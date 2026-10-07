@@ -1,0 +1,173 @@
+# 12 — CHANGELOG
+
+## Zweck
+
+Chronologisches Protokoll aller relevanten Entscheidungen und Änderungen.
+
+## Format
+
+```text
+## YYYY-MM-DD — Titel
+
+Status: 🟢 / 🟡 / 🔵
+
+### Änderung
+...
+
+### Begründung
+...
+
+### Betroffene Bereiche
+- ...
+
+### Auswirkungen auf bestehende Welt
+...
+
+### KubeJS / technische Umsetzung
+...
+
+### Teststatus
+...
+```
+
+## 2026-10-06 — Dokumentationsgrundstruktur erstellt
+
+Status: 🟢
+
+### Änderung
+
+Die zentrale Projektdokumentation für das Minecraft-1.18.2-Modpack wurde angelegt.
+
+### Enthalten
+
+- Status-/Dashboard
+- Modbasis
+- Progression
+- Ressourcen
+- Erzgeneration
+- Verarbeitung
+- Energie/Flüssigkeiten
+- Magie
+- Cross-Mod-Integration
+- AE2/Automation
+- Endgame
+- KubeJS
+- Testing
+- Changelog
+
+### Bekannte bestehende Welt
+
+- Botania Rune Altar
+- IE Steel
+- IE Biodiesel Generator
+- Beginn der Ölgewinnung
+- Tinkers Construct begonnen
+- AE2 noch nicht begonnen
+
+### Nächster Schritt
+
+Vollständige und verifizierte Ressourcen-/Materialinventur.
+
+## 2026-10-06 — Ressourceninventur Phase 1
+
+Status: 🟢
+
+### Änderung
+
+Die hochgelieferten Mod-JARs aus `mods_v3.zip` wurden erstmals direkt auf ressourcenrelevante Registry-/Asset-/Rezeptdaten untersucht.
+
+### Ergebnis
+
+Dokumentiert wurden insbesondere:
+
+- IE Ressourcen und Flüssigkeiten
+- Immersive Petroleum
+- Mekanism / Mekanism Generators
+- Tinkers Construct
+- Botania
+- MythicBotany
+- Blood Magic
+- Blood-Smeltery
+- AE2
+- Applied Mekanistics
+- Applied Botanics
+- Farmer's Delight / Nethers Delight
+- Twilight Forest
+- weitere relevante Content-Mods
+
+### Wichtiger Befund
+
+Mehrere gemeinsame Materialfamilien existieren in mehreren Mods. Eine bloße Namensgleichheit wird deshalb nicht als Identität angenommen.
+
+### Nächster Schritt
+
+Tag- und Rezept-Reconciliation der gemeinsamen Materialfamilien.
+
+## 2026-10-07 — Tag-/Rezept-Reconciliation Phase 2
+
+Status: 🟢 technische Analyse / 🟡 Balancing noch offen
+
+### Änderung
+
+Die wichtigsten gemeinsamen Metallfamilien wurden anhand der tatsächlich enthaltenen Forge-Tags und Rezeptdefinitionen aus `mods_v3.zip` abgeglichen.
+
+### Ergebnis
+
+- Forge-Tags sind die zentrale Integrationsschnittstelle.
+- Lead, Uranium und Steel besitzen mehrere konkrete Item-Repräsentationen, können aber über gemeinsame Tags zusammenarbeiten.
+- Tinkers Construct greift bei zentralen Materialien überwiegend tag-basiert zu.
+- Steel wird als gemeinsame Materialfamilie behandelt, IE bleibt jedoch die geplante primäre Produktionsquelle.
+- Bronze besitzt mehrere parallele Produktionssysteme und wird deshalb als wichtiger Test-/Balancingpunkt markiert.
+- Constantan/Electrum/Aluminum/Nickel/Silver bleiben IE-dominiert.
+- Tin/Osmium bleiben Mekanism-dominiert.
+
+### Bewusst noch nicht geändert
+
+- keine Items entfernt,
+- keine globalen KubeJS-Rezepte ersetzt,
+- keine Worldgen geändert,
+- keine Yield-/Energiewerte finalisiert.
+
+### Nächster Schritt
+
+Reconciliation der sekundären Ressourcenfamilien und anschließend Aufbau der finalen Ressourcenmatrix.
+
+## 2026-10-07 — Phase 2b: Sekundäre Ressourcenfamilien
+
+- Certus Quartz, Fluix und Silicon reconciled.
+- Manasteel, Elementium, Terrasteel und Dragonstone reconciled.
+- Alfsteel als MythicBotany-High-End-Material dokumentiert.
+- Demonite/Hellforged und Blood-Smeltery-Schnittstelle dokumentiert.
+- Tinkers-Sondermetalle als eigenständige Materialfamilien bestätigt.
+- Twilight-Forest-Materialien Ironwood, Steeleaf, Knightmetal und Fiery eingeordnet.
+- Grundsatz festgehalten: Tags als Integrationsschnittstelle, mod-spezifische Outputs erhalten.
+
+## 2026-10-07 — Phase 3: Ore-/Worldgen-Reconciliation
+
+- Twilight-Forest-Erz-Worldgen direkt aus der JAR geprüft.
+- Vanilla-Erzverteilung in Twilight Forest dokumentiert.
+- Dimensionsgebundene Tinkers-, AE2- und Blood-Magic-Ressourcen abgegrenzt.
+- Konzept für seltene Industrieerze in Twilight Forest aufgenommen.
+- Keine bestehende Worldgen-Verteilung im Hauptspiel geändert.
+
+## 2026-10-07 — Progression überarbeitet / früher AE2-Storage-Layer
+
+- 🟢 Progression explizit als parallele Pfade strukturiert.
+- 🟢 Tinkers, IE, Botania, Blood Magic, Mekanism, AE2 und Exploration als eigenständige Pfade definiert.
+- 🟢 Kreuzungspunkte statt einer starren linearen Mod-Leiter festgelegt.
+- 🟢 AE2 in zwei Progressionsstufen aufgeteilt: früher Storage-Layer und später vollständige ME-Automation.
+- 🟡 Frühe AE2-Anbindung von normalen Truhen und Storage Drawers als Ziel festgelegt.
+- 🔵 Exakte Rezepte/Kosten des frühen AE2-Layers bleiben bis zur abgeschlossenen Ressourcenmatrix offen.
+
+
+## 2026-10-07 — Phase 3 finalisiert
+
+- Erz-/Worldgen-Matrix als verbindliche Progressionsentscheidung festgehalten.
+- Overworld als Basisressourcenraum bestätigt.
+- Twilight Forest als **Industrial Frontier** für Aluminium, Nickel, Silver und Lead festgelegt.
+- Cobalt als starke/exklusive Nether-Ressource für Tinkers festgelegt.
+- Tin und Osmium als Mekanism-identitätsgebundene Ressourcen bestätigt.
+- Certus Quartz im Overworld bestätigt; Fluix bleibt AE2-Verarbeitung.
+- Botania/MythicBotany und Blood Magic werden nicht durch gewöhnliche Erzverteilung trivialisiert.
+- Migrationsregel für die bestehende Welt festgehalten.
+- Genaue Y-Level, Vein Sizes und Spawn-Chancen bewusst für die spätere technische Ausarbeitung offen gelassen.

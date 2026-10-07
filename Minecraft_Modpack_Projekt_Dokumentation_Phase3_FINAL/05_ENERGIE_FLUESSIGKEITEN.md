@@ -1,0 +1,65 @@
+# 05 — ENERGIE & FLÜSSIGKEITEN
+
+## Zweck
+
+Einheitliches Modell für technische Energie und wichtige Flüssigkeiten/Gase/magische Energieressourcen.
+
+## Energie-Systeme
+
+### Immersive Engineering
+🔵 zu vermessen und zu balancieren:
+- Produktionsquellen
+- Generatoren
+- Verbrauch
+- Biodiesel
+
+### Mekanism
+🔵 zu vermessen:
+- Energieproduktion
+- Energieumwandlung
+- Maschinenverbrauch
+- Generatoren
+
+### AE2
+🔵 zu vermessen:
+- Energiebedarf
+- Netzgröße
+- Automatisierungskosten
+
+### Botania
+🟢 Eigenständiges Mana-System.
+
+### Blood Magic
+🟢 Eigenständiges Life-Essence-System.
+
+## Flüssigkeiten / Gase
+
+🔵 Zu erfassen:
+- Oil
+- Diesel
+- Biodiesel
+- Petroleum
+- Wasser
+- Mekanism-Gase
+- weitere modrelevante Flüssigkeiten
+- Life Essence, soweit technisch als Fluid umgesetzt
+- weitere relevante Ressourcen
+
+## Balanceprinzipien
+
+- Energie darf nicht kostenlos wirken.
+- Generatoren sollen unterschiedliche Rollen haben.
+- Biodiesel bleibt industriell relevant.
+- Mekanism-Energie wird als High-Tech-System behandelt.
+- Energieumwandlungen werden auf Ausbeute und Kosten geprüft.
+- Flüssigkeiten und Gase können gezielt als Cross-Mod-Gates verwendet werden.
+
+## Noch offen
+
+🔵 Einheitliche Energieökonomie  
+🔵 Produktionskosten  
+🔵 Maschinenverbrauch  
+🔵 Speichergrößen  
+🔵 Generatoren  
+🔵 Flüssigkeitskreisläufe  
+🔵 Gasproduktion und -verbrauch
