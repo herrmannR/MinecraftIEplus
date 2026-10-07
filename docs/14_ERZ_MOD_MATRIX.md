@@ -32,16 +32,16 @@ Die Bewertung ●–●●● stützt sich auf die Zahl der Rezepte, die das Mat
 | **Smaragd** | ⛏ OW Berge, selten 🔧● (=) | – (=) | 🔧● (=) | 🔧● (=) | 🔧● (=) | – (=) | – (=) | – (=) | – (=) | ● (=) |
 | **Netherquarz** | ⛏ NE mittel 🔧● (=) | 🔧● (=) | 🔧●● (=) | 🔧●● (=) | 🔧●● (=) | 🔧● (=) | 🔧● (=) | – (=) | 🔧● (=) | ●● (=) |
 | **Ancient Debris** | ⛏ NE sehr niedrig 🔧●● (=) | – (=) | 🔧● (=) | 🔧●● (=) | – (=) | 🔧●● (=) | – (=) | – (=) | – (=) | ●● (=) |
-| **Aluminium (Bauxit)** | – | ⛏ OW mittel 🔧●● Gerüste/Kabel (⛏ OW niedrig, TF hoch R 🔧●●) | – (=) | ⚙ Material (=) | – (=) | – (=) | – (=) | – (⛏ hoch) | – (=) | ●● (=) |
-| **Blei** | – | ⛏ OW hoch 🔧●● (⛏ OW niedrig, TF hoch R 🔧●●) | ⛏ OW mittel 🔧●● (**kein ⛏**, nutzt IE-Blei per Tag 🔧●●) | 🔧● (=) | – (=) | 🔧● (=) | 🔧● (=) | – (⛏ hoch, IE) | – (=) | ●● (=) |
-| **Silber** | – | ⛏ OW mittel 🔧●● Electrum (⛏ OW niedrig, TF hoch R 🔧●●) | – (=) | 🔧● (=) | – (=) | 🔧● (=) | – (=) | – (⛏ hoch) | – (=) | ●● (=) |
-| **Nickel** | – | ⛏ OW mittel 🔧●● Constantan (⛏ OW niedrig, TF hoch R 🔧●●) | – (=) | 🔧● (=) | – (=) | 🔧● (=) | – (=) | – (⛏ hoch) | – (=) | ●● (=) |
-| **Uran** | – | ⛏ OW niedrig ⚙ (**kein ⛏**, ⚙ =) | ⛏ OW niedrig 🔧●●● Nuklearkette (⛏ OW einzige Quelle, ggf. ↑ 🔵, R 🔧●●●) | 🔧● (=) | – (=) | 🔧● (=) | – (=) | – (⛏ niedrig) | – (=) | ●●● spät (=) |
-| **Zinn** | – | 🔧● Bronze (=) | ⛏ OW hoch 🔧●● (⛏ **nur TF**, OW aus 🔧●●) | 🔧● Bronze (=) | – (=) | 🔧● (=) | 🔧● (=) | – (⛏ **exklusiv**, mittel/hoch) | – (=) | ●● (●●● Gate für Bronze/Mek-Ausbau) |
-| **Osmium** | – | ⚙ (=) | ⛏ OW hoch 🔧●●● jede Maschine (⛏ OW niedrig R, TF hoch 🔧●●●) | 🔧● (=) | – (=) | 🔧● (=) | 🔧● AppMek (=) | – (⛏ hoch) | – (=) | ●●● Engpass (=) |
-| **Fluorit** | – | ⚙ (=) | ⛏ OW niedrig 🔧●● Uran-Chemie (⛏ OW niedrig R, TF niedrig 🔧●●) | – (=) | – (=) | 🔧● (=) | – (=) | – (⛏ niedrig) | – (=) | ●● spät (=) |
+| **Aluminium (Bauxit)** | – | ⛏ OW mittel 🔧●● Gerüste/Kabel (⛏ OW niedrig 🔧●●) | – (=) | ⚙ Material (=) | – (=) | – (=) | – (=) | – (⛏ hoch, KubeJS) | – (=) | ●● (=) |
+| **Blei** | – | ⛏ OW hoch 🔧●● (⛏ OW niedrig 🔧●●) | ⛏ OW mittel 🔧●● (**kein ⛏**, nutzt IE-Blei per Tag 🔧●●) | 🔧● (=) | – (=) | 🔧● (=) | 🔧● (=) | – (⛏ hoch, KubeJS) | – (=) | ●● (=) |
+| **Silber** | – | ⛏ OW mittel 🔧●● Electrum (⛏ OW Standard? 🔵 🔧●●) | – (=) | 🔧● (=) | – (=) | 🔧● (=) | – (=) | – (=) | – (=) | ●● (=) |
+| **Nickel** | – | ⛏ OW mittel 🔧●● Constantan (⛏ OW Standard? 🔵 🔧●●) | – (=) | 🔧● (=) | – (=) | 🔧● (=) | – (=) | – (=) | – (=) | ●● (=) |
+| **Uran** | – | ⛏ OW niedrig ⚙ (**kein ⛏**, ⚙ =) | ⛏ OW niedrig 🔧●●● Nuklearkette (⛏ OW einzige Quelle ×1,3, R 🔧●●●) | 🔧● (=) | – (=) | 🔧● (=) | – (=) | – (=) | – (=) | ●●● spät (=) |
+| **Zinn** | – | 🔧● Bronze (=) | ⛏ OW hoch 🔧●● (⛏ **nur TF**, OW aus 🔧●●) | 🔧● Bronze (=) | – (=) | 🔧● (=) | 🔧● (=) | – (⛏ **exklusiv**, hoch, KubeJS) | – (=) | ●● (●●● Gate für Bronze/Mek-Ausbau) |
+| **Osmium** | – | ⚙ (=) | ⛏ OW hoch 🔧●●● jede Maschine (⛏ OW Standard? 🔵, R 🔧●●●) | 🔧● (=) | – (=) | 🔧● (=) | 🔧● AppMek (=) | – (=) | – (=) | ●●● Engpass (=) |
+| **Fluorit** | – | ⚙ (=) | ⛏ OW niedrig 🔧●● Uran-Chemie (⛏ OW niedrig, R 🔧●●) | – (=) | – (=) | 🔧● (=) | – (=) | – (=) | – (=) | ●● spät (=) |
 | **Salz** | – | – (=) | ⛏ OW niedrig (Sand/Ton) 🔧●● Brine/Lithium (⛏ =, R) | – (=) | – (=) | – (=) | – (=) | – (=) | – (=) | ● (=) |
-| **Kobalt** | – | ⚙ (=) | – (=) | ⛏ NE mittel 🔧●●● Manyullyn (⛏ NE hoch 🔵) | – (=) | – (=) | – (=) | – (=) | – (=) | ●● (=) |
+| **Kobalt** | – | ⚙ (=) | – (=) | ⛏ NE mittel 🔧●●● Manyullyn (=) | – (=) | – (=) | – (=) | – (=) | – (=) | ●● (=) |
 | **Certus-Quarz** | – | – (=) | ⚙ (=) | – (=) | – (=) | 🔧● (=) | ⛏ OW mittel + Meteoriten 🔧●●● (=) | – (=) | – (=) | ●●● AE2 (=) |
 | **Demonit** | – | – (=) | – (=) | 🔧●● Hellforged-Casting (=) | – (=) | ⛏ Demon Dungeon 🔧●●● (=) | – (=) | – (=) | – (=) | ●●● spät (=) |
 | **Dragonstone** | – | – (=) | – (=) | – (=) | ⛏ Alfheim 🔧●●● Alfsteel (=) | – (=) | – (=) | – (=) | – (=) | ●●● Endgame (=) |
@@ -55,11 +55,11 @@ Twilight-Forest-Spezialmaterialien (Ironwood, Steeleaf, Knightmetal, Fiery) sind
 ## Was sich durch das Soll ändert
 
 1. **Blei:** nur noch IE-Erz. Mekanism-Bleierz wird abgeschaltet; Mekanism nutzt IE-Blei über `forge:ingots/lead`.
-2. **Uran:** nur noch Mekanism-Erz. IE-Uranerz wird abgeschaltet. 🔵 Die Mekanism-Menge eventuell erhöhen, weil die zweite Quelle wegfällt.
+2. **Uran:** nur noch Mekanism-Erz (Menge ×1,3). IE-Uranerz wird abgeschaltet.
 3. **Zinn:** wird zum Twilight-Forest-Exklusiverz (Option B) und damit zum Gate für Bronze und den Mekanism-Ausbau.
-4. **Osmium:** in der Overworld deutlich seltener (aber vorhanden, für den Mekanism-Einstieg), im Twilight Forest häufig.
-5. **Aluminium, Nickel, Silber, Blei:** in der Overworld selten, im Twilight Forest häufig.
-6. **Retrogen:** alle Erze, die in bereits erkundeten Overworld-Chunks fehlen (Mekanism kam neu dazu).
+4. **Aluminium, Blei:** in der Overworld selten, im Twilight Forest häufig (KubeJS). Zinn, Blei und Aluminium sind die einzigen TF-Zusatzerze.
+5. **Osmium, Silber, Nickel:** keine TF-Quelle, Overworld-Menge 🔵 (Vorschlag: Standard).
+6. **Retrogen:** Mekanism-Erze (Osmium, Uran, Fluorit, Salz) in allen bereits erkundeten Chunks, weil die Hauptwelt nie mit Mekanism geöffnet wurde. KubeJS-TF-Erze haben kein Retrogen.
 
 ## Anhang — Rezeptzählung
 

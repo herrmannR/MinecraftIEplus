@@ -93,15 +93,15 @@ Eine ausgewogene Erzverteilung, die die parallelen Progressionspfade unterstütz
 | Redstone | mittel | – | mittel | | Technik | 🟢 |
 | Lapis | mittel | – | mittel | | Magie | 🟢 |
 | Diamond | niedrig | – | niedrig/mittel | | hoher Vanilla-Tier | 🟢 |
-| Aluminium | niedrig | – | **hoch** | | IE/Tinkers | 🟢 |
-| Nickel | niedrig | – | **hoch** | | IE/Tinkers | 🟢 |
-| Silver | niedrig | – | **hoch** | | IE/Tinkers/Magie | 🟢 |
-| Lead | niedrig | – | **hoch** | | IE/Mekanism — **nur IE-Erz**, Mekanism-Bleierz aus | 🟢 |
-| Osmium | niedrig | – | **hoch** | | Mekanism, ab erster Maschine benötigt | 🟢 (Option B) |
-| Tin | **keine** | – | **exklusiv** (mittel/hoch) | | Mekanism/Bronze — Gate | 🟢 (Option B) |
-| Uranium | niedrig (ggf. ↑ 🔵) | – | niedrig | | Energie — **nur Mekanism-Erz**, IE-Uranerz aus | 🟢 |
-| Fluorite | niedrig | – | niedrig | | Mekanism | 🟢 |
-| Cobalt | – | **hoch** | – | | Tinkers | 🟢 |
+| Aluminium | niedrig (IE 5 statt 16 Versuche/Chunk) | – | **hoch** (KubeJS) | | IE/Tinkers | 🟢 |
+| Nickel | Standard (🔵 bestätigen) | – | – | | IE/Tinkers | 🟡 |
+| Silver | Standard (🔵 bestätigen) | – | – | | IE/Tinkers/Magie | 🟡 |
+| Lead | niedrig (IE 4 statt 12 Versuche/Chunk) | – | **hoch** (KubeJS) | | IE/Mekanism — **nur IE-Erz**, Mekanism-Bleierz aus | 🟢 |
+| Osmium | Standard (🔵 bestätigen) | – | – | | Mekanism, ab erster Maschine benötigt | 🟡 |
+| Tin | **keine** (Mekanism aus) | – | **exklusiv, hoch** (KubeJS) | | Mekanism/Bronze — Gate | 🟢 (Option B) |
+| Uranium | niedrig, Mekanism ×1,3 (small 5, buried 9) | – | – | | Energie — **nur Mekanism-Erz**, IE-Uranerz aus | 🟢 |
+| Fluorite | niedrig (Standard) | – | – | | Mekanism | 🟢 |
+| Cobalt | – | Standard (8 Adern) | – | | Tinkers | 🟢 |
 | Certus Quartz | mittel | – | – | Meteoriten | AE2 | 🟢 |
 | Fluix | nicht natürlich | | | | AE2-Verarbeitung | 🟢 |
 | Demonite | – | – | – | Demon Dungeon | Blood Magic | 🟢 |
@@ -110,7 +110,7 @@ Eine ausgewogene Erzverteilung, die die parallelen Progressionspfade unterstütz
 
 „niedrig/mittel/hoch“ sind relative Zielgrößen. Konkrete Werte (Y-Level, Vein Size, Versuche/Chunk) werden in Phase 1 aus den Ist-Werten oben abgeleitet und in der Testinstanz geprüft.
 
-## Osmium & Zinn — Optionen (🟢 Option B beschlossen, 2026-10-07)
+## Osmium & Zinn — Optionen (🟢 Option B beschlossen, 2026-10-07; präzisiert: im TF nur Zinn, Blei, Aluminium)
 
 Osmium wird ab der **ersten** Mekanism-Maschine gebraucht (Steel Casing, Metallurgic Infuser, Basic Control Circuits). Es muss deshalb ohne Endgame-Dimension erreichbar sein. Alfheim, Demon Dungeon und Wesley's Dungeons eignen sich nicht (zu spät bzw. kein abbaubares Terrain).
 
@@ -121,7 +121,11 @@ Osmium wird ab der **ersten** Mekanism-Maschine gebraucht (Steel Casing, Metallu
 | C | **nur TF** | Overworld | Mekanism-Einstieg erst nach TF-Expedition; harter Gate |
 | D | eigene neue Dimension (Zusatzmod) | | widerspricht „keine neuen Mods nebenbei“, erhöht Wartungsaufwand |
 
-## Retrogen (🟢 beschlossen: zwingend — in der Hauptwelt wurde seit Mekanism schon viel erkundet)
+## Retrogen (🟢 beschlossen: zwingend)
+
+Die Hauptwelt wurde **noch nie mit Mekanism geöffnet**. Alle bisher erkundeten Chunks haben daher keine Mekanism-Erze. Mekanism-Retrogen (Osmium, Uran, Fluorit, Salz) ist deshalb nötig. Es **darf erst laufen, wenn die finalen Configs beim Host liegen**: Wird die Welt vorher mit Mekanism geöffnet, generiert Mekanism mit Default-Werten, inklusive Zinn und Blei in der Overworld.
+
+⚠️ **KubeJS-Erze haben kein Retrogen** (verifiziert: `AddOreProperties.retrogen` existiert, wird in 1802.5.5 aber nicht ausgewertet). Die TF-Erze (Zinn, Blei, Aluminium) entstehen nur in neu generierten TF-Chunks. Das ist vertretbar, weil der TF gerade erst betreten wurde.
 
 - IE: `retrogen_enable` pro Erz + neuer `retrogen_key` → generiert nur die markierten Erze in bereits geladenen Chunks nach.
 - Mekanism: `enableRegeneration = true` + `userWorldGenVersion` erhöhen.
@@ -138,9 +142,9 @@ Osmium wird ab der **ersten** Mekanism-Maschine gebraucht (Steel Casing, Metallu
 
 ## Noch offen
 
-🔵 Uran-Menge nach Wegfall der IE-Quelle erhöhen?
-🔵 Zinn exklusiv im TF: bereits generierte Overworld-Zinnadern bleiben bestehen (nur neue Chunks/Retrogen ohne Zinn)
-🔵 Retrogen für TF-Erze möglich? (IE/Mek-Retrogen kennt nur ihre eigenen Features; KubeJS-Features haben kein Retrogen)
-🔵 Spawnen IE-/Mek-/AE2-Erze bereits im TF? (Test)
-🔵 Technische Umsetzung von TF-Industrieerzen (KubeJS 1802 Worldgen mit Biome-Filter oder Datapack) — API-Test
+🔵 Osmium, Silber, Nickel: Overworld-Menge bei Standard lassen? (Sie bekommen keine TF-Quelle mehr.)
+🔵 Spawnen IE-/Mek-/AE2-Erze bereits im TF? (Test läuft: `debug_print_ore_features.js`)
+🔵 TF-Erzwerte (count/size/Höhe) in der Testinstanz prüfen
+🟢 Umsetzung TF-Erze: KubeJS `worldgen.add` mit Biome-Regex `/^twilightforest:.*/` (API verifiziert)
+🟢 Uran: Mekanism ×1,3. Kobalt bleibt Standard.
 🔵 Konkrete Zahlenwerte

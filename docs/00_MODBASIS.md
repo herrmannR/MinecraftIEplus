@@ -11,7 +11,21 @@ Referenz für die festgelegte Modpack-Basis. Die Modliste wird nicht stillschwei
 ## Technische Basis
 
 - Minecraft 1.18.2, Forge, ATLauncher-Instanz „Immersive Engineering+“
-- 71 Mod-JARs, Rohliste in `mods_v3.txt` (🟢 2026-10-07 1:1 mit `mods/` der Instanz abgeglichen; die Datei enthält zusätzlich die Einträge `mods_v2.txt`/`mods_v3.txt` selbst)
+- Hauptinstanz/Hauptwelt: 71 Mod-JARs, Rohliste in `mods_v3.txt` (🟢 2026-10-07 1:1 mit `mods/` der Instanz abgeglichen; die Datei enthält zusätzlich die Einträge `mods_v2.txt`/`mods_v3.txt` selbst)
+- Testinstanz: 75 Mod-JARs, Rohliste in `mods_v4.txt` (🟢 2026-10-07 mit `mods/` der Testinstanz abgeglichen) = `mods_v3.txt` + 4 Kandidaten (siehe unten)
+
+## 🔵 Kandidaten in der Testinstanz
+
+Noch nicht in der Hauptinstanz. Übernahme erst nach Test und Entscheidung.
+
+| Mod | JAR | Zweck | Wer braucht ihn |
+|---|---|---|---|
+| GraveStone | `gravestone-1.18.2-1.0.2.jar` | Grab mit Inventar beim Tod | alle Spieler (Host + Clients) |
+| GraveStone Curios Compat | `gravestonecurioscompat-1.18.x-1.20.x-Forge-2.1.0.jar` | Curios-Slots ins Grab übernehmen | alle Spieler |
+| Polymorph | `polymorph-forge-1.18.2-0.51.jar` | Auswahl bei Rezeptkonflikten | alle Spieler |
+| ProbeJS | `probejs-4.0.0-fix4-forge.jar` | KubeJS-Typen/Autovervollständigung | **nur Entwicklung (Testinstanz)**, nicht ausliefern |
+
+Empfohlen, aber (Stand 2026-10-07) nicht installiert: FTB Quests (+ FTB Library, FTB Teams, Item Filters), FerriteCore, ModernFix, Rubidium/Oculus.
 
 ## Gameplay-/Content-Mods
 

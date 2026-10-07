@@ -40,6 +40,10 @@ Ein bestehendes Minecraft-1.18.2-Forge-Modpack („Immersive Engineering+“, AT
 - 🔵 OPEN — noch zu entscheiden / zu verifizieren
 - 🔴 BLOCKED — kann erst nach einer anderen Entscheidung bearbeitet werden
 
+## ⚠️ Wichtig für den Host
+
+**Die Hauptwelt nicht mit Mekanism öffnen, bevor die finalen Worldgen-Configs eingespielt sind.** Sonst generiert Mekanism in allen neu betretenen Chunks mit Default-Werten, inklusive Zinn und Blei in der Overworld. Retrogen kann das nicht rückgängig machen.
+
 ## Stand der Hauptwelt (2026-10-07)
 
 - Botania: Rune Altar vorhanden.
@@ -47,7 +51,7 @@ Ein bestehendes Minecraft-1.18.2-Forge-Modpack („Immersive Engineering+“, AT
 - Tinkers Construct: begonnen.
 - Twilight Forest: gerade erstmals betreten.
 - Applied Energistics 2: noch nicht begonnen.
-- **Mekanism, Mekanism Generators, Blood Magic, Blood-Smeltery und deren Integrationsmods wurden gerade erst hinzugefügt.** In allen bereits generierten Chunks fehlen deshalb Mekanism-Erze (→ Retrogen, siehe `03_ERZGENERATION.md`).
+- **Mekanism, Mekanism Generators, Blood Magic, Blood-Smeltery und deren Integrationsmods wurden gerade erst hinzugefügt. Die Hauptwelt wurde noch nie mit Mekanism geöffnet.** Alle erkundeten Chunks haben keine Mekanism-Erze (→ Retrogen, siehe `03_ERZGENERATION.md`).
 
 ## Festgelegte Designrichtung
 

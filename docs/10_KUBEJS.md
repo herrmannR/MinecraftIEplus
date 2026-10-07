@@ -60,3 +60,28 @@ kubejs/
 
 🔵 KubeJS-1802-Worldgen-API (Erze gezielt in TF-Biomen) in der Testinstanz verifizieren.
 🔵 Neuen Tag-Dump erzeugen (`kubejs/exported` ist veraltet).
+
+## ProbeJS (nur Testinstanz)
+
+`probejs-4.0.0-fix4-forge.jar` ist nur in der Testinstanz installiert und wird nicht ausgeliefert.
+
+- Befehl im Spiel: **`/probejs dump`** (weitere: `clear_cache`, `toggle_*`)
+- Ausgabe: `kubejs/probe/` (`generated/`, `docs/`, `user/`, `cache/`) + `.vscode/` im Instanzordner
+- Nutzen für uns:
+  - vollständige, aktuelle Registry-Listen (Items, Blöcke, Fluids, Biome)
+  - Event- und Rezept-Typen der installierten KubeJS-Addons (IE, Mekanism, Botania, Blood Magic, Tinkers)
+
+  Dadurch werden IDs und Rezept-Schemata nicht mehr aus JARs abgeleitet, sondern direkt aus dem laufenden Spiel gelesen.
+- Ablauf: Testwelt öffnen → `/probejs dump` → Claude liest `kubejs/probe/` aus.
+
+## Verifizierte API-Details (KubeJS 1802.5.5)
+
+- Skripte werden rekursiv geladen (`Files.walk`, Tiefe 10). Unterordner sind also möglich.
+- Worldgen-Events: `worldgen.add` (`addOre`, `addLake`, `addSpawn`, `addFeatureJson`) und `worldgen.remove` (`removeOres`, `removeFeatureById`, `printFeatures`, …). Beides sind **Startup-Events**: Änderungen erfordern einen Neustart des Spiels.
+- Biome-Filter:
+  - `'modid:biome'` (ID)
+  - `'/regex/'` (Regex auf die ID)
+  - `'^category'` (Biome-Kategorie)
+  - Objekte mit `or`, `not`, `id`, `type`, `category`
+- `addOre`-Felder: `id`, `biomes`, `addTarget(ruleTest, block)`, `count(…)`, `chance(…)`, `size`, `noSurface`, `squared()`, `uniformHeight(min, max)`, `triangleHeight(min, max)`, `worldgenLayer`.
+- **`retrogen` wird nicht ausgewertet.** KubeJS-Erze entstehen nur in neuen Chunks.

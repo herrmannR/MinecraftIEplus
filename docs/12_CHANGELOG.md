@@ -226,3 +226,25 @@ Status: 🟢
 - **Retrogen** ist zwingend, weil die Hauptwelt seit der Mekanism-Installation schon weit erkundet ist.
 - Neue Übersicht `14_ERZ_MOD_MATRIX.md`: Erze × Mods mit Ist/Soll, Wertung und Rezeptzählung aus den JARs.
 - Noch nichts an Instanzen geändert.
+
+## 2026-10-07 — Kandidaten-Mods in der Testinstanz
+
+Status: 🔵
+
+- In der Testinstanz installiert: GraveStone (+ Curios Compat), Polymorph, ProbeJS. Neue Modliste: `mods_v4.txt`.
+- ProbeJS ist nur ein Entwicklungswerkzeug und wird nicht an die Mitspieler ausgeliefert.
+- Die Hauptinstanz bleibt unverändert (`mods_v3.txt`).
+- Diskutiert: Beyond Earth als mögliche Erweiterung. Noch nicht entschieden.
+
+## 2026-10-07 — Worldgen präzisiert, erste Testkonfiguration
+
+Status: 🟡 (Test ausstehend)
+
+- Im Twilight Forest kommen nur **Zinn (exklusiv), Blei und Aluminium** dazu, umgesetzt per KubeJS `worldgen.add` mit Biome-Regex. Osmium, Silber, Nickel, Uran und Fluorit bekommen keine TF-Quelle.
+- Uran: Mekanism-Menge ×1,3 (einzige Quelle). Kobalt bleibt Standard.
+- Die Hauptwelt wurde **noch nie mit Mekanism geöffnet**. Mekanism-Retrogen ist damit nötig, und die Configs müssen vor dem ersten Öffnen beim Host liegen.
+- Verifiziert an KubeJS 1802.5.5:
+  - Skripte werden rekursiv geladen.
+  - `worldgen.add`/`worldgen.remove` existieren; Biome-Filter per ID, Regex (`/…/`) oder Kategorie (`^…`).
+  - **KubeJS-Erze haben kein Retrogen.**
+- Configs liegen in `config-overrides/`, Originale in `config-overrides/_original/`; Skripte in `kubejs/`. In die Testinstanz eingespielt (siehe `13_TESTINSTANZ_CHANGELOG.md`).
