@@ -58,7 +58,7 @@ kubejs/
 
 ## Offen
 
-🔵 KubeJS-1802-Worldgen-API (Erze gezielt in TF-Biomen) in der Testinstanz verifizieren.
+🟢 KubeJS-1802-Worldgen-API verifiziert (siehe unten). 🔵 Wirkung im Spiel testen.
 🔵 Neuen Tag-Dump erzeugen (`kubejs/exported` ist veraltet).
 
 ## ProbeJS (nur Testinstanz)
