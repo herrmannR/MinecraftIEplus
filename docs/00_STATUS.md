@@ -123,8 +123,13 @@ Backup der Hauptwelt beim Host → Configs/Skripte bei allen Spielern einspielen
 | KubeJS | 🟡 leer, Struktur geplant | `10_KUBEJS.md` |
 | Testing | 🟢 Testinstanz vorhanden | `11_TESTING.md` |
 | Changelog | 🟢 | `12_CHANGELOG.md`, `13_TESTINSTANZ_CHANGELOG.md` |
+| Erz × Mod Matrix | 🟢 Ist + Soll | `14_ERZ_MOD_MATRIX.md` |
 
 ## Offene Fragen an das Team
 
-🔵 Osmium/Zinn: Verteilung zwischen Overworld und Twilight Forest (siehe `03_ERZGENERATION.md`, Abschnitt „Osmium & Zinn“).
-🔵 Doppelte Generierung von Lead und Uranium (IE + Mekanism) beibehalten oder je eine Quelle abschalten?
+🟢 Osmium/Zinn: Option B (Osmium OW selten + TF hoch, Zinn nur TF).
+🟢 Lead nur IE-Erz, Uranium nur Mekanism-Erz.
+🟢 Retrogen zwingend (Hauptwelt bereits weit erkundet).
+🔵 Uran-Menge erhöhen? Kobalt-Menge erhöhen?
+
+Übersicht aller Erze × Mods: `14_ERZ_MOD_MATRIX.md`.

@@ -96,10 +96,10 @@ Eine ausgewogene Erzverteilung, die die parallelen Progressionspfade unterstütz
 | Aluminium | niedrig | – | **hoch** | | IE/Tinkers | 🟢 |
 | Nickel | niedrig | – | **hoch** | | IE/Tinkers | 🟢 |
 | Silver | niedrig | – | **hoch** | | IE/Tinkers/Magie | 🟢 |
-| Lead | niedrig | – | **hoch** | | IE/Mekanism | 🟢 (Quelle IE/Mek 🔵) |
-| Osmium | 🔵 | – | 🔵 | | Mekanism, ab erster Maschine benötigt | 🔵 |
-| Tin | 🔵 | – | 🔵 | | Mekanism/Bronze | 🔵 |
-| Uranium | sehr niedrig | – | niedrig | | Energie | 🟢 (Quelle IE/Mek 🔵) |
+| Lead | niedrig | – | **hoch** | | IE/Mekanism — **nur IE-Erz**, Mekanism-Bleierz aus | 🟢 |
+| Osmium | niedrig | – | **hoch** | | Mekanism, ab erster Maschine benötigt | 🟢 (Option B) |
+| Tin | **keine** | – | **exklusiv** (mittel/hoch) | | Mekanism/Bronze — Gate | 🟢 (Option B) |
+| Uranium | niedrig (ggf. ↑ 🔵) | – | niedrig | | Energie — **nur Mekanism-Erz**, IE-Uranerz aus | 🟢 |
 | Fluorite | niedrig | – | niedrig | | Mekanism | 🟢 |
 | Cobalt | – | **hoch** | – | | Tinkers | 🟢 |
 | Certus Quartz | mittel | – | – | Meteoriten | AE2 | 🟢 |
@@ -110,7 +110,7 @@ Eine ausgewogene Erzverteilung, die die parallelen Progressionspfade unterstütz
 
 „niedrig/mittel/hoch“ sind relative Zielgrößen. Konkrete Werte (Y-Level, Vein Size, Versuche/Chunk) werden in Phase 1 aus den Ist-Werten oben abgeleitet und in der Testinstanz geprüft.
 
-## Osmium & Zinn — Optionen (🔵 Entscheidung offen)
+## Osmium & Zinn — Optionen (🟢 Option B beschlossen, 2026-10-07)
 
 Osmium wird ab der **ersten** Mekanism-Maschine gebraucht (Steel Casing, Metallurgic Infuser, Basic Control Circuits). Es muss deshalb ohne Endgame-Dimension erreichbar sein. Alfheim, Demon Dungeon und Wesley's Dungeons eignen sich nicht (zu spät bzw. kein abbaubares Terrain).
 
@@ -121,7 +121,7 @@ Osmium wird ab der **ersten** Mekanism-Maschine gebraucht (Steel Casing, Metallu
 | C | **nur TF** | Overworld | Mekanism-Einstieg erst nach TF-Expedition; harter Gate |
 | D | eigene neue Dimension (Zusatzmod) | | widerspricht „keine neuen Mods nebenbei“, erhöht Wartungsaufwand |
 
-## Retrogen (🟢 beschlossen: einplanen)
+## Retrogen (🟢 beschlossen: zwingend — in der Hauptwelt wurde seit Mekanism schon viel erkundet)
 
 - IE: `retrogen_enable` pro Erz + neuer `retrogen_key` → generiert nur die markierten Erze in bereits geladenen Chunks nach.
 - Mekanism: `enableRegeneration = true` + `userWorldGenVersion` erhöhen.
@@ -138,8 +138,9 @@ Osmium wird ab der **ersten** Mekanism-Maschine gebraucht (Steel Casing, Metallu
 
 ## Noch offen
 
-🔵 Osmium/Zinn-Option (A–D)
-🔵 Lead/Uranium: IE- oder Mekanism-Generierung abschalten?
+🔵 Uran-Menge nach Wegfall der IE-Quelle erhöhen?
+🔵 Zinn exklusiv im TF: bereits generierte Overworld-Zinnadern bleiben bestehen (nur neue Chunks/Retrogen ohne Zinn)
+🔵 Retrogen für TF-Erze möglich? (IE/Mek-Retrogen kennt nur ihre eigenen Features; KubeJS-Features haben kein Retrogen)
 🔵 Spawnen IE-/Mek-/AE2-Erze bereits im TF? (Test)
 🔵 Technische Umsetzung von TF-Industrieerzen (KubeJS 1802 Worldgen mit Biome-Filter oder Datapack) — API-Test
 🔵 Konkrete Zahlenwerte

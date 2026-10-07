@@ -216,3 +216,13 @@ Keine. Es wurde nichts an Instanzen oder Welten geändert.
 
 - Hauptwelt liegt beim Mitspieler (Host, LAN).
 - `saves/WasIchBauenWill` ist nur eine Testwelt.
+
+## 2026-10-07 — Worldgen-Entscheidungen + Erz×Mod-Matrix
+
+Status: 🟢
+
+- Osmium/Zinn: **Option B**. Osmium in der Overworld selten, im Twilight Forest häufig; Zinn nur noch im Twilight Forest.
+- **Blei** nur noch aus IE-Erz (Mekanism-Bleierz wird abgeschaltet). **Uran** nur noch aus Mekanism-Erz (IE-Uranerz wird abgeschaltet). Ob die Uran-Menge erhöht wird, ist offen.
+- **Retrogen** ist zwingend, weil die Hauptwelt seit der Mekanism-Installation schon weit erkundet ist.
+- Neue Übersicht `14_ERZ_MOD_MATRIX.md`: Erze × Mods mit Ist/Soll, Wertung und Rezeptzählung aus den JARs.
+- Noch nichts an Instanzen geändert.
