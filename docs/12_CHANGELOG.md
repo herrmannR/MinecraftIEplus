@@ -171,3 +171,48 @@ Reconciliation der sekundären Ressourcenfamilien und anschließend Aufbau der f
 - Botania/MythicBotany und Blood Magic werden nicht durch gewöhnliche Erzverteilung trivialisiert.
 - Migrationsregel für die bestehende Welt festgehalten.
 - Genaue Y-Level, Vein Sizes und Spawn-Chancen bewusst für die spätere technische Ausarbeitung offen gelassen.
+
+## 2026-10-07 — Verifikation gegen die echte Instanz, Doku-Überarbeitung, neuer Plan
+
+Status: 🟢
+
+### Änderung
+
+Die gesamte bisherige Analyse wurde gegen die ATLauncher-Instanz geprüft (JARs, Configs, Logs, Welt-Ordner). Danach wurde die Doku korrigiert und neu strukturiert.
+
+### Korrekturen
+
+- IE besitzt **kein** Kupfererz (`immersiveengineering:ore_copper` existiert nicht).
+- IE-/Mekanism-Spawnwerte müssen nicht gemessen werden, sie stehen in den Configs (IE pro Welt in `serverconfig/`, Mekanism in `config/Mekanism/world.toml`).
+- Retrogen ist bei IE und Mekanism möglich. Die Regel „nur neue Chunks“ war zu streng.
+- Demonite (Demon Dungeon) und die MythicBotany-Erze (Alfheim) haben eigene Dimensionen.
+- Osmium war fälschlich ohne Vorkommen eingetragen. Osmium soll in der Welt vorkommen, die Verteilung ist offen (Optionen in 03).
+- Die Erzmatrix in 03 ist ein **Soll**. Der Ist-Zustand (Default-Werte) ist jetzt separat dokumentiert.
+- Carry On und MouseTweaks wurden in 00_MODBASIS ergänzt.
+- AE2-Rolle vereinheitlicht: Endgame + früher Storage-Layer.
+
+### Neue Befunde
+
+- Lead und Uranium werden doppelt generiert (IE + Mekanism).
+- Inscriber-Pressen gibt es nur in Meteoriten. Das ist ein natürliches Gate schon für den frühen AE2-Layer.
+- Mekanism bringt für seine eigenen Metalle bereits 2x–5x Ertrag mit.
+- MythicBotany: `replaceGaiaRecipe = true`, `lockAlfheim = true`.
+- ExtraBotany ist wegen Startabsturz deaktiviert.
+- Der KubeJS-Tag-Dump ist veraltet. KubeJS enthält nur Beispielskripte.
+
+### Organisation
+
+- Doku-Ordner nach `docs/` umbenannt, Projekt unter Git.
+- Neuer Arbeitsplan (Phasen 0–8) in `00_STATUS.md`.
+- `02_RESSOURCEN.md` gestrafft (veraltete Upload-Bitte, leere Vorlagen und doppelte Worldgen-Abschnitte entfernt).
+- `08_AE2_AUTOMATION.md` neu geschrieben.
+- Testinstanz `TestIEInstance` eingerichtet. Ihr Protokoll steht in `13_TESTINSTANZ_CHANGELOG.md`.
+
+### Auswirkungen auf bestehende Welt
+
+Keine. Es wurde nichts an Instanzen oder Welten geändert.
+
+### Umgebung
+
+- Hauptwelt liegt beim Mitspieler (Host, LAN).
+- `saves/WasIchBauenWill` ist nur eine Testwelt.

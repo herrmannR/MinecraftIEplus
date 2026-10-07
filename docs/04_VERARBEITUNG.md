@@ -47,6 +47,8 @@ Mekanism soll starke Verarbeitung anbieten, aber nicht automatisch die optimale 
 
 🟢 Keine pauschale globale 5x-Verarbeitung.
 
+⚠️ Mekanism bringt für seine eigenen Metallketten (Copper, Gold, Iron, Lead, Osmium, Tin, Uranium) bereits 2x–5x mit (Enrichment → Purification → Injection → Crystallization). „Keine More-Mekanism-Processing-Erweiterung“ verhindert nur die Ausweitung auf weitere Metalle. Die Ertragsfrage für die vorhandenen Ketten bleibt offen.
+
 Erträge werden pro Ressource und Verarbeitungspfad festgelegt.
 
 ## Master-Processing-Tabelle
