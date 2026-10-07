@@ -58,8 +58,9 @@ Twilight-Forest-Spezialmaterialien (Ironwood, Steeleaf, Knightmetal, Fiery) sind
 2. **Uran:** nur noch Mekanism-Erz (Menge ×1,3). IE-Uranerz wird abgeschaltet.
 3. **Zinn:** wird zum Twilight-Forest-Exklusiverz (Option B) und damit zum Gate für Bronze und den Mekanism-Ausbau.
 4. **Aluminium, Blei:** in der Overworld selten, im Twilight Forest häufig (KubeJS). Zinn, Blei und Aluminium sind die einzigen TF-Zusatzerze.
-5. **Osmium, Silber, Nickel:** keine TF-Quelle, Overworld-Menge 🔵 (Vorschlag: Standard).
+5. **Silber, Nickel:** keine TF-Quelle, Overworld-Menge 🔵 (Vorschlag: Standard).
 6. **Retrogen:** Mekanism-Erze (Osmium, Uran, Fluorit, Salz) in allen bereits erkundeten Chunks, weil die Hauptwelt nie mit Mekanism geöffnet wurde. KubeJS-TF-Erze haben kein Retrogen.
+7. **Osmium, Certus (🟢 2026-10-07):** in der Overworld reduziert, auf dem Mond (Beyond Earth) häufig. Die Matrixzeilen oben zeigen noch den alten Soll-Stand; Details in `03_ERZGENERATION.md`, Abschnitt „Mond als Osmium- und Certus-Quelle“.
 
 ## Anhang — Rezeptzählung
 

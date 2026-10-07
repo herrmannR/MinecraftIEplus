@@ -16,7 +16,9 @@ Endgame-Erweiterungen dürfen die bereits definierte Core-Progression nicht rüc
 
 🟡 Draconic Evolution oder vergleichbare Endgame-Inhalte können später geprüft werden.
 
-🔵 Zusätzliche Dimensionen können später geprüft werden.
+🟢 Raumfahrt (Beyond Earth + Star Wars Planets) ist beschlossen und Hauptziel; Star-Wars-Planeten als Erkundungs-/Prestige-Endziel. Siehe `15_RAUMFAHRT.md`.
+
+🔵 Weitere zusätzliche Dimensionen können später geprüft werden.
 
 ## Endgame-Ziele
 

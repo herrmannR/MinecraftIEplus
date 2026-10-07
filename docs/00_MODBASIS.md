@@ -12,7 +12,7 @@ Referenz für die festgelegte Modpack-Basis. Die Modliste wird nicht stillschwei
 
 - Minecraft 1.18.2, Forge, ATLauncher-Instanz „Immersive Engineering+“
 - Hauptinstanz/Hauptwelt: 71 Mod-JARs, Rohliste in `mods_v3.txt` (🟢 2026-10-07 1:1 mit `mods/` der Instanz abgeglichen; die Datei enthält zusätzlich die Einträge `mods_v2.txt`/`mods_v3.txt` selbst)
-- Testinstanz: 75 Mod-JARs, Rohliste in `mods_v4.txt` (🟢 2026-10-07 mit `mods/` der Testinstanz abgeglichen) = `mods_v3.txt` + 4 Kandidaten (siehe unten)
+- Testinstanz: 81 Mod-JARs, Rohliste in `mods_v4.txt` (🟢 2026-10-07 mit `mods/` der Testinstanz abgeglichen) = `mods_v3.txt` + 10 Kandidaten (siehe unten). Startet und lädt eine Welt (🟢 2026-10-07, Log geprüft).
 
 ## 🔵 Kandidaten in der Testinstanz
 
@@ -22,10 +22,20 @@ Noch nicht in der Hauptinstanz. Übernahme erst nach Test und Entscheidung.
 |---|---|---|---|
 | GraveStone | `gravestone-1.18.2-1.0.2.jar` | Grab mit Inventar beim Tod | alle Spieler (Host + Clients) |
 | GraveStone Curios Compat | `gravestonecurioscompat-1.18.x-1.20.x-Forge-2.1.0.jar` | Curios-Slots ins Grab übernehmen | alle Spieler |
-| Polymorph | `polymorph-forge-1.18.2-0.51.jar` | Auswahl bei Rezeptkonflikten | alle Spieler |
 | ProbeJS | `probejs-4.0.0-fix4-forge.jar` | KubeJS-Typen/Autovervollständigung | **nur Entwicklung (Testinstanz)**, nicht ausliefern |
+| FTB Quests (+ FTB Library, FTB Teams, Item Filters) | `ftb-quests-forge-1802.3.16-build.479.jar` u. a. | Questbuch für die Progression | alle Spieler |
+| Beyond Earth | `Beyond-Earth-1.18.2-6.2.jar` | Raumfahrt (siehe `15_RAUMFAHRT.md`) | alle Spieler |
+| Beyond Earth: Giselle Addon | `Beyond-Earth-Giselle-Addon-1.18.2-2.20.jar` | IE-/Mekanism-Integration | alle Spieler |
+| Star Wars Planets | `StarWarsPlanets-1.15.jar` | Star-Wars-Planeten | alle Spieler |
 
-Empfohlen, aber (Stand 2026-10-07) nicht installiert: FTB Quests (+ FTB Library, FTB Teams, Item Filters), FerriteCore, ModernFix, Rubidium/Oculus.
+Empfohlen, aber (Stand 2026-10-07) nicht installiert: FerriteCore, ModernFix, Rubidium/Oculus.
+
+### Verworfen / Versionsfallen (verifiziert 2026-10-07)
+
+- **Polymorph 1.18.2-0.51**: verlangt JEI ≥ 10.81, bei uns läuft JEI 9.7.1 → Absturz beim Laden. Entfernt; eine ältere Version wäre nur mit passender JEI-Range möglich.
+- **Beyond Earth 7.0-SNAPSHOT**: Neufassung eines anderen Teams (Paket `com.st0x0ef`). Star Wars Planets und Giselle Addon brauchen die Original-Klassen (`net.mrscauthd`) → Absturz. **Nur Beyond Earth 6.x verwenden.**
+- **Planeteer Machines**: nur Solarpanels (verstößt gegen die Energie-Regel), fehlende Abhängigkeit `planeteer_core`.
+- **Beyond Planets Core**: erzeugt fest im Code Zinn, Uran, Blei, Kobalt und Zink auf allen Planeten und hebelt damit die Erzplanung aus. Wird von Star Wars Planets nicht gebraucht.
 
 ## Gameplay-/Content-Mods
 
@@ -79,6 +89,9 @@ Create, Thermal, Ender IO etc. sind nicht Teil der Basis.
 
 ### 🟢 ExtraBotany entfernt
 `extrabotany-1.18.2-0.1.6.1.jar` liegt in `disabledmods/`, weil Minecraft damit beim Start abstürzte.
+
+### 🟢 Raumfahrt geplant (Ausnahme zur Tech-Regel)
+Beyond Earth, Star Wars Planets und Beyond Earth: Giselle Addon werden aufgenommen (noch nicht installiert). Beyond Earth bringt eigene Maschinen mit. Deren Energie- und Treibstoffproduktion wird deaktiviert bzw. durch IE/Mekanism ersetzt, damit keine zusätzliche Basistech entsteht. Siehe `15_RAUMFAHRT.md`.
 
 ### 🟡 Mögliche spätere Endgame-Erweiterungen
 Draconic Evolution oder zusätzliche Dimensionen können später diskutiert werden (siehe `09_ENDGAME.md`).

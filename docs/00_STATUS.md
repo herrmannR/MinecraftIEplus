@@ -71,6 +71,8 @@ Ein bestehendes Minecraft-1.18.2-Forge-Modpack („Immersive Engineering+“, AT
 
 🟢 Keine weiteren großen Basistech-Mods. Spätere Erweiterungen sind Endgame-orientiert und werden separat entschieden.
 
+🟢 **Raumfahrt ist Hauptziel des Packs** (Beyond Earth + Star Wars Planets + Giselle Addon). Energie und Treibstoff dafür kommen ausschließlich aus anderen Mods (IE, Immersive Petroleum, Mekanism). Details: `15_RAUMFAHRT.md`.
+
 ---
 
 # Arbeitsplan
@@ -97,7 +99,7 @@ Jeder neu erkundete Chunk bekommt die aktuelle Default-Verteilung. Deshalb zuers
 4. **Retrogen** für bereits erkundete Chunks einplanen (🟢 gewünscht), vor allem für Mekanism-Erze.
 
 ### Phase 2 — Meilensteine
-Statt zuerst alle Erträge zu balancieren, werden 10–15 Schlüssel-Meilensteine definiert (z. B. erste Mekanism-Maschine, Metallurgic Infuser, fortgeschrittene IE-Multiblöcke, Terrasteel, Blood-Altar-Tiers, AE2-Storage-Layer, ME Drive, Alfheim, Alfsteel, Fusion/SPS) — jeweils mit benötigten Pfaden und Kreuzungspunkten, abgeglichen mit dem Weltstand.
+Statt zuerst alle Erträge zu balancieren, werden 10–15 Schlüssel-Meilensteine definiert (z. B. erste Mekanism-Maschine, erster Raumflug, Metallurgic Infuser, fortgeschrittene IE-Multiblöcke, Terrasteel, Blood-Altar-Tiers, AE2-Storage-Layer, ME Drive, Alfheim, Alfsteel, Fusion/SPS) — jeweils mit benötigten Pfaden und Kreuzungspunkten, abgeglichen mit dem Weltstand.
 
 ### Phase 3–6
 Erträge pro Material und Pfad → Energie-Rollen → AE2-Gates → Cross-Mod-Rezepte nur an den Kreuzungspunkten aus Phase 2.
@@ -124,6 +126,7 @@ Backup der Hauptwelt beim Host → Configs/Skripte bei allen Spielern einspielen
 | Cross-Mod-Integration | 🟡 Prinzip festgelegt | `07_CROSSMOD_INTEGRATION.md` |
 | AE2/Automation | 🟡 Rolle festgelegt, Gates offen | `08_AE2_AUTOMATION.md` |
 | Endgame | 🔵 | `09_ENDGAME.md` |
+| Raumfahrt | 🟡 Hauptziel beschlossen, Mods noch nicht installiert | `15_RAUMFAHRT.md` |
 | KubeJS | 🟡 leer, Struktur geplant | `10_KUBEJS.md` |
 | Testing | 🟢 Testinstanz vorhanden | `11_TESTING.md` |
 | Changelog | 🟢 | `12_CHANGELOG.md`, `13_TESTINSTANZ_CHANGELOG.md` |

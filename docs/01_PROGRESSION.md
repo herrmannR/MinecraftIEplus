@@ -49,13 +49,19 @@ Der frühe AE2-Storage-Layer liegt bewusst außerhalb dieser Achse (ab ca. P2/P3
 ### Pfad E — Mekanism / High-Tech
 **IE-Grundlagen → Osmium-Maschinen → Chemie/Gase → fortgeschrittene Verarbeitung → High-Tech-Energie → Nuclear/Endgame**
 - bewusst später und teurer, nicht universell effizienter als IE
-- Osmium wird ab der ersten Mekanism-Maschine benötigt → darf nicht hinter einer Endgame-Dimension liegen
+- Osmium wird ab der ersten Mekanism-Maschine benötigt → darf nicht hinter einer Endgame-Dimension liegen. Overworld-Osmium (reduziert) reicht für den Einstieg, der Ausbau läuft über den Mond.
 
 ### Pfad F — AE2 / Logistik (zweistufig)
 1. 🟢 **Früher Storage-Layer** (teuer, aber früh erreichbar): bestehende Kisten und Storage Drawers anbinden, zentral suchen, ein- und auslagern.
 2. 🟢 **Endgame-ME-System**: Storage-Zellen, Crafting-Automation, Processing Patterns, P2P, Applied Mekanistics.
 
 Hinweis: Inscriber-Pressen gibt es nur in Meteoriten (`spawnPressesInMeteorites = true`). Schon Stufe 1 braucht Prozessoren → Meteoriten-Suche ist ein natürliches Gate.
+
+### Pfad H — Raumfahrt (Hauptziel)
+**IE Steel + Petroleum + erste Mekanism-Maschine → Rakete T1 (Mond: Osmium, Certus) → T2 (Mars) → T3 → T4 / Star-Wars-Planeten (Magie + Uran-Erzeugnisse)**
+- 🟢 Hauptziel des Packs: Beyond Earth + Star Wars Planets + Giselle Addon
+- 🟢 Energie und Treibstoff nur aus anderen Mods (IE, Immersive Petroleum, Mekanism)
+- 🔵 Tier-Zuordnung und Kreuzungspunkte: Entwurf in `15_RAUMFAHRT.md`
 
 ### Pfad G — Exploration / Dimensionen
 **Overworld → Nether → Twilight Forest → Alfheim / Blood-Magic-Dungeon / Wesley's Dungeons → Endgame**
@@ -68,6 +74,7 @@ Hinweis: Inscriber-Pressen gibt es nur in Meteoriten (`spawnPressesInMeteorites 
 - Botania liefert einzelne magische Komponenten für ausgewählte High-End-Systeme.
 - Blood Magic liefert Spezialmaterialien bzw. alternative Ressourcenpfade.
 - Twilight Forest liefert ausgewählte seltene Erze und Dimensionsmaterialien.
+- Raumfahrt braucht Treibstoff aus IE/Petroleum und Komponenten aus IE und Mekanism; Planeten liefern neue Metalle zurück.
 - AE2 verbindet bestehende Produktionssysteme, statt sie von Anfang an zu ersetzen.
 
 ## Weltstand (Hauptwelt, 2026-10-07)
@@ -81,6 +88,7 @@ Hinweis: Inscriber-Pressen gibt es nur in Meteoriten (`spawnPressesInMeteorites 
 | E Mekanism | neu installiert, nicht begonnen |
 | F AE2 | nicht begonnen |
 | G Exploration | Twilight Forest gerade betreten |
+| H Raumfahrt | Mods noch nicht installiert |
 
 Neue Gates dürfen bereits erreichten Fortschritt nicht rückwirkend sperren (z. B. vorhandene Arc Furnace bleibt nutzbar, auch wenn ihr Rezept teurer wird).
 

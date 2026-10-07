@@ -32,6 +32,9 @@ Einheitliches Modell für technische Energie und wichtige Flüssigkeiten/Gase/ma
 ### Blood Magic
 🟢 Eigenständiges Life-Essence-System.
 
+### Beyond Earth (Raumfahrt)
+🟢 Keine eigene Energie- oder Treibstoffproduktion. Raketentreibstoff kommt aus IE/Immersive Petroleum (Diesel, Biodiesel) bzw. Mekanism; Beyond-Earth-Generator, Solar Panel und Fuel Refinery werden deaktiviert oder ersetzt. 🔵 Sauerstoffquelle offen. Siehe `15_RAUMFAHRT.md`.
+
 ## Flüssigkeiten / Gase
 
 🔵 Zu erfassen:
@@ -39,6 +42,8 @@ Einheitliches Modell für technische Energie und wichtige Flüssigkeiten/Gase/ma
 - Diesel
 - Biodiesel
 - Petroleum
+- Raketentreibstoff (Beyond Earth Fuel bzw. Ersatz durch Diesel/Biodiesel)
+- Sauerstoff (Beyond Earth / Mekanism)
 - Wasser
 - Mekanism-Gase
 - weitere modrelevante Flüssigkeiten

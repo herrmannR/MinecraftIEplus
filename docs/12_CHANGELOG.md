@@ -248,3 +248,49 @@ Status: 🟡 (Test ausstehend)
   - `worldgen.add`/`worldgen.remove` existieren; Biome-Filter per ID, Regex (`/…/`) oder Kategorie (`^…`).
   - **KubeJS-Erze haben kein Retrogen.**
 - Configs liegen in `config-overrides/`, Originale in `config-overrides/_original/`; Skripte in `kubejs/`. In die Testinstanz eingespielt (siehe `13_TESTINSTANZ_CHANGELOG.md`).
+
+## 2026-10-07 — Raumfahrt als Hauptziel
+
+Status: 🟢 (Entscheidung) / 🔵 (Umsetzung)
+
+- Raumfahrt wird Hauptziel des Packs: **Beyond Earth**, **Star Wars Planets** und **Beyond Earth: Giselle Addon** werden aufgenommen. Noch nicht installiert.
+- Regel: Energie und Treibstoff für die Raumfahrt kommen ausschließlich aus anderen Mods (IE, Immersive Petroleum, Mekanism). Eigene Produktion von Beyond Earth wird deaktiviert oder ersetzt.
+- Neue Datei `15_RAUMFAHRT.md`. Neuer Pfad H in `01_PROGRESSION.md`. Angepasst wurden außerdem `00_STATUS.md`, `00_MODBASIS.md`, `05_ENERGIE_FLUESSIGKEITEN.md` und `09_ENDGAME.md`.
+
+### Auswirkungen auf bestehende Welt
+Planeten sind neue Dimensionen. Ob die Mods in der Overworld etwas generieren, ist noch zu prüfen.
+
+## 2026-10-07 — Raumfahrt präzisiert, Mond als Osmium-/Certus-Quelle
+
+Status: 🟢
+
+- Ad Astra gibt es nicht für 1.18.2 Forge. Star Wars Planets ist gesetzt, deshalb Beyond Earth.
+- Sauerstoff aus Mekanism, falls technisch sinnvoll machbar.
+- Der erste Raumflug zum Mond setzt Petroleum und eine erste Mekanism-Maschine voraus.
+- **Osmium und Certus:** in der Overworld reduziert, auf dem Mond häufig (`03_ERZGENERATION.md`, `14_ERZ_MOD_MATRIX.md`).
+- Treibstoff-Tiers: IE bleibt nötig, Mekanism ist Pflicht. Star-Wars-Planeten brauchen Magie und Uran-Erzeugnisse.
+- Planeten-Metalle bekommen Mekanisms Mehrfach-Erzverarbeitung, sofern das ins Balancing passt.
+
+## 2026-10-07 — Finale Kandidaten-Modliste, Log-Prüfung
+
+Status: 🟢 (Start) / 🔵 (offene Punkte)
+
+- Die Testinstanz läuft mit 81 JARs (`mods_v4.txt`). Versionsfallen sind in `00_MODBASIS.md` dokumentiert.
+- Erze und Strukturen von Beyond Earth und Star Wars Planets stehen in `15_RAUMFAHRT.md`. Korrektur: Desh kommt vom **Mond**, Ostrum vom **Mars** und Calorite von der **Venus**.
+- Neu entdeckt: Beyond Earth generiert in der Overworld Meteoriten und Ölquellen. Ob die Ölquellen bleiben, ist offen.
+- Die Imperiums-Truhen von Star Wars Planets sind leer, weil ihre Loot-Tabelle kaputt ist.
+
+## 2026-10-07 — Beyond-Earth-Ölquellen aus, Meteoriten bleiben
+
+Status: 🟢 (Entscheidung) / 🔵 (Test)
+
+- Die Oil Wells von Beyond Earth werden per KubeJS-Datapack abgeschaltet (`kubejs/data/…/oil_well_biomes.json`). Meteoriten bleiben.
+- Auswirkung auf die Hauptwelt: Die Datei muss beim Host liegen, **bevor** die Welt zum ersten Mal mit Beyond Earth geöffnet wird. Sonst entstehen in den dann neu generierten Ozean- und Sumpf-Chunks Ölquellen.
+
+## 2026-10-07 — Osmium/Certus-Testwerte, Mond-Erz-Skript
+
+Status: 🟡 (Testwerte)
+
+- Overworld: Osmium etwa auf ein Drittel bis die Hälfte reduziert, Certus auf etwa ein Drittel (Werte in `03_ERZGENERATION.md`).
+- Mond: Osmium und Certus per KubeJS (`moon_ores.js`).
+- Getestet: Die Ölquellen von Beyond Earth sind aus, die Meteoriten bleiben.

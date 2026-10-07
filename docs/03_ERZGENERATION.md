@@ -97,12 +97,12 @@ Eine ausgewogene Erzverteilung, die die parallelen Progressionspfade unterstütz
 | Nickel | Standard (🔵 bestätigen) | – | – | | IE/Tinkers | 🟡 |
 | Silver | Standard (🔵 bestätigen) | – | – | | IE/Tinkers/Magie | 🟡 |
 | Lead | niedrig (IE 4 statt 12 Versuche/Chunk) | – | **hoch** (KubeJS) | | IE/Mekanism — **nur IE-Erz**, Mekanism-Bleierz aus | 🟢 |
-| Osmium | Standard (🔵 bestätigen) | – | – | | Mekanism, ab erster Maschine benötigt | 🟡 |
+| Osmium | **reduziert** (Testwert: upper 20, middle 3, small 4 statt 65/6/8) | – | – | **Mond: hoch** (Beyond Earth, KubeJS) | Mekanism, ab erster Maschine benötigt | 🟢 (2026-10-07) |
 | Tin | **keine** (Mekanism aus) | – | **exklusiv, hoch** (KubeJS) | | Mekanism/Bronze — Gate | 🟢 (Option B) |
 | Uranium | niedrig, Mekanism ×1,3 (small 5, buried 9) | – | – | | Energie — **nur Mekanism-Erz**, IE-Uranerz aus | 🟢 |
 | Fluorite | niedrig (Standard) | – | – | | Mekanism | 🟢 |
 | Cobalt | – | Standard (8 Adern) | – | | Tinkers | 🟢 |
-| Certus Quartz | mittel | – | – | Meteoriten | AE2 | 🟢 |
+| Certus Quartz | **niedrig** (Testwert: 8 Cluster × 6 statt 20 × 7) | – | – | Meteoriten; **Mond: hoch** (KubeJS) | AE2 | 🟢 (2026-10-07) |
 | Fluix | nicht natürlich | | | | AE2-Verarbeitung | 🟢 |
 | Demonite | – | – | – | Demon Dungeon | Blood Magic | 🟢 |
 | Dragonstone, Elementium-Erz, Mythic Gold | – | – | – | Alfheim | MythicBotany | 🟢 |
@@ -120,6 +120,29 @@ Osmium wird ab der **ersten** Mekanism-Maschine gebraucht (Steel Casing, Metallu
 | B | Overworld reduziert, TF hoch | **nur TF** | Bronze und Mekanism-Ausbau brauchen TF; stärkere Bindung an Exploration |
 | C | **nur TF** | Overworld | Mekanism-Einstieg erst nach TF-Expedition; harter Gate |
 | D | eigene neue Dimension (Zusatzmod) | | widerspricht „keine neuen Mods nebenbei“, erhöht Wartungsaufwand |
+
+## Mond als Osmium- und Certus-Quelle (🟢 beschlossen, 2026-10-07)
+
+Der erste Raumflug (Mond) setzt Petroleum **und** eine erste Mekanism-Maschine voraus (siehe `15_RAUMFAHRT.md`). Deshalb:
+
+- Overworld-Osmium wird reduziert, aber nicht abgeschaltet. Es muss für die ersten Mekanism-Maschinen inklusive der Raketen-Voraussetzung reichen.
+- Overworld-Certus wird reduziert, nicht abgeschaltet, damit der frühe AE2-Storage-Layer erreichbar bleibt. Meteoriten bleiben unverändert.
+- Auf dem Mond werden Osmium und Certus häufig (KubeJS `worldgen.add` mit Mond-Biomfilter).
+- Planeten sind neue Dimensionen: kein Retrogen-Problem.
+- 🟢 Mond verifiziert: ein Biom `beyond_earth:moon_desert`, Y 0–384, Gestein `beyond_earth:moon_stone` (Tag `#beyond_earth:moon_ore_replaceables`).
+
+**Testwerte (🟡, 2026-10-07, in der Testinstanz):**
+
+| Quelle | Original | Testwert | Datei |
+|---|---|---|---|
+| Osmium Overworld upper (Y 72…Top−24) | 65 × 7 | **20** × 7 | `config-overrides/config/Mekanism/world.toml` |
+| Osmium Overworld middle (Y −32…56) | 6 × 9 | **3** × 9 | dito |
+| Osmium Overworld small (Y 0…64) | 8 × 4 | **4** × 4 | dito |
+| Certus Overworld | 20 Cluster × 7 | **8** × **6** | `config-overrides/config/appliedenergistics2/common.json` |
+| Osmium Mond | – | 16 × 9, Y 0–128 | `kubejs/startup_scripts/worldgen/moon_ores.js` |
+| Certus Mond | – | 12 × 7, Y 0–96 | dito |
+
+Auf dem Mond werden die normalen Erzblöcke `mekanism:osmium_ore` und `ae2:quartz_ore` eingesetzt (Optik wie Overworld-Stein). 🔵 Eigene Mond-Erzblöcke wären eine optische Verbesserung.
 
 ## Retrogen (🟢 beschlossen: zwingend)
 
@@ -142,7 +165,8 @@ Die Hauptwelt wurde **noch nie mit Mekanism geöffnet**. Alle bisher erkundeten 
 
 ## Noch offen
 
-🔵 Osmium, Silber, Nickel: Overworld-Menge bei Standard lassen? (Sie bekommen keine TF-Quelle mehr.)
+🔵 Silber, Nickel: Overworld-Menge bei Standard lassen? (Sie bekommen keine TF-Quelle mehr.) Osmium: entschieden (Overworld reduziert, Mond hoch).
+🔵 Konkrete Werte für reduziertes Overworld-Osmium und -Certus
 🔵 Spawnen IE-/Mek-/AE2-Erze bereits im TF? (Test läuft: `debug_print_ore_features.js`)
 🔵 TF-Erzwerte (count/size/Höhe) in der Testinstanz prüfen
 🟢 Umsetzung TF-Erze: KubeJS `worldgen.add` mit Biome-Regex `/^twilightforest:.*/` (API verifiziert)
