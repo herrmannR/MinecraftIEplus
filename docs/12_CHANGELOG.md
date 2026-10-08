@@ -299,3 +299,4 @@ Status: 🟡 (Testwerte)
 
 - 🟢 GraveStone und GraveStone Curios Compat kommen ins Hauptpack (bei allen Spielern installieren).
 - Polymorph bleibt draußen (Absturz mit JEI 9.7.1, siehe `00_MODBASIS.md`).
+- 🟢 FTB Quests mit FTB Library, FTB Teams und Item Filters kommt ins Hauptpack (bei allen Spielern installieren).

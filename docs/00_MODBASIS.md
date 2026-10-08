@@ -23,7 +23,7 @@ Noch nicht in der Hauptinstanz. Übernahme erst nach Test und Entscheidung.
 | GraveStone | `gravestone-1.18.2-1.0.2.jar` | Grab mit Inventar beim Tod | alle Spieler (Host + Clients) | 🟢 ins Hauptpack (2026-10-08) |
 | GraveStone Curios Compat | `gravestonecurioscompat-1.18.x-1.20.x-Forge-2.1.0.jar` | Curios-Slots ins Grab übernehmen | alle Spieler | 🟢 ins Hauptpack (2026-10-08) |
 | ProbeJS | `probejs-4.0.0-fix4-forge.jar` | KubeJS-Typen/Autovervollständigung | **nur Entwicklung (Testinstanz)**, nicht ausliefern | nur Testinstanz |
-| FTB Quests (+ FTB Library, FTB Teams, Item Filters) | `ftb-quests-forge-1802.3.16-build.479.jar` u. a. | Questbuch für die Progression | alle Spieler | 🔵 |
+| FTB Quests (+ FTB Library, FTB Teams, Item Filters) | `ftb-quests-forge-1802.3.16-build.479.jar` u. a. | Questbuch für die Progression | alle Spieler | 🟢 ins Hauptpack (2026-10-08) |
 | Beyond Earth | `Beyond-Earth-1.18.2-6.2.jar` | Raumfahrt (siehe `15_RAUMFAHRT.md`) | alle Spieler | 🟢 ins Hauptpack (Raumfahrt-Entscheidung) |
 | Beyond Earth: Giselle Addon | `Beyond-Earth-Giselle-Addon-1.18.2-2.20.jar` | IE-/Mekanism-Integration | alle Spieler | 🟢 ins Hauptpack (Raumfahrt-Entscheidung) |
 | Star Wars Planets | `StarWarsPlanets-1.15.jar` | Star-Wars-Planeten | alle Spieler | 🟢 ins Hauptpack (Raumfahrt-Entscheidung) |
