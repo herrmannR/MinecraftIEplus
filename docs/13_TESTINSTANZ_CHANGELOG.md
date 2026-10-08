@@ -75,3 +75,39 @@ Format pro Eintrag:
 - Zweck / Bezug: `03_ERZGENERATION.md`, Abschnitt „Mond als Osmium- und Certus-Quelle“
 - Rückgängig: Originale in `config-overrides/_original/` zurückkopieren, Skript löschen
 - Teststatus: Ölquellen-Override 🟢 (`/locate beyond_earth:oil_well` findet nichts, Meteor wird gefunden); Mond-Erze 🔵 noch nicht geprüft
+
+## 2026-10-08 — Mekanism-Zinn/-Blei wirklich aus, Mekanism-Erze aus dem TF entfernt (durch Claude)
+
+- Testergebnis vorher: Der Mond ist ok (Osmium, Certus und Desh gefunden, Mengen ausreichend). Im TF: viel Zinn und Blei, wenig Bauxit, **aber auch Uran und Osmium**.
+- Ursache 1: In `config/Mekanism/world.toml` stand bei Zinn und Blei noch `shouldGenerate = true`. Die frühere Doku hatte „aus“ behauptet. → Jetzt `false`.
+- Ursache 2: Mekanism setzt seine Erze in alle Biome, auch in die des TF (`printFeatures`). → Neues Skript `kubejs/startup_scripts/worldgen/tf_remove_foreign_ores.js` entfernt dort Osmium, Uran, Fluorit und Salz.
+- Rückgängig: `world.toml` aus `config-overrides/_original/`, Skript löschen
+- Teststatus: 🔵 Neustart + neue Welt nötig
+
+## 2026-10-08 — Blei: Mekanism-Erz statt IE-Erz (durch Claude, Wunsch des Nutzers)
+
+- Datei(en): `config/Mekanism/world.toml` (Blei wieder an, normal 8 → 4 Adern), `defaultconfigs/immersiveengineering-server.toml` (IE-Blei `vein_size = 0`), `kubejs/startup_scripts/worldgen/tf_industrial_ores.js` (TF-Blei = `mekanism:lead_ore`), `tf_remove_foreign_ores.js` (+ `mekanism:ore_lead_normal` im TF entfernt)
+- Hinweis: Neue Welten bekommen die IE-Config über `defaultconfigs/`; bestehende Testwelten behalten ihre eigene `serverconfig`.
+- Rückgängig: Originale aus `config-overrides/_original/`, Skripte per Git
+- Teststatus: 🔵 Neustart + neue Welt nötig
+
+## 2026-10-08 — Absturz behoben, Bauxit im TF erhöht (durch Claude)
+
+- Absturz beim Laden: `TypeError: redeclaration of const TF_BIOMES`. Die Konstante stand in `tf_industrial_ores.js` und im neuen `tf_remove_foreign_ores.js`, und KubeJS lädt alle Startup-Skripte in einen gemeinsamen Scope. → Im Entfernungs-Skript umbenannt in `TF_REMOVE_BIOMES`.
+- Bauxit im TF: 14 → 18 Adern × 8 (`tf_industrial_ores.js`)
+- Teststatus: 🔵 Neustart nötig
+
+## 2026-10-08 — TF: Certus entfernt, Zinn reduziert (durch Claude)
+
+- Test: Absturz behoben, Overworld passt. Im TF lag noch Certus, Zinn war etwas zu viel.
+- `tf_remove_mekanism_ores.js` → umbenannt in **`tf_remove_foreign_ores.js`**. Es entfernt jetzt zusätzlich `ae2:quartz_ore` aus den TF-Biomen; AE2 generiert Certus in allen Biomen außer Nether/End/Kategorie NONE. Alte Datei in der Testinstanz gelöscht.
+- `tf_industrial_ores.js`: Zinn 14 → 11 Adern × 9
+- Teststatus: 🔵 Neustart + neue Welt nötig
+
+## 2026-10-08 — Worldgen-Test abgeschlossen
+
+- 🟢 Mond: Osmium, Certus und Desh vorhanden, Mengen passen.
+- 🟢 Twilight Forest: Zinn (reduziert), Mekanism-Blei, Bauxit. Kein Certus, Uran oder Osmium.
+- 🟢 Overworld: kein Zinn, Mekanism-Blei, Osmium und Certus reduziert.
+- 🟢 Keine Beyond-Earth-Ölquellen, Meteoriten vorhanden.
+- Vor der Auslieferung entfernen: `kubejs/startup_scripts/worldgen/debug_print_ore_features.js` (nur Testinstanz).

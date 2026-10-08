@@ -96,7 +96,7 @@ Eine ausgewogene Erzverteilung, die die parallelen Progressionspfade unterstütz
 | Aluminium | niedrig (IE 5 statt 16 Versuche/Chunk) | – | **hoch** (KubeJS) | | IE/Tinkers | 🟢 |
 | Nickel | Standard (🔵 bestätigen) | – | – | | IE/Tinkers | 🟡 |
 | Silver | Standard (🔵 bestätigen) | – | – | | IE/Tinkers/Magie | 🟡 |
-| Lead | niedrig (IE 4 statt 12 Versuche/Chunk) | – | **hoch** (KubeJS) | | IE/Mekanism — **nur IE-Erz**, Mekanism-Bleierz aus | 🟢 |
+| Lead | niedrig (**Mekanism-Erz** 4 statt 8 Adern; IE-Blei aus) | – | **hoch** (KubeJS, Mekanism-Erz) | | IE/Mekanism — **nur Mekanism-Erz** (Optik, Entscheidung 2026-10-08), IE nutzt es per Tag | 🟢 |
 | Osmium | **reduziert** (Testwert: upper 20, middle 3, small 4 statt 65/6/8) | – | – | **Mond: hoch** (Beyond Earth, KubeJS) | Mekanism, ab erster Maschine benötigt | 🟢 (2026-10-07) |
 | Tin | **keine** (Mekanism aus) | – | **exklusiv, hoch** (KubeJS) | | Mekanism/Bronze — Gate | 🟢 (Option B) |
 | Uranium | niedrig, Mekanism ×1,3 (small 5, buried 9) | – | – | | Energie — **nur Mekanism-Erz**, IE-Uranerz aus | 🟢 |
@@ -170,5 +170,8 @@ Die Hauptwelt wurde **noch nie mit Mekanism geöffnet**. Alle bisher erkundeten 
 🔵 Spawnen IE-/Mek-/AE2-Erze bereits im TF? (Test läuft: `debug_print_ore_features.js`)
 🔵 TF-Erzwerte (count/size/Höhe) in der Testinstanz prüfen
 🟢 Umsetzung TF-Erze: KubeJS `worldgen.add` mit Biome-Regex `/^twilightforest:.*/` (API verifiziert)
+🟢 Mekanism-Erze (Osmium, Uran, Fluorit, Salz, eigenes Blei) und AE2-Certus werden aus den TF-Biomen entfernt (`tf_remove_foreign_ores.js`), denn Mekanism generiert in allen Biomen (verifiziert 2026-10-08). Mekanism-Zinn/-Blei sind global per `world.toml` aus (korrigiert 2026-10-08; vorher fälschlich noch an).
+🟢 Bauxit im TF auf 18 × 8 erhöht (vorher 14 × 8, im Test zu selten; 2026-10-08).
+🟢 Zinn im TF auf 11 × 9 reduziert (vorher 14 × 9, im Test etwas zu viel; 2026-10-08).
 🟢 Uran: Mekanism ×1,3. Kobalt bleibt Standard.
 🔵 Konkrete Zahlenwerte

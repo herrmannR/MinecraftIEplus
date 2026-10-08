@@ -24,10 +24,10 @@ function tfOre(event, id, stoneOre, deepslateOre, count, size) {
 }
 
 onEvent('worldgen.add', event => {
-  // Zinn: im TF exklusiv (Overworld-Generierung in Mekanism/world.toml abgeschaltet)
-  tfOre(event, 'kubejs:tf_tin_ore', 'mekanism:tin_ore', 'mekanism:deepslate_tin_ore', 14, 9)
-  // Blei: nur IE-Erz; Overworld reduziert (IE serverconfig), TF stark
-  tfOre(event, 'kubejs:tf_lead_ore', 'immersiveengineering:ore_lead', 'immersiveengineering:deepslate_ore_lead', 12, 9)
+  // Zinn: im TF exklusiv (Mekanism-Zinn global per Mekanism/world.toml aus – korrigiert 2026-10-08)
+  tfOre(event, 'kubejs:tf_tin_ore', 'mekanism:tin_ore', 'mekanism:deepslate_tin_ore', 11, 9)
+  // Blei: nur Mekanism-Erz (Optik, Entscheidung 2026-10-08); IE-Blei aus (IE serverconfig), TF stark
+  tfOre(event, 'kubejs:tf_lead_ore', 'mekanism:lead_ore', 'mekanism:deepslate_lead_ore', 12, 9)
   // Aluminium (Bauxit): Overworld reduziert (IE serverconfig), TF stark
-  tfOre(event, 'kubejs:tf_aluminum_ore', 'immersiveengineering:ore_aluminum', 'immersiveengineering:deepslate_ore_aluminum', 14, 8)
+  tfOre(event, 'kubejs:tf_aluminum_ore', 'immersiveengineering:ore_aluminum', 'immersiveengineering:deepslate_ore_aluminum', 18, 8)
 })

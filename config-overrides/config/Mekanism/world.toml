@@ -10,7 +10,7 @@
 	#Generation Settings for tin ore.
 	[world_generation.tin]
 		#Determines if tin ore should be added to world generation.
-		shouldGenerate = true
+		shouldGenerate = false
 
 		#small tin vein Generation Settings.
 		[world_generation.tin.small]
@@ -407,7 +407,7 @@
 			shouldGenerate = true
 			#Chance that normal lead veins generates in a chunk.
 			#Range: 1 ~ 256
-			perChunk = 8
+			perChunk = 4
 			#Maximum number of blocks in a normal lead vein.
 			#Range: 1 ~ 64
 			maxVeinSize = 9

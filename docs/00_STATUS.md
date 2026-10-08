@@ -82,7 +82,7 @@ Leitidee: **erst das Zeitkritische und Strukturelle entscheiden, dann balanciere
 | Phase | Inhalt | Status |
 |---|---|---|
 | 0 | Grundlagen: Projekt/Git, Doku verifiziert & korrigiert, Testinstanz | 🟢 |
-| 1 | **Worldgen** (zeitkritisch) | 🟡 in Arbeit |
+| 1 | **Worldgen** (zeitkritisch) | 🟢 in der Testinstanz abgeschlossen (2026-10-08); Übernahme in Phase 8 |
 | 2 | Progressions-Meilensteine (Gates & Kreuzungspunkte) | 🔵 |
 | 3 | Verarbeitung & Erträge | 🔵 |
 | 4 | Energie & Flüssigkeiten | 🔵 |
@@ -135,8 +135,20 @@ Backup der Hauptwelt beim Host → Configs/Skripte bei allen Spielern einspielen
 ## Offene Fragen an das Team
 
 🟢 Osmium/Zinn: Option B (Osmium OW selten + TF hoch, Zinn nur TF).
-🟢 Lead nur IE-Erz, Uranium nur Mekanism-Erz.
+🟢 Lead nur Mekanism-Erz (umgestellt 2026-10-08, vorher IE-Erz), Uranium nur Mekanism-Erz.
 🟢 Retrogen zwingend (Hauptwelt bereits weit erkundet).
 🔵 Uran-Menge erhöhen? Kobalt-Menge erhöhen?
 
 Übersicht aller Erze × Mods: `14_ERZ_MOD_MATRIX.md`.
+
+## Backlog (zurückgestellt)
+
+### 🔵 Eigene Erz-Texturen für fremdes Gestein
+Erze, die per KubeJS in anderes Gestein gesetzt werden, zeigen die Overworld-Steintextur. Sie werden gesammelt und später gemeinsam umgesetzt: eigene KubeJS-Blöcke mit zusammengesetzter Textur, dazu Original-Drops (Loot-Table) und Original-Tags (`forge:ores/…`).
+
+| Erz | Gestein | Quelle |
+|---|---|---|
+| Osmium | Mondgestein (`beyond_earth:moon_stone`) | `moon_ores.js` |
+| Certus-Quarz | Mondgestein | `moon_ores.js` |
+
+Erkenntnis aus der Vorarbeit: Der KubeJS-1802-Block-Builder hat `noDrops()`, `tagBoth()`, `requiresTool()` und `textureAll()`. Damit lassen sich die Drops über eine eigene Loot-Table regeln.

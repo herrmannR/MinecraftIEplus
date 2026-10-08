@@ -300,3 +300,42 @@ Status: 🟡 (Testwerte)
 - 🟢 GraveStone und GraveStone Curios Compat kommen ins Hauptpack (bei allen Spielern installieren).
 - Polymorph bleibt draußen (Absturz mit JEI 9.7.1, siehe `00_MODBASIS.md`).
 - 🟢 FTB Quests mit FTB Library, FTB Teams und Item Filters kommt ins Hauptpack (bei allen Spielern installieren).
+
+## 2026-10-08 — Worldgen-Korrektur: Mekanism-Zinn/-Blei, Mekanism-Erze im TF
+
+Status: 🟡 (Test ausstehend)
+
+- **Fehler gefunden:** Die bisherige Mekanism-Config hatte Zinn und Blei gar nicht abgeschaltet. Zinn wäre also weiter in der Overworld entstanden. Jetzt ist es korrigiert (`shouldGenerate = false`).
+- **Mekanism-Erze im Twilight Forest:** Osmium, Uran, Fluorit und Salz werden per KubeJS aus den TF-Biomen entfernt, wie beschlossen: Im TF gibt es nur Zinn, Blei und Aluminium.
+- Mond-Test bestanden: Osmium, Certus und Desh vorhanden, Mengen ausreichend.
+- 🔵 Zu prüfen: ob das Mekanism-Retrogen die KubeJS-Entfernung im TF respektiert.
+
+## 2026-10-08 — Blei kommt aus dem Mekanism-Erz statt aus dem IE-Erz
+
+Status: 🟢 (Entscheidung) / 🔵 (Test)
+
+- Wunsch des Nutzers: Die Textur des Mekanism-Bleierzes ist schöner.
+- Overworld: Mekanism-Blei mit 4 Adern × 9 (reduziert, Original 8). IE-Blei ist aus.
+- Twilight Forest: Das KubeJS-Erz setzt jetzt Mekanism-Blei. Mekanisms eigenes Blei-Feature wird im TF entfernt, damit wir die Menge allein steuern.
+- Auswirkung auf die Hauptwelt: Bereits generiertes IE-Bleierz bleibt und funktioniert weiter, weil beide Erze über Tags verarbeitet werden. **Das Mekanism-Retrogen erzeugt in bereits erkundeten Chunks zusätzlich Mekanism-Blei.** Dort gibt es dann etwas mehr Blei als in neuen Chunks.
+
+## 2026-10-08 — Bauxit im TF erhöht, KubeJS-Namensregel
+
+Status: 🟢
+
+- Twilight Forest: Bauxit von 14 auf 18 Adern (× 8), weil es im Test zu selten war.
+- Neue Regel in `10_KUBEJS.md`: Globale Namen müssen über alle Skripte eindeutig sein. Ein doppeltes `const` hat in der Testinstanz einen Absturz verursacht.
+
+## 2026-10-08 — TF ohne Certus, weniger Zinn
+
+Status: 🟢 (Entscheidung) / 🔵 (Test)
+
+- Im Twilight Forest gibt es kein Certus mehr (Wunsch des Nutzers). AE2 setzt es sonst in alle Biome mit normaler Kategorie.
+- Zinn im TF: 11 statt 14 Adern.
+- Das Skript heißt jetzt `tf_remove_foreign_ores.js`.
+
+## 2026-10-08 — Phase 1 (Worldgen) in der Testinstanz abgeschlossen
+
+Status: 🟢
+
+Alle Worldgen-Ziele sind im Spiel bestätigt (Details in `13_TESTINSTANZ_CHANGELOG.md`). Offen für Phase 8: die Übernahme beim Host (Configs, `defaultconfigs` bzw. Welt-`serverconfig`, KubeJS), das Retrogen-Verhalten in der Hauptwelt und das Entfernen des Debug-Skripts.

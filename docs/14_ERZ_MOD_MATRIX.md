@@ -54,7 +54,7 @@ Twilight-Forest-Spezialmaterialien (Ironwood, Steeleaf, Knightmetal, Fiery) sind
 
 ## Was sich durch das Soll ändert
 
-1. **Blei:** nur noch IE-Erz. Mekanism-Bleierz wird abgeschaltet; Mekanism nutzt IE-Blei über `forge:ingots/lead`.
+1. **Blei:** nur noch **Mekanism-Erz** (2026-10-08 umgestellt, vorher IE-Erz; Grund: schönere Textur). IE-Bleierz aus (`vein_size = 0`); IE nutzt Mekanism-Blei über `forge:ingots/lead`. Die Matrixzeile oben zeigt noch die alte Soll-Verteilung.
 2. **Uran:** nur noch Mekanism-Erz (Menge ×1,3). IE-Uranerz wird abgeschaltet.
 3. **Zinn:** wird zum Twilight-Forest-Exklusiverz (Option B) und damit zum Gate für Bronze und den Mekanism-Ausbau.
 4. **Aluminium, Blei:** in der Overworld selten, im Twilight Forest häufig (KubeJS). Zinn, Blei und Aluminium sind die einzigen TF-Zusatzerze.

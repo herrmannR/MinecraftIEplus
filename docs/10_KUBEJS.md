@@ -52,6 +52,7 @@ kubejs/
 ## Script-Regeln
 
 - Ein Script hat eine klar definierte Aufgabe; keine monolithische Datei.
+- **Globale Namen müssen projektweit eindeutig sein.** KubeJS 1802 lädt alle Skripte eines Typs (z. B. `startup_scripts`) in einen gemeinsamen Scope. Ein doppeltes `const` lässt das Laden scheitern („redeclaration of const“) und Forge stürzt ab (verifiziert 2026-10-08). Konstanten deshalb mit Datei-Präfix benennen oder in Funktionen kapseln.
 - Jede Änderung kommentieren und auf die Doku-Entscheidung verweisen.
 - Registry-Namen, entfernte Rezepte und neue Rezepte (mit Progressionsstufe) dokumentieren.
 - Keine finalen Rezeptwerte ohne vorherige Balance-Entscheidung.

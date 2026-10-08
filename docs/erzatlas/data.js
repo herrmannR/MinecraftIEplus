@@ -16,14 +16,14 @@ const GROUPS = [
   {k:"debris", n:"Ancient Debris", sub:"minecraft", gen:[["Nether",1]], use:[0,1,2,0,2,0,0,0], v:2, note:"Netherite"}
  ]],
  ["Industriemetalle (IE)", [
-  {k:"ie_aluminum", n:"Aluminium", sub:"Bauxit · IE", gen:[["Overworld",2,"down","16 → 5 ×6"],["Twilight",4,"new","14×8"]], use:[2,0,1,0,0,0,0,0], v:2, chg:1, note:"IE-Gerüste und Kabel"},
-  {k:"ie_lead", n:"Blei", sub:"nur IE-Erz", gen:[["Overworld",2,"down","IE 12 → 4 ×8"],["Overworld",3,"off","Mekanism-Erz"],["Twilight",4,"new","12×9"]], use:[2,2,1,0,1,1,0,0], v:2, chg:1, note:"Mekanism nutzt IE-Blei über <strong>forge:ingots/lead</strong>"},
+  {k:"ie_aluminum", n:"Aluminium", sub:"Bauxit · IE", gen:[["Overworld",2,"down","16 → 5 ×6"],["Twilight",4,"new","18×8"]], use:[2,0,1,0,0,0,0,0], v:2, chg:1, note:"IE-Gerüste und Kabel"},
+  {k:"mek_lead", n:"Blei", sub:"nur Mekanism-Erz", gen:[["Overworld",2,"down","Mek 8 → 4 ×9",1],["Overworld",3,"off","IE-Erz"],["Twilight",4,"new","12×9"]], use:[2,2,1,0,1,1,0,0], v:2, chg:1, note:"Mekanism-Erz wegen der Optik (2026-10-08). IE nutzt es über <strong>forge:ingots/lead</strong>"},
   {k:"ie_silver", n:"Silber", sub:"IE", gen:[["Overworld",3,null,"10×9"]], use:[2,0,1,0,1,0,0,0], v:2, note:"Electrum. IE-Standardwert, bleibt vorerst"},
   {k:"ie_nickel", n:"Nickel", sub:"IE", gen:[["Overworld",3,null,"7×5 + tief 11×6"]], use:[2,0,1,0,1,0,0,0], v:2, note:"Constantan. IE-Standardwert, bleibt vorerst"}
  ]],
  ["Mekanism", [
   {k:"mek_osmium", n:"Osmium", sub:"Mekanism", gen:[["Overworld",2,"down","65/6/8 → 20/3/4",1],["Mond",4,"new","16×9"]], use:[0,3,1,0,1,1,0,0], v:3, chg:1, space:1, note:"<strong>Engpass</strong>: jede Mekanism-Maschine. Overworld reicht für den Einstieg, Ausbau über den Mond"},
-  {k:"mek_tin", n:"Zinn", sub:"Mekanism-Erz", gen:[["Overworld",4,"off"],["Twilight",4,"new","14×9 exklusiv"]], use:[1,2,1,0,1,1,0,0], v:3, chg:1, note:"<strong>Gate</strong> für Bronze und Mekanism-Ausbau"},
+  {k:"mek_tin", n:"Zinn", sub:"Mekanism-Erz", gen:[["Overworld",4,"off"],["Twilight",4,"new","11×9 exklusiv"]], use:[1,2,1,0,1,1,0,0], v:3, chg:1, note:"<strong>Gate</strong> für Bronze und Mekanism-Ausbau"},
   {k:"mek_uranium", n:"Uran", sub:"nur Mekanism-Erz", gen:[["Overworld",2,"up","×1,3 (5 + 9)",1],["Overworld",2,"off","IE-Erz"]], use:[0,3,1,0,1,0,3,0], v:3, chg:1, space:1, note:"Nuklearkette; <strong>Uran-Erzeugnisse sind Pflicht für Star-Wars-Planeten</strong>"},
   {k:"mek_fluorite", n:"Fluorit", sub:"Mekanism", gen:[["Overworld",2,null,null,1]], use:[0,2,0,0,1,0,0,0], v:2, note:"Uran-Chemie (UF₆)"},
   {k:"salt", n:"Salz", sub:"Mekanism · Sand/Ton", gen:[["Overworld",2,null,null,1]], use:[0,2,0,0,0,0,0,0], v:1, note:"Brine → Lithium"}
