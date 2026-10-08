@@ -18,15 +18,15 @@ Referenz für die festgelegte Modpack-Basis. Die Modliste wird nicht stillschwei
 
 Noch nicht in der Hauptinstanz. Übernahme erst nach Test und Entscheidung.
 
-| Mod | JAR | Zweck | Wer braucht ihn |
-|---|---|---|---|
-| GraveStone | `gravestone-1.18.2-1.0.2.jar` | Grab mit Inventar beim Tod | alle Spieler (Host + Clients) |
-| GraveStone Curios Compat | `gravestonecurioscompat-1.18.x-1.20.x-Forge-2.1.0.jar` | Curios-Slots ins Grab übernehmen | alle Spieler |
-| ProbeJS | `probejs-4.0.0-fix4-forge.jar` | KubeJS-Typen/Autovervollständigung | **nur Entwicklung (Testinstanz)**, nicht ausliefern |
-| FTB Quests (+ FTB Library, FTB Teams, Item Filters) | `ftb-quests-forge-1802.3.16-build.479.jar` u. a. | Questbuch für die Progression | alle Spieler |
-| Beyond Earth | `Beyond-Earth-1.18.2-6.2.jar` | Raumfahrt (siehe `15_RAUMFAHRT.md`) | alle Spieler |
-| Beyond Earth: Giselle Addon | `Beyond-Earth-Giselle-Addon-1.18.2-2.20.jar` | IE-/Mekanism-Integration | alle Spieler |
-| Star Wars Planets | `StarWarsPlanets-1.15.jar` | Star-Wars-Planeten | alle Spieler |
+| Mod | JAR | Zweck | Wer braucht ihn | Entscheidung |
+|---|---|---|---|---|
+| GraveStone | `gravestone-1.18.2-1.0.2.jar` | Grab mit Inventar beim Tod | alle Spieler (Host + Clients) | 🟢 ins Hauptpack (2026-10-08) |
+| GraveStone Curios Compat | `gravestonecurioscompat-1.18.x-1.20.x-Forge-2.1.0.jar` | Curios-Slots ins Grab übernehmen | alle Spieler | 🟢 ins Hauptpack (2026-10-08) |
+| ProbeJS | `probejs-4.0.0-fix4-forge.jar` | KubeJS-Typen/Autovervollständigung | **nur Entwicklung (Testinstanz)**, nicht ausliefern | nur Testinstanz |
+| FTB Quests (+ FTB Library, FTB Teams, Item Filters) | `ftb-quests-forge-1802.3.16-build.479.jar` u. a. | Questbuch für die Progression | alle Spieler | 🔵 |
+| Beyond Earth | `Beyond-Earth-1.18.2-6.2.jar` | Raumfahrt (siehe `15_RAUMFAHRT.md`) | alle Spieler | 🔵 |
+| Beyond Earth: Giselle Addon | `Beyond-Earth-Giselle-Addon-1.18.2-2.20.jar` | IE-/Mekanism-Integration | alle Spieler | 🔵 |
+| Star Wars Planets | `StarWarsPlanets-1.15.jar` | Star-Wars-Planeten | alle Spieler | 🔵 |
 
 Empfohlen, aber (Stand 2026-10-07) nicht installiert: FerriteCore, ModernFix, Rubidium/Oculus.
 

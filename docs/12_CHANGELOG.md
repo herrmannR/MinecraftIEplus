@@ -294,3 +294,8 @@ Status: 🟡 (Testwerte)
 - Overworld: Osmium etwa auf ein Drittel bis die Hälfte reduziert, Certus auf etwa ein Drittel (Werte in `03_ERZGENERATION.md`).
 - Mond: Osmium und Certus per KubeJS (`moon_ores.js`).
 - Getestet: Die Ölquellen von Beyond Earth sind aus, die Meteoriten bleiben.
+
+## 2026-10-08 — GraveStone fürs Hauptpack beschlossen
+
+- 🟢 GraveStone und GraveStone Curios Compat kommen ins Hauptpack (bei allen Spielern installieren).
+- Polymorph bleibt draußen (Absturz mit JEI 9.7.1, siehe `00_MODBASIS.md`).
