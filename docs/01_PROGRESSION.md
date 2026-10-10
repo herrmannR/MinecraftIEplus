@@ -93,6 +93,7 @@ Hinweis: Inscriber-Pressen gibt es nur in Meteoriten (`spawnPressesInMeteorites 
 Neue Gates dürfen bereits erreichten Fortschritt nicht rückwirkend sperren (z. B. vorhandene Arc Furnace bleibt nutzbar, auch wenn ihr Rezept teurer wird).
 
 ## Nächster Schritt (Phase 2)
+🟡 **Vorschlag liegt vor (2026-10-08):** 18 Meilensteine M1–M18 in `docs/meilensteine/` (Daten in `data.js`, Live-Seite siehe README dort). Noch nicht beschlossen.
 
 🔵 10–15 Schlüssel-Meilensteine definieren, jeweils mit:
 - benötigten Pfaden / Kreuzungspunkten

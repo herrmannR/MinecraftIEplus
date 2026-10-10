@@ -1,0 +1,238 @@
+<title>Meilensteinkarte IE+</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: oben die Karte (Pfade als Zeilen, Stufen P1–P8 als Spalten, Linien = Voraussetzungen), darunter die Liste nach Stufen. Gleiche Material-Welt wie der Erzatlas. */
+:root{
+  --bg:#1b1d20; --panel:#24272b; --line:#34383e; --fg:#e7e5e1; --muted:#9a9890;
+  --accent:#e0a33a; --edge:#6c7078; --cross:#e0a33a;
+  --done:#7cc96b; --part:#e0a33a; --open:#8a8d93;
+  --chip:#2c3035; --lane:#202326;
+  --f-display:"Pixelify Sans","Courier New",monospace;
+  --f-body:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-data:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){
+  --bg:#f1efea; --panel:#fbfaf7; --line:#d9d5cc; --fg:#24221f; --muted:#6c675e;
+  --accent:#a36a12; --edge:#9a958b; --cross:#a36a12;
+  --done:#3d8a2f; --part:#a36a12; --open:#8a857b;
+  --chip:#ebe7df; --lane:#f6f4f0; color-scheme:light}}
+:root[data-theme="light"]{
+  --bg:#f1efea; --panel:#fbfaf7; --line:#d9d5cc; --fg:#24221f; --muted:#6c675e;
+  --accent:#a36a12; --edge:#9a958b; --cross:#a36a12;
+  --done:#3d8a2f; --part:#a36a12; --open:#8a857b;
+  --chip:#ebe7df; --lane:#f6f4f0; color-scheme:light}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.45}
+.wrap{max-width:1500px;margin:0 auto;padding-inline:16px;padding-block:28px 48px}
+header{display:grid;gap:10px;margin-bottom:18px}
+h1{font-family:var(--f-display);font-weight:700;font-size:clamp(28px,4vw,40px);letter-spacing:.02em;margin:0;text-wrap:balance}
+h1 span{color:var(--accent)}
+h2{font:700 18px var(--f-display);letter-spacing:.04em;margin:0;color:var(--accent)}
+.lede{color:var(--muted);max-width:75ch;margin:0}
+.meta{font-family:var(--f-data);font-size:12px;color:var(--muted)}
+.badge{display:inline-block;font:700 11px var(--f-data);padding:2px 6px;border:1px dashed var(--accent);color:var(--accent);border-radius:2px;letter-spacing:.04em}
+.draft{display:flex;gap:10px 14px;align-items:baseline;flex-wrap:wrap;border:2px dashed var(--accent);border-radius:4px;padding:10px 14px;margin-bottom:18px;background:color-mix(in srgb,var(--accent) 10%,transparent)}
+.draft strong{font:700 18px var(--f-display);letter-spacing:.08em;color:var(--accent)}
+.draft span{font-size:14px}
+
+.stats{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:14px;color:var(--muted);margin:6px 0 14px;align-items:center}
+.stats b{color:var(--fg);font-family:var(--f-data)}
+.dot{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+
+figure{margin:0}
+.map{overflow-x:auto;border:1px solid var(--line);border-radius:4px;background:var(--panel)}
+.map svg{display:block;width:100%;min-width:1240px;height:auto}
+figcaption{font-size:13px;color:var(--muted);margin-top:8px;max-width:95ch}
+
+svg .lane-bg{fill:var(--lane)}
+svg .lane-label{font:700 13px var(--f-body);fill:var(--fg)}
+svg .stage-label{font:600 12px var(--f-data);fill:var(--muted);text-anchor:middle}
+svg .grid{stroke:var(--line);stroke-width:1}
+svg .edge{fill:none;stroke:var(--edge);stroke-width:1.6}
+svg .edge.cross{stroke:var(--cross);stroke-width:2}
+svg .elabel{font:600 10.5px var(--f-data);fill:var(--muted);text-anchor:middle;paint-order:stroke;stroke:var(--panel);stroke-width:4px}
+svg .elabel.cross{fill:var(--cross)}
+svg .node rect{stroke-width:2}
+svg .node .nm{font:600 12.5px var(--f-body);fill:var(--fg)}
+svg .node .id{font:700 10.5px var(--f-data);fill:var(--muted)}
+svg .node{cursor:pointer}
+svg .node:focus-visible rect{stroke:var(--accent);stroke-width:3}
+svg.hl .node:not(.on){opacity:.22}
+svg.hl .edge:not(.on), svg.hl .elabel:not(.on){opacity:.12}
+@media (prefers-reduced-motion:no-preference){svg .node, svg .edge, svg .elabel{transition:opacity .15s}}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;color:var(--muted);margin:12px 0 0;align-items:center}
+.legend svg{vertical-align:middle}
+
+.list{margin-top:30px;display:grid;gap:22px}
+.stage-block{display:grid;gap:10px}
+.stage-head{display:flex;align-items:baseline;gap:10px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.stage-head .s{font:700 13px var(--f-data);color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:12px}
+.card{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--lane-hue);border-radius:4px;padding:12px 14px;display:grid;gap:7px;min-width:0;scroll-margin-top:16px}
+.card:target{outline:2px solid var(--accent)}
+.card .top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card .mid{font:700 11px var(--f-data);color:var(--muted)}
+.card .nm{font-weight:700;font-size:16px}
+.pill{font:600 11px var(--f-body);padding:1px 7px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.pill.done{color:var(--done);border-color:var(--done)}
+.pill.part{color:var(--part);border-color:var(--part)}
+.pill.must{color:var(--fg);border-color:var(--fg)}
+.card dl{margin:0;display:grid;grid-template-columns:max-content 1fr;gap:3px 10px;font-size:13.5px}
+.card dt{color:var(--muted)}
+.card dd{margin:0;min-width:0}
+.card a{color:var(--accent)}
+.questions{margin-top:30px;background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:14px 18px}
+.questions ol{margin:8px 0 0;padding-left:20px;display:grid;gap:5px;font-size:14px}
+</style>
+
+<div class="wrap">
+  <div class="draft" role="note"><strong>ENTWURF</strong><span>Diese Meilensteine sind ein Vorschlag und noch nicht beschlossen. Reihenfolge, Voraussetzungen und Kreuzungspunkte können sich noch ändern.</span></div>
+  <header>
+    <h1>Meilensteinkarte <span>IE+</span></h1>
+    <p class="lede">Die Schlüssel-Meilensteine des Packs als Karte: jede Zeile ist ein Pfad, jede Spalte eine grobe Stufe. Linien zeigen Voraussetzungen und tragen das Material, das übergeben wird. Goldene Linien sind <strong>Kreuzungspunkte</strong> zwischen zwei Pfaden; dort setzen später die Cross-Mod-Rezepte und Quests an.</p>
+    <div class="meta"><span class="badge">ENTWURF · PHASE 2</span> &nbsp;Stand 2026-10-11 · Quelle: docs/01_PROGRESSION, 06_MAGIE, 08_AE2, 15_RAUMFAHRT</div>
+  </header>
+
+  <div class="stats" id="stats"></div>
+
+  <figure>
+    <div class="map"><svg id="map" role="img" aria-label="Meilensteinkarte: acht Pfade über acht Stufen, alle Linien laufen auf die Star-Wars-Planeten zu."></svg></div>
+    <figcaption>Alle Pflicht-Linien laufen auf die Star-Wars-Planeten (M18) zu: Tech über IE und Mekanism, Nuklear über die Uran-Kette, Magie über Alfsteel. Maus über einen Meilenstein hebt seine Voraussetzungen und Folgen hervor; Klick springt zur Beschreibung.</figcaption>
+  </figure>
+  <div class="legend">
+    <span><svg width="18" height="12"><rect x="1" y="1" width="16" height="10" rx="2" fill="var(--done)" stroke="var(--done)"/></svg> erreicht</span>
+    <span><svg width="18" height="12"><rect x="1" y="1" width="16" height="10" rx="2" fill="none" stroke="var(--part)" stroke-width="2"/></svg> begonnen</span>
+    <span><svg width="18" height="12"><rect x="1" y="1" width="16" height="10" rx="2" fill="none" stroke="var(--open)" stroke-width="2" stroke-dasharray="3 2"/></svg> offen</span>
+    <span><svg width="26" height="10"><line x1="1" y1="5" x2="25" y2="5" stroke="var(--edge)" stroke-width="1.6"/></svg> Voraussetzung im selben Pfad</span>
+    <span><svg width="26" height="10"><line x1="1" y1="5" x2="25" y2="5" stroke="var(--cross)" stroke-width="2"/></svg> Kreuzungspunkt</span>
+    <span>Fett umrandet = Pflicht, dünn = optional</span>
+  </div>
+
+  <div class="list" id="list"></div>
+
+  <section class="questions">
+    <h2>Offene Fragen zum Vorschlag</h2>
+    <ol>
+      <li>Steht die Tinkers-Schmelzerei in der Hauptwelt schon (M1 erreicht)?</li>
+      <li>Soll Blood Magic (M12) zusätzlich Pflicht für die Star-Wars-Planeten sein, oder reicht Alfsteel als Magie-Teil?</li>
+      <li>Ist der AE2-Storage-Layer (M8) früh genug bei P3, oder soll er erst nach Diesel kommen?</li>
+      <li>Soll Terrasteel (M9) wirklich in Raketenteile ab T2, oder lieber ein anderes Botania-Material?</li>
+      <li>Ist Zinn aus dem Twilight Forest als Pflicht vor der ersten Mekanism-Maschine (M5 → M7) gewollt?</li>
+    </ol>
+  </section>
+</div>
+
+<script>
+/*DATA*/
+
+const byId = Object.fromEntries(MILESTONES.map(m => [m.id, m]));
+const pathIdx = Object.fromEntries(PATHS.map((p,i) => [p.id, i]));
+const hue = id => PATHS[pathIdx[id]].hue;
+const STATUS = {done:"erreicht", part:"begonnen", open:"offen"};
+
+// Abhängigkeiten in beide Richtungen
+const kids = {}; MILESTONES.forEach(m => m.req.forEach(([r]) => (kids[r] ||= []).push(m.id)));
+function walk(id, dir, seen = new Set()){
+  (dir === "up" ? byId[id].req.map(r => r[0]) : (kids[id] || [])).forEach(n => { if(!seen.has(n)){ seen.add(n); walk(n, dir, seen); } });
+  return seen;
+}
+
+// Kennzahlen
+const cnt = s => MILESTONES.filter(m => m.status === s).length;
+const toGoal = walk("M18", "up");
+document.getElementById("stats").innerHTML =
+  `<span><b>${MILESTONES.length}</b> Meilensteine</span>` +
+  `<span><span class="dot" style="background:var(--done)"></span><b>${cnt("done")}</b> erreicht</span>` +
+  `<span><span class="dot" style="background:var(--part)"></span><b>${cnt("part")}</b> begonnen</span>` +
+  `<span><span class="dot" style="background:var(--open)"></span><b>${cnt("open")}</b> offen</span>` +
+  `<span><b>${toGoal.size}</b> Meilensteine liegen auf dem Weg zu den Star-Wars-Planeten</span>`;
+
+// Karte
+const LX = 130, CW = 170, TOP = 40, RH = 84, NW = 140, NH = 46;
+const W = LX + STAGES.length * CW + 20, H = TOP + PATHS.length * RH + 10;
+const svg = document.getElementById("map");
+svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+const NS = "http://www.w3.org/2000/svg";
+const el = (tag, attrs, parent = svg) => { const e = document.createElementNS(NS, tag); for(const k in attrs) e.setAttribute(k, attrs[k]); parent.appendChild(e); return e; };
+const cx = m => LX + (m.stage - 1) * CW + CW / 2;
+const cy = m => TOP + pathIdx[m.path] * RH + RH / 2;
+
+PATHS.forEach((p, i) => {
+  if(i % 2 === 0) el("rect", {class:"lane-bg", x:0, y:TOP + i*RH, width:W, height:RH});
+  el("rect", {x:10, y:TOP + i*RH + RH/2 - 9, width:6, height:18, rx:1, fill:p.hue});
+  el("text", {class:"lane-label", x:24, y:TOP + i*RH + RH/2 + 4}).textContent = p.name;
+});
+STAGES.forEach((s, i) => {
+  el("text", {class:"stage-label", x:LX + i*CW + CW/2, y:24}).textContent = s === "P8" ? "P8 · Ziel" : s;
+  el("line", {class:"grid", x1:LX + i*CW, y1:TOP, x2:LX + i*CW, y2:H - 10});
+});
+
+const edgeEls = [];
+MILESTONES.forEach(m => m.req.forEach(([rid, label]) => {
+  const a = byId[rid], cross = a.path !== m.path;
+  const x1 = cx(a) + NW/2, y1 = cy(a), x2 = cx(m) - NW/2 - 6, y2 = cy(m);
+  const mx = (x1 + x2) / 2;
+  const d = `M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2},${y2}`;
+  const p = el("path", {class:"edge" + (cross ? " cross" : ""), d, "marker-end": cross ? "url(#ac)" : "url(#an)"});
+  const t = el("text", {class:"elabel" + (cross ? " cross" : ""), x:mx, y:(y1 + y2)/2 - 4});
+  t.textContent = label;
+  edgeEls.push({from:rid, to:m.id, p, t});
+}));
+
+const defs = el("defs", {});
+[["an","var(--edge)"],["ac","var(--cross)"]].forEach(([id, c]) => {
+  const mk = el("marker", {id, viewBox:"0 0 10 10", refX:9, refY:5, markerWidth:7, markerHeight:7, orient:"auto-start-reverse"}, defs);
+  el("path", {d:"M0,0 L10,5 L0,10 z", fill:c}, mk);
+});
+
+const nodeEls = {};
+MILESTONES.forEach(m => {
+  const g = el("g", {class:"node", tabindex:0, role:"link", "aria-label":`${m.id} ${m.name}, ${STATUS[m.status]}`});
+  const x = cx(m) - NW/2, y = cy(m) - NH/2, c = hue(m.path);
+  const r = el("rect", {x, y, width:NW, height:NH, rx:4, fill: m.status === "done" ? c : "var(--panel)", stroke: m.status === "open" ? "var(--open)" : (m.status === "part" ? "var(--part)" : c), "stroke-width": m.must ? 2.5 : 1.2});
+  if(m.status === "open") r.setAttribute("stroke-dasharray", "4 3");
+  if(m.status === "done") r.setAttribute("fill-opacity", ".28");
+  el("rect", {x, y, width:5, height:NH, rx:2, fill:c}, g);
+  el("text", {class:"id", x:x + 12, y:y + 17}, g).textContent = m.id + (m.must ? " · Pflicht" : "");
+  const nm = el("text", {class:"nm", x:x + 12, y:y + 34}, g);
+  nm.textContent = m.name.length > 21 ? m.name.slice(0, 20) + "…" : m.name;
+  el("title", {}, g).textContent = `${m.id} ${m.name}\n${m.what}`;
+  g.insertBefore(r, g.firstChild);
+  nodeEls[m.id] = g;
+  const go = () => { location.hash = m.id; };
+  g.addEventListener("click", go);
+  g.addEventListener("keydown", e => { if(e.key === "Enter" || e.key === " "){ e.preventDefault(); go(); } });
+  const on = () => {
+    const set = new Set([m.id, ...walk(m.id, "up"), ...walk(m.id, "down")]);
+    svg.classList.add("hl");
+    Object.entries(nodeEls).forEach(([id, n]) => n.classList.toggle("on", set.has(id)));
+    edgeEls.forEach(e => { const k = set.has(e.from) && set.has(e.to); e.p.classList.toggle("on", k); e.t.classList.toggle("on", k); });
+  };
+  const off = () => svg.classList.remove("hl");
+  g.addEventListener("mouseenter", on); g.addEventListener("focus", on);
+  g.addEventListener("mouseleave", off); g.addEventListener("blur", off);
+});
+
+// Liste
+const list = document.getElementById("list");
+STAGES.forEach((s, i) => {
+  const ms = MILESTONES.filter(m => m.stage === i + 1).sort((a, b) => pathIdx[a.path] - pathIdx[b.path]);
+  if(!ms.length) return;
+  let h = `<div class="stage-block"><div class="stage-head"><h2>${s === "P8" ? "P8 · Ziel" : s}</h2><span class="s">${ms.length} Meilenstein${ms.length > 1 ? "e" : ""}</span></div><div class="cards">`;
+  ms.forEach(m => {
+    const reqs = m.req.length ? m.req.map(([r, l]) => `<a href="#${r}">${r} ${byId[r].name}</a> (${l})`).join(", ") : "–";
+    const next = (kids[m.id] || []).map(k => `<a href="#${k}">${k}</a>`).join(", ") || "–";
+    h += `<article class="card" id="${m.id}" style="--lane-hue:${hue(m.path)}">
+      <div class="top"><span class="mid">${m.id}</span><span class="nm">${m.name}</span></div>
+      <div class="top"><span class="pill">${PATHS[pathIdx[m.path]].name}</span><span class="pill ${m.status}">${STATUS[m.status]}</span><span class="pill ${m.must ? "must" : ""}">${m.must ? "Pflicht" : "optional"}</span></div>
+      <dl><dt>Inhalt</dt><dd>${m.what}</dd><dt>Braucht</dt><dd>${reqs}</dd><dt>Öffnet</dt><dd>${next}</dd><dt>Kreuzung</dt><dd>${m.cross}</dd><dt>Weltstand</dt><dd>${m.world}</dd></dl>
+    </article>`;
+  });
+  list.insertAdjacentHTML("beforeend", h + "</div></div>");
+});
+</script>
