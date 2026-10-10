@@ -111,3 +111,11 @@ Format pro Eintrag:
 - 🟢 Overworld: kein Zinn, Mekanism-Blei, Osmium und Certus reduziert.
 - 🟢 Keine Beyond-Earth-Ölquellen, Meteoriten vorhanden.
 - Vor der Auslieferung entfernen: `kubejs/startup_scripts/worldgen/debug_print_ore_features.js` (nur Testinstanz).
+
+## 2026-10-11 — Sauerstoff nur aus Mekanism (durch Claude)
+
+- Datei(en): `kubejs/server_scripts/crossmod/space_oxygen.js` (neu)
+- Änderung: Die Beyond-Earth-Rezepte „Sauerstoff aus Wasser“ für Oxygen Loader und Oxygen Bubble Distributor sind entfernt. Neue Rezepte nehmen flüssigen Mekanism-Sauerstoff (Tag `forge:oxygen`): 1 mB → 5 Sauerstoff (Loader) bzw. 4 (Distributor).
+- Zweck / Bezug: `15_RAUMFAHRT.md`, Entscheidung 1 (Sauerstoff aus Mekanism)
+- Rückgängig: Skript löschen
+- Teststatus: 🔵 Neustart bzw. `/reload` nötig. Zu prüfen: Loader nimmt flüssigen Sauerstoff aus Eimer und Mekanism-Rohren an; JEI zeigt die neuen Rezepte; Wasser erzeugt keinen Sauerstoff mehr; Füllgeschwindigkeit von Anzug und Bubble.

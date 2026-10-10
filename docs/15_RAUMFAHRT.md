@@ -20,7 +20,11 @@ Design der Raumfahrt als **Hauptziel des Packs**: Beyond Earth + Star Wars Plane
 ### Entscheidungen 2026-10-07
 
 1. 🟢 **Sauerstoff** kommt aus Mekanism (z. B. Electrolytic Separator), **sofern sich das technisch sinnvoll umsetzen lässt** (🔵 prüfen: nimmt der Oxygen Loader Mekanism-Sauerstoff an, ggf. über Giselle Addon?). Sonst bleibt der Beyond-Earth-Oxygen-Loader mit Mekanism-Energie.
-   - 🟢 JAR-Befund 2026-10-08: Oxygen Loader und Bubble Distributor haben nur das Rezept „aus Wasser“. Mekanism-Sauerstoff wird nicht angenommen. Mekanism-Anbindung nur über das Giselle-MekaSuit-Atemmodul oder ein eigenes Rezept (🔵 prüfen, ob der Recipe-Type andere Fluids erlaubt).
+   - 🟢 **Umsetzung 2026-10-11 (🔵 Test offen):** Mekanism ist für Sauerstoff zwingend. Die Wasser-Rezepte von Oxygen Loader und Oxygen Bubble Distributor sind entfernt; beide nehmen nur noch **flüssigen Mekanism-Sauerstoff** (`mekanism:oxygen`, Tag `forge:oxygen`). Kette: Wasser → Electrolytic Separator → Sauerstoffgas → Rotary Condensentrator → flüssiger Sauerstoff. Vorläufige Werte: 1 mB → 5 Sauerstoff (Loader) bzw. 4 (Distributor). Skript: `kubejs/server_scripts/crossmod/space_oxygen.js`.
+   - Technische Grundlage: Die Rezepttypen `beyond_earth:oxygen_loader` und `beyond_earth:oxygen_bubble_distributor` akzeptieren beliebige Fluids per `name` oder `tag` (`FluidIngredient`); der Eingangstank hat keinen Filter.
+   - Bekannte Lücken: Mekanism-Rezept `gas_conversion/flint_to_oxygen` (Sauerstoff aus Feuerstein, bleibt ein Mekanism-Weg; 🔵 behalten oder entfernen?). Das Giselle-MekaSuit-Atemmodul füllt die Oxygen Can laut Beschreibung bei Regen/im Wasser selbst auf (erst im Mekanism-Endgame, wird hingenommen).
+   - 🔵 Optional: Mekanism-Bauteil ins Rezept des Oxygen Tanks (z. B. Basic Chemical Tank oder HDPE).
+   - JAR-Befund 2026-10-08 (Ausgangslage): Oxygen Loader und Bubble Distributor haben nur das Rezept „aus Wasser“. Mekanism-Sauerstoff wird nicht angenommen. Mekanism-Anbindung nur über das Giselle-MekaSuit-Atemmodul oder ein eigenes Rezept (🔵 prüfen, ob der Recipe-Type andere Fluids erlaubt).
 2. 🟢 **Erster Raumflug (Mond)** nach Petroleum; zusätzlich ist mindestens eine erste Mekanism-Maschine Pflicht (im Raketen- oder Launchpad-Rezept bzw. über Komponenten).
 3. 🟢 **Mond = Hauptquelle für Osmium und Certus.** In der Overworld beides reduziert (siehe `03_ERZGENERATION.md`).
 4. 🟢 **Treibstoff-Tiers:** IE bleibt auch später nötig, Mekanism wird auf jeden Fall gebraucht. **Star-Wars-Planeten** benötigen zwingend **Magie-Komponenten** und **Uran-Erzeugnisse** (Mekanism-Nuklearkette).
@@ -43,7 +47,7 @@ Design der Raumfahrt als **Hauptziel des Packs**: Beyond Earth + Star Wars Plane
 | Eigener Generator (Kohle) | Rezept entfernen | IE / Mekanism Generators | 🔵 |
 | Solar Panel | Rezept entfernen | Mekanism Solar | 🔵 |
 | Compressor | Rezept entfernen | IE Metal Press + Giselle-Compressing-Mold | 🔵 |
-| Oxygen Loader / Oxygen Bubble Distributor | 🔵 offen: zählt Sauerstoff als „Treibstoff“? | z. B. Mekanism Electrolytic Separator | 🔵 |
+| Oxygen Loader / Oxygen Bubble Distributor | bleiben; Wasser-Rezept ersetzt | flüssiger Mekanism-Sauerstoff (Electrolytic Separator + Rotary Condensentrator) | 🟢 Skript, 🔵 Test |
 | Fuel Loader | bleibt (nur Befüllung, keine Produktion) | — | 🔵 |
 | Eigener Stahl | per Tags mit IE-Stahl vereinheitlichen | IE Steel | 🔵 |
 
@@ -189,7 +193,7 @@ Grafische Übersicht aller Erze: `docs/erzatlas/` (Live-Seite siehe dortige READ
 
 1. 🔵 Wie verhält sich Immersive Aircraft dazu (bleibt Atmosphären-Transport)?
 2. 🔵 Welche Magie-Komponenten genau für Star-Wars-Planeten (z. B. Terrasteel, Gaia Spirit, Alfsteel, Blood-Orb-Tier)?
-3. 🟢 Sauerstoff/Treibstoff-Tiers aus JARs geklärt (2026-10-08): keine Treibstoff-Tiers, Sauerstoff nur aus Wasser → Gating über Rezepte.
+3. 🟢 Sauerstoff/Treibstoff-Tiers aus JARs geklärt (2026-10-08): keine Treibstoff-Tiers, Sauerstoff im Original nur aus Wasser → Gating über Rezepte. Sauerstoff ist seit 2026-10-11 auf Mekanism umgestellt (siehe Entscheidung 1).
 4. 🔵 Eimer statt Flosse in den T2–T4-Rezepten: Fehler oder Absicht? Ggf. per KubeJS korrigieren.
 5. 🔵 Quelle für `beyond_earth:oil_bucket` (Plastic Plates/Stormtrooper-Rüstung), seit die Ölquellen abgeschaltet sind.
 

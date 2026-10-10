@@ -339,3 +339,14 @@ Status: 🟢 (Entscheidung) / 🔵 (Test)
 Status: 🟢
 
 Alle Worldgen-Ziele sind im Spiel bestätigt (Details in `13_TESTINSTANZ_CHANGELOG.md`). Offen für Phase 8: die Übernahme beim Host (Configs, `defaultconfigs` bzw. Welt-`serverconfig`, KubeJS), das Retrogen-Verhalten in der Hauptwelt und das Entfernen des Debug-Skripts.
+
+## 2026-10-11 — Sauerstoff zwingend aus Mekanism
+
+Status: 🟢 (Entscheidung) / 🔵 (Test)
+
+- Oxygen Loader und Oxygen Bubble Distributor erzeugen Sauerstoff nicht mehr aus Wasser, sondern nur noch aus flüssigem Mekanism-Sauerstoff (Electrolytic Separator → Rotary Condensentrator).
+- Umsetzung: `kubejs/server_scripts/crossmod/space_oxygen.js`. Mengen vorläufig.
+- `15_RAUMFAHRT.md` enthält jetzt außerdem den aus den JARs verifizierten Progressionsweg der Raumfahrt-Mods.
+
+### Auswirkungen auf bestehende Welt
+Keine. Raumfahrt ist in der Hauptwelt noch nicht begonnen. Das Skript ist ein Server-Skript und muss beim Host liegen.
