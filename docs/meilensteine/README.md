@@ -1,5 +1,7 @@
 # Meilensteinkarte
 
+> ⚠️ **Stand 1.18.2 (Twilight Forest, Beyond Earth).** Nach dem Wechsel auf 1.20.1 muss diese Übersicht samt Artifact-Seite neu aufgebaut werden; siehe TODO-Liste in `../00_STATUS.md`.
+
 **Entwurf (noch nicht beschlossen).** Phase-2-Vorschlag: Schlüssel-Meilensteine als Karte (Pfade × Stufen) plus Liste.
 
 - **Live-Seite (Artifact, privat):** https://claude.ai/artifact/Hdy6LMxESx5CJ9omjkAMEX

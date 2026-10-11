@@ -2,210 +2,280 @@
 
 ## Zweck
 
-Design der Raumfahrt als **Hauptziel des Packs**: Beyond Earth + Star Wars Planets, eingebettet in die bestehenden Pfade.
+Design der Raumfahrt als **Hauptziel des Packs** auf Minecraft 1.20.1: Ad Astra mit Addons, eingebettet in die bestehenden Pfade.
+
+> Stand 2026-10-11, neu geschrieben für Ad Astra. Die frühere Fassung für Beyond Earth (1.18.2) liegt im Git-Verlauf (Commit `f4b3de5`).
+> 🟢 „aus JAR“ = am 2026-10-11 aus den JARs und Configs der Instanz `Minecraft1201withForge` gelesen. Im Spiel getestet ist davon nichts, außer wo es ausdrücklich steht.
+
+## Mods
+
+| Mod | Version | Rolle | Status |
+|---|---|---|---|
+| Ad Astra | 1.15.21 | Raketen, Planeten, Sauerstoff, Temperatur, Schwerkraft, Rover | 🟢 |
+| Ad Astra: Giselle Addon | 6.27 | Fuel Loader, Automation NASA Workbench, Rocket Sensor, Oxygen Can, Schutz-Module für MekaSuit und Tinkers | 🟢 |
+| Star Wars Planets (Ad-Astra-Version) | 1.4.6.1 | Tatooine, Hoth, Endor, Mustafar, Mandalore; Kyber, Beskar | 🟢 |
+| Ad Astra: More Structures | 1.0.2 | Dungeons und Bosse auf den Ad-Astra-Planeten | 🟢 |
+| Mekanism: Ad Astra Ores | 1.1.0 | nur die Erzblöcke in Planetengestein; Generierung abgeschaltet | 🟢 |
+| Ad Astra: Rocketed | 1.0.5 | Raketen T5–T7 | 🔵 installiert, Entscheidung offen |
+| Star Wars: Galaxy in a Cube | 1.0.3.1 | Lichtschwerter, Macht, Klone, Droiden | 🟢 siehe `17_STAR_WARS_1.20.1.md` |
+
+Pflicht-Bibliotheken von Ad Astra: Resourceful Lib, Resourceful Config, Botarium.
 
 ## Grundentscheidungen
 
-🟢 **Raumfahrt ist ein Hauptziel des Modpacks** (Entscheidung 2026-10-07).
+🟢 **Raumfahrt ist ein Hauptziel des Modpacks** (2026-10-07).
 
-🟢 Mods (geplant, noch nicht installiert):
-- **Beyond Earth** (Forge, 1.18.2) — Raketen, Planeten, Sauerstoff, Rover
-- **Star Wars Planets** (Beyond-Earth-Addon, 1.18.2) — u. a. Tatooine, Kamino, Endor, Hoth, Mustafar
-- **Beyond Earth: Giselle Addon** (1.18.2) — Integration mit Mekanism und IE
+🟢 **Energie, Treibstoff und Sauerstoff kommen ausschließlich aus anderen Mods** (IE, Immersive Petroleum, Mekanism). Eigene Erzeuger von Ad Astra werden entfernt oder ersetzt (2026-10-07, gilt weiter).
 
-🟢 **Energie und Treibstoff kommen ausschließlich aus anderen Mods.** Eigene Energie- und Treibstoffproduktion von Beyond Earth wird deaktiviert (Rezepte entfernt) bzw. ersetzt.
+🟢 **Sauerstoff zwingend aus Mekanism** (2026-10-11): Wasser → Electrolytic Separator → Sauerstoffgas → Rotary Condensentrator → flüssiger Sauerstoff.
 
-🟢 Ad Astra ist für 1.18.2 Forge keine Option. Star Wars Planets ist gesetzt → Beyond Earth (trotz eingestellter Pflege).
+🟢 **Erster Raumflug (Mond)** nach Petroleum; zusätzlich ist mindestens eine erste Mekanism-Maschine Pflicht (2026-10-07).
 
-### Entscheidungen 2026-10-07
+🟢 **Star-Wars-Planeten** verlangen **Magie-Komponenten** und **Uran-Erzeugnisse** aus der Mekanism-Nuklearkette (2026-10-07).
 
-1. 🟢 **Sauerstoff** kommt aus Mekanism (z. B. Electrolytic Separator), **sofern sich das technisch sinnvoll umsetzen lässt** (🔵 prüfen: nimmt der Oxygen Loader Mekanism-Sauerstoff an, ggf. über Giselle Addon?). Sonst bleibt der Beyond-Earth-Oxygen-Loader mit Mekanism-Energie.
-   - 🟢 **Umsetzung 2026-10-11 (🔵 Test offen):** Mekanism ist für Sauerstoff zwingend. Die Wasser-Rezepte von Oxygen Loader und Oxygen Bubble Distributor sind entfernt; beide nehmen nur noch **flüssigen Mekanism-Sauerstoff** (`mekanism:oxygen`, Tag `forge:oxygen`). Kette: Wasser → Electrolytic Separator → Sauerstoffgas → Rotary Condensentrator → flüssiger Sauerstoff. Vorläufige Werte: 1 mB → 5 Sauerstoff (Loader) bzw. 4 (Distributor). Skript: `kubejs/server_scripts/crossmod/space_oxygen.js`.
-   - Technische Grundlage: Die Rezepttypen `beyond_earth:oxygen_loader` und `beyond_earth:oxygen_bubble_distributor` akzeptieren beliebige Fluids per `name` oder `tag` (`FluidIngredient`); der Eingangstank hat keinen Filter.
-   - Bekannte Lücken: Mekanism-Rezept `gas_conversion/flint_to_oxygen` (Sauerstoff aus Feuerstein, bleibt ein Mekanism-Weg; 🔵 behalten oder entfernen?). Das Giselle-MekaSuit-Atemmodul füllt die Oxygen Can laut Beschreibung bei Regen/im Wasser selbst auf (erst im Mekanism-Endgame, wird hingenommen).
-   - 🔵 Optional: Mekanism-Bauteil ins Rezept des Oxygen Tanks (z. B. Basic Chemical Tank oder HDPE).
-   - JAR-Befund 2026-10-08 (Ausgangslage): Oxygen Loader und Bubble Distributor haben nur das Rezept „aus Wasser“. Mekanism-Sauerstoff wird nicht angenommen. Mekanism-Anbindung nur über das Giselle-MekaSuit-Atemmodul oder ein eigenes Rezept (🔵 prüfen, ob der Recipe-Type andere Fluids erlaubt).
-2. 🟢 **Erster Raumflug (Mond)** nach Petroleum; zusätzlich ist mindestens eine erste Mekanism-Maschine Pflicht (im Raketen- oder Launchpad-Rezept bzw. über Komponenten).
-3. 🟢 **Mond = Hauptquelle für Osmium und Certus.** In der Overworld beides reduziert (siehe `03_ERZGENERATION.md`).
-4. 🟢 **Treibstoff-Tiers:** IE bleibt auch später nötig, Mekanism wird auf jeden Fall gebraucht. **Star-Wars-Planeten** benötigen zwingend **Magie-Komponenten** und **Uran-Erzeugnisse** (Mekanism-Nuklearkette).
-5. 🟢 **Planeten-Metalle** bekommen Mekanisms Mehrfach-Erzverarbeitung, sofern es zum Spiel passt (Balancing in Phase 3).
+🟢 **Die Erzverteilung legen wir selbst fest** (2026-10-11). Fremde Erz-Generierung auf den Planeten wird abgeschaltet.
 
-## Bekannte Fakten (Webrecherche, 🔵 noch gegen die JARs zu prüfen)
+🟢 **Planeten-Metalle** bekommen Mekanisms Mehrfach-Erzverarbeitung, sofern es zum Spiel passt (Balancing in Phase 3).
 
-- Beyond Earth wird nicht mehr weiterentwickelt (Nachfolger: Ad Astra / Stellaris, nicht für 1.18.2). Bugs der 1.18.2-Version bleiben → gründlicher Test in der Testinstanz nötig.
-- Star Wars Planets gibt es in zwei Linien: für **Beyond Earth** (1.18.x, Forge) und für **Ad Astra**. Wir brauchen die Beyond-Earth-Version; die passende Beyond-Earth-Version muss abgeglichen werden.
-- Giselle Addon:
-  - IE: Metal-Press-Form „Compressing“ (Barren → Compressed-Platten), Arc-Furnace-Recycling zurück zu Barren
-  - IE-Biodiesel als Treibstoff für Fuel Loader, Rover und Raketen
-  - Mekanism: Crushing-Rezepte für Planetengestein, Oxygen Loader kann Mekanism-Items (z. B. Scuba Tank) mit Sauerstoff füllen
+🔵 **Entwurf des Users (2026-10-11):** Der Zugang zum Blood-Magic-Dungeon ist nur auf einem Ad-Astra-Planeten möglich (Venus oder Merkur, noch offen). Dort gibt es ein Pflicht-Item für die T4-Rakete. Technische Grundlage: Blood Magic meldet Ritual-Aktivierungen als abbrechbares Ereignis (`RitualEvent$RitualActivatedEvent`, im JAR vorhanden); 🔵 ob KubeJS es abfangen kann, ist nicht getestet.
 
-## Regel „Energie/Treibstoff nur aus anderen Mods“ — Umsetzungsentwurf
+## Planeten (🟢 aus JAR)
 
-| Beyond-Earth-Element | Umgang | Ersatzquelle | Status |
+Planeten sind in Ad Astra Datapack-Dateien (`data/<mod>/planets/*.json`). Stufe, Sauerstoff, Temperatur und Schwerkraft lassen sich per Override ändern.
+
+| Planet | Raketenstufe | Sauerstoff | Temperatur | Schwerkraft | System |
+|---|---|---|---|---|---|
+| Erde | 1 | ja | 15 °C | 9,81 | Sonnensystem |
+| Mond | 1 | nein | −173 °C | 1,62 | Sonnensystem |
+| Mars | 2 | nein | −65 °C | 3,72 | Sonnensystem |
+| Merkur | 3 | nein | 167 °C | 3,70 | Sonnensystem |
+| Venus | 3 | nein | 464 °C, Säureregen | 8,87 | Sonnensystem |
+| Glacio | 4 | **ja** | −20 °C | 3,72 | Proxima Centauri |
+| Tatooine | 4 | ja | 25 °C | 9,81 | Outer Rims |
+| Endor | 4 | ja | 15 °C | 9,81 | Outer Rims |
+| Mustafar | 4 | ja | 25 °C | 9,81 | Outer Rims |
+| Hoth (`swplanets:hot`) | 4 | ja | −10 °C | 9,81 | Outer Rims |
+| Mandalore | 4 | ja | **−160 °C** | 3,0 | Outer Rims |
+
+- Jeder Planet hat einen eigenen Orbit (gleiche Stufe, kein Sauerstoff, −270 °C). Dort lässt sich eine Raumstation bauen.
+- **Kamino gibt es in der Ad-Astra-Version nicht.**
+- Alle Star-Wars-Planeten haben Sauerstoff. Auf den meisten braucht man also keinen Raumanzug; Mandalore ist extrem kalt.
+- 🟢 Anders als in Beyond Earth ist die Stufe kein fester Code-Wert. Die Star-Wars-Planeten lassen sich einzeln auf andere Stufen legen (z. B. über T4 hinaus, siehe „Ad Astra: Rocketed“).
+- Config `ad_astra.jsonc`: `launchAnywhere = false` (Raketen starten nur von Planeten), `disabledPlanets` blendet Planeten aus, `atmosphereLeave = 600`.
+
+## Raketen (🟢 aus JAR)
+
+NASA Workbench: Nose Cone + 6 **Blöcke** des Stufenmetalls + 2 Tanks + 4 Flossen + 1 Triebwerk.
+
+| Stufe | Rumpf (6×) | Tanks (2×) | Triebwerk |
 |---|---|---|---|
-| Fuel Refinery (Öl → Fuel) | Rezept entfernen oder Fuel nur über andere Mods erzeugen | IE Petroleum (Diesel/Destillation), IE Biodiesel | 🔵 |
-| Eigener Generator (Kohle) | Rezept entfernen | IE / Mekanism Generators | 🔵 |
-| Solar Panel | Rezept entfernen | Mekanism Solar | 🔵 |
-| Compressor | Rezept entfernen | IE Metal Press + Giselle-Compressing-Mold | 🔵 |
-| Oxygen Loader / Oxygen Bubble Distributor | bleiben; Wasser-Rezept ersetzt | flüssiger Mekanism-Sauerstoff (Electrolytic Separator + Rotary Condensentrator) | 🟢 Skript, 🔵 Test |
-| Fuel Loader | bleibt (nur Befüllung, keine Produktion) | — | 🔵 |
-| Eigener Stahl | per Tags mit IE-Stahl vereinheitlichen | IE Steel | 🔵 |
+| T1 | Stahlblock | Steel Tank | Steel Engine |
+| T2 | Desh-Block | Desh Tank | Desh Engine |
+| T3 | Ostrum-Block | Ostrum Tank | Ostrum Engine |
+| T4 | Calorite-Block | Calorite Tank | Calorite Engine |
 
-🟢 Geklärt (2026-10-08): Raketen akzeptieren den Tag `beyond_earth:vehicle_fuel`; Giselle hängt Diesel und Biodiesel bereits ein (siehe „Progressionsweg der Mods“).
+- **Tanks und Triebwerke bauen aufeinander auf:** Der Desh Tank braucht einen Steel Tank, der Ostrum Tank einen Desh Tank usw.; genauso bei den Triebwerken. Jede höhere Rakete verbraucht also die Bauteile aller Stufen darunter.
+- Nose Cone, Flossen, Engine Frame und Fan bestehen bei allen Stufen aus Stahlplatten und Stahlstäben.
+- Weitere Bauteile: NASA Workbench (Stahlplatten, Stahlblock, Eisenstäbe, Werkbank, Redstone-Fackeln), Launch Pad (Stahlplatten, Stahlstäbe).
+- Rover: Desh-Triebwerk, Desh-Block, Desh-Platte, Large Gas Tank, Radio, Räder.
+- Raumstation je Orbit: z. B. Erde/Mond 64 Eisenplatten, 32 Stahl, 32 Desh, 32 Desh-Platten; Mars mit Ostrum, Merkur/Venus/Glacio mit Calorite.
 
-## Progressionsvorschlag (🔵 Entwurf, in Phase 2 festzulegen)
+### Materialien und Anbindung an IE
 
-Pfad H — Raumfahrt, kreuzt die Pfade B, C, D und E:
+Ad Astra nimmt fremde Materialien über Tags an. 🟢 Aus JAR:
 
-| Stufe | Ziel | Kreuzungspunkte (Vorschlag) |
+- `ad_astra:steel_ingots`, `steel_blocks`, `steel_plates`, `steel_rods`, `iron_plates`, `iron_rods` enthalten jeweils das `forge:`-Tag. **IE-Stahl, IE-Platten und IE-Stäbe gelten ohne Anpassung.**
+- Für Desh, Ostrum und Calorite gibt es `forge:ingots/…` und `forge:plates/…`, aber keine IE-Pressrezepte. Die müssen wir schreiben, wenn der Compressor entfällt.
+
+## Treibstoff (🟢 aus JAR)
+
+**Jede Stufe hat ein eigenes Fluid-Tag**, das standardmäßig auf `#ad_astra:fuel` zeigt:
+`ad_astra:tier_1_rocket_fuel`, `tier_2_rocket_fuel`, `tier_3_rocket_fuel`, `tier_4_rocket_fuel`, `tier_1_rover_fuel`.
+
+`#ad_astra:fuel` enthält von Haus aus:
+
+| Fluid | Quelle | In der Instanz vorhanden |
 |---|---|---|
-| Rakete T1 → Mond | erster Raumflug; **Osmium + Certus in Menge**, Desh | 🟢 IE Steel, Metal Press (Compressing), Diesel aus IE Petroleum, **erste Mekanism-Maschine** |
-| Rakete T2 → Mars | Ostrum (Triebwerk braucht Desh-Platte vom Mond) | IE-Treibstoff, durch Mekanism veredelt (z. B. Chemical Infuser/Oxidizer); Mekanism-Ausbau mit Mond-Osmium |
-| Rakete T3 → Merkur/Venus | Calorite (Venus) | Mekanism-Chemie + weiterhin IE-Komponenten (Refinery, Arc Furnace) |
-| Rakete T4 → Glacio / Star-Wars-Planeten | Star-Wars-Inhalte (Beskar, Kyber), Prestige | 🟢 **Magie** (Botania/MythicBotany, Blood Magic) **+ Uran-Erzeugnisse** (z. B. Polonium/Plutonium aus der Mekanism-Nuklearkette) |
+| `ad_astra:fuel` | Ad Astra Fuel Refinery (aus Öl, 5 mB → 5 mB) | ja |
+| `ad_astra:cryo_fuel` | Ad Astra Cryo Freezer (aus Eis) | ja |
+| `#forge:diesel` | Immersive Petroleum: `diesel` **und** `diesel_sulfur` | ja |
+| `#forge:biodiesel` | Immersive Engineering: `biodiesel` | ja |
+| `#forge:biofuel`, `#forge:fuel` | (Giselle hängt weitere Mods ein) | nein |
 
-🔵 Treibstoff-Idee (Entwurf): T1 = IE-Diesel; ab T2 ein eigener KubeJS-Treibstoff, hergestellt in IE und Mekanism im Wechsel (z. B. Diesel → Mekanism-Veredelung → IE Mixer/Refinery). 🟢 JAR-Befund: Beyond Earth unterscheidet **keine** Treibstoffe pro Tier (ein Fluid-Tag für alle Raketen). Ein eigener KubeJS-Treibstoff würde für alle Tiers gleichermaßen gelten. Das Gating muss daher über die Rezepte von Rakete, Triebwerk und Tanks laufen (z. B. T2+-Triebwerk mit Mekanism-Bauteil).
+- `ad_astra:efficient_fuel` enthält nur Cryo Fuel (sparsamer Treibstoff).
+- **IE-Biodiesel und IP-Diesel funktionieren ohne Anpassung in jeder Rakete**, auch der ungereinigte schwefelhaltige Diesel.
+- ⚠️ `#ad_astra:oil` enthält `#forge:crude_oil`. Die Fuel Refinery macht also aus **Immersive-Petroleum-Rohöl direkt Raketentreibstoff**, ohne Destillation.
+- 🔵 Verbrauch pro Start: In `ad_astra.jsonc` gibt es dafür keinen Schalter. Die Mengen müssen im Spiel abgelesen werden.
+- Fuel Loader (Giselle): 8.000 mB, Reichweite 2 Blöcke.
 
-🟢 JAR-Befund: Alle Star-Wars-Planeten verlangen T4, genau wie Glacio. Magie-/Uran-Pflicht für Star Wars lässt sich nur über T4-Bauteile durchsetzen und gilt dann auch für Glacio. Wenn Glacio früher erreichbar sein soll, wäre ein Eingriff in die Planetenauswahl nötig (nicht per KubeJS-Rezept lösbar).
+### 🔵 Treibstoff-Progression (Entwurf, noch nicht entschieden)
 
-## Installierter Stand (🟢 verifiziert 2026-10-07, Testinstanz startet)
+Die Stufen-Tags machen möglich, was in Beyond Earth nicht ging: je Stufe ein anderer Treibstoff.
 
-- `Beyond-Earth-1.18.2-6.2.jar`, `StarWarsPlanets-1.15.jar`, `Beyond-Earth-Giselle-Addon-1.18.2-2.20.jar`
-- **Nicht** Beyond Earth 7.0-SNAPSHOT (inkompatibel mit beiden Addons) und **nicht** Beyond Planets Core / Planeteer Machines (siehe `00_MODBASIS.md`).
-- Dimensionen: Mond, Mars, Merkur, Venus, Glacio (je + Orbit); Tatooine, Kamino, Endor, Hoth (`hot`), Mustafar, Mandalore (je + Orbit).
-
-## Progressionsweg der Mods (🟢 aus JARs verifiziert 2026-10-08)
-
-Stand **ohne** unsere Anpassungen. Quelle: Rezepte in den JARs und `javap` der Planetenauswahl (`PlanetSelectionGuiWindow.checkTier`, SWP `PlanetSelectionGuiEvents`).
-
-### Raketen-Tier → Ziele
-
-| Rakete | Ziele | Erze |
+| Stufe | Treibstoff | Herkunft |
 |---|---|---|
-| T1 | Mond (+ Orbit) | Desh, Cheese, Ice Shard, Iron *(+ unser Osmium/Certus)* |
-| T2 | Mars (+ Orbit) | Ostrum, Diamond, Iron, Ice Shard |
-| T3 | Merkur **und** Venus (+ Orbits) | Merkur: Iron · Venus: Calorite, Coal, Gold, Diamond |
-| T4 | Glacio **und alle 6 Star-Wars-Planeten** | Glacio: Vanilla-Erze · Kyber (Tatooine, Kamino, Endor, Mustafar), Beskar (Mandalore) |
+| T1 | Biodiesel | IE Refinery |
+| T2 | Diesel | Immersive Petroleum, Destillation (🔵 nur entschwefelt?) |
+| T3 | Gasoline oder ein veredelter Diesel | Immersive Petroleum, 🔵 ggf. mit Mekanism-Schritt |
+| T4 | eigener Raketentreibstoff | KubeJS-Fluid, Rezept in IE und Mekanism im Wechsel |
 
-Star Wars Planets prüft für alle sechs Planeten fest `checkTier(4)`. Eine Abstufung innerhalb der Star-Wars-Planeten gibt es nicht.
+Umsetzung: je Stufe eine Tag-Datei mit `replace: true`. 🔵 Zu klären: endgültige Zuordnung, Kosten des T4-Rezepts, ob Cryo Fuel bleibt.
 
-### Stufe 0 — Overworld-Vorbereitung (nur Eisen/Stahl)
+## Sauerstoff (🟢 aus JAR)
 
-- Stahl: IE-Stahl über `#forge:ingots/steel`; **Beyond Earth erlaubt zusätzlich Stahl aus Eisen im Blast Furnace** (`steel_ingot_blasting`).
-- Eisenplatten: BE-Hammer, IE Metal Press (Platte), Thermal.
-- **Compressed Steel** (zentrales Bauteil): BE-Compressor oder IE Metal Press mit Giselle-Form `mold_compressing` (IE-Bauplan „Molds“, 3 Stahlplatten + Wirecutter).
-- Raumanzug: Oxygen Mask (Eisenhelm + Platten + Glas), Space Suit (2 Oxygen Tanks + Oxygen Gear + Stahl + Platten), Space Pants, Space Boots (Wolle + Platten).
-- Sauerstoff: Oxygen Loader, Oxygen Bubble Distributor (Loader + Engine Fan), Water Pump. **Einziges Sauerstoff-Rezept: aus Wasser** (`oxygen_loading/from_water`, `oxygen_bubble_distributing/from_water`).
-- Infrastruktur: NASA Workbench (4 Compressed Steel, Werkbank, Stahl, Hebel, Redstone-Fackel), Rocket Launch Pad (Stahl + Platten), Fuel Loader (Giselle: Stahl, Platten, Eimer).
+- `ad_astra:oxygen_loading` hat zwei Rezepte: **Wasser** (100 mB → 4 mB Sauerstoff) und **`#ad_astra:oxygen`** (25 mB → 25 mB).
+- `#ad_astra:oxygen` enthält `#forge:oxygen`, und Mekanism trägt dort `mekanism:oxygen` ein. **Flüssiger Mekanism-Sauerstoff funktioniert im Oxygen Loader ohne Anpassung.**
+- Für die Mekanism-Pflicht muss nur das Wasser-Rezept `ad_astra:oxygen_from_oxygen_loading_water` entfernt werden. 🔵 Skript noch nicht geschrieben.
+- Oxygen Distributor versorgt abgedichtete Räume (bis 6.000 Blöcke laut Config). Bricht die Abdichtung, entsteht ein Luftwirbel.
+- Giselle: Oxygen Can (500 mB) und Netherite Oxygen Can (1.000 mB) als tragbare Reserve, als Curio tragbar.
 
-**Treibstoff:** Raketen und Rover nehmen den Fluid-Tag `beyond_earth:vehicle_fuel`. Giselle hängt dort `#forge:diesel`, `#forge:biodiesel`, `#forge:biofuel` und `thermal:refined_fuel` ein. → IE-Biodiesel und IP-Diesel funktionieren ohne Anpassung. **Es gibt keine Treibstoff-Tiers** (ein Tag für alle Raketen).
+### Wesen ohne Sauerstoff
 
-### Raketen-Rezepte (NASA Workbench)
+Ad Astra steuert über Entity-Tags, wer wo überlebt: `ad_astra:lives_without_oxygen`, `can_survive_extreme_cold`, `can_survive_extreme_heat`, `can_survive_in_space`, `can_survive_in_acid_rain`.
 
-Aufbau jeder Rakete: Nose Cone + 6 Rumpf + 2 Tanks + 4 Flossen + 1 Triebwerk.
+⚠️ **More Structures überschreibt diese fünf Tags mit `replace: true`.** Eigene Einträge (z. B. für Star-Wars- oder Alex's-Mobs-Wesen) müssen danach geladen werden, sonst gehen sie verloren. 🔵 Ladereihenfolge gegenüber `kubejs/data` prüfen.
 
-| | Rumpf (6×) | Tanks (2×) | Triebwerk |
+## Schutz und Ausrüstung (🟢 Rezepte aus JAR, 🔵 Wirkung nicht getestet)
+
+- Space Suit (Helm, Anzug, Hose, Stiefel): Stahlplatten, Wolle, Gas Tanks, Oxygen Gear.
+- Netherite Space Suit: Ostrum-Platten, Netherite-Brustplatte, Large Gas Tanks. 🔵 Vermutlich nötig gegen Hitze (Merkur, Venus).
+- Jet Suit: Calorite-Platten, Netherite Space Suit, Calorite-Triebwerk und -Tanks.
+- Giselle: vier Schutzarten (Space Breathing, Space Fire Proof, Acid Rain Proof, Gravity Normalizing) als Verzauberungsbuch, als **MekaSuit-Modul** und als **Tinkers-Modifier**.
+- Gravity Normalizer (Block): Desh-Platten, Diamantblock, Etrionic Capacitors.
+
+## Regel „Energie/Treibstoff nur aus anderen Mods“ — Umsetzung für Ad Astra
+
+| Ad-Astra-Element | Rezept (aus JAR) | Umgang | Status |
 |---|---|---|---|
-| T1 | Compressed Steel | Steel Tank | Steel Engine |
-| T2 | Compressed Desh | Desh Tank | Desh Engine |
-| T3 | Compressed Ostrum | Ostrum Tank | Ostrum Engine |
-| T4 | Compressed Calorite | Calorite Tank | Calorite Engine |
+| Coal Generator | Eisen, Kohleblöcke, Ofen | entfernen | 🔵 |
+| Solar Panel | Desh-Platten, Etrium-Zellen | entfernen | 🔵 |
+| Etrionic Blast Furnace | macht per `alloying` Stahl aus Eisen + Kohle | Stahl-Rezept entfernen (umgeht IE-Stahl); Maschine 🔵 | 🔵 |
+| Compressor | Eisen, Kolben; macht alle Platten | entfernen; Platten über IE Metal Press | 🔵 |
+| Fuel Refinery | Öl → Fuel, nimmt auch IP-Rohöl | entfernen (umgeht die Destillation) | 🔵 |
+| Cryo Freezer | Eis → Cryo Fuel | 🔵 entscheiden: entfernen oder als späte Stufe einbauen | 🔵 |
+| Oxygen Loader | Wasser- und Sauerstoff-Rezept | bleibt; Wasser-Rezept entfernen | 🟢 Entscheidung, 🔵 Skript |
+| Oxygen Distributor, Gravity Normalizer, Oxygen Sensor | — | bleiben | 🟢 |
+| Water Pump | Desh-Platten | 🔵 bleibt? (kein Energie- oder Treibstofferzeuger) | 🔵 |
+| Energizer | Ostrum, Diamantblock | 🔵 lädt Items, erzeugt nichts | 🔵 |
+| Kabel und Fluid Pipes | Stahl/Desh/Ostrum-Platten | 🔵 behalten oder zugunsten von IE/Mekanism entfernen | 🔵 |
+| Ölquellen (`oil_well`) in Ozeanen | Struktur in der Overworld | 🟢 abgeschaltet, siehe Worldgen | 🟢 Datei, 🔵 Test |
 
-- Nose Cone, Rocket Fin, Engine Frame und Engine Fan bestehen bei allen Tiers aus Stahl (Fin zusätzlich Compressed Steel).
-- Tanks: 4 Barren des Tier-Metalls + 4 Stahl. Triebwerke: 2 Barren Tier-Metall + Stahl + Eisenplatte + Engine Fan + Engine Frame + Redstone + Platte.
-- **Alle Triebwerke ab T2 brauchen eine Desh-Platte** → der Mond bleibt dauerhaft relevant.
-- ⚠️ Auffälligkeit: In T2–T4 liegt je Flossenseite ein **Eimer** statt der zweiten Flosse. Vermutlich ein Fehler im Mod; 🔵 in der Testinstanz prüfen.
+## Worldgen (🟢 aus JAR)
 
-### Weitere Inhalte
+### Erze von Ad Astra
 
-- **Raumstation** (Orbit): 6 Desh-Barren, 16 Stahl, 12 Eisenplatten, 4 Desh-Platten.
-- **Rover**: Stahl, Eisenplatte, Ofen, Eimer, Truhe, Lapis, 2 Wheels (Stahl, Slime, schwarzer Farbstoff). Nutzt denselben Treibstoff.
-- **Netherite-Raumanzug**: Anzugteile + Netherite im Schmiedetisch.
-- **Gefahren**: Merkur/Venus setzen in Brand, Venus hat Säureregen (`death.attack.venus.acid`). 🔵 Schutzwirkung des Netherite-Anzugs in der Testinstanz prüfen.
-- **Giselle-Schutz**:
-  - Mekanism-MekaSuit-Module: Space Breathing (Space Suit + Infused Alloy + HDPE), Gravity Normalizing (Space Boots + Infused Alloy + HDPE), Space Fire Proof (Compressed Ostrum + Reinforced Alloy + **Polonium-Pellets**), Venus Acid Proof (Compressed Calorite + Reinforced Alloy + **Polonium-Pellets**).
-  - Entsprechende Verzauberungsbücher (Anzugteil bzw. Compressed Ostrum/Calorite + Planetengestein) und PneumaticCraft-Upgrades.
-  - Oxygen Can (Eisenplatten + Eisenstab) als Sauerstoffquelle für das Atemmodul; Gravity Normalizer (Block).
-- **Star-Wars-Belohnungen**:
-  - Lichtschwert: Light Saber Base (Kyber + Eisen), dann je Farbe ein **Beacon** (→ Nether Star/Wither).
-  - Darksaber: 2 Beskar + Stock.
-  - Stormtrooper-Rüstung aus Plastic Plates; diese entstehen nur durch Schmelzen von `beyond_earth:oil_bucket`. Da die Ölquellen abgeschaltet sind, fehlt dafür eine Quelle (🔵 Alternative per KubeJS).
-  - Speeder: kein Rezept.
-- Giselle-Kompatibilität außerdem: Mekanism Enriching (Ice-Shard-Erz → 4 Ice Shards), Crushing/Inscriber für Sky Stone, Thermal Press/Pulverizer/Refinery, IF Laser Drill (Desh/Ostrum/Calorite/Cheese/Öl).
-
-### Abkürzungen, die mit unseren Regeln kollidieren
-
-| Element | Konflikt | Status |
-|---|---|---|
-| Stahl im Blast Furnace (`steel_ingot_blasting`) | umgeht IE-Stahl | 🔵 entfernen |
-| Compressor (+ Giselle Advanced Compressor) | ersetzt durch IE Metal Press + Compressing Mold | 🔵 entfernen |
-| Coal Generator, Solar Panel | eigene Energie | 🔵 entfernen |
-| Fuel Refinery (+ Thermal-Refinery-Rezept Öl → Fuel) | eigener Treibstoff | 🔵 entfernen |
-| Giselle Electric Blast Furnace | 🔵 prüfen, was sie verarbeitet | 🔵 |
-
-## Worldgen aus den JARs (🟢 verifiziert)
-
-**Planeten-Erze (Beyond Earth, fest im Code):**
-
-Werte per `javap` aus `OreGeneration` ausgelesen (2026-10-08): Adern/Chunk × Adergröße, Höhenbereich. Mond beginnt bei Y 0, alle anderen Planeten bei Y −64. Teile der Höhenbereiche liegen unter dem Weltboden und fallen weg.
+Alle Planeten reichen von Y −64 bis 320. Adern pro Chunk × Adergröße, Höhenbereich (Dreiecksverteilung):
 
 | Planet | Erz | Adern × Größe | Y |
 |---|---|---|---|
-| Mond | **Desh** | 7 × 9 | −80…80 (effektiv 0…80, ~3,5 Adern) |
-| Mond | Cheese | 20 × 10 | −80…192 |
-| Mond | Ice Shard | 8 × 10 | −32…32 (effektiv 0…32) |
+| Mond | **Desh** | 9 × 9 | −80…80 |
+| Mond | Cheese | 9 × 8 | 6…192 |
+| Mond | Ice Shard | 8 × 10 | −32…32 |
 | Mond | Iron | 10 × 11 | −24…56 |
-| Mond | *Osmium (unser KubeJS)* | 16 × 9 | 0…128 |
-| Mond | *Certus (unser KubeJS)* | 12 × 7 | 0…96 |
-| Mars | **Ostrum** | 6 × 8 | −80…80 |
-| Mars | Diamond | 7 × 7 | −80…80 |
+| Mars | **Ostrum** | 8 × 8 | −80…80 |
+| Mars | Diamond | 5 × 7 | −80…80 |
 | Mars | Iron | 10 × 11 | −24…56 |
 | Mars | Ice Shard | 8 × 10 | −32…32 |
 | Merkur | Iron | 20 × 8 | −80…192 |
-| Venus | **Calorite** | 6 × 8 | −80…80 |
+| Venus | **Calorite** | 8 × 8 | −80…80 |
 | Venus | Coal | 20 × 17 | −80…192 |
 | Venus | Gold | 4 × 10 | −64…32 |
-| Venus | Diamond | 7 × 9 | −80…80 |
-| Glacio | Coal / Copper / Iron / Lapis | 20×17 / 16×17 / 10×12 / 2×9 | (+ Deepslate-Varianten) |
-| Glacio | Ice Shard | 8 × 10 | −32…32 |
-| Tatooine | **Kyber** (Sandstein) | 8 × 5 | −80…100 |
-| Kamino, Endor, Mustafar | **Kyber** (nur in Deepslate) | 8 × 5 | −80…100 |
-| Mandalore | **Beskar** (Sandstein) | 8 × 5 | −1…160 |
-| Hoth | – (keine Erze) | | |
+| Venus | Diamond | 5 × 9 | −80…80 |
+| Glacio | Coal / Copper / Iron / Lapis | 20×17 / 16×17 / 10×11 / 2×9 | (+ Deepslate-Varianten) |
+| Glacio | Ice Shard | 8 × 17 | −32…32 |
 
-Star Wars Planets: Strukturen AT-AT, AT-ST, AT-ACT, Tatooine-Häuser. Das Addon trägt außerdem `swplanets:kamino_ocean` in die Ölquellen-Biome von Beyond Earth ein; unser Override (`replace: true`) schaltet auch diese ab.
+Die Erze sind normale JSON-Features in den Biom-Dateien und lassen sich per Datapack ändern.
 
-Grafische Übersicht aller Erze: `docs/erzatlas/` (Live-Seite siehe dortige README).
+### Erze von Star Wars Planets
 
-**Overworld-Strukturen von Beyond Earth** (betreffen neue Overworld-Chunks):
-- **Meteor**: Wald, Dschungel, Taiga, Wüste, Ebenen, Savanne. 🟢 Bleibt (2026-10-07).
-- **Oil Well**: Ozeane, Tiefsee, Sumpf. 🟢 **Abgeschaltet** (2026-10-07), weil sie eine kostenlose Ölquelle wären. Immersive Petroleum bleibt die einzige Ölquelle. Umsetzung: `kubejs/data/beyond_earth/tags/worldgen/biome/has_structure/oil_well_biomes.json` (`replace: true`, leere Liste). 🔵 Wirkung in der Testinstanz prüfen. Das gilt nur für neue Chunks; in der Hauptwelt muss die Datei **vor dem ersten Start mit Beyond Earth** beim Host liegen.
+| Erz | Wo | Adern × Größe | Y |
+|---|---|---|---|
+| **Kyber** (Deepslate) | Endor, Hoth, Mustafar, Tatooine | 5 × 9 | bis 80 über dem Weltboden |
+| **Kyber** (Sandstein) | Tatooine (Wüste) | 5 × 9 | bis 80 über dem Weltboden |
+| **Beskar** (Sandstein) | Mandalore | 15 × 6 | 0…160 über dem Weltboden |
 
-**Fehler im Addon:** Die Loot-Tabelle `swplanets:chests/empire_chests` ist kaputt (`minecraft:steak` gibt es nicht) → Imperiums-Truhen bleiben leer. Lässt sich per Datapack/KubeJS-Override reparieren.
+### Mekanism-Erze auf den Planeten
+
+🟢 „Mekanism: Ad Astra Ores“ bringt 16 Erzblöcke in Planetengestein mit. Seine eigene Generierung ist abgeschaltet (`kubejs/data/mekanismaaa/tags/worldgen/biome/gen_ores.json` und `gen_ores_deepslate.json`, in die Testinstanz kopiert am 2026-10-11, 🔵 Wirkung nicht getestet).
+
+| Planet | Vorhandene Blöcke |
+|---|---|
+| Mond | Osmium, Zinn |
+| Mars | Fluorit, Zinn, Uran |
+| Merkur | Blei, Osmium, Uran |
+| Venus | Fluorit, Blei, Uran |
+| Glacio | Fluorit, Blei, Osmium, Zinn, Uran |
+
+🔵 Welche davon wir wo erzeugen, wird mit der neuen Erzplanung festgelegt (`03_ERZGENERATION.md`, Mekanism-Erze hauptsächlich in Blue Skies). Der frühere Beschluss „Mond = Hauptquelle für Osmium und Certus“ ist neu zu bewerten; Certus in Mondgestein gibt es als fertigen Block nicht.
+
+### Strukturen
+
+| Quelle | Struktur | Wo |
+|---|---|---|
+| Ad Astra | Lunarian Village, Moon Dungeon, Lunar Tower | Mond |
+| Ad Astra | Mars Temple | Mars |
+| Ad Astra | Pygro Village, Pygro Tower, Venus Bullet | Venus |
+| Ad Astra | **Oil Well** | **Overworld-Ozeane** |
+| More Structures | Tower Dungeon mit Boss | Mond, Mars, Glacio |
+| More Structures | Arena Dungeon mit Boss | Merkur |
+| More Structures | Tree Dungeon mit Boss | Venus |
+| More Structures | Abandoned Base, Mystical Tree, Launch Pad (`rocket_launch_t1`) | alle Ad-Astra-Planeten |
+| Star Wars Planets | AT-AT (Hoth), AT-ST und Outpost (Endor), AT-ACT, Häuser, Dorf (Tatooine), Jawa Crawler, TIE Fighter | Star-Wars-Planeten |
+
+- `rocket_launch_t1` ist nur eine Startrampe aus Launch Pads auf den Planeten, **keine Rakete**. Sie verschenkt den ersten Raumflug nicht.
+- Die Bosse von More Structures lassen Roh-Desh, Roh-Ostrum bzw. Roh-Calorite fallen; die Truhen ebenfalls. 🔵 Mengen gegen die Erzplanung prüfen.
+- **Oil Well:** 🟢 abgeschaltet wie in 1.18.2, weil Immersive Petroleum die einzige Ölquelle bleiben soll. Datei: `kubejs/data/ad_astra/tags/worldgen/biome/has_structure/oil_well.json` (`replace: true`, leere Liste). 🔵 Liegt bisher nur im Projektordner; Wirkung nicht getestet. Gilt nur für neue Chunks und muss **vor dem ersten Start der Hauptwelt mit Ad Astra** beim Host liegen.
+
+## 🔵 Ad Astra: Rocketed (Entscheidung offen)
+
+Aus JAR: Der Mod fügt nur drei Raketen T5, T6 und T7 hinzu, jeweils mit eigenem Treibstoff-Tag (`ad_astra_rocketed:tier_5_rocket_fuel` usw.). **Er bringt keine Planeten mit, die diese Stufen verlangen.** Die Standard-Rezepte sind schwach (T5: Ice Shard statt Nose Cone, sonst Calorite; T6: Echo Shard; T7: Echo Shard und Permafrost-Fliesen).
+
+Nutzen hätte er nur, wenn wir Planeten selbst auf T5–T7 legen, zum Beispiel die Star-Wars-Planeten gestaffelt statt alle auf T4, und die Rezepte neu schreiben. Entscheidung nach der Aktualisierung der Progression.
+
+## Progressionsvorschlag (🔵 Entwurf, in Phase 2 festzulegen)
+
+| Stufe | Ziel | Kreuzungspunkte (Vorschlag) |
+|---|---|---|
+| T1 → Mond | erster Raumflug; Desh | IE-Stahl, Metal Press, Biodiesel oder Diesel, flüssiger Mekanism-Sauerstoff, **erste Mekanism-Maschine** |
+| T2 → Mars | Ostrum | Treibstoff der nächsten Stufe; Mekanism-Ausbau |
+| T3 → Merkur, Venus | Calorite (Venus); Hitzeschutz nötig | Mekanism-Chemie; **Blood-Magic-Dungeon nur hier zugänglich** (Entwurf) |
+| T4 → Glacio, Star-Wars-Planeten | Kyber, Beskar | **Magie + Uran-Erzeugnisse + Dungeon-Item** |
+| 🔵 T5–T7 | gestaffelte Star-Wars-Planeten | nur mit Ad Astra: Rocketed |
+
+## Bekannte Fehler und Stolpersteine
+
+- **`forge:sand` ist leer:** Star Wars Planets trägt `swplanets:mustafar_sand` ein, das es nicht gibt. Minecraft verwirft das ganze Tag; Mekanism meldet „Broken tags“. 🔵 Fix per KubeJS schreiben.
+- **More Structures ersetzt fünf Ad-Astra-Entity-Tags** (siehe „Wesen ohne Sauerstoff“).
+- **Star Wars Planets trägt Tatooine in `ad_astra:has_structure/oil_well_biomes` ein.** Dieses Tag heißt in Ad Astra 1.15 anders (`oil_well`); der Eintrag ist vermutlich wirkungslos. 🔵 nicht getestet.
+- Der Abschnitt mit den Maschinenwerten in `ad_astra.jsonc` heißt irreführend `cryoFreezer`, enthält aber die Werte aller Maschinen.
 
 ## Auswirkungen auf die bestehende Welt
 
 - Planeten sind neue Dimensionen → kein Retrogen nötig.
-- 🔵 Prüfen, ob Beyond Earth oder Star Wars Planets Erze/Strukturen in der **Overworld** generieren (dann Retrogen-/Worldgen-Frage).
-- Neue Metalle (Desh, Ostrum, Calorite, ggf. Star-Wars-Materialien) → Erzmatrix (`14_ERZ_MOD_MATRIX.md`), Verarbeitung (`04_VERARBEITUNG.md`), Tags (`02_RESSOURCEN.md`).
+- In der **Overworld** erzeugt Ad Astra nur die Oil Wells (abgeschaltet). Erze oder andere Strukturen kommen dort nicht dazu.
+- 🔵 Ob Galaxy in a Cube in der Overworld etwas erzeugt, ist offen (siehe `17_STAR_WARS_1.20.1.md`).
+- Neue Metalle (Desh, Ostrum, Calorite, Kyber, Beskar) → Erzmatrix (`14_ERZ_MOD_MATRIX.md`), Verarbeitung (`04_VERARBEITUNG.md`), Tags (`02_RESSOURCEN.md`).
 
 ## Offene Fragen
 
-1. 🔵 Wie verhält sich Immersive Aircraft dazu (bleibt Atmosphären-Transport)?
-2. 🔵 Welche Magie-Komponenten genau für Star-Wars-Planeten (z. B. Terrasteel, Gaia Spirit, Alfsteel, Blood-Orb-Tier)?
-3. 🟢 Sauerstoff/Treibstoff-Tiers aus JARs geklärt (2026-10-08): keine Treibstoff-Tiers, Sauerstoff im Original nur aus Wasser → Gating über Rezepte. Sauerstoff ist seit 2026-10-11 auf Mekanism umgestellt (siehe Entscheidung 1).
-4. 🔵 Eimer statt Flosse in den T2–T4-Rezepten: Fehler oder Absicht? Ggf. per KubeJS korrigieren.
-5. 🔵 Quelle für `beyond_earth:oil_bucket` (Plastic Plates/Stormtrooper-Rüstung), seit die Ölquellen abgeschaltet sind.
+1. 🔵 Treibstoff je Stufe endgültig zuordnen; bleibt Cryo Fuel?
+2. 🔵 Planet für den Blood-Magic-Zugang: Venus oder Merkur? Welches Item, wo garantiert zu holen?
+3. 🔵 Welche Magie- und Uran-Komponenten genau für T4 (z. B. Terrasteel, Alfsteel, Blood-Orb-Stufe, Polonium/Plutonium)?
+4. 🔵 Ad Astra: Rocketed nutzen und Star-Wars-Planeten staffeln?
+5. 🔵 Ad-Astra-Kabel, Fluid Pipes, Water Pump, Energizer: behalten oder entfernen?
+6. 🔵 Immersive Aircraft bleibt Atmosphären-Transport; `launchAnywhere` bleibt aus?
+7. 🔵 Treibstoffverbrauch pro Start und Schutzwirkung der Anzüge im Spiel ablesen.
 
 ## Nächste Schritte
 
-1. Passende Versionen von Beyond Earth, Star Wars Planets und Giselle Addon für 1.18.2 heraussuchen und abgleichen.
-2. In der Testinstanz installieren, Start und Log prüfen.
-3. Inhalte aus den JARs erfassen (Rezepte, Fluids, Tags, Worldgen).
-4. Pfad H in die Phase-2-Meilensteine aufnehmen.
+1. Skripte in KubeJS-2001-Syntax: Sand-Fix, Wasser-Sauerstoff-Rezept entfernen, verbotene Maschinen und Rezepte entfernen.
+2. Die drei Tag-Overrides im Spiel prüfen (Oil Well, Mekanism-Ad-Astra-Erze).
+3. Erzplanung für Planeten und Blue Skies (`03_ERZGENERATION.md`, Erzmatrix, Erzatlas).
+4. Treibstoff-Stufen festlegen und als Tags umsetzen.
+5. Pfad Raumfahrt in die Meilensteine aufnehmen (`docs/meilensteine/`).
 
 ## Quellen
 
-- https://www.curseforge.com/minecraft/mc-mods/Beyond-Earth
-- https://www.curseforge.com/minecraft/mc-mods/space-bosstools-giselle-addon
-- https://metamods.net/en/mods/star-wars-planets-be
+- JARs und Configs der Instanz `Minecraft1201withForge` (Stand 2026-10-11)
+- https://modrinth.com/mod/ad-astra
+- https://ad-astra.terrarium.wiki/custom-planets.html

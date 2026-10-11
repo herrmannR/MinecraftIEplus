@@ -1,5 +1,7 @@
 # Erzatlas
 
+> ⚠️ **Stand 1.18.2 (Twilight Forest, Beyond Earth).** Nach dem Wechsel auf 1.20.1 muss diese Übersicht samt Artifact-Seite neu aufgebaut werden; siehe TODO-Liste in `../00_STATUS.md`.
+
 Grafische Übersicht aller Erze: Fundorte, Mengen und Verbrauch pro Mod.
 
 - **Live-Seite (Artifact, privat):** https://claude.ai/artifact/LWwdvCpXRwaHCa8NstSc4g

@@ -350,3 +350,62 @@ Status: 🟢 (Entscheidung) / 🔵 (Test)
 
 ### Auswirkungen auf bestehende Welt
 Keine. Raumfahrt ist in der Hauptwelt noch nicht begonnen. Das Skript ist ein Server-Skript und muss beim Host liegen.
+
+## 2026-10-11 — Star-Wars-Mods für den 1.20.1-Kandidaten
+
+Status: 🟢 (Entscheidung) / 🔵 (Test)
+
+- Neu im 1.20.1-Kandidaten: **Star Wars: Galaxy in a Cube** 1.0.3.1 (Lichtschwerter, Macht, Klone, Droiden, Fahrzeuge).
+- Star Wars Planets bleibt für Planeten, Strukturen, Kyber und Beskar. Seine Lichtschwerter werden per KubeJS entfernt, damit nichts doppelt ist (Skript noch nicht angelegt).
+- Verworfen: Star Wars Expansion (zweites Reisesystem, doppelte Planeten), Star Wars Clone Wars (Rupyber) und Star Wars The Clone Wars (MelonHaver), beide von Galaxy in a Cube abgedeckt.
+- Details und offene Tests: `17_STAR_WARS_1.20.1.md`; Recherche in `recherche/star-wars-clone-wars-mods-1.20.1.md`.
+
+### Auswirkungen auf bestehende Welt
+Keine, solange der Wechsel auf 1.20.1 nicht beschlossen ist. 🔵 Offen: ob Galaxy in a Cube in der Overworld Erze, Strukturen oder Mobs erzeugt.
+
+## 2026-10-11 — Wechsel auf Minecraft 1.20.1 beschlossen
+
+Status: 🟢 (Entscheidung) / 🔵 (Umsetzung)
+
+### Änderung
+- Das Pack wechselt von 1.18.2 auf **Minecraft 1.20.1, Forge 47.4.26**. Die bestehende Welt wird mitgenommen.
+- Raumfahrt: **Ad Astra** + Ad Astra: Giselle Addon + Star Wars Planets (Ad-Astra-Version) ersetzen Beyond Earth und dessen Addons.
+- **Twilight Forest entfällt**, Ersatz ist **Blue Skies** (Story-Dimension, künftige Hauptquelle der Mekanism-Erze).
+- **Waystones entfällt** (samt Balm). **Light Overlay** und **LazyDFU** entfallen.
+- **Wesley's Roguelike Dungeons bleibt** als Spaß-Dungeon-Welt.
+- Neu fest im Pack: Alex's Mobs, Alex's Delight, Citadel, Engineers Delight, iaie, Meka Jade Upgrade, KubeJS Additions.
+- 🔵 Entwurf: Zugang zum Blood-Magic-Dungeon nur auf einem Ad-Astra-Planeten (Venus oder Merkur), dort ein Pflicht-Item für die T4-Rakete.
+
+### Begründung
+- Ad Astra wird gepflegt, hat Treibstoff-Tags je Raketenstufe und datengetriebene Planeten; Beyond Earth 1.18.2 ist eingestellt.
+- Twilight Forest 4.3.2508 stürzt beim Start im Intel-Grafiktreiber ab (Iris Xe, Treiber 32.0.101.7088). Ein Treiberwechsel ist nicht gewünscht.
+- Der Welt-Test mit einer Kopie der Hauptwelt war erfolgreich bis auf die IE-/IP-Multiblöcke (siehe unten).
+
+### Betroffene Bereiche
+Alle. Die Dokumente 00–15 beschreiben noch den Stand 1.18.2 und werden schrittweise angepasst. Mod-Liste und Testergebnisse: `16_MODLISTE_1.20.1.md`.
+
+### Auswirkungen auf bestehende Welt
+- Twilight-Forest-Dimension, Waystones und Chisels-&-Bits-Blöcke (Mod des Hosts) gehen verloren.
+- **Alle gebauten IE-/IP-Multiblöcke verlieren Funktion und Inhalt.** Vor dem Wechsel in 1.18.2 leeren und zerlegen, danach neu formen.
+- `serverconfig/immersivepetroleum-server.toml` vor dem ersten Start aus dem Weltordner entfernen (sonst Absturz).
+- Zurück auf 1.18.2 geht nach dem Öffnen nicht mehr; vollständiges Backup beim Host nötig.
+
+### KubeJS / technische Umsetzung
+- Hinfällig: `space_oxygen.js`, `moon_ores.js`, der Ölquellen-Tag (alle Beyond Earth) sowie `tf_industrial_ores.js` und `tf_remove_foreign_ores.js` (Twilight Forest).
+- Neu zu schreiben in KubeJS-2001-Syntax: Erze für Blue Skies (Freigabe über `allowed_mods_for_feature_gen`), Sauerstoff- und Treibstoffregeln für Ad Astra.
+- `Mekanism/world.toml` und die IE-Serverconfig gegen die 1.20.1-Versionen neu abgleichen.
+
+### Teststatus
+Testinstanz `Minecraft1201withForge` startet und lädt die Welt-Kopie. 🔵 Offen: Ad Astra samt Addons, Ölförderung nach Neuaufbau der Pumpe, Mekanism-Erze in Blue Skies.
+
+## 2026-10-11 — Doku abgeschlossen, Analyse startet neu
+
+Status: 🟢
+
+- Nachträge zur Mod-Liste: Bonsai Trees 3, Traveler's Backpack und Balm entfallen; Chisels & Bits, Embeddium, Easy NPC (für Story-Figuren, Phase 7b), Ad Astra: More Structures und Mekanism: Ad Astra Ores kommen dazu. Ad Astra: Rocketed ist installiert, die Entscheidung ist offen.
+- Mekanism: Ad Astra Ores bleibt nur wegen der Erzblöcke; seine Generierung ist per Tag-Override abgeschaltet. Die Ad-Astra-Ölquellen sind ebenfalls per Override abgeschaltet (nur im Projektordner).
+- `15_RAUMFAHRT.md` ist für Ad Astra neu geschrieben (aus den JARs gelesen).
+- 🟢 Entscheidung des Users: Nach Versionswechsel und Mod-Änderungen beginnt die gesamte Analyse von vorne. Skripte für 1.20.1 wurden bewusst noch nicht geschrieben. Die Dokumente 00–14 tragen einen Warnhinweis „Stand 1.18.2“; Einstieg und TODO-Liste stehen in `00_STATUS.md`.
+
+### Teststatus
+Die Testinstanz startet mit 102 Mods und lädt eine Welt (Log 23:07 Uhr). Keiner der drei Tag-Overrides ist im Spiel geprüft.

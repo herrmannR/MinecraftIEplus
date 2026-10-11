@@ -1,5 +1,7 @@
 # 13 — TESTINSTANZ-CHANGELOG
 
+> ⚠️ Dieses Protokoll gilt für die 1.18.2-Testinstanz `TestIEInstance`. Die 1.20.1-Testinstanz `Minecraft1201withForge` ist in `16_MODLISTE_1.20.1.md` beschrieben.
+
 Protokoll **jeder** Änderung in `C:\Users\richa\AppData\Roaming\ATLauncher\instances\TestIEInstance`.
 
 Format pro Eintrag:

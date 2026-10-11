@@ -1,5 +1,7 @@
 # 00 — MODBASIS
 
+> ⚠️ **Stand 1.18.2, überholt.** Der Wechsel auf 1.20.1 ist beschlossen (2026-10-11). Die gültige Mod-Liste steht in `16_MODLISTE_1.20.1.md`; dieses Dokument wird noch angepasst.
+
 ## Zweck
 
 Referenz für die festgelegte Modpack-Basis. Die Modliste wird nicht stillschweigend verändert.
