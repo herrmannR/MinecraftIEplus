@@ -1,56 +1,69 @@
-# Minecraft-Modpack (Wechsel 1.18.2 → 1.20.1) — Projektstatus
+# Minecraft-Modpack „Immersive Engineering+“ (1.20.1) — Projektstatus
 
 > Zentrale Übersicht und Einstiegspunkt für das gesamte Modpack-Projekt.
-> Letzte Überarbeitung: 2026-10-11 (Wechsel auf 1.20.1 beschlossen, Übergabe für den Neustart der Analyse).
+> Letzte Überarbeitung: 2026-10-12 (Neustart der Analyse, Block A abgeschlossen).
 
-## ▶ Übergabe: Neustart der Analyse (Stand 2026-10-11)
+## ▶ Wo wir stehen
 
-Nach dem Versionswechsel und den Mod-Änderungen wird die gesamte Analyse **von vorne** begonnen (Entscheidung des Users, 2026-10-11). Es wurden bewusst **noch keine Skripte** für 1.20.1 geschrieben.
+Am 2026-10-11 wurde der Wechsel von 1.18.2 auf **Minecraft 1.20.1, Forge 47.4.26** beschlossen; die gesamte Analyse beginnt von vorne. Am 2026-10-12 wurde **Block A (Grundlagen)** aus den JARs der Testinstanz neu aufgenommen. Am selben Tag hat der User die **Erzverteilung (Block B)** entschieden; Configs und Erzatlas sind angepasst. Ebenfalls am 2026-10-12 wurde **Block C (Progression)** begonnen: Treibstoffe, Dungeon-Planet und Ad-Astra-Maschinen sind entschieden, die Meilensteinkarte liegt als Entwurf für 1.20.1 vor. **Nächste Schritte:** Entwurf der Meilensteinkarte bestätigen, die vier zurückgestellten Fragen klären (siehe Block C), dann die Tests aus Block E im Spiel. Eine erste Fassung der Skripte und Overrides (**Block D**) liegt im Projektordner; sie ist seit dem 2026-10-12 in die Testinstanz kopiert, aber im Spiel noch ungetestet (Testplan: `11_TESTING.md`).
 
 ### Welche Dokumente gelten
 
 | Dokument | Stand |
 |---|---|
-| `16_MODLISTE_1.20.1.md` | 🟢 aktuell: Mod-Liste, Testinstanz, Welt-Test, Befunde zu Blue Skies |
-| `15_RAUMFAHRT.md` | 🟢 aktuell: Ad Astra und Addons aus den JARs gelesen |
-| `17_STAR_WARS_1.20.1.md`, `recherche/` | 🟢 aktuell (aus einer parallelen Sitzung) |
+| `00_STATUS.md` (dieses Dokument) | 🟢 1.20.1 |
+| `00_MODBASIS.md` | 🟢 1.20.1, verbindliche Mod-Liste (Rohliste `mods_v5.txt`) |
+| `02_RESSOURCEN.md` | 🟢 1.20.1, Inventur aus den JARs |
+| `14_ERZ_MOD_MATRIX.md` | 🟢 1.20.1, Ist und Soll |
+| `15_RAUMFAHRT.md` | 🟢 1.20.1 |
+| `16_MODLISTE_1.20.1.md` | 🟢 Befunde zu Blue Skies und Welt-Test (die Mod-Liste steht jetzt in `00_MODBASIS.md`) |
+| `17_STAR_WARS_1.20.1.md`, `recherche/` | 🟢 1.20.1 (aus einer parallelen Sitzung) |
 | `12_CHANGELOG.md` | 🟢 fortlaufend |
-| `00_STATUS.md` (dieses Dokument) | 🟡 Übergabe aktuell; alles ab „Projektziel“ ist noch 1.18.2 |
-| `00_MODBASIS.md`, `01`–`11`, `14` | 🔴 Stand 1.18.2, mit Warnhinweis versehen |
+| `03_ERZGENERATION.md` | 🟡 1.20.1: Verteilung beschlossen, Zahlen sind ungetestete Vorschläge |
+| `erzatlas/` (samt Artifact-Seite) | 🟢 1.20.1, Soll-Verteilung |
+| `10_KUBEJS.md` | 🟡 1.20.1 |
+| `11_TESTING.md` | 🟢 1.20.1, Testplan; alle Ergebnisse offen |
+| `04`–`09` | 🔴 Stand 1.18.2, mit Warnhinweis versehen |
 | `13_TESTINSTANZ_CHANGELOG.md` | gilt nur für die 1.18.2-Testinstanz |
-| `erzatlas/`, `meilensteine/` (samt Artifact-Seiten) | 🔴 Stand 1.18.2 (Twilight Forest, Beyond Earth) |
+| `01_PROGRESSION.md` | 🟡 1.20.1, vier Fragen offen |
+| `meilensteine/` (samt Artifact-Seite) | 🟡 1.20.1, Entwurf mit 23 Meilensteinen |
 
 ### TODO-Liste für den Neustart
 
-**A. Grundlagen neu aufnehmen**
-1. `00_MODBASIS.md` auf 1.20.1 umschreiben (Quelle: `16_MODLISTE_1.20.1.md`); danach beide zusammenführen.
-2. In `16_MODLISTE_1.20.1.md` die zwei Abschnitte zum Welt-Test zusammenführen (einer stammt aus einer parallelen Sitzung).
-3. Inventur der 1.20.1-JARs: Erze, Metalle, Tags, Flüssigkeiten, Maschinen (`02_RESSOURCEN.md`, `14_ERZ_MOD_MATRIX.md`). Neu dabei: Ad Astra, Blue Skies, Star Wars Planets, Galaxy in a Cube, Alex's Mobs, Chisels & Bits, Easy NPC.
-4. Dieses Dokument ab „Projektziel“ auf 1.20.1 bringen (Umgebung, Weltstand, Designrichtung, Arbeitsplan).
+**A. Grundlagen neu aufnehmen** — 🟢 erledigt (2026-10-12)
+1. ✅ `00_MODBASIS.md` auf 1.20.1 umgeschrieben und mit `16_MODLISTE_1.20.1.md` zusammengeführt.
+2. ✅ Die zwei Abschnitte zum Welt-Test in `16_MODLISTE_1.20.1.md` zusammengeführt.
+3. ✅ Inventur der 1.20.1-JARs: Erze, Metalle, Tags, Flüssigkeiten, Maschinen (`02_RESSOURCEN.md`, `14_ERZ_MOD_MATRIX.md`).
+4. ✅ Dieses Dokument auf 1.20.1 gebracht.
 
-**B. Worldgen neu planen (ersetzt Phase 1)**
-5. Erzverteilung neu festlegen: Mekanism-Erze hauptsächlich in **Blue Skies** (Freigabe über `allowed_mods_for_feature_gen`), Planeten-Erze selbst bestimmen (Blöcke aus „Mekanism: Ad Astra Ores“).
-6. Alte Beschlüsse neu bewerten: „Zinn nur im Twilight Forest“, „Osmium Overworld selten“, „Mond = Hauptquelle für Osmium und Certus“, „Lead/Uranium nur Mekanism-Erz“.
-7. `Mekanism/world.toml` und die IE-Serverconfig gegen die 1.20.1-Formate neu aufsetzen; Retrogen für 1.20.1 prüfen.
-8. Erzatlas und `03_ERZGENERATION.md` neu aufbauen.
+**B. Worldgen neu planen (ersetzt Phase 1)** — 🟡 entschieden (2026-10-12), Umsetzung und Test offen
+5. ✅ Erzverteilung festgelegt (`03_ERZGENERATION.md`): Zinn nur Everbright; Blei und Aluminium dort häufig, in der Overworld selten; Osmium in der Overworld wenig, in Everdawn und auf dem Mond viel; Uran auf Merkur und Venus; Fluorit auf dem Mars.
+6. ✅ Alte Beschlüsse neu bewertet: Blei und Uran bleiben nur Mekanism-Erz; Certus bleibt AE2-Standard (nur Meteoriten); Kyber-Kristalle aus der Overworld entfernen; Excavator-Ader Cassiterite entfernen.
+7. ✅ `config-overrides/config/Mekanism/world.toml` und `config-overrides/serverconfig/immersiveengineering-server.toml` auf Basis der 1.20.1-Standarddateien neu aufgesetzt; alte AE2-Config entfernt. 🔵 Retrogen und Werte im Spiel prüfen (E17).
+8. ✅ Erzatlas und `03_ERZGENERATION.md` neu aufgebaut. 🔵 Offen: eigene Erz-Features für Blue Skies und die Planeten, Kyber-Override, Excavator-Adern (alles Block D).
 
-**C. Progression**
-9. Meilensteinkarte neu aufbauen: Twilight Forest → Blue Skies, Beyond Earth → Ad Astra, dazu Star Wars, Blood-Magic-Dungeon auf einem Planeten, Wesley's.
-10. Offene Entscheidungen aus `15_RAUMFAHRT.md` klären: Treibstoff je Raketenstufe, Planet für den Blood-Magic-Zugang, Magie- und Uran-Komponenten für T4, Ad Astra: Rocketed, Umgang mit Ad-Astra-Maschinen.
-11. Blue Skies: Entscheidung zur Werkzeug-Abschwächung (Tinkers-Werkzeuge sind betroffen, getestet).
+**C. Progression** — 🟡 teilweise entschieden (2026-10-12)
+9. 🟡 Meilensteinkarte als Entwurf für 1.20.1 neu aufgebaut und veröffentlicht (23 Meilensteine, 9 Stufen); `01_PROGRESSION.md` neu geschrieben. 🔵 Bestätigung durch den User steht aus.
+10. Entscheidungen aus `15_RAUMFAHRT.md`:
+    - ✅ Treibstoff: T1 Biodiesel, T2 entschwefelter Diesel, T3 Kerosin, T4 eigener Raketentreibstoff.
+    - ✅ Blood-Magic-Dungeon nur auf dem **Merkur**.
+    - ✅ Ad-Astra-Kabel, Fluid Pipes und Water Pump entfernen; Energizer entfernen, wenn die Alternative (IE Charging Station oder Mekanism Energy Cube) im Test funktioniert.
+    - 🔵 Zurückgestellt: Magie- und Uran-Teile für T4; Ad Astra: Rocketed; Cryo Fuel.
+    - 🔵 Neu: Soll Petroleum vor dem ersten Raumflug Pflicht bleiben, obwohl T1 mit Biodiesel fliegt?
+11. ✅ Blue Skies: Die Werkzeug-Abschwächung wird als gewollte Hürde hingenommen. 🔵 Im Spiel messen, wie stark sie das Abbauen bremst.
 
-**D. Skripte und Fixes (erst nach A–C)**
-12. KubeJS-2001-Syntax: alle bisherigen Skripte neu schreiben oder löschen. Hinfällig sind `space_oxygen.js`, `moon_ores.js`, `tf_industrial_ores.js`, `tf_remove_foreign_ores.js`, `debug_print_ore_features.js` und der Beyond-Earth-Ölquellen-Tag.
-13. Bekannte Fehler beheben: `forge:sand` leer (Star Wars Planets), `forge:coins` leer und fehlende Hellforged-Flüssigkeiten (Blood-Smeltery).
-14. Regel „Energie/Treibstoff/Sauerstoff nur aus anderen Mods“ für Ad Astra umsetzen (Tabelle in `15_RAUMFAHRT.md`).
-15. Drei Tag-Overrides im Spiel prüfen: `mekanismaaa/…/gen_ores*.json` (in der Testinstanz) und `ad_astra/…/oil_well.json` (nur im Projektordner).
+**D. Skripte und Fixes** — 🟡 erste Fassung (2026-10-12), in die Testinstanz kopiert, ungetestet
+12. ✅ Alte 1.18.2-Skripte und `kubejs/data/beyond_earth/` gelöscht. Neu in KubeJS-2001-Syntax: drei Server-Skripte und das Datapack mit zwölf Erz-Features (`10_KUBEJS.md`, `kubejs/data/README.md`).
+13. 🟡 `forge:sand` per Skript repariert (ungetestet). 🔵 Offen: `forge:coins` und die fehlenden Hellforged-Flüssigkeiten (Blood-Smeltery).
+14. 🟡 Regel „Energie/Treibstoff/Sauerstoff nur aus anderen Mods“ für Ad Astra umgesetzt, soweit entschieden (Rezepte entfernt, Platten über die IE Metal Press, Treibstoff-Tags T1 bis T3). 🔵 Offen: T4-Treibstoff, Energizer, Cryo Freezer.
+15. ✅ Alles in die Testinstanz kopiert (2026-10-12, mit Zustimmung des Users). 🔵 Im Spiel prüfen: Testplan in `11_TESTING.md`.
 
-**E. Tests, die noch fehlen**
+**E. Tests, die noch fehlen** — 🔵 Testplan mit 27 Punkten steht in `11_TESTING.md`; die Tests macht der User im Spiel
 16. Ölförderung: Pumpe an alter Stelle neu formen, findet sie das Vorkommen?
 17. Mekanism-Erze in Blue Skies und auf den Planeten erzeugen lassen.
-18. Treibstoffverbrauch pro Raketenstart und Schutzwirkung der Raumanzüge ablesen.
+18. Treibstoffverbrauch pro Raketenstart und Schutzwirkung der Raumanzüge ablesen. Dazu: Laden sich Jet Suit und Etrionic Capacitor ohne Energizer? Bleiben Räume dicht, wenn IE-Leitungen oder Mekanism-Kabel hineinführen?
 19. Blood Magic: Ritual-Ereignis per KubeJS abfangen (Dungeon-Zugang nur auf einem Planeten).
-20. Galaxy in a Cube: erzeugt der Mod etwas in der Overworld?
+20. 🟡 Galaxy in a Cube in der Overworld: aus dem JAR beantwortet (Kyber-Kristalle in allen Overworld-Biomen, Ewok-Dörfer im Wald, Jawas in Wüsten). Offen: im Spiel bestätigen und entscheiden, ob das bleibt.
 
 **F. Umstellung der Hauptwelt (ersetzt Phase 8)**
 21. Mod-Liste des Hosts abgleichen (Chisels & Bits war nur dort).
@@ -59,39 +72,27 @@ Nach dem Versionswechsel und den Mod-Änderungen wird die gesamte Analyse **von 
 24. Alte `serverconfig/immersivepetroleum-server.toml` aus dem Weltordner entfernen; Worldgen-Configs und Tag-Overrides **vor dem ersten Start** einspielen.
 25. Questbuch und Story-Figuren (Phase 7b).
 
-## 🟢 Versionswechsel auf 1.20.1 beschlossen (2026-10-11)
-
-Das Pack wechselt auf **Minecraft 1.20.1, Forge 47.4.26**; die bestehende Welt wird mitgenommen. **Dieses Dokument ab „Projektziel“ und die Dokumente 00–14 beschreiben noch den Stand 1.18.2.**
-
-- Raumfahrt: Ad Astra + Giselle Addon + Star Wars Planets (Ad-Astra-Version) statt Beyond Earth.
-- Twilight Forest entfällt (Absturz im Intel-Grafiktreiber), Ersatz ist Blue Skies.
-- Waystones entfällt. Wesley's Roguelike Dungeons bleibt.
-- Phase 1 (Worldgen) muss für 1.20.1 wiederholt werden: Die Skripte für Twilight Forest und Beyond Earth sind hinfällig.
-- Testinstanz für 1.20.1: `…\ATLauncher\instances\Minecraft1201withForge`.
-- Vor der Umstellung der Hauptwelt: alle IE-/IP-Multiblöcke in 1.18.2 leeren und zerlegen.
-
-Mod-Liste, Testergebnisse und offene Punkte: `16_MODLISTE_1.20.1.md`. Begründung: `12_CHANGELOG.md`.
-
 ## Projektziel
 
-Ein bestehendes Minecraft-1.18.2-Forge-Modpack („Immersive Engineering+“, ATLauncher) soll zu einem kohärenten, progressiven Modpack ausgebaut werden. Die vorhandene Welt bleibt erhalten. Mods sollen nicht isoliert nebeneinanderstehen, sondern sich über Ressourcen, Verarbeitung, Energie, Magie und Automatisierung gegenseitig ergänzen.
+Das Forge-Modpack „Immersive Engineering+“ (ATLauncher) wird auf Minecraft 1.20.1 zu einem kohärenten, progressiven Modpack ausgebaut. Die vorhandene Welt wird mitgenommen. Mods sollen nicht isoliert nebeneinanderstehen, sondern sich über Ressourcen, Verarbeitung, Energie, Magie und Automatisierung ergänzen. Hauptziel der Progression ist die Raumfahrt.
 
 ## Umgebung
 
 | Was | Wo | Zugriff |
 |---|---|---|
-| Projekt / Doku / Skript-Quellen | `C:\Users\richa\Projekte\MinecraftIEplus` (Git) | frei |
-| Eigene Spielinstanz | `…\ATLauncher\instances\ImmersiveEngineering` | **nur lesen** |
-| Testinstanz | `…\ATLauncher\instances\TestIEInstance` | frei, jede Änderung in `13_TESTINSTANZ_CHANGELOG.md` |
-| **Hauptwelt** | beim Mitspieler (Host), Spiel über **LAN** | kein Zugriff; Übernahme durch die Spieler |
+| Projekt, Doku, Skript-Quellen | `C:\Users\richa\Projekte\MinecraftIEplus` (Git) | frei |
+| **Testinstanz 1.20.1** | `…\ATLauncher\instances\Minecraft1201withForge` | Mods pflegt der User; Schreibzugriffe vorher abstimmen |
+| Alte Spielinstanz 1.18.2 | `…\ATLauncher\instances\ImmersiveEngineering` | **nur lesen** |
+| Alte Testinstanz 1.18.2 | `…\ATLauncher\instances\TestIEInstance` | nicht mehr in Gebrauch |
+| **Hauptwelt** | beim Mitspieler (Host), Spiel über **LAN**, noch in 1.18.2 | kein Zugriff; Übernahme durch die Spieler |
+| Kopie der Hauptwelt | `welten_backups/WeltVorClaude.zip` (nicht in Git); entpackt in der Testinstanz als `saves\3_ Versuch von 1,5` | Test |
 
-### Konsequenzen aus LAN-Betrieb
+### Konsequenzen aus dem LAN-Betrieb
 
-- Der **Host** erzeugt die Welt: Worldgen, Server-Skripte (KubeJS `server_scripts`) und Server-Configs wirken nur über die Instanz des Hosts.
-- IE-Server-Configs liegen **pro Welt** in `saves/<Welt>/serverconfig/` — sie müssen in die Welt des Hosts übernommen werden, nicht nur in `config/`.
-- Mekanism-Worldgen liegt in `config/Mekanism/world.toml` der Host-Instanz.
-- Alle Spieler brauchen identische Mods; Client-/Startup-Skripte (KubeJS `startup_scripts`, `client_scripts`, `assets`) müssen bei **allen** Spielern liegen.
-- `saves/WasIchBauenWill` in den lokalen Instanzen ist eine **Testwelt**, nicht die Hauptwelt.
+- Der **Host** erzeugt die Welt: Worldgen, Server-Skripte (KubeJS `server_scripts`, `kubejs/data`) und Server-Configs wirken nur über die Instanz des Hosts.
+- IE-Server-Configs liegen **pro Welt** in `saves/<Welt>/serverconfig/` und müssen in die Welt des Hosts.
+- Mekanism-Worldgen liegt in `config/Mekanism/world.toml` der Host-Instanz, die Blue-Skies-Freigabe in `config/blue_skies-common.toml`.
+- Alle Spieler brauchen identische Mods; Startup- und Client-Skripte müssen bei **allen** Spielern liegen.
 
 ## Arbeitsregeln
 
@@ -100,27 +101,29 @@ Ein bestehendes Minecraft-1.18.2-Forge-Modpack („Immersive Engineering+“, AT
 - Fakten nur, wenn verifiziert (JAR, Config, Log oder Test). Vermutungen werden als 🔵 markiert oder erfragt.
 - KubeJS und Configs sind die Implementierungsebene; die Designentscheidungen liegen in dieser Dokumentation.
 - Experimente nur in der Testinstanz.
-- Änderungen werden im CHANGELOG dokumentiert; Änderungen an der Testinstanz zusätzlich in `13_TESTINSTANZ_CHANGELOG.md`.
+- Änderungen werden im CHANGELOG dokumentiert.
+- Reihenfolge: erst Analyse und Entscheidungen (A–C), dann Skripte (D). Skripte nur für das, was entschieden ist.
 
 ## Statussystem
 
-- 🟢 DECIDED — verbindlich beschlossen / verifiziert
+- 🟢 DECIDED — verbindlich beschlossen oder verifiziert
 - 🟡 PLANNED — vorgesehen, aber noch nicht vollständig spezifiziert
-- 🔵 OPEN — noch zu entscheiden / zu verifizieren
-- 🔴 BLOCKED — kann erst nach einer anderen Entscheidung bearbeitet werden
+- 🔵 OPEN — noch zu entscheiden oder zu verifizieren
+- 🔴 BLOCKED / überholt — kann erst nach einer anderen Entscheidung bearbeitet werden bzw. gilt nicht mehr
 
 ## ⚠️ Wichtig für den Host
 
-**Die Hauptwelt nicht mit Mekanism öffnen, bevor die finalen Worldgen-Configs eingespielt sind.** Sonst generiert Mekanism in allen neu betretenen Chunks mit Default-Werten, inklusive Zinn und Blei in der Overworld. Retrogen kann das nicht rückgängig machen.
+1. **Die Hauptwelt nicht in 1.20.1 öffnen, bevor die finalen Worldgen-Configs und Tag-Overrides eingespielt sind.** Sonst erzeugen Mekanism, Ad Astra (Ölquellen) und Galaxy in a Cube in allen neu betretenen Chunks ihre Standardwerte. Retrogen kann zu viel Erzeugtes nicht zurücknehmen.
+2. **Vor dem Wechsel, noch in 1.18.2:** alle IE- und IP-Multiblöcke leeren und zerlegen; Traveler's-Rucksäcke und Bonsai-Töpfe leeren; Wichtiges aus dem Twilight Forest holen.
+3. Alte `serverconfig/immersivepetroleum-server.toml` aus dem Weltordner entfernen (sonst Absturz beim Laden).
 
-## Stand der Hauptwelt (2026-10-07)
+## Stand der Hauptwelt (2026-10-07, noch 1.18.2)
 
 - Botania: Rune Altar vorhanden.
-- Immersive Engineering: Steel, Biodiesel-Generator, Crusher, Arc Furnace (Lichtbogenofen), Pumpjack/Ölförderung gerade gebaut.
-- Tinkers Construct: begonnen.
-- Twilight Forest: gerade erstmals betreten.
-- Applied Energistics 2: noch nicht begonnen.
-- **Mekanism, Mekanism Generators, Blood Magic, Blood-Smeltery und deren Integrationsmods wurden gerade erst hinzugefügt. Die Hauptwelt wurde noch nie mit Mekanism geöffnet.** Alle erkundeten Chunks haben keine Mekanism-Erze (→ Retrogen, siehe `03_ERZGENERATION.md`).
+- Immersive Engineering: Stahl, Biodiesel-Generator, Crusher, Lichtbogenofen, Pumpjack und Coker.
+- Tinkers Construct: begonnen. Twilight Forest: gerade erstmals betreten (entfällt). AE2: nicht begonnen.
+- **Die Hauptwelt wurde noch nie mit Mekanism geöffnet.** Alle erkundeten Chunks haben keine Mekanism-Erze → Retrogen.
+- Was der Wechsel mit der Welt macht (kaputte Multiblöcke, entfernte Inhalte): `16_MODLISTE_1.20.1.md`.
 
 ## Festgelegte Designrichtung
 
@@ -128,19 +131,27 @@ Ein bestehendes Minecraft-1.18.2-Forge-Modpack („Immersive Engineering+“, AT
 
 🟢 Magie: Botania, MythicBotany, Blood Magic.
 
-🟢 Werkzeuge/Materialien: Tinkers Construct, Tinkers Levelling Addon, Blood-Smeltery.
+🟢 Werkzeuge und Materialien: Tinkers' Construct, Tinkers Levelling Addon, TCIntegrations, Blood-Smeltery.
 
-🟢 Mekanism übernimmt die High-Tech-/Chemie-/Verarbeitungsrolle, ersetzt aber nicht automatisch jede andere Verarbeitung.
+🟢 Immersive Engineering bleibt die industrielle Grundlage. Mekanism übernimmt die High-Tech-, Chemie- und Verarbeitungsrolle, ersetzt aber nicht automatisch jede andere Verarbeitung.
 
-🟢 Immersive Engineering bleibt die industrielle Grundlage.
+🟢 **AE2 ist Endgame.** Einzige Ausnahme: ein früher, teurer Storage-Layer, mit dem bestehende Kisten und Drawers angebunden und durchsucht werden können.
 
-🟢 **AE2 ist Endgame.** Einzige Ausnahme: ein früher, teurer Storage-Layer, mit dem bestehende Kisten/Drawers angebunden und durchsucht werden können.
+🟢 Keine Erweiterung „More Mekanism Processing“; Erträge werden gezielt selbst balanciert. Keine weiteren großen Basistech-Mods.
 
-🟢 Keine Erweiterung „More Mekanism Processing“; Erträge werden gezielt selbst gebalanced.
+🟢 **Raumfahrt ist Hauptziel des Packs** (Ad Astra, Giselle Addon, Star Wars Planets, Galaxy in a Cube). Energie, Treibstoff und Sauerstoff dafür kommen ausschließlich aus IE, Immersive Petroleum und Mekanism; Sauerstoff zwingend aus Mekanism (`15_RAUMFAHRT.md`).
 
-🟢 Keine weiteren großen Basistech-Mods. Spätere Erweiterungen sind Endgame-orientiert und werden separat entschieden.
+🟢 **Blue Skies ersetzt Twilight Forest** als Story-Dimension und soll Hauptquelle der Mekanism-Erze werden (🔵 Verteilung in Block B).
 
-🟢 **Raumfahrt ist Hauptziel des Packs** (Beyond Earth + Star Wars Planets + Giselle Addon). Energie und Treibstoff dafür kommen ausschließlich aus anderen Mods (IE, Immersive Petroleum, Mekanism). Details: `15_RAUMFAHRT.md`.
+🟢 **Die Erzverteilung legen wir selbst fest.** Fremde Erz-Generierung auf den Planeten wird abgeschaltet. Osmium muss erreichbar bleiben; Retrogen ist eingeplant.
+
+🟢 Wesley's Roguelike Dungeons bleibt als Spaß-Dungeon. Easy NPC liefert Story-Figuren für das Questbuch.
+
+🟡 Der Blood-Magic-Dungeon ist nur auf dem Merkur zugänglich und liefert ein Pflicht-Item für die T4-Rakete (Planet entschieden 2026-10-12; Machbarkeit ungetestet).
+
+🟢 Treibstoff je Raketenstufe: Biodiesel, entschwefelter Diesel, Kerosin, eigener Raketentreibstoff (2026-10-12).
+
+🟢 Die Werkzeug-Abschwächung in Blue Skies ist eine gewollte Hürde (2026-10-12).
 
 ---
 
@@ -148,43 +159,49 @@ Ein bestehendes Minecraft-1.18.2-Forge-Modpack („Immersive Engineering+“, AT
 
 Leitidee: **erst das Zeitkritische und Strukturelle entscheiden, dann balancieren, dann implementieren.**
 
-| Phase | Inhalt | Status |
-|---|---|---|
-| 0 | Grundlagen: Projekt/Git, Doku verifiziert & korrigiert, Testinstanz | 🟢 |
-| 1 | **Worldgen** (zeitkritisch) | 🟢 in der Testinstanz abgeschlossen (2026-10-08); Übernahme in Phase 8 |
-| 2 | Progressions-Meilensteine (Gates & Kreuzungspunkte) | 🔵 |
-| 3 | Verarbeitung & Erträge | 🔵 |
-| 4 | Energie & Flüssigkeiten | 🔵 |
-| 5 | AE2 zweistufig (früher Storage-Layer / Endgame-ME) | 🔵 |
-| 6 | Cross-Mod-Rezepte | 🔵 |
-| 7 | KubeJS-/Config-Umsetzung & Test in der Testinstanz | 🔵 |
-| 7b | **Questbuch & Story:** FTB Quests entlang der Meilensteinkarte, Story-Figuren mit Easy NPC (+ Dialogue Immersion) | 🔵 |
-| 8 | Übernahme in die Hauptwelt (Host) | 🔵 |
+| Phase | Inhalt | Block | Status |
+|---|---|---|---|
+| 0 | Grundlagen: Mod-Basis, Inventur, Testinstanz | A | 🟢 (2026-10-12) |
+| 1 | **Worldgen** (zeitkritisch) | B | 🟡 entschieden (2026-10-12); Umsetzung in D, Test in E |
+| 2 | Progressions-Meilensteine (Gates und Kreuzungspunkte) | C | 🟡 Entwurf liegt vor, vier Fragen offen |
+| 3 | Verarbeitung und Erträge | — | 🔵 |
+| 4 | Energie und Flüssigkeiten | — | 🔵 |
+| 5 | AE2 zweistufig (früher Storage-Layer, Endgame-ME) | — | 🔵 |
+| 6 | Cross-Mod-Rezepte | — | 🔵 |
+| 7 | KubeJS- und Config-Umsetzung, Test in der Testinstanz | D, E | 🔵 |
+| 7b | **Questbuch und Story:** FTB Quests entlang der Meilensteinkarte, Story-Figuren mit Easy NPC | F25 | 🔵 |
+| 8 | Übernahme in die Hauptwelt (Host) | F | 🔵 |
 
 ### Phase 1 — Worldgen ⏰
-Jeder neu erkundete Chunk bekommt die aktuelle Default-Verteilung. Deshalb zuerst:
-1. In der Testinstanz prüfen, ob IE-/Mekanism-/AE2-Erze bereits in Twilight-Forest-Biomen spawnen.
-2. Zielverteilung festlegen (Osmium, Zinn, doppelte Lead-/Uranium-Generierung, TF-Industrieerze).
-3. Umsetzung bevorzugt über Configs (IE serverconfig, `Mekanism/world.toml`, AE2, Tinkers); KubeJS-Worldgen nur für das, was Configs nicht können (z. B. Erze gezielt in TF-Biomen), nach API-Test.
-4. **Retrogen** für bereits erkundete Chunks einplanen (🟢 gewünscht), vor allem für Mekanism-Erze.
+
+Jeder neu erkundete Chunk bekommt die dann gültige Verteilung. Deshalb zuerst:
+1. Zielverteilung je Dimension festlegen: Overworld, Blue Skies (Everbright, Everdawn), Planeten.
+2. Umsetzung bevorzugt über Configs (`Mekanism/world.toml`, IE-Serverconfig, `blue_skies-common.toml`); Datapack oder KubeJS nur für das, was Configs nicht können (Erze in Blue-Skies- und Planetengestein, Kyber in der Overworld).
+3. Nebenquellen angleichen: IE-Mineraladern, Blood-Magic-Meteore.
+4. **Retrogen** für die bereits erkundete Overworld einplanen und im Spiel prüfen.
 
 ### Phase 2 — Meilensteine
-Statt zuerst alle Erträge zu balancieren, werden 10–15 Schlüssel-Meilensteine definiert (z. B. erste Mekanism-Maschine, erster Raumflug, Metallurgic Infuser, fortgeschrittene IE-Multiblöcke, Terrasteel, Blood-Altar-Tiers, AE2-Storage-Layer, ME Drive, Alfheim, Alfsteel, Fusion/SPS) — jeweils mit benötigten Pfaden und Kreuzungspunkten, abgeglichen mit dem Weltstand.
+
+Schlüssel-Meilensteine mit Pfaden und Kreuzungspunkten, abgeglichen mit dem Weltstand; Kapitelgerüst für das Questbuch. Stand: `docs/meilensteine/` (🟡 Entwurf für 1.20.1, 23 Meilensteine) und `01_PROGRESSION.md`.
 
 ### Phase 3–6
+
 Erträge pro Material und Pfad → Energie-Rollen → AE2-Gates → Cross-Mod-Rezepte nur an den Kreuzungspunkten aus Phase 2.
 
 ### Phase 7 — Umsetzung
-Skripte/Configs entstehen im Projektordner (`kubejs/`, `config-overrides/`), werden in die Testinstanz kopiert und dort getestet.
 
-### Phase 7b — Questbuch & Story
-- FTB Quests (+ Library, Teams, Item Filters) führt durch die Progression; Kapitelgerüst ist die Meilensteinkarte (`docs/meilensteine/`).
-- 🟢 **Easy NPC** (Kern, Bundle, Config UI) und **Easy NPC Dialogue Immersion** sind im Pack (Entscheidung 2026-10-11). Damit entstehen Story-Figuren mit Dialogen, z. B. in Blue Skies oder auf den Planeten.
-- 🔵 Offen: welche Figuren, wo sie stehen, ob Dialoge Quests auslösen oder abschließen können (Anbindung Easy NPC ↔ FTB Quests prüfen).
-- Star-Wars-Kapitel: siehe `17_STAR_WARS_1.20.1.md`.
+Skripte und Configs entstehen im Projektordner (`kubejs/`, `config-overrides/`), werden in die Testinstanz kopiert und dort getestet. Die Configs in `config-overrides/` sind seit 2026-10-12 auf 1.20.1. Die Reste aus 1.18.2 in `kubejs/` sind gelöscht.
+
+### Phase 7b — Questbuch und Story
+
+- FTB Quests (+ Library, Teams, Item Filters) führt durch die Progression; Kapitelgerüst ist die Meilensteinkarte.
+- 🟢 Easy NPC (Kern, Bundle, Config UI) und Easy NPC Dialogue Immersion sind im Pack. Damit entstehen Story-Figuren mit Dialogen, z. B. in Blue Skies oder auf den Planeten.
+- 🔵 Offen: welche Figuren, wo sie stehen, ob Dialoge Quests auslösen oder abschließen können.
+- Star-Wars-Kapitel: `17_STAR_WARS_1.20.1.md`.
 
 ### Phase 8 — Übernahme
-Backup der Hauptwelt beim Host → Configs/Skripte bei allen Spielern einspielen (Server-Teil beim Host) → Retrogen → Changelog für die Mitspieler.
+
+Checkliste in 1.18.2 abarbeiten → vollständiges Backup beim Host → Mods, Configs und Skripte bei allen Spielern einspielen (Server-Teil beim Host) → erster Start in 1.20.1 → Retrogen → Changelog für die Mitspieler.
 
 ---
 
@@ -192,39 +209,32 @@ Backup der Hauptwelt beim Host → Configs/Skripte bei allen Spielern einspielen
 
 | Bereich | Status | Datei |
 |---|---|---|
-| Modbasis | 🟢 | `00_MODBASIS.md` |
-| Progression | 🟡 Pfade festgelegt, Meilensteine offen | `01_PROGRESSION.md` |
-| Ressourcen | 🟢 Inventur + Tag-Reconciliation verifiziert | `02_RESSOURCEN.md` |
-| Erzgeneration | 🟡 Ist-Zustand verifiziert, Soll teilweise offen | `03_ERZGENERATION.md` |
-| Verarbeitung | 🔵 | `04_VERARBEITUNG.md` |
-| Energie/Flüssigkeiten | 🔵 | `05_ENERGIE_FLUESSIGKEITEN.md` |
-| Magie | 🟡 Grundrollen festgelegt | `06_MAGIE.md` |
-| Cross-Mod-Integration | 🟡 Prinzip festgelegt | `07_CROSSMOD_INTEGRATION.md` |
-| AE2/Automation | 🟡 Rolle festgelegt, Gates offen | `08_AE2_AUTOMATION.md` |
-| Endgame | 🔵 | `09_ENDGAME.md` |
-| Raumfahrt | 🟡 Hauptziel beschlossen, Mods noch nicht installiert | `15_RAUMFAHRT.md` |
-| KubeJS | 🟡 leer, Struktur geplant | `10_KUBEJS.md` |
-| Testing | 🟢 Testinstanz vorhanden | `11_TESTING.md` |
-| Changelog | 🟢 | `12_CHANGELOG.md`, `13_TESTINSTANZ_CHANGELOG.md` |
-| Erz × Mod Matrix | 🟢 Ist + Soll | `14_ERZ_MOD_MATRIX.md` |
+| Modbasis | 🟢 1.20.1 | `00_MODBASIS.md` |
+| Ressourcen | 🟢 Inventur 1.20.1; kanonische Ausgabe für Bronze offen | `02_RESSOURCEN.md` |
+| Erz × Mod Matrix | 🟢 Ist und Soll 1.20.1 | `14_ERZ_MOD_MATRIX.md` |
+| Erzgeneration | 🟡 Verteilung beschlossen, Werte ungetestet | `03_ERZGENERATION.md` |
+| Raumfahrt | 🟡 Treibstoff, Dungeon-Planet und Maschinen entschieden; T4-Teile, Rocketed, Cryo Fuel offen | `15_RAUMFAHRT.md` |
+| Star Wars | 🟡 | `17_STAR_WARS_1.20.1.md` |
+| Progression | 🟡 1.20.1, Meilensteinkarte als Entwurf | `01_PROGRESSION.md`, `meilensteine/` |
+| Verarbeitung, Energie, Magie, Cross-Mod, AE2, Endgame | 🔴 Stand 1.18.2 | `04`–`09` |
+| KubeJS | 🟡 1.20.1, erste Fassung ungetestet | `10_KUBEJS.md` |
+| Testing | 🟡 Testplan für 1.20.1, Ergebnisse offen | `11_TESTING.md` |
+| Changelog | 🟢 | `12_CHANGELOG.md` |
 
-## Offene Fragen an das Team
+## Entscheidungen zur Erzverteilung (User, 2026-10-12)
 
-🟢 Osmium/Zinn: Option B (Osmium OW selten + TF hoch, Zinn nur TF).
-🟢 Lead nur Mekanism-Erz (umgestellt 2026-10-08, vorher IE-Erz), Uranium nur Mekanism-Erz.
-🟢 Retrogen zwingend (Hauptwelt bereits weit erkundet).
-🔵 Uran-Menge erhöhen? Kobalt-Menge erhöhen?
+🟢 Zinn nur in Everbright; Overworld aus; Excavator-Ader Cassiterite entfernt.
+🟢 Blei: Overworld sehr selten, Everbright häufig, dazu Merkur und Venus. Nur Mekanism-Erz.
+🟢 Aluminium: Overworld selten, Everbright häufig. Silber und Nickel bleiben IE-Standard.
+🟢 Osmium: Overworld wenig, Everdawn und Mond viel, dazu Glacio.
+🟢 Uran: nur Mekanism-Erz, Overworld ×1,3; reichlich auf Merkur und Venus, dazu Glacio. Fluorit zusätzlich auf dem Mars.
+🟢 Certus: AE2-Standard, nur Meteoriten.
+🟢 Kyber-Kristalle (Galaxy in a Cube) werden aus der Overworld entfernt.
 
-Übersicht aller Erze × Mods: `14_ERZ_MOD_MATRIX.md`.
+🔵 Noch offen: Laterite-Ader (Aluminium im Excavator), Blood-Magic-Meteore, alle Zahlenwerte im Spiel.
 
 ## Backlog (zurückgestellt)
 
 ### 🔵 Eigene Erz-Texturen für fremdes Gestein
-Erze, die per KubeJS in anderes Gestein gesetzt werden, zeigen die Overworld-Steintextur. Sie werden gesammelt und später gemeinsam umgesetzt: eigene KubeJS-Blöcke mit zusammengesetzter Textur, dazu Original-Drops (Loot-Table) und Original-Tags (`forge:ores/…`).
 
-| Erz | Gestein | Quelle |
-|---|---|---|
-| Osmium | Mondgestein (`beyond_earth:moon_stone`) | `moon_ores.js` |
-| Certus-Quarz | Mondgestein | `moon_ores.js` |
-
-Erkenntnis aus der Vorarbeit: Der KubeJS-1802-Block-Builder hat `noDrops()`, `tagBoth()`, `requiresTool()` und `textureAll()`. Damit lassen sich die Drops über eine eigene Loot-Table regeln.
+Für die Planeten ist das durch „Mekanism: Ad Astra Ores“ gelöst (fertige Blöcke). Offen bleibt es für **Blue Skies**: Mekanism-Erze in `turquoise_stone` und `lunar_stone` gibt es nicht als Block. Entweder die normalen Erzblöcke einsetzen (Overworld-Steintextur) oder eigene KubeJS-Blöcke mit zusammengesetzter Textur, Original-Drops und Original-Tags bauen.

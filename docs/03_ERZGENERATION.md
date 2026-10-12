@@ -1,179 +1,175 @@
 # 03 — ERZGENERATION
 
-> ⚠️ **Stand 1.18.2, noch nicht auf 1.20.1 geprüft.** Seit 2026-10-11 gilt Minecraft 1.20.1 mit geänderter Mod-Liste (`16_MODLISTE_1.20.1.md`). Dieses Dokument wird beim Neustart der Analyse überarbeitet; Einstieg und TODO-Liste: `00_STATUS.md`.
+> Stand 2026-10-12, Minecraft 1.20.1. Neu aufgebaut beim Neustart der Analyse (Block B); die Fassung für 1.18.2 liegt im Git-Verlauf (Commit `9bf29d8`).
 
 ## Status
 
-🟡 **Ist-Zustand verifiziert (2026-10-07), Soll-Matrix größtenteils beschlossen, Osmium/Zinn und Doppelquellen offen.**
+🟡 **Verteilung beschlossen (User, 2026-10-12). Die Zahlenwerte sind Vorschläge. Configs, Erz-Features und Overrides liegen im Projektordner (`config-overrides/`, `kubejs/`), sind aber im Spiel noch nicht getestet und noch nicht in der Testinstanz.**
 
-## Zweck
-
-Eine ausgewogene Erzverteilung, die die parallelen Progressionspfade unterstützt, die Identität der Mods erhält und die bestehende Welt nicht entwertet.
+Der Ist-Zustand (Standardwerte aller Mods) steht in `02_RESSOURCEN.md`, Teil 1.
 
 ## Grundprinzipien
 
-- 🟢 Die Overworld bleibt die wichtigste Quelle für Grundressourcen.
-- 🟢 Doppelte Erzregistrierungen werden nicht automatisch zu einem Item vereinheitlicht; Materialfamilien werden über Tags verbunden.
-- 🟢 Seltene Industriemetalle bleiben in der Overworld vorhanden, werden aber im Twilight Forest deutlich attraktiver.
-- 🟢 Dimensionen eröffnen zusätzliche Ressourcenwege, blockieren die normale Maschinenprogression aber nicht unnötig hart.
-- 🟢 Magische Ressourcen werden nicht durch gewöhnliche Erzverteilung trivialisiert.
-- 🟢 Die bestehende Welt wird nicht entwertet oder zerstört.
+- 🟢 Die Overworld bleibt die Quelle der Grundressourcen (Vanilla-Erze, Silber, Nickel).
+- 🟢 Industriemetalle für den Mekanism-Ausbau liegen hauptsächlich in **Blue Skies**; die Overworld hat davon nur wenig oder nichts.
+- 🟢 Die Planeten liefern ihre eigenen Metalle und reichlich Uran; so trägt die Raumfahrt die Nuklearkette.
+- 🟢 Doppelte Erzregistrierungen werden nicht zu einem Item vereinheitlicht; Materialfamilien werden über Tags verbunden.
+- 🟢 Die Erzverteilung legen wir selbst fest; fremde Erz-Generierung auf den Planeten ist abgeschaltet.
+- 🟢 Die bestehende Welt wird nicht entwertet; keine Progressionsstufe darf nur durch einen Welt-Reset erreichbar sein.
 
 ---
 
-# Teil 1 — Ist-Zustand (verifiziert)
+# Teil 1 — Soll-Verteilung (🟢 Entscheidungen vom 2026-10-12)
 
-## Wo Worldgen konfiguriert wird
+| Erz | Overworld | Blue Skies | Planeten | Nebenquellen | Erzblock |
+|---|---|---|---|---|---|
+| Kohle, Eisen, Kupfer, Gold, Redstone, Lapis, Diamant, Smaragd | Vanilla | eigener Smaragd | Ad-Astra-Standard | unverändert | Vanilla / Ad Astra |
+| **Zinn** | **keines** | **Everbright: hoch** | keines | Excavator-Ader **Cassiterite entfernt** | Mekanism |
+| **Blei** | **sehr selten** | **Everbright: hoch** | Merkur, Venus | Excavator: Galena und Uraninite seltener | **nur Mekanism** (IE-Bleierz aus) |
+| **Aluminium (Bauxit)** | **selten** | **Everbright: hoch** | – | Excavator-Ader Laterite 🔵 | IE |
+| **Osmium** | **wenig** | **Everdawn: hoch** | **Mond: hoch**, Glacio | – | Mekanism |
+| **Uran** | niedrig (×1,3 gegenüber Standard) | – | **Merkur, Venus: hoch**, Glacio | Excavator: Uraninite seltener | **nur Mekanism** (IE-Uranerz aus) |
+| **Fluorit** | Standard | – | Mars | – | Mekanism |
+| Salz | Standard | – | – | – | Mekanism |
+| Silber, Nickel | IE-Standard | – | – | unverändert | IE |
+| Kobalt | – (Nether: Standard) | – | – | – | Tinkers |
+| **Certus-Quarz** | nur AE2-Meteoriten (Standard) | – | – | Blood-Magic-Meteor 🔵 | kein Erz |
+| **Kyber-Kristall** (Galaxy in a Cube) | **entfernt** | – | – | – | – |
+| Kyber-Erz, Beskar | – | – | Star-Wars-Planeten (Standard) | – | Star Wars Planets |
+| Desh / Ostrum / Calorite | – | – | Mond / Mars / Venus (Standard) | Boss-Beute 🔵 | Ad Astra |
+| Blue-Skies-Erze | – | Standard | – | – | Blue Skies |
+| Elementium, Dragonstone, Mythic-Gold | – | – | – (Alfheim: Standard) | – | MythicBotany |
 
-| Mod | Ort | Hinweis |
-|---|---|---|
-| Immersive Engineering | `saves/<Welt>/serverconfig/immersiveengineering-server.toml` → `[ores.*]` | **pro Welt** → muss in der Welt des Hosts geändert werden |
-| Mekanism | `config/Mekanism/world.toml` | Instanz des Hosts |
-| AE2 | `config/appliedenergistics2/common.json` → `worldGen` | Biome-Blacklist möglich |
-| Tinkers | `config/tconstruct-common.toml` → `[worldgen]` | |
-| Twilight Forest | im JAR (`legacy_*_ore` Features) | nur per Datapack/KubeJS änderbar |
+**Was daraus für die Progression folgt:**
 
-## Aktuelle Werte (Default, unverändert)
+- Bronze und der Mekanism-Ausbau brauchen Zinn und damit **Everbright**. Das ersetzt das frühere Gate „Zinn nur im Twilight Forest“.
+- Osmium für die ersten Mekanism-Maschinen (und damit für die erste Rakete) gibt es knapp in der Overworld; für den Ausbau lohnen sich Everdawn und der Mond.
+- Uran ist in der Overworld knapp und auf Merkur und Venus (Raketenstufe T3) reichlich. Das passt zur Regel, dass die Star-Wars-Planeten Uran-Erzeugnisse verlangen.
+- Certus bleibt an das Finden eines Meteoriten gebunden; er wächst dort nach. Passt zu „AE2 ist Endgame, früher Storage-Layer teuer“.
+- Kyber gibt es nur auf den Star-Wars-Planeten; Lichtschwerter bleiben an die Raumfahrt gebunden. 🔵 Dafür braucht es ein Rezept vom Kyber-Erz (Star Wars Planets) zum Kristall von Galaxy in a Cube, siehe `17_STAR_WARS_1.20.1.md`, Punkt 4.
 
-### Immersive Engineering
+## Ersetzte Beschlüsse aus 1.18.2
 
-| Erz | Verteilung | Y | Vein | Versuche/Chunk | Air-Exposure-Verwurf |
-|---|---|---|---:|---:|---:|
-| Bauxite | Trapez | 32…112 | 6 | 16 | 0 |
-| Lead | Trapez | −32…80 | 8 | 12 | 0 |
-| Silver | Trapez | −48…32 | 9 | 10 | 0,25 |
-| Nickel | Uniform | −64…24 | 5 | 7 | 0 |
-| Nickel (deep) | Trapez | −120…−8 | 6 | 11 | 0 |
-| Uranium | Trapez | −64…−16 | 4 | 9 | 0,5 |
-
-### Mekanism
-
-| Erz | Teilverteilungen (Versuche/Chunk × max. Vein) |
+| Alter Beschluss | Neu |
 |---|---|
-| Tin | small 14×4 (Y −20…94), large 12×9 (Y −32…72) |
-| Osmium | upper 65×7 (Y 72…Top−24), middle 6×9 (Y −32…56), small 8×4 (Boden…64) |
-| Uranium | small 4×4 (Boden…8), buried 7×9 |
-| Fluorite | normal 5×5 (Boden…23), buried 3×13 |
-| Lead | 8 Versuche/Chunk |
-| Salt | 2/Chunk (Sand-/Tonbereiche) |
-
-### Andere
-
-- **AE2 Certus:** 20 Cluster × 7 Erze, keine Biome-Blacklist; Meteoriten aktiv (enthalten die Inscriber-Pressen).
-- **Tinkers Cobalt:** Nether, 8 Adern; Slime-Islands aktiv.
-- **Twilight Forest:** eigene Vanilla-Erzfeatures in allen TF-Biomen: Kohle (Y ≤127, 20), Eisen (Y ≤63, 20), Kupfer (Y 0–96 Trapez, 6), Gold (Y ≤31, 2), Lapis (Y ≤30), Redstone (Y ≤15, 8), Diamant (Y ≤15).
-
-## Dimensionen in der Welt
-
-| Dimension | Mod | Zugang | Eignung als Ressourcenregion |
-|---|---|---|---|
-| Overworld | Vanilla | sofort | Basis |
-| Nether | Vanilla | früh | Cobalt (Tinkers) |
-| Twilight Forest | Twilight Forest | früh/mittel (Portal mit Diamant) | 🟢 normale Terrain-Dimension, gut geeignet |
-| Alfheim | MythicBotany | spätes Botania (Mead of Kvasir, `lockAlfheim = true`) | Dragonstone, Elementium, Mythic Gold; zu spät für Grundmetalle |
-| Demon Dungeon | Blood Magic | fortgeschrittenes Blood Magic | Raum-/Strukturdimension mit Demonite, kein normales Terrain |
-| Wesley's Infinite Dungeons | Wesley's Roguelike Dungeons | über Vessel of Vision, mit Timer | Dungeon-Runs, nicht zum Abbauen geeignet |
-| Growtown | Bonsai Trees 3 | — | interne Hilfsdimension, nicht spielbar |
-| End | Vanilla | spät | — |
-
-## Bekannte Probleme des Ist-Zustands
-
-1. **Doppelte Quellen:** Lead und Uranium werden aktuell von IE **und** Mekanism generiert.
-2. 🔵 **Unbekannt:** Ob IE-, Mekanism- und AE2-Erze schon in Twilight-Forest-Biomen spawnen. Die Mods hängen ihre Erze über Biome-Kategorien an; die TF-Biome könnten darunter fallen. → In der Testinstanz prüfen.
-3. **Mekanism neu installiert:** Alle bereits erkundeten Chunks der Hauptwelt enthalten keine Mekanism-Erze.
+| Zinn nur im Twilight Forest | Zinn nur in Everbright |
+| Blei und Aluminium: Overworld selten, Twilight Forest häufig | Blei: Overworld sehr selten, Everbright häufig. Aluminium: Overworld selten, Everbright häufig |
+| Osmium: Overworld reduziert, Mond häufig | bleibt, dazu Everdawn häufig |
+| Mond = Hauptquelle für Certus; Overworld-Certus reduziert | entfällt (kein Certus-Erz mehr); nur Meteoriten |
+| Blei und Uran nur als Mekanism-Erz | bleibt |
+| Uran ×1,3 | bleibt |
 
 ---
 
-# Teil 2 — Soll-Matrix
+# Teil 2 — Zahlenwerte (🟡 Vorschlag, im Spiel zu prüfen)
 
-| Ressource | Overworld | Nether | Twilight Forest | Andere | Rolle | Status |
-|---|---|---|---|---|---|---|
-| Coal | hoch | – | mittel (TF-default) | | Energie | 🟢 |
-| Iron | hoch | – | mittel (TF-default) | | Basis | 🟢 |
-| Copper | mittel/hoch | – | mittel (TF-default) | | IE/AE2/Mekanism | 🟢 |
-| Gold | mittel | mittel | mittel | Alfheim (Mythic Gold) | Brücke | 🟢 |
-| Redstone | mittel | – | mittel | | Technik | 🟢 |
-| Lapis | mittel | – | mittel | | Magie | 🟢 |
-| Diamond | niedrig | – | niedrig/mittel | | hoher Vanilla-Tier | 🟢 |
-| Aluminium | niedrig (IE 5 statt 16 Versuche/Chunk) | – | **hoch** (KubeJS) | | IE/Tinkers | 🟢 |
-| Nickel | Standard (🔵 bestätigen) | – | – | | IE/Tinkers | 🟡 |
-| Silver | Standard (🔵 bestätigen) | – | – | | IE/Tinkers/Magie | 🟡 |
-| Lead | niedrig (**Mekanism-Erz** 4 statt 8 Adern; IE-Blei aus) | – | **hoch** (KubeJS, Mekanism-Erz) | | IE/Mekanism — **nur Mekanism-Erz** (Optik, Entscheidung 2026-10-08), IE nutzt es per Tag | 🟢 |
-| Osmium | **reduziert** (Testwert: upper 20, middle 3, small 4 statt 65/6/8) | – | – | **Mond: hoch** (Beyond Earth, KubeJS) | Mekanism, ab erster Maschine benötigt | 🟢 (2026-10-07) |
-| Tin | **keine** (Mekanism aus) | – | **exklusiv, hoch** (KubeJS) | | Mekanism/Bronze — Gate | 🟢 (Option B) |
-| Uranium | niedrig, Mekanism ×1,3 (small 5, buried 9) | – | – | | Energie — **nur Mekanism-Erz**, IE-Uranerz aus | 🟢 |
-| Fluorite | niedrig (Standard) | – | – | | Mekanism | 🟢 |
-| Cobalt | – | Standard (8 Adern) | – | | Tinkers | 🟢 |
-| Certus Quartz | **niedrig** (Testwert: 8 Cluster × 6 statt 20 × 7) | – | – | Meteoriten; **Mond: hoch** (KubeJS) | AE2 | 🟢 (2026-10-07) |
-| Fluix | nicht natürlich | | | | AE2-Verarbeitung | 🟢 |
-| Demonite | – | – | – | Demon Dungeon | Blood Magic | 🟢 |
-| Dragonstone, Elementium-Erz, Mythic Gold | – | – | – | Alfheim | MythicBotany | 🟢 |
-| Ironwood, Steeleaf, Knightmetal, Fiery | – | – | TF-exklusiv (Strukturen/Bosse) | | TF | 🟢 |
+Schreibweise „Adern pro Chunk × Adergröße“.
 
-„niedrig/mittel/hoch“ sind relative Zielgrößen. Konkrete Werte (Y-Level, Vein Size, Versuche/Chunk) werden in Phase 1 aus den Ist-Werten oben abgeleitet und in der Testinstanz geprüft.
+## Overworld — über Configs (🟢 Dateien im Projektordner angelegt)
 
-## Osmium & Zinn — Optionen (🟢 Option B beschlossen, 2026-10-07; präzisiert: im TF nur Zinn, Blei, Aluminium)
+**`config-overrides/config/Mekanism/world.toml`** (Basis: Standarddatei der 1.20.1-Testinstanz, Kopie unter `_original/`):
 
-Osmium wird ab der **ersten** Mekanism-Maschine gebraucht (Steel Casing, Metallurgic Infuser, Basic Control Circuits). Es muss deshalb ohne Endgame-Dimension erreichbar sein. Alfheim, Demon Dungeon und Wesley's Dungeons eignen sich nicht (zu spät bzw. kein abbaubares Terrain).
+| Erz | Standard | Soll |
+|---|---|---|
+| Zinn | 14 × 4 und 12 × 9 | `shouldGenerate = false` |
+| Osmium upper (Y 72…Top−24) | 65 × 7 | **20** × 7 |
+| Osmium middle (Y −32…56) | 6 × 9 | **3** × 9 |
+| Osmium small (Boden…64) | 8 × 4 | **4** × 4 |
+| Blei | 8 × 9 | **2** × 9 |
+| Uran small | 4 × 4 | **5** × 4 |
+| Uran buried | 7 × 9 | **9** × 9 |
+| Fluorit, Salz | — | unverändert |
+| Retrogen | `enableRegeneration = false`, `userWorldGenVersion = 0` | **`true`**, **`1`** |
 
-| Option | Osmium | Zinn | Wirkung |
-|---|---|---|---|
-| A | Overworld reduziert, TF hoch | Overworld normal | Mekanism früh möglich, Expeditionen lohnen sich |
-| B | Overworld reduziert, TF hoch | **nur TF** | Bronze und Mekanism-Ausbau brauchen TF; stärkere Bindung an Exploration |
-| C | **nur TF** | Overworld | Mekanism-Einstieg erst nach TF-Expedition; harter Gate |
-| D | eigene neue Dimension (Zusatzmod) | | widerspricht „keine neuen Mods nebenbei“, erhöht Wartungsaufwand |
+Die Osmium- und Uranwerte sind die Testwerte aus 1.18.2. Blei war dort 4 („niedrig“); „sehr selten“ ist hier mit 2 angesetzt.
 
-## Mond als Osmium- und Certus-Quelle (🟢 beschlossen, 2026-10-07)
+**`config-overrides/serverconfig/immersiveengineering-server.toml`** (Basis: Standarddatei einer neuen 1.20.1-Welt):
 
-Der erste Raumflug (Mond) setzt Petroleum **und** eine erste Mekanism-Maschine voraus (siehe `15_RAUMFAHRT.md`). Deshalb:
+| Erz | Standard | Soll |
+|---|---|---|
+| Bauxit | 16 × 6 | **5** × 6 |
+| Blei | 12 × 8 | `vein_size = 0` (aus) |
+| Uran | 9 × 4 | `vein_size = 0` (aus) |
+| Silber, Nickel | — | unverändert |
 
-- Overworld-Osmium wird reduziert, aber nicht abgeschaltet. Es muss für die ersten Mekanism-Maschinen inklusive der Raketen-Voraussetzung reichen.
-- Overworld-Certus wird reduziert, nicht abgeschaltet, damit der frühe AE2-Storage-Layer erreichbar bleibt. Meteoriten bleiben unverändert.
-- Auf dem Mond werden Osmium und Certus häufig (KubeJS `worldgen.add` mit Mond-Biomfilter).
-- Planeten sind neue Dimensionen: kein Retrogen-Problem.
-- 🟢 Mond verifiziert: ein Biom `beyond_earth:moon_desert`, Y 0–384, Gestein `beyond_earth:moon_stone` (Tag `#beyond_earth:moon_ore_replaceables`).
+`vein_size = 0` schaltet ein Erz laut Kommentar in der 1.20.1-Config ab (🟢 gelesen, 🔵 nicht im Spiel geprüft).
 
-**Testwerte (🟡, 2026-10-07, in der Testinstanz):**
+## Blue Skies — eigene Features (🟡 angelegt in `kubejs/data/ieplus/`, ungetestet)
 
-| Quelle | Original | Testwert | Datei |
-|---|---|---|---|
-| Osmium Overworld upper (Y 72…Top−24) | 65 × 7 | **20** × 7 | `config-overrides/config/Mekanism/world.toml` |
-| Osmium Overworld middle (Y −32…56) | 6 × 9 | **3** × 9 | dito |
-| Osmium Overworld small (Y 0…64) | 8 × 4 | **4** × 4 | dito |
-| Certus Overworld | 20 Cluster × 7 | **8** × **6** | `config-overrides/config/appliedenergistics2/common.json` |
-| Osmium Mond | – | 16 × 9, Y 0–128 | `kubejs/startup_scripts/worldgen/moon_ores.js` |
-| Certus Mond | – | 12 × 7, Y 0–96 | dito |
+Configs reichen hier nicht: Die Mekanism- und IE-Features zielen auf die Overworld und ersetzen nur Overworld-Gestein. Deshalb gibt es eigene Erz-Features als Datapack-JSON im Namensraum `ieplus` (`configured_feature`, `placed_feature`), je einen Forge-Biome-Modifier für `#blue_skies:everbright` und `#blue_skies:everdawn` und die Freigabe `allowed_mods_for_feature_gen = ["ieplus"]` in `config-overrides/config/blue_skies-common.toml`.
 
-Auf dem Mond werden die normalen Erzblöcke `mekanism:osmium_ore` und `ae2:quartz_ore` eingesetzt (Optik wie Overworld-Stein). 🔵 Eigene Mond-Erzblöcke wären eine optische Verbesserung.
+| Dimension | Erz | Vorschlag | Y (gleichverteilt) | Ersetzt | Herkunft des Werts |
+|---|---|---|---|---|---|
+| Everbright | Zinn (`mekanism:tin_ore`) | 11 × 9 | 0…96 | `blue_skies:turquoise_stone` | Twilight-Forest-Wert nach Test (2026-10-08) |
+| Everbright | Blei (`mekanism:lead_ore`) | 10 × 9 | 0…80 | `turquoise_stone` | 🔵 neu angesetzt |
+| Everbright | Bauxit (`immersiveengineering:ore_aluminum`) | 18 × 8 | 32…112 | `turquoise_stone` | Twilight-Forest-Wert nach Test (2026-10-08) |
+| Everdawn | Osmium (`mekanism:osmium_ore`) | 16 × 9 | 0…128 | `blue_skies:lunar_stone` | früherer Mond-Wert |
 
-## Retrogen (🟢 beschlossen: zwingend)
+- Zum Vergleich: Die eigenen Blue-Skies-Metalle Falsite und Ventium liegen bei 20 × 6.
+- 🔵 Die Erzblöcke zeigen Overworld-Steintextur im Blue-Skies-Gestein (Backlog „eigene Erz-Texturen“ in `00_STATUS.md`).
+- 🟢 Blue Skies filtert nach dem Namensraum des platzierten Features (im Code von `PurifyBiome` nachgelesen, 2026-10-12): Alles, was nicht freigegeben ist, wird aus den Biomen entfernt. Die Freigabe von `ieplus` genügt also.
+- 🔵 Zu prüfen: Sind Everbright und Everdawn gleich früh erreichbar?
 
-Die Hauptwelt wurde **noch nie mit Mekanism geöffnet**. Alle bisher erkundeten Chunks haben daher keine Mekanism-Erze. Mekanism-Retrogen (Osmium, Uran, Fluorit, Salz) ist deshalb nötig. Es **darf erst laufen, wenn die finalen Configs beim Host liegen**: Wird die Welt vorher mit Mekanism geöffnet, generiert Mekanism mit Default-Werten, inklusive Zinn und Blei in der Overworld.
+## Planeten — eigene Features mit den Blöcken aus „Mekanism: Ad Astra Ores“ (🟡 angelegt in `kubejs/data/ieplus/`, ungetestet)
 
-⚠️ **KubeJS-Erze haben kein Retrogen** (verifiziert: `AddOreProperties.retrogen` existiert, wird in 1802.5.5 aber nicht ausgewertet). Die TF-Erze (Zinn, Blei, Aluminium) entstehen nur in neu generierten TF-Chunks. Das ist vertretbar, weil der TF gerade erst betreten wurde.
+Die Generierung des Mods bleibt abgeschaltet (`kubejs/data/mekanismaaa/tags/worldgen/biome/gen_ores*.json`), weil sie alle Erze auf alle Planeten setzt und ihre Mengen aus `Mekanism/world.toml` nimmt. Eigene Features je Planet:
 
-- IE: `retrogen_enable` pro Erz + neuer `retrogen_key` → generiert nur die markierten Erze in bereits geladenen Chunks nach.
-- Mekanism: `enableRegeneration = true` + `userWorldGenVersion` erhöhen.
-- 🔵 Vor der Hauptwelt in der Testinstanz prüfen: Ladezeit, ob bereits abgebaute Bereiche betroffen sind, ob Erze nur in neuen Feldern landen.
-- Retrogen läuft beim Host, und nur einmal pro Schlüssel/Version.
+| Planet (Stufe) | Erz | Block | Vorschlag | Y (Trapez) |
+|---|---|---|---|---|
+| Mond (T1) | Osmium | `mekanismaaa:moon_osmium_ore` | 16 × 9 | −32…96 |
+| Mars (T2) | Fluorit | `mekanismaaa:mars_fluorite_ore` | 6 × 8 | −64…32 |
+| Merkur (T3) | Uran | `mekanismaaa:mercury_uranium_ore` | 12 × 8 | −64…64 |
+| Merkur (T3) | Blei | `mekanismaaa:mercury_lead_ore` | 10 × 9 | −32…80 |
+| Venus (T3) | Uran | `mekanismaaa:venus_uranium_ore` | 12 × 8 | −64…64 |
+| Venus (T3) | Blei | `mekanismaaa:venus_lead_ore` | 10 × 9 | −32…80 |
+| Glacio (T4) | Osmium | `mekanismaaa:glacio_osmium_ore` | 16 × 9 | −32…96 |
+| Glacio (T4) | Uran | `mekanismaaa:glacio_uranium_ore` | 12 × 8 | −64…64 |
 
-## Migrationsregeln für die bestehende Welt
+Ungenutzt bleiben die Zinn-Blöcke (Mond, Mars, Glacio), Uran auf dem Mars, Osmium auf Merkur, Fluorit auf Venus und Glacio, Blei auf Glacio. Zum Vergleich: Desh, Ostrum und Calorite liegen bei 8–9 × 8–9.
 
-- 🟢 Keine Änderung setzt voraus, dass die Welt neu erzeugt wird.
-- 🟢 Senken von Werten wirkt nur auf neue Chunks; bereits generierte Erze bleiben.
+## Kyber-Kristalle aus der Overworld entfernen (🟡 angelegt, ungetestet)
+
+Galaxy in a Cube hängt `swgc:kyber_crystal` über den Biome Modifier `swgc:kyber_crystals` an alle Overworld-Biome. Ein Override dieser Datei im Datapack ersetzt ihn durch `forge:none` (`kubejs/data/swgc/forge/biome_modifier/kyber_crystals.json`). 🔵 Wirkung testen. **Muss vor dem ersten Start der Hauptwelt in 1.20.1 beim Host liegen**, sonst entstehen Kristalle in jedem neu erzeugten Chunk.
+
+## Excavator-Adern (🟡 angelegt, ungetestet)
+
+| Ader | Standard-Gewicht | Soll |
+|---|---:|---|
+| Cassiterite (100 % Zinn) | 20 | **entfernen** |
+| Galena (40 % Blei, 20 % Silber) | 15 | 5 |
+| Uraninite (70 % Uran, 30 % Blei) | 10 | 5 |
+| Laterite (70 % Aluminium) | 20 | 🔵 passend zu „Aluminium selten“ senken? |
+
+Umsetzung: Cassiterite wird per Skript entfernt (`kubejs/server_scripts/worldgen/excavator_adern.js`); Galena und Uraninite sind als überschriebene Rezeptdateien abgelegt (`kubejs/data/immersiveengineering/recipes/mineral/`). Bereits vom Seismic Survey gefundene oder angezapfte Adern in der bestehenden Welt: 🔵 Verhalten prüfen.
+
+---
+
+# Teil 3 — Retrogen und bestehende Welt
+
+Die Hauptwelt wurde **noch nie mit Mekanism geöffnet**; alle erkundeten Overworld-Chunks haben keine Mekanism-Erze.
+
+- **Mekanism:** `enableRegeneration = true` und `userWorldGenVersion = 1` sind in der Projekt-Config gesetzt. Nachgeneriert werden damit Osmium, Uran, Fluorit, Salz und das seltene Blei, kein Zinn. Die Retrogen-Features sind in 1.20.1 vorhanden (🟢 im JAR: `…_retrogen`). 🔵 Im Spiel prüfen: Ladezeit, Verhalten in bereits abgebauten Bereichen.
+- **IE:** Kein Retrogen nötig. Vorhandenes IE-Blei- und IE-Uranerz bleibt in alten Chunks stehen; weniger Bauxit gilt nur für neue Chunks.
+- **Blue Skies und Planeten** sind neue Dimensionen: kein Retrogen-Problem, solange die Features vor dem ersten Betreten da sind.
+- **Datapack-Features haben kein Retrogen.** Alles, was über `kubejs/data` kommt, wirkt nur in neu erzeugten Chunks.
+- Retrogen läuft beim Host und nur einmal pro Version.
+
+⚠️ **Reihenfolge beim Host:** Erst alle Configs und Overrides einspielen, dann die Welt zum ersten Mal in 1.20.1 öffnen. Sonst erzeugt Mekanism in neuen Chunks Zinn und viel Blei, Galaxy in a Cube Kyber-Kristalle und Ad Astra Ölquellen; das lässt sich nicht zurücknehmen.
+
+## Migrationsregeln
+
+- 🟢 Senken von Werten wirkt nur auf neue Chunks; bereits erzeugte Erze bleiben.
 - 🟢 Ergänzen von Erzen in alten Chunks nur per Retrogen.
-- 🟢 Keine Progressionsstufe darf nur durch einen Welt-Reset erreichbar sein.
 - 🟢 Alles zuerst in der Testinstanz.
 
-## Noch offen
+---
 
-🔵 Silber, Nickel: Overworld-Menge bei Standard lassen? (Sie bekommen keine TF-Quelle mehr.) Osmium: entschieden (Overworld reduziert, Mond hoch).
-🔵 Konkrete Werte für reduziertes Overworld-Osmium und -Certus
-🔵 Spawnen IE-/Mek-/AE2-Erze bereits im TF? (Test läuft: `debug_print_ore_features.js`)
-🔵 TF-Erzwerte (count/size/Höhe) in der Testinstanz prüfen
-🟢 Umsetzung TF-Erze: KubeJS `worldgen.add` mit Biome-Regex `/^twilightforest:.*/` (API verifiziert)
-🟢 Mekanism-Erze (Osmium, Uran, Fluorit, Salz, eigenes Blei) und AE2-Certus werden aus den TF-Biomen entfernt (`tf_remove_foreign_ores.js`), denn Mekanism generiert in allen Biomen (verifiziert 2026-10-08). Mekanism-Zinn/-Blei sind global per `world.toml` aus (korrigiert 2026-10-08; vorher fälschlich noch an).
-🟢 Bauxit im TF auf 18 × 8 erhöht (vorher 14 × 8, im Test zu selten; 2026-10-08).
-🟢 Zinn im TF auf 11 × 9 reduziert (vorher 14 × 9, im Test etwas zu viel; 2026-10-08).
-🟢 Uran: Mekanism ×1,3. Kobalt bleibt Standard.
-🔵 Konkrete Zahlenwerte
+# Offen
+
+1. 🔵 Alle Zahlenwerte im Spiel prüfen (Testplan E17 in `00_STATUS.md`).
+2. 🔵 Blue Skies: Filter und Freigabe klären; Erreichbarkeit von Everdawn gegenüber Everbright.
+3. 🔵 Laterite-Ader: Aluminium auch im Excavator seltener?
+4. 🔵 Blood-Magic-Meteore „mekanism“ (Osmium, Zinn, Blei, Uran) und „ae2“ (Budding-Certus): lassen, verteuern oder anpassen? Vorschlag: lassen, weil spät und teuer; in Block C mit der Blood-Magic-Progression entscheiden.
+5. 🔵 Beute der Bosse aus „Ad Astra: More Structures“ (Roh-Desh, -Ostrum, -Calorite) gegen die Erzmengen prüfen.
+6. 🔵 Eigene Erz-Texturen für Blue-Skies-Gestein (Backlog).
+7. 🔵 Erzatlas neu aufbauen (`docs/erzatlas/`).

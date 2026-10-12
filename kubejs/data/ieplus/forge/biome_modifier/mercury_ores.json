@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": ["ad_astra:mercury_deltas"],
+  "features": ["ieplus:mercury_uranium", "ieplus:mercury_lead"],
+  "step": "underground_ores"
+}

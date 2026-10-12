@@ -409,3 +409,172 @@ Status: 🟢
 
 ### Teststatus
 Die Testinstanz startet mit 102 Mods und lädt eine Welt (Log 23:07 Uhr). Keiner der drei Tag-Overrides ist im Spiel geprüft.
+
+## 2026-10-12 — Neustart der Analyse: Block A (Grundlagen) für 1.20.1 abgeschlossen
+
+Status: 🟢
+
+### Änderung
+
+- `00_MODBASIS.md` neu geschrieben: verbindliche Mod-Liste für 1.20.1 (98 JARs, Rohliste `mods_v5.txt`), zusammengeführt mit der Liste aus `16_MODLISTE_1.20.1.md`.
+- `16_MODLISTE_1.20.1.md` auf die Befunde reduziert (Blue Skies, Welt-Test); die zwei Welt-Test-Abschnitte sind zusammengeführt.
+- `02_RESSOURCEN.md` und `14_ERZ_MOD_MATRIX.md` neu aus den JARs der Testinstanz aufgenommen (Ist-Zustand, Soll offen).
+- `00_STATUS.md` vollständig auf 1.20.1 gebracht.
+
+### Neue Befunde aus den JARs
+
+- **AE2 15.4.11 hat kein Certus-Erz mehr.** Certus entsteht nur an Budding-Blöcken in Meteoriten. Der Beschluss „Mond = Hauptquelle für Certus“ ist so nicht mehr umsetzbar.
+- **Galaxy in a Cube erzeugt in der Overworld** Kyber-Kristalle (alle Biome, jeder 16. Chunk), Ewok-Dörfer (Wald) und Jawas (Wüste, Badlands).
+- **Nebenquellen an der Worldgen vorbei:** IE-Excavator-Ader Cassiterite liefert 100 % Zinn; Blood-Magic-Meteore liefern Osmium, Zinn, Uran, Fluorit und Budding-Certus.
+- Die Config-Formate von IE (`[ores.*]`) und Mekanism (`world.toml`) sind gegenüber 1.18.2 unverändert, die Standardwerte auch.
+- „Mekanism: Ad Astra Ores“ setzt über `gen_ores_deepslate` zusätzlich die normalen Mekanism-Erze auf Glacio; seine Mengen kommen aus `Mekanism/world.toml`.
+- Blue Skies: acht eigene Erze; fremde Erze brauchen die Freigabe **und** einen eigenen Biome Modifier. Mekanism-Erzblöcke in Blue-Skies-Gestein gibt es nicht.
+- Stahl hat ein viertes Item (`ad_astra:steel_ingot`); Beskar und Kyber haben keine `forge:`-Barren-Tags.
+- `iaie` ist „Immersive Aircraft x Immersive Engineering“: Fluggeräte tanken Biodiesel, Diesel oder Kerosene aus dem IE-Metallfass.
+- Die Testinstanz startet mit allen 98 JARs einschließlich Chisels & Bits und Embeddium (Log 2026-10-11, 23:07).
+
+### Betroffene Bereiche
+
+- Erzplanung (Block B), Meilensteine (Block C)
+
+### Auswirkungen auf bestehende Welt
+
+Keine; es wurden nur Dokumente geändert. An der Testinstanz wurde nichts geschrieben.
+
+### KubeJS / technische Umsetzung
+
+Keine Skripte. Ausgewertet wurden `data/*/worldgen`, `data/*/forge/biome_modifier`, `data/*/tags`, `data/*/recipes` aller JARs sowie die Configs der Testinstanz.
+
+### Teststatus
+
+Alles aus JAR und Config gelesen, nichts davon im Spiel getestet.
+
+## 2026-10-12 — Erzverteilung für 1.20.1 beschlossen (Block B)
+
+Status: 🟡 (entschieden; Zahlenwerte ungetestet, Features noch nicht angelegt)
+
+### Änderung
+
+Entscheidungen des Users:
+
+- **Zinn** nur in Blue Skies (Everbright); Overworld aus; Excavator-Ader Cassiterite wird entfernt.
+- **Blei:** Overworld sehr selten, Everbright häufig, dazu Merkur und Venus. Nur Mekanism-Erz (IE-Bleierz aus).
+- **Aluminium:** Overworld selten, Everbright häufig. Silber und Nickel bleiben IE-Standard.
+- **Osmium:** Overworld wenig, Everdawn und Mond viel, dazu Glacio.
+- **Uran:** nur Mekanism-Erz (IE-Uranerz aus), Overworld ×1,3; reichlich auf Merkur und Venus, dazu Glacio. **Fluorit** zusätzlich auf dem Mars.
+- **Certus:** AE2-Standard, nur Meteoriten (kein Erz mehr in 1.20.1).
+- **Kyber-Kristalle** von Galaxy in a Cube werden aus der Overworld entfernt.
+
+### Begründung
+
+Blue Skies übernimmt die Rolle des Twilight Forest als Quelle der Industriemetalle für den Mekanism-Ausbau. Uran auf den T3-Planeten stützt die Regel, dass die Star-Wars-Planeten Uran-Erzeugnisse verlangen. Kyber nur auf den Planeten hält die Lichtschwerter an die Raumfahrt gebunden.
+
+### Betroffene Bereiche
+
+- `03_ERZGENERATION.md` (neu aufgebaut), `14_ERZ_MOD_MATRIX.md` (Soll-Spalte), `02_RESSOURCEN.md`, `15_RAUMFAHRT.md`, `17_STAR_WARS_1.20.1.md`, `00_STATUS.md`
+- Erzatlas (`docs/erzatlas/`, Artifact-Seite neu veröffentlicht, Texturen aus den 1.20.1-JARs)
+
+### Auswirkungen auf bestehende Welt
+
+- Mekanism-Retrogen bleibt nötig (Osmium, Uran, Fluorit, Salz, seltenes Blei in erkundeten Overworld-Chunks).
+- Vorhandenes IE-Blei- und IE-Uranerz bleibt in alten Chunks stehen.
+- Alle Overrides müssen vor dem ersten Start der Hauptwelt in 1.20.1 beim Host liegen.
+
+### KubeJS / technische Umsetzung
+
+- 🟢 Angelegt im Projektordner: `config-overrides/config/Mekanism/world.toml` (Zinn aus; Osmium 20/3/4; Blei 2; Uran 5/9; Retrogen an, Version 1) und `config-overrides/serverconfig/immersiveengineering-server.toml` (Bauxit 5; Blei und Uran `vein_size = 0`), jeweils auf Basis der 1.20.1-Standarddateien (Kopien unter `_original/`).
+- Entfernt: `config-overrides/…/appliedenergistics2/common.json` (die Worldgen-Schlüssel gibt es in AE2 15 nicht mehr).
+- 🔵 Noch nicht angelegt (Block D): eigene Erz-Features für Everbright, Everdawn und die Planeten; Freigabe in `blue_skies-common.toml`; Override für `swgc:kyber_crystals`; Anpassung der Excavator-Adern.
+
+### Teststatus
+
+Nichts im Spiel getestet. In die Testinstanz wurde nichts kopiert.
+
+## 2026-10-12 — Progression für 1.20.1: erste Entscheidungen und neue Meilensteinkarte (Block C)
+
+Status: 🟡 (teilweise entschieden; Meilensteinkarte ist ein Entwurf)
+
+### Änderung
+
+Entscheidungen des Users:
+
+- **Treibstoff je Raketenstufe:** T1 Biodiesel (IE), T2 entschwefelter Diesel, T3 Kerosin (beide Immersive Petroleum), T4 eigener Raketentreibstoff aus Kerosin plus Mekanism-Chemie.
+- **Blood-Magic-Dungeon** nur auf dem **Merkur** zugänglich.
+- **Ad Astra:** Kabel, Fluid Pipes und Water Pump werden entfernt (Ersatz: IE, Mekanism). Der Energizer wird entfernt, wenn sich Ad-Astra-Items in der IE Charging Station oder am Mekanism Energy Cube laden lassen.
+- **Blue Skies:** Die Abschwächung fremder Werkzeuge wird als gewollte Hürde hingenommen.
+- Zurückgestellt: Magie- und Uran-Teile der Rakete T4; Ad Astra: Rocketed; Cryo Fuel.
+
+Die Meilensteinkarte wurde aus dem Entwurf für 1.18.2 übertragen und ergänzt: 23 Meilensteine, 8 Pfade, 9 Stufen. Twilight Forest → Blue Skies (Everbright, Everdawn, Bosse); Beyond Earth → Ad Astra mit vier einzelnen Raketenstufen; neu der Demon Dungeon auf dem Merkur und die Star-Wars-Planeten als eigene Zielstufe.
+
+### Betroffene Bereiche
+
+- `01_PROGRESSION.md` (neu geschrieben), `15_RAUMFAHRT.md`, `16_MODLISTE_1.20.1.md`, `00_STATUS.md`
+- `docs/meilensteine/` (Daten, Vorlage, README; Artifact-Seite neu veröffentlicht)
+
+### Neue offene Punkte
+
+- T1 fliegt jetzt mit Biodiesel. Damit ist „erster Raumflug nach Petroleum“ (Entscheidung 2026-10-07) nicht mehr von selbst erfüllt.
+- Cable Duct und Fluid Pipe Duct hängen an den Ad-Astra-Kabeln. Wie IE-Leitungen und Mekanism-Kabel in abgedichtete Räume kommen, muss im Spiel geprüft werden.
+- Aus dem JAR geprüft: Water Pump, Energizer, Kabel und Pipes sind in keinem anderen Rezept Zutat (außer den zwei Durchführungen).
+
+### Auswirkungen auf bestehende Welt
+
+Keine; die Raumfahrt ist in der Hauptwelt noch nicht begonnen.
+
+### KubeJS / technische Umsetzung
+
+Keine Skripte. Vorgesehen für Block D: Tag-Dateien `ad_astra:tier_N_rocket_fuel` mit `replace: true`, Entfernen der Rezepte der gestrichenen Ad-Astra-Blöcke, neues Fluid für den T4-Treibstoff.
+
+### Teststatus
+
+Nichts im Spiel getestet.
+
+## 2026-10-12 — Erste Fassung der Overrides und Skripte für 1.20.1 (Block D)
+
+Status: 🟡 (im Projektordner angelegt, im Spiel ungetestet, nicht in der Testinstanz)
+
+### Änderung
+
+- Gelöscht: die fünf KubeJS-1802-Skripte und `kubejs/data/beyond_earth/`.
+- Neu, Datapack (`kubejs/data/`): zwölf Erz-Features im Namensraum `ieplus` mit sieben Biome Modifiern (Everbright, Everdawn, Mond, Mars, Merkur, Venus, Glacio); Override für `swgc:kyber_crystals` (`forge:none`); Treibstoff-Tags für T1 bis T3; Excavator-Adern Galena und Uraninite mit Gewicht 5.
+- Neu, Skripte (KubeJS 2001): `fixes/tag_fixes.js` (`forge:sand`), `raumfahrt/ad_astra_regeln.js` (Rezepte entfernen, Platten über die IE Metal Press), `worldgen/excavator_adern.js` (Cassiterite entfernen).
+- Neu, Config: `config-overrides/config/blue_skies-common.toml` mit `allowed_mods_for_feature_gen = ["ieplus"]`.
+- `10_KUBEJS.md` für KubeJS 2001 neu geschrieben.
+
+### Begründung
+
+Umsetzung der Entscheidungen vom 2026-10-12 (Erzverteilung, Treibstoffe, Ad-Astra-Maschinen). Nicht umgesetzt ist alles, was der User zurückgestellt hat (T4-Teile, Rocketed, Cryo Fuel) oder was einen Test braucht (Energizer, Ritual auf dem Merkur).
+
+### Befund
+
+Blue Skies entfernt in seinen Biomen alle platzierten Features, deren **Namensraum** nicht freigegeben ist (Klasse `PurifyBiome`, im Bytecode nachgelesen). Die Freigabe des eigenen Namensraums `ieplus` genügt deshalb; `mekanism` oder `immersiveengineering` müssen nicht freigegeben werden.
+
+### Auswirkungen auf bestehende Welt
+
+Keine, solange nichts kopiert ist. Beim Host müssen alle Dateien vor dem ersten Start in 1.20.1 liegen.
+
+### Teststatus
+
+Ungetestet. Die JSON-Formate sind aus den JARs der Testinstanz übernommen (Blue Skies, Mekanism: Ad Astra Ores, IE). Die KubeJS-Aufrufe sind nicht im Spiel geprüft.
+
+## 2026-10-12 — Overrides und Skripte in die 1.20.1-Testinstanz kopiert
+
+Status: 🟡 (kopiert, ungetestet)
+
+### Änderung
+
+Mit Zustimmung des Users in `…\ATLauncher\instances\Minecraft1201withForge` kopiert:
+
+- `kubejs/data/` (41 Dateien) und `kubejs/server_scripts/` (3 Skripte; `example.js` der Instanz bleibt)
+- `config/Mekanism/world.toml` und `config/blue_skies-common.toml` (Sicherungen der vorherigen Dateien daneben als `….vor-2026-10-12`)
+- `defaultconfigs/immersiveengineering-server.toml` (gilt für neu angelegte Welten)
+
+Vorhandene Welten wurden nicht verändert. `11_TESTING.md` enthält den Testplan (27 Punkte).
+
+### Auswirkungen
+
+Mekanism-Retrogen ist in der Testinstanz eingeschaltet (`enableRegeneration = true`, Version 1). Wer eine vorhandene Testwelt öffnet, löst dort Retrogen aus.
+
+### Teststatus
+
+Nichts getestet; das Spiel wurde nicht gestartet.

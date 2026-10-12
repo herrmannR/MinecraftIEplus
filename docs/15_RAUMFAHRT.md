@@ -37,7 +37,7 @@ Pflicht-Bibliotheken von Ad Astra: Resourceful Lib, Resourceful Config, Botarium
 
 🟢 **Planeten-Metalle** bekommen Mekanisms Mehrfach-Erzverarbeitung, sofern es zum Spiel passt (Balancing in Phase 3).
 
-🔵 **Entwurf des Users (2026-10-11):** Der Zugang zum Blood-Magic-Dungeon ist nur auf einem Ad-Astra-Planeten möglich (Venus oder Merkur, noch offen). Dort gibt es ein Pflicht-Item für die T4-Rakete. Technische Grundlage: Blood Magic meldet Ritual-Aktivierungen als abbrechbares Ereignis (`RitualEvent$RitualActivatedEvent`, im JAR vorhanden); 🔵 ob KubeJS es abfangen kann, ist nicht getestet.
+🟡 **Blood-Magic-Dungeon nur auf dem Merkur** (Entwurf des Users vom 2026-10-11, Planet entschieden am 2026-10-12): Das Ritual zum Dungeon gelingt nur auf dem Merkur. Im Dungeon gibt es ein Pflicht-Item für die T4-Rakete (🔵 welches). Technische Grundlage: Blood Magic meldet Ritual-Aktivierungen als abbrechbares Ereignis (`RitualEvent$RitualActivatedEvent`, im JAR vorhanden); 🔵 ob KubeJS es abfangen kann, ist nicht getestet.
 
 ## Planeten (🟢 aus JAR)
 
@@ -108,18 +108,20 @@ Ad Astra nimmt fremde Materialien über Tags an. 🟢 Aus JAR:
 - 🔵 Verbrauch pro Start: In `ad_astra.jsonc` gibt es dafür keinen Schalter. Die Mengen müssen im Spiel abgelesen werden.
 - Fuel Loader (Giselle): 8.000 mB, Reichweite 2 Blöcke.
 
-### 🔵 Treibstoff-Progression (Entwurf, noch nicht entschieden)
+### 🟢 Treibstoff je Raketenstufe (Entscheidung 2026-10-12)
 
-Die Stufen-Tags machen möglich, was in Beyond Earth nicht ging: je Stufe ein anderer Treibstoff.
+Jede Stufe verlangt einen Schritt mehr in der Industrie.
 
-| Stufe | Treibstoff | Herkunft |
-|---|---|---|
-| T1 | Biodiesel | IE Refinery |
-| T2 | Diesel | Immersive Petroleum, Destillation (🔵 nur entschwefelt?) |
-| T3 | Gasoline oder ein veredelter Diesel | Immersive Petroleum, 🔵 ggf. mit Mekanism-Schritt |
-| T4 | eigener Raketentreibstoff | KubeJS-Fluid, Rezept in IE und Mekanism im Wechsel |
+| Stufe | Treibstoff | Fluid | Herkunft |
+|---|---|---|---|
+| T1 | Biodiesel | `immersiveengineering:biodiesel` | IE Refinery |
+| T2 | entschwefelter Diesel | `immersivepetroleum:diesel` (nicht `diesel_sulfur`) | Immersive Petroleum: Destillation + Hydrotreater |
+| T3 | Kerosin | `immersivepetroleum:kerosene` | Immersive Petroleum |
+| T4 | eigener Raketentreibstoff | 🔵 neues KubeJS-Fluid | Kerosin plus Mekanism-Chemie; Rezept offen |
 
-Umsetzung: je Stufe eine Tag-Datei mit `replace: true`. 🔵 Zu klären: endgültige Zuordnung, Kosten des T4-Rezepts, ob Cryo Fuel bleibt.
+Umsetzung (Block D): je Stufe eine Tag-Datei `ad_astra:tier_N_rocket_fuel` mit `replace: true`. 🔵 Zu klären: Rezept und Kosten des T4-Treibstoffs; Treibstoff des Rovers (`tier_1_rover_fuel`, Vorschlag: wie T1); ob Cryo Fuel entfernt wird oder Zutat des T4-Treibstoffs wird (User: später); Treibstoff für T5–T7, falls „Rocketed“ bleibt.
+
+⚠️ Folge: Die Entscheidung vom 2026-10-07 „erster Raumflug nach Petroleum“ passt nicht mehr von selbst, weil T1 mit Biodiesel fliegt. 🔵 Klären, ob Petroleum vor T1 Pflicht bleiben soll (dann über ein Bauteil) oder erst ab T2 gilt.
 
 ## Sauerstoff (🟢 aus JAR)
 
@@ -152,12 +154,12 @@ Ad Astra steuert über Entity-Tags, wer wo überlebt: `ad_astra:lives_without_ox
 | Etrionic Blast Furnace | macht per `alloying` Stahl aus Eisen + Kohle | Stahl-Rezept entfernen (umgeht IE-Stahl); Maschine 🔵 | 🔵 |
 | Compressor | Eisen, Kolben; macht alle Platten | entfernen; Platten über IE Metal Press | 🔵 |
 | Fuel Refinery | Öl → Fuel, nimmt auch IP-Rohöl | entfernen (umgeht die Destillation) | 🔵 |
-| Cryo Freezer | Eis → Cryo Fuel | 🔵 entscheiden: entfernen oder als späte Stufe einbauen | 🔵 |
+| Cryo Freezer | Eis → Cryo Fuel | 🔵 User: später entscheiden (entfernen oder Zutat für den T4-Treibstoff) | 🔵 |
 | Oxygen Loader | Wasser- und Sauerstoff-Rezept | bleibt; Wasser-Rezept entfernen | 🟢 Entscheidung, 🔵 Skript |
 | Oxygen Distributor, Gravity Normalizer, Oxygen Sensor | — | bleiben | 🟢 |
-| Water Pump | Desh-Platten | 🔵 bleibt? (kein Energie- oder Treibstofferzeuger) | 🔵 |
-| Energizer | Ostrum, Diamantblock | 🔵 lädt Items, erzeugt nichts | 🔵 |
-| Kabel und Fluid Pipes | Stahl/Desh/Ostrum-Platten | 🔵 behalten oder zugunsten von IE/Mekanism entfernen | 🔵 |
+| Water Pump | Desh-Platten | **entfernen**; Ersatz: Mekanism Electric Pump, IE Fluid Pump | 🟢 Entscheidung 2026-10-12, 🔵 Skript |
+| Energizer | Ostrum, Diamantblock | **entfernen, wenn** sich Ad-Astra-Items (Jet Suit, Etrionic Capacitor) in der IE Charging Station oder am Mekanism Energy Cube laden lassen | 🟡 Entscheidung 2026-10-12 unter Vorbehalt, 🔵 Test |
+| Kabel und Fluid Pipes (samt Cable Duct, Fluid Pipe Duct) | Stahl/Desh/Ostrum-Platten | **entfernen**; Strom und Flüssigkeiten laufen über IE und Mekanism | 🟢 Entscheidung 2026-10-12, 🔵 Skript |
 | Ölquellen (`oil_well`) in Ozeanen | Struktur in der Overworld | 🟢 abgeschaltet, siehe Worldgen | 🟢 Datei, 🔵 Test |
 
 ## Worldgen (🟢 aus JAR)
@@ -206,7 +208,7 @@ Die Erze sind normale JSON-Features in den Biom-Dateien und lassen sich per Data
 | Venus | Fluorit, Blei, Uran |
 | Glacio | Fluorit, Blei, Osmium, Zinn, Uran |
 
-🔵 Welche davon wir wo erzeugen, wird mit der neuen Erzplanung festgelegt (`03_ERZGENERATION.md`, Mekanism-Erze hauptsächlich in Blue Skies). Der frühere Beschluss „Mond = Hauptquelle für Osmium und Certus“ ist neu zu bewerten; Certus in Mondgestein gibt es als fertigen Block nicht.
+🟢 **Entscheidung 2026-10-12:** Mond: Osmium. Mars: Fluorit. Merkur und Venus: Uran und Blei. Glacio: Osmium und Uran. Kein Zinn auf Planeten (Zinn gibt es nur in Everbright). Uran ist damit in der Overworld knapp und ab Raketenstufe T3 reichlich. Certus gibt es auf dem Mond nicht mehr: AE2 hat in 1.20.1 kein Certus-Erz, es bleibt bei den Meteoriten in der Overworld. Zahlenvorschläge und Umsetzung (eigene Features, 🔵 noch nicht angelegt): `03_ERZGENERATION.md`.
 
 ### Strukturen
 
@@ -232,14 +234,14 @@ Aus JAR: Der Mod fügt nur drei Raketen T5, T6 und T7 hinzu, jeweils mit eigenem
 
 Nutzen hätte er nur, wenn wir Planeten selbst auf T5–T7 legen, zum Beispiel die Star-Wars-Planeten gestaffelt statt alle auf T4, und die Rezepte neu schreiben. Entscheidung nach der Aktualisierung der Progression.
 
-## Progressionsvorschlag (🔵 Entwurf, in Phase 2 festzulegen)
+## Progression der Raketenstufen (🟡 Stand 2026-10-12; die ganze Karte steht in `docs/meilensteine/`)
 
 | Stufe | Ziel | Kreuzungspunkte (Vorschlag) |
 |---|---|---|
-| T1 → Mond | erster Raumflug; Desh | IE-Stahl, Metal Press, Biodiesel oder Diesel, flüssiger Mekanism-Sauerstoff, **erste Mekanism-Maschine** |
-| T2 → Mars | Ostrum | Treibstoff der nächsten Stufe; Mekanism-Ausbau |
-| T3 → Merkur, Venus | Calorite (Venus); Hitzeschutz nötig | Mekanism-Chemie; **Blood-Magic-Dungeon nur hier zugänglich** (Entwurf) |
-| T4 → Glacio, Star-Wars-Planeten | Kyber, Beskar | **Magie + Uran-Erzeugnisse + Dungeon-Item** |
+| T1 → Mond | erster Raumflug; Desh, Osmium | IE-Stahl, Metal Press, Biodiesel, flüssiger Mekanism-Sauerstoff, **erste Mekanism-Maschine** |
+| T2 → Mars | Ostrum, Fluorit | entschwefelter Diesel (Petroleum); Mekanism-Ausbau |
+| T3 → Merkur, Venus | Calorite (Venus); Uran und Blei; Hitzeschutz nötig | Kerosin; **Blood-Magic-Dungeon nur auf dem Merkur** |
+| T4 → Glacio, Star-Wars-Planeten | Kyber, Beskar | eigener Raketentreibstoff; **Magie + Uran-Erzeugnisse + Dungeon-Item** (🔵 welche Teile) |
 | 🔵 T5–T7 | gestaffelte Star-Wars-Planeten | nur mit Ad Astra: Rocketed |
 
 ## Bekannte Fehler und Stolpersteine
@@ -258,11 +260,11 @@ Nutzen hätte er nur, wenn wir Planeten selbst auf T5–T7 legen, zum Beispiel d
 
 ## Offene Fragen
 
-1. 🔵 Treibstoff je Stufe endgültig zuordnen; bleibt Cryo Fuel?
-2. 🔵 Planet für den Blood-Magic-Zugang: Venus oder Merkur? Welches Item, wo garantiert zu holen?
-3. 🔵 Welche Magie- und Uran-Komponenten genau für T4 (z. B. Terrasteel, Alfsteel, Blood-Orb-Stufe, Polonium/Plutonium)?
-4. 🔵 Ad Astra: Rocketed nutzen und Star-Wars-Planeten staffeln?
-5. 🔵 Ad-Astra-Kabel, Fluid Pipes, Water Pump, Energizer: behalten oder entfernen?
+1. 🟢 Treibstoff je Stufe entschieden (Biodiesel, Diesel, Kerosin, eigener Raketentreibstoff). 🔵 Offen: T4-Rezept, Cryo Fuel, Rover.
+2. 🟢 Blood-Magic-Zugang nur auf dem Merkur. 🔵 Offen: welches Item, wo garantiert zu holen; technische Machbarkeit (Test E19).
+3. 🔵 Welche Magie- und Uran-Komponenten genau für T4 (z. B. Terrasteel, Alfsteel, Polonium/Plutonium)? User: später entscheiden.
+4. 🔵 Ad Astra: Rocketed nutzen und Star-Wars-Planeten staffeln? User: später entscheiden.
+5. 🟢 Ad-Astra-Kabel, Fluid Pipes und Water Pump werden entfernt; der Energizer ebenfalls, sofern die Alternative im Test funktioniert. 🔵 Offen: Wie kommen IE-Leitungen und Mekanism-Kabel in abgedichtete Räume, wenn die Ad-Astra-Durchführungen (Cable Duct, Fluid Pipe Duct) entfallen? Im Spiel prüfen (IE Feedthrough Insulator, Ad-Astra-Tags für dichte Blöcke).
 6. 🔵 Immersive Aircraft bleibt Atmosphären-Transport; `launchAnywhere` bleibt aus?
 7. 🔵 Treibstoffverbrauch pro Start und Schutzwirkung der Anzüge im Spiel ablesen.
 
@@ -270,7 +272,7 @@ Nutzen hätte er nur, wenn wir Planeten selbst auf T5–T7 legen, zum Beispiel d
 
 1. Skripte in KubeJS-2001-Syntax: Sand-Fix, Wasser-Sauerstoff-Rezept entfernen, verbotene Maschinen und Rezepte entfernen.
 2. Die drei Tag-Overrides im Spiel prüfen (Oil Well, Mekanism-Ad-Astra-Erze).
-3. Erzplanung für Planeten und Blue Skies (`03_ERZGENERATION.md`, Erzmatrix, Erzatlas).
+3. ✅ Erzplanung für Planeten und Blue Skies beschlossen (2026-10-12, `03_ERZGENERATION.md`); Features anlegen und testen steht aus.
 4. Treibstoff-Stufen festlegen und als Tags umsetzen.
 5. Pfad Raumfahrt in die Meilensteine aufnehmen (`docs/meilensteine/`).
 

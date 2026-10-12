@@ -78,7 +78,7 @@ JEIEvents.hideItems(event => {
 ## Offene Arbeit
 
 1. 🔵 **Zusammenspiel testen:** Star Wars Planets und Galaxy in a Cube gemeinsam starten. Dass sie zusammen laufen, ist nicht belegt.
-2. 🔵 **Worldgen von Galaxy in a Cube:** Prüfen, ob der Mod Erze (Plastoid, Durasteel, Kyber) oder Strukturen in der Overworld erzeugt. Das berührt die Erzplanung und die bestehende Welt.
+2. 🟡 **Worldgen von Galaxy in a Cube** (🟢 aus JAR, 2026-10-12; 🔵 im Spiel nicht geprüft): Der Mod erzeugt in der Overworld Kyber-Kristalle (`swgc:kyber_crystal`, alle Overworld-Biome, 1 Versuch in jedem 16. Chunk, Y 4…112 über dem Weltboden), die Struktur `swgc:ewok_village` im Biom `minecraft:forest` und Jawa-Spawns in Wüste und Badlands. Erz-Features für Plastoid oder Durasteel gibt es nicht. 🟢 Entscheidung 2026-10-12: Die Kristalle werden aus der Overworld entfernt; Kyber gibt es nur auf den Star-Wars-Planeten (`03_ERZGENERATION.md`). Damit wird Punkt 4 Pflicht: ein Rezept vom Kyber-Erz zum Kristall, sonst sind Lichtschwerter nicht herstellbar.
 3. 🔵 **Spawns:** Wo Galaxy in a Cube Mobs und Strukturen spawnt, ist nicht dokumentiert. Falls nur in der Overworld: pro Planeten-Biom eine Datapack-Datei mit zusätzlichen Spawns (Entity-IDs aus dem Spiel ablesen), und entscheiden, ob Klone und Droiden in der Overworld überhaupt erwünscht sind.
 4. 🔵 **Kyber aus Star Wars Planets:** Ohne dessen Schwerter hat das Erz keinen Zweck mehr. Entweder ausblenden oder per Rezept in die Kristalle von Galaxy in a Cube umwandeln. Die zweite Variante hielte die Schwerter an die Planeten gebunden.
 5. 🔵 **Macht:** an oder per `forceObtainment` aus? Im Kreativmodus Steuerung und Ausdauer ausprobieren.

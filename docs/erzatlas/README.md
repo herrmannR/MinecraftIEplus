@@ -1,19 +1,19 @@
 # Erzatlas
 
-> ⚠️ **Stand 1.18.2 (Twilight Forest, Beyond Earth).** Nach dem Wechsel auf 1.20.1 muss diese Übersicht samt Artifact-Seite neu aufgebaut werden; siehe TODO-Liste in `../00_STATUS.md`.
+> Stand 2026-10-12, Minecraft 1.20.1. Zeigt die Soll-Verteilung aus `../03_ERZGENERATION.md`; die Zahlen sind Vorschläge und im Spiel noch nicht getestet.
 
 Grafische Übersicht aller Erze: Fundorte, Mengen und Verbrauch pro Mod.
 
 - **Live-Seite (Artifact, privat):** https://claude.ai/artifact/LWwdvCpXRwaHCa8NstSc4g
-- `data.js` – **die Daten** (Erze, Fundorte, Werte, Verbrauch). Hier wird angepasst, z. B. wenn Cross-Mod-Rezepte den Verbrauch ändern.
-- `template.html` – Layout, Styles, Render-Logik
-- `icons.js` – Erz-Texturen als Data-URIs (aus Minecraft 1.18.2 und den Mod-JARs)
+- `data.js` – **die Daten** (Erze, Fundorte, Werte, Verbrauch). Hier wird angepasst, z. B. wenn Worldgen-Werte oder Cross-Mod-Rezepte sich ändern.
+- `template.html` – Layout, Styles, Render-Logik, Texte unter der Tabelle
+- `icons.js` – Erz-Texturen als Data-URIs (Vanilla, IE, Mekanism aus 1.18.2; Ad Astra, Star Wars Planets und Blue Skies aus den 1.20.1-JARs)
 - `build.sh` – setzt alles zu `erzatlas.html` zusammen
 
 Ablauf bei Änderungen: `data.js` anpassen → `bash build.sh` → `erzatlas.html` an dieselbe Artifact-URL veröffentlichen.
 
-## Herkunft der Werte (Stand 2026-10-08)
+## Herkunft der Werte (Stand 2026-10-12)
 
-- Overworld/Twilight Forest: unsere Configs bzw. KubeJS-Skripte (`config-overrides/`, `kubejs/`), siehe `03_ERZGENERATION.md`
-- Planeten: aus dem Bytecode von Beyond Earth 6.2 (`world/oregen/OreGeneration`) und Star Wars Planets 1.15 per `javap` ausgelesen
-- Verbrauch: Rezeptzählung aus den JARs (`14_ERZ_MOD_MATRIX.md`) plus Progressionsrolle
+- Overworld: unsere Configs in `config-overrides/` (Mekanism `world.toml`, IE-Serverconfig)
+- Blue Skies, Planeten: Standardwerte aus den JSON-Features der Mod-JARs; mit „NEU“ markierte Quellen sind unsere Vorschläge aus `03_ERZGENERATION.md`
+- Verbrauch: Bewertung aus der Rezeptzählung für 1.18.2 übernommen (noch nicht neu gezählt), neue Zeilen nach Progressionsrolle

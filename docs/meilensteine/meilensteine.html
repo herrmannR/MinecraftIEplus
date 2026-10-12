@@ -3,7 +3,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
-/* Layout: oben die Karte (Pfade als Zeilen, Stufen P1–P8 als Spalten, Linien = Voraussetzungen), darunter die Liste nach Stufen. Gleiche Material-Welt wie der Erzatlas. */
+/* Layout: oben die Karte (Pfade als Zeilen, Stufen als Spalten, Linien = Voraussetzungen), darunter die Liste nach Stufen. Gleiche Material-Welt wie der Erzatlas. */
 :root{
   --bg:#1b1d20; --panel:#24272b; --line:#34383e; --fg:#e7e5e1; --muted:#9a9890;
   --accent:#e0a33a; --edge:#6c7078; --cross:#e0a33a;
@@ -95,14 +95,14 @@ svg.hl .edge:not(.on), svg.hl .elabel:not(.on){opacity:.12}
   <header>
     <h1>Meilensteinkarte <span>IE+</span></h1>
     <p class="lede">Die Schlüssel-Meilensteine des Packs als Karte: jede Zeile ist ein Pfad, jede Spalte eine grobe Stufe. Linien zeigen Voraussetzungen und tragen das Material, das übergeben wird. Goldene Linien sind <strong>Kreuzungspunkte</strong> zwischen zwei Pfaden; dort setzen später die Cross-Mod-Rezepte und Quests an.</p>
-    <div class="meta"><span class="badge">ENTWURF · PHASE 2</span> &nbsp;Stand 2026-10-11 · Quelle: docs/01_PROGRESSION, 06_MAGIE, 08_AE2, 15_RAUMFAHRT</div>
+    <div class="meta"><span class="badge">ENTWURF · PHASE 2</span> &nbsp;Stand 2026-10-12 · Minecraft 1.20.1 · Quelle: docs/01_PROGRESSION, 03_ERZGENERATION, 15_RAUMFAHRT</div>
   </header>
 
   <div class="stats" id="stats"></div>
 
   <figure>
-    <div class="map"><svg id="map" role="img" aria-label="Meilensteinkarte: acht Pfade über acht Stufen, alle Linien laufen auf die Star-Wars-Planeten zu."></svg></div>
-    <figcaption>Alle Pflicht-Linien laufen auf die Star-Wars-Planeten (M18) zu: Tech über IE und Mekanism, Nuklear über die Uran-Kette, Magie über Alfsteel. Maus über einen Meilenstein hebt seine Voraussetzungen und Folgen hervor; Klick springt zur Beschreibung.</figcaption>
+    <div class="map"><svg id="map" role="img" aria-label="Meilensteinkarte: acht Pfade über neun Stufen, alle Linien laufen auf die Star-Wars-Planeten zu."></svg></div>
+    <figcaption>Alle Pflicht-Linien laufen über die Rakete T4 (M22) auf die Star-Wars-Planeten (M23) zu: Tech über IE, Petroleum und Mekanism, Nuklear über die Uran-Kette, Magie über Botania und den Blood-Magic-Dungeon auf dem Merkur. Maus über einen Meilenstein hebt seine Voraussetzungen und Folgen hervor; Klick springt zur Beschreibung.</figcaption>
   </figure>
   <div class="legend">
     <span><svg width="18" height="12"><rect x="1" y="1" width="16" height="10" rx="2" fill="var(--done)" stroke="var(--done)"/></svg> erreicht</span>
@@ -118,18 +118,22 @@ svg.hl .edge:not(.on), svg.hl .elabel:not(.on){opacity:.12}
   <section class="questions">
     <h2>Offene Fragen zum Vorschlag</h2>
     <ol>
+      <li>Welche Magie- und Uran-Teile verlangt die Rakete T4: Terrasteel oder Alfsteel, Plutonium oder Polonium?</li>
+      <li>Soll Petroleum weiter Pflicht vor dem ersten Raumflug sein (Entscheidung vom 2026-10-07), obwohl T1 jetzt mit Biodiesel fliegt?</li>
+      <li>Ad Astra: Rocketed nutzen und die Star-Wars-Planeten auf T5 bis T7 staffeln, oder den Mod entfernen?</li>
+      <li>Cryo Fuel: entfernen oder als Zutat für den Raketentreibstoff T4 behalten?</li>
+      <li>Sind Everbright und Everdawn gleich früh erreichbar (M5 → M10)?</li>
       <li>Steht die Tinkers-Schmelzerei in der Hauptwelt schon (M1 erreicht)?</li>
-      <li>Soll Blood Magic (M12) zusätzlich Pflicht für die Star-Wars-Planeten sein, oder reicht Alfsteel als Magie-Teil?</li>
-      <li>Ist der AE2-Storage-Layer (M8) früh genug bei P3, oder soll er erst nach Diesel kommen?</li>
-      <li>Soll Terrasteel (M9) wirklich in Raketenteile ab T2, oder lieber ein anderes Botania-Material?</li>
-      <li>Ist Zinn aus dem Twilight Forest als Pflicht vor der ersten Mekanism-Maschine (M5 → M7) gewollt?</li>
+      <li>Ist der AE2-Storage-Layer (M6) bei P3 früh genug?</li>
     </ol>
   </section>
 </div>
 
 <script>
-// Meilensteine – ENTWURF Phase 2 (2026-10-08). Alles hier ist 🔵, bis es beschlossen ist.
-// Pfade = Zeilen der Grafik, Stufen P1–P8 = Spalten (grobe Zeitachse aus 01_PROGRESSION.md, P8 = Raumfahrt-Endziel).
+// Meilensteine – ENTWURF Phase 2 für Minecraft 1.20.1 (2026-10-12). Übertragen aus dem Entwurf für 1.18.2 vom 2026-10-08.
+// Beschlossen (User, 2026-10-12): Erzverteilung, Treibstoff je Raketenstufe, Blood-Magic-Dungeon auf Merkur,
+// Blue-Skies-Werkzeugabschwächung als gewollte Hürde. Alles andere ist 🔵, bis es beschlossen ist.
+// Pfade = Zeilen der Grafik, Stufen P1–P9 = Spalten (grobe Zeitachse, letzte Stufe = Ziel).
 // status: "done" = in der Hauptwelt erreicht, "part" = begonnen/teilweise, "open" = offen
 // req: [Meilenstein-ID, Beschriftung der Linie] – Beschriftung = was über die Linie wandert (Material / Freischaltung)
 
@@ -140,24 +144,25 @@ const PATHS = [
   {id:"D", name:"Blood Magic",    hue:"#c7525a"},
   {id:"E", name:"Mekanism",       hue:"#5b9bd5"},
   {id:"F", name:"AE2",            hue:"#8b7fd1"},
-  {id:"G", name:"Exploration",    hue:"#4fb3b0"},
+  {id:"G", name:"Blue Skies",     hue:"#4fb3b0"},
   {id:"H", name:"Raumfahrt",      hue:"#e07b39"}
 ];
 
-const STAGES = ["P1","P2","P3","P4","P5","P6","P7","P8"];
+const STAGES = ["P1","P2","P3","P4","P5","P6","P7","P8","P9"];
+const GOAL = "M23";
 
 const MILESTONES = [
   {id:"M1",  path:"A", stage:1, name:"Schmelzerei", status:"part",
    req:[], must:true,
    what:"Tinkers' Smeltery, erste gegossene Werkzeuge.",
-   cross:"Gießt später auch Desh, Ostrum und Calorite (Beyond-Earth-Integration ist im JAR).",
+   cross:"Gießt später auch Desh, Ostrum und Calorite (TCIntegrations bringt die Schmelz-Fluids mit).",
    world:"Tinkers begonnen; ob die Schmelzerei steht, ist offen."},
 
   {id:"M2",  path:"B", stage:2, name:"IE-Stahl", status:"done",
    req:[], must:true,
-   what:"Koksofen, Hochofen, erster Stahl, IE-Grundmaschinen.",
-   cross:"Stahl ist die Basiswährung für Mekanism, AE2-Storage-Layer und Rakete T1.",
-   world:"Erreicht (Stahl, Crusher, Arc Furnace)."},
+   what:"Koksofen, Hochofen, erster Stahl, IE-Grundmaschinen. Die Raffinerie liefert Biodiesel.",
+   cross:"Stahl ist die Basiswährung für Mekanism, den AE2-Storage-Layer und die Rakete T1. Biodiesel ist der Treibstoff für T1.",
+   world:"Erreicht. Nach dem Wechsel auf 1.20.1 müssen alle Multiblöcke neu geformt werden."},
 
   {id:"M3",  path:"C", stage:3, name:"Runenaltar", status:"done",
    req:[], must:false,
@@ -166,93 +171,123 @@ const MILESTONES = [
    world:"Erreicht."},
 
   {id:"M4",  path:"D", stage:3, name:"Blutaltar T2", status:"open",
-   req:[], must:false,
+   req:[], must:true,
    what:"Blood Altar Stufe 2, erste Blood Orbs.",
-   cross:"Vorschlag: IE-Stahl in den Runen (Schmelzerei-Pfad bleibt eigenständig).",
+   cross:"Beginn der Kette zum Dungeon-Item für die Rakete T4.",
    world:"Mod neu installiert, nicht begonnen."},
 
-  {id:"M5",  path:"G", stage:3, name:"TF-Expedition", status:"part",
+  {id:"M5",  path:"G", stage:3, name:"Everbright", status:"open",
    req:[["M2","Ausrüstung"]], must:true,
-   what:"Twilight Forest erkunden: Zinn (exklusiv), Blei, Bauxit abbauen.",
-   cross:"Zinn → Bronze und Mekanism-Ausbau; Blei/Bauxit → IE.",
-   world:"Twilight Forest gerade betreten."},
+   what:"Gatekeeper finden, Zeal Lighter kaufen (8 Smaragde), Portal nach Everbright. Dort liegen Zinn (nur hier), Blei und Bauxit.",
+   cross:"Zinn → Bronze und Mekanism-Ausbau; Blei und Bauxit → IE. Fremde Werkzeuge sind abgeschwächt, bis die Bosse besiegt sind (gewollte Hürde).",
+   world:"Blue Skies ist neu; ersetzt den Twilight Forest."},
 
-  {id:"M6",  path:"B", stage:4, name:"Diesel", status:"part",
-   req:[["M2","Stahl"]], must:true,
-   what:"Pumpjack + Destillation (Immersive Petroleum) liefern Diesel.",
-   cross:"Diesel ist der Treibstoff für Rakete T1.",
-   world:"Pumpjack gerade gebaut; Destillation offen."},
-
-  {id:"M7",  path:"E", stage:5, name:"Erste Mekanism-Maschine", status:"open",
-   req:[["M2","Stahl"],["M5","Zinn"]], must:true,
-   what:"Metallurgic Infuser / Enrichment Chamber mit Overworld-Osmium.",
-   cross:"Pflichtbaustein für Rakete T1 (Entscheidung 2026-10-07).",
-   world:"Mod neu installiert, nicht begonnen."},
-
-  {id:"M8",  path:"F", stage:3, name:"Storage-Layer", status:"open",
+  {id:"M6",  path:"F", stage:3, name:"Storage-Layer", status:"open",
    req:[["M2","Stahl"]], must:false,
-   what:"Meteorit finden (Inscriber-Pressen), Prozessoren, Kisten und Drawers per Storage Bus anbinden.",
-   cross:"Certus aus Overworld und Meteoriten reicht nur hierfür.",
+   what:"Meteorit finden (Inscriber-Pressen und Budding-Certus), Prozessoren, Kisten und Drawers per Storage Bus anbinden.",
+   cross:"Certus gibt es in 1.20.1 nur noch an Budding-Blöcken in Meteoriten.",
    world:"AE2 nicht begonnen."},
+
+  {id:"M7",  path:"E", stage:3, name:"Erste Mekanism-Maschine", status:"open",
+   req:[["M2","Stahl"]], must:true,
+   what:"Metallurgic Infuser und Enrichment Chamber mit dem knappen Overworld-Osmium. Electrolytic Separator und Rotary Condensentrator für flüssigen Sauerstoff.",
+   cross:"Pflichtbaustein für die Rakete T1: Sauerstoff kommt zwingend aus Mekanism.",
+   world:"Mod neu installiert, nicht begonnen. Osmium kommt per Retrogen in die erkundeten Chunks."},
+
+  {id:"M8",  path:"B", stage:4, name:"Petroleum", status:"part",
+   req:[["M2","Stahl"]], must:true,
+   what:"Pumpjack, Destillation und Hydrotreater (Immersive Petroleum): entschwefelter Diesel und Kerosin.",
+   cross:"Diesel ist der Treibstoff für T2, Kerosin für T3 und die Basis des Raketentreibstoffs für T4.",
+   world:"Pumpjack gebaut; muss nach dem Wechsel neu geformt werden. Ob er das alte Ölvorkommen findet, ist ungetestet."},
 
   {id:"M9",  path:"C", stage:4, name:"Terrasteel", status:"open",
    req:[["M3","Runen"]], must:true,
    what:"Terrestrial Agglomeration Plate, Terrasteel.",
-   cross:"Vorschlag: Terrasteel in Raketenteilen ab T2.",
+   cross:"Mindestens Terrasteel wird als Magie-Teil der Rakete T4 gebraucht (welches Teil genau, ist offen).",
    world:"–"},
 
-  {id:"M10", path:"H", stage:5, name:"Rakete T1 → Mond", status:"open",
-   req:[["M6","Diesel"],["M7","Mek-Bauteil"]], must:true,
-   what:"NASA-Workbench, Rakete T1, Launchpad, Sauerstoff. Erster Raumflug.",
-   cross:"Mond liefert Osmium und Certus in Menge sowie Desh.",
+  {id:"M10", path:"G", stage:4, name:"Everdawn", status:"open",
+   req:[["M5","Gatekeeper"]], must:false,
+   what:"Zweite Blue-Skies-Dimension. Hier liegt Osmium in Menge.",
+   cross:"Osmium für den Mekanism-Ausbau, als Alternative zum Mond.",
    world:"–"},
 
-  {id:"M11", path:"E", stage:6, name:"Mekanism-Ausbau", status:"open",
-   req:[["M7","Maschinen"],["M10","Mond-Osmium"]], must:true,
-   what:"Erzverarbeitung ×3/×4 (Purification, Chemical Injection), Gase.",
-   cross:"Veredelter Treibstoff für T2/T3 (IE-Diesel → Mekanism-Chemie).",
+  {id:"M11", path:"H", stage:4, name:"Rakete T1 → Mond", status:"open",
+   req:[["M2","Stahl · Biodiesel"],["M7","Sauerstoff"]], must:true,
+   what:"NASA Workbench, Rakete T1, Launch Pad, Raumanzug. Erster Raumflug.",
+   cross:"Der Mond liefert Desh für T2 und Osmium in Menge.",
    world:"–"},
 
-  {id:"M12", path:"D", stage:5, name:"Blutaltar T4", status:"open",
-   req:[["M4","Altar"]], must:false,
-   what:"Altar T4, Demon Dungeon, Demonit.",
-   cross:"Demonit → Tinkers (Hellforged). Offen: zusätzlich Pflicht für Star Wars?",
+  {id:"M12", path:"E", stage:4, name:"Mekanism-Ausbau", status:"open",
+   req:[["M7","Maschinen"],["M5","Zinn"]], must:true,
+   what:"Erzverarbeitung ×3 und ×4 (Purification, Chemical Injection), Gase und Chemie.",
+   cross:"Osmium dafür aus Everdawn oder vom Mond. Liefert die Chemie für den Raketentreibstoff T4.",
    world:"–"},
 
-  {id:"M13", path:"C", stage:5, name:"Alfheim", status:"open",
+  {id:"M13", path:"D", stage:5, name:"Blutaltar T4", status:"open",
+   req:[["M4","Altar"]], must:true,
+   what:"Altar Stufe 4, Voraussetzung für das Ritual zum Demon Dungeon.",
+   cross:"Demonit → Tinkers (Hellforged).",
+   world:"–"},
+
+  {id:"M14", path:"C", stage:5, name:"Alfheim", status:"open",
    req:[["M9","Terrasteel"]], must:false,
    what:"Elven Gateway, Mead of Kvasir, Zugang nach Alfheim (MythicBotany).",
    cross:"Elementium und Dragonstone.",
    world:"–"},
 
-  {id:"M14", path:"C", stage:6, name:"Gaia · Alfsteel", status:"open",
-   req:[["M13","Dragonstone"]], must:true,
+  {id:"M15", path:"G", stage:5, name:"Blue-Skies-Bosse", status:"open",
+   req:[["M5","Dungeons"]], must:false,
+   what:"Summoner und Alchemist (Everbright), Starlit Crusher und Arachnarch (Everdawn).",
+   cross:"Hebt die Abschwächung fremder Werkzeuge auf. Story-Kapitel mit Easy-NPC-Figuren.",
+   world:"–"},
+
+  {id:"M16", path:"H", stage:5, name:"Rakete T2 → Mars", status:"open",
+   req:[["M11","Desh"],["M8","Diesel"]], must:true,
+   what:"Desh-Rakete mit entschwefeltem Diesel. Der Mars liefert Ostrum und Fluorit.",
+   cross:"IE bleibt nötig (Metal Press für die Platten, weil der Ad-Astra-Compressor entfällt).",
+   world:"–"},
+
+  {id:"M17", path:"C", stage:6, name:"Gaia · Alfsteel", status:"open",
+   req:[["M14","Dragonstone"]], must:false,
    what:"Gaia-Guardian besiegen, Alfsteel herstellen.",
-   cross:"Alfsteel = Magie-Pflichtteil für Star-Wars-Raketen (Vorschlag).",
+   cross:"Wird Pflicht, falls Alfsteel als Magie-Teil der Rakete T4 gewählt wird (offen).",
    world:"–"},
 
-  {id:"M15", path:"H", stage:6, name:"Rakete T2/T3 → Mars, Venus", status:"open",
-   req:[["M10","Desh"],["M11","Treibstoff"],["M9","Terrasteel"]], must:true,
-   what:"Ostrum (Mars) und Calorite (Venus) erschließen.",
-   cross:"IE bleibt nötig (Metal Press, Refinery), Mekanism für den Treibstoff.",
+  {id:"M18", path:"H", stage:6, name:"Rakete T3 → Merkur, Venus", status:"open",
+   req:[["M16","Ostrum"],["M8","Kerosin"]], must:true,
+   what:"Ostrum-Rakete mit Kerosin. Hitzeschutz nötig (Netherite Space Suit). Venus liefert Calorite; Merkur und Venus liefern Uran und Blei in Menge.",
+   cross:"Macht die Nuklearkette ergiebig und öffnet den Weg zum Blood-Magic-Dungeon.",
    world:"–"},
 
-  {id:"M16", path:"F", stage:7, name:"ME-System", status:"open",
-   req:[["M8","Prozessoren"],["M10","Mond-Certus"],["M11","Mek-Ausbau"]], must:false,
+  {id:"M19", path:"D", stage:7, name:"Demon Dungeon auf Merkur", status:"open",
+   req:[["M13","Ritual"],["M18","Flug zum Merkur"]], must:true,
+   what:"Das Ritual zum Blood-Magic-Dungeon gelingt nur auf dem Merkur. Im Dungeon liegt ein Pflicht-Item für die Rakete T4.",
+   cross:"Verbindet Blood Magic mit der Raumfahrt. Ob sich das Ritual per KubeJS auf einen Planeten beschränken lässt, ist ungetestet.",
+   world:"–"},
+
+  {id:"M20", path:"E", stage:7, name:"Nuklearkette", status:"open",
+   req:[["M12","Gase"],["M18","Uran in Menge"]], must:true,
+   what:"Fission Reactor, Polonium und Plutonium.",
+   cross:"Uran-Erzeugnisse sind Pflichtteil der Rakete T4 (welches genau, ist offen).",
+   world:"–"},
+
+  {id:"M21", path:"F", stage:7, name:"ME-System", status:"open",
+   req:[["M6","Prozessoren"],["M12","Mek-Ausbau"]], must:false,
    what:"ME Drives, Storage Cells, Autocrafting, Applied Mekanistics.",
    cross:"Automatisiert die vorhandenen Ketten.",
    world:"–"},
 
-  {id:"M17", path:"E", stage:7, name:"Nuklearkette", status:"open",
-   req:[["M11","Gase"]], must:true,
-   what:"Fission Reactor, Polonium und Plutonium.",
-   cross:"Uran-Erzeugnisse = Pflichtteil für Star-Wars-Raketen.",
+  {id:"M22", path:"H", stage:8, name:"Rakete T4 → Glacio", status:"open",
+   req:[["M18","Calorite"],["M19","Dungeon-Item"],["M20","Uran-Teil"],["M9","Magie-Teil"],["M12","Raketentreibstoff"]], must:true,
+   what:"Calorite-Rakete mit eigenem Raketentreibstoff (Kerosin plus Mekanism-Chemie). Erreicht Glacio und die Star-Wars-Planeten.",
+   cross:"Hier laufen Tech, Nuklear, Botania und Blood Magic zusammen.",
    world:"–"},
 
-  {id:"M18", path:"H", stage:8, name:"Star-Wars-Planeten", status:"open",
-   req:[["M15","Calorite"],["M17","Polonium"],["M14","Alfsteel"]], must:true,
-   what:"Rakete T4: Tatooine, Kamino, Endor, Hoth, Mustafar, Mandalore. Kyber und Beskar.",
-   cross:"Endziel: verbindet Tech, Nuklear und Magie.",
+  {id:"M23", path:"H", stage:9, name:"Star-Wars-Planeten", status:"open",
+   req:[["M22","Rakete T4"]], must:true,
+   what:"Tatooine, Endor, Hoth, Mustafar, Mandalore. Kyber für Lichtschwerter (nur hier, in der Overworld entfernt) und Beskar.",
+   cross:"Endziel. Offen: mit Ad Astra: Rocketed auf T5 bis T7 staffeln?",
    world:"–"}
 ];
 
@@ -270,7 +305,7 @@ function walk(id, dir, seen = new Set()){
 
 // Kennzahlen
 const cnt = s => MILESTONES.filter(m => m.status === s).length;
-const toGoal = walk("M18", "up");
+const toGoal = walk(GOAL, "up");
 document.getElementById("stats").innerHTML =
   `<span><b>${MILESTONES.length}</b> Meilensteine</span>` +
   `<span><span class="dot" style="background:var(--done)"></span><b>${cnt("done")}</b> erreicht</span>` +
@@ -294,7 +329,7 @@ PATHS.forEach((p, i) => {
   el("text", {class:"lane-label", x:24, y:TOP + i*RH + RH/2 + 4}).textContent = p.name;
 });
 STAGES.forEach((s, i) => {
-  el("text", {class:"stage-label", x:LX + i*CW + CW/2, y:24}).textContent = s === "P8" ? "P8 · Ziel" : s;
+  el("text", {class:"stage-label", x:LX + i*CW + CW/2, y:24}).textContent = i === STAGES.length - 1 ? s + " · Ziel" : s;
   el("line", {class:"grid", x1:LX + i*CW, y1:TOP, x2:LX + i*CW, y2:H - 10});
 });
 
@@ -349,7 +384,7 @@ const list = document.getElementById("list");
 STAGES.forEach((s, i) => {
   const ms = MILESTONES.filter(m => m.stage === i + 1).sort((a, b) => pathIdx[a.path] - pathIdx[b.path]);
   if(!ms.length) return;
-  let h = `<div class="stage-block"><div class="stage-head"><h2>${s === "P8" ? "P8 · Ziel" : s}</h2><span class="s">${ms.length} Meilenstein${ms.length > 1 ? "e" : ""}</span></div><div class="cards">`;
+  let h = `<div class="stage-block"><div class="stage-head"><h2>${i === STAGES.length - 1 ? s + " · Ziel" : s}</h2><span class="s">${ms.length} Meilenstein${ms.length > 1 ? "e" : ""}</span></div><div class="cards">`;
   ms.forEach(m => {
     const reqs = m.req.length ? m.req.map(([r, l]) => `<a href="#${r}">${r} ${byId[r].name}</a> (${l})`).join(", ") : "–";
     const next = (kids[m.id] || []).map(k => `<a href="#${k}">${k}</a>`).join(", ") || "–";

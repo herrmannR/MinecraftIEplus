@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#blue_skies:everbright",
+  "features": ["ieplus:everbright_tin", "ieplus:everbright_lead", "ieplus:everbright_bauxite"],
+  "step": "underground_ores"
+}

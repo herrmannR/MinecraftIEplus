@@ -407,7 +407,7 @@
 			shouldGenerate = true
 			#Chance that normal lead veins generates in a chunk.
 			#Range: 1 ~ 256
-			perChunk = 4
+			perChunk = 2
 			#Maximum number of blocks in a normal lead vein.
 			#Range: 1 ~ 64
 			maxVeinSize = 9
@@ -447,7 +447,7 @@
 		#Determines if salt should be added to world generation.
 		shouldGenerate = true
 		#Chance that salt generates in a chunk.
-		#Range: 1 ~ 2031
+		#Range: 1 ~ 256
 		perChunk = 2
 		#Base radius of a vein of salt.
 		#Range: 1 ~ 4

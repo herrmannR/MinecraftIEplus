@@ -3,7 +3,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
-/* Layout: oben die Karte (Pfade als Zeilen, Stufen P1–P8 als Spalten, Linien = Voraussetzungen), darunter die Liste nach Stufen. Gleiche Material-Welt wie der Erzatlas. */
+/* Layout: oben die Karte (Pfade als Zeilen, Stufen als Spalten, Linien = Voraussetzungen), darunter die Liste nach Stufen. Gleiche Material-Welt wie der Erzatlas. */
 :root{
   --bg:#1b1d20; --panel:#24272b; --line:#34383e; --fg:#e7e5e1; --muted:#9a9890;
   --accent:#e0a33a; --edge:#6c7078; --cross:#e0a33a;
@@ -95,14 +95,14 @@ svg.hl .edge:not(.on), svg.hl .elabel:not(.on){opacity:.12}
   <header>
     <h1>Meilensteinkarte <span>IE+</span></h1>
     <p class="lede">Die Schlüssel-Meilensteine des Packs als Karte: jede Zeile ist ein Pfad, jede Spalte eine grobe Stufe. Linien zeigen Voraussetzungen und tragen das Material, das übergeben wird. Goldene Linien sind <strong>Kreuzungspunkte</strong> zwischen zwei Pfaden; dort setzen später die Cross-Mod-Rezepte und Quests an.</p>
-    <div class="meta"><span class="badge">ENTWURF · PHASE 2</span> &nbsp;Stand 2026-10-11 · Quelle: docs/01_PROGRESSION, 06_MAGIE, 08_AE2, 15_RAUMFAHRT</div>
+    <div class="meta"><span class="badge">ENTWURF · PHASE 2</span> &nbsp;Stand 2026-10-12 · Minecraft 1.20.1 · Quelle: docs/01_PROGRESSION, 03_ERZGENERATION, 15_RAUMFAHRT</div>
   </header>
 
   <div class="stats" id="stats"></div>
 
   <figure>
-    <div class="map"><svg id="map" role="img" aria-label="Meilensteinkarte: acht Pfade über acht Stufen, alle Linien laufen auf die Star-Wars-Planeten zu."></svg></div>
-    <figcaption>Alle Pflicht-Linien laufen auf die Star-Wars-Planeten (M18) zu: Tech über IE und Mekanism, Nuklear über die Uran-Kette, Magie über Alfsteel. Maus über einen Meilenstein hebt seine Voraussetzungen und Folgen hervor; Klick springt zur Beschreibung.</figcaption>
+    <div class="map"><svg id="map" role="img" aria-label="Meilensteinkarte: acht Pfade über neun Stufen, alle Linien laufen auf die Star-Wars-Planeten zu."></svg></div>
+    <figcaption>Alle Pflicht-Linien laufen über die Rakete T4 (M22) auf die Star-Wars-Planeten (M23) zu: Tech über IE, Petroleum und Mekanism, Nuklear über die Uran-Kette, Magie über Botania und den Blood-Magic-Dungeon auf dem Merkur. Maus über einen Meilenstein hebt seine Voraussetzungen und Folgen hervor; Klick springt zur Beschreibung.</figcaption>
   </figure>
   <div class="legend">
     <span><svg width="18" height="12"><rect x="1" y="1" width="16" height="10" rx="2" fill="var(--done)" stroke="var(--done)"/></svg> erreicht</span>
@@ -118,11 +118,13 @@ svg.hl .edge:not(.on), svg.hl .elabel:not(.on){opacity:.12}
   <section class="questions">
     <h2>Offene Fragen zum Vorschlag</h2>
     <ol>
+      <li>Welche Magie- und Uran-Teile verlangt die Rakete T4: Terrasteel oder Alfsteel, Plutonium oder Polonium?</li>
+      <li>Soll Petroleum weiter Pflicht vor dem ersten Raumflug sein (Entscheidung vom 2026-10-07), obwohl T1 jetzt mit Biodiesel fliegt?</li>
+      <li>Ad Astra: Rocketed nutzen und die Star-Wars-Planeten auf T5 bis T7 staffeln, oder den Mod entfernen?</li>
+      <li>Cryo Fuel: entfernen oder als Zutat für den Raketentreibstoff T4 behalten?</li>
+      <li>Sind Everbright und Everdawn gleich früh erreichbar (M5 → M10)?</li>
       <li>Steht die Tinkers-Schmelzerei in der Hauptwelt schon (M1 erreicht)?</li>
-      <li>Soll Blood Magic (M12) zusätzlich Pflicht für die Star-Wars-Planeten sein, oder reicht Alfsteel als Magie-Teil?</li>
-      <li>Ist der AE2-Storage-Layer (M8) früh genug bei P3, oder soll er erst nach Diesel kommen?</li>
-      <li>Soll Terrasteel (M9) wirklich in Raketenteile ab T2, oder lieber ein anderes Botania-Material?</li>
-      <li>Ist Zinn aus dem Twilight Forest als Pflicht vor der ersten Mekanism-Maschine (M5 → M7) gewollt?</li>
+      <li>Ist der AE2-Storage-Layer (M6) bei P3 früh genug?</li>
     </ol>
   </section>
 </div>
@@ -144,7 +146,7 @@ function walk(id, dir, seen = new Set()){
 
 // Kennzahlen
 const cnt = s => MILESTONES.filter(m => m.status === s).length;
-const toGoal = walk("M18", "up");
+const toGoal = walk(GOAL, "up");
 document.getElementById("stats").innerHTML =
   `<span><b>${MILESTONES.length}</b> Meilensteine</span>` +
   `<span><span class="dot" style="background:var(--done)"></span><b>${cnt("done")}</b> erreicht</span>` +
@@ -168,7 +170,7 @@ PATHS.forEach((p, i) => {
   el("text", {class:"lane-label", x:24, y:TOP + i*RH + RH/2 + 4}).textContent = p.name;
 });
 STAGES.forEach((s, i) => {
-  el("text", {class:"stage-label", x:LX + i*CW + CW/2, y:24}).textContent = s === "P8" ? "P8 · Ziel" : s;
+  el("text", {class:"stage-label", x:LX + i*CW + CW/2, y:24}).textContent = i === STAGES.length - 1 ? s + " · Ziel" : s;
   el("line", {class:"grid", x1:LX + i*CW, y1:TOP, x2:LX + i*CW, y2:H - 10});
 });
 
@@ -223,7 +225,7 @@ const list = document.getElementById("list");
 STAGES.forEach((s, i) => {
   const ms = MILESTONES.filter(m => m.stage === i + 1).sort((a, b) => pathIdx[a.path] - pathIdx[b.path]);
   if(!ms.length) return;
-  let h = `<div class="stage-block"><div class="stage-head"><h2>${s === "P8" ? "P8 · Ziel" : s}</h2><span class="s">${ms.length} Meilenstein${ms.length > 1 ? "e" : ""}</span></div><div class="cards">`;
+  let h = `<div class="stage-block"><div class="stage-head"><h2>${i === STAGES.length - 1 ? s + " · Ziel" : s}</h2><span class="s">${ms.length} Meilenstein${ms.length > 1 ? "e" : ""}</span></div><div class="cards">`;
   ms.forEach(m => {
     const reqs = m.req.length ? m.req.map(([r, l]) => `<a href="#${r}">${r} ${byId[r].name}</a> (${l})`).join(", ") : "–";
     const next = (kids[m.id] || []).map(k => `<a href="#${k}">${k}</a>`).join(", ") || "–";
