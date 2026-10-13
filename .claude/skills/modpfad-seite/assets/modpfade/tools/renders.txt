@@ -1,0 +1,1 @@
+# name  gier  neigung  modell.obj[,weiteres.obj]  [platzhalter=namespace:pfad ...]   (Pfade relativ zum JARS-Ordner)

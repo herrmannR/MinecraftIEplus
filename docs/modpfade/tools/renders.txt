@@ -1,0 +1,64 @@
+# name  gier  neigung  modell.obj[,weiteres.obj]  [platzhalter=namespace:pfad ...]   (Pfade relativ zum JARS-Ordner)
+# Immersive Engineering: Multiblöcke
+ie_coke_oven 215 30 ie/assets/immersiveengineering/models/block/stone_multiblocks/cube_three.obj side=immersiveengineering:block/multiblocks/coke_oven front=immersiveengineering:block/multiblocks/coke_oven_off
+ie_blast_furnace 215 30 ie/assets/immersiveengineering/models/block/stone_multiblocks/cube_three.obj side=immersiveengineering:block/multiblocks/blast_furnace front=immersiveengineering:block/multiblocks/blast_furnace_off
+ie_alloy_kiln 215 30 ie/assets/immersiveengineering/models/block/stone_multiblocks/cube_two.obj side=immersiveengineering:block/multiblocks/alloy_smelter_side top=immersiveengineering:block/multiblocks/alloy_smelter_top bottom=immersiveengineering:block/multiblocks/alloy_smelter_bottom front=immersiveengineering:block/multiblocks/alloy_smelter_off
+ie_improved_blast_furnace 215 30 ie/assets/immersiveengineering/models/block/blastfurnace_advanced.obj
+ie_preheater 215 30 ie/assets/immersiveengineering/models/block/metal_device/blastfurnace_preheater.obj
+ie_metal_press 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/metal_press.obj,ie/assets/immersiveengineering/models/block/metal_multiblock/metal_press_piston.obj
+ie_crusher 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/crusher.obj
+ie_sawmill 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/sawmill.obj
+ie_squeezer 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/squeezer.obj
+ie_fermenter 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/fermenter.obj
+ie_refinery 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/refinery.obj
+ie_diesel_generator 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/diesel_generator.obj
+ie_mixer 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/mixer.obj
+ie_bottling_machine 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/bottling_machine.obj.ie
+ie_assembler 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/assembler.obj
+ie_auto_workbench 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/auto_workbench.obj
+ie_arc_furnace 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/arc_furnace.obj
+ie_excavator 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/excavator.obj
+ie_bucket_wheel 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/bucket_wheel.obj.ie
+ie_silo 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/silo.obj
+ie_tank 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/tank.obj
+ie_lightning_rod 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/lightningrod.obj
+# Immersive Engineering: Geräte
+ie_connector_lv 215 30 ie/assets/immersiveengineering/models/block/connector/connector_lv.obj texture=immersiveengineering:block/connector/connector_lv
+ie_relay_lv 215 30 ie/assets/immersiveengineering/models/block/connector/connector_lv.obj texture=immersiveengineering:block/connector/relay_lv
+ie_connector_hv 215 30 ie/assets/immersiveengineering/models/block/connector/connector_hv.obj
+ie_connector_redstone 215 30 ie/assets/immersiveengineering/models/block/connector/connector_redstone.obj.ie
+ie_breaker_switch 215 30 ie/assets/immersiveengineering/models/block/connector/breaker_switch_off.obj.ie
+ie_transformer 215 30 ie/assets/immersiveengineering/models/block/connector/transformer_mv_left.obj
+ie_transformer_hv 215 30 ie/assets/immersiveengineering/models/block/connector/transformer_hv_left.obj
+ie_balloon 215 30 ie/assets/immersiveengineering/models/block/balloon.obj.ie
+ie_lantern 215 30 ie/assets/immersiveengineering/models/block/lantern_inventory.obj
+ie_cloche 215 30 ie/assets/immersiveengineering/models/block/metal_device/cloche.obj.ie
+ie_charging_station 215 30 ie/assets/immersiveengineering/models/block/metal_device/charging_station.obj
+ie_electric_lantern 215 30 ie/assets/immersiveengineering/models/block/metal_device/e_lantern.obj texture=immersiveengineering:block/metal_device/electric_lantern_on
+ie_floodlight 215 30 ie/assets/immersiveengineering/models/block/metal_device/floodlight.obj.ie texture=immersiveengineering:block/metal_device/floodlight
+ie_core_drill 215 30 ie/assets/immersiveengineering/models/block/metal_device/core_drill.obj,ie/assets/immersiveengineering/models/block/metal_device/core_drill_center.obj
+ie_gun_turret 215 30 ie/assets/immersiveengineering/models/block/metal_device/gun_turret_inv.obj
+ie_chem_turret 215 30 ie/assets/immersiveengineering/models/block/metal_device/chem_turret_inv.obj
+ie_teslacoil 215 30 ie/assets/immersiveengineering/models/block/metal_device/teslacoil.obj
+ie_fluid_pipe 215 30 ie/assets/immersiveengineering/models/block/metal_device/fluid_pipe.obj.ie
+ie_fluid_pump 215 30 ie/assets/immersiveengineering/models/block/metal_device/fluid_pump_inv.obj
+ie_razor_wire 215 30 ie/assets/immersiveengineering/models/block/razor_wire.obj.ie
+ie_workbench 215 30 ie/assets/immersiveengineering/models/block/wooden_device/workbench.obj.ie
+ie_craftingtable 215 30 ie/assets/immersiveengineering/models/block/wooden_device/craftingtable.obj
+ie_circuit_table 215 30 ie/assets/immersiveengineering/models/block/wooden_device/circuit_table.obj
+ie_logic_unit 215 30 ie/assets/immersiveengineering/models/block/wooden_device/logic_unit.obj.ie
+ie_windmill 215 20 ie/assets/immersiveengineering/models/block/wooden_device/windmill.obj.ie
+ie_watermill 215 20 ie/assets/immersiveengineering/models/block/wooden_device/watermill.obj
+ie_wooden_post 215 30 ie/assets/immersiveengineering/models/block/wooden_device/wooden_post_inv.obj post=immersiveengineering:block/wooden_decoration/post
+ie_toolbox 215 30 ie/assets/immersiveengineering/models/block/toolbox.obj
+# Immersive Petroleum
+ip_derrick 215 30 ip/assets/immersivepetroleum/models/multiblock/obj/derrick.obj texture=immersivepetroleum:multiblock/derrick
+ip_pumpjack 215 30 ip/assets/immersivepetroleum/models/item/obj/pumpjack_itemmockup.obj texture_base=immersivepetroleum:multiblock/pumpjack_base texture_armature=immersivepetroleum:models/pumpjack_armature
+ip_oiltank 215 30 ip/assets/immersivepetroleum/models/multiblock/obj/oiltank.obj texture=immersivepetroleum:multiblock/oiltank
+ip_distillation_tower 215 30 ip/assets/immersivepetroleum/models/multiblock/obj/distillationtower.obj texture=immersivepetroleum:multiblock/distillation_tower
+ip_hydrotreater 215 30 ip/assets/immersivepetroleum/models/multiblock/obj/hydrotreater.obj texture=immersivepetroleum:multiblock/hydrotreater
+ip_coker 215 30 ip/assets/immersivepetroleum/models/multiblock/obj/cokerunit.obj texture=immersivepetroleum:multiblock/cokerunit
+ip_flarestack 215 30 ip/assets/immersivepetroleum/models/block/obj/flarestack.obj texture=immersivepetroleum:block/obj/flarestack
+ip_generator 215 30 ip/assets/immersivepetroleum/models/block/obj/generator.obj texture=immersivepetroleum:block/obj/generator
+ip_seismic 215 30 ip/assets/immersivepetroleum/models/block/obj/seismic_survey_tool.obj,ip/assets/immersivepetroleum/models/block/obj/seismic_survey_tool_barrel.obj texture=immersivepetroleum:block/obj/seismic_survey_tool
+ip_autolubricator 215 30 ip/assets/immersivepetroleum/models/block/obj/autolubricator.obj texture=immersivepetroleum:models/lubricator

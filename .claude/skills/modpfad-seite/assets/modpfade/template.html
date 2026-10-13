@@ -1,0 +1,307 @@
+<title>/*TITLE*/</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: links Phasen-Navigation, rechts der Weg als nummerierte Schritte – je Schritt Bilder (Inventar-Slots, Bauplan, Buchbild), Erklärung, Zutaten.
+   Farben und Schriften wie im Erzatlas ("Deepslate"-Grund zuerst); --accent kommt je Mod aus den Daten. */
+:root{
+  --bg:#1b1d20; --panel:#24272b; --line:#34383e; --fg:#e7e5e1; --muted:#9a9890;
+  --accent:#e0a33a;
+  --slot:#2f3338; --slot-edge:#15171a; --slot-hi:#474c53;
+  --chip:#2c3035;
+  --o-v:#9a9890; --o-m:#e0a33a; --o-a:#5fb3a0; --o-x:#6aa7e6;
+  --f-display:"Pixelify Sans","Courier New",monospace;
+  --f-body:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-data:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){
+  --bg:#f1efea; --panel:#fbfaf7; --line:#d9d5cc; --fg:#24221f; --muted:#6c675e;
+  --slot:#c9c5bb; --slot-edge:#8f8a7f; --slot-hi:#e9e6de;
+  --chip:#ebe7df;
+  --o-v:#6c675e; --o-m:#a36a12; --o-a:#2f7f6d; --o-x:#2f6fb5; color-scheme:light}}
+:root[data-theme="light"]{
+  --bg:#f1efea; --panel:#fbfaf7; --line:#d9d5cc; --fg:#24221f; --muted:#6c675e;
+  --slot:#c9c5bb; --slot-edge:#8f8a7f; --slot-hi:#e9e6de;
+  --chip:#ebe7df;
+  --o-v:#6c675e; --o-m:#a36a12; --o-a:#2f7f6d; --o-x:#2f6fb5; color-scheme:light}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:16px;padding-block:28px 56px}
+a{color:var(--accent)}
+code{font-family:var(--f-data);font-size:.86em;background:var(--chip);padding:1px 5px;border-radius:3px}
+
+header.top{display:grid;gap:10px;margin-bottom:24px}
+h1{font-family:var(--f-display);font-weight:700;font-size:clamp(28px,4vw,40px);letter-spacing:.02em;margin:0;text-wrap:balance}
+h1 span{color:var(--accent)}
+.lede{color:var(--muted);max-width:70ch;margin:0}
+.mods{display:flex;flex-wrap:wrap;gap:6px}
+.mod{font:12px var(--f-data);background:var(--chip);border:1px solid var(--line);border-radius:3px;padding:3px 8px;color:var(--muted)}
+.mod b{color:var(--fg);font-weight:600}
+.mod.main{border-color:var(--o-m)} .mod.addon{border-color:var(--o-a)} .mod.bridge{border-color:var(--o-x)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:var(--muted);align-items:center}
+.legend b{color:var(--fg);font-weight:600}
+
+.cols{display:grid;grid-template-columns:210px minmax(0,1fr);gap:32px;align-items:start}
+nav.toc{position:sticky;top:calc(env(safe-area-inset-top, 0px) + 12px);display:grid;gap:2px;max-height:calc(100vh - 24px);overflow:auto;font-size:13.5px}
+nav.toc a{display:block;padding:5px 8px;border-left:2px solid var(--line);color:var(--muted);text-decoration:none}
+nav.toc a:hover,nav.toc a:focus-visible{color:var(--fg);border-left-color:var(--accent);outline:none}
+nav.toc a .n{font-family:var(--f-data);font-size:11px;margin-right:6px;color:var(--accent)}
+nav.toc .sep{height:10px}
+main{display:grid;gap:44px;min-width:0}
+
+section.phase{display:grid;gap:18px;min-width:0}
+.phase-head{display:grid;gap:4px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.phase-head .eyebrow{font:600 12px var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h2{font-family:var(--f-display);font-weight:700;font-size:24px;letter-spacing:.02em;margin:0;text-wrap:balance}
+.phase-head p{margin:0;color:var(--muted);max-width:70ch}
+
+.step{display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;min-width:0}
+.step .num{font:700 18px var(--f-data);font-variant-numeric:tabular-nums;color:var(--bg);background:var(--accent);width:44px;height:44px;display:grid;place-items:center;border-radius:3px}
+.step-body{display:grid;gap:12px;min-width:0;padding-bottom:18px;border-bottom:1px dashed var(--line)}
+.step:last-child .step-body{border-bottom:none}
+h3{font:700 18px var(--f-body);margin:0;display:flex;flex-wrap:wrap;gap:8px;align-items:center;min-height:44px}
+.tag{font:600 11px var(--f-data);padding:2px 7px;border-radius:3px;border:1px solid var(--o-a);color:var(--o-a);letter-spacing:.02em}
+.tag.x{border-color:var(--o-x);color:var(--o-x)}
+.prose{max-width:70ch;display:grid;gap:8px}
+.prose p,.prose ul{margin:0}
+.prose ul{padding-left:20px}
+.prose b{font-weight:700}
+
+/* Inventar-Slots */
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.it{display:grid;grid-template-columns:44px minmax(0,1fr);gap:9px;align-items:start}
+.slot{width:44px;height:44px;background:var(--slot);border:2px solid;border-color:var(--slot-edge) var(--slot-hi) var(--slot-hi) var(--slot-edge);display:grid;place-items:center;flex:none}
+.slot img{width:32px;height:32px;image-rendering:pixelated;object-fit:cover;object-position:top}
+.slot img.r{width:38px;height:38px;image-rendering:auto;object-fit:contain}
+.cell img.r{image-rendering:auto;object-fit:contain}
+figure img.r{max-height:230px;width:auto;border:none;background:none}
+.slot span{font:700 12px var(--f-data);color:var(--muted)}
+.it .nm{font-weight:600;line-height:1.25;overflow-wrap:anywhere}
+.it .nt{font-size:13px;color:var(--muted);line-height:1.3;overflow-wrap:anywhere}
+
+/* Buchbilder */
+.pics{display:flex;flex-wrap:wrap;gap:10px}
+figure{margin:0;display:grid;gap:4px;max-width:420px}
+figure img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:3px;background:var(--panel)}
+figure img.px{image-rendering:pixelated;width:260px}
+figcaption{font-size:12.5px;color:var(--muted)}
+
+/* Bauplan */
+.plan{border:1px solid var(--line);border-radius:4px;background:var(--panel);padding:12px;display:grid;gap:10px;min-width:0}
+.plan-title{font:600 12px var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.plan-title b{color:var(--fg);letter-spacing:0;text-transform:none;font-size:14px;margin-right:8px}
+.layers{display:flex;gap:16px;overflow-x:auto;padding-bottom:4px;align-items:flex-end}
+.layer{display:grid;gap:4px;flex:none}
+.layer .cap{font:11px var(--f-data);color:var(--muted)}
+.grid{display:grid;gap:1px}
+.cell{width:22px;height:22px;background:var(--slot);display:grid;place-items:center;font:700 10px var(--f-data);color:var(--fg)}
+.cell img{width:22px;height:22px;image-rendering:pixelated;object-fit:cover;object-position:top;display:block}
+.cell.air{background:transparent;outline:1px dotted var(--line);outline-offset:-1px}
+.parts{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px}
+.part{display:inline-flex;align-items:center;gap:6px}
+.part .cell{width:18px;height:18px}.part .cell img{width:18px;height:18px}
+.part b{font-family:var(--f-data);font-weight:600}
+.plan .form{font-size:13px;color:var(--muted);margin:0}
+
+/* Zutaten */
+.needs{display:flex;flex-wrap:wrap;gap:5px;align-items:center;font-size:13px}
+.needs .lbl{font:600 12px var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:4px}
+.need{background:var(--chip);border:1px solid var(--line);border-left:3px solid var(--o-v);border-radius:3px;padding:2px 8px}
+.need.m{border-left-color:var(--o-m)} .need.a{border-left-color:var(--o-a)} .need.x{border-left-color:var(--o-x)}
+.need small{color:var(--muted);font-family:var(--f-data);font-size:11px;margin-left:4px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+
+/* Tabellen (Materialien, Listen) */
+.scroller{overflow-x:auto;border:1px solid var(--line);border-radius:4px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th{font:600 11.5px var(--f-body);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:6px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td.ic{width:34px;padding-right:0}
+td.ic .slot{width:28px;height:28px;border-width:1px}
+td.ic .slot img{width:22px;height:22px}
+td.ic .slot span{font-size:9px}
+td .sub{color:var(--muted);font-size:12.5px}
+
+.solo-group{display:grid;gap:10px}
+.solo-group h3{min-height:0}
+.note{border-left:3px solid var(--accent);background:var(--panel);padding:10px 14px;max-width:72ch;font-size:14px}
+.note p{margin:0}
+footer{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:14px;max-width:80ch}
+
+@media (max-width:900px){
+  .cols{grid-template-columns:minmax(0,1fr);gap:20px}
+  nav.toc{position:static;display:flex;flex-wrap:wrap;gap:6px;max-height:none}
+  nav.toc a{border:1px solid var(--line);border-radius:3px;padding:4px 8px}
+  nav.toc .sep{display:none}
+}
+@media (max-width:520px){
+  .step{grid-template-columns:minmax(0,1fr)}
+  .step .num{width:36px;height:36px;font-size:15px}
+  h3{min-height:0}
+}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1 id="h1"></h1>
+    <p class="lede" id="lede"></p>
+    <div class="mods" id="mods"></div>
+    <div class="legend"><b>Zutaten:</b>
+      <span><i class="dot" style="background:var(--o-v)"></i>Vanilla</span>
+      <span><i class="dot" style="background:var(--o-m)"></i>dieser Mod</span>
+      <span><i class="dot" style="background:var(--o-a)"></i>Addon</span>
+      <span><i class="dot" style="background:var(--o-x)"></i>anderer Mod im Pack</span>
+    </div>
+  </header>
+  <div class="cols">
+    <nav class="toc" id="toc" aria-label="Phasen"></nav>
+    <main id="main"></main>
+  </div>
+</div>
+
+<script>
+/*ICONS*/
+/*PAGE*/
+
+const $ = (tag, cls, html) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; };
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const initials = n => n.replace(/[^A-Za-zÄÖÜäöü0-9 ]/g, '').split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0].toUpperCase()).join('');
+
+function slot(icon, name) {
+  const s = $('div', 'slot');
+  if (icon && ICONS[icon]) { const i = $("img"); i.src = ICONS[icon]; i.alt = ""; if (icon.startsWith("render:")) i.className = "r"; s.append(i); }
+  else s.append($('span', '', esc(initials(name || '?'))));
+  return s;
+}
+function itemTile([icon, name, note]) {
+  const d = $('div', 'it');
+  d.append(slot(icon, name));
+  d.append($('div', '', `<div class="nm">${name}</div>${note ? `<div class="nt">${note}</div>` : ''}`));
+  return d;
+}
+function needsRow(needs) {
+  const d = $('div', 'needs', '<span class="lbl">Braucht</span>');
+  for (const [name, origin, from] of needs) d.append($('span', 'need ' + (origin || 'v'), name + (from ? `<small>${from}</small>` : '')));
+  return d;
+}
+function planBox(p) {
+  const box = $('div', 'plan');
+  box.append($('div', 'plan-title', `<b>${p.name}</b>Bauplan ${p.size ? p.size + " (B×H×T)" : ""}`));
+  const counts = {};
+  if (p.layers) {
+    const row = $('div', 'layers');
+    p.layers.forEach((layer, y) => {
+      const rows = layer.split(' ');
+      const l = $('div', 'layer');
+      const g = $('div', 'grid');
+      g.style.gridTemplateColumns = `repeat(${rows[0].length}, 22px)`;
+      for (const r of rows) for (const ch of r) {
+        if (ch === '.') { g.append($('div', 'cell air')); continue; }
+        counts[ch] = (counts[ch] || 0) + 1;
+        g.append(planCell(p.key[ch], ch));
+      }
+      l.append(g);
+      l.append($('div', 'cap', p.caps ? p.caps[y] : `Ebene ${y + 1}${y === 0 ? " (unten)" : ""}`));
+      row.append(l);
+    });
+    box.append(row);
+  }
+  const parts = $('div', 'parts');
+  for (const ch of Object.keys(p.key)) {
+    const n = p.count ? p.count[ch] : counts[ch];
+    if (!n) continue;
+    const s = $('span', 'part');
+    s.append(planCell(p.key[ch], ch));
+    s.append($('span', '', `<b>${n}×</b> ${p.key[ch][0]}`));
+    parts.append(s);
+  }
+  box.append(parts);
+  if (p.form) box.append($('p', 'form', p.form));
+  return box;
+}
+function planCell([name, icon], ch) {
+  const c = $('div', 'cell');
+  c.title = name;
+  if (icon && ICONS[icon]) { const i = $("img"); i.src = ICONS[icon]; i.alt = name; if (icon.startsWith("render:")) i.className = "r"; c.append(i); }
+  else c.textContent = ch;
+  return c;
+}
+function tableBox(t) {
+  const sc = $('div', 'scroller');
+  const tb = $('table');
+  tb.append($('thead', '', '<tr><th></th>' + t.head.map(h => `<th>${h}</th>`).join('') + '</tr>'));
+  const body = $('tbody');
+  for (const [icon, ...cells] of t.rows) {
+    const tr = $('tr');
+    const td = $('td', 'ic'); td.append(slot(icon, cells[0])); tr.append(td);
+    cells.forEach((c, i) => tr.append($('td', '', i === 0 ? `<b>${c}</b>` : c)));
+    body.append(tr);
+  }
+  tb.append(body); sc.append(tb);
+  return sc;
+}
+function picRow(pics) {
+  const d = $('div', 'pics');
+  for (const [icon, cap] of pics) {
+    if (!ICONS[icon]) continue;
+    const f = $('figure'); const i = $('img'); i.src = ICONS[icon]; i.alt = cap || '';
+    if (icon.includes("gui/entries")) i.className = "px"; if (icon.startsWith("render:")) i.className = "r";
+    f.append(i); if (cap) f.append($('figcaption', '', cap));
+    d.append(f);
+  }
+  return d;
+}
+
+document.documentElement.style.setProperty('--accent', matchMedia('(prefers-color-scheme: light)').matches && document.documentElement.dataset.theme !== 'dark' || document.documentElement.dataset.theme === 'light' ? PAGE.accent[1] : PAGE.accent[0]);
+document.getElementById('h1').innerHTML = `${PAGE.title} <span>Modpfad</span>`;
+document.getElementById('lede').innerHTML = PAGE.lede;
+for (const [n, v, kind] of PAGE.mods) document.getElementById('mods').append($('span', 'mod ' + kind, `<b>${n}</b> ${v}`));
+
+const main = document.getElementById('main'), toc = document.getElementById('toc');
+let stepNo = 0;
+PAGE.phases.forEach((ph, pi) => {
+  const sec = $('section', 'phase'); sec.id = 'phase-' + (pi + 1);
+  sec.append($('div', 'phase-head', `<div class="eyebrow">Phase ${pi + 1}</div><h2>${ph.t}</h2>${ph.sub ? `<p>${ph.sub}</p>` : ''}`));
+  { const a = $("a", "", `<span class="n">${pi + 1}</span>${ph.t}`); a.href = "#" + sec.id; toc.append(a); }
+  for (const st of ph.steps) {
+    stepNo++;
+    const step = $('div', 'step');
+    step.append($('div', 'num', String(stepNo)));
+    const body = $('div', 'step-body');
+    body.append($('h3', '', st.t + (st.addon ? ` <span class="tag">${st.addon}</span>` : '')));
+    if (st.pics) body.append(picRow(st.pics));
+    if (st.plan) for (const p of [].concat(st.plan)) body.append(planBox(p));
+    if (st.items) { const g = $('div', 'slots'); st.items.forEach(it => g.append(itemTile(it))); body.append(g); }
+    if (st.text) body.append($('div', 'prose', st.text));
+    if (st.table) for (const t of [].concat(st.table)) body.append(tableBox(t));
+    if (st.needs) body.append(needsRow(st.needs));
+    step.append(body); sec.append(step);
+  }
+  main.append(sec);
+});
+
+function extraSection(id, eyebrow, title, sub, groups) {
+  if (!groups || !groups.length) return;
+  const sec = $('section', 'phase'); sec.id = id;
+  sec.append($('div', 'phase-head', `<div class="eyebrow">${eyebrow}</div><h2>${title}</h2><p>${sub}</p>`));
+  for (const g of groups) {
+    const d = $('div', 'solo-group');
+    d.append($('h3', '', g.t + (g.addon ? ` <span class="tag${g.x ? ' x' : ''}">${g.addon}</span>` : '')));
+    if (g.text) d.append($('div', 'prose', g.text));
+    if (g.items) { const grid = $('div', 'slots'); g.items.forEach(it => grid.append(itemTile(it))); d.append(grid); }
+    if (g.table) d.append(tableBox(g.table));
+    sec.append(d);
+  }
+  main.append(sec);
+  toc.append($('div', 'sep'));
+  { const a = $("a", "", title); a.href = "#" + id; toc.append(a); }
+}
+extraSection('solo', 'Abseits des Pfads', 'Für sich stehend', 'Maschinen, Werkzeuge und Items, die man nutzen kann, die aber kein Schritt auf dem Hauptweg des Mods sind.', PAGE.solo);
+extraSection('bruecken', 'Crossmod', 'Brücken zu anderen Mods', 'Was der Mod und seine Addons von sich aus mit anderen Mods des Packs verbinden – Ausgangslage vor unseren eigenen KubeJS-Änderungen.', PAGE.bridges);
+
+if (PAGE.foot) main.append($('footer', '', PAGE.foot));
+</script>
