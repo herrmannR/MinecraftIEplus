@@ -7,10 +7,12 @@ set -euo pipefail
 cd "$(dirname "$0")"
 mods=("$@"); [ ${#mods[@]} -eq 0 ] && mods=($(ls -d */ | tr -d / | grep -v '^tools$'))
 for m in "${mods[@]}"; do
+  # ein Ordner mit eigener template.html (die Oberseite "uebersicht") nutzt diese statt der gemeinsamen
+  tpl=template.html; [ -f "$m/template.html" ] && tpl="$m/template.html"
   title=$(grep -oE 'pageTitle: *"[^"]+"' "$m/data.js" | sed -E 's/pageTitle: *"//; s/"$//')
   awk -v dir="$m" -v title="$title" '
     /\/\*ICONS\*\//{while((getline l < (dir "/icons.js"))>0) print l; while((getline l < (dir "/modifiers.js"))>0) print l; next}
     /\/\*PAGE\*\//{while((getline l < (dir "/data.js"))>0) print l; next}
-    {sub(/\/\*TITLE\*\//, title); print}' template.html > "$m.html"
+    {sub(/\/\*TITLE\*\//, title); print}' "$tpl" > "$m.html"
   echo "$m.html gebaut ($(wc -c < "$m.html") Bytes)"
 done

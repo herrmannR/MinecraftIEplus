@@ -83,7 +83,9 @@ bash docs/modpfade/build.sh <mod>
 
 `<mod>.html` als Artifact veröffentlichen; gibt es für den Mod schon eine URL im README, an dieselbe. Danach im README die Tabelle der Seiten und den Abschnitt „Offen“ nachziehen.
 
-Zum Schluss `docs/modpfade/CROSSMOD_AUFFAELLIGKEITEN.md` fortschreiben: ein Abschnitt je Mod mit dem, was den Progressionsweg des Packs berührt (Abkürzungen, Überschneidungen mit anderen Mods, harte Voraussetzungen, fehlende Verbindungen), und die übergreifenden Tabellen ergänzen, wenn der neue Mod dort mitspielt (Stahl, Erzvervielfachung, Lager, Strom). Der User will diese Punkte gesammelt haben, um sie später zu entscheiden. Es gelten dieselben Regeln wie für die Seite: belegte Befunde mit 🟢, Unbelegtes getrennt unter „Zu prüfen“ mit 🔵, keine Entscheidungen. Auffälligkeiten, die anderen Projektdokumenten widersprechen, dort korrigieren und im Abschlussbericht nennen.
+Die neue Seite auf der Oberseite eintragen: in `docs/modpfade/uebersicht/data.js` einen Eintrag in `MODS` ergänzen (Name, Version, Addons, ein Satz, Phasen- und Schrittzahl, ein Bild, Akzentfarben, URL) und den Mod aus `PLANNED` streichen; dann `JARS=<arbeitsordner> bash mkicons.sh uebersicht`, `bash build.sh uebersicht` und `uebersicht.html` an die URL aus dem README veröffentlichen.
+
+Danach `docs/modpfade/CROSSMOD_AUFFAELLIGKEITEN.md` fortschreiben: ein Abschnitt je Mod mit dem, was den Progressionsweg des Packs berührt (Abkürzungen, Überschneidungen mit anderen Mods, harte Voraussetzungen, fehlende Verbindungen), und die übergreifenden Tabellen ergänzen, wenn der neue Mod dort mitspielt (Stahl, Erzvervielfachung, Lager, Strom). Der User will diese Punkte gesammelt haben, um sie später zu entscheiden. Es gelten dieselben Regeln wie für die Seite: belegte Befunde mit 🟢, Unbelegtes getrennt unter „Zu prüfen“ mit 🔵, keine Entscheidungen. Auffälligkeiten, die anderen Projektdokumenten widersprechen, dort korrigieren und im Abschlussbericht nennen.
 
 ## Aufbau der Seite
 

@@ -4,6 +4,8 @@
 
 Je Content-Mod eine Seite mit der Progression, wie der Mod sie mit seinen Addons selbst vorsieht (ohne unsere KubeJS-Änderungen): nummerierte Schritte mit Bildern, Bauplänen der Multiblöcke und den nötigen Rohstoffen, am Ende die für sich stehenden Items und die Brücken zu anderen Mods. Die Seiten sind die Grundlage für Progressionsweg und Crossmod-Punkte.
 
+**Oberseite mit einer Kachel je Mod:** https://claude.ai/artifact/BJheZu2HgYdykBjkNQaHT4 (Quelle `uebersicht/`, eigene `template.html`; bei jeder neuen Seite in `uebersicht/data.js` eintragen, bauen und neu veröffentlichen)
+
 | Mod | Live-Seite (Artifact, privat) | Quelle |
 |---|---|---|
 | Tinkers' Construct (+ TCIntegrations, Levelling Addon) | https://claude.ai/artifact/TYsNjvC9iqYNyAMW8Dy78y | `tinkers/` |
