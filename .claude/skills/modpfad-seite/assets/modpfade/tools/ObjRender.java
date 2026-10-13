@@ -11,11 +11,12 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Zeichnet OBJ-Modelle aus den Mod-JARs als Bild (Parallelprojektion, schräg von oben), für Blöcke ohne flache Textur.
+ * Zeichnet 3D-Modelle aus den Mod-JARs als Bild (Parallelprojektion, schräg von oben), für Blöcke ohne flache Textur:
+ * OBJ-Dateien (.obj, .obj.ie) und Minecraft-Blockmodelle (.json mit "elements", auch forge:composite).
  *
  * Aufruf: java ObjRender.java <jars-Ordner> <liste.txt> [nur-dieser-name]
  *
- * Die Liste hat je Zeile: name  gier  neigung  modell.obj[,weiteres.obj]  [platzhalter=namespace:pfad ...]
+ * Die Liste hat je Zeile: name  gier  neigung  modell[,weiteres]  [platzhalter=namespace:pfad ...]
  * Modellpfade sind relativ zu <jars-Ordner>. Gier und Neigung in Grad (0 90 = Draufsicht).
  * Ergebnis: <jars-Ordner>/_render/assets/render/textures/model/<name>.png (groß) und <name>_s.png (64 px für Slots),
  * in data.js als "render:model/<name>" bzw. "render:model/<name>_s" verwendbar.
@@ -50,6 +51,7 @@ public class ObjRender {
 
     static void load(File obj, Map<String, String> placeholders, List<Tri> tris) throws Exception {
         if (!obj.isFile()) { System.err.println("FEHLT: " + obj); return; }
+        if (obj.getName().endsWith(".json")) { loadJson(obj, placeholders, tris); return; }
         List<double[]> v = new ArrayList<>(), vt = new ArrayList<>();
         Map<String, BufferedImage> mats = new HashMap<>();
         BufferedImage cur = null;
@@ -97,6 +99,158 @@ public class ObjRender {
                 if (img == null) System.err.println("  Textur fehlt: " + s[1] + " in " + mtl.getName());
                 mats.put(name, img);
             }
+        }
+    }
+
+    // --- Minecraft-Blockmodelle (JSON mit "elements") ---
+
+    /** Liest ein JSON-Blockmodell samt Elternkette; ohne eigene Elemente wird ein voller Würfel mit den Seitentexturen gezeichnet. */
+    @SuppressWarnings("unchecked")
+    static void loadJson(File file, Map<String, String> placeholders, List<Tri> tris) throws Exception {
+        loadModel((Map<String, Object>) Json.parse(Files.readString(file.toPath())), placeholders, tris);
+    }
+
+    @SuppressWarnings("unchecked")
+    static void loadModel(Map<String, Object> model, Map<String, String> inherited, List<Tri> tris) throws Exception {
+        Map<String, String> textures = new HashMap<>(inherited);
+        List<Object> elements = null;
+        Map<String, Object> m = model;
+        for (int depth = 0; m != null && depth < 8; depth++) {
+            if (m.get("textures") instanceof Map<?, ?> t) for (Map.Entry<?, ?> e : t.entrySet()) textures.putIfAbsent(String.valueOf(e.getKey()), String.valueOf(e.getValue()));
+            if (elements == null && m.get("elements") instanceof List<?> l) elements = (List<Object>) l;
+            // forge:composite: das Modell besteht aus mehreren Teilmodellen
+            if (depth == 0 && m.get("children") instanceof Map<?, ?> children) {
+                for (Object child : children.values()) if (child instanceof Map) loadModel((Map<String, Object>) child, textures, tris);
+                return;
+            }
+            File parent = m.get("parent") instanceof String p ? modelFile(p) : null;
+            m = parent == null ? null : (Map<String, Object>) Json.parse(Files.readString(parent.toPath()));
+        }
+        if (elements == null) {
+            // voller Würfel: je Seite die erste passende Textur
+            String[][] keys = {{"north", "front", "side", "sides", "all"}, {"south", "back", "side", "sides", "all"}, {"west", "side", "sides", "all"},
+                    {"east", "side", "sides", "all"}, {"up", "top", "end", "all"}, {"down", "bottom", "end", "all"}};
+            String[] names = {"north", "south", "west", "east", "up", "down"};
+            for (int i = 0; i < 6; i++) {
+                BufferedImage img = null;
+                for (String k : keys[i]) if (img == null && textures.get(k) != null) img = resolve(textures, "#" + k);
+                face(tris, names[i], new double[]{0, 0, 0}, new double[]{16, 16, 16}, new double[]{0, 0, 16, 16}, 0, img, null);
+            }
+            return;
+        }
+        for (Object eo : elements) {
+            Map<String, Object> e = (Map<String, Object>) eo;
+            double[] from = vec(e.get("from")), to = vec(e.get("to"));
+            Map<String, Object> rot = e.get("rotation") instanceof Map ? (Map<String, Object>) e.get("rotation") : null;
+            if (!(e.get("faces") instanceof Map)) continue;
+            for (Map.Entry<String, Object> fe : ((Map<String, Object>) e.get("faces")).entrySet()) {
+                Map<String, Object> f = (Map<String, Object>) fe.getValue();
+                double[] uv = f.get("uv") != null ? vec(f.get("uv")) : defaultUv(fe.getKey(), from, to);
+                int r = f.get("rotation") instanceof Number n ? n.intValue() : 0;
+                face(tris, fe.getKey(), from, to, uv, r, resolve(textures, String.valueOf(f.get("texture"))), rot);
+            }
+        }
+    }
+
+    static File modelFile(String ref) {
+        String ns = ref.contains(":") ? ref.substring(0, ref.indexOf(':')) : "minecraft";
+        String path = ref.substring(ref.indexOf(':') + 1);
+        for (File root : roots) {
+            File f = new File(root, "assets/" + ns + "/models/" + path + ".json");
+            if (f.isFile()) return f;
+        }
+        return null;
+    }
+
+    static BufferedImage resolve(Map<String, String> textures, String ref) throws Exception {
+        for (int i = 0; i < 8 && ref != null && ref.startsWith("#"); i++) ref = textures.get(ref.substring(1));
+        return ref == null ? null : texture(ref);
+    }
+
+    static double[] vec(Object o) {
+        List<?> l = (List<?>) o;
+        double[] v = new double[l.size()];
+        for (int i = 0; i < v.length; i++) v[i] = ((Number) l.get(i)).doubleValue();
+        return v;
+    }
+
+    static double[] defaultUv(String side, double[] a, double[] b) {
+        return switch (side) {
+            case "up", "down" -> new double[]{a[0], a[2], b[0], b[2]};
+            case "north", "south" -> new double[]{a[0], 16 - b[1], b[0], 16 - a[1]};
+            default -> new double[]{a[2], 16 - b[1], b[2], 16 - a[1]};
+        };
+    }
+
+    /** Eine Würfelseite als zwei Dreiecke. Ecken in der Reihenfolge oben links, oben rechts, unten rechts, unten links. */
+    static void face(List<Tri> tris, String side, double[] a, double[] b, double[] uv, int rotation, BufferedImage tex, Map<String, Object> rot) {
+        double[][] c = switch (side) {
+            case "north" -> new double[][]{{b[0], b[1], a[2]}, {a[0], b[1], a[2]}, {a[0], a[1], a[2]}, {b[0], a[1], a[2]}};
+            case "south" -> new double[][]{{a[0], b[1], b[2]}, {b[0], b[1], b[2]}, {b[0], a[1], b[2]}, {a[0], a[1], b[2]}};
+            case "west" -> new double[][]{{a[0], b[1], a[2]}, {a[0], b[1], b[2]}, {a[0], a[1], b[2]}, {a[0], a[1], a[2]}};
+            case "east" -> new double[][]{{b[0], b[1], b[2]}, {b[0], b[1], a[2]}, {b[0], a[1], a[2]}, {b[0], a[1], b[2]}};
+            case "up" -> new double[][]{{a[0], b[1], a[2]}, {b[0], b[1], a[2]}, {b[0], b[1], b[2]}, {a[0], b[1], b[2]}};
+            default -> new double[][]{{a[0], a[1], b[2]}, {b[0], a[1], b[2]}, {b[0], a[1], a[2]}, {a[0], a[1], a[2]}};
+        };
+        if (rot != null) {
+            double[] o = vec(rot.get("origin"));
+            double ang = Math.toRadians(((Number) rot.get("angle")).doubleValue()), cs = Math.cos(ang), sn = Math.sin(ang);
+            String axis = String.valueOf(rot.get("axis"));
+            for (double[] p : c) {
+                double x = p[0] - o[0], y = p[1] - o[1], z = p[2] - o[2];
+                switch (axis) {
+                    case "x" -> { p[1] = y * cs - z * sn + o[1]; p[2] = y * sn + z * cs + o[2]; }
+                    case "y" -> { p[0] = x * cs + z * sn + o[0]; p[2] = -x * sn + z * cs + o[2]; }
+                    default -> { p[0] = x * cs - y * sn + o[0]; p[1] = x * sn + y * cs + o[1]; }
+                }
+            }
+        }
+        // Texturkoordinaten: JSON zählt von oben links in Sechzehnteln, der Zeichner erwartet v von unten
+        double[][] t = {{uv[0] / 16, 1 - uv[1] / 16}, {uv[2] / 16, 1 - uv[1] / 16}, {uv[2] / 16, 1 - uv[3] / 16}, {uv[0] / 16, 1 - uv[3] / 16}};
+        int shift = ((rotation / 90) % 4 + 4) % 4;
+        for (int[] idx : new int[][]{{0, 1, 2}, {0, 2, 3}}) {
+            Tri tri = new Tri();
+            for (int k = 0; k < 3; k++) { tri.p[k] = c[idx[k]]; tri.t[k] = t[(idx[k] + 4 - shift) % 4]; }
+            tri.tex = tex;
+            tris.add(tri);
+        }
+    }
+
+    /** Kleiner JSON-Leser für die Blockmodelle. */
+    static class Json {
+        static int pos; static String src;
+        static Object parse(String s) { src = s; pos = 0; return value(); }
+        static void ws() { while (pos < src.length() && Character.isWhitespace(src.charAt(pos))) pos++; }
+        static Object value() {
+            ws();
+            char c = src.charAt(pos);
+            if (c == '{') {
+                Map<String, Object> m = new java.util.LinkedHashMap<>(); pos++; ws();
+                if (src.charAt(pos) == '}') { pos++; return m; }
+                while (true) { ws(); String k = string(); ws(); pos++; m.put(k, value()); ws(); if (src.charAt(pos++) == '}') return m; }
+            }
+            if (c == '[') {
+                List<Object> l = new ArrayList<>(); pos++; ws();
+                if (src.charAt(pos) == ']') { pos++; return l; }
+                while (true) { l.add(value()); ws(); if (src.charAt(pos++) == ']') return l; }
+            }
+            if (c == '"') return string();
+            int start = pos;
+            while (pos < src.length() && ",}] \n\r\t".indexOf(src.charAt(pos)) < 0) pos++;
+            String t = src.substring(start, pos);
+            if (t.equals("true")) return Boolean.TRUE;
+            if (t.equals("false")) return Boolean.FALSE;
+            if (t.equals("null")) return null;
+            return Double.parseDouble(t);
+        }
+        static String string() {
+            StringBuilder sb = new StringBuilder(); pos++;
+            while (src.charAt(pos) != '"') {
+                char c = src.charAt(pos++);
+                if (c == '\\') { char e = src.charAt(pos++); sb.append(e == 'n' ? '\n' : e == 't' ? '\t' : e); } else sb.append(c);
+            }
+            pos++;
+            return sb.toString();
         }
     }
 

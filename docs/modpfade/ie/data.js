@@ -181,7 +181,7 @@ const PAGE = {
             ["immersiveengineering:item/material_wire_copper", "Copper Wire", "Platte + Wire Cutters, später Metal Press"],
             ["render:model/ie_connector_lv_s", "LV Wire Connector", "Kupfer + Isolator (Terracotta, später Duroplast)"],
             ["render:model/ie_relay_lv_s", "LV Wire Relay", "verbindet Drähte untereinander"],
-            ["immersiveengineering:item/tool_voltmeter", "Voltmeter", "zeigt den mittleren Verlust zwischen zwei Connectors"],
+            ["immersiveengineering:item/tool_voltmeter", "Engineer's Multimeter", "zeigt den mittleren Verlust zwischen zwei Connectors"],
             ["immersiveengineering:block/metal_decoration/coil_lv_side", "Copper Coil Block", "8 LV Wire Coil + Eisen; Bauteil für den Dynamo"],
           ],
           text: `<p>Das Netz kennt vier Blöcke: <b>Connector</b> als Ein- und Ausgang, <b>Relay</b> zum Weiterführen, <b>Transformer</b> zwischen den Spannungen und den Draht selbst. Man klickt mit der Spule erst den einen, dann den anderen Block an. Es gibt drei Stufen:</p>

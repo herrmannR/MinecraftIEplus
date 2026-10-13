@@ -43,12 +43,14 @@ VANILLA=<pfad>/client-1.20.1.jar bash docs/modpfade/tools/extract.sh "<instanz>/
 
 Der Arbeitsordner liegt im Scratchpad, nicht im Projekt. Er ist danach der `JARS`-Ordner für alle Werkzeuge. `modids.txt` darin ist die Liste der wirklich installierten Mods.
 
+Ein Arbeitsordner im Temp-Verzeichnis hält nicht: Windows löscht dort Dateien, die eine Weile nicht gelesen wurden. Ein Ordner aus einer früheren Sitzung oder von vor ein paar Stunden ist deshalb lückenhaft, ohne dass etwas darauf hinweist. Vor der Arbeit an einem Mod dessen JARs (und die Vanilla-Texturen) neu entpacken; das dauert Sekunden.
+
 ### 3. Quellen sichten
 
 Zuerst feststellen, was der Mod mitbringt. `references/quellen-im-jar.md` nennt, wo die Dinge liegen und wie man sie ohne jq ausliest. Mindestens:
 
-- **Das Buch** des Mods und seine Kapitelreihenfolge. Sie gibt die Phasen und die Reihenfolge der Schritte vor. Hat der Mod kein Buch, ersatzweise den Advancement-Baum.
-- **Rezepte** der Schlüsselteile jedes Schritts.
+- **Das Buch** des Mods und seine Kapitelreihenfolge. Sie gibt die Phasen und die Reihenfolge der Schritte vor. Hat der Mod kein Buch (Mekanism), ersatzweise den Advancement-Baum: die `parent`-Ketten ergeben die Reihenfolge, Titel und Beschreibung stehen in der Sprachdatei. Erklärtexte liefern dann die Schlüssel `description.<ns>.<block>` und `info.<ns>.jei.*` der Sprachdatei.
+- **Rezepte** der Schlüsselteile jedes Schritts. `java tools/RecipeDump.java <arbeitsordner> <kürzel>/data/<ns>/recipes > rezepte.txt` schreibt alle Rezepte eines Mods lesbar in eine Datei, in der man dann sucht.
 - **Strukturdateien** der Multiblöcke.
 - **Sprachdatei** für alle Namen.
 
@@ -60,8 +62,9 @@ Zuerst feststellen, was der Mod mitbringt. `references/quellen-im-jar.md` nennt,
 
 - Item- und Blocktexturen als Verweis `"namespace:pfad"` in `data.js`, danach `JARS=<arbeitsordner> bash mkicons.sh <mod>`. Das Werkzeug meldet jeden Verweis ohne Datei als `FEHLT`.
 - Multiblöcke: `java tools/NbtDump.java <datei.nbt>` liefert Stückliste und Ebenen für den Bauplan.
-- Blöcke mit 3D-Modell (OBJ): Eintrag in `tools/renders.txt`, dann `java tools/ObjRender.java <arbeitsordner> tools/renders.txt`. Die Bilder einmal als Übersicht ansehen, bevor sie auf die Seite kommen.
+- Blöcke mit 3D-Modell: Eintrag in `tools/renders.txt`, dann `java tools/ObjRender.java <arbeitsordner> tools/renders.txt`. Der Zeichner liest OBJ-Dateien und JSON-Blockmodelle (`assets/<ns>/models/block/*.json` mit `elements`). Die Bilder einmal als Übersicht ansehen, bevor sie auf die Seite kommen: Ein grauer Würfel heißt, dass das Modell im Code gezeichnet wird und es nichts zu lesen gibt.
 - Texturen, die Abwicklungsbögen von 3D-Modellen sind, nicht als Icon verwenden. Gibt es keine Modelldatei, bleibt das Bild `null`; die Seite zeigt dann ein Kürzel.
+- Items mit 3D-Modell haben oft keine Textur unter `textures/item/`; `mkicons.sh` meldet sie als `FEHLT`. Dann `null` setzen, nicht raten.
 
 ### 6. Prüfen
 
@@ -78,7 +81,9 @@ Vor dem Veröffentlichen, nicht danach:
 bash docs/modpfade/build.sh <mod>
 ```
 
-`<mod>.html` als Artifact veröffentlichen; gibt es für den Mod schon eine URL im README, an dieselbe. Danach im README die Tabelle der Seiten und den Abschnitt „Offen“ nachziehen. Auffälligkeiten, die anderen Projektdokumenten widersprechen, dort korrigieren und im Abschlussbericht nennen.
+`<mod>.html` als Artifact veröffentlichen; gibt es für den Mod schon eine URL im README, an dieselbe. Danach im README die Tabelle der Seiten und den Abschnitt „Offen“ nachziehen.
+
+Zum Schluss `docs/modpfade/CROSSMOD_AUFFAELLIGKEITEN.md` fortschreiben: ein Abschnitt je Mod mit dem, was den Progressionsweg des Packs berührt (Abkürzungen, Überschneidungen mit anderen Mods, harte Voraussetzungen, fehlende Verbindungen), und die übergreifenden Tabellen ergänzen, wenn der neue Mod dort mitspielt (Stahl, Erzvervielfachung, Lager, Strom). Der User will diese Punkte gesammelt haben, um sie später zu entscheiden. Es gelten dieselben Regeln wie für die Seite: belegte Befunde mit 🟢, Unbelegtes getrennt unter „Zu prüfen“ mit 🔵, keine Entscheidungen. Auffälligkeiten, die anderen Projektdokumenten widersprechen, dort korrigieren und im Abschlussbericht nennen.
 
 ## Aufbau der Seite
 
@@ -111,7 +116,9 @@ Regeln, die der User festgelegt hat:
 - **Ein Addon kann ein Rezept des Hauptmods ersetzen oder ein zweites danebenstellen.** Beide nennen und offenlassen, welches gilt, wenn es sich aus den Dateien nicht entscheiden lässt.
 - **Buchtexte enthalten Platzhalter** für Config-Werte und Verweise. Der Satz ist dann unvollständig; den Wert aus Config oder Rezept holen.
 - **Lange Shell-Schleifen über hunderte JSON-Dateien** sind unter Windows sehr langsam. Für Massenauswertung ein kleines Java-Werkzeug nach dem Muster von `ModifierDump.java` schreiben.
-- **Große Seiten** (über etwa 1 MB) lassen sich lokal nicht mehr in der Vorschau öffnen. Die Renderings als Übersicht prüfen, bevor sie eingebaut werden.
+- **Große Seiten** (über etwa 1 MB) lassen sich lokal nicht mehr in der Vorschau öffnen. Die Renderings als Übersicht prüfen, bevor sie eingebaut werden, und den Aufbau an einer Kopie der Seite mit leerem `const ICONS = {};` ansehen (Kopie danach löschen).
+- **Namen aus IDs ableiten geht schief.** Das Modul mit der ID `fortune_unit` heißt im Spiel „Ore Refinement Unit“. Jeden Namen aus der Sprachdatei nehmen; `NameCheck` findet die Ausreißer.
+- **Multiblöcke ohne Strukturdatei** (Mekanism) sind im Code festgelegt. Dann gibt es keinen Bauplan: die Teile mit Rezept und Beschreibung zeigen und ausdrücklich sagen, dass die Bauregeln nicht ausgelesen sind.
 
 ## Abschlussbericht
 

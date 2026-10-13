@@ -9,8 +9,11 @@ Je Content-Mod eine Seite mit der Progression, wie der Mod sie mit seinen Addons
 | Tinkers' Construct (+ TCIntegrations, Levelling Addon) | https://claude.ai/artifact/TYsNjvC9iqYNyAMW8Dy78y | `tinkers/` |
 | Immersive Engineering (+ Petroleum, Posts) | https://claude.ai/artifact/5ND4jUMzFawrQBFv1Htzr6 | `ie/` |
 | Botania (+ MythicBotany) | https://claude.ai/artifact/3tPaBDHNUfvyPoNjbb2TCw | `botania/` |
+| Mekanism (+ Mekanism Generators) | https://claude.ai/artifact/NDtR89BAXYtyGRHu4tsHMd | `mekanism/` |
 
 Neue Seiten entstehen mit dem Skill `modpfad-seite` (`.claude/skills/modpfad-seite/`, als Paket `modpfad-seite.skill` in diesem Ordner). Er legt Aufbau und Quellenregel fest: nur JARs und Bücher der Mods.
+
+Was beim Erstellen der Seiten für die Crossmod-Planung auffällt, steht in `CROSSMOD_AUFFAELLIGKEITEN.md` und wird mit jeder neuen Seite fortgeschrieben.
 
 ## Dateien
 
@@ -19,7 +22,8 @@ Neue Seiten entstehen mit dem Skill `modpfad-seite` (`.claude/skills/modpfad-sei
 - `template.html` – gemeinsames Layout und Render-Logik (Farben und Schriften wie der Erzatlas)
 - `build.sh` – setzt je Mod `<mod>.html` zusammen
 - `mkicons.sh`, `tools/IconTool.java` – erzeugen `icons.js` aus den Mod-JARs
-- `tools/ObjRender.java`, `tools/renders.txt` – zeichnen 3D-Modelle (OBJ) als Bild; Aufruf `java tools/ObjRender.java $JARS tools/renders.txt`, Ergebnis unter `$JARS/_render/`, Verweis `"render:model/<name>"` (groß) oder `"render:model/<name>_s"` (Slot)
+- `tools/RecipeDump.java` – gibt die Rezepte eines Ordners kompakt aus (Ergebnis, gezählte Zutaten, Bedingungen), mit Namen aus den Sprachdateien
+- `tools/ObjRender.java`, `tools/renders.txt` – zeichnen 3D-Modelle als Bild (OBJ und JSON-Blockmodelle mit `elements`, auch `forge:composite`); Aufruf `java tools/ObjRender.java $JARS tools/renders.txt`, Ergebnis unter `$JARS/_render/`, Verweis `"render:model/<name>"` (groß) oder `"render:model/<name>_s"` (Slot)
 - `tools/extract.sh` – entpackt die gewünschten JARs der Instanz in einen Arbeitsordner (der `JARS`-Ordner) und schreibt dort `modids.txt`
 - `tools/NbtDump.java` – liest Strukturdateien (.nbt) und gibt Stückliste und Ebenen für Baupläne aus
 - `tools/NameCheck.java` – prüft die Item-Namen einer `data.js` gegen die Sprachdateien der Mods
@@ -55,4 +59,6 @@ Die Ebenen stammen aus den Strukturdateien der Mods (`data/<mod>/structures/mult
 - Nicht einzeln gegen das Buch gelesen: die Trait-Namen der Tinkers-Materialien sind aus den Materialdaten, ihre Wirkung steht nicht auf der Seite; die Upgrade-Namen des Accumulator Backpack außer der Charging Antenna
 - Botania: Bodenmuster der Rune Rituals, Aufbau des Mana Enchanters
 - Botania: Welches Gaia-Pylon-Rezept im Pack gilt (Botania-Original oder MythicBotany über den Alfsteel Pylon), in JEI prüfen
-- Weitere Mods: Mekanism, AE2, Blood Magic, Ad Astra, Blue Skies, Star Wars, Farmer's Delight
+- Mekanism: Die Bauregeln aller Multiblöcke und der Eingangsstoff des SPS stehen nur im Code (kein Buch, keine Strukturdateien); auf der Seite so vermerkt. Ohne Bild, weil im Code gezeichnet: Energy Cube, Dynamic Tank, Nutritional Liquifier, Personal Chest, Turbine Rotor, Wind Generator, alle Leitungen
+- Der Arbeitsordner mit den entpackten JARs liegt im Temp-Verzeichnis und wird von Windows ausgedünnt (am 2026-10-13 fehlten nach einigen Stunden die meisten Dateien). Vor jeder Arbeit neu entpacken.
+- Weitere Mods: AE2, Blood Magic, Ad Astra, Blue Skies, Star Wars, Farmer's Delight
