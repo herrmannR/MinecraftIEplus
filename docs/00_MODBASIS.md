@@ -28,7 +28,7 @@ Verbindliche Mod-Liste des Packs. Die Liste wird nicht stillschweigend veränder
 | Immersive Engineering | 10.2.0-183 | MR | industrielle Grundlage: Multiblöcke, Draht, Diesel |
 | Immersive Petroleum | 4.3.1-36b | MR | Ölförderung und Destillation |
 | Immersive Posts | 4.3.0-15 | MR | Masten für IE-Leitungen |
-| More Immersive Wires | 1.1.4 | MR | IE-Drähte für AE2- und Mekanism-Netze |
+| More Immersive Wires | 1.1.4 | MR | IE-Drähte für AE2-Netze (ME Glass und Dense Cable); 1.1.4 enthält keinen Mekanism-Draht (🟢 Sprachdatei im JAR, 2026-10-13) |
 | Mekanism | 10.4.16.80 | MR | High-Tech, Chemie, Erzvervielfachung |
 | Mekanism Generators | 10.4.16.80 | MR | Stromerzeuger bis Kern- und Fusionsreaktor |
 | Applied Energistics 2 | 15.4.11 | MR | digitales Lager, Autocrafting (Endgame) |
