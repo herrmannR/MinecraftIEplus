@@ -1,2 +1,5 @@
 # Welt-Backups sind zu groß für Git und bleiben lokal
 welten_backups/
+
+# Build-Ausgabe der Sammelseite, entsteht mit docs/sammelseite/build.sh
+docs/sammelseite/out/

@@ -31,9 +31,33 @@ const MODS = [
     phases: 6, steps: 35, icon: "render:model/mek_metallurgic_infuser",
     accent: ["#4fc3a1", "#1f7f66"], url: "https://claude.ai/artifact/NDtR89BAXYtyGRHu4tsHMd",
   },
+  {
+    name: "Ad Astra", version: "1.15.21", addons: "Giselle Addon, More Structures, Rocketed",
+    text: "Von der ersten Stahlplatte über Mond, Mars, Venus und Merkur bis Glacio. Jede Raketenstufe braucht das Metall des Planeten davor.",
+    phases: 4, steps: 31, icon: "render:model/aa_nasa_workbench",
+    accent: ["#7aa2e8", "#2f5fae"], url: "https://claude.ai/artifact/LDzmRVfRoZREd6nfYoCyQm",
+  },
+  {
+    name: "Star Wars Planets", version: "1.4.6.1", addons: "Addon für Ad Astra",
+    text: "Fünf Planeten hinter der Tier 4 Rocket, dazu Kyber-Kristall, Lichtschwerter mit Beacon, Blaster und Beskar-Rüstung.",
+    phases: 3, steps: 14, icon: "render:model/swp_light_saber_green",
+    accent: ["#e8c95a", "#8a6d0c"], url: "https://claude.ai/artifact/SrPJwSsAAdwZvaUm2MF3iN",
+  },
+  {
+    name: "Star Wars: Galaxy in a Cube", version: "1.0.3.1", addons: "keine",
+    text: "Assembly Bench, Lichtschwerter, Blaster, die Macht mit heller und dunkler Seite, Droiden und Klonrüstungen. Kein Buch; Abläufe aus dem Code gelesen.",
+    phases: 4, steps: 15, icon: "render:model/swgc_assembly_bench",
+    accent: ["#6fc3e8", "#1f6f96"], url: "https://claude.ai/artifact/18k191oT3stvg7zEjZJsHx",
+  },
+  {
+    name: "Blood Magic", version: "3.3.8-50", addons: "Brücke Blood-Smeltery",
+    text: "Fünf Altar-Stufen von der ersten Blutspende bis zum Archmage's Orb. Mit Bauplänen der Altar-Stufen, allen Runen und Sigils und 32 Ritualen samt LP-Kosten.",
+    phases: 5, steps: 29, icon: "render:model/bm_altar",
+    accent: ["#e0605a", "#a32a2a"], url: "https://claude.ai/artifact/LBPGVvAY4w5kV4Mx6KzBjc",
+  },
 ];
 // Mods ohne Seite, in der Reihenfolge der Mod-Liste
-const PLANNED = ["Applied Energistics 2", "Blood Magic", "Ad Astra", "Blue Skies", "Star Wars", "Farmer's Delight"];
+const PLANNED = ["Applied Energistics 2", "Blue Skies", "Farmer's Delight"];
 // Andere Übersichten des Projekts
 const MORE = [
   ["Erzatlas", "alle Erze, Fundorte und Verbrauch je Mod", "https://claude.ai/artifact/LWwdvCpXRwaHCa8NstSc4g"],

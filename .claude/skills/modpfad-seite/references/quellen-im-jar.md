@@ -25,6 +25,8 @@ Das Buch bestimmt Phasen und Reihenfolge. Zuerst nachsehen, welche Form der Mod 
 | GuideME (AE2) | `assets/<ns>/ae2guide/` als Markdown | `navigation` im Kopf der Dateien | Markdown |
 | kein Buch | `data/<ns>/advancements/` | `parent`-Ketten ergeben den Baum | `title`/`description` als Sprachschlüssel |
 
+Ein Patchouli-Buch gibt `java -Dstdout.encoding=UTF-8 tools/PatchouliDump.java <buch>/en_us > buch.txt` vollständig und lesbar aus: Kategorien und Einträge nach `sortnum`, Seitentexte ohne Formatierung, Rezept- und Multiblock-Verweise je Seite. Die Datei dann von vorn bis hinten lesen. Hat das Buch keine `sortnum`, steht die Reihenfolge oft in einem Einleitungs-Eintrag (Blood Magic: „Tiers & Getting Started“ in der Kategorie utility); dort zuerst nachsehen.
+
 Patchouli-Einträge können auch den Aufbau eines Multiblocks enthalten (`"multiblock": {"mapping": …, "pattern": …}`); das ist dann die Quelle für den Bauplan.
 
 Addons hängen ihre Kapitel oft in das Buch des Hauptmods ein (eigener Ordner unter dem Namespace des Hauptmods im Addon-JAR, Texte in einer eigenen Sprachdatei).
@@ -104,3 +106,16 @@ tr '\n' ' ' < assets/<ns>/manual/en_us/<eintrag>.txt | sed -E 's/<[^>]*>//g; s/�
 ```
 
 Für mehr als etwa hundert Dateien oder verschachtelte Auswertung ein Java-Werkzeug schreiben; `tools/ModifierDump.java` enthält einen kleinen JSON-Leser, den man übernehmen kann.
+
+## Wenn die Mechanik nur im Code steht
+
+Manche Mods haben weder Buch noch Advancement-Baum, und ihre Rezepte stehen nicht in Dateien (Beispiel: Star Wars: Galaxy in a Cube mit seiner Assembly Bench). Dann sind die Klassen des JARs die Quelle. Das zählt als „JAR lesen“; geraten wird trotzdem nichts.
+
+- Klassen entpacken: `jar xf <mod>.jar <paket>` (das `unzip` dieser Umgebung findet Muster wie `*.class` nicht).
+- Registrierte Items, Blöcke und Mobs: `javap -p -c -constants reg/<Registry>.class` und nach `String` filtern. Was in Sprachdatei oder Texturen steht, aber hier fehlt, gibt es im Spiel nicht.
+- Abläufe: `javap -p -c -constants <Klasse>.class` lesen, am besten einmal alle Klassen in eine Textdatei schreiben und darin suchen. Ein `javap`-Aufruf je Suchbegriff und Klasse ist viel zu langsam.
+- Vanilla-Felder erscheinen als SRG-Kürzel (`Items.f_42415_`). Die Namen liefern zwei Dateien der Instanz: `libraries/de/oceanlabs/mcp/mcp_config/<version>/…-mappings-merged.txt` (Kürzel zu SRG) und `libraries/net/minecraft/client/<version>/…-mappings.txt` (Name zu Kürzel). Nicht aus dem Gedächtnis zuordnen.
+- Werte aus Konstruktoren vieler gleichartiger Klassen (Blood Magic: Aktivierungskosten aller Rituale) liest ein awk-Skript über die `javap`-Ausgabe aus: Argumente vor dem `invokespecial` der Oberklasse, erste Konstante von `getRefreshCost()` usw. Wo die Methode rechnet statt eine Konstante zurückzugeben, „variabel“ schreiben.
+- Baut eine Methode ihr Ergebnis in Schleifen (Blood Magic `AltarTier.buildComponents`), ist das Ablesen aus dem Bytecode unzuverlässig. Dann die Klasse selbst ausführen: eine Ersatzklasse für die fehlende Minecraft-Klasse schreiben (etwa `net.minecraft.core.BlockPos` mit Konstruktor `(int,int,int)`), zusammen mit den entpackten Mod-Klassen und den nötigen Bibliotheken der Instanz (Guava unter `libraries/com/google/guava/`) auf den Klassenpfad legen und per Reflexion aufrufen. Unter Windows Pfade mit `cygpath -w` umwandeln und `;` als Trenner nehmen. Das geht nur bei Klassen, die beim Laden nichts aus Minecraft brauchen; vorher mit `javap -c` prüfen, welche Klassen sie berühren.
+- Auf der Seite dazuschreiben, dass die Angabe aus dem Code stammt. Zahlen nur nennen, wenn klar ist, wofür sie stehen (Feldname, Konstruktor); sonst als nicht ausgelesen führen.
+- Die Reihenfolge der Schritte folgt dann den Abhängigkeiten der Rezepte, und die Phasenzeile sagt, dass es kein Buchkapitel gibt.

@@ -1,1 +1,199 @@
 # name  gier  neigung  modell.obj[,weiteres.obj]  [platzhalter=namespace:pfad ...]   (Pfade relativ zum JARS-Ordner)
+# Immersive Engineering: Multiblöcke
+ie_coke_oven 215 30 ie/assets/immersiveengineering/models/block/stone_multiblocks/cube_three.obj side=immersiveengineering:block/multiblocks/coke_oven front=immersiveengineering:block/multiblocks/coke_oven_off
+ie_blast_furnace 215 30 ie/assets/immersiveengineering/models/block/stone_multiblocks/cube_three.obj side=immersiveengineering:block/multiblocks/blast_furnace front=immersiveengineering:block/multiblocks/blast_furnace_off
+ie_alloy_kiln 215 30 ie/assets/immersiveengineering/models/block/stone_multiblocks/cube_two.obj side=immersiveengineering:block/multiblocks/alloy_smelter_side top=immersiveengineering:block/multiblocks/alloy_smelter_top bottom=immersiveengineering:block/multiblocks/alloy_smelter_bottom front=immersiveengineering:block/multiblocks/alloy_smelter_off
+ie_improved_blast_furnace 215 30 ie/assets/immersiveengineering/models/block/blastfurnace_advanced.obj
+ie_preheater 215 30 ie/assets/immersiveengineering/models/block/metal_device/blastfurnace_preheater.obj
+ie_metal_press 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/metal_press.obj,ie/assets/immersiveengineering/models/block/metal_multiblock/metal_press_piston.obj
+ie_crusher 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/crusher.obj
+ie_sawmill 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/sawmill.obj
+ie_squeezer 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/squeezer.obj
+ie_fermenter 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/fermenter.obj
+ie_refinery 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/refinery.obj
+ie_diesel_generator 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/diesel_generator.obj
+ie_mixer 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/mixer.obj
+ie_bottling_machine 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/bottling_machine.obj.ie
+ie_assembler 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/assembler.obj
+ie_auto_workbench 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/auto_workbench.obj
+ie_arc_furnace 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/arc_furnace.obj
+ie_excavator 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/excavator.obj
+ie_bucket_wheel 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/bucket_wheel.obj.ie
+ie_silo 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/silo.obj
+ie_tank 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/tank.obj
+ie_lightning_rod 215 30 ie/assets/immersiveengineering/models/block/metal_multiblock/lightningrod.obj
+# Immersive Engineering: Geräte
+ie_connector_lv 215 30 ie/assets/immersiveengineering/models/block/connector/connector_lv.obj texture=immersiveengineering:block/connector/connector_lv
+ie_relay_lv 215 30 ie/assets/immersiveengineering/models/block/connector/connector_lv.obj texture=immersiveengineering:block/connector/relay_lv
+ie_connector_hv 215 30 ie/assets/immersiveengineering/models/block/connector/connector_hv.obj
+ie_connector_redstone 215 30 ie/assets/immersiveengineering/models/block/connector/connector_redstone.obj.ie
+ie_breaker_switch 215 30 ie/assets/immersiveengineering/models/block/connector/breaker_switch_off.obj.ie
+ie_transformer 215 30 ie/assets/immersiveengineering/models/block/connector/transformer_mv_left.obj
+ie_transformer_hv 215 30 ie/assets/immersiveengineering/models/block/connector/transformer_hv_left.obj
+ie_balloon 215 30 ie/assets/immersiveengineering/models/block/balloon.obj.ie
+ie_lantern 215 30 ie/assets/immersiveengineering/models/block/lantern_inventory.obj
+ie_cloche 215 30 ie/assets/immersiveengineering/models/block/metal_device/cloche.obj.ie
+ie_charging_station 215 30 ie/assets/immersiveengineering/models/block/metal_device/charging_station.obj
+ie_electric_lantern 215 30 ie/assets/immersiveengineering/models/block/metal_device/e_lantern.obj texture=immersiveengineering:block/metal_device/electric_lantern_on
+ie_floodlight 215 30 ie/assets/immersiveengineering/models/block/metal_device/floodlight.obj.ie texture=immersiveengineering:block/metal_device/floodlight
+ie_core_drill 215 30 ie/assets/immersiveengineering/models/block/metal_device/core_drill.obj,ie/assets/immersiveengineering/models/block/metal_device/core_drill_center.obj
+ie_gun_turret 215 30 ie/assets/immersiveengineering/models/block/metal_device/gun_turret_inv.obj
+ie_chem_turret 215 30 ie/assets/immersiveengineering/models/block/metal_device/chem_turret_inv.obj
+ie_teslacoil 215 30 ie/assets/immersiveengineering/models/block/metal_device/teslacoil.obj
+ie_fluid_pipe 215 30 ie/assets/immersiveengineering/models/block/metal_device/fluid_pipe.obj.ie
+ie_fluid_pump 215 30 ie/assets/immersiveengineering/models/block/metal_device/fluid_pump_inv.obj
+ie_razor_wire 215 30 ie/assets/immersiveengineering/models/block/razor_wire.obj.ie
+ie_workbench 215 30 ie/assets/immersiveengineering/models/block/wooden_device/workbench.obj.ie
+ie_craftingtable 215 30 ie/assets/immersiveengineering/models/block/wooden_device/craftingtable.obj
+ie_circuit_table 215 30 ie/assets/immersiveengineering/models/block/wooden_device/circuit_table.obj
+ie_logic_unit 215 30 ie/assets/immersiveengineering/models/block/wooden_device/logic_unit.obj.ie
+ie_windmill 215 20 ie/assets/immersiveengineering/models/block/wooden_device/windmill.obj.ie
+ie_watermill 215 20 ie/assets/immersiveengineering/models/block/wooden_device/watermill.obj
+ie_wooden_post 215 30 ie/assets/immersiveengineering/models/block/wooden_device/wooden_post_inv.obj post=immersiveengineering:block/wooden_decoration/post
+ie_toolbox 215 30 ie/assets/immersiveengineering/models/block/toolbox.obj
+# Immersive Petroleum
+ip_derrick 215 30 ip/assets/immersivepetroleum/models/multiblock/obj/derrick.obj texture=immersivepetroleum:multiblock/derrick
+ip_pumpjack 215 30 ip/assets/immersivepetroleum/models/item/obj/pumpjack_itemmockup.obj texture_base=immersivepetroleum:multiblock/pumpjack_base texture_armature=immersivepetroleum:models/pumpjack_armature
+ip_oiltank 215 30 ip/assets/immersivepetroleum/models/multiblock/obj/oiltank.obj texture=immersivepetroleum:multiblock/oiltank
+ip_distillation_tower 215 30 ip/assets/immersivepetroleum/models/multiblock/obj/distillationtower.obj texture=immersivepetroleum:multiblock/distillation_tower
+ip_hydrotreater 215 30 ip/assets/immersivepetroleum/models/multiblock/obj/hydrotreater.obj texture=immersivepetroleum:multiblock/hydrotreater
+ip_coker 215 30 ip/assets/immersivepetroleum/models/multiblock/obj/cokerunit.obj texture=immersivepetroleum:multiblock/cokerunit
+ip_flarestack 215 30 ip/assets/immersivepetroleum/models/block/obj/flarestack.obj texture=immersivepetroleum:block/obj/flarestack
+ip_generator 215 30 ip/assets/immersivepetroleum/models/block/obj/generator.obj texture=immersivepetroleum:block/obj/generator
+ip_seismic 215 30 ip/assets/immersivepetroleum/models/block/obj/seismic_survey_tool.obj,ip/assets/immersivepetroleum/models/block/obj/seismic_survey_tool_barrel.obj texture=immersivepetroleum:block/obj/seismic_survey_tool
+ip_autolubricator 215 30 ip/assets/immersivepetroleum/models/block/obj/autolubricator.obj texture=immersivepetroleum:models/lubricator
+# Mekanism (JSON-Blockmodelle)
+mek_antiprotonic_nucleosynthesizer 215 30 mek/assets/mekanism/models/block/antiprotonic_nucleosynthesizer.json
+mek_boiler_casing 215 30 mek/assets/mekanism/models/block/boiler_casing.json
+mek_boiler_valve_input 215 30 mek/assets/mekanism/models/block/boiler_valve_input.json
+mek_cardboard_box 215 30 mek/assets/mekanism/models/block/cardboard_box.json
+mek_chargepad 215 30 mek/assets/mekanism/models/block/chargepad.json
+mek_chemical_crystallizer 215 30 mek/assets/mekanism/models/block/chemical_crystallizer.json
+mek_chemical_dissolution_chamber 215 30 mek/assets/mekanism/models/block/chemical_dissolution_chamber.json
+mek_chemical_infuser 215 30 mek/assets/mekanism/models/block/chemical_infuser.json
+mek_chemical_injection_chamber 215 30 mek/assets/mekanism/models/block/chemical_injection_chamber.json
+mek_chemical_oxidizer 215 30 mek/assets/mekanism/models/block/chemical_oxidizer.json
+mek_chemical_washer 215 30 mek/assets/mekanism/models/block/chemical_washer.json
+mek_combiner 215 30 mek/assets/mekanism/models/block/combiner.json
+mek_crusher 215 30 mek/assets/mekanism/models/block/crusher.json
+mek_digital_miner 215 30 mek/assets/mekanism/models/block/digital_miner.json
+mek_dimensional_stabilizer 215 30 mek/assets/mekanism/models/block/dimensional_stabilizer.json
+mek_dynamic_valve 215 30 mek/assets/mekanism/models/block/dynamic_valve.json
+mek_electric_pump 215 30 mek/assets/mekanism/models/block/electric_pump.json
+mek_electrolytic_separator 215 30 mek/assets/mekanism/models/block/electrolytic_separator.json
+mek_energized_smelter 215 30 mek/assets/mekanism/models/block/energized_smelter.json
+mek_enrichment_chamber 215 30 mek/assets/mekanism/models/block/enrichment_chamber.json
+mek_fluid_tank 215 30 mek/assets/mekanism/models/block/fluid_tank.json
+mek_fluidic_plenisher 215 30 mek/assets/mekanism/models/block/fluidic_plenisher.json
+mek_formulaic_assemblicator 215 30 mek/assets/mekanism/models/block/formulaic_assemblicator.json
+mek_fuelwood_heater 215 30 mek/assets/mekanism/models/block/fuelwood_heater.json
+mek_industrial_alarm 215 30 mek/assets/mekanism/models/block/industrial_alarm.json
+mek_isotopic_centrifuge 215 30 mek/assets/mekanism/models/block/isotopic_centrifuge.json
+mek_laser 215 30 mek/assets/mekanism/models/block/laser.json
+mek_laser_amplifier 215 30 mek/assets/mekanism/models/block/laser_amplifier.json
+mek_laser_tractor_beam 215 30 mek/assets/mekanism/models/block/laser_tractor_beam.json
+mek_logistical_sorter 215 30 mek/assets/mekanism/models/block/logistical_sorter.json
+mek_metallurgic_infuser 215 30 mek/assets/mekanism/models/block/metallurgic_infuser.json
+mek_modification_station 215 30 mek/assets/mekanism/models/block/modification_station.json
+mek_oredictionificator 215 30 mek/assets/mekanism/models/block/oredictionificator.json
+mek_osmium_compressor 215 30 mek/assets/mekanism/models/block/osmium_compressor.json
+mek_painting_machine 215 30 mek/assets/mekanism/models/block/painting_machine.json
+mek_personal_barrel 215 30 mek/assets/mekanism/models/block/personal_barrel.json
+mek_pigment_extractor 215 30 mek/assets/mekanism/models/block/pigment_extractor.json
+mek_pigment_mixer 215 30 mek/assets/mekanism/models/block/pigment_mixer.json
+mek_precision_sawmill 215 30 mek/assets/mekanism/models/block/precision_sawmill.json
+mek_pressure_disperser 215 30 mek/assets/mekanism/models/block/pressure_disperser.json
+mek_pressurized_reaction_chamber 215 30 mek/assets/mekanism/models/block/pressurized_reaction_chamber.json
+mek_purification_chamber 215 30 mek/assets/mekanism/models/block/purification_chamber.json
+mek_qio_dashboard 215 30 mek/assets/mekanism/models/block/qio_dashboard.json
+mek_qio_drive_array 215 30 mek/assets/mekanism/models/block/qio_drive_array.json
+mek_qio_exporter 215 30 mek/assets/mekanism/models/block/qio_exporter.json
+mek_qio_importer 215 30 mek/assets/mekanism/models/block/qio_importer.json
+mek_qio_redstone_adapter 215 30 mek/assets/mekanism/models/block/qio_redstone_adapter.json
+mek_quantum_entangloporter 215 30 mek/assets/mekanism/models/block/quantum_entangloporter.json
+mek_radioactive_waste_barrel 215 30 mek/assets/mekanism/models/block/radioactive_waste_barrel.json
+mek_resistive_heater 215 30 mek/assets/mekanism/models/block/resistive_heater.json
+mek_rotary_condensentrator 215 30 mek/assets/mekanism/models/block/rotary_condensentrator.json
+mek_security_desk 215 30 mek/assets/mekanism/models/block/security_desk.json
+mek_seismic_vibrator 215 30 mek/assets/mekanism/models/block/seismic_vibrator.json
+mek_solar_neutron_activator 215 30 mek/assets/mekanism/models/block/solar_neutron_activator.json
+mek_sps_casing 215 30 mek/assets/mekanism/models/block/sps_casing.json
+mek_sps_port 215 30 mek/assets/mekanism/models/block/sps_port.json
+mek_steel_casing 215 30 mek/assets/mekanism/models/block/steel_casing.json
+mek_structural_glass 215 30 mek/assets/mekanism/models/block/structural_glass.json
+mek_supercharged_coil 215 30 mek/assets/mekanism/models/block/supercharged_coil.json
+mek_superheating_element 215 30 mek/assets/mekanism/models/block/superheating_element.json
+mek_teleporter 215 30 mek/assets/mekanism/models/block/teleporter.json
+mek_teleporter_frame 215 30 mek/assets/mekanism/models/block/teleporter_frame.json
+mek_bin_basic 215 30 mek/assets/mekanism/models/block/bin/basic.json
+mek_chemical_tank_basic 215 30 mek/assets/mekanism/models/block/chemical_tank/basic.json
+mek_induction_casing 215 30 mek/assets/mekanism/models/block/induction/casing.json
+mek_induction_port 215 30 mek/assets/mekanism/models/block/induction/port.json
+# Mekanism Generators
+mekgen_advanced_solar_generator 215 30 mekgen/assets/mekanismgenerators/models/block/advanced_solar_generator.json
+mekgen_bio_generator 215 30 mekgen/assets/mekanismgenerators/models/block/bio_generator.json
+mekgen_electromagnetic_coil 215 30 mekgen/assets/mekanismgenerators/models/block/electromagnetic_coil.json
+mekgen_gas_burning_generator 215 30 mekgen/assets/mekanismgenerators/models/block/gas_burning_generator.json
+mekgen_heat_generator 215 30 mekgen/assets/mekanismgenerators/models/block/heat_generator.json
+mekgen_reactor_glass 215 30 mekgen/assets/mekanismgenerators/models/block/reactor_glass.json
+mekgen_rotational_complex 215 30 mekgen/assets/mekanismgenerators/models/block/rotational_complex.json
+mekgen_saturating_condenser 215 30 mekgen/assets/mekanismgenerators/models/block/saturating_condenser.json
+mekgen_solar_generator 215 30 mekgen/assets/mekanismgenerators/models/block/solar_generator.json
+mekgen_fission_casing 215 30 mekgen/assets/mekanismgenerators/models/block/fission/casing.json
+mekgen_fission_control_rod_assembly 215 30 mekgen/assets/mekanismgenerators/models/block/fission/control_rod_assembly.json
+mekgen_fission_fuel_assembly 215 30 mekgen/assets/mekanismgenerators/models/block/fission/fuel_assembly.json
+mekgen_fission_logic_adapter 215 30 mekgen/assets/mekanismgenerators/models/block/fission/logic_adapter.json
+mekgen_fission_port_input 215 30 mekgen/assets/mekanismgenerators/models/block/fission/port_input.json
+mekgen_fusion_controller 215 30 mekgen/assets/mekanismgenerators/models/block/fusion/controller.json
+mekgen_fusion_frame 215 30 mekgen/assets/mekanismgenerators/models/block/fusion/frame.json
+mekgen_fusion_laser_focus_matrix 215 30 mekgen/assets/mekanismgenerators/models/block/fusion/laser_focus_matrix.json
+mekgen_fusion_logic_adapter 215 30 mekgen/assets/mekanismgenerators/models/block/fusion/logic_adapter.json
+mekgen_fusion_port 215 30 mekgen/assets/mekanismgenerators/models/block/fusion/port.json
+mekgen_turbine_casing 215 30 mekgen/assets/mekanismgenerators/models/block/turbine/casing.json
+mekgen_turbine_valve 215 30 mekgen/assets/mekanismgenerators/models/block/turbine/valve.json
+mekgen_turbine_vent 215 30 mekgen/assets/mekanismgenerators/models/block/turbine/vent.json
+# Ad Astra (JSON-Blockmodelle)
+aa_coal_generator 215 30 aa/assets/ad_astra/models/block/coal_generator.json
+aa_compressor 215 30 aa/assets/ad_astra/models/block/compressor.json
+aa_etrionic_blast_furnace 215 30 aa/assets/ad_astra/models/block/etrionic_blast_furnace.json
+aa_nasa_workbench 215 30 aa/assets/ad_astra/models/block/nasa_workbench.json
+aa_fuel_refinery 215 30 aa/assets/ad_astra/models/block/fuel_refinery.json
+aa_oxygen_loader 215 30 aa/assets/ad_astra/models/block/oxygen_loader.json
+aa_solar_panel 215 30 aa/assets/ad_astra/models/block/solar_panel.json
+aa_water_pump 215 30 aa/assets/ad_astra/models/block/water_pump.json
+aa_oxygen_distributor 215 30 aa/assets/ad_astra/models/block/oxygen_distributor.json
+aa_gravity_normalizer 215 30 aa/assets/ad_astra/models/block/gravity_normalizer.json
+aa_cryo_freezer 215 30 aa/assets/ad_astra/models/block/cryo_freezer.json
+aa_oxygen_sensor 215 30 aa/assets/ad_astra/models/block/oxygen_sensor.json
+aa_launch_pad 215 30 aa/assets/ad_astra/models/block/launch_pad.json
+aa_radio 215 30 aa/assets/ad_astra/models/block/radio.json
+aa_vent 215 30 aa/assets/ad_astra/models/block/vent.json
+aa_airlock 215 30 aa/assets/ad_astra/models/block/airlock.json
+aag_fuel_loader 215 30 giselle/assets/ad_astra_giselle_addon/models/block/fuel_loader.json
+aag_automation_nasa_workbench 215 30 giselle/assets/ad_astra_giselle_addon/models/block/automation_nasa_workbench.json
+aag_rocket_sensor 215 30 giselle/assets/ad_astra_giselle_addon/models/block/rocket_sensor.json
+swp_blaster_upgrader 215 30 swp/assets/swplanets/models/block/blaster_upgrader.json
+swp_light_saber_base 215 30 swp/assets/swplanets/models/item/light_saber_base.json
+swp_light_saber_blue 215 30 swp/assets/swplanets/models/item/light_saber_blue.json
+swp_light_saber_green 215 30 swp/assets/swplanets/models/item/light_saber_green.json
+swp_light_saber_red 215 30 swp/assets/swplanets/models/item/light_saber_red.json
+swp_light_saber_violet 215 30 swp/assets/swplanets/models/item/light_saber_violet.json
+swp_light_saber_dark_maul 215 30 swp/assets/swplanets/models/item/light_saber_dark_maul.json
+swp_light_saber_kylo_ren 215 30 swp/assets/swplanets/models/item/light_saber_kylo_ren.json
+swp_darksaber 215 30 swp/assets/swplanets/models/item/darksaber.json
+swp_blaster 215 30 swp/assets/swplanets/models/item/blaster.json
+swgc_kyber_crystal 215 30 swgc/assets/swgc/models/block/kyber_crystal.json
+swgc_gas_harvester 215 30 swgc/assets/swgc/models/block/gas_harvester.json
+swgc_assembly_bench 215 30 swgc/assets/swgc/models/block/assembly_bench_item.json
+# Blood Magic
+bm_altar 215 30 bm/assets/bloodmagic/models/block/blockaltar.obj
+bm_alchemy_table 215 30 bm/assets/bloodmagic/models/block/modelalchemytable.obj
+bm_hellfire_forge 215 30 bm/assets/bloodmagic/models/block/blockhellfireforge.obj
+bm_incense_altar 215 30 bm/assets/bloodmagic/models/block/blockincensealtar.obj
+bm_demon_crucible 215 30 bm/assets/bloodmagic/models/block/blockdemoncrucible.obj
+bm_demon_crystallizer 215 30 bm/assets/bloodmagic/models/block/blockdemoncrystallizer.obj
+bm_demon_pylon 215 30 bm/assets/bloodmagic/models/block/blockdemonpylon.obj
+bm_arc 215 30 bm/assets/bloodmagic/models/block/alchemicalreactionchamber.json
+bm_teleposer 215 30 bm/assets/bloodmagic/models/block/teleposer.json
+bm_master_ritual_stone 215 30 bm/assets/bloodmagic/models/block/masterritualstone.json
+bm_spike_trap 215 30 bm/assets/bloodmagic/models/block/dungeon_spike_trap.json

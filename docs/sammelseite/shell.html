@@ -1,0 +1,45 @@
+<title>IE+ Handbuch</title>
+<style>
+:root{--bg:#f1efea;--fg:#24221f;--muted:#6c675e}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1b1d20;--fg:#e7e5e1;--muted:#9a9890;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1b1d20;--fg:#e7e5e1;--muted:#9a9890;color-scheme:dark}
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg)}
+#v{display:block;border:0;width:100%;height:100%;background:var(--bg)}
+#msg{padding:24px 16px;font:15px system-ui,sans-serif;color:var(--muted)}
+</style>
+<div id="msg">Lädt …</div>
+<iframe id="v" title="Seite" hidden></iframe>
+<script>
+// Die Unterseiten stecken als Textblöcke (script type text/plain, id page-NAME) in dieser Datei (build.sh hängt sie an);
+// nachladen per fetch verweigert die Claude-App auf dem Handy (403). Links zwischen ihnen wechselt der Rahmen,
+// damit die App sie nicht im Browser öffnet. Der Seitenname steht im #hash (Zurück-Taste).
+const v = document.getElementById('v'), msg = document.getElementById('msg');
+const PAGES = /^(uebersicht|tinkers|ie|botania|mekanism|adastra|swplanets|swgc|bloodmagic|erzatlas|meilensteine)$/;
+function show(name) {
+  if (!PAGES.test(name)) name = 'uebersicht';
+  const el = document.getElementById('page-' + name);
+  if (!el) { msg.hidden = false; msg.textContent = 'Seite „' + name + '“ fehlt in dieser Fassung.'; return; }
+  cur = name;
+  // build.sh hat schließende Script-Tags und HTML-Kommentaranfänge maskiert, damit der Block nicht vorzeitig endet
+  v.srcdoc = el.textContent.replaceAll('<\/HUBSCRIPT', '<\/script').replaceAll('<HUBCOMMENT', '<\!--');
+}
+let cur = '';
+function go(name) {
+  if (name === cur) return;
+  show(name);
+  try { history.pushState(null, '', '#' + name); } catch (e) {}
+}
+addEventListener('popstate', () => show(location.hash.slice(1)));
+// Die Unterseite (nav.html angehängt) meldet Link-Klicks per postMessage; direkter Zugriff
+// auf ihr Dokument ist im Artifact-Rahmen nicht erlaubt.
+const sendTheme = () => v.contentWindow?.postMessage({ hubTheme: document.documentElement.dataset.theme || '' }, '*');
+v.addEventListener('load', () => { msg.hidden = true; v.hidden = false; sendTheme(); });
+addEventListener('message', e => {
+  if (e.source !== v.contentWindow || !e.data) return;
+  if (e.data.hubReady) sendTheme();
+  if (typeof e.data.hubGo === 'string' && PAGES.test(e.data.hubGo)) go(e.data.hubGo);
+});
+new MutationObserver(sendTheme).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+addEventListener('DOMContentLoaded', () => show(location.hash.slice(1)));
+</script>

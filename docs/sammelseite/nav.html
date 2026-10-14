@@ -1,0 +1,15 @@
+<script>
+// Wird an jede Unterseite angehängt: Klicks auf Links zu anderen Unterseiten meldet die Seite dem
+// Rahmen (start.html) per postMessage, statt selbst zu wechseln. Der Rahmen schickt das Farbschema.
+document.addEventListener('click', e => {
+  const a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
+  const h = a.getAttribute('href'), m = h.match(/^([a-z]+)\.html$/);
+  if (m) { e.preventDefault(); parent.postMessage({ hubGo: m[1] }, '*'); }
+  else if (h.startsWith('#') && h.length > 1) { e.preventDefault(); document.getElementById(decodeURIComponent(h.slice(1)))?.scrollIntoView(); }
+}, true);
+addEventListener('message', e => {
+  if (e.source !== parent || !e.data || !('hubTheme' in e.data)) return;
+  if (e.data.hubTheme) document.documentElement.dataset.theme = e.data.hubTheme; else delete document.documentElement.dataset.theme;
+});
+parent.postMessage({ hubReady: true }, '*');
+</script>
