@@ -578,3 +578,148 @@ Mekanism-Retrogen ist in der Testinstanz eingeschaltet (`enableRegeneration = tr
 ### Teststatus
 
 Nichts getestet; das Spiel wurde nicht gestartet.
+
+## 2026-10-12 — Tinkers in den höheren Stufen, Blood-Smeltery untersucht
+
+Status: 🟢 Entscheidung, 🔵 Rezepte und Werte
+
+### Änderung
+
+- Fünf Wege beschlossen, Tinkers an die späte Progression zu binden: seltene Flüssigkeiten als Zutat (A), Planeten-Metalle aufwerten (C), eigene Materialien (D), Modifier gegen späte Items (E), Gießen als Pflichtschritt (F).
+- Regel: Jedes Metall soll sich einschmelzen lassen; Legierungen entstehen bei der zugehörigen Maschine.
+- Legierungsrezept für Refined Obsidian aus der Schmelzerei entfernt. Bronze, Konstantan, Elektrum und Invar bleiben.
+- Blood-Smeltery bleibt im Pack. Entfernt: Life-Essence-Legierung, Gießen von Blank Slate und Blank Rune (`crossmod/blood_smeltery.js`).
+- Fehler von Blood-Smeltery 1.2.1a auf ihre Ursache zurückgeführt (Mod-Bug bei den Hellforged-Flüssigkeiten, fehlendes Thermal). Keine neuere Version vorhanden.
+
+### Begründung
+
+Tinkers endete bisher praktisch bei Manyullyn; Desh, Ostrum und Calorite sind als Werkzeugmaterial nur Stufe 2.
+
+### Betroffene Bereiche
+
+- `07_CROSSMOD_INTEGRATION.md`, `01_PROGRESSION.md`, `00_STATUS.md`, `00_MODBASIS.md`, `10_KUBEJS.md`
+
+### Auswirkungen auf bestehende Welt
+
+Keine; Refined Obsidian wurde in der Hauptwelt noch nicht hergestellt (Mekanism nicht begonnen).
+
+### KubeJS / technische Umsetzung
+
+`kubejs/server_scripts/crossmod/tinkers_legierungen.js` und `crossmod/blood_smeltery.js`. Am 2026-10-12 mit Zustimmung des Users in die Testinstanz kopiert (`kubejs/server_scripts/crossmod/`).
+
+### Teststatus
+
+Ungetestet.
+
+## 2026-10-13 — Testrunde 1 (Tests 1–7) und zwei Korrekturen
+
+Status: 🟡
+
+### Ergebnis
+
+- ✅ Test 1, 2: neue Welt lädt; 6 von 6 Server-Skripten ohne Fehler.
+- ✅ Test 4, 5 (User, JEI): Ad-Astra-Rezepte sind entfernt; Platten gibt es über Metal Press und Engineer's Hammer.
+- 🟡 Test 3, 6, 7: vom User in JEI noch nicht gefunden; Hinweise, wo nachzusehen ist, stehen in `11_TESTING.md`.
+- Die IE-Erzwerte aus `defaultconfigs/` werden von neuen Welten übernommen.
+
+### Korrekturen
+
+- Ad Astra bringt die IE-Rezepte für Desh-, Ostrum- und Calorite-Platten selbst mit. Die doppelten Rezepte aus `ad_astra_regeln.js` sind entfernt; die falsche Angabe in `15_RAUMFAHRT.md` ist berichtigt.
+- Jawas (Star Wars Planets) ließen Steel Cable fallen. Neues Loot-Override ersetzt es durch Stahlstäbe (ungetestet).
+
+Beide Änderungen sind auch in die Testinstanz kopiert.
+
+## 2026-10-13 — Worldgen ausgezählt; Uran und Osmium gesenkt; JEI-Ausblendung
+
+Status: 🟡
+
+### Änderung
+
+- Neues Werkzeug `tools/ErzZaehler.java`: zählt Erzblöcke je Dimension direkt aus den Weltdateien.
+- Auszählung der Testwelt (Blöcke pro Chunk): Overworld Zinn 0, IE-Blei 0, IE-Uran 0, Kyber-Kristalle 0; Mekanism-Blei 11, Osmium 24, Uran 48. Everbright: Zinn 35, Blei 37, Bauxit 33. Everdawn: Osmium 36. Die Erz-Features und die Blue-Skies-Freigabe (`ieplus`) funktionieren also.
+- 🟢 Entscheidung des Users: Uran in der Overworld auf etwa 10 pro Chunk, Osmium auf Diamant-Niveau (etwa 15). `Mekanism/world.toml`: Uran small 5 → 1, buried 9 → 2; Osmium 20/3/4 → 12/2/3. Noch nicht nachgezählt. Die Vorgabe „Uran ×1,3“ entfällt.
+- 🟢 Vorgabe des Users: Entfernte Items werden immer auch in JEI ausgeblendet. Neu: `kubejs/client_scripts/jei_ausblenden.js` (zwölf Ad-Astra-Items). Die Photovoltaic Etrium Cell ist jetzt ebenfalls entfernt (ihr einziger Zweck war das Solar Panel).
+- Befund: Ad Astra hat für Etrium-Barren, -Platten usw. kein einziges Rezept; 🔵 ausblenden oder eigene Rolle geben.
+
+Alles ist auch in die Testinstanz kopiert; Config und Client-Skript wirken erst nach einem Neustart des Spiels.
+
+## 2026-10-13 — Story begonnen; Ad Astra: Rocketed bleibt
+
+Status: 🟡
+
+### Änderung
+- Neues Dokument `18_STORY.md`: Rahmen, Geheimnis, Handlung in zwei Teilen, offene Stellen, Einbindungs-Ideen. Die Story schreibt der User.
+- „Ad Astra: Rocketed“ bleibt im Pack: Die Star-Wars-Planeten verlangen mindestens die Raketen T5 und T6; T4 führt nur noch nach Glacio.
+
+### Begründung
+Teil 1 der Story endet mit dem Fund des Meisters auf Glacio (T4). Die Star-Wars-Welten bilden Teil 2 und sollen dahinter liegen.
+
+### Betroffene Bereiche
+- `18_STORY.md`, `00_STATUS.md`, `00_MODBASIS.md`, `01_PROGRESSION.md`, `15_RAUMFAHRT.md`
+- 🔵 Noch nicht angepasst: Stufentabellen in `01_PROGRESSION.md` und `15_RAUMFAHRT.md`, Meilensteinkarte, Rezepte und Treibstoffe für T5 und T6.
+
+### Auswirkungen auf bestehende Welt
+Keine.
+
+## 2026-10-14 — Meilensteinkarte nach der Story umgebaut
+
+Status: 🟡
+
+### Änderung
+- Karte von 23 auf 28 Meilensteine, von 9 auf 12 Stufen; neue Spalte „Star Wars · Story“; zwei Story-Parts (Part 1 bis Glacio, Part 2 bis zu den Star-Wars-Welten).
+- Neu: M24 Droide und erste Quest, M25 Elfenportal und Elf, M26 Rakete T5, M27 Rakete T6, M28 Ausbildung beim Meister.
+- Verschoben: Alfheim (M14) und Gaia (M17) nach Part 2; Runenaltar (M3) auf P2; Rakete T4 (M22) auf P9.
+- Pflicht geworden (Vorschlag, zu bestätigen): Runenaltar, Everdawn, Blue-Skies-Bosse.
+- Platzhalter mit „?“ an allen Linien, bei denen der Mod feststeht, das Item aber nicht. Fragenkatalog mit 34 Punkten auf der Seite.
+- Jede Karte hat eine Zeile „Story“ und eingeklappte Spoiler.
+
+### Begründung
+Die Story des Users (`18_STORY.md`) legt die Reihenfolge fest: Tempel auf dem Merkur, dann Elfenportal, dann Glacio; Alfheim, Gaia und die Star-Wars-Welten erst danach.
+
+### Betroffene Bereiche
+- `meilensteine/` (data.js, template.html, README.md, Artifact-Seite), `01_PROGRESSION.md`, `15_RAUMFAHRT.md`, `00_STATUS.md`, `18_STORY.md`
+
+### Auswirkungen auf bestehende Welt
+Keine. Der Weltstand (Stahl, Runenaltar erreicht) passt weiter zur Karte.
+
+## 2026-10-14 — Raketen T5 bis T7 und vier Hürden je Stufe
+
+Status: 🟡
+
+### Änderung
+- T5 führt nur nach Endor (Basis des Meisters), T6 nach Tatooine, Hoth und Mustafar, T7 nach Mandalore.
+- Regel: Jede Rakete braucht einen Rumpf aus dem Metall des zuletzt erreichten Ortes, einen neuen Treibstoff, eine neue Mekanism-Stufe und ein Teil aus einem anderen Pfad. Ab T5 kommt das Rumpf-Material aus Alfheim.
+- T3 braucht ein Teil aus Blood Magic, weil der Tempel den Planeten abschirmt.
+- Karte: neuer Meilenstein M29 (Rakete T7), Part 2 auf P10 bis P14 gestreckt.
+
+### Begründung
+Entscheidungen des Users. Erzprüfung: Bis T4 liegt jedes Material rechtzeitig vor; Glacio hat kein eigenes Metall, deshalb Alfheim für T5.
+
+### Betroffene Bereiche
+- `meilensteine/`, `01_PROGRESSION.md`, `15_RAUMFAHRT.md`, `18_STORY.md`, `00_STATUS.md`
+- 🔵 Umsetzung: Stufen der Star-Wars-Planeten per Datapack ändern; Rezepte und flüssige Treibstoffe für T5 bis T7.
+
+### Auswirkungen auf bestehende Welt
+Keine.
+
+## 2026-10-14 — Meilensteinkarte feiner aufgeteilt (16 Kapitel)
+
+Status: 🟡
+
+### Änderung
+- Je Mod mehrere Stufen nach den Modpfad-Seiten: Tinkers 4, IE/Petroleum 6, Botania 7, Blood Magic 6, Mekanism 9, AE2 3, Blue Skies 4, Raumfahrt 7, Story 4; zusammen 50 Meilensteine.
+- 16 Zeilen, jede Zeile ein Kapitel des Questbuchs (Arbeitstitel K1 Ankunft bis K16 Mandalore). Part 1 K1–K11, Part 2 K12–K16.
+- Neue IDs mit Pfad-Kürzel (TK, IE, BO, BM, MK, AE, BS, RF, SW) statt M1–M29.
+- Mekanism-Leiter als Vorschlag für die vierte Hürde je Rakete: Basic, Advanced, Elite, Ultimate, Fusion, SPS (der User legt fest).
+- Mars-Station als eigener Meilenstein (SW2); Blue-Skies-Bosse nach Dimension getrennt (BS3, BS4).
+- Neue Zeile „Technik“ auf jeder Karte; Fragenkatalog auf die neuen Kürzel umgestellt.
+
+### Begründung
+Wunsch des Users: Progression granularer und gestreckt, damit für die Raketen T5 bis T7 noch neue Bereiche aus den anderen Mods übrig sind; jede Zeile soll ein Kapitel werden, an dem Nebenquests hängen.
+
+### Betroffene Bereiche
+- `meilensteine/`, `01_PROGRESSION.md`, `18_STORY.md`, `00_STATUS.md`, Sammelseite
+- 🔵 Blood Magic, AE2 und Blue Skies haben noch keine Modpfad-Seite; ihre Stufen sind vorläufig.
+
+### Auswirkungen auf bestehende Welt
+Keine. Weltstand: IE bis Schwermaschinen und Biodiesel erreicht, Botania bis Runenaltar erreicht, Tinkers, Petroleum und IE-Großindustrie begonnen.

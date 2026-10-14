@@ -16,7 +16,7 @@ Design der Raumfahrt als **Hauptziel des Packs** auf Minecraft 1.20.1: Ad Astra 
 | Star Wars Planets (Ad-Astra-Version) | 1.4.6.1 | Tatooine, Hoth, Endor, Mustafar, Mandalore; Kyber, Beskar | 🟢 |
 | Ad Astra: More Structures | 1.0.2 | Dungeons und Bosse auf den Ad-Astra-Planeten | 🟢 |
 | Mekanism: Ad Astra Ores | 1.1.0 | nur die Erzblöcke in Planetengestein; Generierung abgeschaltet | 🟢 |
-| Ad Astra: Rocketed | 1.0.5 | Raketen T5–T7 | 🔵 installiert, Entscheidung offen |
+| Ad Astra: Rocketed | 1.0.5 | Raketen T5–T7 | 🟢 bleibt (2026-10-13): Star-Wars-Planeten verlangen mindestens T5 und T6; 🔵 Zuordnung und Rezepte offen (`18_STORY.md`) |
 | Star Wars: Galaxy in a Cube | 1.0.3.1 | Lichtschwerter, Macht, Klone, Droiden | 🟢 siehe `17_STAR_WARS_1.20.1.md` |
 
 Pflicht-Bibliotheken von Ad Astra: Resourceful Lib, Resourceful Config, Botarium.
@@ -85,7 +85,7 @@ NASA Workbench: Nose Cone + 6 **Blöcke** des Stufenmetalls + 2 Tanks + 4 Flosse
 Ad Astra nimmt fremde Materialien über Tags an. 🟢 Aus JAR:
 
 - `ad_astra:steel_ingots`, `steel_blocks`, `steel_plates`, `steel_rods`, `iron_plates`, `iron_rods` enthalten jeweils das `forge:`-Tag. **IE-Stahl, IE-Platten und IE-Stäbe gelten ohne Anpassung.**
-- Für Desh, Ostrum und Calorite gibt es `forge:ingots/…` und `forge:plates/…`, aber keine IE-Pressrezepte. Die müssen wir schreiben, wenn der Compressor entfällt.
+- Für Desh, Ostrum und Calorite bringt Ad Astra selbst IE-Rezepte mit: Platten in der Metal Press und mit dem Engineer's Hammer (`data/immersiveengineering/recipes/metalpress/plate_desh.json` usw. im Ad-Astra-JAR; 🟢 im Spiel bestätigt am 2026-10-13). Wenn der Compressor entfällt, ist nichts weiter nötig. (Korrektur: Die frühere Angabe „keine IE-Pressrezepte“ war falsch.)
 
 ## Treibstoff (🟢 aus JAR)
 
@@ -228,21 +228,25 @@ Die Erze sind normale JSON-Features in den Biom-Dateien und lassen sich per Data
 - Die Bosse von More Structures lassen Roh-Desh, Roh-Ostrum bzw. Roh-Calorite fallen; die Truhen ebenfalls. 🔵 Mengen gegen die Erzplanung prüfen.
 - **Oil Well:** 🟢 abgeschaltet wie in 1.18.2, weil Immersive Petroleum die einzige Ölquelle bleiben soll. Datei: `kubejs/data/ad_astra/tags/worldgen/biome/has_structure/oil_well.json` (`replace: true`, leere Liste). 🔵 Liegt bisher nur im Projektordner; Wirkung nicht getestet. Gilt nur für neue Chunks und muss **vor dem ersten Start der Hauptwelt mit Ad Astra** beim Host liegen.
 
-## 🔵 Ad Astra: Rocketed (Entscheidung offen)
+## 🟢 Ad Astra: Rocketed bleibt (User, 2026-10-13)
 
 Aus JAR: Der Mod fügt nur drei Raketen T5, T6 und T7 hinzu, jeweils mit eigenem Treibstoff-Tag (`ad_astra_rocketed:tier_5_rocket_fuel` usw.). **Er bringt keine Planeten mit, die diese Stufen verlangen.** Die Standard-Rezepte sind schwach (T5: Ice Shard statt Nose Cone, sonst Calorite; T6: Echo Shard; T7: Echo Shard und Permafrost-Fliesen).
 
-Nutzen hätte er nur, wenn wir Planeten selbst auf T5–T7 legen, zum Beispiel die Star-Wars-Planeten gestaffelt statt alle auf T4, und die Rezepte neu schreiben. Entscheidung nach der Aktualisierung der Progression.
+🟢 T4 führt nur noch nach Glacio, T5 nur nach Endor, T6 nach Tatooine, Hoth und Mustafar, T7 nach Mandalore (User, 2026-10-14). Dafür müssen die Stufen in den Planeten-Dateien von Star Wars Planets per Datapack geändert werden. 🔵 Offen: neue Rezepte und flüssige Treibstoffe. Das gehört zu Part 2 der Story (`18_STORY.md`) und wird später besprochen.
 
-## Progression der Raketenstufen (🟡 Stand 2026-10-12; die ganze Karte steht in `docs/meilensteine/`)
+## Progression der Raketenstufen (🟡 Stand 2026-10-14; die ganze Karte steht in `docs/meilensteine/`)
 
 | Stufe | Ziel | Kreuzungspunkte (Vorschlag) |
 |---|---|---|
 | T1 → Mond | erster Raumflug; Desh, Osmium | IE-Stahl, Metal Press, Biodiesel, flüssiger Mekanism-Sauerstoff, **erste Mekanism-Maschine** |
 | T2 → Mars | Ostrum, Fluorit | entschwefelter Diesel (Petroleum); Mekanism-Ausbau |
-| T3 → Merkur, Venus | Calorite (Venus); Uran und Blei; Hitzeschutz nötig | Kerosin; **Blood-Magic-Dungeon nur auf dem Merkur** |
-| T4 → Glacio, Star-Wars-Planeten | Kyber, Beskar | eigener Raketentreibstoff; **Magie + Uran-Erzeugnisse + Dungeon-Item** (🔵 welche Teile) |
-| 🔵 T5–T7 | gestaffelte Star-Wars-Planeten | nur mit Ad Astra: Rocketed |
+| T3 → Merkur, Venus | Calorite (Venus); Uran und Blei; Hitzeschutz nötig | Kerosin; **Tempel mit dem Blood-Magic-Dungeon nur auf dem Merkur** |
+| T4 → Glacio | Fund des Meisters, Ende von Part 1 | Rezept vom Elfen; **magische Komponenten** (🔵 Item aus dem Elfenportal ?); deutlich aufwendigerer Treibstoff; 🔵 ob Uran-Teil und Dungeon-Item Pflicht bleiben |
+| T5 → Endor | Kyber | Rumpf aus Alfheim; 🔵 Part 2 |
+| T6 → Tatooine, Hoth, Mustafar | Kyber | 🔵 Part 2 |
+| T7 → Mandalore | Beskar | 🔵 Part 2 |
+
+🟢 Vier Hürden je Rakete (2026-10-14): Rumpf aus dem Metall des zuletzt erreichten Ortes, neuer Treibstoff, neue Mekanism-Stufe, ein Teil aus einem anderen Pfad; T3 zusätzlich ein Teil aus Blood Magic. Einzelheiten in `01_PROGRESSION.md`.
 
 ## Bekannte Fehler und Stolpersteine
 
@@ -262,8 +266,8 @@ Nutzen hätte er nur, wenn wir Planeten selbst auf T5–T7 legen, zum Beispiel d
 
 1. 🟢 Treibstoff je Stufe entschieden (Biodiesel, Diesel, Kerosin, eigener Raketentreibstoff). 🔵 Offen: T4-Rezept, Cryo Fuel, Rover.
 2. 🟢 Blood-Magic-Zugang nur auf dem Merkur. 🔵 Offen: welches Item, wo garantiert zu holen; technische Machbarkeit (Test E19).
-3. 🔵 Welche Magie- und Uran-Komponenten genau für T4 (z. B. Terrasteel, Alfsteel, Polonium/Plutonium)? User: später entscheiden.
-4. 🔵 Ad Astra: Rocketed nutzen und Star-Wars-Planeten staffeln? User: später entscheiden.
+3. 🔵 Welche magischen Komponenten genau für T4? Alfsteel entfällt, weil Alfheim erst in Part 2 betreten wird; Kandidaten sind Terrasteel und Items aus dem Elfenportal (Elementium, Pixie Dust, Dreamwood). Bleiben Uran-Teil und Dungeon-Item Pflicht?
+4. 🟢 Ad Astra: Rocketed bleibt, Star-Wars-Planeten auf T5 und T6 (2026-10-13). 🔵 Zuordnung der Planeten, Rezepte, Treibstoffe.
 5. 🟢 Ad-Astra-Kabel, Fluid Pipes und Water Pump werden entfernt; der Energizer ebenfalls, sofern die Alternative im Test funktioniert. 🔵 Offen: Wie kommen IE-Leitungen und Mekanism-Kabel in abgedichtete Räume, wenn die Ad-Astra-Durchführungen (Cable Duct, Fluid Pipe Duct) entfallen? Im Spiel prüfen (IE Feedthrough Insulator, Ad-Astra-Tags für dichte Blöcke).
 6. 🔵 Immersive Aircraft bleibt Atmosphären-Transport; `launchAnywhere` bleibt aus?
 7. 🔵 Treibstoffverbrauch pro Start und Schutzwirkung der Anzüge im Spiel ablesen.

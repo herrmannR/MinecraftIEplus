@@ -13,6 +13,7 @@ Stand 2026-10-12, Minecraft 1.20.1. **Nichts davon ist im Spiel getestet.** In d
 | `swgc/forge/biome_modifier/kyber_crystals.json` | Ersetzt den Biome Modifier von Galaxy in a Cube durch `forge:none` → keine Kyber-Kristalle mehr in der Overworld. | Kyber nur auf den Star-Wars-Planeten (2026-10-12) |
 | `ad_astra/tags/fluids/tier_1_rocket_fuel.json` … `tier_3_rocket_fuel.json` | Treibstoff je Raketenstufe: T1 Biodiesel, T2 entschwefelter Diesel (`immersivepetroleum:diesel`), T3 Kerosin. T4 bleibt vorerst beim Standard, bis es den eigenen Raketentreibstoff gibt. | `docs/15_RAUMFAHRT.md` (2026-10-12) |
 | `immersiveengineering/recipes/mineral/galena.json`, `uraninite.json` | Excavator-Adern mit Blei und Uran seltener: Gewicht 5 statt 15 bzw. 10. Sonst unveränderte Kopien aus dem IE-JAR 10.2.0-183. | Blei in der Overworld sehr selten (2026-10-12) |
+| `swplanets/loot_tables/entities/jawa.json` | Jawas lassen keine Steel Cables mehr fallen (ersetzt durch 3 Stahlstäbe); Etrionic Capacitor und Wrench bleiben. | Ad-Astra-Kabel entfallen (2026-10-12); Befund aus Test 4 (2026-10-13) |
 
 ## Was zusätzlich nötig ist, damit die Erz-Features wirken
 

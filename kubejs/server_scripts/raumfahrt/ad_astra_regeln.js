@@ -1,6 +1,7 @@
 // Regel: Energie, Treibstoff und Sauerstoff für die Raumfahrt kommen nur aus
 // Immersive Engineering, Immersive Petroleum und Mekanism.
 // Entscheidungen: docs/15_RAUMFAHRT.md (2026-10-07, 2026-10-11, 2026-10-12).
+// Wer hier ein Item entfernt, blendet es auch in client_scripts/jei_ausblenden.js aus.
 // Stand 2026-10-12, KubeJS 2001. UNGETESTET.
 
 ServerEvents.recipes(event => {
@@ -8,6 +9,7 @@ ServerEvents.recipes(event => {
   const entfernt = [
     'ad_astra:coal_generator',
     'ad_astra:solar_panel',
+    'ad_astra:photovoltaic_etrium_cell', // einziger Zweck war das Solar Panel
     'ad_astra:compressor',
     'ad_astra:fuel_refinery',
     // Kabel, Pipes und ihre Wand-Durchführungen: Strom und Flüssigkeiten laufen über IE und Mekanism
@@ -31,18 +33,9 @@ ServerEvents.recipes(event => {
   // Der Compressor entfällt, also auch alle seine Rezepte
   event.remove({ type: 'ad_astra:compressing' })
 
-  // Platten der Planeten-Metalle über die IE Metal Press.
+  // Platten der Planeten-Metalle: Ad Astra bringt die Rezepte für die IE Metal Press und den
+  // Engineer's Hammer selbst mit (immersiveengineering:metalpress/plate_desh usw.), hier ist nichts nötig.
   // Eisen- und Stahlplatten hat IE bereits; Ad Astra nimmt sie über forge-Tags an.
-  const metalle = ['desh', 'ostrum', 'calorite']
-  metalle.forEach(metall => {
-    event.custom({
-      type: 'immersiveengineering:metal_press',
-      energy: 2400,
-      input: { tag: `forge:ingots/${metall}` },
-      mold: 'immersiveengineering:mold_plate',
-      result: { item: `ad_astra:${metall}_plate` }
-    }).id(`ieplus:metalpress/plate_${metall}`)
-  })
 
   // NOCH NICHT ENTFERNT, weil die Entscheidung offen ist oder ein Test fehlt:
   // - ad_astra:energizer    (entfällt, wenn Jet Suit und Etrionic Capacitor sich über IE oder Mekanism laden lassen)

@@ -28,8 +28,10 @@ Die fünf Skripte für 1.18.2 (`space_oxygen.js`, `moon_ores.js`, `tf_industrial
 | Datei | Aufgabe | Entscheidung |
 |---|---|---|
 | `server_scripts/fixes/tag_fixes.js` | Entfernt `swplanets:mustafar_sand` aus `forge:sand`, damit das Tag wieder lädt. | `00_MODBASIS.md`, Bekannte Fehler |
-| `server_scripts/raumfahrt/ad_astra_regeln.js` | Entfernt die Rezepte von Coal Generator, Solar Panel, Compressor, Fuel Refinery, Water Pump, Kabeln, Pipes und Durchführungen; entfernt das Ad-Astra-Stahlrezept, das Öl-zu-Treibstoff-Rezept, das Wasser-Rezept des Oxygen Loader und alle Compressor-Rezepte. Fügt Desh-, Ostrum- und Calorite-Platten in der IE Metal Press hinzu. | `15_RAUMFAHRT.md` |
+| `server_scripts/raumfahrt/ad_astra_regeln.js` | Entfernt die Rezepte von Coal Generator, Solar Panel, Compressor, Fuel Refinery, Water Pump, Kabeln, Pipes und Durchführungen; entfernt das Ad-Astra-Stahlrezept, das Öl-zu-Treibstoff-Rezept, das Wasser-Rezept des Oxygen Loader und alle Compressor-Rezepte. Die Platten für Desh, Ostrum und Calorite kommen aus den IE-Rezepten, die Ad Astra selbst mitbringt. | `15_RAUMFAHRT.md` |
 | `server_scripts/worldgen/excavator_adern.js` | Entfernt die Excavator-Ader Cassiterite (Zinn). | `03_ERZGENERATION.md` |
+| `server_scripts/crossmod/tinkers_legierungen.js` | Entfernt das Legierungsrezept für Refined Obsidian aus der Schmelzerei. In die Testinstanz kopiert (2026-10-12). | `07_CROSSMOD_INTEGRATION.md` |
+| `server_scripts/crossmod/blood_smeltery.js` | Entfernt die Life-Essence-Legierung und das Gießen von Blank Slate und Blank Rune. In die Testinstanz kopiert (2026-10-12). | `07_CROSSMOD_INTEGRATION.md` |
 
 ### Datapack (`kubejs/data/`)
 
@@ -47,7 +49,8 @@ Unter `_original/` liegen die unveränderten Standarddateien zum Vergleich.
 
 ### Noch nicht umgesetzt
 
-- 🔵 Blood-Smeltery: `forge:coins` und die fehlenden Hellforged-Flüssigkeiten (Ursache noch nicht untersucht).
+- 🔵 Blood-Smeltery: `forge:coins` und die fehlenden Hellforged-Flüssigkeiten (Ursache geklärt: Mod-Bug bzw. fehlendes Thermal, siehe `00_MODBASIS.md` „Bekannte Fehler“; Entscheidung über Skript-Workaround offen).
+- 🔵 Tinkers in den höheren Stufen (Wege A, C, D, E, F und fehlende Schmelzrezepte, `07_CROSSMOD_INTEGRATION.md`): beschlossen, Rezepte und Werte offen.
 - 🔵 Eigener Raketentreibstoff für T4 (Fluid, Rezept, Tag `tier_4_rocket_fuel`); Treibstoff des Rovers.
 - 🔵 Energizer und Cryo Freezer (Entscheidung bzw. Test offen).
 - 🔵 Rezept vom Kyber-Erz zum Kyber-Kristall; Lichtschwerter von Star Wars Planets entfernen (`17_STAR_WARS_1.20.1.md`).

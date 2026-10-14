@@ -3,7 +3,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
-/* Layout: oben die Karte (Pfade als Zeilen, Stufen als Spalten, Linien = Voraussetzungen), darunter die Liste nach Stufen. Gleiche Material-Welt wie der Erzatlas. */
+/* Layout: oben die Karte (Pfade als Spalten, Stufen als Zeilen, Linien = Voraussetzungen), darunter die Liste nach Stufen. Gleiche Material-Welt wie der Erzatlas. */
 :root{
   --bg:#1b1d20; --panel:#24272b; --line:#34383e; --fg:#e7e5e1; --muted:#9a9890;
   --accent:#e0a33a; --edge:#6c7078; --cross:#e0a33a;
@@ -27,7 +27,7 @@
 
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.45}
-.wrap{max-width:1500px;margin:0 auto;padding-inline:16px;padding-block:28px 48px}
+.wrap{max-width:1800px;margin:0 auto;padding-inline:16px;padding-block:28px 48px}
 header{display:grid;gap:10px;margin-bottom:18px}
 h1{font-family:var(--f-display);font-weight:700;font-size:clamp(28px,4vw,40px);letter-spacing:.02em;margin:0;text-wrap:balance}
 h1 span{color:var(--accent)}
@@ -45,17 +45,19 @@ h2{font:700 18px var(--f-display);letter-spacing:.04em;margin:0;color:var(--acce
 
 figure{margin:0}
 .map{overflow-x:auto;border:1px solid var(--line);border-radius:4px;background:var(--panel)}
-.map svg{display:block;width:100%;min-width:1240px;height:auto}
+.map svg{display:block;width:100%;min-width:1500px;height:auto;margin:0 auto}
 figcaption{font-size:13px;color:var(--muted);margin-top:8px;max-width:95ch}
 
 svg .lane-bg{fill:var(--lane)}
 svg .lane-label{font:700 13px var(--f-body);fill:var(--fg)}
-svg .stage-label{font:600 12px var(--f-data);fill:var(--muted);text-anchor:middle}
+svg .stage-label{font:700 13px var(--f-data);fill:var(--muted);text-anchor:middle}
 svg .grid{stroke:var(--line);stroke-width:1}
-svg .edge{fill:none;stroke:var(--edge);stroke-width:1.6}
-svg .edge.cross{stroke:var(--cross);stroke-width:2}
-svg .elabel{font:600 10.5px var(--f-data);fill:var(--muted);text-anchor:middle;paint-order:stroke;stroke:var(--panel);stroke-width:4px}
-svg .elabel.cross{fill:var(--cross)}
+svg .part-bar{stroke:var(--accent);stroke-width:3;stroke-linecap:round}
+svg .part-label{font:700 12px var(--f-display);letter-spacing:.06em;fill:var(--accent);text-anchor:middle}
+svg .part-cut{stroke:var(--accent);stroke-width:1.5;stroke-dasharray:6 5}
+svg .edge{fill:none;stroke-width:2;stroke-linejoin:round}
+svg.hl .edge.on{stroke-width:3}
+svg .elabel{font:600 11px var(--f-body);fill:var(--fg);paint-order:stroke;stroke:var(--panel);stroke-width:4px;stroke-linejoin:round}
 svg .node rect{stroke-width:2}
 svg .node .nm{font:600 12.5px var(--f-body);fill:var(--fg)}
 svg .node .id{font:700 10.5px var(--f-data);fill:var(--muted)}
@@ -87,207 +89,521 @@ svg.hl .edge:not(.on), svg.hl .elabel:not(.on){opacity:.12}
 .card dd{margin:0;min-width:0}
 .card a{color:var(--accent)}
 .questions{margin-top:30px;background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:14px 18px}
-.questions ol{margin:8px 0 0;padding-left:20px;display:grid;gap:5px;font-size:14px}
+.questions ol{margin:6px 0 0;padding-left:26px;display:grid;gap:5px;font-size:14px}
+.questions h3{font:700 14px var(--f-body);margin:16px 0 0;color:var(--fg)}
+.questions p{margin:6px 0 0;font-size:14px;color:var(--muted);max-width:90ch}
+.card details{font-size:13.5px}
+.card summary{cursor:pointer;color:var(--accent);font-weight:600}
+.card details p{margin:4px 0 0}
+.ph{font-family:var(--f-data);color:var(--accent);font-weight:600}
 </style>
 
 <div class="wrap">
-  <div class="draft" role="note"><strong>ENTWURF</strong><span>Diese Meilensteine sind ein Vorschlag und noch nicht beschlossen. Reihenfolge, Voraussetzungen und Kreuzungspunkte können sich noch ändern.</span></div>
+  <div class="draft" role="note"><strong>ENTWURF</strong><span>Diese Meilensteine sind ein Vorschlag und noch nicht beschlossen. Ein <span class="ph">?</span> an einer Linie heißt: Mod oder Quelle steht fest, das genaue Item noch nicht. Die Karten unten enthalten Story-Spoiler (eingeklappt).</span></div>
   <header>
     <h1>Meilensteinkarte <span>IE+</span></h1>
-    <p class="lede">Die Schlüssel-Meilensteine des Packs als Karte: jede Zeile ist ein Pfad, jede Spalte eine grobe Stufe. Linien zeigen Voraussetzungen und tragen das Material, das übergeben wird. Goldene Linien sind <strong>Kreuzungspunkte</strong> zwischen zwei Pfaden; dort setzen später die Cross-Mod-Rezepte und Quests an.</p>
-    <div class="meta"><span class="badge">ENTWURF · PHASE 2</span> &nbsp;Stand 2026-10-12 · Minecraft 1.20.1 · Quelle: docs/01_PROGRESSION, 03_ERZGENERATION, 15_RAUMFAHRT</div>
+    <p class="lede">Die Schlüssel-Meilensteine des Packs als Karte: jede Spalte ist ein Pfad, jede Zeile ein Kapitel des Questbuchs; der Fortschritt läuft von oben nach unten. Linien zeigen Voraussetzungen und tragen das Material, das übergeben wird. Jede Linie trägt die Farbe des Pfades, aus dem sie kommt. Wechselt eine Linie die Spalte, ist das ein <strong>Kreuzungspunkt</strong> zwischen zwei Pfaden; dort setzen später die Cross-Mod-Rezepte und Quests an. Die Story teilt die Karte in zwei Parts: Part 1 endet mit dem Fund des Meisters auf Glacio, Part 2 führt zu den Star-Wars-Welten und ist erst grob skizziert.</p>
+    <div class="meta"><span class="badge">ENTWURF · PHASE 2</span> &nbsp;Stand 2026-10-14 · Minecraft 1.20.1 · Quelle: docs/01_PROGRESSION, 03_ERZGENERATION, 15_RAUMFAHRT, 18_STORY</div>
   </header>
 
   <div class="stats" id="stats"></div>
 
   <figure>
-    <div class="map"><svg id="map" role="img" aria-label="Meilensteinkarte: acht Pfade über neun Stufen, alle Linien laufen auf die Star-Wars-Planeten zu."></svg></div>
-    <figcaption>Alle Pflicht-Linien laufen über die Rakete T4 (M22) auf die Star-Wars-Planeten (M23) zu: Tech über IE, Petroleum und Mekanism, Nuklear über die Uran-Kette, Magie über Botania und den Blood-Magic-Dungeon auf dem Merkur. Maus über einen Meilenstein hebt seine Voraussetzungen und Folgen hervor; Klick springt zur Beschreibung.</figcaption>
+    <div class="map"><svg id="map" role="img" aria-label="Meilensteinkarte: neun Pfade als Spalten, sechzehn Kapitel als Zeilen in zwei Story-Parts, alle Linien laufen auf die Star-Wars-Welten zu."></svg></div>
+    <figcaption>Part 1 läuft auf die Rakete T4 nach Glacio (RF4) zu: Tech über IE, Petroleum und Mekanism, Magie über Botania und das Elfenportal, Blue Skies über die Boss-Items, Blood Magic über den Tempel auf dem Merkur. Part 2 führt über die Raketen T5 (Endor) und T6 zu den Star-Wars-Welten (SW4) und mit T7 nach Mandalore (RF7). Die Beschriftung steht auf dem waagrechten Stück jeder Linie, kurz bevor sie zum Ziel abbiegt. Maus über einen Meilenstein hebt seine Voraussetzungen und Folgen hervor; Klick springt zur Beschreibung.</figcaption>
   </figure>
   <div class="legend">
     <span><svg width="18" height="12"><rect x="1" y="1" width="16" height="10" rx="2" fill="var(--done)" stroke="var(--done)"/></svg> erreicht</span>
     <span><svg width="18" height="12"><rect x="1" y="1" width="16" height="10" rx="2" fill="none" stroke="var(--part)" stroke-width="2"/></svg> begonnen</span>
     <span><svg width="18" height="12"><rect x="1" y="1" width="16" height="10" rx="2" fill="none" stroke="var(--open)" stroke-width="2" stroke-dasharray="3 2"/></svg> offen</span>
-    <span><svg width="26" height="10"><line x1="1" y1="5" x2="25" y2="5" stroke="var(--edge)" stroke-width="1.6"/></svg> Voraussetzung im selben Pfad</span>
-    <span><svg width="26" height="10"><line x1="1" y1="5" x2="25" y2="5" stroke="var(--cross)" stroke-width="2"/></svg> Kreuzungspunkt</span>
+    <span><svg width="26" height="10"><line x1="1" y1="5" x2="25" y2="5" stroke="#d4a72c" stroke-width="2"/></svg> Linienfarbe = Pfad, aus dem die Voraussetzung kommt</span>
     <span>Fett umrandet = Pflicht, dünn = optional</span>
   </div>
 
   <div class="list" id="list"></div>
 
   <section class="questions">
-    <h2>Offene Fragen zum Vorschlag</h2>
+    <h2>Fragenkatalog</h2>
+    <p>Alles, was für diese Karte noch entschieden werden muss. Die Story-Fragen stehen ausführlich in docs/18_STORY.md.</p>
+    <h3>Story Part 1</h3>
     <ol>
-      <li>Welche Magie- und Uran-Teile verlangt die Rakete T4: Terrasteel oder Alfsteel, Plutonium oder Polonium?</li>
-      <li>Soll Petroleum weiter Pflicht vor dem ersten Raumflug sein (Entscheidung vom 2026-10-07), obwohl T1 jetzt mit Biodiesel fliegt?</li>
-      <li>Ad Astra: Rocketed nutzen und die Star-Wars-Planeten auf T5 bis T7 staffeln, oder den Mod entfernen?</li>
-      <li>Cryo Fuel: entfernen oder als Zutat für den Raketentreibstoff T4 behalten?</li>
-      <li>Sind Everbright und Everdawn gleich früh erreichbar (M5 → M10)?</li>
-      <li>Steht die Tinkers-Schmelzerei in der Hauptwelt schon (M1 erreicht)?</li>
-      <li>Ist der AE2-Storage-Layer (M6) bei P3 früh genug?</li>
+      <li>Erste Quest „Würdig sein“ (SW1): Welche Items verlangt der Droide aus Botania und IE? Gehört ein Tinkers-Item dazu?</li>
+      <li>Tagebuch: Wie viele Ausschnitte, wann werden sie freigegeben, welche Rätsel?</li>
+      <li>Droide: Name. Steht er nur in der Basis? Ist er nach dem Dungeon weg oder zerstört, und kommt er in Part 2 zurück?</li>
+      <li>Mars und Venus (RF2, RF3) haben noch keine Story. Was passiert dort?</li>
+      <li>Welche Rolle spielen Mekanism und AE2 in der Geschichte?</li>
+      <li>Altar-Neubau (BM4): im Tempel auf dem Merkur oder in der Overworld?</li>
+      <li>Was finden die Spieler im Dungeon, und wo liegt der Text des Meisters?</li>
+      <li>Warum ist der Meister nach Glacio gegangen, und was ist mit dem Relikt?</li>
+      <li>Elf (BO5): Name und Charakter.</li>
+      <li>Glacio liegt in Ad Astra in einem anderen Sonnensystem, nicht in einer anderen Galaxie. Bleibt die „andere Galaxie“ den Star-Wars-Welten vorbehalten?</li>
+    </ol>
+    <h3>Platzhalter: welches Item genau?</h3>
+    <ol start="11">
+      <li>Schutz-Item für den Altar im Tempel (BO4 → BM4): Rune oder Terrasteel?</li>
+      <li>Boss-Items für den Elfen (BS3, BS4 → RF4): welche der vier Bosse, welche Items?</li>
+      <li>Tech-Erzeugnisse für den Elfen (MK4, MK5 → RF4): was aus IE, Petroleum und Mekanism?</li>
+      <li>Magische Komponenten der Rakete T4 (BO5 → RF4): Item aus dem Elfenportal (Elementium, Pixie Dust, Dreamwood) oder Terrasteel?</li>
+      <li>Bleiben das Dungeon-Item (BM4) und das Uran-Teil (MK5) Pflicht für die Rakete T4?</li>
+      <li>Treibstoff T4: Rezept und Kosten. Cryo Fuel entfernen oder als Zutat nutzen?</li>
+      <li>Wie übergibt der Elf das T4-Rezept: als Bauplan oder Schlüsselbauteil, das im Raketenrezept steckt?</li>
+    </ol>
+    <h3>Aufbau der Karte</h3>
+    <ol start="18">
+      <li>Feinere Aufteilung (2026-10-14): Je Mod mehrere Stufen nach den Modpfad-Seiten, 16 Kapitel. Passen Reihenfolge und Kapitelgrenzen? Die Kapitelnamen sind Arbeitstitel. Blood Magic, AE2 und Blue Skies haben noch keine Modpfad-Seite; ihre Stufen sind vorläufig und im JAR zu prüfen.</li>
+      <li>Everdawn (BS2) und die Blue-Skies-Bosse (BS3, BS4) sind jetzt Pflicht, weil der Elf Boss-Items verlangt. Alle vier Bosse oder nur einige?</li>
+      <li>Soll Petroleum weiter Pflicht vor dem ersten Raumflug sein, obwohl T1 mit Biodiesel fliegt?</li>
+      <li>Sind Everbright und Everdawn gleich früh erreichbar (BS1 → BS2)?</li>
+      <li>Steht die Tinkers-Schmelzerei in der Hauptwelt schon (TK1 erreicht)?</li>
+      <li>Ist der AE2-Storage-Layer (AE1) in Kapitel K3 früh genug?</li>
+    </ol>
+    <h3>Technik (aus den JARs geklärt am 2026-10-14, im Spiel noch zu testen)</h3>
+    <p>Die Ergebnisse stehen auf den Karten in der Zeile „Technik“ und ausführlich in docs/18_STORY.md.</p>
+    <ol start="24">
+      <li>Abgabe beim NPC: Easy NPC prüft Items im Inventar und führt Befehle für <code>@initiator</code> aus. Eine direkte Anbindung an FTB Quests gibt es nicht; der Weg läuft über eine Stage (Entity-Tag), die FTB Quests mit einer Stage-Aufgabe abfragt. Test im Spiel offen.</li>
+      <li>Elf und Droide erscheinen per Befehl als Quest-Belohnung (Easy NPC <code>preset import</code>, <code>despawn</code>). Test im Spiel offen.</li>
+      <li>Offen: Kapsel in der Basis und Tempel auf dem Merkur von Hand bauen oder als Struktur erzeugen?</li>
+      <li>Ritual nur im Tempel: nur über das Forge-Ereignis von Blood Magic, das KubeJS-Addon kennt nur Rezepte. Skript und Test offen.</li>
+      <li>Geklärt: Nach Alfheim kommt nur, wer den Mead of Kvasir getrunken hat. Der Gaia-Pylon braucht Alfsteel.</li>
+      <li>Geklärt: Das Questbuch lässt sich nicht zurückhalten; stattdessen Kapitel verbergen, bis „Würdig sein“ erledigt ist.</li>
+      <li><strong>Neu:</strong> Star Wars Planets schenkt mit der Rakete T3 das „Star Manual“ (Jedi, Sith, Kyber). Belohnung entfernen oder auf T5 verlegen?</li>
+    </ol>
+    <h3>Raketen: vier Hürden je Stufe</h3>
+    <p>Beschlossen (2026-10-14): Jede Rakete braucht (1) einen Rumpf aus dem Metall des zuletzt erreichten Ortes, (2) einen neuen Treibstoff, (3) eine neue Mekanism-Stufe, (4) ein Teil aus einem anderen Pfad. T3 braucht ein Teil aus Blood Magic, weil der Tempel den Planeten abschirmt. Ab T5 kommt das Rumpf-Material aus Alfheim.</p>
+    <ol start="31">
+      <li>Welche Mekanism-Stufe (Schaltkreise, Legierungen) gehört zu welcher Rakete? Legt der User fest.</li>
+      <li>Welche Botania-Items gehören zu welcher Rakete? Legt der User fest.</li>
+      <li>Welches Blood-Magic-Teil verlangt T3? Schirmt der Tempel nur den Merkur ab, oder gilt das Teil auch für den Flug zur Venus?</li>
+      <li>Mars-Station (T2, beschlossen: Station bauen, KubeJS-Quest prüft sie, erst dann kommt der Droide; Quest-Abgaben und Freischaltungen nur bei ihm auf dem Mars): Welche Blöcke auf die Checkliste, welcher Umkreis? Wie kommt der Droide hin? Automatischer Transport zwischen den Welten geht im Pack erst spät (Entangloporter und Chunkloader von Mekanism: Atomic Alloy und Ultimate-Schaltkreise; AE2-Quantenbrücke: Endgame). Später als eigener Meilenstein oder Rezepte verbilligen?</li>
+    </ol>
+    <h3>Part 2 (wird später besprochen)</h3>
+    <ol start="35">
+      <li>T5 führt nur nach Endor, T6 zu Tatooine, Hoth und Mustafar, T7 nach Mandalore (beschlossen). Was schaltet T7 frei?</li>
+      <li>Rezepte und flüssige Treibstoffe der Raketen T5 bis T7; welches Material aus Alfheim für T5?</li>
+      <li>Ablauf der Ausbildung, Prüfungen, Gaia.</li>
+      <li>Welche Bosse für den Meister, auf welchen Welten?</li>
+      <li>Lichtschwert-Quest und Kopfgeldjäger-Quests.</li>
     </ol>
   </section>
 </div>
 
 <script>
-// Meilensteine – ENTWURF Phase 2 für Minecraft 1.20.1 (2026-10-12). Übertragen aus dem Entwurf für 1.18.2 vom 2026-10-08.
-// Beschlossen (User, 2026-10-12): Erzverteilung, Treibstoff je Raketenstufe, Blood-Magic-Dungeon auf Merkur,
-// Blue-Skies-Werkzeugabschwächung als gewollte Hürde. Alles andere ist 🔵, bis es beschlossen ist.
-// Pfade = Zeilen der Grafik, Stufen P1–P9 = Spalten (grobe Zeitachse, letzte Stufe = Ziel).
+// Meilensteine – ENTWURF für Minecraft 1.20.1. Feiner aufgeteilt am 2026-10-14 nach den Modpfad-Seiten (docs/modpfade/) und der Story (docs/18_STORY.md).
+// Beschlossen (User): Erzverteilung, Treibstoff T1–T3, Blood-Magic-Dungeon auf Merkur, Blue-Skies-Werkzeugabschwächung (2026-10-12);
+// Story in zwei Parts, Alfheim und Gaia in Part 2 (2026-10-13); T5 nur Endor, T6 Tatooine/Hoth/Mustafar, T7 Mandalore, vier Hürden je Rakete,
+// T3 braucht ein Blood-Magic-Teil, Mars-Station als Horchposten, jede Zeile = ein Kapitel im Questbuch (2026-10-14). Alles andere ist 🔵.
+// Pfade = Spalten, Stufen = Zeilen = Kapitel (CHAPTERS sind Arbeitstitel). Je Pfad höchstens ein Meilenstein pro Zeile.
+// IDs: Kürzel des Pfades + laufende Nummer (TK Tinkers, IE IE/Petroleum, BO Botania, BM Blood Magic, MK Mekanism, AE AE2, BS Blue Skies, RF Raumfahrt, SW Star Wars · Story).
 // status: "done" = in der Hauptwelt erreicht, "part" = begonnen/teilweise, "open" = offen
-// req: [Meilenstein-ID, Beschriftung der Linie] – Beschriftung = was über die Linie wandert (Material / Freischaltung)
+// req: [ID, Beschriftung der Linie]; „?“ = Mod oder Quelle steht fest, das genaue Item oder die Stufe noch nicht.
+// story / spoiler / tech / world: Story, verborgener Teil, technische Umsetzung, Stand der Hauptwelt.
+// Vier Hürden je Rakete: Rumpf vom letzten Ort, neuer Treibstoff, neue Mekanism-Stufe (Vorschlag, der User legt fest), Teil aus einem anderen Pfad.
 
 const PATHS = [
-  {id:"A", name:"Tinkers",        hue:"#c98a4b"},
-  {id:"B", name:"IE · Petroleum", hue:"#d4a72c"},
-  {id:"C", name:"Botania",        hue:"#5fae6e"},
-  {id:"D", name:"Blood Magic",    hue:"#c7525a"},
-  {id:"E", name:"Mekanism",       hue:"#5b9bd5"},
-  {id:"F", name:"AE2",            hue:"#8b7fd1"},
-  {id:"G", name:"Blue Skies",     hue:"#4fb3b0"},
-  {id:"H", name:"Raumfahrt",      hue:"#e07b39"}
+  {id:"A", name:"Tinkers",           hue:"#c98a4b"},
+  {id:"B", name:"IE · Petroleum",    hue:"#d4a72c"},
+  {id:"C", name:"Botania",           hue:"#5fae6e"},
+  {id:"D", name:"Blood Magic",       hue:"#c7525a"},
+  {id:"E", name:"Mekanism",          hue:"#5b9bd5"},
+  {id:"F", name:"AE2",               hue:"#8b7fd1"},
+  {id:"G", name:"Blue Skies",        hue:"#4fb3b0"},
+  {id:"H", name:"Raumfahrt",         hue:"#e07b39"},
+  {id:"I", name:"Star Wars · Story", hue:"#d9c94a"}
 ];
 
-const STAGES = ["P1","P2","P3","P4","P5","P6","P7","P8","P9"];
-const GOAL = "M23";
+const STAGES = ["K1","K2","K3","K4","K5","K6","K7","K8","K9","K10","K11","K12","K13","K14","K15","K16"];
+const CHAPTERS = ["Ankunft","Würdig sein","Industrie","Der Mond","Erzketten","Der Mars","Horchposten","Hitze","Der Tempel","Der Elf","Glacio",
+                  "Ausbildung","Endor","Hyperraum","Star-Wars-Welten","Mandalore"];
+const PARTS = [
+  {from:1,  to:11, name:"Part 1 · Finden des Meisters"},
+  {from:12, to:16, name:"Part 2 · Ausbildung und Rückkehr (grob)"}
+];
+const GOAL = "RF7";
 
 const MILESTONES = [
-  {id:"M1",  path:"A", stage:1, name:"Schmelzerei", status:"part",
+  // ───── K1 Ankunft
+  {id:"TK1", path:"A", stage:1, name:"Werkzeuge und Melter", status:"part",
    req:[], must:true,
-   what:"Tinkers' Smeltery, erste gegossene Werkzeuge.",
-   cross:"Gießt später auch Desh, Ostrum und Calorite (TCIntegrations bringt die Schmelz-Fluids mit).",
+   what:"Pattern, Part Builder, Tinker Station; Grout und Seared Bricks, Melter mit Heater, Gießen mit Faucet und Casting Table.",
+   cross:"Liefert das Tinkers-Item für die erste Quest.",
+   story:"–",
    world:"Tinkers begonnen; ob die Schmelzerei steht, ist offen."},
 
-  {id:"M2",  path:"B", stage:2, name:"IE-Stahl", status:"done",
+  {id:"IE1", path:"B", stage:1, name:"Koks und erster Stahl", status:"done",
    req:[], must:true,
-   what:"Koksofen, Hochofen, erster Stahl, IE-Grundmaschinen. Die Raffinerie liefert Biodiesel.",
-   cross:"Stahl ist die Basiswährung für Mekanism, den AE2-Storage-Layer und die Rakete T1. Biodiesel ist der Treibstoff für T1.",
+   what:"Engineer's Hammer, Coke Oven, Treated Wood, Alloy Kiln, Crude Blast Furnace.",
+   cross:"Stahl ist die Basiswährung für Mekanism, AE2 und die Rakete T1.",
+   story:"Der Einschlag der Kapsel erklärt, warum die Maschinen nach dem Wechsel kaputt sind.",
    world:"Erreicht. Nach dem Wechsel auf 1.20.1 müssen alle Multiblöcke neu geformt werden."},
 
-  {id:"M3",  path:"C", stage:3, name:"Runenaltar", status:"done",
-   req:[], must:false,
-   what:"Mana-Infrastruktur, erste Runen.",
+  {id:"BO1", path:"C", stage:1, name:"Blüten und Lebendholz", status:"done",
+   req:[], must:true,
+   what:"Mystical Flowers, Petal Apothecary, Pure Daisy (Livingwood, Livingrock), Wand of the Forest.",
    cross:"–",
+   story:"–",
+   world:"Erreicht (Runenaltar steht)."},
+
+  // ───── K2 Würdig sein
+  {id:"TK2", path:"A", stage:2, name:"Smeltery", status:"open",
+   req:[["TK1","Seared Bricks"]], must:false,
+   what:"Smeltery Controller und Aufbau, Legieren, Tinker's Anvil, Plate Armor.",
+   cross:"Legierungen von Hand; Nebenquest-Kandidat.",
+   story:"–",
+   world:"–"},
+
+  {id:"IE2", path:"B", stage:2, name:"Strom und Förderbänder", status:"done",
+   req:[["IE1","Stahl"]], must:true,
+   what:"Drähte und Connectors, Kinetic Dynamo mit Windmill oder Water Wheel, Accumulators, erste Stromverbraucher, Förderbänder und Rohre.",
+   cross:"–",
+   story:"–",
    world:"Erreicht."},
 
-  {id:"M4",  path:"D", stage:3, name:"Blutaltar T2", status:"open",
+  {id:"BO2", path:"C", stage:2, name:"Mana und Manasteel", status:"done",
+   req:[["BO1","Livingwood"]], must:true,
+   what:"Erzeugende Blumen, Mana Spreader, Mana Pool, Mana Infusion, Manasteel-Ausrüstung.",
+   cross:"–",
+   story:"Mana ist die „lebendige Macht“: das helle Gegenstück zu Blood Magic.",
+   spoiler:"Dass die Spieler Mana lenken können, ist das erste Zeichen ihrer Machtsensitivität.",
+   world:"Erreicht."},
+
+  {id:"SW1", path:"I", stage:2, name:"Droide · Würdig sein", status:"open",
+   req:[["TK1","Tinkers-Item ?"],["IE1","IE-Item ?"],["BO1","Botania-Item ?"]], must:true,
+   what:"Erste Quest. Die Spieler bringen dem Droiden Items aus mehreren Mods als Beweis, dass sie eine weit entwickelte Spezies sind. Danach öffnen sich die weiteren Kapitel.",
+   cross:"Start des Questbuchs. Welche Items genau verlangt werden, ist offen.",
+   story:"Eine kugelförmige Kapsel schlägt in der Basis ein. Darin sitzt ein Droide: Sein Meister ist verschollen und hat ihn zur nächsten Lebensform geschickt, zu drei Individuen. Er übergibt Tagebuch-Ausschnitte mit Rätseln. Charakter: lustig, aber mechanisch ernst.",
+   spoiler:"Droide und Meister kommen aus einer weit, weit entfernten Galaxis. Der Droide verrät das nicht und gibt nur kleine Hinweise.",
+   tech:"Abgabe im Dialog des Droiden (Easy NPC: Item prüfen, <code>clear @initiator</code>, Stage per <code>tag</code>) schließt die FTB-Quest über eine Stage-Aufgabe ab. Das Questbuch lässt sich nicht zurückhalten; stattdessen bleiben alle Kapitel außer dem ersten verborgen, bis die Quest erledigt ist (ungetestet).",
+   world:"Die Kapsel muss in der Basis der Hauptwelt gesetzt werden (von Hand oder als Struktur)."},
+
+  // ───── K3 Industrie
+  {id:"IE3", path:"B", stage:3, name:"Schwermaschinen und Biodiesel", status:"done",
+   req:[["IE2","Strom"]], must:true,
+   what:"Improved Blast Furnace, Engineering Blocks, Metal Press, Crusher, Sawmill; Squeezer, Fermenter, Refinery, Diesel Generator, Mixer, Bottling.",
+   cross:"Biodiesel ist der Treibstoff für T1. Die Metal Press macht alle Raketenplatten (der Ad-Astra-Compressor entfällt).",
+   story:"–",
+   world:"Erreicht (Crusher, Biodiesel-Generator)."},
+
+  {id:"BO3", path:"C", stage:3, name:"Runenaltar", status:"done",
+   req:[["BO2","Mana Pearl"]], must:true,
+   what:"Runic Altar, Elementrunen, Jahreszeiten- und Todsünden-Runen; funktionale Blumen, Lenses, Brauerei.",
+   cross:"Runen für Schutz-Items und spätere Rezepte.",
+   story:"–",
+   world:"Erreicht."},
+
+  {id:"BM1", path:"D", stage:3, name:"Blutaltar und erste Orbs", status:"open",
    req:[], must:true,
-   what:"Blood Altar Stufe 2, erste Blood Orbs.",
-   cross:"Beginn der Kette zum Dungeon-Item für die Rakete T4.",
+   what:"Blood Altar Stufe 1 und 2, erste Blood Orbs, Sigille. 🔵 Keine Modpfad-Seite; Stufen aus dem Gedächtnis, im JAR prüfen.",
+   cross:"Beginn der Kette zum Ritual im Tempel.",
+   story:"Life Essence entsteht aus genommenem Leben: die dunkle Gegenseite zu Mana.",
+   spoiler:"Blood Magic steht in der Story für die Sith-Seite.",
    world:"Mod neu installiert, nicht begonnen."},
 
-  {id:"M5",  path:"G", stage:3, name:"Everbright", status:"open",
-   req:[["M2","Ausrüstung"]], must:true,
-   what:"Gatekeeper finden, Zeal Lighter kaufen (8 Smaragde), Portal nach Everbright. Dort liegen Zinn (nur hier), Blei und Bauxit.",
-   cross:"Zinn → Bronze und Mekanism-Ausbau; Blei und Bauxit → IE. Fremde Werkzeuge sind abgeschwächt, bis die Bosse besiegt sind (gewollte Hürde).",
-   world:"Blue Skies ist neu; ersetzt den Twilight Forest."},
-
-  {id:"M6",  path:"F", stage:3, name:"Storage-Layer", status:"open",
-   req:[["M2","Stahl"]], must:false,
-   what:"Meteorit finden (Inscriber-Pressen und Budding-Certus), Prozessoren, Kisten und Drawers per Storage Bus anbinden.",
-   cross:"Certus gibt es in 1.20.1 nur noch an Budding-Blöcken in Meteoriten.",
-   world:"AE2 nicht begonnen."},
-
-  {id:"M7",  path:"E", stage:3, name:"Erste Mekanism-Maschine", status:"open",
-   req:[["M2","Stahl"]], must:true,
-   what:"Metallurgic Infuser und Enrichment Chamber mit dem knappen Overworld-Osmium. Electrolytic Separator und Rotary Condensentrator für flüssigen Sauerstoff.",
-   cross:"Pflichtbaustein für die Rakete T1: Sauerstoff kommt zwingend aus Mekanism.",
+  {id:"MK1", path:"E", stage:3, name:"Infuser und Sauerstoff", status:"open",
+   req:[["IE1","Stahl"]], must:true,
+   what:"Metallurgic Infuser, Basic Control Circuit, Heat Generator, Steel Casing; Electrolytic Separator und Rotary Condensentrator für flüssigen Sauerstoff.",
+   cross:"Mekanism-Stufe Basic: Hürde der Rakete T1. Sauerstoff kommt zwingend aus Mekanism.",
+   story:"–",
    world:"Mod neu installiert, nicht begonnen. Osmium kommt per Retrogen in die erkundeten Chunks."},
 
-  {id:"M8",  path:"B", stage:4, name:"Petroleum", status:"part",
-   req:[["M2","Stahl"]], must:true,
-   what:"Pumpjack, Destillation und Hydrotreater (Immersive Petroleum): entschwefelter Diesel und Kerosin.",
-   cross:"Diesel ist der Treibstoff für T2, Kerosin für T3 und die Basis des Raketentreibstoffs für T4.",
-   world:"Pumpjack gebaut; muss nach dem Wechsel neu geformt werden. Ob er das alte Ölvorkommen findet, ist ungetestet."},
+  {id:"AE1", path:"F", stage:3, name:"Storage-Layer", status:"open",
+   req:[["IE1","Stahl"]], must:false,
+   what:"Meteorit finden (Inscriber-Pressen und Budding-Certus), Prozessoren, Kisten und Drawers per Storage Bus anbinden. 🔵 Keine Modpfad-Seite.",
+   cross:"Certus gibt es in 1.20.1 nur noch an Budding-Blöcken in Meteoriten.",
+   story:"–",
+   world:"AE2 nicht begonnen."},
 
-  {id:"M9",  path:"C", stage:4, name:"Terrasteel", status:"open",
-   req:[["M3","Runen"]], must:true,
-   what:"Terrestrial Agglomeration Plate, Terrasteel.",
-   cross:"Mindestens Terrasteel wird als Magie-Teil der Rakete T4 gebraucht (welches Teil genau, ist offen).",
+  {id:"BS1", path:"G", stage:3, name:"Everbright", status:"open",
+   req:[["IE1","Ausrüstung"]], must:true,
+   what:"Gatekeeper finden, Zeal Lighter (8 Smaragde), Portal nach Everbright. Zinn (nur hier), Blei und Bauxit. 🔵 Keine Modpfad-Seite.",
+   cross:"Zinn → Mekanism-Ausbau; Blei und Bauxit → IE. Fremde Werkzeuge sind abgeschwächt, bis die Bosse besiegt sind.",
+   story:"Offen.",
+   world:"Blue Skies ist neu; ersetzt den Twilight Forest."},
+
+  // ───── K4 Der Mond
+  {id:"IE4", path:"B", stage:4, name:"Erdöl und Destillation", status:"part",
+   req:[["IE3","Stahl · Strom"]], must:true,
+   what:"Seismic Survey Tool, Derrick, Pumpjack, Oil Tank, Distillation Tower (Immersive Petroleum).",
+   cross:"Kerosin für T3 und als Basis des Treibstoffs T4.",
+   story:"–",
+   world:"Pumpjack und Coker gebaut; müssen nach dem Wechsel neu geformt werden. Ob der Pumpjack das alte Vorkommen findet, ist ungetestet."},
+
+  {id:"MK2", path:"E", stage:4, name:"Grundmaschinen", status:"open",
+   req:[["MK1","Basic"]], must:false,
+   what:"Enrichment Chamber, Crusher, Energized Smelter, Precision Sawmill, Formulaic Assemblicator; Energy Cube, Leitungen, Tanks, Bin, Generatoren, Upgrades.",
+   cross:"Erzverdopplung; Nebenquest-Kandidat (erstes Mal Mekanism in der Breite).",
+   story:"–",
    world:"–"},
 
-  {id:"M10", path:"G", stage:4, name:"Everdawn", status:"open",
-   req:[["M5","Gatekeeper"]], must:false,
-   what:"Zweite Blue-Skies-Dimension. Hier liegt Osmium in Menge.",
+  {id:"BS2", path:"G", stage:4, name:"Everdawn", status:"open",
+   req:[["BS1","Gatekeeper"]], must:true,
+   what:"Zweite Blue-Skies-Dimension. Osmium in Menge.",
    cross:"Osmium für den Mekanism-Ausbau, als Alternative zum Mond.",
-   world:"–"},
+   story:"Offen.",
+   world:"Pflicht, weil der Elf Boss-Items aus beiden Dimensionen verlangt (zu bestätigen)."},
 
-  {id:"M11", path:"H", stage:4, name:"Rakete T1 → Mond", status:"open",
-   req:[["M2","Stahl · Biodiesel"],["M7","Sauerstoff"]], must:true,
-   what:"NASA Workbench, Rakete T1, Launch Pad, Raumanzug. Erster Raumflug.",
+  {id:"RF1", path:"H", stage:4, name:"Rakete T1 → Mond", status:"open",
+   req:[["IE3","Stahl · Biodiesel · Platten"],["MK1","Sauerstoff · Basic"],["SW1","Auftrag: Mond"]], must:true,
+   what:"NASA Workbench, Rakete T1, Launch Pad, Space Suit, Oxygen Loader. Erster Raumflug. Hürden: Stahl, Biodiesel, Mekanism Basic, IE Metal Press.",
    cross:"Der Mond liefert Desh für T2 und Osmium in Menge.",
+   story:"Erstes großes Ziel, das der Droide vorgibt.",
    world:"–"},
 
-  {id:"M12", path:"E", stage:4, name:"Mekanism-Ausbau", status:"open",
-   req:[["M7","Maschinen"],["M5","Zinn"]], must:true,
-   what:"Erzverarbeitung ×3 und ×4 (Purification, Chemical Injection), Gase und Chemie.",
-   cross:"Osmium dafür aus Everdawn oder vom Mond. Liefert die Chemie für den Raketentreibstoff T4.",
+  // ───── K5 Erzketten
+  {id:"TK3", path:"A", stage:5, name:"Alloyer und Foundry", status:"open",
+   req:[["TK2","Smeltery"]], must:false,
+   what:"Nether Grout und Scorched Bricks, Scorched Alloyer, Foundry, Blazing Blood, Materialien Stufe 4.",
+   cross:"Nebenquest-Kandidat; Kobalt aus dem Nether.",
+   story:"–",
    world:"–"},
 
-  {id:"M13", path:"D", stage:5, name:"Blutaltar T4", status:"open",
-   req:[["M4","Altar"]], must:true,
-   what:"Altar Stufe 4, Voraussetzung für das Ritual zum Demon Dungeon.",
-   cross:"Demonit → Tinkers (Hellforged).",
+  {id:"IE5", path:"B", stage:5, name:"Entschwefelter Diesel", status:"open",
+   req:[["IE4","Rohöl"]], must:true,
+   what:"High-Pressure Refinery Unit: Diesel entschwefeln (liefert Schwefel).",
+   cross:"Treibstoff der Rakete T2. Schwefel für die Mekanism-Chemie.",
+   story:"–",
    world:"–"},
 
-  {id:"M14", path:"C", stage:5, name:"Alfheim", status:"open",
-   req:[["M9","Terrasteel"]], must:false,
-   what:"Elven Gateway, Mead of Kvasir, Zugang nach Alfheim (MythicBotany).",
-   cross:"Elementium und Dragonstone.",
+  {id:"BM2", path:"D", stage:5, name:"Altar T3 · Soul Forge", status:"open",
+   req:[["BM1","Altar"]], must:true,
+   what:"Blood Altar Stufe 3, Hellfire Forge (Soul Forge), Demon Will, Alchemy Table. 🔵 aus dem Gedächtnis, im JAR prüfen.",
+   cross:"Demonit → Tinkers (Hellforged, Blood-Smeltery).",
+   story:"–",
    world:"–"},
 
-  {id:"M15", path:"G", stage:5, name:"Blue-Skies-Bosse", status:"open",
-   req:[["M5","Dungeons"]], must:false,
-   what:"Summoner und Alchemist (Everbright), Starlit Crusher und Arachnarch (Everdawn).",
-   cross:"Hebt die Abschwächung fremder Werkzeuge auf. Story-Kapitel mit Easy-NPC-Figuren.",
+  {id:"MK3", path:"E", stage:5, name:"Advanced · Erz ×3", status:"open",
+   req:[["MK1","Osmium"],["BS1","Zinn"]], must:true,
+   what:"Infused Alloy und Advanced Control Circuits, Factories und Tier Installer, Purification Chamber (Erz ×3), Osmium Compressor.",
+   cross:"Mekanism-Stufe Advanced: Vorschlag als Hürde der Rakete T2 (der User legt fest).",
+   story:"–",
    world:"–"},
 
-  {id:"M16", path:"H", stage:5, name:"Rakete T2 → Mars", status:"open",
-   req:[["M11","Desh"],["M8","Diesel"]], must:true,
-   what:"Desh-Rakete mit entschwefeltem Diesel. Der Mars liefert Ostrum und Fluorit.",
-   cross:"IE bleibt nötig (Metal Press für die Platten, weil der Ad-Astra-Compressor entfällt).",
+  {id:"BS3", path:"G", stage:5, name:"Bosse in Everbright", status:"open",
+   req:[["BS1","Dungeons"]], must:true,
+   what:"Summoner und Alchemist.",
+   cross:"Boss-Items für den Elfen (welche, ist offen). Hebt die Werkzeug-Abschwächung auf.",
+   story:"Die Bosse können früh besiegt werden; gebraucht werden ihre Items erst für den Elfen.",
    world:"–"},
 
-  {id:"M17", path:"C", stage:6, name:"Gaia · Alfsteel", status:"open",
-   req:[["M14","Dragonstone"]], must:false,
-   what:"Gaia-Guardian besiegen, Alfsteel herstellen.",
-   cross:"Wird Pflicht, falls Alfsteel als Magie-Teil der Rakete T4 gewählt wird (offen).",
+  // ───── K6 Der Mars
+  {id:"IE6", path:"B", stage:6, name:"Großindustrie", status:"part",
+   req:[["IE3","Stahl"]], must:false,
+   what:"Arc Furnace, Mineral Deposits und Excavator, Kunststoff (Phenolic Resin, Duroplast), Logic Circuits.",
+   cross:"Nebenquest-Kandidat; Duroplast und Logic Circuits als Zutaten späterer Raketen möglich.",
+   story:"–",
+   world:"Arc Furnace erreicht; Excavator und Kunststoff offen."},
+
+  {id:"BO4", path:"C", stage:6, name:"Terrasteel", status:"open",
+   req:[["BO3","Runen"]], must:true,
+   what:"Terrestrial Agglomeration Plate, Terrasteel.",
+   cross:"Baustoff des Elfenportals; mögliches Schutz-Item für den Altar im Tempel.",
+   story:"–",
    world:"–"},
 
-  {id:"M18", path:"H", stage:6, name:"Rakete T3 → Merkur, Venus", status:"open",
-   req:[["M16","Ostrum"],["M8","Kerosin"]], must:true,
-   what:"Ostrum-Rakete mit Kerosin. Hitzeschutz nötig (Netherite Space Suit). Venus liefert Calorite; Merkur und Venus liefern Uran und Blei in Menge.",
-   cross:"Macht die Nuklearkette ergiebig und öffnet den Weg zum Blood-Magic-Dungeon.",
+  {id:"BS4", path:"G", stage:6, name:"Bosse in Everdawn", status:"open",
+   req:[["BS2","Dungeons"]], must:true,
+   what:"Starlit Crusher und Arachnarch.",
+   cross:"Boss-Items für den Elfen (welche, ist offen).",
+   story:"–",
    world:"–"},
 
-  {id:"M19", path:"D", stage:7, name:"Demon Dungeon auf Merkur", status:"open",
-   req:[["M13","Ritual"],["M18","Flug zum Merkur"]], must:true,
-   what:"Das Ritual zum Blood-Magic-Dungeon gelingt nur auf dem Merkur. Im Dungeon liegt ein Pflicht-Item für die Rakete T4.",
-   cross:"Verbindet Blood Magic mit der Raumfahrt. Ob sich das Ritual per KubeJS auf einen Planeten beschränken lässt, ist ungetestet.",
+  {id:"RF2", path:"H", stage:6, name:"Rakete T2 → Mars", status:"open",
+   req:[["RF1","Desh"],["IE5","Diesel"],["MK3","Advanced ?"],["BS1","Zinn · Aluminium ?"]], must:true,
+   what:"Desh-Rakete mit entschwefeltem Diesel. Mars liefert Ostrum und Fluorit. Hürden: Desh, Diesel, Mekanism Advanced (?), Everbright (?).",
+   cross:"IE bleibt nötig (Metal Press für die Platten).",
+   story:"Horchposten: Von der Erde aus sind die Signale des Meisters zu schwach; auf dem Mars muss eine Station entstehen.",
+   tech:"Raketen haben ein Inventar für kleine Fracht.",
    world:"–"},
 
-  {id:"M20", path:"E", stage:7, name:"Nuklearkette", status:"open",
-   req:[["M12","Gase"],["M18","Uran in Menge"]], must:true,
-   what:"Fission Reactor, Polonium und Plutonium.",
-   cross:"Uran-Erzeugnisse sind Pflichtteil der Rakete T4 (welches genau, ist offen).",
+  // ───── K7 Horchposten
+  {id:"TK4", path:"A", stage:7, name:"Planetenmetalle gießen", status:"open",
+   req:[["TK3","Foundry"],["RF2","Desh · Ostrum"]], must:false,
+   what:"Desh, Ostrum und später Calorite schmelzen und gießen (TCIntegrations); Werkzeuge aus Planetenmetallen.",
+   cross:"Tinkers in den höheren Stufen (07_CROSSMOD_INTEGRATION.md). Gießen als Pflichtschritt einer Rakete ist möglich, aber offen.",
+   story:"–",
    world:"–"},
 
-  {id:"M21", path:"F", stage:7, name:"ME-System", status:"open",
-   req:[["M6","Prozessoren"],["M12","Mek-Ausbau"]], must:false,
+  {id:"BM3", path:"D", stage:7, name:"Altar T4 · Rituale", status:"open",
+   req:[["BM2","Altar"]], must:true,
+   what:"Blood Altar Stufe 4, Ritual Stones, Master Ritual Stone, erste Rituale. 🔵 im JAR prüfen.",
+   cross:"Liefert das Blood-Magic-Teil für die Rakete T3 (beschlossen; welches, ist offen) und das Ritual für den Tempel.",
+   story:"Der Tempel schirmt den Planeten ab; ohne Blutmagie kommt keine Rakete hindurch.",
+   world:"–"},
+
+  {id:"MK4", path:"E", stage:7, name:"Elite · Chemie", status:"open",
+   req:[["MK3","Advanced"],["IE5","Schwefel"]], must:true,
+   what:"Reinforced Alloy und Elite Circuits; Chemical Injection Chamber (Erz ×4), Thermal Evaporation, Schwefelsäure, Pressurized Reaction Chamber und HDPE.",
+   cross:"Erstes Mal Mekanism-Chemie (Nebenquests). Vorschlag: Hürde der Rakete T3. Chemie für den Treibstoff T4.",
+   story:"–",
+   world:"–"},
+
+  {id:"SW2", path:"I", stage:7, name:"Mars-Station · Horchposten", status:"open",
+   req:[["RF2","Flug zum Mars"]], must:true,
+   what:"Die Spieler bauen auf dem Mars eine richtige Station. Eine eigene Quest prüft, ob sie steht. Erst dann kommt der Droide auf den Mars.",
+   cross:"Quest-Abgaben und Freischaltungen gibt es nur beim Droiden auf dem Mars.",
+   story:"Der Droide fängt von hier die Spur auf, die zum Merkur führt. Er braucht Luft: Ohne abgedichteten Raum mit Sauerstoff überlebt er nicht.",
+   tech:"Der Droide erscheint per Befehl als Quest-Belohnung (Easy NPC <code>preset import</code> mit Ort und Dimension). Ad Astra schont ihn ohne Sauerstoff nicht, wenn er verwundbar eingestellt ist. Die Stations-Prüfung läuft per KubeJS und setzt eine Stage (FTB XMod Compat ist nicht im Pack). Im Spiel zu testen (Runde 5).",
+   world:"–"},
+
+  // ───── K8 Hitze
+  {id:"RF3", path:"H", stage:8, name:"Rakete T3 → Merkur, Venus", status:"open",
+   req:[["RF2","Ostrum"],["IE4","Kerosin"],["MK4","Elite ?"],["BM3","Schutz gegen den Tempel ?"],["SW2","Spur zum Merkur"]], must:true,
+   what:"Ostrum-Rakete mit Kerosin. Hitzeschutz (Netherite Space Suit). Venus liefert Calorite; Merkur und Venus Uran und Blei in Menge. Hürden: Ostrum, Kerosin, Mekanism Elite (?), Blood Magic.",
+   cross:"Macht die Nuklearkette ergiebig und führt zum Tempel auf dem Merkur.",
+   story:"Auf dem Merkur steht der dunkle Tempel, in dem der Meister verschwand. Sein Inneres ist zerstört. Die Venus hat noch keine Story.",
+   tech:"Achtung Spoiler: Star Wars Planets schenkt beim Besitz einer Rakete T3 das „Star Manual“ mit Kapiteln über Jedi und Sith. Die Belohnung muss per Datapack entfernt oder verlegt werden.",
+   world:"–"},
+
+  // ───── K9 Der Tempel
+  {id:"BM4", path:"D", stage:9, name:"Tempel · Demon Dungeon", status:"open",
+   req:[["BM3","Ritual"],["RF3","Flug zum Merkur"],["BO4","Schutz-Item ?"]], must:true,
+   what:"Die Spieler bauen den Altar im zerstörten Tempel neu auf und öffnen mit dem Ritual den Blood-Magic-Dungeon.",
+   cross:"Verbindet Blood Magic, Botania und Raumfahrt. Ob der Altar auf dem Merkur oder in der Overworld steht, ist offen.",
+   story:"Der Meister ist nicht mehr im Dungeon: Er ist selbst entkommen. Bei der Rückkehr ist der Droide weg oder zerstört. Ein Text des Meisters verweist auf das Elfenportal.",
+   spoiler:"Der Tempel war ein Sith-Tempel. Der Meister suchte dort ein altes Relikt.",
+   tech:"Das Ritual lässt sich nur über das Forge-Ereignis von Blood Magic abfangen (das KubeJS-Addon kennt nur Rezepte); ungetestet. Der Droide kann per Befehl verschwinden (Easy NPC <code>despawn</code>).",
+   world:"Der Tempel braucht eine eigene Struktur auf dem Merkur."},
+
+  {id:"MK5", path:"E", stage:9, name:"Kernkraft", status:"open",
+   req:[["MK4","Chemie"],["RF3","Uran in Menge"]], must:true,
+   what:"Yellow Cake bis Fissile Fuel, Fission Reactor, Boiler und Turbine, Plutonium und Polonium, Induction Matrix.",
+   cross:"Kandidat für die Tech-Erzeugnisse, die der Elf verlangt, und für ein Uran-Teil der Rakete T4 (offen).",
+   story:"Offen.",
+   world:"–"},
+
+  {id:"AE2", path:"F", stage:9, name:"ME-System", status:"open",
+   req:[["AE1","Prozessoren"],["MK3","Mek-Ausbau"]], must:false,
    what:"ME Drives, Storage Cells, Autocrafting, Applied Mekanistics.",
-   cross:"Automatisiert die vorhandenen Ketten.",
+   cross:"Automatisiert die vorhandenen Ketten. Nebenquest-Kandidat.",
+   story:"–",
    world:"–"},
 
-  {id:"M22", path:"H", stage:8, name:"Rakete T4 → Glacio", status:"open",
-   req:[["M18","Calorite"],["M19","Dungeon-Item"],["M20","Uran-Teil"],["M9","Magie-Teil"],["M12","Raketentreibstoff"]], must:true,
-   what:"Calorite-Rakete mit eigenem Raketentreibstoff (Kerosin plus Mekanism-Chemie). Erreicht Glacio und die Star-Wars-Planeten.",
-   cross:"Hier laufen Tech, Nuklear, Botania und Blood Magic zusammen.",
+  // ───── K10 Der Elf
+  {id:"BO5", path:"C", stage:10, name:"Elfenportal · Elf", status:"open",
+   req:[["BO4","Terrasteel"],["BM4","Text des Meisters"]], must:true,
+   what:"Portal to Alfheim bauen; die Spieler gehen nicht hindurch. Elfenhandel: Elementium, Pixie Dust, Dreamwood, Dragonstone.",
+   cross:"Der Elf verlangt Boss-Items aus Blue Skies und Tech-Erzeugnisse, dann gibt er das Rezept für die Rakete T4.",
+   story:"Aus dem Portal tritt ein Elf. Die Elfen kennen Reisende von den Sternen aus alter Zeit. Er ortet den Meister: Er ist auf Glacio. Nach dem Ausfall des Droiden führt der Elf die Spieler.",
+   tech:"Der Elf ist ein Easy NPC und kann per Befehl als Quest-Belohnung erscheinen, sobald das Portal gebaut ist (ungetestet).",
    world:"–"},
 
-  {id:"M23", path:"H", stage:9, name:"Star-Wars-Planeten", status:"open",
-   req:[["M22","Rakete T4"]], must:true,
-   what:"Tatooine, Endor, Hoth, Mustafar, Mandalore. Kyber für Lichtschwerter (nur hier, in der Overworld entfernt) und Beskar.",
-   cross:"Endziel. Offen: mit Ad Astra: Rocketed auf T5 bis T7 staffeln?",
+  {id:"MK6", path:"E", stage:10, name:"Ultimate · Teleportation", status:"open",
+   req:[["MK5","Polonium ?"],["MK4","Elite"]], must:true,
+   what:"Atomic Alloy und Ultimate Circuits, Teleportation Core, Teleporter, Quantum Entangloporter, Dimensional Stabilizer (Chunkloader).",
+   cross:"Vorschlag: Hürde der Rakete T4. Nebenquest: automatischer Transport zwischen Mars-Station und Erde.",
+   story:"–",
+   world:"–"},
+
+  // ───── K11 Glacio
+  {id:"RF4", path:"H", stage:11, name:"Rakete T4 → Glacio", status:"open",
+   req:[["RF3","Calorite"],["BO5","T4-Rezept · Portal-Item ?"],["BS3","Boss-Items ?"],["BS4","Boss-Items ?"],["MK6","Ultimate ?"],["MK4","Treibstoff-Chemie ?"],["MK5","Uran-Teil ?"],["BM4","Dungeon-Item ?"]], must:true,
+   what:"Calorite-Rakete nach dem Rezept des Elfen, mit magischen Komponenten und einem deutlich aufwendigeren Treibstoff (Kerosin plus Mekanism-Chemie). Erreicht nur Glacio.",
+   cross:"Hier laufen Tech, Botania, Blue Skies und Blood Magic zusammen.",
+   story:"Der Meister hat eine Barriere um den Planeten gelegt; nur die magischen Komponenten bringen die Rakete hindurch. Auf Glacio finden die Spieler den Meister. Ende von Part 1.",
+   spoiler:"Hier wird das Geheimnis offen: Der Meister ist ein Jedi, und die Spieler können selbst Jedi werden.",
+   world:"–"},
+
+  // ───── K12 Ausbildung (Part 2, grob)
+  {id:"BM5", path:"D", stage:12, name:"Altar T5", status:"open",
+   req:[["BM4","Dungeon"]], must:false,
+   what:"Blood Altar Stufe 5 und höhere Orbs. 🔵 im JAR prüfen.",
+   cross:"Kandidat für ein Teil der Raketen T6 oder T7.",
+   story:"Part 2, wird später besprochen.",
+   world:"–"},
+
+  {id:"BO6", path:"C", stage:12, name:"Alfheim betreten", status:"open",
+   req:[["BO5","Elfenportal"],["RF4","Meister · Mead of Kvasir ?"]], must:true,
+   what:"Mit MythicBotany durch das Elfenportal in die Elfenwelt; Runen der neun Welten, Mana-Infuser, Alfsteel.",
+   cross:"Liefert das Rumpf-Material der Rakete T5 (welches, ist offen).",
+   story:"Part 2: Der Zutritt kommt zusammen mit der Ausbildung.",
+   tech:"Aus dem JAR: Durch das Portal kommt nur, wer den Mead of Kvasir getrunken hat. Den Met kann der Meister herausgeben (Rezept sperren oder an eine Quest binden).",
+   world:"–"},
+
+  {id:"MK7", path:"E", stage:12, name:"Fusion", status:"open",
+   req:[["MK6","Ultimate"]], must:true,
+   what:"Fusion Reactor (Deuterium und Tritium), Laser.",
+   cross:"Vorschlag: Hürde der Rakete T5 (der User legt fest). Der Treibstoff muss eine Flüssigkeit sein.",
+   story:"Part 2, wird später besprochen.",
+   world:"–"},
+
+  {id:"SW3", path:"I", stage:12, name:"Ausbildung beim Meister", status:"open",
+   req:[["RF4","Meister gefunden"]], must:true,
+   what:"Der Meister bildet die Spieler aus und stellt Prüfungen.",
+   cross:"Öffnet den Zutritt zur Elfenwelt und den Kampf gegen Gaia.",
+   story:"Part 2, wird später besprochen.",
+   spoiler:"Ausbildung zum Jedi.",
+   world:"–"},
+
+  // ───── K13 Endor
+  {id:"BO7", path:"C", stage:13, name:"Gaia · Prüfung", status:"open",
+   req:[["BO6","Alfsteel"],["SW3","Prüfung des Meisters"]], must:true,
+   what:"Gaia Guardian besiegen; Gaia Spirits, Relikte, Corporea.",
+   cross:"Kandidat für ein Magie-Teil der Raketen T6 oder T7.",
+   story:"Der Kampf gegen den Gaia Guardian ist eine Prüfung des Meisters.",
+   spoiler:"Es ist die Jedi-Prüfung.",
+   tech:"Aus dem JAR: MythicBotany ersetzt das Rezept des Gaia-Pylons durch eines mit Alfsteel. Gaia liegt damit von selbst hinter Alfheim.",
+   world:"–"},
+
+  {id:"MK8", path:"E", stage:13, name:"SPS · Antimaterie", status:"open",
+   req:[["MK7","Fusion"]], must:true,
+   what:"Supercritical Phase Shifter, Antimatter, Nucleosynthesizer.",
+   cross:"Vorschlag: Hürde der Rakete T6.",
+   story:"Part 2, wird später besprochen.",
+   world:"–"},
+
+  {id:"AE3", path:"F", stage:13, name:"Quantenbrücke", status:"open",
+   req:[["AE2","ME-System"]], must:false,
+   what:"Quantum Network Bridge, Singularitäten, Spatial IO.",
+   cross:"Vorschlag: „Navigationscomputer“ als Hürde der Rakete T6.",
+   story:"Part 2, wird später besprochen.",
+   world:"–"},
+
+  {id:"RF5", path:"H", stage:13, name:"Rakete T5 → Endor", status:"open",
+   req:[["RF4","Calorite · ?"],["BO6","Rumpf aus Alfheim ?"],["MK7","Fusion ?"],["SW3","Auftrag des Meisters"]], must:true,
+   what:"Erste Rakete aus „Ad Astra: Rocketed“. Führt nur nach Endor. Hürden: Rumpf aus Alfheim, neuer Treibstoff, Mekanism-Stufe, Teil aus einem anderen Pfad (alles offen).",
+   cross:"Endor liefert Kyber für die Rakete T6.",
+   story:"Endor ist die Heimat beziehungsweise die Basis des Meisters.",
+   tech:"Planetenstufe per Datapack: Endor (samt Orbit) von 4 auf 5. Treibstoff über das Tag <code>ad_astra_rocketed:tier_5_rocket_fuel</code>, muss eine Flüssigkeit sein. Ob Ad Astra Stufen über 4 annimmt, ist ungetestet.",
+   world:"–"},
+
+  // ───── K14 Hyperraum
+  {id:"BM6", path:"D", stage:14, name:"Altar T6", status:"open",
+   req:[["BM5","Altar"]], must:false,
+   what:"Blood Altar Stufe 6. 🔵 im JAR prüfen.",
+   cross:"Kandidat für ein Teil der Rakete T7.",
+   story:"Part 2, wird später besprochen.",
+   world:"–"},
+
+  {id:"RF6", path:"H", stage:14, name:"T6 → Tatooine, Hoth, Mustafar", status:"open",
+   req:[["RF5","Kyber von Endor ?"],["BO7","Magie-Teil ?"],["MK8","Antimaterie ?"],["AE3","Navigationscomputer ?"]], must:true,
+   what:"Zweite Rakete aus „Ad Astra: Rocketed“. Führt zu allen Star-Wars-Welten außer Mandalore.",
+   cross:"Rezept, Treibstoff und Mekanism-Stufe offen.",
+   story:"Part 2, wird später besprochen.",
+   tech:"Planetenstufe per Datapack: Tatooine, Hoth (<code>hot</code>) und Mustafar samt Orbits auf 6. Treibstoff über <code>tier_6_rocket_fuel</code>.",
+   world:"–"},
+
+  // ───── K15 Star-Wars-Welten
+  {id:"MK9", path:"E", stage:15, name:"Meka-Ausrüstung · QIO", status:"open",
+   req:[["MK8","Antimaterie"]], must:false,
+   what:"MekaSuit, Meka-Tool, Modification Station, QIO, Digital Miner.",
+   cross:"Kandidat für die Hürde der Rakete T7; MekaSuit im All (Ad-Astra-Anbindung).",
+   story:"Part 2, wird später besprochen.",
+   world:"–"},
+
+  {id:"SW4", path:"I", stage:15, name:"Star-Wars-Welten", status:"open",
+   req:[["RF6","Rakete T6"],["SW3","Ausbildung"]], must:true,
+   what:"Tatooine, Endor, Hoth, Mustafar. Kyber für Lichtschwerter (nur hier, in der Overworld entfernt).",
+   cross:"Welche Bosse, Quests und Belohnungen hier liegen, ist offen.",
+   story:"Part 2, wird später besprochen: mehrere Bosse für den Meister besiegen, als Kopfgeldjäger Quests bei Easy NPCs erfüllen, Lichtschwerter über eine Quest.",
+   spoiler:"Rückkehr in die weit, weit entfernte Galaxis.",
+   world:"–"},
+
+  // ───── K16 Mandalore
+  {id:"RF7", path:"H", stage:16, name:"Rakete T7 → Mandalore", status:"open",
+   req:[["SW4","Freischaltung ?"],["MK9","Mekanism-Stufe ?"],["BM6","Blood-Magic-Teil ?"]], must:true,
+   what:"Dritte Rakete aus „Ad Astra: Rocketed“. Einziges Ziel: Mandalore (−160 °C). Dort liegt Beskar.",
+   cross:"Rezept, Treibstoff und Hürden offen. Beskar wird für keine weitere Stufe gebraucht.",
+   story:"Part 2, wird später besprochen.",
+   tech:"Planetenstufe per Datapack: Mandalore samt Orbit auf 7. Treibstoff über <code>tier_7_rocket_fuel</code>.",
    world:"–"}
 ];
 
@@ -311,57 +627,130 @@ document.getElementById("stats").innerHTML =
   `<span><span class="dot" style="background:var(--done)"></span><b>${cnt("done")}</b> erreicht</span>` +
   `<span><span class="dot" style="background:var(--part)"></span><b>${cnt("part")}</b> begonnen</span>` +
   `<span><span class="dot" style="background:var(--open)"></span><b>${cnt("open")}</b> offen</span>` +
-  `<span><b>${toGoal.size}</b> Meilensteine liegen auf dem Weg zu den Star-Wars-Planeten</span>`;
+  `<span><b>${toGoal.size}</b> Meilensteine liegen auf dem Weg zum Ziel (Rakete T7 nach Mandalore)</span>`;
 
-// Karte
-const LX = 130, CW = 170, TOP = 40, RH = 84, NW = 140, NH = 46;
-const W = LX + STAGES.length * CW + 20, H = TOP + PATHS.length * RH + 10;
-const svg = document.getElementById("map");
-svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+// Karte: Pfade als Spalten, Stufen als Zeilen, der Fortschritt läuft von oben nach unten.
+// Linien sind rechtwinklig geführt: waagrechte Stücke laufen in den Zwischenräumen der Stufen (jede Linie auf eigener
+// Höhe, dort steht auch ihre Beschriftung), lange senkrechte Stücke auf den Grenzen zwischen den Pfad-Spalten.
+// Jede Linie trägt die Farbe des Pfades, aus dem sie kommt.
+const LX = 92, PX = 30, CW = 196, TOP = 46, NW = 156, NH = 64, LANE = 14;
 const NS = "http://www.w3.org/2000/svg";
+const svg = document.getElementById("map");
 const el = (tag, attrs, parent = svg) => { const e = document.createElementNS(NS, tag); for(const k in attrs) e.setAttribute(k, attrs[k]); parent.appendChild(e); return e; };
-const cx = m => LX + (m.stage - 1) * CW + CW / 2;
-const cy = m => TOP + pathIdx[m.path] * RH + RH / 2;
+const colOf = n => pathIdx[n.path];
+
+const EDGES = [];
+MILESTONES.forEach(m => m.req.forEach(([rid, label]) => EDGES.push({a: byId[rid], m, label})));
+const spread = (i, n, step, max) => n < 2 ? 0 : (i - (n - 1) / 2) * Math.min(step, max / (n - 1));
+
+// Spuren vergeben: je Stufen-Zwischenraum (waagrecht) und je Spaltengrenze (senkrecht)
+const gutterUse = {}, trackUse = {};
+const take = (map, key) => (map[key] = (map[key] || 0) + 1) - 1;
+const occupied = (col, s1, s2) => MILESTONES.some(n => colOf(n) === col && n.stage > s1 && n.stage < s2);
+EDGES.slice().sort((p, q) => p.m.stage - q.m.stage || colOf(p.m) - colOf(q.m) || colOf(p.a) - colOf(q.a)).forEach(e => {
+  const {a, m} = e, ca = colOf(a), cm = colOf(m);
+  e.direct = m.stage - a.stage === 1 || (ca === cm && !occupied(ca, a.stage, m.stage));
+  if(!e.direct){
+    e.l1 = take(gutterUse, a.stage);
+    e.bound = ca > cm ? cm + 1 : cm;   // Spaltengrenze links bzw. rechts vom Ziel
+    e.track = take(trackUse, e.bound);
+  }
+  e.l2 = take(gutterUse, m.stage - 1);
+});
+
+// Zeilen: Die Höhe des Zwischenraums richtet sich nach der Zahl der Linien darin
+const rowTop = [0, TOP];
+for(let s = 1; s < STAGES.length; s++) rowTop[s + 1] = rowTop[s] + NH + 26 + Math.max(gutterUse[s] || 0, 1) * LANE;
+const W = LX + PATHS.length * CW + 8, H = rowTop[STAGES.length] + NH + 16;
+svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+svg.style.maxWidth = W + "px";
+const cx = m => LX + colOf(m) * CW + CW / 2;
+const nodeTop = m => rowTop[m.stage];
+const laneY = (g, lane) => rowTop[g] + NH + 16 + lane * LANE;
+const trackX = e => LX + e.bound * CW + (e.track - (trackUse[e.bound] - 1) / 2) * 5;
 
 PATHS.forEach((p, i) => {
-  if(i % 2 === 0) el("rect", {class:"lane-bg", x:0, y:TOP + i*RH, width:W, height:RH});
-  el("rect", {x:10, y:TOP + i*RH + RH/2 - 9, width:6, height:18, rx:1, fill:p.hue});
-  el("text", {class:"lane-label", x:24, y:TOP + i*RH + RH/2 + 4}).textContent = p.name;
+  if(i % 2 === 0) el("rect", {class:"lane-bg", x:LX + i*CW, y:0, width:CW, height:H});
+  el("rect", {x:LX + i*CW + CW/2 - 60, y:14, width:6, height:16, rx:1, fill:p.hue});
+  el("text", {class:"lane-label", x:LX + i*CW + CW/2 - 48, y:27}).textContent = p.name;
 });
 STAGES.forEach((s, i) => {
-  el("text", {class:"stage-label", x:LX + i*CW + CW/2, y:24}).textContent = i === STAGES.length - 1 ? s + " · Ziel" : s;
-  el("line", {class:"grid", x1:LX + i*CW, y1:TOP, x2:LX + i*CW, y2:H - 10});
+  const sx = PX + (LX - PX) / 2;
+  el("text", {class:"stage-label", x:sx, y:rowTop[i + 1] + NH/2 + 4}).textContent = s;
+  if(i === STAGES.length - 1) el("text", {class:"stage-label", x:sx, y:rowTop[i + 1] + NH/2 + 19}).textContent = "Ziel";
+  if(i) el("line", {class:"grid", x1:PX, y1:rowTop[i + 1] - 13, x2:LX - 8, y2:rowTop[i + 1] - 13});
+});
+// Story-Parts: Balken mit Beschriftung am linken Rand, gestrichelte Trennlinie über die ganze Breite
+PARTS.forEach((pt, i) => {
+  const y1 = rowTop[pt.from] + 2, y2 = rowTop[pt.to] + NH - 2, ym = (y1 + y2) / 2;
+  el("line", {class:"part-bar", x1:7, y1, x2:7, y2});
+  el("text", {class:"part-label", x:22, y:ym, transform:`rotate(-90 22 ${ym})`}).textContent = pt.name;
+  if(i) el("line", {class:"part-cut", x1:PX, y1:rowTop[pt.from] - 13, x2:W, y2:rowTop[pt.from] - 13});
+});
+
+// Ein- und Austrittspunkte am Meilenstein verteilen (unten hinaus, oben hinein)
+MILESTONES.forEach(n => {
+  const ins = EDGES.filter(e => e.m === n).sort((p, q) => colOf(p.a) - colOf(q.a) || p.a.stage - q.a.stage);
+  ins.forEach((e, i) => e.xIn = cx(n) + spread(i, ins.length, 26, NW - 44));
+  const outs = EDGES.filter(e => e.a === n).sort((p, q) => colOf(p.m) - colOf(q.m) || p.m.stage - q.m.stage);
+  outs.forEach((e, i) => e.xOut = cx(n) + spread(i, outs.length, 10, NW - 40));
+});
+
+function rounded(pts, r){
+  pts = pts.filter((p, i) => i === 0 || p[0] !== pts[i-1][0] || p[1] !== pts[i-1][1]);
+  let d = `M${pts[0][0]},${pts[0][1]}`;
+  for(let i = 1; i < pts.length - 1; i++){
+    const [px, py] = pts[i-1], [x, y] = pts[i], [nx, ny] = pts[i+1];
+    const l1 = Math.hypot(x - px, y - py), l2 = Math.hypot(nx - x, ny - y), k = Math.min(r, l1 / 2, l2 / 2);
+    if(k < 0.5){ d += ` L${x},${y}`; continue; }
+    d += ` L${x + (px - x) / l1 * k},${y + (py - y) / l1 * k} Q${x},${y} ${x + (nx - x) / l2 * k},${y + (ny - y) / l2 * k}`;
+  }
+  const last = pts[pts.length - 1];
+  return d + ` L${last[0]},${last[1]}`;
+}
+
+const defs = el("defs", {});
+PATHS.forEach(p => {
+  const mk = el("marker", {id:"mk" + p.id, viewBox:"0 0 10 10", refX:9, refY:5, markerWidth:4.5, markerHeight:4.5, markerUnits:"strokeWidth", orient:"auto-start-reverse"}, defs);
+  el("path", {d:"M0,0 L10,5 L0,10 z", fill:p.hue}, mk);
 });
 
 const edgeEls = [];
-MILESTONES.forEach(m => m.req.forEach(([rid, label]) => {
-  const a = byId[rid], cross = a.path !== m.path;
-  const x1 = cx(a) + NW/2, y1 = cy(a), x2 = cx(m) - NW/2 - 6, y2 = cy(m);
-  const mx = (x1 + x2) / 2;
-  const d = `M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2},${y2}`;
-  const p = el("path", {class:"edge" + (cross ? " cross" : ""), d, "marker-end": cross ? "url(#ac)" : "url(#an)"});
-  const t = el("text", {class:"elabel" + (cross ? " cross" : ""), x:mx, y:(y1 + y2)/2 - 4});
+const gEdges = el("g", {}), gLabels = el("g", {});
+EDGES.forEach(e => {
+  const {a, m, label} = e;
+  const y1 = nodeTop(a) + NH, y2 = nodeTop(m) - 3, yb = laneY(m.stage - 1, e.l2);
+  const xFrom = e.direct ? e.xOut : trackX(e);     // Beginn des letzten waagrechten Stücks
+  const pts = e.direct
+    ? [[e.xOut, y1], [e.xOut, yb], [e.xIn, yb], [e.xIn, y2]]
+    : [[e.xOut, y1], [e.xOut, laneY(a.stage, e.l1)], [xFrom, laneY(a.stage, e.l1)], [xFrom, yb], [e.xIn, yb], [e.xIn, y2]];
+  const p = el("path", {class:"edge", d: rounded(pts, 7), stroke: hue(a.path), "marker-end": `url(#mk${a.path})`}, gEdges);
+  el("title", {}, p).textContent = `${a.id} ${a.name} → ${m.id} ${m.name}: ${label}`;
+  // Beschriftung auf der eigenen Höhe der Linie, kurz vor dem Abbiegen zum Ziel
+  const near = Math.abs(xFrom - e.xIn) < 46;
+  const start = near || xFrom > e.xIn;
+  const t = el("text", {class:"elabel", "text-anchor": start ? "start" : "end", x: near ? Math.max(xFrom, e.xIn) + 6 : (start ? e.xIn + 7 : e.xIn - 7), y: yb - 4, style: `fill:color-mix(in srgb, ${hue(a.path)} 62%, var(--fg))`}, gLabels);
   t.textContent = label;
-  edgeEls.push({from:rid, to:m.id, p, t});
-}));
-
-const defs = el("defs", {});
-[["an","var(--edge)"],["ac","var(--cross)"]].forEach(([id, c]) => {
-  const mk = el("marker", {id, viewBox:"0 0 10 10", refX:9, refY:5, markerWidth:7, markerHeight:7, orient:"auto-start-reverse"}, defs);
-  el("path", {d:"M0,0 L10,5 L0,10 z", fill:c}, mk);
+  edgeEls.push({from:a.id, to:m.id, p, t});
 });
+
+const wrapName = s => {
+  const out = [""];
+  s.split(" ").forEach(w => { const cur = out[out.length - 1]; if(cur && (cur + " " + w).length > 20) out.push(w); else out[out.length - 1] = (cur + " " + w).trim(); });
+  return out.slice(0, 2);
+};
 
 const nodeEls = {};
 MILESTONES.forEach(m => {
   const g = el("g", {class:"node", tabindex:0, role:"link", "aria-label":`${m.id} ${m.name}, ${STATUS[m.status]}`});
-  const x = cx(m) - NW/2, y = cy(m) - NH/2, c = hue(m.path);
+  const x = cx(m) - NW/2, y = nodeTop(m), c = hue(m.path);
   const r = el("rect", {x, y, width:NW, height:NH, rx:4, fill: m.status === "done" ? c : "var(--panel)", stroke: m.status === "open" ? "var(--open)" : (m.status === "part" ? "var(--part)" : c), "stroke-width": m.must ? 2.5 : 1.2});
   if(m.status === "open") r.setAttribute("stroke-dasharray", "4 3");
   if(m.status === "done") r.setAttribute("fill-opacity", ".28");
   el("rect", {x, y, width:5, height:NH, rx:2, fill:c}, g);
-  el("text", {class:"id", x:x + 12, y:y + 17}, g).textContent = m.id + (m.must ? " · Pflicht" : "");
-  const nm = el("text", {class:"nm", x:x + 12, y:y + 34}, g);
-  nm.textContent = m.name.length > 21 ? m.name.slice(0, 20) + "…" : m.name;
+  const lines = wrapName(m.name);
+  el("text", {class:"id", x:x + 12, y:y + (lines.length > 1 ? 18 : 25)}, g).textContent = m.id + (m.must ? " · Pflicht" : "");
+  lines.forEach((ln, i) => { el("text", {class:"nm", x:x + 12, y:y + (lines.length > 1 ? 35 : 44) + i * 15}, g).textContent = ln; });
   el("title", {}, g).textContent = `${m.id} ${m.name}\n${m.what}`;
   g.insertBefore(r, g.firstChild);
   nodeEls[m.id] = g;
@@ -384,14 +773,15 @@ const list = document.getElementById("list");
 STAGES.forEach((s, i) => {
   const ms = MILESTONES.filter(m => m.stage === i + 1).sort((a, b) => pathIdx[a.path] - pathIdx[b.path]);
   if(!ms.length) return;
-  let h = `<div class="stage-block"><div class="stage-head"><h2>${i === STAGES.length - 1 ? s + " · Ziel" : s}</h2><span class="s">${ms.length} Meilenstein${ms.length > 1 ? "e" : ""}</span></div><div class="cards">`;
+  let h = `<div class="stage-block"><div class="stage-head"><h2>${s} · ${CHAPTERS[i]}${i === STAGES.length - 1 ? " · Ziel" : ""}</h2><span class="s">${ms.length} Meilenstein${ms.length > 1 ? "e" : ""}</span></div><div class="cards">`;
   ms.forEach(m => {
     const reqs = m.req.length ? m.req.map(([r, l]) => `<a href="#${r}">${r} ${byId[r].name}</a> (${l})`).join(", ") : "–";
     const next = (kids[m.id] || []).map(k => `<a href="#${k}">${k}</a>`).join(", ") || "–";
     h += `<article class="card" id="${m.id}" style="--lane-hue:${hue(m.path)}">
       <div class="top"><span class="mid">${m.id}</span><span class="nm">${m.name}</span></div>
       <div class="top"><span class="pill">${PATHS[pathIdx[m.path]].name}</span><span class="pill ${m.status}">${STATUS[m.status]}</span><span class="pill ${m.must ? "must" : ""}">${m.must ? "Pflicht" : "optional"}</span></div>
-      <dl><dt>Inhalt</dt><dd>${m.what}</dd><dt>Braucht</dt><dd>${reqs}</dd><dt>Öffnet</dt><dd>${next}</dd><dt>Kreuzung</dt><dd>${m.cross}</dd><dt>Weltstand</dt><dd>${m.world}</dd></dl>
+      <dl><dt>Inhalt</dt><dd>${m.what}</dd><dt>Braucht</dt><dd>${reqs}</dd><dt>Öffnet</dt><dd>${next}</dd><dt>Kreuzung</dt><dd>${m.cross}</dd><dt>Story</dt><dd>${m.story || "–"}</dd><dt>Technik</dt><dd>${m.tech || "–"}</dd><dt>Weltstand</dt><dd>${m.world || "–"}</dd></dl>
+      ${m.spoiler ? `<details><summary>Spoiler</summary><p>${m.spoiler}</p></details>` : ""}
     </article>`;
   });
   list.insertAdjacentHTML("beforeend", h + "</div></div>");

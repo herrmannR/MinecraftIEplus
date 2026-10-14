@@ -27,8 +27,8 @@ Der Ist-Zustand (Standardwerte aller Mods) steht in `02_RESSOURCEN.md`, Teil 1.
 | **Zinn** | **keines** | **Everbright: hoch** | keines | Excavator-Ader **Cassiterite entfernt** | Mekanism |
 | **Blei** | **sehr selten** | **Everbright: hoch** | Merkur, Venus | Excavator: Galena und Uraninite seltener | **nur Mekanism** (IE-Bleierz aus) |
 | **Aluminium (Bauxit)** | **selten** | **Everbright: hoch** | – | Excavator-Ader Laterite 🔵 | IE |
-| **Osmium** | **wenig** | **Everdawn: hoch** | **Mond: hoch**, Glacio | – | Mekanism |
-| **Uran** | niedrig (×1,3 gegenüber Standard) | – | **Merkur, Venus: hoch**, Glacio | Excavator: Uraninite seltener | **nur Mekanism** (IE-Uranerz aus) |
+| **Osmium** | **wenig** (Ziel etwa 15 Blöcke pro Chunk, wie Diamant) | **Everdawn: hoch** | **Mond: hoch**, Glacio | – | Mekanism |
+| **Uran** | **knapp** (Ziel etwa 10 Blöcke pro Chunk, Standard 37) | – | **Merkur, Venus: hoch**, Glacio | Excavator: Uraninite seltener | **nur Mekanism** (IE-Uranerz aus) |
 | **Fluorit** | Standard | – | Mars | – | Mekanism |
 | Salz | Standard | – | – | – | Mekanism |
 | Silber, Nickel | IE-Standard | – | – | unverändert | IE |
@@ -72,16 +72,16 @@ Schreibweise „Adern pro Chunk × Adergröße“.
 | Erz | Standard | Soll |
 |---|---|---|
 | Zinn | 14 × 4 und 12 × 9 | `shouldGenerate = false` |
-| Osmium upper (Y 72…Top−24) | 65 × 7 | **20** × 7 |
-| Osmium middle (Y −32…56) | 6 × 9 | **3** × 9 |
-| Osmium small (Boden…64) | 8 × 4 | **4** × 4 |
+| Osmium upper (Y 72…Top−24) | 65 × 7 | **12** × 7 |
+| Osmium middle (Y −32…56) | 6 × 9 | **2** × 9 |
+| Osmium small (Boden…64) | 8 × 4 | **3** × 4 |
 | Blei | 8 × 9 | **2** × 9 |
-| Uran small | 4 × 4 | **5** × 4 |
-| Uran buried | 7 × 9 | **9** × 9 |
+| Uran small | 4 × 4 | **1** × 4 |
+| Uran buried | 7 × 9 | **2** × 9 |
 | Fluorit, Salz | — | unverändert |
 | Retrogen | `enableRegeneration = false`, `userWorldGenVersion = 0` | **`true`**, **`1`** |
 
-Die Osmium- und Uranwerte sind die Testwerte aus 1.18.2. Blei war dort 4 („niedrig“); „sehr selten“ ist hier mit 2 angesetzt.
+🟢 Entscheidung des Users vom 2026-10-13 nach der Auszählung (`tools/ErzZaehler.java`, Blöcke pro Chunk): Uran soll auf etwa 10 (gezählt 48 mit den Werten 5 und 9, Standard 37), Osmium auf Diamant-Niveau, etwa 15 (gezählt 24 mit 20/3/4, Standard 46). Die Werte oben sind daraus geschätzt und noch nicht nachgezählt. Blei: 11 pro Chunk mit dem Wert 2 (Standard 42). Damit entfällt die frühere Vorgabe „Uran ×1,3“.
 
 **`config-overrides/serverconfig/immersiveengineering-server.toml`** (Basis: Standarddatei einer neuen 1.20.1-Welt):
 

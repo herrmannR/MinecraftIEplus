@@ -26,7 +26,8 @@ Am 2026-10-11 wurde der Wechsel von 1.18.2 auf **Minecraft 1.20.1, Forge 47.4.26
 | `04`–`09` | 🔴 Stand 1.18.2, mit Warnhinweis versehen |
 | `13_TESTINSTANZ_CHANGELOG.md` | gilt nur für die 1.18.2-Testinstanz |
 | `01_PROGRESSION.md` | 🟡 1.20.1, vier Fragen offen |
-| `meilensteine/` (samt Artifact-Seite) | 🟡 1.20.1, Entwurf mit 23 Meilensteinen |
+| `meilensteine/` (samt Artifact-Seite) | 🟡 1.20.1, am 2026-10-14 nach der Story umgebaut: 50 Meilensteine, 9 Pfade, 16 Kapitel in zwei Parts, Fragenkatalog (feiner aufgeteilt am 2026-10-14) |
+| `18_STORY.md` | 🟡 begonnen am 2026-10-13: Part 1 (Finden des Meisters) im Umriss, Part 2 folgt; die Story schreibt der User |
 
 ### TODO-Liste für den Neustart
 
@@ -43,12 +44,13 @@ Am 2026-10-11 wurde der Wechsel von 1.18.2 auf **Minecraft 1.20.1, Forge 47.4.26
 8. ✅ Erzatlas und `03_ERZGENERATION.md` neu aufgebaut. 🔵 Offen: eigene Erz-Features für Blue Skies und die Planeten, Kyber-Override, Excavator-Adern (alles Block D).
 
 **C. Progression** — 🟡 teilweise entschieden (2026-10-12)
-9. 🟡 Meilensteinkarte als Entwurf für 1.20.1 neu aufgebaut und veröffentlicht (23 Meilensteine, 9 Stufen); `01_PROGRESSION.md` neu geschrieben. 🔵 Bestätigung durch den User steht aus.
+9. 🟡 Meilensteinkarte als Entwurf für 1.20.1 neu aufgebaut und am 2026-10-14 nach der Story umgebaut (28 Meilensteine, 12 Stufen, neue Spalte „Star Wars · Story“); `01_PROGRESSION.md` nachgezogen. 🔵 Der Fragenkatalog auf der Karte ist offen.
 10. Entscheidungen aus `15_RAUMFAHRT.md`:
     - ✅ Treibstoff: T1 Biodiesel, T2 entschwefelter Diesel, T3 Kerosin, T4 eigener Raketentreibstoff.
     - ✅ Blood-Magic-Dungeon nur auf dem **Merkur**.
     - ✅ Ad-Astra-Kabel, Fluid Pipes und Water Pump entfernen; Energizer entfernen, wenn die Alternative (IE Charging Station oder Mekanism Energy Cube) im Test funktioniert.
-    - 🔵 Zurückgestellt: Magie- und Uran-Teile für T4; Ad Astra: Rocketed; Cryo Fuel.
+    - 🟢 Ad Astra: Rocketed bleibt; Star-Wars-Planeten verlangen mindestens T5 und T6 (2026-10-13).
+    - 🔵 Zurückgestellt: magische Komponenten und Uran-Teil für T4; Zuordnung der Star-Wars-Planeten zu T5 und T6; Cryo Fuel.
     - 🔵 Neu: Soll Petroleum vor dem ersten Raumflug Pflicht bleiben, obwohl T1 mit Biodiesel fliegt?
 11. ✅ Blue Skies: Die Werkzeug-Abschwächung wird als gewollte Hürde hingenommen. 🔵 Im Spiel messen, wie stark sie das Abbauen bremst.
 
@@ -71,6 +73,17 @@ Am 2026-10-11 wurde der Wechsel von 1.18.2 auf **Minecraft 1.20.1, Forge 47.4.26
 23. Vollständiges Backup beim Host (im Test-Backup fehlte `DIM-1/entities`).
 24. Alte `serverconfig/immersivepetroleum-server.toml` aus dem Weltordner entfernen; Worldgen-Configs und Tag-Overrides **vor dem ersten Start** einspielen.
 25. Questbuch und Story-Figuren (Phase 7b).
+
+**G. Story und Questbuch** — 🟡 begonnen (2026-10-13); Story schreibt der User, Stand in `18_STORY.md`
+26. 🔵 Entscheidungen des Users: offene Stellen O1 bis O23 in `18_STORY.md` und Fragenkatalog der Meilensteinkarte. Als Nächstes: Checkliste der Mars-Station (O22), Anreise des Droiden (O23), Mekanism-Stufen und Botania-Items je Rakete.
+27. ✅ Aus den JARs geklärt am 2026-10-14; Ergebnisse in `18_STORY.md` („Ergebnisse aus den JARs“). Neu daraus: Das „Star Manual“ von Star Wars Planets verrät das Geheimnis schon bei Rakete T3 → Belohnung entfernen oder verlegen (Block D). Ursprüngliche Fragen:
+    - FTB Quests: eigene Aufgabe per KubeJS (Checkliste „Blöcke im Umkreis auf dem Mars“); Questbuch erst nach der ersten Quest ausgeben.
+    - Easy NPC: Items übergeben und Abgaben prüfen; Quests auslösen oder abschließen; Figur per Befehl erzeugen (Elf am Portal, Droide auf dem Mars); verfügbares Aussehen für den Droiden.
+    - Ad Astra: Welche Lebewesen nehmen ohne Sauerstoff Schaden (Ausnahme-Tag)? Können Raketen Fracht mitnehmen?
+    - Ad Astra: Rocketed: Treibstoff-Tags T5 bis T7 (Flüssigkeit nötig?); Stufen der Star-Wars-Planeten per Datapack (T5 Endor, T6 Tatooine/Hoth/Mustafar, T7 Mandalore).
+    - MythicBotany: Sperrt `lockAlfheim` in 1.20.1 den Zutritt hinter dem Mead of Kvasir?
+    - Blood Magic: Ritual per KubeJS auf den Tempel beschränken (schon Test E19).
+28. 🔵 Im Spiel testen: Runde 5 in `11_TESTING.md`.
 
 ## Projektziel
 
@@ -153,6 +166,8 @@ Das Forge-Modpack „Immersive Engineering+“ (ATLauncher) wird auf Minecraft 1
 
 🟢 Die Werkzeug-Abschwächung in Blue Skies ist eine gewollte Hürde (2026-10-12).
 
+🟢 Tinkers wird in die höheren Stufen eingebunden; jedes Metall soll sich einschmelzen lassen, die Herstellung von Legierungen bleibt bei der zugehörigen Maschine (2026-10-12, `07_CROSSMOD_INTEGRATION.md`; Rezepte und Werte offen).
+
 ---
 
 # Arbeitsplan
@@ -182,7 +197,7 @@ Jeder neu erkundete Chunk bekommt die dann gültige Verteilung. Deshalb zuerst:
 
 ### Phase 2 — Meilensteine
 
-Schlüssel-Meilensteine mit Pfaden und Kreuzungspunkten, abgeglichen mit dem Weltstand; Kapitelgerüst für das Questbuch. Stand: `docs/meilensteine/` (🟡 Entwurf für 1.20.1, 23 Meilensteine) und `01_PROGRESSION.md`.
+Schlüssel-Meilensteine mit Pfaden und Kreuzungspunkten, abgeglichen mit dem Weltstand; Kapitelgerüst für das Questbuch. Stand: `docs/meilensteine/` (🟡 Entwurf für 1.20.1, 28 Meilensteine in zwei Story-Parts) und `01_PROGRESSION.md`.
 
 ### Phase 3–6
 
@@ -195,6 +210,7 @@ Skripte und Configs entstehen im Projektordner (`kubejs/`, `config-overrides/`),
 ### Phase 7b — Questbuch und Story
 
 - FTB Quests (+ Library, Teams, Item Filters) führt durch die Progression; Kapitelgerüst ist die Meilensteinkarte.
+- 🟢 Neben der Story schaltet das Questbuch laufend Nebenquests frei, die Maschinen und Ziele der Mods vorstellen, damit die Spieler das Pack in der Breite erleben und nicht nur der Story nach rushen. Sie werden mit jedem Story-Kapitel zum passenden Zeitpunkt freigeschaltet, sind kurze Ketten von höchstens drei bis vier Quests und dürfen später auch für die Story gebraucht werden (User, 2026-10-14; `18_STORY.md`).
 - 🟢 Easy NPC (Kern, Bundle, Config UI) und Easy NPC Dialogue Immersion sind im Pack. Damit entstehen Story-Figuren mit Dialogen, z. B. in Blue Skies oder auf den Planeten.
 - 🔵 Offen: welche Figuren, wo sie stehen, ob Dialoge Quests auslösen oder abschließen können.
 - Star-Wars-Kapitel: `17_STAR_WARS_1.20.1.md`.

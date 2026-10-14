@@ -3,7 +3,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
-/* Layout: oben die Karte (Pfade als Zeilen, Stufen als Spalten, Linien = Voraussetzungen), darunter die Liste nach Stufen. Gleiche Material-Welt wie der Erzatlas. */
+/* Layout: oben die Karte (Pfade als Spalten, Stufen als Zeilen, Linien = Voraussetzungen), darunter die Liste nach Stufen. Gleiche Material-Welt wie der Erzatlas. */
 :root{
   --bg:#1b1d20; --panel:#24272b; --line:#34383e; --fg:#e7e5e1; --muted:#9a9890;
   --accent:#e0a33a; --edge:#6c7078; --cross:#e0a33a;
@@ -27,7 +27,7 @@
 
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.45}
-.wrap{max-width:1500px;margin:0 auto;padding-inline:16px;padding-block:28px 48px}
+.wrap{max-width:1800px;margin:0 auto;padding-inline:16px;padding-block:28px 48px}
 header{display:grid;gap:10px;margin-bottom:18px}
 h1{font-family:var(--f-display);font-weight:700;font-size:clamp(28px,4vw,40px);letter-spacing:.02em;margin:0;text-wrap:balance}
 h1 span{color:var(--accent)}
@@ -45,17 +45,19 @@ h2{font:700 18px var(--f-display);letter-spacing:.04em;margin:0;color:var(--acce
 
 figure{margin:0}
 .map{overflow-x:auto;border:1px solid var(--line);border-radius:4px;background:var(--panel)}
-.map svg{display:block;width:100%;min-width:1240px;height:auto}
+.map svg{display:block;width:100%;min-width:1500px;height:auto;margin:0 auto}
 figcaption{font-size:13px;color:var(--muted);margin-top:8px;max-width:95ch}
 
 svg .lane-bg{fill:var(--lane)}
 svg .lane-label{font:700 13px var(--f-body);fill:var(--fg)}
-svg .stage-label{font:600 12px var(--f-data);fill:var(--muted);text-anchor:middle}
+svg .stage-label{font:700 13px var(--f-data);fill:var(--muted);text-anchor:middle}
 svg .grid{stroke:var(--line);stroke-width:1}
-svg .edge{fill:none;stroke:var(--edge);stroke-width:1.6}
-svg .edge.cross{stroke:var(--cross);stroke-width:2}
-svg .elabel{font:600 10.5px var(--f-data);fill:var(--muted);text-anchor:middle;paint-order:stroke;stroke:var(--panel);stroke-width:4px}
-svg .elabel.cross{fill:var(--cross)}
+svg .part-bar{stroke:var(--accent);stroke-width:3;stroke-linecap:round}
+svg .part-label{font:700 12px var(--f-display);letter-spacing:.06em;fill:var(--accent);text-anchor:middle}
+svg .part-cut{stroke:var(--accent);stroke-width:1.5;stroke-dasharray:6 5}
+svg .edge{fill:none;stroke-width:2;stroke-linejoin:round}
+svg.hl .edge.on{stroke-width:3}
+svg .elabel{font:600 11px var(--f-body);fill:var(--fg);paint-order:stroke;stroke:var(--panel);stroke-width:4px;stroke-linejoin:round}
 svg .node rect{stroke-width:2}
 svg .node .nm{font:600 12.5px var(--f-body);fill:var(--fg)}
 svg .node .id{font:700 10.5px var(--f-data);fill:var(--muted)}
@@ -87,44 +89,100 @@ svg.hl .edge:not(.on), svg.hl .elabel:not(.on){opacity:.12}
 .card dd{margin:0;min-width:0}
 .card a{color:var(--accent)}
 .questions{margin-top:30px;background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:14px 18px}
-.questions ol{margin:8px 0 0;padding-left:20px;display:grid;gap:5px;font-size:14px}
+.questions ol{margin:6px 0 0;padding-left:26px;display:grid;gap:5px;font-size:14px}
+.questions h3{font:700 14px var(--f-body);margin:16px 0 0;color:var(--fg)}
+.questions p{margin:6px 0 0;font-size:14px;color:var(--muted);max-width:90ch}
+.card details{font-size:13.5px}
+.card summary{cursor:pointer;color:var(--accent);font-weight:600}
+.card details p{margin:4px 0 0}
+.ph{font-family:var(--f-data);color:var(--accent);font-weight:600}
 </style>
 
 <div class="wrap">
-  <div class="draft" role="note"><strong>ENTWURF</strong><span>Diese Meilensteine sind ein Vorschlag und noch nicht beschlossen. Reihenfolge, Voraussetzungen und Kreuzungspunkte können sich noch ändern.</span></div>
+  <div class="draft" role="note"><strong>ENTWURF</strong><span>Diese Meilensteine sind ein Vorschlag und noch nicht beschlossen. Ein <span class="ph">?</span> an einer Linie heißt: Mod oder Quelle steht fest, das genaue Item noch nicht. Die Karten unten enthalten Story-Spoiler (eingeklappt).</span></div>
   <header>
     <h1>Meilensteinkarte <span>IE+</span></h1>
-    <p class="lede">Die Schlüssel-Meilensteine des Packs als Karte: jede Zeile ist ein Pfad, jede Spalte eine grobe Stufe. Linien zeigen Voraussetzungen und tragen das Material, das übergeben wird. Goldene Linien sind <strong>Kreuzungspunkte</strong> zwischen zwei Pfaden; dort setzen später die Cross-Mod-Rezepte und Quests an.</p>
-    <div class="meta"><span class="badge">ENTWURF · PHASE 2</span> &nbsp;Stand 2026-10-12 · Minecraft 1.20.1 · Quelle: docs/01_PROGRESSION, 03_ERZGENERATION, 15_RAUMFAHRT</div>
+    <p class="lede">Die Schlüssel-Meilensteine des Packs als Karte: jede Spalte ist ein Pfad, jede Zeile ein Kapitel des Questbuchs; der Fortschritt läuft von oben nach unten. Linien zeigen Voraussetzungen und tragen das Material, das übergeben wird. Jede Linie trägt die Farbe des Pfades, aus dem sie kommt. Wechselt eine Linie die Spalte, ist das ein <strong>Kreuzungspunkt</strong> zwischen zwei Pfaden; dort setzen später die Cross-Mod-Rezepte und Quests an. Die Story teilt die Karte in zwei Parts: Part 1 endet mit dem Fund des Meisters auf Glacio, Part 2 führt zu den Star-Wars-Welten und ist erst grob skizziert.</p>
+    <div class="meta"><span class="badge">ENTWURF · PHASE 2</span> &nbsp;Stand 2026-10-14 · Minecraft 1.20.1 · Quelle: docs/01_PROGRESSION, 03_ERZGENERATION, 15_RAUMFAHRT, 18_STORY</div>
   </header>
 
   <div class="stats" id="stats"></div>
 
   <figure>
-    <div class="map"><svg id="map" role="img" aria-label="Meilensteinkarte: acht Pfade über neun Stufen, alle Linien laufen auf die Star-Wars-Planeten zu."></svg></div>
-    <figcaption>Alle Pflicht-Linien laufen über die Rakete T4 (M22) auf die Star-Wars-Planeten (M23) zu: Tech über IE, Petroleum und Mekanism, Nuklear über die Uran-Kette, Magie über Botania und den Blood-Magic-Dungeon auf dem Merkur. Maus über einen Meilenstein hebt seine Voraussetzungen und Folgen hervor; Klick springt zur Beschreibung.</figcaption>
+    <div class="map"><svg id="map" role="img" aria-label="Meilensteinkarte: neun Pfade als Spalten, sechzehn Kapitel als Zeilen in zwei Story-Parts, alle Linien laufen auf die Star-Wars-Welten zu."></svg></div>
+    <figcaption>Part 1 läuft auf die Rakete T4 nach Glacio (RF4) zu: Tech über IE, Petroleum und Mekanism, Magie über Botania und das Elfenportal, Blue Skies über die Boss-Items, Blood Magic über den Tempel auf dem Merkur. Part 2 führt über die Raketen T5 (Endor) und T6 zu den Star-Wars-Welten (SW4) und mit T7 nach Mandalore (RF7). Die Beschriftung steht auf dem waagrechten Stück jeder Linie, kurz bevor sie zum Ziel abbiegt. Maus über einen Meilenstein hebt seine Voraussetzungen und Folgen hervor; Klick springt zur Beschreibung.</figcaption>
   </figure>
   <div class="legend">
     <span><svg width="18" height="12"><rect x="1" y="1" width="16" height="10" rx="2" fill="var(--done)" stroke="var(--done)"/></svg> erreicht</span>
     <span><svg width="18" height="12"><rect x="1" y="1" width="16" height="10" rx="2" fill="none" stroke="var(--part)" stroke-width="2"/></svg> begonnen</span>
     <span><svg width="18" height="12"><rect x="1" y="1" width="16" height="10" rx="2" fill="none" stroke="var(--open)" stroke-width="2" stroke-dasharray="3 2"/></svg> offen</span>
-    <span><svg width="26" height="10"><line x1="1" y1="5" x2="25" y2="5" stroke="var(--edge)" stroke-width="1.6"/></svg> Voraussetzung im selben Pfad</span>
-    <span><svg width="26" height="10"><line x1="1" y1="5" x2="25" y2="5" stroke="var(--cross)" stroke-width="2"/></svg> Kreuzungspunkt</span>
+    <span><svg width="26" height="10"><line x1="1" y1="5" x2="25" y2="5" stroke="#d4a72c" stroke-width="2"/></svg> Linienfarbe = Pfad, aus dem die Voraussetzung kommt</span>
     <span>Fett umrandet = Pflicht, dünn = optional</span>
   </div>
 
   <div class="list" id="list"></div>
 
   <section class="questions">
-    <h2>Offene Fragen zum Vorschlag</h2>
+    <h2>Fragenkatalog</h2>
+    <p>Alles, was für diese Karte noch entschieden werden muss. Die Story-Fragen stehen ausführlich in docs/18_STORY.md.</p>
+    <h3>Story Part 1</h3>
     <ol>
-      <li>Welche Magie- und Uran-Teile verlangt die Rakete T4: Terrasteel oder Alfsteel, Plutonium oder Polonium?</li>
-      <li>Soll Petroleum weiter Pflicht vor dem ersten Raumflug sein (Entscheidung vom 2026-10-07), obwohl T1 jetzt mit Biodiesel fliegt?</li>
-      <li>Ad Astra: Rocketed nutzen und die Star-Wars-Planeten auf T5 bis T7 staffeln, oder den Mod entfernen?</li>
-      <li>Cryo Fuel: entfernen oder als Zutat für den Raketentreibstoff T4 behalten?</li>
-      <li>Sind Everbright und Everdawn gleich früh erreichbar (M5 → M10)?</li>
-      <li>Steht die Tinkers-Schmelzerei in der Hauptwelt schon (M1 erreicht)?</li>
-      <li>Ist der AE2-Storage-Layer (M6) bei P3 früh genug?</li>
+      <li>Erste Quest „Würdig sein“ (SW1): Welche Items verlangt der Droide aus Botania und IE? Gehört ein Tinkers-Item dazu?</li>
+      <li>Tagebuch: Wie viele Ausschnitte, wann werden sie freigegeben, welche Rätsel?</li>
+      <li>Droide: Name. Steht er nur in der Basis? Ist er nach dem Dungeon weg oder zerstört, und kommt er in Part 2 zurück?</li>
+      <li>Mars und Venus (RF2, RF3) haben noch keine Story. Was passiert dort?</li>
+      <li>Welche Rolle spielen Mekanism und AE2 in der Geschichte?</li>
+      <li>Altar-Neubau (BM4): im Tempel auf dem Merkur oder in der Overworld?</li>
+      <li>Was finden die Spieler im Dungeon, und wo liegt der Text des Meisters?</li>
+      <li>Warum ist der Meister nach Glacio gegangen, und was ist mit dem Relikt?</li>
+      <li>Elf (BO5): Name und Charakter.</li>
+      <li>Glacio liegt in Ad Astra in einem anderen Sonnensystem, nicht in einer anderen Galaxie. Bleibt die „andere Galaxie“ den Star-Wars-Welten vorbehalten?</li>
+    </ol>
+    <h3>Platzhalter: welches Item genau?</h3>
+    <ol start="11">
+      <li>Schutz-Item für den Altar im Tempel (BO4 → BM4): Rune oder Terrasteel?</li>
+      <li>Boss-Items für den Elfen (BS3, BS4 → RF4): welche der vier Bosse, welche Items?</li>
+      <li>Tech-Erzeugnisse für den Elfen (MK4, MK5 → RF4): was aus IE, Petroleum und Mekanism?</li>
+      <li>Magische Komponenten der Rakete T4 (BO5 → RF4): Item aus dem Elfenportal (Elementium, Pixie Dust, Dreamwood) oder Terrasteel?</li>
+      <li>Bleiben das Dungeon-Item (BM4) und das Uran-Teil (MK5) Pflicht für die Rakete T4?</li>
+      <li>Treibstoff T4: Rezept und Kosten. Cryo Fuel entfernen oder als Zutat nutzen?</li>
+      <li>Wie übergibt der Elf das T4-Rezept: als Bauplan oder Schlüsselbauteil, das im Raketenrezept steckt?</li>
+    </ol>
+    <h3>Aufbau der Karte</h3>
+    <ol start="18">
+      <li>Feinere Aufteilung (2026-10-14): Je Mod mehrere Stufen nach den Modpfad-Seiten, 16 Kapitel. Passen Reihenfolge und Kapitelgrenzen? Die Kapitelnamen sind Arbeitstitel. Blood Magic, AE2 und Blue Skies haben noch keine Modpfad-Seite; ihre Stufen sind vorläufig und im JAR zu prüfen.</li>
+      <li>Everdawn (BS2) und die Blue-Skies-Bosse (BS3, BS4) sind jetzt Pflicht, weil der Elf Boss-Items verlangt. Alle vier Bosse oder nur einige?</li>
+      <li>Soll Petroleum weiter Pflicht vor dem ersten Raumflug sein, obwohl T1 mit Biodiesel fliegt?</li>
+      <li>Sind Everbright und Everdawn gleich früh erreichbar (BS1 → BS2)?</li>
+      <li>Steht die Tinkers-Schmelzerei in der Hauptwelt schon (TK1 erreicht)?</li>
+      <li>Ist der AE2-Storage-Layer (AE1) in Kapitel K3 früh genug?</li>
+    </ol>
+    <h3>Technik (aus den JARs geklärt am 2026-10-14, im Spiel noch zu testen)</h3>
+    <p>Die Ergebnisse stehen auf den Karten in der Zeile „Technik“ und ausführlich in docs/18_STORY.md.</p>
+    <ol start="24">
+      <li>Abgabe beim NPC: Easy NPC prüft Items im Inventar und führt Befehle für <code>@initiator</code> aus. Eine direkte Anbindung an FTB Quests gibt es nicht; der Weg läuft über eine Stage (Entity-Tag), die FTB Quests mit einer Stage-Aufgabe abfragt. Test im Spiel offen.</li>
+      <li>Elf und Droide erscheinen per Befehl als Quest-Belohnung (Easy NPC <code>preset import</code>, <code>despawn</code>). Test im Spiel offen.</li>
+      <li>Offen: Kapsel in der Basis und Tempel auf dem Merkur von Hand bauen oder als Struktur erzeugen?</li>
+      <li>Ritual nur im Tempel: nur über das Forge-Ereignis von Blood Magic, das KubeJS-Addon kennt nur Rezepte. Skript und Test offen.</li>
+      <li>Geklärt: Nach Alfheim kommt nur, wer den Mead of Kvasir getrunken hat. Der Gaia-Pylon braucht Alfsteel.</li>
+      <li>Geklärt: Das Questbuch lässt sich nicht zurückhalten; stattdessen Kapitel verbergen, bis „Würdig sein“ erledigt ist.</li>
+      <li><strong>Neu:</strong> Star Wars Planets schenkt mit der Rakete T3 das „Star Manual“ (Jedi, Sith, Kyber). Belohnung entfernen oder auf T5 verlegen?</li>
+    </ol>
+    <h3>Raketen: vier Hürden je Stufe</h3>
+    <p>Beschlossen (2026-10-14): Jede Rakete braucht (1) einen Rumpf aus dem Metall des zuletzt erreichten Ortes, (2) einen neuen Treibstoff, (3) eine neue Mekanism-Stufe, (4) ein Teil aus einem anderen Pfad. T3 braucht ein Teil aus Blood Magic, weil der Tempel den Planeten abschirmt. Ab T5 kommt das Rumpf-Material aus Alfheim.</p>
+    <ol start="31">
+      <li>Welche Mekanism-Stufe (Schaltkreise, Legierungen) gehört zu welcher Rakete? Legt der User fest.</li>
+      <li>Welche Botania-Items gehören zu welcher Rakete? Legt der User fest.</li>
+      <li>Welches Blood-Magic-Teil verlangt T3? Schirmt der Tempel nur den Merkur ab, oder gilt das Teil auch für den Flug zur Venus?</li>
+      <li>Mars-Station (T2, beschlossen: Station bauen, KubeJS-Quest prüft sie, erst dann kommt der Droide; Quest-Abgaben und Freischaltungen nur bei ihm auf dem Mars): Welche Blöcke auf die Checkliste, welcher Umkreis? Wie kommt der Droide hin? Automatischer Transport zwischen den Welten geht im Pack erst spät (Entangloporter und Chunkloader von Mekanism: Atomic Alloy und Ultimate-Schaltkreise; AE2-Quantenbrücke: Endgame). Später als eigener Meilenstein oder Rezepte verbilligen?</li>
+    </ol>
+    <h3>Part 2 (wird später besprochen)</h3>
+    <ol start="35">
+      <li>T5 führt nur nach Endor, T6 zu Tatooine, Hoth und Mustafar, T7 nach Mandalore (beschlossen). Was schaltet T7 frei?</li>
+      <li>Rezepte und flüssige Treibstoffe der Raketen T5 bis T7; welches Material aus Alfheim für T5?</li>
+      <li>Ablauf der Ausbildung, Prüfungen, Gaia.</li>
+      <li>Welche Bosse für den Meister, auf welchen Welten?</li>
+      <li>Lichtschwert-Quest und Kopfgeldjäger-Quests.</li>
     </ol>
   </section>
 </div>
@@ -152,57 +210,130 @@ document.getElementById("stats").innerHTML =
   `<span><span class="dot" style="background:var(--done)"></span><b>${cnt("done")}</b> erreicht</span>` +
   `<span><span class="dot" style="background:var(--part)"></span><b>${cnt("part")}</b> begonnen</span>` +
   `<span><span class="dot" style="background:var(--open)"></span><b>${cnt("open")}</b> offen</span>` +
-  `<span><b>${toGoal.size}</b> Meilensteine liegen auf dem Weg zu den Star-Wars-Planeten</span>`;
+  `<span><b>${toGoal.size}</b> Meilensteine liegen auf dem Weg zum Ziel (Rakete T7 nach Mandalore)</span>`;
 
-// Karte
-const LX = 130, CW = 170, TOP = 40, RH = 84, NW = 140, NH = 46;
-const W = LX + STAGES.length * CW + 20, H = TOP + PATHS.length * RH + 10;
-const svg = document.getElementById("map");
-svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+// Karte: Pfade als Spalten, Stufen als Zeilen, der Fortschritt läuft von oben nach unten.
+// Linien sind rechtwinklig geführt: waagrechte Stücke laufen in den Zwischenräumen der Stufen (jede Linie auf eigener
+// Höhe, dort steht auch ihre Beschriftung), lange senkrechte Stücke auf den Grenzen zwischen den Pfad-Spalten.
+// Jede Linie trägt die Farbe des Pfades, aus dem sie kommt.
+const LX = 92, PX = 30, CW = 196, TOP = 46, NW = 156, NH = 64, LANE = 14;
 const NS = "http://www.w3.org/2000/svg";
+const svg = document.getElementById("map");
 const el = (tag, attrs, parent = svg) => { const e = document.createElementNS(NS, tag); for(const k in attrs) e.setAttribute(k, attrs[k]); parent.appendChild(e); return e; };
-const cx = m => LX + (m.stage - 1) * CW + CW / 2;
-const cy = m => TOP + pathIdx[m.path] * RH + RH / 2;
+const colOf = n => pathIdx[n.path];
+
+const EDGES = [];
+MILESTONES.forEach(m => m.req.forEach(([rid, label]) => EDGES.push({a: byId[rid], m, label})));
+const spread = (i, n, step, max) => n < 2 ? 0 : (i - (n - 1) / 2) * Math.min(step, max / (n - 1));
+
+// Spuren vergeben: je Stufen-Zwischenraum (waagrecht) und je Spaltengrenze (senkrecht)
+const gutterUse = {}, trackUse = {};
+const take = (map, key) => (map[key] = (map[key] || 0) + 1) - 1;
+const occupied = (col, s1, s2) => MILESTONES.some(n => colOf(n) === col && n.stage > s1 && n.stage < s2);
+EDGES.slice().sort((p, q) => p.m.stage - q.m.stage || colOf(p.m) - colOf(q.m) || colOf(p.a) - colOf(q.a)).forEach(e => {
+  const {a, m} = e, ca = colOf(a), cm = colOf(m);
+  e.direct = m.stage - a.stage === 1 || (ca === cm && !occupied(ca, a.stage, m.stage));
+  if(!e.direct){
+    e.l1 = take(gutterUse, a.stage);
+    e.bound = ca > cm ? cm + 1 : cm;   // Spaltengrenze links bzw. rechts vom Ziel
+    e.track = take(trackUse, e.bound);
+  }
+  e.l2 = take(gutterUse, m.stage - 1);
+});
+
+// Zeilen: Die Höhe des Zwischenraums richtet sich nach der Zahl der Linien darin
+const rowTop = [0, TOP];
+for(let s = 1; s < STAGES.length; s++) rowTop[s + 1] = rowTop[s] + NH + 26 + Math.max(gutterUse[s] || 0, 1) * LANE;
+const W = LX + PATHS.length * CW + 8, H = rowTop[STAGES.length] + NH + 16;
+svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+svg.style.maxWidth = W + "px";
+const cx = m => LX + colOf(m) * CW + CW / 2;
+const nodeTop = m => rowTop[m.stage];
+const laneY = (g, lane) => rowTop[g] + NH + 16 + lane * LANE;
+const trackX = e => LX + e.bound * CW + (e.track - (trackUse[e.bound] - 1) / 2) * 5;
 
 PATHS.forEach((p, i) => {
-  if(i % 2 === 0) el("rect", {class:"lane-bg", x:0, y:TOP + i*RH, width:W, height:RH});
-  el("rect", {x:10, y:TOP + i*RH + RH/2 - 9, width:6, height:18, rx:1, fill:p.hue});
-  el("text", {class:"lane-label", x:24, y:TOP + i*RH + RH/2 + 4}).textContent = p.name;
+  if(i % 2 === 0) el("rect", {class:"lane-bg", x:LX + i*CW, y:0, width:CW, height:H});
+  el("rect", {x:LX + i*CW + CW/2 - 60, y:14, width:6, height:16, rx:1, fill:p.hue});
+  el("text", {class:"lane-label", x:LX + i*CW + CW/2 - 48, y:27}).textContent = p.name;
 });
 STAGES.forEach((s, i) => {
-  el("text", {class:"stage-label", x:LX + i*CW + CW/2, y:24}).textContent = i === STAGES.length - 1 ? s + " · Ziel" : s;
-  el("line", {class:"grid", x1:LX + i*CW, y1:TOP, x2:LX + i*CW, y2:H - 10});
+  const sx = PX + (LX - PX) / 2;
+  el("text", {class:"stage-label", x:sx, y:rowTop[i + 1] + NH/2 + 4}).textContent = s;
+  if(i === STAGES.length - 1) el("text", {class:"stage-label", x:sx, y:rowTop[i + 1] + NH/2 + 19}).textContent = "Ziel";
+  if(i) el("line", {class:"grid", x1:PX, y1:rowTop[i + 1] - 13, x2:LX - 8, y2:rowTop[i + 1] - 13});
+});
+// Story-Parts: Balken mit Beschriftung am linken Rand, gestrichelte Trennlinie über die ganze Breite
+PARTS.forEach((pt, i) => {
+  const y1 = rowTop[pt.from] + 2, y2 = rowTop[pt.to] + NH - 2, ym = (y1 + y2) / 2;
+  el("line", {class:"part-bar", x1:7, y1, x2:7, y2});
+  el("text", {class:"part-label", x:22, y:ym, transform:`rotate(-90 22 ${ym})`}).textContent = pt.name;
+  if(i) el("line", {class:"part-cut", x1:PX, y1:rowTop[pt.from] - 13, x2:W, y2:rowTop[pt.from] - 13});
+});
+
+// Ein- und Austrittspunkte am Meilenstein verteilen (unten hinaus, oben hinein)
+MILESTONES.forEach(n => {
+  const ins = EDGES.filter(e => e.m === n).sort((p, q) => colOf(p.a) - colOf(q.a) || p.a.stage - q.a.stage);
+  ins.forEach((e, i) => e.xIn = cx(n) + spread(i, ins.length, 26, NW - 44));
+  const outs = EDGES.filter(e => e.a === n).sort((p, q) => colOf(p.m) - colOf(q.m) || p.m.stage - q.m.stage);
+  outs.forEach((e, i) => e.xOut = cx(n) + spread(i, outs.length, 10, NW - 40));
+});
+
+function rounded(pts, r){
+  pts = pts.filter((p, i) => i === 0 || p[0] !== pts[i-1][0] || p[1] !== pts[i-1][1]);
+  let d = `M${pts[0][0]},${pts[0][1]}`;
+  for(let i = 1; i < pts.length - 1; i++){
+    const [px, py] = pts[i-1], [x, y] = pts[i], [nx, ny] = pts[i+1];
+    const l1 = Math.hypot(x - px, y - py), l2 = Math.hypot(nx - x, ny - y), k = Math.min(r, l1 / 2, l2 / 2);
+    if(k < 0.5){ d += ` L${x},${y}`; continue; }
+    d += ` L${x + (px - x) / l1 * k},${y + (py - y) / l1 * k} Q${x},${y} ${x + (nx - x) / l2 * k},${y + (ny - y) / l2 * k}`;
+  }
+  const last = pts[pts.length - 1];
+  return d + ` L${last[0]},${last[1]}`;
+}
+
+const defs = el("defs", {});
+PATHS.forEach(p => {
+  const mk = el("marker", {id:"mk" + p.id, viewBox:"0 0 10 10", refX:9, refY:5, markerWidth:4.5, markerHeight:4.5, markerUnits:"strokeWidth", orient:"auto-start-reverse"}, defs);
+  el("path", {d:"M0,0 L10,5 L0,10 z", fill:p.hue}, mk);
 });
 
 const edgeEls = [];
-MILESTONES.forEach(m => m.req.forEach(([rid, label]) => {
-  const a = byId[rid], cross = a.path !== m.path;
-  const x1 = cx(a) + NW/2, y1 = cy(a), x2 = cx(m) - NW/2 - 6, y2 = cy(m);
-  const mx = (x1 + x2) / 2;
-  const d = `M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2},${y2}`;
-  const p = el("path", {class:"edge" + (cross ? " cross" : ""), d, "marker-end": cross ? "url(#ac)" : "url(#an)"});
-  const t = el("text", {class:"elabel" + (cross ? " cross" : ""), x:mx, y:(y1 + y2)/2 - 4});
+const gEdges = el("g", {}), gLabels = el("g", {});
+EDGES.forEach(e => {
+  const {a, m, label} = e;
+  const y1 = nodeTop(a) + NH, y2 = nodeTop(m) - 3, yb = laneY(m.stage - 1, e.l2);
+  const xFrom = e.direct ? e.xOut : trackX(e);     // Beginn des letzten waagrechten Stücks
+  const pts = e.direct
+    ? [[e.xOut, y1], [e.xOut, yb], [e.xIn, yb], [e.xIn, y2]]
+    : [[e.xOut, y1], [e.xOut, laneY(a.stage, e.l1)], [xFrom, laneY(a.stage, e.l1)], [xFrom, yb], [e.xIn, yb], [e.xIn, y2]];
+  const p = el("path", {class:"edge", d: rounded(pts, 7), stroke: hue(a.path), "marker-end": `url(#mk${a.path})`}, gEdges);
+  el("title", {}, p).textContent = `${a.id} ${a.name} → ${m.id} ${m.name}: ${label}`;
+  // Beschriftung auf der eigenen Höhe der Linie, kurz vor dem Abbiegen zum Ziel
+  const near = Math.abs(xFrom - e.xIn) < 46;
+  const start = near || xFrom > e.xIn;
+  const t = el("text", {class:"elabel", "text-anchor": start ? "start" : "end", x: near ? Math.max(xFrom, e.xIn) + 6 : (start ? e.xIn + 7 : e.xIn - 7), y: yb - 4, style: `fill:color-mix(in srgb, ${hue(a.path)} 62%, var(--fg))`}, gLabels);
   t.textContent = label;
-  edgeEls.push({from:rid, to:m.id, p, t});
-}));
-
-const defs = el("defs", {});
-[["an","var(--edge)"],["ac","var(--cross)"]].forEach(([id, c]) => {
-  const mk = el("marker", {id, viewBox:"0 0 10 10", refX:9, refY:5, markerWidth:7, markerHeight:7, orient:"auto-start-reverse"}, defs);
-  el("path", {d:"M0,0 L10,5 L0,10 z", fill:c}, mk);
+  edgeEls.push({from:a.id, to:m.id, p, t});
 });
+
+const wrapName = s => {
+  const out = [""];
+  s.split(" ").forEach(w => { const cur = out[out.length - 1]; if(cur && (cur + " " + w).length > 20) out.push(w); else out[out.length - 1] = (cur + " " + w).trim(); });
+  return out.slice(0, 2);
+};
 
 const nodeEls = {};
 MILESTONES.forEach(m => {
   const g = el("g", {class:"node", tabindex:0, role:"link", "aria-label":`${m.id} ${m.name}, ${STATUS[m.status]}`});
-  const x = cx(m) - NW/2, y = cy(m) - NH/2, c = hue(m.path);
+  const x = cx(m) - NW/2, y = nodeTop(m), c = hue(m.path);
   const r = el("rect", {x, y, width:NW, height:NH, rx:4, fill: m.status === "done" ? c : "var(--panel)", stroke: m.status === "open" ? "var(--open)" : (m.status === "part" ? "var(--part)" : c), "stroke-width": m.must ? 2.5 : 1.2});
   if(m.status === "open") r.setAttribute("stroke-dasharray", "4 3");
   if(m.status === "done") r.setAttribute("fill-opacity", ".28");
   el("rect", {x, y, width:5, height:NH, rx:2, fill:c}, g);
-  el("text", {class:"id", x:x + 12, y:y + 17}, g).textContent = m.id + (m.must ? " · Pflicht" : "");
-  const nm = el("text", {class:"nm", x:x + 12, y:y + 34}, g);
-  nm.textContent = m.name.length > 21 ? m.name.slice(0, 20) + "…" : m.name;
+  const lines = wrapName(m.name);
+  el("text", {class:"id", x:x + 12, y:y + (lines.length > 1 ? 18 : 25)}, g).textContent = m.id + (m.must ? " · Pflicht" : "");
+  lines.forEach((ln, i) => { el("text", {class:"nm", x:x + 12, y:y + (lines.length > 1 ? 35 : 44) + i * 15}, g).textContent = ln; });
   el("title", {}, g).textContent = `${m.id} ${m.name}\n${m.what}`;
   g.insertBefore(r, g.firstChild);
   nodeEls[m.id] = g;
@@ -225,14 +356,15 @@ const list = document.getElementById("list");
 STAGES.forEach((s, i) => {
   const ms = MILESTONES.filter(m => m.stage === i + 1).sort((a, b) => pathIdx[a.path] - pathIdx[b.path]);
   if(!ms.length) return;
-  let h = `<div class="stage-block"><div class="stage-head"><h2>${i === STAGES.length - 1 ? s + " · Ziel" : s}</h2><span class="s">${ms.length} Meilenstein${ms.length > 1 ? "e" : ""}</span></div><div class="cards">`;
+  let h = `<div class="stage-block"><div class="stage-head"><h2>${s} · ${CHAPTERS[i]}${i === STAGES.length - 1 ? " · Ziel" : ""}</h2><span class="s">${ms.length} Meilenstein${ms.length > 1 ? "e" : ""}</span></div><div class="cards">`;
   ms.forEach(m => {
     const reqs = m.req.length ? m.req.map(([r, l]) => `<a href="#${r}">${r} ${byId[r].name}</a> (${l})`).join(", ") : "–";
     const next = (kids[m.id] || []).map(k => `<a href="#${k}">${k}</a>`).join(", ") || "–";
     h += `<article class="card" id="${m.id}" style="--lane-hue:${hue(m.path)}">
       <div class="top"><span class="mid">${m.id}</span><span class="nm">${m.name}</span></div>
       <div class="top"><span class="pill">${PATHS[pathIdx[m.path]].name}</span><span class="pill ${m.status}">${STATUS[m.status]}</span><span class="pill ${m.must ? "must" : ""}">${m.must ? "Pflicht" : "optional"}</span></div>
-      <dl><dt>Inhalt</dt><dd>${m.what}</dd><dt>Braucht</dt><dd>${reqs}</dd><dt>Öffnet</dt><dd>${next}</dd><dt>Kreuzung</dt><dd>${m.cross}</dd><dt>Weltstand</dt><dd>${m.world}</dd></dl>
+      <dl><dt>Inhalt</dt><dd>${m.what}</dd><dt>Braucht</dt><dd>${reqs}</dd><dt>Öffnet</dt><dd>${next}</dd><dt>Kreuzung</dt><dd>${m.cross}</dd><dt>Story</dt><dd>${m.story || "–"}</dd><dt>Technik</dt><dd>${m.tech || "–"}</dd><dt>Weltstand</dt><dd>${m.world || "–"}</dd></dl>
+      ${m.spoiler ? `<details><summary>Spoiler</summary><p>${m.spoiler}</p></details>` : ""}
     </article>`;
   });
   list.insertAdjacentHTML("beforeend", h + "</div></div>");

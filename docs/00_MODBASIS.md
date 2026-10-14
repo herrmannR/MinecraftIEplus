@@ -61,7 +61,7 @@ Verbindliche Mod-Liste des Packs. Die Liste wird nicht stillschweigend veränder
 | Ad Astra: Giselle Addon | 6.27 | MR | Fuel Loader, Anbindung an Mekanism und Tinkers |
 | Ad Astra: More Structures | 1.0.2 | — | Dungeons und Bosse auf den Planeten |
 | Mekanism: Ad Astra Ores | 1.1.0 | — | nur die Erzblöcke in Planetengestein; eigene Generierung abgeschaltet |
-| Ad Astra: Rocketed | 1.0.5 | — | Raketen T5–T7; 🔵 installiert, Entscheidung offen |
+| Ad Astra: Rocketed | 1.0.5 | — | Raketen T5–T7; 🟢 bleibt (2026-10-13), Star-Wars-Planeten auf T5 und T6 |
 | Star Wars Planets (Ad-Astra-Version) | 1.4.6.1 | MR / CF | Tatooine, Hoth, Endor, Mustafar, Mandalore; Kyber, Beskar |
 | Star Wars: Galaxy in a Cube | 1.0.3.1 | MR | Lichtschwerter, Macht, Klone, Droiden |
 
@@ -208,6 +208,10 @@ In `disabledmods/` der Testinstanz liegen noch: Twilight Forest, Twilight Spark 
 
 - **`forge:sand` ist leer:** Star Wars Planets trägt `swplanets:mustafar_sand` in das Item-Tag ein (🟢 im JAR bestätigt, 2026-10-12); das Item gibt es nicht, Minecraft verwirft das ganze Tag. Folge: Mekanism meldet „Broken tags“, Rezepte mit `#forge:sand` fehlen. 🔵 Fix per KubeJS (TODO D13).
 - **Blood-Smeltery teilweise defekt:** verweist auf vier nicht registrierte Flüssigkeiten (`*_molten_hellforged`); die Schmelzrezepte dazu fehlen, das JEI-Plugin wirft einen Fehler. `forge:coins` ist leer. Im Log vom 23:07 Uhr laden außerdem rund 25 Rezepte nicht (Chiller, Crucible, Melter, Press).
+  - Ursache (2026-10-12, Bytecode von 1.2.1a geprüft): `BloodSmelteryContent.initHellforgedFluids()` bricht die Schleife nach dem ersten Will-Typ (`DEFAULT`) immer ab; es wird nur `molten_hellforged` registriert. Mod-Bug, per Config nicht behebbar. Betroffen sind nur die vier Block-Schmelzrezepte `smeltery/melting/metal/hellforged/block/<typ>`, die zugehörigen Tags und Eimer-Modelle.
+  - JEI-Fehler: `NoClassDefFoundError cofh/core/common/item/CoinItem`, weil das Plugin `ThermalIntegration` anfasst, obwohl Thermal/CoFH Core fehlt. Aus demselben Grund gibt es keine `bloodbrass_coin` (`forge:coins/bloodbrass` leer).
+  - Neuere Version: keine. 1.2.1a (2026-09-30) ist laut Modrinth die aktuellste für 1.20.1 (geprüft 2026-10-12).
+  - Die Rezepte der Typen `thermal:*`, `cyclic:melter` und `bloodsmeltery:numismatic_fuel` gehören zu nicht installierten Mods und sind folgenlos.
 - Fehlermeldungen zu Rezepten für nicht installierte Mods (Thermal, Cyclic u. a.) sind harmlos.
 
 ## Offene Punkte
