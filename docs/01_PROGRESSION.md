@@ -12,7 +12,7 @@ Die spielerische Entwicklung des Modpacks und die Abhängigkeiten zwischen den M
 
 ## Kapitel (Orientierung, kein Lock-System)
 
-Die Karte (`meilensteine/`, Artifact-Seite) ist am 2026-10-14 feiner aufgeteilt worden: 16 Kapitel, 50 Meilensteine mit Kürzeln je Pfad (TK, IE, BO, BM, MK, AE, BS, RF, SW), je Mod mehrere Stufen nach den Modpfad-Seiten. Jede Zeile wird ein Kapitel im Questbuch; die Kapitelnamen sind Arbeitstitel.
+Die Karte (`meilensteine/`, Artifact-Seite) ist am 2026-10-14 feiner aufgeteilt worden: 16 Kapitel, 51 Meilensteine mit Kürzeln je Pfad (TK, IE, BO, BM, MK, AE, BS, RF, SW), je Mod mehrere Stufen nach den Modpfad-Seiten. Jede Zeile wird ein Kapitel im Questbuch; die Kapitelnamen sind Arbeitstitel.
 
 | Kapitel | Progression | Story |
 |---|---|---|
@@ -20,19 +20,20 @@ Die Karte (`meilensteine/`, Artifact-Seite) ist am 2026-10-14 feiner aufgeteilt 
 | K1 Ankunft | Tinkers: Werkzeuge und Melter · IE: Koks und erster Stahl · Botania: Blüten und Lebendholz | Einschlag der Kapsel |
 | K2 Würdig sein | Smeltery · IE: Strom und Förderbänder · Mana und Manasteel | Droide, „Würdig sein“ (SW1), Questbuch |
 | K3 Industrie | IE: Schwermaschinen und Biodiesel · Runenaltar · Blutaltar · Mekanism: Infuser und Sauerstoff · AE2: Storage-Layer · Everbright | – |
-| K4 Der Mond | Erdöl und Destillation · Mekanism-Grundmaschinen · Everdawn · **Rakete T1** | erstes großes Ziel |
+| K4 Der Mond | Erdöl und Destillation · Mekanism-Grundmaschinen · Everdawn · **Rakete T1** | erstes großes Ziel; Einsiedler (SW2): Questbuch, Credits und Shop; Mond abgeschirmt, Hinweis auf den Mars |
 | K5 Erzketten | Alloyer und Foundry · entschwefelter Diesel · Altar T3 und Soul Forge · Mekanism Advanced · Bosse in Everbright | offen |
 | K6 Der Mars | IE-Großindustrie · Terrasteel · Bosse in Everdawn · **Rakete T2** | Signale von der Erde zu schwach |
-| K7 Horchposten | Planetenmetalle gießen · Altar T4 und Rituale · Mekanism Elite und Chemie | Mars-Station (SW2), der Droide zieht auf den Mars |
+| K7 Horchposten | Planetenmetalle gießen · Altar T4 und Rituale · Mekanism Elite und Chemie | Mars-Station (SW3), der Droide zieht auf den Mars |
 | K8 Hitze | **Rakete T3** | der zerstörte Tempel |
 | K9 Der Tempel | Tempel und Dungeon (BM4) · Kernkraft · ME-System | Meister entkommen, Droide fällt aus, Text des Meisters |
 | K10 Der Elf | Elfenportal (BO5) · Mekanism Ultimate und Teleportation | Elf; Boss-Items und Tech-Erzeugnisse |
-| K11 Glacio | **Rakete T4** (RF4) | Barriere, Meister gefunden; Ende von Part 1 |
-| **Part 2 · Ausbildung zum Jedi und Rückkehr in die weit, weit entfernte Galaxis** (wird später besprochen) | | |
-| K12 Ausbildung | Altar T5 · Alfheim betreten · Fusion | Ausbildung beim Meister (SW3) |
-| K13 Endor | Gaia · SPS und Antimaterie · AE2-Quantenbrücke · **Rakete T5** | Basis des Meisters; Gaia als Prüfung |
-| K14 Hyperraum | Altar T6 · **Rakete T6** | offen |
-| K15 Star-Wars-Welten | Meka-Ausrüstung und QIO | Bosse, Kopfgeldjagd, Lichtschwerter (SW4) |
+| K11 Glacio | **Rakete T4** (RF4) | Barriere, Meister gefunden und in die Overworld zurückgebracht; Ende von Part 1 |
+| **Part 2 · Ausbildung zum Jedi und Vorbereitung T5** (wird später besprochen) | | |
+| K12 Ausbildung | Altar T5 · Alfheim betreten · Fusion | Ausbildung beim Meister (SW4) |
+| K13 Die Prüfung | Gaia · SPS und Antimaterie · AE2-Quantenbrücke · **Rakete T5** | Gaia als Prüfung; Rakete T5 fertig, Ende von Part 2 |
+| **Part 3 · Rückkehr in die weit, weit entfernte Galaxis** (wird später besprochen) | | |
+| K14 Endor | Altar T6 · **Rakete T6** | Ankunft auf Endor, Basis des Meisters; sonst offen |
+| K15 Star-Wars-Welten | Meka-Ausrüstung und QIO | Bosse, Kopfgeldjagd, Lichtschwerter (SW5) |
 | K16 Mandalore | **Rakete T7** | offen |
 
 Vorschlag für die Mekanism-Stufe je Rakete (der User legt fest): T1 Basic, T2 Advanced, T3 Elite, T4 Ultimate, T5 Fusion, T6 SPS und Antimaterie, T7 offen.
@@ -105,7 +106,7 @@ Erzprüfung (2026-10-14): Bis T4 liegt jedes Rumpf-Metall auf dem Planeten davor
 - 🟢 Energie, Treibstoff und Sauerstoff nur aus IE, Immersive Petroleum und Mekanism. Ad-Astra-Erzeuger, Kabel, Pipes und Water Pump werden entfernt (`15_RAUMFAHRT.md`).
 - 🟢 T1 verlangt mindestens eine erste Mekanism-Maschine (über den Sauerstoff).
 - 🟢 T4 (2026-10-13): Das Rezept gibt der Elf, nachdem er Boss-Items aus Blue Skies und Erzeugnisse der Tech-Mods erhalten hat. Die Rakete braucht magische Komponenten. 🔵 Welche Items genau; ob Uran-Teil und Dungeon-Item Pflicht bleiben.
-- 🟢 „Ad Astra: Rocketed“ bleibt: T5 nur Endor, T6 die übrigen Star-Wars-Welten außer Mandalore, T7 Mandalore (2026-10-14). 🔵 Rezepte und flüssige Treibstoffe in Part 2.
+- 🟢 „Ad Astra: Rocketed“ bleibt: T5 nur Endor, T6 die übrigen Star-Wars-Welten außer Mandalore, T7 Mandalore (2026-10-14). 🔵 Rezepte und flüssige Treibstoffe in Part 2 und 3.
 
 ## Kreuzungspunkte statt linearer Gates
 
@@ -147,7 +148,7 @@ Neue Gates dürfen bereits erreichten Fortschritt nicht rückwirkend sperren.
 0. Der vollständige Fragenkatalog steht auf der Meilensteinkarte und in `18_STORY.md`.
 1. 🔵 Magische Komponenten der Rakete T4; ob Uran-Teil und Dungeon-Item Pflicht bleiben.
 2. 🔵 Soll Petroleum weiter Pflicht vor dem ersten Raumflug sein (Entscheidung vom 2026-10-07)? T1 fliegt jetzt mit Biodiesel.
-3. 🟡 Ad Astra: Rocketed bleibt (User, 2026-10-13): Die Star-Wars-Planeten verlangen mindestens T5 und T6; T4 führt nur noch nach Glacio. 🔵 Offen: welcher Planet auf welcher Stufe, Rezepte und Treibstoffe (Part 2).
+3. 🟡 Ad Astra: Rocketed bleibt (User, 2026-10-13): Die Star-Wars-Planeten verlangen mindestens T5 und T6; T4 führt nur noch nach Glacio. 🔵 Offen: welcher Planet auf welcher Stufe, Rezepte und Treibstoffe (Part 2 und 3).
 4. 🔵 Cryo Fuel: entfernen oder Zutat des T4-Treibstoffs.
 5. 🔵 Meilensteinkarte als Ganzes bestätigen oder korrigieren (Reihenfolge, Pflicht oder optional).
 6. 🔵 Kostenrahmen je Meilenstein (Phase 3).

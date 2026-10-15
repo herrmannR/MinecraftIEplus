@@ -723,3 +723,15 @@ Wunsch des Users: Progression granularer und gestreckt, damit für die Raketen T
 
 ### Auswirkungen auf bestehende Welt
 Keine. Weltstand: IE bis Schwermaschinen und Biodiesel erreicht, Botania bis Runenaltar erreicht, Tinkers, Petroleum und IE-Großindustrie begonnen.
+
+## 2026-10-14 — Story in drei Teilen
+
+### Änderung
+- Story in drei statt zwei Teilen (User): Part 1 bis zur Rückkehr des Meisters in die Overworld (K1–K11), Part 2 Ausbildung und Vorbereitung T5 (K12–K13, endet mit der fertigen Rakete T5), Part 3 die Star-Wars-Welten ab der Ankunft auf Endor (K14–K16).
+- Kapitelnamen (Arbeitstitel): K13 heißt jetzt „Die Prüfung“, K14 „Endor“ (vorher „Endor“ und „Hyperraum“); die Ankunft auf Endor steht am Anfang von K14.
+
+### Betroffene Bereiche
+- `18_STORY.md`, `01_PROGRESSION.md`, `15_RAUMFAHRT.md`, `00_STATUS.md`, `meilensteine/`, Sammelseite
+
+### Auswirkungen auf bestehende Welt
+Keine.

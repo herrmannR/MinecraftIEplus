@@ -27,7 +27,7 @@ Am 2026-10-11 wurde der Wechsel von 1.18.2 auf **Minecraft 1.20.1, Forge 47.4.26
 | `13_TESTINSTANZ_CHANGELOG.md` | gilt nur für die 1.18.2-Testinstanz |
 | `01_PROGRESSION.md` | 🟡 1.20.1, vier Fragen offen |
 | `meilensteine/` (samt Artifact-Seite) | 🟡 1.20.1, am 2026-10-14 nach der Story umgebaut: 50 Meilensteine, 9 Pfade, 16 Kapitel in zwei Parts, Fragenkatalog (feiner aufgeteilt am 2026-10-14) |
-| `18_STORY.md` | 🟡 begonnen am 2026-10-13: Part 1 (Finden des Meisters) im Umriss, Part 2 folgt; die Story schreibt der User |
+| `18_STORY.md` | 🟡 begonnen am 2026-10-13: Part 1 (Finden des Meisters) im Umriss, Part 2 (Ausbildung, Vorbereitung T5) und Part 3 (Star-Wars-Welten ab Endor) folgen; die Story schreibt der User |
 
 ### TODO-Liste für den Neustart
 

@@ -232,7 +232,7 @@ Die Erze sind normale JSON-Features in den Biom-Dateien und lassen sich per Data
 
 Aus JAR: Der Mod fügt nur drei Raketen T5, T6 und T7 hinzu, jeweils mit eigenem Treibstoff-Tag (`ad_astra_rocketed:tier_5_rocket_fuel` usw.). **Er bringt keine Planeten mit, die diese Stufen verlangen.** Die Standard-Rezepte sind schwach (T5: Ice Shard statt Nose Cone, sonst Calorite; T6: Echo Shard; T7: Echo Shard und Permafrost-Fliesen).
 
-🟢 T4 führt nur noch nach Glacio, T5 nur nach Endor, T6 nach Tatooine, Hoth und Mustafar, T7 nach Mandalore (User, 2026-10-14). Dafür müssen die Stufen in den Planeten-Dateien von Star Wars Planets per Datapack geändert werden. 🔵 Offen: neue Rezepte und flüssige Treibstoffe. Das gehört zu Part 2 der Story (`18_STORY.md`) und wird später besprochen.
+🟢 T4 führt nur noch nach Glacio, T5 nur nach Endor, T6 nach Tatooine, Hoth und Mustafar, T7 nach Mandalore (User, 2026-10-14). Dafür müssen die Stufen in den Planeten-Dateien von Star Wars Planets per Datapack geändert werden. 🔵 Offen: neue Rezepte und flüssige Treibstoffe. Das gehört zu Part 2 und 3 der Story (`18_STORY.md`) und wird später besprochen.
 
 ## Progression der Raketenstufen (🟡 Stand 2026-10-14; die ganze Karte steht in `docs/meilensteine/`)
 
@@ -242,9 +242,9 @@ Aus JAR: Der Mod fügt nur drei Raketen T5, T6 und T7 hinzu, jeweils mit eigenem
 | T2 → Mars | Ostrum, Fluorit | entschwefelter Diesel (Petroleum); Mekanism-Ausbau |
 | T3 → Merkur, Venus | Calorite (Venus); Uran und Blei; Hitzeschutz nötig | Kerosin; **Tempel mit dem Blood-Magic-Dungeon nur auf dem Merkur** |
 | T4 → Glacio | Fund des Meisters, Ende von Part 1 | Rezept vom Elfen; **magische Komponenten** (🔵 Item aus dem Elfenportal ?); deutlich aufwendigerer Treibstoff; 🔵 ob Uran-Teil und Dungeon-Item Pflicht bleiben |
-| T5 → Endor | Kyber | Rumpf aus Alfheim; 🔵 Part 2 |
-| T6 → Tatooine, Hoth, Mustafar | Kyber | 🔵 Part 2 |
-| T7 → Mandalore | Beskar | 🔵 Part 2 |
+| T5 → Endor | Kyber | Rumpf aus Alfheim; Bau am Ende von Part 2, Ankunft zu Beginn von Part 3; 🔵 |
+| T6 → Tatooine, Hoth, Mustafar | Kyber | 🔵 Part 3 |
+| T7 → Mandalore | Beskar | 🔵 Part 3 |
 
 🟢 Vier Hürden je Rakete (2026-10-14): Rumpf aus dem Metall des zuletzt erreichten Ortes, neuer Treibstoff, neue Mekanism-Stufe, ein Teil aus einem anderen Pfad; T3 zusätzlich ein Teil aus Blood Magic. Einzelheiten in `01_PROGRESSION.md`.
 

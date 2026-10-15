@@ -1,7 +1,8 @@
 // Meilensteine – ENTWURF für Minecraft 1.20.1. Feiner aufgeteilt am 2026-10-14 nach den Modpfad-Seiten (docs/modpfade/) und der Story (docs/18_STORY.md).
 // Beschlossen (User): Erzverteilung, Treibstoff T1–T3, Blood-Magic-Dungeon auf Merkur, Blue-Skies-Werkzeugabschwächung (2026-10-12);
-// Story in zwei Parts, Alfheim und Gaia in Part 2 (2026-10-13); T5 nur Endor, T6 Tatooine/Hoth/Mustafar, T7 Mandalore, vier Hürden je Rakete,
-// T3 braucht ein Blood-Magic-Teil, Mars-Station als Horchposten, jede Zeile = ein Kapitel im Questbuch (2026-10-14). Alles andere ist 🔵.
+// Story in drei Parts (2026-10-14; Part 2 Ausbildung und Vorbereitung T5, Part 3 ab Endor), Alfheim und Gaia in Part 2 (2026-10-13); T5 nur Endor, T6 Tatooine/Hoth/Mustafar, T7 Mandalore, vier Hürden je Rakete,
+// T3 braucht ein Blood-Magic-Teil, Mars-Station als Horchposten, jede Zeile = ein Kapitel im Questbuch, Einsiedler auf dem Mond mit Questbuch,
+// Nebenquests gegen Credits und Shop; kein Questbuch vor dem Mond; Galaxy in a Cube nur in Star-Wars-Welten; Baupläne schalten Rezepte global frei (2026-10-14). Alles andere ist 🔵.
 // Pfade = Spalten, Stufen = Zeilen = Kapitel (CHAPTERS sind Arbeitstitel). Je Pfad höchstens ein Meilenstein pro Zeile.
 // IDs: Kürzel des Pfades + laufende Nummer (TK Tinkers, IE IE/Petroleum, BO Botania, BM Blood Magic, MK Mekanism, AE AE2, BS Blue Skies, RF Raumfahrt, SW Star Wars · Story).
 // status: "done" = in der Hauptwelt erreicht, "part" = begonnen/teilweise, "open" = offen
@@ -23,10 +24,11 @@ const PATHS = [
 
 const STAGES = ["K1","K2","K3","K4","K5","K6","K7","K8","K9","K10","K11","K12","K13","K14","K15","K16"];
 const CHAPTERS = ["Ankunft","Würdig sein","Industrie","Der Mond","Erzketten","Der Mars","Horchposten","Hitze","Der Tempel","Der Elf","Glacio",
-                  "Ausbildung","Endor","Hyperraum","Star-Wars-Welten","Mandalore"];
+                  "Ausbildung","Die Prüfung","Endor","Star-Wars-Welten","Mandalore"];
 const PARTS = [
-  {from:1,  to:11, name:"Part 1 · Finden des Meisters"},
-  {from:12, to:16, name:"Part 2 · Ausbildung und Rückkehr (grob)"}
+  {from:1,  to:11, name:"Part 1 · Finden des Meisters und Rückkehr"},
+  {from:12, to:13, name:"Part 2 · Ausbildung"},
+  {from:14, to:16, name:"Part 3 · Star-Wars-Welten"}
 ];
 const GOAL = "RF7";
 
@@ -78,11 +80,11 @@ const MILESTONES = [
 
   {id:"SW1", path:"I", stage:2, name:"Droide · Würdig sein", status:"open",
    req:[["TK1","Tinkers-Item ?"],["IE1","IE-Item ?"],["BO1","Botania-Item ?"]], must:true,
-   what:"Erste Quest. Die Spieler bringen dem Droiden Items aus mehreren Mods als Beweis, dass sie eine weit entwickelte Spezies sind. Danach öffnen sich die weiteren Kapitel.",
-   cross:"Start des Questbuchs. Welche Items genau verlangt werden, ist offen.",
+   what:"Erste Quest. Die Spieler bringen dem Droiden Items aus mehreren Mods als Beweis, dass sie eine weit entwickelte Spezies sind. Danach gibt der Droide die großen Ziele vor.",
+   cross:"Bis zum Mond gibt es kein Questbuch: Der Droide führt allein über Easy-NPC-Quests. Welche Items genau verlangt werden, ist offen.",
    story:"Eine kugelförmige Kapsel schlägt in der Basis ein. Darin sitzt ein Droide: Sein Meister ist verschollen und hat ihn zur nächsten Lebensform geschickt, zu drei Individuen. Er übergibt Tagebuch-Ausschnitte mit Rätseln. Charakter: lustig, aber mechanisch ernst.",
    spoiler:"Droide und Meister kommen aus einer weit, weit entfernten Galaxis. Der Droide verrät das nicht und gibt nur kleine Hinweise.",
-   tech:"Abgabe im Dialog des Droiden (Easy NPC: Item prüfen, <code>clear @initiator</code>, Stage per <code>tag</code>) schließt die FTB-Quest über eine Stage-Aufgabe ab. Das Questbuch lässt sich nicht zurückhalten; stattdessen bleiben alle Kapitel außer dem ersten verborgen, bis die Quest erledigt ist (ungetestet).",
+   tech:"Abgabe im Dialog des Droiden (Easy NPC: Item prüfen, <code>clear @initiator</code>, Stage per <code>tag</code>) setzt eine Stage. Das Questbuch lässt sich über das Inventar öffnen; es bleibt leer (alle Kapitel verborgen), bis der Einsiedler auf dem Mond es freigibt (ungetestet).",
    world:"Die Kapsel muss in der Basis der Hauptwelt gesetzt werden (von Hand oder als Struktur)."},
 
   // ───── K3 Industrie
@@ -155,8 +157,17 @@ const MILESTONES = [
    req:[["IE3","Stahl · Biodiesel · Platten"],["MK1","Sauerstoff · Basic"],["SW1","Auftrag: Mond"]], must:true,
    what:"NASA Workbench, Rakete T1, Launch Pad, Space Suit, Oxygen Loader. Erster Raumflug. Hürden: Stahl, Biodiesel, Mekanism Basic, IE Metal Press.",
    cross:"Der Mond liefert Desh für T2 und Osmium in Menge.",
-   story:"Erstes großes Ziel, das der Droide vorgibt.",
+   story:"Erstes großes Ziel, das der Droide vorgibt. Er hofft, den Meister vom Mond aus zu orten.",
    world:"–"},
+
+  {id:"SW2", path:"I", stage:4, name:"Einsiedler · Questbuch · Shop", status:"open",
+   req:[["RF1","Flug zum Mond"]], must:true,
+   what:"Auf dem Mond lebt ein außerirdischer Einsiedler in einer eigenen Mondbasis. Nach einer kleinen Quest für ihn vertraut er den Spielern und gibt ihnen das Questbuch. Darin stehen seine Aufgaben (die Nebenquests, Belohnung Credits sofort nach dem Erfüllen) und als „Notizen“ die Aufgaben des Droiden (die Hauptquests). Credits sind die Währung seines Shops; gehandelt wird nur bei ihm auf dem Mond.",
+   cross:"Ab dem folgenden Kapitel gibt es Nebenquests. Shop: Items und Rohstoffe für Droiden (offen), Baupläne für Droid Fabricator und Assembly Bench, Rezepte für Blaster und für einzelne Droiden als Wachen (Galaxy in a Cube). Diese Waren gibt es nirgends sonst: Galaxy in a Cube wird komplett aus allen Nicht-Star-Wars-Dimensionen entfernt.",
+   story:"Er ist alt, lebt schon lange hier und schweigt über seine Vergangenheit. Ein lustiger Typ, der den Spielern gern vom Mond aus zusieht; deshalb zahlt er Credits für Aufgaben, die ihm eigentlich nichts bringen. Er kennt die Bauart des Droiden und ist ihm gegenüber sehr misstrauisch. Er schirmt den Mond ab, deshalb kann der Droide den Meister von hier nicht orten. Er verrät, dass es vom Mars aus sehr gut geht.",
+   spoiler:"Er kommt aus derselben Galaxis wie der Droide. Dass Star Wars im Spiel ist, dürfen die Mitspieler ab hier erraten; das eigentliche Geheimnis ist, dass man wirklich zu den Star-Wars-Welten reisen kann.",
+   tech:"Handel mit Easy NPC (Handelsfenster per Dialog-Knopf, erst nach seiner Quest). Währung: Credits von Galaxy in a Cube (Rezept aus Kupfer entfernen), Auszahlung als Item-Belohnung in FTB Quests. Bauplan = Buch-Item, das das Rezept zeigt (bei Droiden Steuerkern und Droide). Beim Kauf schaltet KubeJS das Rezept einmalig für die ganze Welt frei; vorher ist es in JEI ausgeblendet und liefert an der Werkbank nichts. Droiden einzeln über einen Steuerkern je Typ als zusätzliche Fabricator-Zutat. Alles ungetestet; Skripte erst, wenn die Story von Part 1 steht.",
+   world:"Seine Mondbasis muss gebaut werden (von Hand beim Host oder als Struktur)."},
 
   // ───── K5 Erzketten
   {id:"TK3", path:"A", stage:5, name:"Alloyer und Foundry", status:"open",
@@ -217,10 +228,10 @@ const MILESTONES = [
    world:"–"},
 
   {id:"RF2", path:"H", stage:6, name:"Rakete T2 → Mars", status:"open",
-   req:[["RF1","Desh"],["IE5","Diesel"],["MK3","Advanced ?"],["BS1","Zinn · Aluminium ?"]], must:true,
+   req:[["RF1","Desh"],["IE5","Diesel"],["MK3","Advanced ?"],["BS1","Zinn · Aluminium ?"],["SW2","Hinweis: Mars"]], must:true,
    what:"Desh-Rakete mit entschwefeltem Diesel. Mars liefert Ostrum und Fluorit. Hürden: Desh, Diesel, Mekanism Advanced (?), Everbright (?).",
    cross:"IE bleibt nötig (Metal Press für die Platten).",
-   story:"Horchposten: Von der Erde aus sind die Signale des Meisters zu schwach; auf dem Mars muss eine Station entstehen.",
+   story:"Horchposten: Von der Erde aus sind die Signale des Meisters zu schwach, und den Mond schirmt der Einsiedler ab. Er verrät, dass es vom Mars aus sehr gut geht; dort muss eine Station entstehen.",
    tech:"Raketen haben ein Inventar für kleine Fracht.",
    world:"–"},
 
@@ -246,7 +257,7 @@ const MILESTONES = [
    story:"–",
    world:"–"},
 
-  {id:"SW2", path:"I", stage:7, name:"Mars-Station · Horchposten", status:"open",
+  {id:"SW3", path:"I", stage:7, name:"Mars-Station · Horchposten", status:"open",
    req:[["RF2","Flug zum Mars"]], must:true,
    what:"Die Spieler bauen auf dem Mars eine richtige Station. Eine eigene Quest prüft, ob sie steht. Erst dann kommt der Droide auf den Mars.",
    cross:"Quest-Abgaben und Freischaltungen gibt es nur beim Droiden auf dem Mars.",
@@ -256,7 +267,7 @@ const MILESTONES = [
 
   // ───── K8 Hitze
   {id:"RF3", path:"H", stage:8, name:"Rakete T3 → Merkur, Venus", status:"open",
-   req:[["RF2","Ostrum"],["IE4","Kerosin"],["MK4","Elite ?"],["BM3","Schutz gegen den Tempel ?"],["SW2","Spur zum Merkur"]], must:true,
+   req:[["RF2","Ostrum"],["IE4","Kerosin"],["MK4","Elite ?"],["BM3","Schutz gegen den Tempel ?"],["SW3","Spur zum Merkur"]], must:true,
    what:"Ostrum-Rakete mit Kerosin. Hitzeschutz (Netherite Space Suit). Venus liefert Calorite; Merkur und Venus Uran und Blei in Menge. Hürden: Ostrum, Kerosin, Mekanism Elite (?), Blood Magic.",
    cross:"Macht die Nuklearkette ergiebig und führt zum Tempel auf dem Merkur.",
    story:"Auf dem Merkur steht der dunkle Tempel, in dem der Meister verschwand. Sein Inneres ist zerstört. Die Venus hat noch keine Story.",
@@ -308,7 +319,7 @@ const MILESTONES = [
    req:[["RF3","Calorite"],["BO5","T4-Rezept · Portal-Item ?"],["BS3","Boss-Items ?"],["BS4","Boss-Items ?"],["MK6","Ultimate ?"],["MK4","Treibstoff-Chemie ?"],["MK5","Uran-Teil ?"],["BM4","Dungeon-Item ?"]], must:true,
    what:"Calorite-Rakete nach dem Rezept des Elfen, mit magischen Komponenten und einem deutlich aufwendigeren Treibstoff (Kerosin plus Mekanism-Chemie). Erreicht nur Glacio.",
    cross:"Hier laufen Tech, Botania, Blue Skies und Blood Magic zusammen.",
-   story:"Der Meister hat eine Barriere um den Planeten gelegt; nur die magischen Komponenten bringen die Rakete hindurch. Auf Glacio finden die Spieler den Meister. Ende von Part 1.",
+   story:"Der Meister hat eine Barriere um den Planeten gelegt; nur die magischen Komponenten bringen die Rakete hindurch. Auf Glacio finden die Spieler den Meister und bringen ihn in die Overworld zurück (beides gehört zu K11). Ende von Part 1.",
    spoiler:"Hier wird das Geheimnis offen: Der Meister ist ein Jedi, und die Spieler können selbst Jedi werden.",
    world:"–"},
 
@@ -335,7 +346,7 @@ const MILESTONES = [
    story:"Part 2, wird später besprochen.",
    world:"–"},
 
-  {id:"SW3", path:"I", stage:12, name:"Ausbildung beim Meister", status:"open",
+  {id:"SW4", path:"I", stage:12, name:"Ausbildung beim Meister", status:"open",
    req:[["RF4","Meister gefunden"]], must:true,
    what:"Der Meister bildet die Spieler aus und stellt Prüfungen.",
    cross:"Öffnet den Zutritt zur Elfenwelt und den Kampf gegen Gaia.",
@@ -343,9 +354,9 @@ const MILESTONES = [
    spoiler:"Ausbildung zum Jedi.",
    world:"–"},
 
-  // ───── K13 Endor
+  // ───── K13 Die Prüfung
   {id:"BO7", path:"C", stage:13, name:"Gaia · Prüfung", status:"open",
-   req:[["BO6","Alfsteel"],["SW3","Prüfung des Meisters"]], must:true,
+   req:[["BO6","Alfsteel"],["SW4","Prüfung des Meisters"]], must:true,
    what:"Gaia Guardian besiegen; Gaia Spirits, Relikte, Corporea.",
    cross:"Kandidat für ein Magie-Teil der Raketen T6 oder T7.",
    story:"Der Kampf gegen den Gaia Guardian ist eine Prüfung des Meisters.",
@@ -368,26 +379,26 @@ const MILESTONES = [
    world:"–"},
 
   {id:"RF5", path:"H", stage:13, name:"Rakete T5 → Endor", status:"open",
-   req:[["RF4","Calorite · ?"],["BO6","Rumpf aus Alfheim ?"],["MK7","Fusion ?"],["SW3","Auftrag des Meisters"]], must:true,
+   req:[["RF4","Calorite · ?"],["BO6","Rumpf aus Alfheim ?"],["MK7","Fusion ?"],["SW4","Auftrag des Meisters"]], must:true,
    what:"Erste Rakete aus „Ad Astra: Rocketed“. Führt nur nach Endor. Hürden: Rumpf aus Alfheim, neuer Treibstoff, Mekanism-Stufe, Teil aus einem anderen Pfad (alles offen).",
    cross:"Endor liefert Kyber für die Rakete T6.",
-   story:"Endor ist die Heimat beziehungsweise die Basis des Meisters.",
+   story:"Die fertige Rakete T5 schließt Part 2 ab. Mit der Ankunft auf Endor, der Heimat beziehungsweise Basis des Meisters, beginnt Part 3.",
    tech:"Planetenstufe per Datapack: Endor (samt Orbit) von 4 auf 5. Treibstoff über das Tag <code>ad_astra_rocketed:tier_5_rocket_fuel</code>, muss eine Flüssigkeit sein. Ob Ad Astra Stufen über 4 annimmt, ist ungetestet.",
    world:"–"},
 
-  // ───── K14 Hyperraum
+  // ───── K14 Endor (Part 3, grob)
   {id:"BM6", path:"D", stage:14, name:"Altar T6", status:"open",
    req:[["BM5","Altar"]], must:false,
    what:"Blood Altar Stufe 6. 🔵 im JAR prüfen.",
    cross:"Kandidat für ein Teil der Rakete T7.",
-   story:"Part 2, wird später besprochen.",
+   story:"Part 3, wird später besprochen.",
    world:"–"},
 
   {id:"RF6", path:"H", stage:14, name:"T6 → Tatooine, Hoth, Mustafar", status:"open",
    req:[["RF5","Kyber von Endor ?"],["BO7","Magie-Teil ?"],["MK8","Antimaterie ?"],["AE3","Navigationscomputer ?"]], must:true,
    what:"Zweite Rakete aus „Ad Astra: Rocketed“. Führt zu allen Star-Wars-Welten außer Mandalore.",
    cross:"Rezept, Treibstoff und Mekanism-Stufe offen.",
-   story:"Part 2, wird später besprochen.",
+   story:"Part 3, wird später besprochen.",
    tech:"Planetenstufe per Datapack: Tatooine, Hoth (<code>hot</code>) und Mustafar samt Orbits auf 6. Treibstoff über <code>tier_6_rocket_fuel</code>.",
    world:"–"},
 
@@ -396,23 +407,23 @@ const MILESTONES = [
    req:[["MK8","Antimaterie"]], must:false,
    what:"MekaSuit, Meka-Tool, Modification Station, QIO, Digital Miner.",
    cross:"Kandidat für die Hürde der Rakete T7; MekaSuit im All (Ad-Astra-Anbindung).",
-   story:"Part 2, wird später besprochen.",
+   story:"Part 3, wird später besprochen.",
    world:"–"},
 
-  {id:"SW4", path:"I", stage:15, name:"Star-Wars-Welten", status:"open",
-   req:[["RF6","Rakete T6"],["SW3","Ausbildung"]], must:true,
+  {id:"SW5", path:"I", stage:15, name:"Star-Wars-Welten", status:"open",
+   req:[["RF6","Rakete T6"],["SW4","Ausbildung"]], must:true,
    what:"Tatooine, Endor, Hoth, Mustafar. Kyber für Lichtschwerter (nur hier, in der Overworld entfernt).",
    cross:"Welche Bosse, Quests und Belohnungen hier liegen, ist offen.",
-   story:"Part 2, wird später besprochen: mehrere Bosse für den Meister besiegen, als Kopfgeldjäger Quests bei Easy NPCs erfüllen, Lichtschwerter über eine Quest.",
+   story:"Part 3, wird später besprochen: mehrere Bosse für den Meister besiegen, als Kopfgeldjäger Quests bei Easy NPCs erfüllen, Lichtschwerter über eine Quest.",
    spoiler:"Rückkehr in die weit, weit entfernte Galaxis.",
    world:"–"},
 
   // ───── K16 Mandalore
   {id:"RF7", path:"H", stage:16, name:"Rakete T7 → Mandalore", status:"open",
-   req:[["SW4","Freischaltung ?"],["MK9","Mekanism-Stufe ?"],["BM6","Blood-Magic-Teil ?"]], must:true,
+   req:[["SW5","Freischaltung ?"],["MK9","Mekanism-Stufe ?"],["BM6","Blood-Magic-Teil ?"]], must:true,
    what:"Dritte Rakete aus „Ad Astra: Rocketed“. Einziges Ziel: Mandalore (−160 °C). Dort liegt Beskar.",
    cross:"Rezept, Treibstoff und Hürden offen. Beskar wird für keine weitere Stufe gebraucht.",
-   story:"Part 2, wird später besprochen.",
+   story:"Part 3, wird später besprochen.",
    tech:"Planetenstufe per Datapack: Mandalore samt Orbit auf 7. Treibstoff über <code>tier_7_rocket_fuel</code>.",
    world:"–"}
 ];
