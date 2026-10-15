@@ -1,12 +1,12 @@
 # Modpfade
 
-> Stand 2026-10-14, Minecraft 1.20.1. Acht Seiten liegen vor (Tinkers, IE, Botania, Mekanism, Ad Astra, Star Wars Planets, Star Wars: Galaxy in a Cube, Blood Magic); der User hat die Tiefe bestätigt. Regel: keine Angabe aus dem Gedächtnis, alles aus den JARs lesen.
+> Stand 2026-10-15, Minecraft 1.20.1. Neun Seiten liegen vor (Tinkers, IE, Botania, Mekanism, Ad Astra, Star Wars Planets, Star Wars: Galaxy in a Cube, Blood Magic, Wesley's Roguelike Dungeons); der User hat die Tiefe bestätigt. Regel: keine Angabe aus dem Gedächtnis, alles aus den JARs lesen.
 
 Je Content-Mod eine Seite mit der Progression, wie der Mod sie mit seinen Addons selbst vorsieht (ohne unsere KubeJS-Änderungen): nummerierte Schritte mit Bildern, Bauplänen der Multiblöcke und den nötigen Rohstoffen, am Ende die für sich stehenden Items und die Brücken zu anderen Mods. Die Seiten sind die Grundlage für Progressionsweg und Crossmod-Punkte.
 
 **Oberseite mit einer Kachel je Mod:** https://claude.ai/artifact/BJheZu2HgYdykBjkNQaHT4 (Quelle `uebersicht/`, eigene `template.html`; bei jeder neuen Seite in `uebersicht/data.js` eintragen, bauen und neu veröffentlichen)
 
-**Sammelseite fürs Handy** (alle Seiten in einem Artifact, Wechsel im selben Fenster): https://claude.ai/artifact/9CTNkTGyHWCCL3j9gapuEc, siehe `../sammelseite/README.md`. Nach jeder Änderung an einer Seite mit neu bauen und veröffentlichen.
+**Sammelseite fürs Handy** (alle Seiten in einem Artifact, Wechsel im selben Fenster): https://claude.ai/artifact/9CTNkTGyHWCCL3j9gapuEc, siehe `../sammelseite/README.md`. Neu bauen und veröffentlichen nur auf ausdrücklichen Befehl des Users.
 
 | Mod | Live-Seite (Artifact, privat) | Quelle |
 |---|---|---|
@@ -18,6 +18,7 @@ Je Content-Mod eine Seite mit der Progression, wie der Mod sie mit seinen Addons
 | Star Wars Planets | https://claude.ai/artifact/SrPJwSsAAdwZvaUm2MF3iN | `swplanets/` |
 | Star Wars: Galaxy in a Cube | https://claude.ai/artifact/18k191oT3stvg7zEjZJsHx | `swgc/` |
 | Blood Magic (Brücke Blood-Smeltery) | https://claude.ai/artifact/LBPGVvAY4w5kV4Mx6KzBjc | `bloodmagic/` |
+| Wesley's Roguelike Dungeons | https://claude.ai/artifact/JoCxMWugDJXsXTJxFFyrwN | `rld/` |
 
 **Nachschlage-Notizen für Claude:** Zu jeder Seite gibt es `<mod>/WISSEN.md` mit JARs und Kürzeln, Fundstellen im JAR (bei Galaxy in a Cube die Klassen), Progression in Kürze, Schlüsselzahlen, Pack-Bezug, Offenem und einer Tabelle Name → Item-ID. Vor Arbeit an einem Mod zuerst dort nachsehen; bei Änderungen an `data.js` mitziehen.
 
@@ -80,3 +81,4 @@ Die Ebenen stammen aus den Strukturdateien der Mods (`data/<mod>/structures/mult
 - Mods, deren Mechanik nur im Code steht: Vanilla-Namen hinter den SRG-Kürzeln (`f_42415_`) liefern die Mapping-Dateien der Instanz (`libraries/de/oceanlabs/mcp/mcp_config/…-mappings-merged.txt` zusammen mit `libraries/net/minecraft/client/…-mappings.txt`).
 - Blood Magic: nicht ausgelesen sind die Zahl der Ritual Stones je Ritual, die Erzgewichte der Meteore, die Wirkung des Bounce Array, die Werte der Sentient-Waffen, die Kosten je Stufe der Living-Armour-Upgrades und wie Trick Shot, True Strike und Grave Digger trainiert werden (stehen nur in den Daten, nicht im Buch). Die Upgrade-Namen weichen teils vom Buch ab (Sprachdatei „Weakened Pick“, Buch „Leadened Pick“); auf der Seite gilt die Sprachdatei.
 - Weitere Mods: AE2, Blue Skies, Farmer's Delight
+- Wesley's Roguelike Dungeons (MCreator-Mod, fast alles im Code): nicht ausgelesen sind Schaden der Waffen und Stäbe, Wirkung der 25 Artefakte, Spellbook-Kombinationen, Verzauberungen und Tränke, die Staffel der Lauf-Belohnung nach Dungeon-Wert, die Herkunft des ersten Boss Room Key, der Rückweg des Sentient Pathfinder und ob die Vessel verbraucht wird. Der JAR-Name enthält ein Apostroph: Kürzel `rld="Wesley's Roguelike"`. Der Klassen-Dump (`javap`, 3755 Prozedur-Klassen) dauert rund 3 Minuten.

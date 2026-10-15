@@ -15,7 +15,7 @@ body{background:var(--bg);color:var(--fg)}
 // nachladen per fetch verweigert die Claude-App auf dem Handy (403). Links zwischen ihnen wechselt der Rahmen,
 // damit die App sie nicht im Browser öffnet. Der Seitenname steht im #hash (Zurück-Taste).
 const v = document.getElementById('v'), msg = document.getElementById('msg');
-const PAGES = /^(uebersicht|tinkers|ie|botania|mekanism|adastra|swplanets|swgc|bloodmagic|erzatlas|meilensteine)$/;
+const PAGES = /^(uebersicht|tinkers|ie|botania|mekanism|adastra|swplanets|swgc|bloodmagic|rld|erzatlas|meilensteine)$/;
 function show(name) {
   if (!PAGES.test(name)) name = 'uebersicht';
   const el = document.getElementById('page-' + name);

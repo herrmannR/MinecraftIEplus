@@ -178,6 +178,17 @@ Jeder Befund ist aus den JARs oder der Config der Testinstanz belegt (🟢). Was
 - **BM8** 🟢 KubeJS Blood Magic ist installiert und kennt Rezeptschemas für Altar, Alchemy Table, Hellfire Forge, ARC und Arrays. Meteore und Flasks gehen damit nicht, nur als Datapack-Rezept.
 - **BM9** 🟢 Plant Oil von Blood Magic ist ein Item (Alchemy Table aus Feldfrüchten), Plant Oil von IE eine Flüssigkeit. In JEI heißen beide gleich.
 
+## Wesley's Roguelike Dungeons
+
+- **RD1** 🟢 Der Mod hängt an keinem anderen Mod, braucht keinen Strom und keine Erze außer Eisen. Einstieg ist die Vessel of Vision (6 Eisen, Blaze Powder, Ender Pearl, Kessel), also nach dem ersten Nether-Besuch (Ü7). Ab Werk entstehen Dungeons nur über die Vessel (`CFAllowNaturalDungeons = false`), 5000 bis 16000 Blöcke vom Spieler entfernt; der Sentient Pathfinder teleportiert die Gruppe hin.
+- **RD2** 🟢 Die Dungeon-Gruppe richtet sich nach der Grundtemperatur des Bioms am Zielort. Biome anderer Mods zählen über ihre Temperatur mit. Ob die Vessel in fremden Dimensionen (Blue Skies, Ad-Astra-Planeten) einen Dungeon baut, ist nicht ausgelesen.
+- **RD3** 🟢 Weg zum Endspiel: 8 Orbs of the Deep (1–2 je Bone Chest, also 4–8 Dungeons), Ender Heart aus dem Purpur-Palast im End (braucht End-Zugang), Portalbaum in der Welt. Damit ist die Dungeon-Dimension frühestens mit End-Zugang erreichbar.
+- **RD4** 🟢 Belohnung der Dungeon-Läufe kommt aus `forge:ok_loot`, `good_loot`, `better_loot`, `super_loot`; nur dieser Mod füllt sie (alle 98 JARs geprüft). Darin stecken Raw Ores, Diamanten, Smaragde, Raw-Ore-Blöcke, Netherite Scrap und Ancient Debris. Ein freier Andockpunkt, um Pack-Rohstoffe als Dungeon-Belohnung auszugeben, und zugleich eine zweite Netherite-Quelle neben Nether und BM5 (Ü6).
+- **RD5** 🟢 Die Truhen der Oberwelt-Dungeons geben Vanilla-Wertgegenstände in Menge: Diamantausrüstung mit Verzauberung, Diamant-, Smaragd- und Goldblöcke, Totem of Undying, Ancient Debris (Treasure Chest), Raw Iron/Gold/Copper. Das umgeht keine Mod-Stufe direkt, beschleunigt aber Vanilla-Tore.
+- **RD6** 🟢 Corrupted-Werkzeuge haben Werkzeugstufe 5 und 2532 Haltbarkeit, aus der Bone Chest. Ob das in der Pack-Progression eine Abbau-Stufe überspringt (Tinkers, Mekanism-Erze), hängt an den Block-Tags des Packs.
+- **RD7** 🟢 Keine Material-Tags, keine Rezepte für fremde Mods. Die elf Waffen stehen in `minecraft:swords`, Poison und Icewater in `minecraft:water`.
+- **RD8** 🟢 Weltgenerierung: Deep Sand ersetzt Sand in Plains, Desert, warmen und lauwarmen Ozeanen; Maulstone ersetzt Stein in Mushroom Fields; Portalbäume erscheinen ohne Config-Schalter (400 je Million Chunks, nicht in Ozean, Strand, Plains). Für die eigene Erzverteilung (`03_ERZGENERATION.md`) relevant, falls Sand-Erze oder Sandvorkommen geplant sind.
+
 ## Zu prüfen
 
 - **P1** 🔵 Botania Gaia Pylon: Botania hat ein Rezept ohne Alfsteel, MythicBotany eines über den Alfsteel Pylon. Welches im Pack gilt, in JEI nachsehen. Davon hängt ab, ob das Ritual of Gaia vor oder nach Alfsteel liegt.
@@ -191,6 +202,7 @@ Jeder Befund ist aus den JARs oder der Config der Testinstanz belegt (🟢). Was
 - **P9** 🔵 Galaxy in a Cube: Zeigt JEI die Rezepte der Assembly Bench? Schaden und Magazin der Blaster, Schaden der Lichtschwerter und alle Rüstungswerte stehen nur im Code und sind nicht ausgelesen.
 - **P10** 🔵 Ad Astra: Handelsangebote der Lunarians, Mobs der More-Structures-Dungeons und die Sauerstoffregeln des Giselle Addon sind nicht ausgelesen.
 - **P11** 🔵 Blood Magic: Ob die Demon-Realm-Dimension auf dem Server des Hosts ohne Probleme läuft (eigene Dimension, prozedurale Räume), ist nicht geprüft. Ebenso nicht ausgelesen: Ritual-Stein-Zahlen, Erzgewichte der Meteore, Werte der Sentient-Waffen.
+- **P12** 🔵 Wesley's Roguelike Dungeons: Staffel der Lauf-Belohnung nach Dungeon-Wert, Wirkung der 25 Artefakte, Schaden der Waffen und Stäbe, Herkunft des ersten Boss Room Key, Rückweg des Sentient Pathfinder. Im Spiel prüfen, ob die Dimension auf dem Server des Hosts stabil läuft (eigene Dimension, Strukturen zur Laufzeit gebaut).
 
 ## Quellen
 

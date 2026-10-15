@@ -46,7 +46,7 @@ Schreibweise „Adern pro Chunk × Adergröße“.
 - **AE2:** In 15.4.11 gibt es keinen Certus-Erzblock und keine Erz-Generierung mehr. Certus entsteht an **Budding-Certus-Blöcken**, die nur in Meteoriten vorkommen (Struktur `ae2:meteorite` in `#minecraft:is_overworld`, Abstand 32 Chunks). In `config/ae2/common.json` gibt es unter `worldGen` nur noch `spawnPressesInMeteorites` und `spawnFlawlessOnly`. Die alten Stellschrauben (Cluster-Anzahl) sind entfallen.
 - **Galaxy in a Cube** erzeugt außerdem die Struktur `swgc:ewok_village` im Biom `minecraft:forest` und lässt Jawas in Wüsten und Badlands spawnen. Damit ist TODO E20 aus dem JAR beantwortet: **Ja, der Mod erzeugt etwas in der Overworld.** 🔵 Im Spiel nicht geprüft.
 - **Tinkers** (Overworld): Erd-Schleim-Geoden, 1 Versuch in jedem 256. Chunk.
-- **Wesley's Roguelike Dungeons:** `wrd:deepsand` (warme Ozeane, Ebenen, Wüste) und `wrd:maulstone` (Pilzinseln) als Erz-Features, dazu Dungeon-Eingänge.
+- **Wesley's Roguelike Dungeons:** `wrd:deepsand` (warme Ozeane, Ebenen, Wüste) und `wrd:maulstone` (Pilzinseln) als Erz-Features. Dungeons entstehen ab Werk nicht von selbst (`CFAllowNaturalDungeons = false`), nur über die Vessel of Vision; von selbst erscheinen nur die Portalbäume (2026-10-15 aus dem JAR, `modpfade/rld/WISSEN.md`).
 
 ## Nether und End
 

@@ -55,6 +55,12 @@ const MODS = [
     phases: 5, steps: 29, icon: "render:model/bm_altar",
     accent: ["#e0605a", "#a32a2a"], url: "https://claude.ai/artifact/LBPGVvAY4w5kV4Mx6KzBjc",
   },
+  {
+    name: "Wesley's Roguelike Dungeons", version: "2.3.6", addons: "keine",
+    text: "Vessel of Vision, sechs Dungeon-Gruppen mit Miniboss und Boss, der Purpur-Palast im End, ein Portalbaum und die Dimension Infinite Dungeons mit acht Läufen auf Zeit. Kein Buch; Abläufe aus dem Code gelesen.",
+    phases: 5, steps: 18, icon: "render:model/wrd_bone_chest",
+    accent: ["#b48ade", "#6a3f96"], url: "https://claude.ai/artifact/JoCxMWugDJXsXTJxFFyrwN",
+  },
 ];
 // Mods ohne Seite, in der Reihenfolge der Mod-Liste
 const PLANNED = ["Applied Energistics 2", "Blue Skies", "Farmer's Delight"];

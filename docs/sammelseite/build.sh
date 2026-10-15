@@ -25,6 +25,7 @@ sub_links() {
     -e 's#https://claude.ai/artifact/SrPJwSsAAdwZvaUm2MF3iN#swplanets.html#g' \
     -e 's#https://claude.ai/artifact/18k191oT3stvg7zEjZJsHx#swgc.html#g' \
     -e 's#https://claude.ai/artifact/LBPGVvAY4w5kV4Mx6KzBjc#bloodmagic.html#g' \
+    -e 's#https://claude.ai/artifact/JoCxMWugDJXsXTJxFFyrwN#rld.html#g' \
     -e 's#https://claude.ai/artifact/LWwdvCpXRwaHCa8NstSc4g#erzatlas.html#g' \
     -e 's#https://claude.ai/artifact/Hdy6LMxESx5CJ9omjkAMEX#meilensteine.html#g'
 }
@@ -34,7 +35,7 @@ sub_links() {
 cp shell.html out/start.html
 { echo "$head"; sub_links < ../modpfade/uebersicht.html; echo "$nav"; } > out/uebersicht.html
 
-for f in ../modpfade/{tinkers,ie,botania,mekanism,adastra,swplanets,swgc,bloodmagic}.html ../erzatlas/erzatlas.html ../meilensteine/meilensteine.html; do
+for f in ../modpfade/{tinkers,ie,botania,mekanism,adastra,swplanets,swgc,bloodmagic,rld}.html ../erzatlas/erzatlas.html ../meilensteine/meilensteine.html; do
   n=$(basename "$f")
   { echo "$head"; cat "$f"; echo "$back"; echo "$nav"; } > "out/$n"
 done
