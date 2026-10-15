@@ -1,0 +1,875 @@
+<title>Modpfad Applied Energistics 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: links Phasen-Navigation, rechts der Weg als nummerierte Schritte – je Schritt Bilder (Inventar-Slots, Bauplan, Buchbild), Erklärung, Zutaten.
+   Farben und Schriften wie im Erzatlas ("Deepslate"-Grund zuerst); --accent kommt je Mod aus den Daten. */
+:root{
+  --bg:#1b1d20; --panel:#24272b; --line:#34383e; --fg:#e7e5e1; --muted:#9a9890;
+  --accent:#e0a33a;
+  --slot:#2f3338; --slot-edge:#15171a; --slot-hi:#474c53;
+  --chip:#2c3035;
+  --o-v:#9a9890; --o-m:#e0a33a; --o-a:#5fb3a0; --o-x:#6aa7e6;
+  --f-display:"Pixelify Sans","Courier New",monospace;
+  --f-body:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-data:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){
+  --bg:#f1efea; --panel:#fbfaf7; --line:#d9d5cc; --fg:#24221f; --muted:#6c675e;
+  --slot:#c9c5bb; --slot-edge:#8f8a7f; --slot-hi:#e9e6de;
+  --chip:#ebe7df;
+  --o-v:#6c675e; --o-m:#a36a12; --o-a:#2f7f6d; --o-x:#2f6fb5; color-scheme:light}}
+:root[data-theme="light"]{
+  --bg:#f1efea; --panel:#fbfaf7; --line:#d9d5cc; --fg:#24221f; --muted:#6c675e;
+  --slot:#c9c5bb; --slot-edge:#8f8a7f; --slot-hi:#e9e6de;
+  --chip:#ebe7df;
+  --o-v:#6c675e; --o-m:#a36a12; --o-a:#2f7f6d; --o-x:#2f6fb5; color-scheme:light}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:16px;padding-block:28px 56px}
+a{color:var(--accent)}
+code{font-family:var(--f-data);font-size:.86em;background:var(--chip);padding:1px 5px;border-radius:3px}
+
+header.top{display:grid;gap:10px;margin-bottom:24px}
+h1{font-family:var(--f-display);font-weight:700;font-size:clamp(28px,4vw,40px);letter-spacing:.02em;margin:0;text-wrap:balance}
+h1 span{color:var(--accent)}
+.lede{color:var(--muted);max-width:70ch;margin:0}
+.mods{display:flex;flex-wrap:wrap;gap:6px}
+.mod{font:12px var(--f-data);background:var(--chip);border:1px solid var(--line);border-radius:3px;padding:3px 8px;color:var(--muted)}
+.mod b{color:var(--fg);font-weight:600}
+.mod.main{border-color:var(--o-m)} .mod.addon{border-color:var(--o-a)} .mod.bridge{border-color:var(--o-x)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:var(--muted);align-items:center}
+.legend b{color:var(--fg);font-weight:600}
+
+.cols{display:grid;grid-template-columns:210px minmax(0,1fr);gap:32px;align-items:start}
+nav.toc{position:sticky;top:calc(env(safe-area-inset-top, 0px) + 12px);display:grid;gap:2px;max-height:calc(100vh - 24px);overflow:auto;font-size:13.5px}
+nav.toc a{display:block;padding:5px 8px;border-left:2px solid var(--line);color:var(--muted);text-decoration:none}
+nav.toc a:hover,nav.toc a:focus-visible{color:var(--fg);border-left-color:var(--accent);outline:none}
+nav.toc a .n{font-family:var(--f-data);font-size:11px;margin-right:6px;color:var(--accent)}
+nav.toc .sep{height:10px}
+main{display:grid;gap:44px;min-width:0}
+
+section.phase{display:grid;gap:18px;min-width:0}
+.phase-head{display:grid;gap:4px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.phase-head .eyebrow{font:600 12px var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h2{font-family:var(--f-display);font-weight:700;font-size:24px;letter-spacing:.02em;margin:0;text-wrap:balance}
+.phase-head p{margin:0;color:var(--muted);max-width:70ch}
+
+.step{display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;min-width:0}
+.step .num{font:700 18px var(--f-data);font-variant-numeric:tabular-nums;color:var(--bg);background:var(--accent);width:44px;height:44px;display:grid;place-items:center;border-radius:3px}
+.step-body{display:grid;gap:12px;min-width:0;padding-bottom:18px;border-bottom:1px dashed var(--line)}
+.step:last-child .step-body{border-bottom:none}
+h3{font:700 18px var(--f-body);margin:0;display:flex;flex-wrap:wrap;gap:8px;align-items:center;min-height:44px}
+.tag{font:600 11px var(--f-data);padding:2px 7px;border-radius:3px;border:1px solid var(--o-a);color:var(--o-a);letter-spacing:.02em}
+.tag.x{border-color:var(--o-x);color:var(--o-x)}
+.prose{max-width:70ch;display:grid;gap:8px}
+.prose p,.prose ul{margin:0}
+.prose ul{padding-left:20px}
+.prose b{font-weight:700}
+
+/* Inventar-Slots */
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.it{display:grid;grid-template-columns:44px minmax(0,1fr);gap:9px;align-items:start}
+.slot{width:44px;height:44px;background:var(--slot);border:2px solid;border-color:var(--slot-edge) var(--slot-hi) var(--slot-hi) var(--slot-edge);display:grid;place-items:center;flex:none}
+.slot img{width:32px;height:32px;image-rendering:pixelated;object-fit:cover;object-position:top}
+.slot img.r{width:38px;height:38px;image-rendering:auto;object-fit:contain}
+.cell img.r{image-rendering:auto;object-fit:contain}
+figure img.r{max-height:230px;width:auto;border:none;background:none}
+.slot span{font:700 12px var(--f-data);color:var(--muted)}
+.it .nm{font-weight:600;line-height:1.25;overflow-wrap:anywhere}
+.it .nt{font-size:13px;color:var(--muted);line-height:1.3;overflow-wrap:anywhere}
+
+/* Buchbilder */
+.pics{display:flex;flex-wrap:wrap;gap:10px}
+figure{margin:0;display:grid;gap:4px;max-width:420px}
+figure img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:3px;background:var(--panel)}
+figure img.px{image-rendering:pixelated;width:260px}
+figcaption{font-size:12.5px;color:var(--muted)}
+
+/* Bauplan */
+.plan{border:1px solid var(--line);border-radius:4px;background:var(--panel);padding:12px;display:grid;gap:10px;min-width:0}
+.plan-title{font:600 12px var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.plan-title b{color:var(--fg);letter-spacing:0;text-transform:none;font-size:14px;margin-right:8px}
+.layers{display:flex;gap:16px;overflow-x:auto;padding-bottom:4px;align-items:flex-end}
+.layer{display:grid;gap:4px;flex:none}
+.layer .cap{font:11px var(--f-data);color:var(--muted)}
+.grid{display:grid;gap:1px}
+.cell{width:22px;height:22px;background:var(--slot);display:grid;place-items:center;font:700 10px var(--f-data);color:var(--fg)}
+.cell img{width:22px;height:22px;image-rendering:pixelated;object-fit:cover;object-position:top;display:block}
+.cell.air{background:transparent;outline:1px dotted var(--line);outline-offset:-1px}
+.parts{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px}
+.part{display:inline-flex;align-items:center;gap:6px}
+.part .cell{width:18px;height:18px}.part .cell img{width:18px;height:18px}
+.part b{font-family:var(--f-data);font-weight:600}
+.plan .form{font-size:13px;color:var(--muted);margin:0}
+
+/* Zutaten */
+.needs{display:flex;flex-wrap:wrap;gap:5px;align-items:center;font-size:13px}
+.needs .lbl{font:600 12px var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:4px}
+.need{background:var(--chip);border:1px solid var(--line);border-left:3px solid var(--o-v);border-radius:3px;padding:2px 8px}
+.need.m{border-left-color:var(--o-m)} .need.a{border-left-color:var(--o-a)} .need.x{border-left-color:var(--o-x)}
+.need small{color:var(--muted);font-family:var(--f-data);font-size:11px;margin-left:4px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+
+/* Tabellen (Materialien, Listen) */
+.scroller{overflow-x:auto;border:1px solid var(--line);border-radius:4px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th{font:600 11.5px var(--f-body);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:6px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td.ic{width:34px;padding-right:0}
+td.ic .slot{width:28px;height:28px;border-width:1px}
+td.ic .slot img{width:22px;height:22px}
+td.ic .slot span{font-size:9px}
+td .sub{color:var(--muted);font-size:12.5px}
+
+.solo-group{display:grid;gap:10px}
+.solo-group h3{min-height:0}
+.note{border-left:3px solid var(--accent);background:var(--panel);padding:10px 14px;max-width:72ch;font-size:14px}
+.note p{margin:0}
+footer{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:14px;max-width:80ch}
+
+@media (max-width:900px){
+  .cols{grid-template-columns:minmax(0,1fr);gap:20px}
+  nav.toc{position:static;display:flex;flex-wrap:wrap;gap:6px;max-height:none}
+  nav.toc a{border:1px solid var(--line);border-radius:3px;padding:4px 8px}
+  nav.toc .sep{display:none}
+}
+@media (max-width:520px){
+  .step{grid-template-columns:minmax(0,1fr)}
+  .step .num{width:36px;height:36px;font-size:15px}
+  h3{min-height:0}
+}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1 id="h1"></h1>
+    <p class="lede" id="lede"></p>
+    <div class="mods" id="mods"></div>
+    <div class="legend"><b>Zutaten:</b>
+      <span><i class="dot" style="background:var(--o-v)"></i>Vanilla</span>
+      <span><i class="dot" style="background:var(--o-m)"></i>dieser Mod</span>
+      <span><i class="dot" style="background:var(--o-a)"></i>Addon</span>
+      <span><i class="dot" style="background:var(--o-x)"></i>anderer Mod im Pack</span>
+    </div>
+  </header>
+  <div class="cols">
+    <nav class="toc" id="toc" aria-label="Phasen"></nav>
+    <main id="main"></main>
+  </div>
+</div>
+
+<script>
+const ICONS = {
+  "ae2:block/cell_workbench": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACiklEQVR4XjVT2W5SURQ9/6FR20hLB1NtqsYnhkJRhNCm/IFhpt9g4hyNTNoiQ1seILQ0PJXJliIUMLYO72qp1fgXGpasbXi4Oeeec/baa6+1t9o/AQ5OgdcfgFj9J6y+x9Dr9fB6vWi1Wuh2u7I3Go24432El9UTrB4B9R7Q/g2oeq+PN5+AxGcg/PYU9uAzmEwmBAIBtNttAfD5fALKO77h+7XjPt6dDQAinb+CyOzMMD8/L8HJZBKlUgm7u7tIpVLw+/1YWFiAxf1AQGLv+wPWfagX5W+I7P2ALfAUBoMBbrcb29vbWFpawtbWFgqFAhYXF+UsGAwKOyaK7p9JnOLPbc9DyexyueThxsYGbs5Oyrq5uYnrV7VIp9PI5XJYWVmRcu76n4heillJjRTz+bw8tNvtmBofQSQSQTgcxrR2VFjwbmdnRzQxm82wWCxQDKTKrNNqtWL2igaakXOYHLskypPZ2Oh5TGguYm5mHMvLy1hfXxcQfqrT6aDRaKBSqQg6xYvFYhIYCoUQjUYFiGe8I0sK22w2xSU19JoAFIw0SZ0UuTKQJXI/LKFWq+Hw8FBAFOl7PB5kMhk4nU7cuDYhdLWXL4grBJqZ0sgZ76gFy2UcP0VbSJFa0AEC2Ww2EZECsgyC0dZEIiFO0E6Cs0xFK2gJMxFkWAYF48q6b81NIx6PS1+wyRhM69kCis3w6uCXgNBfPigWi1IOGWWzWTgcDtnzjnrwbajWk0+tHvUR/9iX9jTduw+dTif2MHu5XEa1WpU9g4cD9bz0Fckvg9lp/4HiJK4dQ0DYniyJFCkQbaLaBGRmtjsT8T2Hae87/gNwqjhhvOSwMBMz0ibazPngGcGH48w4TvI/qOGLWh46cuoAAAAASUVORK5CYII=",
+  "ae2:block/charger": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABQ0lEQVR4XqVSu07DQBD0N0QgIEgJNOBEAj8aiGnAAgqcpAPyCYgiNHxB/sWPzrbs2v60xbPhTsc6EkIUo7ubnZ3b3TuraRoC2ralsiwpz3OG4hUUL2OWFP4V/zcoikIf6rpmSJFCVVXcpjpjb5k9gRgfXdHZKKLIf6f9oUubcE32eEGDgwuaniz7BiYB7A0dHTQBzp+sfmjZwCQA3IZAlmWUpinFccwruElXgdT3DJ6DTxYnScIlb8IP3oNDS1LfM0CvEONWJD85b7oCezT/3WB6uh0UknAzVrQDzjt/6RvIIfr2K6+7hohqTC0P0TTAk0Zu93zH3nf/685wRYPDy678iFuSeja4C1ya31/v/OsmEIN+8TCj8MYjfEILybczh0lAJkksHwMGcpCrhwgCrjJBQl2oztoAAZSkypSJ5kChVfwXv6nhOt26PP0AAAAASUVORK5CYII=",
+  "ae2:block/chest/front": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABdUlEQVR4XnWS50pDURCE73tYwJLiD1MsISaIJoiiiOIbpJD6IwkpT5JCysOufAtzORFzYbK7c2Zn9xwSfb4U7eu1ZM8PWauUch5BtZy3p2LGOfFwqn/eH+37rWzRR7Vgi8XC5vO5LZdLz1erlUcBHsADtMANmLLZbGy323kMc8XtdusgX6/XsY6tItYSSQyNZAIPZKLoBnfZlIHbTNLuc2nPVQPl4sHNdSLO3aDf71u327XhcGij0cgGg8FeBJwJvV7PezCKmEqBaDqd2mQyieN4PHbMZjMHHEBLD70RLkwKRTRJDIehTDWAHt+A+1FIzKPyOIX81d6b6H9AMwNiA360KiYYRgc+DLUFen/E1MWJdToda7fb/pBM/tuoD3NpW62W0RulL0+90EHy/PigQeLsyDVoGeZafihkgCtcGEOgC7V+BTbQWhJgqmnhhqo5Z3s3qNfr1mw29yJoNBpWq9WcI1KHvF+Be4Ur4wqn+N+VONOVfgE16ehW2b+STAAAAABJRU5ErkJggg==",
+  "ae2:block/chipped_budding_quartz": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA8UlEQVR4Xm2SsQ1CQQxD/zrsQMEWlCzACkjUVAzAAkh0lGwBHRtQsQFBNnpfJroi+jmf7e9EN50eVYfb27U73yvPlLCOX15Vn6qa1CRRZ8gyxDRxzqqpi5/1I47IIxMbpFixtserK8k9Pv1fApWEi9XapfiYqVKsOxswJybqJV5u9rMZve4ZcU6Q4jSRSGIJ1Qsb7cgj9AXxN74YsCO4KifISMROMb0qxU6QIAaMgLibwBXPD0nR2C4bB0NMwhR7BBLkMiXuy2JXaeIRcOMiH1SfF1Nwj4BTxkoSxP4D0sxPeZSk43kHNr+DTs5z3idH+Bc9ZjZC0ul5wAAAAABJRU5ErkJggg==",
+  "ae2:block/condenser": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACAElEQVR4XlWTy05TcRDGz3uIJiK3jdzURGRB23UvLtsGDeIDqLyArwC8AvQShcT0slLbwrqw1KaFcEnbfS+JuuEzvyFzAovvnP9l5ptv5j8TxFaXBF4szmlu6pFmJic0/fhBuAazTx7anj93zxdmtfZyXtFXiwr4FItF5XI5RaNRlctlNRqNEPV63f61Wk2lUkmRSET5fN5gBMtPp1UoFFStVhWPxzUejzUcDjUajTQYDOzvZyCRSJgtBM/mZxQgEVacM5mMdt+eKr91rf2Pl9r7cKHcpyvbg+31prLZrFKplKklJSOoVCoWaefNiTYSX7SZOtC75FcDawd32KCMdPANYCFPZBIVw84PGY52/up495/Oa7d77lBCKvhQWCOgSBAgl6g4eO7dble9Xk/t7zdGQFrc4WMKeBY2sKIAmUTF6ObzL/3OflO/31dj+48RYMNdqAAWnggCFGAEQafTsT05N5tNI4CcM2qAjxXRa+AKIDj7KbXbbbVaLXMGXoO7ClB/j4ACvX99aPniQFQKyZq6OAG2YQ340BgcIpciQuLP6Gt/WvoEBTx9WESagubwRiIKIF9vJPYESKfTSiaT5mNFZDBoZWaANoXd2/YuvLWxwZbZYQCDyMqCEdDbtDTSfIiADxVVxzEWi4X2TKRNIwuUkJOPLfDR9pH2scYWP/Af5PKpwhm2kL8AAAAASUVORK5CYII=",
+  "ae2:block/controller": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABmUlEQVR4Xk2TSxKCQAxE52aiaxBd8lmqKEdRFA7hd6uypfRksV6qmnIRZiYk3Z1MJmw2G9vtdlYUhSVJYqfTyebzuS2XSz+z11pVle/zPLf1em11XVvYbrf2+Xzs/X7b7Xaztm3tfD7b/X636/Xqxv5yuTgAMcQOw2CQhyzL3BFFkU2nU9vv967ieDzabDbzJAJlk8nEY1+vl5EbFouFM5BMggIAwAeAwPmPcUYJ5QQhE4hREsGHw8ED8QGKn7PUdV3n5YY0TR2NJAIIJIFA2GgWPkj43zSN+8mhsQEZNE2MBAKmUiRdBDCzBwDywHVxUM2wYUjnjB81MGsPIH1zBQBwVVLwbwBQJ2rUPHxS4AB8ACAQdOyfmVW9Wa1Wo7qxBHqgJsKEVLFw1l63AxiNpQRGIMAidpIFwJgiW4pgxae9lHgJjKmGSB3XAOnaxK44yo7j2EJZltb3/Sj1f6g401wUalVZjDIPMFDP9/v190BdSNMDwujP4/FwHzOA7/l8+gPkFQex8TBoCgroLqWxYviRiwL8PGdN5w8b8z24ymXtpgAAAABJRU5ErkJggg==",
+  "ae2:block/crank": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABAUlEQVR4Xp2SOY4CMRBF+0ZMQuCsE0IOwM4gjQi5Ajdgh9GgCcm7NewgIUKORFToW/qWKbcQPcGT7CrX81KOYlMQnzRNLVnz83dH1sOqBWMQJUkil0pRyiVjFxpjJI5jV4jcfdG34/20mS34KX84AYohoQA5SDBmsU+U5wq62Ar+BhXZjusOHg1xcFv1ngiuwIX/FiB4WX4Fid2kIZtRTa6/XQvjGivwzXhpCgDmbwkY4NE5hwTiw6wlx3nbid0j+gLs9koA/GLXBcCAPpEuIHg3rAsETFCgC/VGgYBz3BewvewW46fFpyWXAAQCFqLngG3U/4PoDxcImND/wz+hL3gAcsqe1gzNAYsAAAAASUVORK5CYII=",
+  "ae2:block/damaged_budding_quartz": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA7klEQVR4XnWSsQ1CMRBDsw47ULAFJQuwAhI1FQOwABIdJVtAxwZUbMAhH3qRcwpF9H98Pse+pJ0eEYfbO9fufA/fs4RV/PKK+ERE048TtYcsQUQdZ6/VavMzfsQZeSaSAt4sW//Ibp//wYFb3R6vQ+barGgpQE4/Sc2L1bqLeJ2I3YEX+QqTgIt4TNymALY8s5qIgaCWzwiRdOCW3L7w5Wbf/3ExOHAQAYkKoxlxGuGKlw9J1vxq1OTD0p66N2cEHNRJ12HV2+KwHGK9xtmwVEcUPCOg5LacBLEeQKT+lGdOKu41sP4OKtn3XneO8C/wykfnv2RirAAAAABJRU5ErkJggg==",
+  "ae2:block/dense_energy_cell": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB/ElEQVR4XqVTyy9jcRS+f0MX3dBJUZekQT02YtPMJCyoZ4gyXvUYY2Nh141VWXhFCCqIhIXHDDKJhAjxWKAqM0EanXhsdCGxun+Aj+/Ivbkjjc0sTnLOd875/c7jO8rngmzkZqpQkxORmpSAtBSb6B6PB8FgEH6/X3RiFPrTHZ+Ql5UGd34WFCoMoLjdbkPMdjwfhbkKX6TRX3WE4boQIt51jDX9lkCXywWn0yl6oOIAow3nOCtdxHjzH8lhrsKyGDDkPcX9PnA8+Yxmz4pgqqrC4XCI3lr+E6dB4DEEPPdGBPvnAfTfITQNzH6PoqV0VTC73Q6bzSZ699dtTPgusBl4wsO33bcPXnOlBRr3vi14CxfQXrlu9Gq1WmGxWAy7qWQZHVUbmGy9FJtDV+INkPLREHWMonBVBDgw9syy+TMxTdMQi8WMauhjDGOJMVfhnmlw2hwYe9bLjkajCIfDohOjjzH6Zpj7/y2QVQS4W1/ZD9QVLRpB74fYWLyEmi/zmOv6K7YMUV8jycM9T7VdobP6l2DmNZIHg7UnwpOR+jPB+LnxAHd8uwfsDGhoq1gTzEwk8oAcIJG0npBgQiSWwV6mOyJA4Eao2ld5KAFmKpPqGHoQSs90XkuOEImXGG+QHw1Rj8/JSIXCk+RVmc9VPzDzObNS+tk3/fyYuS+J1PpjhybM2QAAAABJRU5ErkJggg==",
+  "ae2:block/drive/drive_front": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABMklEQVR4XoWS12rDQBBF9z9SIMXlJbbTwHYeUojzlOQPBJJA5V3V+vkJZ2CEEStl4Gp2p9y5u1r3/bkV8L7fyOt21fu33Vrx8XKve7yB/e/XXn4OO3EsgiAQ57E4jiWKIm+OHnodU8Iw9BZlWSZpmnpzkNOrBEwBSZIITdZo6zzPdW8wZRzXPW+WWjScgFVVJUVReHMMe1ovxPEpy9JbRPMYAeQMd4+ruRJ0XSdt2/ZrYApOc/jj8ahxJUBBXdfeKTRAMoxjxBmudzBGQNHU8ZTg4W4mTdP0QJ5JNwUMACYfT1wvcX59PilzSsHs6kzc4uZitOg/guXtpThYkIc0k4enkSI7zmne/gjDVcHYc536C7xOVcAd8DSHBZg93WEco6dXwDEMsEIKyOEthqfGcuz/AJX8OeCyfUPXAAAAAElFTkSuQmCC",
+  "ae2:block/energy_acceptor": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABwElEQVR4XmWTt24CYRCE7z0cJAdCY8AByaE4czVQE2rCY7gH0RqOmlATaj8NogYqV2t9gxYdcrG3f9idmd37Nyi9F+zzLW8v+YyVSiUrFrKWvr2UZe6uZKmbC/nnXNrCMLSnh5R5XhB9PNpisbDpdGrVatVGo5HWs9nsnx+Px1Yul7Vfr9dHAJjn87kS6/W6dTodazabskajIV+r1XTXbre1JpYclATIBpWLbrdrk8lE6ATAinG2XC61hgBgcsgNQBkOh7oggEAMsFarJYOZs9VqpRju4jg+KqBZ1AQqvcA8YLfb2WazkWRAUAYQasmhsQEf5AKA9+Rer6dE1PX7/ZNKJ8PzdwSALJrFIUyHw0Ed//3+sp96UUD7/V539MMBUC8ANnTZAVw2yXGlIPbtdisFDoCXAj5JVC9hMBgIJLmmoZQJGapPPWADAA2iiTCRQCkwUw7A3PEnKBdSlYACWEgCnQCA/BdyTrKf+1sAlKeth1SpVISaBCGQNWXB5s+dHp09JJ4ywaigNtjwGIFuEJDM+dlTDl9zJ0ZQAfLhSapwEgaOPTkMYuBjCVoURRprH2U8PcreX8tTMzGMPMQA/AEX62Lcdpee3gAAAABJRU5ErkJggg==",
+  "ae2:block/energy_cell": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9UlEQVR4XqVT3UtacRg+f4MX3myGa3oayJZb3UQ3snv/Ie+2Bo0uFowJs3UR9EFhDa0Et8CGmigdNy0pTaygTGurDc0WxXrW845zOAvppouX3/s+78fv/VSe9z9FzxMVaud9OB/cQ9dDm/BerxeBQAA+n094YiTqHzk60NvdBU9fNxQyNCB5PB6DzHI7HYm+CiNSWCz8xlz2F6a1HD5v/RFDt9sNl8slfLR4iVntJ0a/JDGd/i4+9FWYFg2CqyeI7QD+DDD8aVswVVXhcDiEfzmbx+BSE6F8C8u1I8H+CxCp7OLDNyCcP4V/eV8wu90Om80m/Pt4DZMrdYx8BcaS6X8fXPtKCRQmM1m8iVbw6uO6UavVaoXFYjFkBmEmoVxTZDZdaddA0m1N1DGSwlERYMNYM9Pmz8QajQaq1aqRDXW0oS0x+iqcMwV2mw1jzXrapVIJmqYJT4w62uiToe/dS+BWEVgqX8n43sX2DKObTQwk6hgMb2Am80NkaaI+RgYYzQETyRoG5tYEM4/xRTAnyzQUOxNbYvzcCDCeOMBC4VzmzHERMy/S6/lNvE1dIbJxgVCxLJgsEtNgLVyS6O4eFjbLRormVZ5fayF+dCzvVOpQfGSReIntGnlbE3X7Z4+dUHiSvCrzueoHZj5nZko966aeH9P3L3glGISEk/Z9AAAAAElFTkSuQmCC",
+  "ae2:block/flawed_budding_quartz": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA9ElEQVR4Xm2SsQ0CQRADvx16IKALQhqgBSRiIgqgASQyQrqAjA6I6IBFtjQn/+qD1f3t2T6v76fLq+r0+LoO12flnlKv92+fql9VTfpIoPaAJYho9tmrpk7en++uJXB3NQSSvNpsXTmOVoRVKTZzIJLI693RK2cQ1dfKeBZgzhQByIob7d81D9QCkNOu+p2sbwTAewRCokmIS2Q9HViVHaQlguR2xoCQZDvIZpK5ObOACFkX+EeSNZ5RYMJSL5PPrHA+HBCaSuQeFlmlyAgxXwJyD0vniNL3CCilrQQB5IIceTjIuRLY+3lGb/wHHZz7PE+M+n+UXyvU9tUznQAAAABJRU5ErkJggg==",
+  "ae2:block/flawless_budding_quartz": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA80lEQVR4Xm2SsQ0CQQwEvx16IKALQhqgBSRiIgqgASQyQrqAjA6I6ACjtTSv4URg3Xvt3Vv7fjo9qg63d8fufC/nRLARv7yqPlU15cONyWmOIKLGyRPTSN4erx3/mqkZbwGTF6t1h8fJmdpys++w6x8HIYWMEDVyRBivBZjTImnihIyjZ/0utAUg225wboScEwH6ewSWBAgRDJGQ83TgiXZgS6Nlv0rC5HZg0MvyzewCIuTU+keKtZxuHDG2b3KPgANuSoTsZSHC+yMyL9EvAXlcVuqIgvcIKNmWm2jkAo88O/Bcbhxx18Dm/2Bsdu66e4J/AeZwJ46jwEcAAAAAAElFTkSuQmCC",
+  "ae2:block/fluix_block": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAC9UlEQVR4XjVT2VJTURC8X2RAHjTsagkEsofsewK5MQlkgZCwhR0fLK3iQV8UqYAsYQmEABFEvoBFynL5m7bPDT5Mzalzz/R0T8+V8sE7TIbuMR78gRH/LZLeawx7rpEUwXPad4OxwB2mwveYl39iOfoLi/JvzET+YGrwLyTxIWc9Q9p0hAHtDtyaDTh61mHrXoWzZw0eTRG+3k2E+C3ZX0XCcowI38qmKkwdHyBNEyBrPkbKeMiHX1i8Bnv3Z7iYfb0b8LN4UH+AIcsJ0v0niJnKCOhKCBLwedMEpJilhgAL3T1FFhXJoAgvY5CPXun3kbJUWXiKrLWGLLtH9Xvw9dUZvWjKQwoZq7B2rcJNEC+7hXU7yqO4voSkcR+jZDZJgGnKzFsqyp2s3UaEYWp/B0kMy6Vhcd+2olXMYdiwh4zpADnzEQr2GubsX1GwnigAKQJEdbsKA23rW0gp7w08LA7wMmI4QIY6J2w1FJwXWHBdYt52hlnrKcbMh5S0gwEy9PG9aNjckIaU8d0ibCwjaqpgmIPKkmrBUS9etDPzPM7uUbLyUKZTs/4QG1Cr4pCy9DhCnVFaEyODJHOGYHnLqRIZ8wnixgOECeBmVxEebT3UqigksSRhxRZeElnMQTYcImO9wIjtgn5XFHkDhn2EONyQfhcBDthFBk8fyWTA7Rtk5yAfeTkYEUH6HmP3pPVckRZkkZCQMO6SZQlh7aZidW/zQt0FQed/sTj72Uk2HCFtOUPKdIghdh81l5Hvryg5RgYyZbU2DEESe+/q26K2rToAJQQpKU5WU1yeefs5ZujCnIPZUUOODiW4ucKxFtUDgJ0bKEJMV8whQqvGzFUW1rDk/o7Xnissuq+Qc3yjrBrncgx/3w6aVQlIQW5if9cnBUD8QAFOeYj08rRzigskYoJ2jtov+SPV6FgVIV0Zfm0JmpYlSC/VsxDxhBNVq2Job0zD1rECZ+d7JRvb3nBlV2Dp/Ahz5xqeNS2j4/E02hqzaGlI4h9rFF5zDSghZQAAAABJRU5ErkJggg==",
+  "ae2:block/growth_accelerator": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABCUlEQVR4XqWTTQrCMBCF+7MQFN1ocVd3uhFBdxYpBXdCt0ILbr1TL9AL9AA9WuRNeXFaoxRcPJJM875kphmvbVvTNI2p61pUVdVPcR888HqYrMNMghi1oiB1CnsxwutpYp7nJssyEeZaOq5vLADQ8GEZJGbu70WL4GDNmFNReJEYb+0hLwBAp3Hm70Q8lWtCEIMHXgGAhqA2T/yNBWDOOA5xAnjVzhzLpqIoRB0kNlN/KwDsdQJ0sWB8pqUpj7mF6OLCYwEs4hBwOz/M9XQfD3in0OXfT6GrA//ORwpjisgaOItIgOs3wkgzATaFbw+J1Yb4PqBVmPQf0t9PGQvdIMOG0nI207/t/AJhMOkI8f8NogAAAABJRU5ErkJggg==",
+  "ae2:block/inscriber": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABfUlEQVR4Xp2Ty07CUBCG+wxEo2ICutFCIm3ZSGFhIV4SS3GlwgsQ4wI3PgHvwmVX2HN5tLHf6CGVBjUu/s7pnPn/M3POjNW5rcvDXUOuahVFq+FJFEXi+74EQaBgjY+9Zt1VCw9Y0Y0vq9VK1uu1zOdzieNY+v2+9Ho9JQHW+NgDxC8WC4FroYYDMvYvIBYBuFbgOzKbzTIirNNI+42lHBVIBxSPLuWsEEpYfZX9vCvD1kDsYiS5gwspn3S+CakANVKf2djLOzszqJa6mzg4cC1umEsyJE7DTqdTmUwmMhqN1OIrJRkYMThwLZ4JJSPwWH9XOx6PNeVh603X+CjJCMCBmxGgViynQr53XjYZ2IV2VmC7hPLpZ5qQOBlLOfi886dsCduXWLWfd14i2WQukacwfQBCN3m+Y++r/kEi2JXcYSVJP9SSTBwcWl878T+NBGfTSLRlOug3mFjNoH1d05/lcqmqPw2TyYbBg6PDxAeQiRnXXePMiewTa8b5A7WBhho9X3S6AAAAAElFTkSuQmCC",
+  "ae2:block/interface": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABNUlEQVR4XqWTPU7DQBCF90QQ5CabFBgToIkJdJgD+HIUtiUKCv8kTZoUaSIkRENDRcMNBn0jrbW2MApy8ezd2Xlv9ueNub2eyepmLufTE0U0P5M4jsVaK2EYKhgTY+1iNtE/PGDiKyt1XUvTNFIUhWRZJkmSSBAESgSMibEGyC/LUuAa1Ag83i/kYRXJcjGVNE2VQFXAmBgVyQMIwDWhPZU8zzX4tHlVZNv3X+HWKcRuOY4KMEHdJz/vPjrwRdhlK+BvsU9+2X8q+iL+EU3nknrk8vCl6Iv4l2z8Z3ICjrx++1b4IuT4zzxeYPQRRl8iT4EPcNWxz0guHKyvTmSS3F3+y0hwWiNhS4K4EUMNWRkDUQhgf90BQSZVVanqX82E+wCNB0ebiQ9gJ65dh9qZiqyT69r5B15Oj69eArQuAAAAAElFTkSuQmCC",
+  "ae2:block/molecular_assembler": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABSElEQVR4XpVTSW6DQBCcb2T1buMksuNsSpRIbJ+wZD4CHPgFAmxzBNs/yh9yyi2niqoRluGCqcMwM3TXdFd3K/vrCc+zMUa9Kww6F9B1HZPBDbThrXzvJz3Z879lWZiOOnKmj/W5gHpbTJFlGfb7PbbbLVzXxXq9xmazqXzDMMRqtZI97Q+HA+irxv1ruVAtQQJGIgRJklQIfv/QSMjI6KsMw8ByuTw6fP80OxNBEMA0TSiGQTZenvNyCeo17F4WBPUUzgFFlRS4UNm6QRPow5JWUmiDOI4LAkbAfOoGTWAKQsCljQal0IxARLRtG57nnUVwWiXHccAWUOz3NhGUoIh3425BwLasGzTh2Mov8wnyPJd5IGs5MFEUibhpmsqZUfq+LxXb7XbyKCdSGR9zvD5qx/FlezI0Vofn09Fmzg9aX9Tnw/r7DP/HNvwBB2F6fAAAAABJRU5ErkJggg==",
+  "ae2:block/pattern_provider": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABNklEQVR4XqWTzUrDUBCF7xP5Qza97cJYq26MtbvGB8ijuRKS4ErIz84HKBQEF4LLFos+wZRv4JYx2KJkcZJ75845c3/OuNuroUyvR3I2OFKMR6eSJIl47yWOYwVjYqydD0/0Dw+45NJL0zTStq2UZSl5nkuaphJFkRIBY2KsAfKrqhK4DjUC97OJzKdjuZkMJMsyJVAVMCZGRfIAAnBd7I+lKAoNrhYPivXy8VeEdQqxW46jAkxQt+TP16cfsCLscidgt9glb96eFV0Re0RnL6lL/npvFV0Re8nOPlMQCOTvjxeFFSHHPnN/gd5H6H2JPAU+wFV/fUZy4WB9dSKT9O7iX0aCszMStiSIGzHUPitjIAoB7K87IMikrmtVPdRMuA/QeHC0mfgAdhLadV87U5F1ckM7bwH1TJm75nyFJQAAAABJRU5ErkJggg==",
+  "ae2:block/quartz_block": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAyklEQVR4XnWS0Q0CMAhEu7gLOIMLmLiBW+ifG/jlBmIOc83zgh+khR7HAV2ne9Xx+mo7nG9F36ZYxi/PqndVLV0IlG+wCE3KuH3ZyuRHfYETeCJpAiZL1j+wi0mV7z8KKNXJfNdpIpMs98lKrEywfLe4FfAxzySbZtQtZM82KsgZmaQVZCLbokKq2gpSqpPSJwmV9UeSNK4pSbk2xroFg3MTOazclgl7iFNyDotVHe8WzEQAQQZmAbe8v/KkJON8c2z/gwTTn7bkvA9hhVVObhMZJQAAAABJRU5ErkJggg==",
+  "ae2:block/quartz_cluster": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAuUlEQVR4Xs2RsQ3CMBAAsw47ULAFJQuwAlJqKgZgASQ6SraALhtQsQFGF3TR84mApOIly/H/3zm2q+rv41FKybmfA5jRTJUAThYAHm8vAXOuf40o2F9HSvxtwc3hUrbn+zgBMKAC1rH+8XXYHUgwCqh5tA7IF+WuUTBf1e2xzL/dCQKT692pd3bgKO3dB0WSNiCJawTmBwVKbMjNs8WyE5EffFJ3pIFhMzkEEWbOfBs2MQMxWPttPTJPAR5bXgW53oYAAAAASUVORK5CYII=",
+  "ae2:block/sky_stone_block": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABPElEQVR4Xl2Ty07DQAxF50OICqRKohRSIlIq0g0IiQU7/v9jgo7RGbldTDzjx/X1I+XpOG3T67x1Qx+S977r4j6flm04jNvu4T703JGP+zYkMQXHcXrelvdzSAyX3+8KgI4A7Ng46Npl/QdAQQYCyKDECEA3DjVQpuj0CQAygCpFHNEhKWd3OtTMgKLjzT1K0JjvSGgDiuMtQ5MVMlGPATZOJndNcwWADyWf5z7exfqlLEWDsAsoaJ5KybSk3ozHaJAlOAGTOeYogY90BLBuA/MIc4nz17oVjbc0KQlnbZx+/bwCoD9FJ44bhoN3xwt9fd9+PqotSiCjHaccqWYAlicnow8VAAMPu4+uvbxUACWNNaGNLG6XmfLymI09iY1MI1UGA38kUa3XUeUAGdUx2m27i8w/l865J0iX6Q/UvIWKuNVFkQAAAABJRU5ErkJggg==",
+  "ae2:block/sky_stone_tank": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABR0lEQVR4Xo1T206DUBA8P6MxqRZoi0rL/VIuBaSAtcaP9wt88NnE1VkCrbQWJpkcOOyZs7uziE1WkCQrNJUUupNk5tXkhm6nEinzBUnKjL9hVWYLJr7Jszk/i3r3Sl4QUhhvaB0nDaNmtRyP7pcambZLjheQG6yZumnT9e9FuFiU9Qs5fkBpvqUgikkMAIKIw4pMRF5UfGM/8PObTvaOAQEu4ZzA+8fXxcNAJ7Ctdn9SH3MY0EzjUAIag82htI/RZVCU9UkJY6BqGlsusqeSXegHDAEZYD54DuB5P+A/tGVqht4IoIljMzhu8ERtplHs9m9kud6gQN+dR33VTOIYgXPudALV855dgEhr5yWgdhyGC/jB+F+wXZ/7kKQ5M95kFCUp7/lhRKrp8LNhOR0fVsuDC2gkhJANiLIwHxgyEHuIQSzYvuOiH5Sm8sowoy4EAAAAAElFTkSuQmCC",
+  "ae2:block/smooth_sky_stone_block": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABxklEQVR4Xk2T61LCQAyF+zbOOEJpvWChbOn9AiiCojO+/3PE/bKE8Udmd5uTk5NLo8P7Sd6OZ7Hz9Pktx9OnfJwv+sZ4m9/s/PUj/biTiEtZtzJMeymbVrZ1I8sy17OfdlK3vXTDJHXXSzuM0vajNP2g5yJ9lIiMOABCsDscpWo6mfZvHjRJ1XZqIXhS4nRdaMI4SSVCzrg7aDCBqHHb6qaG4DRfSlHW+h0ifEVVS5I+SXT5+VWJKtOrQB5gk06dZDMludvqN5TGi0QimgVAJXpz21IBgFFgRPqumlCax6FAS6CJrqxuAZaJpiEZRUg2azyhYny58zgJTTTJ1rhnFwgh0fOqAqVIJxGWPPoeMF9GYtkBckciCggyIprNHSWbopS72X0ogZoAYv/LsLLISl/my1WYju/FyyoLTWTLAOL4PwXdjWu2bpxUkTXyyWV66hjZAwDrTXHbNJNt+4ACiMFAZDsxixehB7A9Z5kCcCDbDY2ScKdeMKYOLD6dAovEx2yThzFdQRBxKrkLuwERtVMKd+0BY8zcRpbrlbzmayVaOadAMmF8ww/O7mCVgNkzT7YKSXanQfxt1Knf/fthHmsQbzC8/wCxB8fCzsiZ3AAAAABJRU5ErkJggg==",
+  "ae2:block/vibration_chamber": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABX0lEQVR4XpVSu06EUBCl5hd0SVbdR+MuvhLfr1p7NpQmQGPHB9jtdhYUEuhZaqCgoKI08YOsxpxJ5uYusiYWh3ncOefOHcb4/nijz5dbxtfrk4LkdHTz4BrJs03LmyG9Xw8UEEuu6+s14Bp6B91OtuXl7M8O+rrRz1QHD5c23V/M6XQ+oTN7yhjv7TIm+wPGaLjD9mQ25vPjwxEJz3i8OqIkSSjLMrbir9frX1Y/h2UB3JznORVF8S+Ag05YAGpIRlHEQCxWILFcBh9cAypxHCuBsiy3oqoqappGCXAHGBbeJEkUdYlChm3blmvBwWBZAAOSd+EGoK5r5euxCIADroFfJDNYLVe9CMNQIQgCrk3TlH/rxhBRYFkWmabZC5zpAjxEfOQJEFgsFuT7Prmuy3Ach3Oe57EPbPzGu/MZd9BdFMQACrctEpZQrTLU0A0gawyLGU0PLLZ4s6w8LobADwnjYOOhhLiFAAAAAElFTkSuQmCC",
+  "ae2:item/advanced_card": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAmklEQVR4XmNgoBaorKz8D8J5eXkoODkpCYwDAwLAGCQGUoehee2KFTjxxL6+/0UMDP9X8TP+93p7E4wX/n6BMARmwII5c7Di2TNm/Fc4uhWsCYav/v+GMADkLHRNyJigCwgZMExcAItGUJSC1MM1E2MACIM0o2hCBiBT0TWg44E1ABYG6PrgAGQASBE+jNcAEEDPNOgYXT3VAADE98CI1HkH0wAAAABJRU5ErkJggg==",
+  "ae2:item/annihilation_core": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA4ElEQVR4XrWRsQrCQAyG+zauSgUXcZE6OFV8g7p3EYS+hIuPcLOLi7PDbdIHEG4SnHyHyB9IiUfvvA4GAjnI97VJsuxfsSlLknpVFF2dFICdc10aYyhZArhpGga36wXNJiMW1HX9WyIwmiFYzsdfgqhEwyIALIJdVcUl/tzTPCdrLcO6lrfPZ4CedONs6cQAdoAxAJ0fxHm8E799ngUAkZfXnpv0DgAiD9d3v0BGwJeR+E39y1IHR/CXiEZ9Rr3EXgFCS/wRRBCEJSBBI8bQZ0yCJXBnfbbg3LHQwGB4SHwAPw02NdmHkhYAAAAASUVORK5CYII=",
+  "ae2:item/basic_card": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAm0lEQVR4XmNgoBaorKz8D8J5eXkoODkpCYwDAwLAGCQGUoehee2KFTjxxL6+/46sDP+LGBj+v9woCsZ/v8YjDIEZsGDOHKx49owZ/0s1mP5vShGEY5AhcANAzkLXhIwJuoCQAcPEBbBoBEUpSD1cMzEGgDBIM4omZAAyFV0DOh5YA2BhgK4PDkAGgBThw3gNAAH0TIOO0dVTDQAArUKpxjfPbUQAAAAASUVORK5CYII=",
+  "ae2:item/blank_pattern": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAt0lEQVR4XmNgoCVobmr6D8PocngBTNOtW7fgmChDsGlMTkoibAgujSAcGhKC3xCQwKtXr7BqRMY4DQFx9u/fDzckd9MhDM14DYEZAMKLbz4DG4DNEGTvgSwD4aSEhP9gAzZu2ADXiG4INo0g9SAMNgDmCveO6SiG4NOIYQAIGGaVww2BhQkujSA8d/ZsVAOQDYGFyenTp3FqxNAMAyBDQArRDSCoERnAAhZkCEkakQEsdZKskVQAAP2erXSgvrL/AAAAAElFTkSuQmCC",
+  "ae2:item/calculation_processor": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAp0lEQVR4XmNgoDZYxc/4f/35T/9x0ejqMQBIYc+222AN2Gh09RigiIHhf+2iI/9x0ejqwQDkNJDpIAWOrAx4McggkGtAGG4ATAAkCVIEMgwZTz7+H4xBciBLQGIo4YHuApBimCKYHAiT5AJkjTBXEO0CdANgmkhyAbpmmAFEuQAWBuiYaBfgw1hdgAywJR5kGl09BgCZDnINLhpdPQbAloGQaXT1FAMAM4V6kJuSfu4AAAAASUVORK5CYII=",
+  "ae2:item/calculation_processor_press": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAqElEQVR4Xq2TWw6FIAxEXTxrYQn8sAq+2AHb8GZIjqmV6k20yYTax9AHbtsXknPe/0VK6cCJYIyxt9bmKfTeJ0oppxOEBLXWGYBOIjrfSwI5qMBX4iu6EOhGWsCObisJCewMPIFEibaqWwIgUTBxslHNkoABYvfDVEzYgu1PCfisfjsD62Rd8nE+EqzWZudh7SEBq4weEFgSEOxvIsHjQrD6WZ5wELyRH1J+QPG7L5JPAAAAAElFTkSuQmCC",
+  "ae2:item/card_capacity": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA4ElEQVR4XmNgoBaorKz8D8J5eXkoODkpCYwDAwLAGCQGUoehee2KFTjxxL6+/46sDP+LGBj+v9woCsZ/v8YjDIEZEOxl99/ZxgCMF8yZA+fPnjHjf6kG0/9NKYJwDDIEbgDIWTANIIPMDdXBfBAbZABBF8AMACkGaYYZADOEaBcg+xtmCEkuAHkB2WaYi4h2AXIAInsH5AJYNIKiFKQerhnZAJjz0b0D4oM0o2hCBiBTQYpAfsSGiTZgFT8jWAM6TbQB/6Ga0GlYGKDrgwOQASBF+DBeA0AAPdOgY3T1VAMAVNZ9IO1/+jkAAAAASUVORK5CYII=",
+  "ae2:item/card_crafting": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA30lEQVR4XmNgoBaorKz8D8J5eXkoODkpCYwDAwLAGCQGUoehee2KFTjxxL6+/46sDP+LGBj+v9woCsZ/v8YjDIEZsGDOHDAO9rIDY2cbAzB/9owZ/0s1mP5vShGEY5AhcANAzoJpBmGQYSDNIGxuqE7YBegGgDSCDAFpBtEkuQCmGeYSEE20C2A2wsIB5gWiXYAckMjeALkAFo2gKAWph2tGNgA9IJFpkGYUTcgAZCpIEciP2DDRBqziZwRrQKeJNuA/VBM6DQsDdH1wADIApAgfxmsACKBnGnSMrp5qAACpu4PgrKQcVAAAAABJRU5ErkJggg==",
+  "ae2:item/card_energy": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAy0lEQVR4XmNgoBaorKz8D8J5eXkoODkpCYwDAwLAGCQGUoehee2KFTjxxL6+/0UMDP9X8TP+93p7E4wX/n6BMARmwII5c7Di2TNm/Fc4uhWsCYav/v+GMADkLHRNwV52cEMJugDdAGTNJLsApNnZxgCMzQ3VSXcBLOBAmmGuIMkFIIysGeYCWDSCohSkHq4ZmwHYYgSkGUUTMgCZClIE8ic2TLQBoECCBRYyTbQB/6Ga0GlYGKDrgwOQASBF+DBeA0AAPdOgY3T1VAMAri+ikpznaRsAAAAASUVORK5CYII=",
+  "ae2:item/card_equal_distribution": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAt0lEQVR4XmNgoBaorKz8D8J5eXkoODkpCYwDAwLAGCQGUoehee2KFVjxgjlz/k/s6/tfxMDwfxU/43+vtzfBeOHvFwhDYAaYG6qDFWMzROHoVrAmGL76/xvCAJCzsBmAzMfrAmIMIMkF6DTJLkCnqeICWDSCohSkHq4ZZgAopJFDHZ0P0oyiCRmATAUpAvkTGybaAFAgwQILmSbagP9QTeg0KBwIGgBShA/jNQAE0DMNOkZXTzUAALFnmgzK+V7qAAAAAElFTkSuQmCC",
+  "ae2:item/card_fuzzy": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA4ElEQVR4XmNgoBaorKz8D8J5eXkoODkpCYwDAwLAGCQGUoehee2KFTjxxL6+/0UMDP9X8TP+93p7E4wX/n6BMARmQLCX3X9nG4P/C+bMAWMQG4Rnz5jxX+HoVrAmGL76/xvCAJCzYBpABsEMALFBYgRdADMAphnZJSAxol2A7HRzQ3U4n2gXgGyG2QpzDcggol2AbjOIDcIgF8CiERSlIPVwzcgGINuMzgdpRtGEDECmghSB/IkNE20AKJBggYVME23Af6gmdBoWBuj64ABkAEgRPozXABBAzzToGF091QAAHMGZef1XsKQAAAAASUVORK5CYII=",
+  "ae2:item/card_inverter": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA10lEQVR4XmNgoBZoamz8D8MF+fl48eLFi/9jaF67YgVOPLGv738RA8P/VfyM/73e3gTjhb9fIAyBGbBgzhwwDvay++9sYwDnz54x47/C0a1gTTB89f83VAOQNcNshhlClAuQNYPYIM0gtrmhOvEugNkI0wxigwwg2gUwZyNrBrGJdgGyITDNsDBISU4GY1A09nR2YkYjzACYIcixAsIgzSiakAHIVJAikD+xYaINAAUSLLCQaaIN+A/VhE7DwgBdHxyADAApwofxGgACsIwCC210jK6eagAApvykDy9BUTQAAAAASUVORK5CYII=",
+  "ae2:item/card_redstone": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA4klEQVR4XmNgoBaorKz8D8J5eXkoODkpCYwDAwLAGCQGUoehee2KFTjxxL6+/46sDP+LGBj+v9woCsZ/v8YjDIEZsGDOHDAO9rL772xjAOfPnjHjf6kG0/9NKYJwDDIEbgDIWciaYTbDDCHoApgBMM0wF4DY5obqxLsApBFEgzSBMIxNtAtgzoZ5AaQZRBPtApghMBfAAhbkAlg0gqIUpB6uGd0AmCHIsQLCIM0ompAByFSQIpAfsWGiDVjFzwjWgE4TbcB/qCZ0GhYG6PrgAGQASBE+jNcAEEDPNOgYXT3VAAAK74MZKwP7DgAAAABJRU5ErkJggg==",
+  "ae2:item/card_speed": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA1ElEQVR4XmNgoBaorKz8D8J5eXkoODkpCYwDAwLAGCQGUoehee2KFTjxxL6+/0UMDP9X8TP+93p7E4wX/n6BMARmQLCX3f8Fc+aAMTJ79owZ/xWObgVrguGr/78hDAA5C6bJ2cYAg03QBTADQK4AaTI3VEdhE+0CEIZpQmYT7QJstoPYRLsApgGdDXIBLBpBUQpSD9eMbABMAzobhEGaUTQhA5CpIEUgf2LDRBsACiRYYCHTRBvwH6oJnYaFAbo+OAAZAFKED+M1AATQMw06RldPNQAABxWUV5T/bLAAAAAASUVORK5CYII=",
+  "ae2:item/card_void": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABEUlEQVR4XmNgoBaorKz8D8J5eXkoODkpCYwDAwLAGCQGUoeheWJf3/+1K1ZgxSA5R1aG/0UMDP9fbhQF479f4xGGgAxA1hDibQ/GyAaUajD935QiCMcgQ+AGgJy1YM4csOJgL7v/QV62//1cLf97OpoR5wKYASHedv8D3G3+rz//6X/Pttv/XW2N/jtY6v2fPWMGcS7wd7P+7+1sDtYMwnYWuv+tTLTAckS5AORcNzvj/05WBv9tzXX+WxprgsVAckS5ABZoNqba/80N1eF8kBwsGkFRClIP14zNAHQMMwBFEzIAmQpSBPIjNky0Aav4GcEa0GmiDfgP1YROg9IBQQNAivBhvAaAAHqmQcfo6qkGALdmgaGZdLYDAAAAAElFTkSuQmCC",
+  "ae2:item/cell_component_16k": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABFUlEQVR4XnWTMW7CQBBFuU1aIpDSRDSIFFREgZYCepeR3OYKOYJFwwkQBZ2VMgdAPkkUJnorfWvz16z0LfvvzJ+dv+PR6M56P0WA7fEnwfcH1+tqFeBlsYjz9RZvy1nMn8fpHQ5MJ5NhMRLruu5BEslPjw9x+P6NzXod+90uqqoqRZTcdV1C27YJEnC+EMkFPr8iPi63FEiyBHK+EKA3BNiUcU3TpCTgPK30AmzQL9ARCZKAqjpPfLodBOS2elZlOU8g3x6XBHiIEFTZBTyuF+A4XJW7rSFyXi33A0YVjHG31Yrz/0zMBdxt9ez8oAB3626rZ+eLOchFABXyUeb4GuWier7yHwYBuc07nOB5g0s3IPi+1h8e5g+FRt3eoAAAAABJRU5ErkJggg==",
+  "ae2:item/cell_component_1k": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABEElEQVR4Xo2TsYrCQBRF8ze2igs2YiNabJVFbS20Tymk9Rf2E8I2+wWLhV2w9AMkXyL65Azc4TmJrAM3GSbvHnLfzGTZi7H7M0Pr32tQ+r1zfOW5oflsZofL3RafE5uO+2HOGvoYDrthGMuyjMKEeTTo2c/5Zqvl0rabjRVF0YZ4MwXo+2QRwFyATogAMlOECfNbALIJoCIMGGWW9D0C6DR5kTc0TRNU13WQByLqw+4AULd9Zsy898d7ADBP6wKAhxZ8Zkw6B1VVPTVVigB+h61CiqBfx4x8BEWOB4wmqnFebzXRA9IdUGZBfE0L4LcQ+cwpoHUOPEQgf5RTQMus4S8MAHWbOWtS6uscusb/XecHJr7koLpKj+cAAAAASUVORK5CYII=",
+  "ae2:item/cell_component_256k": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABRElEQVR4XoWTMUsDQRCF829slQRsgo1E0CpirATB2F8lwnVibWdjf52llVgICoelCmITr7LQykIQRDFPvj3mmM2euPBym5mdNzNvdjudP9b+uQS2T78DZv2ta304FFgZDHQxmWpjbUnL/fmwxwZ63W47GYF5njeoqiqgLMuAzdFIu+OxsixLSSzYB/E9epL2HpSQJSSe4PhGOrychoM7d1Lvuibw9oSA3iDAiXBFUUSwzIjJf1ppCAhAJF8mh16+pPsP6exNOnlVYzdCYsJ0IEBt3zMHCL56r4MPnmub9y8uzNUE/DAq3zN7y7w1kVYffyI/VUQElMMB34ZlJrh/+xlNAYKmBRMRYUxtT+ZhU4hE9AQ47fqSxffs7a0EzNaXCLwm3p7cA08CrBofZFc5ye6XfzCIhNKAPTbDbFzrsmf833P+BRbNPr47Jj/7AAAAAElFTkSuQmCC",
+  "ae2:item/cell_component_4k": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABB0lEQVR4XpWTMQoCMRBFvY2tomAjNqKFleLaWmi/pbCtV/AIi40nEAu7xdIDyJ5EdOQFfggxogb+Eibz3yYzSaPxYWyOZmh5uDvF68kxm04NjUcjO92eNp8MbNhvuTkx1O100jCMRVF4YcLcazdtf33YIstsvVpZnufvkNBMAtpdzAOYC5CECCAzSZgw/wTgbAIoCQNGmSWtewCV5ryormunqqqcMG/P6Tj5rjsAVG2SZCJRlY/jqo0D8FGARfW+LEsPiOOqjQewHVqlLZKEdIniuI7sLxh/UeFC/VTEEBB3QLWJ25gEhC1Ef12kECJQeJVjwJtZI3wwAFRt5sSk2Jcc6sC35/wCr3/vQr8JBkoAAAAASUVORK5CYII=",
+  "ae2:item/cell_component_64k": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHElEQVR4XpWTvUoDURCF8za2SgI2YiNJkSpibAVjv1UIbJs6nY+w2PgEYmEhLJZa2Ok+iZgj38Ask3t3MRk4l2F+zp2feweDHlk9SeDm8ceQ+jvlcjYTmIzHev7a6mp6rouzY9OxgdFw2E1GYlmWLUgi+fTkSA/vv7qez3W3WKgoipzEk5umMdR1bejTM5JIcP8mrV+2Frj5lpafMj3aMwJ6gwCnD66qKt1+SKNXmR7ttNIS4KBf4CUSBPp0qiHetgOBT5sWYtk++dTuwzUCDjfgjGU7QWondoeAclhV2kKcfLR7y+0D4xYGs+8WdoYYCXAevAUnYLdpqX169g4iCeCG+JQp359ydnuU+GEg8GmjY3OkeZ3i3/i/7/wHqMMj18PKIIsAAAAASUVORK5CYII=",
+  "ae2:item/certus_quartz_crystal_charged": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA5ElEQVR4Xp2RMQoCMRBF94reRTvPYGNhI5ZiZ2mplVhYKYg2YqNYLSw2soWRF/jZkGQ1OhA2yfz/ZjJbFB9isDgaVnifFRi3t9ocSvMfBBNmFqCfIRiq58uMTw2kN1nlQ/SE2hgHAZiEpIaFcF89HATzbFe2AxD7EITr691V5ps0ExoYrSISUEMEwPkrgFY1LNoVADPdCBA9mQRV9N8FmF8aAOdOd2hzFIq64QIxJoQ+ADB3FGmdh18V8Wh5ds8QQN1EZsI3se9PN/YMUAAB2Yd+GySUFASTAH6B0JsMAX1otjk33kPWr7cOHPISAAAAAElFTkSuQmCC",
+  "ae2:item/certus_quartz_cutting_knife": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAeUlEQVR4XmNgGJLA00z0v4Yc9390caIASHNnujp5BoA0Z/jJka95iNmcmJj4n2ybQZq7urr+92y7TZnm9ec//XdPayLeAJDmA/v2wTWTZABI840bN+Ca77/9TbxmEKhddOT/x3//wRpBOL17NfGaQQBkAAyTrJkSAADIu3icgTtGnwAAAABJRU5ErkJggg==",
+  "ae2:item/certus_quartz_dust": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAqElEQVR4XmNgGN4gvXv1fxBGFycKgDTuuv3//827H0k3BKQBpHHy8f//t99/9H/9+U//3dOaiDMEpvn+299gGuQKkEFEGQLTDLIV5gIQDdJcu+gIfkNgfka2GaQBZAgyu2fbbeyGwGwHKT566T7cdphmgq4ACYIkV569CPczTDOIBomD2DhdAAIwQ5BthtkKMwinZhgAKQBhkE3othLUjAxgGkjWSHcAAHVoEhrHkwhPAAAAAElFTkSuQmCC",
+  "ae2:item/certus_quartz_pickaxe": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAlklEQVR4XmNgGLSgdtGR/8g4vXv1f3Q1OAFIw/23v/+vP//pf8+222AMYoMM8TQT/Z/hJ0fYMJBi97QmOIYZ1Jmu/l9DjpuwAegAZDPMRSAD0eXxApizQTbDvEO0ISDNyM6GeYcoA5BthokRbQC6zTAA0kjQC9hshgGQRlAU4zQAl83IAK9mXDYTBMTYjBeANJKtmRIAANODmBVyHVLYAAAAAElFTkSuQmCC",
+  "ae2:item/certus_quartz_wrench": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAh0lEQVR4XmNgoAWoXXTkP7oY0QCk+eO////Tu1dTZsj9t79JMwTZ2SCNJBkAczaIBmnq2Xb7//rzn/67pzURZwAIwAwB2QzSDDIEhEkyBGQ7SAMIIxtEkiEwgM0QGEZXixPAAhMWJmS5CBQ26K4gKYBBrkDXQLRmEICFBUma0AHVDEEXowoAAL8guUeILbT0AAAAAElFTkSuQmCC",
+  "ae2:item/charged_staff": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAzUlEQVR4XtWQuwrCQBBF83+p/IT8g/6GjY1VKlH/wEINqQ3W2ZCIQjS+H/iIMT6uOwsB2SYbC8ELw8DMnHvZ1bQvVO0wUMnzXGVgcATq1qiYQcW0MZzs0J0B7h5oOxFK5ZqaCcG98RLr6wumD3jcoOnM1QwIbg1ceHGK8AQ0AiA88yf0fTUDOnKiBIynLi7A9sF7DDXYMAxx6PPEQ8Lh2xPedKMGk8jAtiwBrNK76IVgxhh0XRelDJKyZALlXa4+k+Vdrv40mZT9tDz/id5dIMroMBvajwAAAABJRU5ErkJggg==",
+  "ae2:item/color_applicator": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAlklEQVR4XmNgwAOCvez+o4uRDCg2pDli4X9nGwPyDAFpdnN1Jc+AiRnrKNccGBBAugHImvPy8v6bG6rjNwA5lGF+hmkG0ZWVlcQZAtMMYoOcDcIgzTDDPC1UCBuCHucgQ0Cagx00/ldEmBE2BBtwMVYEG5Dmrz9IDAFhomIHGwAZAoud5KQk8gwBBSxIM1HRiwvAohmEAXQMiDI0O7z1AAAAAElFTkSuQmCC",
+  "ae2:item/crafting_pattern": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAu0lEQVR4XrWSsQ3CMBBFvRJTsEZkOiRq+tCwAUVElQUCC1iidUOLB6DwEkb/pDMXx3ZwwZd+kdjvOT5FqX/m1PeBm65Vw5BzLvYnSQ7cab0uKYGoeoa6BC+891mQanxdggdjTJQc7o8vKFuSsAAdX28SkCQRyOvhMFR3XSDBbZoimEpyIPajJOCv2J4vM0kNXAiQzf4YJTyTEoheh2EukBKeibW2CC5gDiTYmApWQRkeLCRNoAz/nc1gaz46SbkY7mwhwwAAAABJRU5ErkJggg==",
+  "ae2:item/ender_dust": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAmUlEQVR4XmNgGN6Ax9zgPwijixMFQBoF4gL/m8zsIN0QkAbVlpL/PV8egWluX6f/zGoKxBkC0gyyVefsRrBmkCtABhFlCMxmGIYZAtOM1xCYn2HOBrFBGkCGILPZLA2xGwJzOkgxsu0wzQRdAZOEaQaxYZqRDcHpAhBANgSmCSYGMwinZhgAKQBhkE3othLUjAxgGkjWSHcAAFBqmeJXGWsuAAAAAElFTkSuQmCC",
+  "ae2:item/engineering_processor": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAp0lEQVR4XmNgoDZYxc/43+vtzf+4aHT1GACkUOHoVrAGbDS6egxQxMDwX2birP+4aHT1YAByGsh0kAJHVga8GGQQyDUgDDcAJgCSBCmSWrUcBcMsAMmBLAGxUcID3QUgPkijzoMbYAwziCQXIGsEYZJcgG6AYFEV6S5A1wwzgCgXwMIAHRPtAnwYqwuQAbbEg0yjq8cA2JIvMo2uHgNgy0DINLp6igEAlSRK6d6vdx4AAAAASUVORK5CYII=",
+  "ae2:item/engineering_processor_press": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAt0lEQVR4Xq2Tyw3EIAxEUzy1UAIXquBEB9TAjWhWesgBo10pi2Txyfh5cMR1/WPEGMevEUKY8QD03kcp5TO31kbOeZ5pnVKaUWs9A5SsWUJAmgkluwArprrWgFYnGwABSSRi2TpxHaiiRFjUucRorDvXAQAEEmsAw8mxiWuTdI51e3f2G0A9sI3im/bAAB4dWJGtSnAFtwc4AMKVAAMgNoBX2XZ9dbIB7D+3FdfKR4D3WL7FBLwZN2+mXls5Io0PAAAAAElFTkSuQmCC",
+  "ae2:item/entropy_manipulator": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAvElEQVR4XmNgoBdYWXf7/4LSS/8nxp79v6Tgwf8DE77/R1eDE4A0gzTd3vP/f6LfarAhRBvgZzMVrPh/w3W4ISA+yDXoajGAqkH0f5ABmfYz/1+LXA+3GWQQUQZIKzv/BxkCsh1kCMwAEL/ObythAxITE/+DDAG5AuYSojWDAMgAOUljMAa5BIRBhqCrwwpAmm/cuPHf29sbjGGGoKvDCkCaD+zbB9aILkcQINuMLkcQDFGbQQAW0ujidAEAmPyvFWJTaTgAAAAASUVORK5CYII=",
+  "ae2:item/fluid_cell_housing": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABNElEQVR4XmNgoCWYIsbwH4Sb+Bj+o8vhBSANIPy0yOP/96o4ME2UIcgaYThSR+b/mTgzMLuQBYchuDSCsI+axH9/FVGwISCMYQhI4GVt+P8rGU4YGl3kheA0siGZDEiGgAzY4CIHNgRmO0gTTCMIB2nIYxgSCjMEZgAI/2qPBRsAUgDTDDMAFJg7ggzAcg+Lvf+fTXf9bwEyBNmAg34qYENgtoA0g2iQZhAGaQLhFlkGMIYbsMCYF2zACishMAbZADMEhNE1ohgAAqBAARkCMwBmCAzDNKSxQjCGATBDZmgyohgy1Vjwf5kwQgPMABDOY0MzANmQNhUmFANAYQGiQRoDgGqkGLBohgGQISDFIENaVdnBbBBOgGrCqREZuEMNKROD2KgFxejq8AKQIeZQ56LLIQMABfcyZyaSakMAAAAASUVORK5CYII=",
+  "ae2:item/fluix_crystal": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA70lEQVR4Xo2RLQ4CMRBGOQaEBATBk2BxeDwhCG7AEfYIILgBDkHwCC6ABYFBcwFkyWvymmb56yRNZ9v53jfTbTR+RLs3Dqz6eVEg3C7vYT0/l0NyR3bELEBFEF0FnVbPsJjsyiHN7igW344hFiMiFwLwI0RHABSF6hpzdiGcf+2CQ4rZdQNwme6T81cx4YMhRijQR7SrvwBaxQnIZLRJAMR0I8CRE8DZ/e8CHMe36LSGUYgRNQkgxDEozAGH6hHPMGFp8gboD2YJQO4YAuzmTUzYHsI8ByiAbyDkdX0MLrzMIfn8GtS1H0NgDi0Wl8YLrNQ/dt33UcwAAAAASUVORK5CYII=",
+  "ae2:item/fluix_dust": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAmklEQVR4XmNgGN5ATMbsPwijixMFQBoT/Vb/z4vZQbohIA0gjf8broNpVYPo/3KSxsQZAtM8O+kwmAa5AsQmyhCYZhieGHsW7gIJeRv8hsD8DHM2iA3SADIEmS2t7IzdEJjtsICD2Q7TTNAVIEGQJEwziA3TjGwITheAALIhME0wW2EG4dQMAyAFIAyyCd1WgpqRAUwDyRrpDgC4w6nHAeNxpgAAAABJRU5ErkJggg==",
+  "ae2:item/fluix_pearl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAwElEQVR4XmNgGNTARC3zPwyjy+EFME1LCh6A8cTYs8QbhK4x0W81GMPEtOSicBsC0wzS+L/h+v9rkev/+9lMBWNkg3AaAjMAplnVIBqOkQ3CagCy7TDNupaZ/6WVnf+LyZiB+SDNOA0BCYAMgCkCaYBplpM0hrsCFi5YDYBJwgyAaUY2AGYJhgHIhsCciR4GIK/hDUR0V8BomGZQ4ILkcRoAAuiGgNjI6QKvZhgAKQJhWNzD/EyUZmQA00SyRlIAAOnMBlaxRayxAAAAAElFTkSuQmCC",
+  "ae2:item/fluix_pickaxe": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAnUlEQVR4XmNgGLRAWtn5PzIWkzH7j64GJwBpuL3n//8DE77/nxh7FoxBbJAhnmai/zP85AgbBlIsJ2kMxyBDrkWu/9+Zrv5fQ46bsAHoAGTz/4brYENABqLL4wUwZ4NshnmHaENAmpGdDfMOUQYg2wwTI9oAdJthAKSRoBew2QwDII2gKMZpAC6bkQFezbhsJgiIsRkvAGkkWzMlAAA+3X7cxJ8I2wAAAABJRU5ErkJggg==",
+  "ae2:item/fluix_upgrade_smithing_template": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAlElEQVR4Xq2QvQmAMBCFHcwZ3MBd7NJq4RqZwQxgG2dQOxsbIfKEJ0dM/Ak++Jq7ex8hWfZ3tNbuCb9zBktr7SNRiRSM0xwEO6VUWIAFy9u2BMHuVuCXi7xNF6DsqsE1Zf9dwHJXr4eAktcCwGLSC/gKlOU/fBaQJIEEc2CMuRfggMcSzElUgFDigznxO5fI49el1OzlQNpKwJMPdQAAAABJRU5ErkJggg==",
+  "ae2:item/formation_core": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA30lEQVR4XrWRMQrCQBBFcxtbJYKN2kgErSLeIPZprHICD+AR9gZeQCy2zQ3WRrD1Bo78gQnjkl03hQMDszDvJTOTZf+KXVmS1Oui6OqkAOyc69IYQ8kSwE3TMLjfLmk2GbGgruvfEoHRDMFqPv4SRCUaFgFgERyqKi7x557mOVlrGda1vH0+A/S+nzip3TCAHWAMQA+6cbZ05rfPswAg8nVdcJPeAUDk5XnsF8gI+DISv6l/WergCP4S0ajPqJfYK0BoiT+CCIKwBCRoxBj6jEmwBO6szxacOxYaGAwPiQ+tuDT4UB96EwAAAABJRU5ErkJggg==",
+  "ae2:item/item_cell_housing": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAlklEQVR4XrWSwQ2AIAxF2QlXwAlwAbxzZwbGYFDMP5QUaEEP/uTHUH0vNNGYP3M6V6nju2UIyjm3vpJI4B3CXqKB6OX9WoJBKUUEeVUJDjHGTjLCSwkJdhK+Hr5DD2trJ5AkEkhrNgEOmkQCOwGtIUk0cBJokpRSm40w1usEkgQCPGnOwQmmcAm/wRbk4ZJPIA/93jvwAeMucEEnXJKNAAAAAElFTkSuQmCC",
+  "ae2:item/item_storage_cell_16k": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAs0lEQVR4XmNgoCVIa5/5H4bR5fACmKb9Z6/AMVGGYNOY0TGLsCG4NIIw02kh/IaABK7ff4JVIwgz/BfFbwiIM2fjXhRDYBqRMU5DwAygAnRD0A1A9h5IHQiHFTb8hxsAsgGbIdg09izdBMZwA0AcXIZg04hiAMwb2AzBpRHDAFyGrNx9FCwGYqNrrpq2DNUAdENgBoBonx9RGBoxNMMAzBBkFxClERkgG0KSRmQAS96ENAIA4kTQHGmm678AAAAASUVORK5CYII=",
+  "ae2:item/item_storage_cell_1k": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAr0lEQVR4XmNgoCUILaj/D8PocngBTNOEFVvhmChDsGnM6JhF2BBcGkF4mp0MfkNAAst3HcGqEYTXeSnjNwTEKZm0CMUQmEZkjNMQEAOkAN0QdAOQvQdSB8JeiXn/4QaAbMBmCDaNMG/CDQBxcBmCTSOKATBvYDMEl0YMA3AZUj9rJVgMxEbXHF/bh2oAuiEwA0C0z48oDI0YmmEAZgiyC4jSiAyQDSFJIzKAJW9CGgF+daKwWKgplQAAAABJRU5ErkJggg==",
+  "ae2:item/item_storage_cell_256k": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAArUlEQVR4XmNgoCXoWbb5Pwyjy+EFME1vP3yCY6IMwaaxtH8OYUNwaQTh6rSL+A0BCYAANo0gPKvpP35DQJyT126jGALTiIxxGgJigBSgG4JuALL3YABkINwAkA3YDMGmcdfJi2AMNwDEwWUINo0oBsC8gc0QXBoxDMBlyM0HT8FiIDa65sU7DqEagG4IzAAQ7fMjCkMjhmYYgBmC7AKiNCIDZENI0ogMYMmbkEYAJl8fOcPaW0YAAAAASUVORK5CYII=",
+  "ae2:item/item_storage_cell_4k": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAs0lEQVR4XmNgoCWIre7+D8PocngBTNPyXUfgmChDsGnM6JhF2BBcGkH48j0G/IaABPafvYJVIwh/+g+hcRoC4rQtWIdiCEwjMsZpCIgBUoBuCLoByN4DqQPhgMzy/3ADQDZgMwSbxsqpS8EYbgCIg8sQbBpRDIB5A5shuDRiGIDLkMmrtoPFQGx0zZmds1ENQDcEZgCI9vkRhaERQzMMwAxBdgFRGpEBsiEkaUQGsORNSCMAiR3N1xZWMiMAAAAASUVORK5CYII=",
+  "ae2:item/item_storage_cell_64k": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAs0lEQVR4XmNgoCUonbz4Pwyjy+EFME1X7z2GY6IMwaYxo2MWYUNwaQRh/du38RsCEnj1/iNWjSBs9/8/fkNAnM2Hz6AYAtOIjHEaAmKAFKAbgm4AsvdA6kA4rqbnP9wAkA3YDMGmcdG2g2AMNwDEwWUINo0oBsC8gc0QXBoxDMBlyMFzV8FiIDa65t5lm1ENQDcEZgCI9vkRhaERQzMMwAxBdgFRGpEBsiEkaUQGsORNSCMAxhYFdIb4zFkAAAAASUVORK5CYII=",
+  "ae2:item/logic_processor": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAp0lEQVR4XmNgoDZYxc/4/9/Pqf9x0ejqMQBI4a9rXmAN2Gh09RigiIHh/51pwv9x0ejqwQDkNJDpIAWOrAx4McggkGtAGG4ATAAkCVL0cqMoCoZZAJIDWQJio4QHugtAfJDGv1/jwRhmEEkuQNYIwiS5AN2ATSmCpLsAXTPMAKJcAAsDdEy0C/BhrC5ABtgSDzKNrh4DYEu+yDS6egyALQMh0+jqKQYA9i9pqaxhAjYAAAAASUVORK5CYII=",
+  "ae2:item/logic_processor_press": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAkklEQVR4Xq2TwQ2AIAwAHZ5ZGIEPU/BiA2bgp55JG4zFarTJxQbaK5C4LH9EjHF9SghBOQl67ydaaya11gNTUEpRcs5KSumARvmagtlkmeoKmEyDrI85QSMn+iSgxhRQjH08OlKKXwmsBnnI2ysgkCLd2IMGyW8fcSZgTXJXwIbHVMDieF8LV/CGi8D6WTxU8CU29a8xoKQcNCAAAAAASUVORK5CYII=",
+  "ae2:item/matter_ball": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAY0lEQVR4Xu2RsQ3AMAgEPTlT0DOAZ2ASZqBAHoDoC5o0NopSJSdRwR9IjPHzHkSUVffeFoTMLNdaGRE9SYWBqqa755zzXIJBbK4wZCLSE+DsCkPEzOcCgGGcjc3tcPHoCx/jAkUBb0PqUvLzAAAAAElFTkSuQmCC",
+  "ae2:item/matter_cannon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA1klEQVR4Xu2RMQrCQBBFPZIHUBsrrSLWNrEPglW6HEHJEeIJrIW1CVamDkjAytbScuQN7CbGSGBrPwyzuzP/ZbI7GPz1pSzLJI5jjXYN2bo7KMtSOEySRDP7pxlLVVXauA5DF9RvJ5Hz7lVDOFzOJxqs8zwXKWaaoyhyNQLTYXOX/eqqQAXw5eloqEEDxkJSB7C1Zg/mRRDUADsiRaY4PraaAdDY/I0Pc5eAYCTYY0gvoiab255eAbGX3DvBL1mjMUZhXhCE0T67F4RJeCEgXgDkfQ9degMJKeKOE8AC2AAAAABJRU5ErkJggg==",
+  "ae2:item/meteorite_compass": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHElEQVR4Xu2Q2U7DMBBF8/9PILYCrdhEqKKQNoR0SUifQG1ZSqvSHfgSxwePpVSi/QS40shje+6ZsR3HKIoi4jimVqsRBAGNRmOddzodmxf3Uv9Lcuj7PgIRo+d51iT7arVKmqbWmCQJYRhuAzYlXcWUZZkFiFlCcoFs1m9JAK1Wa22StYDJ3Wa947ouEkUnKZLxi30BKJfLNi+eW8Cd9lLz8AXtJURTRThR1Cea+hz8D3BHcG3iaghnAzjq5Ry/wmEf9nvgNOeKZAXNhSaea+6muQV4I4U3Nuah5sasF8ZceYNTYy49w15Xs/OocLJvSD/NBAZyP8uJF3A7VhYQzMAzU1wONOfGfNJXVN7hoJtTeoHdp3z7T/71J/UDqxZO0Z91WLsAAAAASUVORK5CYII=",
+  "ae2:item/network_tool": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAjklEQVR4XsWQsQ2AMAwE2QlWgBo66tCnT80kzEGdGViCHYyusBQCRQxCvPSKFPnPL1fVFxr6XvK/YhGOMUrXtu8gIQQbJK1N0ATQ2ryEJufEey9NXZcBkELYTBgINkHYTgCnIBNEpRCaqVmQLskzFzFEcB4X2db99BYBEABCuU2AfxtwtFcN9OJ3zmcf6QBxDMCHxanJGAAAAABJRU5ErkJggg==",
+  "ae2:item/processing_pattern": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAu0lEQVR4XrWSsQ3CMBBFvRJTsEZkOiRq+tCwAUVElQUCC1iidUOLB6DwEkb/pDMXx3ZwwZd+kdjvOT5FqX/m1PeBm65Vw5BzLvYnSQ7cab0uKYGoeoa6BC+891mQanxdggdjTJQc7o8vKFuSsAAdX28SkCQRyOvhMFR3XSDBbZoimEpyIPajJOCv2J4vM0kNXAiQzf4YJTyTEoheh2EukBKeibW2CC5gDiTYmApWQRkeLCRNoAz/nc1gaz46SbkY7mwhwwAAAABJRU5ErkJggg==",
+  "ae2:item/quantum_entangled_singularity": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAgElEQVR4XmNgGAU4gRBDwH9kjC6PF4A0GBn9B2N1hl4w5mLQJ84QmGaQJhDbLOb//7YzED5RhoA0wTSDcOuVL//3Xv//3+vAY9IMAGmEGQLSDHIVUQaAFDUDNVx+/f9/4KufYANABhJtAAiAFPo/+AgPQJI0wwBIAzJGlx8FCAAAh+Bim9ypQ3oAAAAASUVORK5CYII=",
+  "ae2:item/quartz_glass": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAmElEQVR4XmPQVpP/b6ynCsfmhuoYGJe4horsfwYQg4FMADKYwVRfDasB//79wyqODMz0VbG74P7Tbxhi2ABYL9gZSIBYzSAA1ovsAmKcjQzAesH+IBPgDANiAYYXSAVgvRQbgB4LpACKvQA2gNRYQI5qkmMBPZ1QJxC1VGX/g5xiAcSgjAXCMDZIAQiD5GEYJG6kC1EHCgMA9rVzcPZW5AMAAAAASUVORK5CYII=",
+  "ae2:item/silicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAgUlEQVR4XmNgGNQgJDDsPwijixMEMI1rFy0HY3cXTzBGV4cVIGsszsmH42m1CwgbAtMM07Rn0bH/qbEJKBivIcgGIGsC2Q6i00PzCBuArhkdm5qakmYAyFZk5+M1AKQA2cnIGBYTeA0AAZghMNthGonSDAMwxcgaidaMDMjWOLQAADeUrN4FT+7FAAAAAElFTkSuQmCC",
+  "ae2:item/silicon_press": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAApElEQVR4Xq2TUQrEIAxEe3jP4hH88RR+eQOv4TILr0zR0C7dwJCaji9i0+P4R+Sc51OllE5dAIrW2uy9zzHGRaohfAug1jpLKV+TajIpq67MO3wLwLs5QGYHoC1AmyR1QdqI8IcA1m72GgoBdN8BuAtFCGC9A7w+wU934JfHs9e2AD4PJ1GdrmQfqgXAhMnkw+NZGx9NYjTGUjiJu5/lTifgTXwA83HwBqvA1pkAAAAASUVORK5CYII=",
+  "ae2:item/singularity": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAArUlEQVR4Xs2SsQ0CMQxFXVOyBCXoCkagvoaOlRiCOdgBiTGYwugdeiJCF+tEgbBknaP4vx8nF/HXsY4xyWNmHq63/NyfDRoVDkNOYteLIAgQXvKV1Js4T7mKbQ3Q9dG47sZ77k9vUAlBoDM1zaSQEoCABsV+FQEpT+Ft06C7o1ALAzIL8LZpwk1he5KumOCJ2KSReYU4jq/TBRAtxGzdF/9Q3n77/qVzL74W/jSeu9PRKcmW2nMAAAAASUVORK5CYII=",
+  "ae2:item/sky_dust": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAtElEQVR4XmNgGN7Azd7kPwijixMFQBo9PT3/19bWkm4ISANIY1RBKpjuXb/1v7mhOnGGYNPcfv///6D4FMKGgDSDNIA0wjSDaGUTq/9KSkpgQ3EaAtMMsw3kfydXN7AYiA3SPPP/2f/WgW7YDYE5HWQbSDHMdphBICyjrwamsRoAEgRJItsE04xsiI6+HnYDQABmCMgmmCaQ32GaQWI4NcMASAEIg2xCt5WgZmQA00CyRroDABgTrttFeUDZAAAAAElFTkSuQmCC",
+  "ae2:item/spatial_cell_component_128": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA70lEQVR4Xo1TQQrCMBDsb8SLKBX0oIJIPXiq+I/e+xHPQvHuxQeI9N4PVH/gF1YmMCWdxOLAQJjNTJPNNkkGcB5fDFQ9imOeG7nPMnsuGzsdNrZbTd0aGjhPU8fAXJaltW3rWNe1I8yL2SjQi6Loh/gB7+3HmvXLbYSZAb4eDYCIIjbd04dVVWXXyc1R9SCAITwiNoEwMMDXAzOAbrNpMMHMxqEGjfXoy0Bk03h0DWA9GgBotzkHqquvg3abJ1FdfR2027yz6urroN3mnVVXXw8cKnyNAVhH3/4XEIL59wOg6b5BIICjjLXW/8I/v/MXGmKBxam5xE0AAAAASUVORK5CYII=",
+  "ae2:item/spatial_cell_component_16": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA90lEQVR4XpVTMQrCQBDMb8RGlAhaqCASC6uI8QOxT5+PWAvB3sYHiFyfD0R/4BdW5mDCZXOGODBwzO3MXfY2QdCB8/AioNa92MexkNsokue8lMNuJZvF2K6hgdMwtGyZ8zxvECaYZ5OB3MOHHJNETmkqWZZZNkIYwE0UwgSzDmBIK8A1gzBcRzdLrElvAEOqqrI0xljiZARovWUG0G0UvdcfKZcvW8jGad37MhCxiSKcXBRFHaB1bwDAK6KIhQx2de2rwWb6msjmer/fBUL4jBwkrHuZAd4CJneQ/grAUOkA79v/AkL0KEPTdZ1AAEcZa73fC31+5y9+g1tgK82/bgAAAABJRU5ErkJggg==",
+  "ae2:item/spatial_cell_component_2": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABBElEQVR4XpWTPaoCQRCEvY2YPJR98AxUENkXGCnqBTTffC9iLCzmJh5AZHMvsHoDr9DyDZSMs+NfQcHQ3VUz09PTaLzAurUxGMajmE4mJv6nqR27J5uNBzbqtd2aGPxNEseaOM/zByJC/Ndp2j452GI+t9VyaVmWOT6YyEBJChEhDg1kUjPwxRDB9mfnyFqMGsiEY7MbRVVVOZZl6YiYHKyJAd1W09gV8WV4tVP/7AyIKR99GYJqGsWIELNjURQupnzUAOgKHFdHRwz9K4S6O9TMWBPV3Oj9fWCiZ9Sd1di3YqBTIPIH6SsDhio0iL79M2gmfANiYd1LYKBRZh3mP8In3/kG9oxMlbrXJbkAAAAASUVORK5CYII=",
+  "ae2:item/spatial_pylon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA3ElEQVR4XmMI9rL7D8LONgYo2NxQHQWjy8P0MYCIysrK/58+ffp/9+5dMD569ChWDJMHqQXpARsAMg0mAMJ5eXlgnJyUhIJh4jB1ID0gvWADQKaCBOUkjcFYTMbsv7Sy839Vg2gwBrFBYjB5kFqQHhQDQKZj04zNEJBaFANA/gMJImt2N+v5n+i3GoxBbGRDQGpBesAGgEIYxAH5E13zxNizYIxuCEgtSA9IL4oBMOfCNN/e8///gQnf4YbA5Ik2AKR5ScED4g0gywsUByJVopHihERRUqY4M1GanQHghTIT/zjLPQAAAABJRU5ErkJggg==",
+  "ae2:item/spatial_storage_cell_2": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAsUlEQVR4XpXQzQ2DMAwF4AxG7z1CBwAJNihdIAvkzjVzZLRKtM+KVdf5xdKTkJX3QTCmMY9pOhG9bw4XvfeUbkQXZapIqbitK6WKYBlCyBbNeFKqCBbW2j+Ei+YZExGcQW7D8EMYSBAuf3M/3hQgr30vAxrBM4ryKk2AEQSH5VW6AbwdBwmI/6D6BVgWgVjkcgLkEAnIIrLMcwpoRAK6mC3zMCKBrqIcIM6560U5QHqKH0efgwvQZMKoAAAAAElFTkSuQmCC",
+  "ae2:item/view_cell": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAqElEQVR4XpWSwQ2FIBBELcSjZWgRWoKWoA3QACcr4P47oAhrsQHNmCxZ1mX9TDIHWN4zGJrGyDSOF1XOzBAUQkj9S6KByzx/S0oguh+tLcFGjFEF0d/Z2RIccM5lEgJ5ixIaSokU8OvhHDr0/fVcwZJo4LauzywJaEOTaGAmoB+pSUrgSyAlEKDe+7SWAnwoE3CJFGjgC6ZwCRd8gjxcUgXy0POuBmtzA9hPodLwIwCjAAAAAElFTkSuQmCC",
+  "ae2:item/wireless_booster": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA6klEQVR4XmNgoDbg9nX6r3N2439cNLp6FFBZWQlWaDKzAyednJSE2xCYAaotJThpnAaANPf09PxnszQEK8ZFg9RhNQQksXbFiv95eXlgRbjoiX19+A0A4QVz5mDFIM0gHBgQgNsAkEIQG4ZBNoMwyFaYIVgNACkCGQDStKTgwf/be/7/97OZ+j/RbzWcBhlClAEgxf8broMNOjDhO5h/LXI9cQaA6ImxZ/+rGkSDNYLY0srOYD5II04DQKbDwgBkiJiMGdhWkGYQG6QJbxiAALohID4IE6UZBkAKsEUlUZphAKQQG0ZXRxUAAKxpVVqwLfVPAAAAAElFTkSuQmCC",
+  "ae2:item/wireless_crafting_terminal": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAnElEQVR4XmNgQAL/G67/R+aTDAIDAsg3IC8v7z/IABCNDScnJaFgDM137979f/To0f+LFy/GiUHyMIxiCMgAkCDIBbiwm6srHOM1oD16GRhf3/0GKxtkAMg1tDMApBgfJmgANluxuQAlykEcUgyARTmKATBT0Z2Mjk2MjXEbADIdm63IbNobgAuDNMIwTgMIYeS8gWIAzBBSMEwfALO55uWcbFhoAAAAAElFTkSuQmCC",
+  "ae2:item/wireless_receiver": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAtklEQVR4XrWOMQrCMBSGew9HcfcAbu7dxSk38AjOmYTqmM3NwRuUnkIzCvUOjq98gVdCSqEJ+MNPQnjf91JV/4ypH0LT90UB7C4/2WyPUu9ueRJgOb/lfvqEM1uC4HV4hgKv1vs8AUFSDGsAi2FirRVjTJkAsGtbyZIwrPXejwLuSLQpF+KcCwAFSAX02/ehEwkwA5xUIYZVGP+OmVlJvDkub7pgAmuuTTMOp1VwFo6TbqeLwJIMFeD/o8nh+b0AAAAASUVORK5CYII=",
+  "ae2:item/wireless_terminal": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAApElEQVR4XmNgQAL/G67/R+aTDAIDAgbQgLy8vP8gA0A0NpyclISCMTTfvXv3/9GjR/8vXrwYJwbJwzCKISADQIIgF+DCbq6ucIzXgOu73+DEYXpFYANArsFrQHv0Mpw0UQbgwsgGoMQYiEOMC2BegMUYigEwU9FtRcYgA0yMjXEbADIdm83ILiDKAFyYKANwYZBGGMZpACGMnLRRDIAZQgqG6QMAEnLO52A5ahQAAAAASUVORK5CYII=",
+  "ae2wtlib:item/magnet_card": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA70lEQVR4Xq2TPQrCQBCF1xN4ABs7W61sRAu7VBFvEPsUdrlEQLAImEK7IFjmCB7BwhvY2NpYrPkWJj8rxgQy8EHYzHvzskOU6qqCINDg+36FjecZVq5r4Iy+L/ElSX6yC0O9VUqf+z3tPO+G0/tRmIjBMY712pnnqEVqzg5RpIfX1IiEm34VBsQS8XI21tPJyKAG+2YJbINy/FYJEAPPZRonILaYAIJWCYgs3w9MlTuQNbJS+nNx2UBM7DsAxBVRuXClicgCKxQaGTANIbGBFRoyA979NWCKiCsGGXIHti4vDGiqo9aAsn8aG7u/s/oAmTKUGoM9R98AAAAASUVORK5CYII=",
+  "ae2wtlib:item/quantum_bridge_card": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAz0lEQVR4Xq2TMQrCQBBFcxIP4GEklgoWxn6x3c4TBNIFksLCIiDiSWy19SYT/sBPJiuJWcjAI+wy/8/fXZIkS5X3XoBzbsApy5RtmirYQ9+P+NE0oxR5LuvVXjlu7nI7f+W9e/YmNLjWtTYQrEFVlrouDi8FYrl8egPEothOpsnfBNaAUwEEUQkwlSJ8eazZCawJxVEJ7D0wCRPwGfGk6O/E1oDi8DgA4oHIFlxpQAGINuBUYu9hlgFNCPd4B6GuKxigaYpJA1T404SE/YtVC7UPpUXE3QBmAAAAAElFTkSuQmCC",
+  "ae2wtlib:item/wireless_pattern_access_terminal": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAnklEQVR4Xr2TsQ2EMAxF2YlbAWqupoM+M9AxSCSWuDozUGUDdjD6hVEcsHNQEOkpciK/fMlKVSWLppXS+vb6dt1zgXOOIMB+xTgMglNzjJFCCOS9V8E9IyQQ4BAJNNqmOTAF628zgQBpTMHcLwdp/Z7AggVi5Ci0BHkaCHjkQsDW/MWcT13rAthLCf4SWBQFGmhkVEGJ9G8IAUvuwH07JM/0WYJX3WoAAAAASUVORK5CYII=",
+  "ae2wtlib:item/wireless_pattern_encoding_terminal": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAmElEQVR4XmNgQAL/G67/R+aTDAIDAsg3IC8v7z/IABCNDScnJaFgDM137979f/To0f+LFy/GiUHyMIxiCMgAkCDIBbiwm6srHOM1oD16GQa+vvsNnA0yAOQavAaANMDw4DUAJcpBHFLCABblKAbATEW2HRs2MTbGbQDIdHTb0V1AewNwYZBGGMZpACGMnDdQDIAZQgqG6QMAo03jDeMwCMUAAAAASUVORK5CYII=",
+  "ae2wtlib:item/wireless_universal_terminal": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAi0lEQVR4Xt2TwQ2AIAxF3QlXwDOuoHdmcBfG8MwMntjAHWr+oYaixWDixSYvpJD/0qSh67KiZaO8b67RufcC7z1BgPOOeZoEl3BKiWKMFEJQwTsjJBDgEhNoDNaeVAXbuleBANP8QCBWjqZFwCsXAraWgZLeGF0Aexko+V6ggSCjCp7I/4YQsKQFzh1GNwmMk+4N2gAAAABJRU5ErkJggg==",
+  "appbot:item/mana_cell_housing": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAm0lEQVR4XrWRsQ2AIBBFbVzAwlYbh9B1LNzFfSxYxSGcwATzi08OuAMtvOTHcPIeXGiaP2vqds+k/4pFaHNXyCuJBg6jq0ssEEG/KEHj8LcKypgSLJb1jCQpXJRQUJPI8bAP6dvZRwJNooEcMwiwsCQaGAk4hiaxwExgSXA6eymM/ZFAk0CAL/sSzGCWlMgbVEFZUvIJlMX3r4EPv6F/mWJVu/QAAAAASUVORK5CYII=",
+  "appbot:item/mana_storage_cell_4k": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAr0lEQVR4XmNgoCVQFer6D8PocngBTFP6zndwTJQh2DTKK+wkbAgujSB8+R4DfkNAAlv//8GqEYQ//YfQOA0BcaySb6EYAtOIjHEaAmKAFKAbgm4AsvdA6kBYjNXyP9wAkA3YDMGmEeZNuAEgDi5DsGlEMQDmDWyG4NKIYQAuQ0C2g8RAbHTNIPUoBqAbAjMARPv8iMLQiKEZBmCGoLuAoEZkgGwISRqRAUgjVn+iAQCYbZW6yIBZ4AAAAABJRU5ErkJggg==",
+  "appbot:item/portable_mana_storage_cell_4k": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAzUlEQVR4XmNgwANUhbr+wzC6HF4A0yR/8D4cE2UIuka29Co4xmsILo3nv/8HY+frn3EbAhLY+v8PikaQBhBe+OE/GBuefIrbEBDHKvkW2BCYZpCtMI0gDGLjdAmIcfkeA4ohyDbDDABhmAtB6kBYjNXyP9iAT/8ZMAwBaYS5BF2jvMJOMIYbAOJgMwSXRhQDYN7AZggujRgG4DIkfec7sBiIja4ZpB7FAHRDYAaAaJ8fURgaMTTDAMwQdBcQ1IgMkA0hSSMyAGnE6k9qAwCci42/CUL7ZAAAAABJRU5ErkJggg==",
+  "appmek:item/chemical_cell_housing": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAoElEQVR4XmNgoCXQM7L9D8PocngBTFNyTi0cE2UINo0O7mGEDcGlEYTNbb3wGwISaO6agVUjMsZpCIjjEZCIYgi6ZryGwAwgZAiy90DqQFhJVfc/igHYDMGmEeZNuAEgDi5DsGlEMQDmDWyG4NKIYQAuQ/wjsuBi6JpB3kMxAJshIANANEwcWSOGZhhANgTZBQQ1IgNkQ0jSiAxgyZuQRgAoEUNS4wNHyAAAAABJRU5ErkJggg==",
+  "appmek:item/chemical_storage_cell_4k": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAsklEQVR4XmNgoCWwjar9D8PocngBTFPH8r1wTJQh2DS6ZPQRNgSXRhC+fI8BvyEggZX7z2PVCMKf/kNonIaAODFtS1AMgWlExjgNATFACtANQTcA2XsgdSBs4pv5H24AyAZshmDT6F8xC4zhBoA4uAzBphHFAJg3sBmCSyOGAbgMyZ28DiwGYqNrdsnsRzUA3RCYASDa50cUhkYMzTAAMwTZBURpRAbIhpCkERnAkjchjQBVaqgjm8flgAAAAABJRU5ErkJggg==",
+  "appmek:item/portable_chemical_storage_cell_4k": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAzklEQVR4XmNgwAM8A5P+wzC6HF4A09QQMheOiTIEXWOIZQYc4zUEl8Ynp7+D8bzS3bgNAQlcvHITRSNIAwhf3/0GjNujl+E2BMTpm7IQbAhMM8hWmEYQBrFxugTEuHyPAcUQZJthBoAwzIUgdSBsZuPxH2zAp/8MGIaANMJcgq6xsqEfjOEGgDjYDMGlEcUAmDewGYJLI4YBuAyZt2QdWAzERtccl16BagC6ITADQLTPjygMjRiaYQBmCLILiNKIDJANIUkjMoAlb5I1kgoAIrGiA4P1dd4AAAAASUVORK5CYII=",
+  "more_immersive_wires:item/ae_coil": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABsElEQVR4Xt2Sy0pCURSGHefxeCz1UJmU3UktLLtfBhVZYkGSdoGILtCNQEqzoolhGBnhoEHQKCh6gEaNoieoQZMmNYhe42+vVR00HyBowWbvs9j/t/6119Hp/l+47YWg5SkvQnZ+yFWKkUYbaM/O5wQJD63PGDckcGR9QUg+Qlp9hb+pDImgB8mJZqTCLfz9W6tz2kw4Vd8xY8zgRH3DpJxGRv1Aq8OMcFsFYn4Xon6nBslzQpaT39UPLE+YkFNIWB7RUmHmigRpKFUYdBhq5nY0caOwvlV0h4C0h13zA/xSHHHzPYt7a1W+3FltBbmsUmWGHE95Meqxf0Go+rLpGj5pE1EBIkCk8BZeYb9HAHxuG5/rio0M2Am4uQ0NQA7mlQsMSREsKZfo168J4BU7oMrUL53rSxRUWg3YGnZyGxrgx8WK6QYD+nXMGs8wqN/AnHLO4+yuUfkd+E5/LSK+hlwxBbmYNp5ydRL2FiwgKCfhKjOxC2oj6C3nx5zqcORP4QcyZtgXkFXxDtvoK1jEiBRjSHuVBV0CRG6ond9aLegy/VBNYmXnqX+aAu3Z+b+PT20X4hGMBrBOAAAAAElFTkSuQmCC",
+  "more_immersive_wires:item/ae_dense_coil": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABfklEQVR4Xt2S207CQBCGeQGgQKGWtpyPUgoUyhk1HiKIp4Qgkqj3XpqoibcmGhMf+ndnDE2BBzBxks3sTvp/889ufb7/F1YiDFp2KgJv/bSq4aymg7K3vhYkbBu3SIcddBJLZCNd9JJ3mNYNvM9sfMyb+Fq0+Lyp9Zl6CP3kPfLykEXZSE+cH9DOyFh00nidVvEyNV3IlhOy3DYW3N3R59ydcistc0eCVDSJQZ83TR7HFdeE9Zp6jmTIhq1dIyE10IhfsXivqPDH/XwM5DKnBBjyvXRwaSd+IdR9VzmGIdUYRABrZwJH2B8JwNjSeV9Sgwx4u7B4DBdADkrRAwaUY4fQgiYDyQF1pnlpX45LyMb8eJ6YPIYLWLmoKCfQhbggj0Suohjd5+ccFhS+B9o/HhXxNK6siynIRV4ecHcSqv4SMuEOqkaIXdAYMyfFl7nsZbZfYQVJhVoMoXtQA2WR6wzp5qIYCBC5oXE2tW7Qx/RD1cXy1ml+egXK3vrfxw+PzcjRVdv/YwAAAABJRU5ErkJggg==",
+};
+// Stand 2026-10-15, Minecraft 1.20.1. Quelle: AE2-Handbuch im JAR (assets/ae2/ae2guide, v. a. getting-started.md und die
+// Item-Seiten), Rezepte und Sprachdateien aus appliedenergistics2-forge-15.4.11.jar, ae2wtlib-15.3.3-forge.jar,
+// Applied-Mekanistics-1.4.3.jar, applied-botanics-forge-1.5.2.jar, more-immersive-wires-1.20.1-1.1.4.jar;
+// Zahlen aus dem Handbuch und config/ae2/common.json der Testinstanz.
+// Die Reihenfolge folgt „Getting Started“ des Handbuchs, danach den Kapiteln „AE2 Mechanics“ und „Items, Blocks, and Machines“.
+// Bilder nur aus flachen Texturen (keine gezeichneten 3D-Modelle, Vorgabe des Users); Kabelteile ohne Item-Textur stehen mit null.
+// Zeigt den Weg, wie ihn der Mod selbst vorsieht (ohne unsere KubeJS-Änderungen). Schema: Skill modpfad-seite, references/data-schema.md.
+// Zutaten: [Name, Herkunft, Zusatz] – Herkunft v = Vanilla, m = dieser Mod, a = Addon, x = anderer Mod im Pack
+const PAGE = {
+  pageTitle: "Modpfad Applied Energistics 2",
+  title: "Applied Energistics 2",
+  accent: ["#9b7cf0", "#5b3fb0"],
+  lede: "Vom Meteoriten über Certus Quartz, Fluix und die Prozessoren aus dem Inscriber zum ersten ME-Lager, dann zu Kanälen, Autocrafting, kabellosem Zugriff, Quantum Bridge und Spatial IO. Die Reihenfolge folgt dem eingebauten Handbuch des Mods („Getting Started“ und die Kapitel danach); Zutaten und Zahlen stammen aus den Rezepten, dem Handbuch und der AE2-Config der Testinstanz.",
+  mods: [
+    ["Applied Energistics 2", "15.4.11", "main"],
+    ["AE2 Wireless Terminals (AE2WTLib)", "15.3.3", "addon"],
+    ["Applied Mekanistics", "1.4.3", "bridge"],
+    ["Applied Botanics", "1.5.2", "bridge"],
+    ["More Immersive Wires", "1.1.4", "bridge"],
+  ],
+  phases: [
+    {
+      t: "Meteorit und Certus Quartz",
+      sub: "Handbuch „Getting Started“, Abschnitte „Getting The Initial Materials“, „Growing Certus Quartz“ und „A Quick Aside on Fluix“. Voraussetzung: Eisen, Kupfer und ein Meteorit in der Oberwelt.",
+      steps: [
+        {
+          t: "Meteorit finden",
+          items: [
+            ["ae2:item/meteorite_compass", "Meteorite Compass", "Compass im Charger; zeigt auf den nächsten Mysterious Cube"],
+            [null, "Mysterious Cube", "Kern jedes Meteoriten; ohne Silk Touch abgebaut gibt er alle vier Pressen"],
+            ["ae2:block/sky_stone_block", "Sky Stone", "Gestein des Meteoriten"],
+            ["ae2:block/quartz_cluster", "Certus Quartz Cluster", "ausgewachsen: 4 Certus Quartz Crystal, Fortune erhöht"],
+          ],
+          text: `<p>AE2 beginnt mit einem <b>Meteoriten</b>. Sie hinterlassen große Krater; laut Handbuch hat man meist schon einen gesehen. Sonst führt der <b>Meteorite Compass</b> zum nächsten Mysterious Cube. Im Meteoriten liegen Certus-Quartz-Cluster und -Knospen, Budding-Certus-Blöcke verschiedener Stufen und in der Mitte der Mysterious Cube.</p>
+<p>Abbauen soll man die Cluster und alle Certus-Blöcke. Budding-Blöcke verlieren ohne Silk Touch eine Stufe. <b>Flawless</b> Budding Certus soll man gar nicht abbauen: Es wird selbst mit Silk Touch zu Flawed und lässt sich nicht mehr zurückverwandeln. Der Mysterious Cube gibt beim Abbau die vier Inscriber-Pressen.</p>
+<p>Meteoriten erscheinen in Biomen mit dem Tag <code>#ae2:has_meteorites</code>, der alle Oberwelt-Biome umfasst (Strukturabstand 32 Chunks, Mindestabstand 8). In der Config der Testinstanz ist <code>spawnPressesInMeteorites</code> eingeschaltet.</p>`,
+          needs: [["Compass", "v", "für den Kompass"], ["Charger oder Fundglück", "m"]],
+        },
+        {
+          t: "Charger und Wooden Crank",
+          items: [
+            ["ae2:block/charger", "Charger", "5 Eisen, 2 Kupfer"],
+            ["ae2:block/crank", "Wooden Crank", "4 Holzstäbe, 1 Kupfer"],
+            ["ae2:item/certus_quartz_crystal_charged", "Charged Certus Quartz Crystal", "Certus Quartz Crystal im Charger"],
+          ],
+          text: `<p>Der <b>Charger</b> lädt Certus Quartz Crystal zu Charged Certus Quartz Crystal auf und macht aus einem Compass den Meteorite Compass, aus einem Buch den Guide. Strom nimmt er oben oder unten an, als AE oder Forge Energy; entnehmen lassen sich nur die Ergebnisse.</p>
+<p>Ohne Stromquelle setzt man eine <b>Wooden Crank</b> oben oder unten auf und dreht per Rechtsklick, bis das Item geladen ist.</p>`,
+          needs: [["Eisen", "v"], ["Kupfer", "v"], ["Certus Quartz Crystal", "m"]],
+        },
+        {
+          t: "Certus Quartz wachsen lassen",
+          items: [
+            ["ae2:block/flawless_budding_quartz", "Flawless Budding Certus Quartz", "nur im Meteoriten; zerfällt nie"],
+            ["ae2:block/flawed_budding_quartz", "Flawed Budding Certus Quartz", "Chipped + Charged Certus in Wasser"],
+            ["ae2:block/chipped_budding_quartz", "Chipped Budding Certus Quartz", "Damaged + Charged Certus in Wasser"],
+            ["ae2:block/damaged_budding_quartz", "Damaged Budding Certus Quartz", "Certus Quartz Block + Charged Certus in Wasser"],
+            ["ae2:block/growth_accelerator", "Growth Accelerator", "4 Eisen, 2 Fluix ME Glass Cable, 2 Quartz Glass, 1 Fluix Block"],
+            ["ae2:item/certus_quartz_dust", "Certus Quartz Dust", "aus unfertigen Knospen oder im Inscriber"],
+          ],
+          text: `<p>Certus-Knospen wachsen wie Amethyst aus <b>Budding Certus</b>. Eine unfertige Knospe gibt 1 Certus Quartz Dust, ein fertiger Cluster 4 Certus Quartz Crystal. Es gibt vier Stufen: Flawless, Flawed, Chipped und Damaged. Bei jedem Wachstumsschritt kann der Block eine Stufe verlieren und wird am Ende zum gewöhnlichen Certus Quartz Block.</p>
+<p>Repariert und neu erzeugt werden Budding-Blöcke, indem man sie (oder einen Certus Quartz Block) zusammen mit Charged Certus Quartz Crystal in Wasser wirft. Flawless zerfällt nie und liefert unbegrenzt, lässt sich aber weder herstellen noch mit der Spitzhacke bewegen, nur mit Spatial IO.</p>
+<p>Allein wachsen die Knospen sehr langsam. Der <b>Growth Accelerator</b> neben dem Budding-Block beschleunigt das stark; das Handbuch nennt ihn die erste Priorität. Fehlt Quarz für Energy Acceptor oder Vibration Chamber, reicht eine Wooden Crank am Ende des Accelerators.</p>`,
+          needs: [["Certus Quartz Crystal", "m"], ["Wasser", "v"], ["Eisen", "v"], ["Fluix Block", "m"]],
+        },
+        {
+          t: "Fluix",
+          items: [
+            ["ae2:item/fluix_crystal", "Fluix Crystal", "Charged Certus + Redstone + Nether Quartz in Wasser → 2"],
+            ["ae2:item/fluix_dust", "Fluix Dust", "Fluix Crystal im Inscriber"],
+            ["ae2:block/fluix_block", "Fluix Block", "4 Fluix Crystal"],
+            ["ae2:item/quartz_glass", "Quartz Glass", "5 Quarzstaub + 4 Glas → 4"],
+          ],
+          text: `<p>Das zweite Grundmaterial ist <b>Fluix</b>. Es entsteht, wenn man Charged Certus Quartz Crystal, Redstone und Nether Quartz zusammen in Wasser wirft (2 Fluix Crystal). Charged Certus mit Fluix Dust in Wasser gibt ebenfalls Fluix Crystal, mit Certus Quartz Dust 2 Certus Quartz Crystal. Das Automatisieren lässt das Handbuch ausdrücklich dem Spieler.</p>
+<p><b>Quartz Glass</b> aus Quarzstaub (Certus oder Nether) und Glas steckt in Zellen, Energiespeichern und vielen Geräten.</p>`,
+          needs: [["Charged Certus Quartz Crystal", "m"], ["Redstone", "v"], ["Nether Quartz", "v"], ["Glas", "v"]],
+        },
+      ],
+    },
+    {
+      t: "Inscriber und Prozessoren",
+      sub: "Handbuch „Getting Started“, Abschnitt „Inscribing Some Processors“. Voraussetzung: die vier Pressen aus dem Mysterious Cube.",
+      steps: [
+        {
+          t: "Inscriber",
+          items: [
+            ["ae2:block/inscriber", "Inscriber", "5 Eisen, 2 Sticky Piston, 1 Kupfer"],
+            ["ae2:item/silicon", "Silicon", "Certus Quartz Dust im Blast Furnace"],
+            ["ae2:item/certus_quartz_wrench", "Certus Quartz Wrench", "5 Certus Quartz Crystal; dreht den Inscriber"],
+          ],
+          text: `<p>Der <b>Inscriber</b> prägt mit den Pressen Schaltkreise und Prozessoren und zermahlt Items zu Staub: Certus und Fluix zu Dust, Ender Pearl zu Ender Dust, Sky Stone zu Sky Stone Dust. Er arbeitet wie ein Ofen nach Seiten: oben und unten gehen in die oberen und unteren Slots, die Seiten und die Rückseite in den mittleren. Mit dem Wrench lässt er sich drehen, die Größe des Eingangspuffers ist einstellbar, und er kann Ergebnisse in benachbarte Inventare schieben.</p>
+<p>Strom nimmt er als AE oder Forge Energy an. <b>Silicon</b> entsteht aus Certus Quartz Dust im Blast Furnace (Tag <code>#forge:dusts/certus_quartz</code>); der Inscriber prägt alles mit dem Tag <code>#forge:silicon</code>.</p>`,
+          needs: [["Eisen", "v"], ["Sticky Piston", "v"], ["Kupfer", "v"]],
+        },
+        {
+          t: "Prozessoren",
+          items: [
+            ["ae2:item/silicon_press", "Inscriber Silicon Press", "prägt Silicon zu Printed Silicon"],
+            ["ae2:item/logic_processor_press", "Inscriber Logic Press", "prägt Gold zu Printed Logic Circuit"],
+            ["ae2:item/calculation_processor_press", "Inscriber Calculation Press", "prägt Certus Quartz Crystal zu Printed Calculation Circuit"],
+            ["ae2:item/engineering_processor_press", "Inscriber Engineering Press", "prägt Diamant zu Printed Engineering Circuit"],
+            ["ae2:item/logic_processor", "Logic Processor", "Printed Logic Circuit + Redstone + Printed Silicon"],
+            ["ae2:item/calculation_processor", "Calculation Processor", "Printed Calculation Circuit + Redstone + Printed Silicon"],
+            ["ae2:item/engineering_processor", "Engineering Processor", "Printed Engineering Circuit + Redstone + Printed Silicon"],
+          ],
+          text: `<p>Jeder Prozessor entsteht in zwei Schritten. Zuerst prägt eine Presse den Rohstoff zum Schaltkreis: Gold für Logic, Certus Quartz Crystal für Calculation, Diamant für Engineering, Silicon für Printed Silicon. Dann presst der Inscriber Schaltkreis (oben), Redstone (Mitte) und Printed Silicon (unten) zum Prozessor.</p>
+<p>Die Pressen verbrauchen sich nicht. Eine Presse mit einem Eisenblock in der Mitte ergibt eine Kopie der Presse. Für das erste ME-System soll man laut Handbuch von jedem Prozessor ein paar herstellen.</p>`,
+          table: {
+            head: ["Prozessor", "Schaltkreis aus", "braucht man für"],
+            rows: [
+              ["ae2:item/logic_processor", "Logic Processor", "Gold", "Formation und Annihilation Core, 1k Storage Component, ME Terminal"],
+              ["ae2:item/calculation_processor", "Calculation Processor", "Certus Quartz Crystal", "Storage Components ab 4k, Upgrade Cards, Crafting Unit"],
+              ["ae2:item/engineering_processor", "Engineering Processor", "Diamant", "ME Drive, ME Controller, P2P, Spatial, Pattern-Terminals"],
+            ],
+          },
+          needs: [["Gold", "v"], ["Diamant", "v"], ["Redstone", "v"], ["Silicon", "m"], ["Eisenblock", "v", "für Pressenkopien"]],
+        },
+        {
+          t: "Formation Core und Annihilation Core",
+          items: [
+            ["ae2:item/formation_core", "Formation Core", "Certus Quartz + Fluix Dust + Logic Processor → 2"],
+            ["ae2:item/annihilation_core", "Annihilation Core", "Nether Quartz + Fluix Dust + Logic Processor → 2"],
+          ],
+          text: `<p>Die beiden Kerne sind die Bausteine fast aller Geräte, die Dinge ins Netz holen oder hinausgeben. Der Formation Core steckt in Export Bus, Formation Plane und Terminal, der Annihilation Core in Import Bus und Annihilation Plane; Interface, Pattern Provider, Molecular Assembler und Terminal brauchen beide.</p>`,
+          needs: [["Certus Quartz Crystal", "m"], ["Nether Quartz", "v"], ["Fluix Dust", "m"], ["Logic Processor", "m"]],
+        },
+      ],
+    },
+    {
+      t: "Das erste ME-System",
+      sub: "Handbuch „Getting Started“, Abschnitte „Matter Energy Tech“ und „Your Very First ME System“, dazu „Energy“ und „Bytes and Types“. Voraussetzung: Prozessoren aller drei Sorten und Strom aus einem anderen Mod.",
+      steps: [
+        {
+          t: "Energie",
+          items: [
+            ["ae2:block/energy_acceptor", "Energy Acceptor", "4 Eisen, 4 Quartz Glass, 1 Kupfer; Würfel oder flach"],
+            ["ae2:block/vibration_chamber", "Vibration Chamber", "Furnace + Energy Acceptor, Kupfer, Fluix, Eisen"],
+            [null, "Crystal Resonance Generator", "4 Kupfer, 1 Fluix Block, 1 Charged Certus, 3 Eisen"],
+            ["ae2:block/energy_cell", "Energy Cell", "4 Certus, 4 Fluix Dust, 1 Quartz Glass; 200k AE"],
+            ["ae2:block/dense_energy_cell", "Dense Energy Cell", "8 Energy Cell + Calculation Processor; 1,6M AE"],
+          ],
+          text: `<p>AE2 rechnet intern in <b>AE</b>; der <b>Energy Acceptor</b> wandelt Forge Energy um, 2 FE ergeben 1 AE. Das Handbuch sieht Strom aus anderen Mods als Hauptweg vor. Die <b>Vibration Chamber</b> verbrennt Brennstoff und liefert ohne Upgrades 40 AE/t (Config: 10 bis 40), drosselt aber, wenn der Speicher voll ist. Der <b>Crystal Resonance Generator</b> erzeugt laut Config 20 AE/t; im Handbuch hat er keine eigene Seite.</p>
+<p>Jedes Kabel und jedes Gerät puffert 25 AE. Eine <b>Energy Cell</b> speichert 200k AE und reicht laut Handbuch meist aus, eine Dense Energy Cell 1,6M AE.</p>`,
+          needs: [["Strom aus einem anderen Mod", "x", "FE"], ["Quartz Glass", "m"], ["Kupfer", "v"]],
+        },
+        {
+          t: "Kabel",
+          items: [
+            [null, "Quartz Fiber", "6 Glas + 3 Quarzstaub → 3; leitet nur Strom"],
+            [null, "Fluix ME Glass Cable", "Quartz Fiber + 2 Fluix → 4"],
+            [null, "Fluix ME Covered Cable", "Glass Cable + Wolle"],
+            [null, "Fluix ME Smart Cable", "Covered Cable + Redstone + Glowstone; zeigt Kanäle"],
+            [null, "Fluix ME Dense Covered Cable", "4 Covered Cable; 32 Kanäle"],
+            [null, "Fluix ME Dense Smart Cable", "Dense Covered + Redstone + Glowstone"],
+          ],
+          text: `<p>Normale Kabel tragen 8 Kanäle, dichte (Dense) 32. Alle Kabel lassen sich mit Farbstoff einfärben (8 Kabel + 1 Farbstoff). Verschiedenfarbige Kabel verbinden sich nicht miteinander, Fluix-Kabel mit jeder Farbe; mit den Kanälen hat die Farbe nichts zu tun. Smart Cables zeigen, wie die Kanäle laufen, und das Handbuch empfiehlt sie zum Lernen. Für das erste System reichen Glass, Covered oder Smart Cable, aber keine dichten.</p>`,
+          needs: [["Glas", "v"], ["Quarzstaub", "m"], ["Fluix Crystal", "m"], ["Wolle", "v"], ["Redstone, Glowstone", "v"]],
+        },
+        {
+          t: "Speicherzellen",
+          items: [
+            ["ae2:item/item_cell_housing", "ME Item Cell Housing", "2 Quartz Glass, 3 Redstone, 3 Eisen"],
+            ["ae2:item/fluid_cell_housing", "ME Fluid Cell Housing", "2 Quartz Glass, 3 Redstone, 3 Kupfer"],
+            ["ae2:item/cell_component_1k", "1k ME Storage Component", "4 Redstone, 4 Certus, 1 Logic Processor"],
+            ["ae2:item/cell_component_4k", "4k ME Storage Component", "3× 1k, 4 Redstone, Calculation Processor, Quartz Glass"],
+            ["ae2:item/cell_component_16k", "16k ME Storage Component", "3× 4k, 4 Glowstone, Calculation Processor, Quartz Glass"],
+            ["ae2:item/cell_component_64k", "64k ME Storage Component", "3× 16k, 4 Glowstone, Calculation Processor, Quartz Glass"],
+            ["ae2:item/cell_component_256k", "256k ME Storage Component", "3× 64k, 4 Sky Stone Dust, Calculation Processor, Quartz Glass"],
+            ["ae2:item/item_storage_cell_4k", "4k ME Item Storage Cell", "Housing + 4k Component"],
+          ],
+          text: `<p>ME speichert Items in <b>Storage Cells</b>. Eine Zelle ist ein Housing mit einer Storage Component; jede Stufe fasst viermal so viel und kostet drei der Vorstufe. Item-Zellen fassen bis zu 63 Sorten, Fluid-Zellen bis zu 5. Gezählt wird in Bytes: 8 Items sind 1 Byte, bei Flüssigkeiten 8 Eimer; jede Sorte kostet vorab einen festen Anteil, deshalb fasst eine Zelle mit einer Sorte doppelt so viel wie mit 63.</p>
+<p>Das Handbuch empfiehlt für den Anfang 4k-Zellen als Mittelweg aus Platz und Sorten.</p>`,
+          table: {
+            head: ["Zelle", "Bytes", "Items bei 1 Sorte", "Items bei 63 Sorten"],
+            rows: [
+              ["ae2:item/item_storage_cell_1k", "1k ME Item Storage Cell", "1.024", "8.128", "4.160"],
+              ["ae2:item/item_storage_cell_4k", "4k ME Item Storage Cell", "4.096", "32.512", "16.640"],
+              ["ae2:item/item_storage_cell_16k", "16k ME Item Storage Cell", "16.384", "130.048", "66.560"],
+              ["ae2:item/item_storage_cell_64k", "64k ME Item Storage Cell", "65.536", "520.192", "266.240"],
+              ["ae2:item/item_storage_cell_256k", "256k ME Item Storage Cell", "262.144", "2.080.768", "1.064.960"],
+            ],
+          },
+          needs: [["Redstone", "v"], ["Glowstone", "v", "ab 16k"], ["Sky Stone Dust", "m", "256k"], ["Eisen oder Kupfer", "v", "Housing"]],
+        },
+        {
+          t: "ME Drive, ME Chest und Terminal",
+          items: [
+            ["ae2:block/drive/drive_front", "ME Drive", "4 Eisen, 2 Engineering Processor, 2 Fluix ME Glass Cable"],
+            ["ae2:block/chest/front", "ME Chest", "ME Terminal, 2 Glas, 2 Glass Cable, 2 Eisen, 1 Kupfer"],
+            [null, "Illuminated Panel", "3 Quartz Glass, 2 Glowstone, Eisen, Redstone → 3"],
+            [null, "ME Terminal", "Illuminated Panel, Formation + Annihilation Core, Logic Processor"],
+            [null, "ME Crafting Terminal", "ME Terminal + Crafting Table + Calculation Processor"],
+          ],
+          text: `<p>Die <b>ME Chest</b> zeigt den Inhalt einer einzelnen Zelle wie eine Truhe; laut Handbuch der Einstieg in das Prinzip. Das eigentliche Netz beginnt mit dem <b>ME Drive</b>, der mehrere Zellen aufnimmt.</p>
+<p>Das erste System nach Handbuch: ein Drive, ein Terminal oder Crafting Terminal, ein Energy Acceptor, ein paar Kabel und einige Zellen. Acceptor an den Drive (oder als flache Variante auf ein Kabel), Strom aus einem anderen Mod hinein, Terminal auf ein Kabel in Augenhöhe, Zellen in den Drive. Das Ergebnis ist durchsuchbares Lager ohne Autocrafting.</p>`,
+          needs: [["Engineering Processor", "m"], ["Glowstone", "v"], ["Crafting Table", "v"]],
+        },
+      ],
+    },
+    {
+      t: "Netz ausbauen",
+      sub: "Handbuch „Getting Started“, Abschnitte „Expanding your Network“ und „Overcoming Limits“, dazu „Channels“, „Devices“ und die Geräteseiten. Voraussetzung: ein laufendes ME-System.",
+      steps: [
+        {
+          t: "Busse und Interface",
+          items: [
+            [null, "ME Import Bus", "Annihilation Core, 2 Eisen, Sticky Piston"],
+            [null, "ME Export Bus", "Formation Core, 2 Eisen, Piston"],
+            [null, "ME Storage Bus", "Interface + Piston + Sticky Piston"],
+            ["ae2:block/interface", "ME Interface", "4 Eisen, 2 Glas, Formation + Annihilation Core"],
+            [null, "ME Level Emitter", "Redstone Torch + Calculation Processor"],
+          ],
+          text: `<p>Der <b>Export Bus</b> gibt Items aus dem Netz in das angrenzende Inventar, der <b>Import Bus</b> holt sie herein. Das Beispiel des Handbuchs: Export Bus oben auf einen Ofen, Import Bus unten. Der <b>Storage Bus</b> macht ein angrenzendes Inventar zum Teil des Netzspeichers.</p>
+<p>Das <b>Interface</b> ist eine kleine Truhe und ein Tank mit bis zu 9 Sorten, die sich aus dem Netz auf einen eingestellten Bestand auffüllt oder in das Netz leert, bis zu 9 Stapel pro Tick. Block und flache Variante lassen sich im Crafting-Gitter ineinander umwandeln. Der Level Emitter gibt ein Redstone-Signal abhängig von der Menge eines Items im Netz, der Energy Level Emitter abhängig vom gespeicherten Strom.</p>`,
+          needs: [["Formation Core, Annihilation Core", "m"], ["Piston, Sticky Piston", "v"], ["Redstone Torch", "v"]],
+        },
+        {
+          t: "Kanäle und ME Controller",
+          items: [
+            ["ae2:block/controller", "ME Controller", "4 Sky Stone Block, 4 Fluix Crystal, 1 Engineering Processor"],
+          ],
+          text: `<p>Viele Geräte brauchen einen <b>Kanal</b>. Ohne Controller ist ein Netz „ad hoc“ und trägt höchstens 8 kanalnutzende Geräte; ab dem neunten schalten sie ab. Der <b>ME Controller</b> liefert 32 Kanäle je Seite und verteilt sie über die Kabel. Ein Netz darf nur einen Controller haben, der aber aus mehreren Blöcken bestehen kann: alle verbunden, höchstens 7×7×7 groß, und je Block höchstens zwei Nachbarn auf einer Achse.</p>
+<p>Jeder Controller-Block braucht 6 AE/t und speichert 8000 AE. Kanäle kosten 1/128 AE/t je durchlaufenem Knoten. Die Kanalregel ist einstellbar (Befehl <code>/ae2 channelmode</code>, Config <code>channels</code>: doppelt, dreifach, vierfach oder unbegrenzt); in der Testinstanz steht sie auf <code>default</code>.</p>`,
+          needs: [["Sky Stone Block", "m", "Sky Stone im Ofen"], ["Fluix Crystal", "m"], ["Engineering Processor", "m"]],
+        },
+        {
+          t: "Upgrade Cards und Cell Workbench",
+          items: [
+            ["ae2:item/basic_card", "Basic Card", "2 Gold, 3 Eisen, Redstone, Calculation Processor → 2"],
+            ["ae2:item/advanced_card", "Advanced Card", "2 Diamant, 3 Eisen, Redstone, Calculation Processor → 2"],
+            ["ae2:item/card_capacity", "Capacity Card", "Basic Card + Certus"],
+            ["ae2:item/card_redstone", "Redstone Card", "Basic Card + Redstone Torch"],
+            ["ae2:item/card_crafting", "Crafting Card", "Basic Card + Crafting Table"],
+            ["ae2:item/card_void", "Overflow Destruction Card", "Basic Card + Calculation Processor"],
+            ["ae2:item/card_speed", "Acceleration Card", "Advanced Card + Fluix"],
+            ["ae2:item/card_fuzzy", "Fuzzy Card", "Advanced Card + Wolle"],
+            ["ae2:item/card_inverter", "Inverter Card", "Advanced Card + Redstone Torch"],
+            ["ae2:item/card_equal_distribution", "Equal Distribution Card", "Advanced Card + Calculation Processor"],
+            ["ae2:item/card_energy", "Energy Card", "Advanced Card + Dense Energy Cell"],
+            ["ae2:block/cell_workbench", "Cell Workbench", "2 Wolle, Calculation Processor, 5 Eisen, Truhe"],
+          ],
+          text: `<p><b>Upgrade Cards</b> ändern das Verhalten von Geräten: Redstone-Steuerung, mehr Filterplätze (Capacity), Geschwindigkeit (Acceleration) und mehr. Sie entstehen aus einer Basic oder Advanced Card. Die Overflow Destruction Card löscht in einer Zelle, was nicht mehr hineinpasst. In der <b>Cell Workbench</b> bekommen Zellen und View Cells Karten und eine Partitionierung, also einen Filter, was sie aufnehmen.</p>`,
+          needs: [["Gold, Diamant", "v"], ["Calculation Processor", "m"], ["Wolle", "v"]],
+        },
+      ],
+    },
+    {
+      t: "Autocrafting",
+      sub: "Handbuch, Kapitel „Autocrafting“ und die Seiten zu Pattern Provider, Molecular Assembler und Crafting CPU. Voraussetzung: Controller und genug Kanäle.",
+      steps: [
+        {
+          t: "Patterns und Pattern Encoding Terminal",
+          items: [
+            ["ae2:item/blank_pattern", "Blank Pattern", "2 Quartz Glass, 3 Glowstone, Certus, 3 Eisen → 2"],
+            ["ae2:item/crafting_pattern", "Crafting Pattern", "kodiertes Werkbankrezept"],
+            ["ae2:item/processing_pattern", "Processing Pattern", "kodierter Maschinenvorgang"],
+            [null, "ME Pattern Encoding Terminal", "ME Crafting Terminal + Engineering Processor"],
+          ],
+          text: `<p>Eine Autocrafting-Anlage besteht laut Handbuch aus drei Teilen: dem, was den Auftrag sendet, der Crafting CPU und den Patterns samt Pattern Provider. Im <b>Pattern Encoding Terminal</b> schreibt man Rezepte auf Blank Patterns. Neben Werkbank- und Verarbeitungsmustern gibt es Smithing Table Pattern und Stonecutting Pattern. Autocrafting funktioniert auch mit Flüssigkeiten und mit Stoffen, die Addons ins Netz bringen, etwa Mekanism-Gase.</p>`,
+          needs: [["Glowstone", "v"], ["Engineering Processor", "m"]],
+        },
+        {
+          t: "Pattern Provider und Molecular Assembler",
+          items: [
+            ["ae2:block/pattern_provider", "ME Pattern Provider", "4 Eisen, 2 Crafting Table, Formation + Annihilation Core"],
+            ["ae2:block/molecular_assembler", "Molecular Assembler", "4 Eisen, 2 Quartz Glass, Crafting Table, beide Cores"],
+            [null, "ME Pattern Access Terminal", "Illuminated Panel, Engineering Processor, Pattern Provider"],
+          ],
+          text: `<p>Der <b>Pattern Provider</b> schiebt die Zutaten seiner Patterns in benachbarte Inventare, immer alle auf einmal, nie halbe Ladungen. Ergebnisse können in ihn zurückgeleitet werden; das spart den Kanal eines Import Bus. Da er die Zutaten direkt aus der CPU schiebt, kann man nichts aus ihm herauspumpen.</p>
+<p>Der <b>Molecular Assembler</b> führt Werkbank-, Smithing- und Stonecutting-Patterns aus. Neben einem Pattern Provider bekommt er das passende Pattern gleich mitgeliefert und wirft das Ergebnis aus. Das Pattern Access Terminal zeigt alle Provider im Netz.</p>`,
+          needs: [["Formation Core, Annihilation Core", "m"], ["Crafting Table", "v"]],
+        },
+        {
+          t: "Crafting CPU",
+          items: [
+            [null, "Crafting Unit", "4 Eisen, 2 Calculation Processor, 2 Glass Cable, Logic Processor"],
+            [null, "1k Crafting Storage", "Crafting Unit + 1k Component (bis 256k)"],
+            [null, "Crafting Co-Processing Unit", "Crafting Unit + Engineering Processor"],
+            [null, "Crafting Monitor", "Crafting Unit + ME Storage Monitor"],
+          ],
+          text: `<p>Die <b>Crafting CPU</b> ist ein Multiblock aus Crafting Units, Crafting Storage, Co-Processing Units und Monitoren. Jede CPU bearbeitet einen Auftrag; für zwei gleichzeitige Aufträge braucht man zwei CPUs. Pflicht ist mindestens ein Crafting Storage, die kleinste CPU ist ein einzelner 1k Crafting Storage. Der Speicher hält die Zutaten des Auftrags; Co-Processing Units sind optional und lassen die Pattern Provider öfter Zutaten senden.</p>`,
+          needs: [["Calculation Processor", "m"], ["Storage Components", "m"]],
+        },
+      ],
+    },
+    {
+      t: "Kabellos und über Entfernung",
+      sub: "Handbuch, Seiten „Wireless Access Point“, „Wireless Terminals“, „P2P Tunnels“, „Quantum Bridge“ und „Spatial IO“. AE2WTLib ergänzt die kabellosen Terminals. Voraussetzung: Fluix Pearl und Dense Energy Cell.",
+      steps: [
+        {
+          t: "Kabelloser Zugriff",
+          items: [
+            ["ae2:item/fluix_pearl", "Fluix Pearl", "Ender Pearl, 4 Fluix Dust, 4 Fluix Crystal"],
+            ["ae2:item/wireless_receiver", "Wireless Receiver", "Fluix Pearl, 3 Eisen, Quartz Fiber"],
+            [null, "ME Wireless Access Point", "Wireless Receiver, Calculation Processor, Glass Cable"],
+            ["ae2:item/wireless_booster", "Wireless Booster", "Fluix Dust, Certus, Ender Dust, 3 Eisen → 2"],
+            ["ae2:item/wireless_terminal", "Wireless Terminal", "Wireless Receiver + ME Terminal + Dense Energy Cell"],
+            ["ae2:item/wireless_crafting_terminal", "Wireless Crafting Terminal", "Wireless Receiver + Crafting Terminal + Dense Energy Cell"],
+          ],
+          text: `<p>Der <b>Wireless Access Point</b> braucht einen Kanal und erlaubt Zugriff mit einem Wireless Terminal; an ihm wird das Terminal auch gebunden. Reichweite und Stromverbrauch hängen von der Zahl der Wireless Booster ab. Ein Netz darf beliebig viele Access Points haben.</p>`,
+          needs: [["Ender Pearl", "v"], ["Fluix", "m"], ["Dense Energy Cell", "m"]],
+        },
+        {
+          t: "Weitere kabellose Terminals",
+          addon: "AE2WTLib",
+          items: [
+            ["ae2wtlib:item/wireless_pattern_encoding_terminal", "Wireless Pattern Encoding Terminal", "Receiver + Pattern Encoding Terminal + Dense Energy Cell, oder Wireless Crafting Terminal + Engineering Processor"],
+            ["ae2wtlib:item/wireless_pattern_access_terminal", "Wireless Pattern Access Terminal", "Receiver + Pattern Access Terminal + Dense Energy Cell"],
+            ["ae2wtlib:item/wireless_universal_terminal", "Wireless Universal Terminal", "zwei kabellose Terminals kombiniert"],
+            ["ae2wtlib:item/quantum_bridge_card", "Quantum Bridge Card", "2 Fluix Pearl + Wireless Receiver; unbegrenzte Reichweite über Quantum Bridge"],
+            ["ae2wtlib:item/magnet_card", "Magnet Card", "Advanced Card, ME Annihilation Plane, Redstone-, Lapis- und 5 Eisenblöcke"],
+          ],
+          text: `<p>AE2WTLib ergänzt kabellose Fassungen von Pattern Encoding und Pattern Access Terminal. Zwei kabellose Terminals lassen sich zum <b>Wireless Universal Terminal</b> kombinieren. Die Quantum Bridge Card verbindet ein kabelloses Terminal über eine Quantum Bridge ohne Reichweitengrenze; die Magnet Card ist laut Sprachdatei ein Magnet-Upgrade für das Wireless Crafting Terminal.</p>`,
+          needs: [["Wireless Receiver", "m"], ["Dense Energy Cell", "m"], ["Fluix Pearl", "m"]],
+        },
+        {
+          t: "P2P Tunnels",
+          items: [
+            [null, "ME P2P Tunnel", "3 Eisen, Engineering Processor, 3 Fluix"],
+            [null, "Item P2P Tunnel", "abstimmen mit Bus, Hopper, Truhe oder Interface"],
+            [null, "Fluid P2P Tunnel", "abstimmen mit Eimern"],
+            [null, "Energy P2P Tunnel", "abstimmen mit Energy Acceptor oder Energy Cell"],
+            [null, "Redstone P2P Tunnel", "abstimmen mit Redstone-Bauteilen"],
+            [null, "Light P2P Tunnel", "abstimmen mit Fackel oder Glowstone"],
+          ],
+          text: `<p><b>P2P Tunnels</b> verbinden zwei Blockseiten über Entfernung wie ein Portal und übertragen jeweils nur eine Art: Items, Flüssigkeiten, Redstone, Strom, Licht oder Kanäle. Sie haben feste Ein- und Ausgänge. Man stellt einen ME P2P Tunnel her und stimmt ihn um, indem man ihn mit einem Item aus der passenden Liste anklickt (Tags <code>ae2:p2p_attunements/*</code>). Der ME P2P Tunnel trägt wie dichte Kabel 32 Kanäle. Energie durch einen P2P Tunnel kostet 2,5 % Abgabe (Config <code>p2pTunnelEnergyTax</code>).</p>`,
+          needs: [["Engineering Processor", "m"], ["Fluix", "m"]],
+        },
+        {
+          t: "Quantum Network Bridge",
+          items: [
+            ["ae2:item/quantum_entangled_singularity", "Quantum Entangled Singularity", "Singularity + Ender Dust in einer Explosion → 2"],
+            ["ae2:item/singularity", "Singularity", "Matter Condenser, 256.000 Items oder Eimer"],
+            ["ae2:block/condenser", "Matter Condenser", "4 Eisen, 4 Glas, Fluix Dust"],
+            [null, "ME Quantum Ring", "4 Eisen, 2 Logic, 1 Engineering Processor, Energy Cell, Dense Smart Cable"],
+            [null, "ME Quantum Link Chamber", "4 Quartz Glass, 4 Fluix Pearl"],
+          ],
+          text: `<p>Acht <b>Quantum Rings</b> um eine <b>Quantum Link Chamber</b> bilden eine Quantum Network Bridge. Die Link Chamber nimmt genau eine Quantum Entangled Singularity auf; das Rezept liefert sie paarweise. So verbunden reicht ein Netz über beliebige Entfernung und auch zwischen Dimensionen. Sie tragen 32 Kanäle, wie ein kabelloses dichtes Kabel. Beide Seiten müssen geladen sein, etwa mit einem Spatial Anchor.</p>
+<p>Die Singularity entsteht im <b>Matter Condenser</b>, der alles annimmt, was eine Zelle speichern kann: als Mülleimer, als Hersteller von Matter Balls (256 Items) oder von Singularities (256.000 Items). Für Singularities braucht er mindestens eine 64k Storage Component im oberen Slot.</p>`,
+          needs: [["Fluix Pearl", "m"], ["Ender Dust", "m"], ["sehr viele Abfall-Items", "v"]],
+        },
+        {
+          t: "Spatial IO",
+          items: [
+            ["ae2:item/spatial_pylon", "Spatial Pylon", "4 Quartz Glass, 2 Glass Cable, 2 Fluix Dust, Fluix"],
+            [null, "Spatial IO Port", "ME IO Port, Engineering Processor, Glas, Glass Cable, Eisen"],
+            ["ae2:item/spatial_cell_component_2", "2³ Spatial Component", "4 Glowstone, 4 Fluix Pearl, Engineering Processor"],
+            ["ae2:item/spatial_cell_component_16", "16³ Spatial Component", "4× 2³ + Glowstone + Engineering Processor"],
+            ["ae2:item/spatial_cell_component_128", "128³ Spatial Component", "4× 16³ + Glowstone + Engineering Processor"],
+            ["ae2:item/spatial_storage_cell_2", "2³ Spatial Storage Cell", "Item Cell Housing + Spatial Component"],
+            [null, "Spatial Anchor", "3 Spatial Pylon, 128³ Component, Engineering Processor, Glass Cable, Eisen"],
+          ],
+          text: `<p><b>Spatial IO</b> schneidet einen Raum aus der Welt aus und fügt ihn woanders wieder ein. Es tauscht den von Pylonen umgrenzten Bereich mit einem gleich großen Bereich in der Spatial-Storage-Dimension. Damit lässt sich Flawless Budding Certus bewegen, ein Raum mit wechselnder Einrichtung bauen oder sogar ein Endportal versetzen. Große Anlagen ziehen kurzzeitig sehr viel Strom; dafür nennt das Handbuch die Dense Energy Cell. Der <b>Spatial Anchor</b> lädt alle Chunks, die sein Netz belegt; ein einzelnes Kabel über eine Chunkgrenze genügt, auch über Quantum Bridges, aber nicht über Dimensionen hinweg.</p>`,
+          needs: [["Fluix Pearl", "m"], ["Glowstone", "v"], ["Engineering Processor", "m"]],
+        },
+      ],
+    },
+  ],
+  solo: [
+    {
+      t: "Werkzeuge",
+      items: [
+        ["ae2:item/certus_quartz_pickaxe", "Certus Quartz Pickaxe", "Quarzwerkzeuge auch aus Nether Quartz, alle fünf Sorten"],
+        ["ae2:item/fluix_pickaxe", "Fluix Pickaxe", "Quarzwerkzeug + Fluix Block + Fluix Upgrade im Smithing Table"],
+        ["ae2:item/fluix_upgrade_smithing_template", "Fluix Upgrade", "Papier + Fluix; anders als Vanilla-Templates frei herstellbar"],
+        ["ae2:item/certus_quartz_cutting_knife", "Certus Quartz Cutting Knife", "2 Holzstäbe, Eisen, 2 Certus; schneidet Name Press und Cable Anchor"],
+        ["ae2:item/network_tool", "Network Tool", "Illuminated Panel, Truhe, Wrench, Calculation Processor; Wrench mit Netzdiagnose und 9 Kartenplätzen, dreht aber nicht"],
+        [null, "Memory Card", "Calculation Processor, 2 Eisen, 2 Gold, Redstone; kopiert Einstellungen und Karten, verknüpft P2P Tunnels"],
+        ["ae2:item/entropy_manipulator", "Entropy Manipulator", "Fluix, Energy Cell, Engineering Processor, 2 Eisen; erhitzt und kühlt Blöcke in der Welt"],
+        ["ae2:item/charged_staff", "Charged Staff", "Charged Certus + 2 Eisen; 6 Schaden, 300 AE je Schlag"],
+        ["ae2:item/matter_cannon", "Matter Cannon", "3 Eisen, Formation Core, 4k Component, Energy Cell; verschießt Matter Balls (2 Schaden) und Nuggets, 1600 AE je Schuss"],
+        ["ae2:item/color_applicator", "Color Applicator", "Formation Core, 2 Eisen, 4k Component, Energy Cell"],
+        [null, "White Paint Ball", "Farbkugeln, auch als Lumen Paint Ball"],
+      ],
+    },
+    {
+      t: "Zellen und Speicher außerhalb des Drives",
+      items: [
+        [null, "1k Portable Item Cell", "ME Chest, Component, Energy Cell, Housing; tragbare Zelle, auch für Fluids"],
+        ["ae2:item/view_cell", "View Cell", "Housing + Certus; Filter für das Terminal"],
+        [null, "ME IO Port", "2 ME Drive, Logic Processor, Glas, Glass Cable, Eisen; leert und füllt Zellen"],
+        ["ae2:block/sky_stone_tank", "Sky Stone Tank", "8 Sky Stone + Quartz Glass; 16 Eimer, behält den Inhalt nicht"],
+        [null, "Sky Stone Chest", "8 Sky Stone"],
+      ],
+    },
+    {
+      t: "Weitere Netzteile",
+      items: [
+        [null, "ME Formation Plane", "Formation Core, 3 Fluix, 2 Eisen; setzt Blöcke oder wirft Items aus"],
+        [null, "ME Annihilation Plane", "Annihilation Core, 3 Fluix, 2 Eisen; baut Blöcke ab oder sammelt Items"],
+        [null, "ME Storage Monitor", "Level Emitter + Illuminated Panel"],
+        [null, "ME Conversion Monitor", "Storage Monitor + Formation + Annihilation Core"],
+        [null, "ME Energy Level Emitter", "Redstone Torch, Charged Certus, Calculation Processor"],
+        [null, "ME Toggle Bus", "2 Redstone, 2 Glass Cable, Lever; auch invertiert"],
+        [null, "Cable Facade", "verkleidet normale und dichte Kabel mit einem Block"],
+        [null, "Cable Anchor", "Metallbarren + Cutting Knife → 4"],
+      ],
+    },
+    {
+      t: "Bau- und Kleinteile",
+      items: [
+        ["ae2:block/quartz_block", "Certus Quartz Block", "4 Certus; mit Ziegeln, Säule, Stufen, Mauern"],
+        ["ae2:block/smooth_sky_stone_block", "Sky Stone Block", "Sky Stone im Ofen; Zutat des Controllers"],
+        ["ae2:item/sky_dust", "Sky Stone Dust", "Sky Stone im Inscriber; im Ofen wieder Sky Stone"],
+        ["ae2:item/ender_dust", "Ender Dust", "Ender Pearl im Inscriber"],
+        [null, "Vibrant Quartz Glass", "Quartz Glass + 2 Glowstone"],
+        [null, "Charged Quartz Fixture", "leuchtet; die Light Detecting Fixture gibt Redstone nach Lichtstärke"],
+        [null, "Tiny TNT", "2 Quarzstaub + 2 Gunpowder"],
+        [null, "Not So Mysterious Cube", "Nachbau des Mysterious Cube aus Sky Stone, Pressen und Controller"],
+        ["ae2:item/matter_ball", "Matter Ball", "aus dem Matter Condenser; Munition der Matter Cannon"],
+      ],
+    },
+  ],
+  bridges: [
+    {
+      t: "Mekanism",
+      addon: "Applied Mekanistics",
+      x: true,
+      text: `<p>Applied Mekanistics bringt Mekanism-Chemikalien ins ME-Netz: eigene Zellen in allen fünf Größen, tragbare Fassungen und einen Chemical P2P Tunnel, der mit Mekanisms Chemical Tanks abgestimmt wird. Das Housing braucht Osmium, liegt also hinter dem ersten Mekanism-Erz. Laut Handbuch funktioniert Autocrafting dann auch mit Mekanism-Gasen.</p>`,
+      items: [
+        ["appmek:item/chemical_cell_housing", "ME Chemical Cell Housing", "2 Quartz Glass, 3 Redstone, 3 Osmium Ingot"],
+        ["appmek:item/chemical_storage_cell_4k", "4k ME Chemical Storage Cell", "Housing + 4k Component (1k bis 256k)"],
+        ["appmek:item/portable_chemical_storage_cell_4k", "4k Portable Chemical Cell", "ME Chest, Component, Energy Cell, Housing"],
+        [null, "Chemical P2P Tunnel", "abstimmen mit Mekanism Chemical Tank"],
+      ],
+    },
+    {
+      t: "Botania",
+      addon: "Applied Botanics",
+      x: true,
+      text: `<p>Applied Botanics lagert Mana im ME-Netz. Das Housing braucht Life Essence und Manasteel, liegt also hinter dem Gaia Guardian. Der Mana P2P Tunnel wird mit Blütenblättern oder Mana Dusts abgestimmt. Der Fluix Mana Pool entsteht aus einem Fabulous Mana Pool und einem ME Interface; was er genau tut, ist nicht ausgelesen.</p>`,
+      items: [
+        ["appbot:item/mana_cell_housing", "ME Mana Cell Housing", "2 Quartz Glass, 3 Life Essence, 3 Manasteel Ingot"],
+        ["appbot:item/mana_storage_cell_4k", "4k ME Mana Storage Cell", "Housing + 4k Component (1k bis 256k)"],
+        ["appbot:item/portable_mana_storage_cell_4k", "4k Portable Mana Cell", "ME Chest, Component, Energy Cell, Housing"],
+        [null, "Mana P2P Tunnel", "abstimmen mit Blütenblättern oder Mana Dust"],
+        [null, "Fluix Mana Pool", "Fabulous Mana Pool + ME Interface"],
+      ],
+    },
+    {
+      t: "Immersive Engineering",
+      addon: "More Immersive Wires",
+      x: true,
+      text: `<p>More Immersive Wires überträgt ME-Netze über IE-Drähte: Glass Cable und Dense Cable je mit eigener Spule, Anschluss und Relais. Die Spulen brauchen Aluminiumdraht aus IE. Die Rezepte gelten nur, wenn AE2 geladen ist; im Pack ist das der Fall. Einen Mekanism-Draht enthält die Version nicht.</p>`,
+      items: [
+        ["more_immersive_wires:item/ae_coil", "ME Glass Cable Coil", "4 Aluminiumdraht, 4 Glass Cable, Holzstab → 4"],
+        [null, "ME Glass Cable Connector", "2 Fluix, 4 Deepslate, Glass Cable → 4"],
+        [null, "ME Glass Cable Relay", "2 Fluix, 2 Deepslate → 8"],
+        ["more_immersive_wires:item/ae_dense_coil", "ME Dense Cable Coil", "4 Aluminiumdraht, 4 Dense Covered Cable, Holzstab → 4"],
+        [null, "ME Dense Cable Connector", "2 Fluix Block, 4 Sky Stone, Dense Covered Cable → 4"],
+        [null, "ME Dense Cable Relay", "2 Fluix Block, 2 Sky Stone → 8"],
+      ],
+    },
+    {
+      t: "Strom und Rohstoffe aus anderen Mods",
+      text: `<p>AE2 erzeugt kaum eigenen Strom und rechnet Forge Energy im Verhältnis 2 FE zu 1 AE um; jeder Strom-Mod des Packs kann das Netz versorgen. Inscriber und Charger nehmen FE direkt an. Silicon wird über den Tag <code>#forge:silicon</code> geprägt, Certus über <code>#forge:gems/certus_quartz</code>; Silicon oder Certus anderer Mods würden also ebenfalls passen. Der Cable Anchor nimmt jeden Barren aus <code>#ae2:metal_ingots</code> (Kupfer, Zinn, Eisen, Gold, Messing, Nickel, Aluminium).</p>
+<p>Aus den anderen Seiten bekannt: Ad Astra macht Sky Stone aus Moon und Mars Stone, Mekanism bringt eigene Rezepte für AE2-Material mit, und Blood Magic ruft mit Certus Quartz Crystal einen Meteor mit Budding Quartz (siehe dortige Seiten und <code>CROSSMOD_AUFFAELLIGKEITEN.md</code>).</p>`,
+      items: [],
+    },
+  ],
+  foot: "Quelle: AE2-Handbuch im JAR (assets/ae2/ae2guide), Rezepte, Tags und Sprachdateien aus den JARs der Testinstanz (Minecraft 1.20.1, Forge 47.4.26), Zahlen aus dem Handbuch und config/ae2/common.json. Bilder nur aus flachen Item- und Blocktexturen; Kabelteile (Terminals, Busse, Kabel, Tunnel) haben keine flache Textur und stehen ohne Bild. Nicht ausgelesen: Reichweite und Verbrauch je Wireless Booster, Brennstoffwerte der Vibration Chamber, die Bedingungen im Spatial IO (Pylonen-Aufbau, Energiebedarf), die Werte der Werkzeuge und der Matter Cannon, die genaue Funktion von Color Applicator, Magnet Card und Fluix Mana Pool. Die Beispielanlagen des Handbuchs (Kapitel „Example Setups“) sind nicht übernommen.",
+};
+
+const $ = (tag, cls, html) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; };
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const initials = n => n.replace(/[^A-Za-zÄÖÜäöü0-9 ]/g, '').split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0].toUpperCase()).join('');
+
+function slot(icon, name) {
+  const s = $('div', 'slot');
+  if (icon && ICONS[icon]) { const i = $("img"); i.src = ICONS[icon]; i.alt = ""; if (icon.startsWith("render:")) i.className = "r"; s.append(i); }
+  else s.append($('span', '', esc(initials(name || '?'))));
+  return s;
+}
+function itemTile([icon, name, note]) {
+  const d = $('div', 'it');
+  d.append(slot(icon, name));
+  d.append($('div', '', `<div class="nm">${name}</div>${note ? `<div class="nt">${note}</div>` : ''}`));
+  return d;
+}
+function needsRow(needs) {
+  const d = $('div', 'needs', '<span class="lbl">Braucht</span>');
+  for (const [name, origin, from] of needs) d.append($('span', 'need ' + (origin || 'v'), name + (from ? `<small>${from}</small>` : '')));
+  return d;
+}
+function planBox(p) {
+  const box = $('div', 'plan');
+  box.append($('div', 'plan-title', `<b>${p.name}</b>Bauplan ${p.size ? p.size + " (B×H×T)" : ""}`));
+  const counts = {};
+  if (p.layers) {
+    const row = $('div', 'layers');
+    p.layers.forEach((layer, y) => {
+      const rows = layer.split(' ');
+      const l = $('div', 'layer');
+      const g = $('div', 'grid');
+      g.style.gridTemplateColumns = `repeat(${rows[0].length}, 22px)`;
+      for (const r of rows) for (const ch of r) {
+        if (ch === '.') { g.append($('div', 'cell air')); continue; }
+        counts[ch] = (counts[ch] || 0) + 1;
+        g.append(planCell(p.key[ch], ch));
+      }
+      l.append(g);
+      l.append($('div', 'cap', p.caps ? p.caps[y] : `Ebene ${y + 1}${y === 0 ? " (unten)" : ""}`));
+      row.append(l);
+    });
+    box.append(row);
+  }
+  const parts = $('div', 'parts');
+  for (const ch of Object.keys(p.key)) {
+    const n = p.count ? p.count[ch] : counts[ch];
+    if (!n) continue;
+    const s = $('span', 'part');
+    s.append(planCell(p.key[ch], ch));
+    s.append($('span', '', `<b>${n}×</b> ${p.key[ch][0]}`));
+    parts.append(s);
+  }
+  box.append(parts);
+  if (p.form) box.append($('p', 'form', p.form));
+  return box;
+}
+function planCell([name, icon], ch) {
+  const c = $('div', 'cell');
+  c.title = name;
+  if (icon && ICONS[icon]) { const i = $("img"); i.src = ICONS[icon]; i.alt = name; if (icon.startsWith("render:")) i.className = "r"; c.append(i); }
+  else c.textContent = ch;
+  return c;
+}
+function tableBox(t) {
+  const sc = $('div', 'scroller');
+  const tb = $('table');
+  tb.append($('thead', '', '<tr><th></th>' + t.head.map(h => `<th>${h}</th>`).join('') + '</tr>'));
+  const body = $('tbody');
+  for (const [icon, ...cells] of t.rows) {
+    const tr = $('tr');
+    const td = $('td', 'ic'); td.append(slot(icon, cells[0])); tr.append(td);
+    cells.forEach((c, i) => tr.append($('td', '', i === 0 ? `<b>${c}</b>` : c)));
+    body.append(tr);
+  }
+  tb.append(body); sc.append(tb);
+  return sc;
+}
+function picRow(pics) {
+  const d = $('div', 'pics');
+  for (const [icon, cap] of pics) {
+    if (!ICONS[icon]) continue;
+    const f = $('figure'); const i = $('img'); i.src = ICONS[icon]; i.alt = cap || '';
+    if (icon.includes("gui/entries")) i.className = "px"; if (icon.startsWith("render:")) i.className = "r";
+    f.append(i); if (cap) f.append($('figcaption', '', cap));
+    d.append(f);
+  }
+  return d;
+}
+
+document.documentElement.style.setProperty('--accent', matchMedia('(prefers-color-scheme: light)').matches && document.documentElement.dataset.theme !== 'dark' || document.documentElement.dataset.theme === 'light' ? PAGE.accent[1] : PAGE.accent[0]);
+document.getElementById('h1').innerHTML = `${PAGE.title} <span>Modpfad</span>`;
+document.getElementById('lede').innerHTML = PAGE.lede;
+for (const [n, v, kind] of PAGE.mods) document.getElementById('mods').append($('span', 'mod ' + kind, `<b>${n}</b> ${v}`));
+
+const main = document.getElementById('main'), toc = document.getElementById('toc');
+let stepNo = 0;
+PAGE.phases.forEach((ph, pi) => {
+  const sec = $('section', 'phase'); sec.id = 'phase-' + (pi + 1);
+  sec.append($('div', 'phase-head', `<div class="eyebrow">Phase ${pi + 1}</div><h2>${ph.t}</h2>${ph.sub ? `<p>${ph.sub}</p>` : ''}`));
+  { const a = $("a", "", `<span class="n">${pi + 1}</span>${ph.t}`); a.href = "#" + sec.id; toc.append(a); }
+  for (const st of ph.steps) {
+    stepNo++;
+    const step = $('div', 'step');
+    step.append($('div', 'num', String(stepNo)));
+    const body = $('div', 'step-body');
+    body.append($('h3', '', st.t + (st.addon ? ` <span class="tag">${st.addon}</span>` : '')));
+    if (st.pics) body.append(picRow(st.pics));
+    if (st.plan) for (const p of [].concat(st.plan)) body.append(planBox(p));
+    if (st.items) { const g = $('div', 'slots'); st.items.forEach(it => g.append(itemTile(it))); body.append(g); }
+    if (st.text) body.append($('div', 'prose', st.text));
+    if (st.table) for (const t of [].concat(st.table)) body.append(tableBox(t));
+    if (st.needs) body.append(needsRow(st.needs));
+    step.append(body); sec.append(step);
+  }
+  main.append(sec);
+});
+
+function extraSection(id, eyebrow, title, sub, groups) {
+  if (!groups || !groups.length) return;
+  const sec = $('section', 'phase'); sec.id = id;
+  sec.append($('div', 'phase-head', `<div class="eyebrow">${eyebrow}</div><h2>${title}</h2><p>${sub}</p>`));
+  for (const g of groups) {
+    const d = $('div', 'solo-group');
+    d.append($('h3', '', g.t + (g.addon ? ` <span class="tag${g.x ? ' x' : ''}">${g.addon}</span>` : '')));
+    if (g.text) d.append($('div', 'prose', g.text));
+    if (g.items) { const grid = $('div', 'slots'); g.items.forEach(it => grid.append(itemTile(it))); d.append(grid); }
+    if (g.table) d.append(tableBox(g.table));
+    sec.append(d);
+  }
+  main.append(sec);
+  toc.append($('div', 'sep'));
+  { const a = $("a", "", title); a.href = "#" + id; toc.append(a); }
+}
+extraSection('solo', 'Abseits des Pfads', 'Für sich stehend', 'Maschinen, Werkzeuge und Items, die man nutzen kann, die aber kein Schritt auf dem Hauptweg des Mods sind.', PAGE.solo);
+extraSection('bruecken', 'Crossmod', 'Brücken zu anderen Mods', 'Was der Mod und seine Addons von sich aus mit anderen Mods des Packs verbinden – Ausgangslage vor unseren eigenen KubeJS-Änderungen.', PAGE.bridges);
+
+if (PAGE.foot) main.append($('footer', '', PAGE.foot));
+</script>

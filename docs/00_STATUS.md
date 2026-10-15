@@ -119,7 +119,7 @@ Stand der Hauptwelt (2026-10-07): IE mit Stahl, Biodiesel, Crusher, Lichtbogenof
 
 - 🟢 Core-Technik: IE, Immersive Petroleum, Mekanism (+ Generators), AE2, Applied Mekanistics. IE ist die industrielle Grundlage, Mekanism High-Tech und Chemie.
 - 🟢 Magie: Botania, MythicBotany, Blood Magic. Werkzeuge: Tinkers' Construct (+ Levelling, TCIntegrations, Blood-Smeltery); jedes Metall einschmelzbar, Legierungen bleiben bei ihrer Maschine.
-- 🟢 AE2 ist Endgame, außer einem frühen, teuren Storage-Layer.
+- 🟢 AE2 ist Endgame, außer einem frühen, teuren Storage-Layer. (Hinweis 2026-10-15: Von sich aus ist AE2 frühes Midgame, ohne Stahl; siehe Crossmod AE1. Die Entscheidung braucht also KubeJS-Eingriffe.)
 - 🟢 Kein „More Mekanism Processing“, keine weiteren großen Basistech-Mods.
 - 🟢 Raumfahrt ist Hauptziel (Ad Astra, Giselle Addon, Rocketed, Star Wars Planets, Galaxy in a Cube). Energie, Treibstoff, Sauerstoff nur aus IE, IP, Mekanism; Sauerstoff aus Mekanism. Treibstoff: T1 Biodiesel, T2 entschwefelter Diesel, T3 Kerosin, T4 eigener. Star-Wars-Planeten ab T5/T6.
 - 🟢 Blue Skies ersetzt Twilight Forest; Werkzeugabschwächung ist gewollt.

@@ -1,6 +1,6 @@
 # Modpfade
 
-> Stand 2026-10-15, Minecraft 1.20.1. Neun Seiten liegen vor (Tinkers, IE, Botania, Mekanism, Ad Astra, Star Wars Planets, Star Wars: Galaxy in a Cube, Blood Magic, Wesley's Roguelike Dungeons); der User hat die Tiefe bestätigt. Regel: keine Angabe aus dem Gedächtnis, alles aus den JARs lesen.
+> Stand 2026-10-15, Minecraft 1.20.1. Elf Seiten liegen vor (Tinkers, IE, Botania, Mekanism, Ad Astra, Star Wars Planets, Star Wars: Galaxy in a Cube, Blood Magic, Wesley's Roguelike Dungeons, Applied Energistics 2, Blue Skies); der User hat die Tiefe bestätigt. Regel: keine Angabe aus dem Gedächtnis, alles aus den JARs lesen.
 
 Je Content-Mod eine Seite mit der Progression, wie der Mod sie mit seinen Addons selbst vorsieht (ohne unsere KubeJS-Änderungen): nummerierte Schritte mit Bildern, Bauplänen der Multiblöcke und den nötigen Rohstoffen, am Ende die für sich stehenden Items und die Brücken zu anderen Mods. Die Seiten sind die Grundlage für Progressionsweg und Crossmod-Punkte.
 
@@ -19,6 +19,8 @@ Je Content-Mod eine Seite mit der Progression, wie der Mod sie mit seinen Addons
 | Star Wars: Galaxy in a Cube | https://claude.ai/artifact/18k191oT3stvg7zEjZJsHx | `swgc/` |
 | Blood Magic (Brücke Blood-Smeltery) | https://claude.ai/artifact/LBPGVvAY4w5kV4Mx6KzBjc | `bloodmagic/` |
 | Wesley's Roguelike Dungeons | https://claude.ai/artifact/JoCxMWugDJXsXTJxFFyrwN | `rld/` |
+| Applied Energistics 2 (+ AE2WTLib; Brücken Applied Mekanistics, Applied Botanics, More Immersive Wires) | https://claude.ai/artifact/EGPb1ZNHD7gCtHSELecFhN | `ae2/` |
+| Blue Skies (+ Structure Gel API) | https://claude.ai/artifact/GAjru1A7JmbqwXNhfBumJt | `blue_skies/` |
 
 **Nachschlage-Notizen für Claude:** Zu jeder Seite gibt es `<mod>/WISSEN.md` mit JARs und Kürzeln, Fundstellen im JAR (bei Galaxy in a Cube die Klassen), Progression in Kürze, Schlüsselzahlen, Pack-Bezug, Offenem und einer Tabelle Name → Item-ID. Vor Arbeit an einem Mod zuerst dort nachsehen; bei Änderungen an `data.js` mitziehen.
 
@@ -80,5 +82,7 @@ Die Ebenen stammen aus den Strukturdateien der Mods (`data/<mod>/structures/mult
 - Star Wars: Galaxy in a Cube hat weder Buch noch sichtbare Advancements; die Reihenfolge der Seite folgt den Rezept-Abhängigkeiten, die Abläufe (Assembly Bench, Macht, Jawa-Handel, Gas Harvester) sind mit `javap` aus den Klassen des JARs gelesen. Nicht ausgelesen: Werte der Blaster, Lichtschwerter und Rüstungen, Freischaltung der Lichtschwert-Formen, Drops der Mobs, Bedienung der Fahrzeuge.
 - Mods, deren Mechanik nur im Code steht: Vanilla-Namen hinter den SRG-Kürzeln (`f_42415_`) liefern die Mapping-Dateien der Instanz (`libraries/de/oceanlabs/mcp/mcp_config/…-mappings-merged.txt` zusammen mit `libraries/net/minecraft/client/…-mappings.txt`).
 - Blood Magic: nicht ausgelesen sind die Zahl der Ritual Stones je Ritual, die Erzgewichte der Meteore, die Wirkung des Bounce Array, die Werte der Sentient-Waffen, die Kosten je Stufe der Living-Armour-Upgrades und wie Trick Shot, True Strike und Grave Digger trainiert werden (stehen nur in den Daten, nicht im Buch). Die Upgrade-Namen weichen teils vom Buch ab (Sprachdatei „Weakened Pick“, Buch „Leadened Pick“); auf der Seite gilt die Sprachdatei.
-- Weitere Mods: AE2, Blue Skies, Farmer's Delight
+- Weitere Mods: Farmer's Delight
+- Blue Skies (sparsam gebaut, Verfahren in `blue_skies/WISSEN.md`; Bilder nur flache Texturen und Journal-Bilder): nicht ausgelesen, weil nur im Code, sind Werkzeugrezepte, Preise des Gatekeepers und der Dorfbewohner, Stärke der Werkzeugabschwächung, welche Schilde gegen den Arachnarch genügen, wann welcher Loot Bag fällt, ob Catylist-Hilfsstoffe der Alchemy Table verbraucht werden. Aquatic/Life/Runic Arc und Infused Arc Sword sind im JAR, aber ohne Quelle.
 - Wesley's Roguelike Dungeons (MCreator-Mod, fast alles im Code): nicht ausgelesen sind Schaden der Waffen und Stäbe, Wirkung der 25 Artefakte, Spellbook-Kombinationen, Verzauberungen und Tränke, die Staffel der Lauf-Belohnung nach Dungeon-Wert, die Herkunft des ersten Boss Room Key, der Rückweg des Sentient Pathfinder und ob die Vessel verbraucht wird. Der JAR-Name enthält ein Apostroph: Kürzel `rld="Wesley's Roguelike"`. Der Klassen-Dump (`javap`, 3755 Prozedur-Klassen) dauert rund 3 Minuten.
+- AE2: gebaut ohne einzelnes Öffnen der Dateien – Inhaltsverzeichnis des Handbuchs (`assets/ae2/ae2guide`) per awk aus dem Frontmatter, Seitentexte ohne Markup, Rezepte per RecipeDump gefiltert (Verfahren in `ae2/WISSEN.md`). Bilder nur aus flachen Texturen (Vorgabe des Users), Kabelteile ohne Bild. Nicht ausgelesen: Reichweite je Wireless Booster, Brennstoffwerte der Vibration Chamber, Aufbau und Energiebedarf von Spatial IO, Funktion von Color Applicator und Magnet Card; die Beispielanlagen des Handbuchs sind nicht übernommen.

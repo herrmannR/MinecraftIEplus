@@ -1,0 +1,780 @@
+<title>Modpfad Blue Skies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: links Phasen-Navigation, rechts der Weg als nummerierte Schritte – je Schritt Bilder (Inventar-Slots, Bauplan, Buchbild), Erklärung, Zutaten.
+   Farben und Schriften wie im Erzatlas ("Deepslate"-Grund zuerst); --accent kommt je Mod aus den Daten. */
+:root{
+  --bg:#1b1d20; --panel:#24272b; --line:#34383e; --fg:#e7e5e1; --muted:#9a9890;
+  --accent:#e0a33a;
+  --slot:#2f3338; --slot-edge:#15171a; --slot-hi:#474c53;
+  --chip:#2c3035;
+  --o-v:#9a9890; --o-m:#e0a33a; --o-a:#5fb3a0; --o-x:#6aa7e6;
+  --f-display:"Pixelify Sans","Courier New",monospace;
+  --f-body:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-data:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){
+  --bg:#f1efea; --panel:#fbfaf7; --line:#d9d5cc; --fg:#24221f; --muted:#6c675e;
+  --slot:#c9c5bb; --slot-edge:#8f8a7f; --slot-hi:#e9e6de;
+  --chip:#ebe7df;
+  --o-v:#6c675e; --o-m:#a36a12; --o-a:#2f7f6d; --o-x:#2f6fb5; color-scheme:light}}
+:root[data-theme="light"]{
+  --bg:#f1efea; --panel:#fbfaf7; --line:#d9d5cc; --fg:#24221f; --muted:#6c675e;
+  --slot:#c9c5bb; --slot-edge:#8f8a7f; --slot-hi:#e9e6de;
+  --chip:#ebe7df;
+  --o-v:#6c675e; --o-m:#a36a12; --o-a:#2f7f6d; --o-x:#2f6fb5; color-scheme:light}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:16px;padding-block:28px 56px}
+a{color:var(--accent)}
+code{font-family:var(--f-data);font-size:.86em;background:var(--chip);padding:1px 5px;border-radius:3px}
+
+header.top{display:grid;gap:10px;margin-bottom:24px}
+h1{font-family:var(--f-display);font-weight:700;font-size:clamp(28px,4vw,40px);letter-spacing:.02em;margin:0;text-wrap:balance}
+h1 span{color:var(--accent)}
+.lede{color:var(--muted);max-width:70ch;margin:0}
+.mods{display:flex;flex-wrap:wrap;gap:6px}
+.mod{font:12px var(--f-data);background:var(--chip);border:1px solid var(--line);border-radius:3px;padding:3px 8px;color:var(--muted)}
+.mod b{color:var(--fg);font-weight:600}
+.mod.main{border-color:var(--o-m)} .mod.addon{border-color:var(--o-a)} .mod.bridge{border-color:var(--o-x)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:var(--muted);align-items:center}
+.legend b{color:var(--fg);font-weight:600}
+
+.cols{display:grid;grid-template-columns:210px minmax(0,1fr);gap:32px;align-items:start}
+nav.toc{position:sticky;top:calc(env(safe-area-inset-top, 0px) + 12px);display:grid;gap:2px;max-height:calc(100vh - 24px);overflow:auto;font-size:13.5px}
+nav.toc a{display:block;padding:5px 8px;border-left:2px solid var(--line);color:var(--muted);text-decoration:none}
+nav.toc a:hover,nav.toc a:focus-visible{color:var(--fg);border-left-color:var(--accent);outline:none}
+nav.toc a .n{font-family:var(--f-data);font-size:11px;margin-right:6px;color:var(--accent)}
+nav.toc .sep{height:10px}
+main{display:grid;gap:44px;min-width:0}
+
+section.phase{display:grid;gap:18px;min-width:0}
+.phase-head{display:grid;gap:4px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.phase-head .eyebrow{font:600 12px var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h2{font-family:var(--f-display);font-weight:700;font-size:24px;letter-spacing:.02em;margin:0;text-wrap:balance}
+.phase-head p{margin:0;color:var(--muted);max-width:70ch}
+
+.step{display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;min-width:0}
+.step .num{font:700 18px var(--f-data);font-variant-numeric:tabular-nums;color:var(--bg);background:var(--accent);width:44px;height:44px;display:grid;place-items:center;border-radius:3px}
+.step-body{display:grid;gap:12px;min-width:0;padding-bottom:18px;border-bottom:1px dashed var(--line)}
+.step:last-child .step-body{border-bottom:none}
+h3{font:700 18px var(--f-body);margin:0;display:flex;flex-wrap:wrap;gap:8px;align-items:center;min-height:44px}
+.tag{font:600 11px var(--f-data);padding:2px 7px;border-radius:3px;border:1px solid var(--o-a);color:var(--o-a);letter-spacing:.02em}
+.tag.x{border-color:var(--o-x);color:var(--o-x)}
+.prose{max-width:70ch;display:grid;gap:8px}
+.prose p,.prose ul{margin:0}
+.prose ul{padding-left:20px}
+.prose b{font-weight:700}
+
+/* Inventar-Slots */
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.it{display:grid;grid-template-columns:44px minmax(0,1fr);gap:9px;align-items:start}
+.slot{width:44px;height:44px;background:var(--slot);border:2px solid;border-color:var(--slot-edge) var(--slot-hi) var(--slot-hi) var(--slot-edge);display:grid;place-items:center;flex:none}
+.slot img{width:32px;height:32px;image-rendering:pixelated;object-fit:cover;object-position:top}
+.slot img.r{width:38px;height:38px;image-rendering:auto;object-fit:contain}
+.cell img.r{image-rendering:auto;object-fit:contain}
+figure img.r{max-height:230px;width:auto;border:none;background:none}
+.slot span{font:700 12px var(--f-data);color:var(--muted)}
+.it .nm{font-weight:600;line-height:1.25;overflow-wrap:anywhere}
+.it .nt{font-size:13px;color:var(--muted);line-height:1.3;overflow-wrap:anywhere}
+
+/* Buchbilder */
+.pics{display:flex;flex-wrap:wrap;gap:10px}
+figure{margin:0;display:grid;gap:4px;max-width:420px}
+figure img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:3px;background:var(--panel)}
+figure img.px{image-rendering:pixelated;width:260px}
+figcaption{font-size:12.5px;color:var(--muted)}
+
+/* Bauplan */
+.plan{border:1px solid var(--line);border-radius:4px;background:var(--panel);padding:12px;display:grid;gap:10px;min-width:0}
+.plan-title{font:600 12px var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.plan-title b{color:var(--fg);letter-spacing:0;text-transform:none;font-size:14px;margin-right:8px}
+.layers{display:flex;gap:16px;overflow-x:auto;padding-bottom:4px;align-items:flex-end}
+.layer{display:grid;gap:4px;flex:none}
+.layer .cap{font:11px var(--f-data);color:var(--muted)}
+.grid{display:grid;gap:1px}
+.cell{width:22px;height:22px;background:var(--slot);display:grid;place-items:center;font:700 10px var(--f-data);color:var(--fg)}
+.cell img{width:22px;height:22px;image-rendering:pixelated;object-fit:cover;object-position:top;display:block}
+.cell.air{background:transparent;outline:1px dotted var(--line);outline-offset:-1px}
+.parts{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px}
+.part{display:inline-flex;align-items:center;gap:6px}
+.part .cell{width:18px;height:18px}.part .cell img{width:18px;height:18px}
+.part b{font-family:var(--f-data);font-weight:600}
+.plan .form{font-size:13px;color:var(--muted);margin:0}
+
+/* Zutaten */
+.needs{display:flex;flex-wrap:wrap;gap:5px;align-items:center;font-size:13px}
+.needs .lbl{font:600 12px var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:4px}
+.need{background:var(--chip);border:1px solid var(--line);border-left:3px solid var(--o-v);border-radius:3px;padding:2px 8px}
+.need.m{border-left-color:var(--o-m)} .need.a{border-left-color:var(--o-a)} .need.x{border-left-color:var(--o-x)}
+.need small{color:var(--muted);font-family:var(--f-data);font-size:11px;margin-left:4px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+
+/* Tabellen (Materialien, Listen) */
+.scroller{overflow-x:auto;border:1px solid var(--line);border-radius:4px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th{font:600 11.5px var(--f-body);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:6px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td.ic{width:34px;padding-right:0}
+td.ic .slot{width:28px;height:28px;border-width:1px}
+td.ic .slot img{width:22px;height:22px}
+td.ic .slot span{font-size:9px}
+td .sub{color:var(--muted);font-size:12.5px}
+
+.solo-group{display:grid;gap:10px}
+.solo-group h3{min-height:0}
+.note{border-left:3px solid var(--accent);background:var(--panel);padding:10px 14px;max-width:72ch;font-size:14px}
+.note p{margin:0}
+footer{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:14px;max-width:80ch}
+
+@media (max-width:900px){
+  .cols{grid-template-columns:minmax(0,1fr);gap:20px}
+  nav.toc{position:static;display:flex;flex-wrap:wrap;gap:6px;max-height:none}
+  nav.toc a{border:1px solid var(--line);border-radius:3px;padding:4px 8px}
+  nav.toc .sep{display:none}
+}
+@media (max-width:520px){
+  .step{grid-template-columns:minmax(0,1fr)}
+  .step .num{width:36px;height:36px;font-size:15px}
+  h3{min-height:0}
+}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1 id="h1"></h1>
+    <p class="lede" id="lede"></p>
+    <div class="mods" id="mods"></div>
+    <div class="legend"><b>Zutaten:</b>
+      <span><i class="dot" style="background:var(--o-v)"></i>Vanilla</span>
+      <span><i class="dot" style="background:var(--o-m)"></i>dieser Mod</span>
+      <span><i class="dot" style="background:var(--o-a)"></i>Addon</span>
+      <span><i class="dot" style="background:var(--o-x)"></i>anderer Mod im Pack</span>
+    </div>
+  </header>
+  <div class="cols">
+    <nav class="toc" id="toc" aria-label="Phasen"></nav>
+    <main id="main"></main>
+  </div>
+</div>
+
+<script>
+const ICONS = {
+  "blue_skies:block/crafting/horizonite_forge_front": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABAElEQVR4Xo1SsRHCMAzMANmAIwVpQks6LmmTkjsqpmCVLMECbEBLxxaMYfKy37wdOCjekuXXy5ZcPA6FI+7DKoG77A3KUR78wojXk0dIYJL5k/hE4L4FJk80nLcGSwox80OcnOex9gI8RICW4JX1TDlRQN+l0Hd/45hAvakjqnUVLZGfEyaABZtxGF3f9a5pmmQPtLvWgDMtkgiAmExDp6KxGRBfCKCCEaTTyWSk+ygWn8Ae4HpWZSaVZRmt+hRAMeTEKbBB/wigKnsRBdg0FUAlCtBXAeSYQNLE7LPY27MY+JzEookk/MLHf8BGwocldO7cJze4df6LwipYLY/n/BdJpxKnH9y0ugAAAABJRU5ErkJggg==",
+  "blue_skies:block/crafting/snowcap_oven_front": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA+klEQVR4Xo2RsQ5BQRRE9w90olBIaDXCBxAKnUpCJTqNH1CIWqcVtU/wAzRa0WgkEolOolOR2WRu5l2PKObt23tnzm7uhsXx/oJu50NcVbPdJcrX2cMaGH4+rnFFY7Q5mQjROn0GwAZFNHvrvUlB7OlhBlBDY7VNiDCt8TAcHHg1mgq15k8pKAK4oaHSHrzK9W4U/inWPCiwoIFStZkqhTEX/GkwZrL5VKGnXvwH3XTG84+QFzwKsRug0RpOzZgrlhNSACHxBv+E0yDwGwBXIcCHvOCB12agQ/wXwLDNoD9ZxoIa/RNqj5kIwIeD+Rb2kMQM+Bz6nF6/+m+3ghNIrBgZTAAAAABJRU5ErkJggg==",
+  "blue_skies:block/dungeon/blinding_keystone": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA1UlEQVR4XpWTsQoCMQyG+1R9ISeH2wQHQRdBEOHg4LYb3A58ycpXTPlNK/UCoc2f5k/StGG3HxI6HI5NNX/rDFi43u7pdDknXR/jlMZpzsoezPyoYawBgQkgG38IZ3N2E8rZQkBmYgqAUcr52L5XzUhrXwQ4Ac3Gua6vrMvyzORKUFXwi4DgGGP2KUF1B/4SIbBg1FewmcAHeMJqCtiUbcHMvkugU7A70cfjp9AlQHWEvoJqCkrQkyaBjrEntFYIrE9W+0DsTcmmH8qfL89W+/aY9yn2BtIKg0VYSz8KAAAAAElFTkSuQmCC",
+  "blue_skies:block/dungeon/nature_keystone": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAvUlEQVR4XmNgGFQgckPbfxCOWD8NjGFsZFo53P4/uj44AClymlMMxza9BWAMY4NoeX8LwgZgcwnIZpCcjKshbgNACmEGmNbG/eeSFARjEBtkM8gVRBkAshWmGYZJNkBAQwauGcQGaQS5hKABIFtABsC8ANIM84Juli/+QIQZgBwGIANgGgkaALMZRoM0wwwAOZ1oA0BRBlIIwiCNMAwzCF0fHMCcDlIIwshsGMZrAMhmkAKY7egugGF0fQMLALS57CyPwwHoAAAAAElFTkSuQmCC",
+  "blue_skies:block/dungeon/poison_keystone": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAo0lEQVR4XmNgGHTAU87yf6Ci438YjcxO1gr4j64eA4AU4TIARKOrhwOQJEgzCIPY6Aagy6PrZ0BWDFJUZBj+f6Zjyf8e60wwG4SRDUXXD3YBTAGyZkVeKTAb2WsEXQAyAKYZZgBBF6B7AaQJZgDMG3gNgDkN3QXI4YCsBl0/hhdghsA0w0IfpwtgUUQoGmE0un44wJeQ8GqEAZhibAZg9fuAAwDb6uEcbZ2CnAAAAABJRU5ErkJggg==",
+  "blue_skies:block/misc/food_prep_table_side": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAjUlEQVR4XmNgGAUMCQkJ/5uamuC4oKAAhY9PzsvH5z8DiABJgDDIMGQME8cmB8J29vYQA2AYJADD+MSQxRnExUT/K8rL/TfR1/2P7j1cAKQWpAekF26Arakx0QaA1GIYQKoLtFRVEAaAOKS6AKQHZDEDiKCKAaR4AcUAcrxAcSxgGABzBbpCXAAWAyAMAC/EsqI1ggSUAAAAAElFTkSuQmCC",
+  "blue_skies:block/misc/spider_webbing_full": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAo0lEQVR4Xo2RQQ6AQAgD/f+7PHvwDV58hQpJN2WWTeyFhZaCuG3AfpxP92bt+dDxSeh93XcRME8DuQQpgUwiqkauoHOOmhs5z7wUnXRjNjFP+IG66IbcenKMPES8tN9sFFws+B1c47phvlpNTcpV85hgk94+Wbm4YtwRnMRNRg8vH+An0aTbKJFKmxzgZPETVq7eMP1Cga7+C7WFGxc9J/7NFV8TWI5vInYqjQAAAABJRU5ErkJggg==",
+  "blue_skies:block/misc/sunstone_crystal": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAnElEQVR4Xt2QwQmAMAxFHchZPDqIE3hyChfQHTw6gLiEeBFcoBLhwW/UIh4NlLTp/69Js+z/scxj8LXXYeZl6MInCOatb8Le1ufeax7DzBg1v4bwuhotT0WeBjArJgWsVZkG6Lw6N3sF3I6C2IQpgP5PBKBoIgy0HgEEGgFUpJ1o5g5tBPAiXtazdnf5UA9AbJm6h92a1aA1f8c6AL99X9YDzfx+AAAAAElFTkSuQmCC",
+  "blue_skies:block/ores/everbright_aquite_ore": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA8ElEQVR4Xn2SOwoCQRBE51KCmZGZgmwkmBkYiZmxBzBdL+JNPIHoJUyEkWqo5jkMG9R+pmuru6q3LLbnutxfAvPhGNCZoffZ+pAcw/Vigu4sWmw1Puru/kohi21O10DRxSQTKKi7OLfnt74/NXluUNTNahYSmYK2aZ7rOiv0RSF2dDfmJF4IMLBWSOC5a3zPCXofMBP7bhvGFjgix3Qmgp7bLYSAlHqrcnjcQC/csEAiu3JdzMWbSgFmILhbT6zl5xY8iafh6FNCMYHI9D8lxhz+LAhtmBSimCCueGmBRfu3NYNc/xMhQBID4kfeRsv/AXQoSz5zeD4aAAAAAElFTkSuQmCC",
+  "blue_skies:block/ores/everbright_charoite_ore": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA/ElEQVR4XnWSMQpCQQxE91KCnZVYCWJlrWAldr/+WIqX8AS2XsErCB7DfmUCL4xBi/D3J5PJTHbbbDN0xXw7xne6PkSQ03my3PfV8RL/BH0NEE00KtS4W5z6dXhkEzURKhpNAitEpAJ5Nb9u71QA5kuBT2IKhExynAKiUCCAptzPz/QM0CUzBKzyoQASpFcgCvTVP7m0AAnyXZHO7tkthQIvskwWyRTACiySTwXVO0So87rsQRJLrEX3SF1Rd6OeVIB39+jktY66UPDLW7VE3vcVFiqQpWpKlQyJLzos6ODekacz915Vschc4r9r8zw1f7X5EpFOY/XqeSf9AIeyN9i/K6BMAAAAAElFTkSuQmCC",
+  "blue_skies:block/ores/everbright_diopside_ore": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABFklEQVR4Xm2SMW4CMRRE3XMCDhIpHRWRkIiEqKgpqFA66hU13CA19+AmtNzC7Ax5q1lnC6/tv/Pnz/zvstid6nLfeX1uj/Xj+1AzprPim5/LKMYqLXD9XI1Ait3rr3eIVYS8kkD9AExF7SL96s4Dse6QjRTohwioMCUfRWCsQEFfHvNabrNarrMhlna0UCmce5CMqqTklJt+sfOPQJWVJAA7ytKvC/RYxVBpApIAIT+bioVU6TPBBOlM9WxYWkGlp6CDwCRClHKnmunG65ONxO+U3FTBg7OFHA0AyNrkxA8WLFNv4PoeDQBGm/IVM74vprMV8IBUTXcayB1bWopZ7Z81K8BrjrKVjgr7zjEmc4Jb30ynJX8BO3soQ8ZGHeMAAAAASUVORK5CYII=",
+  "blue_skies:block/ores/everbright_moonstone_ore": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA9UlEQVR4Xm2SIQ5CQQxE91IkOBSShKDQCBQhQaA5AJpz4LgDhhtgEEgMCrVkmrym6VY0u7+dTqezv83Wxz7fnCx0J8gt92ePWOPeAE4W2z5d7QYy7qrpFE4BrpG83F/99vwMRDEyzhWoQcn39+fFajLNwjHEFGg/FVXQyb7IhSgOAWcKIsnh+rB7JZfviHMTFbid5epeDbEVJI09ldQ9NuuMDQzxV2CF+GT4keWCg8BeITMyhcbYjKnxmd2DDIAYcuVRhKlGgCw15f8gy46eDD9S5Xq1FnWM9xUEEHNlWiahLhJfAUBlaoUhZwpyE0W8if9KXu0PYwto4s2Bz7EAAAAASUVORK5CYII=",
+  "blue_skies:block/ores/everbright_pyrope_ore": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABFklEQVR4XnWSMUpEQRBE/yE8gNnmgmDmImwoiNFmCwZiIGYaCR5ATL2DJ/AiexIvMMtrfENto0HzZ/p3V1dXzXK5fR6bu7dxfn0/OBvmLm4f62xwz9rF5P70bLxe7WYRMV4+xs/6YYLQSI5acjdP72PhABLNJJxE4fj8qmLu1ABG7vtkNUGKQVJzGmCyEpivzbJdQKap0H8pqwENROrCPUGLwV/UsskVjAQtAOkmtf9WU2DvtQIHGvu+OtHdyPXKBS1Jqhb29dKpuQIBzZxuAaxyvT7gyAV/KKJgfT1XmQy0MCn2N6Em5FOPYqALOSGfbNLOYUc2ah/JLlxXXz1gM11IqkR/soI7jG8xkF4qm2A2Krb/rDsAr3Qt10LJYJkAAAAASUVORK5CYII=",
+  "blue_skies:block/ores/falsite_ore": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA70lEQVR4XoWSoa5CMRBE70+RhyBBIQkEhSYBRXAIFAaHx6L4AX4MjSqZTaY5mUCemPS2d2f37LbDdH1ss825pO/xat9G810/k5aHa4lx1qADm6TF361tJ8/6ZqCNmXRwgI2X06s97u/ak4J0JCwCZ7RZq5FpdBESdgImSTONJNS/gcNxEu599ouwWiAmB8ehJaHiq4XsL6+Qg5MhCWsG7I0V/kteBNmnxBZ4vVpttPoMJFVQ1W99iy7xta8WiKnViZzYSWTKp14E+Qp951mNb6I/pMT0EImb83BcPSQH8I5pkkiRcT2BA2gmgWfCOOkD/XY3qI5xwu8AAAAASUVORK5CYII=",
+  "blue_skies:block/ores/horizonite_ore": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA9ElEQVR4XnVTwQ3CQAy7ZShUoh/6Q2qfiBU6BKzCSnyZ6jhHdeSc0kfUXmM5tnMt03Wqw2mwwvt8m+2p7+xnmIIDqr7HWj/3Q/D2XGr9vhyzLqtVIRMOBmoAA7ZSEu+j14axV8iUEjXg73EOitjHdxCbAp2k/kgclIkFI7DmLqknUhuuTLIyCw7uJmTBaRZuYbyMcUJGIlloqCEDKull0i+n8huzMgs6sZepmahKEhkBGpiKJs60hXcC6VnXjKfdA66tn3Z0qUIG2Y4V6Jkkfc8AoGwD3E52B1Cw6lc5+NvXRhUqm+HSuv9MPRDFMFEaLMNG/QEBXNhc4TQj4wAAAABJRU5ErkJggg==",
+  "blue_skies:block/ores/ventium_ore": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA+klEQVR4XnWTMQoCURBD/zXstvEIwnZWloJYWStYLXbWHkDwOl7G0nusJPA+YViLYef/yeQnEdv2dJ/H4zRv9ld/dVbtzo9eh9vTxVlz4fVtat7DMH/G0SDIALCQj6i0I3wDpIMAr/XKQ5WAvJoz9RC3uigl38vkUo+SnKFWJFag0gUAPAPixbxHeUPKv7BkA9K8I3ATZGA1NIiZ570V6ELSc0k9mQBkOYPU2QpYzCFEfGuQ2HKI9RfQF2vZYyezsgJ85zCDSnVpsxOQA0SQaqmqS4UmwB9J1/TrYsoXvltASf4vljxjCbwJEpB9Vs0Cxd3C0kL2BFof+AFLnR0v18z+yAAAAABJRU5ErkJggg==",
+  "blue_skies:block/plants/brewberry_bush": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAwUlEQVR4Xp1SwQ3CMBDLICzQNboBOzBBJf7swABMwQdG6L8b8GaEVi5y5HMSoLUUnXI6++6cpGR4vOYZx/ObcB7fhQiFPd+EiiDijuN1Adrh+JxWgkavD9AuFOlv95WI6PVNsCNEQOwu10z+2wd2RTychuCDNggkVVcfIKBk5oOhur+axhV+uk8CO4CIHMiYgCb6hBm1J6IHNFGnrHrAol0ekKy7445IAf8LVQFdhQaqB4pi7UIxfUT4DzZDJ/gmsgAy3WNo/8341QAAAABJRU5ErkJggg==",
+  "blue_skies:block/plants/crystal_flower": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAfUlEQVR4XmNgoCX4+un7f3QxkgBVDHh85wV5hsA0Xzx+gzxDqGbApgX7wXR73kziDYFpAtkOYoNokgwAKYZpJNmACRnbwQphhsBodHU4Qbn//P8gQ0AaQWwQDWOnOfQQZxBMMQgjs9HVEQQgl5ClEQYoNoAkf6MDZL/jMwQAiQ2o7foc6IMAAAAASUVORK5CYII=",
+  "blue_skies:block/plants/snowcap_mushroom": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACSklEQVR4Xr2WPUoEQRSEvY6ZZ/AWHsHQIwimgmAoxhtrYmakBiImYiKIIAjGZkYjNfhBWfu6Z0eWLVi6+/WbrvfbvVtbge2Ds2Hn6HLQ6HON+qX+2iGyw9v3Yf/qZdhb3I8ja+2l/tqBAZ9vT8Pu+c1IrPnGDFCY3XsioPVGUoABeE/4tW4ZcHWxGE5Pjse9x7vrQT/JGJm7DvMleA0QeqLRS0EeWBELuV6CSESIERrlvcaeAdXBKfNINeEtWLVk6juSIFMzSe7QB9V8CpDq56SSp24Xyr/G1+eHMZe5PwV9JwP4fpb3gj78/vr4FzmQEzpnNjnQxymbAxng5F7YrtfEnNwnRO7R8wuNe8X1S6zTANqZR23SAPL33xrI+oGQtHZbmg4QZvfvL2RAVUNLDuVlwzovIJf7/p/DDLSgyzItI3SIPzoqknyI8n8Bo4exqvBMQ1lTMsAfH8i9ankL0GEfA/zpRl9yr6HSe0GHcLAshgBCyPVzHRGRAu15arQnOWnoFjMfiMi9SwOQQy45BrQqHAPK0AMpZ9gz1F4DXiNZhFl0Xc+BDsn3P0PtRen59iIUvH1Zd70XvAswQiROXhWp9ioD3OPsghJ0gUcBL1sFiE6mQJDHkK5kgLzw0KbXWYDMpZMRAOR+pRR4FziJE3tU3MgqAmCy/YAOcfIMM4Z4VFpdkPB0NOEGkGv30mVZI60UAO6ArhHchN4F7nEVFfamDFj5InLvPPTIRJ7h17qXAvJPLTSN4JnV6HPudeS+7/I8D68JO2MrHT8owJAJerVhpQAAAABJRU5ErkJggg==",
+  "blue_skies:block/plants/snowcap_pinhead": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAhklEQVR4XmNgGAWDDGRuv/W/8eij/zAamf3z01M4H10fGBi0bMJQiG4giHaae+Q/SC26fgbNwtlgicjlp8AYpBBkGIiG8WGaQWrR9YMNgGGYIhANYyOLYzUAHdy9egbsgu0blxNWjAuADEEXIwmcO7ZvgA0AeYHsMAAFIMgAkCsmT+jFaQgAcp2mmvBfkioAAAAASUVORK5CYII=",
+  "blue_skies:block/stone/lunar_stone": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAq0lEQVR4XnWRUQ6AMAxCdxxN9Ee/9f630nQJC77hB8lGactY27f9OY+zY13Wp+7OFe7r7nBOuuZkEuis4RzaJCyBF7jRGz8OJE7W02ZiOOB0CulMmp5BXSgQ7zVx5UrOphCTbQ1Kzhq/ji4IPrdn8NfIgKmJTxDozJucGwN8OjPwOjE58EHcxvpwUKI/y2rS2TUjA7fkgsQXxNXSTwbJom9Oz5sy8AY/p2ALLynymCS/j7vmAAAAAElFTkSuQmCC",
+  "blue_skies:block/stone/lunar_stonebrick": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAvElEQVR4XnWSsQ7EIAxD+RQGhqt0Xa5z+/9/1ZMjGRnXHVJIHALParvO6/Y4fkfFGCPWue+93w3J/t2niNg+W9U4QDXUVW9+CCsDN7imPTUAHwSaEZprPekTwTmJlDyghnwOUD5FIgLrWBWlBqgxuicjLnB27h8eOF+qMWcsHpCNexxwjxR5DiBzYnTzXF88SIx+SPtqQOJMrKx5z8MDfa56QE3zxYP0VPdAteiBMrLhTadH9R8kH5zf2Rl/F8eDyqcXLvkAAAAASUVORK5CYII=",
+  "blue_skies:block/stone/turquoise_stone": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAtElEQVR4XnWRMQ7DMAwD/axunbIXnTpnDrp1zgPy6BQyQIM5MwMBm6Ikmm7Pz+9c1r3j8d7OujtXeH2PDueka04mgc4azqFNwhJ4gRu98eJA4mQ9bSaGA06nkM6k6RnUhQLxXhNXruRsCjHZ1qDkrPHr6ILgc3sGd40MmJr4BIHOvMm5McCnMwOvE5MDH8RtrA8HJbqzrCadXTMycEsuSHxBXC29ZJAs+ub0vCkDb/BzCrbwB1tjI8XI47OsAAAAAElFTkSuQmCC",
+  "blue_skies:block/stone/turquoise_stonebrick": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAyElEQVR4Xo2SMQ7CMBAE/SZKOioaJESZggqJgpKGLyDR8op80mhPmmg5HJtic/bYXnnPKdfnXKXT/V0Pt1fdHi8x73ExabOfamGD6u78CAhD4jLgICwMmCDBzOCqvhYG+shd0hjBMmeN8RKhlbHHNFZdInh26ohJpZf9HxY9yBrlZi6FwVrOHidWGLAByJt7dl1XPLMwGOV0rsPOir/3Ws7cj68e+PPk3Kqt3LDoAVflep4R48y9Rz//Qc7e6oez6EErW+a+5uwDXwMdUF1AmJYAAAAASUVORK5CYII=",
+  "blue_skies:block/villager/alchemy_table_front": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABS0lEQVR4Xn2TvUoDURCF7yMYkAgWYYVVjCSFbicYKyvBQiu7iFU6sVNbEbYRUopY2YiQcjsLH8BCsLXwTUa+CWcZrsHi5MzPnTNz707S9PTF7o4fDX44m/3Bf/HLg1tLGMXyuq0u9RzYOZTL8zeH95bojrOxMnBsnz9b0zTOAvnvnw/H59e7vc6ePOYT8CMBeOvo2uq6dhY8t9bzYlgC492L+RUY7a3b9c5whMRjdwlQ61dAYNrpeGc4It45FlNDbRrtjSyi2qla5Lk8XxTFXABnOBhaf7PfAh/osPyYd4GyLD2Agw2wBXwO5znVJL7lZP/KXxQs8mHFYh5ObBUOLyrEbcs3UTEJuwC7oJUWOCDk8ZNq3E7SCsAEgIr0wDos0JmadgIMOHbhoD4VdpyKCRCAfRM1AQGAoOwYi3EJ+X8hjgTHUWUrH78QAr/bogfK0YFs4wAAAABJRU5ErkJggg==",
+  "blue_skies:block/villager/star_emitter_side": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAqklEQVR4XmNgGH6g2uPKPhiONl6IQoMwunoMAFLkrdEC1gSiQdhGLhvOR1ePAUAKkTUjs7WE/QkbAHMyumaQK4gyAFkTTCMyG109BsAWBiA20S4AGQCzFZ0mygBk/4IwMpsoA5CBe3D5/9jc2f/RxYkGNm7p/0NTJpJvgKFFyH+QK9DFsQKYYt/odrCzQRhkOzIfhEFqQGrR9YMNAGGQs0GKYDSMjSyObAAAvPGuCPudf9EAAAAASUVORK5CYII=",
+  "blue_skies:block/villager/summoning_table_front": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABA0lEQVR4Xu2SsQrCQAyG7wFcnFwE0UGkIOigiIsgdBMpgtDJQcdKJx3UQTcpiqKTHXSpkzgJfb6TP5AjVgo+gIWvyf2XhL93Ver/KMffaeAuQsIer2ktNcAa4BroCouOOycRtAZTs5Z6MgcYorgBIGeS67Q6NTuH2t+fNOLqcjP5LxpQeOUKRSJfrphcakmdNQxTm2tE4rA7Iuxmj0BBqVojuEFq6PlwgE00Nqy2KcwePB3HMUUJOzIDILADdgEt4zk6CAKKktQBbB8u2FV9EpELRMnXJ6BJwgdm9ZfkAlGCPTpEDDg+XwQOlHOwvT8+clyfrDMO5B3z/aKI7xs568n/4g1AEpLtaK7fiwAAAABJRU5ErkJggg==",
+  "blue_skies:gui/journal/icons/alchemist": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA30lEQVR4Xq2PMQrCQBBFcwQLFYSAhSzWlsFOsPcMtikUhLT2FqIoQbyBpSewyRlyg5zBzpG/MGHzRwKiD4adnXkzm0TRv9nFY2kL9g3bwciLeoY5TvYNWW8ocovkeZ/I6zHzgRw19Ng3YGDZjWXR6TcCNfTYN0BOkkTO+2MjUEOPfYNzzsuIa37xoXf02DfgNbCazuvXkQPk7Buy9caL+eEkaZr6wFeghh77hrIspaoqKYqiXoBc6+wbIEH+eQFOXYBc6+wb9HU9w4W4s2/QYR3ihex/JPznr4eVcLBt+A0s5zD1tEiqVAAAAABJRU5ErkJggg==",
+  "blue_skies:gui/journal/icons/arachnarch": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAAuklEQVR4Xm2SIQ7CQBBF9wYoUgMKBKIOB5KE1HIKjsQlsJA6LkCCxWC4yJC3yS8z04rd2T/z/9+/acvn/bXn42Wq+ZwXs5IbU6KMq+h2uVvTbGw+W9aqJUxliVvYACK0520QeAw3iBaH/y1y9pj5IMrxcJYBFSyTcJNEq1MkyoA+81E8/wY5S6iYcPtrP46Xq38bghCP4W69t649BjKYPngQ6YNNOeebEYV4yis3j32//hE6iJjP2ZT6A36EiRA8GxmVAAAAAElFTkSuQmCC",
+  "blue_skies:gui/journal/icons/arcs": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABS0lEQVR4XtWSMUsDQRBGrxXrVGIhKIqtBCwUQQQRO3uFdJailoq1hYWQRrSzVkGwja1IqlTxB4hVau1W38K77F1M9Dod+NiZzcy7b3eTZf86dtu3ATUez6PSeulsL5T7RwaDq1cHUQyX88n1hWpAXAgJnSyEiy/dZzm0MvBodiWg7Yn5uAqrDASApsbGC2Jvs9kpqDw7EDgR4FFxwzB7/H7S6kY9dHthsXEdVebE0BW5r8gxgQmg5+bpLUrw1t3L91CaWf1b1I93cnfAUOpQ6FDge6uXAwFRp+4A8FGBwugBOLe234cy/HH6Gh0AtBbIPntcCXBh5D5QAdg+fA7Njcv8NQWyn9apM6XD2vRyHwjM3GHkR8yFeIfCBoBppO5q9ZnYLMy7TGGsQ2EEIB1RO+TxlM5GujO8U2suHAlPQT/CiBSWhoBfg/5kfAKO7fccq5Zc7wAAAABJRU5ErkJggg==",
+  "blue_skies:gui/journal/icons/armored_frost_spirit": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAV0lEQVR4XmOYc/j/iQk7IBgbmwHEQMYwSRhmaF3750TezBcnQDRMAbIYA4ix+8p/MIbpgvFBcnAFJ+4iFIDYcAUwI9GtgPHBJoAwzPUwDBNngAGYALoEAG0jtdjla5R9AAAAAElFTkSuQmCC",
+  "blue_skies:gui/journal/icons/azulfo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAABW0lEQVR4Xu2UvUpEMRBG91kEKyu5jQpaCLJYLqidVrZa21htYys+g60giOATiJViaeWbRDLwXS5HL/Fn1Azkg1Nkkswc9ieTSYtzHu9vUub15cHg/n9FPvKLI3p3dZEyfaGSyEd+cUSvL89SplZR+cUT7T/iSiKfeKLzk4OU6QuFLK1Nkwfsy8hHfnFE+Txpgz9mrbutXYODS/DeWH/OH31HeZCNOPCz8N5Yf85/947qAOGPmoM3do4M1rnPtfqpP+cKnYsj+tVoEKFICfZ1DwdWK8o/iaDI3vGpwXOCfd3DgdWKSuDp+dbous5QnaLa13nV2dc94UR/Cvu6hwO/C/u653B+njJ52OZs31hYXje0Xt2eGaznO7rPvu4JJ5qREAW1Zn14l33dE1J0cWVq6CsWqnO/iX4UPS/DoRQlw7N/9jyFE6Uw66V99nUPB46JlPbZt6WlpaXld/MGtZBZSBK8/rYAAAAASUVORK5CYII=",
+  "blue_skies:gui/journal/icons/crystal_camel": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAAYUlEQVR4Xq2PwQrAMAhD/f+f8b7evZcd/RhHhAxxbqcFgta+lijyp461wsyiz0d9wrhw99GdhQLCo73PhFiFDQ2IYHfC9YcO8py52UxQtaqOmR/R3pZL1aVYO3Or7wFjfgHed+Etp9x2FgAAAABJRU5ErkJggg==",
+  "blue_skies:gui/journal/icons/diophyde_prowler": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAAsElEQVR4Xu2QTQoCMQyF59668gbuBE/gXtyLq/FSlQx+w9e0ltmJYKCk+XkvL5mmn7T7/CijeLNdbteSwb3c0GgO4PF8KuEdU99EGk0AIXPOccYu5om7w34FfHpeN3zgG0KagtCxSSLvekXkZt1oAQCiRi7qnMH4RtV7UpnLs6ss8gyz2lWdCdOBq+f6cE0Klm7CnkpvVK3pSXiDrSb3NWtCytG5CUfnDwF9meNvX7QXB8fAEti8gbUAAAAASUVORK5CYII=",
+  "blue_skies:gui/journal/icons/emberback": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAf0lEQVR4XmNggIL/FzT+w9gEAT+jMnmKmbn4/wvK6P/HagBIECYBUgjCfGra/+ESIA4IC5iag/kgBTAaZCpYIUjyfzvTf5CHQDRIA0whTDHYeLDC11kQDFQMMxXZZLCJIBOQTURWCJNngPkKJInuRpi74Z6B+Q7ZOpiTQAaBMABQ8WkQN3GD8gAAAABJRU5ErkJggg==",
+  "blue_skies:gui/journal/icons/nyctofly": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAbUlEQVR4XmNgIAVoK5j/B2EjVQcUDBOHK3Q2CvkPwsiSIDZMHKwo69S1/3OvPfgvvPUIhkKQGEgOpIZh87XbcAF0hTADQGpQTER2J4iNYiIIwCRg7oS5D6YRxTMwK9E9BfcMzESYJDY2XCExAADuQoivPZ8HjAAAAABJRU5ErkJggg==",
+  "blue_skies:gui/journal/icons/polargeist": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAvklEQVR4XrWOQQrCQAxFe7RuhC68Q8FjeYw5Q7vQlW0XClOKWqjdDEipdCODvkBGxp0LAyHJ/z8/SZJfoyxPzpido35zGpGGpmmubp6fkn0/yUzSK86MNmx33SgOEPTjuEgPxhx9AWHvi9sePmLc6cHg0IQfEegFnNRNKxxvhQVAchgevq4vvm1v3pi9VDDlowu4IUaY5xufZeuwBIcmugBYVWcRpulKkt7aQRaiCwoUxVFcyfcsFUwNw8Jf4wVi7ikzJnx3XwAAAABJRU5ErkJggg==",
+  "blue_skies:gui/journal/icons/seclam": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAAwUlEQVR4Xu2TMQoCMRBF50SC5YKNtaewXAvvINgJllsL4i3E0gt4ib1F5Ad++HwTtDcDQ2b+z7wJCxvRo8cfxHM7JuR8OKXzckjX1Tr3rHH+0rMGh8wPeG2R9grwvgqHoK+o9TU4tVYfHOCptX8iJpd+m435MSUkzddln3vVWJeXm4fEnGsZDuO2W6T7cZNrLqDGO+pBh68eNd4pcF+gcAU7iPMKLnAaNB1W0xykGlnQAoKnLmPvfuuupv9TPXq04w30/AKUsVIncAAAAABJRU5ErkJggg==",
+  "blue_skies:gui/journal/icons/shade_monitor": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAWElEQVR4XmNgoBg4Olj+z0qN+R8W7AXGIDayGAOI0NfX/Q9U+x8EkCVBNIOFheV/Y2NjsCIQBvFBNEgMhBnOndkM0s2wfdt8DEmwAhgDJgEzCcZGczImAABhZEfMK4kIsAAAAABJRU5ErkJggg==",
+  "blue_skies:gui/journal/icons/starlit_crusher": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAABY0lEQVR4Xu3YoU4DURCF4b4eshJFMJUYgsBisDU0GAypwqBQPBykrve7czu02XQJzEmO6c4582+zbW+6WARaXq6+9n2xvGp8c/fQ+Hp13/h1+97YefvcJ89QBi12cYFmMmixi2cDPbZY0PXTS2Pn7XOfPEMZtNjFBZrJoMUu/jWgzx+fBy3osXnn5RnKoMW6QDMZtFjPBurD/7h9a3y73jR2kXbePuflGapA/y1oVpR9eDyUOJ+9EfIMZVAQF3v9FFBfkylUgU4N6sMviDciiIcS80KdBGrgXKDOyNXJkgKdGjQCETTK7FsIPwPRjFydDAgqVOQM1BuPeuXqZGmBTg3qIcLCCEzbKeQkoBZ6fWfBXOp8ZDNydbKgQLEZuTpZ8BNQvxdd6nXzfxvUgKCR/cnMOjwGRkdBuTplSyIX6CFlSyLPAmoge+h3dsa/Fe30xqKbk6uTpUJYWKCZLBXCwnOBfgN+3vG0qSOXSQAAAABJRU5ErkJggg==",
+  "blue_skies:gui/journal/icons/summoner": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAmElEQVR4Xp2OMQrDMBAE7zN6hL7hyk9IEzeuDClTxI0IiBiMG78pH7qwR+6IF6vJwuLV3axkka9e26ZwqdW+5n2P7FzotPBj5qPA9guYtwKWLTMvOWeF7/McELLPmZeUUizrupr9jB3zghuh6/sWLyBDp780TpM+StHnsuhlGMx4BTPsmI9C1/dRQG4WALQKyMwf5AWe/6UP7gfOZBU7m3AAAAAASUVORK5CYII=",
+  "blue_skies:gui/journal/icons/venom_spider": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAS0lEQVR4XmOQ1xD/LybL/x8bzaBirQkXgAmCMEicASSg42EK5sAEQXywTpAkSMAi2hmsE0SD+CA2Aza7YFbAdcKMQrYCrBObg0BsANk4RF6avp3yAAAAAElFTkSuQmCC",
+  "blue_skies:item/arcs/dusk_arc": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAArklEQVR4Xs2QMQrCMBSGcwChs4tDERyqN+gBunXp6CWc3OvsabyCeC3LF/jLTzEJXaQPfgLJ+76XJITN1mU/fD3L82QJuPefOdfmFfeO9TkvEvi8vedIMrRjFGUlCBwEUDjrTo+0wKfTJJDJ1e4QVz3vp8QFrDQRYERMlyQpoNGvDkwAgJHQx96SD2qSRM/wZ2UFlJocJOwVYcqv6tHnFQWUPs8hgUXYS8Bq8O81AWMb07+ORb6gAAAAAElFTkSuQmCC",
+  "blue_skies:item/arcs/ethereal_arc": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAr0lEQVR4XmNgGLTAe8ql/8gYXR4ngGmo33cDjrfeePvfInExGKOrRwEwjSANILz2xHMwhhkUtP4mfkNABiBrhmmEsfEagGw7smZk20FqQAZouBRhGgIzAFkzyDCYZhAbFj5YDQCZDFKIbjtIDIZhLhBVscVuAEgBzDaYJpirYJpxGgACIEmYZuRYgGkG0Tg1gwCyK2D+RbYZr+0wAAogEIYZhqyRoGZkANNAska6AwAdSS7FLQE7sQAAAABJRU5ErkJggg==",
+  "blue_skies:item/arcs/nature_arc": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAvUlEQVR4XmNgGJQg48y6/yCcuH8iGCPzbXoL/qOrRwEghU5zisEYpBidLetujN8AkC0wTf8vMfz/PxOINzHADSHaAJiNMM1EGQBzPkghyHZszhc1VcVtAMx2kGaQJphG09o4uO0EDQDbvgnib5D/QXyiDIBFE0wxDIP4RBsA06Cb5QumwbGwCeIKvJpBAGQAsma4V4DeAPEJGgByPkgzzACYITBDCRoAUgBThMyG8WFsdH0oAKYIF0ZXTxUAAIZQCFJdLyoMAAAAAElFTkSuQmCC",
+  "blue_skies:item/arcs/poison_arc": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAWUlEQVR4XmNgGNSgRt3+PwjHSmuBaXR5nACkAYQVOblRMEgMXS0GANkE04AuBxLD6xKYrejiyACvK/BKQgFeFxADCFqCywaYOCEvghWg24LOJxkQtHUUUAYAOt8sjzUNpoIAAAAASUVORK5CYII=",
+  "blue_skies:item/armor/aquite_chestplate": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAnklEQVR4Xs1RuQ2AMBBjBVagZBYKBqBmCsZADMMWIAZgiPRBLhyZS3giUWDppEv8nJIril+gbidvK0uDw+acH1bnu3m/DKAGdRvQjMtJgB535KMhOCiJniE0K5cMoNCKNZh89Adl1XsULu/MnEx9CNAgNTNA+6SRAMlJKTO4rIDUM7ID1Mz3W18AP1I3QfOrAEBD7NoezQTXZMvqPsEB7E9frbIxCC8AAAAASUVORK5CYII=",
+  "blue_skies:item/armor/horizonite_chestplate": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAuUlEQVR4Xs2SwQ3CMAxFswg3JMSpdwZggO4Bc3DrJOzAtVOZ/pBv/boJEVIPWLLS2N8vdtKU/sIeQ7LoP2mwsdfN7Hkxu5+bgKbGk9MnOV9PKwG+EVPNFgBySWIlxIsRF80G4CIIpJMcF3CtwzQejgb3NmXW7BKDhnoHKCietOpsWauFtAzg6bGDEusDOK8Wyr10AX5p5SX0Ejl/rHNDki+is3OP3FcAjJD8b5RRuO8W0/hM0aNuF3sDp2U55E5lqhgAAAAASUVORK5CYII=",
+  "blue_skies:item/banished_armor_trim_smithing_template": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA0UlEQVR4XpWQMQrCQBBFcw9P4A3srSysBMFL2IitltbaWonnCGJp6SE8R+QFHsyubpYMDDvJzn9/ZpumENv9rjPzu2ogulzvXds++vNwOo8DIVDMaQ1kuVoPg2iKojyBAymCaLDxfZt2n9emryPAt5nNFynE3cnncZKIY10F6J5PE91ZIQHwU4HuTkMNgNr9/7oD0C3uzDdQnX8Aij1xjDXiqjvpQymOzkV3AY7vvn57VxQTXMQ1nCa+/CCAsCFOQ80KVXEMG+NEowAGzXnmPcQX2heQ2PuCHeUAAAAASUVORK5CYII=",
+  "blue_skies:item/food/crescent_fruit": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAsElEQVR4XmNgoAdoCt34f27Bmf8gGoTR5fECZM35TvNI0wwCZGnebs7wH4ZBGufJMf3vEIJgdLUYAKTpcQfP/8fTecEYpBkkdieCGUzjNQRFM4iGskGazzsxEzYEbACSZpiBMANAfBBNlAEwxTDNMAwSj2EjZAAQI2tCtp04A7A4G+Z/EI3fAKQYwGYISBynASAANwQpBmCYoGYYQDcExiZKMwyADAFhUEICYZI0kwIAi470h0cCXXAAAAAASUVORK5CYII=",
+  "blue_skies:item/food/cryo_root": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAzklEQVR4XpWRsQ3CQAxFMwslCyDRUjMCBRUSEjW0NJFoGSALwABskJKCigkYw+hF+pHj3IXjS5bPzv/fvktVBcwuO1vea/M9avq+l4TE67bpBaqLTQBELyoWgtW1scXx3Is50yMidwRITzM7vT+dkDi0r65Hpo6aATBADFmxuT0GOWui6SJrdQwlpp5v93kDkRFjxpngm/KkgcSEX131TwPdj6xt1JdZ1sA/jp/oxZMbCHE6Am8W+SOk7ksumg70+yK5aDqAGMUg1cviH/IXv08n6t64X1MAAAAASUVORK5CYII=",
+  "blue_skies:item/food/pine_fruit": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAvElEQVR4Xr2RMQrCQBBFU2lhYyuClVjbmcZC8AJi6QVsLL2HvYddeQsvjJMoqfIhzLDM+zP8NM0UuuwWha9dzbqaZwYVwXu7Kef1vNZRBoAZ+nvB+3UqfPTCQhrxTu0ZAD4f+3K7bqtJ3CwIFPsvA+DjYVkN6N2CgVsFezACtmKSN2eTzHfyAozyyT+3KyBgMtBAEzMy5EEBMcAVgP4Vw40ZZbbKCxyyF2Ym9j05nMHRcDw1gqNk8vl9En0A1drOKc+jEEsAAAAASUVORK5CYII=",
+  "blue_skies:item/food/scalefruit": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAmElEQVR4XmNgGBKgSNPxPwxHSun9R5fHC0CaHnVt+3/MuRKuuTes63+aSyFhg5A1w2wnS/NMk1Sw5gqXMrBmkBy6ehSArPl2ZC/cdhAmKhxgBoA0gwyBuQIkjhwWWAG6ZhAb5hpk76DrgwOYLegaQQYSpRmkENkFMI0ENYMAuvORNZKlmSiNMABzPiyUidYIAzBNJGukFAAADJzTkEbQQTIAAAAASUVORK5CYII=",
+  "blue_skies:item/materials/aquite": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAlUlEQVR4XmNgGP7ANHfmf2SMLo8B0DVc+fIFjBe//f7fZ8pF/IbANIAU11xCaITxQRhkiKBSGqYhuDSD2DG7HsAxyACshsAMgGlA1ozsCpghKAag2w6zDd35OF2AbjuyC7B5QStgGqYB6E5G1wyzGasBMENgoYzuX2SNWDXDAMgQkEJkpyJjkEacmmEApggbRlc7OAAAfX5Nh5G/xSAAAAAASUVORK5CYII=",
+  "blue_skies:item/materials/azulfo_horn": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAyUlEQVR4XrWQKw4CQRBE9xJIEhQCRcIFVnABLIYD4DgAd8CxN8CDRxIUHsVNltQkb9LT81HQSWXnU/V6ervuH3U67saSvC8rjJ/3M+j1uI2X8yGumyCCMtqwvtL9OgTpLIP4rgQAsJb22z4ogQCgC0+VkSANgOkuAeiC7uwxll6WAWwHXiHjZr1MRmkC/LwAdMe+CABig7a7HYH/kgFUOlQI+XC1O+HVYho1n00ixD69CpBZIQvwkGpYBcCKUZpz27Lz2zDy/p/UF5IvogE+9itdAAAAAElFTkSuQmCC",
+  "blue_skies:item/materials/bluebright_stick": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAOElEQVR4XmNgGJJA377gv4pR3H90caIASHNi4SLyDKBYs0dEJ/maR20mAQyszWRrBgGQRrI1UwIAhV1H7D0SHXIAAAAASUVORK5CYII=",
+  "blue_skies:item/materials/charoite": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAlklEQVR4XmNgGPQg2b3xPzJGl8cJYBq+nvwDx3fWfflvKOtN2BBkjSBNILy98yYYLyg9gd8QXJpBGkG4K24FbgNgmrHZCqJBmkFqiDIAphlmAEgzUQZgsxlmAEjewyQZuwHotsP8jG47XgPQNcM0wjQTNAA9wIjWDAIgSXTnImvEqxkGQApgitExQc0wAFKIDaOroxoAAOE4NqK8mY+MAAAAAElFTkSuQmCC",
+  "blue_skies:item/materials/comet_stick": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAOUlEQVR4XmNgGJKg0dD+f4aE2n90caIASPPm5ELyDKBY8yyvCPI1j9pMAhhYm8nWDAIgjWRrpgQAAJbsSN2O/WB1AAAAAElFTkSuQmCC",
+  "blue_skies:item/materials/diopside_gem": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAnElEQVR4Xq2Quw2AMAxE0yCQmIB9aJCYiFWo2YNNaNki2CS2HAtCDFyDP3cvCc49aWm9Htn0CQDh1c/+PeQOoHuWXEA97sNPgK3zbmrCDj1UJ9LXxS8EEwB5cgA8FQ0UPPsIoH3V14WA+Ay6Ns2uAWDQp0kAhmSt40H4NgCwOfYcyoZBiYn+tgWAQkMCiCGel4jNADCHSTJoDlt0ANUzzGauMPdxAAAAAElFTkSuQmCC",
+  "blue_skies:item/materials/dusk_stick": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAOElEQVR4XmNgGJLASNLmvzaHxX90caIASHOcdTZ5BlCs2UUxkHzNozaTAAbWZrI1gwBII9maKQEA6LQ6/u1ZqqQAAAAASUVORK5CYII=",
+  "blue_skies:item/materials/falsite_ingot": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAo0lEQVR4XmNgGDLAWLDyPwiji+MFME0gXCZ3A4wjRCbiNwRDU9LT/y2V7xE0NkPQNcE0IGtGwciGgDTNmvIBt2I0g0BqYerBhmCzFd0wmCZkjSA9slwuUAOgzgIpQLcJpilOfBlYIwiD2KgGQEMYZgi6JmTNMHUgMbgBYBOhriBWI1gzcizAnIXNuciaUDQiA2RDQLS+QAFhTegAlhZI0jTgAABEizYdttt7DwAAAABJRU5ErkJggg==",
+  "blue_skies:item/materials/falsite_nugget": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAWklEQVR4XmNgGAV4gbFg5X8QRhcnCoA0liU9/V8md+O/LJcLaYaANLdUvgcbMGvKB/IMAGkEYbJcgewCkOY48WWkGwDWTK4BIADSANNMlgEgANIEw+hyowABAGqsTl3JHfzxAAAAAElFTkSuQmCC",
+  "blue_skies:item/materials/frostbright_stick": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAOElEQVR4XmNgGJLASEnmv7q0+H90caIASHNBgCt5BlCsOdbZknzNozaTAAbWZrI1gwBII9maKQEAEpQ5gQenYbwAAAAASUVORK5CYII=",
+  "blue_skies:item/materials/horizonite_ingot": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAp0lEQVR4XmNgGDJgnhHDfxBGF8cLYJpA+H+eJhhv0BPFbwiGpn6r///XImFshmDVBNMIYyMbhGwIWNOBXFTF6GxkDFILwkA5sCFwW7EZgq4JqhEWHkGyKkgGIBuCQ9NJN3W480FsuAEwCbghWDSBaJhGGBtuAEwCHoBQw2CKYRpgGKQRrBk5FmAKQQYga0C2DUMjMoC5BObHDn0GwprQASwtkKRpwAEAFk9AF83oDaoAAAAASUVORK5CYII=",
+  "blue_skies:item/materials/lunar_stick": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAOUlEQVR4XmNgGJIgTa/qv69o4n90caIASPOMhDXkGUCx5nr3yeRrHrWZBDCwNpOtGQRAGsnWTAkAAH/8TQ6hACK0AAAAAElFTkSuQmCC",
+  "blue_skies:item/materials/maple_stick": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAOElEQVR4XmNgGJIgQlf5v5OU8H90caIASPPqcFfyDKBYc7+nFfmaR20mAQyszWRrBgGQRrI1UwIAsi9ABxN94V4AAAAASUVORK5CYII=",
+  "blue_skies:item/materials/moonstone": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAoklEQVR4XmNgGJRg6slH/9Fx4fpz/9HVYQUgxceeffl/8f0fMA3DID5BQ5A1P/v8E45BfJiBaZNW4DYEZACyZmSNILzt7jvcBqDbjq4RhGHhEZ5Tg2kIzABk22Ga0QMTqwEgCXTbQZqRDQGpAXkBpwHIoQ+ikTUSNAAkgawRxIZphGnGawAIwAxB9jdRtiMDkCJ0G2GYoGYYACnEhtHVDQ4AAN8nfGpQ0KxGAAAAAElFTkSuQmCC",
+  "blue_skies:item/materials/moonstone_shard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAeElEQVR4XmNgoAeYevLRf3QxogFI87FnX/6nTVpBuiEgzRff/yHPAJDmZ59/wg0Iz6khzwCYIRQZAHIBiE+0Iei2U2wAiF+4/hzxBoAUgzSS5XwQABkAcwXIAJJsBwGYATDnk6QZBkAJh2zNIAAygGSnowOKNBMLAI48xhZqyCP4AAAAAElFTkSuQmCC",
+  "blue_skies:item/materials/pyrope_gem": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAmklEQVR4XmNgoDWYoWj7H12MaADS/D9txv8EDjXSDQFrnrz9/yeHDNINgWkGaYQZAKKJMgSuGYsBVxSMCBuCYTuQDdIIYhN0BTbNyLYTdAWyASCFIBpmwBwuISINQLIRmQ0yAERvlTHFbwCyc2GakGmCBiAHGLJmmO0gPk4DQAAkCdOM7nS8tiMDkCIQRnc2UZqRAUwTyRpJAQBPv/S0pxoLmgAAAABJRU5ErkJggg==",
+  "blue_skies:item/materials/starlit_stick": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAOUlEQVR4XmNgGJIgobrhv3tS+n90caIASPOktZvIM4BizZVTZpKvedRmEsDA2ky2ZhAAaSRbMyUAAKAhWC9r9P4lAAAAAElFTkSuQmCC",
+  "blue_skies:item/materials/ventium_ingot": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAn0lEQVR4XtWSMQ5AQBBF1ToKiYrGCTTiNBKJyhGcwXWcQ690D/I3+YwxWVGJn/zYrHlvkyUIfpMujjdU73tDCJ3y3HXIEr9EQ0tVXWpKfNBclEdNCaC17W8nWSCKWc47CU/FpoQkTEiCYOowPAVaoqGxSB2IYm0KKLEgVs4eAhp5gT4Q7wA6WH4FSrQAawldQBkpwbOJomdIh//CK+jz7IsBBEs0c0FUAAAAAElFTkSuQmCC",
+  "blue_skies:item/misc/alchemy_scroll": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAuElEQVR4XmNgoCb4vpLh/0wFnf/HNC3BNIyNjGFiILXo+hkulzD8r5dU/p8mIgPGyGx0Pkgtun4wCPSx+39kezdeDFKDrg8MQBL3Ly9DwV9e7gdjGD872Re75smdmXDFuDBOzSAAMwBmK4gGORdGg8RAatD1wQExLsBrAMh5IEWwgEIOA5gL8HoBZgA+jNcAEAApQI8ymEsIRiEIgAxAj0ZkjNcAkAS6k9ExTs1UzQPoNDrGmQfIBQCUx5bcsNZ4EQAAAABJRU5ErkJggg==",
+  "blue_skies:item/misc/bag_of_spoils": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA0klEQVR4XrWSIQ7CQBBFewE0EoHEIrgACgMSyRVAcgSCwqHQcAAMWDwOTtGECwx5m3wyO6FbQfjJz3bT+W92p62qf2gx2pk8GSyTY02jCK3HFxv2Ztbt9D8WqBUG4DB/2Wb6SGYvCFDBYy6T70YAEKuu1QrYb4/2vNV2Pd0ThIB3rM+kLnTEArECjvWZCHJcPwPCBFuPH8PnVZ2eOQUAzaAIoIigugsGwA/yKyRO3AO0B14E6BoKKBQ/ZRGg6XuQgkUA4oWHKODdGJbiTxMd63/WG1V1OE3kol9BAAAAAElFTkSuQmCC",
+  "blue_skies:item/misc/blinding_key": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAgUlEQVR4Xr2RgQnAIAwEHSzLFBzEEbKBAzik5YWHkGBbFXoQiiH3RprSX+ScO8r3PwGx1jpqOYTy1VoXkbUQL6PHEJ4fQYCqhuFZP8AN7CBlu9UUDvPdr7L9VfhiEEIpZRTOUxlwZS9DsOW9cDNCrOznA/bmZZkcyQQh2zI5kne4AQpXv9N6jwh4AAAAAElFTkSuQmCC",
+  "blue_skies:item/misc/blue_journal": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA10lEQVR4XmNgoDVgM3X6D8PocngBTJNoUOp/ucRSMJZVsiBsyExvuf8gDNOomNP0X/P+QzANwjgNgdl4LF79/5ka6/+PVtXDNTEeOIDbEHSngmwnZAiKd0AMZOeC2LgMQcbsNr4QQ0AEzAUwSVwuAakBaQThpRNzES4AGXD71AK8hoBokMZNs0vAakE02AAZIV2wxj+f72IYguwdEAbJwzTDvYDLEJhTYRpBNLJGkB4QhkQFFkNgTgW5AMQGYawakQE2Q2AuwasRGcAMwelUYgBME8kayQEAy1Y6ESPyeiAAAAAASUVORK5CYII=",
+  "blue_skies:item/misc/camel_saddle": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAApUlEQVR4XmNgGAVEAQ/N3P9p1rPhGF0eL9i46AhY04G672A8L/wtcYaANILwsc23wfjKgVf/273PgA0B0VgNQXYmSBFIEwjDDAHZDhLH6gpszgQphtkOwjDvgMRN5PxRDQAFFAjDnAkyBMaHuaK/eR7YAJA4VgNgkjBngmgYH2Q7zBIMzcgA2RBkNkwjiEbXgwHQ4x1ZI17bkQFIIQzD+OhqBgcAABWY3CGbLIcRAAAAAElFTkSuQmCC",
+  "blue_skies:item/misc/crushing_hammer": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAt0lEQVR4XqWPoQoCQRCG9yWMRqNJbJe8YBLBYj2rQYRDMNsNNgXB7kuYfao5voWRvRH2xvOHYdjd/5t/NoQOjbcLoey9S4DFeS+b1yV2+54VMODsXsd+fTxldzj5hqQwycCrdeX7isKACpP8PgaRW4hDspsMpqMIYrQw3bUNQyjMw/mkBTOQOwqPZVvCTClIMiDpGmKZjxQEsnBnegpzxtwbRgA/rV2Uyy+TG06T3coluwTYG/5XDQHjztS4CmTHAAAAAElFTkSuQmCC",
+  "blue_skies:item/misc/everbright_portal": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA3ElEQVR4Xs2SPQrCQBCFcwOP4DFS2FpqoTdQsEkjeAEbO8HKM3ilPYIW2oT0MV/wPZZRgmDjg2Ey2Xlv52eL4q+wPlxabLE722Oz6thOlpXjyDMgkTxd7d98Od84jjwDdZLG90fCyqZJ27pOp87wEos8g1swyCJhCGG0wXnkGVRAEgK6GaIr6siDM+BQFah8vkfXW2+ID85AwyL5k4gGGXmGetSNKj2vYHAG2nVOysX0JiLPQJ2EfHD5Sr9aI1VohdFrzZFnaIj581VbxPoXeUZf/qsNxCQY48j7CU+pcEB6YvMJlwAAAABJRU5ErkJggg==",
+  "blue_skies:item/misc/everdawn_portal": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAxElEQVR4Xs2SMQ7CMAxFe5QMGahEFzrTiyCEkNi4BQfo9bgDEzOL0UP6VmKhBjH1S1aaON/+Tn/XrQrTfjLFuBstpVTtiWE7WOQ5SOpSv+kt51zttUaeAwJdX9fL/Xk+VcGZ8pHnQCpdIDwOxw+RVd/KR54DuUgUia6E9s0RkEdIcimfAuQYI/IckqjuscBPI6jAtxE0YuQ5dCE+ntbmG7R+o94o8hxynM03l6/grOlECpSOk5VLGy8WiLaVlcuiiwX+wRuQU/4VjqiGWgAAAABJRU5ErkJggg==",
+  "blue_skies:item/misc/loot_bag_alchemist": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAuUlEQVR4XmNgoAVIEJb+D8Oe/GL/0eXxApCmLhl1MC4Qkwdjog0BaQZpgNkMwhbc/GA8MZKBOEOwadxRwgA2GMRHV48VIGuEaf6+0RDsLYLegYUBzP8wjUQZAlIEUrBdzRSM0TX+2+9E2ABkzTAM0wizAGfMoBsA0wAyAFkM5E2sAYrsBXQbiTIAlg5gCmFsGIZphkUzun54EoZpRjYEphmvASAAkkQ3CFkjXs0wAFOIniphGF09RQAAIfLi3SM6FHsAAAAASUVORK5CYII=",
+  "blue_skies:item/misc/loot_bag_summoner": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAuUlEQVR4XmNgoAWwN/L/D8Mayqb/0eXxApCmWLc8MPaxigZjog0BaQZpgNkMwtLiymCs5mNLnCHYNJpmh4INBvHR1WMFyBphmlNm1YG9RdA7sDCA+R+mkShDQIpACsoie8AYXeOcXYsIG4CsGYZhGmEW4IwZdANgGkAGIIuBvIk1QJG9gG4jUQbA0gFMIYwNwzDNsGhG1w9PwjDNyIbANOM1AARAkugGIWvEqxkGYArRUyUMo6unCAAAosn2ODuOU3gAAAAASUVORK5CYII=",
+  "blue_skies:item/misc/nature_key": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAtklEQVR4Xr2QPQoCQQyF5yB21hb2giBsaa1ewUrwDna2C4J3UDyKF4p+g09icDWLYCBMSOb9JKX8I4aLqZGxnwqAq/POlqfWBs24H4nAs+PW7FJqnSYBjGoFX0t9ybQTqaMsEtUpJxCM1nOb7DfPFezwILvX9L8eFhVP4sH0P7pgiFXvhDU6wd6O9vefeZVvwVJjyKWjEq/yBUwAZD8AUTn+7QyR6GC9wAodTKvEeSr8wX4iyYJvsHPM0Rh9hkkAAAAASUVORK5CYII=",
+  "blue_skies:item/misc/pearl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAYklEQVR4XmNgGAU4wfLL1/7DcPKiFf/R5fECkKa379/D8fGXb4k3BFkzSCMME+0SmAHImkkyAKQIm+aGnfv/O+UUEGcASANMI0wzSJwoA0AAZghMI0maYQCkARmjy48CBAAAzHGjFKa4VzsAAAAASUVORK5CYII=",
+  "blue_skies:item/misc/poison_key": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAm0lEQVR4XmNgoAfwV7T/D8Lo4kQBkMaZjiWUaQbR9tLGcBpdHU4A0lBkGA7WJB+i+l89W580Q2CKYZolXCXhhqCrxQpgBiBrBhkGcwGGQegCIIX1ZklgG5E1w8IGwyvI0QWShAUgKBxgciA2hmaYJpjJMBpkOywQ0TFcM0wjuiHImlEUYwP4bEZXixNQpBkGYIFElmYYoEgzOQAATNWbuCUJstQAAAAASUVORK5CYII=",
+  "blue_skies:item/misc/soul_fragment": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAoklEQVR4XpVSyw2AIBRzJTdxCzdwAEZwDY+u4A7ePXj06slgStLkWV/4NCGQBy3tg65rQD+GqLUfcAhjmLc4rUea9YwLTx21sF9JxNt3oTdaJ9UiBAggL/FOc7WA9oEx1J0LbSDI2sysE0umfebPEgG1DfIZn4+LrAgFLBkD66rnZNdp3QqwnhWw9jVC1UswgvaBtxcjAPoHLLFItqBIM7EVLwtGKArBfWwDAAAAAElFTkSuQmCC",
+  "blue_skies:item/misc/summoning_tome": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAsElEQVR4XmNgoDXg5pf5D8PocnhBwuyc/7POLfkvLG3wX1zBCoyJMgRmG0gjzBCQZhl1d/yGYLMRhkFyIAOwGoLPRpgGGBurITDN6DYSMoRHUBFiCLIL0BVi44M0gvDiGcUIF4Dw/cvLsBqCrvHI9m6wWhANNoCFlQus8cvL/RiGYNMI0wyyFCSO0xBCGkF6QBgSFVgMIVojMsBmCMwleDUiA5ghJGtEBjBNJGskBwAAM80JjumrTPQAAAAASUVORK5CYII=",
+  "blue_skies:item/misc/venom_sac": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAfklEQVR4XmNgGD5gbeay/+hiJIFOp8b/NDFEXFzjPwwji+MEKQZx/2EGgWiQRkPDyP9KSrakGQIzCIRBbJBmkgwBKYQZxMclAtcMYhNlCEwxCCN7AcQGiaGrxwAwxTDNyAYRZQAIwEIfWTNJBoAATDGyYSQZgAxgGsk2gCYAAE18Y2qrynhiAAAAAElFTkSuQmCC",
+  "blue_skies:item/misc/warding_pearl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAc0lEQVR4XmNgGAUEQZncjf/GgpX/Zblc/qPLEQRkawQBkEaQAWQZMmvKh/9lSU//g5wPY4NodHU4AUwznA9kg8SQ1eAF2BQjG0gQYFOMTQwnwKY4TnwZhhhOgE1xhMhEDDGcABR1IA0gg0A0LDrR1Q0OAACnL0hqli63uAAAAABJRU5ErkJggg==",
+  "blue_skies:item/misc/zeal_lighter": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAb0lEQVR4XmNgGAUjCXTFrfgPwsnujf/R5XABRhgDpPHryT9gfGfdF+IM8czNZQfRMM0gjds7b/5fUHqCOANAAFkzSCPIAJCYh0ky8QYg2wwLA0NZb9IMQA5AkO1EGwDSANNIsmYYAGmCaSRZMzEAAP8adK+JChaKAAAAAElFTkSuQmCC",
+  "blue_skies:item/regrowth_armor_trim_smithing_template": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA1klEQVR4XpWSPQ4BQRhA9xA6hZpGo6AQpeglohY3UElErXYCcRKl0iGcY+Rt8mR27Ay+5Mv8vvfNzG5VZWK0XwUzXfsaQLPzLiyuh7r9W8Rm4MelH573dUPUW07KorR6TpIVxQJAMpUMNvM6O9NhU8JkDAMypn87dusxBYqC8Wn7FtAHoE+LRJgrNATCbPbuVvMkwtnqVvH4wsz5gMXqJH3v692Z9wQfcCzwh4kljBX7+VoFwopSSRYmmFSigBbAly8KCBZikSlYhONIRT9VbwtFcaZ7iBdKK1SPMNWRyQAAAABJRU5ErkJggg==",
+  "blue_skies:item/thwarted_armor_trim_smithing_template": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAzUlEQVR4XpWSMQrCQBBFcw9P4A3SW1lYCQEvYSO2WqbW1ko8RxBLSw/hOSJ/4clkmN0lA8Muu/+/mdmkaTKxPx5G0t9VQ6br7TEOwzOtp/4yDyQDZq3sBdlsuzJIIhm+710yvc6L1IH2dCNIFuTFAgEheZt2tZ5CmN2aP/flfwSyCojM2tvqGmEC0CHta/WVuWP+sDpGC/GthwDMtguZ/RcIzQAshJf3P1IRgIjKmOkia1boAohSZjtSsTqBwIIYrWq2gXBW9Sgk9uk1ih/iiJM10o3i+QAAAABJRU5ErkJggg==",
+  "blue_skies:item/tools/astrolabe": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAsElEQVR4XmNgoCUok7vxH4TRxYkCceLL/hsLVoIxiI0ujxPAbIVhkGZkPrp6FABSMGvKh/8tle/BGGYASAwmjtMQZM3INqPQSU/B8hheQtcsy+UCxjCNMD5OQ0AKYYIwxdgMQDYEFLhwA9ADCoZhsYAuDpNDMQAbBimC2YqOMQxA9z8hL4DYKAbAAodQIILVoBuAzRAwH43GqRkGYIbAMZpGvJphABbyMIzsf4KayQEAvBxIAgzj1pMAAAAASUVORK5CYII=",
+  "blue_skies:item/tools/different_sword": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAlklEQVR4XmNgoDeIZGX9j4zR5XECmIZHxsb/jzIygmknBgbiDIBpBOHFDKLkaQbZCtIMommnGTlQyNIMUojMJ1ozCIA0NAEVwUKbJM0wAHMFSAPJmmEAZjtII8matTks/rsoBsJdQFRKgykCaY6zzv4vzaAB5sMMAYULXpeADAApQNYMA0R5A6SArMBCBiDNMJegyxECAHXVhMAXGzotAAAAAElFTkSuQmCC",
+  "blue_skies:item/tools/shields/moonstone": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABlElEQVR4Xu2WsUoDQRRF83d+gL1gq73WwUosDVhmwcIilpJFGyGFVkFiEbCw0V5/QFg5AyeM4wSybqaRvfCY3clM7t337r6dweX8vRnNXkJwPX39aBafX2F0/qRehN+Inb2DZvfwuNk/Gq7GQRdAcD6dVcTp1U11t3wL47h+ri6uH6qz8W01HE3CiLB0PyLSuVZAAISS10/LQI4gBEBukJV0PxlJ51qB9EIEMQIm948/RBCQIxCx6f7OAqgr6SUgVgD3lsXsIDbd37kECLDGPDUCyAikzElO5DLQGRjLGlt3SJ3j2vLkTNgZGEtyQtdLrjGJIhmgrgqw3grQiIooIsA+EJst7gOM3OONnAlTtBG5+j97gWaLm5DCMGuyf3tAgOQaLvYCGSoqgFRIbh9gjL1R5A0QPJ1Oh5iIvw+UpE1tW0MBMbm1h5zYxIB/BumNnzgmtzcU9QDNKP74xCJ8G3JfwnXYZO2vNWQh1wfWnQO2DhStOw8UNaCwF+TOA0UNKDz3kW7PhIRnwXR9jx49evT4N/gGYlmbiJW7DiIAAAAASUVORK5CYII=",
+  "blue_skies:item/tools/shields/spike": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABF0lEQVR4Xu1TMQ6DMBDjAcxdWBgqprKUhaV8ovyuD+ln+hdaV3JkXZNKKBwssXRKuKSx7+qrqg9e47g823Z5NE0IfDNwjsBdPdN8FvDIfJ+/Md2mn31/6QPRqa4XDQix760CqyeZrsN1CAJYsRWAjtg3VwEPKzFIsQdpd+6CEOxxd3MBqMpWmxKAu+oB+sW+uQpsv1aOPUm5qg82BSpQYq1Y91izDRdDTIBtP89cBHAEUwKYpwnt77PBKdBKUwKyDReDmlDJ+L+7C6AHSMLq7QRgdZsCbbsKsDkXD0CAmlBJ9dtNAEATKiHyOhHMuUBNiNAzK8oFseoJdkFzLtB227NYbnP8q3QXAcBuRCkcLqCgoKCg4Ai8AQ7hbtXgecDNAAAAAElFTkSuQmCC",
+  "blue_skies:item/tools/spears/bluebright_spear": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAOElEQVR4XmNgGFlA377gP7oY0QCkObFw0X8VozjSDaFYs0dEJ/maR20mAQyszWRrBgGQRrI1AwEAPCZGOWiZg00AAAAASUVORK5CYII=",
+  "blue_skies:item/tools/spears/soulbound_spear": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAASElEQVR4XmNgGFnAxyr6P7oY0QCkuSRj8X+yDAFpagNq1leyGgDNIGeTrZkim1f9P0a+5iFmM0gDxaENcjZZKQwGQJrJsh0IAF87S6NCCCPlAAAAAElFTkSuQmCC",
+  "blue_skies:item/tools/ventium_bucket": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAqklEQVR4XmNgoAWw4uL6jw2jq8MAMIU18mL/+1Ql4Xi7ggIY4zUIphGEEwQF4RgmBjMURGM1BCQI0hDCxwfH6AbADMdpAAwjG4BsCN7wAAnesbBA8Ss6hnkDpwG31c3AhsAwLPBgfifagCfJOTgNgLkQXT/YAJAkRQaAFIBcgc8AnF4AAWRvgGh0A/BqBgFkb8AMgKVGogwAAZghyAYQrRkGQAqxYXR1VAEA/V/10i/JOMwAAAAASUVORK5CYII=",
+  "blue_skies:item/tools/ventium_shears": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAo0lEQVR4XmNgGPQgwcPk/3YFhf93LCzAGMRGV4MTgDT3qUr+v61uhqKZKENAmiuiHcGaQAYgawYZhq4eBYA0T8jxxakZrwEwzQF2GmDnI2sGGYZsIFaAbABMDNklIEOR5VAANs0gAHMJSB5dDgXAAg5ZEUgMhvFqBgGQLTCbYBhkILqhWAFywICcjKyRoGYQAGmCsRMEBYnXiAxAGkEYXXxwAwCFNZV38lo/0AAAAABJRU5ErkJggg==",
+  "blue_skies:item/toxic_armor_trim_smithing_template": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAzElEQVR4Xp2QsQ0CMQxFbw1ETUFJh6i5ih7EDHSUNHRUDAETMAMlJUMwB+hF+qcfK7lIfMlKzuf/bKfrKrr1p+91eUgR/zWFmXhsLukULNZVRbHMnLqT3876cZDM3t0nEqQKokDdPq/9cPc4LnYp1pNVDiGJ4X2fZ7sTnmsCYldfQ2ZWyAAkvZvGd+DzPB32L3YvmfUW2r0IkJmTLkA0OmZ9F80lgO8OgFy1uwME8bcQsGpGJN0okE82CkD8iCBBmmaXg/4CSAJ5xBr0A29aXX3n59x1AAAAAElFTkSuQmCC",
+  "minecraft:block/enchanting_table_top": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAk0lEQVR4XmP4DwSHf38EY52zG/9nM+jjxSA1MPUgwABiLPr2HIy93l78X8+u8X+RpiZWDJIDqYGpB+ml3ACQk0CC2DSXyBqBMTZDQBiklwHkL5AgsmaQpggxHRSMbBBMPUgv2AB0W9E1YzMEhLEagK4JHeM1AJ/t2FxBfQMo9gIhV+AMRIqikeKERHFSptgASrMzAE2hIIPKxuInAAAAAElFTkSuQmCC",
+  "minecraft:block/end_stone": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA2klEQVR4Xn2SoRLCQAxE8/+1fAKfgAUHDolBIJHICkyZvZnXeQ0M4qZNstls9q4ez/1yu+/Gyf9rPozj+HyalutlWnHJEVdvpgBRYnIMA5tv9ameRs2EnaTc8I8EJfP7uFFX3o2i5QIMqXGJc4YHATCpk0DQcRsTvavXsVzjHBcJ9rbrkHgAOOIKgN26eeTy331YbwEFgFz8dUM2fazQZdl9gICpbRRYFo3evatxLvj1KTPdUiH75Q1EwwOzZjI3gTo3dZXjJToRAK/M+zKAgeC+XqKb/LUHXusDpFNX9itKlwEAAAAASUVORK5CYII=",
+  "minecraft:item/coal": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAqklEQVR4Xs2QsQoDIRBE7xOuCWmOC4GY8goLIc2V+f8/MozwwnBqMKTJwuDq7rxVp+kvY1nW7DrWP4YM27blGGOR8mGIGkMIOaWUH/uzALSXhiBqklkGprMOQdRwX29FfhOt3KYL4fpMc4jEuUDzfKohfJ6/XXvk0C6gZULa8zypggBATMOo/HK+vtcmQAWafRqi3gQodKiig8gxds2EQ9zgOnqq+NrwS7wAeIuvFFjjfGEAAAAASUVORK5CYII=",
+  "minecraft:item/gold_ingot": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAl0lEQVR4XmNgGDJgU4rgfxBGF8cLYJpA+Nc1LzAmaAiypr9f47FiDEPQbULXgI5Bako1mCCGgDT9//sAQxEuDFILUw82BGYrPkNgmmBq7kwTRrgC2dnIhqBrerlRFKwRhrEaAHYJCODQBMIgMViMwA0ACcIMIFYjPBBhAQlTgG4AiA3CME0oGpEBsiFEa0IHsLRAkqYBBwCj73xd3U1AQgAAAABJRU5ErkJggg==",
+  "minecraft:item/iron_ingot": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAiElEQVR4XtWS0QnAIBBDXcpd/HIIR3AaR3Kblghpz2BP+lUaCD1a3xOqIfwmOecD1fduCKGttdFSii9RqPc+dSnZQdpJAgjRRU9lMA8Jd/UkNgTBxBhvgUoUqrUOEMW8FFCygli79hLQyB/ogfgGcMD2FChRAWYLTaCNleCZUtpDGt6FV9DnOQGs7n3r/un+hQAAAABJRU5ErkJggg==",
+  "minecraft:item/stick": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAOElEQVR4XmNgGJLA00z0v4Yc9390caIASHNnujp5BlCsOcNPjnzNozaTAAbWZrI1gwBII9maKQEAhtw7K4hY+J4AAAAASUVORK5CYII=",
+};
+// Stand 2026-10-15, Minecraft 1.20.1. Quelle: blue_skies-1.20.1-1.3.31.jar (Namespace blue_skies), Abhängigkeit structure_gel-1.20.1-2.16.2.jar.
+// Gelesen: Journal des Mods (data/blue_skies/blue_skies/journal, Texte in assets/blue_skies/blue_skies/journal_lang/en_us.json),
+// Advancements, Rezepte samt eigener Rezeptordner (alchemy_recipes, horizonite_forge_fuels, snowcap_*), Loot-Tabellen (Kisten, Loot Bags),
+// Tags, Weltgenerierung, Sprachdatei, Config blue_skies-common.toml der Testinstanz. Die Werkzeugrezepte und die Gatekeeper-Handel stehen nur im Code.
+// Zeigt den Weg, wie ihn der Mod selbst vorsieht (ohne unsere KubeJS-Änderungen). Schema: Skill modpfad-seite, references/data-schema.md.
+// Zutaten: [Name, Herkunft, Zusatz] – Herkunft v = Vanilla, m = dieser Mod, a = Addon, x = anderer Mod im Pack
+const T = (head, kind) => `blue_skies:item/tools/handles/${kind === "sword" ? "handle_sword" : "handle"}+/item/tools/heads/${kind}/${head}`;
+const PAGE = {
+  pageTitle: "Modpfad Blue Skies",
+  title: "Blue Skies",
+  accent: ["#5cc8d8", "#1f7d8a"],
+  lede: "Zwei eigene Dimensionen statt einer Technikkette: Vom Gatekeeper-Haus in der Oberwelt geht es durch Portale in das kalte, ewig helle Everbright und das heiße Everdawn bei ewigem Sonnenaufgang. Dort beginnt man wieder bei Holz und Stein, weil fremde Werkzeuge schwächer werden, arbeitet sich über eigene Metalle und Edelsteine hoch und besiegt in vier Dungeons die vier Bosse, die Arcs, Zauber und die Alchemy Table hinterlassen. Das Journal des Mods gibt die Reihenfolge vor: Seine Einträge öffnen sich beim Betreten der Welten und nach jedem Boss.",
+  mods: [
+    ["Blue Skies", "1.3.31", "main"],
+    ["Structure Gel API", "2.16.2", "addon"],
+  ],
+  phases: [
+    {
+      t: "Gatekeeper und Portale",
+      sub: "Journal, Teil „General“ und die Portal-Einträge beider Welten. Spielt in der Oberwelt; man braucht nur das, was im Haus des Gatekeepers liegt oder was er verkauft.",
+      steps: [
+        {
+          t: "Gatekeeper's House",
+          pics: [["blue_skies:gui/journal/icons/arcs", "Journal-Bild „Arcs“"]],
+          items: [
+            ["blue_skies:item/misc/blue_journal", "Blue Journal", "beim Gatekeeper zu kaufen; das Buch des Mods"],
+            ["blue_skies:item/misc/zeal_lighter", "Zeal Lighter", "beim Gatekeeper zu kaufen, oder 1 Charoite + 1 Moonstone Shard, formlos"],
+            ["blue_skies:block/stone/turquoise_stonebrick", "Turquoise Stone Bricks", "im Haus verbaut; Rahmen des Everbright-Portals"],
+            ["blue_skies:block/stone/lunar_stonebrick", "Lunar Stone Bricks", "im Haus verbaut; Rahmen des Everdawn-Portals"],
+          ],
+          text: `<p>Das Haus des Gatekeepers ist eine Oberwelt-Struktur in drei Varianten (Ebene, Berg, Schnee); die Ebenen-Variante steht in Biomen mit Ebenen-Dorf und in Savannen, im Raster alle 33 Chunks, nicht nahe beim Spawn. Laut JEI-Hinweis des Mods stehen beide Portale schon im Haus, und die Steinziegel für eigene Portale findet man dort. Die Kisten enthalten Brot und Kleinkram, dazu je nach Variante einen Ventium Ingot, Snowcap Pinheads oder einen Moonstone Shard.</p>
+<p>Der Gatekeeper verkauft das Blue Journal und den Zeal Lighter, der die Portale entzündet. Den Preis legt die Config fest (<code>zeal_lighter_cost = 8</code>); in welcher Währung, steht nur im Code und ist nicht ausgelesen. Später verkauft er auch Dungeon-Schlüssel (Schritt 11).</p>
+<p>Das Journal hat drei Teile: General, Everbright, Everdawn. Ein Eintrag öffnet sich erst, wenn seine Bedingung erfüllt ist: die Welt betreten, den Blinding-Boss oder den zweiten Boss der Welt besiegt.</p>`,
+          needs: [["Gatekeeper's House", "m", "Oberwelt"], ["Bezahlung beim Gatekeeper", "m", "nicht ausgelesen"]],
+        },
+        {
+          t: "Everbright- und Everdawn-Portal",
+          items: [
+            ["blue_skies:item/misc/everbright_portal", "Everbright Portal Block", "Rahmen aus Turquoise Stone Bricks, mit Zeal Lighter entzündet"],
+            ["blue_skies:item/misc/everdawn_portal", "Everdawn Portal Block", "Rahmen aus Lunar Stone Bricks, mit Zeal Lighter entzündet"],
+            ["blue_skies:block/stone/turquoise_stone", "Turquoise Stone", "Gestein des Everbright; 4 ergeben 4 Turquoise Stone Bricks"],
+            ["blue_skies:block/stone/lunar_stone", "Lunar Stone", "Gestein des Everdawn; 4 ergeben 4 Lunar Stone Bricks"],
+          ],
+          text: `<p><b>Everbright:</b> immer Tag, aber kalt, viel Schnee, große Tiere mit dichtem Fell und geisterhafte Gegner, die bei Schneefall häufiger werden. <b>Everdawn:</b> immer Sonnenaufgang, heiß und feucht; Insekten werden bei Regen zahlreicher, die Tiere sind meist Echsen.</p>
+<p>Wer in beiden Welten war, bekommt „Now You're Thinking with Portals!“. Steinziegel lassen sich danach aus dem Gestein der Welten selbst herstellen, so dass man weitere Portale bauen kann.</p>`,
+          needs: [["Turquoise Stone Bricks", "m"], ["Lunar Stone Bricks", "m"], ["Zeal Lighter", "m"]],
+        },
+        {
+          t: "Neu anfangen: Holz, Stein und Sticks",
+          items: [
+            [T("bluebright", "pickaxe"), "Bluebright Wood Pickaxe", "Rezept im Code; Holzwerkzeug des Everbright"],
+            [T("turquoise_stone", "pickaxe"), "Turquoise Stone Pickaxe", "Rezept im Code; Steinwerkzeug des Everbright"],
+            [T("lunar_stone", "pickaxe"), "Lunar Stone Pickaxe", "Rezept im Code; Steinwerkzeug des Everdawn"],
+            ["blue_skies:item/materials/bluebright_stick", "Bluebright Stick", "2 Bluebright Planks ergeben 4"],
+            ["blue_skies:item/tools/spears/bluebright_spear", "Bluebright Spear", "1 Moonstone Shard + 2 Bluebright Stick"],
+          ],
+          text: `<p>Werkzeuge und Waffen von außerhalb arbeiten in den Welten schlechter; der Tooltip sagt dann „It seems this tool doesn't work as well here.“ Im Code hängt die Abschwächung am Boss-Fortschritt, einen Config-Schalter gibt es nicht (Projektbefund, im Spiel mit Tinkers-Werkzeugen bestätigt). Deshalb beginnt man mit Holz- und Steinwerkzeugen der Welten.</p>
+<p>Jede Holzart der Welten gibt eigene Sticks, und der Stick im Werkzeug ändert dessen Werte (Journal „Stick Variations“). Die Faktoren stehen in <code>tool_handle_types</code>. Die Werkzeugrezepte sind ein eigener Rezepttyp, der nur im Code steht; welche Sticks sie annehmen, ist nicht ausgelesen. Später tauscht die Tool Box den Stick eines fertigen Werkzeugs (Schritt 4).</p>
+<p>Speere sind laut Journal billig, wirken wie eine Mischung aus Dreizack und Bogen und funktionieren unter Wasser; Loyalty und Piercing lassen sich darauf verzaubern.</p>`,
+          table: { head: ["Stick", "Angriffstempo", "Haltbarkeit", "Wurfschaden"], rows: [
+            ["blue_skies:item/materials/bluebright_stick", "Bluebright Stick", "×1,00", "×1,00", "×1,00"],
+            ["blue_skies:item/materials/lunar_stick", "Lunar Stick", "×1,00", "×1,00", "×1,00"],
+            ["blue_skies:item/materials/frostbright_stick", "Frostbright Stick", "×1,05", "×1,10", "×0,90"],
+            ["blue_skies:item/materials/maple_stick", "Maple Stick", "×1,05", "×1,10", "×0,90"],
+            ["blue_skies:item/materials/comet_stick", "Comet Stick", "×1,05", "×1,20", "×0,90"],
+            ["blue_skies:item/materials/starlit_stick", "Starlit Stick", "×0,95", "×0,90", "×1,10"],
+            ["blue_skies:item/materials/dusk_stick", "Dusk Stick", "×0,95", "×0,90", "×1,10"],
+            ["minecraft:item/stick", "Stick", "×1,00", "×1,00", "×1,00"],
+          ] },
+          needs: [["Holz der Welten", "m"], ["Turquoise Cobblestone, Lunar Cobblestone", "m"], ["Moonstone Shard", "m", "für Speere"]],
+        },
+      ],
+    },
+    {
+      t: "Everbright: Ventium, Falsite, Snowcap",
+      sub: "Journal, Teil „Everbright“, offen ab dem Betreten. Die Metalle liegen in den Biomen außerhalb der Berge.",
+      steps: [
+        {
+          t: "Ventium und Tool Box",
+          items: [
+            ["blue_skies:block/ores/ventium_ore", "Ventium Ore", "Everbright, bis Y 63"],
+            ["blue_skies:item/materials/ventium_ingot", "Ventium Ingot", "Raw Ventium oder Erz im Ofen (200 Ticks) oder Hochofen"],
+            ["blue_skies:item/tools/ventium_bucket", "Ventium Bucket", "3 Ventium Ingot"],
+            ["blue_skies:item/tools/ventium_shears", "Ventium Shears", "2 Ventium Ingot"],
+            [null, "Tool Box", "2 Ventium Ingot + 4 Planks"],
+          ],
+          text: `<p>Ventium ist laut Journal das Eisen des Everbright: Eimer, Schere und die Tool Box entstehen daraus. Den Ventium Bucket gibt es mit Wasser, Lava, Milch und als Fischeimer für die Fische der Welten. Über Tags ersetzt Ventium Eisen auch in Vanilla-Rezepten des Mods: Anvil (3 Ventium-Blöcke + 4 Ventium Ingot), Stonecutter und Camel Saddle.</p>
+<p>Die <b>Tool Box</b> verbessert Werkzeuge: Falsite erhöht die Haltbarkeit fast aller Werkzeuge der beiden Welten (der Tooltip zählt „Falsite uses“), und jeder Stick der Welten lässt sich in ein fertiges Werkzeug einsetzen.</p>`,
+          needs: [["Raw Ventium", "m"], ["Planks", "v"]],
+        },
+        {
+          t: "Falsite",
+          items: [
+            ["blue_skies:block/ores/falsite_ore", "Falsite Ore", "Everbright, bis Y 63"],
+            ["blue_skies:item/materials/falsite_ingot", "Falsite Ingot", "Raw Falsite oder Erz im Ofen"],
+            ["blue_skies:item/materials/falsite_nugget", "Falsite Nugget", "1 Ingot ergibt 9"],
+          ],
+          text: `<p>Falsite ist ein magisches Metall. Sein Hauptzweck ist die Tool Box; dazu ersetzt das Nugget Lapis Lazuli im Zaubertisch (Tag <code>forge:enchanting_fuels</code>). Laut Journal braucht man zum Verzaubern allein mit Material der Welten Charoite, Obsidian aus dem Everdawn und Falsite (Schritt 10).</p>`,
+          needs: [["Raw Falsite", "m"]],
+        },
+        {
+          t: "Snowcap Oven",
+          items: [
+            ["blue_skies:block/plants/snowcap_mushroom", "Snowcap Mushroom", "Brennstoff, kühlt die Umgebung"],
+            ["blue_skies:block/plants/snowcap_pinhead", "Snowcap Pinhead", "4 ergeben 1 Snowcap Mushroom Block"],
+            ["blue_skies:block/crafting/snowcap_oven_front", "Snowcap Oven", "3 Snowcap Mushroom Block + 5 Turquoise Cobblestone + 1 Furnace"],
+          ],
+          text: `<p>Der Snowcap Mushroom saugt Wärme auf. In der Welt kühlt er Blöcke ab: Lava und Magma erstarren, Feuer, Lagerfeuer und Laternen gehen aus, und ein Horizonite-Block wird zu einem Iron Block. Im Ofen brennt er wie Kohle.</p>
+<p>Der Snowcap Oven kocht, indem er heißen Dingen die Wärme entzieht; dabei bleibt manchmal das gefrorene Nebenprodukt des Brennstoffs übrig. Er verbrennt Snowcap-Pilze (1600), Fackeln (300), Blaze-Teile, Lava- und Wassereimer und Laternen. Aus Horizonite wird dabei Eisen: Horizonite Ingot ergibt Iron Ingot (Wert 1600), Werkzeuge und Rüstung werden zu ihrem Eisen-Gegenstück, Raw Horizonite zu Raw Iron; ein Lavaeimer wird zu Obsidian, ein Wassereimer zu Eis.</p>`,
+          needs: [["Snowcap Pinhead", "m", "12"], ["Turquoise Cobblestone", "m", "5"], ["Furnace", "v"]],
+        },
+        {
+          t: "Warding Pearl",
+          pics: [["blue_skies:gui/journal/icons/seclam", "Journal-Bild Seclam"]],
+          items: [
+            ["blue_skies:item/misc/pearl", "Pearl", "aus dem Maul eines Seclam in der Tiefsee"],
+            ["blue_skies:item/misc/soul_fragment", "Soul Fragment", "von den Geistern des Everbright"],
+            ["blue_skies:item/misc/warding_pearl", "Warding Pearl", "6 Falsite Nugget + 2 Soul Fragment + 1 Pearl"],
+          ],
+          text: `<p>In den Welten verhindert Licht (auch Moonstone) das Spawnen von Monstern nicht. Die Warding Pearl tut es in großem Umkreis. Die Pearl holt man aus einem Seclam: einige Male schlagen, bis er sich öffnet, dann schnell zugreifen. Soul Fragments lassen vor allem die Frost Spirits fallen; Pickaxes treffen deren Eispanzer besser als Schwerter.</p>`,
+          needs: [["Falsite Nugget", "m", "6"], ["Soul Fragment", "m", "2"], ["Pearl", "m"]],
+        },
+      ],
+    },
+    {
+      t: "Everdawn: Horizonite und Sunstone",
+      sub: "Journal, Teil „Everdawn“, offen ab dem Betreten. Horizonite liegt tief in den heißen Biomen.",
+      steps: [
+        {
+          t: "Horizonite",
+          items: [
+            ["blue_skies:block/ores/horizonite_ore", "Horizonite Ore", "Everdawn, bis Y 24"],
+            ["blue_skies:item/materials/horizonite_ingot", "Horizonite Ingot", "Raw Horizonite oder Erz im Ofen"],
+            [T("horizonite", "pickaxe"), "Horizonite Pickaxe", "Rezept im Code"],
+            ["blue_skies:item/armor/horizonite_chestplate", "Horizonite Chestplate", "8 Horizonite Ingot"],
+          ],
+          text: `<p>Horizonite ist ein sehr heißes Metall aus Crystal Dunes, Crystal Roughs, Searing Grassland und Sunset Maple Forest. Werkzeuge daraus schmelzen abgebaute Erze sofort (Fähigkeit „Auto-Smelt“). Horizonite-Werkzeuge und -Rüstung lassen sich im Ofen zu Horizonite Nuggets einschmelzen; im Snowcap Oven werden sie zu Eisen.</p>`,
+          needs: [["Raw Horizonite", "m"]],
+        },
+        {
+          t: "Horizonite Forge",
+          items: [
+            ["blue_skies:block/crafting/horizonite_forge_front", "Horizonite Forge", "5 Horizonite Ingot + 1 Furnace + 3 Lunar Cobblestone"],
+            ["blue_skies:block/misc/sunstone_crystal", "Sunstone Crystal", "Sunset Maple Forest, Searing Grassland; Brennstoff"],
+          ],
+          text: `<p>Die Forge schmilzt ohne Brennstoff, muss aber nachladen, und sie lädt nur, solange nichts darin gart. Sofort aufladen kann man sie mit allem aus Horizonite oder mit Sunstone. Die Ladewerte stehen in <code>horizonite_forge_fuels</code>: Horizonite Block 0,8, Sunstone Crystal 0,4, Horizonite Ingot 0,2, Horizonite Nugget 0,05 (Sunstone-Block und Raw Horizonite ebenfalls). Das Journal rät zu mehreren Forges.</p>
+<p>Sunstone Crystals brennen auch in jedem normalen Ofen; 4 ergeben einen Block of Sunstone.</p>`,
+          needs: [["Horizonite Ingot", "m", "5"], ["Lunar Cobblestone", "m", "3"], ["Furnace", "v"]],
+        },
+        {
+          t: "Moonstone Shield",
+          pics: [["blue_skies:gui/journal/icons/crystal_camel", "Journal-Bild Crystal Camel"]],
+          items: [
+            [null, "Vitreous Moonstone", "Drop des Crystal Camel"],
+            ["blue_skies:item/tools/shields/moonstone", "Moonstone Shield", "6 Vitreous Moonstone + 1 Stick"],
+          ],
+          text: `<p>Der Moonstone Shield hält mehr aus als der Holzschild und ist durchsichtig. Schilde sind im Everdawn wichtig: Venom Spider, Emberback und die Pfeilbündel des Alchemist werden damit abgefangen, und laut Journal stoppen die Schilde des Everdawn den Diophyde Prowler. Gegen den Arachnarch reicht nicht jeder Schild (Tooltip „It seems this shield isn't strong enough!“); welcher genügt, steht nur im Code.</p>`,
+          needs: [["Vitreous Moonstone", "m", "6"], ["Stick", "v"]],
+        },
+      ],
+    },
+    {
+      t: "Erze beider Welten und Ausrüstung",
+      sub: "Journal, Teil „General“. Fünf Erze kommen in beiden Welten vor, jeweils im Gestein der Welt.",
+      steps: [
+        {
+          t: "Pyrope, Aquite und Moonstone",
+          items: [
+            ["blue_skies:item/materials/pyrope_gem", "Pyrope Gemstone", "aus Pyrope Ore"],
+            [T("pyrope", "pickaxe"), "Pyrope Pickaxe", "Rezept im Code"],
+            ["blue_skies:item/materials/aquite", "Aquite", "Raw Aquite oder Erz im Ofen"],
+            ["blue_skies:item/armor/aquite_chestplate", "Aquite Chestplate", "8 Aquite"],
+            ["blue_skies:item/materials/moonstone_shard", "Moonstone Shard", "aus Moonstone Ore; 4 ergeben 2 Moonstone"],
+            ["blue_skies:item/materials/moonstone", "Moonstone", "9 ergeben einen Block of Moonstone"],
+          ],
+          text: `<p><b>Pyrope</b>-Werkzeuge sind leicht und sehr schnell, aber wenig haltbar, und sie bauen Diopside und Charoite nicht ab. <b>Aquite</b> entspricht bei Werkzeug und Rüstung dem Eisen der Oberwelt und lässt sich gut verzaubern. <b>Moonstone</b> ist eine reine Lichtquelle, die auch unter Wasser leuchtet; es gibt größere Leuchtblöcke und eine Kristallform in Höhlen.</p>
+<p>Rüstung braucht bei allen Materialien 5 (Helm), 8 (Brust), 7 (Beine) und 4 (Stiefel) Einheiten.</p>`,
+          table: { head: ["Erz", "Welt", "Höhe", "Versuche je Chunk, Adergröße"], rows: [
+            ["blue_skies:block/ores/everbright_moonstone_ore", "Moonstone Ore", "beide", "Y 0–127", "20"],
+            ["blue_skies:block/ores/everbright_pyrope_ore", "Pyrope Ore", "beide", "Y 0–83", "17"],
+            ["blue_skies:block/ores/everbright_aquite_ore", "Aquite Ore", "beide", "Y 0–54", "15, 5"],
+            ["blue_skies:block/ores/everbright_diopside_ore", "Diopside Ore", "beide", "Y 0–19", "1, 6"],
+            ["blue_skies:block/ores/everbright_charoite_ore", "Charoite Ore", "beide", "Y 0–13", "1, 6"],
+            ["blue_skies:block/ores/ventium_ore", "Ventium Ore", "Everbright", "Y 0–63", "20, 6"],
+            ["blue_skies:block/ores/falsite_ore", "Falsite Ore", "Everbright", "Y 0–63", "20, 6"],
+            ["blue_skies:block/ores/horizonite_ore", "Horizonite Ore", "Everdawn", "Y 0–24", "10, 4"],
+          ] },
+          needs: [["Pyrope Ore, Aquite Ore, Moonstone Ore", "m"]],
+        },
+        {
+          t: "Diopside oder Charoite",
+          items: [
+            ["blue_skies:item/materials/diopside_gem", "Diopside Gemstone", "aus Diopside Ore, sehr tief"],
+            [T("diopside", "sword"), "Diopside Sword", "Rezept im Code"],
+            ["blue_skies:item/materials/charoite", "Charoite", "Raw Charoite oder Erz im Ofen"],
+            [T("charoite", "pickaxe"), "Charoite Pickaxe", "Rezept im Code"],
+            ["minecraft:block/enchanting_table_top", "Enchanting Table", "zusätzlich: 1 Book + 2 Charoite + 4 Obsidian"],
+          ],
+          text: `<p>Die beiden obersten Materialien sind Gegenstücke. <b>Diopside</b>: sehr haltbar und stark, Werkzeuge schwer und langsam, aber mit sehr hohem Schaden. <b>Charoite</b>: ausgewogen wie Diamant, Werkzeuge schneller und schwächer, die Rüstung fängt leichte Treffer besser ab. Charoite-Werkzeuge bauen alles ab, was die Welten bieten.</p>
+<p>Charoite ersetzt Diamant auch in den Vanilla-Rezepten des Mods: Enchanting Table und Jukebox. Mit Falsite Nuggets als Lapis-Ersatz kann man dann ganz ohne Oberwelt verzaubern. Charoite steckt außerdem im Zeal Lighter.</p>`,
+          needs: [["Diopside Ore oder Charoite Ore", "m", "unter Y 19 bzw. 13"], ["Obsidian", "v", "Everdawn"]],
+        },
+      ],
+    },
+    {
+      t: "Blinding Dungeons",
+      sub: "Journal „Blinding Dungeon“ (General) und die Boss-Einträge; je ein Turm in jeder Welt, bewohnt von Illagern.",
+      steps: [
+        {
+          t: "Blinding Dungeon Keys",
+          items: [
+            ["blue_skies:item/misc/blinding_key", "Blinding Dungeon Key", "aus den Kisten des Turms"],
+            ["blue_skies:block/dungeon/blinding_keystone", "Blinding Keystone (Everbright)", "oberstes Stockwerk; braucht 4 Schlüssel"],
+          ],
+          text: `<p>Der Blinding Dungeon ist ein hoher Turm. Im Everbright steht er in Calming Skies, Brisk Meadow, Brightlands und Snow Covered Pines. Die Schlüssel liegen in Bibliotheks-, Gefängnis- und Studierzimmer-Kisten; mit vier Schlüsseln öffnet man den Keystone im obersten Stockwerk und kommt zum Boss. Wer den Keystone benutzt hat, kann danach Blinding-Schlüssel beim Gatekeeper kaufen (Toast „The Gatekeeper is now selling Blinding keys.“).</p>
+<p>Die Kisten geben außerdem Aquite, Pyrope, Diopside und eine Aquite Axe.</p>`,
+          needs: [["Blinding Dungeon Key", "m", "4"]],
+        },
+        {
+          t: "Summoner",
+          pics: [["blue_skies:gui/journal/icons/summoner", "Journal-Bild Summoner"]],
+          items: [
+            ["blue_skies:item/misc/loot_bag_summoner", "Summoner Loot Bag", "Beute des Bosses"],
+            ["blue_skies:item/arcs/ethereal_arc", "Ethereal Arc", "Arc: schneller laufen"],
+            ["blue_skies:item/tools/spears/soulbound_spear", "Soulbound Spear", "Speer, der zurückkehrt"],
+            ["blue_skies:block/villager/summoning_table_front", "Summoning Table", "stellt den Modus des Summoning Tome um"],
+            ["blue_skies:item/misc/summoning_tome", "Summoning Tome", "seltener; Fluctuant Sphere oder Artificial Golem"],
+          ],
+          text: `<p>Der Summoner (Everbright) lässt Golems aus Dungeonstein für sich kämpfen, erst Fernkämpfer, dann Nahkämpfer, und teleportiert sich weg, wenn man ihm nahe kommt. Nur während er zaubert, kann man ihn treffen. Sein Sieg schaltet im Journal die zweite Stufe des Everbright frei.</p>
+<p>Der Loot Bag enthält immer mögliche Teile wie den Ethereal Arc, den Soulbound Spear (eingebaute Loyalty), die Summoning Table und Soul Fragments; der Summoning Tome steht nur in den Fassungen „uncommon“ und „rare“. Der Tome verschießt eine Fluctuant Sphere mit Flächenschaden; an der Summoning Table umgestellt ruft er einen Artificial Golem (nur einer zugleich).</p>`,
+          needs: [["Zugang zum Keystone", "m"]],
+        },
+        {
+          t: "Alchemist und Alchemy Table",
+          pics: [["blue_skies:gui/journal/icons/alchemist", "Journal-Bild Alchemist"]],
+          items: [
+            ["blue_skies:item/misc/loot_bag_alchemist", "Alchemist Loot Bag", "Beute des Bosses"],
+            ["blue_skies:item/arcs/dusk_arc", "Dusk Arc", "Arc: unsichtbar beim Schleichen"],
+            ["blue_skies:item/tools/shields/spike", "Spike Shield", "stärker als der Moonstone Shield, mit Nahkampfschaden"],
+            ["blue_skies:block/villager/alchemy_table_front", "Alchemy Table", "wandelt Stoffe um"],
+            ["blue_skies:item/misc/alchemy_scroll", "Alchemy Scroll", "seltener; Decaying Spikes"],
+          ],
+          text: `<p>Der Alchemist (Everdawn) kämpft selbst: Pfeilbündel (mit dem Schild abwehren), Steinstacheln und Trankwolken in den Ecken. Auch er teleportiert sich weg, außer beim Zaubern.</p>
+<p>Die <b>Alchemy Table</b> kennt zwei Rezeptarten. „Transmute“ tauscht innerhalb einer Gruppe: Iron Ingot gegen Ventium Ingot, Stein der Oberwelt gegen die Steine der Welten, Erde, Holz, Kohle und Holzkohle, Farben und vieles mehr. „Catylist“ wandelt einen Stoff mit einem Hilfsstoff um, etwa Iron Ingot mit Soul Fragment zu Falsite, Iron Ingot mit Blaze Rod zu Horizonite, Stone mit Chorus Fruit zu End Stone, Turquoise Stone mit Nature Arc zu Nature Stone, Netherite Ingot mit einem Trank zu Gold („Finally.“). Ob der Hilfsstoff verbraucht wird, ist nicht ausgelesen.</p>`,
+          table: { head: ["Rezept", "Art", "Eingang", "Hilfsstoff → Ergebnis"], rows: [
+            ["minecraft:item/iron_ingot", "Iron Ingot", "Transmute", "Iron Ingot ↔ Ventium Ingot", "–"],
+            ["blue_skies:item/materials/falsite_ingot", "Falsite Ingot", "Catylist", "Iron Ingot", "Soul Fragment → Falsite Ingot"],
+            ["blue_skies:item/materials/horizonite_ingot", "Horizonite Ingot", "Catylist", "Iron Ingot", "Blaze Rod → Horizonite Ingot"],
+            ["minecraft:item/gold_ingot", "Gold Ingot", "Catylist", "Netherite Ingot", "Potion → Gold Ingot"],
+            ["minecraft:block/end_stone", "End Stone", "Catylist", "Stone", "Chorus Fruit → End Stone"],
+            ["minecraft:item/coal", "Coal", "Transmute", "Tag minecraft:coals", "–"],
+          ] },
+          needs: [["Zugang zum Keystone", "m"]],
+        },
+      ],
+    },
+    {
+      t: "Nature und Poison Dungeon",
+      sub: "Journal-Einträge, offen nach dem jeweiligen Blinding-Boss. Je ein Dungeon in jeder Welt mit einem zweiten Boss.",
+      steps: [
+        {
+          t: "Nature Dungeon und Starlit Crusher",
+          pics: [["blue_skies:gui/journal/icons/starlit_crusher", "Journal-Bild Starlit Crusher"]],
+          items: [
+            ["blue_skies:item/misc/nature_key", "Nature Dungeon Key", "aus den Kisten des Dungeons"],
+            ["blue_skies:block/dungeon/nature_keystone", "Nature Keystone", "am Ende des Dungeons"],
+            ["blue_skies:item/arcs/nature_arc", "Nature Arc", "Arc: zusätzliche Herzen"],
+            ["blue_skies:item/misc/crushing_hammer", "Crushing Hammer", "seltener; Bodenschlag"],
+          ],
+          text: `<p>Der Nature Dungeon ist eine grüne Pyramide in den Snow Covered Pines. Seine Wächter, die Stonelets, nehmen wie die Frost Spirits mehr Schaden von Pickaxes; oben spucken Spewters Samenbomben. Die Kisten enthalten Brewberries, Starlit Spear, Edelsteine und die Schlüssel.</p>
+<p>Der Starlit Crusher schützt sich mit vier Holzwänden und lässt Wurzeln, Spewters und hölzerne Schneeeulen wachsen. Eine Wand fällt man mit der Axt (für andere Waffen sagt der Tooltip „maybe an axe would work?“); danach schlägt er auf den Boden und ist für Wurfwaffen wie Speere verwundbar. Sein Loot Bag: Nature Arc, Comet Sapling, Falsite, Cryo Root, in den selteneren Fassungen der Crushing Hammer und Diopside.</p>`,
+          needs: [["Nature Dungeon Key", "m"], ["Axt und Speere", "m"]],
+        },
+        {
+          t: "Poison Dungeon und Arachnarch",
+          pics: [["blue_skies:gui/journal/icons/arachnarch", "Journal-Bild Arachnarch"]],
+          items: [
+            ["blue_skies:item/misc/poison_key", "Poison Dungeon Key", "ein Schlüssel je Stockwerk"],
+            ["blue_skies:block/dungeon/poison_keystone", "Poison Keystone", "am Ende der Tunnel"],
+            ["blue_skies:item/arcs/poison_arc", "Poisonous Arc", "Arc: mehr Schaden, wenn vergiftet"],
+            ["blue_skies:item/misc/venom_sac", "Venom Sac", "seltener; verschießt Gift"],
+            ["blue_skies:item/tools/different_sword", "Different Sword", "seltener; schnelle Klinge"],
+          ],
+          text: `<p>Der Poison Dungeon ist ein mit Netzen überzogener Baum im Sunset Maple Forest, innen ein Spinnennest voller Venom Spiders und Cave Spiders. Jedes Stockwerk hat einen Schlüssel. Die Kisten geben Horizonite, Moonstone Shield, Camel Saddle und Spider Webbing.</p>
+<p>Der Arachnarch hängt sich an die Decke und ist dort kaum verwundbar; man hält ihn hin, bis er herunterkommt, und wehrt am Boden seine Sprünge mit dem Schild ab. Sein Loot Bag: Poisonous Arc, Horizonite, in den selteneren Fassungen Venom Sac, Diopside und Different Sword. Das Different Sword tötet schnell, aber wartet man zu lange, heilt das Ziel mehr, als man ihm abgezogen hat.</p>`,
+          needs: [["Poison Dungeon Key", "m"], ["Schild", "m"]],
+        },
+        {
+          t: "Arcs",
+          items: [
+            ["blue_skies:item/arcs/ethereal_arc", "Ethereal Arc", "Summoner"],
+            ["blue_skies:item/arcs/dusk_arc", "Dusk Arc", "Alchemist"],
+            ["blue_skies:item/arcs/nature_arc", "Nature Arc", "Starlit Crusher"],
+            ["blue_skies:item/arcs/poison_arc", "Poisonous Arc", "Arachnarch"],
+          ],
+          text: `<p>Arcs sind laut Journal Artefakte, die nur die Wächter der Dungeons tragen. Man trägt sie in eigenen Feldern (Fenster <code>arc_inventory</code>). Jeder Arc hat vier Seltenheitsstufen (Common, Uncommon, Rare, Empowered), und seine Wirkung wächst mit der Stufe.</p>
+<p>Im JAR gibt es außerdem Aquatic Arc, Life Arc und Runic Arc sowie Aquatic und Life Keystone; in keiner Loot-Tabelle oder keinem Rezept kommen sie vor. Ebenso die Infused Arc Sword, obwohl ein Advancement sie „from a dungeon“ verlangt.</p>`,
+          table: { head: ["Arc", "Common", "Uncommon", "Rare", "Empowered"], rows: [
+            ["blue_skies:item/arcs/ethereal_arc", "Ethereal Arc", "+10 % Tempo", "+15 %", "+20 %", "+25 %"],
+            ["blue_skies:item/arcs/dusk_arc", "Dusk Arc", "unsichtbar beim Schleichen, mit Rauch", "weniger Rauch", "ohne Rauch", "auch Rüstung unsichtbar"],
+            ["blue_skies:item/arcs/nature_arc", "Nature Arc", "+1 Herz", "+2", "+3", "+4"],
+            ["blue_skies:item/arcs/poison_arc", "Poisonous Arc", "+1 Schaden, wenn vergiftet", "+2", "+3", "+4"],
+          ] },
+          needs: [["Loot Bags der vier Bosse", "m"]],
+        },
+      ],
+    },
+  ],
+  solo: [
+    { t: "Essen und Tiere",
+      items: [
+        ["blue_skies:block/misc/food_prep_table_side", "Food Prep Table", "3 Steinstufen + 4 Logs; 3 bis 5 Zutaten je Gericht"],
+        [null, "Trough", "5 Wooden Slabs; Jungtiere fressen daraus und wachsen schneller"],
+        ["blue_skies:block/plants/brewberry_bush", "Brewberry", "Busch; auf Comet Grass pinke (Regeneration), auf Mycelium schwarze Beeren (heilt Gift)"],
+        ["blue_skies:item/food/pine_fruit", "Pine Fruit", "Everbright; zähmt Reindeer, füttert Stardust Ram"],
+        ["blue_skies:item/food/crescent_fruit", "Crescent Fruit", "Everdawn; wächst unter blühenden Blättern nach, zähmt Cosmic Fox"],
+        ["blue_skies:item/food/scalefruit", "Scalefruit", "zähmt das Crystal Camel"],
+        ["blue_skies:item/materials/azulfo_horn", "Azulfo Horn", "ergibt 3 Bone Meal"],
+      ],
+      text: `<p>Die Food Prep Table macht aus vielen verschiedenen Zutaten bessere Gerichte; Fleisch gibt mehr Portionen, Blumen geben ihre Trankwirkung weiter. Reittiere: Reindeer (Pine Fruit, Sattel), Crystal Camel (Scalefruit, Camel Saddle, Truhe möglich), Crogre (Bug Guts, Sattel, läuft über Wasser). Arbeitet ein Dorfbewohner an der Trough, wird er Wrangler.</p>` },
+    { t: "Dörfer und Reisen",
+      items: [
+        ["blue_skies:block/villager/star_emitter_side", "Star Emitter", "1 Star Flare + 1 Falsite Ingot + 3 Wooden Slabs"],
+        ["blue_skies:item/tools/astrolabe", "Astrolabe", "vom Stargazer im Dorf; teleportiert zum Star Emitter"],
+        ["blue_skies:item/misc/bag_of_spoils", "Bag of Spoils", "5 Fox Pelt + 1 String; Taschendiebstahl bei Dorfbewohnern"],
+        ["blue_skies:item/misc/camel_saddle", "Camel Saddle", "5 Leather + 1 Iron oder Ventium Ingot + 2 Fox Pelt"],
+      ],
+      text: `<p>Beide Welten haben Dörfer (Everbright: Brightlands, Calming Skies, Slushlands; Everdawn: Crystal Dunes, Shaded Woodlands, Sunset Maple Forest) mit eigenen Berufen wie Stargazer, Wrangler, Shoveler und Nightwatcher. Das Astrolabe springt über eine mittlere Strecke zurück zu einem Star Emitter und lädt danach je nach Entfernung nach.</p>` },
+    { t: "Besondere Pflanzen und Blöcke",
+      items: [
+        ["blue_skies:block/plants/crystal_flower", "Crystal Flower", "wird mit Bone Meal zum Kristallbaum"],
+        ["blue_skies:item/food/cryo_root", "Cryo Root", "aus Bunker- und Höhlenkisten"],
+        ["blue_skies:block/misc/spider_webbing_full", "Spider Webbing", "Netz, das an Ecken und Wänden haftet"],
+      ],
+      text: `<p>Der Kristallbaum des Everdawn brennt nicht und gibt keine Sticks; seine Logs werden zu Mauern. Der Baneful Mushroom besprüht alles, was auf ihn tritt, mit Gift. Dazu kommen Baustoffe wie Taratite, Rimestone, Cinderstone, Umber, Brumble, Crystal Sand und Midnight Sand mit Glas und Sandstein. In den Slushlands steht ein Frozen Bunker mit eigener Kiste.</p>` },
+    { t: "Kreaturen",
+      items: [
+        ["blue_skies:gui/journal/icons/azulfo", "Azulfo", "größtes Tier des Everbright; die Herde wehrt sich"],
+        ["blue_skies:gui/journal/icons/armored_frost_spirit", "Armored Frost Spirit", "häufigster Gegner; Soul Fragments"],
+        ["blue_skies:gui/journal/icons/polargeist", "Polargeist", "schneller Geisterbär"],
+        ["blue_skies:gui/journal/icons/diophyde_prowler", "Diophyde Prowler", "umkreist seine Beute"],
+        ["blue_skies:gui/journal/icons/shade_monitor", "Shade Monitor", "häufigstes Tier des Everdawn"],
+        ["blue_skies:gui/journal/icons/emberback", "Emberback", "Käfer mit heißem Atem"],
+        ["blue_skies:gui/journal/icons/nyctofly", "Nyctofly", "Fluginsekt, sieht sehr weit"],
+        ["blue_skies:gui/journal/icons/venom_spider", "Venom Spider", "beißt oder spuckt Gift"],
+      ] },
+    { t: "Rüstungsbesatz und Musik",
+      items: [
+        ["blue_skies:item/banished_armor_trim_smithing_template", "Banished Armor Trim", "Summoner Loot Bag"],
+        ["blue_skies:item/thwarted_armor_trim_smithing_template", "Thwarted Armor Trim", "Alchemist Loot Bag"],
+        ["blue_skies:item/regrowth_armor_trim_smithing_template", "Regrowth Armor Trim", "Starlit Crusher Loot Bag"],
+        ["blue_skies:item/toxic_armor_trim_smithing_template", "Toxic Armor Trim", "Arachnarch Loot Bag"],
+      ],
+      text: `<p>Die Loot Bags enthalten außerdem Schallplatten: <code>blinding_rage</code> (Summoner und Alchemist), <code>defying_starlight</code> (Starlit Crusher), <code>venomous_encounter</code> (Arachnarch). Die Sprachdatei hat für sie keinen Namen.</p>` },
+  ],
+  bridges: [
+    { t: "Eisen, Gold und andere Metalle",
+      text: `<p>Blue Skies verbindet seine Metalle von sich aus mit Eisen: Die Alchemy Table tauscht Iron Ingot gegen Ventium Ingot und macht aus Eisen Falsite (mit Soul Fragment) oder Horizonite (mit Blaze Rod). Der Snowcap Oven und der Snowcap Mushroom machen umgekehrt aus Horizonite Eisen. Damit ist Eisen nach dem Alchemist in beide Richtungen umwandelbar.</p>
+<p>Ventium, Falsite und Horizonite stehen in <code>forge:ingots</code>, die Raw-Formen in <code>forge:raw_materials</code>, alle Erze in <code>forge:ores</code>, Pyrope, Diopside, Aquite und Charoite in <code>forge:gems</code>. Eigene Untertags wie <code>forge:ingots/ventium</code> setzt der Mod nicht; Maschinen anderer Mods, die nach solchen Untertags suchen, erkennen die Metalle also nicht von selbst.</p>` },
+    { t: "Erze anderer Mods",
+      text: `<p>Blue Skies filtert Weltgenerierung anderer Mods in seinen Dimensionen. Freigeben kann man Mods über <code>allowed_mods_for_feature_gen</code> in <code>blue_skies-common.toml</code> (ab Werk leer). In der Testinstanz steht dort <code>["ieplus"]</code>, also nur die eigenen Features des Packs. Mekanism-, IE- oder Tinkers-Erze erscheinen ohne solche Features nicht.</p>
+<p>Die Werkzeugabschwächung trifft auch Werkzeuge anderer Mods (bestätigt für Tinkers). Wer in den Welten mit Werkzeugen anderer Mods abbauen will, ist auf den Boss-Fortschritt angewiesen.</p>` },
+    { t: "Vanilla-Rezepte mit Blue-Skies-Material",
+      text: `<p>Furnace aus 8 Cobblestone der Welten, Anvil und Stonecutter aus Ventium, Enchanting Table und Jukebox mit Charoite, Cake mit Ventium Milk Bucket, Camel Saddle mit Ventium oder Eisen. So lässt sich die Grundausstattung ganz in den Welten bauen.</p>` },
+  ],
+  foot: "Quellen: blue_skies-1.20.1-1.3.31.jar – Journal (data/blue_skies/blue_skies/journal, Texte in assets/blue_skies/blue_skies/journal_lang/en_us.json), Advancements, Rezepte, alchemy_recipes, horizonite_forge_fuels, snowcap_mushroom_freezing, snowcap_oven_freezing_recipes, tool_handle_types, Loot-Tabellen (Kisten, Loot Bags), Tags, Weltgenerierung, Sprachdatei; Config blue_skies-common.toml der Testinstanz. Werkzeugabschwächung: Projektbefund (docs/16_MODLISTE_1.20.1.md). Nicht ausgelesen, weil nur im Code: Werkzeugrezepte, Handel und Preise des Gatekeepers und der Dorfbewohner, Stärke der Werkzeugabschwächung, welche Schilde gegen den Arachnarch genügen, wann welcher Loot Bag (common, uncommon, rare) fällt, ob Catylist-Hilfsstoffe verbraucht werden, Bossleben und -schaden.",
+};
+
+const $ = (tag, cls, html) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; };
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const initials = n => n.replace(/[^A-Za-zÄÖÜäöü0-9 ]/g, '').split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0].toUpperCase()).join('');
+
+function slot(icon, name) {
+  const s = $('div', 'slot');
+  if (icon && ICONS[icon]) { const i = $("img"); i.src = ICONS[icon]; i.alt = ""; if (icon.startsWith("render:")) i.className = "r"; s.append(i); }
+  else s.append($('span', '', esc(initials(name || '?'))));
+  return s;
+}
+function itemTile([icon, name, note]) {
+  const d = $('div', 'it');
+  d.append(slot(icon, name));
+  d.append($('div', '', `<div class="nm">${name}</div>${note ? `<div class="nt">${note}</div>` : ''}`));
+  return d;
+}
+function needsRow(needs) {
+  const d = $('div', 'needs', '<span class="lbl">Braucht</span>');
+  for (const [name, origin, from] of needs) d.append($('span', 'need ' + (origin || 'v'), name + (from ? `<small>${from}</small>` : '')));
+  return d;
+}
+function planBox(p) {
+  const box = $('div', 'plan');
+  box.append($('div', 'plan-title', `<b>${p.name}</b>Bauplan ${p.size ? p.size + " (B×H×T)" : ""}`));
+  const counts = {};
+  if (p.layers) {
+    const row = $('div', 'layers');
+    p.layers.forEach((layer, y) => {
+      const rows = layer.split(' ');
+      const l = $('div', 'layer');
+      const g = $('div', 'grid');
+      g.style.gridTemplateColumns = `repeat(${rows[0].length}, 22px)`;
+      for (const r of rows) for (const ch of r) {
+        if (ch === '.') { g.append($('div', 'cell air')); continue; }
+        counts[ch] = (counts[ch] || 0) + 1;
+        g.append(planCell(p.key[ch], ch));
+      }
+      l.append(g);
+      l.append($('div', 'cap', p.caps ? p.caps[y] : `Ebene ${y + 1}${y === 0 ? " (unten)" : ""}`));
+      row.append(l);
+    });
+    box.append(row);
+  }
+  const parts = $('div', 'parts');
+  for (const ch of Object.keys(p.key)) {
+    const n = p.count ? p.count[ch] : counts[ch];
+    if (!n) continue;
+    const s = $('span', 'part');
+    s.append(planCell(p.key[ch], ch));
+    s.append($('span', '', `<b>${n}×</b> ${p.key[ch][0]}`));
+    parts.append(s);
+  }
+  box.append(parts);
+  if (p.form) box.append($('p', 'form', p.form));
+  return box;
+}
+function planCell([name, icon], ch) {
+  const c = $('div', 'cell');
+  c.title = name;
+  if (icon && ICONS[icon]) { const i = $("img"); i.src = ICONS[icon]; i.alt = name; if (icon.startsWith("render:")) i.className = "r"; c.append(i); }
+  else c.textContent = ch;
+  return c;
+}
+function tableBox(t) {
+  const sc = $('div', 'scroller');
+  const tb = $('table');
+  tb.append($('thead', '', '<tr><th></th>' + t.head.map(h => `<th>${h}</th>`).join('') + '</tr>'));
+  const body = $('tbody');
+  for (const [icon, ...cells] of t.rows) {
+    const tr = $('tr');
+    const td = $('td', 'ic'); td.append(slot(icon, cells[0])); tr.append(td);
+    cells.forEach((c, i) => tr.append($('td', '', i === 0 ? `<b>${c}</b>` : c)));
+    body.append(tr);
+  }
+  tb.append(body); sc.append(tb);
+  return sc;
+}
+function picRow(pics) {
+  const d = $('div', 'pics');
+  for (const [icon, cap] of pics) {
+    if (!ICONS[icon]) continue;
+    const f = $('figure'); const i = $('img'); i.src = ICONS[icon]; i.alt = cap || '';
+    if (icon.includes("gui/entries")) i.className = "px"; if (icon.startsWith("render:")) i.className = "r";
+    f.append(i); if (cap) f.append($('figcaption', '', cap));
+    d.append(f);
+  }
+  return d;
+}
+
+document.documentElement.style.setProperty('--accent', matchMedia('(prefers-color-scheme: light)').matches && document.documentElement.dataset.theme !== 'dark' || document.documentElement.dataset.theme === 'light' ? PAGE.accent[1] : PAGE.accent[0]);
+document.getElementById('h1').innerHTML = `${PAGE.title} <span>Modpfad</span>`;
+document.getElementById('lede').innerHTML = PAGE.lede;
+for (const [n, v, kind] of PAGE.mods) document.getElementById('mods').append($('span', 'mod ' + kind, `<b>${n}</b> ${v}`));
+
+const main = document.getElementById('main'), toc = document.getElementById('toc');
+let stepNo = 0;
+PAGE.phases.forEach((ph, pi) => {
+  const sec = $('section', 'phase'); sec.id = 'phase-' + (pi + 1);
+  sec.append($('div', 'phase-head', `<div class="eyebrow">Phase ${pi + 1}</div><h2>${ph.t}</h2>${ph.sub ? `<p>${ph.sub}</p>` : ''}`));
+  { const a = $("a", "", `<span class="n">${pi + 1}</span>${ph.t}`); a.href = "#" + sec.id; toc.append(a); }
+  for (const st of ph.steps) {
+    stepNo++;
+    const step = $('div', 'step');
+    step.append($('div', 'num', String(stepNo)));
+    const body = $('div', 'step-body');
+    body.append($('h3', '', st.t + (st.addon ? ` <span class="tag">${st.addon}</span>` : '')));
+    if (st.pics) body.append(picRow(st.pics));
+    if (st.plan) for (const p of [].concat(st.plan)) body.append(planBox(p));
+    if (st.items) { const g = $('div', 'slots'); st.items.forEach(it => g.append(itemTile(it))); body.append(g); }
+    if (st.text) body.append($('div', 'prose', st.text));
+    if (st.table) for (const t of [].concat(st.table)) body.append(tableBox(t));
+    if (st.needs) body.append(needsRow(st.needs));
+    step.append(body); sec.append(step);
+  }
+  main.append(sec);
+});
+
+function extraSection(id, eyebrow, title, sub, groups) {
+  if (!groups || !groups.length) return;
+  const sec = $('section', 'phase'); sec.id = id;
+  sec.append($('div', 'phase-head', `<div class="eyebrow">${eyebrow}</div><h2>${title}</h2><p>${sub}</p>`));
+  for (const g of groups) {
+    const d = $('div', 'solo-group');
+    d.append($('h3', '', g.t + (g.addon ? ` <span class="tag${g.x ? ' x' : ''}">${g.addon}</span>` : '')));
+    if (g.text) d.append($('div', 'prose', g.text));
+    if (g.items) { const grid = $('div', 'slots'); g.items.forEach(it => grid.append(itemTile(it))); d.append(grid); }
+    if (g.table) d.append(tableBox(g.table));
+    sec.append(d);
+  }
+  main.append(sec);
+  toc.append($('div', 'sep'));
+  { const a = $("a", "", title); a.href = "#" + id; toc.append(a); }
+}
+extraSection('solo', 'Abseits des Pfads', 'Für sich stehend', 'Maschinen, Werkzeuge und Items, die man nutzen kann, die aber kein Schritt auf dem Hauptweg des Mods sind.', PAGE.solo);
+extraSection('bruecken', 'Crossmod', 'Brücken zu anderen Mods', 'Was der Mod und seine Addons von sich aus mit anderen Mods des Packs verbinden – Ausgangslage vor unseren eigenen KubeJS-Änderungen.', PAGE.bridges);
+
+if (PAGE.foot) main.append($('footer', '', PAGE.foot));
+</script>

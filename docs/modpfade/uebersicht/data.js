@@ -61,9 +61,21 @@ const MODS = [
     phases: 5, steps: 18, icon: "render:model/wrd_bone_chest",
     accent: ["#b48ade", "#6a3f96"], url: "https://claude.ai/artifact/JoCxMWugDJXsXTJxFFyrwN",
   },
+  {
+    name: "Applied Energistics 2", version: "15.4.11", addons: "AE2WTLib; Brücken Applied Mekanistics, Applied Botanics, More Immersive Wires",
+    text: "Vom Meteoriten über Certus, Fluix und die Prozessoren aus dem Inscriber zum ersten ME-Lager, dann Kanäle, Autocrafting, kabelloser Zugriff, P2P, Quantum Bridge und Spatial IO. Reihenfolge aus dem eingebauten Handbuch.",
+    phases: 6, steps: 22, icon: "ae2:block/controller",
+    accent: ["#9b7cf0", "#5b3fb0"], url: "https://claude.ai/artifact/EGPb1ZNHD7gCtHSELecFhN",
+  },
+  {
+    name: "Blue Skies", version: "1.3.31", addons: "Structure Gel API",
+    text: "Vom Gatekeeper-Haus durch die Portale ins kalte Everbright und ins heiße Everdawn: eigene Werkzeugkette von Holz bis Charoite, Ventium, Falsite und Horizonite, dann vier Dungeons mit Summoner, Alchemist, Starlit Crusher und Arachnarch. Reihenfolge aus dem Journal des Mods.",
+    phases: 6, steps: 18, icon: "blue_skies:item/misc/zeal_lighter",
+    accent: ["#5cc8d8", "#1f7d8a"], url: "https://claude.ai/artifact/GAjru1A7JmbqwXNhfBumJt",
+  },
 ];
 // Mods ohne Seite, in der Reihenfolge der Mod-Liste
-const PLANNED = ["Applied Energistics 2", "Blue Skies", "Farmer's Delight"];
+const PLANNED = ["Farmer's Delight"];
 // Andere Übersichten des Projekts
 const MORE = [
   ["Erzatlas", "alle Erze, Fundorte und Verbrauch je Mod", "https://claude.ai/artifact/LWwdvCpXRwaHCa8NstSc4g"],

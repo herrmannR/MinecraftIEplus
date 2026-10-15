@@ -1,6 +1,6 @@
 # Auffälligkeiten für die Crossmod-Planung
 
-> Stand 2026-10-14, Minecraft 1.20.1. Gesammelt beim Erstellen der Modpfad-Seiten für Tinkers' Construct, Immersive Engineering, Botania, Mekanism, Ad Astra, Star Wars Planets und Star Wars: Galaxy in a Cube. Wird mit jeder weiteren Seite fortgeschrieben.
+> Stand 2026-10-15, Minecraft 1.20.1. Gesammelt beim Erstellen der Modpfad-Seiten für Tinkers' Construct, Immersive Engineering, Botania, Mekanism, Ad Astra, Star Wars Planets, Star Wars: Galaxy in a Cube und weitere (zuletzt Blue Skies). Wird mit jeder weiteren Seite fortgeschrieben.
 
 ## Zweck
 
@@ -47,7 +47,7 @@ Jeder Befund ist aus den JARs oder der Config der Testinstanz belegt (🟢). Was
 
 ### Ü3 Drei Lagersysteme
 
-🟢 AE2 (laut Projektentscheidung Endgame), Mekanism QIO (braucht Polonium, liegt also hinter dem Fission Reactor) und Botania Corporea (braucht Pixie Dust, Dragonstone, Ender Air, also hinter dem Elfenportal). Dazu Storage Drawers, Mekanism Bins, IE Silo. Keines der drei großen Systeme ist früh; welches wann die Rolle übernimmt, ist nicht festgelegt.
+🟢 AE2 (laut Projektentscheidung Endgame), Mekanism QIO (braucht Polonium, liegt also hinter dem Fission Reactor) und Botania Corporea (braucht Pixie Dust, Dragonstone, Ender Air, also hinter dem Elfenportal). Dazu Storage Drawers, Mekanism Bins, IE Silo. Keines der drei großen Systeme ist früh; welches wann die Rolle übernimmt, ist nicht festgelegt. Nachtrag AE2-Seite: Von sich aus ist AE2 nicht spät, sondern frühes Midgame (AE1).
 
 ### Ü4 Fünf Autocrafter
 
@@ -55,7 +55,7 @@ Jeder Befund ist aus den JARs oder der Config der Testinstanz belegt (🟢). Was
 
 ### Ü5 Strom
 
-🟢 IE liefert Forge Energy; Mekanism rechnet in Joule, und sein Chargepad lädt laut Beschreibung aufladbare Items aus jedem Mod. Botania gibt über das Mana Fluxfield Mana als Forge Energy ab; den Rückweg gibt es nicht.
+🟢 IE liefert Forge Energy; Mekanism rechnet in Joule, und sein Chargepad lädt laut Beschreibung aufladbare Items aus jedem Mod. Botania gibt über das Mana Fluxfield Mana als Forge Energy ab; den Rückweg gibt es nicht. AE2 nimmt Forge Energy über den Energy Acceptor im Verhältnis 2 FE = 1 AE an; Inscriber und Charger auch direkt (AE3).
 
 🟢 Früheste Stromquellen je Mod: IE Windmill (kein Stahl) und Water Wheel (braucht 1 Stahlbarren); Mekanism Heat Generator (Eisen, Kupfer, 1 Osmium, kein Stahl). Mekanism Generators hat mit Bio-, Gas-Burning-, Solar- und Wind-Generator vier weitere Quellen vor jeder Kernkraft. Das berührt die Projektregel, dass Energie für die Raumfahrt nur aus IE, Petroleum und Mekanism kommt: Innerhalb von Mekanism ist nichts festgelegt.
 
@@ -73,6 +73,7 @@ Jeder Befund ist aus den JARs oder der Config der Testinstanz belegt (🟢). Was
 - Mekanism Digital Miner baut gefiltert im Umkreis von 32 Blöcken ab.
 - Blood Magic Mark of the Falling Tower ruft gegen eine Opfergabe Erz-Meteore: mit LV Wire Coil IE-Erze (Kupfer, Blei, Nickel, Aluminium, Silber, Uran), mit Infused Alloy Mekanism-Erze samt Uranblock-Kern, mit Certus Quartz Crystal AE2 Budding Quartz, mit Eisenblock, Diamant, Glowstone, Stein und Knochen Vanilla-Erze. Kosten 250 000 bis 1 000 000 LP, Start 250 000 LP.
 - Blood Magic Ritual of Magnetism holt Erze aus dem Boden (Radius bis 31 mit Diamantblock), Yawning of the Void und Ritual of the Crusher bauen Flächen ab, Serenade of the Nether und Lava Sigil erzeugen Lava gegen LP, der Alchemy Table macht 4 Sulfur aus Lava Bucket und Cobblestone.
+- Blue Skies Alchemy Table (Beute des Alchemist) tauscht Iron Ingot gegen Ventium Ingot und macht aus Eisen Falsite (mit Soul Fragment) oder Horizonite (mit Blaze Rod), aus Stein End Stone (mit Chorus Fruit), aus Netherite Gold; Snowcap Oven und Snowcap Mushroom machen Horizonite zu Eisen (BS1).
 
 ### Ü7 Nether als Voraussetzung
 
@@ -189,6 +190,26 @@ Jeder Befund ist aus den JARs oder der Config der Testinstanz belegt (🟢). Was
 - **RD7** 🟢 Keine Material-Tags, keine Rezepte für fremde Mods. Die elf Waffen stehen in `minecraft:swords`, Poison und Icewater in `minecraft:water`.
 - **RD8** 🟢 Weltgenerierung: Deep Sand ersetzt Sand in Plains, Desert, warmen und lauwarmen Ozeanen; Maulstone ersetzt Stein in Mushroom Fields; Portalbäume erscheinen ohne Config-Schalter (400 je Million Chunks, nicht in Ozean, Strand, Plains). Für die eigene Erzverteilung (`03_ERZGENERATION.md`) relevant, falls Sand-Erze oder Sandvorkommen geplant sind.
 
+## Applied Energistics 2
+
+- **AE1** 🟢 AE2 ist von sich aus kein Endgame. Bis zum ersten ME-System braucht es nur Eisen, Kupfer, Gold, Diamant, Redstone, Glowstone, Nether Quartz, Sticky Pistons und einen Meteoriten in der Oberwelt; kein Stahl, keine Maschine eines anderen Mods; Strom kann aus jedem FE-Mod oder aus der eigenen Vibration Chamber kommen. Das widerspricht der Projektentscheidung „AE2 ist Endgame“ (Ü3); ohne KubeJS-Eingriff wäre AE2 das früheste der drei großen Lagersysteme und mit Pattern Provider und Molecular Assembler auch ein früher Autocrafter (Ü4).
+- **AE2** 🟢 Das Tor ist der Meteorit: Er liefert die vier Inscriber-Pressen (Config `spawnPressesInMeteorites = true`) und Flawless Budding Certus. Pressen lassen sich mit einem Eisenblock im Inscriber kopieren, ein Meteorit reicht also. Natürliche Ansatzpunkte, um AE2 zu verschieben: die Pressen, die Prozessor-Rezepte (Gold, Certus, Diamant) und der Engineering Processor in ME Drive und Controller.
+- **AE3** 🟢 Strom: Energy Acceptor wandelt 2 FE in 1 AE; Vibration Chamber (Brennstoff, 40 AE/t) und Crystal Resonance Generator (20 AE/t) sind eigene Quellen, das Handbuch sieht aber Strom aus anderen Mods als Hauptweg vor. Die Projektregel zu Energiequellen (Ü5) betrifft AE2 also kaum.
+- **AE4** 🟢 Silicon und Certus laufen über Forge-Tags (`#forge:silicon`, `#forge:gems/certus_quartz`, `#forge:dusts/certus_quartz`). Der Cable Anchor nimmt jeden Barren aus `#ae2:metal_ingots` (darin auch Messing, Nickel, Aluminium).
+- **AE5** 🟢 Andere Quellen für AE2-Material: Sky Stone über Ad Astra (A9), Budding Quartz über Blood-Magic-Meteore (BM4), eigene Mekanism-Rezepte für AE2-Material (M7).
+- **AE6** 🟢 Brücken: Applied Mekanistics (Chemikalien, Housing aus Osmium, Chemical P2P über Mekanism Chemical Tanks), Applied Botanics (Mana, Housing aus Life Essence und Manasteel, also nach Gaia; Mana P2P über Blütenblätter und Mana Dust), More Immersive Wires (ME über IE-Drähte, Spulen aus IE-Aluminiumdraht). Autocrafting kann laut Handbuch mit Addons auch Mekanism-Gase verarbeiten.
+- **AE7** 🟢 Spatial IO kann Flawless Budding Certus und laut Handbuch sogar ein Endportal versetzen; der Spatial Anchor lädt Chunks des eigenen Netzes. Beides ist für den Server des Hosts relevant (Chunkloading, eigene Dimension `ae2:spatial_storage`).
+
+## Blue Skies
+
+- **BS1** 🟢 Eisen-Kreislauf: Die Alchemy Table tauscht Iron Ingot ↔ Ventium Ingot (`transmute`) und macht Iron Ingot + Soul Fragment zu Falsite, Iron Ingot + Blaze Rod zu Horizonite (`catylist`). Snowcap Oven (Wert 1600) und Snowcap Mushroom in der Welt machen Horizonite-Barren, -Blöcke, -Werkzeuge und Raw Horizonite zu Eisen. Wer Ventium oder Horizonite abbaut, hat damit Eisen, und umgekehrt. Die Alchemy Table gibt es erst aus dem Loot Bag des Alchemist.
+- **BS2** 🟢 Fremde Erze erscheinen in Everbright und Everdawn nur über `allowed_mods_for_feature_gen` (ab Werk leer, Testinstanz `["ieplus"]`). Die Orechid (B1) und Mekanism-Erze helfen dort also nicht von selbst; Industriemetalle in Blue Skies brauchen eigene Features (Block D).
+- **BS3** 🟢 Werkzeuge anderer Mods sind in den Welten abgeschwächt (Code, am Boss-Fortschritt; laut `16_MODLISTE_1.20.1.md` mit Tinkers bestätigt). Der Mod bringt dafür eine komplette eigene Werkzeugkette mit (Holz, Stein, Pyrope, Aquite, Horizonite, Diopside, Charoite).
+- **BS4** 🟢 Tags: Ventium, Falsite, Horizonite in `forge:ingots`, Raw-Formen in `forge:raw_materials`, Erze in `forge:ores`, Edelsteine in `forge:gems` – aber keine Untertags wie `forge:ingots/ventium` oder `forge:ores/ventium`. Erzverdoppler anderer Mods (Ü2) erkennen die Blue-Skies-Erze deshalb nicht von selbst.
+- **BS5** 🟢 Vanilla-Grundausstattung ohne Oberwelt: Furnace aus Cobblestone der Welten, Anvil und Stonecutter aus Ventium, Enchanting Table und Jukebox aus Charoite, Falsite Nugget als Lapis-Ersatz (`forge:enchanting_fuels`).
+- **BS6** 🟢 Der Einstieg kostet nur einen Besuch beim Gatekeeper (Zeal Lighter, Preis `zeal_lighter_cost = 8`); Diamant, Nether oder ein anderer Mod sind nicht nötig. Den Zeal Lighter kann man später auch aus Charoite und Moonstone Shard bauen.
+- **BS7** 🟢 Horizonite Forge schmilzt ohne Brennstoff (lädt mit Horizonite und Sunstone nach) – eine Ofen-Alternative ohne Kohle und ohne Strom.
+
 ## Zu prüfen
 
 - **P1** 🔵 Botania Gaia Pylon: Botania hat ein Rezept ohne Alfsteel, MythicBotany eines über den Alfsteel Pylon. Welches im Pack gilt, in JEI nachsehen. Davon hängt ab, ob das Ritual of Gaia vor oder nach Alfsteel liegt.
@@ -203,6 +224,8 @@ Jeder Befund ist aus den JARs oder der Config der Testinstanz belegt (🟢). Was
 - **P10** 🔵 Ad Astra: Handelsangebote der Lunarians, Mobs der More-Structures-Dungeons und die Sauerstoffregeln des Giselle Addon sind nicht ausgelesen.
 - **P11** 🔵 Blood Magic: Ob die Demon-Realm-Dimension auf dem Server des Hosts ohne Probleme läuft (eigene Dimension, prozedurale Räume), ist nicht geprüft. Ebenso nicht ausgelesen: Ritual-Stein-Zahlen, Erzgewichte der Meteore, Werte der Sentient-Waffen.
 - **P12** 🔵 Wesley's Roguelike Dungeons: Staffel der Lauf-Belohnung nach Dungeon-Wert, Wirkung der 25 Artefakte, Schaden der Waffen und Stäbe, Herkunft des ersten Boss Room Key, Rückweg des Sentient Pathfinder. Im Spiel prüfen, ob die Dimension auf dem Server des Hosts stabil läuft (eigene Dimension, Strukturen zur Laufzeit gebaut).
+- **P13** 🔵 AE2: Reichweite je Wireless Booster, Brennstoffwerte der Vibration Chamber und Energiebedarf von Spatial IO sind nicht ausgelesen. Ob die Spatial-Storage-Dimension auf dem Server des Hosts stabil läuft, ist nicht geprüft.
+- **P14** 🔵 Blue Skies: Werkzeugrezepte, Preise des Gatekeepers und der Dorfbewohner, Stärke der Werkzeugabschwächung, Wahl des Loot Bags (common/uncommon/rare) und ob Catylist-Hilfsstoffe der Alchemy Table verbraucht werden, stehen nur im Code.
 
 ## Quellen
 
