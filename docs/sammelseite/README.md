@@ -19,7 +19,7 @@ alle Seiten in einem Artifact und wechseln im selben Fenster.
 
 ## Aktualisieren
 
-Nur auf ausdrücklichen Befehl des Users (das Neubauen kostet Nutzungslimit), nicht automatisch nach jeder Änderung an einer Einzelseite:
+Nur auf ausdrücklichen Befehl des Users, nicht automatisch nach jeder Änderung an einer Einzelseite. Am billigsten mit dem Skill `/handbuch` (`.claude/skills/handbuch/SKILL.md`):
 
 1. die Einzelseite wie gewohnt bauen und an ihre eigene URL veröffentlichen
 2. `bash docs/sammelseite/build.sh`
