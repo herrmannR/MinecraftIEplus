@@ -773,3 +773,11 @@ Keine (noch nichts umgesetzt).
 Status: 🟢 behoben (in der Testinstanz)
 
 Die neu kopierte Weltkopie `3_ Versuch von 1,5` brachte wieder ihre `serverconfig/immersivepetroleum-server.toml` aus 1.18.2 mit. Sie nennt `immersivepetroleum:benzene`, das es in 1.20.1 nicht gibt; der integrierte Server stürzte ab (`crash-2026-10-17_09.26.45-server.txt`), das Spiel blieb hängen. Datei in `.1182-alt` umbenannt; zugleich unsere IE-Serverconfig in die Weltkopie gelegt (alte als `.1182-alt`). Gleicher Fehler wie am 2026-10-11; für die Hauptwelt ist das TODO F24.
+
+## 2026-10-17 — Retrogen geprüft, Worldgen abgeschlossen
+
+Status: 🟢
+
+- Mekanism-Retrogen in der Kopie der Hauptwelt: 821 Chunks rund um den Spawn beim ersten Laden in 28 Sekunden nachgeneriert (Log: „Regenerating ores and salt“). Pro Chunk Uran 10,4, Osmium 16,6, Blei 10,4, Fluorit 46, Salz 2,1, kein Zinn. Nicht geladene Chunks folgen, sobald jemand sie betritt.
+- 🟢 Entscheidung des Users: Excavator-Ader Laterite und die Blood-Magic-Meteore bleiben unverändert.
+- Block B (Worldgen) ist damit abgeschlossen.

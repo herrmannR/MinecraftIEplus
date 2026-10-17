@@ -65,7 +65,7 @@ Ergebnis jeweils hier eintragen: ✅ bestanden, ❌ Fehler (mit Beschreibung), �
 
 | Nr. | Test | Wie | Erwartet | Ergebnis |
 |---|---|---|---|---|
-| 25 | Retrogen | Weltkopie `3_ Versuch von 1,5` öffnen, bekannte Gegend unter Tage ansehen | Osmium, Uran, Fluorit, Salz, wenig Blei sind nachgeneriert; kein Zinn; Ladezeit notieren | ⏳ |
+| 25 | Retrogen | Weltkopie `3_ Versuch von 1,5` öffnen, bekannte Gegend unter Tage ansehen | Osmium, Uran, Fluorit, Salz, wenig Blei sind nachgeneriert; kein Zinn; Ladezeit notieren | ✅ 2026-10-17: Mekanism meldet „Regenerating ores and salt“ für 821 Chunks rund um den Spawn, alle in 28 Sekunden beim ersten Laden (10:16:36–10:17:04), nur eine „Can't keep up“-Meldung. Auf diese 821 Chunks kommen pro Chunk: Uran 10,4, Osmium 16,6, Blei 10,4, Fluorit 46, Salz 2,1; kein Zinn. Gleiche Werte wie in einer neuen Welt. Retrogen läuft nur in Chunks, die geladen werden; die übrigen rund 48.500 erkundeten Chunks bekommen ihre Erze, sobald jemand hinkommt. Altes IE-Blei und -Uran bleibt in den alten Chunks liegen (wie geplant) |
 | 26 | Ölförderung | Pumpjack an der alten Stelle neu formen | fördert aus dem alten Vorkommen | ⏳ |
 | 27 | IE-Config der Weltkopie | `saves/3_ Versuch von 1,5/serverconfig/immersiveengineering-server.toml` | enthält noch die alten Werte; für den Test von Hand ersetzen | ✅ 2026-10-17: unsere IE-Serverconfig in die Weltkopie gelegt (alte Datei als `.1182-alt` daneben) |
 

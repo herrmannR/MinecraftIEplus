@@ -138,7 +138,7 @@ Galaxy in a Cube hängt `swgc:kyber_crystal` über den Biome Modifier `swgc:kybe
 | Cassiterite (100 % Zinn) | 20 | **entfernen** |
 | Galena (40 % Blei, 20 % Silber) | 15 | 5 |
 | Uraninite (70 % Uran, 30 % Blei) | 10 | 5 |
-| Laterite (70 % Aluminium) | 20 | 🔵 passend zu „Aluminium selten“ senken? |
+| Laterite (70 % Aluminium) | 20 | bleibt (User, 2026-10-17) |
 
 Umsetzung: Cassiterite wird per Skript entfernt (`kubejs/server_scripts/worldgen/excavator_adern.js`); Galena und Uraninite sind als überschriebene Rezeptdateien abgelegt (`kubejs/data/immersiveengineering/recipes/mineral/`). Bereits vom Seismic Survey gefundene oder angezapfte Adern in der bestehenden Welt: 🔵 Verhalten prüfen.
 
@@ -168,8 +168,8 @@ Die Hauptwelt wurde **noch nie mit Mekanism geöffnet**; alle erkundeten Overwor
 
 1. 🔵 Alle Zahlenwerte im Spiel prüfen (Testplan E17 in `00_STATUS.md`).
 2. 🔵 Blue Skies: Filter und Freigabe klären; Erreichbarkeit von Everdawn gegenüber Everbright.
-3. 🔵 Laterite-Ader: Aluminium auch im Excavator seltener?
-4. 🔵 Blood-Magic-Meteore „mekanism“ (Osmium, Zinn, Blei, Uran) und „ae2“ (Budding-Certus): lassen, verteuern oder anpassen? Vorschlag: lassen, weil spät und teuer; in Block C mit der Blood-Magic-Progression entscheiden.
+3. 🟢 Laterite-Ader bleibt unverändert (User, 2026-10-17).
+4. 🟢 Blood-Magic-Meteore bleiben unverändert, auch „mekanism“ (mit Zinn) und „ae2“ (User, 2026-10-17).
 5. 🔵 Beute der Bosse aus „Ad Astra: More Structures“ (Roh-Desh, -Ostrum, -Calorite) gegen die Erzmengen prüfen.
 6. 🔵 Eigene Erz-Texturen für Blue-Skies-Gestein (Backlog).
 7. 🔵 Erzatlas neu aufbauen (`docs/erzatlas/`).

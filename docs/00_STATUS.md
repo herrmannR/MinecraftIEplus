@@ -33,9 +33,7 @@ Minecraft **1.20.1, Forge 47.4.26** (Wechsel von 1.18.2 am 2026-10-11). Block A 
 
 ### Offene Punkte (Nummern wie im Archiv)
 
-**B. Worldgen** — 🟢 umgesetzt und im Spiel nachgezählt (2026-10-17)
-- 7. 🔵 Retrogen in der Weltkopie prüfen (Test 25).
-- 8. 🔵 Offen: Laterite-Ader (Aluminium im Excavator), Blood-Magic-Meteore.
+**B. Worldgen** — 🟢 abgeschlossen: umgesetzt, nachgezählt, Retrogen geprüft (2026-10-17)
 
 **C. Progression** — 🟡
 - 9. 🔵 Fragenkatalog der Meilensteinkarte.
@@ -74,7 +72,7 @@ Minecraft **1.20.1, Forge 47.4.26** (Wechsel von 1.18.2 am 2026-10-11). Block A 
 | Phase | Inhalt | Block | Status |
 |---|---|---|---|
 | 0 | Grundlagen | A | 🟢 |
-| 1 | Worldgen (zeitkritisch) | B | 🟢 umgesetzt und nachgezählt; Retrogen offen |
+| 1 | Worldgen (zeitkritisch) | B | 🟢 abgeschlossen (2026-10-17) |
 | 2 | Progressions-Meilensteine | C | 🟡 Entwurf, Fragen offen |
 | 3–6 | Erträge, Energie, AE2 zweistufig, Cross-Mod-Rezepte | — | 🔵 |
 | 7 | KubeJS und Configs, Test in der Testinstanz | D, E | 🔵 |
