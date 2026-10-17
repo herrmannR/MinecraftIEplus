@@ -30,8 +30,8 @@ Die fünf Skripte für 1.18.2 (`space_oxygen.js`, `moon_ores.js`, `tf_industrial
 | `server_scripts/fixes/tag_fixes.js` | Entfernt `swplanets:mustafar_sand` aus `forge:sand`, damit das Tag wieder lädt. | `00_MODBASIS.md`, Bekannte Fehler |
 | `server_scripts/raumfahrt/ad_astra_regeln.js` | Entfernt die Rezepte von Coal Generator, Solar Panel, Compressor, Fuel Refinery, Water Pump, Kabeln, Pipes und Durchführungen; entfernt das Ad-Astra-Stahlrezept, das Öl-zu-Treibstoff-Rezept, das Wasser-Rezept des Oxygen Loader und alle Compressor-Rezepte. Die Platten für Desh, Ostrum und Calorite kommen aus den IE-Rezepten, die Ad Astra selbst mitbringt. | `15_RAUMFAHRT.md` |
 | `server_scripts/worldgen/excavator_adern.js` | Entfernt die Excavator-Ader Cassiterite (Zinn). | `03_ERZGENERATION.md` |
-| `server_scripts/crossmod/tinkers_legierungen.js` | Entfernt das Legierungsrezept für Refined Obsidian aus der Schmelzerei. In die Testinstanz kopiert (2026-10-12). | `07_CROSSMOD_INTEGRATION.md` |
-| `server_scripts/crossmod/blood_smeltery.js` | Entfernt die Life-Essence-Legierung und das Gießen von Blank Slate und Blank Rune. In die Testinstanz kopiert (2026-10-12). | `07_CROSSMOD_INTEGRATION.md` |
+| `server_scripts/crossmod/tinkers_legierungen.js` | Entfernt das Legierungsrezept für Refined Obsidian aus der Schmelzerei. ✅ In JEI bestätigt (2026-10-17). | `07_CROSSMOD_INTEGRATION.md` |
+| `server_scripts/crossmod/blood_smeltery.js` | Entfernt die Life-Essence-Legierung und das Gießen von Blank Slate und Blank Rune. ✅ In JEI bestätigt (2026-10-17). | `07_CROSSMOD_INTEGRATION.md` |
 
 ### Datapack (`kubejs/data/`)
 

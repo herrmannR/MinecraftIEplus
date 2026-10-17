@@ -256,3 +256,9 @@ Checkliste in 1.18.2 abarbeiten → vollständiges Backup beim Host → Mods, Co
 ### 🔵 Eigene Erz-Texturen für fremdes Gestein
 
 Für die Planeten ist das durch „Mekanism: Ad Astra Ores“ gelöst (fertige Blöcke). Offen bleibt es für **Blue Skies**: Mekanism-Erze in `turquoise_stone` und `lunar_stone` gibt es nicht als Block. Entweder die normalen Erzblöcke einsetzen (Overworld-Steintextur) oder eigene KubeJS-Blöcke mit zusammengesetzter Textur, Original-Drops und Original-Tags bauen.
+
+## Erledigt am 2026-10-13 bis 2026-10-17
+
+- Testrunde 1 (Tests 1–7): Skripte laden fehlerfrei, Ad-Astra-Rezepte entfernt, Platten über IE, Oxygen Loader nur mit Sauerstoff, Cassiterite entfernt, `forge:sand` repariert.
+- JEI-Ausblendung der entfernten Ad-Astra-Items, Jawa-Loot ohne Steel Cable, keine Ad-Astra-Ölquellen (Tests 4, 10).
+- B7/B8 und E17: Erz-Features für Blue Skies und Planeten, Kyber-Override und Mekanism-/IE-Configs im Spiel nachgezählt; alle Zielwerte getroffen (Tests 8, 9, 11–15; Tabelle in `03_ERZGENERATION.md`).

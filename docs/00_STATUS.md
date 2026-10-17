@@ -20,10 +20,10 @@ Minecraft **1.20.1, Forge 47.4.26** (Wechsel von 1.18.2 am 2026-10-11). Block A 
 | `16_MODLISTE_1.20.1.md` | 🟢 Befunde zu Blue Skies und Welt-Test |
 | `17_STAR_WARS_1.20.1.md`, `recherche/` | 🟢 |
 | `12_CHANGELOG.md` | 🟢 fortlaufend |
-| `03_ERZGENERATION.md` | 🟡 Verteilung beschlossen, Zahlen ungetestet |
+| `03_ERZGENERATION.md` | 🟢 Verteilung beschlossen und im Spiel nachgezählt (2026-10-17) |
 | `erzatlas/` (samt Artifact-Seite) | 🟢 Soll-Verteilung |
 | `10_KUBEJS.md` | 🟡 |
-| `11_TESTING.md` | 🟢 Testplan; alle Ergebnisse offen |
+| `11_TESTING.md` | 🟢 Testplan; Tests 1–15 bestanden, 16–27 offen |
 | `01_PROGRESSION.md` | 🟡 vier Fragen offen |
 | `meilensteine/` (samt Artifact-Seite) | 🟡 nach der Story umgebaut (2026-10-14): 50 Meilensteine, 9 Pfade, 16 Kapitel in zwei Parts, Fragenkatalog |
 | `18_STORY.md` | 🟡 Part 1 im Umriss, Part 2 und 3 folgen; schreibt der User |
@@ -33,9 +33,9 @@ Minecraft **1.20.1, Forge 47.4.26** (Wechsel von 1.18.2 am 2026-10-11). Block A 
 
 ### Offene Punkte (Nummern wie im Archiv)
 
-**B. Worldgen** — 🟡 entschieden, Umsetzung und Test offen
-- 7. 🔵 Retrogen und Werte von `Mekanism/world.toml` und IE-Serverconfig im Spiel prüfen (E17).
-- 8. 🔵 Eigene Erz-Features für Blue Skies und Planeten, Kyber-Override, Excavator-Adern (Block D). Offen auch: Laterite-Ader, Blood-Magic-Meteore, alle Zahlenwerte.
+**B. Worldgen** — 🟢 umgesetzt und im Spiel nachgezählt (2026-10-17)
+- 7. 🔵 Retrogen in der Weltkopie prüfen (Test 25).
+- 8. 🔵 Offen: Laterite-Ader (Aluminium im Excavator), Blood-Magic-Meteore.
 
 **C. Progression** — 🟡
 - 9. 🔵 Fragenkatalog der Meilensteinkarte.
@@ -47,9 +47,8 @@ Minecraft **1.20.1, Forge 47.4.26** (Wechsel von 1.18.2 am 2026-10-11). Block A 
 - 14. 🔵 T4-Treibstoff, Energizer, Cryo Freezer.
 - 🔵 Umsetzen (entschieden 2026-10-17, Ideenimport): Star Manual raus; Plastic Plate raus, Plastoid mit HDPE; Kyber von Star Wars Planets durch das von Galaxy in a Cube ersetzen; Beskar nur im starken Ofen, 1 Nugget (Ofen offen); Digital Miner raus; AE2-Energieerzeuger raus; IE-Crusher übernimmt den Mekanism-Crusher. Erst wenn die Story von Part 1 steht.
 
-**E. Tests** — 🔵 Testplan mit 27 Punkten in `11_TESTING.md`, macht der User im Spiel
+**E. Tests** — 🟡 Tests 1–15 bestanden (Runde 1 und Worldgen); offen Runde 3 und 4 in `11_TESTING.md`
 - 16. Ölförderung: findet die neu geformte Pumpe das Vorkommen?
-- 17. Mekanism-Erze in Blue Skies und auf den Planeten.
 - 18. Treibstoffverbrauch je Start, Schutz der Raumanzüge; Laden von Jet Suit und Etrionic Capacitor ohne Energizer; bleiben Räume dicht mit IE-Leitungen oder Mekanism-Kabeln?
 - 19. Blood-Magic-Ritual per KubeJS abfangen (Dungeon nur auf dem Merkur).
 - 20. Galaxy in a Cube in der Overworld im Spiel bestätigen und entscheiden, ob es bleibt.
@@ -75,7 +74,7 @@ Minecraft **1.20.1, Forge 47.4.26** (Wechsel von 1.18.2 am 2026-10-11). Block A 
 | Phase | Inhalt | Block | Status |
 |---|---|---|---|
 | 0 | Grundlagen | A | 🟢 |
-| 1 | Worldgen (zeitkritisch) | B | 🟡 entschieden; Umsetzung D, Test E |
+| 1 | Worldgen (zeitkritisch) | B | 🟢 umgesetzt und nachgezählt; Retrogen offen |
 | 2 | Progressions-Meilensteine | C | 🟡 Entwurf, Fragen offen |
 | 3–6 | Erträge, Energie, AE2 zweistufig, Cross-Mod-Rezepte | — | 🔵 |
 | 7 | KubeJS und Configs, Test in der Testinstanz | D, E | 🔵 |

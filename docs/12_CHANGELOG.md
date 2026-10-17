@@ -736,6 +736,22 @@ Keine. Weltstand: IE bis Schwermaschinen und Biodiesel erreicht, Botania bis Run
 ### Auswirkungen auf bestehende Welt
 Keine.
 
+## 2026-10-17 — Tests bestätigt, Planeten-Erze angepasst, Skills zum Entfernen
+
+Status: 🟡
+
+- ✅ Vom User in JEI bestätigt: Refined Obsidian ohne Schmelzerei-Legierung, Life Essence ohne Legierung, Blank Slate und Blank Rune ohne Gussrezept (`crossmod/tinkers_legierungen.js`, `crossmod/blood_smeltery.js`).
+- ✅ Vom User bestätigt: Die zwölf entfernten Ad-Astra-Items sind in JEI ausgeblendet; Jawas lassen kein Steel Cable mehr fallen; `/locate` findet keine Ad-Astra-Ölquellen.
+- ❌ Overworld-Uran und -Osmium waren in der neuen Welt unverändert (48 und 24 pro Chunk). Ursache: `config/Mekanism/world.toml` war am 2026-10-13 bei laufendem Spiel in die Instanz kopiert worden; das Spiel hat beim Beenden seine alten Werte zurückgeschrieben. Configs nur bei geschlossenem Spiel kopieren.
+- 🟢 Entscheidung des User: Mond-Osmium Ziel 36 pro Chunk (Feature `count` 16 → 9), Merkur-Uran 24 (12 → 5), Venus-Uran 40 (12 → 8). Noch nicht nachgezählt.
+- Neue Skills `/remove-recipe` (entfernt alle Rezepte eines Items in `kubejs/server_scripts/entfernt/rezepte.js` und blendet es aus) und `/remove-jei` (trägt ein Item in `kubejs/client_scripts/jei_ausblenden.js` ein).
+
+## 2026-10-17 — Erzverteilung im Spiel bestätigt
+
+Status: 🟢
+
+Neue Testwelt mit korrekt kopierter Mekanism-Config und den gesenkten Planetenwerten ausgezählt: Overworld Uran 10,4 und Osmium 16,4 pro Chunk (Ziel 10 bzw. Diamant-Niveau 14,9), Mond-Osmium 37,7 (Ziel 36), Merkur-Uran 24,4 (24), Venus-Uran 39,2 (40). Everbright, Everdawn, Mars und Glacio wie geplant; kein Zinn, kein IE-Blei/-Uran, keine Kyber-Kristalle in der Overworld. Tabelle: `03_ERZGENERATION.md`, Abschnitt „Nachgezählt“. Tests 8 und 11–15 bestanden.
+
 ## 2026-10-17 — Ideenimport eingearbeitet
 
 Status: 🟡

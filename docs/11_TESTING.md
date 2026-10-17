@@ -28,19 +28,22 @@ Ergebnis jeweils hier eintragen: ✅ bestanden, ❌ Fehler (mit Beschreibung), �
 | 5 | Platten über IE | JEI: Desh-, Ostrum-, Calorite-Platte | Rezept in der Metal Press | ✅ Etrium geprüft (2026-10-13): Ad Astra 1.15.21 enthält Etrium-Barren, -Platte, -Nugget, -Stab und -Blöcke als Items, aber im JAR kein einziges Rezept, das sie herstellt oder verbraucht. Das ist der Zustand des Mods, nicht unser Eingriff. 🔵 Entscheiden: in JEI ausblenden oder dem Material eine eigene Rolle geben |
 | 6 | Oxygen Loader | JEI: Oxygen Loading | nur das Rezept mit Sauerstoff, keines mit Wasser | ✅ |
 | 7 | Excavator | JEI oder Mineral-Übersicht von IE | Cassiterite fehlt; Galena und Uraninite vorhanden | ✅ |
+| 7a | Refined Obsidian nur Mekanism (`crossmod/tinkers_legierungen.js`) | JEI: Rezepte von Refined Obsidian | kein Legierungsrezept der Schmelzerei | ✅ 2026-10-17 (User) |
+| 7b | Life Essence nur am Altar (`crossmod/blood_smeltery.js`) | JEI: Rezepte von Life Essence | kein Legierungsrezept der Schmelzerei | ✅ 2026-10-17 (User) |
+| 7c | Slates und Runen nur am Altar (`crossmod/blood_smeltery.js`) | JEI: Blank Slate, Blank Rune | kein Rezept am Gießtisch oder im Gießbecken | ✅ 2026-10-17 (User) |
 
 ### Runde 2 — Worldgen (neue Welt, Kreativ, Zuschauermodus zum Durchfliegen)
 
 | Nr. | Test | Wie | Erwartet | Ergebnis |
 |---|---|---|---|---|
-| 8 | Overworld-Erze | unter Tage fliegen, JER-Anzeige | kein Zinn, kein IE-Blei, kein IE-Uran; Osmium wenig; Mekanism-Blei sehr selten; wenig Bauxit | 🟡 2026-10-13, ausgezählt mit `tools/ErzZaehler.java` (870 Chunks der Welt `New World (3)`, Vergleich: zwei Welten mit Standardwerten). Blöcke pro Chunk, Standard → jetzt: Zinn 82 → 0 ✅; IE-Blei 11 → 0 ✅; IE-Uran 7,6 → 0 ✅; Mekanism-Blei 42 → 11; Osmium 46 → 24; Mekanism-Uran 37 → 48; Fluorit 46 → 47; Bauxit 1,8–3,3 → 2,6 (wegen der Geländehöhe nicht aussagekräftig). 🔵 Uran ist damit häufiger als Osmium und nicht knapp; Blei liegt etwa beim Diamanten (15). Werte bestätigen oder senken |
+| 8 | Overworld-Erze | unter Tage fliegen, JER-Anzeige | kein Zinn, kein IE-Blei, kein IE-Uran; Osmium wenig; Mekanism-Blei sehr selten; wenig Bauxit | ✅ 2026-10-17 nach Korrektur der Config: Uran 10,4, Osmium 16,4, Blei 11, kein Zinn/IE-Blei/IE-Uran. Vorher: 🟡 2026-10-13, ausgezählt mit `tools/ErzZaehler.java` (870 Chunks der Welt `New World (3)`, Vergleich: zwei Welten mit Standardwerten). Blöcke pro Chunk, Standard → jetzt: Zinn 82 → 0 ✅; IE-Blei 11 → 0 ✅; IE-Uran 7,6 → 0 ✅; Mekanism-Blei 42 → 11; Osmium 46 → 24; Mekanism-Uran 37 → 48; Fluorit 46 → 47; Bauxit 1,8–3,3 → 2,6 (wegen der Geländehöhe nicht aussagekräftig). 🔵 Uran ist damit häufiger als Osmium und nicht knapp; Blei liegt etwa beim Diamanten (15). Werte bestätigen oder senken |
 | 9 | Kyber-Kristalle | Overworld, mehrere Chunks unter Tage | keine `swgc:kyber_crystal` | ✅ 2026-10-13: 0 Kristalle in 870 Chunks (Standard: 49 in 841 Chunks) |
-| 10 | Ölquellen von Ad Astra | Ozean absuchen oder `/locate structure ad_astra:oil_well` | keine gefunden | ⏳ |
+| 10 | Ölquellen von Ad Astra | Ozean absuchen oder `/locate structure ad_astra:oil_well` | keine gefunden | ✅ 2026-10-17 (User): mit `/locate` keine gefunden |
 | 11 | Everbright | Portal bauen, unter Tage | Zinn, Blei, Bauxit in Turquoise Stone; eigene Blue-Skies-Erze weiter vorhanden | ✅ 2026-10-13, ausgezählt (400 Chunks, per `forceload` erzeugt): Zinn 35, Blei 37, Bauxit 33 Blöcke pro Chunk; eigene Erze vorhanden (Falsite 19, Ventium 19, Moonstone 110) |
 | 12 | Everdawn | wie oben | Osmium in Lunar Stone | ✅ 2026-10-13, ausgezählt (400 Chunks): Osmium 36 pro Chunk; kein Zinn, Blei oder Bauxit. Horizonite nur 0,03 pro Chunk (biomgebunden, Standard des Mods) |
 | 13 | Mond | `/execute in ad_astra:moon run tp ~ 100 ~` | Osmium in Mondgestein; kein Zinn | ✅ 2026-10-13, ausgezählt (400 Chunks): Osmium 67 pro Chunk; kein Zinn. Zum Vergleich Desh 51, Eisen 84 |
 | 14 | Mars, Merkur, Venus, Glacio | wie oben mit `ad_astra:mars`, `mercury`, `venus`, `glacio` | Mars: Fluorit. Merkur, Venus: Uran, Blei. Glacio: Osmium, Uran. Sonst keine Mekanism-Erze | ✅ 2026-10-13, ausgezählt (je 400 Chunks): Mars Fluorit 30 (Ostrum 39). Merkur Uran 58, Blei 57. Venus Uran 60, Blei 60 (Calorite 39). Glacio Osmium 77, Uran 25. Keine anderen Mekanism-Erze, auch nicht die normalen Mekanism-Erze auf Glacio |
-| 15 | Mengen | je Dimension einschätzen | passt zu „selten“ bzw. „häufig“; sonst Zahlen in `03_ERZGENERATION.md` anpassen | 🟡 Zahlen liegen vor (Tests 8, 11–14); Bewertung durch den User offen. Overworld-Uran und -Osmium nach der Senkung vom 2026-10-13 noch nicht nachgezählt |
+| 15 | Mengen | je Dimension einschätzen | passt zu „selten“ bzw. „häufig“; sonst Zahlen in `03_ERZGENERATION.md` anpassen | ✅ 2026-10-17: Alle Zielwerte in einer neuen Welt nachgezählt und getroffen (Overworld Uran 10,4, Osmium 16,4; Mond-Osmium 37,7; Merkur-Uran 24,4; Venus-Uran 39,2). Tabelle in `03_ERZGENERATION.md`, Abschnitt „Nachgezählt“ |
 
 ### Runde 3 — Raumfahrt und Blue Skies
 
@@ -58,11 +61,13 @@ Ergebnis jeweils hier eintragen: ✅ bestanden, ❌ Fehler (mit Beschreibung), �
 
 ### Runde 4 — Weltkopie (erst nach Runde 1 und 2)
 
+⚠️ Vor jedem Laden einer frischen Kopie der Hauptwelt: `saves/<Welt>/serverconfig/immersivepetroleum-server.toml` umbenennen oder löschen. Die Datei aus 1.18.2 nennt `immersivepetroleum:benzene`; der Server stürzt dann ab und das Spiel hängt (zuletzt 2026-10-17).
+
 | Nr. | Test | Wie | Erwartet | Ergebnis |
 |---|---|---|---|---|
 | 25 | Retrogen | Weltkopie `3_ Versuch von 1,5` öffnen, bekannte Gegend unter Tage ansehen | Osmium, Uran, Fluorit, Salz, wenig Blei sind nachgeneriert; kein Zinn; Ladezeit notieren | ⏳ |
 | 26 | Ölförderung | Pumpjack an der alten Stelle neu formen | fördert aus dem alten Vorkommen | ⏳ |
-| 27 | IE-Config der Weltkopie | `saves/3_ Versuch von 1,5/serverconfig/immersiveengineering-server.toml` | enthält noch die alten Werte; für den Test von Hand ersetzen | ⏳ |
+| 27 | IE-Config der Weltkopie | `saves/3_ Versuch von 1,5/serverconfig/immersiveengineering-server.toml` | enthält noch die alten Werte; für den Test von Hand ersetzen | ✅ 2026-10-17: unsere IE-Serverconfig in die Weltkopie gelegt (alte Datei als `.1182-alt` daneben) |
 
 ### Runde 5 — Story-Technik (für `18_STORY.md`)
 

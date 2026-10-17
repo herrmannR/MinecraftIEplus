@@ -45,7 +45,7 @@ Curios ist installiert (Sigils, Tartaric Gems, Tome of Peritia als Curio).
 
 - Keine Strom-Brücke, keine Verarbeitung fremder Erze; einzige Anbindung an IE, Mekanism, AE2 über Meteor-Opfergaben. Rezepte nehmen Forge-Tags (`forge:dusts/sulfur`, `forge:gems/diamond`, `forge:ingots/copper` …).
 - Harte Voraussetzungen: Nether (Magma Cream für Inscription Tool: Fire, Ghast Tear für Air Tool und Air Reagent, Nether Wart für Catalysts und Anointments), Netherite Scrap für Reinforced Runes. Kein Strom, keine anderen Mods nötig.
-- Blood-Smeltery (siehe auch `tinkers/WISSEN.md`): Bloodbrass (Altar: Kupfer + 1500 LP, Stufe 2), Blood-Seared Stone, Tauonic Thread, Will als Flüssigkeit, Modifier Sentience/Divination/Hemoglowin; nur `molten_hellforged` registriert (Bug, `docs/00_MODBASIS.md`).
+- Blood-Smeltery (siehe auch `tinkers/WISSEN.md`): Bloodbrass (Altar: Kupfer + 1500 LP, Stufe 2), Blood-Seared Stone, Tauonic Thread, Will als Flüssigkeit, Modifier Sentience/Divination/Hemoglowin; nur `molten_hellforged` registriert (Bug, `docs/00_MODBASIS.md`). Im Pack entfernt (`kubejs/server_scripts/crossmod/blood_smeltery.js`, in JEI bestätigt 2026-10-17): Life-Essence-Legierungen `bloodsmeltery:smeltery/alloy/life_essence` und `…/life_essence_meat_soup`, Gussrezepte `bloodsmeltery:smeltery/casting/blank_slate`, `…/blank_slate_reusable`, `…/blank_rune`. LP, Slates und Runen kommen also nur vom Altar.
 - Ansatzpunkte für KubeJS: Altar-, Alchemy-Table-, Hellfire-Forge-, ARC- und Array-Rezepte über KubeJS Blood Magic; Altar-Stufen-Gates über die Slates (jede Stufe braucht die Slate der Stufe davor), Orb-Zutaten `{orb_tier}` in Werkbank-Rezepten.
 
 ## Offen

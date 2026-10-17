@@ -116,11 +116,11 @@ Die Generierung des Mods bleibt abgeschaltet (`kubejs/data/mekanismaaa/tags/worl
 
 | Planet (Stufe) | Erz | Block | Vorschlag | Y (Trapez) |
 |---|---|---|---|---|
-| Mond (T1) | Osmium | `mekanismaaa:moon_osmium_ore` | 16 × 9 | −32…96 |
+| Mond (T1) | Osmium | `mekanismaaa:moon_osmium_ore` | 9 × 9 (gezählt mit 16: 67 pro Chunk; Ziel 36, User 2026-10-17) | −32…96 |
 | Mars (T2) | Fluorit | `mekanismaaa:mars_fluorite_ore` | 6 × 8 | −64…32 |
-| Merkur (T3) | Uran | `mekanismaaa:mercury_uranium_ore` | 12 × 8 | −64…64 |
+| Merkur (T3) | Uran | `mekanismaaa:mercury_uranium_ore` | 5 × 8 (gezählt mit 12: 58; Ziel 24, User 2026-10-17) | −64…64 |
 | Merkur (T3) | Blei | `mekanismaaa:mercury_lead_ore` | 10 × 9 | −32…80 |
-| Venus (T3) | Uran | `mekanismaaa:venus_uranium_ore` | 12 × 8 | −64…64 |
+| Venus (T3) | Uran | `mekanismaaa:venus_uranium_ore` | 8 × 8 (gezählt mit 12: 60; Ziel 40, User 2026-10-17) | −64…64 |
 | Venus (T3) | Blei | `mekanismaaa:venus_lead_ore` | 10 × 9 | −32…80 |
 | Glacio (T4) | Osmium | `mekanismaaa:glacio_osmium_ore` | 16 × 9 | −32…96 |
 | Glacio (T4) | Uran | `mekanismaaa:glacio_uranium_ore` | 12 × 8 | −64…64 |
@@ -173,3 +173,24 @@ Die Hauptwelt wurde **noch nie mit Mekanism geöffnet**; alle erkundeten Overwor
 5. 🔵 Beute der Bosse aus „Ad Astra: More Structures“ (Roh-Desh, -Ostrum, -Calorite) gegen die Erzmengen prüfen.
 6. 🔵 Eigene Erz-Texturen für Blue-Skies-Gestein (Backlog).
 7. 🔵 Erzatlas neu aufbauen (`docs/erzatlas/`).
+
+## ✅ Nachgezählt (2026-10-17)
+
+Ausgezählt mit `tools/ErzZaehler.java` in einer neuen Testwelt (`saves/New World`), Overworld 938 Chunks, jede andere Dimension 400 Chunks (per `forceload` erzeugt). Blöcke pro Chunk:
+
+| Dimension | Erz | Ziel | Gezählt |
+|---|---|---|---|
+| Overworld | Uran | etwa 10 | 10,4 ✅ |
+| Overworld | Osmium | Diamant-Niveau (Diamant: 14,9) | 16,4 ✅ |
+| Overworld | Mekanism-Blei | sehr selten | 11,0 ✅ |
+| Overworld | Zinn, IE-Blei, IE-Uran, Kyber-Kristalle | keine | 0 ✅ |
+| Overworld | Bauxit | selten | 1,4 ✅ |
+| Everbright | Zinn / Blei / Bauxit | hoch | 31,7 / 31,6 / 27,0 ✅ |
+| Everdawn | Osmium | hoch | 40,2 ✅ |
+| Mond | Osmium | 36 | 37,7 ✅ |
+| Mars | Fluorit | – | 31,1 ✅ |
+| Merkur | Uran / Blei | 24 / – | 24,4 / 58,4 ✅ |
+| Venus | Uran / Blei | 40 / – | 39,2 / 57,4 ✅ |
+| Glacio | Osmium / Uran | – | 78,4 / 23,8 ✅ |
+
+Auf keinem Planeten kommen andere Mekanism-Erze oder Zinn vor. Damit sind die Werte in `config-overrides/` und `kubejs/data/ieplus/` bestätigt; offen bleibt nur das Retrogen in der Weltkopie (Test 25).
