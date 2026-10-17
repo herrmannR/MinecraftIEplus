@@ -73,6 +73,12 @@ const MODS = [
     phases: 6, steps: 18, icon: "blue_skies:item/misc/zeal_lighter",
     accent: ["#5cc8d8", "#1f7d8a"], url: "https://claude.ai/artifact/GAjru1A7JmbqwXNhfBumJt",
   },
+  {
+    name: "Alex's Mobs", version: "1.22.9", addons: "Brücke Alex's Delight",
+    text: "Rund 90 Tierarten in Oberwelt, Nether und End, viele mit einem Beutestück für Rüstung, Werkzeug oder Essen. Am Ende eine feste Kette: Enderiophage, Capsid, Void Worm, Dimensional Carver, Farseer am Weltrand und die Transmutation Table. Reihenfolge aus dem Advancement-Baum.",
+    phases: 6, steps: 21, icon: "alexsmobs:item/animal_dictionary",
+    accent: ["#9cc45e", "#4f7a25"], url: "https://claude.ai/artifact/Tf1bokH9S871MVquTbiiAJ",
+  },
 ];
 // Mods ohne Seite, in der Reihenfolge der Mod-Liste
 const PLANNED = ["Farmer's Delight"];

@@ -1,6 +1,6 @@
 # Auffälligkeiten für die Crossmod-Planung
 
-> Stand 2026-10-15, Minecraft 1.20.1. Gesammelt beim Erstellen der Modpfad-Seiten für Tinkers' Construct, Immersive Engineering, Botania, Mekanism, Ad Astra, Star Wars Planets, Star Wars: Galaxy in a Cube und weitere (zuletzt Blue Skies). Wird mit jeder weiteren Seite fortgeschrieben.
+> Stand 2026-10-17, Minecraft 1.20.1. Gesammelt beim Erstellen der Modpfad-Seiten für Tinkers' Construct, Immersive Engineering, Botania, Mekanism, Ad Astra, Star Wars Planets, Star Wars: Galaxy in a Cube und weitere (zuletzt Alex's Mobs). Wird mit jeder weiteren Seite fortgeschrieben.
 
 ## Zweck
 
@@ -209,6 +209,14 @@ Jeder Befund ist aus den JARs oder der Config der Testinstanz belegt (🟢). Was
 - **BS5** 🟢 Vanilla-Grundausstattung ohne Oberwelt: Furnace aus Cobblestone der Welten, Anvil und Stonecutter aus Ventium, Enchanting Table und Jukebox aus Charoite, Falsite Nugget als Lapis-Ersatz (`forge:enchanting_fuels`).
 - **BS6** 🟢 Der Einstieg kostet nur einen Besuch beim Gatekeeper (Zeal Lighter, Preis `zeal_lighter_cost = 8`); Diamant, Nether oder ein anderer Mod sind nicht nötig. Den Zeal Lighter kann man später auch aus Charoite und Moonstone Shard bauen.
 - **BS7** 🟢 Horizonite Forge schmilzt ohne Brennstoff (lädt mit Horizonite und Sunstone nach) – eine Ofen-Alternative ohne Kohle und ohne Strom.
+
+## Alex's Mobs
+
+- **AM1** 🟢 Die Transmutation Table (2 Farseer Arm, 1 Nether Star, 3 Obsidian) wandelt ganze Stacks gegen 3 Erfahrung in andere Gegenstände; ihre Beutetabellen enthalten Rohmetalle (uncommon) sowie Diamant, Smaragd und Ender Pearl (rare), und umgewandelte Gegenstände kommen als Möglichkeiten hinzu. Ein möglicher Umweg an Erz-Gating vorbei; der Weg dahin braucht allerdings Netherit (Dimensional Carver), einen Nether Star und eine Reise an die Weltgrenze.
+- **AM2** 🟢 Netherit ist an zwei Stellen hartes Tor (Dimensional Carver 2, Straddleboard 3), sonst braucht der Mod nur Vanilla-Mittel. Rezepte nutzen `#forge:ingots/iron`, `#forge:ingots/netherite`, `#forge:nuggets/iron`, `#forge:glass`, `#forge:rods/wooden`; Teile anderer Mods kommen in keinem Rezept vor.
+- **AM3** 🟢 Der Capsid (Beute des Enderiophage) fördert Gegenstände senkrecht nach oben, ohne Strom – eine frühe Alternative zu Förderröhren, sobald man im End ist.
+- **AM4** 🟢 Alex's Delight: Rezept `barbecue_on_a_stick` verlangt `amfd:singular_cooked_moose_rib` (Mod nicht installiert) und ist so nicht herstellbar. Das Addon bringt eigene Fassungen von `alexsmobs:kangaroo_burger` und der Beutetabellen `entities/bison`, `entities/bunfungus` mit.
+- **AM5** 🟢 Ambergris ist Brennstoff für 64 Items und lässt sich an Fischer-Dorfbewohner verkaufen (Animal Dictionary); Kangaroo Hide ergibt Leather, Komodo Dragon Spit Slimeballs, Dropbear Claw ersetzt Eisen im Flint and Steel.
 
 ## Zu prüfen
 

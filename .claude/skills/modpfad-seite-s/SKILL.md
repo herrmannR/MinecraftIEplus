@@ -37,6 +37,8 @@ Wie im Hauptskill (`tools/extract.sh`, Vanilla-JAR unter `ATLauncher/libraries/n
 - **Eigenes Journal-Format** (Blue Skies: `data/<ns>/<ns>/journal/entries`): erst eine Indexzeile je Eintrag bauen (Abschnitt, Freischaltbedingung, Icon), dann die Texte. Die Texte können in einer eigenen Sprachdatei liegen (`assets/<ns>/<ns>/journal_lang/en_us.json`), nicht in `lang/en_us.json`: bei leerem `grep` erst `grep -rl "<schlüssel>" assets` statt zu raten. Journal-Bilder unter `textures/gui/journal/icons` sind flache Bilder und erlaubt.
 - **Boss-Beute** kann in eigenen Loot-Tabellen statt unter `entities/` stehen (Blue Skies: `loot_tables/loot_bags/<boss>/`); leere Entity-Tabellen sind ein Hinweis darauf.
 - **Kein Buch**: Advancement-Baum laut Hauptskill, aber nur `parent` und Titel-Schlüssel per `grep` ausgeben.
+- **Citadel-Buch** (Alex's Mobs: `assets/<ns>/book/<buch>/*.json` + `en_us/*.txt`): oft flach (alle `parent: root.json`), dann gibt der Advancement-Baum mit Titel und Beschreibung (`parent`, `title`, `.desc` aus der Sprachdatei, eine Zeile je Advancement) das Gerüst. Die Texte mit **einem** `awk`-Lauf in eine Datei „`<eintrag>| <satz>`“ (ein Satz je Zeile) schreiben und nur noch `grep`en. Nie eine Shell-Schleife über viele Textdateien je Suchbegriff – unter Windows läuft das wegen der Prozessstarts in den 2-Minuten-Timeout.
+- **Beute im Code**: Viele Mob-Mods vergeben Beute außerhalb der Loot-Tabellen (Scheren, Abwurf, Belohnung). Was in keiner Tabelle steht, im Buchtext per `grep` suchen, nicht weglassen und nicht raten.
 
 ### 4. Rezepte billig erschließen
 ```bash

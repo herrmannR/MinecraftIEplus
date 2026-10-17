@@ -76,6 +76,7 @@ a.tile:focus-visible{box-shadow:0 0 0 2px var(--a)}
 
 <script>
 const ICONS = {
+  "alexsmobs:item/animal_dictionary": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAqklEQVR4XmNgoDXQMeb4D8PocngBTJNXiPj/8GSF/wnZav+tXXkJG4JNI4hP0BBkjSCFMIzsBayG4NNIlCEgBkwzSBJdIzY2TB3YEBCB7AJ8hsDkQDg6OhrhApDA9u3bcRoCEodpnDlzJlgtiAYbwCvKDlZw7do1DEOwaYRphnsBlyH4NIIwSA8IQ6ICiyHYNIJsxNCIDLAZQpRGZAAzhGSNyACmiWSN5AAAgpoWfbtNoa4AAAAASUVORK5CYII=",
   "blue_skies:item/misc/zeal_lighter": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAb0lEQVR4XmNgGAUjCXTFrfgPwsnujf/R5XABRhgDpPHryT9gfGfdF+IM8czNZQfRMM0gjds7b/5fUHqCOANAAFkzSCPIAJCYh0ky8QYg2wwLA0NZb9IMQA5AkO1EGwDSANNIsmYYAGmCaSRZMzEAAP8adK+JChaKAAAAAElFTkSuQmCC",
   "ae2:block/controller": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABmUlEQVR4Xk2TSxKCQAxE52aiaxBd8lmqKEdRFA7hd6uypfRksV6qmnIRZiYk3Z1MJmw2G9vtdlYUhSVJYqfTyebzuS2XSz+z11pVle/zPLf1em11XVvYbrf2+Xzs/X7b7Xaztm3tfD7b/X636/Xqxv5yuTgAMcQOw2CQhyzL3BFFkU2nU9vv967ieDzabDbzJAJlk8nEY1+vl5EbFouFM5BMggIAwAeAwPmPcUYJ5QQhE4hREsGHw8ED8QGKn7PUdV3n5YY0TR2NJAIIJIFA2GgWPkj43zSN+8mhsQEZNE2MBAKmUiRdBDCzBwDywHVxUM2wYUjnjB81MGsPIH1zBQBwVVLwbwBQJ2rUPHxS4AB8ACAQdOyfmVW9Wa1Wo7qxBHqgJsKEVLFw1l63AxiNpQRGIMAidpIFwJgiW4pgxae9lHgJjKmGSB3XAOnaxK44yo7j2EJZltb3/Sj1f6g401wUalVZjDIPMFDP9/v190BdSNMDwujP4/FwHzOA7/l8+gPkFQex8TBoCgroLqWxYviRiwL8PGdN5w8b8z24ymXtpgAAAABJRU5ErkJggg==",
   "botania:block/endoflame": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAl0lEQVR4XmNgoDa4tUXi/+EJvP+RxUB8dDGsAKQZhNHFQQBkwOpsJqxycACzHd02kDhIM0EDYJqRFcNcRZQBIABTiM0AdLUYAJdN6K7CCUAKkQPy638GMI3sNVQdaACmGYRBmkH4/10GjHDBC2AxATOIJM3IgGhn4wK8Noz/5ZMhYUA2MKjhoI4h6GJEA4pcANIIwoTCAgCQcqAyp860HwAAAABJRU5ErkJggg==",
@@ -162,6 +163,12 @@ const MODS = [
     text: "Vom Gatekeeper-Haus durch die Portale ins kalte Everbright und ins heiße Everdawn: eigene Werkzeugkette von Holz bis Charoite, Ventium, Falsite und Horizonite, dann vier Dungeons mit Summoner, Alchemist, Starlit Crusher und Arachnarch. Reihenfolge aus dem Journal des Mods.",
     phases: 6, steps: 18, icon: "blue_skies:item/misc/zeal_lighter",
     accent: ["#5cc8d8", "#1f7d8a"], url: "https://claude.ai/artifact/GAjru1A7JmbqwXNhfBumJt",
+  },
+  {
+    name: "Alex's Mobs", version: "1.22.9", addons: "Brücke Alex's Delight",
+    text: "Rund 90 Tierarten in Oberwelt, Nether und End, viele mit einem Beutestück für Rüstung, Werkzeug oder Essen. Am Ende eine feste Kette: Enderiophage, Capsid, Void Worm, Dimensional Carver, Farseer am Weltrand und die Transmutation Table. Reihenfolge aus dem Advancement-Baum.",
+    phases: 6, steps: 21, icon: "alexsmobs:item/animal_dictionary",
+    accent: ["#9cc45e", "#4f7a25"], url: "https://claude.ai/artifact/Tf1bokH9S871MVquTbiiAJ",
   },
 ];
 // Mods ohne Seite, in der Reihenfolge der Mod-Liste
