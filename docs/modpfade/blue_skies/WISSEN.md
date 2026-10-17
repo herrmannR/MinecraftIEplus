@@ -58,6 +58,8 @@ Werkzeug-Icons als Ebenen: `blue_skies:item/tools/handles/handle+/item/tools/hea
 - Alchemy Table: Iron ↔ Ventium (transmute), Iron + Soul Fragment → Falsite, Iron + Blaze Rod → Horizonite; Snowcap Oven/Mushroom: Horizonite → Iron. Eisen-Kreislauf ohne Erz. Siehe CROSSMOD_AUFFAELLIGKEITEN.md, Abschnitt Blue Skies.
 - Vanilla-Kompatrezepte: Anvil/Stonecutter mit Ventium-Tags, Enchanting Table/Jukebox mit Charoite, Furnace aus `blue_skies:cobblestone`.
 - Fremde Erze nur über `allowed_mods_for_feature_gen`.
+- Everbright und Everdawn sind beide sofort erreichbar (Test 23, 2026-10-17).
+- Werkzeugabschwächung im Spiel (Test 22, 2026-10-17): Zinnerz in Everbright mit einer Tinkers-Spitzhacke abzubauen dauert ewig, man braucht die Blue-Skies-Werkzeuge. Bleibt so gewollt.
 
 ## In den Dateien, aber nicht im Spiel
 
@@ -65,7 +67,7 @@ Aquatic Arc, Life Arc, Runic Arc, Aquatic/Life Keystone und Key, Infused Arc Swo
 
 ## Offen
 
-Werkzeugrezepte (Code), Preise des Gatekeepers und der Dorfbewohner, Stärke und Ende der Werkzeugabschwächung, welche Schilde gegen den Arachnarch genügen, wann common/uncommon/rare Loot Bag, ob Catylist-Hilfsstoffe verbraucht werden, Bosswerte.
+Werkzeugrezepte (Code), Preise des Gatekeepers und der Dorfbewohner, genaue Stärke und Ende der Werkzeugabschwächung, welche Schilde gegen den Arachnarch genügen, wann common/uncommon/rare Loot Bag, ob Catylist-Hilfsstoffe verbraucht werden, Bosswerte.
 
 ## IDs der Seite
 

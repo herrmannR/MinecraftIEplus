@@ -45,11 +45,18 @@
 - Mitgebrachte Fremdrezepte: IE (Desh/Ostrum/Calorite-Platten per Hammer und Metal Press; Ice Shard Ore, Venus Sandstone im Crusher), Mekanism (Ice Shard Ore in der Enrichment Chamber, Planetenhölzer in der Sawmill).
 - Giselle: die vier Schutzwirkungen als Verzauberung, Tinkers-Modifier (Upgrade-Slot) und MekaSuit-Modul; Sky Stone (5 Moon + 4 Mars Stone) → AE2 Sky Dust.
 - Mekanism-Erze auf den Planeten: siehe `mekanism/WISSEN.md`.
+- Im Spiel getestet (2026-10-17, `11_TESTING.md` Tests 16–21):
+  - Ein Start verbraucht 3 Eimer, auf jeder Stufe T1 bis T3; Hin- und Rückflug also 6 (wie im Buch).
+  - Die Treibstoff-Tags greifen: T1 nur Biodiesel, T2 nur entschwefelter Diesel, T3 nur Kerosin.
+  - Flüssiger Mekanism-Sauerstoff klappt im Oxygen Loader.
+  - Jet Suit und Etrionic Capacitor laden in der IE Charging Station und am Mekanism Energy Cube; der Energizer ist deshalb entfernt.
+  - Räume bleiben mit den richtigen Blöcken dicht; Strom kommt über den IE Feedthrough Insulator oder einen Energiespeicher in Wand oder Boden hinein.
+  - Anzüge: Auf Glacio braucht man keinen. Auf allen anderen Planeten reicht jeder Anzug, auch der einfache Space Suit auf Merkur und Venus. Das Buch nennt den Netherite Space Suit für Venus und Merkur als Pflicht; im Spiel stimmt das nicht.
 
 ## Offen
 
 - Handelsangebote der Lunarians, Mobs der More-Structures-Bosse (außer Super Lunarian, 60 HP), Spawnorte der Mobs, Herkunft von Glacian Fur.
-- Treibstoffverbrauch je Raketenstufe, Sauerstoffregeln der Giselle-Verzauberungen, Funktionsweise der Automation NASA Workbench.
+- Sauerstoffregeln der Giselle-Verzauberungen, Funktionsweise der Automation NASA Workbench.
 - In der Sprachdatei ohne Rezept: Etrium (Ingot, Plate, Rod, Block), Etrionic Core, Photovoltaic Vesnium Cell, Flüssigkeit Hydrogen.
 - Raketen, Rover, Lander sind Entities ohne lesbares Bild.
 

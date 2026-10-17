@@ -105,7 +105,7 @@ Ad Astra nimmt fremde Materialien über Tags an. 🟢 Aus JAR:
 - `ad_astra:efficient_fuel` enthält nur Cryo Fuel (sparsamer Treibstoff).
 - **IE-Biodiesel und IP-Diesel funktionieren ohne Anpassung in jeder Rakete**, auch der ungereinigte schwefelhaltige Diesel.
 - ⚠️ `#ad_astra:oil` enthält `#forge:crude_oil`. Die Fuel Refinery macht also aus **Immersive-Petroleum-Rohöl direkt Raketentreibstoff**, ohne Destillation.
-- 🔵 Verbrauch pro Start: In `ad_astra.jsonc` gibt es dafür keinen Schalter. Die Mengen müssen im Spiel abgelesen werden.
+- 🟢 Verbrauch pro Start: 3 Eimer auf jeder Stufe T1 bis T3, also 6 für Hin- und Rückflug (im Spiel abgelesen, 2026-10-17). In `ad_astra.jsonc` gibt es dafür keinen Schalter.
 - Fuel Loader (Giselle): 8.000 mB, Reichweite 2 Blöcke.
 
 ### 🟢 Treibstoff je Raketenstufe (Entscheidung 2026-10-12)
@@ -137,10 +137,11 @@ Ad Astra steuert über Entity-Tags, wer wo überlebt: `ad_astra:lives_without_ox
 
 ⚠️ **More Structures überschreibt diese fünf Tags mit `replace: true`.** Eigene Einträge (z. B. für Star-Wars- oder Alex's-Mobs-Wesen) müssen danach geladen werden, sonst gehen sie verloren. 🔵 Ladereihenfolge gegenüber `kubejs/data` prüfen.
 
-## Schutz und Ausrüstung (🟢 Rezepte aus JAR, 🔵 Wirkung nicht getestet)
+## Schutz und Ausrüstung (🟢 Rezepte aus JAR, Wirkung getestet 2026-10-17)
 
+- 🟢 Im Spiel (Test 21): Auf Glacio braucht man keinen Anzug. Auf allen anderen Ad-Astra-Planeten braucht man einen, und dort reicht jeder Anzug, auch der einfache Space Suit auf Merkur und Venus.
 - Space Suit (Helm, Anzug, Hose, Stiefel): Stahlplatten, Wolle, Gas Tanks, Oxygen Gear.
-- Netherite Space Suit: Ostrum-Platten, Netherite-Brustplatte, Large Gas Tanks. 🔵 Vermutlich nötig gegen Hitze (Merkur, Venus).
+- Netherite Space Suit: Ostrum-Platten, Netherite-Brustplatte, Large Gas Tanks. Gegen Hitze nicht nötig (Test 21).
 - Jet Suit: Calorite-Platten, Netherite Space Suit, Calorite-Triebwerk und -Tanks.
 - Giselle: vier Schutzarten (Space Breathing, Space Fire Proof, Acid Rain Proof, Gravity Normalizing) als Verzauberungsbuch, als **MekaSuit-Modul** und als **Tinkers-Modifier**.
 - Gravity Normalizer (Block): Desh-Platten, Diamantblock, Etrionic Capacitors.
@@ -158,7 +159,7 @@ Ad Astra steuert über Entity-Tags, wer wo überlebt: `ad_astra:lives_without_ox
 | Oxygen Loader | Wasser- und Sauerstoff-Rezept | bleibt; Wasser-Rezept entfernen | 🟢 Entscheidung, 🔵 Skript |
 | Oxygen Distributor, Gravity Normalizer, Oxygen Sensor | — | bleiben | 🟢 |
 | Water Pump | Desh-Platten | **entfernen**; Ersatz: Mekanism Electric Pump, IE Fluid Pump | 🟢 Entscheidung 2026-10-12, 🔵 Skript |
-| Energizer | Ostrum, Diamantblock | **entfernen, wenn** sich Ad-Astra-Items (Jet Suit, Etrionic Capacitor) in der IE Charging Station oder am Mekanism Energy Cube laden lassen | 🟡 Entscheidung 2026-10-12 unter Vorbehalt, 🔵 Test |
+| Energizer | Ostrum, Diamantblock | **entfernen**; Jet Suit und Etrionic Capacitor laden in der IE Charging Station und am Mekanism Energy Cube (Test 19, 2026-10-17) | 🟢 Entscheidung, Skript 2026-10-17 |
 | Kabel und Fluid Pipes (samt Cable Duct, Fluid Pipe Duct) | Stahl/Desh/Ostrum-Platten | **entfernen**; Strom und Flüssigkeiten laufen über IE und Mekanism | 🟢 Entscheidung 2026-10-12, 🔵 Skript |
 | Ölquellen (`oil_well`) in Ozeanen | Struktur in der Overworld | 🟢 abgeschaltet, siehe Worldgen | 🟢 Datei, 🔵 Test |
 
@@ -268,9 +269,9 @@ Aus JAR: Der Mod fügt nur drei Raketen T5, T6 und T7 hinzu, jeweils mit eigenem
 2. 🟢 Blood-Magic-Zugang nur auf dem Merkur. 🔵 Offen: welches Item, wo garantiert zu holen; technische Machbarkeit (Test E19).
 3. 🔵 Welche magischen Komponenten genau für T4? Alfsteel entfällt, weil Alfheim erst in Part 2 betreten wird; Kandidaten sind Terrasteel und Items aus dem Elfenportal (Elementium, Pixie Dust, Dreamwood). Bleiben Uran-Teil und Dungeon-Item Pflicht?
 4. 🟢 Ad Astra: Rocketed bleibt, Star-Wars-Planeten auf T5 und T6 (2026-10-13). 🔵 Zuordnung der Planeten, Rezepte, Treibstoffe.
-5. 🟢 Ad-Astra-Kabel, Fluid Pipes und Water Pump werden entfernt; der Energizer ebenfalls, sofern die Alternative im Test funktioniert. 🔵 Offen: Wie kommen IE-Leitungen und Mekanism-Kabel in abgedichtete Räume, wenn die Ad-Astra-Durchführungen (Cable Duct, Fluid Pipe Duct) entfallen? Im Spiel prüfen (IE Feedthrough Insulator, Ad-Astra-Tags für dichte Blöcke).
+5. 🟢 Ad-Astra-Kabel, Fluid Pipes, Water Pump und Energizer werden entfernt. 🟢 Strom in abgedichtete Räume (Test 20, 2026-10-17): Mit den richtigen Blöcken bleibt ein Raum dicht; der IE Feedthrough Insulator oder ein Energiespeicher in Wand oder Boden bringt den Strom hinein.
 6. 🔵 Immersive Aircraft bleibt Atmosphären-Transport; `launchAnywhere` bleibt aus?
-7. 🔵 Treibstoffverbrauch pro Start und Schutzwirkung der Anzüge im Spiel ablesen.
+7. 🟢 Treibstoffverbrauch (3 Eimer je Start) und Schutzwirkung der Anzüge im Spiel abgelesen (2026-10-17).
 
 ## Nächste Schritte
 

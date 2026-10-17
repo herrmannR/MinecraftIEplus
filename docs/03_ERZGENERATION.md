@@ -108,7 +108,7 @@ Configs reichen hier nicht: Die Mekanism- und IE-Features zielen auf die Overwor
 - Zum Vergleich: Die eigenen Blue-Skies-Metalle Falsite und Ventium liegen bei 20 × 6.
 - 🔵 Die Erzblöcke zeigen Overworld-Steintextur im Blue-Skies-Gestein (Backlog „eigene Erz-Texturen“ in `00_STATUS.md`).
 - 🟢 Blue Skies filtert nach dem Namensraum des platzierten Features (im Code von `PurifyBiome` nachgelesen, 2026-10-12): Alles, was nicht freigegeben ist, wird aus den Biomen entfernt. Die Freigabe von `ieplus` genügt also.
-- 🔵 Zu prüfen: Sind Everbright und Everdawn gleich früh erreichbar?
+- 🟢 Everbright und Everdawn sind beide sofort erreichbar (Test 23, 2026-10-17). Osmium in Menge gibt es damit schon vor dem Mond.
 
 ## Planeten — eigene Features mit den Blöcken aus „Mekanism: Ad Astra Ores“ (🟡 angelegt in `kubejs/data/ieplus/`, ungetestet)
 
@@ -167,7 +167,7 @@ Die Hauptwelt wurde **noch nie mit Mekanism geöffnet**; alle erkundeten Overwor
 # Offen
 
 1. 🔵 Alle Zahlenwerte im Spiel prüfen (Testplan E17 in `00_STATUS.md`).
-2. 🔵 Blue Skies: Filter und Freigabe klären; Erreichbarkeit von Everdawn gegenüber Everbright.
+2. 🔵 Blue Skies: Filter und Freigabe klären. (Erreichbarkeit geprüft: beide sofort, 2026-10-17.)
 3. 🟢 Laterite-Ader bleibt unverändert (User, 2026-10-17).
 4. 🟢 Blood-Magic-Meteore bleiben unverändert, auch „mekanism“ (mit Zinn) und „ae2“ (User, 2026-10-17).
 5. 🔵 Beute der Bosse aus „Ad Astra: More Structures“ (Roh-Desh, -Ostrum, -Calorite) gegen die Erzmengen prüfen.

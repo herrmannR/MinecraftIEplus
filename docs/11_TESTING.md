@@ -49,14 +49,14 @@ Ergebnis jeweils hier eintragen: ✅ bestanden, ❌ Fehler (mit Beschreibung), �
 
 | Nr. | Test | Wie | Erwartet | Ergebnis |
 |---|---|---|---|---|
-| 16 | Treibstoff T1 bis T3 | Rakete betanken (Fuel Loader oder Eimer) | T1 nimmt nur Biodiesel, T2 nur entschwefelten Diesel, T3 nur Kerosin | ⏳ |
-| 17 | Verbrauch pro Start | Tankanzeige vor und nach dem Start | Menge notieren | ⏳ |
-| 18 | Sauerstoff | Mekanism-Sauerstoff (flüssig) in den Oxygen Loader | wird angenommen | ⏳ |
-| 19 | Laden ohne Energizer | Jet Suit oder Etrionic Capacitor in IE Charging Station und an Mekanism Energy Cube | lädt → Energizer kann entfallen | ⏳ |
-| 20 | Dichte Räume | Raum mit Oxygen Distributor; IE-Leitung (Feedthrough Insulator) und Mekanism-Kabel hineinführen | bleibt dicht, oder notieren, was undicht macht | ⏳ |
-| 21 | Schutz der Anzüge | Mond, Merkur, Venus mit Space Suit und Netherite Space Suit | notieren, was wo reicht | ⏳ |
-| 22 | Werkzeug-Abschwächung | Zinnerz in Everbright mit Tinkers-Spitzhacke und mit Blue-Skies-Werkzeug abbauen | Zeiten notieren | ⏳ |
-| 23 | Everdawn-Zugang | prüfen, ob Everdawn sofort erreichbar ist | ja oder nein notieren | ⏳ |
+| 16 | Treibstoff T1 bis T3 | Rakete betanken (Fuel Loader oder Eimer) | T1 nimmt nur Biodiesel, T2 nur entschwefelten Diesel, T3 nur Kerosin | ✅ 2026-10-17 (User): Die Tankregeln greifen, jede Stufe nimmt nur ihren Treibstoff |
+| 17 | Verbrauch pro Start | Tankanzeige vor und nach dem Start | Menge notieren | ✅ 2026-10-17 (User): 3 Eimer pro Start auf jeder Stufe T1 bis T3, also 6 für Hin- und Rückflug |
+| 18 | Sauerstoff | Mekanism-Sauerstoff (flüssig) in den Oxygen Loader | wird angenommen | ✅ 2026-10-17 (User): flüssiger Sauerstoff klappt |
+| 19 | Laden ohne Energizer | Jet Suit oder Etrionic Capacitor in IE Charging Station und an Mekanism Energy Cube | lädt → Energizer kann entfallen | ✅ 2026-10-17 (User): lädt an beiden; Energizer entfernt (Skript) |
+| 20 | Dichte Räume | Raum mit Oxygen Distributor; IE-Leitung (Feedthrough Insulator) und Mekanism-Kabel hineinführen | bleibt dicht, oder notieren, was undicht macht | ✅ 2026-10-17 (User): Mit den richtigen Blöcken bleibt der Raum dicht; Strom kommt über den IE Feedthrough Insulator oder einen Energiespeicher in Wand oder Boden hinein |
+| 21 | Schutz der Anzüge | Mond, Merkur, Venus mit Space Suit und Netherite Space Suit | notieren, was wo reicht | ✅ 2026-10-17 (User): Glacio braucht keinen Anzug; alle anderen Ad-Astra-Planeten brauchen einen, dort reicht jeder (auch der einfache auf Merkur und Venus) |
+| 22 | Werkzeug-Abschwächung | Zinnerz in Everbright mit Tinkers-Spitzhacke und mit Blue-Skies-Werkzeug abbauen | Zeiten notieren | ✅ 2026-10-17 (User): Mit fremdem Werkzeug unpraktisch, dauert ewig. Bleibt so gewollt: In Blue Skies muss man die neuen Werkzeuge benutzen |
+| 23 | Everdawn-Zugang | prüfen, ob Everdawn sofort erreichbar ist | ja oder nein notieren | ✅ 2026-10-17 (User): ja, Everdawn ist sofort erreichbar (wie Everbright) |
 | 24 | Galaxy in a Cube | Rezepte der Lichtschwerter und Kristalle in JEI ansehen | notieren (für das Rezept Kyber-Erz → Kristall) | ⏳ |
 
 ### Runde 4 — Weltkopie (erst nach Runde 1 und 2)
@@ -66,7 +66,7 @@ Ergebnis jeweils hier eintragen: ✅ bestanden, ❌ Fehler (mit Beschreibung), �
 | Nr. | Test | Wie | Erwartet | Ergebnis |
 |---|---|---|---|---|
 | 25 | Retrogen | Weltkopie `3_ Versuch von 1,5` öffnen, bekannte Gegend unter Tage ansehen | Osmium, Uran, Fluorit, Salz, wenig Blei sind nachgeneriert; kein Zinn; Ladezeit notieren | ✅ 2026-10-17: Mekanism meldet „Regenerating ores and salt“ für 821 Chunks rund um den Spawn, alle in 28 Sekunden beim ersten Laden (10:16:36–10:17:04), nur eine „Can't keep up“-Meldung. Auf diese 821 Chunks kommen pro Chunk: Uran 10,4, Osmium 16,6, Blei 10,4, Fluorit 46, Salz 2,1; kein Zinn. Gleiche Werte wie in einer neuen Welt. Retrogen läuft nur in Chunks, die geladen werden; die übrigen rund 48.500 erkundeten Chunks bekommen ihre Erze, sobald jemand hinkommt. Altes IE-Blei und -Uran bleibt in den alten Chunks liegen (wie geplant) |
-| 26 | Ölförderung | Pumpjack an der alten Stelle neu formen | fördert aus dem alten Vorkommen | ⏳ |
+| 26 | Ölförderung | Pumpjack an der alten Stelle neu formen | fördert aus dem alten Vorkommen | ✅ 2026-10-17 (User): An derselben Stelle liegt weiterhin ein Ölreservoir, der neu gebaute Pumpjack fördert dort; das Vorkommen von Immersive Petroleum übersteht den Wechsel auf 1.20.1 |
 | 27 | IE-Config der Weltkopie | `saves/3_ Versuch von 1,5/serverconfig/immersiveengineering-server.toml` | enthält noch die alten Werte; für den Test von Hand ersetzen | ✅ 2026-10-17: unsere IE-Serverconfig in die Weltkopie gelegt (alte Datei als `.1182-alt` daneben) |
 
 ### Runde 5 — Story-Technik (für `18_STORY.md`)

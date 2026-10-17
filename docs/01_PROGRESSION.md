@@ -90,7 +90,7 @@ Certus gibt es in 1.20.1 nur noch an Budding-Blöcken in Meteoriten, die Inscrib
 **Gatekeeper → Zeal Lighter (8 Smaragde) → Everbright und Everdawn → Dungeons und vier Bosse**
 - ersetzt den Twilight Forest als „Industrial Frontier“: Everbright liefert Zinn (nur dort), Blei und Bauxit, Everdawn Osmium
 - Story-Dimension mit Easy-NPC-Figuren (Phase 7b)
-- 🔵 Ob Everbright und Everdawn gleich früh erreichbar sind, ist nicht geprüft
+- 🟢 Everbright und Everdawn sind beide sofort erreichbar (Test 23, 2026-10-17)
 - 🟢 **Blue-Skies-Haus** (User, 2026-10-17): Die Overworld-Struktur mit den Portalen bekommt statt des Guard eine Easy-NPC-Figur. Ihr Strang beginnt als Nebenquest (Quests, Boss-Reihe, Alchemy Table) und wird später Pflicht für die Altar-Reparatur auf dem Merkur (`18_STORY.md`).
 
 Weitere Dimensionen ohne eigenen Pfad: Nether (Kobalt), Alfheim (Pfad C), Demon Dungeon (Pfad D), Wesley's Roguelike Dungeons. 🟢 Wesley's ist nicht mehr nur Spaß-Dungeon (User, 2026-10-17): fünfstufige Nebenquest-Reihe, Vorbereitung auf die Altar-Dimension in Part 1 und allgemeines Training in Part 2 (`18_STORY.md`, O35).

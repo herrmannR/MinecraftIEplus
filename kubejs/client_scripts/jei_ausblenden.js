@@ -11,6 +11,7 @@ JEIEvents.hideItems(event => {
     'ad_astra:compressor',
     'ad_astra:fuel_refinery',
     'ad_astra:water_pump',
+    'ad_astra:energizer',                   // Laden über IE und Mekanism (Test 19, 2026-10-17)
     // Ad Astra: Kabel, Pipes und Durchführungen
     'ad_astra:steel_cable',
     'ad_astra:desh_cable',

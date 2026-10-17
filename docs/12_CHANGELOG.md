@@ -781,3 +781,33 @@ Status: 🟢
 - Mekanism-Retrogen in der Kopie der Hauptwelt: 821 Chunks rund um den Spawn beim ersten Laden in 28 Sekunden nachgeneriert (Log: „Regenerating ores and salt“). Pro Chunk Uran 10,4, Osmium 16,6, Blei 10,4, Fluorit 46, Salz 2,1, kein Zinn. Nicht geladene Chunks folgen, sobald jemand sie betritt.
 - 🟢 Entscheidung des Users: Excavator-Ader Laterite und die Blood-Magic-Meteore bleiben unverändert.
 - Block B (Worldgen) ist damit abgeschlossen.
+
+## 2026-10-17 — Ölvorkommen nach dem Wechsel geprüft
+
+Status: 🟢
+
+- Test 26 in der Weltkopie `3_ Versuch von 1,5` (User): An der alten Pumpjack-Stelle liegt weiterhin ein Ölreservoir, und der neu gebaute Pumpjack fördert dort. Die Vorkommen von Immersive Petroleum überstehen den Wechsel auf 1.20.1; nur der Pumpjack selbst muss neu gebaut werden.
+- Runde 4 in `11_TESTING.md` ist damit abgeschlossen.
+
+## 2026-10-17 — Testrunde 3: Raumfahrt und Blue Skies
+
+Status: 🟢 (Tests 16–23), 🔵 24 offen
+
+### Ergebnisse (User)
+- 16: Die Treibstoff-Tags greifen; T1 bis T3 nehmen jeweils nur ihren Treibstoff.
+- 17: 3 Eimer pro Start auf jeder Stufe T1 bis T3, 6 für Hin- und Rückflug.
+- 18: Flüssiger Mekanism-Sauerstoff klappt.
+- 19: Jet Suit und Etrionic Capacitor laden in der IE Charging Station und am Mekanism Energy Cube.
+- 20: Mit den richtigen Blöcken bleibt ein Raum dicht; der IE Feedthrough Insulator oder ein Energiespeicher in Wand oder Boden bringt den Strom hinein.
+- 21: Glacio braucht keinen Anzug; auf allen anderen Ad-Astra-Planeten reicht jeder Anzug.
+- 22: Blue-Skies-Werkzeugabschwächung: mit fremdem Werkzeug dauert es ewig. Bleibt so gewollt (offener Punkt C.11 erledigt).
+- 23: Everdawn ist sofort erreichbar, wie Everbright. Osmium in Menge gibt es damit schon vor dem Mond.
+
+### Änderung
+- Energizer entfernt: Rezept in `server_scripts/raumfahrt/ad_astra_regeln.js`, in JEI ausgeblendet. Er ist in keinem anderen Rezept Zutat (geprüft in den JARs von Ad Astra, Giselle und Rocketed). Ungetestet, noch nicht in der Testinstanz.
+
+### Betroffene Bereiche
+- `11_TESTING.md`, `15_RAUMFAHRT.md`, `01_PROGRESSION.md`, `03_ERZGENERATION.md`, `00_STATUS.md`, `modpfade/adastra/WISSEN.md`, `modpfade/blue_skies/WISSEN.md`, KubeJS
+
+### Auswirkungen auf bestehende Welt
+Keine; die Hauptwelt hat Ad Astra noch nicht.

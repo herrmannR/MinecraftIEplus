@@ -21,6 +21,8 @@ ServerEvents.recipes(event => {
     'ad_astra:fluid_pipe_duct',
     // Ersatz: Mekanism Electric Pump, IE Fluid Pump
     'ad_astra:water_pump',
+    // Jet Suit und Etrionic Capacitor laden in der IE Charging Station und am Mekanism Energy Cube (Test 19, 2026-10-17)
+    'ad_astra:energizer',
     // Stahl nur über IE (Hochofen, Lichtbogenofen)
     'ad_astra:alloying/steel_ingot_from_alloying_iron_ingot_and_coals',
     // Öl direkt zu Raketentreibstoff würde die Destillation umgehen
@@ -38,7 +40,6 @@ ServerEvents.recipes(event => {
   // Eisen- und Stahlplatten hat IE bereits; Ad Astra nimmt sie über forge-Tags an.
 
   // NOCH NICHT ENTFERNT, weil die Entscheidung offen ist oder ein Test fehlt:
-  // - ad_astra:energizer    (entfällt, wenn Jet Suit und Etrionic Capacitor sich über IE oder Mekanism laden lassen)
   // - ad_astra:cryo_freezer (Cryo Fuel: entfernen oder Zutat für den T4-Treibstoff)
   // - ad_astra:etrionic_blast_furnace als Block (nur sein Stahl-Rezept ist entfernt)
 })
