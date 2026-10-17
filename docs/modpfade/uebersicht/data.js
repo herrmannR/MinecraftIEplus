@@ -79,6 +79,12 @@ const MODS = [
     phases: 6, steps: 21, icon: "alexsmobs:item/animal_dictionary",
     accent: ["#9cc45e", "#4f7a25"], url: "https://claude.ai/artifact/Tf1bokH9S871MVquTbiiAJ",
   },
+  {
+    name: "Immersive Aircraft", version: "1.5.0", addons: "Brücke iaie",
+    text: "Sieben Fluggeräte aus Holz, Eisen und Kupfer, vom muskelbetriebenen Gyrodyne bis zum Warship, dazu Upgrades und Waffen. Kein Buch; alle Rezepte ab dem ersten Eisenbarren. Im Pack tanken die Geräte nur flüssigen IE-Treibstoff im Metal Barrel.",
+    phases: 5, steps: 9, icon: "immersive_aircraft:item/biplane",
+    accent: ["#d9a066", "#8a5a24"], url: "https://claude.ai/artifact/BfUwZLQdeo3DugNVASvxYh",
+  },
 ];
 // Mods ohne Seite, in der Reihenfolge der Mod-Liste
 const PLANNED = ["Farmer's Delight"];

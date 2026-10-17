@@ -76,6 +76,7 @@ a.tile:focus-visible{box-shadow:0 0 0 2px var(--a)}
 
 <script>
 const ICONS = {
+  "immersive_aircraft:item/biplane": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABM0lEQVR4Xo2RwUrDQBCG8wCRoKBIi6iYCqZQoZdaay0eS06C3ixB8KYHwVvjVXLy6EEwAQ85+g55jLzN2H/CLLsx2/jDsJtkv4/ZieM0JBx3CFV//6+c97doeRfQ9+vEkJRl2S4cBx7DItAlcRxTq8TvukqAyrLsjyRNU7sEgstBdYUkSYxO8jynKIpobScQ3F7tKYkU4KIoeMW5VsnL40JJdLg+WGv8jkujE8+AmwZrTXDg0fPNsZKsGyxn6LvqQeDri10GILENliWA8YD19GiTQaw4CBmu0zRY1NlK7kz6Hn19ftD705Du5/v8IRztMCxd1QeLmq3208F2dQaS5SKgn7cZPYSH3IHAEvnFAFHY97ob1Tm0DRgSdKLPRI9IDBiBACXXkZlorApAA64HEhvclF+OuyCWslq9xAAAAABJRU5ErkJggg==",
   "alexsmobs:item/animal_dictionary": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAqklEQVR4XmNgoDXQMeb4D8PocngBTJNXiPj/8GSF/wnZav+tXXkJG4JNI4hP0BBkjSCFMIzsBayG4NNIlCEgBkwzSBJdIzY2TB3YEBCB7AJ8hsDkQDg6OhrhApDA9u3bcRoCEodpnDlzJlgtiAYbwCvKDlZw7do1DEOwaYRphnsBlyH4NIIwSA8IQ6ICiyHYNIJsxNCIDLAZQpRGZAAzhGSNyACmiWSN5AAAgpoWfbtNoa4AAAAASUVORK5CYII=",
   "blue_skies:item/misc/zeal_lighter": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAb0lEQVR4XmNgGAUjCXTFrfgPwsnujf/R5XABRhgDpPHryT9gfGfdF+IM8czNZQfRMM0gjds7b/5fUHqCOANAAFkzSCPIAJCYh0ky8QYg2wwLA0NZb9IMQA5AkO1EGwDSANNIsmYYAGmCaSRZMzEAAP8adK+JChaKAAAAAElFTkSuQmCC",
   "ae2:block/controller": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABmUlEQVR4Xk2TSxKCQAxE52aiaxBd8lmqKEdRFA7hd6uypfRksV6qmnIRZiYk3Z1MJmw2G9vtdlYUhSVJYqfTyebzuS2XSz+z11pVle/zPLf1em11XVvYbrf2+Xzs/X7b7Xaztm3tfD7b/X636/Xqxv5yuTgAMcQOw2CQhyzL3BFFkU2nU9vv967ieDzabDbzJAJlk8nEY1+vl5EbFouFM5BMggIAwAeAwPmPcUYJ5QQhE4hREsGHw8ED8QGKn7PUdV3n5YY0TR2NJAIIJIFA2GgWPkj43zSN+8mhsQEZNE2MBAKmUiRdBDCzBwDywHVxUM2wYUjnjB81MGsPIH1zBQBwVVLwbwBQJ2rUPHxS4AB8ACAQdOyfmVW9Wa1Wo7qxBHqgJsKEVLFw1l63AxiNpQRGIMAidpIFwJgiW4pgxae9lHgJjKmGSB3XAOnaxK44yo7j2EJZltb3/Sj1f6g401wUalVZjDIPMFDP9/v190BdSNMDwujP4/FwHzOA7/l8+gPkFQex8TBoCgroLqWxYviRiwL8PGdN5w8b8z24ymXtpgAAAABJRU5ErkJggg==",
@@ -169,6 +170,12 @@ const MODS = [
     text: "Rund 90 Tierarten in Oberwelt, Nether und End, viele mit einem Beutestück für Rüstung, Werkzeug oder Essen. Am Ende eine feste Kette: Enderiophage, Capsid, Void Worm, Dimensional Carver, Farseer am Weltrand und die Transmutation Table. Reihenfolge aus dem Advancement-Baum.",
     phases: 6, steps: 21, icon: "alexsmobs:item/animal_dictionary",
     accent: ["#9cc45e", "#4f7a25"], url: "https://claude.ai/artifact/Tf1bokH9S871MVquTbiiAJ",
+  },
+  {
+    name: "Immersive Aircraft", version: "1.5.0", addons: "Brücke iaie",
+    text: "Sieben Fluggeräte aus Holz, Eisen und Kupfer, vom muskelbetriebenen Gyrodyne bis zum Warship, dazu Upgrades und Waffen. Kein Buch; alle Rezepte ab dem ersten Eisenbarren. Im Pack tanken die Geräte nur flüssigen IE-Treibstoff im Metal Barrel.",
+    phases: 5, steps: 9, icon: "immersive_aircraft:item/biplane",
+    accent: ["#d9a066", "#8a5a24"], url: "https://claude.ai/artifact/BfUwZLQdeo3DugNVASvxYh",
   },
 ];
 // Mods ohne Seite, in der Reihenfolge der Mod-Liste

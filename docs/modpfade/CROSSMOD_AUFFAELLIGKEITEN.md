@@ -1,6 +1,6 @@
 # Auffälligkeiten für die Crossmod-Planung
 
-> Stand 2026-10-17, Minecraft 1.20.1. Gesammelt beim Erstellen der Modpfad-Seiten für Tinkers' Construct, Immersive Engineering, Botania, Mekanism, Ad Astra, Star Wars Planets, Star Wars: Galaxy in a Cube und weitere (zuletzt Alex's Mobs). Wird mit jeder weiteren Seite fortgeschrieben.
+> Stand 2026-10-17, Minecraft 1.20.1. Gesammelt beim Erstellen der Modpfad-Seiten für Tinkers' Construct, Immersive Engineering, Botania, Mekanism, Ad Astra, Star Wars Planets, Star Wars: Galaxy in a Cube und weitere (zuletzt Immersive Aircraft). Wird mit jeder weiteren Seite fortgeschrieben.
 
 ## Zweck
 
@@ -217,6 +217,13 @@ Jeder Befund ist aus den JARs oder der Config der Testinstanz belegt (🟢). Was
 - **AM3** 🟢 Der Capsid (Beute des Enderiophage) fördert Gegenstände senkrecht nach oben, ohne Strom – eine frühe Alternative zu Förderröhren, sobald man im End ist.
 - **AM4** 🟢 Alex's Delight: Rezept `barbecue_on_a_stick` verlangt `amfd:singular_cooked_moose_rib` (Mod nicht installiert) und ist so nicht herstellbar. Das Addon bringt eigene Fassungen von `alexsmobs:kangaroo_burger` und der Beutetabellen `entities/bison`, `entities/bunfungus` mit.
 - **AM5** 🟢 Ambergris ist Brennstoff für 64 Items und lässt sich an Fischer-Dorfbewohner verkaufen (Animal Dictionary); Kangaroo Hide ergibt Leather, Komodo Dragon Spit Slimeballs, Dropbear Claw ersetzt Eisen im Flint and Steel.
+
+## Immersive Aircraft
+
+- **IA1** 🟢 Alle 27 Rezepte nutzen nur Vanilla-Items und `#minecraft:logs`; alle schalten sich mit dem ersten Eisenbarren frei. Ohne Eingriff fliegt man also sehr früh, lange vor IE-Stahl. Das einzige Tor im Pack ist der Treibstoff (I4): Mit `disableSolidFuel = true` (iaie) braucht jedes Gerät außer dem Gyrodyne Biodiesel oder Petroleum-Treibstoff im Metal Barrel.
+- **IA2** 🟢 Der Gyrodyne fliegt ohne Engine und ohne Treibstoff (Muskelkraft). Er umgeht damit das Treibstoff-Tor vollständig und braucht nur Hull, Sail und Propeller.
+- **IA3** 🟢 Nicht eingetragene Dimensionen sind erlaubt (`validDimensions.getOrDefault(…, true)`); die Fluggeräte funktionieren also auch auf den Planeten von Ad Astra und Star Wars Planets und in Blue Skies – eine Konkurrenz zu Rover und Fortbewegung dort.
+- **IA4** 🟢 Die Nether Engine braucht einen Netherite Ingot, sonst ist das stärkste Teil die Engine (Blast Furnace, Piston, Kupfer). Engine, Boiler und Hull sind naheliegende Stellen für IE-Teile (Stahl, Mechanical Component), falls Fliegen später kommen soll.
 
 ## Zu prüfen
 
