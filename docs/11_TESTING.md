@@ -57,7 +57,7 @@ Ergebnis jeweils hier eintragen: ✅ bestanden, ❌ Fehler (mit Beschreibung), �
 | 21 | Schutz der Anzüge | Mond, Merkur, Venus mit Space Suit und Netherite Space Suit | notieren, was wo reicht | ✅ 2026-10-17 (User): Glacio braucht keinen Anzug; alle anderen Ad-Astra-Planeten brauchen einen, dort reicht jeder (auch der einfache auf Merkur und Venus) |
 | 22 | Werkzeug-Abschwächung | Zinnerz in Everbright mit Tinkers-Spitzhacke und mit Blue-Skies-Werkzeug abbauen | Zeiten notieren | ✅ 2026-10-17 (User): Mit fremdem Werkzeug unpraktisch, dauert ewig. Bleibt so gewollt: In Blue Skies muss man die neuen Werkzeuge benutzen |
 | 23 | Everdawn-Zugang | prüfen, ob Everdawn sofort erreichbar ist | ja oder nein notieren | ✅ 2026-10-17 (User): ja, Everdawn ist sofort erreichbar (wie Everbright) |
-| 24 | Galaxy in a Cube | Rezepte der Lichtschwerter und Kristalle in JEI ansehen | notieren (für das Rezept Kyber-Erz → Kristall) | ⏳ |
+| 24 | Galaxy in a Cube | Rezepte der Lichtschwerter und Kristalle in JEI ansehen | notieren (für das Rezept Kyber-Erz → Kristall) | ✅ 2026-10-17 (User): JEI zeigt nur die Werkbank-Rezepte (Klon-Rüstung Phase 2, Jedi, Sith, Royal Guard, Vader u. a.). Lichtschwerter, Kristalle, Droiden und bemalte Rüstungen wie die 501st fehlen; der Mod hat kein JEI-Plugin (Assembly Bench und Kyber-Färben im Code, Droiden über `swgc:fabrication`). Ad Astra zeigt alle 7 Raketen-Rezepte; die betankte Variante im Kreativmenü hat keins |
 
 ### Runde 4 — Weltkopie (erst nach Runde 1 und 2)
 
@@ -90,6 +90,13 @@ Ergebnis jeweils hier eintragen: ✅ bestanden, ❌ Fehler (mit Beschreibung), �
 | 37 | Mekanism-Maschinen grob | Grundmaschinen bis Elite in JEI und kurz im Spiel | keine Rezeptkonflikte, keine fehlenden Eingaben, keine Umgehung der Progression | ⏳ |
 | 38 | Star Wars Planets und Galaxy in a Cube | beide Mods, Planeten besuchen | läuft zusammen; Dopplungen notieren (Liste in `17_STAR_WARS_1.20.1.md`) | ⏳ |
 | 39 | Blue-Skies-Haus | Struktur mit den Portalen suchen | Name der Struktur und des Guard notieren (für T11 in `18_STORY.md`) | ⏳ |
+
+### Runde 7 — Questtexte Botania (2026-10-17)
+
+| Nr. | Test | Wie | Erwartet | Ergebnis |
+|---|---|---|---|---|
+| 40 | Alfheim-Sperre | Elfenportal öffnen und ohne Mead of Kvasir hineingehen; dann Met trinken (`mythicbotany:kvasir_mead`, Kreativ) und erneut | ohne Met kein Durchgang, mit Met nach Alfheim (`lockAlfheim`); sonst BO5-02/BO6-01 in `questtexte/botania.md` anpassen | ⏳ |
+| 41 | Gaia-Pylon-Rezept | `botania:gaia_pylon` in JEI ansehen | nur das Rezept über den Alfsteel Pylon (MythicBotany `replaceGaiaRecipe`); gilt das Botania-Original, liegt Gaia nicht hinter Alfsteel (Ü P1) | ⏳ |
 
 ### Noch ohne Testweg
 

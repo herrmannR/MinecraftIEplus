@@ -98,7 +98,7 @@ JEIEvents.hideItems(event => {
 6. 🔵 **Drops und Truhen:** Prüfen, ob Mobs oder Strukturen von Star Wars Planets entfernte Schwerter droppen; falls ja, per LootJS ersetzen (LootJS ist noch nicht im Pack).
 7. 🔵 **Advancement `craft_saber`** von Star Wars Planets wird ohne Rezept unerreichbar → nicht als Quest-Bedingung verwenden.
 8. 🔵 **Dopplungen** bei Jawas, Kyber-Kristallen und Blastern sichten und entscheiden, welche Seite bleibt.
-9. 🔵 **Rezepte und Werte** von Galaxy in a Cube in JEI nachschlagen und hier eintragen.
+9. 🟡 **Rezepte und Werte** von Galaxy in a Cube: JEI zeigt nur die 32 Werkbank-Rezepte (Test 24, 2026-10-17). Lichtschwerter, Blaster, Bemalungen (z. B. 501st), Kyber-Färben und Droiden laufen über Assembly Bench, eigenen Bildschirm und Droid Fabricator ohne JEI; Rezepte dieser Wege stehen in `modpfade/swgc/WISSEN.md` und müssen im Questbuch erklärt werden. 🔵 Werte der Waffen und Rüstungen offen.
 10. 🔵 **Quests:** Star-Wars-Kapitel in FTB Quests, z. B. „Lande auf Tatooine", „Baue ein Lichtschwert".
 
 ## Vorlage: fremde Dimension als Ad-Astra-Planet

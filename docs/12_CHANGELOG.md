@@ -791,7 +791,7 @@ Status: 🟢
 
 ## 2026-10-17 — Testrunde 3: Raumfahrt und Blue Skies
 
-Status: 🟢 (Tests 16–23), 🔵 24 offen
+Status: 🟢 (Tests 16–24)
 
 ### Ergebnisse (User)
 - 16: Die Treibstoff-Tags greifen; T1 bis T3 nehmen jeweils nur ihren Treibstoff.
@@ -802,6 +802,7 @@ Status: 🟢 (Tests 16–23), 🔵 24 offen
 - 21: Glacio braucht keinen Anzug; auf allen anderen Ad-Astra-Planeten reicht jeder Anzug.
 - 22: Blue-Skies-Werkzeugabschwächung: mit fremdem Werkzeug dauert es ewig. Bleibt so gewollt (offener Punkt C.11 erledigt).
 - 23: Everdawn ist sofort erreichbar, wie Everbright. Osmium in Menge gibt es damit schon vor dem Mond.
+- 24: JEI zeigt von Galaxy in a Cube nur die Werkbank-Rezepte. Lichtschwerter, Kristalle, Droiden und bemalte Rüstungen (z. B. 501st) fehlen, weil der Mod kein JEI-Plugin hat. Die 7 Raketen-Rezepte von Ad Astra und Rocketed sind sichtbar; nur die betankte Rakete aus dem Kreativmenü hat keins.
 
 ### Änderung
 - Energizer entfernt: Rezept in `server_scripts/raumfahrt/ad_astra_regeln.js`, in JEI ausgeblendet. Er ist in keinem anderen Rezept Zutat (geprüft in den JARs von Ad Astra, Giselle und Rocketed). Ungetestet, noch nicht in der Testinstanz.
@@ -838,3 +839,17 @@ Status: 🟡
 
 ### Betroffene Bereiche
 - `questtexte/README.md`, `modpfade/ie/WISSEN.md`, Skill `questtexte`
+
+## 2026-10-17 — Questtexte für Botania (Entwurf)
+
+Status: 🟡
+
+### Änderung
+- Neu: `questtexte/botania.md` mit dem Skill `questtexte`. 55 Quests über BO1 bis BO7 plus sieben Nebenquests ohne Meilenstein, im kurzen Format für Mods mit Buch: Ziel, Fundstelle im Lexica Botania (Kategorie → Eintrag), Pack-Abweichungen. MythicBotany ist eingeschlossen (Kategorien „Alfheim“ und „MythicBotany“), dazu die Reihen Corporea und Mimir/Mjöllnir.
+- `modpfade/botania/WISSEN.md`: Lexikon-Titel stehen als Sprachschlüssel in der Sprachdatei, Pure Daisy liefert `botania:livingwood_log`, Dimension `mythicbotany:alfheim`.
+
+### Betroffene Bereiche
+- `questtexte/README.md`, `modpfade/botania/WISSEN.md`, Skill `questtexte`, `11_TESTING.md` (Tests 40–41), `00_STATUS.md`
+
+### Teststatus
+Offen: Weg zum Mead of Kvasir (Alfheim vor Gaia), Gaia-Pylon-Rezept in JEI, `lockAlfheim` in 1.20.1.

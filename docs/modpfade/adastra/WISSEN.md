@@ -52,6 +52,7 @@
   - Jet Suit und Etrionic Capacitor laden in der IE Charging Station und am Mekanism Energy Cube; der Energizer ist deshalb entfernt.
   - Räume bleiben mit den richtigen Blöcken dicht; Strom kommt über den IE Feedthrough Insulator oder einen Energiespeicher in Wand oder Boden hinein.
   - Anzüge: Auf Glacio braucht man keinen. Auf allen anderen Planeten reicht jeder Anzug, auch der einfache Space Suit auf Merkur und Venus. Das Buch nennt den Netherite Space Suit für Venus und Merkur als Pflicht; im Spiel stimmt das nicht.
+  - JEI: Alle 7 Raketen-Rezepte (T1–T4, Rocketed T5–T7) stehen unter NASA Workbench. Die betankte Rakete im Kreativmenü ist eine eigene Item-Variante ohne Rezept (Test 24).
 
 ## Offen
 

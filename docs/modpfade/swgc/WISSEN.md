@@ -43,6 +43,7 @@
 - Vollständig ab der ersten Spielstunde erreichbar (Eisen, Kupfer, Redstone, ein paar Diamanten), an keine Stufe eines anderen Mods gebunden.
 - Trägt nichts in `forge:`-Tags ein (Durasteel ist kein `forge:ingots`) → kein anderer Mod verarbeitet seine Werkstoffe. Ansatzpunkt für Einbindung: Rezepte von Plastoid, Durasteel, Gas Harvester, Droid Fabricator (`swgc:fabrication`) per KubeJS; Assembly-Bench-Rezepte stehen im Code, nicht in Rezeptdateien (ob KubeJS sie erreicht, ist nicht geprüft).
 - Überschneidung mit Star Wars Planets, siehe `swplanets/WISSEN.md`.
+- **Kein JEI-Plugin** (JAR ohne JEI-Klassen, geprüft 2026-10-17): Lichtschwerter, Griffe, Blaster und Bemalungen wie die 501st-Rüstung (Assembly Bench, im Code), das Färben der Kyber-Kristalle (eigener Bildschirm) und die Droiden (`swgc:fabrication`) erscheinen nie in JEI. Sichtbar sind nur die 32 Werkbank-Rezepte (u. a. Klon-, Jedi-, Sith-, Royal-Guard- und Vader-Rüstung, Plastoid, Durasteel, Assembly Bench, Droid Fabricator). Für Spieler muss das Questbuch diese Wege erklären.
 
 ## Ohne Rezept und ohne Fundort
 
@@ -50,7 +51,7 @@ AT-RT, AT-ST, Delta-7B, Clone, Darksaber, Double-bladed Glaive, Jedi/Sith Holocr
 
 ## Offen
 
-- Werte der Blaster, Lichtschwerter, Rüstungen; Wechsel/Freischaltung der Formen; Kosten der Macht-Fähigkeiten; Form des Kyber-Vorkommens; Drops der Mobs; Preise des Anzellan; Fahrzeuge; ob JEI die Assembly-Bench-Rezepte zeigt.
+- Werte der Blaster, Lichtschwerter, Rüstungen; Wechsel/Freischaltung der Formen; Kosten der Macht-Fähigkeiten; Form des Kyber-Vorkommens; Drops der Mobs; Preise des Anzellan; Fahrzeuge.
 
 ## IDs der Seite
 

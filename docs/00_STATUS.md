@@ -23,13 +23,13 @@ Minecraft **1.20.1, Forge 47.4.26** (Wechsel von 1.18.2 am 2026-10-11). Block A 
 | `03_ERZGENERATION.md` | 🟢 Verteilung beschlossen und im Spiel nachgezählt (2026-10-17) |
 | `erzatlas/` (samt Artifact-Seite) | 🟢 Soll-Verteilung |
 | `10_KUBEJS.md` | 🟡 |
-| `11_TESTING.md` | 🟢 Testplan; Tests 1–23 und 25–27 bestanden, 24 und 28–39 offen |
+| `11_TESTING.md` | 🟢 Testplan; Tests 1–27 bestanden, 28–39 offen |
 | `01_PROGRESSION.md` | 🟡 vier Fragen offen |
 | `meilensteine/` (samt Artifact-Seite) | 🟡 nach der Story umgebaut (2026-10-14): 50 Meilensteine, 9 Pfade, 16 Kapitel in zwei Parts, Fragenkatalog |
 | `18_STORY.md` | 🟡 Part 1 im Umriss, Part 2 und 3 folgen; schreibt der User |
 | `modpfade/` | je Mod eine Seite und `WISSEN.md` |
 | `19_HILFEBUECHER.md` | 🟢 welche Mods ein Buch im Spiel haben; Regel für die Erklärtiefe im Questbuch |
-| `questtexte/` | 🟡 Questtexte je Mod (Skill `questtexte`); Mekanism als Entwurf, Multiblock-Bauregeln 🔵 im Spiel prüfen |
+| `questtexte/` | 🟡 Questtexte je Mod (Skill `questtexte`); Entwürfe für Mekanism, IE und Botania; Multiblock-Bauregeln (Mekanism) und Tests 40–41 (Botania) 🔵 offen |
 | `04`–`09` | 🔴 Stand 1.18.2, mit Warnhinweis |
 | `13_TESTINSTANZ_CHANGELOG.md` | gilt nur für die 1.18.2-Testinstanz |
 
@@ -41,13 +41,14 @@ Minecraft **1.20.1, Forge 47.4.26** (Wechsel von 1.18.2 am 2026-10-11). Block A 
 - 9. 🔵 Fragenkatalog der Meilensteinkarte.
 - 10. 🔵 Zurückgestellt: magische Komponenten und Uran-Teil für T4; Zuordnung der Star-Wars-Planeten zu T5/T6; Cryo Fuel. Neu: Petroleum vor dem ersten Raumflug Pflicht, obwohl T1 mit Biodiesel fliegt?
 - 11. 🟢 Blue-Skies-Werkzeugabschwächung gemessen (2026-10-17): fremdes Werkzeug dauert ewig, bleibt so gewollt.
+- 🔵 Neu (Test 23, 2026-10-17): Everdawn ist sofort erreichbar, Osmium in Menge gibt es also schon vor dem Mond (Karte: Everdawn bei K4). So lassen, Portal per Skript sperren oder Osmium dort senken?
 
 **D. Skripte und Fixes** — 🟡 erste Fassung, ungetestet
 - 13. 🔵 `forge:coins` und fehlende Hellforged-Flüssigkeiten (Blood-Smeltery).
 - 14. 🔵 T4-Treibstoff, Cryo Freezer. (Energizer entfernt, 2026-10-17, ungetestet.)
 - 🔵 Umsetzen (entschieden 2026-10-17, Ideenimport): Star Manual raus; Plastic Plate raus, Plastoid mit HDPE; Kyber von Star Wars Planets durch das von Galaxy in a Cube ersetzen; Beskar nur im starken Ofen, 1 Nugget (Ofen offen); Digital Miner raus; AE2-Energieerzeuger raus; IE-Crusher übernimmt den Mekanism-Crusher. Erst wenn die Story von Part 1 steht.
 
-**E. Tests** — 🟡 Runde 1, 2 und 4 bestanden, Runde 3 bis auf 24 (2026-10-17); offen in `11_TESTING.md` außerdem Runde 5 und 6
+**E. Tests** — 🟡 Runde 1 bis 4 bestanden (2026-10-17); offen Runde 5 und 6 in `11_TESTING.md`
 - 19. Blood-Magic-Ritual per KubeJS abfangen (Dungeon nur auf dem Merkur).
 - 20. Galaxy in a Cube in der Overworld im Spiel bestätigen und entscheiden, ob es bleibt.
 

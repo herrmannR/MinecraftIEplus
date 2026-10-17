@@ -17,6 +17,8 @@
 - **Rezepte** `data/botania/recipes/<typ>/`: `petal_apothecary` (46), `mana_infusion` (139), `runic_altar` (16), `pure_daisy` (8), `elven_trade` (14), `terra_plate`, `orechid` (16), `orechid_ignem`, `marimorphosis`, `brew` (20), `conversions`. MythicBotany: `mythicbotany_infusion` (`mythicbotany:infuser`), `mythicbotany_rune_rituals`, dazu `botania:runic_altar` für die neun Runen.
 - **Strukturen** `data/botania/structures/`: `alfheim_portal`, `terra_plate`, `enchanter`, `gaia_ritual`, `gog_island`. MythicBotany: `andwari_cave`, `elven_houses/` u. a. **Enchanter und Gaia-Ritual liegen als NBT vor, sind aber noch nicht mit `NbtDump` ausgelesen** (siehe Offen).
 - Lexikon-Bilder: `assets/botania/textures/gui/entries/`.
+- **Titel der Lexikon-Einträge** stehen in den JSONs nur als Sprachschlüssel (`botania.entry.<name>`, `botania.category.<name>`); die Klartexte holt ein `grep -oE` aus `assets/botania/lang/en_us.json`. Kategorie eines Eintrags = Ordner unter `entries/` (`unzip -Z1`). MythicBotany: Schlüssel `lexicon.entry.mythicbotany.botania.<kategorie>.<eintrag>` in `assets/mythicbotany_lexicon/lang/en_us.json`.
+- Weitere IDs (2026-10-17 geprüft): Pure Daisy macht `botania:livingwood_log`, Alfheim ist die Dimension `mythicbotany:alfheim`, Flaschen der Brauerei `botania:brew_flask`, Ender Air `botania:ender_air_bottle`, Relikte `botania:infinite_fruit`, `king_key`, `flugel_eye`, `thor_ring`, `loki_ring`, `odin_ring`.
 
 ## Progression in Kürze
 
