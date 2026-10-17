@@ -25,7 +25,13 @@
   - **Raster:** Jede Zeile (Stufe) der Meilensteinkarte wird ein Kapitel im Questbuch, also ein relativ großer Fortschritt. Die Zeilen können sich beim weiteren Umbau noch ändern.
   - **Anlass:** Kommt in einer Zeile ein Teil des Packs zum ersten Mal vor (zum Beispiel zum ersten Mal Mekanism oder zum ersten Mal Mekanism-Chemie), tauchen dazu passende Nebenquests auf. Sie zeigen, was man mit dem gerade erarbeiteten Teil sonst noch machen kann, ohne dass die Story es gerade braucht.
   - 🟢 **Die Nebenquests sind die Aufgaben des Einsiedlers** (2026-10-14). Belohnung: Credits, sofort nach dem Erfüllen. Das erste Kapitel mit Nebenquests folgt auf das Kapitel, das mit der ersten erfolgreichen Quest für den Einsiedler endet.
-  - 🔵 Offen: die Liste der Nebenquests je Kapitel.
+  - 🟢 **Alle Nebenquests geben Credits** (User, 2026-10-17).
+  - 🔵 Offen: die Liste der Nebenquests je Kapitel. Vom User genannte Stränge (Ideenimport, 2026-10-17; Kapitel noch nicht zugeordnet):
+    - **Blue-Skies-Haus:** Quests bei der Easy-NPC-Figur im Haus, dann Boss-Reihe, Alchemy Table. Wird später Pflicht (Abschnitt 3).
+    - **Roguelike-Dungeons (Wesley's), fünf Stufen:** (1) Vorbereitung, dazu gehört der Chalk Marker (Kreide); (2) die acht Oberwelt-Dungeons, je eine Quest; (3) der Dungeon im End (Heart of Ender); (4) der Nether; (5) der Endboss in der Infinite-Dungeons-Dimension. 🔵 Welche Stufen für die Vorbereitung auf die Altar-Dimension Pflicht werden (O35).
+    - **Immersive Aircraft:** verschiedene Fluggeräte bauen; Anzahl und Reihenfolge offen.
+    - **Erzvervielfachung (Mekanism):** je eine kurze Anleitung für 2×, 3×, 4× und 5×, damit die Spieler wissen, welche Schritte nötig sind.
+    - **IE-Erkundung:** Core Sample Drill (spürt die unsichtbaren Erzadern auf).
 - 🟢 **T3 braucht ein Teil aus Blood Magic**, weil der Tempel den Planeten abschirmt. So haben die Spieler garantiert schon Fortschritt in Blood Magic.
 - 🟢 **T2 (Mars):** Die Spieler müssen dort eine richtige Station bauen (2026-10-14, Einzelheiten in Abschnitt 3). Automatischer Transport zwischen den Welten ist noch offen (O19).
 
@@ -97,13 +103,28 @@
 - 🟢 **Droiden einzeln freischalten** (User, 2026-10-14). Weg (vom User übernommen am 2026-10-14; die Fabricator-Rezepte kennen keinen Spieler): Jeder Droide bekommt im Fabricator-Rezept eine zusätzliche Zutat, einen eigenen Steuerkern je Typ (B-1, B-2, Droideka; eigene KubeJS-Items). Den Steuerkern baut man an der Werkbank, und dieses Rezept schaltet der jeweilige Bauplan global frei. Der Kern wird bei jedem Droiden verbraucht. Die Fabricator-Rezepte sind JSON (`swgc:fabrication`, Zutatenliste mit Anzahl) und lassen sich per KubeJS (`event.custom`) ersetzen. 🔵 Im Spiel prüfen.
 - Später festlegen: Name, Volk, die Quest, die sein Vertrauen gewinnt; Credits je Spieler oder je Team; wiederholbare Aufgaben.
 
-**Der Tempel**
-- Wenn die Spieler auf dem Planeten ankommen, ist das Innere des Tempels zerstört.
-- Sie müssen den Altar neu aufbauen, um in die Dimension zu gelangen. Vielleicht geschieht das dann doch in der Overworld (nicht entschieden).
+**Der Tempel (präzisiert durch den Ideenimport, User, 2026-10-17)**
+- 🟢 Der Tempel liegt auf dem **Merkur**. Der Altar dort ist das „Portal“ in die Blood-Magic-Dimension (man kommt über den Altar hinein); beides ist dasselbe.
+- 🟢 Ablauf:
+  1. Ankunft auf dem Merkur: Der Tempel ist verlassen, der Altar kaputt.
+  2. Im Tempel liegen **vier Schriftrollen**. Die erste weist darauf hin, dass im Tempel ein Portal zur dunklen Seite steht; die Rollen 2 bis 4 enthalten kurze Texte.
+  3. Die Spieler übergeben alle vier Rollen dem Droiden. Er erkennt daraus: Der Meister muss in der Altar-Dimension gefangen sein. Er gibt die Quest, den Altar zu reparieren.
+  4. Rückkehr zur Erde: Material für die Reparatur beschaffen und auf die Altar-Dimension vorbereiten, im Roguelike-Dungeon (Wesley's) und mit den Welt-Bossen von Blue Skies. Für die Reparatur braucht es auch etwas aus dem Strang um das Blue-Skies-Haus (siehe unten).
+  5. Rückkehr zum Merkur, Reparatur des Altars, Betreten der Dimension.
+  6. Erkenntnis in der Dimension: Der Meister war dort, ist aber weg.
+- 🔵 Offen: Texte, Fundorte und Reihenfolge der Schriftrollen; die Zutaten der Reparatur; ob der Altar nach der Reparatur sofort öffnet oder weitere Bedingungen hat.
 
 **Wendung**
 - Es stellt sich heraus, dass der Meister selbst aus der Dungeon-Dimension entkommen ist.
 - Wenn die Spieler aus dem Dungeon zurückkommen, ist der Droide entweder weg oder bei einer Explosion kaputtgegangen. Er kann nicht mehr weiterhelfen.
+- Danach geht es auf der Erde mit dem Elfen weiter, um nach Glacio zu kommen (User, 2026-10-17).
+
+**Das Blue-Skies-Haus (neuer Strang, User, 2026-10-17)**
+- „Haus“ ist die Overworld-Struktur von Blue Skies, in der die Portale nach Everbright und Everdawn stehen. Everbright und Everdawn sind die „Traumwelten des Lichts und der Dunkelheit“.
+- Der Mob-Händler, den Blue Skies dort von sich aus hinstellt (Guard), wird durch eine eigene **Easy-NPC-Figur** ersetzt.
+- Der Strang wird **zuerst als Nebenquest** freigeschaltet: Erst erledigen die Spieler einige Quests bei dieser Figur, später folgt eine Boss-Reihe; der Alchemy Table von Blue Skies gehört mit hinein.
+- Später wird er für die Reparatur des Altars in der Hauptstory **Pflicht** (erst optional, dann Pflicht).
+- Aus den Notizen des Users (Wortlaut sinngemäß): Der Droide findet den Meister nicht, hat aber „etwas aus seiner eigenen Welt“ gefunden, das Haus, über das man in die Traumwelten reisen kann. Er empfiehlt, den dortigen Herrscher aufzusuchen; der hilft, an Erze aus seiner Welt zu kommen, vor allem die Mekanism-Erze, die es in der Overworld nur wenig gibt. 🔵 Offen: siehe O34.
 - Ein hinterlassener Text des Meisters gibt den Hinweis: Die Spieler brauchen das Elfenportal beziehungsweise die Macht daraus.
 - Das Betreten der Elfenwelt (Alfheim, über MythicBotany) kommt erst später: zusammen mit der Jedi-Ausbildung und den Raketen T5 und T6.
 
@@ -126,7 +147,15 @@
 
 - Beginnt, sobald der Meister in der Overworld ist; endet mit der fertigen Rakete T5.
 - Der Meister bildet die Spieler zu Jedi aus.
-- Noch nicht besprochen. Laut Karte gehören dazu Alfheim (Mead of Kvasir vom Meister), Gaia als Prüfung, Altar T5, Fusion, SPS und Antimaterie, die AE2-Quantenbrücke und die Rakete T5.
+- Laut Karte gehören dazu Alfheim (Mead of Kvasir vom Meister), Gaia als Prüfung, Altar T5, Fusion, SPS und Antimaterie, die AE2-Quantenbrücke und die Rakete T5.
+
+**Macht und Training (Ideenimport, User, 2026-10-17)**
+- 🟢 Das Training liegt in Teil 2 und beginnt, sobald der Meister zurück ist. Es beginnt beim Meister mit einer **Machtprobe** (Quest).
+- 🟢 Die Macht ist zu Beginn nicht frei verfügbar; die Spieler müssen sie erst freischalten. Die Macht kommt aus Galaxy in a Cube (helle Seite über XP, dunkle über das Töten von Zivilisten; Spielregel `forceObtainment`). Ob sich der normale Fortschritt abschalten und Punkte gezielt vergeben lassen, ist eine technische Prüfung (T10).
+- 🟢 **Machtpunkte** werden als Questbelohnung vergeben; Jedi- und Sith-Artefakte können Belohnungen sein und mit Machtpunkten verknüpft werden.
+- 🟢 Trainingspfade: **helle Seite** mit Aufgaben rund um Botania, **dunkle Seite** rund um Blood Magic, **allgemeines Training** im Roguelike-Dungeon (Wesley's). Den Abschluss der ersten Trainingsreihe bildet der Sieg über den **Gaia Guardian** (Gaia I).
+- 🔵 Ideen des Users, nicht entschieden: Freischaltung über ein **Machtmessgerät**, das hergestellt werden muss (angelehnt an Episode I); alternativ oder zusätzlich ein sehr teures Ritual oder ein Handel.
+- 🔵 Offen: O36 bis O38.
 
 ### Teil 3: Star-Wars-Welten
 
@@ -152,7 +181,12 @@ Erledigt seit der ersten Fassung: Herkunft des Droiden (er schweigt), Grund für
 | O23 | Wie kommt der Droide auf den Mars: fliegt er mit den Spielern, oder erscheint er von selbst, sobald die Station-Quest erledigt ist? (Entschieden: Abgaben und Freischaltungen nur bei ihm auf dem Mars.) | Mars |
 | O15 | Schicksal des Droiden: weg oder zerstört? Wer gibt danach die großen Ziele (Elf, dann Meister)? Kommt der Droide in Teil 2 oder 3 zurück? | Figuren |
 | O16 | Wo liegt der hinterlassene Text des Meisters: im Dungeon, im Tempel oder bei den Resten des Droiden? | Wendung |
-| O2 | Wo wird der Altar neu aufgebaut: im Tempel auf dem Merkur oder in der Overworld? Bisher beschlossen ist, dass das Ritual nur auf dem Merkur gelingt (🟡, `15_RAUMFAHRT.md`). | Tempel |
+| O2 | ~~Wo wird der Altar neu aufgebaut?~~ Entschieden (User, 2026-10-17): im Tempel auf dem Merkur. Offen: Texte und Fundorte der vier Schriftrollen, Zutaten der Reparatur. | Tempel |
+| O34 | **Blue-Skies-Haus:** Ist der „Herrscher“ dieselbe Easy-NPC-Figur, die den Guard im Haus ersetzt, oder eine zweite Figur (etwa in Everbright oder Everdawn)? Wann und wo erzählt der Droide vom Haus, wenn der Strang schon vorher als Nebenquest freigeschaltet ist? Was heißt „aus seiner eigenen Welt“, wenn der Droide aus der Star-Wars-Galaxis kommt? Was genau liefert der Strang für die Altar-Reparatur? | Blue-Skies-Haus |
+| O35 | **Roguelike-Dungeons:** Welche der fünf Stufen sind für die Vorbereitung auf die Altar-Dimension (Part 1) Pflicht, welche gehören zum allgemeinen Training (Part 2), welche bleiben Nebenquest? | Tempel, Teil 2 |
+| O36 | **Machtpfade:** Muss ein Spieler beide Pfade (hell und dunkel) gehen oder darf er sich auf einen festlegen? Reihenfolge von allgemeinem Training, hellem und dunklem Pfad? | Teil 2 |
+| O37 | **Machtpunkte und Artefakte:** Welche Jedi- und Sith-Artefakte (z. B. die Holocrons von Galaxy in a Cube), und wie hängen sie an den Machtpunkten? | Teil 2 |
+| O38 | **Freischaltung der Macht:** Machtmessgerät, teures Ritual oder Handel? | Teil 2 |
 | O3 | Was finden die Spieler in der Dungeon-Dimension, wenn der Meister schon weg ist? Wo steckt das Rätsel, das nach Glacio führt? Laut Progression liegt dort das Pflicht-Item für Rakete T4. | Wendung |
 | O4 | Warum ist der Meister nach Glacio gegangen und nicht zum Droiden zurück? Was ist mit dem Relikt? | Wendung |
 | O5 | Welche Items beweisen die „Würdigkeit“? Die Hauptwelt hat schon Stahl, Biodiesel-Generator und Runenaltar. | Erste Quest |
@@ -186,6 +220,8 @@ Erledigt seit der ersten Fassung: Herkunft des Droiden (er schweigt), Grund für
 | T7 | Ritual-Ort per KubeJS beschränken (schon Test E19 in `11_TESTING.md`). |
 | T8 | „Ad Astra: Rocketed“: Rezepte und Treibstoffe für T5 und T6 neu schreiben; Star-Wars-Planeten auf diese Stufen legen. |
 | T9 | Bosse, Macht-Fähigkeiten und Lichtschwert-Rezepte in Galaxy in a Cube: Rezepte sind laut `17_STAR_WARS_1.20.1.md` noch nicht bekannt. |
+| T10 | Macht (Galaxy in a Cube): Schaltet die Spielregel `forceObtainment` den normalen Fortschritt (XP, Töten von Zivilisten) ab? Lassen sich Machtpunkte per Befehl vergeben, also als FTB-Quest-Belohnung „Befehl“? Tests 33 und 34. |
+| T11 | Blue-Skies-Haus: Wie heißt die Struktur und der Guard im JAR, lässt sich der Guard per Datapack aus der Struktur entfernen, und lässt sich dort eine Easy-NPC-Figur setzen (in jedem Haus der Welt oder nur in einem)? |
 
 ### Ergebnisse aus den JARs (2026-10-14, TODO G27)
 
@@ -216,7 +252,7 @@ Erledigt seit der ersten Fassung: Herkunft des Droiden (er schweigt), Grund für
 | **Rezept je Spieler freischalten** (2026-10-14) | KubeJS 2001.6.5 kennt an Werkbank-Rezepten `modifyResult`, und das Raster liefert den Spieler (`ModifyRecipeCraftingGrid.getPlayer`). Stages setzt der Befehl `/kubejs stages add <Spieler> <Stage>`. Assembly Bench, Droid Fabricator, Gas Harvester, Empty Gas Vessel (shaped), Plastoid und Durasteel (shapeless) sind normale Werkbank-Rezepte. B-1, B-2 und Droideka sind `swgc:fabrication` (Maschine, kein Spieler bekannt); die Blaster stehen im Code der Assembly Bench. | Werkbank-Rezepte liefern ohne Stage nichts. Der Bauplan setzt die Freischaltung (später entschieden: global für die Welt, beim Kauf, siehe Abschnitt 3). Droiden und Blaster sind über ihre Maschinen gesperrt: Wer Fabricator oder Assembly Bench nicht bauen kann, baut auch keine Droiden oder Blaster. Einzelne Droiden oder Blaster lassen sich so nicht getrennt freischalten. Autocrafter (AE2, Mekanism) haben keinen Spieler und bekommen dann nichts. 🔵 Ob die Tinkers-Werkbank den Spieler durchreicht, im Spiel prüfen. |
 | **Futuristisches Aussehen** | FTB Quests nimmt Kapitel-Hintergründe, Bilder und Farben je Quest; das Gesamt-Thema des Buchs kommt aus einem Ressourcenpaket und gilt für das ganze Buch. | Ein eigener Look nur für den Bereich des Einsiedlers geht über Bilder und Hintergründe im Kapitel, nicht über ein zweites Thema. 🔵 |
 
-⚠️ **Neuer Fund, Spoiler-Gefahr:** Star Wars Planets schenkt jedem Spieler das Handbuch „Star Manual“, sobald er eine Rakete T3 im Inventar hat (Advancement `swplanets:star_manual`). Das Buch hat Kapitel über Jedi, Sith, Kyber und „Learn the Force“. Damit wäre das Geheimnis in Part 1 verraten. 🔵 Belohnung per Datapack entfernen oder auf T5 verlegen.
+⚠️ **Neuer Fund, Spoiler-Gefahr:** Star Wars Planets schenkt jedem Spieler das Handbuch „Star Manual“, sobald er eine Rakete T3 im Inventar hat (Advancement `swplanets:star_manual`). Das Buch hat Kapitel über Jedi, Sith, Kyber und „Learn the Force“. Damit wäre das Geheimnis in Part 1 verraten. 🟢 Entschieden (User, 2026-10-17): Das Star Manual kommt ganz raus.
 
 ## 5. Einbindungs-Ideen (Vorschläge von Claude, nicht entschieden)
 
@@ -275,8 +311,8 @@ Die Karte (`meilensteine/`, Artifact-Seite) ist am 2026-10-14 feiner aufgeteilt 
 | K5 Erzketten | Alloyer und Foundry · entschwefelter Diesel · Altar T3 und Soul Forge · Mekanism Advanced · Bosse in Everbright | offen |
 | K6 Der Mars | IE-Großindustrie · Terrasteel · Bosse in Everdawn · **Rakete T2** | Signale von der Erde zu schwach |
 | K7 Horchposten | Planetenmetalle gießen · Altar T4 und Rituale · Mekanism Elite und Chemie | Mars-Station (SW3), der Droide zieht auf den Mars |
-| K8 Hitze | **Rakete T3** | der zerstörte Tempel |
-| K9 Der Tempel | Tempel und Dungeon (BM4) · Kernkraft · ME-System | Meister entkommen, Droide fällt aus, Text des Meisters |
+| K8 Hitze | **Rakete T3** | der verlassene Tempel, kaputter Altar, vier Schriftrollen; zurück zur Erde (Material, Roguelike-Dungeon, Blue-Skies-Bosse, Blue-Skies-Haus; Zuordnung zu K8 ist ein Vorschlag) |
+| K9 Der Tempel | Tempel und Dungeon (BM4) · Kernkraft · ME-System | Altar repariert, Dimension betreten; Meister entkommen, Droide fällt aus, Text des Meisters |
 | K10 Der Elf | Elfenportal (BO5) · Mekanism Ultimate und Teleportation | Elf; Boss-Items und Tech-Erzeugnisse |
 | K11 Glacio | **Rakete T4** (RF4) | Barriere, Meister gefunden und in die Overworld zurückgebracht; Ende von Part 1 |
 | **Part 2 · Ausbildung zum Jedi und Vorbereitung T5** (wird später besprochen) | | |

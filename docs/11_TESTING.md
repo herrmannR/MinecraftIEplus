@@ -74,11 +74,23 @@ Ergebnis jeweils hier eintragen: ✅ bestanden, ❌ Fehler (mit Beschreibung), �
 | 31 | Fracht in der Rakete | Rakete beladen, fliegen, landen | Inhalt kommt an oder nicht | ⏳ |
 | 32 | Checkliste per KubeJS | eigene FTB-Quests-Aufgabe „Station auf dem Mars“ (Skript folgt) | Aufgabe wird nur mit allen Blöcken im Umkreis erfüllt | ⏳ |
 
+### Runde 6 — Ideenimport (2026-10-17)
+
+| Nr. | Test | Wie | Erwartet | Ergebnis |
+|---|---|---|---|---|
+| 33 | Macht gesperrt | neue Welt, `/gamerule forceObtainment false`; XP sammeln, Zivilisten (`swgc:civilians`) töten | kein Machtfortschritt; notieren, was die Regel genau abschaltet | ⏳ |
+| 34 | Machtpunkte per Befehl | Befehle von Galaxy in a Cube suchen (Tab-Vervollständigung) | Punkte hell/dunkel lassen sich gezielt setzen → als Quest-Belohnung „Befehl“ nutzbar | ⏳ |
+| 35 | Mob-Stärke | Overworld, Blue Skies, Wesley's-Dungeons, Planeten mit typischer Ausrüstung der Stufe | „schwer, aber fair“; Eindruck je Gebiet notieren | ⏳ |
+| 36 | AE2 ohne Generatoren | nach dem Entfernen von Vibration Chamber und Crystal Resonance Generator JEI ansehen | kein Rezept fehlt, das eine der beiden als Zutat braucht | ⏳ |
+| 37 | Mekanism-Maschinen grob | Grundmaschinen bis Elite in JEI und kurz im Spiel | keine Rezeptkonflikte, keine fehlenden Eingaben, keine Umgehung der Progression | ⏳ |
+| 38 | Star Wars Planets und Galaxy in a Cube | beide Mods, Planeten besuchen | läuft zusammen; Dopplungen notieren (Liste in `17_STAR_WARS_1.20.1.md`) | ⏳ |
+| 39 | Blue-Skies-Haus | Struktur mit den Portalen suchen | Name der Struktur und des Guard notieren (für T11 in `18_STORY.md`) | ⏳ |
+
 ### Noch ohne Testweg
 
 - Blood-Magic-Ritual nur auf dem Merkur (braucht erst ein Skript).
 - Blood-Smeltery: `forge:coins`, Hellforged-Flüssigkeiten.
-- Zusammenspiel Star Wars Planets und Galaxy in a Cube (Liste in `17_STAR_WARS_1.20.1.md`).
+- Nach der Umsetzung (Skripte fehlen noch): IE-Crusher deckt die Rezepte des Mekanism-Crushers ab; Digital Miner entfernt; Plastic Plate entfernt; Beskar nur im starken Ofen, ergibt ein Nugget; Kyber nur über Galaxy in a Cube; Star Manual kommt nicht an; mit T5 erscheint nur Endor auf der Karte; Machtfortschritt nur über Quests.
 
 ## Regeln
 

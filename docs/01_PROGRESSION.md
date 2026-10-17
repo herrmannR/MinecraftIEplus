@@ -52,6 +52,8 @@ Vorschlag für die Mekanism-Stufe je Rakete (der User legt fest): T1 Basic, T2 A
 - industrielle Grundlage, bleibt auch nach Mekanism nötig (Metal Press für alle Raketenplatten)
 - liefert die Treibstoffe der Raketenstufen T1 bis T3 und die Basis für T4
 - Blei und Aluminium dafür liegen vor allem in Everbright
+- 🟢 **IE-Crusher übernimmt den Mekanism-Crusher** (User, 2026-10-17): Er soll alles können, was der Mekanism-Crusher heute macht. 🔵 Offen: die Liste dieser Rezepte und ob der Mekanism-Crusher danach entfällt.
+- 🔵 Core Sample Drill als Nebenquest zur Erkundung der Erzadern (`18_STORY.md`).
 
 ### Pfad C — Naturmagie / Botania
 **Mana → Runen → Manasteel → Terrasteel → Elfenportal, Elementium → (Part 2:) Alfheim → Gaia → Alfsteel**
@@ -72,10 +74,15 @@ Vorschlag für die Mekanism-Stufe je Rakete (der User legt fest): T1 Basic, T2 A
 - Zinn: nur in Everbright
 - Uran: knapp in der Overworld, reichlich auf Merkur und Venus
 - 🟢 Flüssiger Sauerstoff für die Raumfahrt kommt zwingend aus Mekanism
+- 🟢 **Digital Miner wird entfernt** (User, 2026-10-17): zu stark und eine Dopplung zum IE-Excavator.
+- 🟢 Erzvervielfachung (2× bis 5×) ist Teil der Progression; zu jeder Stufe eine kurze Anleitung als Nebenquest (`18_STORY.md`).
+- 🔵 Idee des Users: Automatische Erzgewinnung und Automatisierung allgemein erst über eine teure Progression freischalten (Ritual oder Handel als mögliche Schranke). Welche Maschinen und Meilensteine, ist offen.
 
 ### Pfad F — AE2 / Logistik (zweistufig)
 1. 🟢 **Früher Storage-Layer** (teuer, aber früh erreichbar): bestehende Kisten und Storage Drawers anbinden, zentral suchen.
 2. 🟢 **Endgame-ME-System**: Storage Cells, Autocrafting, P2P, Applied Mekanistics.
+
+🟢 **AE2 erzeugt keine Energie** (User, 2026-10-17): Vibration Chamber und Crystal Resonance Generator werden entfernt; Energie kommt nur aus anderen Mods. 🔵 Testen, ob das andere Rezepte oder Systeme trifft (Test 36).
 
 Certus gibt es in 1.20.1 nur noch an Budding-Blöcken in Meteoriten, die Inscriber-Pressen ebenfalls. Die Meteoriten-Suche ist das natürliche Gate für beide Stufen.
 
@@ -84,8 +91,9 @@ Certus gibt es in 1.20.1 nur noch an Budding-Blöcken in Meteoriten, die Inscrib
 - ersetzt den Twilight Forest als „Industrial Frontier“: Everbright liefert Zinn (nur dort), Blei und Bauxit, Everdawn Osmium
 - Story-Dimension mit Easy-NPC-Figuren (Phase 7b)
 - 🔵 Ob Everbright und Everdawn gleich früh erreichbar sind, ist nicht geprüft
+- 🟢 **Blue-Skies-Haus** (User, 2026-10-17): Die Overworld-Struktur mit den Portalen bekommt statt des Guard eine Easy-NPC-Figur. Ihr Strang beginnt als Nebenquest (Quests, Boss-Reihe, Alchemy Table) und wird später Pflicht für die Altar-Reparatur auf dem Merkur (`18_STORY.md`).
 
-Weitere Dimensionen ohne eigenen Pfad: Nether (Kobalt), Alfheim (Pfad C), Demon Dungeon (Pfad D), Wesley's Roguelike Dungeons (Spaß-Dungeons, keine Pflicht).
+Weitere Dimensionen ohne eigenen Pfad: Nether (Kobalt), Alfheim (Pfad C), Demon Dungeon (Pfad D), Wesley's Roguelike Dungeons. 🟢 Wesley's ist nicht mehr nur Spaß-Dungeon (User, 2026-10-17): fünfstufige Nebenquest-Reihe, Vorbereitung auf die Altar-Dimension in Part 1 und allgemeines Training in Part 2 (`18_STORY.md`, O35).
 
 ### Pfad H — Raumfahrt (Hauptziel)
 

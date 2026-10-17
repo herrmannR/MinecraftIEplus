@@ -45,7 +45,7 @@ Minecraft **1.20.1, Forge 47.4.26** (Wechsel von 1.18.2 am 2026-10-11). Block A 
 **D. Skripte und Fixes** — 🟡 erste Fassung, ungetestet
 - 13. 🔵 `forge:coins` und fehlende Hellforged-Flüssigkeiten (Blood-Smeltery).
 - 14. 🔵 T4-Treibstoff, Energizer, Cryo Freezer.
-- 🔵 „Star Manual“ verrät das Geheimnis schon bei T3 → Belohnung entfernen oder verlegen (aus G27).
+- 🔵 Umsetzen (entschieden 2026-10-17, Ideenimport): Star Manual raus; Plastic Plate raus, Plastoid mit HDPE; Kyber von Star Wars Planets durch das von Galaxy in a Cube ersetzen; Beskar nur im starken Ofen, 1 Nugget (Ofen offen); Digital Miner raus; AE2-Energieerzeuger raus; IE-Crusher übernimmt den Mekanism-Crusher. Erst wenn die Story von Part 1 steht.
 
 **E. Tests** — 🔵 Testplan mit 27 Punkten in `11_TESTING.md`, macht der User im Spiel
 - 16. Ölförderung: findet die neu geformte Pumpe das Vorkommen?
@@ -63,7 +63,8 @@ Minecraft **1.20.1, Forge 47.4.26** (Wechsel von 1.18.2 am 2026-10-11). Block A 
 
 **G. Story und Questbuch** — 🟡
 - 26. 🔵 Entscheidungen des Users: O1 bis O23 in `18_STORY.md` und Fragenkatalog der Meilensteinkarte. Als Nächstes: Checkliste der Mars-Station (O22), Anreise des Droiden (O23), Mekanism-Stufen und Botania-Items je Rakete.
-- 28. 🔵 Runde 5 in `11_TESTING.md` im Spiel testen.
+- 28. 🔵 Runde 5 und 6 in `11_TESTING.md` im Spiel testen.
+- 🔵 Aus dem Ideenimport (2026-10-17): O34 bis O38 in `18_STORY.md` (Blue-Skies-Haus, Roguelike-Stufen, Machtpfade, Artefakte, Freischaltung der Macht); Texte der vier Schriftrollen; Zutaten der Altar-Reparatur.
 
 ### Backlog
 

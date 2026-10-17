@@ -735,3 +735,25 @@ Keine. Weltstand: IE bis Schwermaschinen und Biodiesel erreicht, Botania bis Run
 
 ### Auswirkungen auf bestehende Welt
 Keine.
+
+## 2026-10-17 — Ideenimport eingearbeitet
+
+Status: 🟡
+
+### Änderung
+- Gesammelte Ideen des Users (von anderen KI zusammengefasst) nach Rückfragen eingearbeitet.
+- Story: Ablauf am Tempel auf dem Merkur präzisiert (vier Schriftrollen, Droide erkennt die Gefangenschaft des Meisters, Rückkehr zur Erde zur Vorbereitung, Reparatur des Altars, Meister weg); neuer Strang Blue-Skies-Haus (Easy NPC statt Guard, erst Nebenquest, dann Pflicht für die Reparatur); Nebenquest-Stränge (Wesley's in fünf Stufen, Immersive Aircraft, Erzvervielfachung, Core Sample Drill), alle mit Credits; Macht und Training in Teil 2.
+- Entschieden: Star Manual raus; Plastic Plate raus, Plastoid mit HDPE; Kyber von Star Wars Planets durch Galaxy in a Cube ersetzt; Beskar extrem teuer (Ofen offen); Dopplungen von Star Wars Planets raus; mit T5 nur Endor auf der Karte; Digital Miner raus; AE2-Energieerzeuger raus; IE-Crusher übernimmt den Mekanism-Crusher.
+- Neue offene Fragen O34–O38, Technik T10–T11, Testrunde 6 (Tests 33–39).
+
+### Betroffene Bereiche
+- `18_STORY.md`, `17_STAR_WARS_1.20.1.md`, `01_PROGRESSION.md`, `11_TESTING.md`, `00_STATUS.md`, `meilensteine/data.js`
+
+### Auswirkungen auf bestehende Welt
+Keine (noch nichts umgesetzt).
+
+## 2026-10-17 — Absturz beim Laden der frischen Hauptwelt-Kopie
+
+Status: 🟢 behoben (in der Testinstanz)
+
+Die neu kopierte Weltkopie `3_ Versuch von 1,5` brachte wieder ihre `serverconfig/immersivepetroleum-server.toml` aus 1.18.2 mit. Sie nennt `immersivepetroleum:benzene`, das es in 1.20.1 nicht gibt; der integrierte Server stürzte ab (`crash-2026-10-17_09.26.45-server.txt`), das Spiel blieb hängen. Datei in `.1182-alt` umbenannt; zugleich unsere IE-Serverconfig in die Weltkopie gelegt (alte als `.1182-alt`). Gleicher Fehler wie am 2026-10-11; für die Hauptwelt ist das TODO F24.
