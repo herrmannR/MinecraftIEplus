@@ -811,3 +811,30 @@ Status: 🟢 (Tests 16–23), 🔵 24 offen
 
 ### Auswirkungen auf bestehende Welt
 Keine; die Hauptwelt hat Ad Astra noch nicht.
+
+## 2026-10-17 — Questtexte für Mekanism (Entwurf)
+
+Status: 🟡
+
+### Änderung
+- Neu: `questtexte/mekanism.md` (Ordner `questtexte/` mit README, Skill `questtexte` für die übrigen Mods). Beschreibende Questtexte als Ersatz für das fehlende Mekanism-Buch, gegliedert nach MK1 bis MK9 der Meilensteinkarte, dazu die Nebenquest-Reihe Erzvervielfachung (EV-1 bis EV-5). Je Quest Aufgabe (Item-ID, gegen die Sprachdateien geprüft) und Text. Pack-Änderungen markiert.
+
+### Begründung
+Mekanism hat kein Buch im Spiel (`19_HILFEBUECHER.md`); das Questbuch muss den Weg Schritt für Schritt führen.
+
+### Betroffene Bereiche
+- `00_STATUS.md`
+
+### Teststatus
+Multiblock-Bauregeln, Zündenergie der Fusion und Eingang des SPS stammen nicht aus den JAR-Daten (🔵, im Spiel prüfen).
+
+## 2026-10-17 — Questtexte für Immersive Engineering (Entwurf)
+
+Status: 🟡
+
+### Änderung
+- Neu: `questtexte/ie.md` mit dem Skill `questtexte`. 35 Quests über IE1 bis IE6 plus sechs Werkzeug-Nebenquests, im kurzen Format für Mods mit Buch: Ziel, Fundstelle im Engineer's Manual (Kapitel → Eintrag), Pack-Abweichungen. Petroleum ist eingeschlossen (Kapitel „Oil Processing“).
+- `modpfade/ie/WISSEN.md`: Flüssigkeits-IDs von Petroleum richtiggestellt (Tabelle nennt die Blöcke), billiger Weg zur Gliederung des Handbuchs.
+
+### Betroffene Bereiche
+- `questtexte/README.md`, `modpfade/ie/WISSEN.md`, Skill `questtexte`

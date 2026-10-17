@@ -47,6 +47,8 @@
 
 - Treibstoffe des Portable Generator (Petroleum) nicht ausgelesen.
 - Upgrade-Namen des Accumulator Backpack außer Charging Antenna nicht einzeln gelesen.
+- Hinweis IDs (2026-10-17): Die `fluid_…`-IDs der Petroleum-Flüssigkeiten in der Tabelle sind die Flüssigkeits-**Blöcke**. Die Flüssigkeiten selbst (für Tanks, Tags, Quest-Aufgaben) heißen `immersivepetroleum:crude_oil`, `diesel`, `diesel_sulfur`, `kerosene`, `lubricant`, `gasoline`; Biodiesel `immersiveengineering:biodiesel` (Schlüssel `fluid_type.*` in der Sprachdatei).
+- Handbuch-Gliederung billig lesen: `manual/autoload.json` (Kapitel und Reihenfolge der Einträge), Eintragstitel = erste Zeile von `manual/en_us/<eintrag>.txt`, Kapitelnamen unter `manual.immersiveengineering.<kapitel>` in der Sprachdatei. Petroleum: eigenes `assets/immersiveengineering/manual/autoload.json` im IP-JAR, Kapitel „Oil Processing“.
 
 ## IDs der Seite
 

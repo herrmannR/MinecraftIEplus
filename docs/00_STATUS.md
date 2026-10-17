@@ -29,6 +29,7 @@ Minecraft **1.20.1, Forge 47.4.26** (Wechsel von 1.18.2 am 2026-10-11). Block A 
 | `18_STORY.md` | 🟡 Part 1 im Umriss, Part 2 und 3 folgen; schreibt der User |
 | `modpfade/` | je Mod eine Seite und `WISSEN.md` |
 | `19_HILFEBUECHER.md` | 🟢 welche Mods ein Buch im Spiel haben; Regel für die Erklärtiefe im Questbuch |
+| `questtexte/` | 🟡 Questtexte je Mod (Skill `questtexte`); Mekanism als Entwurf, Multiblock-Bauregeln 🔵 im Spiel prüfen |
 | `04`–`09` | 🔴 Stand 1.18.2, mit Warnhinweis |
 | `13_TESTINSTANZ_CHANGELOG.md` | gilt nur für die 1.18.2-Testinstanz |
 
