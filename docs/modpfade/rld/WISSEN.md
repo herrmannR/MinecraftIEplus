@@ -194,3 +194,7 @@ Erzeugt mit `java -Dstdout.encoding=UTF-8 tools/IdIndex.java <arbeitsordner> rld
 | Maulstone | `wrd:maulstone` |
 
 31 Namen ohne Sprachschlüssel (Sammelbezeichnungen, Bildunterschriften, Vanilla) nicht aufgeführt.
+
+## Nachtrag Questtexte (2026-10-17): Trophäen
+
+Blöcke `wrd:trophy_*`: `um` Undead Mage, `ne` Necromancer, `am` Ancient Mummy, `kw` The Host (King Wraith), `ag` Ancient Golem, `agu` Ancient Guardian Golem, `hoi` Heart of Ice, `im` Ice Mage, `dp` Doom Pillar, `db` Doom Golem, `sk` The Sad King, `tas` The Overseer; Infinite Dungeons: `ks` King Snake, `aqg` Aquaguard, `cs` Crystal Spider, `gm` Giant Mummy, `tm` Face of The Maw, `tc` The Corpse, `be` The Beyond, `tf` The Fallen, `fb` The Great Creator. Keine Trophäe für die Gegner im Purpur-Palast.

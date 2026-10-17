@@ -881,3 +881,17 @@ Status: 🟡
 
 ### Teststatus
 Offen: Cryo Freezer, Rover-Treibstoff, Boss-Mobs der More-Structures-Dungeons, Automation NASA Workbench, Rezepte und Treibstoffe T4 bis T7.
+
+## 2026-10-17 — Questtexte für Wesley's Roguelike Dungeons und Immersive Aircraft (Entwurf)
+
+Status: 🟡
+
+### Änderung
+- Neu: `questtexte/rld.md` mit dem Skill `questtexte`. 23 Nebenquests in den fünf Stufen aus `18_STORY.md` (Vorbereitung, Oberwelt-Dungeons je Gruppe, Purpur-Palast im End, Nether, Infinite Dungeons bis The Great Creator), im vollen Format für Mods ohne Buch. Bosse werden über ihre Trophäen geprüft.
+- Neu: `questtexte/aircraft.md`. 18 Nebenquests (Teile, Treibstoff im Metal Barrel, Fluggeräte, Upgrades, große Geräte, Waffen), im vollen Format.
+
+### Betroffene Bereiche
+- `questtexte/README.md`, `modpfade/rld/WISSEN.md` (Trophäen-IDs)
+
+### Teststatus
+Offen: O35 (welche Wesley's-Stufen Pflicht), „acht Oberwelt-Dungeons“ der Story gegenüber fünf Gruppen im Mod, Seltenheit des Portalbaums, Rückweg des Pathfinder; Freischaltung und Umfang der Aircraft-Reihe, Gyrodyne ohne Treibstoff, Bindung an IE-Stahl.

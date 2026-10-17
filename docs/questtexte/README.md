@@ -11,5 +11,7 @@ Erklärtiefe nach `../19_HILFEBUECHER.md`: **ohne Buch** führen die Texte Schri
 | Botania + MythicBotany | `botania.md` | mit Buch (Lexica Botania), kurz | 🟡 Entwurf 2026-10-17; Weg zum Mead of Kvasir und Gaia-Pylon-Rezept offen |
 | Star Wars: Galaxy in a Cube | `swgc.md` | ohne Buch, voll; mit Rezeptanhang (Assembly Bench, Droid Fabricator, Kyber färben) | 🟡 Entwurf 2026-10-17; hängt an den Bauplan-, Steuerkern- und Macht-Entscheidungen |
 | Ad Astra + Giselle Addon, More Structures, Rocketed | `adastra.md` | mit Buch (Astrodux), kurz; Addons ohne Buch knapp erklärt | 🟡 Entwurf 2026-10-17; Rezepte und Treibstoffe T4–T7, Cryo Freezer, Boss-Mobs offen |
+| Wesley's Roguelike Dungeons | `rld.md` | ohne Buch, voll; Nebenquest-Reihe in fünf Stufen (WD1–WD5) | 🟡 Entwurf 2026-10-17; hängt an O35 (welche Stufen Pflicht) |
+| Immersive Aircraft + iaie | `aircraft.md` | ohne Buch, voll; Nebenquest-Reihe (IA1–IA5) | 🟡 Entwurf 2026-10-17; Freischaltung und Umfang der Reihe offen |
 
 Noch offen (große Mods): Tinkers' Construct, Blood Magic, AE2, Blue Skies, Star Wars Planets.
