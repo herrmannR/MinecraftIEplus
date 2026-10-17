@@ -73,11 +73,14 @@ Ergebnis jeweils hier eintragen: ✅ bestanden, ❌ Fehler (mit Beschreibung), �
 
 | Nr. | Test | Wie | Erwartet | Ergebnis |
 |---|---|---|---|---|
-| 28 | NPC ohne Sauerstoff | Easy NPC auf dem Mars ins Freie stellen, dann in einen abgedichteten Raum mit Oxygen Distributor | draußen nimmt er Schaden, drinnen nicht (sonst braucht es ein Skript) | ⏳ |
-| 29 | NPC-Dialog mit Abgabe | Easy NPC mit Dialog, der ein Item verlangt und eines übergibt | klappt; notieren, ob ein FTB-Quest dadurch fortschreitet | ⏳ |
-| 30 | NPC per Befehl | Figur aus einer gespeicherten Vorlage per Befehl erzeugen (Quest-Belohnung „Befehl“) | Figur erscheint am gewünschten Ort | ⏳ |
-| 31 | Fracht in der Rakete | Rakete beladen, fliegen, landen | Inhalt kommt an oder nicht | ⏳ |
-| 32 | Checkliste per KubeJS | eigene FTB-Quests-Aufgabe „Station auf dem Mars“ (Skript folgt) | Aufgabe wird nur mit allen Blöcken im Umkreis erfüllt | ⏳ |
+| 28 | NPC ohne Sauerstoff | Easy NPC auf dem Mars ins Freie stellen, dann in einen abgedichteten Raum mit Oxygen Distributor | draußen nimmt er Schaden, drinnen nicht (sonst braucht es ein Skript) | ✅ 2026-10-17 (User): draußen Schaden, drinnen keiner; die Luft-Regel gilt für Easy NPC ohne Skript |
+| 29 | NPC-Dialog mit Abgabe | Easy NPC mit Dialog, der ein Item verlangt und eines übergibt | klappt; notieren, ob ein FTB-Quest dadurch fortschreitet | ✅ 2026-10-17 (User), nach zwei Bedienfehlern: Abgabe, Übergabe und Stage-Quest funktionieren. Ein Knopf mit Bedingung bleibt sichtbar und ist nur klickbar, wenn die Bedingung erfüllt ist. Die Bedingung „Item in der Hand“ prüft Haupt- und Nebenhand, „Item im Inventar“ das ganze Inventar. In der Stage-Aufgabe von FTB Quests gehört der Name ins Feld **Stage**, nicht ins Feld „Tags“ (das ist nur eine Markierung der Quest). |
+| 29a | Bedingung Inventar | wie 29, Bedingung „Item im Inventar“, Eisen nur im Inventar | Knopf klickbar, ohne das Eisen in der Hand zu halten | ✅ 2026-10-17 (User) |
+| 29b/c | Stage per Befehl und aus dem Dialog | Quest mit Stage-Aufgabe; `/kubejs stages add …`, `/tag … add …`, Befehl im Dialogknopf | Quest wird erfüllt | ✅ 2026-10-17 (User), nach Korrektur des Felds Stage |
+| 30 | NPC per Befehl | Figur aus einer gespeicherten Vorlage per Befehl erzeugen (Quest-Belohnung „Befehl“) | Figur erscheint am gewünschten Ort | ✅ 2026-10-17 (User): Import klappt, auch in eine andere Dimension per `/execute in <dimension> run easy_npc preset import …` (der Befehl selbst hat keine Angabe für die Dimension). `easy_npc despawn` lässt die Figur verschwinden; zurück holt sie `easy_npc spawn`, nicht `respawn` |
+| 31 | Fracht in der Rakete | Rakete beladen, fliegen, landen | Inhalt kommt an oder nicht | ✅ 2026-10-17 (User): jede Rakete hat 8 Plätze, der Inhalt bleibt beim Flug erhalten |
+| 32a | Stage-Brücke | Quest mit Stage-Aufgabe `mars_station`; `/kubejs stages add @s mars_station` | Quest wird erfüllt | ✅ 2026-10-17 (User): der geplante Weg (KubeJS prüft die Station und setzt eine Stage) trägt, FTB XMod Compat ist nicht nötig |
+| 32 | Checkliste per KubeJS | eigene FTB-Quests-Aufgabe „Station auf dem Mars“ (Skript folgt) | Aufgabe wird nur mit allen Blöcken im Umkreis erfüllt | ⏳ Skript fehlt, braucht die Blockliste (O22) |
 
 ### Runde 6 — Ideenimport (2026-10-17)
 

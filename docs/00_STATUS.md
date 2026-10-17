@@ -23,7 +23,7 @@ Minecraft **1.20.1, Forge 47.4.26** (Wechsel von 1.18.2 am 2026-10-11). Block A 
 | `03_ERZGENERATION.md` | 🟢 Verteilung beschlossen und im Spiel nachgezählt (2026-10-17) |
 | `erzatlas/` (samt Artifact-Seite) | 🟢 Soll-Verteilung |
 | `10_KUBEJS.md` | 🟡 |
-| `11_TESTING.md` | 🟢 Testplan; Tests 1–27 bestanden, 28–39 offen |
+| `11_TESTING.md` | 🟢 Testplan; Tests 1–31 und 32a bestanden, 32 (Skript fehlt) und 33–41 offen |
 | `01_PROGRESSION.md` | 🟡 vier Fragen offen |
 | `meilensteine/` (samt Artifact-Seite) | 🟡 nach der Story umgebaut (2026-10-14): 50 Meilensteine, 9 Pfade, 16 Kapitel in zwei Parts, Fragenkatalog |
 | `18_STORY.md` | 🟡 Part 1 im Umriss, Part 2 und 3 folgen; schreibt der User |
