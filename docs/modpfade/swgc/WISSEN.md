@@ -30,6 +30,13 @@
 3. **Die Macht**: helle Seite durch XP-Gewinn (Chance sinkt, Zufall > 0,984^Punkte), dunkle durch Töten von `swgc:civilians` (1:3) bzw. `swgc:innocent` (1:5). Fähigkeiten nach Summe: Block 0, Telekinesis 1, Jump 15, Push 30, Mind Trick 42; Unlimited Power bei dunkler Seite ≥ 55. Kyber färben: Blau/Grün/Rot ab Macht 1 (Verhältnis hell:dunkel), Violett/Orange/Gelb/Pink ab 30; Weiß nur aus Rot bei hell ≥ 50, dunkel ≤ 10. **Ohne Macht kein Lichtschwert.** Acht Lichtschwert-Formen mit Stamina-Werten.
 4. **Truppen und Rüstungen**: Droid Fabricator → B-1 (mit Blaster), B-2, Droideka (Metallblöcke, Redstone, Diamant; kein Strom). Klonrüstung (24 Plastoid, 16 Bemalungen per Assembly Bench), Jedi/Sith-Kleidung (Wolle, Faden), Royal Guard (10 Durasteel), Vader (18 Durasteel, Obsidian).
 
+## Funde für die Questtexte (2026-10-17)
+
+- **Assembly Bench, Verbrauch** (`AssemblyBenchMenu$ResultSlot`, javap): je Zusammenbau 1 Item aus dem Hauptfeld und 1 aus jedem Nebenfeld. Ein Lightsaber im Ergebnisfeld legt Griff und Kristall in die Felder zurück (Zerlegen, 🔵 im Spiel prüfen). Der Name des Items wird übernommen. Rezeptwahl über `tableswitch` 0–3 (Hilt, Lightsaber, Blaster, Connector), sonst Rüstungsvarianten.
+- **Droiden-Items**: `swgc:b1`, `swgc:b2`, `swgc:droideka` (Ergebnisse der `swgc:fabrication`-Rezepte; Sprachschlüssel nur als `entity.swgc.*`). Im B-1-Rezept zeigt `"weapon":3` auf die Zutat Blaster. Zeit in Rezept-Einheiten, vermutlich Ticks.
+- **Klonrüstung**: `swgc:clone_phase_2_{helmet,chestplate,leggings,boots}`; Bemalungen per Sprachmuster `clone.swgc.<einheit>` („501st Legion %s“), IDs der bemalten Teile nicht ausgelesen.
+- Weitere Rüstungsteile: `swgc:royal_guard_{leggings,boots}`, `swgc:vader_{leggings,boots}`, `swgc:jedi_male_{leggings,boots}`, `swgc:sith_male_{helmet,leggings,boots}`, `swgc:jedi_female_*`, `swgc:sith_female_*`.
+
 ## Schlüsselzahlen
 
 - Jedi-Ränge (hell ab): 10 / 24 / 42 / 54 / 72; Sith-Ränge (dunkel ab): 8 / 18 / 40 / 55 / 70.

@@ -853,3 +853,17 @@ Status: 🟡
 
 ### Teststatus
 Offen: Weg zum Mead of Kvasir (Alfheim vor Gaia), Gaia-Pylon-Rezept in JEI, `lockAlfheim` in 1.20.1.
+
+## 2026-10-17 — Questtexte für Galaxy in a Cube (Entwurf)
+
+Status: 🟡
+
+### Änderung
+- Neu: `questtexte/swgc.md` mit dem Skill `questtexte`. 26 Quests über SW2 bis SW5 (Shop des Einsiedlers, Plastoid und Truppen, Macht, Lichtschwerter), im vollen Format für Mods ohne Buch. Anhang mit allen Rezepten, die JEI nicht zeigt: Assembly Bench, Droid Fabricator, Kyber färben.
+- `modpfade/swgc/WISSEN.md`: Verbrauch an der Assembly Bench, Ergebnis-IDs der Droiden und der Klonrüstung.
+
+### Betroffene Bereiche
+- `questtexte/README.md`, `modpfade/swgc/WISSEN.md`
+
+### Teststatus
+Offen: Plastoid mit HDPE verschiebt Blaster, B-1, Droideka und Klonrüstung auf K7; Machtpunkte per Befehl (T10); Weg Kyber-Erz → Kristall; Befehle an Droiden.
