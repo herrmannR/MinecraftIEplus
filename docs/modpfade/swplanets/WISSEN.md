@@ -35,6 +35,7 @@
 - Tags: `swplanets:jawas_trades` (Wrench, Steel Nugget, Steel Rod), `swplanets:light_sabers` (ohne Dark Saber); Stormtrooper-Teile in `ad_astra:space_suit_items`; Tatooine-Biome in der Ölquellen-Liste von Ad Astra; nur die Kyber-Erze in `forge:ores`.
 - Kein gemeinsamer Tag für Kyber Crystal, Beskar, Plastic Plate → kein Verdoppeln, kein Tinkers-Material.
 - Überschneidung mit Galaxy in a Cube (Kyber, Lichtschwerter, Blaster, Jawas, Kunststoff), nichts gegenseitig verwendbar; siehe `swgc/WISSEN.md`.
+- Dimensionen (2026-10-17): `swplanets:{endor,tatooine,mustafar,mandalore}` und **`swplanets:hot` für Hoth**, je mit `_orbit` (`data/swplanets/dimension/`).
 
 ## In den Dateien, aber nicht registriert
 

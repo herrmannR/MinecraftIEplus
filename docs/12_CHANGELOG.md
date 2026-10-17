@@ -867,3 +867,17 @@ Status: 🟡
 
 ### Teststatus
 Offen: Plastoid mit HDPE verschiebt Blaster, B-1, Droideka und Klonrüstung auf K7; Machtpunkte per Befehl (T10); Weg Kyber-Erz → Kristall; Befehle an Droiden.
+
+## 2026-10-17 — Questtexte für Ad Astra mit Addons (Entwurf)
+
+Status: 🟡
+
+### Änderung
+- Neu: `questtexte/adastra.md` mit dem Skill `questtexte`. 50 Quests über RF1 bis RF7 plus die Reihen RFX (Schutz ohne Raumanzug: Verzauberungen, Tinkers-Modifier, MekaSuit-Module) und RFY (Sky Stone für AE2). Hauptmod im kurzen Format mit Fundstelle im Astrodux (Kapitel → Eintrag); Giselle Addon, More Structures und Rocketed ohne Buch, knapp erklärt. Die Buchkapitel stehen beim Meilenstein der Rakete, für die man sie braucht.
+- `modpfade/adastra/WISSEN.md`: Dimensions-IDs, IDs der Giselle-Verzauberungen und MekaSuit-Module, Moon Globe. `modpfade/swplanets/WISSEN.md`: Dimensions-IDs, Hoth heißt `swplanets:hot`.
+
+### Betroffene Bereiche
+- `questtexte/README.md`, `modpfade/adastra/WISSEN.md`, `modpfade/swplanets/WISSEN.md`
+
+### Teststatus
+Offen: Cryo Freezer, Rover-Treibstoff, Boss-Mobs der More-Structures-Dungeons, Automation NASA Workbench, Rezepte und Treibstoffe T4 bis T7.

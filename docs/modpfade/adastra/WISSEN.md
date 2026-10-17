@@ -173,3 +173,10 @@ Erzeugt mit `java -Dstdout.encoding=UTF-8 tools/IdIndex.java <arbeitsordner> ada
 | Sky Stone | `ad_astra:sky_stone` |
 
 35 Namen ohne Sprachschlüssel (Sammelbezeichnungen, Bildunterschriften, Vanilla) nicht aufgeführt.
+
+## Nachtrag Questtexte (2026-10-17)
+
+- Dimensionen: `ad_astra:{moon,mars,mercury,venus,glacio}` und je `_orbit`, dazu `ad_astra:earth_orbit` (`data/ad_astra/dimension/`).
+- Giselle-Verzauberungen: `ad_astra_giselle_addon:{space_breathing,space_fire_proof,acid_rain_proof,gravity_normalizing}`. MekaSuit-Module als Items `ad_astra_giselle_addon:module_{space_breathing,gravity_normalizing,space_fire_proof,acid_rain_proof}_unit` (Name unter `module.…` in der Sprachdatei). Außerdem PneumaticCraft-Upgrades `pneumatic_*_upgrade` (Mod nicht installiert).
+- Trophäe: `ad_astra:moon_globe` (laut Astrodux der einzige Globus im Überlebensmodus).
+- Astrodux-Einträge in Buchreihenfolge: The First Launch: Generating Energy, Creating Plates, Making Steel, Your First Rocket, Fuel, Oxygen, Portable Resources, Radio, Preparing to Launch, The Moon. The Moon: Space Station, Solar Panel, Oxygen Distributor, Gravity Normalizer, Ti-69, Rover, Cables, Lunarians, Mars. Surviving Mars: Trophies, Flags, Industrial Lamps, Sliding Doors, Fluid Pipes, Energizer, Better Fuel, Detection, Netherite Space Suit, Venus and Mercury. The Hot Planets: Jet Suit, Proxima Centauri.
