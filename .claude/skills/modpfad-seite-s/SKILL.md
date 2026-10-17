@@ -56,6 +56,7 @@ Addons: Rezeptordner mit `find <kürzel>/data -type d -name recipes | grep -v ad
 - Namen der Addons: `grep -E '"(item|block)\.' en_us.json` in eine Zeile mit `tr '\n' ';'`.
 - Namen, bei denen man unsicher ist: eine einzige `grep -E '"(item|block)\.<ns>\.(a|b|c)"'`-Abfrage.
 - Tags, Worldgen und Config: `tr -d ' \n' < datei | cut -c1-250`.
+- Beute außerhalb der Loot-Tabellen steht oft in `data/<ns>/loot_modifiers/*.json` (Farmer's Delight: Messer-Beute, Truhenbeute); eine Zeile je Datei mit `tr -d ' \n\r' | grep -o '"item":"[^"]*"\|"chance":[0-9.]*\|"type":"[^"]*"\|"tag":"[^"]*"' | sort -u | tr '\n' ' '`. Biome der Weltgenerierung stehen in `data/<ns>/forge/biome_modifier/*.json` (Schlüssel `biomes` oder `allowed_biomes`/`denied_biomes`) – erst eine Datei ansehen, welcher Schlüssel benutzt wird.
 
 ### 6. Schreiben
 `data.js` in einem Zug schreiben, nur mit Fakten aus den gelesenen Ausgaben. **Jeden Satz, der über die gelesenen Zeilen hinausgeht, vor dem Veröffentlichen per gezieltem `grep` belegen oder streichen** – beim AE2-Lauf waren das rund ein Dutzend Stellen (Kabelfarben, Level Emitter, Quantum-Bridge-Paarung, Werkzeugfunktionen, Transform-Bedingung „Explosion“ statt „Wasser“). Rezepttyp-Bedingungen (`circumstance`, `mode`) im Roh-JSON prüfen, wenn RecipeDump sie verkürzt.

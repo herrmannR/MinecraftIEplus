@@ -1,6 +1,6 @@
 # Auffälligkeiten für die Crossmod-Planung
 
-> Stand 2026-10-17, Minecraft 1.20.1. Gesammelt beim Erstellen der Modpfad-Seiten für Tinkers' Construct, Immersive Engineering, Botania, Mekanism, Ad Astra, Star Wars Planets, Star Wars: Galaxy in a Cube und weitere (zuletzt Immersive Aircraft). Wird mit jeder weiteren Seite fortgeschrieben.
+> Stand 2026-10-17, Minecraft 1.20.1. Gesammelt beim Erstellen der Modpfad-Seiten für Tinkers' Construct, Immersive Engineering, Botania, Mekanism, Ad Astra, Star Wars Planets, Star Wars: Galaxy in a Cube und weitere (zuletzt Farmer's Delight). Wird mit jeder weiteren Seite fortgeschrieben.
 
 ## Zweck
 
@@ -224,6 +224,13 @@ Jeder Befund ist aus den JARs oder der Config der Testinstanz belegt (🟢). Was
 - **IA2** 🟢 Der Gyrodyne fliegt ohne Engine und ohne Treibstoff (Muskelkraft). Er umgeht damit das Treibstoff-Tor vollständig und braucht nur Hull, Sail und Propeller.
 - **IA3** 🟢 Nicht eingetragene Dimensionen sind erlaubt (`validDimensions.getOrDefault(…, true)`); die Fluggeräte funktionieren also auch auf den Planeten von Ad Astra und Star Wars Planets und in Blue Skies – eine Konkurrenz zu Rover und Fortbewegung dort.
 - **IA4** 🟢 Die Nether Engine braucht einen Netherite Ingot, sonst ist das stärkste Teil die Engine (Blast Furnace, Piston, Kupfer). Engine, Boiler und Hull sind naheliegende Stellen für IE-Teile (Stahl, Mechanical Component), falls Fliegen später kommen soll.
+
+## Farmer's Delight (+ Nether's Delight, Engineer's Delight)
+
+- **FD1** 🟢 Engineer's Delight ersetzt die IE-Sawmill-Rezepte für 11 Holzarten (`data/immersiveengineering/recipes/sawmill/*_log`): Beim Entrinden fällt Tree Bark ab, bei Bamboo Straw. Wer die Sawmill per KubeJS ändert, muss diese Rezepte mitnehmen.
+- **FD2** 🟢 Rich Soil ist die Brücke zur IE-Landwirtschaft: In der Garden Cloche gibt es auf Rich Soil meist 3 statt 2 Ernte, und die Bottling Machine macht Rich Soil aus Organic Compost + Wasser (Rich Soul Soil aus Soul Compost + Lava). Organic Compost braucht nur Straw, Dirt, Bone Meal und Rotten Flesh oder Tree Bark.
+- **FD3** 🟢 Gunpowder aus Pflanzen: Propelplant Cane (Crimson Forest) gibt am Cutting Board 1, im IE-Crusher 2 Gunpowder – eine erneuerbare Quelle für Sprengstoff und Munition (Rotary Cannon von Immersive Aircraft).
+- **FD4** 🟢 Ethanol und Plant Oil: Farmer's Delight bringt eigene IE-Rezepte für Ethanol aus Tomaten und Plant Oil aus Cabbage- und Tomato-Seeds; damit hängen Kochzutaten an der Biodiesel-Kette (I4).
 
 ## Zu prüfen
 

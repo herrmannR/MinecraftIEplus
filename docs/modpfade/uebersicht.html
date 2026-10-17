@@ -76,6 +76,7 @@ a.tile:focus-visible{box-shadow:0 0 0 2px var(--a)}
 
 <script>
 const ICONS = {
+  "farmersdelight:item/cooking_pot": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAz0lEQVR4Xs2QPQrCQBSE01vbptXGQgliZUCbpDHYSDyAmEYsLO3ExjN4H6+18j2YZVlIiKRxYMiy8/PeJkn+BuVy7GB83xuEX+fJsJJpOnLNLjXGWm9Qok2qqnKny9XIOV9vuotns4UZtQkl3IlofONc8j5s3S2f24RjXZuJEjEswIOXjC/4NHu7zLKVGVj5/ngaOVNKGB3iJeMLCCEwhXO4dkhpGuQLBISyKFqpQXHOA5F19ee1+k8FMhMMCwj3KtD7YBhUuLMAyNTG2D8YX8+pzWVkUQS3AAAAAElFTkSuQmCC",
   "immersive_aircraft:item/biplane": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABM0lEQVR4Xo2RwUrDQBCG8wCRoKBIi6iYCqZQoZdaay0eS06C3ixB8KYHwVvjVXLy6EEwAQ85+g55jLzN2H/CLLsx2/jDsJtkv4/ZieM0JBx3CFV//6+c97doeRfQ9+vEkJRl2S4cBx7DItAlcRxTq8TvukqAyrLsjyRNU7sEgstBdYUkSYxO8jynKIpobScQ3F7tKYkU4KIoeMW5VsnL40JJdLg+WGv8jkujE8+AmwZrTXDg0fPNsZKsGyxn6LvqQeDri10GILENliWA8YD19GiTQaw4CBmu0zRY1NlK7kz6Hn19ftD705Du5/v8IRztMCxd1QeLmq3208F2dQaS5SKgn7cZPYSH3IHAEvnFAFHY97ob1Tm0DRgSdKLPRI9IDBiBACXXkZlorApAA64HEhvclF+OuyCWslq9xAAAAABJRU5ErkJggg==",
   "alexsmobs:item/animal_dictionary": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAqklEQVR4XmNgoDXQMeb4D8PocngBTJNXiPj/8GSF/wnZav+tXXkJG4JNI4hP0BBkjSCFMIzsBayG4NNIlCEgBkwzSBJdIzY2TB3YEBCB7AJ8hsDkQDg6OhrhApDA9u3bcRoCEodpnDlzJlgtiAYbwCvKDlZw7do1DEOwaYRphnsBlyH4NIIwSA8IQ6ICiyHYNIJsxNCIDLAZQpRGZAAzhGSNyACmiWSN5AAAgpoWfbtNoa4AAAAASUVORK5CYII=",
   "blue_skies:item/misc/zeal_lighter": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAb0lEQVR4XmNgGAUjCXTFrfgPwsnujf/R5XABRhgDpPHryT9gfGfdF+IM8czNZQfRMM0gjds7b/5fUHqCOANAAFkzSCPIAJCYh0ky8QYg2wwLA0NZb9IMQA5AkO1EGwDSANNIsmYYAGmCaSRZMzEAAP8adK+JChaKAAAAAElFTkSuQmCC",
@@ -177,9 +178,15 @@ const MODS = [
     phases: 5, steps: 9, icon: "immersive_aircraft:item/biplane",
     accent: ["#d9a066", "#8a5a24"], url: "https://claude.ai/artifact/BfUwZLQdeo3DugNVASvxYh",
   },
+  {
+    name: "Farmer's Delight", version: "1.3.4", addons: "Nether's Delight, Brücke Engineer's Delight",
+    text: "Messer, Wildpflanzen und Stroh, Rich Soil, Cutting Board und Cooking Pot bis zu Festessen; im Nether Machete, Hoglin, Strider und Soul Compost. Engineer's Delight bringt Crusher, Cloche, Bottling Machine und Sawmill ins Spiel. Reihenfolge aus dem Advancement-Baum.",
+    phases: 5, steps: 14, icon: "farmersdelight:item/cooking_pot",
+    accent: ["#c6b24a", "#7a6a14"], url: "https://claude.ai/artifact/Rj7tWAhmGLAmje66fHT9sX",
+  },
 ];
 // Mods ohne Seite, in der Reihenfolge der Mod-Liste
-const PLANNED = ["Farmer's Delight"];
+const PLANNED = [];
 // Andere Übersichten des Projekts
 const MORE = [
   ["Erzatlas", "alle Erze, Fundorte und Verbrauch je Mod", "https://claude.ai/artifact/LWwdvCpXRwaHCa8NstSc4g"],
@@ -207,6 +214,7 @@ for (const m of MODS) {
 }
 const planned = document.getElementById('planned');
 for (const p of PLANNED) { const s = document.createElement('span'); s.textContent = p; planned.append(s); }
+if (!PLANNED.length) planned.closest('section').hidden = true;
 const more = document.getElementById('more');
 for (const [name, text, url] of MORE) { const d = document.createElement('div'); d.innerHTML = `<a href="${url}">${name}</a> <span>– ${text}</span>`; more.append(d); }
 </script>

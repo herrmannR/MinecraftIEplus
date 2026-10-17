@@ -99,6 +99,7 @@ for (const m of MODS) {
 }
 const planned = document.getElementById('planned');
 for (const p of PLANNED) { const s = document.createElement('span'); s.textContent = p; planned.append(s); }
+if (!PLANNED.length) planned.closest('section').hidden = true;
 const more = document.getElementById('more');
 for (const [name, text, url] of MORE) { const d = document.createElement('div'); d.innerHTML = `<a href="${url}">${name}</a> <span>– ${text}</span>`; more.append(d); }
 </script>

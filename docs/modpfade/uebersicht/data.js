@@ -85,9 +85,15 @@ const MODS = [
     phases: 5, steps: 9, icon: "immersive_aircraft:item/biplane",
     accent: ["#d9a066", "#8a5a24"], url: "https://claude.ai/artifact/BfUwZLQdeo3DugNVASvxYh",
   },
+  {
+    name: "Farmer's Delight", version: "1.3.4", addons: "Nether's Delight, Brücke Engineer's Delight",
+    text: "Messer, Wildpflanzen und Stroh, Rich Soil, Cutting Board und Cooking Pot bis zu Festessen; im Nether Machete, Hoglin, Strider und Soul Compost. Engineer's Delight bringt Crusher, Cloche, Bottling Machine und Sawmill ins Spiel. Reihenfolge aus dem Advancement-Baum.",
+    phases: 5, steps: 14, icon: "farmersdelight:item/cooking_pot",
+    accent: ["#c6b24a", "#7a6a14"], url: "https://claude.ai/artifact/Rj7tWAhmGLAmje66fHT9sX",
+  },
 ];
 // Mods ohne Seite, in der Reihenfolge der Mod-Liste
-const PLANNED = ["Farmer's Delight"];
+const PLANNED = [];
 // Andere Übersichten des Projekts
 const MORE = [
   ["Erzatlas", "alle Erze, Fundorte und Verbrauch je Mod", "https://claude.ai/artifact/LWwdvCpXRwaHCa8NstSc4g"],
