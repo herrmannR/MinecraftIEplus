@@ -13,5 +13,8 @@ Erklärtiefe nach `../19_HILFEBUECHER.md`: **ohne Buch** führen die Texte Schri
 | Ad Astra + Giselle Addon, More Structures, Rocketed | `adastra.md` | mit Buch (Astrodux), kurz; Addons ohne Buch knapp erklärt | 🟡 Entwurf 2026-10-17; Rezepte und Treibstoffe T4–T7, Cryo Freezer, Boss-Mobs offen |
 | Wesley's Roguelike Dungeons | `rld.md` | ohne Buch, voll; Nebenquest-Reihe in fünf Stufen (WD1–WD5) | 🟡 Entwurf 2026-10-17; hängt an O35 (welche Stufen Pflicht) |
 | Immersive Aircraft + iaie | `aircraft.md` | ohne Buch, voll; Nebenquest-Reihe (IA1–IA5) | 🟡 Entwurf 2026-10-17; Freischaltung und Umfang der Reihe offen |
+| Alex's Mobs + Alex's Delight | `alexsmobs.md` | mit Buch (Animal Dictionary, ein Eintrag je Tier), kurz; sieben Nebenquest-Reihen (AM1–AM7) | 🟡 Entwurf 2026-10-18; Transmutation Table gegen Erz-Gating offen |
+| Applied Energistics 2 + Wireless Terminals, Applied Mekanistics, Applied Botanics, More Immersive Wires | `ae2.md` | mit Buch (Guide), kurz; Addons ohne Buch knapp erklärt | 🟡 Entwurf 2026-10-18; Verteuerung (Storage-Layer, Endgame) und Entfernen der Energieerzeuger offen |
+| Tinkers' Construct + TCIntegrations, Tinkers Levelling Addon, Blood-Smeltery | `tinkers.md` | mit Buch (sechs Tinkers-Bücher), kurz; Addons ohne Buch knapp erklärt; Nebenquest-Reihe Ausbau (TKA) | 🟡 Entwurf 2026-10-18; Würdigkeits-Item, Wege A/C–F und Blood-Smeltery offen |
 
-Noch offen (große Mods): Tinkers' Construct, Blood Magic, AE2, Blue Skies, Star Wars Planets.
+Noch offen (große Mods): Blood Magic, Blue Skies, Star Wars Planets.

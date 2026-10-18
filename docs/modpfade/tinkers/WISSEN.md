@@ -15,6 +15,7 @@
 ## Wo die Quellen liegen
 
 - **Bücher** `assets/tconstruct/book/<buch>/` mit `index.json`, `sections/` und `en_us/`; Bilder unter `book/images/`. Reihenfolge der Bücher = Phasen der Seite: `materials_and_you` → `puny_smelting` → `mighty_smelting` → `fantastic_foundry` → `tinkers_gadgetry` / `encyclopedia`.
+- **Titel der Bücher** (für Questtexte): Abschnittsnamen in `book/<buch>/en_us/language.lang`, Eintragsnamen (intern) in `book/<buch>/sections/*.json`; nur Fantastic Foundry und Encyclopedia haben zusätzlich `en_us/<abschnitt>/*.json`. Weiterführende Bücher: Materials and You → Further Reading (Puny Smelting, Fantastic Foundry, Gadgetry), Puny Smelting → Further Reading (Mighty Smelting, Encyclopedia).
 - **Strukturen** der Bücher: `assets/tconstruct/book/structures/smeltery.nbt`, `foundry.nbt` (nicht unter `data/`).
 - **Rezepte** `data/tconstruct/recipes/` (rund 3060). Typen: `tconstruct:melting`, `ore_melting`, `casting_table`, `casting_basin`, `material`, `material_fluid`, `item_part_builder`, `modifier`, `modifier_salvage`, Legierungen `tconstruct:alloy`. 941 Rezepte hängen an `mantle:tag_filled` (Fremdmetalle, nur aktiv, wenn der Tag im Pack gefüllt ist).
 - **Materialien** `data/tconstruct/tinkering/materials/` (Definition, Stats, Traits).
@@ -190,3 +191,17 @@ Erzeugt mit `java -Dstdout.encoding=UTF-8 tools/IdIndex.java <arbeitsordner> tin
 | Mana Infused String | `botania:mana_string` |
 
 101 Namen ohne Sprachschlüssel (Sammelbezeichnungen, Bildunterschriften, Vanilla) nicht aufgeführt.
+
+Nachgetragen 2026-10-18 (Questtexte, gegen Sprachdateien geprüft):
+
+| Name | ID |
+|---|---|
+| Pickaxe Head / Gold Cast | `tconstruct:pick_head`, `tconstruct:pick_head_cast` |
+| Slimesteel, Rose Gold, Pig Iron, Amethyst Bronze | `tconstruct:slimesteel_ingot`, `tconstruct:rose_gold_ingot`, `tconstruct:pig_iron_ingot`, `tconstruct:amethyst_bronze_ingot` |
+| Manyullyn, Hepatizon, Queen's Slime, Knightslime, Cinderslime | `tconstruct:manyullyn_ingot`, `tconstruct:hepatizon_ingot`, `tconstruct:queens_slime_ingot`, `tconstruct:knightslime_ingot`, `tconstruct:cinderslime_ingot` |
+| Cobalt | `tconstruct:cobalt_ore`, `tconstruct:raw_cobalt`, `tconstruct:cobalt_ingot` |
+| Plate Armor | `tconstruct:plate_helmet`, `tconstruct:plate_chestplate`, `tconstruct:plate_leggings`, `tconstruct:plate_boots` |
+| Encyclopedia of Tinkering | `tconstruct:encyclopedia` |
+| Blazing Blood (Flüssigkeit) | `tconstruct:blazing_blood` |
+| Molten Desh, Ostrum, Calorite (Flüssigkeit) | `tcintegrations:molten_desh`, `tcintegrations:molten_ostrum`, `tcintegrations:molten_calorite` |
+| Demon Will, Bloodbrass, Blood-Seared Stone (Flüssigkeit) | `bloodsmeltery:demon_will`, `bloodsmeltery:molten_bloodbrass`, `bloodsmeltery:blood_seared_stone` |

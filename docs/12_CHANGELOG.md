@@ -895,3 +895,45 @@ Status: 🟡
 
 ### Teststatus
 Offen: O35 (welche Wesley's-Stufen Pflicht), „acht Oberwelt-Dungeons“ der Story gegenüber fünf Gruppen im Mod, Seltenheit des Portalbaums, Rückweg des Pathfinder; Freischaltung und Umfang der Aircraft-Reihe, Gyrodyne ohne Treibstoff, Bindung an IE-Stahl.
+
+## 2026-10-18 — Questtexte für Alex's Mobs (Entwurf)
+
+Status: 🟡
+
+### Änderung
+- Neu: `questtexte/alexsmobs.md` mit dem Skill `questtexte`. 37 Nebenquests in sieben Reihen (Oberwelt, Beute der Oberwelt, Meer und Untergrund, Nether, End, Void Worm und Weltrand, Essen mit Alex's Delight), im kurzen Format mit Fundstelle im Animal Dictionary (ohne Kapitel, ein Eintrag je Tier). Keine Pack-Änderungen; Config-Werte als Standard genannt.
+- `modpfade/alexsmobs/WISSEN.md`: IDs Cosmic Cod und Ghostly Pickaxe.
+
+### Betroffene Bereiche
+- `questtexte/README.md`, `modpfade/alexsmobs/WISSEN.md`
+
+### Teststatus
+Offen: Transmutation Table und Erz-Gating (Befund AM1), Barbecue on a Stick (AM4), Zähm-Quests nur als Checkmark, Skreecher und Warden, Freischaltung von Nether- und End-Reihe.
+
+## 2026-10-18 — Questtexte für AE2 (Entwurf)
+
+Status: 🟡
+
+### Änderung
+- Neu: `questtexte/ae2.md` mit dem Skill `questtexte`. 44 Quests: AE1 Storage-Layer (13), AE2 ME-System (18), AE3 Quantenbrücke (7), dazu 6 Werkzeug-Nebenquests (AEX). Kurzes Format mit Fundstelle im Guide; die Addons (Wireless Terminals, Applied Mekanistics, Applied Botanics, More Immersive Wires) knapp selbst erklärt.
+- `modpfade/ae2/WISSEN.md`: IDs Certus Quartz Crystal und Guide.
+
+### Betroffene Bereiche
+- `questtexte/README.md`, `modpfade/ae2/WISSEN.md`
+
+### Teststatus
+Offen: welche AE2-Rezepte teurer werden, Entfernen von Vibration Chamber und Crystal Resonance Generator (Test 36), Storage Bus an Storage Drawers, Chunkloading der Quantum Bridge auf dem Server, Quantum Bridge Card und Magnet Card.
+
+## 2026-10-18 — Questtexte für Tinkers' Construct (Entwurf)
+
+Status: 🟡
+
+### Änderung
+- Neu: `questtexte/tinkers.md` mit dem Skill `questtexte`. 40 Quests in TK1 bis TK4 und der Nebenquest-Reihe Ausbau (TKA-01 bis TKA-07), im kurzen Format mit Fundstelle in den sechs Tinkers-Büchern; TCIntegrations, Levelling Addon und Blood-Smeltery ohne Buch knapp erklärt. Pack-Änderungen: Refined Obsidian nur Mekanism, Blood-Smeltery-Abkürzungen entfernt, Wege A und C–F als offen.
+- `modpfade/tinkers/WISSEN.md`: IDs für Legierungsbarren, Kobalt, Plate Armor, Werkzeugteil, Encyclopedia, Planetenmetall- und Blood-Smeltery-Flüssigkeiten; Fundort der Abschnittsnamen.
+
+### Betroffene Bereiche
+- `questtexte/README.md`, `modpfade/tinkers/WISSEN.md`
+
+### Teststatus
+Offen: Würdigkeits-Item (K2), O31, Eintragstitel im Buch gegenlesen, Blood-Smeltery 1.2.1a im Spiel, Material-Aufgaben per NBT oder Kontrollhaken.

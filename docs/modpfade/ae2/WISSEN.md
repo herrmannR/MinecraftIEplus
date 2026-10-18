@@ -67,6 +67,8 @@ Erzeugt mit `java -Dstdout.encoding=UTF-8 tools/IdIndex.java <arbeitsordner> ae2
 | Mysterious Cube | `ae2:mysterious_cube` |
 | Sky Stone | `ae2:sky_stone_block` |
 | Certus Quartz Cluster | `ae2:quartz_cluster` |
+| Certus Quartz Crystal | `ae2:certus_quartz_crystal` |
+| Guide | `ae2:guide` |
 | Charger | `ae2:charger` |
 | Wooden Crank | `ae2:crank` |
 | Charged Certus Quartz Crystal | `ae2:charged_certus_quartz_crystal` |

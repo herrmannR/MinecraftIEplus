@@ -149,6 +149,8 @@ Erzeugt mit `java -Dstdout.encoding=UTF-8 tools/IdIndex.java <arbeitsordner> ale
 | Shattered Dimensional Carver | `alexsmobs:shattered_dimensional_carver` |
 | Farseer Arm | `alexsmobs:farseer_arm` |
 | Transmutation Table | `alexsmobs:transmutation_table` |
+| Cosmic Cod | `alexsmobs:cosmic_cod` |
+| Ghostly Pickaxe | `alexsmobs:ghostly_pickaxe` |
 | Cooked Kangaroo Meat | `alexsmobs:cooked_kangaroo_meat` |
 | Kangaroo Burger | `alexsmobs:kangaroo_burger` |
 | Cooked Moose Ribs | `alexsmobs:cooked_moose_ribs` |
