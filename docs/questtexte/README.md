@@ -20,4 +20,4 @@ Erklärtiefe nach `../19_HILFEBUECHER.md`: **ohne Buch** führen die Texte Schri
 | Blue Skies | `blue_skies.md` | halbes Buch (Blue Journal): Weg zu den Bossen voll, sonst kurz mit Fundstelle; Nebenquest-Reihe BSN | 🟡 Entwurf 2026-10-19; Handel der Figur im Haus und Boss-Beute (O1) offen |
 | Blood Magic | `bloodmagic.md` | mit Buch (Sanguine Scientiem), kurz | 🟡 Entwurf 2026-10-19; Zuschnitt BM1–BM6 nach Altar-Stufen (Vorschlag), Teil für T3 (O20), Altar-Reparatur (O2), Fund für T4, Ritual-Sperre (E19) offen |
 
-Alle großen Mods haben einen Entwurf.
+Alle großen Mods haben einen Entwurf. Die offenen Fragen aller Dateien stehen gesammelt in `OFFENE_FRAGEN.md`.
