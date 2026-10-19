@@ -16,5 +16,8 @@ Erklärtiefe nach `../19_HILFEBUECHER.md`: **ohne Buch** führen die Texte Schri
 | Alex's Mobs + Alex's Delight | `alexsmobs.md` | mit Buch (Animal Dictionary, ein Eintrag je Tier), kurz; sieben Nebenquest-Reihen (AM1–AM7) | 🟡 Entwurf 2026-10-18; Transmutation Table gegen Erz-Gating offen |
 | Applied Energistics 2 + Wireless Terminals, Applied Mekanistics, Applied Botanics, More Immersive Wires | `ae2.md` | mit Buch (Guide), kurz; Addons ohne Buch knapp erklärt | 🟡 Entwurf 2026-10-18; Verteuerung (Storage-Layer, Endgame) und Entfernen der Energieerzeuger offen |
 | Tinkers' Construct + TCIntegrations, Tinkers Levelling Addon, Blood-Smeltery | `tinkers.md` | mit Buch (sechs Tinkers-Bücher), kurz; Addons ohne Buch knapp erklärt; Nebenquest-Reihe Ausbau (TKA) | 🟡 Entwurf 2026-10-18; Würdigkeits-Item, Wege A/C–F und Blood-Smeltery offen |
+| Star Wars Planets | `swplanets.md` | wie ohne Buch (Star Manual fliegt raus), kurz; schließt an RF5-01 bis RF7-01 in `adastra.md` an | 🟡 Entwurf 2026-10-19; Kyber auf Endor, Stormtrooper-Rezept, Beskar-Ofen und Blaster offen |
+| Blue Skies | `blue_skies.md` | halbes Buch (Blue Journal): Weg zu den Bossen voll, sonst kurz mit Fundstelle; Nebenquest-Reihe BSN | 🟡 Entwurf 2026-10-19; Handel der Figur im Haus und Boss-Beute (O1) offen |
+| Blood Magic | `bloodmagic.md` | mit Buch (Sanguine Scientiem), kurz | 🟡 Entwurf 2026-10-19; Zuschnitt BM1–BM6 nach Altar-Stufen (Vorschlag), Teil für T3 (O20), Altar-Reparatur (O2), Fund für T4, Ritual-Sperre (E19) offen |
 
-Noch offen (große Mods): Blood Magic, Blue Skies, Star Wars Planets.
+Alle großen Mods haben einen Entwurf.

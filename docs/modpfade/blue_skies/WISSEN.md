@@ -165,3 +165,10 @@ Werkzeugrezepte (Code), Preise des Gatekeepers und der Dorfbewohner, genaue Stä
 | Spider Webbing | `blue_skies:spider_webbing` |
 
 19 Namen ohne Sprachschlüssel (Sammelbezeichnungen, Bildunterschriften, Vanilla) nicht aufgeführt.
+
+## Nachtrag Questtexte (2026-10-19)
+
+- Dimensionen: `blue_skies:everbright`, `blue_skies:everdawn`. Bosse (Entity): `blue_skies:summoner`, `blue_skies:alchemist`, `blue_skies:starlit_crusher`, `blue_skies:arachnarch`; Tiere u. a. `blue_skies:reindeer`, `blue_skies:crystal_camel`, `blue_skies:seclam`, `blue_skies:armored_frost_spirit`.
+- Keystones: `bright_blinding_keystone`, `dawn_blinding_keystone`, `nature_keystone`, `poison_keystone` (dazu ungenutzt `life_keystone`, `aquatic_keystone`). Werkzeug-IDs `<material>_<werkzeug>`, Holz `bluebright_pickaxe`, Stein `turquoise_stone_pickaxe`/`lunar_stone_pickaxe`.
+- Journal-Freischaltung: Boss-Einträge Summoner und Alchemist ab Betreten der Welt; Nature Dungeon, Stonelet, Starlit Crusher (Everbright) erst nach dem Summoner; Poison Dungeon, Arachnarch (Everdawn) erst nach dem Alchemist. Je Welt also Blinding-Boss → zweiter Boss.
+- Index der Einträge (Teil, Bedingung, Name) in einer Zeile je Eintrag: Schleife über `journal/entries/*.json` mit `tr -d ' \n'` und `grep -o '"section"…'`, siehe „So wurde billig gelesen“.

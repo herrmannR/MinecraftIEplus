@@ -21,8 +21,8 @@ Die Karte (`meilensteine/`, Artifact-Seite) ist am 2026-10-14 feiner aufgeteilt 
 | K2 Würdig sein | Smeltery · IE: Strom und Förderbänder · Mana und Manasteel | Droide, „Würdig sein“ (SW1), Questbuch |
 | K3 Industrie | IE: Schwermaschinen und Biodiesel · Runenaltar · Blutaltar · Mekanism: Infuser und Sauerstoff · AE2: Storage-Layer · Everbright | – |
 | K4 Der Mond | Erdöl und Destillation · Mekanism-Grundmaschinen · Everdawn · **Rakete T1** | erstes großes Ziel; Einsiedler (SW2): Questbuch, Credits und Shop; Mond abgeschirmt, Hinweis auf den Mars |
-| K5 Erzketten | Alloyer und Foundry · entschwefelter Diesel · Altar T3 und Soul Forge · Mekanism Advanced · Bosse in Everbright | offen |
-| K6 Der Mars | IE-Großindustrie · Terrasteel · Bosse in Everdawn · **Rakete T2** | Signale von der Erde zu schwach |
+| K5 Erzketten | Alloyer und Foundry · entschwefelter Diesel · Altar T3 und Soul Forge · Mekanism Advanced · Blinding-Bosse (Blue Skies) | offen |
+| K6 Der Mars | IE-Großindustrie · Terrasteel · Nature- und Poison-Boss (Blue Skies) · **Rakete T2** | Signale von der Erde zu schwach |
 | K7 Horchposten | Planetenmetalle gießen · Altar T4 und Rituale · Mekanism Elite und Chemie | Mars-Station (SW3), der Droide zieht auf den Mars |
 | K8 Hitze | **Rakete T3** | der zerstörte Tempel |
 | K9 Der Tempel | Tempel und Dungeon (BM4) · Kernkraft · ME-System | Meister entkommen, Droide fällt aus, Text des Meisters |

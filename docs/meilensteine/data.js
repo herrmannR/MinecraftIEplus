@@ -198,10 +198,10 @@ const MILESTONES = [
    story:"–",
    world:"–"},
 
-  {id:"BS3", path:"G", stage:5, name:"Bosse in Everbright", status:"open",
-   req:[["BS1","Dungeons"]], must:true,
-   what:"Summoner und Alchemist.",
-   cross:"Boss-Items für den Elfen (welche, ist offen). Hebt die Werkzeug-Abschwächung auf.",
+  {id:"BS3", path:"G", stage:5, name:"Die Blinding-Bosse", status:"open",
+   req:[["BS1","Blinding Dungeon"],["BS2","Blinding Dungeon"]], must:true,
+   what:"Je ein Blinding Dungeon in jeder Welt: Summoner (Everbright) und Alchemist (Everdawn). Beute u. a. Ethereal Arc, Dusk Arc, Alchemy Table.",
+   cross:"Boss-Items für den Elfen (welche, ist offen). Soll die Werkzeug-Abschwächung aufheben (🔵 wann genau, im Spiel prüfen).",
    story:"Die Bosse können früh besiegt werden; gebraucht werden ihre Items erst für den Elfen.",
    world:"–"},
 
@@ -220,9 +220,9 @@ const MILESTONES = [
    story:"–",
    world:"–"},
 
-  {id:"BS4", path:"G", stage:6, name:"Bosse in Everdawn", status:"open",
-   req:[["BS2","Dungeons"]], must:true,
-   what:"Starlit Crusher und Arachnarch.",
+  {id:"BS4", path:"G", stage:6, name:"Nature- und Poison-Boss", status:"open",
+   req:[["BS3","Blinding-Bosse"]], must:true,
+   what:"Nature Dungeon in Everbright (Starlit Crusher, offen nach dem Summoner) und Poison Dungeon in Everdawn (Arachnarch, offen nach dem Alchemist). Beute u. a. Nature Arc, Poisonous Arc.",
    cross:"Boss-Items für den Elfen (welche, ist offen).",
    story:"–",
    world:"–"},

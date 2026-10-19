@@ -958,3 +958,45 @@ Status: 🟢 Entscheidung, 🔵 Skript
 
 ### Betroffene Bereiche
 - `15_RAUMFAHRT.md` (neuer Abschnitt „Etrium“), `01_PROGRESSION.md`, `11_TESTING.md` (Test 5), `modpfade/adastra/WISSEN.md`
+
+## 2026-10-19 — Questtexte für Star Wars Planets (Entwurf)
+
+Status: 🟡
+
+### Änderung
+- Neu: `questtexte/swplanets.md` mit dem Skill `questtexte`. 16 Quests in RF5 (Endor), RF6 (Tatooine, Hoth, Mustafar) und RF7 (Mandalore), anschließend an RF5-01 bis RF7-01 in `adastra.md`. Geschrieben wie ohne Buch, weil das Star Manual rausfliegt; Schwerpunkt Planeten, Bauwerke, Kyber und Beskar. Blaster und Lichtschwerter des Mods ohne Quest (Dopplung zu Galaxy in a Cube).
+
+### Betroffene Bereiche
+- `questtexte/README.md`
+
+### Teststatus
+Offen: Kyber auf Endor fehlt im Mod (S3) und bricht die Kette Endor → T6, Weg Kyber-Erz → Kristall, Stormtrooper-Rüstung ohne Plastic Plate, Beskar-Ofen und Nugget, Blaster behalten oder nicht, Structure-Task in FTB Quests.
+
+## 2026-10-19 — Questtexte für Blue Skies (Entwurf)
+
+Status: 🟡
+
+### Änderung
+- Neu: `questtexte/blue_skies.md` mit dem Skill `questtexte`. 30 Quests in BS1 bis BS4 und der Nebenquest-Reihe BSN (Leben in den Welten). Halbes Buch: Weg zu den vier Bossen ausgeschrieben, Rest mit Fundstelle im Blue Journal. Pack-Änderungen: Zinn, Blei, Bauxit in Everbright, Osmium in Everdawn, Figur im Blue-Skies-Haus statt Händler, Boss-Beute für später (O1).
+- Meilensteinkarte (User, 2026-10-19): BS3 heißt jetzt „Die Blinding-Bosse“ (Summoner in Everbright, Alchemist in Everdawn; braucht BS1 und BS2), BS4 „Nature- und Poison-Boss“ (Starlit Crusher, Arachnarch; braucht BS3). Vorher standen die Bosse unter der falschen Welt. Kapiteltabellen in `01_PROGRESSION.md` und `18_STORY.md` nachgezogen.
+
+### Betroffene Bereiche
+- `questtexte/README.md`
+- `meilensteine/data.js` (BS3, BS4), `01_PROGRESSION.md` und `18_STORY.md` (Kapiteltabelle K5/K6)
+
+### Teststatus
+Offen: Währung des Zeal Lighter, Werkzeugrezepte, Ende der Werkzeugabschwächung, welcher Schild gegen den Arachnarch genügt, Bosse wiederholbar, Zähm-Aufgabe in FTB Quests.
+
+## 2026-10-19 — Questtexte für Blood Magic (Entwurf)
+
+Status: 🟡
+
+### Änderung
+- Neu: `questtexte/bloodmagic.md` mit dem Skill `questtexte`. 54 Quests in BM1 bis BM6, mit Buch (Sanguine Scientiem): Ziel, Fundstelle im Buch, Pack-Änderungen. Eintragstitel aus der JAR.
+- Die Quests folgen den Altar-Stufen des Mods, nicht den Stufen der Meilensteinkarte: Rituale ab Stufe 3, Stufe 4 erst nach dem Demon Realm (Weak Blood Shard aus Tau), Stufe 6 gibt es nicht. Vorschlag für die Karte im Abschnitt „Offen vor dem Einbau“.
+
+### Betroffene Bereiche
+- `questtexte/README.md`
+
+### Teststatus
+Offen: Zuschnitt BM1–BM6 (User), Teil für T3 (O20, nur aus Stufe 3 möglich), Altar-Reparatur im Tempel (O2), Fund für T4, Ritual-Sperre auf den Tempel (E19), Ritual-Stein-Zahlen.
