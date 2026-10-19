@@ -103,13 +103,13 @@ Weitere Dimensionen ohne eigenen Pfad: Nether (Kobalt), Alfheim (Pfad C), Demon 
 | T2 | Mars | Desh | entschwefelter Diesel (Petroleum) | Ostrum, Fluorit |
 | T3 | Merkur, Venus | Ostrum | Kerosin (Petroleum) | Calorite, Uran, Blei; Zugang zum Demon Dungeon |
 | T4 | Glacio | Calorite | eigener Raketentreibstoff (Kerosin plus Mekanism-Chemie), deutlich aufwendiger | Fund des Meisters |
-| T5 | Endor | 🔵 Material aus Alfheim | 🔵 | Kyber |
+| T5 | Endor | Etrium (Legierung aus Calorite und Elementium aus Alfheim, 🟢 2026-10-19) | 🔵 | Kyber |
 | T6 | Tatooine, Hoth, Mustafar | 🔵 (Kyber von Endor ?) | 🔵 | Kyber |
 | T7 | Mandalore | 🔵 | 🔵 | Beskar |
 
 🟢 **Vier Hürden je Rakete** (User, 2026-10-14): (1) Rumpf aus dem Metall des zuletzt erreichten Ortes, (2) neuer Treibstoff, (3) neue Mekanism-Stufe (Schaltkreise, Legierungen), (4) ein Teil aus einem anderen Pfad. T3 braucht ein Teil aus Blood Magic (der Tempel schirmt den Planeten ab). 🔵 Welche Mekanism-Stufe und welche Botania-Items zu welcher Rakete gehören, legt der User fest.
 
-Erzprüfung (2026-10-14): Bis T4 liegt jedes Rumpf-Metall auf dem Planeten davor; Zinn (Everbright, P3), Osmium (Everdawn, Mond), Fluorit (Overworld, Mars) und Uran (Merkur, Venus) sind rechtzeitig da. Glacio hat kein eigenes Metall, daher kommt der Rumpf von T5 aus Alfheim. Kyber liegt auf Endor und steht damit für T6 bereit; Beskar (nur Mandalore) wird für keine weitere Stufe gebraucht.
+Erzprüfung (2026-10-14): Bis T4 liegt jedes Rumpf-Metall auf dem Planeten davor; Zinn (Everbright, P3), Osmium (Everdawn, Mond), Fluorit (Overworld, Mars) und Uran (Merkur, Venus) sind rechtzeitig da. Glacio hat kein eigenes Metall, daher ist der Rumpf von T5 die Legierung Etrium (Calorite plus Elementium aus Alfheim, dazu eine Zutat von Glacio). Kyber liegt auf Endor und steht damit für T6 bereit; Beskar (nur Mandalore) wird für keine weitere Stufe gebraucht.
 
 - 🟢 Energie, Treibstoff und Sauerstoff nur aus IE, Immersive Petroleum und Mekanism. Ad-Astra-Erzeuger, Kabel, Pipes und Water Pump werden entfernt (`15_RAUMFAHRT.md`).
 - 🟢 T1 verlangt mindestens eine erste Mekanism-Maschine (über den Sauerstoff).

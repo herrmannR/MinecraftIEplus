@@ -58,7 +58,7 @@
 
 - Handelsangebote der Lunarians, Mobs der More-Structures-Bosse (außer Super Lunarian, 60 HP), Spawnorte der Mobs, Herkunft von Glacian Fur.
 - Sauerstoffregeln der Giselle-Verzauberungen, Funktionsweise der Automation NASA Workbench.
-- In der Sprachdatei ohne Rezept: Etrium (Ingot, Plate, Rod, Block), Etrionic Core, Photovoltaic Vesnium Cell, Flüssigkeit Hydrogen.
+- In der Sprachdatei ohne Rezept: Etrium (Ingot, Plate, Rod, Block), Etrionic Core, Photovoltaic Vesnium Cell, Flüssigkeit Hydrogen. Etrium bindet das Pack als Rumpf von T5 ein (Legierung im Arc Furnace, `15_RAUMFAHRT.md`, Abschnitt „Etrium“; User, 2026-10-19).
 - Raketen, Rover, Lander sind Entities ohne lesbares Bild.
 
 ## IDs der Seite

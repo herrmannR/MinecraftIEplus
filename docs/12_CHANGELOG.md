@@ -947,3 +947,14 @@ Status: 🟢
 
 ### Betroffene Bereiche
 - `03_ERZGENERATION.md`, `00_STATUS.md`
+
+## 2026-10-19 — Etrium wird Rumpf der Rakete T5
+
+Status: 🟢 Entscheidung, 🔵 Skript
+
+### Änderung
+- Entscheidung (User): Etrium (in Ad Astra ohne Rezept) wird das Rumpfmetall von T5. Herstellung im IE Arc Furnace aus Calorite, Elementium und einer Zutat von Glacio (noch offen). Kein Erz.
+- Offen im Skript: Arc-Furnace-Rezept, Platte und Stab in der Metal Press, Nugget und Block, Tinkers-Schmelzen, Etrium im Rezept der Rakete T5, Photovoltaic Etrium Cell ausblenden; Verwendung des Etrionic Core.
+
+### Betroffene Bereiche
+- `15_RAUMFAHRT.md` (neuer Abschnitt „Etrium“), `01_PROGRESSION.md`, `11_TESTING.md` (Test 5), `modpfade/adastra/WISSEN.md`

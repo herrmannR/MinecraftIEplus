@@ -87,6 +87,16 @@ Ad Astra nimmt fremde Materialien über Tags an. 🟢 Aus JAR:
 - `ad_astra:steel_ingots`, `steel_blocks`, `steel_plates`, `steel_rods`, `iron_plates`, `iron_rods` enthalten jeweils das `forge:`-Tag. **IE-Stahl, IE-Platten und IE-Stäbe gelten ohne Anpassung.**
 - Für Desh, Ostrum und Calorite bringt Ad Astra selbst IE-Rezepte mit: Platten in der Metal Press und mit dem Engineer's Hammer (`data/immersiveengineering/recipes/metalpress/plate_desh.json` usw. im Ad-Astra-JAR; 🟢 im Spiel bestätigt am 2026-10-13). Wenn der Compressor entfällt, ist nichts weiter nötig. (Korrektur: Die frühere Angabe „keine IE-Pressrezepte“ war falsch.)
 
+### Etrium (🟢 Entscheidung User, 2026-10-19; 🔵 Skript)
+
+Ad Astra 1.15.21 bringt Etrium-Barren, -Platte, -Nugget, -Stab und -Blöcke mit, aber kein Rezept, das sie herstellt oder verbraucht (Test 5). Das Pack bindet Etrium ein:
+
+- **Rolle:** Rumpfmetall der Rakete T5 (Endor). Glacio hat kein eigenes Metall; Etrium verbindet den Calorite der T4-Stufe mit dem Magiepfad (Alfheim) und erfüllt so zugleich die Hürde „Teil aus einem anderen Pfad“.
+- **Herstellung:** IE Arc Furnace, Calorite-Barren + Elementium-Barren (`botania:elementium_ingot`) + eine Zutat von Glacio → Etrium-Barren (`ad_astra:etrium_ingot`). Kein Erz, die Worldgen bleibt unverändert.
+- 🔵 **Zutat von Glacio offen:** Ice Shard gibt es auch auf Mond und Mars; alternativ ein Item, das der Meister übergibt.
+- 🔵 **Folgerezepte im Skript:** Platte und Stab in der Metal Press, Nugget und Block über die Werkbank, Schmelzen in der Tinkers-Schmelzerei (jedes Metall einschmelzbar). Etrium-Platten im Rezept der Rocketed-Rakete T5.
+- 🔵 **Restliche Etrium-Items:** Photovoltaic Etrium Cell in JEI ausblenden (das Solar Panel entfällt); Verwendung des Etrionic Core offen.
+
 ## Treibstoff (🟢 aus JAR)
 
 **Jede Stufe hat ein eigenes Fluid-Tag**, das standardmäßig auf `#ad_astra:fuel` zeigt:
@@ -243,7 +253,7 @@ Aus JAR: Der Mod fügt nur drei Raketen T5, T6 und T7 hinzu, jeweils mit eigenem
 | T2 → Mars | Ostrum, Fluorit | entschwefelter Diesel (Petroleum); Mekanism-Ausbau |
 | T3 → Merkur, Venus | Calorite (Venus); Uran und Blei; Hitzeschutz nötig | Kerosin; **Tempel mit dem Blood-Magic-Dungeon nur auf dem Merkur** |
 | T4 → Glacio | Fund des Meisters, Ende von Part 1 | Rezept vom Elfen; **magische Komponenten** (🔵 Item aus dem Elfenportal ?); deutlich aufwendigerer Treibstoff; 🔵 ob Uran-Teil und Dungeon-Item Pflicht bleiben |
-| T5 → Endor | Kyber | Rumpf aus Alfheim; Bau am Ende von Part 2, Ankunft zu Beginn von Part 3; 🔵 |
+| T5 → Endor | Kyber | Rumpf aus Etrium (siehe „Etrium“); Bau am Ende von Part 2, Ankunft zu Beginn von Part 3; 🔵 |
 | T6 → Tatooine, Hoth, Mustafar | Kyber | 🔵 Part 3 |
 | T7 → Mandalore | Beskar | 🔵 Part 3 |
 
