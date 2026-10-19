@@ -937,3 +937,13 @@ Status: 🟡
 
 ### Teststatus
 Offen: Würdigkeits-Item (K2), O31, Eintragstitel im Buch gegenlesen, Blood-Smeltery 1.2.1a im Spiel, Material-Aufgaben per NBT oder Kontrollhaken.
+
+## 2026-10-19 — Osmium in Everdawn bleibt
+
+Status: 🟢
+
+### Änderung
+- Entscheidung (User): Everdawn ist sofort erreichbar und liefert Osmium in Menge vor dem Mond. Das bleibt so, weil Everdawn durch die Werkzeugabschwächung von Blue Skies (neue Werkzeuge nötig) schwer genug ist. Kein Portal-Skript, keine Senkung.
+
+### Betroffene Bereiche
+- `03_ERZGENERATION.md`, `00_STATUS.md`

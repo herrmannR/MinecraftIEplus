@@ -108,7 +108,7 @@ Configs reichen hier nicht: Die Mekanism- und IE-Features zielen auf die Overwor
 - Zum Vergleich: Die eigenen Blue-Skies-Metalle Falsite und Ventium liegen bei 20 × 6.
 - 🔵 Die Erzblöcke zeigen Overworld-Steintextur im Blue-Skies-Gestein (Backlog „eigene Erz-Texturen“ in `00_STATUS.md`).
 - 🟢 Blue Skies filtert nach dem Namensraum des platzierten Features (im Code von `PurifyBiome` nachgelesen, 2026-10-12): Alles, was nicht freigegeben ist, wird aus den Biomen entfernt. Die Freigabe von `ieplus` genügt also.
-- 🟢 Everbright und Everdawn sind beide sofort erreichbar (Test 23, 2026-10-17). Osmium in Menge gibt es damit schon vor dem Mond.
+- 🟢 Everbright und Everdawn sind beide sofort erreichbar (Test 23, 2026-10-17). Osmium in Menge gibt es damit schon vor dem Mond. Bleibt so (User, 2026-10-19): Everdawn ist durch die nötigen neuen Werkzeuge schwer genug.
 
 ## Planeten — eigene Features mit den Blöcken aus „Mekanism: Ad Astra Ores“ (🟡 angelegt in `kubejs/data/ieplus/`, ungetestet)
 

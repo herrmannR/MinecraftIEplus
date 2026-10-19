@@ -264,3 +264,4 @@ Für die Planeten ist das durch „Mekanism: Ad Astra Ores“ gelöst (fertige B
 - B7/B8 und E17: Erz-Features für Blue Skies und Planeten, Kyber-Override und Mekanism-/IE-Configs im Spiel nachgezählt; alle Zielwerte getroffen (Tests 8, 9, 11–15; Tabelle in `03_ERZGENERATION.md`).
 - B7 / Test 25: Mekanism-Retrogen in der Kopie der Hauptwelt geprüft (2026-10-17): 821 Chunks beim ersten Laden in 28 Sekunden, Erzmengen wie in neuen Welten, kein Zinn.
 - B8: Laterite-Ader und Blood-Magic-Meteore bleiben unverändert (User, 2026-10-17).
+- C (Test 23): Osmium in Everdawn bleibt trotz sofortigem Zugang; kein Portal-Skript, keine Senkung. Everdawn ist durch die nötigen neuen Werkzeuge schwer genug (User, 2026-10-19).

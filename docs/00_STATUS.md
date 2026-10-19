@@ -41,7 +41,6 @@ Minecraft **1.20.1, Forge 47.4.26** (Wechsel von 1.18.2 am 2026-10-11). Block A 
 - 9. 🔵 Fragenkatalog der Meilensteinkarte.
 - 10. 🔵 Zurückgestellt: magische Komponenten und Uran-Teil für T4; Zuordnung der Star-Wars-Planeten zu T5/T6; Cryo Fuel. Neu: Petroleum vor dem ersten Raumflug Pflicht, obwohl T1 mit Biodiesel fliegt?
 - 11. 🟢 Blue-Skies-Werkzeugabschwächung gemessen (2026-10-17): fremdes Werkzeug dauert ewig, bleibt so gewollt.
-- 🔵 Neu (Test 23, 2026-10-17): Everdawn ist sofort erreichbar, Osmium in Menge gibt es also schon vor dem Mond (Karte: Everdawn bei K4). So lassen, Portal per Skript sperren oder Osmium dort senken?
 
 **D. Skripte und Fixes** — 🟡 erste Fassung, ungetestet
 - 13. 🔵 `forge:coins` und fehlende Hellforged-Flüssigkeiten (Blood-Smeltery).
