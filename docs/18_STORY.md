@@ -9,6 +9,7 @@
 - 🟢 Erzählform: Das Questbuch führt, dazu Easy-NPC-Figuren mit Dialogen.
 - 🟢 **Bis zum Mond gibt es kein Questbuch** (User, 2026-10-14, ersetzt die Übergabe durch den Droiden): Bis dahin führt der Droide allein über Easy-NPC-Quests. Das Questbuch bekommen die Spieler vom Einsiedler auf dem Mond.
 - 🟢 Ton: Mischung aus abenteuerlich, ernst und humorvoll.
+- 🟢 **Mehrspieler** (User, 2026-10-19): Es wird immer nur zu dritt gespielt. Alle drei sind in **einer FTB-Party**, der Quest-Fortschritt gilt also für alle. In Easy-NPC-Dialogen setzen Befehle Fortschritt mit `tag @a add …` statt `@initiator`, damit alle drei denselben Stand sehen. Befehls- und Stage-Belohnungen in FTB Quests stehen auf „Team Reward“, damit sie nur einmal laufen.
 - 🟢 **Drei Teile** (User, 2026-10-14, ersetzt die bisherigen zwei Teile):
   - **Teil 1:** Erkunden der Standard-Planeten von Ad Astra und Suche nach dem Meister, bis er in die Overworld zurückgebracht ist. Die Star-Wars-Welt ist hier ein unbestätigtes, offenes Geheimnis und nur über Anspielungen erkennbar.
   - **Teil 2:** Ausbildung beim Meister und Vorbereitung der Rakete T5. Beginnt, sobald der Meister in der Overworld ist, und endet mit der fertigen Rakete T5.
