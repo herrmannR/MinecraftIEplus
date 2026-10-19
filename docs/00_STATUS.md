@@ -1,13 +1,13 @@
 # Minecraft-Modpack „Immersive Engineering+“ (1.20.1) — Projektstatus
 
 > Einstiegspunkt. Nur der aktuelle Stand und das Offene; Erledigtes, Phasenbeschreibungen und Entscheidungslog stehen in `00_STATUS_ARCHIV.md`.
-> Letzte Überarbeitung: 2026-10-15 (gekürzt).
+> Letzte Überarbeitung: 2026-10-19 (Doku-Prüfung).
 
 ## ▶ Wo wir stehen
 
-Minecraft **1.20.1, Forge 47.4.26** (Wechsel von 1.18.2 am 2026-10-11). Block A (Grundlagen) ist erledigt, Block B (Erzverteilung) entschieden, Block C (Progression) teilweise. Eine erste Fassung der Skripte und Overrides (Block D) liegt seit 2026-10-12 in der Testinstanz, im Spiel ungetestet (Testplan: `11_TESTING.md`). Die Story (Block G) schreibt der User, Stand in `18_STORY.md`.
+Minecraft **1.20.1, Forge 47.4.26** (Wechsel von 1.18.2 am 2026-10-11). Block A (Grundlagen) ist erledigt, Block B (Erzverteilung) entschieden, Block C (Progression) teilweise. Die erste Fassung der Skripte und Overrides (Block D) liegt in der Testinstanz und ist mit den Tests 1–27 bestätigt (Testplan: `11_TESTING.md`). Die Story (Block G) schreibt der User, Stand in `18_STORY.md`. Questtexte gibt es für alle großen Mods im Entwurf.
 
-**Nächste Schritte:** Meilensteinkarte bestätigen, die zurückgestellten Fragen aus Block C klären, Tests aus Block E im Spiel.
+**Nächste Schritte:** die Entscheidungen F1–F17 in `questtexte/OFFENE_FRAGEN.md` (sie decken die offenen Fragen aus Block C und G ab), Tests 32–41 im Spiel, danach die Story von Part 1 fertigstellen und die Skripte aus dem Ideenimport umsetzen.
 
 ### Welche Dokumente gelten
 
@@ -25,7 +25,8 @@ Minecraft **1.20.1, Forge 47.4.26** (Wechsel von 1.18.2 am 2026-10-11). Block A 
 | `10_KUBEJS.md` | 🟡 |
 | `11_TESTING.md` | 🟢 Testplan; Tests 1–31 und 32a bestanden, 32 (Skript fehlt) und 33–41 offen |
 | `01_PROGRESSION.md` | 🟡 vier Fragen offen |
-| `meilensteine/` (samt Artifact-Seite) | 🟡 nach der Story umgebaut (2026-10-14): 50 Meilensteine, 9 Pfade, 16 Kapitel in zwei Parts, Fragenkatalog |
+| `questtexte/OFFENE_FRAGEN.md` | 🟡 gesammelte Entscheidungen (F1–F17) und Prüfpunkte im Spiel (P1–P13) aus allen Questtexten |
+| `meilensteine/` (samt Artifact-Seite) | 🟡 nach der Story umgebaut (2026-10-14): 51 Meilensteine, 9 Pfade, 16 Kapitel in zwei Parts, Fragenkatalog |
 | `18_STORY.md` | 🟡 Part 1 im Umriss, Part 2 und 3 folgen; schreibt der User |
 | `modpfade/` | je Mod eine Seite und `WISSEN.md` |
 | `19_HILFEBUECHER.md` | 🟢 welche Mods ein Buch im Spiel haben; Regel für die Erklärtiefe im Questbuch |
@@ -47,7 +48,7 @@ Minecraft **1.20.1, Forge 47.4.26** (Wechsel von 1.18.2 am 2026-10-11). Block A 
 - 14. 🔵 T4-Treibstoff, Cryo Freezer. (Energizer entfernt, 2026-10-17, ungetestet.)
 - 🔵 Umsetzen (entschieden 2026-10-17, Ideenimport): Star Manual raus; Plastic Plate raus, Plastoid mit HDPE; Kyber von Star Wars Planets durch das von Galaxy in a Cube ersetzen; Beskar nur im starken Ofen, 1 Nugget (Ofen offen); Digital Miner raus; AE2-Energieerzeuger raus; IE-Crusher übernimmt den Mekanism-Crusher. Erst wenn die Story von Part 1 steht.
 
-**E. Tests** — 🟡 Runde 1 bis 4 bestanden (2026-10-17); offen Runde 5 und 6 in `11_TESTING.md`
+**E. Tests** — 🟡 Runde 1 bis 4 bestanden, Runde 5 bis auf Test 32 (2026-10-17); offen Test 32 sowie Runde 6 und 7 (Tests 33–41) in `11_TESTING.md`
 - 19. Blood-Magic-Ritual per KubeJS abfangen (Dungeon nur auf dem Merkur).
 - 20. Galaxy in a Cube in der Overworld im Spiel bestätigen und entscheiden, ob es bleibt.
 
@@ -60,7 +61,6 @@ Minecraft **1.20.1, Forge 47.4.26** (Wechsel von 1.18.2 am 2026-10-11). Block A 
 
 **G. Story und Questbuch** — 🟡
 - 26. 🔵 Entscheidungen des Users: O1 bis O23 in `18_STORY.md` und Fragenkatalog der Meilensteinkarte. Als Nächstes: Checkliste der Mars-Station (O22), Anreise des Droiden (O23), Mekanism-Stufen und Botania-Items je Rakete.
-- 28. 🔵 Runde 5 und 6 in `11_TESTING.md` im Spiel testen.
 - 🔵 Aus dem Ideenimport (2026-10-17): O34 bis O38 in `18_STORY.md` (Blue-Skies-Haus, Roguelike-Stufen, Machtpfade, Artefakte, Freischaltung der Macht); Texte der vier Schriftrollen; Zutaten der Altar-Reparatur.
 
 ### Backlog

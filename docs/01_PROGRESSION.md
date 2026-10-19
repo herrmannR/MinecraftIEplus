@@ -24,8 +24,8 @@ Die Karte (`meilensteine/`, Artifact-Seite) ist am 2026-10-14 feiner aufgeteilt 
 | K5 Erzketten | Alloyer und Foundry · entschwefelter Diesel · Altar T3 und Soul Forge · Mekanism Advanced · Blinding-Bosse (Blue Skies) | offen |
 | K6 Der Mars | IE-Großindustrie · Terrasteel · Nature- und Poison-Boss (Blue Skies) · **Rakete T2** | Signale von der Erde zu schwach |
 | K7 Horchposten | Planetenmetalle gießen · Altar T4 und Rituale · Mekanism Elite und Chemie | Mars-Station (SW3), der Droide zieht auf den Mars |
-| K8 Hitze | **Rakete T3** | der zerstörte Tempel |
-| K9 Der Tempel | Tempel und Dungeon (BM4) · Kernkraft · ME-System | Meister entkommen, Droide fällt aus, Text des Meisters |
+| K8 Hitze | **Rakete T3** | der verlassene Tempel, kaputter Altar, vier Schriftrollen; zurück zur Erde (Material, Roguelike-Dungeon, Blue-Skies-Bosse, Blue-Skies-Haus; Zuordnung zu K8 ist ein Vorschlag) |
+| K9 Der Tempel | Tempel und Dungeon (BM4) · Kernkraft · ME-System | Altar repariert, Dimension betreten; Meister entkommen, Droide fällt aus, Text des Meisters |
 | K10 Der Elf | Elfenportal (BO5) · Mekanism Ultimate und Teleportation | Elf; Boss-Items und Tech-Erzeugnisse |
 | K11 Glacio | **Rakete T4** (RF4) | Barriere, Meister gefunden und in die Overworld zurückgebracht; Ende von Part 1 |
 | **Part 2 · Ausbildung zum Jedi und Vorbereitung T5** (wird später besprochen) | | |
@@ -59,7 +59,7 @@ Vorschlag für die Mekanism-Stufe je Rakete (der User legt fest): T1 Basic, T2 A
 **Mana → Runen → Manasteel → Terrasteel → Elfenportal, Elementium → (Part 2:) Alfheim → Gaia → Alfsteel**
 - 🟢 Story (2026-10-13): Mana ist die „lebendige Macht“, das helle Gegenstück zu Blood Magic. Das Elfenportal wird in Part 1 nur gebaut und für den Handel genutzt; betreten wird Alfheim erst in Part 2, Gaia ist dort eine Prüfung des Meisters.
 - liefert ein Schutz-Item für den Altar im Tempel (🔵 Rune oder Terrasteel) und die magischen Komponenten der Rakete T4 (🔵 Item aus dem Elfenportal oder Terrasteel; Alfsteel entfällt für T4)
-- 🔵 aus 1.18.2 übernommen und für 1.20.1 nicht geprüft: MythicBotany ändert das Gaia-Rezept (`replaceGaiaRecipe`) und sperrt Alfheim hinter Mead of Kvasir (`lockAlfheim`)
+- 🟢 aus JAR und Config (`18_STORY.md`, Ergebnisse aus den JARs): MythicBotany ändert das Gaia-Rezept (`replaceGaiaRecipe`, Gaia-Pylon braucht Alfsteel) und lässt nur mit Mead of Kvasir durch das Portal (`lockAlfheim`). 🔵 Im Spiel: Tests 40 und 41.
 
 ### Pfad D — Blutmagie
 **Life Essence → Blood Altar → Stufen T2 bis T4 → Rituale → Demon Dungeon**
@@ -109,7 +109,7 @@ Weitere Dimensionen ohne eigenen Pfad: Nether (Kobalt), Alfheim (Pfad C), Demon 
 
 🟢 **Vier Hürden je Rakete** (User, 2026-10-14): (1) Rumpf aus dem Metall des zuletzt erreichten Ortes, (2) neuer Treibstoff, (3) neue Mekanism-Stufe (Schaltkreise, Legierungen), (4) ein Teil aus einem anderen Pfad. T3 braucht ein Teil aus Blood Magic (der Tempel schirmt den Planeten ab). 🔵 Welche Mekanism-Stufe und welche Botania-Items zu welcher Rakete gehören, legt der User fest.
 
-Erzprüfung (2026-10-14): Bis T4 liegt jedes Rumpf-Metall auf dem Planeten davor; Zinn (Everbright, P3), Osmium (Everdawn, Mond), Fluorit (Overworld, Mars) und Uran (Merkur, Venus) sind rechtzeitig da. Glacio hat kein eigenes Metall, daher ist der Rumpf von T5 die Legierung Etrium (Calorite plus Elementium aus Alfheim, dazu eine Zutat von Glacio). Kyber liegt auf Endor und steht damit für T6 bereit; Beskar (nur Mandalore) wird für keine weitere Stufe gebraucht.
+Erzprüfung (2026-10-14): Bis T4 liegt jedes Rumpf-Metall auf dem Planeten davor; Zinn (Everbright, P3), Osmium (Everdawn, Mond), Fluorit (Overworld, Mars) und Uran (Merkur, Venus) sind rechtzeitig da. Glacio hat kein eigenes Metall, daher ist der Rumpf von T5 die Legierung Etrium (Calorite plus Elementium aus Alfheim, dazu eine Zutat von Glacio). ⚠️ Korrektur 2026-10-19: Kyber liegt ohne Eingriff **nicht** auf Endor. Belegt ist nur das Sandstein-Erz auf Tatooine; das Deepslate-Vorkommen für Endor, Hoth und Mustafar verweist auf einen Block, den es nicht gibt (`modpfade/CROSSMOD_AUFFAELLIGKEITEN.md`, S3). Die Hürde „Kyber von Endor → T6“ braucht also ein eigenes Vorkommen per Datapack oder eine andere Zutat (🔵 F5 in `questtexte/OFFENE_FRAGEN.md`). Beskar (nur Mandalore) wird für keine weitere Stufe gebraucht.
 
 - 🟢 Energie, Treibstoff und Sauerstoff nur aus IE, Immersive Petroleum und Mekanism. Ad-Astra-Erzeuger, Kabel, Pipes und Water Pump werden entfernt (`15_RAUMFAHRT.md`).
 - 🟢 T1 verlangt mindestens eine erste Mekanism-Maschine (über den Sauerstoff).
@@ -153,10 +153,10 @@ Neue Gates dürfen bereits erreichten Fortschritt nicht rückwirkend sperren.
 
 ## Offen
 
-0. Der vollständige Fragenkatalog steht auf der Meilensteinkarte und in `18_STORY.md`.
+0. Der vollständige Fragenkatalog steht auf der Meilensteinkarte und in `18_STORY.md`; die Fragen aus den Questtexten gesammelt in `questtexte/OFFENE_FRAGEN.md` (Punkt 1 = F2, Punkt 2 = F6, Punkt 4 = F3).
 1. 🔵 Magische Komponenten der Rakete T4; ob Uran-Teil und Dungeon-Item Pflicht bleiben.
 2. 🔵 Soll Petroleum weiter Pflicht vor dem ersten Raumflug sein (Entscheidung vom 2026-10-07)? T1 fliegt jetzt mit Biodiesel.
-3. 🟡 Ad Astra: Rocketed bleibt (User, 2026-10-13): Die Star-Wars-Planeten verlangen mindestens T5 und T6; T4 führt nur noch nach Glacio. 🔵 Offen: welcher Planet auf welcher Stufe, Rezepte und Treibstoffe (Part 2 und 3).
+3. 🟡 Ad Astra: Rocketed bleibt (User, 2026-10-13); Planeten je Stufe entschieden (2026-10-14: T5 Endor, T6 Tatooine, Hoth, Mustafar, T7 Mandalore). 🔵 Offen: Rezepte und Treibstoffe T5–T7 (Part 2 und 3).
 4. 🔵 Cryo Fuel: entfernen oder Zutat des T4-Treibstoffs.
 5. 🔵 Meilensteinkarte als Ganzes bestätigen oder korrigieren (Reihenfolge, Pflicht oder optional).
 6. 🔵 Kostenrahmen je Meilenstein (Phase 3).

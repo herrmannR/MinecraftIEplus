@@ -379,9 +379,9 @@ const MILESTONES = [
    world:"–"},
 
   {id:"RF5", path:"H", stage:13, name:"Rakete T5 → Endor", status:"open",
-   req:[["RF4","Calorite · ?"],["BO6","Rumpf aus Alfheim ?"],["MK7","Fusion ?"],["SW4","Auftrag des Meisters"]], must:true,
-   what:"Erste Rakete aus „Ad Astra: Rocketed“. Führt nur nach Endor. Hürden: Rumpf aus Alfheim, neuer Treibstoff, Mekanism-Stufe, Teil aus einem anderen Pfad (alles offen).",
-   cross:"Endor liefert Kyber für die Rakete T6.",
+   req:[["RF4","Calorite"],["BO6","Elementium für Etrium"],["MK7","Fusion ?"],["SW4","Auftrag des Meisters"]], must:true,
+   what:"Erste Rakete aus „Ad Astra: Rocketed“. Führt nur nach Endor. Rumpf aus Etrium (Arc Furnace: Calorite + Elementium aus Alfheim + Zutat von Glacio ?; entschieden 2026-10-19). Offen: Treibstoff, Mekanism-Stufe.",
+   cross:"Geplant: Endor liefert Kyber für die Rakete T6. ⚠️ Ohne Eingriff gibt es auf Endor kein Kyber-Erz (nur auf Tatooine); braucht ein Vorkommen per Datapack oder eine andere Zutat.",
    story:"Die fertige Rakete T5 schließt Part 2 ab. Mit der Ankunft auf Endor, der Heimat beziehungsweise Basis des Meisters, beginnt Part 3.",
    tech:"Planetenstufe per Datapack: Endor (samt Orbit) von 4 auf 5. Treibstoff über das Tag <code>ad_astra_rocketed:tier_5_rocket_fuel</code>, muss eine Flüssigkeit sein. Ob Ad Astra Stufen über 4 annimmt, ist ungetestet.",
    world:"–"},

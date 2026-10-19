@@ -4,7 +4,7 @@
 
 ## Status
 
-🟡 **Verteilung beschlossen (User, 2026-10-12). Die Zahlenwerte sind Vorschläge. Configs, Erz-Features und Overrides liegen im Projektordner (`config-overrides/`, `kubejs/`), sind aber im Spiel noch nicht getestet und noch nicht in der Testinstanz.**
+🟢 **Verteilung beschlossen (User, 2026-10-12), umgesetzt und im Spiel nachgezählt (2026-10-17, Abschnitt „Nachgezählt“ am Ende). Configs, Erz-Features und Overrides liegen im Projektordner (`config-overrides/`, `kubejs/`) und in der Testinstanz.**
 
 Der Ist-Zustand (Standardwerte aller Mods) steht in `02_RESSOURCEN.md`, Teil 1.
 
@@ -61,7 +61,7 @@ Der Ist-Zustand (Standardwerte aller Mods) steht in `02_RESSOURCEN.md`, Teil 1.
 
 ---
 
-# Teil 2 — Zahlenwerte (🟡 Vorschlag, im Spiel zu prüfen)
+# Teil 2 — Zahlenwerte (🟢 im Spiel bestätigt, 2026-10-17)
 
 Schreibweise „Adern pro Chunk × Adergröße“.
 
@@ -94,7 +94,7 @@ Schreibweise „Adern pro Chunk × Adergröße“.
 
 `vein_size = 0` schaltet ein Erz laut Kommentar in der 1.20.1-Config ab (🟢 gelesen, 🔵 nicht im Spiel geprüft).
 
-## Blue Skies — eigene Features (🟡 angelegt in `kubejs/data/ieplus/`, ungetestet)
+## Blue Skies — eigene Features (🟢 angelegt in `kubejs/data/ieplus/`, getestet)
 
 Configs reichen hier nicht: Die Mekanism- und IE-Features zielen auf die Overworld und ersetzen nur Overworld-Gestein. Deshalb gibt es eigene Erz-Features als Datapack-JSON im Namensraum `ieplus` (`configured_feature`, `placed_feature`), je einen Forge-Biome-Modifier für `#blue_skies:everbright` und `#blue_skies:everdawn` und die Freigabe `allowed_mods_for_feature_gen = ["ieplus"]` in `config-overrides/config/blue_skies-common.toml`.
 
@@ -110,7 +110,7 @@ Configs reichen hier nicht: Die Mekanism- und IE-Features zielen auf die Overwor
 - 🟢 Blue Skies filtert nach dem Namensraum des platzierten Features (im Code von `PurifyBiome` nachgelesen, 2026-10-12): Alles, was nicht freigegeben ist, wird aus den Biomen entfernt. Die Freigabe von `ieplus` genügt also.
 - 🟢 Everbright und Everdawn sind beide sofort erreichbar (Test 23, 2026-10-17). Osmium in Menge gibt es damit schon vor dem Mond. Bleibt so (User, 2026-10-19): Everdawn ist durch die nötigen neuen Werkzeuge schwer genug.
 
-## Planeten — eigene Features mit den Blöcken aus „Mekanism: Ad Astra Ores“ (🟡 angelegt in `kubejs/data/ieplus/`, ungetestet)
+## Planeten — eigene Features mit den Blöcken aus „Mekanism: Ad Astra Ores“ (🟢 angelegt in `kubejs/data/ieplus/`, getestet)
 
 Die Generierung des Mods bleibt abgeschaltet (`kubejs/data/mekanismaaa/tags/worldgen/biome/gen_ores*.json`), weil sie alle Erze auf alle Planeten setzt und ihre Mengen aus `Mekanism/world.toml` nimmt. Eigene Features je Planet:
 
@@ -127,11 +127,11 @@ Die Generierung des Mods bleibt abgeschaltet (`kubejs/data/mekanismaaa/tags/worl
 
 Ungenutzt bleiben die Zinn-Blöcke (Mond, Mars, Glacio), Uran auf dem Mars, Osmium auf Merkur, Fluorit auf Venus und Glacio, Blei auf Glacio. Zum Vergleich: Desh, Ostrum und Calorite liegen bei 8–9 × 8–9.
 
-## Kyber-Kristalle aus der Overworld entfernen (🟡 angelegt, ungetestet)
+## Kyber-Kristalle aus der Overworld entfernen (🟢 Test 9)
 
 Galaxy in a Cube hängt `swgc:kyber_crystal` über den Biome Modifier `swgc:kyber_crystals` an alle Overworld-Biome. Ein Override dieser Datei im Datapack ersetzt ihn durch `forge:none` (`kubejs/data/swgc/forge/biome_modifier/kyber_crystals.json`). 🔵 Wirkung testen. **Muss vor dem ersten Start der Hauptwelt in 1.20.1 beim Host liegen**, sonst entstehen Kristalle in jedem neu erzeugten Chunk.
 
-## Excavator-Adern (🟡 angelegt, ungetestet)
+## Excavator-Adern (🟢 Test 7)
 
 | Ader | Standard-Gewicht | Soll |
 |---|---:|---|

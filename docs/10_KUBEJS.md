@@ -17,9 +17,9 @@ Technische Umsetzung der beschlossenen Modpack-Regeln, zusammen mit den Config-�
 
 KubeJS ist die Implementierungsebene. Designentscheidungen stehen zuerst in den Fachdateien.
 
-## Stand der Umsetzung (2026-10-12)
+## Stand der Umsetzung (2026-10-19)
 
-⚠️ **Alles hier liegt nur im Projektordner und ist im Spiel ungetestet.** In der Testinstanz liegen bisher nur die Beispielskripte von KubeJS und die zwei `mekanismaaa`-Tag-Dateien.
+🟢 Alles unten Aufgeführte liegt in der Testinstanz und ist mit den Tests 1–27 in `11_TESTING.md` bestätigt. (Die Kopfzeilen „UNGETESTET“ in den Skripten sind älter.)
 
 Die fünf Skripte für 1.18.2 (`space_oxygen.js`, `moon_ores.js`, `tf_industrial_ores.js`, `tf_remove_foreign_ores.js`, `debug_print_ore_features.js`) und `kubejs/data/beyond_earth/` sind gelöscht (im Git-Verlauf erhalten).
 
@@ -28,10 +28,11 @@ Die fünf Skripte für 1.18.2 (`space_oxygen.js`, `moon_ores.js`, `tf_industrial
 | Datei | Aufgabe | Entscheidung |
 |---|---|---|
 | `server_scripts/fixes/tag_fixes.js` | Entfernt `swplanets:mustafar_sand` aus `forge:sand`, damit das Tag wieder lädt. | `00_MODBASIS.md`, Bekannte Fehler |
-| `server_scripts/raumfahrt/ad_astra_regeln.js` | Entfernt die Rezepte von Coal Generator, Solar Panel, Compressor, Fuel Refinery, Water Pump, Kabeln, Pipes und Durchführungen; entfernt das Ad-Astra-Stahlrezept, das Öl-zu-Treibstoff-Rezept, das Wasser-Rezept des Oxygen Loader und alle Compressor-Rezepte. Die Platten für Desh, Ostrum und Calorite kommen aus den IE-Rezepten, die Ad Astra selbst mitbringt. | `15_RAUMFAHRT.md` |
+| `server_scripts/raumfahrt/ad_astra_regeln.js` | Entfernt die Rezepte von Coal Generator, Solar Panel, Compressor, Fuel Refinery, Water Pump, Energizer (2026-10-17), Kabeln, Pipes und Durchführungen; entfernt das Ad-Astra-Stahlrezept, das Öl-zu-Treibstoff-Rezept, das Wasser-Rezept des Oxygen Loader und alle Compressor-Rezepte. Die Platten für Desh, Ostrum und Calorite kommen aus den IE-Rezepten, die Ad Astra selbst mitbringt. | `15_RAUMFAHRT.md` |
 | `server_scripts/worldgen/excavator_adern.js` | Entfernt die Excavator-Ader Cassiterite (Zinn). | `03_ERZGENERATION.md` |
 | `server_scripts/crossmod/tinkers_legierungen.js` | Entfernt das Legierungsrezept für Refined Obsidian aus der Schmelzerei. ✅ In JEI bestätigt (2026-10-17). | `07_CROSSMOD_INTEGRATION.md` |
 | `server_scripts/crossmod/blood_smeltery.js` | Entfernt die Life-Essence-Legierung und das Gießen von Blank Slate und Blank Rune. ✅ In JEI bestätigt (2026-10-17). | `07_CROSSMOD_INTEGRATION.md` |
+| `client_scripts/jei_ausblenden.js` | Blendet alle entfernten Items in JEI aus (Regel: was ein Skript entfernt, kommt auch hierher). | User, 2026-10-13 |
 
 ### Datapack (`kubejs/data/`)
 
@@ -52,10 +53,11 @@ Unter `_original/` liegen die unveränderten Standarddateien zum Vergleich.
 - 🔵 Blood-Smeltery: `forge:coins` und die fehlenden Hellforged-Flüssigkeiten (Ursache geklärt: Mod-Bug bzw. fehlendes Thermal, siehe `00_MODBASIS.md` „Bekannte Fehler“; Entscheidung über Skript-Workaround offen).
 - 🔵 Tinkers in den höheren Stufen (Wege A, C, D, E, F und fehlende Schmelzrezepte, `07_CROSSMOD_INTEGRATION.md`): beschlossen, Rezepte und Werte offen.
 - 🔵 Eigener Raketentreibstoff für T4 (Fluid, Rezept, Tag `tier_4_rocket_fuel`); Treibstoff des Rovers.
-- 🔵 Energizer und Cryo Freezer (Entscheidung bzw. Test offen).
+- 🔵 Cryo Freezer (Entscheidung offen, F3).
 - 🔵 Rezept vom Kyber-Erz zum Kyber-Kristall; Lichtschwerter von Star Wars Planets entfernen (`17_STAR_WARS_1.20.1.md`).
 - 🔵 Blood-Magic-Ritual nur auf dem Merkur (Machbarkeit ungetestet).
-- 🔵 Entfernte Blöcke in JEI ausblenden (`client_scripts`).
+- 🔵 Etrium-Rezepte (`15_RAUMFAHRT.md`), Planetenstufen T5–T7, Ewok-Dörfer und Jawas aus der Overworld.
+- 🔵 Aus dem Ideenimport (erst wenn die Story von Part 1 steht, `00_STATUS.md` Block D): Star Manual, Plastic Plate, Digital Miner, AE2-Energieerzeuger, IE-Crusher statt Mekanism-Crusher, Beskar, Kyber.
 - 🔵 Alles aus den Phasen 3 bis 6 (Erträge, Energie, AE2-Gates, Cross-Mod-Rezepte).
 
 ## Workflow

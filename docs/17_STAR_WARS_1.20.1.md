@@ -2,7 +2,7 @@
 
 ## Zweck
 
-Welche Star-Wars-Mods in den 1.20.1-Kandidaten kommen, wer welchen Inhalt liefert und was dafür noch zu tun ist. Gilt nur für `16_MODLISTE_1.20.1.md`; für 1.18.2 bleibt `15_RAUMFAHRT.md` maßgeblich.
+Welche Star-Wars-Mods im Pack sind, wer welchen Inhalt liefert und was dafür noch zu tun ist. Raumfahrt und Planetenstufen: `15_RAUMFAHRT.md`; Story: `18_STORY.md`.
 
 Grundlage: Recherche des Users vom 2026-10-10, vollständig in `recherche/star-wars-clone-wars-mods-1.20.1.md` (Mod-Vergleich, Lichtschwert-Tabelle, Quellen).
 
@@ -40,9 +40,9 @@ Begründung in Kurzform:
 
 ## Unterschiede zum 1.18.2-Plan
 
-- **Kamino:** In der 1.20.1-Planetenliste der Recherche fehlt Kamino (1.18.2: sechs Planeten). 🔵 Im Spiel prüfen. Fehlt er, ändert sich die Kyber-Verteilung aus `15_RAUMFAHRT.md`.
-- **Lichtschwert als Belohnung:** In 1.18.2 ist es Light Saber Base (Kyber + Eisen) plus Beacon je Farbe. Das entfällt mit dem Wechsel auf die Schwerter von Galaxy in a Cube; deren Rezepte sind noch nicht bekannt (kein Wiki, closed source).
-- **Erzatlas und Meilensteinkarte** bleiben auf dem 1.18.2-Stand, solange der Wechsel nicht beschlossen ist.
+- **Kamino** gibt es in der Ad-Astra-Version nicht (🟢 aus JAR, `15_RAUMFAHRT.md`).
+- **Kyber** liegt ohne Eingriff nur auf Tatooine, nicht auf Endor (S3 in `modpfade/CROSSMOD_AUFFAELLIGKEITEN.md`).
+- **Lichtschwerter** kommen aus Galaxy in a Cube (Assembly Bench, Rezepte im Code; ausgelesen in `modpfade/swgc/WISSEN.md`).
 
 ## KubeJS: Schwerter von Star Wars Planets entfernen
 
@@ -91,7 +91,7 @@ JEIEvents.hideItems(event => {
 ## Offene Arbeit
 
 1. 🔵 **Zusammenspiel testen:** Star Wars Planets und Galaxy in a Cube gemeinsam starten. Dass sie zusammen laufen, ist nicht belegt.
-2. 🟡 **Worldgen von Galaxy in a Cube** (🟢 aus JAR, 2026-10-12; 🔵 im Spiel nicht geprüft): Der Mod erzeugt in der Overworld Kyber-Kristalle (`swgc:kyber_crystal`, alle Overworld-Biome, 1 Versuch in jedem 16. Chunk, Y 4…112 über dem Weltboden), die Struktur `swgc:ewok_village` im Biom `minecraft:forest` und Jawa-Spawns in Wüste und Badlands. Erz-Features für Plastoid oder Durasteel gibt es nicht. 🟢 Entscheidung 2026-10-12: Die Kristalle werden aus der Overworld entfernt; Kyber gibt es nur auf den Star-Wars-Planeten (`03_ERZGENERATION.md`). Damit wird Punkt 4 Pflicht: ein Rezept vom Kyber-Erz zum Kristall, sonst sind Lichtschwerter nicht herstellbar.
+2. 🟡 **Worldgen von Galaxy in a Cube** (🟢 aus JAR, 2026-10-12; Kyber-Abschaltung bestätigt mit Test 9; Ewok-Dörfer und Jawas in der Overworld 🔵 noch nicht abgeschaltet, Entscheidung 2026-10-14 in `18_STORY.md`): Der Mod erzeugt in der Overworld Kyber-Kristalle (`swgc:kyber_crystal`, alle Overworld-Biome, 1 Versuch in jedem 16. Chunk, Y 4…112 über dem Weltboden), die Struktur `swgc:ewok_village` im Biom `minecraft:forest` und Jawa-Spawns in Wüste und Badlands. Erz-Features für Plastoid oder Durasteel gibt es nicht. 🟢 Entscheidung 2026-10-12: Die Kristalle werden aus der Overworld entfernt; Kyber gibt es nur auf den Star-Wars-Planeten (`03_ERZGENERATION.md`). Damit wird Punkt 4 Pflicht: ein Rezept vom Kyber-Erz zum Kristall, sonst sind Lichtschwerter nicht herstellbar.
 3. 🔵 **Spawns:** Wo Galaxy in a Cube Mobs und Strukturen spawnt, ist nicht dokumentiert. Falls nur in der Overworld: pro Planeten-Biom eine Datapack-Datei mit zusätzlichen Spawns (Entity-IDs aus dem Spiel ablesen), und entscheiden, ob Klone und Droiden in der Overworld überhaupt erwünscht sind.
 4. 🟡 **Kyber aus Star Wars Planets:** wird durch das Kyber von Galaxy in a Cube ersetzt (User, 2026-10-17). Offen ist nur noch der Weg: Drop des Erzes ändern oder Rezept zum Kristall.
 5. 🟡 **Macht:** über Quests freischalten (User, 2026-10-17). Prüfen, ob `forceObtainment` den normalen Fortschritt abschaltet und ob sich Punkte per Befehl vergeben lassen; im Kreativmodus Steuerung und Ausdauer ausprobieren.

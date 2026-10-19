@@ -12,13 +12,13 @@
 
 - **Fremde Erze:** Blue Skies filtert Features anderer Mods in seinen Dimensionen. Freigabe über `allowed_mods_for_feature_gen` in `config/blue_skies-common.toml` (🟢 Standard ist eine leere Liste, 2026-10-12 gelesen). Die Freigabe lässt Features nur durch den Filter; erzeugen muss sie weiterhin ein Biome Modifier.
 - **Gestein:** `blue_skies:turquoise_stone` (Everbright), `blue_skies:lunar_stone` (Everdawn). Die eigenen Erze sind normale JSON-Features; Werte in `02_RESSOURCEN.md`.
-- **Werkzeug-Abschwächung:** im Code vorhanden (`PlayerHooks.isNerfableTool`, `SkiesEntityHooks.nerfDamage`), an den Boss-Fortschritt gekoppelt, **kein Config-Schalter**. 🟢 Im Spiel getestet (User, 2026-10-11): Tinkers-Werkzeuge sind in Everbright abgeschwächt. 🟢 **Entscheidung 2026-10-12:** als gewollte Hürde hinnehmen. Wer in Blue Skies abbauen will, nutzt die Werkzeuge der Dimension oder besiegt die Bosse. 🔵 Im Spiel messen, wie stark das Abbauen von Zinn, Blei, Bauxit und Osmium gebremst wird.
+- **Werkzeug-Abschwächung:** im Code vorhanden (`PlayerHooks.isNerfableTool`, `SkiesEntityHooks.nerfDamage`), an den Boss-Fortschritt gekoppelt, **kein Config-Schalter**. 🟢 Im Spiel getestet (User, 2026-10-11): Tinkers-Werkzeuge sind in Everbright abgeschwächt. 🟢 **Entscheidung 2026-10-12:** als gewollte Hürde hinnehmen. Wer in Blue Skies abbauen will, nutzt die Werkzeuge der Dimension oder besiegt die Bosse. 🟢 Gemessen (Test 22, 2026-10-17): mit fremdem Werkzeug dauert es ewig; bleibt so.
 - **Bosse:** Summoner, Alchemist, Starlit Crusher, Arachnarch; Zugang über den Gatekeeper.
 
 ## Rollen der Dimensionen (Stand 2026-10-12)
 
 - 🟢 Blue Skies: Story-Dimension und Quelle der Industriemetalle. Everbright: Zinn (nur dort), Blei, Bauxit. Everdawn: Osmium. Details: `03_ERZGENERATION.md`.
-- 🟢 Wesley's Roguelike Dungeons: Spaß-Dungeons.
+- 🟢 Wesley's Roguelike Dungeons: seit 2026-10-17 fünfstufige Nebenquest-Reihe und Vorbereitung auf die Altar-Dimension (`01_PROGRESSION.md`, O35).
 - 🟡 Blood-Magic-Dungeon: Zugang nur auf dem Merkur, dort ein Pflicht-Item für die T4-Rakete (`15_RAUMFAHRT.md`; technische Machbarkeit ungetestet).
 
 ## Welt-Test: Kopie der Hauptwelt in 1.20.1 (2026-10-11)
@@ -53,7 +53,7 @@ IE 10 hat das Multiblock-System neu gebaut. Die alten Block-Entity-Typen (`…_d
 
 - **Absturz beim ersten Ladeversuch:** `serverconfig/immersivepetroleum-server.toml` aus 1.18.2 nennt `immersivepetroleum:benzene`, das es nicht mehr gibt (`crash-2026-10-11_21.58.36-server.txt`). Die Datei muss vor dem ersten Start aus dem Weltordner entfernt werden. In der Testwelt liegt sie als `immersivepetroleum-server.toml.1182-alt`.
 - **Backup unvollständig:** `DIM-1/entities` fehlt im Download (`___All_Errors.txt`).
-- Die Ölvorkommen (`data/ImmersivePetroleum-ReservoirRegions/`) sind als Dateien unverändert vorhanden. 🔵 Ob 1.20.1 sie korrekt liest, ist nicht geprüft (TODO E16).
+- Die Ölvorkommen (`data/ImmersivePetroleum-ReservoirRegions/`) sind als Dateien unverändert vorhanden. 🟢 1.20.1 liest sie korrekt (Test 26, 2026-10-17).
 
 ### Noch nicht geprüft
 

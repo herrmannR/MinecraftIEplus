@@ -1,6 +1,6 @@
 # Erzatlas
 
-> Stand 2026-10-12, Minecraft 1.20.1. Zeigt die Soll-Verteilung aus `../03_ERZGENERATION.md`; die Zahlen sind Vorschläge und im Spiel noch nicht getestet.
+> Stand 2026-10-17, Minecraft 1.20.1. Zeigt die Verteilung aus `../03_ERZGENERATION.md`; im Spiel nachgezählt und bestätigt (2026-10-17).
 
 Grafische Übersicht aller Erze: Fundorte, Mengen und Verbrauch pro Mod.
 

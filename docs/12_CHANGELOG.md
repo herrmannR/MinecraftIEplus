@@ -1000,3 +1000,21 @@ Status: 🟡
 
 ### Teststatus
 Offen: Zuschnitt BM1–BM6 (User), Teil für T3 (O20, nur aus Stufe 3 möglich), Altar-Reparatur im Tempel (O2), Fund für T4, Ritual-Sperre auf den Tempel (E19), Ritual-Stein-Zahlen.
+
+## 2026-10-19 — Doku-Prüfung auf Stimmigkeit
+
+Status: 🟢
+
+### Änderung
+- Kyber: Das Deepslate-Vorkommen von Star Wars Planets ist wirkungslos (S3); ohne Eingriff gibt es Kyber nur auf Tatooine, nicht auf Endor. Korrigiert in `01_PROGRESSION.md`, `15_RAUMFAHRT.md`, `17_STAR_WARS_1.20.1.md` und auf der Meilensteinkarte (RF5).
+- Meilensteinkarte RF5: Rumpf aus Etrium eingetragen (Entscheidung vom 2026-10-19); Seite neu veröffentlicht, dabei auch die noch nicht veröffentlichte Umbenennung von BS3/BS4.
+- Veraltete Status-Angaben nach den Tests 1–27 nachgezogen: `00_STATUS.md` (51 Meilensteine, Testrunden), `03_ERZGENERATION.md`, `10_KUBEJS.md` (Skripte getestet, `jei_ausblenden.js`, Energizer), `15_RAUMFAHRT.md` (Tag-Overrides, Nächste Schritte), `16_MODLISTE_1.20.1.md`, `00_MODBASIS.md`, `erzatlas/README.md`, `README.md` (1.20.1).
+- Überholte Beschlüsse markiert: „erster Raumflug nach Petroleum“ wieder offen (F6), „Star-Wars-Planeten verlangen Magie und Uran“ ersetzt durch die vier Hürden; im Erzatlas der Uran-Hinweis.
+- `18_STORY.md`: O13 erledigt; Questbuch-Freischaltung „nach Würdig sein“ als überholt markiert; Elf per Befehl (Test 30) und Alfheim-Sperre (JAR) nachgetragen.
+- `01_PROGRESSION.md`: Kapiteltabelle K8/K9 an `18_STORY.md` angeglichen.
+
+### Betroffene Bereiche
+- Doku, Meilensteinkarte, Erzatlas
+
+### Auswirkungen auf bestehende Welt
+Keine.

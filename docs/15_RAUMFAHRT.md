@@ -16,7 +16,7 @@ Design der Raumfahrt als **Hauptziel des Packs** auf Minecraft 1.20.1: Ad Astra 
 | Star Wars Planets (Ad-Astra-Version) | 1.4.6.1 | Tatooine, Hoth, Endor, Mustafar, Mandalore; Kyber, Beskar | 🟢 |
 | Ad Astra: More Structures | 1.0.2 | Dungeons und Bosse auf den Ad-Astra-Planeten | 🟢 |
 | Mekanism: Ad Astra Ores | 1.1.0 | nur die Erzblöcke in Planetengestein; Generierung abgeschaltet | 🟢 |
-| Ad Astra: Rocketed | 1.0.5 | Raketen T5–T7 | 🟢 bleibt (2026-10-13): Star-Wars-Planeten verlangen mindestens T5 und T6; 🔵 Zuordnung und Rezepte offen (`18_STORY.md`) |
+| Ad Astra: Rocketed | 1.0.5 | Raketen T5–T7 | 🟢 bleibt (2026-10-13); T5 Endor, T6 Tatooine/Hoth/Mustafar, T7 Mandalore (2026-10-14); 🔵 Rezepte und Treibstoffe offen |
 | Star Wars: Galaxy in a Cube | 1.0.3.1 | Lichtschwerter, Macht, Klone, Droiden | 🟢 siehe `17_STAR_WARS_1.20.1.md` |
 
 Pflicht-Bibliotheken von Ad Astra: Resourceful Lib, Resourceful Config, Botarium.
@@ -29,9 +29,9 @@ Pflicht-Bibliotheken von Ad Astra: Resourceful Lib, Resourceful Config, Botarium
 
 🟢 **Sauerstoff zwingend aus Mekanism** (2026-10-11): Wasser → Electrolytic Separator → Sauerstoffgas → Rotary Condensentrator → flüssiger Sauerstoff.
 
-🟢 **Erster Raumflug (Mond)** nach Petroleum; zusätzlich ist mindestens eine erste Mekanism-Maschine Pflicht (2026-10-07).
+🟢 **Erster Raumflug (Mond):** mindestens eine erste Mekanism-Maschine ist Pflicht (2026-10-07). 🔵 Ob auch Petroleum vor T1 Pflicht bleibt, ist wieder offen, seit T1 mit Biodiesel fliegt (siehe „Treibstoff je Raketenstufe“; F6 in `questtexte/OFFENE_FRAGEN.md`).
 
-🟢 **Star-Wars-Planeten** verlangen **Magie-Komponenten** und **Uran-Erzeugnisse** aus der Mekanism-Nuklearkette (2026-10-07).
+🔴 Überholt: „Star-Wars-Planeten verlangen Magie-Komponenten und Uran-Erzeugnisse“ (2026-10-07). Seit 2026-10-14 gelten die vier Hürden je Rakete; die magischen Komponenten gehören zu T4, ob ein Uran-Teil Pflicht bleibt, ist offen (O18 in `18_STORY.md`).
 
 🟢 **Die Erzverteilung legen wir selbst fest** (2026-10-11). Fremde Erz-Generierung auf den Planeten wird abgeschaltet.
 
@@ -203,13 +203,15 @@ Die Erze sind normale JSON-Features in den Biom-Dateien und lassen sich per Data
 
 | Erz | Wo | Adern × Größe | Y |
 |---|---|---|---|
-| **Kyber** (Deepslate) | Endor, Hoth, Mustafar, Tatooine | 5 × 9 | bis 80 über dem Weltboden |
+| ~~Kyber (Deepslate)~~ | ~~Endor, Hoth, Mustafar, Tatooine~~ | – | ⚠️ wirkungslos: der Eintrag verweist auf einen Block, den es nicht gibt (S3 in `modpfade/CROSSMOD_AUFFAELLIGKEITEN.md`, Korrektur 2026-10-19) |
 | **Kyber** (Sandstein) | Tatooine (Wüste) | 5 × 9 | bis 80 über dem Weltboden |
 | **Beskar** (Sandstein) | Mandalore | 15 × 6 | 0…160 über dem Weltboden |
 
+Ohne Eingriff gibt es Kyber also nur auf Tatooine (und in Truhen der Jawa Crawler), **nicht auf Endor**. 🔵 Für die Hürde „Kyber von Endor → T6“ braucht es ein eigenes Vorkommen per Datapack oder eine andere Zutat (F5).
+
 ### Mekanism-Erze auf den Planeten
 
-🟢 „Mekanism: Ad Astra Ores“ bringt 16 Erzblöcke in Planetengestein mit. Seine eigene Generierung ist abgeschaltet (`kubejs/data/mekanismaaa/tags/worldgen/biome/gen_ores.json` und `gen_ores_deepslate.json`, in die Testinstanz kopiert am 2026-10-11, 🔵 Wirkung nicht getestet).
+🟢 „Mekanism: Ad Astra Ores“ bringt 16 Erzblöcke in Planetengestein mit. Seine eigene Generierung ist abgeschaltet (`kubejs/data/mekanismaaa/tags/worldgen/biome/gen_ores.json` und `gen_ores_deepslate.json`, in die Testinstanz kopiert am 2026-10-11; 🟢 Wirkung bestätigt mit Test 14, 2026-10-13).
 
 | Planet | Vorhandene Blöcke |
 |---|---|
@@ -219,7 +221,7 @@ Die Erze sind normale JSON-Features in den Biom-Dateien und lassen sich per Data
 | Venus | Fluorit, Blei, Uran |
 | Glacio | Fluorit, Blei, Osmium, Zinn, Uran |
 
-🟢 **Entscheidung 2026-10-12:** Mond: Osmium. Mars: Fluorit. Merkur und Venus: Uran und Blei. Glacio: Osmium und Uran. Kein Zinn auf Planeten (Zinn gibt es nur in Everbright). Uran ist damit in der Overworld knapp und ab Raketenstufe T3 reichlich. Certus gibt es auf dem Mond nicht mehr: AE2 hat in 1.20.1 kein Certus-Erz, es bleibt bei den Meteoriten in der Overworld. Zahlenvorschläge und Umsetzung (eigene Features, 🔵 noch nicht angelegt): `03_ERZGENERATION.md`.
+🟢 **Entscheidung 2026-10-12:** Mond: Osmium. Mars: Fluorit. Merkur und Venus: Uran und Blei. Glacio: Osmium und Uran. Kein Zinn auf Planeten (Zinn gibt es nur in Everbright). Uran ist damit in der Overworld knapp und ab Raketenstufe T3 reichlich. Certus gibt es auf dem Mond nicht mehr: AE2 hat in 1.20.1 kein Certus-Erz, es bleibt bei den Meteoriten in der Overworld. Werte und Umsetzung (eigene Features in `kubejs/data/ieplus/`, 🟢 im Spiel nachgezählt am 2026-10-17): `03_ERZGENERATION.md`.
 
 ### Strukturen
 
@@ -237,7 +239,7 @@ Die Erze sind normale JSON-Features in den Biom-Dateien und lassen sich per Data
 
 - `rocket_launch_t1` ist nur eine Startrampe aus Launch Pads auf den Planeten, **keine Rakete**. Sie verschenkt den ersten Raumflug nicht.
 - Die Bosse von More Structures lassen Roh-Desh, Roh-Ostrum bzw. Roh-Calorite fallen; die Truhen ebenfalls. 🔵 Mengen gegen die Erzplanung prüfen.
-- **Oil Well:** 🟢 abgeschaltet wie in 1.18.2, weil Immersive Petroleum die einzige Ölquelle bleiben soll. Datei: `kubejs/data/ad_astra/tags/worldgen/biome/has_structure/oil_well.json` (`replace: true`, leere Liste). 🔵 Liegt bisher nur im Projektordner; Wirkung nicht getestet. Gilt nur für neue Chunks und muss **vor dem ersten Start der Hauptwelt mit Ad Astra** beim Host liegen.
+- **Oil Well:** 🟢 abgeschaltet wie in 1.18.2, weil Immersive Petroleum die einzige Ölquelle bleiben soll. Datei: `kubejs/data/ad_astra/tags/worldgen/biome/has_structure/oil_well.json` (`replace: true`, leere Liste). 🟢 Wirkung bestätigt (Test 10, 2026-10-17). Gilt nur für neue Chunks und muss **vor dem ersten Start der Hauptwelt mit Ad Astra** beim Host liegen.
 
 ## 🟢 Ad Astra: Rocketed bleibt (User, 2026-10-13)
 
@@ -270,7 +272,7 @@ Aus JAR: Der Mod fügt nur drei Raketen T5, T6 und T7 hinzu, jeweils mit eigenem
 
 - Planeten sind neue Dimensionen → kein Retrogen nötig.
 - In der **Overworld** erzeugt Ad Astra nur die Oil Wells (abgeschaltet). Erze oder andere Strukturen kommen dort nicht dazu.
-- 🔵 Ob Galaxy in a Cube in der Overworld etwas erzeugt, ist offen (siehe `17_STAR_WARS_1.20.1.md`).
+- Galaxy in a Cube erzeugt in der Overworld Kyber-Kristalle, Ewok-Dörfer und Jawas (aus JAR, `18_STORY.md`). Die Kristalle sind abgeschaltet (Test 9); Ewok-Dörfer und Jawas sollen ebenfalls raus (🔵 noch nicht umgesetzt, `17_STAR_WARS_1.20.1.md`).
 - Neue Metalle (Desh, Ostrum, Calorite, Kyber, Beskar) → Erzmatrix (`14_ERZ_MOD_MATRIX.md`), Verarbeitung (`04_VERARBEITUNG.md`), Tags (`02_RESSOURCEN.md`).
 
 ## Offene Fragen
@@ -278,18 +280,17 @@ Aus JAR: Der Mod fügt nur drei Raketen T5, T6 und T7 hinzu, jeweils mit eigenem
 1. 🟢 Treibstoff je Stufe entschieden (Biodiesel, Diesel, Kerosin, eigener Raketentreibstoff). 🔵 Offen: T4-Rezept, Cryo Fuel, Rover.
 2. 🟢 Blood-Magic-Zugang nur auf dem Merkur. 🔵 Offen: welches Item, wo garantiert zu holen; technische Machbarkeit (Test E19).
 3. 🔵 Welche magischen Komponenten genau für T4? Alfsteel entfällt, weil Alfheim erst in Part 2 betreten wird; Kandidaten sind Terrasteel und Items aus dem Elfenportal (Elementium, Pixie Dust, Dreamwood). Bleiben Uran-Teil und Dungeon-Item Pflicht?
-4. 🟢 Ad Astra: Rocketed bleibt, Star-Wars-Planeten auf T5 und T6 (2026-10-13). 🔵 Zuordnung der Planeten, Rezepte, Treibstoffe.
+4. 🟢 Ad Astra: Rocketed bleibt (2026-10-13), Planeten je Stufe entschieden (2026-10-14). 🔵 Rezepte, Treibstoffe; Kyber auf Endor (F5).
 5. 🟢 Ad-Astra-Kabel, Fluid Pipes, Water Pump und Energizer werden entfernt. 🟢 Strom in abgedichtete Räume (Test 20, 2026-10-17): Mit den richtigen Blöcken bleibt ein Raum dicht; der IE Feedthrough Insulator oder ein Energiespeicher in Wand oder Boden bringt den Strom hinein.
 6. 🔵 Immersive Aircraft bleibt Atmosphären-Transport; `launchAnywhere` bleibt aus?
 7. 🟢 Treibstoffverbrauch (3 Eimer je Start) und Schutzwirkung der Anzüge im Spiel abgelesen (2026-10-17).
 
 ## Nächste Schritte
 
-1. Skripte in KubeJS-2001-Syntax: Sand-Fix, Wasser-Sauerstoff-Rezept entfernen, verbotene Maschinen und Rezepte entfernen.
-2. Die drei Tag-Overrides im Spiel prüfen (Oil Well, Mekanism-Ad-Astra-Erze).
-3. ✅ Erzplanung für Planeten und Blue Skies beschlossen (2026-10-12, `03_ERZGENERATION.md`); Features anlegen und testen steht aus.
-4. Treibstoff-Stufen festlegen und als Tags umsetzen.
-5. Pfad Raumfahrt in die Meilensteine aufnehmen (`docs/meilensteine/`).
+Erledigt (Tests 3–21, 2026-10-13 bis 2026-10-17): Sand-Fix, entfernte Maschinen und Rezepte, Tag-Overrides, Erz-Features, Treibstoff-Tags T1–T3, Pfad Raumfahrt auf der Meilensteinkarte.
+
+1. Entscheidungen: T4-Treibstoff und Cryo Freezer (F3), Raketenrezepte T2–T7 (F2), Kyber auf Endor (F5), Rover-Treibstoff (F11).
+2. Skripte: Etrium-Rezepte, T4-Treibstoff, Planetenstufen von Star Wars Planets (T5–T7), Star Manual entfernen.
 
 ## Quellen
 

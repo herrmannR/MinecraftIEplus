@@ -206,7 +206,7 @@ In `disabledmods/` der Testinstanz liegen noch: Twilight Forest, Twilight Spark 
 
 ## Bekannte Fehler aus dem Start-Log (2026-10-11)
 
-- **`forge:sand` ist leer:** Star Wars Planets trägt `swplanets:mustafar_sand` in das Item-Tag ein (🟢 im JAR bestätigt, 2026-10-12); das Item gibt es nicht, Minecraft verwirft das ganze Tag. Folge: Mekanism meldet „Broken tags“, Rezepte mit `#forge:sand` fehlen. 🔵 Fix per KubeJS (TODO D13).
+- **`forge:sand` ist leer:** Star Wars Planets trägt `swplanets:mustafar_sand` in das Item-Tag ein (🟢 im JAR bestätigt, 2026-10-12); das Item gibt es nicht, Minecraft verwirft das ganze Tag. Folge: Mekanism meldet „Broken tags“, Rezepte mit `#forge:sand` fehlen. 🟢 Fix per KubeJS (`fixes/tag_fixes.js`, Test 3 bestanden).
 - **Blood-Smeltery teilweise defekt:** verweist auf vier nicht registrierte Flüssigkeiten (`*_molten_hellforged`); die Schmelzrezepte dazu fehlen, das JEI-Plugin wirft einen Fehler. `forge:coins` ist leer. Im Log vom 23:07 Uhr laden außerdem rund 25 Rezepte nicht (Chiller, Crucible, Melter, Press).
   - Ursache (2026-10-12, Bytecode von 1.2.1a geprüft): `BloodSmelteryContent.initHellforgedFluids()` bricht die Schleife nach dem ersten Will-Typ (`DEFAULT`) immer ab; es wird nur `molten_hellforged` registriert. Mod-Bug, per Config nicht behebbar. Betroffen sind nur die vier Block-Schmelzrezepte `smeltery/melting/metal/hellforged/block/<typ>`, die zugehörigen Tags und Eimer-Modelle.
   - JEI-Fehler: `NoClassDefFoundError cofh/core/common/item/CoinItem`, weil das Plugin `ThermalIntegration` anfasst, obwohl Thermal/CoFH Core fehlt. Aus demselben Grund gibt es keine `bloodbrass_coin` (`forge:coins/bloodbrass` leer).
@@ -218,4 +218,4 @@ In `disabledmods/` der Testinstanz liegen noch: Twilight Forest, Twilight Spark 
 
 1. 🔵 Mod-Liste des Hosts abgleichen (F21).
 2. 🔵 Ersatz für Light Overlay oder ersatzlos streichen.
-3. 🔵 Ad Astra: Rocketed behalten? (Entscheidung nach der Progression, C10)
+3. 🟢 Ad Astra: Rocketed bleibt (2026-10-13).
