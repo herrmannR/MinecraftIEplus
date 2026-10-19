@@ -5,80 +5,58 @@
 
 ## ▶ Wo wir stehen
 
-Minecraft **1.20.1, Forge 47.4.26** (Wechsel von 1.18.2 am 2026-10-11). Block A (Grundlagen) ist erledigt, Block B (Erzverteilung) entschieden, Block C (Progression) teilweise. Die erste Fassung der Skripte und Overrides (Block D) liegt in der Testinstanz und ist mit den Tests 1–27 bestätigt (Testplan: `11_TESTING.md`). Die Story (Block G) schreibt der User, Stand in `18_STORY.md`. Questtexte gibt es für alle großen Mods im Entwurf.
+Minecraft **1.20.1, Forge 47.4.26** (Wechsel von 1.18.2 am 2026-10-11). Erledigt sind die Grundlagen, die Erzverteilung (umgesetzt und nachgezählt, 2026-10-17) und die erste Fassung der Skripte (Tests 1–31 bestanden). Die Story schreibt der User (`18_STORY.md`, Part 1 im Umriss). Questtexte gibt es für alle großen Mods im Entwurf.
 
-**Nächste Schritte:** die Entscheidungen F1–F17 in `questtexte/OFFENE_FRAGEN.md` (sie decken die offenen Fragen aus Block C und G ab), Tests 32–41 im Spiel, danach die Story von Part 1 fertigstellen und die Skripte aus dem Ideenimport umsetzen.
+**Als Nächstes:** Schritt 1 und 2 des Fahrplans, also Entscheidungen aus `20_ENTSCHEIDUNGEN.md` und Tests 32–41. Am meisten hängt an F1, F2, F3, F5 und F6.
+
+### Fahrplan
+
+Die Schritte laufen in dieser Reihenfolge; 1 und 2 gehen parallel. Alle offenen Fragen stehen nur in `20_ENTSCHEIDUNGEN.md` (F, O, P, T); hier steht nur, woran ein Schritt hängt.
+
+| Schritt | Inhalt | Stand | Hängt an |
+|---|---|---|---|
+| 1 Entscheidungen | F1–F25 und die O-Fragen für Part 1 | 🟡 offen | User |
+| 2 Tests im Spiel | Tests 32–41 (`11_TESTING.md`), Prüfpunkte P1–P15 | 🟡 offen | User spielt; Test 32 braucht O22 |
+| 3 Story von Part 1 fertig | `18_STORY.md` bis zur Rückkehr des Meisters | 🟡 Umriss | User; F1, F4, F8, F14, O-Fragen |
+| 4 Skripte und Raketen | Ideenimport (Star Manual, Plastic Plate, Digital Miner, AE2-Energieerzeuger, IE-Crusher statt Mekanism-Crusher, Beskar, Kyber); Etrium; T4-Treibstoff; Planetenstufen T5–T7; Galaxy in a Cube aus der Overworld (Ewok-Dörfer, Jawas); Ritual nur im Tempel; Mars-Station (Test 32) | 🔵 | Schritt 3 (Regel des Users, 2026-10-14: Skripte erst, wenn Part 1 steht); F2, F3, F5, F12, F21 |
+| 5 Balance (frühere Phasen 3–6) | Erträge der Erzverarbeitung, Energie, AE2 zweistufig, Cross-Mod-Rezepte (`07_CROSSMOD_INTEGRATION.md`) | 🔵 nicht begonnen | F10, F19, F20, F24 |
+| 6 Questbuch einbauen | FTB Quests aus `questtexte/`, Easy-NPC-Figuren (Droide, Einsiedler, Elf, Figur im Blue-Skies-Haus) | 🟡 Texte im Entwurf | Schritte 3–5 |
+| 7 Hauptwelt umstellen | Aufgaben beim Host (H1–H5 unten) | 🔵 | Schritte 4–6; nur, was in `11_TESTING.md` ✅ hat |
+
+### Aufgaben beim Host (Schritt 7)
+
+- H1. Mod-Liste des Hosts abgleichen (Chisels & Bits war nur dort).
+- H2. Checkliste für alle Spieler, noch in 1.18.2 (siehe „Wichtig für den Host“).
+- H3. Vollständiges Backup beim Host (im Test-Backup fehlte `DIM-1/entities`).
+- H4. Alte `immersivepetroleum-server.toml` entfernen; Worldgen-Configs und Tag-Overrides vor dem ersten Start einspielen.
+- H5. Questbuch und Story-Figuren einspielen.
+
+(Die Nummern 9–28 und die Blöcke A–G aus früheren Fassungen gelten nicht mehr; sie stehen noch im Archiv.)
 
 ### Welche Dokumente gelten
 
 | Dokument | Stand |
 |---|---|
+| `20_ENTSCHEIDUNGEN.md` | 🟡 **die** Liste aller offenen Fragen (F, O, P, T); Antworten werden von dort in die Fachdokumente übertragen |
 | `00_MODBASIS.md` | 🟢 verbindliche Mod-Liste (Rohliste `mods_v5.txt`) |
+| `01_PROGRESSION.md` | 🟡 Pfade, Kapiteltabelle, Raketen; offene Fragen in 20 |
 | `02_RESSOURCEN.md` | 🟢 Inventur aus den JARs |
+| `03_ERZGENERATION.md` | 🟢 Verteilung beschlossen und im Spiel nachgezählt (2026-10-17) |
+| `07_CROSSMOD_INTEGRATION.md` | 🟡 Tinkers in den höheren Stufen, Schmelzregeln, Blood-Smeltery |
+| `10_KUBEJS.md` | 🟡 Stand der Skripte, was noch fehlt |
+| `11_TESTING.md` | 🟢 Testplan; Tests 1–31 und 32a bestanden, 32 (Skript fehlt) und 33–41 offen |
+| `12_CHANGELOG.md` | 🟢 fortlaufend |
 | `14_ERZ_MOD_MATRIX.md` | 🟢 Ist und Soll |
 | `15_RAUMFAHRT.md` | 🟢 |
 | `16_MODLISTE_1.20.1.md` | 🟢 Befunde zu Blue Skies und Welt-Test |
 | `17_STAR_WARS_1.20.1.md`, `recherche/` | 🟢 |
-| `12_CHANGELOG.md` | 🟢 fortlaufend |
-| `03_ERZGENERATION.md` | 🟢 Verteilung beschlossen und im Spiel nachgezählt (2026-10-17) |
-| `erzatlas/` (samt Artifact-Seite) | 🟢 Soll-Verteilung |
-| `10_KUBEJS.md` | 🟡 |
-| `11_TESTING.md` | 🟢 Testplan; Tests 1–31 und 32a bestanden, 32 (Skript fehlt) und 33–41 offen |
-| `01_PROGRESSION.md` | 🟡 vier Fragen offen |
-| `questtexte/OFFENE_FRAGEN.md` | 🟡 gesammelte Entscheidungen (F1–F17) und Prüfpunkte im Spiel (P1–P13) aus allen Questtexten |
-| `meilensteine/` (samt Artifact-Seite) | 🟡 nach der Story umgebaut (2026-10-14): 51 Meilensteine, 9 Pfade, 16 Kapitel in zwei Parts, Fragenkatalog |
 | `18_STORY.md` | 🟡 Part 1 im Umriss, Part 2 und 3 folgen; schreibt der User |
-| `modpfade/` | je Mod eine Seite und `WISSEN.md` |
 | `19_HILFEBUECHER.md` | 🟢 welche Mods ein Buch im Spiel haben; Regel für die Erklärtiefe im Questbuch |
-| `questtexte/` | 🟡 Questtexte je Mod (Skill `questtexte`); alle großen Mods im Entwurf (2026-10-19), offene Punkte je Mod in der README dort |
-| `04`–`09` | 🔴 Stand 1.18.2, mit Warnhinweis |
-| `13_TESTINSTANZ_CHANGELOG.md` | gilt nur für die 1.18.2-Testinstanz |
-
-### Offene Punkte (Nummern wie im Archiv)
-
-**B. Worldgen** — 🟢 abgeschlossen: umgesetzt, nachgezählt, Retrogen geprüft (2026-10-17)
-
-**C. Progression** — 🟡
-- 9. 🔵 Fragenkatalog der Meilensteinkarte.
-- 10. 🔵 Zurückgestellt: magische Komponenten und Uran-Teil für T4; Zuordnung der Star-Wars-Planeten zu T5/T6; Cryo Fuel. Neu: Petroleum vor dem ersten Raumflug Pflicht, obwohl T1 mit Biodiesel fliegt?
-- 11. 🟢 Blue-Skies-Werkzeugabschwächung gemessen (2026-10-17): fremdes Werkzeug dauert ewig, bleibt so gewollt.
-
-**D. Skripte und Fixes** — 🟡 erste Fassung, ungetestet
-- 13. 🔵 `forge:coins` und fehlende Hellforged-Flüssigkeiten (Blood-Smeltery).
-- 14. 🔵 T4-Treibstoff, Cryo Freezer. (Energizer entfernt, 2026-10-17, ungetestet.)
-- 🔵 Umsetzen (entschieden 2026-10-17, Ideenimport): Star Manual raus; Plastic Plate raus, Plastoid mit HDPE; Kyber von Star Wars Planets durch das von Galaxy in a Cube ersetzen; Beskar nur im starken Ofen, 1 Nugget (Ofen offen); Digital Miner raus; AE2-Energieerzeuger raus; IE-Crusher übernimmt den Mekanism-Crusher. Erst wenn die Story von Part 1 steht.
-
-**E. Tests** — 🟡 Runde 1 bis 4 bestanden, Runde 5 bis auf Test 32 (2026-10-17); offen Test 32 sowie Runde 6 und 7 (Tests 33–41) in `11_TESTING.md`
-- 19. Blood-Magic-Ritual per KubeJS abfangen (Dungeon nur auf dem Merkur).
-- 20. Galaxy in a Cube in der Overworld im Spiel bestätigen und entscheiden, ob es bleibt.
-
-**F. Umstellung der Hauptwelt**
-- 21. Mod-Liste des Hosts abgleichen (Chisels & Bits war nur dort).
-- 22. Checkliste für alle Spieler, noch in 1.18.2 (siehe „Wichtig für den Host“).
-- 23. Vollständiges Backup beim Host (im Test-Backup fehlte `DIM-1/entities`).
-- 24. Alte `immersivepetroleum-server.toml` entfernen; Worldgen-Configs und Tag-Overrides vor dem ersten Start einspielen.
-- 25. Questbuch und Story-Figuren.
-
-**G. Story und Questbuch** — 🟡
-- 26. 🔵 Entscheidungen des Users: O1 bis O23 in `18_STORY.md` und Fragenkatalog der Meilensteinkarte. Als Nächstes: Checkliste der Mars-Station (O22), Anreise des Droiden (O23), Mekanism-Stufen und Botania-Items je Rakete.
-- 🔵 Aus dem Ideenimport (2026-10-17): O34 bis O38 in `18_STORY.md` (Blue-Skies-Haus, Roguelike-Stufen, Machtpfade, Artefakte, Freischaltung der Macht); Texte der vier Schriftrollen; Zutaten der Altar-Reparatur.
-
-### Backlog
-
-- 🔵 Mekanism-Erze in Blue-Skies-Gestein (`turquoise_stone`, `lunar_stone`) gibt es nicht als Block: normale Erzblöcke einsetzen oder eigene KubeJS-Blöcke mit zusammengesetzter Textur, Original-Drops und Tags. (Planeten sind durch „Mekanism: Ad Astra Ores“ gelöst.)
-
-### Arbeitsplan
-
-| Phase | Inhalt | Block | Status |
-|---|---|---|---|
-| 0 | Grundlagen | A | 🟢 |
-| 1 | Worldgen (zeitkritisch) | B | 🟢 abgeschlossen (2026-10-17) |
-| 2 | Progressions-Meilensteine | C | 🟡 Entwurf, Fragen offen |
-| 3–6 | Erträge, Energie, AE2 zweistufig, Cross-Mod-Rezepte | — | 🔵 |
-| 7 | KubeJS und Configs, Test in der Testinstanz | D, E | 🔵 |
-| 7b | Questbuch (FTB Quests) und Story-Figuren (Easy NPC) | G | 🟡 |
-| 8 | Übernahme in die Hauptwelt | F | 🔵 |
-
+| `meilensteine/` (samt Artifact-Seite) | 🟡 nach der Story umgebaut (2026-10-14): 51 Meilensteine, 9 Pfade, 16 Kapitel in drei Parts |
+| `erzatlas/` (samt Artifact-Seite) | 🟢 Erzverteilung |
+| `modpfade/` | je Mod eine Seite und `WISSEN.md` |
+| `questtexte/` | 🟡 Questtexte je Mod (Skill `questtexte`); alle großen Mods im Entwurf (2026-10-19) |
+| `archiv_1182/` | 🔴 Stand 1.18.2 (früher 04–06, 08, 09, 13), gilt nicht mehr |
 ## Projektziel
 
 Das Forge-Modpack „Immersive Engineering+“ (ATLauncher) wird auf 1.20.1 zu einem kohärenten, progressiven Modpack ausgebaut; die vorhandene Welt wird mitgenommen. Mods ergänzen sich über Ressourcen, Verarbeitung, Energie, Magie und Automatisierung. Hauptziel der Progression ist die Raumfahrt.
@@ -102,6 +80,7 @@ Das Forge-Modpack „Immersive Engineering+“ (ATLauncher) wird auf 1.20.1 zu e
 - Designentscheidungen stehen in der Doku; KubeJS und Configs setzen sie um, nur für Entschiedenes.
 - Experimente nur in der Testinstanz. Änderungen im CHANGELOG.
 - Erledigtes aus diesem Dokument ins Archiv verschieben, damit es kurz bleibt.
+- Offene Fragen stehen nur in `20_ENTSCHEIDUNGEN.md`; Fachdokumente nennen nur die Nummer. Jede Tatsache und jede Tabelle hat genau ein führendes Dokument, andere verweisen darauf.
 
 Status: 🟢 entschieden/verifiziert · 🟡 geplant · 🔵 offen · 🔴 blockiert/überholt
 

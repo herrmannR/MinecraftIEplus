@@ -1018,3 +1018,20 @@ Status: 🟢
 
 ### Auswirkungen auf bestehende Welt
 Keine.
+
+## 2026-10-19 — Neuordnung der Doku (Entscheidung User)
+
+Status: 🟢
+
+### Änderung
+- **Zentrale Fragenliste** `20_ENTSCHEIDUNGEN.md` (F1–F25, O-Fragen, P1–P15, T-Fragen), aufgebaut aus `questtexte/OFFENE_FRAGEN.md` (entfernt), der O-Liste und den Technik-Fragen aus `18_STORY.md`, den Offen-Abschnitten von `01_PROGRESSION.md` und `15_RAUMFAHRT.md`, den offenen Punkten aus `00_STATUS.md` und dem Fragenkatalog der Meilensteinkarte (Seite neu veröffentlicht, zeigt jetzt einen Hinweis). Die übrigen Dokumente nennen nur noch Nummern.
+- **Kapiteltabelle** nur noch in `01_PROGRESSION.md`; `18_STORY.md` Abschnitt 6 verweist darauf.
+- **Archiv** `archiv_1182/`: 04–06, 08, 09, 13, `mods_v3.txt`, `mods_v4.txt` und die alte `Erzatlas IE+.html` aus dem Hauptordner. `07_CROSSMOD_INTEGRATION.md` auf die gültigen 1.20.1-Teile gekürzt (Tinkers, Schmelzregeln, Blood-Smeltery).
+- **Fahrplan** in `00_STATUS.md` mit sieben Schritten statt der Phasen- und Blocknummern; Host-Aufgaben als H1–H5. Neue Arbeitsregel: offene Fragen nur in `20_ENTSCHEIDUNGEN.md`, je Tabelle ein führendes Dokument.
+- Skill `questtexte` trägt neue Fragen in `20_ENTSCHEIDUNGEN.md` ein.
+
+### Betroffene Bereiche
+- Doku, Meilensteinkarte, Skill `questtexte`
+
+### Auswirkungen auf bestehende Welt
+Keine.

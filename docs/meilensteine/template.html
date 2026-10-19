@@ -123,76 +123,12 @@ svg.hl .edge:not(.on), svg.hl .elabel:not(.on){opacity:.12}
   <div class="list" id="list"></div>
 
   <section class="questions">
-    <h2>Fragenkatalog</h2>
-    <p>Alles, was für diese Karte noch entschieden werden muss. Die Story-Fragen stehen ausführlich in docs/18_STORY.md.</p>
-    <h3>Story Part 1</h3>
-    <ol>
-      <li>Erste Quest „Würdig sein“ (SW1): Welche Items verlangt der Droide aus Botania und IE? Gehört ein Tinkers-Item dazu?</li>
-      <li>Tagebuch: Wie viele Ausschnitte, wann werden sie freigegeben, welche Rätsel?</li>
-      <li>Droide: Name. Steht er nur in der Basis? Ist er nach dem Dungeon weg oder zerstört, und kommt er in Part 2 oder 3 zurück?</li>
-      <li>Mars und Venus (RF2, RF3) haben noch keine Story. Was passiert dort?</li>
-      <li>Welche Rolle spielen Mekanism und AE2 in der Geschichte?</li>
-      <li>Altar-Neubau (BM4): im Tempel auf dem Merkur oder in der Overworld?</li>
-      <li>Was finden die Spieler im Dungeon, und wo liegt der Text des Meisters?</li>
-      <li>Warum ist der Meister nach Glacio gegangen, und was ist mit dem Relikt?</li>
-      <li>Elf (BO5): Name und Charakter.</li>
-      <li>Glacio liegt in Ad Astra in einem anderen Sonnensystem, nicht in einer anderen Galaxie. Bleibt die „andere Galaxie“ den Star-Wars-Welten vorbehalten?</li>
-    </ol>
-    <h3>Platzhalter: welches Item genau?</h3>
-    <ol start="11">
-      <li>Schutz-Item für den Altar im Tempel (BO4 → BM4): Rune oder Terrasteel?</li>
-      <li>Boss-Items für den Elfen (BS3, BS4 → RF4): welche der vier Bosse, welche Items?</li>
-      <li>Tech-Erzeugnisse für den Elfen (MK4, MK5 → RF4): was aus IE, Petroleum und Mekanism?</li>
-      <li>Magische Komponenten der Rakete T4 (BO5 → RF4): Item aus dem Elfenportal (Elementium, Pixie Dust, Dreamwood) oder Terrasteel?</li>
-      <li>Bleiben das Dungeon-Item (BM4) und das Uran-Teil (MK5) Pflicht für die Rakete T4?</li>
-      <li>Treibstoff T4: Rezept und Kosten. Cryo Fuel entfernen oder als Zutat nutzen?</li>
-      <li>Wie übergibt der Elf das T4-Rezept: als Bauplan oder Schlüsselbauteil, das im Raketenrezept steckt?</li>
-    </ol>
-    <h3>Aufbau der Karte</h3>
-    <ol start="18">
-      <li>Feinere Aufteilung (2026-10-14): Je Mod mehrere Stufen nach den Modpfad-Seiten, 16 Kapitel. Passen Reihenfolge und Kapitelgrenzen? Die Kapitelnamen sind Arbeitstitel. Blood Magic, AE2 und Blue Skies haben noch keine Modpfad-Seite; ihre Stufen sind vorläufig und im JAR zu prüfen.</li>
-      <li>Everdawn (BS2) und die Blue-Skies-Bosse (BS3, BS4) sind jetzt Pflicht, weil der Elf Boss-Items verlangt. Alle vier Bosse oder nur einige?</li>
-      <li>Soll Petroleum weiter Pflicht vor dem ersten Raumflug sein, obwohl T1 mit Biodiesel fliegt?</li>
-      <li>Sind Everbright und Everdawn gleich früh erreichbar (BS1 → BS2)?</li>
-      <li>Steht die Tinkers-Schmelzerei in der Hauptwelt schon (TK1 erreicht)?</li>
-      <li>Ist der AE2-Storage-Layer (AE1) in Kapitel K3 früh genug?</li>
-    </ol>
-    <h3>Technik (aus den JARs geklärt am 2026-10-14, im Spiel noch zu testen)</h3>
-    <p>Die Ergebnisse stehen auf den Karten in der Zeile „Technik“ und ausführlich in docs/18_STORY.md.</p>
-    <ol start="24">
-      <li>Abgabe beim NPC: Easy NPC prüft Items im Inventar und führt Befehle für <code>@initiator</code> aus. Eine direkte Anbindung an FTB Quests gibt es nicht; der Weg läuft über eine Stage (Entity-Tag), die FTB Quests mit einer Stage-Aufgabe abfragt. Test im Spiel offen.</li>
-      <li>Elf und Droide erscheinen per Befehl als Quest-Belohnung (Easy NPC <code>preset import</code>, <code>despawn</code>). Test im Spiel offen.</li>
-      <li>Offen: Kapsel in der Basis und Tempel auf dem Merkur von Hand bauen oder als Struktur erzeugen?</li>
-      <li>Ritual nur im Tempel: nur über das Forge-Ereignis von Blood Magic, das KubeJS-Addon kennt nur Rezepte. Skript und Test offen.</li>
-      <li>Geklärt: Nach Alfheim kommt nur, wer den Mead of Kvasir getrunken hat. Der Gaia-Pylon braucht Alfsteel.</li>
-      <li>Geklärt: Das Questbuch lässt sich nicht zurückhalten; stattdessen bleiben alle Kapitel verborgen, bis der Einsiedler auf dem Mond das Buch freigibt.</li>
-      <li><strong>Neu:</strong> Star Wars Planets schenkt mit der Rakete T3 das „Star Manual“ (Jedi, Sith, Kyber). Belohnung entfernen oder auf T5 verlegen?</li>
-    </ol>
+    <h2>Offene Fragen</h2>
+    <p>Alle offenen Entscheidungen zu dieser Karte, zur Story und zum ganzen Pack stehen seit 2026-10-19 gesammelt in <code>docs/20_ENTSCHEIDUNGEN.md</code> (F = Progression und Pack, O = Story, P = im Spiel prüfen). Auf den Karten steht ein „?“ überall dort, wo noch eine Entscheidung fehlt.</p>
     <h3>Raketen: vier Hürden je Stufe</h3>
-    <p>Beschlossen (2026-10-14): Jede Rakete braucht (1) einen Rumpf aus dem Metall des zuletzt erreichten Ortes, (2) einen neuen Treibstoff, (3) eine neue Mekanism-Stufe, (4) ein Teil aus einem anderen Pfad. T3 braucht ein Teil aus Blood Magic, weil der Tempel den Planeten abschirmt. Ab T5 kommt das Rumpf-Material aus Alfheim.</p>
-    <ol start="31">
-      <li>Welche Mekanism-Stufe (Schaltkreise, Legierungen) gehört zu welcher Rakete? Legt der User fest.</li>
-      <li>Welche Botania-Items gehören zu welcher Rakete? Legt der User fest.</li>
-      <li>Welches Blood-Magic-Teil verlangt T3? Schirmt der Tempel nur den Merkur ab, oder gilt das Teil auch für den Flug zur Venus?</li>
-      <li>Mars-Station (T2, beschlossen: Station bauen, KubeJS-Quest prüft sie, erst dann kommt der Droide; Quest-Abgaben und Freischaltungen nur bei ihm auf dem Mars): Welche Blöcke auf die Checkliste, welcher Umkreis? Wie kommt der Droide hin? Automatischer Transport zwischen den Welten geht im Pack erst spät (Entangloporter und Chunkloader von Mekanism: Atomic Alloy und Ultimate-Schaltkreise; AE2-Quantenbrücke: Endgame). Später als eigener Meilenstein oder Rezepte verbilligen?</li>
-    </ol>
+    <p>Beschlossen (2026-10-14): Jede Rakete braucht (1) einen Rumpf aus dem Metall des zuletzt erreichten Ortes, (2) einen neuen Treibstoff, (3) eine neue Mekanism-Stufe, (4) ein Teil aus einem anderen Pfad. T3 braucht ein Teil aus Blood Magic, weil der Tempel den Planeten abschirmt. Der Rumpf von T5 ist Etrium (Calorite und Elementium aus Alfheim, 2026-10-19).</p>
     <h3>Einsiedler auf dem Mond (SW2)</h3>
     <p>Beschlossen (2026-10-14): kein Questbuch vor dem Mond; der Einsiedler gibt das Buch, zahlt Credits für die Nebenquests und betreibt den Shop nur auf dem Mond. Galaxy in a Cube gibt es nur in den Star-Wars-Welten. Baupläne zeigen das Rezept und schalten es beim Kauf einmalig für die ganze Welt frei; Droiden einzeln über einen Steuerkern je Typ. Skripte erst, wenn die Story von Part 1 steht.</p>
-    <ol start="35">
-      <li>Name, Volk und die Quest, mit der die Spieler sein Vertrauen gewinnen (später).</li>
-      <li>Kapitelzählung: Der Mond ist K4. Ist K4 das Kapitel, das mit der ersten Quest für ihn endet, oder wird die Karte umgebaut?</li>
-      <li>Vor dem Mond gibt es keine Nebenquests. Werden die Grundlagen aus K1 bis K3 später im Buch nachgereicht? Stehen die Hauptquests vor dem Mond nachträglich als „Notizen“ im Buch?</li>
-      <li>Shop: welche Items und Rohstoffe für Droiden, welche Preise? Credits je Spieler oder je Team, wiederholbare Aufgaben (später)?</li>
-      <li>Mondbasis: von Hand beim Host bauen oder als Struktur setzen? Braucht er darin Luft?</li>
-    </ol>
-    <h3>Part 2 und 3 (wird später besprochen)</h3>
-    <ol start="40">
-      <li>T5 führt nur nach Endor, T6 zu Tatooine, Hoth und Mustafar, T7 nach Mandalore (beschlossen). Was schaltet T7 frei?</li>
-      <li>Rezepte und flüssige Treibstoffe der Raketen T5 bis T7; welches Material aus Alfheim für T5?</li>
-      <li>Part 2: Ablauf der Ausbildung, Prüfungen, Gaia.</li>
-      <li>Part 3: Welche Bosse für den Meister, auf welchen Welten?</li>
-      <li>Lichtschwert-Quest (Part 2 oder 3?) und Kopfgeldjäger-Quests (Part 3).</li>
-    </ol>
   </section>
 </div>
 

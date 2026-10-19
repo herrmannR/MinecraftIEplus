@@ -33,7 +33,7 @@ Halbes Buch (Blue Skies: Journal ohne gesicherte Progression) → wie „ohne Bu
 ### 1. Vorwissen (billig)
 - `docs/modpfade/<mod>/WISSEN.md` ganz lesen. Es enthält Progression, Zahlen, Fundstellen im JAR und die ID-Tabelle.
 - Meilensteine des Mods: Pfad-Kürzel aus dem Kommentar oben in `docs/meilensteine/data.js` (TK, IE, BO, BM, MK, AE, BS, RF, SW), dann `grep -n -A4 'id:"<KÜRZEL>[0-9]' docs/meilensteine/data.js`. Kapitel dazu: `grep -n "<Mod-Name>" docs/01_PROGRESSION.md`.
-- Pack-Änderungen: `grep -n -i "<mod>\|<namespace>" docs/01_PROGRESSION.md docs/00_STATUS.md docs/15_RAUMFAHRT.md docs/03_ERZGENERATION.md docs/modpfade/CROSSMOD_AUFFAELLIGKEITEN.md` und `grep -rn "<namespace>:" kubejs/server_scripts kubejs/startup_scripts | cut -c1-200`. Nur die Treffer lesen.
+- Pack-Änderungen: `grep -n -i "<mod>\|<namespace>" docs/01_PROGRESSION.md docs/00_STATUS.md docs/20_ENTSCHEIDUNGEN.md docs/15_RAUMFAHRT.md docs/03_ERZGENERATION.md docs/modpfade/CROSSMOD_AUFFAELLIGKEITEN.md` und `grep -rn "<namespace>:" kubejs/server_scripts kubejs/startup_scripts | cut -c1-200`. Nur die Treffer lesen.
 - Story-Bezüge nur zur Einordnung: `grep -n -i "<mod>" docs/18_STORY.md` (z. B. geplante Nebenquest-Reihen wie die Erzvervielfachung). Nicht übernehmen, nur beachten.
 
 ### 2. Inhalt holen
@@ -83,6 +83,7 @@ Die Sprachdatei ist eine einzige lange Zeile: immer `grep -o`, nie die ganze Zei
 
 ### 6. Nachziehen
 - `docs/questtexte/README.md`: Zeile in der Tabelle, Mod aus „Noch offen“ streichen.
+- `docs/20_ENTSCHEIDUNGEN.md`: neue Fragen aus „Offen vor dem Einbau“, die der User entscheiden muss, als nächste freie F-Nummer eintragen; reine Prüfungen im Spiel als P-Nummer. Schon vorhandene Fragen nur um den Mod ergänzen.
 - `docs/12_CHANGELOG.md`: kurzer Eintrag nach dem Format oben in der Datei.
 - `00_STATUS.md` nur, wenn sich am Stand von `questtexte/` etwas Grundsätzliches ändert.
 - Nichts committen, kein Artifact, Handbuch nicht neu bauen.

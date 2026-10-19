@@ -29,7 +29,7 @@ Pflicht-Bibliotheken von Ad Astra: Resourceful Lib, Resourceful Config, Botarium
 
 🟢 **Sauerstoff zwingend aus Mekanism** (2026-10-11): Wasser → Electrolytic Separator → Sauerstoffgas → Rotary Condensentrator → flüssiger Sauerstoff.
 
-🟢 **Erster Raumflug (Mond):** mindestens eine erste Mekanism-Maschine ist Pflicht (2026-10-07). 🔵 Ob auch Petroleum vor T1 Pflicht bleibt, ist wieder offen, seit T1 mit Biodiesel fliegt (siehe „Treibstoff je Raketenstufe“; F6 in `questtexte/OFFENE_FRAGEN.md`).
+🟢 **Erster Raumflug (Mond):** mindestens eine erste Mekanism-Maschine ist Pflicht (2026-10-07). 🔵 Ob auch Petroleum vor T1 Pflicht bleibt, ist wieder offen, seit T1 mit Biodiesel fliegt (siehe „Treibstoff je Raketenstufe“; F6 in `20_ENTSCHEIDUNGEN.md`).
 
 🔴 Überholt: „Star-Wars-Planeten verlangen Magie-Komponenten und Uran-Erzeugnisse“ (2026-10-07). Seit 2026-10-14 gelten die vier Hürden je Rakete; die magischen Komponenten gehören zu T4, ob ein Uran-Teil Pflicht bleibt, ist offen (O18 in `18_STORY.md`).
 
@@ -273,17 +273,11 @@ Aus JAR: Der Mod fügt nur drei Raketen T5, T6 und T7 hinzu, jeweils mit eigenem
 - Planeten sind neue Dimensionen → kein Retrogen nötig.
 - In der **Overworld** erzeugt Ad Astra nur die Oil Wells (abgeschaltet). Erze oder andere Strukturen kommen dort nicht dazu.
 - Galaxy in a Cube erzeugt in der Overworld Kyber-Kristalle, Ewok-Dörfer und Jawas (aus JAR, `18_STORY.md`). Die Kristalle sind abgeschaltet (Test 9); Ewok-Dörfer und Jawas sollen ebenfalls raus (🔵 noch nicht umgesetzt, `17_STAR_WARS_1.20.1.md`).
-- Neue Metalle (Desh, Ostrum, Calorite, Kyber, Beskar) → Erzmatrix (`14_ERZ_MOD_MATRIX.md`), Verarbeitung (`04_VERARBEITUNG.md`), Tags (`02_RESSOURCEN.md`).
+- Neue Metalle (Desh, Ostrum, Calorite, Kyber, Beskar) → Erzmatrix (`14_ERZ_MOD_MATRIX.md`), Verarbeitung (Phase 3, `00_STATUS.md`), Tags (`02_RESSOURCEN.md`).
 
 ## Offene Fragen
 
-1. 🟢 Treibstoff je Stufe entschieden (Biodiesel, Diesel, Kerosin, eigener Raketentreibstoff). 🔵 Offen: T4-Rezept, Cryo Fuel, Rover.
-2. 🟢 Blood-Magic-Zugang nur auf dem Merkur. 🔵 Offen: welches Item, wo garantiert zu holen; technische Machbarkeit (Test E19).
-3. 🔵 Welche magischen Komponenten genau für T4? Alfsteel entfällt, weil Alfheim erst in Part 2 betreten wird; Kandidaten sind Terrasteel und Items aus dem Elfenportal (Elementium, Pixie Dust, Dreamwood). Bleiben Uran-Teil und Dungeon-Item Pflicht?
-4. 🟢 Ad Astra: Rocketed bleibt (2026-10-13), Planeten je Stufe entschieden (2026-10-14). 🔵 Rezepte, Treibstoffe; Kyber auf Endor (F5).
-5. 🟢 Ad-Astra-Kabel, Fluid Pipes, Water Pump und Energizer werden entfernt. 🟢 Strom in abgedichtete Räume (Test 20, 2026-10-17): Mit den richtigen Blöcken bleibt ein Raum dicht; der IE Feedthrough Insulator oder ein Energiespeicher in Wand oder Boden bringt den Strom hinein.
-6. 🔵 Immersive Aircraft bleibt Atmosphären-Transport; `launchAnywhere` bleibt aus?
-7. 🟢 Treibstoffverbrauch (3 Eimer je Start) und Schutzwirkung der Anzüge im Spiel abgelesen (2026-10-17).
+Gesammelt in `20_ENTSCHEIDUNGEN.md`: F2 (Raketen T2–T7, magische Komponenten, Uran-Teil), F3 (T4-Treibstoff, Cryo Fuel), F5 (Kyber), F6 (Petroleum vor T1), F11 (Rover, Sky Stone, MekaSuit-Module, `launchAnywhere`), F22 (Transport zwischen den Welten); im Spiel P4. Geklärt: Treibstoff T1–T3, Verbrauch (3 Eimer je Start), Schutz der Anzüge, Strom in dichte Räume (Tests 16–21).
 
 ## Nächste Schritte
 

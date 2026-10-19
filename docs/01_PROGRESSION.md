@@ -109,7 +109,7 @@ Weitere Dimensionen ohne eigenen Pfad: Nether (Kobalt), Alfheim (Pfad C), Demon 
 
 🟢 **Vier Hürden je Rakete** (User, 2026-10-14): (1) Rumpf aus dem Metall des zuletzt erreichten Ortes, (2) neuer Treibstoff, (3) neue Mekanism-Stufe (Schaltkreise, Legierungen), (4) ein Teil aus einem anderen Pfad. T3 braucht ein Teil aus Blood Magic (der Tempel schirmt den Planeten ab). 🔵 Welche Mekanism-Stufe und welche Botania-Items zu welcher Rakete gehören, legt der User fest.
 
-Erzprüfung (2026-10-14): Bis T4 liegt jedes Rumpf-Metall auf dem Planeten davor; Zinn (Everbright, P3), Osmium (Everdawn, Mond), Fluorit (Overworld, Mars) und Uran (Merkur, Venus) sind rechtzeitig da. Glacio hat kein eigenes Metall, daher ist der Rumpf von T5 die Legierung Etrium (Calorite plus Elementium aus Alfheim, dazu eine Zutat von Glacio). ⚠️ Korrektur 2026-10-19: Kyber liegt ohne Eingriff **nicht** auf Endor. Belegt ist nur das Sandstein-Erz auf Tatooine; das Deepslate-Vorkommen für Endor, Hoth und Mustafar verweist auf einen Block, den es nicht gibt (`modpfade/CROSSMOD_AUFFAELLIGKEITEN.md`, S3). Die Hürde „Kyber von Endor → T6“ braucht also ein eigenes Vorkommen per Datapack oder eine andere Zutat (🔵 F5 in `questtexte/OFFENE_FRAGEN.md`). Beskar (nur Mandalore) wird für keine weitere Stufe gebraucht.
+Erzprüfung (2026-10-14): Bis T4 liegt jedes Rumpf-Metall auf dem Planeten davor; Zinn (Everbright, P3), Osmium (Everdawn, Mond), Fluorit (Overworld, Mars) und Uran (Merkur, Venus) sind rechtzeitig da. Glacio hat kein eigenes Metall, daher ist der Rumpf von T5 die Legierung Etrium (Calorite plus Elementium aus Alfheim, dazu eine Zutat von Glacio). ⚠️ Korrektur 2026-10-19: Kyber liegt ohne Eingriff **nicht** auf Endor. Belegt ist nur das Sandstein-Erz auf Tatooine; das Deepslate-Vorkommen für Endor, Hoth und Mustafar verweist auf einen Block, den es nicht gibt (`modpfade/CROSSMOD_AUFFAELLIGKEITEN.md`, S3). Die Hürde „Kyber von Endor → T6“ braucht also ein eigenes Vorkommen per Datapack oder eine andere Zutat (🔵 F5 in `20_ENTSCHEIDUNGEN.md`). Beskar (nur Mandalore) wird für keine weitere Stufe gebraucht.
 
 - 🟢 Energie, Treibstoff und Sauerstoff nur aus IE, Immersive Petroleum und Mekanism. Ad-Astra-Erzeuger, Kabel, Pipes und Water Pump werden entfernt (`15_RAUMFAHRT.md`).
 - 🟢 T1 verlangt mindestens eine erste Mekanism-Maschine (über den Sauerstoff).
@@ -153,10 +153,4 @@ Neue Gates dürfen bereits erreichten Fortschritt nicht rückwirkend sperren.
 
 ## Offen
 
-0. Der vollständige Fragenkatalog steht auf der Meilensteinkarte und in `18_STORY.md`; die Fragen aus den Questtexten gesammelt in `questtexte/OFFENE_FRAGEN.md` (Punkt 1 = F2, Punkt 2 = F6, Punkt 4 = F3).
-1. 🔵 Magische Komponenten der Rakete T4; ob Uran-Teil und Dungeon-Item Pflicht bleiben.
-2. 🔵 Soll Petroleum weiter Pflicht vor dem ersten Raumflug sein (Entscheidung vom 2026-10-07)? T1 fliegt jetzt mit Biodiesel.
-3. 🟡 Ad Astra: Rocketed bleibt (User, 2026-10-13); Planeten je Stufe entschieden (2026-10-14: T5 Endor, T6 Tatooine, Hoth, Mustafar, T7 Mandalore). 🔵 Offen: Rezepte und Treibstoffe T5–T7 (Part 2 und 3).
-4. 🔵 Cryo Fuel: entfernen oder Zutat des T4-Treibstoffs.
-5. 🔵 Meilensteinkarte als Ganzes bestätigen oder korrigieren (Reihenfolge, Pflicht oder optional).
-6. 🔵 Kostenrahmen je Meilenstein (Phase 3).
+Alle offenen Fragen stehen in `20_ENTSCHEIDUNGEN.md`. Für diese Datei wichtig: F2 (was jede Rakete braucht, samt O18), F3 (T4-Treibstoff, Cryo Fuel), F5 (Kyber), F6 (Petroleum vor T1), F19 (Meilensteinkarte bestätigen), F20 (Kostenrahmen), F23 (Weltstand), F24 (Automatisierung freischalten).

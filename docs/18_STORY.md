@@ -165,64 +165,9 @@
 - Danach oder parallel: Sie verdingen sich als Kopfgeldjäger und erfüllen Quests bei mehreren Easy NPCs.
 - Über eine Quest erlangen sie Lichtschwerter.
 
-## 4. Offene Stellen
+## 4. Offene Stellen und Technik
 
-Erledigt seit der ersten Fassung: Herkunft des Droiden (er schweigt), Grund für die Landung bei den Spielern (Auftrag des Meisters), Lage von Glacio (kein Widerspruch mehr, Glacio ist das Fernziel von Teil 1).
-
-| Nr. | Frage | Bezug |
-|---|---|---|
-| O1 | **Elfen-NPC:** Name und Charakter. Welche Boss-Items (Blue Skies hat vier Bosse) und welche Tech-Erzeugnisse verlangt er genau? | Der Elf |
-| O14 | **Aufbau der Karte bestätigen** (umgebaut am 2026-10-14): Runenaltar auf P2 vorgezogen und Pflicht; Everdawn und Blue-Skies-Bosse Pflicht; Alfheim und Gaia in Part 2; Alfsteel entfällt als Magie-Teil für T4. | Progression |
-| O17 | **Galaxie oder Sonnensystem:** Glacio liegt in Ad Astra in einem anderen Sonnensystem (Proxima Centauri), nicht in einer anderen Galaxie. Die „weit entfernte Galaxis“ wäre dann erst der Sprung zu den Star-Wars-Welten mit T5 und T6. So gewollt, oder soll Glacio schon „die andere Galaxie“ sein? | Der Elf |
-| O18 | Welche magischen Komponenten braucht die Rakete T4 (Terrasteel, Elementium, anderes)? Bleiben das Uran-Teil und das Dungeon-Item aus der bisherigen Planung Pflicht? | Rakete T4 |
-| O19 | **Mars-Basis und Transport:** Transport zwischen den Welten gibt es im Pack nur spät (aus den JARs, 2026-10-14): Quantum Entangloporter und Dimensional Stabilizer (Chunkloader) von Mekanism verlangen Atomic Alloy und Ultimate-Schaltkreise, die Quantenbrücke von AE2 Prozessoren und Singularitäten. Ohne Chunkloader läuft eine Basis nur, solange jemand dort ist. Basis bei T2 von Hand, Transport später als eigener Meilenstein, oder Rezepte verbilligen? | T2 |
-| O20 | Blood-Magic-Teil für T3: welches? Gilt es auch für den Flug zur Venus, obwohl nur der Merkur abgeschirmt ist? | T3 |
-| O21 | Was schaltet T7 (Mandalore) frei? | Part 3 |
-| O22 | Mars-Station: Welche Blöcke gehören auf die Checkliste (Sauerstoffverteiler, Energiespeicher, Landeplatz, Bett, Mekanism-Maschine, anderes)? Wie groß ist der Umkreis? | Mars |
-| O23 | Wie kommt der Droide auf den Mars: fliegt er mit den Spielern, oder erscheint er von selbst, sobald die Station-Quest erledigt ist? (Entschieden: Abgaben und Freischaltungen nur bei ihm auf dem Mars.) | Mars |
-| O15 | Schicksal des Droiden: weg oder zerstört? Wer gibt danach die großen Ziele (Elf, dann Meister)? Kommt der Droide in Teil 2 oder 3 zurück? | Figuren |
-| O16 | Wo liegt der hinterlassene Text des Meisters: im Dungeon, im Tempel oder bei den Resten des Droiden? | Wendung |
-| O2 | ~~Wo wird der Altar neu aufgebaut?~~ Entschieden (User, 2026-10-17): im Tempel auf dem Merkur. Offen: Texte und Fundorte der vier Schriftrollen, Zutaten der Reparatur. | Tempel |
-| O34 | **Blue-Skies-Haus:** Ist der „Herrscher“ dieselbe Easy-NPC-Figur, die den Guard im Haus ersetzt, oder eine zweite Figur (etwa in Everbright oder Everdawn)? Wann und wo erzählt der Droide vom Haus, wenn der Strang schon vorher als Nebenquest freigeschaltet ist? Was heißt „aus seiner eigenen Welt“, wenn der Droide aus der Star-Wars-Galaxis kommt? Was genau liefert der Strang für die Altar-Reparatur? | Blue-Skies-Haus |
-| O35 | **Roguelike-Dungeons:** Welche der fünf Stufen sind für die Vorbereitung auf die Altar-Dimension (Part 1) Pflicht, welche gehören zum allgemeinen Training (Part 2), welche bleiben Nebenquest? | Tempel, Teil 2 |
-| O36 | **Machtpfade:** Muss ein Spieler beide Pfade (hell und dunkel) gehen oder darf er sich auf einen festlegen? Reihenfolge von allgemeinem Training, hellem und dunklem Pfad? | Teil 2 |
-| O37 | **Machtpunkte und Artefakte:** Welche Jedi- und Sith-Artefakte (z. B. die Holocrons von Galaxy in a Cube), und wie hängen sie an den Machtpunkten? | Teil 2 |
-| O38 | **Freischaltung der Macht:** Machtmessgerät, teures Ritual oder Handel? | Teil 2 |
-| O3 | Was finden die Spieler in der Dungeon-Dimension, wenn der Meister schon weg ist? Wo steckt das Rätsel, das nach Glacio führt? Laut Progression liegt dort das Pflicht-Item für Rakete T4. | Wendung |
-| O4 | Warum ist der Meister nach Glacio gegangen und nicht zum Droiden zurück? Was ist mit dem Relikt? | Wendung |
-| O5 | Welche Items beweisen die „Würdigkeit“? Die Hauptwelt hat schon Stahl, Biodiesel-Generator und Runenaltar. | Erste Quest |
-| O6 | Tagebuch: Wie viele Ausschnitte, wann werden sie freigegeben, welche Rätsel? | Auftakt |
-| O7 | Name des Droiden; bleibt er in der Basis oder taucht er an weiteren Orten auf (Mond, Tempel, Glacio)? | Figuren |
-| O8 | Große Ziele zwischen Mond und Tempel: Mars und Venus haben noch keine Story. Ebenso Blue Skies (Everbright, Everdawn), Mekanism und AE2. | Teil 1 |
-| O9 | Welche Anspielungen auf Star Wars streut Teil 1, und wann wird das Geheimnis offen ausgesprochen (auf Glacio beim Meister)? | Geheimnis |
-| O10 | Teil 3: Welche Bosse, auf welchen Planeten, warum will der Meister sie besiegt sehen? | Teil 3 |
-| O11 | Ablauf der Jedi-Ausbildung (Teil 2) und der Lichtschwert-Quest (Teil 2 oder 3?). | Teil 2 |
-| O12 | Teil 3: Kopfgeldjäger-Quests: welche NPCs, wo, welche Belohnungen? Passt Kopfgeldjagd zur Jedi-Ausbildung oder ist das bewusst die „graue“ Nebenlinie? | Teil 3 |
-| O13 | ~~Welche Star-Wars-Planeten liegen auf T5, welche auf T6?~~ Entschieden (2026-10-14): T5 Endor, T6 Tatooine, Hoth, Mustafar, T7 Mandalore (Abschnitt 1). | Progression |
-| O25 | Einsiedler: Name, Volk; welche Quest gewinnt sein Vertrauen? (User: später) | Einsiedler |
-| O27 | Credits je Spieler oder je Team? Wiederholbare Aufgaben? (User: vielleicht, später) | Einsiedler |
-| O28 | Welche Items und Rohstoffe für Droiden verkauft er genau? Welche Preise? | Einsiedler |
-| O29 | Mondbasis des Einsiedlers: von Hand beim Host bauen oder als Struktur setzen? Braucht er Luft darin (Test 28)? | Einsiedler |
-| O30 | **Kapitelzählung:** Laut Meilensteinkarte ist der Mond K4 (Rakete T1). Gemeint ist „das Kapitel, das mit der ersten Quest für den Einsiedler endet“: Ist das K4, oder wird die Karte umgebaut? | Raster |
-| O31 | Vor dem Mond gibt es kein Questbuch und keine Nebenquests. Werden die Grundlagen aus K1 bis K3 (Tinkers, IE, Botania, Blood Magic, Mekanism-Anfang, AE2, Everbright) später im Buch nachgereicht, oder bleiben sie ohne Nebenquests? Stehen die Hauptquests vor dem Mond nachträglich als „Notizen“ im Buch? | Raster |
-| O33 | ~~Gehört das Zurückbringen des Meisters in die Overworld noch zu K11?~~ Entschieden (User, 2026-10-14): ja, K11 Glacio umfasst Fund und Rückkehr in die Overworld. Offen: wie er zurückkommt (mit den Spielern in der Rakete oder anders) und wo er in der Overworld bleibt. | Part 1 |
-| O32 | ~~Wird der Bauplan beim Lesen verbraucht?~~ Erledigt: Er schaltet beim Kauf frei und bleibt als Buch mit dem Rezept erhalten. (Entschieden: Droiden einzeln freischalten über einen Steuerkern je Typ; Rezepte in JEI ausgeblendet; Freischalten per Bauplan gilt für das ganze Team, umgesetzt als globale Freischaltung für die Welt.) | Einsiedler |
-
-### Technisch zu klären (🔵, ungeprüft)
-
-| Nr. | Frage |
-|---|---|
-| T1 | Kapsel und Einschlag in der Basis der Hauptwelt: von Hand beim Host bauen oder als Struktur einsetzen? |
-| T2 | Kann ein Easy-NPC-Dialog Items übergeben und Abgaben prüfen? Können Dialoge FTB-Quests auslösen oder abschließen? |
-| T3 | Welches Droiden-Aussehen steht in Easy NPC zur Verfügung (eigener Skin, Modell aus Galaxy in a Cube)? |
-| T4 | Questbuch erst auf dem Mond (geändert 2026-10-14): Das Buch lässt sich über das Inventar öffnen. Alle Kapitel bleiben verborgen, bis der Einsiedler per Dialog-Befehl eine Stage setzt; vorher ist das Buch leer. Übergabe als Item per `give` im Dialog. 🔵 |
-| T5 | Tagebuch als Item: geschriebenes Buch, Patchouli-Buch oder Questtexte? |
-| T6 | Sith-Tempel auf dem Merkur: eigene Struktur nötig (zerstörtes Inneres, Platz für den Altar). Erzeugung per Datapack oder von Hand? |
-| T7 | Ritual-Ort per KubeJS beschränken (schon Test E19 in `11_TESTING.md`). |
-| T8 | „Ad Astra: Rocketed“: Rezepte und Treibstoffe für T5 und T6 neu schreiben; Star-Wars-Planeten auf diese Stufen legen. |
-| T9 | Bosse, Macht-Fähigkeiten und Lichtschwert-Rezepte in Galaxy in a Cube: Rezepte sind laut `17_STAR_WARS_1.20.1.md` noch nicht bekannt. |
-| T10 | Macht (Galaxy in a Cube): Schaltet die Spielregel `forceObtainment` den normalen Fortschritt (XP, Töten von Zivilisten) ab? Lassen sich Machtpunkte per Befehl vergeben, also als FTB-Quest-Belohnung „Befehl“? Tests 33 und 34. |
-| T11 | Blue-Skies-Haus: Wie heißt die Struktur und der Guard im JAR, lässt sich der Guard per Datapack aus der Struktur entfernen, und lässt sich dort eine Easy-NPC-Figur setzen (in jedem Haus der Welt oder nur in einem)? |
+Die offenen Fragen zur Story (O-Nummern) und zur Story-Technik (T-Nummern) stehen seit 2026-10-19 gesammelt in `20_ENTSCHEIDUNGEN.md`, zusammen mit allen übrigen offenen Entscheidungen des Projekts. Die Nummern bleiben gleich. Hier stehen nur die Ergebnisse.
 
 ### Ergebnisse aus den JARs (2026-10-14, TODO G27)
 
@@ -302,28 +247,4 @@ Durchsetzung im Spiel (🔵 alles ungeprüft):
 
 ## 6. Zuordnung zur Meilensteinkarte
 
-Die Karte (`meilensteine/`, Artifact-Seite) ist am 2026-10-14 feiner aufgeteilt worden: 16 Kapitel, 51 Meilensteine mit Kürzeln je Pfad (TK, IE, BO, BM, MK, AE, BS, RF, SW), je Mod mehrere Stufen nach den Modpfad-Seiten. Jede Zeile wird ein Kapitel im Questbuch; die Kapitelnamen sind Arbeitstitel.
-
-| Kapitel | Progression | Story |
-|---|---|---|
-| **Part 1 · Finden des Meisters** | | |
-| K1 Ankunft | Tinkers: Werkzeuge und Melter · IE: Koks und erster Stahl · Botania: Blüten und Lebendholz | Einschlag der Kapsel |
-| K2 Würdig sein | Smeltery · IE: Strom und Förderbänder · Mana und Manasteel | Droide, „Würdig sein“ (SW1) |
-| K3 Industrie | IE: Schwermaschinen und Biodiesel · Runenaltar · Blutaltar · Mekanism: Infuser und Sauerstoff · AE2: Storage-Layer · Everbright | – |
-| K4 Der Mond | Erdöl und Destillation · Mekanism-Grundmaschinen · Everdawn · **Rakete T1** | erstes großes Ziel; Einsiedler (SW2), Questbuch, Credits und Shop; Mond abgeschirmt, Hinweis auf den Mars |
-| K5 Erzketten | Alloyer und Foundry · entschwefelter Diesel · Altar T3 und Soul Forge · Mekanism Advanced · Blinding-Bosse (Blue Skies) | offen |
-| K6 Der Mars | IE-Großindustrie · Terrasteel · Nature- und Poison-Boss (Blue Skies) · **Rakete T2** | Signale von der Erde zu schwach |
-| K7 Horchposten | Planetenmetalle gießen · Altar T4 und Rituale · Mekanism Elite und Chemie | Mars-Station (SW3), der Droide zieht auf den Mars |
-| K8 Hitze | **Rakete T3** | der verlassene Tempel, kaputter Altar, vier Schriftrollen; zurück zur Erde (Material, Roguelike-Dungeon, Blue-Skies-Bosse, Blue-Skies-Haus; Zuordnung zu K8 ist ein Vorschlag) |
-| K9 Der Tempel | Tempel und Dungeon (BM4) · Kernkraft · ME-System | Altar repariert, Dimension betreten; Meister entkommen, Droide fällt aus, Text des Meisters |
-| K10 Der Elf | Elfenportal (BO5) · Mekanism Ultimate und Teleportation | Elf; Boss-Items und Tech-Erzeugnisse |
-| K11 Glacio | **Rakete T4** (RF4) | Barriere, Meister gefunden und in die Overworld zurückgebracht; Ende von Part 1 |
-| **Part 2 · Ausbildung zum Jedi und Vorbereitung T5** (wird später besprochen) | | |
-| K12 Ausbildung | Altar T5 · Alfheim betreten · Fusion | Ausbildung beim Meister (SW4) |
-| K13 Die Prüfung | Gaia · SPS und Antimaterie · AE2-Quantenbrücke · **Rakete T5** | Gaia als Prüfung; Rakete T5 fertig, Ende von Part 2 |
-| **Part 3 · Rückkehr in die weit, weit entfernte Galaxis** (wird später besprochen) | | |
-| K14 Endor | Altar T6 · **Rakete T6** | Ankunft auf Endor, Basis des Meisters; sonst offen |
-| K15 Star-Wars-Welten | Meka-Ausrüstung und QIO | Bosse, Kopfgeldjagd, Lichtschwerter (SW5) |
-| K16 Mandalore | **Rakete T7** | offen |
-
-Vorschlag für die Mekanism-Stufe je Rakete (der User legt fest): T1 Basic, T2 Advanced, T3 Elite, T4 Ultimate, T5 Fusion, T6 SPS und Antimaterie, T7 offen.
+Die Kapiteltabelle (Kapitel, Progression, Story) steht nur noch in `01_PROGRESSION.md`, Abschnitt „Kapitel“; die Meilensteine selbst in `meilensteine/data.js`.

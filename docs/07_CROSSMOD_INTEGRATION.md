@@ -1,8 +1,8 @@
 # 07 — CROSS-MOD-INTEGRATION
 
-> ⚠️ **Stand 1.18.2, noch nicht auf 1.20.1 geprüft.** Seit 2026-10-11 gilt Minecraft 1.20.1 mit geänderter Mod-Liste (`00_MODBASIS.md`). Dieses Dokument wird beim Neustart der Analyse überarbeitet; Einstieg und TODO-Liste: `00_STATUS.md`.
-
-> Befunde aus den Modpfad-Seiten (was die Mods von sich aus tun und den Progressionsweg berührt) stehen für 1.20.1 in `modpfade/CROSSMOD_AUFFAELLIGKEITEN.md`.
+> Stand 2026-10-19, Minecraft 1.20.1. Enthält nur Entscheidungen für 1.20.1. Die leeren Platzhalter aus 1.18.2 (Integrationsachsen, Matrix) liegen im Git-Verlauf; eigene Cross-Mod-Rezepte kommen in Phase 6 (`00_STATUS.md`, Arbeitsplan).
+>
+> Was die Mods **von sich aus** tun und den Progressionsweg berührt: `modpfade/CROSSMOD_AUFFAELLIGKEITEN.md`. Kreuzungspunkte der Progression: `01_PROGRESSION.md`.
 
 ## Zweck
 
@@ -18,49 +18,11 @@ Ein gutes Rezept beantwortet mindestens eine dieser Fragen:
 - Welche Ressource wird dadurch wertvoll?
 - Welche bisherige Maschine bekommt eine neue Rolle?
 
-## Geplante Integrationsachsen
-
-### Immersive Engineering ↔ Mekanism
-
-🟡 Industrielle Vorprodukte → High-Tech-Verarbeitung.
-
-### Immersive Engineering ↔ Botania
-
-🔵 Industrielle Komponenten + magische Ressourcen.
-
-### Blood Magic ↔ Tinkers
-
-🔵 spezielle Material-/Werkzeugprogression.
-
-### Mekanism ↔ AE2
-
-🟢 High-Tech-Verarbeitung → spätere Automatisierung.
-
-### Botania ↔ AE2
-
-🔵 magische Ressourcen als optionale/gezielte Komponenten.
-
-### Blood Magic ↔ Mekanism
-
-🔵 spezielle High-End-Materialien/Prozesse.
-
-### Tinkers ↔ Tech-Mods
-
-🔵 fortgeschrittene Werkzeugmaterialien über mehrere Pfade.
-
-## Integrationsmatrix
-
-| Quelle | Ziel | Ressource/Rezept | Zweck | Progressionsstufe | Status |
-|---|---|---|---|---|---|
-| IE | Mekanism | 🔵 | 🔵 | 🔵 | 🔵 |
-| Botania | IE | 🔵 | 🔵 | 🔵 | 🔵 |
-| Blood Magic | Tinkers | 🔵 | 🔵 | 🔵 | 🔵 |
-| Mekanism | AE2 | 🔵 | 🔵 | 🔵 | 🔵 |
-| Botania | AE2 | 🔵 | 🔵 | 🔵 | 🔵 |
+Verboten: willkürliche „5 Eisen + 2 Mana = High-Tech-Teil“-Rezepte ohne systemische Begründung.
 
 ## Tinkers in den höheren Stufen (🟢 1.20.1, User-Entscheidung 2026-10-12)
 
-Dieser Abschnitt gilt für 1.20.1; Befunde aus den JARs der Testinstanz. Alles ist im Spiel ungetestet, konkrete Rezepte und Werte sind noch nicht festgelegt.
+Befunde aus den JARs der Testinstanz. Die beiden Entfernungen unten sind im Spiel bestätigt (Tests 7a–7c); Rezepte und Werte der Wege A–F sind noch nicht festgelegt.
 
 ### Beschlossene Wege
 
@@ -109,6 +71,3 @@ Legierungen in der Schmelzerei:
 
 Das Einschmelzen von Slates und Runen zu Blood-Seared Stone bleibt; die Flüssigkeit dient nur noch als Werkzeugmaterial.
 
-## Verbotene Integrationsform
-
-Keine willkürlichen „5 Eisen + 2 Mana = High-Tech-Teil“-Rezepte ohne systemische Begründung.

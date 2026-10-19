@@ -17,7 +17,7 @@ Verbindliche Mod-Liste des Packs. Die Liste wird nicht stillschweigend veränder
 - Versionen in den Tabellen: 🟢 aus den Dateinamen und `mods.toml` der JARs gelesen (2026-10-12).
 - Quelle: **MR** = Modrinth, **CF** = CurseForge, — = vom User installiert, Quelle nicht notiert.
 - Die Hauptwelt liegt beim Host; dessen Mod-Liste ist noch nicht abgeglichen (🔵 TODO F21 in `00_STATUS.md`).
-- Alte Rohlisten `mods_v3.txt` (Hauptinstanz 1.18.2) und `mods_v4.txt` (Testinstanz 1.18.2) bleiben nur als Vergleich.
+- Alte Rohlisten `mods_v3.txt` (Hauptinstanz 1.18.2) und `mods_v4.txt` (Testinstanz 1.18.2) liegen nur zum Vergleich in `archiv_1182/`.
 
 ## Gameplay- und Content-Mods
 
@@ -202,7 +202,7 @@ In `disabledmods/` der Testinstanz liegen noch: Twilight Forest, Twilight Spark 
 - 🟢 **Keine zusätzlichen großen Tech-Mods** (Create, Thermal, Ender IO usw.).
 - 🟢 **Raumfahrt ist Hauptziel** und die einzige Ausnahme zur Tech-Regel: Ad Astra bringt eigene Maschinen mit; deren Energie-, Treibstoff- und Sauerstofferzeugung wird entfernt oder durch IE, Immersive Petroleum und Mekanism ersetzt (`15_RAUMFAHRT.md`).
 - 🟢 **Mekanism: Ad Astra Ores bleibt nur wegen der Erzblöcke.** Die Erzverteilung legen wir selbst fest.
-- 🟡 Spätere Endgame-Erweiterungen (z. B. Draconic Evolution) werden separat entschieden (`09_ENDGAME.md`).
+- 🟡 Spätere Endgame-Erweiterungen (z. B. Draconic Evolution) werden separat entschieden (Part 2 und 3 in `18_STORY.md`).
 
 ## Bekannte Fehler aus dem Start-Log (2026-10-11)
 
