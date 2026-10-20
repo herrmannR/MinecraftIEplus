@@ -107,7 +107,7 @@ Ergebnis jeweils hier eintragen: ✅ bestanden, ❌ Fehler (mit Beschreibung), �
 
 | Nr. | Test | Wie | Erwartet | Ergebnis |
 |---|---|---|---|---|
-| 42 | Skripte laden | `logs/kubejs/startup.log`, `server.log`, `client.log` | keine Zeile mit `ERROR` zu den neuen Dateien; in `server.log` die Zeile „ie_crusher_uebernimmt.js: … Rezepte“ | ⏳ |
+| 42 | Skripte laden | `logs/kubejs/startup.log`, `server.log`, `client.log` | keine Zeile mit `ERROR` zu den neuen Dateien; in `server.log` die Zeile „ie_crusher_uebernimmt.js: … Rezepte“ | 🟡 2026-10-20, erster Start: alle Skripte geladen (Startup 3/3, Server 12/12, Client 3/3, 0 Fehler). Zwei Fehler gefunden und behoben: 5 von 220 IE-Crusher-Rezepten scheiterten (Listen als Eingabe, Eingabemenge 2; jetzt geteilt bzw. ausgelassen), Steuerkerne ohne Textur (jetzt `minecraft:block/redstone_torch`). Die 86 „Failed to parse recipe“-Warnungen kommen aus den KubeJS-Addons und gab es schon vorher (172 am 2026-10-17). Nach dem nächsten Neustart erneut prüfen |
 | 43 | Eigene Items | JEI nach „Strahlenschutz“, „Relikt“, „Steuerkern“, „Bauplan“ durchsuchen | deutsche Namen, Tooltips; Baupläne zeigen ihr Rezept | ⏳ |
 | 44 | Triebwerke | JEI: Steel, Desh, Ostrum, Calorite Engine | je ein Control Circuit der Stufe (Basic, Advanced, Elite, Ultimate); Calorite Engine zusätzlich mit Galaktischem Strahlenschutz | ⏳ |
 | 45 | Tanks | JEI: Desh, Ostrum, Calorite Tank | je 2 Ventium, Imbued Slate bzw. Elementium; Steel Tank unverändert | ⏳ |

@@ -17,9 +17,9 @@ StartupEvents.registry('item', event => {
     .rarity('epic').glow(true).maxStackSize(1)
 
   // Steuerkerne: zusätzliche Zutat im Droid Fabricator, nur im Shop des Einsiedlers (O28)
-  event.create('steuerkern_b1').displayName('Steuerkern B-1').texture('minecraft:item/redstone_torch').rarity('uncommon')
-  event.create('steuerkern_b2').displayName('Steuerkern B-2').texture('minecraft:item/redstone_torch').rarity('uncommon')
-  event.create('steuerkern_droideka').displayName('Steuerkern Droideka').texture('minecraft:item/redstone_torch').rarity('rare')
+  event.create('steuerkern_b1').displayName('Steuerkern B-1').texture('minecraft:block/redstone_torch').rarity('uncommon')
+  event.create('steuerkern_b2').displayName('Steuerkern B-2').texture('minecraft:block/redstone_torch').rarity('uncommon')
+  event.create('steuerkern_droideka').displayName('Steuerkern Droideka').texture('minecraft:block/redstone_torch').rarity('rare')
 
   // Baupläne: schalten beim ersten Erhalt ein Rezept für die ganze Welt frei (server_scripts/starwars/einsiedler_shop.js)
   event.create('bauplan_assembly_bench').displayName('Bauplan: Assembly Bench').texture('minecraft:item/paper').rarity('uncommon').maxStackSize(1)
