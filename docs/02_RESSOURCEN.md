@@ -151,7 +151,7 @@ Die Werte der Planeten-Erze stehen in `15_RAUMFAHRT.md`, Abschnitt Worldgen. Kur
 |---|---|---|---|
 | Kupfer, Eisen, Gold | Vanilla | Basis | 🟢 |
 | Aluminium, Nickel, Silber, Constantan, Electrum | IE | IE-Industrie | 🟢 |
-| Stahl | IE (Progressionsquelle) | industrielles Gate | 🟢; 🔵 Parallelwege in Mekanism und Ad Astra bereinigen |
+| Stahl | IE (Progressionsquelle) | industrielles Gate | 🟢; Ad-Astra- und Mekanism-Weg entfernt (O41, 2026-10-20), Tinkers-Splitter bleiben |
 | Zinn, Osmium | Mekanism | Mekanism-Technik | 🟢 |
 | Blei | **Mekanism** (IE-Bleierz aus; IE nutzt es über `forge:ingots/lead`) | Strom, Chemie, Schutz | 🟢 2026-10-12 |
 | Uran | **Mekanism** (IE-Uranerz aus) | Nuklearkette, exklusiv Mekanism | 🟢 2026-10-12 |

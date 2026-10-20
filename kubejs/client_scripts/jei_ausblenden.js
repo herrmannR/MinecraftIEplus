@@ -32,7 +32,14 @@ JEIEvents.hideItems(event => {
     // Steuerkerne: Rezept steht im Bauplan des Droiden (2026-10-20)
     'kubejs:steuerkern_b1',
     'kubejs:steuerkern_b2',
-    'kubejs:steuerkern_droideka'
+    'kubejs:steuerkern_droideka',
+    // Bioethanol (Mekanism Generators): hat im Mod kein Rezept und keinen Zweck (User, 2026-10-20)
+    'mekanismgenerators:bioethanol_bucket'
   ]
   ausgeblendet.forEach(id => event.hide(id))
+})
+
+JEIEvents.hideFluids(event => {
+  // Bioethanol: Flüssigkeit zum Eimer oben
+  event.hide('mekanismgenerators:bioethanol')
 })

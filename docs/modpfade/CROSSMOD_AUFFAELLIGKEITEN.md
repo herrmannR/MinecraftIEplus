@@ -20,7 +20,7 @@ Jeder Befund ist aus den JARs oder der Config der Testinstanz belegt (🟢). Was
 | Tinkers | Steel Shards (Skyslimes, Geoden), Nebenprodukt von Eisenerz in der Foundry | Slime-Inseln bzw. Foundry |
 | Ad Astra Alloying | 1 Eisen + 1 Kohle oder Holzkohle | Etrionic Blast Furnace (A4) |
 
-🟢 Der Mekanism-Weg braucht weder Koksofen noch Hochofen noch Nether und ist mit einem Barren Osmium erreichbar. Alle Mods nehmen Stahl über `forge:ingots/steel` voneinander an. Wer die IE-Stahlkette als Tor will, muss den Mekanism-Weg anfassen.
+🟢 Der Mekanism-Weg braucht weder Koksofen noch Hochofen noch Nether und ist mit einem Barren Osmium erreichbar. Alle Mods nehmen Stahl über `forge:ingots/steel` voneinander an. Wer die IE-Stahlkette als Tor will, muss den Mekanism-Weg anfassen. **Pack (O41, 2026-10-20):** Mekanism-Weg (`mekanism:processing/steel/enriched_iron_to_dust`) und Ad-Astra-Alloying entfernt; Tinkers bleibt.
 
 ### Ü2 Erzvervielfachung im Vergleich
 

@@ -1160,3 +1160,12 @@ Status: 🟡
 ### Änderung
 - Wunsch des Users: Die Truhe des Meisters entsteht von selbst in einem großen Raum der Minen; mehrere Funde sind erlaubt.
 - Neu `kubejs/data/bloodmagic/loot_tables/chests/mines/smithy_loot.json`: Kopie der Blood-Magic-Tabelle mit einem Pool, der `ieplus:chests/meister_truhe` einbindet. Die Tabelle gibt es nur in einer Truhe der Station, dem größten Mine-Raum. Test 58.
+
+## 2026-10-20 — Stahl nur über IE, Bioethanol ausgeblendet, JEI-Info für Cryo Fuel (O41)
+
+Status: 🟡
+
+### Änderung
+- Funde des Users beim Testen. Neu `kubejs/server_scripts/progression/stahl_nur_ie.js`: entfernt `mekanism:processing/steel/enriched_iron_to_dust` (Metallurgic Infuser). Ad Astra war schon entfernt, Tinkers bleibt.
+- `jei_ausblenden.js`: Bioethanol (Eimer und Flüssigkeit) ausgeblendet; hat in Mekanism Generators kein Rezept.
+- Neu `kubejs/client_scripts/jei_infos.js`: Info-Seite für Cryo Fuel. Ad Astra zeichnet das Ergebnis des Cryo Freezer in JEI nur als Füllbalken (laut Klassen im JAR), deshalb fand R auf Cryo Fuel nichts. Test 59. Noch nicht in die Testinstanz kopiert.
