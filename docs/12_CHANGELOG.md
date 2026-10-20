@@ -1072,3 +1072,19 @@ Status: 🟡 (ungetestet)
 
 ### Auswirkungen auf bestehende Welt
 Keine.
+
+## 2026-10-20 — Tests 43–47, Fassung 2 von Baupläne und Ritual-Sperre
+
+Status: 🟡
+
+### Änderung
+- Tests 44–46 bestanden (Triebwerke, Tanks, Rover nur mit Biodiesel).
+- Test 47 fehlgeschlagen: `altar_dimension.js` rief `dimension()` als Funktion auf; die Ausnahme brach jede Ritual-Aktivierung ab. Fassung 2 liest die Dimension robust, und Fehler im Handler lassen das Ereignis durch.
+- Test 43 (Wünsche des Users): Baupläne als öffenbare Bücher mit Beschreibung und Rezept (Befehl `/bauplan`); Baupläne für B-1, B-2 und Droideka schalten das Rezept des Steuerkerns frei; Bauplan-Rezepte und Droiden stark verteuert (Stahl, Desh, Durasteel, Control Circuits; Entwurf); eigene Texturen für die Steuerkerne. Die Bauplan-Items entfallen.
+- In die Testinstanz kopiert. Wieder zu testen: 43, 47, 48, 53.
+
+### Betroffene Bereiche
+- `kubejs/`, `docs/10_KUBEJS.md`, `11_TESTING.md`, `18_STORY.md`, `20_ENTSCHEIDUNGEN.md`
+
+### Auswirkungen auf bestehende Welt
+Keine.

@@ -24,11 +24,15 @@ JEIEvents.hideItems(event => {
     'ae2:vibration_chamber',
     'ae2:crystal_resonance_generator',
     'swplanets:plastic_plate',
-    // Rezepte hinter Bauplänen (server_scripts/starwars/einsiedler_shop.js): in JEI ausgeblendet, der Bauplan zeigt sie im Tooltip
+    // Rezepte hinter Bauplänen (server_scripts/starwars/einsiedler_shop.js): in JEI ausgeblendet, das Bauplan-Buch zeigt sie
     'swgc:assembly_bench',
     'swgc:droid_fabricator',
     'swgc:gas_harvester',
-    'swgc:empty_gas_vessel'
+    'swgc:empty_gas_vessel',
+    // Steuerkerne: Rezept steht im Bauplan des Droiden (2026-10-20)
+    'kubejs:steuerkern_b1',
+    'kubejs:steuerkern_b2',
+    'kubejs:steuerkern_droideka'
   ]
   ausgeblendet.forEach(id => event.hide(id))
 })
