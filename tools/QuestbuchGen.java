@@ -113,10 +113,19 @@ public class QuestbuchGen {
         }
         if (prevMain != null) prevMain.milestone = true;
 
-        // Freischaltung über die Hauptquests: erste Quest je Abschnitt mit Kn
+        // Freischaltung über die Hauptquests: erste Quest je Abschnitt mit Kn hängt nur an Kn
+        // (FTB blendet sie ein, wenn ALLE Voraussetzungen erledigt sind; eine Kette zum vorigen
+        // Abschnitt würde den Abschnitt sonst trotz Kn verbergen)
         sec = null;
         for (Quest q : qs) {
-            if (!q.section.equals(sec)) { sec = q.section; if (q.kGate != null) { q.deps.add(q.kGate); q.gated = true; } }
+            if (!q.section.equals(sec)) {
+                sec = q.section;
+                if (q.kGate != null) {
+                    final String s = q.section;
+                    q.deps.removeIf(d -> !byCode.get(d).section.equals(s));
+                    q.deps.add(q.kGate); q.gated = true;
+                }
+            }
         }
 
         write(Paths.get(a[2]), snbt(qs));

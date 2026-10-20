@@ -167,7 +167,7 @@
 			y: 0.5d
 		}
 		{
-			dependencies: ["6D928FB73894B839", "4FBA50D1BBCB97FA"]
+			dependencies: ["4FBA50D1BBCB97FA"]
 			description: [
 				"Die erste Stufe der Erzverarbeitung: Aus einem Erzblock werden zwei Stäube, aus drei Raw-Stücken vier. Die Stäube schmilzt du im Ofen."
 				"Erzblöcke bringen in jeder Stufe mehr als Raw-Stücke. Wenn du kannst, bau mit Silk Touch ab."
@@ -341,7 +341,7 @@
 			y: 5.5d
 		}
 		{
-			dependencies: ["1594BB213B1B4F4A", "6AF68093B3F6D97F"]
+			dependencies: ["6AF68093B3F6D97F"]
 			description: [
 				"&6⚙&r Zinn gibt es in diesem Pack nur in Everbright. Du brauchst es für Bronze (3 Kupfer + 10 Tin im Infuser ergeben 4 Bronze) und für die Pumpen, Jetpacks und Fluidic Plenisher von Mekanism. Everbright liefert auch Blei."
 			]
@@ -475,7 +475,7 @@
 			y: 9.0d
 		}
 		{
-			dependencies: ["7EAB9F168BFEB124", "4432DA367BD815DD"]
+			dependencies: ["4432DA367BD815DD"]
 			description: [
 				"Im Infuser: Infused Alloy + 20 Diamond. Ein Diamant ergibt 10 Einheiten; in der Enrichment Chamber angereichert (Enriched Diamond) sind es 80. Reichere die Diamanten deshalb immer erst an."
 			]
@@ -715,7 +715,7 @@
 			y: 16.0d
 		}
 		{
-			dependencies: ["65FD91C69EED1303", "7264B19A966F455A"]
+			dependencies: ["7264B19A966F455A"]
 			description: [
 				"&c&lWarnung:&r&c Radioaktive Stoffe sind gefährlich. Tritt Gas aus einer Leitung, einer zerstörten Maschine oder einem abgebauten Tank aus, verstrahlt es die Umgebung. Strahlenvergiftung macht Schaden und kann töten.&r"
 				""
@@ -911,7 +911,7 @@
 			y: 19.5d
 		}
 		{
-			dependencies: ["5727C86B5DB4F060", "2596BAFEBEF00419"]
+			dependencies: ["2596BAFEBEF00419"]
 			description: [
 				"Im Infuser: Reinforced Alloy + 40 Refined Obsidian. Enriched Refined Obsidian aus der Enrichment Chamber liefert 80 Einheiten statt 10. Die höchste Stufe von Mekanism."
 			]
@@ -1045,7 +1045,7 @@
 			y: 21.5d
 		}
 		{
-			dependencies: ["015545685E8A0045", "490DA592DDA71B52"]
+			dependencies: ["490DA592DDA71B52"]
 			description: [
 				"Eine &eElectric Pump&r mit &eFilter Upgrade&r in einem Meer oder großen Wasser fördert &eHeavy Water&r. Der Electrolytic Separator spaltet es in Deuterium und Oxygen."
 			]
@@ -1131,7 +1131,7 @@
 			y: 25.0d
 		}
 		{
-			dependencies: ["54F8124FDF2B9EF2", "13CC768AFE8EB0F0"]
+			dependencies: ["13CC768AFE8EB0F0"]
 			description: [
 				"Das SPS erzeugt mit riesigen Mengen Strom &eAntimatter&r. &9(ungeprüft)&r Eingangsstoff und Bauregeln stehen nicht in den JAR-Daten. Nach Spielwissen (im Spiel prüfen): Eingang ist Polonium als Gas, 2000 mB je 1 mB Antimatter. Bauform ein Würfel von 7 × 7 × 7 ohne Kanten aus SPS Casing und Reactor Glass, mit SPS Ports. An einen Port, der Strom bekommt, setzt du außen die &eSupercharged Coil&r."
 			]
@@ -1199,7 +1199,7 @@
 			y: 30.0d
 		}
 		{
-			dependencies: ["24478A7934447EE3", "3F54FB63312E353E"]
+			dependencies: ["3F54FB63312E353E"]
 			description: [
 				"An der Modification Station setzt du &eModule&r in MekaSuit und Meka-Tool ein und nimmst sie heraus. Jedes Modul beginnt mit einer Module Base. Leer können die Geräte fast nichts."
 			]

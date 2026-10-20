@@ -138,7 +138,7 @@
 			y: 2.0d
 		}
 		{
-			dependencies: ["0E9E3687A3A51B2B", "7D17A2E727E32894"]
+			dependencies: ["7D17A2E727E32894"]
 			description: [
 				"Erzeugende Blumen machen Mana: die Endoflame aus Brennstoff, die Hydroangeas aus Wasser."
 				"Buch: Generating Flora → Generating Flora, Endoflame, Hydroangeas."
@@ -284,7 +284,7 @@
 			y: 5.5d
 		}
 		{
-			dependencies: ["4FEAEAE56A2A8400", "0B2B8888238E82AD"]
+			dependencies: ["0B2B8888238E82AD"]
 			description: [
 				"Am Altar entstehen die Runen. Die meisten besseren Blumen brauchen sie."
 				"Buch: Basics and Mechanics → Runic Altar."
@@ -640,7 +640,7 @@
 			y: 9.0d
 		}
 		{
-			dependencies: ["194C2ADA92F61A8F", "1102A1D22CF06A0C"]
+			dependencies: ["1102A1D22CF06A0C"]
 			description: [
 				"Die Platte verschmilzt Manasteel, Mana Pearl und Mana Diamond mit viel Mana. Sie braucht einen festen Unterbau."
 				"Buch: Basics and Mechanics → Terrasteel."
@@ -702,7 +702,7 @@
 			y: 12.5d
 		}
 		{
-			dependencies: ["32310B37BC9A953F", "2596BAFEBEF00419"]
+			dependencies: ["2596BAFEBEF00419"]
 			description: [
 				"Das Portal zieht sein Mana über Natura Pylons aus Pools in der Nähe."
 				"Buch: Alfhomancy → The Portal to Alfheim."
@@ -824,7 +824,7 @@
 			y: 16.0d
 		}
 		{
-			dependencies: ["20CA9735F369D8FB", "490DA592DDA71B52"]
+			dependencies: ["490DA592DDA71B52"]
 			description: [
 				"Der Met öffnet dir das Portal nach Alfheim."
 				"Buch: Alfheim → The Mead of Kvasir."
@@ -1045,7 +1045,7 @@
 			y: 19.5d
 		}
 		{
-			dependencies: ["17D58AB389983771", "13CC768AFE8EB0F0"]
+			dependencies: ["13CC768AFE8EB0F0"]
 			description: [
 				"&c⚠ &eDer Guardian of Gaia ist ein schwerer Bosskampf.&r&c Lies den Eintrag im Buch vor dem Ritual ganz. Lass keine Wertsachen in der Arena liegen.&r"
 				""
