@@ -129,7 +129,7 @@
 - Aus einem noch offenen Grund musste er vorzeitig fliehen und versteckt sich nun auf Glacio.
 - Die Spieler kehren zur Erde zurück, finden den Elfen durch das Portal und geben ihm das Relikt. Er will oder kann dazu nicht viel sagen, bietet aber an, ihnen nach Glacio zu helfen.
 - Dafür fertigt er den **Galaktischen Strahlenschutz** (Bauteil der Rakete T4). Er braucht dazu das Relikt, die Boss-Items aus Blue Skies und Tech-Erzeugnisse (F14).
-- **Schutz beim Betreten** (F18, User 2026-10-20): Jeder Spieler muss einen Benevolent Goddess’ Charm tragen, wenn er durch den Altar in die Dimension geht; ein Skript lässt nur Spieler mit Amulett hinein. Die Reparatur selbst braucht Terrasteel.
+- **Schutz beim Betreten** (F18, User 2026-10-20): Jeder Spieler muss einen Benevolent Goddess’ Charm tragen, wenn er durch den Altar in die Dimension geht; ein Skript lässt nur Spieler mit Amulett hinein. Die Reparatur selbst braucht Terrasteel. 🟢 Das Amulett gilt für beide Rituale, also auch schon für den Mini-Dungeon (O39, User 2026-10-20). Machbar ist es ab dem Runenaltar (BO3).
 - Damit ist O16 beantwortet (der Text des Meisters ist sein Tagebuch); O3 und O4 sind zum großen Teil beantwortet (offen: der Grund der Flucht).
 
 **Das Blue-Skies-Haus (neuer Strang, User, 2026-10-17)**
