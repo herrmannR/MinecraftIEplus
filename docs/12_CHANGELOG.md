@@ -1195,5 +1195,12 @@ Status: 🟡
 ### Änderung
 - Wunsch des Users: Die Werkbank-Rezepte der Rüstungen aus Galaxy in a Cube (Klon Phase 2, Jedi, Sith, Royal Guard, Vader; 19 Teile) gibt es nur noch per Bauplan. Fünf neue Rollen `kubejs:bauplan_ruestung_<satz>`; das Rezept ist bis zum Lesen gesperrt (gleiche Technik wie bei den Maschinen), die Kosten bleiben wie im Original. Die Rüstungsteile sind in JEI ausgeblendet.
 - Das Buch „Baupläne des Einsiedlers“ hat jetzt drei Kapitel: Maschinen (Assembly Bench, Droid Fabricator, Gas Harvester), Waffen (Blaster, Droiden), Rüstung (fünf Sätze mit Rezeptbildern).
-- Test 56 angelegt. In die Testinstanz kopiert (Neustart nötig).
+- Test 60 angelegt (zuerst als 56, doppelt mit dem Treibstoff-Test). In die Testinstanz kopiert (Neustart nötig).
 - Test 48 ✅ (User): nur mit Charm im Curios-Slot hinein; das Log zeigt die Abfrage sauber (false ohne Charm und mit Charm im Inventar, true im Slot).
+
+## 2026-10-20 — Baupläne auch in der Tinkers-Werkstation (Test 60)
+
+Status: 🟡
+
+### Änderung
+- Test 60 (User): Nach dem Lesen des Bauplans ging das Rezept an der Werkbank, nicht aber in der Tinkers-Werkstation; sie gibt keinen Spieler an das Rezept weiter. `ieplusFreigeschaltet` in `einsiedler_shop.js` liest den Weltwert jetzt über `Utils.server`, wenn kein Spieler da ist. Gilt für alle Baupläne; Autocrafter funktionieren damit nach der Freischaltung ebenfalls. In die Testinstanz kopiert.

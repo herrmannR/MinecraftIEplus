@@ -7,7 +7,7 @@
 //   „Baupläne des Einsiedlers“ (Patchouli, patchouli_books/bauplaene) entsperrt. Wer offline war, bekommt es beim Einloggen.
 //   Ist der Bauplan schon im Buch, bleibt die Rolle und es kommt nur eine Meldung.
 //   Wer als Erster in der Welt eine Rolle liest, bekommt das Buch dazu (gedacht: Assembly Bench als erster Kauf).
-//   Ohne Freischaltung liefert die Werkbank nichts; Autocrafter (ohne Spieler) nie.
+//   Ohne Freischaltung liefert die Werkbank nichts; danach auch die Tinkers-Werkstation und Autocrafter (Weltwert, Test 56).
 // - Droiden: Jeder Droide braucht im Droid Fabricator zusätzlich seinen Steuerkern (wird verbraucht).
 //   Das Werkbank-Rezept des Kerns schaltet der Bauplan des Droiden frei.
 // - Alle Rezepte stark verteuert (User, Test 43, 2026-10-20).
@@ -19,7 +19,7 @@
 // Rezept-IDs ieplus:bauplan/<ergebnis> werden in den Patchouli-Einträgen verwendet; beim Ändern dort mitziehen.
 // - Buch in drei Kapiteln (User, 2026-10-20): Maschinen (Assembly Bench, Droid Fabricator, Gas Harvester), Waffen (Blaster,
 //   Droiden), Rüstung (Klon, Jedi, Sith, Royal Guard, Vader; deren Werkbank-Rezepte sind bis zum Bauplan gesperrt).
-// Stand 2026-10-20, KubeJS 2001. Fassung 8 (Rüstungs-Baupläne, Kapitel), UNGETESTET.
+// Stand 2026-10-20, KubeJS 2001. Fassung 9 (Tinkers-Werkstation, Test 60), UNGETESTET.
 
 const IEPLUS_ADV = 'mekanism:advanced_control_circuit'
 const IEPLUS_BAUPLAN_BUCH = 'patchouli:bauplaene'
@@ -84,10 +84,13 @@ const IEPLUS_BAUPLAENE = {
 
 function ieplusSchluessel(name) { return 'ieplus_bauplan_' + name }
 
+// Die Freischaltung gilt für die ganze Welt; der Spieler wird nur gebraucht, um an den Server zu kommen.
+// Die Tinkers-Werkstation (und Autocrafter) geben keinen Spieler mit (Test 56), dann über Utils.server.
 function ieplusFreigeschaltet(grid, name) {
   var player = grid.player
-  if (!player || !player.server) return false
-  return player.server.persistentData.getBoolean(ieplusSchluessel(name))
+  var server = (player && player.server) ? player.server : Utils.server
+  if (!server) return false
+  return server.persistentData.getBoolean(ieplusSchluessel(name))
 }
 
 function ieplusBauplanBuch() {
