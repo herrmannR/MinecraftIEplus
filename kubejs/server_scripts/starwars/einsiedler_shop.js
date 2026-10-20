@@ -17,7 +17,7 @@
 //   /bauplan zuruecksetzen   alle Baupläne der Welt wieder sperren, Bucheinträge bei allen Spielern zurücknehmen,
 //                            das Buch wird beim nächsten Lesen einer Rolle erneut verteilt
 // Rezept-IDs ieplus:bauplan/<ergebnis> werden in den Patchouli-Einträgen verwendet; beim Ändern dort mitziehen.
-// Stand 2026-10-20, KubeJS 2001. Fassung 6 (Rechtsklick, Zurücksetzen), UNGETESTET.
+// Stand 2026-10-20, KubeJS 2001. Fassung 7 (Blaster-Baupläne, nur Buch), UNGETESTET.
 
 const IEPLUS_ADV = 'mekanism:advanced_control_circuit'
 const IEPLUS_BAUPLAN_BUCH = 'patchouli:bauplaene'
@@ -43,7 +43,16 @@ const IEPLUS_BAUPLAENE = {
       zutaten: { D: 'swgc:durasteel_ingot', C: IEPLUS_ADV, X: 'minecraft:diamond_block' } }] },
   droide_droideka: { titel: 'Droideka', rezepte: [
     { ergebnis: 'kubejs:steuerkern_droideka', muster: ['DCD', 'CXC', 'DCD'],
-      zutaten: { D: 'swgc:durasteel_ingot', C: 'mekanism:elite_control_circuit', X: 'minecraft:netherite_ingot' } }] }
+      zutaten: { D: 'swgc:durasteel_ingot', C: 'mekanism:elite_control_circuit', X: 'minecraft:netherite_ingot' } }] },
+  // Blaster: nur Buchseite mit Anleitung, keine Sperre an der Assembly Bench (User, 2026-10-20).
+  // Die Bench liest ihre Blaster-Liste nur beim Start (static in AssemblyBenchMenu), eine Sperre zur Laufzeit ginge nur über Umwege.
+  blaster_dc15a: { titel: 'Blaster DC-15A', rezepte: [] },
+  blaster_dc15s: { titel: 'Blaster DC-15S', rezepte: [] },
+  blaster_dc17: { titel: 'Blaster DC-17', rezepte: [] },
+  blaster_dh17: { titel: 'Blaster DH-17', rezepte: [] },
+  blaster_e5: { titel: 'Blaster E-5', rezepte: [] },
+  blaster_tl50: { titel: 'Blaster TL-50', rezepte: [] },
+  blaster_amban_sniper_rifle: { titel: 'Amban-Gewehr', rezepte: [] }
 }
 
 function ieplusSchluessel(name) { return 'ieplus_bauplan_' + name }
@@ -135,7 +144,7 @@ ItemEvents.rightClicked(event => {
   }
   event.item.shrink(1)
   daten.putBoolean(ieplusSchluessel(name), true)
-  server.tell(Text.gold('Neuer Bauplan im Buch: ' + b.titel + '. Das Rezept ist jetzt für alle herstellbar.'))
+  server.tell(Text.gold('Neuer Bauplan im Buch: ' + b.titel + (b.rezepte.length > 0 ? '. Das Rezept ist jetzt für alle herstellbar.' : '.')))
   if (!daten.getBoolean('ieplus_bauplan_buch_gegeben')) {
     daten.putBoolean('ieplus_bauplan_buch_gegeben', true)
     player.give(ieplusBauplanBuch())

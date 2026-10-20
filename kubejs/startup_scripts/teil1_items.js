@@ -25,7 +25,15 @@ StartupEvents.registry('item', event => {
     gas_harvester: 'Gas Harvester',
     droide_b1: 'Droide B-1',
     droide_b2: 'Droide B-2',
-    droide_droideka: 'Droideka'
+    droide_droideka: 'Droideka',
+    // Blaster: nur Buchseite, keine Sperre an der Assembly Bench (User, 2026-10-20)
+    blaster_dc15a: 'Blaster DC-15A',
+    blaster_dc15s: 'Blaster DC-15S',
+    blaster_dc17: 'Blaster DC-17',
+    blaster_dh17: 'Blaster DH-17',
+    blaster_e5: 'Blaster E-5',
+    blaster_tl50: 'Blaster TL-50',
+    blaster_amban_sniper_rifle: 'Amban-Gewehr'
   }
   Object.keys(rollen).forEach(name => {
     event.create('bauplan_' + name)

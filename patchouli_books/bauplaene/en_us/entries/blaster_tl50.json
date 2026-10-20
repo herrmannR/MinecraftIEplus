@@ -1,0 +1,11 @@
+{
+  "name": "Blaster TL-50",
+  "icon": "swgc:tl50",
+  "category": "patchouli:bauplaene",
+  "advancement": "ieplus:bauplan/blaster_tl50",
+  "sortnum": 12,
+  "pages": [
+    { "type": "patchouli:spotlight", "item": "swgc:tl50", "title": "TL-50", "text": "Schwerer Repetierblaster. Viel Feuerkraft, wenig Beweglichkeit." },
+    { "type": "patchouli:text", "title": "An der Assembly Bench", "text": "$(li)1 Diamant ins Hauptfeld$(li)1 Plastoid und 1 Durasteel in die Nebenfelder$(br2)Dann aus den Modellen den $(item)TL-50$() wählen.$(br2)Munition: gefüllte Tibanna-Behälter (Gas Harvester)." }
+  ]
+}

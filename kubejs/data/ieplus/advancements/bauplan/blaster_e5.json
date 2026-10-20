@@ -1,0 +1,15 @@
+{
+  "parent": "ieplus:bauplan/root",
+  "display": {
+    "icon": { "item": "kubejs:bauplan_blaster_e5" },
+    "title": "Bauplan: E-5",
+    "description": "Im Buch der Baupläne freigeschaltet",
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "freigeschaltet": { "trigger": "minecraft:impossible" }
+  }
+}

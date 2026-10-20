@@ -1169,3 +1169,13 @@ Status: 🟢 (Test 59 bestanden, User 2026-10-20)
 - Funde des Users beim Testen. Neu `kubejs/server_scripts/progression/stahl_nur_ie.js`: entfernt `mekanism:processing/steel/enriched_iron_to_dust` (Metallurgic Infuser). Ad Astra war schon entfernt, Tinkers bleibt.
 - `jei_ausblenden.js`: Bioethanol (Eimer und Flüssigkeit) ausgeblendet; hat in Mekanism Generators kein Rezept.
 - Neu `kubejs/client_scripts/jei_infos.js`: Info-Seite für Cryo Fuel. Ad Astra zeichnet das Ergebnis des Cryo Freezer in JEI nur als Füllbalken (laut Klassen im JAR), deshalb fand R auf Cryo Fuel nichts. Test 59. In die Testinstanz kopiert (Sicherung: `kubejs/client_scripts/jei_ausblenden.js.vor-O41`), Neustart nötig.
+
+## 2026-10-20 — Test 53 bestanden, Blaster-Baupläne
+
+Status: 🟡
+
+### Änderung
+- Test 53 (Baupläne als Rollen, Buch, Zurücksetzen) vom User geprüft: passt.
+- Sieben neue Rollen `kubejs:bauplan_blaster_<modell>` (DC-15A, DC-15S, DC-17, DH-17, E-5, TL-50, Amban-Gewehr) mit je einer Buchseite (Bild des Blasters, Zutaten an der Assembly Bench). Keine Sperre an der Bench (User): Die Bench liest ihre Blaster-Liste nur beim Start (statisch in `AssemblyBenchMenu`), und wer das Rezept vorher findet, darf es nutzen.
+- Bestätigt: Durasteel und Plastoid haben kein Rezept, nur Shop-Ware.
+- In die Testinstanz kopiert (Neustart nötig, neue Items).

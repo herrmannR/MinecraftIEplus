@@ -1,0 +1,11 @@
+{
+  "name": "Blaster DC-17",
+  "icon": "swgc:dc17",
+  "category": "patchouli:bauplaene",
+  "advancement": "ieplus:bauplan/blaster_dc17",
+  "sortnum": 9,
+  "pages": [
+    { "type": "patchouli:spotlight", "item": "swgc:dc17", "title": "DC-17", "text": "Handblaster, wie ihn Klon-Offiziere tragen." },
+    { "type": "patchouli:text", "title": "An der Assembly Bench", "text": "$(li)1 Diamant ins Hauptfeld$(li)1 Plastoid und 1 Durasteel in die Nebenfelder$(br2)Dann aus den Modellen den $(item)DC-17$() wählen.$(br2)Munition: gefüllte Tibanna-Behälter (Gas Harvester)." }
+  ]
+}

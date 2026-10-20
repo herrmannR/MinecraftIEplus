@@ -1,0 +1,11 @@
+{
+  "name": "Blaster DH-17",
+  "icon": "swgc:dh17",
+  "category": "patchouli:bauplaene",
+  "advancement": "ieplus:bauplan/blaster_dh17",
+  "sortnum": 10,
+  "pages": [
+    { "type": "patchouli:spotlight", "item": "swgc:dh17", "title": "DH-17", "text": "Blasterpistole mit hoher Feuerrate, beliebt bei Schiffsbesatzungen." },
+    { "type": "patchouli:text", "title": "An der Assembly Bench", "text": "$(li)1 Diamant ins Hauptfeld$(li)1 Plastoid und 1 Durasteel in die Nebenfelder$(br2)Dann aus den Modellen den $(item)DH-17$() wählen.$(br2)Munition: gefüllte Tibanna-Behälter (Gas Harvester)." }
+  ]
+}

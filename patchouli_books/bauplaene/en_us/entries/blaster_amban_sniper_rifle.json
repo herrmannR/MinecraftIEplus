@@ -1,0 +1,11 @@
+{
+  "name": "Blaster Amban-Gewehr",
+  "icon": "swgc:amban_sniper_rifle",
+  "category": "patchouli:bauplaene",
+  "advancement": "ieplus:bauplan/blaster_amban_sniper_rifle",
+  "sortnum": 13,
+  "pages": [
+    { "type": "patchouli:spotlight", "item": "swgc:amban_sniper_rifle", "title": "Amban-Gewehr", "text": "Scharfschützengewehr aus Mandalore. Trifft auf große Entfernung." },
+    { "type": "patchouli:text", "title": "An der Assembly Bench", "text": "$(li)1 Diamant ins Hauptfeld$(li)1 Plastoid und 1 Durasteel in die Nebenfelder$(br2)Dann aus den Modellen den $(item)Amban-Gewehr$() wählen.$(br2)Munition: gefüllte Tibanna-Behälter (Gas Harvester)." }
+  ]
+}
