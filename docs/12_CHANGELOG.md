@@ -1214,3 +1214,4 @@ Status: 🟡
 - Die sieben Blaster haben an der Assembly Bench dasselbe Rezept (1 Diamant, 1 Plastoid, 1 Durasteel; nur das Modell wird gewählt), fest im Code. Einzelne Rezepte sind nicht möglich. Deshalb ersetzt eine Rolle `kubejs:bauplan_blaster` die sieben Einzelrollen; sie öffnet alle sieben Blaster-Seiten im Buch (Advancement `ieplus:bauplan/blaster`). Die Droiden behalten ihre drei Baupläne (User).
 - In die Testinstanz kopiert, alte Advancements dort entfernt (Neustart nötig, Items geändert).
 - Neuer Befehl `/bauplan alles` (Gegenteil von `zuruecksetzen`): schaltet alle Baupläne frei, öffnet alle Bucheinträge bei allen Spielern und gibt dem Ausführenden ein Buch.
+- Test 61 ✅ (User): ein Blaster-Bauplan öffnet alle sieben Seiten; `/bauplan alles` funktioniert.
