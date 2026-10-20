@@ -12,104 +12,41 @@
 
 ## Teil 1 · Entscheidungen zu Progression und Pack
 
-### Raketen und Raumfahrt
+Beantwortet am 2026-10-20: F2 (bis auf g), F2e, F6, F7, F10, F11, F16–F19, F21–F23, F25; siehe „Erledigt“.
 
-**F2 · Was jede Rakete braucht** (vier Hürden: Rumpf, Treibstoff, Mekanism-Stufe, Teil aus einem anderen Pfad)
-- a) Mekanism-Stufe je Rakete. Vorschlag: T1 Basic, T2 Advanced, T3 Elite, T4 Ultimate, T5 Fusion, T6 SPS und Antimaterie, T7 offen.
-- b) Botania-Items: magische Komponente für T4 (Item aus dem Elfenportal: Elementium, Pixie Dust, Dreamwood, oder Terrasteel?). Der Rumpf T5 ist entschieden (Etrium).
-- c) Blood-Magic-Teil für T3 (O20). Es muss aus Altar-Stufe 3 kommen, weil Stufe 4 erst nach dem Tempel geht. Gilt es auch für den Flug zur Venus, obwohl nur der Merkur abgeschirmt ist?
-- d) Rezepte, Treibstoffe und Zusatzteile der Raketen T2 bis T7 (auch T8 in der Story-Technik).
-- e) Bleiben das Dungeon-Item aus der Altar-Dimension und ein Uran-Teil Pflicht für T4 (O18)?
-- f) Wie übergibt der Elf das T4-Rezept: als Bauplan oder als Schlüsselbauteil, das im Raketenrezept steckt?
-- g) Etrium: Zutat von Glacio (Ice Shard gibt es auch auf Mond und Mars) oder ein Item vom Meister? Wofür der Etrionic Core?
-→ `meilensteine/`, `15_RAUMFAHRT.md`, `18_STORY.md`; Questtexte `adastra.md`, `mekanism.md`, `botania.md`, `bloodmagic.md`
+**F2g · Etrium** (Teil 2)
+Zutat von Glacio (Ice Shard gibt es auch auf Mond und Mars) oder ein Item vom Meister? Wofür der Etrionic Core?
+→ `15_RAUMFAHRT.md`
 
-**F3 · T4-Treibstoff und Cryo Freezer**
-Behältst du den Cryo Freezer (Cryo Fuel) oder fliegt er raus? Woraus und wie teuer wird der T4-Treibstoff (Kerosin plus Mekanism-Chemie)?
+**F3 · Treibstoffe** (User: wird gesondert analysiert)
+Cryo Freezer behalten oder entfernen? Woraus und wie teuer wird der T4-Treibstoff? Vorschlag aus der Runde vom 2026-10-20: Cryo Freezer raus, T4-Treibstoff in der IE Refinery aus Kerosin und flüssigem Wasserstoff (Mekanism).
 → `15_RAUMFAHRT.md`; `adastra.md`
 
 **F5 · Kyber und Star-Wars-Rohstoffe**
-- a) Endor hat ohne Eingriff kein Kyber-Erz (nur Tatooine). Bekommt Endor ein Vorkommen per Datapack, oder ändert sich die Hürde „Kyber von Endor → T6“?
-- b) Wie wird aus dem Kyber-Erz der Kristall von Galaxy in a Cube: als Drop oder über ein Rezept?
-- c) Plastoid gibt es erst ab K7 (es braucht HDPE). Gewollt, oder verkauft der Einsiedler Plastoid?
-- d) Gas Harvester, Empty Gas Vessel, Durasteel: frei baubar oder nur im Shop?
+- a) Endor hat ohne Eingriff kein Kyber-Erz (nur Tatooine). Vorkommen per Datapack, oder ändert sich die Hürde „Kyber von Endor → T6“? (Teil 3)
+- b) Kyber-Erz → Kristall von Galaxy in a Cube: Drop oder Rezept? (Teil 3)
+- c) Plastoid erst ab K7 (HDPE). Gewollt, oder verkauft der Einsiedler Plastoid? (Vorschlag: Einsiedler verkauft es)
+- d) Gas Harvester, Empty Gas Vessel, Durasteel: frei baubar oder nur im Shop? (Vorschlag: nur im Shop, mit Bauplan)
 → `17_STAR_WARS_1.20.1.md`, `meilensteine/`; `swplanets.md`, `swgc.md`
 
-**F6 · Petroleum vor T1**
-Ist Petroleum vor dem ersten Raumflug Pflicht (dann über ein Bauteil), oder erst ab T2? Davon hängt ab, ob IE4 auf dem Hauptweg vor dem Mond liegt.
-→ `01_PROGRESSION.md`, `15_RAUMFAHRT.md`; `ie.md`
+**F9 · Botania: Mead of Kvasir und Corporea** (Teil 2)
+- a) Wie kommt der Spieler an den Met? Hängt am Meister in Part 2.
+- b) Corporea bei BO7 lassen oder schon nach BO5?
+→ `18_STORY.md`, `meilensteine/`; `botania.md`
 
-**F11 · Ad Astra: Kleinigkeiten**
-- a) Treibstoff des Rovers (Vorschlag: wie T1) und das Fuel, das der Lunarian-Händler verkauft.
-- b) Bleibt der AE2-Weg über Sky Stone (RFY-01)?
-- c) Ab wann erscheinen die MekaSuit-Module (RFX-03)?
-- d) `launchAnywhere` bleibt aus? Immersive Aircraft als Transport in der Atmosphäre?
-→ `15_RAUMFAHRT.md`; `adastra.md`
-
-**F12 · Star Wars Planets: Ausrüstung**
+**F12 · Star Wars Planets: Ausrüstung** (Teil 3)
 - a) Stormtrooper-Rüstung: neues Rezept oder nur Beute? Davon hängt die Beskar-Rüstung ab.
 - b) Beskar: welcher Ofen, welches Rezept, welches Nugget-Item, welche Kosten je Rüstungsteil?
 - c) Der Blaster von Star Wars Planets doppelt den von Galaxy in a Cube: behalten oder entfernen?
 - d) Jawas: welcher Mod stellt sie, welche Tauschverhältnisse?
 → `17_STAR_WARS_1.20.1.md`; `swplanets.md`
 
-**F22 · Mars-Basis und Transport (O19)**
-Automatischer Transport zwischen den Welten geht erst spät (Entangloporter, Chunkloader, Quantenbrücke). Basis bei T2 von Hand betreiben, Transport später als eigener Meilenstein, oder Rezepte verbilligen?
-→ `18_STORY.md`, `meilensteine/`
-
-### Mods und Meilensteine
-
-**F7 · Blood Magic: Meilensteine neu schneiden**
-Die Karte passt nicht zum Mod: Es gibt keine Altar-Stufe 6, und Stufe 4 kommt erst nach dem Tempel. Vorschlag: BM2 = Altar Stufe 3, BM3 = Rituale, BM4 = Tempel, Demon Realm und Stufe 4, BM5 = Endless Realm und Stufe 5, BM6 = Hellforged-Ausbau. Übernehmen?
-→ `meilensteine/`; `bloodmagic.md`
-
-**F9 · Botania: Mead of Kvasir und Corporea**
-- a) Wie kommt der Spieler an den Met? Hängt am Meister in Part 2.
-- b) Corporea bei BO7 lassen oder schon nach BO5?
-→ `18_STORY.md`, `meilensteine/`; `botania.md`
-
-**F10 · AE2: Verteuerung**
-Welche Rezepte ändert KubeJS (Pressen, Prozessoren, Drive, Controller, Housings)? Ist der Storage-Layer (AE1) in K3 früh genug?
-→ `01_PROGRESSION.md`, `10_KUBEJS.md`; `ae2.md`
-
-**F16 · Alex's Mobs**
-- a) Transmutation Table: hebelt er das Erz-Gating aus? Entfernen, verteuern oder lassen?
-- b) Steht die ganze Reihe ab dem Mond offen, oder AM4–AM6 erst später (Nether, End)?
-→ `01_PROGRESSION.md`; `alexsmobs.md`
-
-**F17 · Immersive Aircraft**
-- a) Ab welchem Kapitel, wie lang (18 oder 6 Quests)?
-- b) Der Gyrodyne fliegt schon ganz früh ohne Treibstoff. Gewollt?
-- c) Rezepte an IE-Stahl binden?
-→ `18_STORY.md`; `aircraft.md`
-
-**F18 · Schutz-Item für den Altar im Tempel**
-Welches Botania-Erzeugnis ist das Gegengewicht beim Altar-Neubau: Rune oder Terrasteel?
-→ `18_STORY.md`, `meilensteine/`; `botania.md`
-
-**F19 · Meilensteinkarte bestätigen (O14)**
-Reihenfolge und Kapitelgrenzen der 16 Kapitel; Runenaltar auf K2 vorgezogen und Pflicht; Everdawn und Blue-Skies-Bosse Pflicht: alle vier Bosse oder nur einige? Alfsteel entfällt als Magie-Teil für T4.
-→ `meilensteine/`, `01_PROGRESSION.md`
-
-**F20 · Kostenrahmen je Meilenstein** (Phase 3, Balance)
-Wie teuer soll jeder Meilenstein grob sein? Erst nach F2 und F19 sinnvoll.
+**F20 · Kostenrahmen je Meilenstein** (Schritt 5, Balance)
 → `01_PROGRESSION.md`
 
-**F21 · Blood-Smeltery: `forge:coins` und Hellforged-Flüssigkeiten**
-Ursache geklärt (Mod-Fehler bzw. fehlendes Thermal). Workaround per Skript oder so lassen?
-→ `00_MODBASIS.md`, `10_KUBEJS.md`; `tinkers.md`
-
-**F23 · Weltstand der Hauptwelt**
-Steht die Tinkers-Schmelzerei in der Hauptwelt schon (TK1 erreicht)? Wichtig, damit neue Gates nichts rückwirkend sperren.
-→ `01_PROGRESSION.md`, `meilensteine/`
-
-**F24 · Automatisierung teuer freischalten** (Idee des Users)
-Automatische Erzgewinnung und Automatisierung allgemein erst über eine teure Progression (Ritual oder Handel). Welche Maschinen, welcher Meilenstein?
+**F24 · Automatisierung teuer freischalten** (Idee des Users; verschoben auf Schritt 5, Balance, 2026-10-20)
+Welche Maschinen (IE Excavator, Mekanism-Factories, AE2-Autocrafting), welcher Meilenstein? Für Teil 1 nichts zusätzlich.
 → `01_PROGRESSION.md`
-
-**F25 · Mekanism-Erze in Blue-Skies-Gestein** (früher Backlog in `00_STATUS.md`)
-In Everbright und Everdawn liegen die Mekanism-Erze als normale Erzblöcke im fremden Gestein. Lassen, oder eigene KubeJS-Blöcke mit zusammengesetzter Textur, Original-Drops und Tags?
-→ `03_ERZGENERATION.md`
 
 ## Teil 2 · Entscheidungen zu Questbuch und Story
 
@@ -145,14 +82,13 @@ Name und Charakter. Welche Boss-Items (von welchen der vier Bosse) und welche Te
 
 | Nr. | Frage |
 |---|---|
-| O3 | Was finden die Spieler in der Altar-Dimension, wenn der Meister schon weg ist? Wo steckt das Rätsel, das nach Glacio führt? |
-| O4 | Warum ist der Meister nach Glacio gegangen und nicht zum Droiden zurück? Was ist mit dem Relikt? |
+
+| O4 | Aus welchem Grund musste der Meister vorzeitig fliehen? (Ziel Glacio und der „Helle Elf“ entschieden 2026-10-20) |
 | O6 | Tagebuch: wie viele Ausschnitte, wann freigegeben, welche Rätsel? |
 | O7 | Name des Droiden; bleibt er in der Basis oder taucht er an weiteren Orten auf? |
 | O8 | Große Ziele zwischen Mond und Tempel: Mars und Venus haben noch keine Story; ebenso Everbright, Everdawn, Mekanism und AE2. |
 | O9 | Welche Anspielungen auf Star Wars streut Part 1, und wann wird das Geheimnis offen ausgesprochen? |
 | O15 | Schicksal des Droiden: weg oder zerstört? Wer gibt danach die großen Ziele? Kommt er zurück? |
-| O16 | Wo liegt der hinterlassene Text des Meisters: im Dungeon, im Tempel oder bei den Resten des Droiden? |
 | O17 | Glacio liegt in einem anderen Sonnensystem, nicht in einer anderen Galaxie. Bleibt „die andere Galaxie“ den Star-Wars-Welten vorbehalten? |
 | O22 | Mars-Station: welche Blöcke auf die Checkliste, welcher Umkreis? (Danach kann das Skript für Test 32 entstehen.) |
 | O23 | Wie kommt der Droide auf den Mars: fliegt er mit, oder erscheint er, sobald die Station steht? |
@@ -219,6 +155,25 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 | O13 | T5 Endor, T6 Tatooine, Hoth, Mustafar, T7 Mandalore | 2026-10-14 | `18_STORY.md`, `15_RAUMFAHRT.md` |
 | O32 | Bauplan schaltet beim Kauf frei, bleibt erhalten; Steuerkern je Droide | 2026-10-14 | `18_STORY.md` |
 | – | Rumpf T5 aus Etrium | 2026-10-19 | `15_RAUMFAHRT.md`, Meilensteinkarte |
+| F2a | Mekanism-Stufe je Rakete: T1 Basic, T2 Advanced, T3 Elite, T4 Ultimate Control Circuit, jeweils im Rezept des Triebwerks | 2026-10-20 | `01_PROGRESSION.md`, `15_RAUMFAHRT.md` |
+| F2 (Teil aus anderem Pfad) | T1 Mekanism (Sauerstoff), T2 Ventium-Barren (Blue Skies, Everbright), T3 Imbued Slate (Blood Magic, Altar-Stufe 3, gilt auch für die Venus), T4 Elementium vom Elfen (magische Komponente) | 2026-10-20 | `01_PROGRESSION.md`, `15_RAUMFAHRT.md` |
+| F2d | Raketen T2–T4: Ad-Astra-Rezepte plus die Zusätze aus F2/F2a/F2f | 2026-10-20 | `15_RAUMFAHRT.md` |
+| F2f | Der Elf übergibt ein Schlüsselbauteil **„Galaktischer Strahlenschutz“** (eigenes KubeJS-Item), das im Rezept der Rakete T4 steckt | 2026-10-20 | `18_STORY.md`, `15_RAUMFAHRT.md` |
+| F6 | Petroleum ist vor T1 nicht Pflicht; T1 fliegt mit Biodiesel. Erdöl (IE4) bleibt in K4 als Nebenquest | 2026-10-20 | `01_PROGRESSION.md`, `15_RAUMFAHRT.md` |
+| F7 | Blood-Magic-Meilensteine neu: BM2 Altar Stufe 3, BM3 Rituale, BM4 Tempel/Demon Realm/Stufe 4, BM5 Endless Realm/Stufe 5, BM6 Hellforged-Ausbau | 2026-10-20 | `meilensteine/` |
+| F10 | AE2 verteuern: Storage-Layer (AE1) bleibt in K3; ME Controller und ME Drive brauchen zusätzlich Advanced Control Circuit und Stahlplatten | 2026-10-20 | `01_PROGRESSION.md`, `10_KUBEJS.md` |
+| F17 | Immersive Aircraft: kurze Reihe (6 Quests) ab K4; Gyrodyne bleibt früh; ab dem Airship Rezepte mit IE-Stahl | 2026-10-20 | `questtexte/aircraft.md` |
+| F19 | Meilensteinkarte bestätigt; alle vier Blue-Skies-Bosse Pflicht | 2026-10-20 | `meilensteine/` |
+| F23 | Die Tinkers-Schmelzerei steht in der Hauptwelt schon. Sie kommt trotzdem als erste Quest ins Buch: Startgeschenk an Credits und Einführung ins Questsystem | 2026-10-20 | `01_PROGRESSION.md`, `questtexte/tinkers.md` |
 | T2 | Easy-NPC-Dialog prüft Abgaben und setzt Stages für FTB Quests (Test 29); Figuren per Befehl (Test 30) | 2026-10-17 | `18_STORY.md` |
 | T7, T8, T10, T11 | aufgegangen in P9, F2d, P6, P8 | 2026-10-19 | hier |
 | E20 (Status) | Galaxy in a Cube kommt aus allen Nicht-Star-Wars-Welten raus (User, 2026-10-14); Kyber abgeschaltet (Test 9), Ewok-Dörfer und Jawas noch umzusetzen (`10_KUBEJS.md`) | 2026-10-19 | `00_STATUS.md` |
+| F2e | Kein Uran-Teil für T4. Statt eines Dungeon-Items: Die Spieler finden ein **Relikt** und das **Tagebuch des Meisters** (Story siehe `18_STORY.md`). Das Relikt geht an den Elfen; zusammen mit den Boss-Items und Tech-Teilen (F14) wird daraus der Galaktische Strahlenschutz (F2f) | 2026-10-20 | `18_STORY.md`, `01_PROGRESSION.md` |
+| F11 | Rover nur mit Biodiesel; Fuel-Handel der Lunarians bleibt (nutzlos, harmlos); Sky Stone (Giselle) bleibt; MekaSuit-Module in Teil 2; `launchAnywhere` bleibt aus, Immersive Aircraft darf auf Planeten fliegen | 2026-10-20 | `15_RAUMFAHRT.md`, `questtexte/adastra.md` |
+| F16 | Transmutation Table bleibt, aber Config `limitTransmutingToLootTables = true` (nur noch Truhenbeute); ganze Alex's-Mobs-Reihe ab dem Mond offen | 2026-10-20 | `config-overrides/`, `questtexte/alexsmobs.md` |
+| F18 | Altar-Reparatur braucht Terrasteel; jeder Spieler muss beim Betreten der Altar-Dimension einen Benevolent Goddess’ Charm tragen (Skript prüft) | 2026-10-20 | `18_STORY.md`, `questtexte/botania.md` |
+| F21 | Fehler im Blood-Smeltery-Addon (Hellforged-Flüssigkeiten, Münzen) bleiben; erst in Teil 2 wieder ansehen | 2026-10-20 | `00_MODBASIS.md` |
+| F22 | Kein automatischer Transport in Teil 1; die Mars-Station muss nur stehen; Material per Rakete (8 Plätze) | 2026-10-20 | `18_STORY.md` (O19) |
+| F25 | Mekanism-Erze in Blue Skies bleiben normale Erzblöcke | 2026-10-20 | `03_ERZGENERATION.md` |
+| O16 | Der Text des Meisters ist sein Tagebuch, gefunden zusammen mit dem Relikt | 2026-10-20 | `18_STORY.md` |
+| O3 | Relikt und Tagebuch des Meisters liegen in der Altar-Dimension | 2026-10-20 | `18_STORY.md` |

@@ -120,6 +120,15 @@
 - Wenn die Spieler aus dem Dungeon zurückkommen, ist der Droide entweder weg oder bei einer Explosion kaputtgegangen. Er kann nicht mehr weiterhelfen.
 - Danach geht es auf der Erde mit dem Elfen weiter, um nach Glacio zu kommen (User, 2026-10-17).
 
+**Relikt und Tagebuch des Meisters (User, 2026-10-20)**
+- Die Spieler finden ein **Relikt** und das **Tagebuch des Meisters**, das er dort verloren hat. Fundort: in der Altar-Dimension (User, 2026-10-20); per Datapack sicher in einer Truhe oder vom Host von Hand gelegt.
+- Das Tagebuch erzählt seine Geschichte ab dem Moment, in dem er sich vom Droiden getrennt hat. Darin schreibt er, dass er zur Erde gehen muss, um den **„Hellen Elfen“** zu finden, der ihm helfen soll, die Macht des Relikts zu erkunden.
+- Aus einem noch offenen Grund musste er vorzeitig fliehen und versteckt sich nun auf Glacio.
+- Die Spieler kehren zur Erde zurück, finden den Elfen durch das Portal und geben ihm das Relikt. Er will oder kann dazu nicht viel sagen, bietet aber an, ihnen nach Glacio zu helfen.
+- Dafür fertigt er den **Galaktischen Strahlenschutz** (Bauteil der Rakete T4). Er braucht dazu das Relikt, die Boss-Items aus Blue Skies und Tech-Erzeugnisse (F14).
+- **Schutz beim Betreten** (F18, User 2026-10-20): Jeder Spieler muss einen Benevolent Goddess’ Charm tragen, wenn er durch den Altar in die Dimension geht; ein Skript lässt nur Spieler mit Amulett hinein. Die Reparatur selbst braucht Terrasteel.
+- Damit ist O16 beantwortet (der Text des Meisters ist sein Tagebuch); O3 und O4 sind zum großen Teil beantwortet (offen: der Grund der Flucht).
+
 **Das Blue-Skies-Haus (neuer Strang, User, 2026-10-17)**
 - „Haus“ ist die Overworld-Struktur von Blue Skies, in der die Portale nach Everbright und Everdawn stehen. Everbright und Everdawn sind die „Traumwelten des Lichts und der Dunkelheit“.
 - Der Mob-Händler, den Blue Skies dort von sich aus hinstellt (Guard), wird durch eine eigene **Easy-NPC-Figur** ersetzt.
