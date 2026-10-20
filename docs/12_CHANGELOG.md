@@ -1286,3 +1286,4 @@ Status: 🟡
 - Nach dem dritten Fix lädt alles ohne KubeJS-Fehler (Test 65 ✅, Log geprüft: 17/17 Skripte, nur bekannte Fallback-Meldungen; `alexsdelight:barbecue_on_a_stick` verweist auf den fehlenden Mod `amfd` und war schon im Original kaputt).
 - Test 62 ✅ und Test 64 ✅ (User).
 - Test 63 (User): Das Plastoid-Rezept ist bis zum Bauplan gesperrt und danach frei. Im Buch fehlt noch das Rezeptbild. Der Eintrag ist wie die funktionierenden Rüstungseinträge gebaut und in der Instanz aktuell. Vermutlich hat Patchouli die Seite beim Betreten der Welt gebaut, als das Rezept noch fehlte; `/reload` baut sie nicht neu (die Buch-Meldungen von 21:17 im Log stammen von Modonomicon). Prüfen nach erneutem Betreten der Welt.
+- Test 63 ✅ (User): Nach erneutem Betreten der Welt zeigt das Buch das Plastoid-Rezept. Patchouli baut die Rezeptbilder nur beim Betreten der Welt; nach `/reload` mit neuen Rezepten also Welt neu betreten.

@@ -46,7 +46,7 @@ Die Schritte laufen in dieser Reihenfolge; 1 und 2 gehen parallel. Alle offenen 
 | `03_ERZGENERATION.md` | 🟢 Verteilung beschlossen und im Spiel nachgezählt (2026-10-17) |
 | `07_CROSSMOD_INTEGRATION.md` | 🟡 Tinkers in den höheren Stufen, Schmelzregeln, Blood-Smeltery |
 | `10_KUBEJS.md` | 🟡 Stand der Skripte, was noch fehlt |
-| `11_TESTING.md` | 🟢 Testplan; Tests 1–31, 32a, 42–48, 50–62, 64, 65 bestanden; 32 (O22) und 49 (O40) entfallen; offen 33–41, 63 (Buchbild), 66–72 (Kaleidoscope) |
+| `11_TESTING.md` | 🟢 Testplan; Tests 1–31, 32a, 42–48, 50–65 bestanden; 32 (O22) und 49 (O40) entfallen; offen 33–41, 66–72 (Kaleidoscope) |
 | `12_CHANGELOG.md` | 🟢 fortlaufend |
 | `14_ERZ_MOD_MATRIX.md` | 🟢 Ist und Soll |
 | `15_RAUMFAHRT.md` | 🟢 |
