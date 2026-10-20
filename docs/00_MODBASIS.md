@@ -83,6 +83,13 @@ Details: `15_RAUMFAHRT.md`, `17_STAR_WARS_1.20.1.md`.
 | Nether's Delight | 4.0 | MR | Nether-Zutaten |
 | Alex's Delight | 1.5 | — | Gerichte aus Alex's-Mobs-Zutaten |
 | Engineers Delight (`tmted`) | B.1.4 | — | Farmer's Delight ↔ IE (Sawmill, Cloche, Abfüller) |
+| Kaleidoscope Cookery | 1.6.0 | — | Wok, Suppentopf, Dampfgarer, Mühlstein, Teekanne, Möbel, Koch-Dorfbewohner (Wunsch eines Mitspielers, 2026-10-20) |
+| Kaleidoscope Tavern | 1.2.0 | — | Weinreben, Kelter, Fass, Shaker, Getränke, Möbel |
+| Kaleidoscope Grilling | 1.1.1 | — | Grill, Spieße, Ölpresse, Gewürze; Raps, Zwiebel, Süßkartoffel, Pfefferbaum |
+| Kaleidoscope End | 1.0.14 | — | Gerichte aus End-Zutaten, Fundblöcke zum Abpinseln |
+| Kaleidoscope: ImmersiveEating (`food`) | 1.5.1 | — | nur Ess-Animationen; braucht GeckoLib 4.8.4 |
+
+Kaleidoscope und Farmer's Delight sind ohne Dopplungen zusammengeführt (`server_scripts/crossmod/kaleidoscope_einheitlich.js`, Zuordnung in `12_CHANGELOG.md`, 2026-10-20). **Kaleidoscope Compat** bleibt bewusst draußen: Sein Abgleich mit Farmer's Delight ist unter 1.20.1 zu drei Vierteln wirkungslos (Dateien im 1.21-Format) und fasst Engineers Delight nicht an.
 
 ### Lager, Transport, Bauen
 
@@ -194,7 +201,7 @@ Die Spalte „Gebraucht von“ stammt aus der Installation, nicht aus einer Ausw
 | Lucent, MaFgLib | nicht mehr installiert; kein Mod im Pack verlangt sie |
 | KubeJS Tinkers | nicht installiert (siehe Abschnitt KubeJS) |
 
-In `disabledmods/` der Testinstanz liegen noch: Twilight Forest, Twilight Spark Delight, Waystones, Balm, Traveler's Backpack. Ihre Config-Dateien in `config/` sind Reste und wirkungslos.
+In `disabledmods/` der Testinstanz liegen noch: Twilight Forest, Twilight Spark Delight, Waystones, Balm, Traveler's Backpack, Kaleidoscope Compat (2.6.5 „Patch.2“, siehe Abschnitt Essen). Ihre Config-Dateien in `config/` sind Reste und wirkungslos.
 
 ## Bewusste Entscheidungen
 

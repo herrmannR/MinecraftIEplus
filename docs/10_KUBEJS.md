@@ -55,6 +55,14 @@ Die fünf Skripte für 1.18.2 (`space_oxygen.js`, `moon_ores.js`, `tf_industrial
 | `config-overrides/config/alexsmobs.toml` | `limitTransmutingToLootTables = true`. | F16 |
 | `server_scripts/starwars/galaxy_overworld.js` | Keine Tusken Raider von Galaxy in a Cube in der Overworld (eigener Spawner im Code, per Datapack nicht abschaltbar). Ewok-Dörfer und Jawas laufen über `kubejs/data/swgc/`. | E20, Test 54 |
 
+#### Kaleidoscope ohne Dopplungen (2026-10-20, 🔵 ungetestet, Tests 65–72)
+
+| Datei | Aufgabe | Entscheidung |
+|---|---|---|
+| `server_scripts/crossmod/kaleidoscope_einheitlich.js` | Tabelle `ERSETZEN` (Verlierer → Gewinner, 25 Einträge). Jedes Rezept mit einem Verlierer wird mit dem Gewinner neu angelegt (`ieplus:einheitlich/…`), Dubletten verworfen, Rezepte wegfallender Geräte entfernt. Kaleidoscope-Brett entfällt, seine Rezepte ohne Gegenstück ziehen auf das Farmer's-Delight-Brett um. Altbestand: FD-Zutaten und FD-Herd 1:1 umwandelbar. Tags: Verlierer raus (außer FD-Messer), Gewinner rein. Offline mit Node gegen alle JAR-Rezepte durchgespielt: 123 betroffen, 103 neu, 10 doppelt, 10 ersatzlos, kein Verlierer übrig. | User, 2026-10-20 |
+| `data/farmersdelight/loot_tables/…`, `loot_modifiers/…`, `data/kaleidoscope_cookery/loot_tables/…` | 29 Kopien der Mod-Tabellen mit Gewinner statt Verlierer (Pflanzen, Truhen, Zwiebel von Zombies, FD-Herd → KC-Herd). Erzeugt mit `tools/kaleidoscope_loot.py`, das die Tabelle aus dem Skript liest; nach Mod-Updates neu laufen lassen. | wie oben |
+| `config-overrides/config/farmersdelight-common.toml` | Bauern- und Händler-Handel von Farmer's Delight aus, keine FD-Pflanzen in Dorffeldern (sonst kämen Verlierer-Items ins Spiel). | wie oben |
+
 ### Datapack (`kubejs/data/`)
 
 Erz-Features für Blue Skies und die Planeten, Kyber-Override, Treibstoff-Tags, seltenere Excavator-Adern, abgeschaltete Ölquellen und Mekanism-Planeten-Erze. Tabelle mit Begründungen: `kubejs/data/README.md`.
@@ -67,6 +75,7 @@ Erz-Features für Blue Skies und die Planeten, Kyber-Override, Treibstoff-Tags, 
 | `config/blue_skies-common.toml` | `config/` | Freigabe des Namensraums `ieplus` für Erz-Features |
 | `serverconfig/immersiveengineering-server.toml` | `saves/<Welt>/serverconfig/` | IE-Erze |
 | `config/alexsmobs.toml` | `config/` | Transmutation Table nur noch Truhenbeute (F16) |
+| `config/farmersdelight-common.toml` | `config/` | FD-Handel und FD-Pflanzen in Dorffeldern aus (Kaleidoscope, 2026-10-20) |
 
 Unter `_original/` liegen die unveränderten Standarddateien zum Vergleich.
 

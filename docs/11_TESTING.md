@@ -131,6 +131,21 @@ Ergebnis jeweils hier eintragen: ✅ bestanden, ❌ Fehler (mit Beschreibung), �
 | 64 | Mekanism-Erze Silber, Nickel, Aluminium | JEI: U auf Silbererz, Raw Nickel, Raw-Aluminium-Block; je ein Erz durch Enrichment, Purification, Injection und Dissolution-Kette schicken | Rezepte in allen fünf Stufen; Items und Slurries mit Namen und Farbe; Ergebnis IE-Staub (2/3/4/5 je Erz) | ⏳ |
 | 59 | Stahl, Bioethanol, Cryo Fuel | Neustart; JEI: R auf Stahlstaub; Suche „Bioethanol“; R auf Cryo-Fuel-Eimer | kein Metallurgic-Infuser-Rezept für Stahlstaub mehr (Crusher-Rezept aus Barren bleibt); Bioethanol weder als Eimer noch als Flüssigkeit sichtbar; Cryo Fuel zeigt eine Info-Seite | ✅ 2026-10-20 (User) |
 
+### Runde 9 — Kaleidoscope ohne Dopplungen (2026-10-20)
+
+Neustart nötig (Tags, Loot, Config). Zuordnung: `12_CHANGELOG.md`, Eintrag vom 2026-10-20.
+
+| Nr. | Test | Wie | Erwartet | Ergebnis |
+|---|---|---|---|---|
+| 65 | Skript lädt | Spiel starten, Welt laden; `python tools/kubejs_check.py --nur-log` | Zeile „kaleidoscope_einheitlich.js: 123 Rezepte …, 103 neu angelegt, 10 als doppelt verworfen, 10 ersatzlos entfernt“ (Zahlen dürfen leicht abweichen); keine Fehler zu `ieplus:einheitlich/…` | ⏳ |
+| 66 | JEI ohne Doppel | JEI-Suche: tomato, rice, onion, dough, flour, noodle, egg, mutton, bacon, dumpling, knife, stove, board | je nur noch eine Variante; Messer: Feuersteinmesser von Farmer's Delight und vier Küchenmesser von Kaleidoscope; Herd nur von Kaleidoscope, Schneidebrett nur von Farmer's Delight | ⏳ |
+| 67 | Rezepte umgestellt | JEI: U auf Kaleidoscope-Tomate, -Reis, -Teig, Grilling-Zwiebel; R auf rohe Nudeln; IE Cloche mit Tomatensamen | FD-Gerichte (Tomatensauce, Ratatouille, gebratener Reis) und Engineers-Delight-Rezepte (Squeezer, Bottling, Metal Press) nennen die Kaleidoscope-Items; Cloche nimmt die neuen Samen und erntet | ⏳ |
+| 68 | Ein Schneidebrett | FD-Brett, Kaleidoscope-Küchenmesser: Karotte, Kartoffel, Rindfleisch, gekochtes Rindfleisch, Chorusfrucht, Teig, Hammelfleisch | Karottenwürfel, Kartoffelscheiben, Hackfleisch + Rindfleischwürfel, Kuh-Innereien, Chorus-Samen, rohe Nudeln, Hammelkoteletts | ⏳ |
+| 69 | Wok und Topf | Kaleidoscope-Wok auf Kaleidoscope-Herd: Speck braten; Donkey Burger mit Hähnchenstücken; ein Sashimi-Gericht mit Kabeljau-Filet | Speck → gebratener Speck; Burger und Sashimi-Gericht gelingen mit den Farmer's-Delight-Stücken | ⏳ |
+| 70 | Beute | wilde Tomaten, wilden Reis, wilde Zwiebeln abbauen (auch mit Messer am Brett); `/loot give @s loot farmersdelight:chests/fd_village_plains_house`; FD-Herd setzen und abbauen | nur Kaleidoscope-Samen/-Reis/Grilling-Zwiebel; FD-Herd lässt einen Kaleidoscope-Herd fallen | ⏳ |
+| 71 | Altbestand | `/give @s farmersdelight:tomato 9`, `farmersdelight:iron_knife`; Werkbank; Messer am FD-Brett | FD-Tomate wird 1:1 zur Kaleidoscope-Tomate; altes FD-Messer schneidet weiter | ⏳ |
+| 72 | Koch-Dorfbewohner | Kaleidoscope-Herd neben einen arbeitslosen Dorfbewohner stellen | er wird Koch; seine Angebote nennen nur Kaleidoscope-Items (Tomate, Reis, Spiegelei, Küchenmesser) | ⏳ |
+
 ### Noch ohne Testweg
 
 - Blood-Smeltery: `forge:coins`, Hellforged-Flüssigkeiten.

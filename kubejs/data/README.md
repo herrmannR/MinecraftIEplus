@@ -15,6 +15,12 @@ Stand 2026-10-12, Minecraft 1.20.1. **Nichts davon ist im Spiel getestet.** In d
 | `immersiveengineering/recipes/mineral/galena.json`, `uraninite.json` | Excavator-Adern mit Blei und Uran seltener: Gewicht 5 statt 15 bzw. 10. Sonst unveränderte Kopien aus dem IE-JAR 10.2.0-183. | Blei in der Overworld sehr selten (2026-10-12) |
 | `swplanets/loot_tables/entities/jawa.json` | Jawas lassen keine Steel Cables mehr fallen (ersetzt durch 3 Stahlstäbe); Etrionic Capacitor und Wrench bleiben. | Ad-Astra-Kabel entfallen (2026-10-12); Befund aus Test 4 (2026-10-13) |
 
+## Kaleidoscope ohne Dopplungen (2026-10-20, ungetestet)
+
+| Datei | Wirkung | Entscheidung |
+|---|---|---|
+| `farmersdelight/loot_tables/blocks/*.json` (10), `farmersdelight/loot_tables/chests/fd_*.json` (14), `farmersdelight/loot_modifiers/add_onion_to_*.json` (2), `kaleidoscope_cookery/loot_tables/blocks/{chopping_board,straw_block}.json`, `kaleidoscope_cookery/loot_tables/chest/village_chest.json` | Kopien der Mod-Tabellen, in denen Verlierer-Items durch die Gewinner ersetzt sind (Pflanzen, Truhenbeute, Zwiebel von Zombies und Illagern; FD-Herd → KC-Herd, KC-Brett → FD-Brett, KC-„Strohballen“ → FD-Reisballen). Nicht von Hand ändern: `python tools/kaleidoscope_loot.py` erzeugt sie aus der Tabelle in `server_scripts/crossmod/kaleidoscope_einheitlich.js`. | User, 2026-10-20 |
+
 ## Was zusätzlich nötig ist, damit die Erz-Features wirken
 
 - `config/blue_skies-common.toml`: `allowed_mods_for_feature_gen = ["ieplus"]` (liegt in `config-overrides/config/`). Blue Skies entfernt sonst alle platzierten Features fremder Namensräume aus seinen Biomen (🟢 im Code von `PurifyBiome` nachgelesen).

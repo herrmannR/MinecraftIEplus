@@ -40,7 +40,17 @@ JEIEvents.hideItems(event => {
     'swgc:royal_guard_helmet', 'swgc:royal_guard_chestplate', 'swgc:royal_guard_leggings', 'swgc:royal_guard_boots',
     'swgc:vader_helmet', 'swgc:vader_chestplate', 'swgc:vader_leggings', 'swgc:vader_boots',
     // Bioethanol (Mekanism Generators): hat im Mod kein Rezept und keinen Zweck (User, 2026-10-20)
-    'mekanismgenerators:bioethanol_bucket'
+    'mekanismgenerators:bioethanol_bucket',
+    // Kaleidoscope / Farmer's Delight ohne Dopplungen (server_scripts/crossmod/kaleidoscope_einheitlich.js, 2026-10-20)
+    'farmersdelight:tomato', 'farmersdelight:tomato_seeds', 'farmersdelight:rice', 'farmersdelight:rice_panicle',
+    'farmersdelight:cooked_rice', 'farmersdelight:fried_egg', 'farmersdelight:wheat_dough', 'farmersdelight:raw_pasta',
+    'farmersdelight:onion', 'tmted:wheat_flour',
+    'kaleidoscope_cookery:raw_lamb_chops', 'kaleidoscope_cookery:cooked_lamb_chops', 'kaleidoscope_cookery:dumpling',
+    'kaleidoscope_cookery:raw_pork_belly', 'kaleidoscope_cookery:cooked_pork_belly',
+    'kaleidoscope_cookery:raw_cut_small_meats', 'kaleidoscope_cookery:cooked_cut_small_meats',
+    'kaleidoscope_cookery:sashimi', 'kaleidoscope_cookery:straw_block',
+    'farmersdelight:stove', 'kaleidoscope_cookery:chopping_board',
+    'farmersdelight:iron_knife', 'farmersdelight:golden_knife', 'farmersdelight:diamond_knife', 'farmersdelight:netherite_knife'
   ]
   ausgeblendet.forEach(id => event.hide(id))
 })

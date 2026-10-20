@@ -1233,3 +1233,30 @@ Status: 🟡
 - Fund des Users: Bauwerke auf den Planeten bringen Fahrzeuge mit. Im JAR von Ad Astra More Structures stecken ein Rover in `abandoned_base.nbt` und eine fertige T1-Rakete in `rocket_launch_t1.nbt` (beide auf allen Planeten). Kopien ohne diese Entities liegen in `kubejs/data/ad_astra_more_structures/structures/` (Werkzeug `tools/nbt_entities_entfernen.py`, Rundlauf geprüft). Gilt nur für neu erzeugte Chunks.
 - Plastoid: Bauplan „Plastoid“ (Rolle, Advancement, Buchseite im neuen Kapitel „Werkstoffe“), Rezept 2 HDPE Pellets → 1 Plastoid. Der Einsiedler verkauft nur die ersten 20 (Einstellung im Handel von Easy NPC, macht der User).
 - Mekanism-Erzverarbeitung bis 5× für Silber, Nickel, Aluminium: neue Items und Slurries (`startup_scripts/mekanism_erze.js`), 21 Rezepte je Metall (`server_scripts/crossmod/mekanism_erze.js`), Texturen aus den Blei-Texturen von Mekanism eingefärbt. Tests 62–64. In die Testinstanz kopiert (21 Dateien; `einsiedler_shop.js` und `teil1_items.js` waren dort auf dem Stand vor O42, alter Stand liegt in Git), Neustart nötig.
+
+## 2026-10-20 — Kaleidoscope aufgenommen, ohne Dopplungen mit Farmer's Delight
+
+Status: 🔵 ungetestet (Tests 65–72)
+
+### Änderung
+- Wunsch eines Mitspielers: Kaleidoscope Cookery 1.6.0, Tavern 1.2.0, Grilling 1.1.1, End 1.0.14 und ImmersiveEating 1.5.1 (+ GeckoLib 4.8.4) liegen in `mods/` der Testinstanz. Kaleidoscope Compat 2.6.5 „Patch.2“ bleibt in `disabledmods/`.
+- Vorgabe des Users: perfekt integriert, keine Dopplungen; Farmer's Delight und alle Addons bleiben (FD und Nether's Delight stecken schon in der Welt).
+- Neues Skript `server_scripts/crossmod/kaleidoscope_einheitlich.js`, 29 Loot-Overrides in `kubejs/data/` (Werkzeug `tools/kaleidoscope_loot.py`), JEI-Ausblendung, `config-overrides/config/farmersdelight-common.toml`. In die Testinstanz kopiert (Spiel war zu).
+
+### Zuordnung (Verlierer → Gewinner)
+- **Kaleidoscope gewinnt** (im Code verdrahtet: Handel des Kochs, Reisschale, Teig- und Mehl-Item, Spieß-Code): Tomate, Tomatensamen, Reis, Reisrispe, gekochter Reis, Spiegelei, Teig, Mehl (auch das von Engineers Delight), rohe Nudeln (statt Pasta), Zwiebel (Grilling).
+- **Farmer's Delight gewinnt** (schon in der Welt, bei Kaleidoscope nur Nährwerte im Code): Hammelkoteletts roh/gebraten, Dumplings, Speck roh/gebraten (statt Schweinebauch), Hähnchenstücke roh/gebraten (statt Fleischstücke), Kabeljau- und Lachsfilet (statt Sashimi), Reisballen (statt des Kaleidoscope-„Strohballens“ aus 9 Reisrispen).
+- **Geräte:** Herd von Kaleidoscope (Arbeitsplatz des Kochs, gilt auch als FD-Hitzequelle); Schneidebrett von Farmer's Delight; Küchenmesser von Kaleidoscope (Eisen bis Netherite), das Feuersteinmesser von Farmer's Delight bleibt als Einstieg.
+- **Bleiben getrennt** (eigene Mechanik oder anderes Ding): FD-Kochtopf und Pfanne neben Wok, Suppentopf, Dampfgarer, Mühlstein, Grill; Kohl und Salat; Hackfleisch und Rindfleischwürfel (Grilling braucht die Würfel im Spieß-Code, deshalb gibt Rindfleisch am Brett jetzt beides je 1 statt 2 Hackfleisch).
+- Entfallen mit ihren Items: Kaleidoscope-Fleischstücke aus Kaninchen, Sashimi aus Tropenfisch, Knochen aus gebratenem Fisch am Kaleidoscope-Brett. Rohe Kuh-Innereien gibt es weiter nur beim Koch: Grilling überschreibt im Original deren Brett-Rezept mit Rindfleischwürfeln.
+
+### Begründung gegen Compat
+- Von 61 Dateien seines Farmer's-Delight-Abgleichs sind 47 unter 1.20.1 wirkungslos oder fehlerhaft (Ordner `recipe/`, `loot_table/`, `advancement/`, Tags `c:…`, `neoforge:conditions`, leere Dateien). Wilde Pflanzen und Truhen hätten weiter FD-Items geliefert, Engineers Delight fasst Compat nicht an.
+
+### Auswirkungen auf bestehende Welt
+- FD-Zutaten und FD-Herd im Bestand: 1:1 in der Werkbank umwandeln. Gesetzte FD-Herde lassen beim Abbauen einen Kaleidoscope-Herd fallen. Alte FD-Messer bleiben Messer (Tags behalten).
+- Gepflanzte FD-Tomaten, -Reis und -Zwiebeln geben über die Loot-Overrides schon die Gewinner (im FD-Code der Ranke steht kein Tomaten-Item; im Spiel prüfen, Test 70).
+- Neue Pflanzen, Bäume und Dorfgebäude von Kaleidoscope erscheinen nur in neuen Chunks. Beim Host müssen Mods, `kubejs/` und die FD-Config mit.
+
+### Teststatus
+- Offline geprüft: `kubejs_check.py` ohne Befund; das Skript lief in Node gegen alle 14.937 Rezepte der JARs (123 betroffen, 103 neu, 10 Dubletten verworfen, 10 ersatzlos, kein Verlierer in neuen Rezepten). Im Spiel offen: Tests 65–72.
