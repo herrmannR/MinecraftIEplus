@@ -16,6 +16,7 @@
 //   /bauplan buch            Ersatzbuch
 //   /bauplan zuruecksetzen   alle Baupläne der Welt wieder sperren, Bucheinträge bei allen Spielern zurücknehmen,
 //                            das Buch wird beim nächsten Lesen einer Rolle erneut verteilt
+//   /bauplan alles           Gegenteil: alle Baupläne frei, alle Einträge offen, Buch an den Ausführenden
 // Rezept-IDs ieplus:bauplan/<ergebnis> werden in den Patchouli-Einträgen verwendet; beim Ändern dort mitziehen.
 // - Buch in drei Kapiteln (User, 2026-10-20): Maschinen (Assembly Bench, Droid Fabricator, Gas Harvester), Waffen (Blaster,
 //   Droiden), Rüstung (Klon, Jedi, Sith, Royal Guard, Vader; deren Werkbank-Rezepte sind bis zum Bauplan gesperrt).
@@ -199,6 +200,18 @@ ServerEvents.commandRegistry(event => {
     daten.remove('ieplus_bauplan_buch_gegeben')
     server.runCommandSilent('advancement revoke @a from ieplus:bauplan/root')
     server.tell(Text.yellow('Alle Baupläne zurückgesetzt: Rezepte gesperrt, Bucheinträge geschlossen.'))
+    return 1
+  }))
+  // Gegenteil von zuruecksetzen: alles frei, alle Einträge offen; wer den Befehl ausführt, bekommt ein Buch
+  befehl = befehl.then(Commands.literal('alles').executes(ctx => {
+    var server = ctx.source.getServer()
+    var daten = server.persistentData
+    Object.keys(IEPLUS_BAUPLAENE).forEach(name => daten.putBoolean(ieplusSchluessel(name), true))
+    daten.putBoolean('ieplus_bauplan_buch_gegeben', true)
+    ieplusEintraegeGeben(server, '@a')
+    var player = ctx.source.getPlayer()
+    if (player) player.give(ieplusBauplanBuch())
+    server.tell(Text.yellow('Alle Baupläne freigeschaltet: Rezepte frei, Bucheinträge offen.'))
     return 1
   }))
   Object.keys(IEPLUS_BAUPLAENE).forEach(name => {
