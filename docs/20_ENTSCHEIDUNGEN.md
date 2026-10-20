@@ -25,8 +25,8 @@ Cryo Freezer behalten oder entfernen? Woraus und wie teuer wird der T4-Treibstof
 **F5 · Kyber und Star-Wars-Rohstoffe**
 - a) Endor hat ohne Eingriff kein Kyber-Erz (nur Tatooine). Vorkommen per Datapack, oder ändert sich die Hürde „Kyber von Endor → T6“? (Teil 3)
 - b) Kyber-Erz → Kristall von Galaxy in a Cube: Drop oder Rezept? (Teil 3)
-- c) Plastoid erst ab K7 (HDPE). Gewollt, oder verkauft der Einsiedler Plastoid? (Vorschlag: Einsiedler verkauft es)
-- d) Gas Harvester, Empty Gas Vessel, Durasteel: frei baubar oder nur im Shop? (Vorschlag: nur im Shop, mit Bauplan)
+- c) ✅ Plastoid verkauft der Einsiedler (2026-10-20, siehe O28).
+- d) ✅ Gas Harvester, Durasteel und Co. nur im Shop, mit Bauplan (2026-10-20, siehe O28).
 → `17_STAR_WARS_1.20.1.md`, `meilensteine/`; `swplanets.md`, `swgc.md`
 
 **F9 · Botania: Mead of Kvasir und Corporea** (Teil 2)
@@ -58,6 +58,13 @@ Beantwortet am 2026-10-20: F1, F4, F8, F14, F15; siehe „Erledigt“.
 Welche Jedi- und Sith-Artefakte, und wie hängen sie an den Machtpunkten?
 → `18_STORY.md`; `swgc.md`
 
+**F26 · Questbuch vom Droiden: was gilt vor dem Mond?** (neu 2026-10-20, Folge von T4)
+Das Buch kommt jetzt nach „Würdig sein“ (K2), nicht erst auf dem Mond. Damit passt F1 nicht mehr ganz:
+- a) Hauptquests aus K1 (vor dem Buch): wie in F1 als „Notizen“, die sich beim Öffnen selbst abhaken? Und K2–K3 dann ganz normal?
+- b) Nebenquests aus K1–K3: Sie sind laut Story die Aufgaben des Einsiedlers und zahlen Credits. Erscheinen sie erst nach dem Mond (nachgereicht), oder schon vorher, und wer zahlt dann die Credits?
+- c) Das Startgeschenk an der Tinkers-Schmelze (F23): bleibt es die erste Quest im Buch des Droiden?
+→ `18_STORY.md`; alle Questtexte vor dem Mond
+
 ### Story, Part 1
 
 | Nr. | Frage |
@@ -68,15 +75,7 @@ Welche Jedi- und Sith-Artefakte, und wie hängen sie an den Machtpunkten?
 | O8 | Große Ziele zwischen Mond und Tempel: Mars und Venus haben noch keine Story; ebenso Everbright, Everdawn, Mekanism und AE2. |
 | O9 | Welche Anspielungen auf Star Wars streut Part 1, und wann wird das Geheimnis offen ausgesprochen? |
 | O15 | Schicksal des Droiden: weg oder zerstört? Wer gibt danach die großen Ziele? Kommt er zurück? |
-| O17 | Glacio liegt in einem anderen Sonnensystem, nicht in einer anderen Galaxie. Bleibt „die andere Galaxie“ den Star-Wars-Welten vorbehalten? |
-| O22 | Mars-Station: welche Blöcke auf die Checkliste, welcher Umkreis? (Danach kann das Skript für Test 32 entstehen.) |
-| O23 | Wie kommt der Droide auf den Mars: fliegt er mit, oder erscheint er, sobald die Station steht? |
 | O25 | Einsiedler: Name, Volk; welche Quest gewinnt sein Vertrauen? (User: später) |
-| O27 | Credits je Spieler oder je Team? Wiederholbare Aufgaben? (User: später) |
-| O28 | Welche Items und Rohstoffe für Droiden verkauft der Einsiedler, zu welchen Preisen? |
-| O29 | Mondbasis des Einsiedlers: von Hand beim Host bauen oder als Struktur setzen? Braucht er Luft darin? |
-| O30 | Kapitelzählung: Ist K4 das Kapitel, das mit der ersten Quest für den Einsiedler endet, oder wird die Karte umgebaut? |
-| O33 | Wie kommt der Meister in die Overworld zurück, und wo bleibt er dort? |
 | O34 | Blue-Skies-Haus: Ist der „Herrscher“ die Figur im Haus oder eine zweite? Wann erzählt der Droide davon? Was heißt „aus seiner eigenen Welt“? Was liefert der Strang für die Altar-Reparatur, und was handelt die Figur? |
 
 ### Story, Part 2 und 3 (später)
@@ -116,11 +115,6 @@ Hier musst du nichts entscheiden, nur nachsehen. Testwege und Ergebnisse stehen 
 
 | Nr. | Frage |
 |---|---|
-| T1 | Kapsel und Einschlag in der Basis: von Hand beim Host bauen oder als Struktur? |
-| T3 | Welches Aussehen für den Droiden in Easy NPC (eigener Skin, Modell aus Galaxy in a Cube)? |
-| T4 | Questbuch erst auf dem Mond: Kapitel verborgen, bis der Einsiedler per Dialog-Befehl eine Stage setzt; Übergabe per `give`. Im Spiel prüfen. |
-| T5 | Tagebuch als Item: geschriebenes Buch, Patchouli-Buch oder Questtexte? |
-| T6 | Sith-Tempel auf dem Merkur: eigene Struktur per Datapack oder von Hand? |
 | T9 | Bosse und Macht-Fähigkeiten von Galaxy in a Cube (Rezepte sind ausgelesen, `modpfade/swgc/WISSEN.md`). |
 
 ## Teil 4 · Erst beim Einbau ins Questbuch
@@ -156,8 +150,20 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 | F25 | Mekanism-Erze in Blue Skies bleiben normale Erzblöcke | 2026-10-20 | `03_ERZGENERATION.md` |
 | O16 | Der Text des Meisters ist sein Tagebuch, gefunden zusammen mit dem Relikt | 2026-10-20 | `18_STORY.md` |
 | O3 | Relikt und Tagebuch des Meisters liegen in der Altar-Dimension | 2026-10-20 | `18_STORY.md` |
-| F1 | Hauptquests aus K1–K3 stehen als „Notizen des Roboters“ im Buch und haken sich beim Öffnen selbst ab, wenn das Item da ist; Nebenquests aus K1–K3 normal mit Credits; erste Quest ist die Tinkers-Schmelze (Startgeschenk, Einführung) | 2026-10-20 | `18_STORY.md`, Questtexte |
+| F1 | ⚠️ Teilweise überholt durch T4 (2026-10-20, Buch schon nach „Würdig sein“), offen in F26. Ursprünglich: Hauptquests aus K1–K3 stehen als „Notizen des Roboters“ im Buch und haken sich beim Öffnen selbst ab, wenn das Item da ist; Nebenquests aus K1–K3 normal mit Credits; erste Quest ist die Tinkers-Schmelze (Startgeschenk, Einführung) | 2026-10-20 | `18_STORY.md`, Questtexte |
 | F4 | „Würdig sein“: Smeltery Controller (Tinkers), LV-Kondensator (IE), 4 Manasteel-Barren (Botania) | 2026-10-20 | `18_STORY.md`, `questtexte/tinkers.md`, `ie.md`, `botania.md` |
 | F8 | Altar-Reparatur: Terrasteel, 4 Imbued Slate, Dusk Arc (Alchemist, Strang des Blue-Skies-Hauses), ein Item aus dem Pflicht-Dungeon von Wesley's (F15). Texte der Schriftrollen schreibt der User | 2026-10-20 | `18_STORY.md`, `questtexte/bloodmagic.md` |
 | F14 | Der Elf fertigt den Galaktischen Strahlenschutz aus: Relikt, vier Arcs (`blue_skies:ethereal_arc`, `dusk_arc`, `nature_arc`, `poison_arc`, je sicher im Loot Bag des Bosses), Elite Control Circuit, 4 Elementium. Name und Charakter legt der User fest | 2026-10-20 | `18_STORY.md`, `questtexte/blue_skies.md` |
 | F15 | Wesley's in Teil 1: Pflicht sind Stufe 1 (Vorbereitung, Kreide) und ein Oberwelt-Dungeon (liefert das Item für F8); Rest Nebenquest bzw. Training in Teil 2 | 2026-10-20 | `18_STORY.md`, `questtexte/rld.md` |
+| O22 | Mars-Station ohne Prüfskript („wir schummeln“): Quest 1 = Checkliste aller Items für die Basis (Item-Aufgaben); Quest 2 = Basis bauen und sich zu dritt dort aufhalten. Sind alle drei da, setzt der User den Tag per Befehl und die Quest ist erfüllt | 2026-10-20 | `18_STORY.md`; Test 32 entfällt |
+| O23 | Der Droide erscheint per Befehl in der Mars-Station, sobald die Station-Quest erfüllt ist; in der Basis auf der Erde verschwindet er gleichzeitig | 2026-10-20 | `18_STORY.md` |
+| O27 | Credits je Team (eine Party); keine wiederholbaren Aufgaben in Teil 1 | 2026-10-20 | `18_STORY.md` |
+| O28, F5c, F5d | Shop des Einsiedlers: Plastoid, Durasteel, Baupläne (Assembly Bench, Droid Fabricator, Gas Harvester), Steuerkerne B-1, B-2, Droideka; nur bei ihm erhältlich. Preise als Entwurf von Claude | 2026-10-20 | `18_STORY.md`, `17_STAR_WARS_1.20.1.md` |
+| O29 | Mondbasis baut der Host von Hand, mit Luft darin; der Einsiedler ist verwundbar | 2026-10-20 | `18_STORY.md` |
+| O30 | K4 „Der Mond“ bleibt das Kapitel, das mit der ersten Quest für den Einsiedler endet | 2026-10-20 | `meilensteine/` |
+| O33 | Der Meister fliegt in der Rakete mit und erscheint per Befehl in der Basis der Spieler | 2026-10-20 | `18_STORY.md` |
+| O17 | Glacio ist ein anderes Sonnensystem; die „andere Galaxie“ bleibt Teil 3 vorbehalten | 2026-10-20 | `18_STORY.md` |
+| T1, T6 | Kapsel und Sith-Tempel baut der Host von Hand | 2026-10-20 | `18_STORY.md` |
+| T3 | Droide als Easy NPC mit eigenem Skin; den Skin sucht der User aus | 2026-10-20 | `18_STORY.md` |
+| T4 | **Geändert:** Das Questbuch gibt der Droide nach der ersten Quest („Würdig sein“). Nach dem Einsiedler erscheinen dort zusätzlich seine Quests und Nebenquests; der User erklärt das in Dialogen | 2026-10-20 | `18_STORY.md` |
+| T5 | Tagebuch des Droiden und Tagebuch des Meisters als geschriebene Bücher: per `give` aus dem Dialog bzw. per Datapack in der Truhe der Altar-Dimension | 2026-10-20 | `18_STORY.md` |

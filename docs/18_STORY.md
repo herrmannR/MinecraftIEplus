@@ -7,7 +7,8 @@
 
 - 🟢 Grundidee: Kombination aus „Ruf aus der Ferne“ und „gestrandet“.
 - 🟢 Erzählform: Das Questbuch führt, dazu Easy-NPC-Figuren mit Dialogen.
-- 🟢 **Bis zum Mond gibt es kein Questbuch** (User, 2026-10-14, ersetzt die Übergabe durch den Droiden): Bis dahin führt der Droide allein über Easy-NPC-Quests. Das Questbuch bekommen die Spieler vom Einsiedler auf dem Mond.
+- 🔴 Überholt durch T4 (2026-10-20, siehe nächster Punkt): ~~**Bis zum Mond gibt es kein Questbuch**~~ (User, 2026-10-14, ersetzt die Übergabe durch den Droiden): Bis dahin führt der Droide allein über Easy-NPC-Quests. Das Questbuch bekommen die Spieler vom Einsiedler auf dem Mond.
+- 🟢 **Questbuch vom Droiden** (User, 2026-10-20, T4): Der Droide gibt das Questbuch nach der ersten Quest („Würdig sein“). Nach dem Besuch beim Einsiedler erscheinen im selben Buch zusätzlich seine Quests und Nebenquests; der User erklärt das in Dialogen. 🔵 Was das für die Quests vor dem Mond heißt: F26 in `20_ENTSCHEIDUNGEN.md`.
 - 🟢 Ton: Mischung aus abenteuerlich, ernst und humorvoll.
 - 🟢 **Mehrspieler** (User, 2026-10-19): Es wird immer nur zu dritt gespielt. Alle drei sind in **einer FTB-Party**, der Quest-Fortschritt gilt also für alle. In Easy-NPC-Dialogen setzen Befehle Fortschritt mit `tag @a add …` statt `@initiator`, damit alle drei denselben Stand sehen. Befehls- und Stage-Belohnungen in FTB Quests stehen auf „Team Reward“, damit sie nur einmal laufen.
 - 🟢 **Drei Teile** (User, 2026-10-14, ersetzt die bisherigen zwei Teile):
@@ -73,15 +74,15 @@
 
 **Erste Quest: „Würdig sein“**
 - Die Spieler beschaffen Items aus Botania, IE und anderen Mods als Beweis.
-- Danach ist der Droide der Guide und gibt fortan die großen, übergeordneten Ziele für die nächsten Story-Abschnitte (als Easy-NPC-Quests). Ein Questbuch gibt es bis zum Mond nicht.
+- Danach ist der Droide der Guide und gibt fortan die großen, übergeordneten Ziele für die nächsten Story-Abschnitte (als Easy-NPC-Quests). Nach dieser Quest gibt er das Questbuch (T4, 2026-10-20).
 
 **Erstes großes Ziel: der Mond.**
 
 **Mars: der Horchposten (User, 2026-10-14)**
 - Von der Erde aus sind die Signale des Meisters zu schwach. Der Droide dachte, er könne den Meister vom Mond aus orten. Das klappt nicht, weil der Einsiedler den Mond abschirmt. Der Einsiedler sagt den Spielern, dass es vom Mars aus sehr gut geht (User, 2026-10-14).
 - Der Droide braucht eine dauerhaft besetzte Station auf dem Mars, um die Signale aufzufangen.
-- Die Spieler müssen die Station zuerst bauen. Eine eigene Quest (per KubeJS) prüft, ob sie wirklich steht.
-- Erst dann kommt der Droide auf den Mars und bleibt dort.
+- Die Spieler müssen die Station zuerst bauen. Umsetzung ohne Prüfskript (User, 2026-10-20, O22): Quest 1 ist eine Checkliste aller Items für die Basis; Quest 2 heißt „Baut die Basis und haltet euch zu dritt dort auf“. Sind alle drei da, setzt der User den Tag per Befehl, und die Quest ist erfüllt.
+- Erst dann kommt der Droide auf den Mars und bleibt dort: Er erscheint per Befehl in der Station und verschwindet gleichzeitig aus der Basis auf der Erde (O23, 2026-10-20).
 - Von dort fängt er die Spur auf, die zum Merkur führt.
 - Die Spieler müssen zum Mars fliegen, um beim Droiden Quest-Items abzugeben und die nächsten Schritte freizuschalten (User, 2026-10-14). Die großen Ziele kommen also nicht per Funk.
 
@@ -91,7 +92,7 @@
 - Charakter: eher ein lustiger Typ. Er beobachtet die Spieler gern vom Mond aus und hat Spaß daran.
 - Dem Droiden gegenüber ist er sehr misstrauisch. Den Spielern vertraut er erst, nachdem sie ihm mit einer kleinen Quest oder Story auf dem Mond geholfen haben.
 - Er schirmt den Mond ab; deshalb kann der Droide den Meister von dort nicht orten. Er verrät, dass es vom Mars aus gut geht.
-- **Das Questbuch kommt von ihm.** Darin stehen seine Aufgaben (die Nebenquests). Für die gibt er Credits, obwohl sie ihm eigentlich nichts bringen: Er hat einfach Spaß am Zusehen. Credits gibt es direkt nach dem Erfüllen.
+- **Seine Quests im Questbuch** (geändert 2026-10-20, T4: das Buch selbst kommt vom Droiden). Nach dem Besuch bei ihm erscheinen darin seine Aufgaben (die Nebenquests). Für die gibt er Credits, obwohl sie ihm eigentlich nichts bringen: Er hat einfach Spaß am Zusehen. Credits gibt es direkt nach dem Erfüllen.
 - Er sagt, im Buch könne man auch Notizen über die Aufgaben „dieses komischen Roboters“ machen. Das sind die Hauptquests; sie stehen einfach drin, die Spieler schreiben nichts selbst.
 - Das Buch ist futuristisch beziehungsweise elektrisch gestaltet.
 - **Shop:** Credits sind die Währung seines Shops. Handeln geht nur bei ihm auf dem Mond.
