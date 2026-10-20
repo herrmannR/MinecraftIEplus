@@ -1159,7 +1159,7 @@ Status: 🟡
 
 ### Änderung
 - Wunsch des Users: Die Truhe des Meisters entsteht von selbst in einem großen Raum der Minen; mehrere Funde sind erlaubt.
-- Neu `kubejs/data/bloodmagic/loot_tables/chests/mines/smithy_loot.json`: Kopie der Blood-Magic-Tabelle mit einem Pool, der `ieplus:chests/meister_truhe` einbindet. Die Tabelle gibt es nur in einer Truhe der Station, dem größten Mine-Raum. Test 58.
+- Neu `kubejs/data/bloodmagic/loot_tables/chests/mines/smithy_loot.json`: Kopie der Blood-Magic-Tabelle mit einem Pool, der `ieplus:chests/meister_truhe` einbindet. Die Tabelle gibt es nur in einer Truhe der Station, dem größten Mine-Raum. Test 58. In die Testinstanz kopiert (`/reload` genügt).
 
 ## 2026-10-20 — Stahl nur über IE, Bioethanol ausgeblendet, JEI-Info für Cryo Fuel (O41)
 
