@@ -33,6 +33,12 @@ JEIEvents.hideItems(event => {
     'kubejs:steuerkern_b1',
     'kubejs:steuerkern_b2',
     'kubejs:steuerkern_droideka',
+    // Rüstungen aus Galaxy in a Cube: Rezept steht im Bauplan des Satzes (2026-10-20)
+    'swgc:clone_phase_2_helmet', 'swgc:clone_phase_2_chestplate', 'swgc:clone_phase_2_leggings', 'swgc:clone_phase_2_boots',
+    'swgc:jedi_male_chestplate', 'swgc:jedi_male_leggings', 'swgc:jedi_male_boots',
+    'swgc:sith_male_helmet', 'swgc:sith_male_chestplate', 'swgc:sith_male_leggings', 'swgc:sith_male_boots',
+    'swgc:royal_guard_helmet', 'swgc:royal_guard_chestplate', 'swgc:royal_guard_leggings', 'swgc:royal_guard_boots',
+    'swgc:vader_helmet', 'swgc:vader_chestplate', 'swgc:vader_leggings', 'swgc:vader_boots',
     // Bioethanol (Mekanism Generators): hat im Mod kein Rezept und keinen Zweck (User, 2026-10-20)
     'mekanismgenerators:bioethanol_bucket'
   ]

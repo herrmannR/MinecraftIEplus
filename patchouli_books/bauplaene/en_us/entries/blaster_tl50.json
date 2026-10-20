@@ -1,7 +1,7 @@
 {
   "name": "Blaster TL-50",
   "icon": "swgc:tl50",
-  "category": "patchouli:bauplaene",
+  "category": "patchouli:waffen",
   "advancement": "ieplus:bauplan/blaster_tl50",
   "sortnum": 12,
   "pages": [

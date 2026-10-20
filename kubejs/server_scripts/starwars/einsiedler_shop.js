@@ -17,7 +17,9 @@
 //   /bauplan zuruecksetzen   alle Baupläne der Welt wieder sperren, Bucheinträge bei allen Spielern zurücknehmen,
 //                            das Buch wird beim nächsten Lesen einer Rolle erneut verteilt
 // Rezept-IDs ieplus:bauplan/<ergebnis> werden in den Patchouli-Einträgen verwendet; beim Ändern dort mitziehen.
-// Stand 2026-10-20, KubeJS 2001. Fassung 7 (Blaster-Baupläne, nur Buch), UNGETESTET.
+// - Buch in drei Kapiteln (User, 2026-10-20): Maschinen (Assembly Bench, Droid Fabricator, Gas Harvester), Waffen (Blaster,
+//   Droiden), Rüstung (Klon, Jedi, Sith, Royal Guard, Vader; deren Werkbank-Rezepte sind bis zum Bauplan gesperrt).
+// Stand 2026-10-20, KubeJS 2001. Fassung 8 (Rüstungs-Baupläne, Kapitel), UNGETESTET.
 
 const IEPLUS_ADV = 'mekanism:advanced_control_circuit'
 const IEPLUS_BAUPLAN_BUCH = 'patchouli:bauplaene'
@@ -52,7 +54,32 @@ const IEPLUS_BAUPLAENE = {
   blaster_dh17: { titel: 'Blaster DH-17', rezepte: [] },
   blaster_e5: { titel: 'Blaster E-5', rezepte: [] },
   blaster_tl50: { titel: 'Blaster TL-50', rezepte: [] },
-  blaster_amban_sniper_rifle: { titel: 'Amban-Gewehr', rezepte: [] }
+  blaster_amban_sniper_rifle: { titel: 'Amban-Gewehr', rezepte: [] },
+  // Rüstungen: Originalrezepte aus swgc 1.0.3.1, gesperrt bis zum Bauplan (User, 2026-10-20). Kosten unverändert.
+  ruestung_klon: { titel: 'Klon-Rüstung (Phase 2)', rezepte: [
+    { ergebnis: 'swgc:clone_phase_2_helmet', muster: ['XXX', 'X X'], zutaten: { X: 'swgc:plastoid' } },
+    { ergebnis: 'swgc:clone_phase_2_chestplate', muster: ['X X', 'XXX', 'XXX'], zutaten: { X: 'swgc:plastoid' } },
+    { ergebnis: 'swgc:clone_phase_2_leggings', muster: ['XXX', 'X X', 'X X'], zutaten: { X: 'swgc:plastoid' } },
+    { ergebnis: 'swgc:clone_phase_2_boots', muster: ['X X', 'X X'], zutaten: { X: 'swgc:plastoid' } }] },
+  ruestung_jedi: { titel: 'Jedi-Gewand', rezepte: [
+    { ergebnis: 'swgc:jedi_male_chestplate', muster: ['X X', 'XYX', 'XZX'], zutaten: { X: 'minecraft:string', Y: 'minecraft:white_wool', Z: 'minecraft:brown_wool' } },
+    { ergebnis: 'swgc:jedi_male_leggings', muster: ['YXZ', 'X X', 'X X'], zutaten: { X: 'minecraft:string', Y: 'minecraft:white_wool', Z: 'minecraft:brown_wool' } },
+    { ergebnis: 'swgc:jedi_male_boots', muster: ['X X', 'Y Z'], zutaten: { X: 'minecraft:string', Y: 'minecraft:white_wool', Z: 'minecraft:brown_wool' } }] },
+  ruestung_sith: { titel: 'Sith-Gewand', rezepte: [
+    { ergebnis: 'swgc:sith_male_helmet', muster: ['YXZ', 'X X'], zutaten: { X: 'minecraft:string', Y: 'minecraft:gray_wool', Z: 'minecraft:black_wool' } },
+    { ergebnis: 'swgc:sith_male_chestplate', muster: ['X X', 'XYX', 'XZX'], zutaten: { X: 'minecraft:string', Y: 'minecraft:gray_wool', Z: 'minecraft:black_wool' } },
+    { ergebnis: 'swgc:sith_male_leggings', muster: ['YXZ', 'X X', 'X X'], zutaten: { X: 'minecraft:string', Y: 'minecraft:gray_wool', Z: 'minecraft:black_wool' } },
+    { ergebnis: 'swgc:sith_male_boots', muster: ['X X', 'Y Z'], zutaten: { X: 'minecraft:string', Y: 'minecraft:gray_wool', Z: 'minecraft:black_wool' } }] },
+  ruestung_royal_guard: { titel: 'Rüstung der Royal Guard', rezepte: [
+    { ergebnis: 'swgc:royal_guard_helmet', muster: ['DPD', 'W W'], zutaten: { D: 'swgc:durasteel_ingot', P: 'swgc:plastoid', W: 'minecraft:red_wool' } },
+    { ergebnis: 'swgc:royal_guard_chestplate', muster: ['P P', 'DPD', 'WDW'], zutaten: { D: 'swgc:durasteel_ingot', P: 'swgc:plastoid', W: 'minecraft:red_wool' } },
+    { ergebnis: 'swgc:royal_guard_leggings', muster: ['PDP', 'D D', 'W W'], zutaten: { D: 'swgc:durasteel_ingot', P: 'swgc:plastoid', W: 'minecraft:red_wool' } },
+    { ergebnis: 'swgc:royal_guard_boots', muster: ['W P', 'D D'], zutaten: { D: 'swgc:durasteel_ingot', P: 'swgc:plastoid', W: 'minecraft:red_wool' } }] },
+  ruestung_vader: { titel: 'Vader-Rüstung', rezepte: [
+    { ergebnis: 'swgc:vader_helmet', muster: ['DPD', 'AOA', 'D D'], zutaten: { A: 'minecraft:amethyst_shard', D: 'swgc:durasteel_ingot', O: 'minecraft:obsidian', P: 'swgc:plastoid' } },
+    { ergebnis: 'swgc:vader_chestplate', muster: ['DRD', 'DOD', 'DPD'], zutaten: { D: 'swgc:durasteel_ingot', O: 'minecraft:obsidian', P: 'swgc:plastoid', R: 'minecraft:redstone' } },
+    { ergebnis: 'swgc:vader_leggings', muster: ['DOD', 'D D', 'D D'], zutaten: { D: 'swgc:durasteel_ingot', O: 'minecraft:obsidian' } },
+    { ergebnis: 'swgc:vader_boots', muster: ['O O', 'D D'], zutaten: { D: 'swgc:durasteel_ingot', O: 'minecraft:obsidian' } }] }
 }
 
 function ieplusSchluessel(name) { return 'ieplus_bauplan_' + name }
@@ -115,10 +142,10 @@ ServerEvents.recipes(event => {
     event.custom(json).id(`ieplus:swgc/${id}`)
   })
 
-  // Rezepte hinter Bauplänen
-  ;['swgc:assembly_bench', 'swgc:droid_fabricator', 'swgc:gas_harvester', 'swgc:empty_gas_vessel'].forEach(id => event.remove({ id: id }))
+  // Rezepte hinter Bauplänen: Originalrezept entfernen (bei swgc gleicht die Rezept-ID der Item-ID), gesperrtes Rezept anlegen
   Object.keys(IEPLUS_BAUPLAENE).forEach(name => {
     IEPLUS_BAUPLAENE[name].rezepte.forEach(r => {
+      if (r.ergebnis.indexOf('swgc:') === 0) event.remove({ id: r.ergebnis })
       event.shaped(r.ergebnis, r.muster, r.zutaten)
         .modifyResult((grid, result) => ieplusFreigeschaltet(grid, name) ? result : Item.empty)
         .id('ieplus:bauplan/' + r.ergebnis.replace(':', '_'))

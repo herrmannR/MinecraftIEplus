@@ -1,7 +1,7 @@
 {
   "name": "Gas Harvester",
   "icon": "swgc:gas_harvester",
-  "category": "patchouli:bauplaene",
+  "category": "patchouli:maschinen",
   "advancement": "ieplus:bauplan/gas_harvester",
   "sortnum": 3,
   "pages": [

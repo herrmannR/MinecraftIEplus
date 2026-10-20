@@ -1,7 +1,7 @@
 {
   "name": "Blaster DH-17",
   "icon": "swgc:dh17",
-  "category": "patchouli:bauplaene",
+  "category": "patchouli:waffen",
   "advancement": "ieplus:bauplan/blaster_dh17",
   "sortnum": 10,
   "pages": [

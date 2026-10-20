@@ -1,7 +1,7 @@
 {
   "name": "Droid Fabricator",
   "icon": "swgc:droid_fabricator",
-  "category": "patchouli:bauplaene",
+  "category": "patchouli:maschinen",
   "advancement": "ieplus:bauplan/droid_fabricator",
   "sortnum": 2,
   "pages": [

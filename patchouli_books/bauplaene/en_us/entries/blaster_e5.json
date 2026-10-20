@@ -1,7 +1,7 @@
 {
   "name": "Blaster E-5",
   "icon": "swgc:e5",
-  "category": "patchouli:bauplaene",
+  "category": "patchouli:waffen",
   "advancement": "ieplus:bauplan/blaster_e5",
   "sortnum": 11,
   "pages": [

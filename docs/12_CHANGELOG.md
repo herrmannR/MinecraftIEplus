@@ -1186,4 +1186,13 @@ Status: 🟡
 
 ### Änderung
 - Test 47 ✅ (User): Edge of the Hidden Realm überall, Pathway to the Endless Realm nur auf dem Merkur.
-- Test 48 ❌ (User): Man kommt weiter ohne Amulett hinein. Im JAR geprüft: Blood Magic teleportiert per `/execute … run tp`, Forge löst dabei `EntityTravelToDimensionEvent` aus, Abbrechen wirkt. Fassung 4 von `altar_dimension.js`: kein Rückfall aufs Inventar mehr (der ließ bei einer gescheiterten Curios-Abfrage durch), `findFirstCurio(Item)` ausdrücklich gewählt, bei gescheiterter Abfrage bleibt man draußen, Log-Zeilen für jede Reise und jede Entscheidung.
+- Test 48 ❌ (User): Man kommt weiter ohne Amulett hinein. Im JAR geprüft: Blood Magic teleportiert per `/execute … run tp`, Forge löst dabei `EntityTravelToDimensionEvent` aus, Abbrechen wirkt. Fassung 4 von `altar_dimension.js`: kein Rückfall aufs Inventar mehr (der ließ bei einer gescheiterten Curios-Abfrage durch), `findFirstCurio(Item)` ausdrücklich gewählt, bei gescheiterter Abfrage bleibt man draußen, Log-Zeilen für jede Reise und jede Entscheidung. In die Testinstanz kopiert (Neustart nötig).
+
+## 2026-10-20 — Rüstungs-Baupläne, Buch in drei Kapiteln
+
+Status: 🟡
+
+### Änderung
+- Wunsch des Users: Die Werkbank-Rezepte der Rüstungen aus Galaxy in a Cube (Klon Phase 2, Jedi, Sith, Royal Guard, Vader; 19 Teile) gibt es nur noch per Bauplan. Fünf neue Rollen `kubejs:bauplan_ruestung_<satz>`; das Rezept ist bis zum Lesen gesperrt (gleiche Technik wie bei den Maschinen), die Kosten bleiben wie im Original. Die Rüstungsteile sind in JEI ausgeblendet.
+- Das Buch „Baupläne des Einsiedlers“ hat jetzt drei Kapitel: Maschinen (Assembly Bench, Droid Fabricator, Gas Harvester), Waffen (Blaster, Droiden), Rüstung (fünf Sätze mit Rezeptbildern).
+- Test 56 angelegt. In die Testinstanz kopiert (Neustart nötig).

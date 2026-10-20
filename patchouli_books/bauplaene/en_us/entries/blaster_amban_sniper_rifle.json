@@ -1,7 +1,7 @@
 {
   "name": "Blaster Amban-Gewehr",
   "icon": "swgc:amban_sniper_rifle",
-  "category": "patchouli:bauplaene",
+  "category": "patchouli:waffen",
   "advancement": "ieplus:bauplan/blaster_amban_sniper_rifle",
   "sortnum": 13,
   "pages": [

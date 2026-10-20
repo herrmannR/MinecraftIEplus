@@ -33,7 +33,13 @@ StartupEvents.registry('item', event => {
     blaster_dh17: 'Blaster DH-17',
     blaster_e5: 'Blaster E-5',
     blaster_tl50: 'Blaster TL-50',
-    blaster_amban_sniper_rifle: 'Amban-Gewehr'
+    blaster_amban_sniper_rifle: 'Amban-Gewehr',
+    // Rüstungen: schalten die Werkbank-Rezepte des Satzes frei (User, 2026-10-20)
+    ruestung_klon: 'Klon-Rüstung (Phase 2)',
+    ruestung_jedi: 'Jedi-Gewand',
+    ruestung_sith: 'Sith-Gewand',
+    ruestung_royal_guard: 'Rüstung der Royal Guard',
+    ruestung_vader: 'Vader-Rüstung'
   }
   Object.keys(rollen).forEach(name => {
     event.create('bauplan_' + name)

@@ -1,7 +1,7 @@
 {
   "name": "Assembly Bench",
   "icon": "swgc:assembly_bench",
-  "category": "patchouli:bauplaene",
+  "category": "patchouli:maschinen",
   "advancement": "ieplus:bauplan/assembly_bench",
   "sortnum": 1,
   "pages": [

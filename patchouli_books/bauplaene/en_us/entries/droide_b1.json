@@ -1,7 +1,7 @@
 {
   "name": "Droide B-1",
   "icon": "kubejs:steuerkern_b1",
-  "category": "patchouli:bauplaene",
+  "category": "patchouli:waffen",
   "advancement": "ieplus:bauplan/droide_b1",
   "sortnum": 4,
   "pages": [

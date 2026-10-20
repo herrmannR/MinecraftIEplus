@@ -1,7 +1,7 @@
 {
   "name": "Blaster DC-15A",
   "icon": "swgc:dc15a",
-  "category": "patchouli:bauplaene",
+  "category": "patchouli:waffen",
   "advancement": "ieplus:bauplan/blaster_dc15a",
   "sortnum": 7,
   "pages": [
