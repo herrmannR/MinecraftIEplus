@@ -166,6 +166,11 @@ def pruefe_rhino(text):
         for m in muster.finditer(text):
             zeile = text.count("\n", 0, m.start()) + 1
             funde.append(f"Z.{zeile:<4} RHINO   {name} – läuft in KubeJS evtl. nicht")
+    # event.custom läuft durch die Schemas der KubeJS-Addons; Flüssigkeit als Tag ergibt dort eine
+    # NullPointerException, die den ganzen Handler abbricht (mekanism_erze.js, 2026-10-20). 'fluid' nehmen.
+    for m in re.finditer(r"event\.custom\(.*?\b(fluid\w*)\s*:\s*\{[^}]*\btag\s*:", text):
+        zeile = text.count("\n", 0, m.start(1)) + 1
+        funde.append(f"Z.{zeile:<4} SCHEMA  {m.group(1)} als Tag in event.custom – KubeJS-Addon stürzt ab, 'fluid' nehmen")
     # Rhino: const in einer Funktion, die sich selbst aufruft, bricht beim zweiten Aufruf ab
     # ("redeclaration of var", Fund 2026-10-20 in kaleidoscope_einheitlich.js). Dort let nehmen.
     for m in re.finditer(r"^function\s+(\w+)\s*\(", text, re.M):

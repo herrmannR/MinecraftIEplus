@@ -1269,3 +1269,11 @@ Status: 🟡
 
 ### Änderung
 - Test 63 ❌ (User): Kein Plastoid-Rezept, im Buch nur der Text. `einsiedler_shop.js` entfernte Plastoid zusätzlich per `event.remove({ output: 'swgc:plastoid' })`; nur dieser Bauplan hatte so einen Ergebnis-Filter, alle anderen (gehen) entfernen das Original über die ID. Der Filter traf vermutlich auch das neue Bauplan-Rezept. Er ist raus; das einzige Mod-Rezept `swgc:plastoid` entfernt die Bauplan-Schleife weiter über die ID. Fassung 11, in die Testinstanz kopiert, `/reload` genügt. Test 63 erneut offen.
+
+## 2026-10-20 — KubeJS-Fehler beim Weltstart kam aus mekanism_erze.js (Test 65)
+
+Status: 🟡
+
+### Änderung
+- Auch nach Fassung 2 von Kaleidoscope blieb die NullPointerException. Sie kam nicht von dort (das Skript legt keine Rezepte mehr an), sondern aus `crossmod/mekanism_erze.js` (O42): Das Washing-Rezept gab Wasser als Tag an (`fluidInput: { amount: 5, tag: 'minecraft:water' }`). Das Schema von KubeJS Mekanism stürzt daran ab und bricht das ganze Skript ab, schon beim ersten Metall. Damit fehlten die Kristall-Rezepte und alle Rezepte für Nickel und Aluminium (Test 64 wäre gescheitert). Auch die NPE nach Fassung 1 kam von hier, nicht von der Bottling Machine.
+- Jetzt `fluid: 'minecraft:water'`. `tools/kubejs_check.py` warnt vor Flüssigkeiten als Tag in `event.custom`. In die Testinstanz kopiert, `/reload` genügt.

@@ -2,6 +2,8 @@
 // Items und Slurries: startup_scripts/mekanism_erze.js. Vorlage: die Blei-Rezepte von Mekanism 10.4.16
 // (data/mekanism/recipes/processing/lead/), gleiche Mengen. Endprodukt ist der IE-Staub; den schmilzt der Ofen.
 // Desh, Ostrum, Calorite, Kobalt und die Blue-Skies-Metalle bekommen bewusst nichts (Tor bzw. eigener Pfad).
+// Wasser im Washing-Rezept als Flüssigkeits-ID, nicht als Tag: das Schema von KubeJS Mekanism stürzt sonst ab
+// und bricht das ganze Skript ab (NullPointerException, Test 65, 2026-10-20).
 // Stand 2026-10-20, KubeJS 2001. UNGETESTET.
 
 ServerEvents.tags('item', event => {
@@ -48,7 +50,7 @@ ServerEvents.recipes(event => {
     event.custom({ type: 'mekanism:dissolution', gasInput: gas('sulfuric_acid', 1), itemInput: { ingredient: erz }, output: { amount: 1000, chemicalType: 'slurry', slurry: schmutzig } }).id(id('slurry_from_ore'))
     event.custom({ type: 'mekanism:dissolution', gasInput: gas('sulfuric_acid', 1), itemInput: { amount: 3, ingredient: roh }, output: { amount: 2000, chemicalType: 'slurry', slurry: schmutzig } }).id(id('slurry_from_raw_ore'))
     event.custom({ type: 'mekanism:dissolution', gasInput: gas('sulfuric_acid', 2), itemInput: { ingredient: rohblock }, output: { amount: 6000, chemicalType: 'slurry', slurry: schmutzig } }).id(id('slurry_from_raw_block'))
-    event.custom({ type: 'mekanism:washing', fluidInput: { amount: 5, tag: 'minecraft:water' }, slurryInput: { amount: 1, slurry: schmutzig }, output: { amount: 1, slurry: sauber } }).id(id('slurry_clean'))
+    event.custom({ type: 'mekanism:washing', fluidInput: { amount: 5, fluid: 'minecraft:water' }, slurryInput: { amount: 1, slurry: schmutzig }, output: { amount: 1, slurry: sauber } }).id(id('slurry_clean'))
     event.custom({ type: 'mekanism:crystallizing', chemicalType: 'slurry', input: { amount: 200, slurry: sauber }, output: { item: `kubejs:crystal_${m}` } }).id(id('crystal_from_slurry'))
   })
 })
