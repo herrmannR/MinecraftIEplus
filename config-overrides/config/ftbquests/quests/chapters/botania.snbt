@@ -11,10 +11,25 @@
 		{
 			dependencies: ["49DA11DCC4D42945"]
 			description: [
+				"Freigeschaltet mit dem Kapitel K1 Ankunft (Hauptquests)."
+			]
+			hide_until_deps_complete: true
+			icon: "minecraft:book"
+			id: "7E871922B053F5CC"
+			shape: "gear"
+			subtitle: "BO1 · Blüten und Lebendholz"
+			tasks: []
+			title: "K1 Ankunft"
+			x: -1.75d
+			y: 0.5d
+		}
+		{
+			dependencies: ["7E871922B053F5CC"]
+			description: [
 				"Botania erklärt sich selbst: Das Lexikon zeigt jede Blume, jedes Gerät und alle Rezepte. Lies es, wann immer eine Quest darauf verweist."
 				"Buch: Basics and Mechanics → Welcome To Botania, Lexica Botania."
 			]
-			hide_until_deps_complete: true
+			hide_until_deps_visible: true
 			icon: "botania:lexicon"
 			id: "672EC395D28D9461"
 			subtitle: "BO1 · Blüten und Lebendholz"
@@ -140,10 +155,25 @@
 		{
 			dependencies: ["7D17A2E727E32894"]
 			description: [
+				"Freigeschaltet mit dem Kapitel K2 Würdig sein (Hauptquests)."
+			]
+			hide_until_deps_complete: true
+			icon: "minecraft:book"
+			id: "5015DD764B441CE1"
+			shape: "gear"
+			subtitle: "BO2 · Mana und Manasteel"
+			tasks: []
+			title: "K2 Würdig sein"
+			x: -1.75d
+			y: 4.0d
+		}
+		{
+			dependencies: ["0E9E3687A3A51B2B", "5015DD764B441CE1"]
+			description: [
 				"Erzeugende Blumen machen Mana: die Endoflame aus Brennstoff, die Hydroangeas aus Wasser."
 				"Buch: Generating Flora → Generating Flora, Endoflame, Hydroangeas."
 			]
-			hide_until_deps_complete: true
+			hide_until_deps_visible: true
 			icon: "botania:endoflame"
 			id: "47845FF024A9DDBC"
 			subtitle: "BO2 · Mana und Manasteel"
@@ -286,10 +316,25 @@
 		{
 			dependencies: ["0B2B8888238E82AD"]
 			description: [
+				"Freigeschaltet mit dem Kapitel K3 Industrie (Hauptquests)."
+			]
+			hide_until_deps_complete: true
+			icon: "minecraft:book"
+			id: "67DC8C91F9F786B9"
+			shape: "gear"
+			subtitle: "BO3 · Runenaltar"
+			tasks: []
+			title: "K3 Industrie"
+			x: -1.75d
+			y: 7.5d
+		}
+		{
+			dependencies: ["4FEAEAE56A2A8400", "67DC8C91F9F786B9"]
+			description: [
 				"Am Altar entstehen die Runen. Die meisten besseren Blumen brauchen sie."
 				"Buch: Basics and Mechanics → Runic Altar."
 			]
-			hide_until_deps_complete: true
+			hide_until_deps_visible: true
 			icon: "botania:runic_altar"
 			id: "083AC076A6081BF5"
 			subtitle: "BO3 · Runenaltar"
@@ -642,10 +687,25 @@
 		{
 			dependencies: ["1102A1D22CF06A0C"]
 			description: [
+				"Freigeschaltet mit dem Kapitel K6 Der Mars (Hauptquests)."
+			]
+			hide_until_deps_complete: true
+			icon: "minecraft:book"
+			id: "7B4DA5D78FFB5629"
+			shape: "gear"
+			subtitle: "BO4 · Terrasteel"
+			tasks: []
+			title: "K6 Der Mars"
+			x: -1.75d
+			y: 11.0d
+		}
+		{
+			dependencies: ["194C2ADA92F61A8F", "7B4DA5D78FFB5629"]
+			description: [
 				"Die Platte verschmilzt Manasteel, Mana Pearl und Mana Diamond mit viel Mana. Sie braucht einen festen Unterbau."
 				"Buch: Basics and Mechanics → Terrasteel."
 			]
-			hide_until_deps_complete: true
+			hide_until_deps_visible: true
 			icon: "botania:terra_plate"
 			id: "51CEB2BFB723DB77"
 			subtitle: "BO4 · Terrasteel"
@@ -704,10 +764,25 @@
 		{
 			dependencies: ["2596BAFEBEF00419"]
 			description: [
+				"Freigeschaltet mit dem Kapitel K10 Der Elf (Hauptquests)."
+			]
+			hide_until_deps_complete: true
+			icon: "minecraft:book"
+			id: "6DEC45FC4C7C3262"
+			shape: "gear"
+			subtitle: "BO5 · Elfenportal"
+			tasks: []
+			title: "K10 Der Elf"
+			x: -1.75d
+			y: 14.5d
+		}
+		{
+			dependencies: ["32310B37BC9A953F", "6DEC45FC4C7C3262"]
+			description: [
 				"Das Portal zieht sein Mana über Natura Pylons aus Pools in der Nähe."
 				"Buch: Alfhomancy → The Portal to Alfheim."
 			]
-			hide_until_deps_complete: true
+			hide_until_deps_visible: true
 			icon: "botania:natura_pylon"
 			id: "5D0A360656B07CDA"
 			subtitle: "BO5 · Elfenportal"
@@ -826,11 +901,26 @@
 		{
 			dependencies: ["490DA592DDA71B52"]
 			description: [
+				"Freigeschaltet mit dem Kapitel K12 Ausbildung (Hauptquests)."
+			]
+			hide_until_deps_complete: true
+			icon: "minecraft:book"
+			id: "055F8D8D38838F8D"
+			shape: "gear"
+			subtitle: "BO6 · Alfheim betreten"
+			tasks: []
+			title: "K12 Ausbildung"
+			x: -1.75d
+			y: 18.0d
+		}
+		{
+			dependencies: ["20CA9735F369D8FB", "055F8D8D38838F8D"]
+			description: [
 				"Der Met öffnet dir das Portal nach Alfheim."
 				"Buch: Alfheim → The Mead of Kvasir."
 				"&6⚙&r &9(ungeprüft)&r Im Buch liegt der Met hinter dem Guardian of Gaia II (Blood of Kvasir). Im Pack kommt Alfheim vor Gaia; wie du den Met bekommst (Quest-Belohnung oder gesperrtes Rezept), ist noch nicht entschieden. Text nach der Entscheidung anpassen."
 			]
-			hide_until_deps_complete: true
+			hide_until_deps_visible: true
 			icon: "mythicbotany:kvasir_mead"
 			id: "69ABF49F86AF0E46"
 			subtitle: "BO6 · Alfheim betreten"
@@ -1047,6 +1137,21 @@
 		{
 			dependencies: ["13CC768AFE8EB0F0"]
 			description: [
+				"Freigeschaltet mit dem Kapitel K13 Die Prüfung (Hauptquests)."
+			]
+			hide_until_deps_complete: true
+			icon: "minecraft:book"
+			id: "29852188C2162654"
+			shape: "gear"
+			subtitle: "BO7 · Gaia"
+			tasks: []
+			title: "K13 Die Prüfung"
+			x: -1.75d
+			y: 21.5d
+		}
+		{
+			dependencies: ["17D58AB389983771", "29852188C2162654"]
+			description: [
 				"&c⚠ &eDer Guardian of Gaia ist ein schwerer Bosskampf.&r&c Lies den Eintrag im Buch vor dem Ritual ganz. Lass keine Wertsachen in der Arena liegen.&r"
 				""
 				"Das Ritual braucht einen aktiven Beacon mit Gaia Pylons darum."
@@ -1054,7 +1159,7 @@
 				"&6⚙&r Im Pack wird der Gaia Pylon aus dem Alfsteel Pylon gebaut, nicht wie im Buch beschrieben."
 				"Hinweis: Der Beacon braucht einen Nether Star."
 			]
-			hide_until_deps_complete: true
+			hide_until_deps_visible: true
 			icon: "minecraft:beacon"
 			id: "36443A11DFC20ABF"
 			subtitle: "BO7 · Gaia"

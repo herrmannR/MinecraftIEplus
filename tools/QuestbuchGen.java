@@ -27,9 +27,10 @@ import java.util.regex.*;
  * Standard-Abhängigkeit: Hauptweg-Quest an der vorigen Hauptweg-Quest, Nebenquest einer Reihe an der
  * vorigen der Reihe, sonst Nebenquest an der letzten Hauptweg-Quest davor.
  *
- * Freischaltung: Die erste Quest eines Abschnitts mit "(Kn …)" hängt zusätzlich an der Hauptquest Kn
- * (Kapitel "hauptquests") und bleibt unsichtbar, bis Kn erledigt ist. Alle anderen Quests werden erst
- * sichtbar, wenn ihre Voraussetzungen sichtbar sind; so erscheint ein Abschnitt mit seinem Kn.
+ * Freischaltung: Ein Abschnitt mit "(Kn …)" bekommt am Zeilenanfang eine Marke ohne Aufgabe, die an der
+ * Hauptquest Kn hängt (Kapitel "hauptquests") und erst erscheint, wenn Kn erledigt ist. Die erste Quest
+ * des Abschnitts hängt an Marke und Vorgänger; alle Quests werden sichtbar, sobald ihre Voraussetzungen
+ * sichtbar sind. So zeigt sich ein Abschnitt mit seinem Kn, abschließen geht aber nur der Reihe nach.
  *
  * Die IDs entstehen aus Kapitelname und Questcode und bleiben beim Neubauen gleich (sonst verlieren
  * Spieler ihren Fortschritt). Questcodes und K-Nummern deshalb nie umbenennen.
@@ -41,12 +42,12 @@ public class QuestbuchGen {
         String aufgabe;
         List<String> tasks = new ArrayList<>(); // fertige SNBT-Blöcke
         List<String> deps = new ArrayList<>();
-        String icon; double x, y; boolean milestone, gated;
+        String icon; double x, y; boolean milestone, gated, marker;
     }
 
     static final String HQ = "hauptquests";
     static String chapter, chTitle = "", chIcon = "", order = "1";
-    static Map<String, String> cfgTasks = new HashMap<>(), cfgDeps = new HashMap<>(), cfgIcon = new HashMap<>();
+    static Map<String, String> cfgTasks = new HashMap<>(), cfgDeps = new HashMap<>(), cfgIcon = new HashMap<>(), kNames = new HashMap<>();
 
     public static void main(String[] a) throws Exception {
         if (a.length == 3 && a[0].equals("--hauptquests")) { hauptquests(Paths.get(a[1]), Paths.get(a[2])); return; }
@@ -113,20 +114,26 @@ public class QuestbuchGen {
         }
         if (prevMain != null) prevMain.milestone = true;
 
-        // Freischaltung über die Hauptquests: erste Quest je Abschnitt mit Kn hängt nur an Kn
-        // (FTB blendet sie ein, wenn ALLE Voraussetzungen erledigt sind; eine Kette zum vorigen
-        // Abschnitt würde den Abschnitt sonst trotz Kn verbergen)
+        // Freischaltung über die Hauptquests. FTB koppelt Sichtbarkeit und Voraussetzungen; deshalb
+        // je Abschnitt eine Marke ohne Aufgabe am Zeilenanfang: hängt an Kn, unsichtbar bis Kn erledigt,
+        // gilt dann sofort als erledigt. Die erste Quest des Abschnitts hängt an Marke UND Vorgänger und
+        // wird mit der Marke sichtbar (hide_until_deps_visible); abschließen geht erst mit dem Vorgänger.
         sec = null;
+        List<Quest> all = new ArrayList<>();
         for (Quest q : qs) {
             if (!q.section.equals(sec)) {
                 sec = q.section;
                 if (q.kGate != null) {
-                    final String s = q.section;
-                    q.deps.removeIf(d -> !byCode.get(d).section.equals(s));
-                    q.deps.add(q.kGate); q.gated = true;
+                    Quest mk = new Quest(); mk.code = "M-" + q.kGate; mk.section = q.section; mk.main = true;
+                    mk.title = kNames.get(q.kGate); mk.gated = true; mk.marker = true; mk.icon = "minecraft:book";
+                    mk.deps.add(q.kGate); mk.x = -1.75; mk.y = q.y;
+                    mk.desc.add("Freigeschaltet mit dem Kapitel " + mk.title + " (Hauptquests).");
+                    all.add(mk); q.deps.add(mk.code);
                 }
             }
+            all.add(q);
         }
+        qs = all;
 
         write(Paths.get(a[2]), snbt(qs));
         System.out.println(qs.size() + " Quests geschrieben nach " + a[2]);
@@ -188,7 +195,8 @@ public class QuestbuchGen {
                 cur = null; series = null; intro = new ArrayList<>();
                 if (l.contains("Pack-Änderungen") || l.contains("Offen vor dem Einbau") || l.contains("Hinweise zur Verwendung")) { section = null; continue; }
                 Matcher k = Pattern.compile("\\((K\\d+)\\b[^)]*\\)").matcher(l);
-                kGate = k.find() ? k.group(1) : null;
+                kGate = null;
+                if (k.find()) { kGate = k.group(1); kNames.put(kGate, k.group(0).replaceAll("[()]", "")); }
                 section = l.substring(3).replaceAll("\\s*\\(.*\\)\\s*$", "").replace("Nebenquest-Reihe: ", "");
                 continue;
             }
@@ -337,6 +345,7 @@ public class QuestbuchGen {
             sb.append("\t\t\tid: \"").append(depId(q.code)).append("\"\n");
             if (!q.main) sb.append("\t\t\toptional: true\n\t\t\tshape: \"square\"\n");
             if (q.milestone) sb.append("\t\t\tshape: \"hexagon\"\n\t\t\tsize: 1.5d\n");
+            if (q.marker) sb.append("\t\t\tshape: \"gear\"\n");
             sb.append("\t\t\tsubtitle: \"").append(esc(q.section + (q.main ? "" : " · Nebenquest"))).append("\"\n");
             sb.append("\t\t\ttasks: [");
             for (int i = 0; i < q.tasks.size(); i++) sb.append(i > 0 ? "\n\t\t\t" : "").append(q.tasks.get(i));

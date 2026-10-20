@@ -11,9 +11,24 @@
 		{
 			dependencies: ["0B2B8888238E82AD"]
 			description: [
-				"Osmium ist das Metall, um das sich in Mekanism alles dreht: Maschinen, Schaltkreise, Tanks und Upgrades brauchen es. In der Overworld ist es selten, ungefähr so häufig wie Diamant, und liegt in allen Höhen. Für den Anfang reichen ein paar Barren. &6⚙&r Später gibt es Osmium reichlich in Everdawn und auf dem Mond."
+				"Freigeschaltet mit dem Kapitel K3 Industrie (Hauptquests)."
 			]
 			hide_until_deps_complete: true
+			icon: "minecraft:book"
+			id: "12617912326846AC"
+			shape: "gear"
+			subtitle: "MK1 · Infuser und Sauerstoff"
+			tasks: []
+			title: "K3 Industrie"
+			x: -1.75d
+			y: 0.5d
+		}
+		{
+			dependencies: ["12617912326846AC"]
+			description: [
+				"Osmium ist das Metall, um das sich in Mekanism alles dreht: Maschinen, Schaltkreise, Tanks und Upgrades brauchen es. In der Overworld ist es selten, ungefähr so häufig wie Diamant, und liegt in allen Höhen. Für den Anfang reichen ein paar Barren. &6⚙&r Später gibt es Osmium reichlich in Everdawn und auf dem Mond."
+			]
+			hide_until_deps_visible: true
 			icon: "mekanism:raw_osmium"
 			id: "75C91E77E306DEEC"
 			subtitle: "MK1 · Infuser und Sauerstoff"
@@ -169,12 +184,27 @@
 		{
 			dependencies: ["4FBA50D1BBCB97FA"]
 			description: [
+				"Freigeschaltet mit dem Kapitel K4 Der Mond (Hauptquests)."
+			]
+			hide_until_deps_complete: true
+			icon: "minecraft:book"
+			id: "3E189EEF517F442D"
+			shape: "gear"
+			subtitle: "MK2 · Grundmaschinen"
+			tasks: []
+			title: "K4 Der Mond"
+			x: -1.75d
+			y: 4.0d
+		}
+		{
+			dependencies: ["6D928FB73894B839", "3E189EEF517F442D"]
+			description: [
 				"Die erste Stufe der Erzverarbeitung: Aus einem Erzblock werden zwei Stäube, aus drei Raw-Stücken vier. Die Stäube schmilzt du im Ofen."
 				"Erzblöcke bringen in jeder Stufe mehr als Raw-Stücke. Wenn du kannst, bau mit Silk Touch ab."
 				"Die Kammer reichert außerdem Stoffe für den Infuser an: Enriched Carbon, Redstone, Diamond, Gold und Tin liefern je 80 Einheiten statt 10."
 				"Mekanism verarbeitet nur Eisen, Gold, Kupfer, Zinn, Osmium, Blei und Uran. Silber, Nickel und Aluminium bleiben bei Immersive Engineering."
 			]
-			hide_until_deps_complete: true
+			hide_until_deps_visible: true
 			icon: "mekanism:enrichment_chamber"
 			id: "1594BB213B1B4F4A"
 			shape: "hexagon"
@@ -343,9 +373,24 @@
 		{
 			dependencies: ["6AF68093B3F6D97F"]
 			description: [
-				"&6⚙&r Zinn gibt es in diesem Pack nur in Everbright. Du brauchst es für Bronze (3 Kupfer + 10 Tin im Infuser ergeben 4 Bronze) und für die Pumpen, Jetpacks und Fluidic Plenisher von Mekanism. Everbright liefert auch Blei."
+				"Freigeschaltet mit dem Kapitel K5 Erzketten (Hauptquests)."
 			]
 			hide_until_deps_complete: true
+			icon: "minecraft:book"
+			id: "43567C1272BD2765"
+			shape: "gear"
+			subtitle: "MK3 · Advanced, Erz ×3"
+			tasks: []
+			title: "K5 Erzketten"
+			x: -1.75d
+			y: 7.5d
+		}
+		{
+			dependencies: ["1594BB213B1B4F4A", "43567C1272BD2765"]
+			description: [
+				"&6⚙&r Zinn gibt es in diesem Pack nur in Everbright. Du brauchst es für Bronze (3 Kupfer + 10 Tin im Infuser ergeben 4 Bronze) und für die Pumpen, Jetpacks und Fluidic Plenisher von Mekanism. Everbright liefert auch Blei."
+			]
+			hide_until_deps_visible: true
 			icon: "mekanism:raw_tin"
 			id: "4E293D6B64CEDD5B"
 			subtitle: "MK3 · Advanced, Erz ×3"
@@ -477,9 +522,24 @@
 		{
 			dependencies: ["4432DA367BD815DD"]
 			description: [
-				"Im Infuser: Infused Alloy + 20 Diamond. Ein Diamant ergibt 10 Einheiten; in der Enrichment Chamber angereichert (Enriched Diamond) sind es 80. Reichere die Diamanten deshalb immer erst an."
+				"Freigeschaltet mit dem Kapitel K7 Horchposten (Hauptquests)."
 			]
 			hide_until_deps_complete: true
+			icon: "minecraft:book"
+			id: "3FA0B9BE762AE467"
+			shape: "gear"
+			subtitle: "MK4 · Elite und Chemie"
+			tasks: []
+			title: "K7 Horchposten"
+			x: -1.75d
+			y: 11.0d
+		}
+		{
+			dependencies: ["7EAB9F168BFEB124", "3FA0B9BE762AE467"]
+			description: [
+				"Im Infuser: Infused Alloy + 20 Diamond. Ein Diamant ergibt 10 Einheiten; in der Enrichment Chamber angereichert (Enriched Diamond) sind es 80. Reichere die Diamanten deshalb immer erst an."
+			]
+			hide_until_deps_visible: true
 			icon: "mekanism:alloy_reinforced"
 			id: "3CFF6061F5E536DA"
 			subtitle: "MK4 · Elite und Chemie"
@@ -717,11 +777,26 @@
 		{
 			dependencies: ["7264B19A966F455A"]
 			description: [
+				"Freigeschaltet mit dem Kapitel K9 Der Tempel (Hauptquests)."
+			]
+			hide_until_deps_complete: true
+			icon: "minecraft:book"
+			id: "212009E2CEC4D2E8"
+			shape: "gear"
+			subtitle: "MK5 · Kernkraft"
+			tasks: []
+			title: "K9 Der Tempel"
+			x: -1.75d
+			y: 18.0d
+		}
+		{
+			dependencies: ["65FD91C69EED1303", "212009E2CEC4D2E8"]
+			description: [
 				"&c&lWarnung:&r&c Radioaktive Stoffe sind gefährlich. Tritt Gas aus einer Leitung, einer zerstörten Maschine oder einem abgebauten Tank aus, verstrahlt es die Umgebung. Strahlenvergiftung macht Schaden und kann töten.&r"
 				""
 				"&6⚙&r Uran ist in der Overworld knapp; reichlich gibt es es auf Merkur und Venus. Aus einem Uranbarren macht die Enrichment Chamber 2 &eYellow Cake Uranium&r. Rohes Uran ist ungefährlich, Gefahr droht erst bei den Gasen."
 			]
-			hide_until_deps_complete: true
+			hide_until_deps_visible: true
 			icon: "mekanism:yellow_cake_uranium"
 			id: "438B171218CF8B69"
 			subtitle: "MK5 · Kernkraft"
@@ -913,9 +988,24 @@
 		{
 			dependencies: ["2596BAFEBEF00419"]
 			description: [
-				"Im Infuser: Reinforced Alloy + 40 Refined Obsidian. Enriched Refined Obsidian aus der Enrichment Chamber liefert 80 Einheiten statt 10. Die höchste Stufe von Mekanism."
+				"Freigeschaltet mit dem Kapitel K10 Der Elf (Hauptquests)."
 			]
 			hide_until_deps_complete: true
+			icon: "minecraft:book"
+			id: "4E6259B8C3E06E09"
+			shape: "gear"
+			subtitle: "MK6 · Ultimate und Teleportation"
+			tasks: []
+			title: "K10 Der Elf"
+			x: -1.75d
+			y: 21.5d
+		}
+		{
+			dependencies: ["5727C86B5DB4F060", "4E6259B8C3E06E09"]
+			description: [
+				"Im Infuser: Reinforced Alloy + 40 Refined Obsidian. Enriched Refined Obsidian aus der Enrichment Chamber liefert 80 Einheiten statt 10. Die höchste Stufe von Mekanism."
+			]
+			hide_until_deps_visible: true
 			icon: "mekanism:alloy_atomic"
 			id: "39B05FAB9BD91D07"
 			subtitle: "MK6 · Ultimate und Teleportation"
@@ -1047,9 +1137,24 @@
 		{
 			dependencies: ["490DA592DDA71B52"]
 			description: [
-				"Eine &eElectric Pump&r mit &eFilter Upgrade&r in einem Meer oder großen Wasser fördert &eHeavy Water&r. Der Electrolytic Separator spaltet es in Deuterium und Oxygen."
+				"Freigeschaltet mit dem Kapitel K12 Ausbildung, Part 2 (Hauptquests)."
 			]
 			hide_until_deps_complete: true
+			icon: "minecraft:book"
+			id: "4AFC5BA521A65285"
+			shape: "gear"
+			subtitle: "MK7 · Fusion"
+			tasks: []
+			title: "K12 Ausbildung, Part 2"
+			x: -1.75d
+			y: 25.0d
+		}
+		{
+			dependencies: ["015545685E8A0045", "4AFC5BA521A65285"]
+			description: [
+				"Eine &eElectric Pump&r mit &eFilter Upgrade&r in einem Meer oder großen Wasser fördert &eHeavy Water&r. Der Electrolytic Separator spaltet es in Deuterium und Oxygen."
+			]
+			hide_until_deps_visible: true
 			id: "21B0A08A576D0BAC"
 			subtitle: "MK7 · Fusion"
 			tasks: [{
@@ -1133,9 +1238,24 @@
 		{
 			dependencies: ["13CC768AFE8EB0F0"]
 			description: [
-				"Das SPS erzeugt mit riesigen Mengen Strom &eAntimatter&r. &9(ungeprüft)&r Eingangsstoff und Bauregeln stehen nicht in den JAR-Daten. Nach Spielwissen (im Spiel prüfen): Eingang ist Polonium als Gas, 2000 mB je 1 mB Antimatter. Bauform ein Würfel von 7 × 7 × 7 ohne Kanten aus SPS Casing und Reactor Glass, mit SPS Ports. An einen Port, der Strom bekommt, setzt du außen die &eSupercharged Coil&r."
+				"Freigeschaltet mit dem Kapitel K13 Die Prüfung, Part 2 (Hauptquests)."
 			]
 			hide_until_deps_complete: true
+			icon: "minecraft:book"
+			id: "207FA44D8DFA956F"
+			shape: "gear"
+			subtitle: "MK8 · SPS und Antimaterie"
+			tasks: []
+			title: "K13 Die Prüfung, Part 2"
+			x: -1.75d
+			y: 28.5d
+		}
+		{
+			dependencies: ["54F8124FDF2B9EF2", "207FA44D8DFA956F"]
+			description: [
+				"Das SPS erzeugt mit riesigen Mengen Strom &eAntimatter&r. &9(ungeprüft)&r Eingangsstoff und Bauregeln stehen nicht in den JAR-Daten. Nach Spielwissen (im Spiel prüfen): Eingang ist Polonium als Gas, 2000 mB je 1 mB Antimatter. Bauform ein Würfel von 7 × 7 × 7 ohne Kanten aus SPS Casing und Reactor Glass, mit SPS Ports. An einen Port, der Strom bekommt, setzt du außen die &eSupercharged Coil&r."
+			]
+			hide_until_deps_visible: true
 			icon: "mekanism:sps_casing"
 			id: "04BD7704B41907D7"
 			subtitle: "MK8 · SPS und Antimaterie"
@@ -1201,9 +1321,24 @@
 		{
 			dependencies: ["3F54FB63312E353E"]
 			description: [
-				"An der Modification Station setzt du &eModule&r in MekaSuit und Meka-Tool ein und nimmst sie heraus. Jedes Modul beginnt mit einer Module Base. Leer können die Geräte fast nichts."
+				"Freigeschaltet mit dem Kapitel K15 Star-Wars-Welten, Part 3 (Hauptquests)."
 			]
 			hide_until_deps_complete: true
+			icon: "minecraft:book"
+			id: "32158DE727BB126D"
+			shape: "gear"
+			subtitle: "MK9 · Meka-Ausrüstung und QIO"
+			tasks: []
+			title: "K15 Star-Wars-Welten, Part 3"
+			x: -1.75d
+			y: 33.5d
+		}
+		{
+			dependencies: ["24478A7934447EE3", "32158DE727BB126D"]
+			description: [
+				"An der Modification Station setzt du &eModule&r in MekaSuit und Meka-Tool ein und nimmst sie heraus. Jedes Modul beginnt mit einer Module Base. Leer können die Geräte fast nichts."
+			]
+			hide_until_deps_visible: true
 			icon: "mekanism:modification_station"
 			id: "64564512A45B8C8E"
 			optional: true
