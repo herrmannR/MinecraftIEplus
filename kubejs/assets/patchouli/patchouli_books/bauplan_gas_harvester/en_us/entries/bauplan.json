@@ -1,0 +1,6 @@
+{
+  "name": "Gas Harvester",
+  "icon": "swgc:gas_harvester",
+  "category": "patchouli:bauplan",
+  "pages": [ { "type": "patchouli:crafting", "recipe": "ieplus:bauplan/swgc_gas_harvester", "recipe2": "ieplus:bauplan/swgc_empty_gas_vessel" } ]
+}

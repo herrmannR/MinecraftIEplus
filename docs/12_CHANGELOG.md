@@ -1088,3 +1088,18 @@ Status: 🟡
 
 ### Auswirkungen auf bestehende Welt
 Keine.
+
+## 2026-10-20 — Baupläne als Patchouli-Bücher, Ritual- und Amulett-Sperre (Fassung 3)
+
+Status: 🟡
+
+### Änderung
+- Test 47 und 48 erneut fehlgeschlagen: Rhino meldet bei `const` in einem `try`-Block „redeclaration of var“; der Handler fing den Fehler ab und ließ Ritual und Betreten durch. `altar_dimension.js` nutzt jetzt `var`. Das Betreten-Ereignis kommt bei der Teleportation von Blood Magic an (Log).
+- Baupläne sind Patchouli-Bücher mit Beschreibung und dem Rezept als Bild (Wunsch des Users zu Test 43): sechs Bücher `patchouli:bauplan_<name>`, `book.json` in `patchouli_books/` (gehört beim Host in den Ordner `patchouli_books/` der Instanz), Inhalt und Item-Modelle in `kubejs/assets/`. `/bauplan <name>` gibt das Buch; der erste Erhalt schaltet frei. Die geschriebenen Bücher aus Fassung 2 entfallen.
+- In die Testinstanz kopiert. Wieder zu testen: 43, 47, 48, 53 (Neustart nötig: Patchouli lädt Bücher nur beim Start).
+
+### Betroffene Bereiche
+- `kubejs/`, `patchouli_books/`, Doku
+
+### Auswirkungen auf bestehende Welt
+Keine. Der Host braucht zusätzlich den Ordner `patchouli_books/`.

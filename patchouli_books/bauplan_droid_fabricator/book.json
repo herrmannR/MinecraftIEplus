@@ -1,0 +1,9 @@
+{
+  "name": "Bauplan: Droid Fabricator",
+  "landing_text": "Baut Kampfdroiden. Ohne den Bauplan eines Droiden und seinen Steuerkern baut er nichts.$(br2)Wer dieses Buch zum ersten Mal erhält, schaltet das Rezept für alle frei.",
+  "book_texture": "patchouli:textures/gui/book_blue.png",
+  "model": "kubejs:bauplan_droid_fabricator",
+  "show_progress": false,
+  "use_resource_pack": true,
+  "i18n": false
+}

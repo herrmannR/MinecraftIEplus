@@ -1,0 +1,5 @@
+{
+  "name": "Bauplan",
+  "description": "Zerstörerdroide mit Schild. Der Steuerkern ist sein Gehirn; der Droid Fabricator verbraucht ihn.",
+  "icon": "kubejs:steuerkern_droideka"
+}

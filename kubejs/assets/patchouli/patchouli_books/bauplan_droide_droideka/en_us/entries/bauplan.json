@@ -1,0 +1,6 @@
+{
+  "name": "Droideka",
+  "icon": "kubejs:steuerkern_droideka",
+  "category": "patchouli:bauplan",
+  "pages": [ { "type": "patchouli:crafting", "recipe": "ieplus:bauplan/kubejs_steuerkern_droideka", "text": "Steuerkern Droideka, gebaut an der Werkbank." }, { "type": "patchouli:text", "title": "Im Droid Fabricator", "text": "$(li)4 Stahlblöcke$(li)8 Redstone$(li)3 Kupferblöcke$(li)4 Diamanten$(li)1 Plastoid$(li)1 Steuerkern Droideka" } ]
+}

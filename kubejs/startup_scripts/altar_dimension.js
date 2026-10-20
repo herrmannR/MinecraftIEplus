@@ -4,7 +4,8 @@
 // Forge-Ereignisse gehen in KubeJS 2001 nur aus startup_scripts.
 // Fehler in einem Handler brechen das Ereignis ab (Test 47: Ritual ging nirgends). Deshalb fängt jeder Handler
 // seine Fehler selbst ab und lässt das Ereignis im Fehlerfall durch.
-// Stand 2026-10-20, KubeJS 2001. Fassung 2 nach Test 47, UNGETESTET.
+// Innerhalb der Funktionen nur var: Rhino meldet bei const in try-Blöcken „redeclaration of var“ (Test 47/48, 2026-10-20).
+// Stand 2026-10-20, KubeJS 2001. Fassung 3 nach Test 47/48, UNGETESTET.
 
 const IEPLUS_DUNGEON_RITUALE = ['ritualSimpleDungeon', 'ritualStandardDungeon']
 const IEPLUS_TEMPEL_DIMENSION = 'ad_astra:mercury'
@@ -15,20 +16,20 @@ const IEPLUS_AMULETT = 'botania:goddess_charm'
 // einem ResourceKey ("ResourceKey[minecraft:dimension / ad_astra:mercury]") oder einer ResourceLocation.
 function ieplusDimId(x) {
   if (x === null || x === undefined) return ''
-  const quelle = (x.dimension !== undefined && typeof x.dimension !== 'function') ? x.dimension : x
-  const s = String(quelle)
-  const m = s.match(/\/\s*([a-z0-9_.-]+:[a-z0-9_.\/-]+)\s*\]/)
+  var quelle = (x.dimension !== undefined && typeof x.dimension !== 'function') ? x.dimension : x
+  var s = String(quelle)
+  var m = s.match(/\/\s*([a-z0-9_.-]+:[a-z0-9_.\/-]+)\s*\]/)
   return m ? m[1] : s
 }
 
 ForgeEvents.onEvent('wayoftime.bloodmagic.event.RitualEvent$RitualActivatedEvent', event => {
   try {
-    const name = String(event.getRitual().getName())
+    var name = String(event.getRitual().getName())
     if (!IEPLUS_DUNGEON_RITUALE.includes(name)) return
-    const dim = ieplusDimId(event.getRitualStone().getWorldObj())
+    var dim = ieplusDimId(event.getRitualStone().getWorldObj())
     if (dim === IEPLUS_TEMPEL_DIMENSION) return
     event.setCanceled(true)
-    const player = event.getPlayer()
+    var player = event.getPlayer()
     if (player) player.tell(Text.red('Das Ritual findet hier keinen Halt. Nur im Tempel auf dem Merkur öffnet sich der Weg.'))
   } catch (err) {
     console.error('altar_dimension.js (Ritual): ' + err)
@@ -37,8 +38,8 @@ ForgeEvents.onEvent('wayoftime.bloodmagic.event.RitualEvent$RitualActivatedEvent
 
 function ieplusTraegtAmulett(player) {
   try {
-    const CuriosApi = Java.loadClass('top.theillusivec4.curios.api.CuriosApi')
-    const handler = CuriosApi.getCuriosInventory(player).resolve()
+    var CuriosApi = Java.loadClass('top.theillusivec4.curios.api.CuriosApi')
+    var handler = CuriosApi.getCuriosInventory(player).resolve()
     if (handler.isPresent()) {
       return handler.get().findFirstCurio(Item.of(IEPLUS_AMULETT).getItem()).isPresent()
     }
@@ -51,7 +52,7 @@ function ieplusTraegtAmulett(player) {
 
 ForgeEvents.onEvent('net.minecraftforge.event.entity.EntityTravelToDimensionEvent', event => {
   try {
-    const entity = event.getEntity()
+    var entity = event.getEntity()
     if (!entity || !entity.isPlayer()) return
     if (ieplusDimId(event.getDimension()) !== IEPLUS_ALTAR_DIMENSION) return
     if (entity.isCreative() || entity.isSpectator()) return

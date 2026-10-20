@@ -1,0 +1,9 @@
+{
+  "name": "Bauplan: Gas Harvester",
+  "landing_text": "Sammelt Tibanna-Gas in leere Gasbehälter.$(br2)Wer dieses Buch zum ersten Mal erhält, schaltet das Rezept für alle frei.",
+  "book_texture": "patchouli:textures/gui/book_blue.png",
+  "model": "kubejs:bauplan_gas_harvester",
+  "show_progress": false,
+  "use_resource_pack": true,
+  "i18n": false
+}
