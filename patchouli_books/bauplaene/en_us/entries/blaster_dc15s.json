@@ -2,7 +2,7 @@
   "name": "Blaster DC-15S",
   "icon": "swgc:dc15s",
   "category": "patchouli:waffen",
-  "advancement": "ieplus:bauplan/blaster_dc15s",
+  "advancement": "ieplus:bauplan/blaster",
   "sortnum": 8,
   "pages": [
     { "type": "patchouli:spotlight", "item": "swgc:dc15s", "title": "DC-15S", "text": "Kurzer Blasterkarabiner der Klonsoldaten. Handlich im Nahkampf." },

@@ -1204,3 +1204,12 @@ Status: 🟡
 
 ### Änderung
 - Test 60 (User): Nach dem Lesen des Bauplans ging das Rezept an der Werkbank, nicht aber in der Tinkers-Werkstation; sie gibt keinen Spieler an das Rezept weiter. `ieplusFreigeschaltet` in `einsiedler_shop.js` liest den Weltwert jetzt über `Utils.server`, wenn kein Spieler da ist. Gilt für alle Baupläne; Autocrafter funktionieren damit nach der Freischaltung ebenfalls. In die Testinstanz kopiert.
+
+## 2026-10-20 — Test 60 bestanden, ein Bauplan für alle Blaster
+
+Status: 🟡
+
+### Änderung
+- Test 60 ✅ (User): Rüstungs-Baupläne gehen an Werkbank und Tinkers-Werkstation.
+- Die sieben Blaster haben an der Assembly Bench dasselbe Rezept (1 Diamant, 1 Plastoid, 1 Durasteel; nur das Modell wird gewählt), fest im Code. Einzelne Rezepte sind nicht möglich. Deshalb ersetzt eine Rolle `kubejs:bauplan_blaster` die sieben Einzelrollen; sie öffnet alle sieben Blaster-Seiten im Buch (Advancement `ieplus:bauplan/blaster`). Die Droiden behalten ihre drei Baupläne (User).
+- In die Testinstanz kopiert, alte Advancements dort entfernt (Neustart nötig, Items geändert).

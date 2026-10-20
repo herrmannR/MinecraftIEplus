@@ -2,7 +2,7 @@
   "name": "Blaster Amban-Gewehr",
   "icon": "swgc:amban_sniper_rifle",
   "category": "patchouli:waffen",
-  "advancement": "ieplus:bauplan/blaster_amban_sniper_rifle",
+  "advancement": "ieplus:bauplan/blaster",
   "sortnum": 13,
   "pages": [
     { "type": "patchouli:spotlight", "item": "swgc:amban_sniper_rifle", "title": "Amban-Gewehr", "text": "Scharfschützengewehr aus Mandalore. Trifft auf große Entfernung." },

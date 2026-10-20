@@ -2,7 +2,7 @@
   "name": "Blaster DC-17",
   "icon": "swgc:dc17",
   "category": "patchouli:waffen",
-  "advancement": "ieplus:bauplan/blaster_dc17",
+  "advancement": "ieplus:bauplan/blaster",
   "sortnum": 9,
   "pages": [
     { "type": "patchouli:spotlight", "item": "swgc:dc17", "title": "DC-17", "text": "Handblaster, wie ihn Klon-Offiziere tragen." },

@@ -2,7 +2,7 @@
   "name": "Blaster DH-17",
   "icon": "swgc:dh17",
   "category": "patchouli:waffen",
-  "advancement": "ieplus:bauplan/blaster_dh17",
+  "advancement": "ieplus:bauplan/blaster",
   "sortnum": 10,
   "pages": [
     { "type": "patchouli:spotlight", "item": "swgc:dh17", "title": "DH-17", "text": "Blasterpistole mit hoher Feuerrate, beliebt bei Schiffsbesatzungen." },

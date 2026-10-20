@@ -1,8 +1,8 @@
 {
   "parent": "ieplus:bauplan/root",
   "display": {
-    "icon": { "item": "kubejs:bauplan_blaster_dc15s" },
-    "title": "Bauplan: DC-15S",
+    "icon": { "item": "kubejs:bauplan_blaster" },
+    "title": "Bauplan: Blaster",
     "description": "Im Buch der Baupläne freigeschaltet",
     "frame": "task",
     "show_toast": false,

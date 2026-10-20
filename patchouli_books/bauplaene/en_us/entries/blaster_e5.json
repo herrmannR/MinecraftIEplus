@@ -2,7 +2,7 @@
   "name": "Blaster E-5",
   "icon": "swgc:e5",
   "category": "patchouli:waffen",
-  "advancement": "ieplus:bauplan/blaster_e5",
+  "advancement": "ieplus:bauplan/blaster",
   "sortnum": 11,
   "pages": [
     { "type": "patchouli:spotlight", "item": "swgc:e5", "title": "E-5", "text": "Standardblaster der Kampfdroiden. Billig gebaut, aber zahlreich." },

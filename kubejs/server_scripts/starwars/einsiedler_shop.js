@@ -48,13 +48,8 @@ const IEPLUS_BAUPLAENE = {
       zutaten: { D: 'swgc:durasteel_ingot', C: 'mekanism:elite_control_circuit', X: 'minecraft:netherite_ingot' } }] },
   // Blaster: nur Buchseite mit Anleitung, keine Sperre an der Assembly Bench (User, 2026-10-20).
   // Die Bench liest ihre Blaster-Liste nur beim Start (static in AssemblyBenchMenu), eine Sperre zur Laufzeit ginge nur über Umwege.
-  blaster_dc15a: { titel: 'Blaster DC-15A', rezepte: [] },
-  blaster_dc15s: { titel: 'Blaster DC-15S', rezepte: [] },
-  blaster_dc17: { titel: 'Blaster DC-17', rezepte: [] },
-  blaster_dh17: { titel: 'Blaster DH-17', rezepte: [] },
-  blaster_e5: { titel: 'Blaster E-5', rezepte: [] },
-  blaster_tl50: { titel: 'Blaster TL-50', rezepte: [] },
-  blaster_amban_sniper_rifle: { titel: 'Amban-Gewehr', rezepte: [] },
+  // Ein Bauplan für alle sieben Modelle (die Bench hat nur ein Blaster-Rezept für alle; User, 2026-10-20).
+  blaster: { titel: 'Blaster', rezepte: [] },
   // Rüstungen: Originalrezepte aus swgc 1.0.3.1, gesperrt bis zum Bauplan (User, 2026-10-20). Kosten unverändert.
   ruestung_klon: { titel: 'Klon-Rüstung (Phase 2)', rezepte: [
     { ergebnis: 'swgc:clone_phase_2_helmet', muster: ['XXX', 'X X'], zutaten: { X: 'swgc:plastoid' } },
