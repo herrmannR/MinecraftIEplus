@@ -11,6 +11,7 @@ Was geprüft wird:
   2. Sprachmittel, die Rhino (die JS-Engine von KubeJS) nicht kann.
   3. Jede ID in Anführungszeichen ('mod:name', '#mod:tag', '2x mod:name') gegen den
      ProbeJS-Dump der 1.20.1-Testinstanz: unbekannte IDs und nicht installierte Mods.
+Eine ID, die absichtlich fehlt, mit `// check:ok` am Zeilenende von der Prüfung ausnehmen.
 Exit-Code 1, wenn Fehler gefunden wurden (Warnungen allein: 0).
 """
 import json
@@ -76,7 +77,10 @@ def installierte_mods():
                 toml = z.read("META-INF/mods.toml").decode("utf-8", "replace")
         except (KeyError, zipfile.BadZipFile, OSError):
             continue
-        ids.update(re.findall(r'^\s*modId\s*=\s*"([^"]+)"', toml, re.M))
+        # nur [[mods]]-Abschnitte, nicht [[dependencies.x]] (dort steht auch modId)
+        for abschnitt in re.split(r"^\s*\[", toml, flags=re.M):
+            if abschnitt.startswith("[mods]]"):
+                ids.update(re.findall(r'^\s*modId\s*=\s*"([^"]+)"', abschnitt, re.M))
     return ids
 
 
@@ -167,7 +171,11 @@ def pruefe_rhino(text):
 
 def pruefe_ids(text, index, eigene_ids, eigene_tags, jar_mods):
     funde, ungeprueft = [], {}
+    # Zeilen mit dem Kommentar `check:ok` nennen absichtlich fehlende IDs (z. B. Tag-Reparaturen)
+    ok_zeilen = {i + 1 for i, z in enumerate(text.splitlines()) if "check:ok" in z}
     for zeile, s, davor, danach in strings_im_code(text):
+        if zeile in ok_zeilen:
+            continue
         m = ID_RE.match(s.strip())
         # .id('...') legt eine neue ID an, 'x:y': ist ein Objektschlüssel (NBT), 'x:y/' ein Präfix
         if not m or ".id(" in davor or danach.lstrip().startswith(":") or s.endswith("/"):

@@ -5,5 +5,5 @@
 ServerEvents.tags('item', event => {
   // Star Wars Planets trägt swplanets:mustafar_sand ein, das es nicht gibt.
   // Minecraft verwirft deshalb das ganze Tag forge:sand (Mekanism: "Broken tags").
-  event.remove('forge:sand', 'swplanets:mustafar_sand')
+  event.remove('forge:sand', 'swplanets:mustafar_sand') // check:ok – fehlt absichtlich
 })
