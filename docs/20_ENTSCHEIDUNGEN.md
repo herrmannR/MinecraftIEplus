@@ -52,31 +52,11 @@ Welche Maschinen (IE Excavator, Mekanism-Factories, AE2-Autocrafting), welcher M
 
 Die Story schreibt der User. Diese Fragen braucht es, damit Questbuch und Skripte gebaut werden können.
 
-**F1 · Quests vor dem Mond (O31)** — 6 Mods: IE, Tinkers, Botania, Blood Magic, AE2, Ad Astra
-Werden die Grundlagen aus K1 bis K3 im Questbuch nachgereicht (abhakbar), stehen sie nur als Notizen, oder fallen sie weg?
-→ `18_STORY.md`; alle sechs Questtext-Dateien
+Beantwortet am 2026-10-20: F1, F4, F8, F14, F15; siehe „Erledigt“.
 
-**F4 · Würdigkeits-Beweis in K2 (O5)** — Tinkers, Botania, IE
-Welche Items verlangt der Droide? Die Hauptwelt hat schon Stahl, Biodiesel-Generator und Runenaltar.
-→ `18_STORY.md`; `tinkers.md`, `botania.md`, `ie.md`
-
-**F8 · Altar-Reparatur (O2)**
-Texte, Fundorte und Reihenfolge der vier Schriftrollen; Zutaten der Reparatur; öffnet der Altar sofort danach?
-→ `18_STORY.md`; `bloodmagic.md`
-
-**F13 · Holocrons und Machtpunkte (O37)**
+**F13 · Holocrons und Machtpunkte (O37)** (Teil 2)
 Welche Jedi- und Sith-Artefakte, und wie hängen sie an den Machtpunkten?
 → `18_STORY.md`; `swgc.md`
-
-**F14 · Der Elf (O1)**
-Name und Charakter. Welche Boss-Items (von welchen der vier Bosse) und welche Tech-Erzeugnisse (IE, Petroleum, Mekanism) verlangt er?
-→ `18_STORY.md`; `blue_skies.md`, `mekanism.md`
-
-**F15 · Wesley's Roguelike Dungeons (O35)**
-- a) Welche Stufen sind Pflicht für Part 1, welche gehören zum Training in Part 2, welche bleiben Nebenquest?
-- b) „Die acht Oberwelt-Dungeons“: eine Quest je Dungeon-Gruppe, oder die acht Dungeons der Infinite-Dimension (WD5)?
-- c) Goldmenge für WD5-04; WD5-05 als Kette aus sechs Quests?
-→ `18_STORY.md`; `rld.md`
 
 ### Story, Part 1
 
@@ -176,3 +156,8 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 | F25 | Mekanism-Erze in Blue Skies bleiben normale Erzblöcke | 2026-10-20 | `03_ERZGENERATION.md` |
 | O16 | Der Text des Meisters ist sein Tagebuch, gefunden zusammen mit dem Relikt | 2026-10-20 | `18_STORY.md` |
 | O3 | Relikt und Tagebuch des Meisters liegen in der Altar-Dimension | 2026-10-20 | `18_STORY.md` |
+| F1 | Hauptquests aus K1–K3 stehen als „Notizen des Roboters“ im Buch und haken sich beim Öffnen selbst ab, wenn das Item da ist; Nebenquests aus K1–K3 normal mit Credits; erste Quest ist die Tinkers-Schmelze (Startgeschenk, Einführung) | 2026-10-20 | `18_STORY.md`, Questtexte |
+| F4 | „Würdig sein“: Smeltery Controller (Tinkers), LV-Kondensator (IE), 4 Manasteel-Barren (Botania) | 2026-10-20 | `18_STORY.md`, `questtexte/tinkers.md`, `ie.md`, `botania.md` |
+| F8 | Altar-Reparatur: Terrasteel, 4 Imbued Slate, Dusk Arc (Alchemist, Strang des Blue-Skies-Hauses), ein Item aus dem Pflicht-Dungeon von Wesley's (F15). Texte der Schriftrollen schreibt der User | 2026-10-20 | `18_STORY.md`, `questtexte/bloodmagic.md` |
+| F14 | Der Elf fertigt den Galaktischen Strahlenschutz aus: Relikt, vier Arcs (`blue_skies:ethereal_arc`, `dusk_arc`, `nature_arc`, `poison_arc`, je sicher im Loot Bag des Bosses), Elite Control Circuit, 4 Elementium. Name und Charakter legt der User fest | 2026-10-20 | `18_STORY.md`, `questtexte/blue_skies.md` |
+| F15 | Wesley's in Teil 1: Pflicht sind Stufe 1 (Vorbereitung, Kreide) und ein Oberwelt-Dungeon (liefert das Item für F8); Rest Nebenquest bzw. Training in Teil 2 | 2026-10-20 | `18_STORY.md`, `questtexte/rld.md` |
