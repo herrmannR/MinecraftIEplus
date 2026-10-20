@@ -1,0 +1,12 @@
+{
+  "name": "Klon-Rüstung (Phase 2)",
+  "icon": "swgc:clone_phase_2_helmet",
+  "category": "patchouli:ruestung",
+  "advancement": "ieplus:bauplan/ruestung_klon",
+  "sortnum": 1,
+  "pages": [
+    { "type": "patchouli:text", "text": "Rüstung der Klonsoldaten, ganz aus Plastoid. Bemalen lässt sie sich an der Assembly Bench.$(br2)Alle Teile an der Werkbank." },
+    { "type": "patchouli:crafting", "recipe": "ieplus:bauplan/swgc_clone_phase_2_helmet", "recipe2": "ieplus:bauplan/swgc_clone_phase_2_chestplate" },
+    { "type": "patchouli:crafting", "recipe": "ieplus:bauplan/swgc_clone_phase_2_leggings", "recipe2": "ieplus:bauplan/swgc_clone_phase_2_boots" }
+  ]
+}

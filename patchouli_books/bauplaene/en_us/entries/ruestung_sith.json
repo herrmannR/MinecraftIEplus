@@ -1,0 +1,12 @@
+{
+  "name": "Sith-Gewand",
+  "icon": "swgc:sith_male_helmet",
+  "category": "patchouli:ruestung",
+  "advancement": "ieplus:bauplan/ruestung_sith",
+  "sortnum": 3,
+  "pages": [
+    { "type": "patchouli:text", "text": "Dunkles Gewand der Sith, mit Kapuze.$(br2)Alle Teile an der Werkbank." },
+    { "type": "patchouli:crafting", "recipe": "ieplus:bauplan/swgc_sith_male_helmet", "recipe2": "ieplus:bauplan/swgc_sith_male_chestplate" },
+    { "type": "patchouli:crafting", "recipe": "ieplus:bauplan/swgc_sith_male_leggings", "recipe2": "ieplus:bauplan/swgc_sith_male_boots" }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Rüstung der Royal Guard",
+  "icon": "swgc:royal_guard_helmet",
+  "category": "patchouli:ruestung",
+  "advancement": "ieplus:bauplan/ruestung_royal_guard",
+  "sortnum": 4,
+  "pages": [
+    { "type": "patchouli:text", "text": "Rote Rüstung der Leibwache des Imperators, aus Durasteel, Plastoid und roter Wolle.$(br2)Alle Teile an der Werkbank." },
+    { "type": "patchouli:crafting", "recipe": "ieplus:bauplan/swgc_royal_guard_helmet", "recipe2": "ieplus:bauplan/swgc_royal_guard_chestplate" },
+    { "type": "patchouli:crafting", "recipe": "ieplus:bauplan/swgc_royal_guard_leggings", "recipe2": "ieplus:bauplan/swgc_royal_guard_boots" }
+  ]
+}

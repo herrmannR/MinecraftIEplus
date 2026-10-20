@@ -1,0 +1,12 @@
+{
+  "name": "Vader-Rüstung",
+  "icon": "swgc:vader_helmet",
+  "category": "patchouli:ruestung",
+  "advancement": "ieplus:bauplan/ruestung_vader",
+  "sortnum": 5,
+  "pages": [
+    { "type": "patchouli:text", "text": "Schwere schwarze Rüstung aus Durasteel und Obsidian.$(br2)Alle Teile an der Werkbank." },
+    { "type": "patchouli:crafting", "recipe": "ieplus:bauplan/swgc_vader_helmet", "recipe2": "ieplus:bauplan/swgc_vader_chestplate" },
+    { "type": "patchouli:crafting", "recipe": "ieplus:bauplan/swgc_vader_leggings", "recipe2": "ieplus:bauplan/swgc_vader_boots" }
+  ]
+}

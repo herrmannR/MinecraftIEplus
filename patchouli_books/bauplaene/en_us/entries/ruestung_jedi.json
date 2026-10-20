@@ -1,0 +1,12 @@
+{
+  "name": "Jedi-Gewand",
+  "icon": "swgc:jedi_male_chestplate",
+  "category": "patchouli:ruestung",
+  "advancement": "ieplus:bauplan/ruestung_jedi",
+  "sortnum": 2,
+  "pages": [
+    { "type": "patchouli:text", "text": "Schlichtes Gewand der Jedi aus Wolle und Faden.$(br2)Alle Teile an der Werkbank." },
+    { "type": "patchouli:crafting", "recipe": "ieplus:bauplan/swgc_jedi_male_chestplate", "recipe2": "ieplus:bauplan/swgc_jedi_male_leggings" },
+    { "type": "patchouli:crafting", "recipe": "ieplus:bauplan/swgc_jedi_male_boots" }
+  ]
+}

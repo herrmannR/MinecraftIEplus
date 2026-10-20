@@ -1,0 +1,6 @@
+{
+  "name": "Rüstung",
+  "description": "Rüstungen und Gewänder. Erst mit dem Bauplan lassen sie sich an der Werkbank herstellen.",
+  "icon": "swgc:clone_phase_2_helmet",
+  "sortnum": 3
+}
