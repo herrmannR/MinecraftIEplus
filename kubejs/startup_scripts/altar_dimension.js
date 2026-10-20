@@ -6,7 +6,12 @@
 // Fehler in einem Handler brechen das Ereignis ab (Test 47: Ritual ging nirgends). Deshalb fängt jeder Handler
 // seine Fehler selbst ab und lässt das Ereignis im Fehlerfall durch.
 // Innerhalb der Funktionen nur var: Rhino meldet bei const in try-Blöcken „redeclaration of var“ (Test 47/48, 2026-10-20).
-// Stand 2026-10-20, KubeJS 2001. Fassung 3 nach Test 47/48, UNGETESTET.
+// Amulett-Prüfung ohne Rückfall aufs Inventar: Der Rückfall ließ bei Fehlern jeden mit Charm im Inventar hinein (Test 48, Runde 3).
+// findFirstCurio gibt es mit Item und mit Predicate; die Item-Fassung wird ausdrücklich gewählt.
+// Jede Entscheidung beim Betreten steht in logs/kubejs/startup.log („altar_dimension.js: Betreten …“).
+// Stand 2026-10-20, KubeJS 2001. Fassung 4 nach Test 48 (Ritual-Teil mit Fassung 3 bestanden, Test 47).
+// Blood Magic bringt Spieler per /execute in … run tp hinein (TileInversionPillar.teleportPlayerToLocation);
+// ServerPlayer.teleportTo ruft dabei ForgeHooks.onTravelToDimension, das Ereignis kommt also an (Forge 47.4.26, JAR geprüft).
 
 const IEPLUS_DUNGEON_RITUALE = ['ritualStandardDungeon']
 const IEPLUS_TEMPEL_DIMENSION = 'ad_astra:mercury'
@@ -38,26 +43,30 @@ ForgeEvents.onEvent('wayoftime.bloodmagic.event.RitualEvent$RitualActivatedEvent
 })
 
 function ieplusTraegtAmulett(player) {
+  // Liefert true, false oder null (Abfrage gescheitert)
   try {
     var CuriosApi = Java.loadClass('top.theillusivec4.curios.api.CuriosApi')
     var handler = CuriosApi.getCuriosInventory(player).resolve()
-    if (handler.isPresent()) {
-      return handler.get().findFirstCurio(Item.of(IEPLUS_AMULETT).getItem()).isPresent()
-    }
+    if (!handler.isPresent()) return false
+    var item = Item.of(IEPLUS_AMULETT).getItem()
+    return handler.get()['findFirstCurio(net.minecraft.world.item.Item)'](item).isPresent()
   } catch (err) {
-    console.warn('altar_dimension.js: Curios nicht abfragbar, prüfe nur das Inventar: ' + err)
+    console.error('altar_dimension.js: Curios nicht abfragbar: ' + err)
+    return null
   }
-  // Rückfall, damit niemand wegen eines Fehlers für immer draußen bleibt
-  return player.inventory.find(IEPLUS_AMULETT) >= 0
 }
 
 ForgeEvents.onEvent('net.minecraftforge.event.entity.EntityTravelToDimensionEvent', event => {
   try {
     var entity = event.getEntity()
     if (!entity || !entity.isPlayer()) return
+    console.info('altar_dimension.js: Reise ' + entity.username + ' nach ' + ieplusDimId(event.getDimension()) + ', kreativ: ' + entity.isCreative())
     if (ieplusDimId(event.getDimension()) !== IEPLUS_ALTAR_DIMENSION) return
     if (entity.isCreative() || entity.isSpectator()) return
-    if (ieplusTraegtAmulett(entity)) return
+    var amulett = ieplusTraegtAmulett(entity)
+    console.info('altar_dimension.js: Betreten ' + entity.username + ', Amulett im Curios-Slot: ' + amulett)
+    if (amulett === true) return
+    // Auch bei gescheiterter Abfrage (null) bleibt man draußen; Kreativmodus kommt immer hinein.
     event.setCanceled(true)
     entity.tell(Text.red('Eine dunkle Kraft stößt dich zurück. Ohne den Schutz der Göttin (Benevolent Goddess\' Charm) kommst du nicht hinein.'))
   } catch (err) {

@@ -1179,3 +1179,11 @@ Status: 🟡
 - Sieben neue Rollen `kubejs:bauplan_blaster_<modell>` (DC-15A, DC-15S, DC-17, DH-17, E-5, TL-50, Amban-Gewehr) mit je einer Buchseite (Bild des Blasters, Zutaten an der Assembly Bench). Keine Sperre an der Bench (User): Die Bench liest ihre Blaster-Liste nur beim Start (statisch in `AssemblyBenchMenu`), und wer das Rezept vorher findet, darf es nutzen.
 - Bestätigt: Durasteel und Plastoid haben kein Rezept, nur Shop-Ware.
 - In die Testinstanz kopiert (Neustart nötig, neue Items).
+
+## 2026-10-20 — Test 47 bestanden, Test 48: Amulett-Prüfung Fassung 4
+
+Status: 🟡
+
+### Änderung
+- Test 47 ✅ (User): Edge of the Hidden Realm überall, Pathway to the Endless Realm nur auf dem Merkur.
+- Test 48 ❌ (User): Man kommt weiter ohne Amulett hinein. Im JAR geprüft: Blood Magic teleportiert per `/execute … run tp`, Forge löst dabei `EntityTravelToDimensionEvent` aus, Abbrechen wirkt. Fassung 4 von `altar_dimension.js`: kein Rückfall aufs Inventar mehr (der ließ bei einer gescheiterten Curios-Abfrage durch), `findFirstCurio(Item)` ausdrücklich gewählt, bei gescheiterter Abfrage bleibt man draußen, Log-Zeilen für jede Reise und jede Entscheidung.
