@@ -1,0 +1,1459 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "botania"
+	group: ""
+	icon: "botania:lexicon"
+	id: "57F6105C5D58B3B2"
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["49DA11DCC4D42945"]
+			description: [
+				"Botania erklärt sich selbst: Das Lexikon zeigt jede Blume, jedes Gerät und alle Rezepte. Lies es, wann immer eine Quest darauf verweist."
+				"Buch: Basics and Mechanics → Welcome To Botania, Lexica Botania."
+			]
+			hide_until_deps_complete: true
+			icon: "botania:lexicon"
+			id: "672EC395D28D9461"
+			subtitle: "BO1 · Blüten und Lebendholz"
+			tasks: [{
+				id: "22A615EC14D28E31"
+				item: "botania:lexicon"
+				type: "item"
+			}]
+			title: "Lexica Botania"
+			x: 0.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["672EC395D28D9461"]
+			description: [
+				"Die bunten Blumen wachsen überall in der Overworld und liefern Petals, den Grundstoff des Mods. Weiße brauchst du gleich für die Pure Daisy."
+				"Buch: Basics and Mechanics → Mystical Flowers."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:white_petal"
+			id: "6286EA3BAF407A45"
+			subtitle: "BO1 · Blüten und Lebendholz"
+			tasks: [{
+				count: 4L
+				id: "7109FA6939C191E1"
+				item: "botania:white_petal"
+				type: "item"
+			}]
+			title: "Mystical Flowers"
+			x: 1.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["6286EA3BAF407A45"]
+			description: [
+				"In der Apothecary entstehen alle besonderen Blumen."
+				"Buch: Basics and Mechanics → Petal Apothecary."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:apothecary_default"
+			id: "7583F8390031199F"
+			subtitle: "BO1 · Blüten und Lebendholz"
+			tasks: [{
+				id: "4952C500D9AB5771"
+				item: "botania:apothecary_default"
+				type: "item"
+			}]
+			title: "Petal Apothecary"
+			x: 3.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["7583F8390031199F"]
+			description: [
+				"Die erste besondere Blume: Sie macht aus Holz Livingwood und aus Stein Livingrock, die Baustoffe für fast alles Weitere."
+				"Buch: Basics and Mechanics → Pure Daisy."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:pure_daisy"
+			id: "77093286C0E2DB3B"
+			subtitle: "BO1 · Blüten und Lebendholz"
+			tasks: [{
+				id: "42C6225923CE404A"
+				item: "botania:pure_daisy"
+				type: "item"
+			}
+			{
+				id: "2C07820A0C884BDC"
+				item: "botania:livingwood_log"
+				type: "item"
+			}
+			{
+				id: "0DD76559096B24CF"
+				item: "botania:livingrock"
+				type: "item"
+			}]
+			title: "Pure Daisy"
+			x: 4.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["77093286C0E2DB3B"]
+			description: [
+				"Der Stab verbindet Blumen mit Spreadern und Pools und zeigt dir deren Zustand."
+				"Buch: Basics and Mechanics → Wand of the Forest."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:twig_wand"
+			id: "0E9E3687A3A51B2B"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "BO1 · Blüten und Lebendholz"
+			tasks: [{
+				id: "5176EB36056383AF"
+				item: "botania:twig_wand"
+				type: "item"
+			}]
+			title: "Wand of the Forest"
+			x: 6.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["0E9E3687A3A51B2B"]
+			description: [
+				"Sammelt Blumen beim Aufheben, damit das Inventar frei bleibt."
+				"Buch: Basics and Mechanics → Flower Pouch."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:flower_bag"
+			id: "35E3909F0AA03C7C"
+			optional: true
+			shape: "square"
+			subtitle: "BO1 · Blüten und Lebendholz · Nebenquest"
+			tasks: [{
+				id: "55B499FE9FFFD86F"
+				item: "botania:flower_bag"
+				type: "item"
+			}]
+			title: "Flower Pouch"
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["0E9E3687A3A51B2B", "7D17A2E727E32894"]
+			description: [
+				"Erzeugende Blumen machen Mana: die Endoflame aus Brennstoff, die Hydroangeas aus Wasser."
+				"Buch: Generating Flora → Generating Flora, Endoflame, Hydroangeas."
+			]
+			hide_until_deps_complete: true
+			icon: "botania:endoflame"
+			id: "47845FF024A9DDBC"
+			subtitle: "BO2 · Mana und Manasteel"
+			tasks: [{
+				id: "6C11445465D145B4"
+				item: { Count: 1b, id: "itemfilters:or", tag: { items: [{ Count: 1b, id: "botania:endoflame" }, { Count: 1b, id: "botania:hydroangeas" }] } }
+				title: "Erste Mana-Blume"
+				type: "item"
+			}]
+			title: "Erste Mana-Blume"
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["47845FF024A9DDBC"]
+			description: [
+				"Der Spreader sammelt das Mana der Blumen und schießt es weiter."
+				"Buch: Mana Manipulation → Introduction to Mana, Mana Spreader."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:mana_spreader"
+			id: "6A138084A4B791EF"
+			subtitle: "BO2 · Mana und Manasteel"
+			tasks: [{
+				id: "0CAEC3D1E5412DA9"
+				item: "botania:mana_spreader"
+				type: "item"
+			}]
+			title: "Mana Spreader"
+			x: 1.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["6A138084A4B791EF"]
+			description: [
+				"Der Pool speichert Mana und ist zugleich die Werkbank für Mana Infusion."
+				"Buch: Mana Manipulation → Mana Pool."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:mana_pool"
+			id: "131F51EE29E22307"
+			subtitle: "BO2 · Mana und Manasteel"
+			tasks: [{
+				id: "20B503D04FBBC361"
+				item: "botania:mana_pool"
+				type: "item"
+			}]
+			title: "Mana Pool"
+			x: 3.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["131F51EE29E22307"]
+			description: [
+				"Eisen in einen gefüllten Pool werfen. Manasteel ist das erste Metall des Mods."
+				"Buch: Mana Manipulation → Mana Pool."
+				"&6⚙&r Mit TCIntegrations ist Manasteel auch ein Werkzeugmaterial für Tinkers, ebenso Livingwood, Livingrock und Mana Infused String."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:manasteel_ingot"
+			id: "33A1ABD2FA5E2B9B"
+			subtitle: "BO2 · Mana und Manasteel"
+			tasks: [{
+				id: "0076FFCDD416D9DB"
+				item: "botania:manasteel_ingot"
+				type: "item"
+			}]
+			title: "Manasteel"
+			x: 4.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["33A1ABD2FA5E2B9B"]
+			description: [
+				"Ebenfalls aus dem Pool. Die Mana Pearl brauchst du für den Runic Altar."
+				"Buch: Mana Manipulation → Mana Pool."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:mana_pearl"
+			id: "4FEAEAE56A2A8400"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "BO2 · Mana und Manasteel"
+			tasks: [{
+				id: "7B7735AFAC326442"
+				item: "botania:mana_pearl"
+				type: "item"
+			}
+			{
+				id: "1FB9E476ABD40379"
+				item: "botania:mana_diamond"
+				type: "item"
+			}]
+			title: "Mana Pearl und Mana Diamond"
+			x: 6.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["4FEAEAE56A2A8400"]
+			description: [
+				"Werkzeuge und Rüstung, die sich mit Mana aus dem Inventar selbst reparieren."
+				"Buch: Mystical Items → Manasteel Equipment."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:manasteel_pick"
+			id: "1F5B7E8CF2278E96"
+			optional: true
+			shape: "square"
+			subtitle: "BO2 · Mana und Manasteel · Nebenquest"
+			tasks: [{
+				id: "144BB95AA085BA55"
+				item: "botania:manasteel_pick"
+				type: "item"
+			}]
+			title: "Manasteel-Ausrüstung"
+			x: 6.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["4FEAEAE56A2A8400"]
+			description: [
+				"Ein tragbarer Mana-Speicher für Werkzeuge und Geräte."
+				"Buch: Mana Manipulation → Mana Tablet."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:mana_tablet"
+			id: "50EAFBBFA5EF8E9A"
+			optional: true
+			shape: "square"
+			subtitle: "BO2 · Mana und Manasteel · Nebenquest"
+			tasks: [{
+				id: "4E62BF778B8F12BB"
+				item: "botania:mana_tablet"
+				type: "item"
+			}]
+			title: "Mana Tablet"
+			x: 7.25d
+			y: 5.5d
+		}
+		{
+			dependencies: ["4FEAEAE56A2A8400", "0B2B8888238E82AD"]
+			description: [
+				"Am Altar entstehen die Runen. Die meisten besseren Blumen brauchen sie."
+				"Buch: Basics and Mechanics → Runic Altar."
+			]
+			hide_until_deps_complete: true
+			icon: "botania:runic_altar"
+			id: "083AC076A6081BF5"
+			subtitle: "BO3 · Runenaltar"
+			tasks: [{
+				id: "028D6106559BDE9B"
+				item: "botania:runic_altar"
+				type: "item"
+			}]
+			title: "Runic Altar"
+			x: 0.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["083AC076A6081BF5"]
+			description: [
+				"Die vier Grundrunen."
+				"Buch: Basics and Mechanics → Runic Altar."
+				"Hinweis: Die Rune of Fire braucht Zutaten aus dem Nether."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:rune_water"
+			id: "194C2ADA92F61A8F"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "BO3 · Runenaltar"
+			tasks: [{
+				id: "4B805CE810486CC1"
+				item: "botania:rune_water"
+				type: "item"
+			}
+			{
+				id: "22872BF399B2F9CC"
+				item: "botania:rune_fire"
+				type: "item"
+			}
+			{
+				id: "020DFF5CF3D10D07"
+				item: "botania:rune_earth"
+				type: "item"
+			}
+			{
+				id: "791721135D12ABDB"
+				item: "botania:rune_air"
+				type: "item"
+			}]
+			title: "Elementrunen"
+			x: 1.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["194C2ADA92F61A8F"]
+			description: [
+				"Buch: Basics and Mechanics → Runic Altar."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:rune_mana"
+			id: "2EA654EA36EC4AC7"
+			optional: true
+			shape: "square"
+			subtitle: "BO3 · Runenaltar · Nebenquest"
+			tasks: [{
+				id: "3EAF05128448D6EB"
+				item: "botania:rune_mana"
+				type: "item"
+			}
+			{
+				id: "3C2C5E1ECF50F15B"
+				item: "botania:rune_spring"
+				type: "item"
+			}
+			{
+				id: "26027EBBD447BD46"
+				item: "botania:rune_summer"
+				type: "item"
+			}
+			{
+				id: "359940B4F6BF88BC"
+				item: "botania:rune_autumn"
+				type: "item"
+			}
+			{
+				id: "3AD746D8849400D1"
+				item: "botania:rune_winter"
+				type: "item"
+			}]
+			title: "Rune of Mana und Jahreszeiten"
+			x: 1.5d
+			y: 9.0d
+		}
+		{
+			dependencies: ["194C2ADA92F61A8F"]
+			description: [
+				"Die teuersten Runen, mit Mana Diamonds."
+				"Buch: Basics and Mechanics → Runic Altar."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:rune_lust"
+			id: "4FA29F534D2520C5"
+			optional: true
+			shape: "square"
+			subtitle: "BO3 · Runenaltar · Nebenquest"
+			tasks: [{
+				id: "354BB9FAFD14CF66"
+				item: "botania:rune_lust"
+				type: "item"
+			}
+			{
+				id: "4FAA8014F263752A"
+				item: "botania:rune_gluttony"
+				type: "item"
+			}
+			{
+				id: "267FF0B1BD96F58E"
+				item: "botania:rune_greed"
+				type: "item"
+			}
+			{
+				id: "1DE871F7BC733A5C"
+				item: "botania:rune_sloth"
+				type: "item"
+			}
+			{
+				id: "09638D3BA1A96275"
+				item: "botania:rune_wrath"
+				type: "item"
+			}
+			{
+				id: "29B6040F93762C98"
+				item: "botania:rune_envy"
+				type: "item"
+			}
+			{
+				id: "1C5691DB3A13B5AC"
+				item: "botania:rune_pride"
+				type: "item"
+			}]
+			title: "Runen der Todsünden"
+			x: 2.75d
+			y: 9.0d
+		}
+		{
+			dependencies: ["194C2ADA92F61A8F"]
+			description: [
+				"Jede erzeugende Blume hat ihren eigenen Brennstoff, von Lava bis Explosionen."
+				"Buch: Generating Flora → Eintrag der Blume."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:thermalily"
+			id: "30E2BFE1CA8DCE48"
+			optional: true
+			shape: "square"
+			subtitle: "BO3 · Runenaltar · Nebenquest"
+			tasks: [{
+				id: "4ACB03CAC9009C8A"
+				item: { Count: 1b, id: "itemfilters:or", tag: { items: [{ Count: 1b, id: "botania:thermalily" }, { Count: 1b, id: "botania:gourmaryllis" }, { Count: 1b, id: "botania:munchdew" }, { Count: 1b, id: "botania:rosa_arcana" }, { Count: 1b, id: "botania:entropinnyum" }, { Count: 1b, id: "botania:kekimurus" }, { Count: 1b, id: "botania:narslimmus" }] } }
+				title: "Bessere Mana-Blumen"
+				type: "item"
+			}]
+			title: "Bessere Mana-Blumen"
+			x: 4.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["194C2ADA92F61A8F"]
+			description: [
+				"Blumen, die mit Mana arbeiten: Items sammeln, Pflanzen wachsen lassen, Blöcke setzen, Öfen heizen."
+				"Buch: Functional Flora → Functional Flora und Eintrag der Blume."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:hopperhock"
+			id: "17E15B15A49C476B"
+			optional: true
+			shape: "square"
+			subtitle: "BO3 · Runenaltar · Nebenquest"
+			tasks: [{
+				id: "64A4E50D13DC8BB9"
+				item: { Count: 1b, id: "itemfilters:or", tag: { items: [{ Count: 1b, id: "botania:hopperhock" }, { Count: 1b, id: "botania:agricarnation" }, { Count: 1b, id: "botania:rannuncarpus" }, { Count: 1b, id: "botania:exoflame" }, { Count: 1b, id: "botania:clayconia" }, { Count: 1b, id: "botania:jaded_amaranthus" }] } }
+				title: "Funktionale Blumen"
+				type: "item"
+			}]
+			title: "Funktionale Blumen"
+			x: 5.25d
+			y: 9.0d
+		}
+		{
+			dependencies: ["194C2ADA92F61A8F"]
+			description: [
+				"Lenses verändern den Strahl des Spreaders, Sparks verteilen Mana ohne Strahl."
+				"Buch: Mana Manipulation → Mana Lenses, Sparks, Spark Augments."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:lens_normal"
+			id: "40EE4D2B83A53517"
+			optional: true
+			shape: "square"
+			subtitle: "BO3 · Runenaltar · Nebenquest"
+			tasks: [{
+				id: "093950D49246E2C6"
+				item: "botania:lens_normal"
+				type: "item"
+			}
+			{
+				id: "075615E3EE30E3E6"
+				item: "botania:spark"
+				type: "item"
+			}]
+			title: "Lenses und Sparks"
+			x: 6.5d
+			y: 9.0d
+		}
+		{
+			dependencies: ["194C2ADA92F61A8F"]
+			description: [
+				"Tränke aus Mana, mit mehreren Schlucken je Flasche."
+				"Buch: Natural Apparatus → Botanical Brewery, Brewing Flasks."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:brewery"
+			id: "7501314B125FE8D3"
+			optional: true
+			shape: "square"
+			subtitle: "BO3 · Runenaltar · Nebenquest"
+			tasks: [{
+				id: "73792251025E5588"
+				item: "botania:brewery"
+				type: "item"
+			}
+			{
+				id: "71D103B086279A62"
+				item: "botania:brew_flask"
+				type: "item"
+			}]
+			title: "Botanical Brewery"
+			x: 7.75d
+			y: 9.0d
+		}
+		{
+			dependencies: ["194C2ADA92F61A8F"]
+			description: [
+				"Botanias Autocrafter: Er baut Rezepte nach, die du ihm vorgibst."
+				"Buch: Natural Apparatus → Open Crate, Crafty Crate."
+				"&6⚙&r Im Pack gibt es weitere Autocrafter (IE Assembler, Mekanism Formulaic Assemblicator, später AE2); die Crate ist der magische Weg."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:crafty_crate"
+			id: "09D8AEEBB399F280"
+			optional: true
+			shape: "square"
+			subtitle: "BO3 · Runenaltar · Nebenquest"
+			tasks: [{
+				id: "54C0381F427626BF"
+				item: "botania:crafty_crate"
+				type: "item"
+			}]
+			title: "Crafty Crate"
+			x: 9.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["194C2ADA92F61A8F"]
+			description: [
+				"Wandelt Mana in Strom um."
+				"Buch: Mana Manipulation → Mana Fluxfield."
+				"&6⚙&r Das Fluxfield ist die einzige Brücke von Botania zur Technik. Der Strom passt in IE- und Mekanism-Netze; den Rückweg von Strom zu Mana gibt es nicht."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:mana_fluxfield"
+			id: "7300CA11A587DBA3"
+			optional: true
+			shape: "square"
+			subtitle: "BO3 · Runenaltar · Nebenquest"
+			tasks: [{
+				id: "2E4E97EA47B0EC9C"
+				item: "botania:mana_fluxfield"
+				type: "item"
+			}]
+			title: "Mana Fluxfield"
+			x: 10.25d
+			y: 9.0d
+		}
+		{
+			dependencies: ["194C2ADA92F61A8F"]
+			description: [
+				"Unter einem Pool verwandelt oder vermehrt ein Katalysator, was du hineinwirfst."
+				"Buch: Natural Apparatus → Alchemising with Mana, Conjuring with Mana."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:alchemy_catalyst"
+			id: "0AB3571EEB10A49A"
+			optional: true
+			shape: "square"
+			subtitle: "BO3 · Runenaltar · Nebenquest"
+			tasks: [{
+				id: "6D033AD2511CF907"
+				item: "botania:alchemy_catalyst"
+				type: "item"
+			}
+			{
+				id: "403C19A1BF05671F"
+				item: "botania:conjuration_catalyst"
+				type: "item"
+			}]
+			title: "Katalysatoren"
+			x: 11.5d
+			y: 9.0d
+		}
+		{
+			dependencies: ["194C2ADA92F61A8F"]
+			description: [
+				"Verwandelt Stein in Erz."
+				"Buch: Functional Flora → Orechid."
+				"&6⚙&r Die Orechid macht nur Vanilla-Erze. Erze von IE, Mekanism, Blue Skies und den Planeten liefert sie nicht."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:orechid"
+			id: "7DC3A406E4ED450D"
+			optional: true
+			shape: "square"
+			subtitle: "BO3 · Runenaltar · Nebenquest"
+			tasks: [{
+				id: "49204AC98026D90C"
+				item: "botania:orechid"
+				type: "item"
+			}]
+			title: "Orechid"
+			x: 12.75d
+			y: 9.0d
+		}
+		{
+			dependencies: ["194C2ADA92F61A8F"]
+			description: [
+				"Verzaubert Items mit Mana, gezielt und ohne Zufall."
+				"Buch: Natural Apparatus → Mana Pylon, Enchanting with Mana."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:enchanter"
+			id: "6DE68168574592F9"
+			optional: true
+			shape: "square"
+			subtitle: "BO3 · Runenaltar · Nebenquest"
+			tasks: [{
+				id: "60571ED6CC6351F3"
+				item: "botania:enchanter"
+				type: "item"
+			}]
+			title: "Mana Enchanter"
+			x: 14.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["194C2ADA92F61A8F", "1102A1D22CF06A0C"]
+			description: [
+				"Die Platte verschmilzt Manasteel, Mana Pearl und Mana Diamond mit viel Mana. Sie braucht einen festen Unterbau."
+				"Buch: Basics and Mechanics → Terrasteel."
+			]
+			hide_until_deps_complete: true
+			icon: "botania:terra_plate"
+			id: "51CEB2BFB723DB77"
+			subtitle: "BO4 · Terrasteel"
+			tasks: [{
+				id: "713FCA28E70B175D"
+				item: "botania:terra_plate"
+				type: "item"
+			}]
+			title: "Terrestrial Agglomeration Plate"
+			x: 0.0d
+			y: 11.0d
+		}
+		{
+			dependencies: ["51CEB2BFB723DB77"]
+			description: [
+				"Das zweite Metall des Mods und Baustoff des Elfenportals. Plane die Mana-Versorgung vorher: Ein Barren braucht etwa einen halben Pool."
+				"Buch: Basics and Mechanics → Terrasteel."
+				"&6⚙&r Mit TCIntegrations gibt Terrasteel einen Modifier für Tinkers-Werkzeuge."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:terrasteel_ingot"
+			id: "32310B37BC9A953F"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "BO4 · Terrasteel"
+			tasks: [{
+				id: "637DD1C0FF2100C6"
+				item: "botania:terrasteel_ingot"
+				type: "item"
+			}]
+			title: "Terrasteel"
+			x: 1.5d
+			y: 11.0d
+		}
+		{
+			dependencies: ["32310B37BC9A953F"]
+			description: [
+				"Buch: Mystical Items → Terra Blade, Terra Shatterer, Terrasteel Armor."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:terra_sword"
+			id: "45CDED460490F35A"
+			optional: true
+			shape: "square"
+			subtitle: "BO4 · Terrasteel · Nebenquest"
+			tasks: [{
+				id: "728208BE0E948102"
+				item: { Count: 1b, id: "itemfilters:or", tag: { items: [{ Count: 1b, id: "botania:terra_sword" }, { Count: 1b, id: "botania:terra_pick" }, { Count: 1b, id: "botania:terrasteel_helmet" }] } }
+				title: "Terra-Ausrüstung"
+				type: "item"
+			}]
+			title: "Terra-Ausrüstung"
+			x: 1.5d
+			y: 12.5d
+		}
+		{
+			dependencies: ["32310B37BC9A953F", "2596BAFEBEF00419"]
+			description: [
+				"Das Portal zieht sein Mana über Natura Pylons aus Pools in der Nähe."
+				"Buch: Alfhomancy → The Portal to Alfheim."
+			]
+			hide_until_deps_complete: true
+			icon: "botania:natura_pylon"
+			id: "5D0A360656B07CDA"
+			subtitle: "BO5 · Elfenportal"
+			tasks: [{
+				id: "4E978C6CD2F48BDC"
+				item: "botania:natura_pylon"
+				type: "item"
+			}]
+			title: "Natura Pylon"
+			x: 0.0d
+			y: 14.5d
+		}
+		{
+			dependencies: ["5D0A360656B07CDA"]
+			description: [
+				"Rahmen aus Livingwood, in der Mitte der Elven Gateway Core. Mit dem Wand of the Forest öffnest du es."
+				"Buch: Alfhomancy → The Portal to Alfheim, A Message from Elven Garde."
+				"&6⚙&r Hindurchgehen kannst du noch nicht: MythicBotany lässt nur durch, wer den Mead of Kvasir getrunken hat (Quest „Mead of Kvasir“). Bis dahin dient das Portal dem Handel."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:alfheim_portal"
+			id: "1324315F8E271AF5"
+			subtitle: "BO5 · Elfenportal"
+			tasks: [{
+				id: "28A70EE52044CD0E"
+				item: "botania:alfheim_portal"
+				type: "item"
+			}
+			{
+				id: "320BF7B2E2DF6188"
+				item: "botania:glimmering_livingwood"
+				type: "item"
+			}]
+			title: "Portal to Alfheim"
+			x: 1.5d
+			y: 14.5d
+		}
+		{
+			dependencies: ["1324315F8E271AF5"]
+			description: [
+				"Was du ins Portal wirfst, tauschen die Elfen gegen ihre Stoffe."
+				"Buch: Alfhomancy → Resources of Alfheim."
+				"&6⚙&r Bis Alfheim betreten werden kann, gibt es diese Stoffe nur über den Handel."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:elementium_ingot"
+			id: "20CA9735F369D8FB"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "BO5 · Elfenportal"
+			tasks: [{
+				id: "22F665AF774DD0A0"
+				item: "botania:elementium_ingot"
+				type: "item"
+			}
+			{
+				id: "1DBDE61E8A36E03D"
+				item: "botania:pixie_dust"
+				type: "item"
+			}
+			{
+				id: "0967303C0F8DA240"
+				item: "botania:dragonstone"
+				type: "item"
+			}
+			{
+				id: "5A8ADE8B98ECD26A"
+				item: "botania:dreamwood"
+				type: "item"
+			}]
+			title: "Elfenhandel"
+			x: 3.0d
+			y: 14.5d
+		}
+		{
+			dependencies: ["20CA9735F369D8FB"]
+			description: [
+				"Buch: Mystical Items → Elementium Equipment."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:elementium_pickaxe"
+			id: "2FDEFBFEF5D65F75"
+			optional: true
+			shape: "square"
+			subtitle: "BO5 · Elfenportal · Nebenquest"
+			tasks: [{
+				id: "5FA130C12F7C4C95"
+				item: "botania:elementium_pickaxe"
+				type: "item"
+			}]
+			title: "Elementium-Ausrüstung"
+			x: 3.0d
+			y: 16.0d
+		}
+		{
+			dependencies: ["20CA9735F369D8FB"]
+			description: [
+				"Schneller und sparsamer als der erste Spreader."
+				"Buch: Mana Manipulation → Elven Mana Spreaders, Elven Mana Lenses."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:elven_spreader"
+			id: "369AC4F605413BF3"
+			optional: true
+			shape: "square"
+			subtitle: "BO5 · Elfenportal · Nebenquest"
+			tasks: [{
+				id: "212AFA53A304C4A6"
+				item: "botania:elven_spreader"
+				type: "item"
+			}]
+			title: "Elven Mana Spreader"
+			x: 4.25d
+			y: 16.0d
+		}
+		{
+			dependencies: ["20CA9735F369D8FB", "490DA592DDA71B52"]
+			description: [
+				"Der Met öffnet dir das Portal nach Alfheim."
+				"Buch: Alfheim → The Mead of Kvasir."
+				"&6⚙&r &9(ungeprüft)&r Im Buch liegt der Met hinter dem Guardian of Gaia II (Blood of Kvasir). Im Pack kommt Alfheim vor Gaia; wie du den Met bekommst (Quest-Belohnung oder gesperrtes Rezept), ist noch nicht entschieden. Text nach der Entscheidung anpassen."
+			]
+			hide_until_deps_complete: true
+			icon: "mythicbotany:kvasir_mead"
+			id: "69ABF49F86AF0E46"
+			subtitle: "BO6 · Alfheim betreten"
+			tasks: [{
+				id: "33B568D5F22569CC"
+				item: "mythicbotany:kvasir_mead"
+				type: "item"
+			}]
+			title: "Mead of Kvasir"
+			x: 0.0d
+			y: 18.0d
+		}
+		{
+			dependencies: ["69ABF49F86AF0E46"]
+			description: [
+				"Die Welt der Elfen. Elementium und Dragonstone liegen hier als Erz, dazu viel Gold."
+				"Buch: Alfheim → Alfheim Landscape, Resources of Alfheim."
+			]
+			hide_until_deps_visible: true
+			id: "7D91CE0A05B9DBDF"
+			subtitle: "BO6 · Alfheim betreten"
+			tasks: [{
+				dimension: "mythicbotany:alfheim"
+				id: "530B0488459EAF73"
+				type: "dimension"
+			}]
+			title: "Alfheim"
+			x: 1.5d
+			y: 18.0d
+		}
+		{
+			dependencies: ["7D91CE0A05B9DBDF"]
+			description: [
+				"Neun neue Runen am Runic Altar."
+				"Buch: MythicBotany → Runes of the Nine Worlds."
+				"Hinweis: Die Rune of Asgard braucht einen Netherite-Barren."
+				"&6⚙&r Netherite lässt sich im Pack über die Alchemical Reaction Chamber (ARC) von Blood Magic vervielfachen."
+			]
+			hide_until_deps_visible: true
+			icon: "mythicbotany:midgard_rune"
+			id: "7A9899404BD38A09"
+			subtitle: "BO6 · Alfheim betreten"
+			tasks: [{
+				id: "2B7EEE934F181E50"
+				item: "mythicbotany:midgard_rune"
+				type: "item"
+			}
+			{
+				id: "578228C653034837"
+				item: "mythicbotany:alfheim_rune"
+				type: "item"
+			}
+			{
+				id: "16F735C02DC93AFF"
+				item: "mythicbotany:nidavellir_rune"
+				type: "item"
+			}
+			{
+				id: "4EDA426F781859FE"
+				item: "mythicbotany:joetunheim_rune"
+				type: "item"
+			}
+			{
+				id: "27A89E6C99447D61"
+				item: "mythicbotany:muspelheim_rune"
+				type: "item"
+			}
+			{
+				id: "58F95D5AE2F22F72"
+				item: "mythicbotany:niflheim_rune"
+				type: "item"
+			}
+			{
+				id: "6A1B25D2F1159491"
+				item: "mythicbotany:asgard_rune"
+				type: "item"
+			}
+			{
+				id: "5E38B74EC96ADDC8"
+				item: "mythicbotany:vanaheim_rune"
+				type: "item"
+			}
+			{
+				id: "2B4109B986B8EE69"
+				item: "mythicbotany:helheim_rune"
+				type: "item"
+			}]
+			title: "Runen der neun Welten"
+			x: 3.0d
+			y: 18.0d
+		}
+		{
+			dependencies: ["7A9899404BD38A09"]
+			description: [
+				"Die Weiterentwicklung der Terra Plate, mit eigenem Unterbau."
+				"Buch: MythicBotany → The Mana Infuser."
+			]
+			hide_until_deps_visible: true
+			icon: "mythicbotany:mana_infuser"
+			id: "324B71F41207B3A2"
+			subtitle: "BO6 · Alfheim betreten"
+			tasks: [{
+				id: "25B409AD309A6CF9"
+				item: "mythicbotany:mana_infuser"
+				type: "item"
+			}]
+			title: "Mana Infuser"
+			x: 4.5d
+			y: 18.0d
+		}
+		{
+			dependencies: ["324B71F41207B3A2"]
+			description: [
+				"Elementium, Dragonstone und Pixie Dust im Infuser, mit noch mehr Mana als Terrasteel."
+				"Buch: MythicBotany → The Mana Infuser."
+			]
+			hide_until_deps_visible: true
+			icon: "mythicbotany:alfsteel_ingot"
+			id: "0EDBD93632DE4C31"
+			subtitle: "BO6 · Alfheim betreten"
+			tasks: [{
+				id: "3B4A2D9805D59FD2"
+				item: "mythicbotany:alfsteel_ingot"
+				type: "item"
+			}]
+			title: "Alfsteel"
+			x: 6.0d
+			y: 18.0d
+		}
+		{
+			dependencies: ["0EDBD93632DE4C31"]
+			description: [
+				"Buch: MythicBotany → Alfsteel Pylons."
+				"&6⚙&r Im Pack braucht der Gaia Pylon den Alfsteel Pylon (Quest „Beacon und Gaia Pylons“)."
+			]
+			hide_until_deps_visible: true
+			icon: "mythicbotany:alfsteel_pylon"
+			id: "17D58AB389983771"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "BO6 · Alfheim betreten"
+			tasks: [{
+				id: "3B415F4AEB1480F7"
+				item: "mythicbotany:alfsteel_pylon"
+				type: "item"
+			}]
+			title: "Alfsteel Pylon"
+			x: 7.5d
+			y: 18.0d
+		}
+		{
+			dependencies: ["17D58AB389983771"]
+			description: [
+				"Upgrade der Terra-Werkzeuge am Smithing Table."
+				"Buch: MythicBotany → Alfsteel Tools."
+			]
+			hide_until_deps_visible: true
+			icon: "mythicbotany:alfsteel_pick"
+			id: "04434370156D7BD0"
+			optional: true
+			shape: "square"
+			subtitle: "BO6 · Alfheim betreten · Nebenquest"
+			tasks: [{
+				id: "3A58591C713AE337"
+				item: { Count: 1b, id: "itemfilters:or", tag: { items: [{ Count: 1b, id: "mythicbotany:alfsteel_pick" }, { Count: 1b, id: "mythicbotany:alfsteel_sword" }, { Count: 1b, id: "mythicbotany:alfsteel_axe" }] } }
+				title: "Alfsteel-Werkzeuge"
+				type: "item"
+			}]
+			title: "Alfsteel-Werkzeuge"
+			x: 7.5d
+			y: 19.5d
+		}
+		{
+			dependencies: ["17D58AB389983771"]
+			description: [
+				"Buch: MythicBotany → Alfsteel Mana Bands, Elemental Rings."
+			]
+			hide_until_deps_visible: true
+			icon: "mythicbotany:mana_ring_greatest"
+			id: "1ADCA0BDBA82E112"
+			optional: true
+			shape: "square"
+			subtitle: "BO6 · Alfheim betreten · Nebenquest"
+			tasks: [{
+				id: "4E31E0FFA3E0A388"
+				item: "mythicbotany:mana_ring_greatest"
+				type: "item"
+			}]
+			title: "Greatest Band of Mana"
+			x: 8.75d
+			y: 19.5d
+		}
+		{
+			dependencies: ["17D58AB389983771"]
+			description: [
+				"Buch: MythicBotany → Generating Flora, Functional Flora."
+			]
+			hide_until_deps_visible: true
+			icon: "mythicbotany:aquapanthus"
+			id: "64ECBD71AE6B240B"
+			optional: true
+			shape: "square"
+			subtitle: "BO6 · Alfheim betreten · Nebenquest"
+			tasks: [{
+				id: "2B3E2640A8540731"
+				item: { Count: 1b, id: "itemfilters:or", tag: { items: [{ Count: 1b, id: "mythicbotany:aquapanthus" }, { Count: 1b, id: "mythicbotany:exoblaze" }, { Count: 1b, id: "mythicbotany:hellebore" }, { Count: 1b, id: "mythicbotany:wither_aconite" }, { Count: 1b, id: "mythicbotany:raindeletia" }] } }
+				title: "Blumen von MythicBotany"
+				type: "item"
+			}]
+			title: "Blumen von MythicBotany"
+			x: 10.0d
+			y: 19.5d
+		}
+		{
+			dependencies: ["17D58AB389983771", "13CC768AFE8EB0F0"]
+			description: [
+				"&c⚠ &eDer Guardian of Gaia ist ein schwerer Bosskampf.&r&c Lies den Eintrag im Buch vor dem Ritual ganz. Lass keine Wertsachen in der Arena liegen.&r"
+				""
+				"Das Ritual braucht einen aktiven Beacon mit Gaia Pylons darum."
+				"Buch: Alfhomancy → Ritual of Gaia."
+				"&6⚙&r Im Pack wird der Gaia Pylon aus dem Alfsteel Pylon gebaut, nicht wie im Buch beschrieben."
+				"Hinweis: Der Beacon braucht einen Nether Star."
+			]
+			hide_until_deps_complete: true
+			icon: "minecraft:beacon"
+			id: "36443A11DFC20ABF"
+			subtitle: "BO7 · Gaia"
+			tasks: [{
+				id: "31D77209200EE2DB"
+				item: "minecraft:beacon"
+				type: "item"
+			}
+			{
+				id: "50AB43DF35A5AA3D"
+				item: "botania:gaia_pylon"
+				type: "item"
+			}]
+			title: "Beacon und Gaia Pylons"
+			x: 0.0d
+			y: 21.5d
+		}
+		{
+			dependencies: ["36443A11DFC20ABF"]
+			description: [
+				"Besiege den Guardian. Er lässt Gaia Spirits fallen."
+				"Buch: Alfhomancy → Ritual of Gaia."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:life_essence"
+			id: "6E9B54DF2046B698"
+			subtitle: "BO7 · Gaia"
+			tasks: [{
+				id: "5128BAF9F934D4C9"
+				item: "botania:life_essence"
+				type: "item"
+			}]
+			title: "Guardian of Gaia"
+			x: 1.5d
+			y: 21.5d
+		}
+		{
+			dependencies: ["6E9B54DF2046B698"]
+			description: [
+				"Grundstoff der stärksten Items und Schlüssel zum zweiten Ritual."
+				"Buch: Alfhomancy → Ritual of Gaia, Ritual of Gaia II."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:gaia_ingot"
+			id: "60CF6DFCC4F9EA7E"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "BO7 · Gaia"
+			tasks: [{
+				id: "138440093F969825"
+				item: "botania:gaia_ingot"
+				type: "item"
+			}]
+			title: "Gaia Spirit Ingot"
+			x: 3.0d
+			y: 21.5d
+		}
+		{
+			dependencies: ["60CF6DFCC4F9EA7E"]
+			description: [
+				"Die härtere Fassung des Kampfs. Der Dice of Fate verwandelt sich in eins der Relikte."
+				"Buch: Alfhomancy → Ritual of Gaia II, The Relics of the Aesir, The Relics of the Aesir II."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:dice"
+			id: "22FEDC94EFAD93E1"
+			optional: true
+			shape: "square"
+			subtitle: "BO7 · Gaia · Nebenquest"
+			tasks: [{
+				id: "07DBAB672F56C22C"
+				item: "botania:dice"
+				type: "item"
+			}]
+			title: "Guardian of Gaia II"
+			x: 3.0d
+			y: 23.0d
+		}
+		{
+			dependencies: ["60CF6DFCC4F9EA7E"]
+			description: [
+				"Buch: Ender Artifacts → Flügel Tiara; Mana Manipulation → Elven Mana Spreaders."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:flight_tiara"
+			id: "2EF3E0BAD669D170"
+			optional: true
+			shape: "square"
+			subtitle: "BO7 · Gaia · Nebenquest"
+			tasks: [{
+				id: "3E42276D412BC355"
+				item: { Count: 1b, id: "itemfilters:or", tag: { items: [{ Count: 1b, id: "botania:flight_tiara" }, { Count: 1b, id: "botania:gaia_spreader" }] } }
+				title: "Gaia-Ausrüstung"
+				type: "item"
+			}]
+			title: "Gaia-Ausrüstung"
+			x: 4.25d
+			y: 23.0d
+		}
+		{
+			dependencies: ["20CA9735F369D8FB"]
+			description: [
+				"Corporea ist Botanias Lagersystem. Technisch geht es schon ab dem Elfenhandel (BO5), die Karte führt es hier."
+				""
+				"Buch: Ender Artifacts → Extracting Ender Air"
+			]
+			hide_until_deps_visible: true
+			icon: "botania:ender_air_bottle"
+			id: "55607010B2685C35"
+			optional: true
+			shape: "square"
+			subtitle: "BO7 · Gaia · Nebenquest"
+			tasks: [{
+				id: "65E8030E2891785A"
+				item: "botania:ender_air_bottle"
+				type: "item"
+			}]
+			title: "Ender Air"
+			x: 5.5d
+			y: 23.0d
+		}
+		{
+			dependencies: ["55607010B2685C35"]
+			description: [
+				"Buch: Ender Artifacts → Basics of Corporea, Corporea Index"
+			]
+			hide_until_deps_visible: true
+			icon: "botania:corporea_spark"
+			id: "441C0B97D492F327"
+			optional: true
+			shape: "square"
+			subtitle: "BO7 · Gaia · Nebenquest"
+			tasks: [{
+				id: "32C8EC4A98F7D510"
+				item: "botania:corporea_spark"
+				type: "item"
+			}
+			{
+				id: "2E93243105069596"
+				item: "botania:corporea_index"
+				type: "item"
+			}]
+			title: "Corporea Index"
+			x: 6.75d
+			y: 23.0d
+		}
+		{
+			dependencies: ["441C0B97D492F327"]
+			description: [
+				"Buch: Ender Artifacts → Corporea Funnel, Corporea Interceptor, Corporea Crystal Cube"
+			]
+			hide_until_deps_visible: true
+			icon: "botania:corporea_funnel"
+			id: "6167978084DF330B"
+			optional: true
+			shape: "square"
+			subtitle: "BO7 · Gaia · Nebenquest"
+			tasks: [{
+				id: "1C5440BC3D307AD0"
+				item: { Count: 1b, id: "itemfilters:or", tag: { items: [{ Count: 1b, id: "botania:corporea_funnel" }, { Count: 1b, id: "botania:corporea_interceptor" }, { Count: 1b, id: "botania:corporea_crystal_cube" }] } }
+				title: "Corporea ausbauen"
+				type: "item"
+			}]
+			title: "Corporea ausbauen"
+			x: 8.0d
+			y: 23.0d
+		}
+		{
+			dependencies: ["60CF6DFCC4F9EA7E"]
+			description: [
+				"Der späte Weg von MythicBotany. Im Buch führt er zum Mead of Kvasir; den hast du im Pack schon (Quest „Mead of Kvasir“)."
+				""
+				"Buch: MythicBotany → The well of Mimir"
+			]
+			hide_until_deps_visible: true
+			icon: "mythicbotany:yggdrasil_branch"
+			id: "7E9224A05A4B230C"
+			optional: true
+			shape: "square"
+			subtitle: "BO7 · Gaia · Nebenquest"
+			tasks: [{
+				id: "000C98B02696E37A"
+				item: "mythicbotany:yggdrasil_branch"
+				type: "item"
+			}
+			{
+				id: "713B16EEE0A17D81"
+				item: "mythicbotany:gjallar_horn_full"
+				type: "item"
+			}]
+			title: "Well of Mimir"
+			x: 9.25d
+			y: 23.0d
+		}
+		{
+			dependencies: ["7E9224A05A4B230C"]
+			description: [
+				"Buch: MythicBotany → Rune Rituals"
+			]
+			hide_until_deps_visible: true
+			icon: "mythicbotany:central_rune_holder"
+			id: "7686863347C305E9"
+			optional: true
+			shape: "square"
+			subtitle: "BO7 · Gaia · Nebenquest"
+			tasks: [{
+				id: "1E4D11FFB873669A"
+				item: "mythicbotany:central_rune_holder"
+				type: "item"
+			}]
+			title: "Rune Rituals"
+			x: 10.5d
+			y: 23.0d
+		}
+		{
+			dependencies: ["7686863347C305E9"]
+			description: [
+				"Buch: MythicBotany → Rune Rituals"
+			]
+			hide_until_deps_visible: true
+			icon: "mythicbotany:fimbultyr_tablet"
+			id: "414E854EF72E8A91"
+			optional: true
+			shape: "square"
+			subtitle: "BO7 · Gaia · Nebenquest"
+			tasks: [{
+				id: "3D30D31507C5E7D9"
+				item: "mythicbotany:fimbultyr_tablet"
+				type: "item"
+			}]
+			title: "Rune Tablet of Fimbultyr"
+			x: 11.75d
+			y: 23.0d
+		}
+		{
+			dependencies: ["414E854EF72E8A91"]
+			description: [
+				"Buch: MythicBotany → Mjöllnir"
+			]
+			hide_until_deps_visible: true
+			icon: "mythicbotany:mjoellnir"
+			id: "73E43725772CB339"
+			optional: true
+			shape: "square"
+			subtitle: "BO7 · Gaia · Nebenquest"
+			tasks: [{
+				id: "0EBAB9918C8A6923"
+				item: "mythicbotany:mjoellnir"
+				type: "item"
+			}]
+			title: "Mjöllnir"
+			x: 13.0d
+			y: 23.0d
+		}
+		{
+			dependencies: ["083AC076A6081BF5"]
+			description: [
+				"Ab dem Runic Altar machbar, ohne feste Stelle im Weg."
+				""
+				"Buch: Trinkets and Accessories → Band of Mana"
+			]
+			hide_until_deps_visible: true
+			icon: "botania:mana_ring"
+			id: "6DC1D2620A022BE9"
+			optional: true
+			shape: "square"
+			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
+			tasks: [{
+				id: "2794B52D15876257"
+				item: "botania:mana_ring"
+				type: "item"
+			}]
+			title: "Band of Mana"
+			x: 0.0d
+			y: 26.5d
+		}
+		{
+			dependencies: ["083AC076A6081BF5"]
+			description: [
+				"Buch: Trinkets and Accessories → Ring of Magnetization"
+			]
+			hide_until_deps_visible: true
+			icon: "botania:magnet_ring"
+			id: "1E96D64107AD5B15"
+			optional: true
+			shape: "square"
+			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
+			tasks: [{
+				id: "48FE77597CB8499A"
+				item: "botania:magnet_ring"
+				type: "item"
+			}]
+			title: "Ring of Magnetization"
+			x: 1.25d
+			y: 26.5d
+		}
+		{
+			dependencies: ["083AC076A6081BF5"]
+			description: [
+				"Buch: Trinkets and Accessories → Sojourner's Sash"
+			]
+			hide_until_deps_visible: true
+			icon: "botania:travel_belt"
+			id: "76B739108DE7CD3F"
+			optional: true
+			shape: "square"
+			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
+			tasks: [{
+				id: "53F482725768E88E"
+				item: "botania:travel_belt"
+				type: "item"
+			}]
+			title: "Sojourner's Sash"
+			x: 2.5d
+			y: 26.5d
+		}
+		{
+			dependencies: ["083AC076A6081BF5"]
+			description: [
+				"Buch: Mystical Items → Rod of the Lands"
+			]
+			hide_until_deps_visible: true
+			icon: "botania:dirt_rod"
+			id: "15BC99F880D67DDD"
+			optional: true
+			shape: "square"
+			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
+			tasks: [{
+				id: "19E8EB4CF09CC796"
+				item: "botania:dirt_rod"
+				type: "item"
+			}]
+			title: "Rod of the Lands"
+			x: 3.75d
+			y: 26.5d
+		}
+		{
+			dependencies: ["083AC076A6081BF5"]
+			description: [
+				"Buch: Mystical Items → Livingwood Bow"
+			]
+			hide_until_deps_visible: true
+			icon: "botania:livingwood_bow"
+			id: "231E4C3A44261C67"
+			optional: true
+			shape: "square"
+			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
+			tasks: [{
+				id: "32B56861BCD36633"
+				item: "botania:livingwood_bow"
+				type: "item"
+			}]
+			title: "Livingwood Bow"
+			x: 5.0d
+			y: 26.5d
+		}
+		{
+			dependencies: ["083AC076A6081BF5"]
+			description: [
+				"Buch: Miscellaneous → Tiny Potato"
+			]
+			hide_until_deps_visible: true
+			icon: "botania:tiny_potato"
+			id: "5DB2A5040C62E849"
+			optional: true
+			shape: "square"
+			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
+			tasks: [{
+				id: "4A348EAD4C61A37F"
+				item: "botania:tiny_potato"
+				type: "item"
+			}]
+			title: "Tiny Potato"
+			x: 6.25d
+			y: 26.5d
+		}
+		{
+			dependencies: ["083AC076A6081BF5"]
+			description: [
+				"Buch: kein Eintrag (Applied Botanics)"
+				""
+				"&6⚙&r Applied Botanics lagert Mana in AE2. AE2 ist im Pack Endgame, die Quest gehört deshalb hinter den Meilenstein des ME-Systems."
+			]
+			hide_until_deps_visible: true
+			icon: "appbot:mana_cell_housing"
+			id: "2237C88380EAB395"
+			optional: true
+			shape: "square"
+			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
+			tasks: [{
+				id: "6FBDFADCCAFE0B23"
+				item: { Count: 1b, id: "itemfilters:or", tag: { items: [{ Count: 1b, id: "appbot:mana_cell_housing" }, { Count: 1b, id: "appbot:mana_p2p_tunnel" }] } }
+				title: "Mana im ME-Netz"
+				type: "item"
+			}]
+			title: "Mana im ME-Netz"
+			x: 7.5d
+			y: 26.5d
+		}
+	]
+	title: "Botania"
+}

@@ -1,0 +1,348 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "hauptquests"
+	group: ""
+	icon: "minecraft:nether_star"
+	id: "252255E8D31149B5"
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				""
+				"&eFortschritt:&r Tinkers: Werkzeuge und Melter · IE: Koks und erster Stahl · Botania: Blüten und Lebendholz"
+			]
+			icon: "minecraft:book"
+			id: "49DA11DCC4D42945"
+			shape: "hexagon"
+			size: 1.25d
+			subtitle: "Part 1 · Finden des Meisters"
+			tasks: [{
+				id: "5A51334162609B60"
+				title: "Kapitel abgeschlossen"
+				type: "checkmark"
+			}]
+			title: "K1 Ankunft"
+			x: 0.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["49DA11DCC4D42945"]
+			description: [
+				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				""
+				"&eFortschritt:&r Smeltery · IE: Strom und Förderbänder · Mana und Manasteel"
+			]
+			icon: "minecraft:book"
+			id: "7D17A2E727E32894"
+			shape: "hexagon"
+			size: 1.25d
+			subtitle: "Part 1 · Finden des Meisters"
+			tasks: [{
+				id: "2A1E37DCB99AF848"
+				title: "Kapitel abgeschlossen"
+				type: "checkmark"
+			}]
+			title: "K2 Würdig sein"
+			x: 1.75d
+			y: 0.5d
+		}
+		{
+			dependencies: ["7D17A2E727E32894"]
+			description: [
+				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				""
+				"&eFortschritt:&r IE: Schwermaschinen und Biodiesel · Runenaltar · Blutaltar · Mekanism: Infuser und Sauerstoff · AE2: Storage-Layer · Everbright"
+			]
+			icon: "minecraft:book"
+			id: "0B2B8888238E82AD"
+			shape: "hexagon"
+			size: 1.25d
+			subtitle: "Part 1 · Finden des Meisters"
+			tasks: [{
+				id: "128BEAFFC97B99CF"
+				title: "Kapitel abgeschlossen"
+				type: "checkmark"
+			}]
+			title: "K3 Industrie"
+			x: 3.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["0B2B8888238E82AD"]
+			description: [
+				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				""
+				"&eFortschritt:&r Erdöl und Destillation · Mekanism-Grundmaschinen · Everdawn · &eRakete T1&r"
+			]
+			icon: "minecraft:book"
+			id: "4FBA50D1BBCB97FA"
+			shape: "hexagon"
+			size: 1.25d
+			subtitle: "Part 1 · Finden des Meisters"
+			tasks: [{
+				id: "04CE469D2ED20FEC"
+				title: "Kapitel abgeschlossen"
+				type: "checkmark"
+			}]
+			title: "K4 Der Mond"
+			x: 5.25d
+			y: 0.5d
+		}
+		{
+			dependencies: ["4FBA50D1BBCB97FA"]
+			description: [
+				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				""
+				"&eFortschritt:&r Alloyer und Foundry · entschwefelter Diesel · Altar T3 und Soul Forge · Mekanism Advanced · Blinding-Bosse (Blue Skies)"
+			]
+			icon: "minecraft:book"
+			id: "6AF68093B3F6D97F"
+			shape: "hexagon"
+			size: 1.25d
+			subtitle: "Part 1 · Finden des Meisters"
+			tasks: [{
+				id: "3BB6CF2E3B516C7D"
+				title: "Kapitel abgeschlossen"
+				type: "checkmark"
+			}]
+			title: "K5 Erzketten"
+			x: 7.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["6AF68093B3F6D97F"]
+			description: [
+				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				""
+				"&eFortschritt:&r IE-Großindustrie · Terrasteel · Nature- und Poison-Boss (Blue Skies) · &eRakete T2&r"
+			]
+			icon: "minecraft:book"
+			id: "1102A1D22CF06A0C"
+			shape: "hexagon"
+			size: 1.25d
+			subtitle: "Part 1 · Finden des Meisters"
+			tasks: [{
+				id: "36708D29263D9008"
+				title: "Kapitel abgeschlossen"
+				type: "checkmark"
+			}]
+			title: "K6 Der Mars"
+			x: 8.75d
+			y: 0.5d
+		}
+		{
+			dependencies: ["1102A1D22CF06A0C"]
+			description: [
+				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				""
+				"&eFortschritt:&r Planetenmetalle gießen · Altar T4 und Rituale · Mekanism Elite und Chemie"
+			]
+			icon: "minecraft:book"
+			id: "4432DA367BD815DD"
+			shape: "hexagon"
+			size: 1.25d
+			subtitle: "Part 1 · Finden des Meisters"
+			tasks: [{
+				id: "24524B70D9AEC222"
+				title: "Kapitel abgeschlossen"
+				type: "checkmark"
+			}]
+			title: "K7 Horchposten"
+			x: 10.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["4432DA367BD815DD"]
+			description: [
+				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				""
+				"&eFortschritt:&r &eRakete T3&r"
+			]
+			icon: "minecraft:book"
+			id: "436D5852356AD565"
+			shape: "hexagon"
+			size: 1.25d
+			subtitle: "Part 1 · Finden des Meisters"
+			tasks: [{
+				id: "635935D7F5FCE8C3"
+				title: "Kapitel abgeschlossen"
+				type: "checkmark"
+			}]
+			title: "K8 Hitze"
+			x: 12.25d
+			y: 0.5d
+		}
+		{
+			dependencies: ["436D5852356AD565"]
+			description: [
+				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				""
+				"&eFortschritt:&r Tempel und Dungeon (BM4) · Kernkraft · ME-System"
+			]
+			icon: "minecraft:book"
+			id: "7264B19A966F455A"
+			shape: "hexagon"
+			size: 1.25d
+			subtitle: "Part 1 · Finden des Meisters"
+			tasks: [{
+				id: "15D64D09CEFDA071"
+				title: "Kapitel abgeschlossen"
+				type: "checkmark"
+			}]
+			title: "K9 Der Tempel"
+			x: 14.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["7264B19A966F455A"]
+			description: [
+				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				""
+				"&eFortschritt:&r Elfenportal (BO5) · Mekanism Ultimate und Teleportation"
+			]
+			icon: "minecraft:book"
+			id: "2596BAFEBEF00419"
+			shape: "hexagon"
+			size: 1.25d
+			subtitle: "Part 1 · Finden des Meisters"
+			tasks: [{
+				id: "3DC22494E3DEC37A"
+				title: "Kapitel abgeschlossen"
+				type: "checkmark"
+			}]
+			title: "K10 Der Elf"
+			x: 15.75d
+			y: 0.5d
+		}
+		{
+			dependencies: ["2596BAFEBEF00419"]
+			description: [
+				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				""
+				"&eFortschritt:&r &eRakete T4&r (RF4)"
+			]
+			icon: "minecraft:book"
+			id: "7AC6FA1861C2D3B0"
+			shape: "hexagon"
+			size: 1.25d
+			subtitle: "Part 1 · Finden des Meisters"
+			tasks: [{
+				id: "7B01F1665B500306"
+				title: "Kapitel abgeschlossen"
+				type: "checkmark"
+			}]
+			title: "K11 Glacio"
+			x: 17.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["7AC6FA1861C2D3B0"]
+			description: [
+				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				""
+				"&eFortschritt:&r Altar T5 · Alfheim betreten · Fusion"
+			]
+			icon: "minecraft:book"
+			id: "490DA592DDA71B52"
+			shape: "hexagon"
+			size: 1.25d
+			subtitle: "Part 2 · Ausbildung zum Jedi und Vorbereitung T5"
+			tasks: [{
+				id: "6B00A431C3A671F8"
+				title: "Kapitel abgeschlossen"
+				type: "checkmark"
+			}]
+			title: "K12 Ausbildung"
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["490DA592DDA71B52"]
+			description: [
+				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				""
+				"&eFortschritt:&r Gaia · SPS und Antimaterie · AE2-Quantenbrücke · &eRakete T5&r"
+			]
+			icon: "minecraft:book"
+			id: "13CC768AFE8EB0F0"
+			shape: "hexagon"
+			size: 1.25d
+			subtitle: "Part 2 · Ausbildung zum Jedi und Vorbereitung T5"
+			tasks: [{
+				id: "41EBD8D0073D5854"
+				title: "Kapitel abgeschlossen"
+				type: "checkmark"
+			}]
+			title: "K13 Die Prüfung"
+			x: 1.75d
+			y: 3.0d
+		}
+		{
+			dependencies: ["13CC768AFE8EB0F0"]
+			description: [
+				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				""
+				"&eFortschritt:&r Altar T6 · &eRakete T6&r"
+			]
+			icon: "minecraft:book"
+			id: "7E3BF632DE197FB4"
+			shape: "hexagon"
+			size: 1.25d
+			subtitle: "Part 3 · Rückkehr in die weit, weit entfernte Galaxis"
+			tasks: [{
+				id: "796A3B35C3068F2B"
+				title: "Kapitel abgeschlossen"
+				type: "checkmark"
+			}]
+			title: "K14 Endor"
+			x: 0.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["7E3BF632DE197FB4"]
+			description: [
+				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				""
+				"&eFortschritt:&r Meka-Ausrüstung und QIO"
+			]
+			icon: "minecraft:book"
+			id: "3F54FB63312E353E"
+			shape: "hexagon"
+			size: 1.25d
+			subtitle: "Part 3 · Rückkehr in die weit, weit entfernte Galaxis"
+			tasks: [{
+				id: "58C4E9310ABCD7BD"
+				title: "Kapitel abgeschlossen"
+				type: "checkmark"
+			}]
+			title: "K15 Star-Wars-Welten"
+			x: 1.75d
+			y: 5.5d
+		}
+		{
+			dependencies: ["3F54FB63312E353E"]
+			description: [
+				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				""
+				"&eFortschritt:&r &eRakete T7&r"
+			]
+			icon: "minecraft:book"
+			id: "2E92F0E81C219781"
+			shape: "hexagon"
+			size: 1.25d
+			subtitle: "Part 3 · Rückkehr in die weit, weit entfernte Galaxis"
+			tasks: [{
+				id: "4194B9CF9CA49613"
+				title: "Kapitel abgeschlossen"
+				type: "checkmark"
+			}]
+			title: "K16 Mandalore"
+			x: 3.5d
+			y: 5.5d
+		}
+	]
+	title: "Hauptquests"
+}
