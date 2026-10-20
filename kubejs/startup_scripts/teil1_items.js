@@ -1,7 +1,7 @@
 // Eigene Items für Teil 1 der Story.
 // Entscheidungen: docs/20_ENTSCHEIDUNGEN.md (F2f, F2e, O28), docs/18_STORY.md (2026-10-20).
-// Baupläne: Bauplan-Seiten (Items) für den Shop, ein gemeinsames Patchouli-Buch mit gesperrten Einträgen (patchouli_books/bauplaene).
-// Stand 2026-10-20, KubeJS 2001. Fassung 3 (ein Buch, Bauplan-Seiten), UNGETESTET.
+// Baupläne: Schriftrollen (Items) für den Shop, ein gemeinsames Patchouli-Buch mit gesperrten Einträgen (patchouli_books/bauplaene).
+// Stand 2026-10-20, KubeJS 2001. Fassung 4 (Schriftrollen), UNGETESTET.
 
 StartupEvents.registry('item', event => {
   // Bauteil der Rakete T4, fertigt der Helle Elf aus Relikt, Arcs, Elite Control Circuit und Elementium (F14)
@@ -16,20 +16,21 @@ StartupEvents.registry('item', event => {
     .texture('minecraft:item/echo_shard')
     .rarity('epic').glow(true).maxStackSize(1)
 
-  // Bauplan-Seiten: Ware des Einsiedlers (O28, Test 43). Beim Erhalt werden sie ins Buch „Baupläne des Einsiedlers“
-  // eingeklebt (verbraucht) und schalten Rezept und Bucheintrag frei (server_scripts/starwars/einsiedler_shop.js).
-  const seiten = {
-    assembly_bench: ['Assembly Bench', 'blueprint_lightsaber_hilt'],
-    droid_fabricator: ['Droid Fabricator', 'blueprint_durasteel_ingot'],
-    gas_harvester: ['Gas Harvester', 'blueprint_iron_ingot'],
-    droide_b1: ['Droide B-1', 'blueprint_helmet'],
-    droide_b2: ['Droide B-2', 'blueprint_chestplate'],
-    droide_droideka: ['Droideka', 'blueprint_diamond']
+  // Baupläne: Schriftrollen, Ware des Einsiedlers (O28, Test 43). Alle sehen gleich aus (kubejs/assets/kubejs/textures/item/bauplan_rolle.png).
+  // Rechtsklick liest die Rolle: Sie verschwindet, Rezept und Eintrag im Buch „Baupläne des Einsiedlers“ werden frei
+  // (server_scripts/starwars/einsiedler_shop.js).
+  const rollen = {
+    assembly_bench: 'Assembly Bench',
+    droid_fabricator: 'Droid Fabricator',
+    gas_harvester: 'Gas Harvester',
+    droide_b1: 'Droide B-1',
+    droide_b2: 'Droide B-2',
+    droide_droideka: 'Droideka'
   }
-  Object.keys(seiten).forEach(name => {
+  Object.keys(rollen).forEach(name => {
     event.create('bauplan_' + name)
-      .displayName('Bauplan-Seite: ' + seiten[name][0])
-      .texture('swgc:item/' + seiten[name][1])
+      .displayName('Bauplan: ' + rollen[name])
+      .texture('kubejs:item/bauplan_rolle')
       .rarity('uncommon')
   })
 

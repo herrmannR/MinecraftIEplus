@@ -1,18 +1,23 @@
 // Waren aus der Star-Wars-Galaxis gibt es nur beim Einsiedler auf dem Mond (O28, F5c/d, 2026-10-20; docs/18_STORY.md).
 // - Credits nur als Quest-Belohnung und im Shop: die Rezepte aus Kupfer, Eisen und Gold entfallen; Umtausch zwischen den Stufen bleibt.
 // - Plastoid, Durasteel: nur im Shop.
-// - Baupläne (User, 2026-10-20): Der Einsiedler verkauft Bauplan-Seiten (kubejs:bauplan_<name>). Beim Erhalt wird die Seite
-//   verbraucht („ins Buch eingeklebt“), das Rezept ist für die ganze Welt freigeschaltet (Weltwert in server.persistentData)
-//   und alle Spieler bekommen das Advancement ieplus:bauplan/<name>, das den Eintrag im Buch „Baupläne des Einsiedlers“
-//   (Patchouli, patchouli_books/bauplaene) entsperrt. Wer offline war, bekommt es beim Einloggen.
-//   Wer bei der ersten Freischaltung der Welt kauft, bekommt das Buch dazu (gedacht: Assembly Bench als erster Kauf).
+// - Baupläne (User, 2026-10-20): Der Einsiedler verkauft Schriftrollen (kubejs:bauplan_<name>, alle gleich aussehend).
+//   Rechtsklick liest die Rolle: Sie verschwindet, das Rezept ist für die ganze Welt freigeschaltet (Weltwert in
+//   server.persistentData) und alle Spieler bekommen das Advancement ieplus:bauplan/<name>, das den Eintrag im Buch
+//   „Baupläne des Einsiedlers“ (Patchouli, patchouli_books/bauplaene) entsperrt. Wer offline war, bekommt es beim Einloggen.
+//   Ist der Bauplan schon im Buch, bleibt die Rolle und es kommt nur eine Meldung.
+//   Wer als Erster in der Welt eine Rolle liest, bekommt das Buch dazu (gedacht: Assembly Bench als erster Kauf).
 //   Ohne Freischaltung liefert die Werkbank nichts; Autocrafter (ohne Spieler) nie.
 // - Droiden: Jeder Droide braucht im Droid Fabricator zusätzlich seinen Steuerkern (wird verbraucht).
 //   Das Werkbank-Rezept des Kerns schaltet der Bauplan des Droiden frei.
 // - Alle Rezepte stark verteuert (User, Test 43, 2026-10-20).
-// - Befehle für den Host: /bauplan buch gibt ein Buch (Ersatz); /bauplan <name> gibt eine Bauplan-Seite.
+// - Befehle für den Host (nur mit Rechten):
+//   /bauplan <name>          eine Schriftrolle (zum Testen oder für das Handelsfenster von Easy NPC)
+//   /bauplan buch            Ersatzbuch
+//   /bauplan zuruecksetzen   alle Baupläne der Welt wieder sperren, Bucheinträge bei allen Spielern zurücknehmen,
+//                            das Buch wird beim nächsten Lesen einer Rolle erneut verteilt
 // Rezept-IDs ieplus:bauplan/<ergebnis> werden in den Patchouli-Einträgen verwendet; beim Ändern dort mitziehen.
-// Stand 2026-10-20, KubeJS 2001. Fassung 5 (Seite per /clear entfernt, Test 53), UNGETESTET.
+// Stand 2026-10-20, KubeJS 2001. Fassung 6 (Rechtsklick, Zurücksetzen), UNGETESTET.
 
 const IEPLUS_ADV = 'mekanism:advanced_control_circuit'
 const IEPLUS_BAUPLAN_BUCH = 'patchouli:bauplaene'
@@ -62,6 +67,16 @@ function ieplusEintraegeGeben(server, ziel) {
   })
 }
 
+// Gleicht die Bucheinträge eines Spielers (oder @a) an den Weltstand an: frei = vergeben, gesperrt = zurückgenommen
+function ieplusEintraegeAbgleichen(server, ziel) {
+  Object.keys(IEPLUS_BAUPLAENE).forEach(name => {
+    if (!server.persistentData.getBoolean(ieplusSchluessel(name))) {
+      server.runCommandSilent(`advancement revoke ${ziel} only ieplus:bauplan/${name}`)
+    }
+  })
+  ieplusEintraegeGeben(server, ziel)
+}
+
 ServerEvents.recipes(event => {
   // Credits
   ;['swgc:copper_credit', 'swgc:iron_credit', 'swgc:gold_credit'].forEach(id => event.remove({ id: id }))
@@ -102,8 +117,8 @@ ServerEvents.recipes(event => {
   })
 })
 
-// Kauf einer Bauplan-Seite
-PlayerEvents.inventoryChanged(event => {
+// Rechtsklick mit einer Schriftrolle: Bauplan lesen
+ItemEvents.rightClicked(event => {
   var id = String(event.item.id)
   if (id.indexOf('kubejs:bauplan_') !== 0) return
   var name = id.substring('kubejs:bauplan_'.length)
@@ -111,42 +126,45 @@ PlayerEvents.inventoryChanged(event => {
   if (!b) return
   var server = event.server
   var player = event.player
-  var spieler = String(player.username)
+  var daten = server.persistentData
 
-  // Einen Tick später: Seite per /clear entfernen („ins Buch eingeklebt“). event.item.shrink() wirkte nur auf eine Kopie,
-  // die Seite blieb liegen und jede Inventaränderung meldete erneut (Test 53, 2026-10-20). Der Rückgabewert von /clear
-  // ist die Zahl der entfernten Seiten; 0 heißt: schon erledigt, nichts melden.
-  server.scheduleInTicks(1, () => {
-    var entfernt = server.runCommandSilent(`clear ${spieler} kubejs:bauplan_${name}`)
-    if (!entfernt || entfernt <= 0) return
-    var daten = server.persistentData
-    if (!daten.getBoolean('ieplus_bauplan_buch_gegeben')) {
-      daten.putBoolean('ieplus_bauplan_buch_gegeben', true)
-      player.give(ieplusBauplanBuch())
-      player.tell(Text.aqua('Der Einsiedler drückt dir ein Buch in die Hand: „Baupläne des Einsiedlers“.'))
-    }
-    if (!daten.getBoolean(ieplusSchluessel(name))) {
-      daten.putBoolean(ieplusSchluessel(name), true)
-      server.tell(Text.gold('Neuer Bauplan im Buch: ' + b.titel + '. Das Rezept ist jetzt für alle herstellbar.'))
-    } else {
-      player.tell(Text.gray('Diesen Bauplan habt ihr schon.'))
-    }
-    ieplusEintraegeGeben(server, '@a')
-  })
+  if (daten.getBoolean(ieplusSchluessel(name))) {
+    player.tell(Text.gray('Den Bauplan „' + b.titel + '“ habt ihr schon im Buch.'))
+    event.cancel()   // beendet den Handler (KubeJS 6), deshalb immer zuletzt
+    return
+  }
+  event.item.shrink(1)
+  daten.putBoolean(ieplusSchluessel(name), true)
+  server.tell(Text.gold('Neuer Bauplan im Buch: ' + b.titel + '. Das Rezept ist jetzt für alle herstellbar.'))
+  if (!daten.getBoolean('ieplus_bauplan_buch_gegeben')) {
+    daten.putBoolean('ieplus_bauplan_buch_gegeben', true)
+    player.give(ieplusBauplanBuch())
+    player.tell(Text.aqua('Der Einsiedler drückt dir ein Buch in die Hand: „Baupläne des Einsiedlers“.'))
+  }
+  ieplusEintraegeGeben(server, '@a')
+  event.cancel()
 })
 
-// Wer offline war, bekommt die Einträge beim Einloggen
+// Beim Einloggen den Stand der Welt übernehmen (wer offline war, oder nach einem Zurücksetzen)
 PlayerEvents.loggedIn(event => {
-  ieplusEintraegeGeben(event.server, event.player.username)
+  ieplusEintraegeAbgleichen(event.server, event.player.username)
 })
 
-// /bauplan buch: Ersatzbuch; /bauplan <name>: Bauplan-Seite (zum Testen oder für das Handelsfenster von Easy NPC)
 ServerEvents.commandRegistry(event => {
   const { commands: Commands } = event
   var befehl = Commands.literal('bauplan').requires(s => s.hasPermission(2))
   befehl = befehl.then(Commands.literal('buch').executes(ctx => {
     var player = ctx.source.getPlayerOrException()
     player.give(ieplusBauplanBuch())
+    return 1
+  }))
+  befehl = befehl.then(Commands.literal('zuruecksetzen').executes(ctx => {
+    var server = ctx.source.getServer()
+    var daten = server.persistentData
+    Object.keys(IEPLUS_BAUPLAENE).forEach(name => daten.remove(ieplusSchluessel(name)))
+    daten.remove('ieplus_bauplan_buch_gegeben')
+    server.runCommandSilent('advancement revoke @a from ieplus:bauplan/root')
+    server.tell(Text.yellow('Alle Baupläne zurückgesetzt: Rezepte gesperrt, Bucheinträge geschlossen.'))
     return 1
   }))
   Object.keys(IEPLUS_BAUPLAENE).forEach(name => {

@@ -1143,3 +1143,12 @@ Status: 🟡
 
 ### Änderung
 - Die Bauplan-Seite blieb im Inventar (`event.item.shrink()` wirkte nur auf eine Kopie), jede Inventaränderung meldete erneut. `einsiedler_shop.js` entfernt die Seite jetzt einen Tick später per `/clear` und meldet nur, wenn wirklich eine Seite entfernt wurde. In die Testinstanz kopiert.
+
+## 2026-10-20 — Baupläne als Schriftrollen, Rechtsklick, Zurücksetzen
+
+Status: 🟡
+
+### Änderung
+- Wunsch des Users: Alle Baupläne sehen gleich aus, als Schriftrolle (eigene Textur `kubejs/assets/kubejs/textures/item/bauplan_rolle.png`). Freigeschaltet wird per Rechtsklick: Die Rolle verschwindet, Rezept und Bucheintrag werden frei; ist der Bauplan schon im Buch, bleibt die Rolle und es kommt nur eine Meldung. Das Inventar-Ereignis aus Fassung 5 entfällt.
+- Neuer Befehl `/bauplan zuruecksetzen`: sperrt alle Baupläne der Welt, nimmt die Bucheinträge bei allen Spielern zurück (Advancement `ieplus:bauplan/root` samt Unterpunkten) und gibt das Buch beim nächsten Lesen erneut aus. Beim Einloggen gleicht das Skript jeden Spieler an den Weltstand an.
+- Texte im Buch angepasst. In die Testinstanz kopiert (Neustart nötig).
