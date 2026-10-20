@@ -1168,4 +1168,4 @@ Status: 🟡
 ### Änderung
 - Funde des Users beim Testen. Neu `kubejs/server_scripts/progression/stahl_nur_ie.js`: entfernt `mekanism:processing/steel/enriched_iron_to_dust` (Metallurgic Infuser). Ad Astra war schon entfernt, Tinkers bleibt.
 - `jei_ausblenden.js`: Bioethanol (Eimer und Flüssigkeit) ausgeblendet; hat in Mekanism Generators kein Rezept.
-- Neu `kubejs/client_scripts/jei_infos.js`: Info-Seite für Cryo Fuel. Ad Astra zeichnet das Ergebnis des Cryo Freezer in JEI nur als Füllbalken (laut Klassen im JAR), deshalb fand R auf Cryo Fuel nichts. Test 59. Noch nicht in die Testinstanz kopiert.
+- Neu `kubejs/client_scripts/jei_infos.js`: Info-Seite für Cryo Fuel. Ad Astra zeichnet das Ergebnis des Cryo Freezer in JEI nur als Füllbalken (laut Klassen im JAR), deshalb fand R auf Cryo Fuel nichts. Test 59. In die Testinstanz kopiert (Sicherung: `kubejs/client_scripts/jei_ausblenden.js.vor-O41`), Neustart nötig.
