@@ -1,0 +1,11 @@
+{
+  "name": "Droideka",
+  "icon": "kubejs:steuerkern_droideka",
+  "category": "patchouli:bauplaene",
+  "advancement": "ieplus:bauplan/droide_droideka",
+  "sortnum": 6,
+  "pages": [
+    { "type": "patchouli:text", "text": "Zerstörerdroide mit Schild. Der Steuerkern ist sein Gehirn; der Droid Fabricator verbraucht ihn.$(br2)Im Droid Fabricator:$(li)4 Stahlblöcke$(li)8 Redstone$(li)3 Kupferblöcke$(li)4 Diamanten$(li)1 Plastoid$(li)1 Steuerkern Droideka" },
+    { "type": "patchouli:crafting", "recipe": "ieplus:bauplan/kubejs_steuerkern_droideka", "text": "Steuerkern Droideka, gebaut an der Werkbank." }
+  ]
+}

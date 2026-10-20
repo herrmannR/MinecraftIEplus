@@ -1,0 +1,8 @@
+{
+  "name": "Baupläne des Einsiedlers",
+  "landing_text": "Baupläne aus einer weit entfernten Galaxis.$(br2)Jede Bauplan-Seite, die ihr beim Einsiedler kauft, kommt in dieses Buch und schaltet ihr Rezept für alle frei. Gesperrte Einträge habt ihr noch nicht gekauft.",
+  "book_texture": "patchouli:textures/gui/book_blue.png",
+  "model": "kubejs:bauplan_buch",
+  "show_progress": false,
+  "i18n": false
+}

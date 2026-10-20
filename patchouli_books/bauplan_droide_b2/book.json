@@ -1,8 +1,0 @@
-{
-  "name": "Bauplan: Droide B-2",
-  "landing_text": "Schwerer Kampfdroide. Der Steuerkern ist sein Gehirn; der Droid Fabricator verbraucht ihn.$(br2)Wer dieses Buch zum ersten Mal erhält, schaltet das Rezept für alle frei.",
-  "book_texture": "patchouli:textures/gui/book_red.png",
-  "model": "kubejs:bauplan_droide_b2",
-  "show_progress": false,
-  "i18n": false
-}

@@ -1,0 +1,11 @@
+{
+  "name": "Droide B-1",
+  "icon": "kubejs:steuerkern_b1",
+  "category": "patchouli:bauplaene",
+  "advancement": "ieplus:bauplan/droide_b1",
+  "sortnum": 4,
+  "pages": [
+    { "type": "patchouli:text", "text": "Einfacher Kampfdroide. Der Steuerkern ist sein Gehirn; der Droid Fabricator verbraucht ihn.$(br2)Im Droid Fabricator:$(li)3 Stahlblöcke$(li)3 Redstone$(li)2 Kupferblöcke$(li)1 Blaster$(li)1 Steuerkern B-1" },
+    { "type": "patchouli:crafting", "recipe": "ieplus:bauplan/kubejs_steuerkern_b1", "text": "Steuerkern B-1, gebaut an der Werkbank." }
+  ]
+}

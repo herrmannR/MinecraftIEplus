@@ -1,6 +1,0 @@
-{
-  "name": "Assembly Bench",
-  "icon": "swgc:assembly_bench",
-  "category": "patchouli:bauplan",
-  "pages": [ { "type": "patchouli:crafting", "recipe": "ieplus:bauplan/swgc_assembly_bench", "text": "Gebaut an der Werkbank. Die Rezepte der Blaster zeigt die Assembly Bench selbst." } ]
-}

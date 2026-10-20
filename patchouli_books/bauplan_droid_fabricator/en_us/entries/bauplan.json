@@ -1,6 +1,0 @@
-{
-  "name": "Droid Fabricator",
-  "icon": "swgc:droid_fabricator",
-  "category": "patchouli:bauplan",
-  "pages": [ { "type": "patchouli:crafting", "recipe": "ieplus:bauplan/swgc_droid_fabricator", "text": "Welche Droiden er baut, steht in den Bauplänen der Droiden." } ]
-}

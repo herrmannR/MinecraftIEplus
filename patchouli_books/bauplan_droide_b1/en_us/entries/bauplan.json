@@ -1,6 +1,0 @@
-{
-  "name": "Droide B-1",
-  "icon": "kubejs:steuerkern_b1",
-  "category": "patchouli:bauplan",
-  "pages": [ { "type": "patchouli:crafting", "recipe": "ieplus:bauplan/kubejs_steuerkern_b1", "text": "Steuerkern B-1, gebaut an der Werkbank." }, { "type": "patchouli:text", "title": "Im Droid Fabricator", "text": "$(li)3 Stahlblöcke$(li)3 Redstone$(li)2 Kupferblöcke$(li)1 Blaster$(li)1 Steuerkern B-1$(br2)Der Fabricator zeigt seine Rezepte selbst; der Kern wird verbraucht." } ]
-}

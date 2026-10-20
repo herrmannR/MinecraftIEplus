@@ -1,20 +1,23 @@
 // Waren aus der Star-Wars-Galaxis gibt es nur beim Einsiedler auf dem Mond (O28, F5c/d, 2026-10-20; docs/18_STORY.md).
 // - Credits nur als Quest-Belohnung und im Shop: die Rezepte aus Kupfer, Eisen und Gold entfallen; Umtausch zwischen den Stufen bleibt.
 // - Plastoid, Durasteel: nur im Shop.
-// - Baupläne sind Patchouli-Bücher mit Beschreibung und Rezept als Bild (Test 43; Bücher in patchouli_books/ der Instanz,
-//   Inhalt in kubejs/assets/patchouli/patchouli_books/). Wer ein Bauplan-Buch zum ersten Mal ins Inventar bekommt,
-//   schaltet das Rezept für die ganze Welt frei (Weltwert in server.persistentData, gilt auch für Mitspieler,
-//   die gerade nicht online sind). Ohne Freischaltung liefert die Werkbank nichts; Autocrafter (ohne Spieler) nie.
+// - Baupläne (User, 2026-10-20): Der Einsiedler verkauft Bauplan-Seiten (kubejs:bauplan_<name>). Beim Erhalt wird die Seite
+//   verbraucht („ins Buch eingeklebt“), das Rezept ist für die ganze Welt freigeschaltet (Weltwert in server.persistentData)
+//   und alle Spieler bekommen das Advancement ieplus:bauplan/<name>, das den Eintrag im Buch „Baupläne des Einsiedlers“
+//   (Patchouli, patchouli_books/bauplaene) entsperrt. Wer offline war, bekommt es beim Einloggen.
+//   Wer bei der ersten Freischaltung der Welt kauft, bekommt das Buch dazu (gedacht: Assembly Bench als erster Kauf).
+//   Ohne Freischaltung liefert die Werkbank nichts; Autocrafter (ohne Spieler) nie.
 // - Droiden: Jeder Droide braucht im Droid Fabricator zusätzlich seinen Steuerkern (wird verbraucht).
 //   Das Werkbank-Rezept des Kerns schaltet der Bauplan des Droiden frei.
 // - Alle Rezepte stark verteuert (User, Test 43, 2026-10-20).
-// - Befehl für den Host: /bauplan <name> gibt das Buch (für das Handelsfenster von Easy NPC oder als Quest-Belohnung).
-// Rezept-IDs ieplus:bauplan/<ergebnis> werden in den Patchouli-Seiten verwendet; beim Ändern dort mitziehen.
-// Stand 2026-10-20, KubeJS 2001. Fassung 3 nach Test 43, UNGETESTET.
+// - Befehle für den Host: /bauplan buch gibt ein Buch (Ersatz); /bauplan <name> gibt eine Bauplan-Seite.
+// Rezept-IDs ieplus:bauplan/<ergebnis> werden in den Patchouli-Einträgen verwendet; beim Ändern dort mitziehen.
+// Stand 2026-10-20, KubeJS 2001. Fassung 4 (ein Buch), UNGETESTET.
 
 const IEPLUS_ADV = 'mekanism:advanced_control_circuit'
+const IEPLUS_BAUPLAN_BUCH = 'patchouli:bauplaene'
 
-// Ein Eintrag je Bauplan (Name = Buch patchouli:bauplan_<name>): Werkbank-Rezepte, je Zeile 3 Zeichen.
+// Ein Eintrag je Bauplan (Name = Item kubejs:bauplan_<name>, Advancement ieplus:bauplan/<name>, Eintrag im Buch).
 const IEPLUS_BAUPLAENE = {
   assembly_bench: { titel: 'Assembly Bench', rezepte: [
     { ergebnis: 'swgc:assembly_bench', muster: [' C ', 'DWD', 'SSS'],
@@ -46,8 +49,17 @@ function ieplusFreigeschaltet(grid, name) {
   return player.server.persistentData.getBoolean(ieplusSchluessel(name))
 }
 
-function ieplusBauplanBuch(name) {
-  return Item.of('patchouli:guide_book', { 'patchouli:book': 'patchouli:bauplan_' + name })
+function ieplusBauplanBuch() {
+  return Item.of('patchouli:guide_book', { 'patchouli:book': IEPLUS_BAUPLAN_BUCH })
+}
+
+// Gibt allen Spielern (oder einem) das Advancement der freigeschalteten Baupläne; entsperrt die Einträge im Buch
+function ieplusEintraegeGeben(server, ziel) {
+  Object.keys(IEPLUS_BAUPLAENE).forEach(name => {
+    if (server.persistentData.getBoolean(ieplusSchluessel(name))) {
+      server.runCommandSilent(`advancement grant ${ziel} until ieplus:bauplan/${name}`)   // until: Stamm „root“ gleich mit
+    }
+  })
 }
 
 ServerEvents.recipes(event => {
@@ -90,30 +102,50 @@ ServerEvents.recipes(event => {
   })
 })
 
-// Freischaltung beim ersten Erhalt eines Bauplan-Buchs (patchouli:guide_book mit NBT patchouli:book = patchouli:bauplan_<name>)
+// Kauf einer Bauplan-Seite
 PlayerEvents.inventoryChanged(event => {
-  if (String(event.item.id) !== 'patchouli:guide_book') return
-  var nbt = event.item.nbt
-  if (!nbt || !nbt.contains('patchouli:book')) return
-  var buch = String(nbt.getString('patchouli:book'))
-  if (buch.indexOf('patchouli:bauplan_') !== 0) return
-  var name = buch.substring('patchouli:bauplan_'.length)
+  var id = String(event.item.id)
+  if (id.indexOf('kubejs:bauplan_') !== 0) return
+  var name = id.substring('kubejs:bauplan_'.length)
   var b = IEPLUS_BAUPLAENE[name]
   if (!b) return
-  var daten = event.server.persistentData
-  if (daten.getBoolean(ieplusSchluessel(name))) return
-  daten.putBoolean(ieplusSchluessel(name), true)
-  event.server.tell(Text.gold('Bauplan gelesen: ' + b.titel + ' ist jetzt für alle herstellbar.'))
+  var server = event.server
+  var daten = server.persistentData
+  var ersterKauf = !daten.getBoolean('ieplus_bauplan_buch_gegeben')
+
+  event.item.shrink(event.item.count)   // Seite wird ins Buch eingeklebt
+  if (ersterKauf) {
+    daten.putBoolean('ieplus_bauplan_buch_gegeben', true)
+    event.player.give(ieplusBauplanBuch())
+    event.player.tell(Text.aqua('Der Einsiedler drückt dir ein Buch in die Hand: „Baupläne des Einsiedlers“.'))
+  }
+  if (!daten.getBoolean(ieplusSchluessel(name))) {
+    daten.putBoolean(ieplusSchluessel(name), true)
+    server.tell(Text.gold('Neuer Bauplan im Buch: ' + b.titel + '. Das Rezept ist jetzt für alle herstellbar.'))
+  } else {
+    event.player.tell(Text.gray('Diesen Bauplan habt ihr schon.'))
+  }
+  ieplusEintraegeGeben(server, '@a')
 })
 
-// /bauplan <name>: gibt dem ausführenden Spieler das Buch (nur mit Rechten, z. B. Host oder Quest-Belohnung)
+// Wer offline war, bekommt die Einträge beim Einloggen
+PlayerEvents.loggedIn(event => {
+  ieplusEintraegeGeben(event.server, event.player.username)
+})
+
+// /bauplan buch: Ersatzbuch; /bauplan <name>: Bauplan-Seite (zum Testen oder für das Handelsfenster von Easy NPC)
 ServerEvents.commandRegistry(event => {
   const { commands: Commands } = event
-  let befehl = Commands.literal('bauplan').requires(s => s.hasPermission(2))
+  var befehl = Commands.literal('bauplan').requires(s => s.hasPermission(2))
+  befehl = befehl.then(Commands.literal('buch').executes(ctx => {
+    var player = ctx.source.getPlayerOrException()
+    player.give(ieplusBauplanBuch())
+    return 1
+  }))
   Object.keys(IEPLUS_BAUPLAENE).forEach(name => {
     befehl = befehl.then(Commands.literal(name).executes(ctx => {
       var player = ctx.source.getPlayerOrException()
-      player.give(ieplusBauplanBuch(name))
+      player.give('kubejs:bauplan_' + name)
       return 1
     }))
   })

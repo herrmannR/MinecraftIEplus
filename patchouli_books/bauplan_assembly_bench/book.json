@@ -1,8 +1,0 @@
-{
-  "name": "Bauplan: Assembly Bench",
-  "landing_text": "Werkbank für Blaster, Lichtschwert-Teile und das Färben von Kyber-Kristallen. Aus meiner alten Heimat; hier kennt sie niemand.$(br2)Wer dieses Buch zum ersten Mal erhält, schaltet das Rezept für alle frei.",
-  "book_texture": "patchouli:textures/gui/book_blue.png",
-  "model": "kubejs:bauplan_assembly_bench",
-  "show_progress": false,
-  "i18n": false
-}

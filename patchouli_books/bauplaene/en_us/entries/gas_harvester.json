@@ -1,0 +1,11 @@
+{
+  "name": "Gas Harvester",
+  "icon": "swgc:gas_harvester",
+  "category": "patchouli:bauplaene",
+  "advancement": "ieplus:bauplan/gas_harvester",
+  "sortnum": 3,
+  "pages": [
+    { "type": "patchouli:text", "text": "Sammelt Tibanna-Gas in leere Gasbehälter. Beide Rezepte stehen auf der nächsten Seite." },
+    { "type": "patchouli:crafting", "recipe": "ieplus:bauplan/swgc_gas_harvester", "recipe2": "ieplus:bauplan/swgc_empty_gas_vessel" }
+  ]
+}

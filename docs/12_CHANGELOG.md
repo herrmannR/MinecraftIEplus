@@ -1124,3 +1124,15 @@ Status: 🟡
 - `altar_dimension.js` passt zu F27 und O39: Die Merkur-Sperre gilt nur für `ritualStandardDungeon` (im JAR: „Pathway to the Endless Realm“); die Amulett-Sperre gilt für die ganze Dimension; die `var`-Korrektur aus Fassung 3 ist erhalten. Die Testinstanz hatte noch die Fassung mit beiden Ritualen gesperrt; neu kopiert.
 - Tests 47–49 an F27 angepasst: Test 47 prüft Pathway to the Endless Realm (Sperre) und Edge of the Hidden Realm (überall erlaubt); die Truhe des Meisters gehört ins Endless Realm. Das Ergebnis „Ritual geht überall“ der zweiten Runde war mit Edge of the Hidden Realm und ist jetzt gewollt.
 - Questtext Blood Magic: BM4-02 und die Tabelle der Pack-Änderungen korrigiert. 🔵 BM4/BM5 müssen nach F27 noch neu geordnet werden.
+
+## 2026-10-20 — Baupläne in einem Buch mit freischaltbaren Einträgen
+
+Status: 🟡
+
+### Änderung
+- Wunsch des Users: Statt sechs einzelner Bücher gibt es ein Buch „Baupläne des Einsiedlers“ (`patchouli_books/bauplaene/`). Jeder Eintrag ist gesperrt, bis sein Advancement `ieplus:bauplan/<name>` vergeben ist (versteckt, ohne Toast; Stamm `ieplus:bauplan/root`).
+- Der Einsiedler verkauft Bauplan-Seiten (`kubejs:bauplan_<name>`). Beim Erhalt: Seite verbraucht, Rezept freigeschaltet, Advancement an alle Spieler (Offline-Spieler beim Einloggen); der erste Kauf der Welt gibt das Buch dazu.
+- Die sechs Einzelbücher und ihre Modelle entfernt (Projekt und Testinstanz). Neu kopiert: Buch, Advancements, `teil1_items.js`, `einsiedler_shop.js`.
+
+### Betroffene Bereiche
+- `kubejs/`, `patchouli_books/`, Doku

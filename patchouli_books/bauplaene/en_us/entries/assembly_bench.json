@@ -1,0 +1,11 @@
+{
+  "name": "Assembly Bench",
+  "icon": "swgc:assembly_bench",
+  "category": "patchouli:bauplaene",
+  "advancement": "ieplus:bauplan/assembly_bench",
+  "sortnum": 1,
+  "pages": [
+    { "type": "patchouli:text", "text": "Werkbank für Blaster, Lichtschwert-Teile und das Färben von Kyber-Kristallen. Aus meiner alten Heimat; hier kennt sie niemand." },
+    { "type": "patchouli:crafting", "recipe": "ieplus:bauplan/swgc_assembly_bench", "text": "Gebaut an der Werkbank. Die Rezepte der Blaster zeigt die Assembly Bench selbst." }
+  ]
+}
