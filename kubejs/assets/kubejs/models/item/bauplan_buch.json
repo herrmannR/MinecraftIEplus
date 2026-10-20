@@ -1,4 +1,4 @@
 {
   "parent": "minecraft:item/generated",
-  "textures": { "layer0": "swgc:item/blueprint_lightsaber_hilt" }
+  "textures": { "layer0": "kubejs:item/bauplan_buch" }
 }
