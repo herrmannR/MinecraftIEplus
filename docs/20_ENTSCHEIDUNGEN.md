@@ -19,7 +19,7 @@ Zutat von Glacio (Ice Shard gibt es auch auf Mond und Mars) oder ein Item vom Me
 → `15_RAUMFAHRT.md`
 
 **F3 · Treibstoffe** (User: wird gesondert analysiert)
-Cryo Freezer behalten oder entfernen? Woraus und wie teuer wird der T4-Treibstoff? Vorschlag aus der Runde vom 2026-10-20: Cryo Freezer raus, T4-Treibstoff in der IE Refinery aus Kerosin und flüssigem Wasserstoff (Mekanism).
+Cryo Freezer behalten oder entfernen? Treibstoffe T4–T7? **Analyse aller Flüssigkeiten mit Stufen und Vorschlag: `recherche/f3_treibstoffe.md`** (2026-10-20). Kurz: T4 Kryo-Treibstoff (Benzin + Cryo Fuel, Cryo Freezer bleibt als Zulieferer), T5 flüssiges D-T-Fusionsgemisch, T6 D-T + Antimaterie, T7 Antimaterie-Treibstoff + Magie; ab T4 sparsam (1 Eimer pro Start).
 → `15_RAUMFAHRT.md`; `adastra.md`
 
 **F5 · Kyber und Star-Wars-Rohstoffe**

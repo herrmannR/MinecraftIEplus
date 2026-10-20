@@ -47,6 +47,7 @@
 - Mekanism-Erze auf den Planeten: siehe `mekanism/WISSEN.md`.
 - Im Spiel getestet (2026-10-17, `11_TESTING.md` Tests 16–21):
   - Ein Start verbraucht 3 Eimer, auf jeder Stufe T1 bis T3; Hin- und Rückflug also 6 (wie im Buch).
+  - Treibstoff im Tag `ad_astra:efficient_fuel` (von Haus aus nur Cryo Fuel) verbraucht nur **1 Eimer pro Start** statt 3 (Klasse `earth.terrarium.adastra.common.entities.vehicles.Rocket`, Bytecode gelesen 2026-10-20).
   - Die Treibstoff-Tags greifen: T1 nur Biodiesel, T2 nur entschwefelter Diesel, T3 nur Kerosin.
   - Flüssiger Mekanism-Sauerstoff klappt im Oxygen Loader.
   - Jet Suit und Etrionic Capacitor laden in der IE Charging Station und am Mekanism Energy Cube; der Energizer ist deshalb entfernt.
