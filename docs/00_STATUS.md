@@ -7,7 +7,7 @@
 
 Minecraft **1.20.1, Forge 47.4.26** (Wechsel von 1.18.2 am 2026-10-11). Erledigt sind die Grundlagen, die Erzverteilung (umgesetzt und nachgezählt, 2026-10-17) und die erste Fassung der Skripte (Tests 1–31 bestanden). Die Story schreibt der User (`18_STORY.md`, Part 1 im Umriss). Questtexte gibt es für alle großen Mods im Entwurf.
 
-**Als Nächstes (Ziel: Teil 1 fertig):** Die Entscheidungen und Skripte für Teil 1 stehen (`10_KUBEJS.md`, Abschnitt „Teil 1“). Von den Tests 42–61 sind alle bestanden außer **54** (Tusken Raider in der Overworld; Skript nachgereicht, erneut prüfen); Test 49 entfällt (O40). Danach bleiben für Teil 1 nur Easy-NPC-Dialoge und Questbuch.
+**Als Nächstes (Ziel: Teil 1 fertig):** Die Entscheidungen und Skripte für Teil 1 stehen (`10_KUBEJS.md`, Abschnitt „Teil 1“). Die Tests 42–61 sind alle bestanden (2026-10-20); Test 49 entfällt (O40). Danach bleiben für Teil 1 nur Easy-NPC-Dialoge und Questbuch.
 
 ### Fahrplan
 
@@ -16,9 +16,9 @@ Die Schritte laufen in dieser Reihenfolge; 1 und 2 gehen parallel. Alle offenen 
 | Schritt | Inhalt | Stand | Hängt an |
 |---|---|---|---|
 | 1 Entscheidungen | Teil 1 entschieden; Teil 2 und 3 offen | 🟢 Teil 1 erledigt (2026-10-20) | User |
-| 2 Tests im Spiel | Teil 1: nur noch 54; außerdem 33–41 (`11_TESTING.md`), Prüfpunkte P1–P15 | 🟡 Teil 1 bis auf Test 54 bestanden (2026-10-20) | User spielt |
+| 2 Tests im Spiel | Teil 1 fertig; offen noch 33–41 (`11_TESTING.md`), Prüfpunkte P1–P15 | 🟢 Teil 1 bestanden (2026-10-20) | User spielt |
 | 3 Story von Part 1 fertig | `18_STORY.md` bis zur Rückkehr des Meisters; reine Story-Texte (Tagebücher, Schriftrollen, Dialoge) schreibt der User beim Bau der NPCs | 🟡 Handlung steht, Texte offen | User; O4, O6–O9, O15, O25, O34 |
-| 4 Skripte und Raketen | Teil 1 geschrieben (2026-10-20): Raketen T1–T4, Rover, eigene Items, Altar-Dimension (Ritual, Amulett, Truhe), Ideenimport-Entfernungen, IE-Crusher, AE2, Airship, Shop und Baupläne, Galaxy in a Cube aus der Overworld. Offen: Antimaterie-Treibstoffe T6/T7, Etrium, Planetenstufen T5–T7, Beskar, Kyber (Teil 2 und 3) | 🟢 Teil 1 getestet bis auf Test 54 | Test 54 |
+| 4 Skripte und Raketen | Teil 1 geschrieben (2026-10-20): Raketen T1–T4, Rover, eigene Items, Altar-Dimension (Ritual, Amulett, Truhe), Ideenimport-Entfernungen, IE-Crusher, AE2, Airship, Shop und Baupläne, Galaxy in a Cube aus der Overworld. Offen: Antimaterie-Treibstoffe T6/T7, Etrium, Planetenstufen T5–T7, Beskar, Kyber (Teil 2 und 3) | 🟢 Teil 1 getestet (2026-10-20) | – |
 | 5 Balance (frühere Phasen 3–6) | Erträge der Erzverarbeitung, Energie, AE2 zweistufig, Cross-Mod-Rezepte (`07_CROSSMOD_INTEGRATION.md`) | 🔵 nicht begonnen | F10, F19, F20, F24 |
 | 6 Questbuch einbauen | FTB Quests aus `questtexte/`, Easy-NPC-Figuren (Droide, Einsiedler, Elf, Figur im Blue-Skies-Haus) | 🟡 Texte im Entwurf | Schritte 3–5 |
 | 7 Hauptwelt umstellen | Aufgaben beim Host (H1–H5 unten) | 🔵 | Schritte 4–6; nur, was in `11_TESTING.md` ✅ hat |
@@ -44,7 +44,7 @@ Die Schritte laufen in dieser Reihenfolge; 1 und 2 gehen parallel. Alle offenen 
 | `03_ERZGENERATION.md` | 🟢 Verteilung beschlossen und im Spiel nachgezählt (2026-10-17) |
 | `07_CROSSMOD_INTEGRATION.md` | 🟡 Tinkers in den höheren Stufen, Schmelzregeln, Blood-Smeltery |
 | `10_KUBEJS.md` | 🟡 Stand der Skripte, was noch fehlt |
-| `11_TESTING.md` | 🟢 Testplan; Tests 1–31, 32a, 42–48, 50–53, 55–61 bestanden; 32 (O22) und 49 (O40) entfallen; 33–41 und 54 offen |
+| `11_TESTING.md` | 🟢 Testplan; Tests 1–31, 32a, 42–48, 50–61 bestanden; 32 (O22) und 49 (O40) entfallen; 33–41 offen |
 | `12_CHANGELOG.md` | 🟢 fortlaufend |
 | `14_ERZ_MOD_MATRIX.md` | 🟢 Ist und Soll |
 | `15_RAUMFAHRT.md` | 🟢 |

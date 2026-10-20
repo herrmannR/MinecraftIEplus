@@ -41,6 +41,10 @@ Zutat von Glacio (Ice Shard gibt es auch auf Mond und Mars) oder ein Item vom Me
 AT-RT, AT-ST und Delta-7B (`swgc:atrt`, `swgc:atst`, `swgc:delta7b`) haben im Mod weder Rezept noch Fundort, also nur Kreativmodus (G8). Wie kommen sie ins Pack: eigene Rezepte per KubeJS (Werkbank oder hinter Bauplan wie die Rüstungen) oder Questbelohnung? Vorher Steuerung und Werte auslesen (WISSEN.md „Offen“).
 → `17_STAR_WARS_1.20.1.md`; `modpfade/swgc/WISSEN.md`, `swgc.md`
 
+**F29 · Tusken Raider auf Tatooine** (Teil 2; Wunsch des Users 2026-10-20: sie sollen auf Tatooine spawnen)
+Galaxy in a Cube setzt sie nur über einen eigenen Spawner im Code, der nur in der Overworld läuft (Test 54); in der Overworld sind sie jetzt per `galaxy_overworld.js` abgefangen. Auf Tatooine kommen sie also nicht von selbst. Weg: Forge-Biome-Modifier `add_spawns` für `swgc:tusken_raider` in `swplanets:tatooine_desert` und `swplanets:tatooine_rocky_desert` (oder Tag `swplanets:tatooine_like`); vorher prüfen, ob das Wesen eine Spawn-Regel hat und ob Gruppe und Häuptling dann fehlen. Wie häufig, und neben den Pillar-Tusken von Star Wars Planets?
+→ `17_STAR_WARS_1.20.1.md`; `modpfade/swgc/WISSEN.md`
+
 **F20 · Kostenrahmen je Meilenstein** (Schritt 5, Balance)
 → `01_PROGRESSION.md`
 

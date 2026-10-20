@@ -1223,3 +1223,4 @@ Status: 🟡
 ### Änderung
 - Tests 43, 50, 51, 52, 55, 56, 57 ✅ (User); Test 49 entfällt (O40, Test 58).
 - Test 54 (User): kein Ewok-Dorf, aber Tusken Raider in der Overworld. Sie kommen über einen eigenen Spawner im Code von Galaxy in a Cube (`TuskenTribeSpawner`, nur Overworld, keine Config), nicht über Biom-Daten. Neues Skript `server_scripts/starwars/galaxy_overworld.js` fängt `swgc:tusken_raider` in der Overworld ab. In die Testinstanz kopiert (`/reload` genügt).
+- Test 54 ✅ (User): keine Tusken Raider mehr in der Overworld. Damit sind alle Tests für Teil 1 bestanden. Wunsch für Teil 2: Tusken auf Tatooine (F29).

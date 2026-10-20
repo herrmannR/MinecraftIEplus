@@ -34,7 +34,7 @@ Die fünf Skripte für 1.18.2 (`space_oxygen.js`, `moon_ores.js`, `tf_industrial
 | `server_scripts/crossmod/blood_smeltery.js` | Entfernt die Life-Essence-Legierung und das Gießen von Blank Slate und Blank Rune. ✅ In JEI bestätigt (2026-10-17). | `07_CROSSMOD_INTEGRATION.md` |
 | `client_scripts/jei_ausblenden.js` | Blendet alle entfernten Items in JEI aus (Regel: was ein Skript entfernt, kommt auch hierher). | User, 2026-10-13 |
 
-#### Teil 1 (2026-10-20, 🟢 getestet bis auf Test 54 in `11_TESTING.md`)
+#### Teil 1 (2026-10-20, 🟢 getestet, Tests 42–61 in `11_TESTING.md`)
 
 | Datei | Aufgabe | Entscheidung |
 |---|---|---|

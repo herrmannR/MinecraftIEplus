@@ -52,6 +52,8 @@
 - Überschneidung mit Star Wars Planets, siehe `swplanets/WISSEN.md`.
 - **Kein JEI-Plugin** (JAR ohne JEI-Klassen, geprüft 2026-10-17): Lichtschwerter, Griffe, Blaster und Bemalungen wie die 501st-Rüstung (Assembly Bench, im Code), das Färben der Kyber-Kristalle (eigener Bildschirm) und die Droiden (`swgc:fabrication`) erscheinen nie in JEI. Sichtbar sind nur die 32 Werkbank-Rezepte (u. a. Klon-, Jedi-, Sith-, Royal-Guard- und Vader-Rüstung, Plastoid, Durasteel, Assembly Bench, Droid Fabricator). Für Spieler muss das Questbuch diese Wege erklären.
 
+- **Tusken Raider** (Befund 2026-10-20, Test 54): kein Biome-Modifier, sondern ein eigener Spawner `che.swgc.TuskenTribeSpawner` (tickt pro Welt, läuft nur in `Level.OVERWORLD`, nur bei `doMobSpawning`, prüft ein Vanilla-Biom-Tag, keine Config). Im Pack in der Overworld per `server_scripts/starwars/galaxy_overworld.js` abgefangen; auf Tatooine gewünscht (F29).
+
 ## Ohne Rezept und ohne Fundort
 
 AT-RT, AT-ST, Delta-7B, Clone, Darksaber, Double-bladed Glaive, Jedi/Sith Holocron (nur Kreativ). Nur von Mobs: Jawa Blaster, Tusken Pike, Ewok Staff. Obese-Wan Carbobi: Klasse vorhanden, nicht registriert.
