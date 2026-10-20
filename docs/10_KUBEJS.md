@@ -34,7 +34,7 @@ Die fünf Skripte für 1.18.2 (`space_oxygen.js`, `moon_ores.js`, `tf_industrial
 | `server_scripts/crossmod/blood_smeltery.js` | Entfernt die Life-Essence-Legierung und das Gießen von Blank Slate und Blank Rune. ✅ In JEI bestätigt (2026-10-17). | `07_CROSSMOD_INTEGRATION.md` |
 | `client_scripts/jei_ausblenden.js` | Blendet alle entfernten Items in JEI aus (Regel: was ein Skript entfernt, kommt auch hierher). | User, 2026-10-13 |
 
-#### Teil 1 (2026-10-20, 🟡 großteils getestet; offen Tests 50–52, 54–57 in `11_TESTING.md`)
+#### Teil 1 (2026-10-20, 🟢 getestet bis auf Test 54 in `11_TESTING.md`)
 
 | Datei | Aufgabe | Entscheidung |
 |---|---|---|
@@ -51,6 +51,7 @@ Die fünf Skripte für 1.18.2 (`space_oxygen.js`, `moon_ores.js`, `tf_industrial
 | `server_scripts/progression/stahl_nur_ie.js` | Entfernt den Mekanism-Stahlweg (Enriched Iron → Stahlstaub). | O41 |
 | `startup_scripts/treibstoffe.js`, `server_scripts/raumfahrt/treibstoffe.js` | Kryo-Raketentreibstoff für T4 (eigene Flüssigkeit), IE Refinery: 10 Benzin + 10 Cryo Fuel → 10. | F3 |
 | `config-overrides/config/alexsmobs.toml` | `limitTransmutingToLootTables = true`. | F16 |
+| `server_scripts/starwars/galaxy_overworld.js` | Keine Tusken Raider von Galaxy in a Cube in der Overworld (eigener Spawner im Code, per Datapack nicht abschaltbar). Ewok-Dörfer und Jawas laufen über `kubejs/data/swgc/`. | E20, Test 54 |
 
 ### Datapack (`kubejs/data/`)
 
