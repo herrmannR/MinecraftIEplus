@@ -1196,3 +1196,4 @@ Status: 🟡
 - Wunsch des Users: Die Werkbank-Rezepte der Rüstungen aus Galaxy in a Cube (Klon Phase 2, Jedi, Sith, Royal Guard, Vader; 19 Teile) gibt es nur noch per Bauplan. Fünf neue Rollen `kubejs:bauplan_ruestung_<satz>`; das Rezept ist bis zum Lesen gesperrt (gleiche Technik wie bei den Maschinen), die Kosten bleiben wie im Original. Die Rüstungsteile sind in JEI ausgeblendet.
 - Das Buch „Baupläne des Einsiedlers“ hat jetzt drei Kapitel: Maschinen (Assembly Bench, Droid Fabricator, Gas Harvester), Waffen (Blaster, Droiden), Rüstung (fünf Sätze mit Rezeptbildern).
 - Test 56 angelegt. In die Testinstanz kopiert (Neustart nötig).
+- Test 48 ✅ (User): nur mit Charm im Curios-Slot hinein; das Log zeigt die Abfrage sauber (false ohne Charm und mit Charm im Inventar, true im Slot).

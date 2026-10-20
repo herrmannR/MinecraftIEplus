@@ -9,7 +9,7 @@
 // Amulett-Prüfung ohne Rückfall aufs Inventar: Der Rückfall ließ bei Fehlern jeden mit Charm im Inventar hinein (Test 48, Runde 3).
 // findFirstCurio gibt es mit Item und mit Predicate; die Item-Fassung wird ausdrücklich gewählt.
 // Jede Entscheidung beim Betreten steht in logs/kubejs/startup.log („altar_dimension.js: Betreten …“).
-// Stand 2026-10-20, KubeJS 2001. Fassung 4 nach Test 48 (Ritual-Teil mit Fassung 3 bestanden, Test 47).
+// Stand 2026-10-20, KubeJS 2001. Fassung 4, getestet: Test 47 und 48 bestanden (2026-10-20).
 // Blood Magic bringt Spieler per /execute in … run tp hinein (TileInversionPillar.teleportPlayerToLocation);
 // ServerPlayer.teleportTo ruft dabei ForgeHooks.onTravelToDimension, das Ereignis kommt also an (Forge 47.4.26, JAR geprüft).
 
