@@ -1,0 +1,53 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:chorus_fruit"
+    },
+    {
+      "item": "minecraft:chorus_fruit"
+    },
+    {
+      "item": "minecraft:chorus_fruit"
+    },
+    [
+      {
+        "item": "farmersdelight:cod_slice"
+      },
+      {
+        "item": "farmersdelight:salmon_slice"
+      }
+    ],
+    [
+      {
+        "item": "farmersdelight:cod_slice"
+      },
+      {
+        "item": "farmersdelight:salmon_slice"
+      }
+    ],
+    [
+      {
+        "item": "farmersdelight:cod_slice"
+      },
+      {
+        "item": "farmersdelight:salmon_slice"
+      }
+    ],
+    [
+      {
+        "item": "farmersdelight:cod_slice"
+      },
+      {
+        "item": "farmersdelight:salmon_slice"
+      }
+    ],
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "item": "kaleidoscope_cookery:end_style_sashimi"
+  }
+}

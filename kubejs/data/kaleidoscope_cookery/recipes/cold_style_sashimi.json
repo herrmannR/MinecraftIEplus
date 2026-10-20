@@ -1,0 +1,53 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:snowball"
+    },
+    {
+      "item": "minecraft:snowball"
+    },
+    {
+      "item": "minecraft:snowball"
+    },
+    [
+      {
+        "item": "farmersdelight:cod_slice"
+      },
+      {
+        "item": "farmersdelight:salmon_slice"
+      }
+    ],
+    [
+      {
+        "item": "farmersdelight:cod_slice"
+      },
+      {
+        "item": "farmersdelight:salmon_slice"
+      }
+    ],
+    [
+      {
+        "item": "farmersdelight:cod_slice"
+      },
+      {
+        "item": "farmersdelight:salmon_slice"
+      }
+    ],
+    [
+      {
+        "item": "farmersdelight:cod_slice"
+      },
+      {
+        "item": "farmersdelight:salmon_slice"
+      }
+    ],
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "item": "kaleidoscope_cookery:cold_style_sashimi"
+  }
+}

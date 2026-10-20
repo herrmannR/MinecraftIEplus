@@ -21,7 +21,7 @@
 // Rezept-IDs ieplus:bauplan/<ergebnis> werden in den Patchouli-Einträgen verwendet; beim Ändern dort mitziehen.
 // - Buch in drei Kapiteln (User, 2026-10-20): Maschinen (Assembly Bench, Droid Fabricator, Gas Harvester), Waffen (Blaster,
 //   Droiden), Rüstung (Klon, Jedi, Sith, Royal Guard, Vader; deren Werkbank-Rezepte sind bis zum Bauplan gesperrt).
-// Stand 2026-10-20, KubeJS 2001. Fassung 10 (Bauplan Plastoid; Fassung 9: Tinkers-Werkstation, Test 60), UNGETESTET.
+// Stand 2026-10-20, KubeJS 2001. Fassung 11 (Plastoid-Rezept nicht mehr über output entfernt, Test 63; Fassung 10: Bauplan Plastoid), UNGETESTET.
 
 const IEPLUS_ADV = 'mekanism:advanced_control_circuit'
 const IEPLUS_BAUPLAN_BUCH = 'patchouli:bauplaene'
@@ -118,8 +118,8 @@ function ieplusEintraegeAbgleichen(server, ziel) {
 ServerEvents.recipes(event => {
   // Credits
   ;['swgc:copper_credit', 'swgc:iron_credit', 'swgc:gold_credit'].forEach(id => event.remove({ id: id }))
-  // Shop-Waren
-  event.remove({ output: 'swgc:plastoid' })
+  // Shop-Waren. Plastoid nicht über output entfernen: das träfe auch das Bauplan-Rezept unten (Test 63);
+  // sein einziges Mod-Rezept swgc:plastoid entfernt die Bauplan-Schleife über die ID.
   event.remove({ output: 'swgc:durasteel_ingot' })
 
   // Droiden mit Steuerkern; Eisenblöcke werden Stahlblöcke (verteuert, Test 43). "weapon" zeigt weiter auf die Blaster-Zutat.

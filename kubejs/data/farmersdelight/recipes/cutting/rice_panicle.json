@@ -1,0 +1,25 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "kaleidoscope_cookery:rice_panicle"
+    }
+  ],
+  "result": [
+    {
+      "item": "kaleidoscope_cookery:rice"
+    },
+    {
+      "item": "farmersdelight:straw"
+    }
+  ],
+  "tool": [
+    {
+      "type": "farmersdelight:tool_action",
+      "action": "knife_dig"
+    },
+    {
+      "tag": "forge:tools/knives"
+    }
+  ]
+}

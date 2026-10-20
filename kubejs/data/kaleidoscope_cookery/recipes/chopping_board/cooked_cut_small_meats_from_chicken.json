@@ -1,0 +1,8 @@
+{
+  "type": "kaleidoscope_cookery:chopping_board",
+  "conditions": [
+    {
+      "type": "forge:false"
+    }
+  ]
+}

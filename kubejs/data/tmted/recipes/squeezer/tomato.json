@@ -1,0 +1,11 @@
+{
+  "type": "immersiveengineering:squeezer",
+  "energy": 6400,
+  "fluid": {
+    "amount": 75,
+    "fluid": "tmted:tomato_sauce"
+  },
+  "input": {
+    "item": "kaleidoscope_cookery:tomato"
+  }
+}

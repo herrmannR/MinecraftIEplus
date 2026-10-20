@@ -1,0 +1,17 @@
+{
+  "type": "immersiveengineering:bottling_machine",
+  "fluid": {
+    "amount": 250,
+    "tag": "minecraft:water"
+  },
+  "inputs": [
+    {
+      "item": "kaleidoscope_cookery:flour"
+    }
+  ],
+  "results": [
+    {
+      "item": "kaleidoscope_cookery:raw_dough"
+    }
+  ]
+}

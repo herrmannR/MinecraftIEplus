@@ -1,0 +1,27 @@
+{
+  "type": "immersiveengineering:crusher",
+  "energy": 1600,
+  "input": {
+    "item": "minecraft:hay_block"
+  },
+  "result": {
+    "count": 18,
+    "item": "kaleidoscope_cookery:flour"
+  },
+  "secondaries": [
+    {
+      "chance": 1,
+      "output": {
+        "count": 5,
+        "item": "farmersdelight:straw"
+      }
+    },
+    {
+      "chance": 0.25,
+      "output": {
+        "count": 4,
+        "item": "farmersdelight:straw"
+      }
+    }
+  ]
+}

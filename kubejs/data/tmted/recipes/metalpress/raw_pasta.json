@@ -1,0 +1,12 @@
+{
+  "type": "immersiveengineering:metal_press",
+  "mold": "immersiveengineering:mold_wire",
+  "result": {
+    "item": "kaleidoscope_cookery:raw_noodles",
+    "count": 2
+  },
+  "input": {
+    "item": "kaleidoscope_cookery:raw_dough"
+  },
+  "energy": 3200
+}

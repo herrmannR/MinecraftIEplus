@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "kaleidoscope_grilling:sweet_potato_powder"
+    }
+  ],
+  "result": [
+    {
+      "item": "kaleidoscope_grilling:raw_sweet_potato_sheet"
+    }
+  ],
+  "tool": [
+    {
+      "type": "farmersdelight:tool_action",
+      "action": "knife_dig"
+    },
+    {
+      "tag": "forge:tools/knives"
+    }
+  ]
+}

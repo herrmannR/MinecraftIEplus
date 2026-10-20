@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "farmersdelight:tomato_seeds"
+    }
+  ],
+  "result": {
+    "item": "kaleidoscope_cookery:tomato_seed"
+  }
+}

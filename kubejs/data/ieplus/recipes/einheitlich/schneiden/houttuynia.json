@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "tag": "kaleidoscope_grilling:ingredients/houttuynia"
+    }
+  ],
+  "result": [
+    {
+      "item": "kaleidoscope_grilling:minced_houttuynia"
+    }
+  ],
+  "tool": [
+    {
+      "type": "farmersdelight:tool_action",
+      "action": "knife_dig"
+    },
+    {
+      "tag": "forge:tools/knives"
+    }
+  ]
+}

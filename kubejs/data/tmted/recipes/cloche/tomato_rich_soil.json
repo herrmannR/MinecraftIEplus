@@ -1,0 +1,20 @@
+{
+  "type": "immersiveengineering:cloche",
+  "input": {
+    "item": "kaleidoscope_cookery:tomato_seed"
+  },
+  "render": {
+    "type": "crop",
+    "block": "farmersdelight:tomatoes"
+  },
+  "results": [
+    {
+      "item": "kaleidoscope_cookery:tomato",
+      "count": 3
+    }
+  ],
+  "soil": {
+    "item": "farmersdelight:rich_soil"
+  },
+  "time": 800
+}

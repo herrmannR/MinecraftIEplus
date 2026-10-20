@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "fd_rice",
+  "ingredients": [
+    {
+      "item": "kaleidoscope_cookery:rice_panicle"
+    }
+  ],
+  "result": {
+    "item": "kaleidoscope_cookery:rice"
+  }
+}

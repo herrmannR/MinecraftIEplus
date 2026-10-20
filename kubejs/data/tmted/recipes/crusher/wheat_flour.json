@@ -1,0 +1,19 @@
+{
+  "type": "immersiveengineering:crusher",
+  "energy": 1600,
+  "input": {
+    "item": "minecraft:wheat"
+  },
+  "result": {
+    "count": 2,
+    "item": "kaleidoscope_cookery:flour"
+  },
+  "secondaries": [
+    {
+      "chance": 0.25,
+      "output": {
+        "item": "farmersdelight:straw"
+      }
+    }
+  ]
+}

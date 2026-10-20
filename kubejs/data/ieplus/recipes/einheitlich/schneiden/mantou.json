@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "kaleidoscope_cookery:mantou"
+    }
+  ],
+  "result": [
+    {
+      "item": "kaleidoscope_grilling:raw_mantou_slice",
+      "count": 3
+    }
+  ],
+  "tool": [
+    {
+      "type": "farmersdelight:tool_action",
+      "action": "knife_dig"
+    },
+    {
+      "tag": "forge:tools/knives"
+    }
+  ]
+}

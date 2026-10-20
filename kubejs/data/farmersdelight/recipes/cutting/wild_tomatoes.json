@@ -1,0 +1,30 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "farmersdelight:wild_tomatoes"
+    }
+  ],
+  "result": [
+    {
+      "item": "kaleidoscope_cookery:tomato_seed"
+    },
+    {
+      "chance": 0.2,
+      "item": "kaleidoscope_cookery:tomato"
+    },
+    {
+      "chance": 0.1,
+      "item": "minecraft:green_dye"
+    }
+  ],
+  "tool": [
+    {
+      "type": "farmersdelight:tool_action",
+      "action": "knife_dig"
+    },
+    {
+      "tag": "forge:tools/knives"
+    }
+  ]
+}

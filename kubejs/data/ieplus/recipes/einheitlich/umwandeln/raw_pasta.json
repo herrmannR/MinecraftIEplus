@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "farmersdelight:raw_pasta"
+    }
+  ],
+  "result": {
+    "item": "kaleidoscope_cookery:raw_noodles"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "farmersdelight:rice"
+    }
+  ],
+  "result": {
+    "item": "kaleidoscope_cookery:rice"
+  }
+}

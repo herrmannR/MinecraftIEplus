@@ -1261,3 +1261,11 @@ Status: 🔵 ungetestet (Tests 65–72)
 ### Teststatus
 - Offline geprüft: `kubejs_check.py` ohne Befund; das Skript lief in Node gegen alle 14.937 Rezepte der JARs (123 betroffen, 103 neu, 10 Dubletten verworfen, 10 ersatzlos, kein Verlierer in neuen Rezepten). Im Spiel offen: Tests 65–72.
 - Erster Start (Test 65): „KubeJS error“ beim Betreten der Welt. Rhino bricht bei `const` in der rekursiven Funktion `ersetze` ab („redeclaration of var schluessel“); Node hatte das im Offline-Lauf nicht bemängelt. In allen Funktionen des Skripts `let` statt `const`. `tools/kubejs_check.py` warnt jetzt vor `const` in rekursiven Funktionen. In die Testinstanz kopiert, `/reload` genügt.
+- Nach `/reload` weiter Fehler (Test 65): `event.custom` läuft durch die Schemas der KubeJS-Addons. KubeJS IE lehnt den Squeezer ohne Item-Ergebnis ab („Recipe component key 'result' not found“) und stürzt bei einer Flüssigkeit als Tag (Bottling Machine) mit NullPointerException ab; 7 Rezepte fehlten. **Fassung 2:** Das Skript macht nur noch die Tags. Rezepte und Loot schreibt `tools/kaleidoscope_daten.py` (vorher `kaleidoscope_loot.py`) als Datapack-Dateien: 103 Rezepte unter der Original-ID mit Gewinner überschrieben, 10 Dubletten, 10 ersatzlose und alle 22 Brett-Rezepte per `forge:false` abgeschaltet, 9 Brett-Rezepte und 10 Umwandlungen neu in `ieplus/recipes/einheitlich/`, 29 Loot-Dateien (unverändert). 193 Dateien, in die Testinstanz kopiert, `/reload` genügt.
+
+## 2026-10-20 — Plastoid-Rezept fehlte (Test 63)
+
+Status: 🟡
+
+### Änderung
+- Test 63 ❌ (User): Kein Plastoid-Rezept, im Buch nur der Text. `einsiedler_shop.js` entfernte Plastoid zusätzlich per `event.remove({ output: 'swgc:plastoid' })`; nur dieser Bauplan hatte so einen Ergebnis-Filter, alle anderen (gehen) entfernen das Original über die ID. Der Filter traf vermutlich auch das neue Bauplan-Rezept. Er ist raus; das einzige Mod-Rezept `swgc:plastoid` entfernt die Bauplan-Schleife weiter über die ID. Fassung 11, in die Testinstanz kopiert, `/reload` genügt. Test 63 erneut offen.
