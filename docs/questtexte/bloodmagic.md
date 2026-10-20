@@ -245,7 +245,7 @@ Buch: Demon Will → Item Routing → Routing Nodes, Node Router.
 
 Das Ritual öffnet den Weg in den Demon Realm. Es kostet 80 000 LP.
 Buch: Rituals → List of Rituals → Edge of the Hidden Realm; Dungeon Delving → The Antechamber.
-⚙️ Das Ritual gelingt nur im Tempel auf dem Merkur. Woanders startet es nicht.
+⚙️ Das Ritual geht überall; der Mini-Dungeon hat keine Story (F27, 2026-10-20). Hinein nur mit getragenem Benevolent Goddess' Charm (O39). 🔵 Die Quests BM4/BM5 müssen nach F27 neu geordnet werden: Der Altar im Tempel ist Pathway to the Endless Realm.
 
 ### BM4-03 Tau Fruit · Hauptweg
 **Aufgabe:** `bloodmagic:weak_tau`
@@ -379,8 +379,8 @@ Buch: Rituals → List of Rituals → Reverence of the Condor.
 | Änderung | Steht in | Stand |
 |---|---|---|
 | Life Essence, Blank Slates und Blank Runes nicht über die Smeltery (Blood-Smeltery) | BM1-04 | 🟢 umgesetzt (`crossmod/blood_smeltery.js`), in JEI bestätigt 2026-10-17 |
-| Edge of the Hidden Realm nur im Tempel auf dem Merkur | BM4-02 | 🟡 beschlossen; Skript nicht geschrieben, Test E19 offen |
-| Pathway to the Endless Realm ebenfalls nur im Tempel? | BM5-07 | 🔵 offen |
+| Edge of the Hidden Realm geht überall, ohne Story (F27); Amulett nötig (O39) | BM4-02 | 🟡 Skript `altar_dimension.js`, Tests 47–48 |
+| Pathway to the Endless Realm nur im Tempel auf dem Merkur (F27); Amulett nötig | BM5-07 | 🟡 Skript `altar_dimension.js`, Test 47 |
 | Altar im Tempel neu aufbauen, mit Botania-Schutz-Item | BM4-01 | 🔵 Zutaten offen (O2) |
 | Blood-Magic-Teil für die Rakete T3 | BM3-06 | 🟢 beschlossen; 🔵 welches Teil (O20) |
 | Pflicht-Item aus dem Demon Realm für die Rakete T4 | BM4-05 | 🟡 beschlossen; 🔵 welches Item |

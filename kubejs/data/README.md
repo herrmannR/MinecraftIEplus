@@ -26,7 +26,7 @@ Stand 2026-10-12, Minecraft 1.20.1. **Nichts davon ist im Spiel getestet.** In d
 | Datei | Wirkung | Entscheidung |
 |---|---|---|
 | `ad_astra/tags/fluids/tier_1_rover_fuel.json` | Der Rover fährt nur mit Biodiesel. | F11 (2026-10-20) |
-| `ieplus/loot_tables/chests/meister_truhe.json` | Truhe in der Altar-Dimension: Relikt (`kubejs:relikt`) und Tagebuch des Meisters (geschriebenes Buch, Text ist Platzhalter). Setzen per `/setblock <x> <y> <z> minecraft:chest{LootTable:"ieplus:chests/meister_truhe"}` in `bloodmagic:dungeon`. | F2e, O3, T5 (2026-10-20) |
+| `ieplus/loot_tables/chests/meister_truhe.json` | Truhe in der Altar-Dimension: Relikt (`kubejs:relikt`) und Tagebuch des Meisters (geschriebenes Buch, Text ist Platzhalter). Setzen per `/setblock <x> <y> <z> minecraft:chest{LootTable:"ieplus:chests/meister_truhe"}` in `bloodmagic:dungeon`, im Teil des Endless Realm (über Pathway to the Endless Realm, F27), nicht im Mini-Dungeon. | F2e, O3, T5 (2026-10-20) |
 | `swplanets/loot_tables/star_manual.json` | Leere Belohnung: Das Star Manual kommt mit der Rakete T3 nicht mehr an. | Ideenimport (2026-10-17) |
 | `swgc/tags/worldgen/biome/spawns_jawas.json` | Leer: keine Jawas von Galaxy in a Cube mehr in Wüste und Badlands. | Galaxy in a Cube nur in den Star-Wars-Welten (2026-10-14) |
 | `swgc/worldgen/structure/ewok_village.json` | Biom-Liste leer: keine Ewok-Dörfer mehr in der Overworld. | wie oben |
