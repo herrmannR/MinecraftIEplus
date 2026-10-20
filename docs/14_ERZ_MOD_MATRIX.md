@@ -30,9 +30,9 @@ Die Bewertung ●–●●● ist 🟡 aus der 1.18.2-Matrix übernommen (dort m
 | **Smaragd** | ⛏ Vanilla OW; Blue Skies (2 Biome) | MT | – | 🔧● | 🔧● | 🔧● | – | – | unverändert |
 | **Netherquarz** | ⛏ Vanilla NE | EX, MT | 🔧● | 🔧●● | 🔧●● | 🔧●● | 🔧● | – | unverändert |
 | **Ancient Debris** | ⛏ Vanilla NE | EX, MT | – | 🔧● | 🔧●● | 🔧●● | – | 🔧● Netherite-Anzug | unverändert |
-| **Aluminium** | ⛏ IE OW 16×6 | EX, MT | 🔧●● | – | ⚙ | – | – | – | OW selten (5×6); **Everbright hoch** |
-| **Nickel** | ⛏ IE OW 7×5 + 11×6 | EX, MT | 🔧●● Constantan | – | 🔧● | 🔧● | – | – | unverändert |
-| **Silber** | ⛏ IE OW 10×9 | EX, MT | 🔧●● Electrum | – | 🔧● | 🔧● | – | – | unverändert |
+| **Aluminium** | ⛏ IE OW 16×6 | EX, MT | 🔧●● | ⚙ Erzverarbeitung bis 5× (O42) | ⚙ | – | – | – | OW selten (5×6); **Everbright hoch** |
+| **Nickel** | ⛏ IE OW 7×5 + 11×6 | EX, MT | 🔧●● Constantan | ⚙ Erzverarbeitung bis 5× (O42) | 🔧● | 🔧● | – | – | unverändert |
+| **Silber** | ⛏ IE OW 10×9 | EX, MT | 🔧●● Electrum | ⚙ Erzverarbeitung bis 5× (O42) | 🔧● | 🔧● | – | – | unverändert |
 | **Blei** | ⛏ IE OW 12×8 **und** Mekanism OW 8×9 | EX, MT | 🔧●● | 🔧●● | 🔧● | 🔧● | 🔧● | – | **nur Mekanism-Erz**; OW sehr selten (2×9); **Everbright hoch**; Merkur, Venus; Galena/Uraninite seltener |
 | **Uran** | ⛏ IE OW 9×4 **und** Mekanism OW 4×4 + 7×9 | EX, MT | ⚙ | 🔧●●● Nuklearkette | 🔧● | 🔧● | – | 🔧 Pflicht für Star-Wars-Planeten (Entscheidung 2026-10-07) | **nur Mekanism-Erz**; OW ×1,3; **Merkur, Venus hoch**; Glacio |
 | **Zinn** | ⛏ Mekanism OW 14×4 + 12×9 | **EX (Cassiterite 100 %)**, MT | 🔧● Bronze | 🔧●● | 🔧● Bronze | 🔧● | 🔧● | – | **nur Everbright**; OW aus; Cassiterite entfernt |

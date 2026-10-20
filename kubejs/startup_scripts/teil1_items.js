@@ -23,6 +23,8 @@ StartupEvents.registry('item', event => {
     assembly_bench: 'Assembly Bench',
     droid_fabricator: 'Droid Fabricator',
     gas_harvester: 'Gas Harvester',
+    // Plastoid aus HDPE Pellets; der Einsiedler verkauft nur die ersten 20 Plastoid (User, 2026-10-20)
+    plastoid: 'Plastoid',
     droide_b1: 'Droide B-1',
     droide_b2: 'Droide B-2',
     droide_droideka: 'Droideka',

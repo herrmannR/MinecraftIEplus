@@ -1224,3 +1224,12 @@ Status: 🟡
 - Tests 43, 50, 51, 52, 55, 56, 57 ✅ (User); Test 49 entfällt (O40, Test 58).
 - Test 54 (User): kein Ewok-Dorf, aber Tusken Raider in der Overworld. Sie kommen über einen eigenen Spawner im Code von Galaxy in a Cube (`TuskenTribeSpawner`, nur Overworld, keine Config), nicht über Biom-Daten. Neues Skript `server_scripts/starwars/galaxy_overworld.js` fängt `swgc:tusken_raider` in der Overworld ab. In die Testinstanz kopiert (`/reload` genügt).
 - Test 54 ✅ (User): keine Tusken Raider mehr in der Overworld. Damit sind alle Tests für Teil 1 bestanden. Wunsch für Teil 2: Tusken auf Tatooine (F29).
+
+## 2026-10-20 — Keine Fahrzeuge in Bauwerken, Plastoid aus HDPE, Mekanism-Erze für IE-Metalle (O42)
+
+Status: 🟡
+
+### Änderung
+- Fund des Users: Bauwerke auf den Planeten bringen Fahrzeuge mit. Im JAR von Ad Astra More Structures stecken ein Rover in `abandoned_base.nbt` und eine fertige T1-Rakete in `rocket_launch_t1.nbt` (beide auf allen Planeten). Kopien ohne diese Entities liegen in `kubejs/data/ad_astra_more_structures/structures/` (Werkzeug `tools/nbt_entities_entfernen.py`, Rundlauf geprüft). Gilt nur für neu erzeugte Chunks.
+- Plastoid: Bauplan „Plastoid“ (Rolle, Advancement, Buchseite im neuen Kapitel „Werkstoffe“), Rezept 2 HDPE Pellets → 1 Plastoid. Der Einsiedler verkauft nur die ersten 20 (Einstellung im Handel von Easy NPC, macht der User).
+- Mekanism-Erzverarbeitung bis 5× für Silber, Nickel, Aluminium: neue Items und Slurries (`startup_scripts/mekanism_erze.js`), 21 Rezepte je Metall (`server_scripts/crossmod/mekanism_erze.js`), Texturen aus den Blei-Texturen von Mekanism eingefärbt. Tests 62–64. Noch nicht in die Testinstanz kopiert.

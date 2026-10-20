@@ -1,0 +1,11 @@
+{
+  "name": "Plastoid",
+  "icon": "swgc:plastoid",
+  "category": "patchouli:werkstoffe",
+  "advancement": "ieplus:bauplan/plastoid",
+  "sortnum": 1,
+  "pages": [
+    { "type": "patchouli:text", "text": "Der Kunststoff der Klonrüstungen. Der Einsiedler gibt nur wenig davon ab; mit diesem Bauplan pressen wir es selbst aus HDPE Pellets (Mekanism, Pressurized Reaction Chamber)." },
+    { "type": "patchouli:crafting", "recipe": "ieplus:bauplan/swgc_plastoid" }
+  ]
+}

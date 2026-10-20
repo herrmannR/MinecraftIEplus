@@ -1,6 +1,7 @@
 // Waren aus der Star-Wars-Galaxis gibt es nur beim Einsiedler auf dem Mond (O28, F5c/d, 2026-10-20; docs/18_STORY.md).
 // - Credits nur als Quest-Belohnung und im Shop: die Rezepte aus Kupfer, Eisen und Gold entfallen; Umtausch zwischen den Stufen bleibt.
-// - Plastoid, Durasteel: nur im Shop.
+// - Durasteel: nur im Shop. Plastoid: der Shop verkauft nur die ersten 20 (Handel in Easy NPC begrenzt), danach
+//   Werkbank-Rezept aus 2 HDPE Pellets (Mekanism) hinter dem Bauplan „Plastoid“ (User, 2026-10-20).
 // - Baupläne (User, 2026-10-20): Der Einsiedler verkauft Schriftrollen (kubejs:bauplan_<name>, alle gleich aussehend).
 //   Rechtsklick liest die Rolle: Sie verschwindet, das Rezept ist für die ganze Welt freigeschaltet (Weltwert in
 //   server.persistentData) und alle Spieler bekommen das Advancement ieplus:bauplan/<name>, das den Eintrag im Buch
@@ -20,7 +21,7 @@
 // Rezept-IDs ieplus:bauplan/<ergebnis> werden in den Patchouli-Einträgen verwendet; beim Ändern dort mitziehen.
 // - Buch in drei Kapiteln (User, 2026-10-20): Maschinen (Assembly Bench, Droid Fabricator, Gas Harvester), Waffen (Blaster,
 //   Droiden), Rüstung (Klon, Jedi, Sith, Royal Guard, Vader; deren Werkbank-Rezepte sind bis zum Bauplan gesperrt).
-// Stand 2026-10-20, KubeJS 2001. Fassung 9 (Tinkers-Werkstation, Test 60), UNGETESTET.
+// Stand 2026-10-20, KubeJS 2001. Fassung 10 (Bauplan Plastoid; Fassung 9: Tinkers-Werkstation, Test 60), UNGETESTET.
 
 const IEPLUS_ADV = 'mekanism:advanced_control_circuit'
 const IEPLUS_BAUPLAN_BUCH = 'patchouli:bauplaene'
@@ -38,6 +39,8 @@ const IEPLUS_BAUPLAENE = {
       zutaten: { S: '#forge:storage_blocks/steel', C: IEPLUS_ADV, D: 'ad_astra:desh_plate', T: 'mekanism:basic_fluid_tank', R: 'immersiveengineering:rs_engineering' } },
     { ergebnis: 'swgc:empty_gas_vessel', muster: [' D ', 'PGP', ' P '],
       zutaten: { D: 'ad_astra:desh_plate', P: '#forge:plates/steel', G: 'minecraft:glass' } }] },
+  plastoid: { titel: 'Plastoid', rezepte: [
+    { ergebnis: 'swgc:plastoid', muster: ['HH'], zutaten: { H: 'mekanism:hdpe_pellet' } }] },
   droide_b1: { titel: 'Droide B-1', rezepte: [
     { ergebnis: 'kubejs:steuerkern_b1', muster: ['PCP', 'CRC', 'PCP'],
       zutaten: { P: 'swgc:plastoid', C: 'mekanism:basic_control_circuit', R: 'minecraft:redstone_block' } }] },

@@ -24,6 +24,8 @@ Jeder Befund ist aus den JARs oder der Config der Testinstanz belegt (🟢). Was
 
 ### Ü2 Erzvervielfachung im Vergleich
 
+**Pack (O42, 2026-10-20):** Die Mekanism-Kette bis 5× gilt per KubeJS auch für Silber, Nickel und Aluminium.
+
 | Verfahren | Aus 1 Erzblock | Aus Raw Ore |
 |---|---|---|
 | Ofen | 1 Barren | 1 |

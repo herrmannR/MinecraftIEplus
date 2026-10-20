@@ -49,6 +49,8 @@ Die fünf Skripte für 1.18.2 (`space_oxygen.js`, `moon_ores.js`, `tf_industrial
 | `client_scripts/tooltips_teil1.js` | Tooltips der eigenen Items. | – |
 | `client_scripts/jei_infos.js` | Info-Seiten in JEI (Cryo Fuel: Herkunft aus dem Cryo Freezer). | O41 |
 | `server_scripts/progression/stahl_nur_ie.js` | Entfernt den Mekanism-Stahlweg (Enriched Iron → Stahlstaub). | O41 |
+| `startup_scripts/mekanism_erze.js` + `server_scripts/crossmod/mekanism_erze.js` | Mekanism-Erzverarbeitung bis 5× für Silber, Nickel, Aluminium: Clump, Shard, Crystal, Dirty Dust (`kubejs:<stufe>_<metall>`, eingefärbte Blei-Texturen), Slurries `kubejs:dirty_/clean_<metall>`, Rezepte nach Vorlage Blei; Endprodukt IE-Staub. | O42 |
+| `data/ad_astra_more_structures/structures/` | `abandoned_base.nbt` ohne Rover, `rocket_launch_t1.nbt` ohne Rakete (erzeugt mit `tools/nbt_entities_entfernen.py` aus dem JAR). | O42 |
 | `startup_scripts/treibstoffe.js`, `server_scripts/raumfahrt/treibstoffe.js` | Kryo-Raketentreibstoff für T4 (eigene Flüssigkeit), IE Refinery: 10 Benzin + 10 Cryo Fuel → 10. | F3 |
 | `config-overrides/config/alexsmobs.toml` | `limitTransmutingToLootTables = true`. | F16 |
 | `server_scripts/starwars/galaxy_overworld.js` | Keine Tusken Raider von Galaxy in a Cube in der Overworld (eigener Spawner im Code, per Datapack nicht abschaltbar). Ewok-Dörfer und Jawas laufen über `kubejs/data/swgc/`. | E20, Test 54 |
