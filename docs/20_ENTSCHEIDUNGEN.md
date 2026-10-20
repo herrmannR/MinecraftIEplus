@@ -58,13 +58,6 @@ Beantwortet am 2026-10-20: F1, F4, F8, F14, F15; siehe „Erledigt“.
 Welche Jedi- und Sith-Artefakte, und wie hängen sie an den Machtpunkten?
 → `18_STORY.md`; `swgc.md`
 
-**F26 · Questbuch vom Droiden: was gilt vor dem Mond?** (neu 2026-10-20, Folge von T4)
-Das Buch kommt jetzt nach „Würdig sein“ (K2), nicht erst auf dem Mond. Damit passt F1 nicht mehr ganz:
-- a) Hauptquests aus K1 (vor dem Buch): wie in F1 als „Notizen“, die sich beim Öffnen selbst abhaken? Und K2–K3 dann ganz normal?
-- b) Nebenquests aus K1–K3: Sie sind laut Story die Aufgaben des Einsiedlers und zahlen Credits. Erscheinen sie erst nach dem Mond (nachgereicht), oder schon vorher, und wer zahlt dann die Credits?
-- c) Das Startgeschenk an der Tinkers-Schmelze (F23): bleibt es die erste Quest im Buch des Droiden?
-→ `18_STORY.md`; alle Questtexte vor dem Mond
-
 ### Story, Part 1
 
 | Nr. | Frage |
@@ -91,7 +84,7 @@ Das Buch kommt jetzt nach „Würdig sein“ (K2), nicht erst auf dem Mond. Dami
 
 ## Teil 3 · Im Spiel prüfen
 
-Hier musst du nichts entscheiden, nur nachsehen. Testwege und Ergebnisse stehen in `11_TESTING.md` (Tests 32–41); Funde gehen in `11_TESTING.md` und `modpfade/<mod>/WISSEN.md`.
+Hier musst du nichts entscheiden, nur nachsehen. Testwege und Ergebnisse stehen in `11_TESTING.md` (Tests 33–41); Funde gehen in `11_TESTING.md` und `modpfade/<mod>/WISSEN.md`.
 
 | Nr. | Mod | Was prüfen |
 |---|---|---|
@@ -137,7 +130,7 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 | F10 | AE2 verteuern: Storage-Layer (AE1) bleibt in K3; ME Controller und ME Drive brauchen zusätzlich Advanced Control Circuit und Stahlplatten | 2026-10-20 | `01_PROGRESSION.md`, `10_KUBEJS.md` |
 | F17 | Immersive Aircraft: kurze Reihe (6 Quests) ab K4; Gyrodyne bleibt früh; ab dem Airship Rezepte mit IE-Stahl | 2026-10-20 | `questtexte/aircraft.md` |
 | F19 | Meilensteinkarte bestätigt; alle vier Blue-Skies-Bosse Pflicht | 2026-10-20 | `meilensteine/` |
-| F23 | Die Tinkers-Schmelzerei steht in der Hauptwelt schon. Sie kommt trotzdem als erste Quest ins Buch: Startgeschenk an Credits und Einführung ins Questsystem | 2026-10-20 | `01_PROGRESSION.md`, `questtexte/tinkers.md` |
+| F23 | Die Tinkers-Schmelzerei steht in der Hauptwelt schon. (Die Startquest an der Schmelze ist durch F26 ersetzt: erste Quest ist „Würdig sein“ als Klick-Quest.) | 2026-10-20 | `01_PROGRESSION.md`, `questtexte/tinkers.md` |
 | T2 | Easy-NPC-Dialog prüft Abgaben und setzt Stages für FTB Quests (Test 29); Figuren per Befehl (Test 30) | 2026-10-17 | `18_STORY.md` |
 | T7, T8, T10, T11 | aufgegangen in P9, F2d, P6, P8 | 2026-10-19 | hier |
 | E20 (Status) | Galaxy in a Cube kommt aus allen Nicht-Star-Wars-Welten raus (User, 2026-10-14); Kyber abgeschaltet (Test 9), Ewok-Dörfer und Jawas noch umzusetzen (`10_KUBEJS.md`) | 2026-10-19 | `00_STATUS.md` |
@@ -150,7 +143,7 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 | F25 | Mekanism-Erze in Blue Skies bleiben normale Erzblöcke | 2026-10-20 | `03_ERZGENERATION.md` |
 | O16 | Der Text des Meisters ist sein Tagebuch, gefunden zusammen mit dem Relikt | 2026-10-20 | `18_STORY.md` |
 | O3 | Relikt und Tagebuch des Meisters liegen in der Altar-Dimension | 2026-10-20 | `18_STORY.md` |
-| F1 | ⚠️ Teilweise überholt durch T4 (2026-10-20, Buch schon nach „Würdig sein“), offen in F26. Ursprünglich: Hauptquests aus K1–K3 stehen als „Notizen des Roboters“ im Buch und haken sich beim Öffnen selbst ab, wenn das Item da ist; Nebenquests aus K1–K3 normal mit Credits; erste Quest ist die Tinkers-Schmelze (Startgeschenk, Einführung) | 2026-10-20 | `18_STORY.md`, Questtexte |
+| F1 | 🔴 Überholt durch F26 (2026-10-20). Ursprünglich: Hauptquests aus K1–K3 stehen als „Notizen des Roboters“ im Buch und haken sich beim Öffnen selbst ab, wenn das Item da ist; Nebenquests aus K1–K3 normal mit Credits; erste Quest ist die Tinkers-Schmelze (Startgeschenk, Einführung) | 2026-10-20 | `18_STORY.md`, Questtexte |
 | F4 | „Würdig sein“: Smeltery Controller (Tinkers), LV-Kondensator (IE), 4 Manasteel-Barren (Botania) | 2026-10-20 | `18_STORY.md`, `questtexte/tinkers.md`, `ie.md`, `botania.md` |
 | F8 | Altar-Reparatur: Terrasteel, 4 Imbued Slate, Dusk Arc (Alchemist, Strang des Blue-Skies-Hauses), ein Item aus dem Pflicht-Dungeon von Wesley's (F15). Texte der Schriftrollen schreibt der User | 2026-10-20 | `18_STORY.md`, `questtexte/bloodmagic.md` |
 | F14 | Der Elf fertigt den Galaktischen Strahlenschutz aus: Relikt, vier Arcs (`blue_skies:ethereal_arc`, `dusk_arc`, `nature_arc`, `poison_arc`, je sicher im Loot Bag des Bosses), Elite Control Circuit, 4 Elementium. Name und Charakter legt der User fest | 2026-10-20 | `18_STORY.md`, `questtexte/blue_skies.md` |
@@ -167,3 +160,4 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 | T3 | Droide als Easy NPC mit eigenem Skin; den Skin sucht der User aus | 2026-10-20 | `18_STORY.md` |
 | T4 | **Geändert:** Das Questbuch gibt der Droide nach der ersten Quest („Würdig sein“). Nach dem Einsiedler erscheinen dort zusätzlich seine Quests und Nebenquests; der User erklärt das in Dialogen | 2026-10-20 | `18_STORY.md` |
 | T5 | Tagebuch des Droiden und Tagebuch des Meisters als geschriebene Bücher: per `give` aus dem Dialog bzw. per Datapack in der Truhe der Altar-Dimension | 2026-10-20 | `18_STORY.md` |
+| F26 | Questbuch vor dem Mond: a) alle Quests werden ganz normal abgehakt (keine „Notizen“); b) Nebenquests aus K1–K3 sind Aufgaben des **Droiden**, „um uns intelligenter zu machen“: Belohnung nur Kleinigkeiten und XP, **keine Credits** (Credits erst beim Einsiedler); c) erste Quest im Buch ist **„Würdig sein“ als Klick-Quest** (Checkmark): schon im Dialog erfüllt, erklärt das Questsystem. Ersetzt F1 und die Startquest an der Schmelze aus F23 | 2026-10-20 | `18_STORY.md`, Questtexte vor dem Mond |

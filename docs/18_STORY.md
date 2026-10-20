@@ -8,7 +8,7 @@
 - 🟢 Grundidee: Kombination aus „Ruf aus der Ferne“ und „gestrandet“.
 - 🟢 Erzählform: Das Questbuch führt, dazu Easy-NPC-Figuren mit Dialogen.
 - 🔴 Überholt durch T4 (2026-10-20, siehe nächster Punkt): ~~**Bis zum Mond gibt es kein Questbuch**~~ (User, 2026-10-14, ersetzt die Übergabe durch den Droiden): Bis dahin führt der Droide allein über Easy-NPC-Quests. Das Questbuch bekommen die Spieler vom Einsiedler auf dem Mond.
-- 🟢 **Questbuch vom Droiden** (User, 2026-10-20, T4): Der Droide gibt das Questbuch nach der ersten Quest („Würdig sein“). Nach dem Besuch beim Einsiedler erscheinen im selben Buch zusätzlich seine Quests und Nebenquests; der User erklärt das in Dialogen. 🔵 Was das für die Quests vor dem Mond heißt: F26 in `20_ENTSCHEIDUNGEN.md`.
+- 🟢 **Questbuch vom Droiden** (User, 2026-10-20, T4): Der Droide gibt das Questbuch nach der ersten Quest („Würdig sein“). Nach dem Besuch beim Einsiedler erscheinen im selben Buch zusätzlich seine Quests und Nebenquests; der User erklärt das in Dialogen. Erste Quest im Buch ist „Würdig sein“ als Klick-Quest (schon im Dialog erfüllt, erklärt das Questsystem). Alle Quests werden normal abgehakt. Die Nebenquests vor dem Mond sind Aufgaben des Droiden, „um uns intelligenter zu machen“: Belohnung Kleinigkeiten und XP, keine Credits; Credits gibt es erst beim Einsiedler (F26, 2026-10-20).
 - 🟢 Ton: Mischung aus abenteuerlich, ernst und humorvoll.
 - 🟢 **Mehrspieler** (User, 2026-10-19): Es wird immer nur zu dritt gespielt. Alle drei sind in **einer FTB-Party**, der Quest-Fortschritt gilt also für alle. In Easy-NPC-Dialogen setzen Befehle Fortschritt mit `tag @a add …` statt `@initiator`, damit alle drei denselben Stand sehen. Befehls- und Stage-Belohnungen in FTB Quests stehen auf „Team Reward“, damit sie nur einmal laufen.
 - 🟢 **Drei Teile** (User, 2026-10-14, ersetzt die bisherigen zwei Teile):
@@ -26,8 +26,8 @@
   - Sie dürfen später für die Hauptstory gebraucht werden, erscheinen aber zuerst als Nebenquest.
   - **Raster:** Jede Zeile (Stufe) der Meilensteinkarte wird ein Kapitel im Questbuch, also ein relativ großer Fortschritt. Die Zeilen können sich beim weiteren Umbau noch ändern.
   - **Anlass:** Kommt in einer Zeile ein Teil des Packs zum ersten Mal vor (zum Beispiel zum ersten Mal Mekanism oder zum ersten Mal Mekanism-Chemie), tauchen dazu passende Nebenquests auf. Sie zeigen, was man mit dem gerade erarbeiteten Teil sonst noch machen kann, ohne dass die Story es gerade braucht.
-  - 🟢 **Die Nebenquests sind die Aufgaben des Einsiedlers** (2026-10-14). Belohnung: Credits, sofort nach dem Erfüllen. Das erste Kapitel mit Nebenquests folgt auf das Kapitel, das mit der ersten erfolgreichen Quest für den Einsiedler endet.
-  - 🟢 **Alle Nebenquests geben Credits** (User, 2026-10-17).
+  - 🟢 **Die Nebenquests ab dem Mond sind die Aufgaben des Einsiedlers** (2026-10-14; vor dem Mond stellt sie der Droide, F26). Belohnung: Credits, sofort nach dem Erfüllen. Das erste Kapitel mit Nebenquests folgt auf das Kapitel, das mit der ersten erfolgreichen Quest für den Einsiedler endet.
+  - 🟢 **Alle Nebenquests ab dem Einsiedler geben Credits** (User, 2026-10-17; eingeschränkt am 2026-10-20 durch F26: Nebenquests vor dem Mond sind Aufgaben des Droiden mit Kleinigkeiten und XP).
   - 🔵 Offen: die Liste der Nebenquests je Kapitel. Vom User genannte Stränge (Ideenimport, 2026-10-17; Kapitel noch nicht zugeordnet):
     - **Blue-Skies-Haus:** Quests bei der Easy-NPC-Figur im Haus, dann Boss-Reihe, Alchemy Table. Wird später Pflicht (Abschnitt 3).
     - **Roguelike-Dungeons (Wesley's), fünf Stufen:** (1) Vorbereitung, dazu gehört der Chalk Marker (Kreide); (2) die acht Oberwelt-Dungeons, je eine Quest; (3) der Dungeon im End (Heart of Ender); (4) der Nether; (5) der Endboss in der Infinite-Dungeons-Dimension. 🔵 Welche Stufen für die Vorbereitung auf die Altar-Dimension Pflicht werden (O35).

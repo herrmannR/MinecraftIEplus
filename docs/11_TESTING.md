@@ -80,7 +80,7 @@ Ergebnis jeweils hier eintragen: ✅ bestanden, ❌ Fehler (mit Beschreibung), �
 | 30 | NPC per Befehl | Figur aus einer gespeicherten Vorlage per Befehl erzeugen (Quest-Belohnung „Befehl“) | Figur erscheint am gewünschten Ort | ✅ 2026-10-17 (User): Import klappt, auch in eine andere Dimension per `/execute in <dimension> run easy_npc preset import …` (der Befehl selbst hat keine Angabe für die Dimension). `easy_npc despawn` lässt die Figur verschwinden; zurück holt sie `easy_npc spawn`, nicht `respawn` |
 | 31 | Fracht in der Rakete | Rakete beladen, fliegen, landen | Inhalt kommt an oder nicht | ✅ 2026-10-17 (User): jede Rakete hat 8 Plätze, der Inhalt bleibt beim Flug erhalten |
 | 32a | Stage-Brücke | Quest mit Stage-Aufgabe `mars_station`; `/kubejs stages add @s mars_station` | Quest wird erfüllt | ✅ 2026-10-17 (User): der geplante Weg (KubeJS prüft die Station und setzt eine Stage) trägt, FTB XMod Compat ist nicht nötig |
-| 32 | Checkliste per KubeJS | eigene FTB-Quests-Aufgabe „Station auf dem Mars“ (Skript folgt) | Aufgabe wird nur mit allen Blöcken im Umkreis erfüllt | ⏳ Skript fehlt, braucht die Blockliste (O22) |
+| 32 | Checkliste per KubeJS | – | – | entfällt (O22, 2026-10-20): Quest-Checkliste mit Items, die Stage setzt der User per Befehl, wenn alle drei in der Station sind |
 
 ### Runde 6 — Ideenimport (2026-10-17)
 
