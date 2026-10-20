@@ -1060,3 +1060,15 @@ Status: 🟡
 - `kubejs/startup_scripts`, `server_scripts`, `client_scripts` und `data` aus dem Projekt in die Testinstanz `Minecraft1201withForge` kopiert (mit Zustimmung des Users); `config-overrides/config/alexsmobs.toml` nach `config/`.
 - Sicherungen: `config/alexsmobs.toml.vor-2026-10-20`, `kubejs/jei_ausblenden.js.vor-2026-10-20`.
 - Alle 15 neuen bzw. geänderten Dateien per Vergleich bestätigt. Getestet ist noch nichts (Tests 42–55).
+
+## 2026-10-20 — F3: Treibstoffe T4 bis T7
+
+Status: 🟡 (ungetestet)
+
+### Änderung
+- Entscheidung (User): T4 Kryo-Raketentreibstoff aus Benzin + Cryo Fuel, T5 flüssiges D-T-Fusionsgemisch, T6 Antimaterie-Treibstoff, T7 Antimaterie-Treibstoff + Magie; ab T4 sparsam (1 Eimer pro Start). Cryo Freezer bleibt als Zulieferer. Analyse aller Flüssigkeiten: `recherche/f3_treibstoffe.md`.
+- Umgesetzt: eigene Flüssigkeit `kubejs:kryo_treibstoff` mit Refinery-Rezept; Tags für T4, T5, `efficient_fuel`; T6 und T7 vorerst ohne Treibstoff.
+- In die Testinstanz kopiert (7 Dateien, per Vergleich bestätigt). Tests 56 und 57 in `11_TESTING.md`.
+
+### Auswirkungen auf bestehende Welt
+Keine.

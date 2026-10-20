@@ -34,7 +34,7 @@ Die fünf Skripte für 1.18.2 (`space_oxygen.js`, `moon_ores.js`, `tf_industrial
 | `server_scripts/crossmod/blood_smeltery.js` | Entfernt die Life-Essence-Legierung und das Gießen von Blank Slate und Blank Rune. ✅ In JEI bestätigt (2026-10-17). | `07_CROSSMOD_INTEGRATION.md` |
 | `client_scripts/jei_ausblenden.js` | Blendet alle entfernten Items in JEI aus (Regel: was ein Skript entfernt, kommt auch hierher). | User, 2026-10-13 |
 
-#### Teil 1 (2026-10-20, 🔵 ungetestet, Tests 42–55 in `11_TESTING.md`)
+#### Teil 1 (2026-10-20, 🔵 ungetestet, Tests 42–57 in `11_TESTING.md`)
 
 | Datei | Aufgabe | Entscheidung |
 |---|---|---|
@@ -47,6 +47,7 @@ Die fünf Skripte für 1.18.2 (`space_oxygen.js`, `moon_ores.js`, `tf_industrial
 | `server_scripts/crossmod/ie_crusher_uebernimmt.js` | Legt für jedes Rezept des Mekanism-Crushers ein gleiches im IE-Crusher an (wenn der IE-Crusher die Eingabe noch nicht kennt). | Ideenimport |
 | `server_scripts/starwars/einsiedler_shop.js` | Credits nicht mehr aus Metall; Plastoid und Durasteel nur im Shop; Droiden mit Steuerkern; Assembly Bench, Droid Fabricator, Gas Harvester, Empty Gas Vessel erst nach dem Bauplan (Weltwert, gilt für alle). | O28, F5c/d |
 | `client_scripts/tooltips_teil1.js` | Tooltips der eigenen Items; die Baupläne zeigen ihr Rezept. | Baupläne (2026-10-14) |
+| `startup_scripts/treibstoffe.js`, `server_scripts/raumfahrt/treibstoffe.js` | Kryo-Raketentreibstoff für T4 (eigene Flüssigkeit), IE Refinery: 10 Benzin + 10 Cryo Fuel → 10. | F3 |
 | `config-overrides/config/alexsmobs.toml` | `limitTransmutingToLootTables = true`. | F16 |
 
 ### Datapack (`kubejs/data/`)
@@ -66,7 +67,7 @@ Unter `_original/` liegen die unveränderten Standarddateien zum Vergleich.
 
 ### Noch nicht umgesetzt
 
-- 🔵 Eigener Raketentreibstoff für T4 (Fluid, Rezept, Tag `tier_4_rocket_fuel`) und Cryo Freezer: wartet auf F3.
+- 🔵 Antimaterie-Treibstoffe für T6 und T7 (F3, Teil 2 und 3).
 - 🔵 Tinkers in den höheren Stufen (Wege A, C, D, E, F und fehlende Schmelzrezepte, `07_CROSSMOD_INTEGRATION.md`): beschlossen, Rezepte und Werte offen.
 - 🔵 Rezept vom Kyber-Erz zum Kyber-Kristall; Lichtschwerter von Star Wars Planets entfernen (`17_STAR_WARS_1.20.1.md`).
 - 🔵 Etrium-Rezepte (`15_RAUMFAHRT.md`), Planetenstufen T5–T7 (Teil 2 und 3).

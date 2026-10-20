@@ -102,10 +102,10 @@ Weitere Dimensionen ohne eigenen Pfad: Nether (Kobalt), Alfheim (Pfad C), Demon 
 | T1 | Mond | Stahl | Biodiesel (IE) | Desh, Osmium |
 | T2 | Mars | Desh | entschwefelter Diesel (Petroleum) | Ostrum, Fluorit |
 | T3 | Merkur, Venus | Ostrum | Kerosin (Petroleum) | Calorite, Uran, Blei; Zugang zum Demon Dungeon |
-| T4 | Glacio | Calorite | eigener Raketentreibstoff (Kerosin plus Mekanism-Chemie), deutlich aufwendiger | Fund des Meisters |
-| T5 | Endor | Etrium (Legierung aus Calorite und Elementium aus Alfheim, 🟢 2026-10-19) | 🔵 | Kyber |
-| T6 | Tatooine, Hoth, Mustafar | 🔵 (Kyber von Endor ?) | 🔵 | Kyber |
-| T7 | Mandalore | 🔵 | 🔵 | Beskar |
+| T4 | Glacio | Calorite | Kryo-Raketentreibstoff (Benzin + Cryo Fuel, F3 2026-10-20), sparsam | Fund des Meisters |
+| T5 | Endor | Etrium (Legierung aus Calorite und Elementium aus Alfheim, 🟢 2026-10-19) | flüssiges D-T-Fusionsgemisch (F3) | Kyber |
+| T6 | Tatooine, Hoth, Mustafar | 🔵 (Kyber von Endor ?) | Antimaterie-Treibstoff (F3) | Kyber |
+| T7 | Mandalore | 🔵 | Antimaterie-Treibstoff + Magie (F3, Name offen) | Beskar |
 
 🟢 **Vier Hürden je Rakete** (User, 2026-10-14): (1) Rumpf aus dem Metall des zuletzt erreichten Ortes, (2) neuer Treibstoff, (3) neue Mekanism-Stufe (Schaltkreise, Legierungen), (4) ein Teil aus einem anderen Pfad. T3 braucht ein Teil aus Blood Magic (der Tempel schirmt den Planeten ab). 🔵 Welche Mekanism-Stufe und welche Botania-Items zu welcher Rakete gehören, legt der User fest.
 

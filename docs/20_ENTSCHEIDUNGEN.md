@@ -12,15 +12,11 @@
 
 ## Teil 1 · Entscheidungen zu Progression und Pack
 
-Beantwortet am 2026-10-20: F2 (bis auf g), F2e, F6, F7, F10, F11, F16–F19, F21–F23, F25; siehe „Erledigt“.
+Beantwortet am 2026-10-20: F2 (bis auf g), F2e, F3, F6, F7, F10, F11, F16–F19, F21–F23, F25; siehe „Erledigt“.
 
 **F2g · Etrium** (Teil 2)
 Zutat von Glacio (Ice Shard gibt es auch auf Mond und Mars) oder ein Item vom Meister? Wofür der Etrionic Core?
 → `15_RAUMFAHRT.md`
-
-**F3 · Treibstoffe** (User: wird gesondert analysiert)
-Cryo Freezer behalten oder entfernen? Treibstoffe T4–T7? **Analyse aller Flüssigkeiten mit Stufen und Vorschlag: `recherche/f3_treibstoffe.md`** (2026-10-20). Kurz: T4 Kryo-Treibstoff (Benzin + Cryo Fuel, Cryo Freezer bleibt als Zulieferer), T5 flüssiges D-T-Fusionsgemisch, T6 D-T + Antimaterie, T7 Antimaterie-Treibstoff + Magie; ab T4 sparsam (1 Eimer pro Start).
-→ `15_RAUMFAHRT.md`; `adastra.md`
 
 **F5 · Kyber und Star-Wars-Rohstoffe**
 - a) Endor hat ohne Eingriff kein Kyber-Erz (nur Tatooine). Vorkommen per Datapack, oder ändert sich die Hürde „Kyber von Endor → T6“? (Teil 3)
@@ -161,3 +157,4 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 | T4 | **Geändert:** Das Questbuch gibt der Droide nach der ersten Quest („Würdig sein“). Nach dem Einsiedler erscheinen dort zusätzlich seine Quests und Nebenquests; der User erklärt das in Dialogen | 2026-10-20 | `18_STORY.md` |
 | T5 | Tagebuch des Droiden und Tagebuch des Meisters als geschriebene Bücher: per `give` aus dem Dialog bzw. per Datapack in der Truhe der Altar-Dimension | 2026-10-20 | `18_STORY.md` |
 | F26 | Questbuch vor dem Mond: a) alle Quests werden ganz normal abgehakt (keine „Notizen“); b) Nebenquests aus K1–K3 sind Aufgaben des **Droiden**, „um uns intelligenter zu machen“: Belohnung nur Kleinigkeiten und XP, **keine Credits** (Credits erst beim Einsiedler); c) erste Quest im Buch ist **„Würdig sein“ als Klick-Quest** (Checkmark): schon im Dialog erfüllt, erklärt das Questsystem. Ersetzt F1 und die Startquest an der Schmelze aus F23 | 2026-10-20 | `18_STORY.md`, Questtexte vor dem Mond |
+| F3 | Treibstoffe: T4 **Kryo-Raketentreibstoff** (eigene Flüssigkeit, IE Refinery: Benzin + Cryo Fuel), T5 **flüssiges D-T-Fusionsgemisch** (Mekanism Generators), T6 **Antimaterie-Treibstoff** (D-T-Gemisch + Antimaterie-Pellet, IE Mixer), T7 Antimaterie-Treibstoff + Life Essence oder Demon Will (Name offen). Ab T4 sparsam (`ad_astra:efficient_fuel`, 1 Eimer pro Start). Cryo Freezer bleibt nur als Zulieferer für T4; Cryo Fuel allein nimmt keine Rakete. Analyse: `recherche/f3_treibstoffe.md` | 2026-10-20 | `15_RAUMFAHRT.md`, `01_PROGRESSION.md` |

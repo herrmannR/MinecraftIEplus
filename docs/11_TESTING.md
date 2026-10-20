@@ -121,6 +121,8 @@ Ergebnis jeweils hier eintragen: ✅ bestanden, ❌ Fehler (mit Beschreibung), �
 | 53 | Shop-Waren und Baupläne | Werkbank: Credits aus Kupfer, Plastoid, Durasteel; Assembly Bench nach dem Muster legen; dann `/give @s kubejs:bauplan_assembly_bench` und erneut; zweiter Spieler ohne Bauplan; neu einloggen; Droid Fabricator: B-1 ohne Steuerkern | keine Credits, kein Plastoid, kein Durasteel; Assembly Bench erst nach dem Bauplan (Meldung im Chat), dann auch für den zweiten Spieler und nach dem Neustart; B-1 nur mit Steuerkern | ⏳ |
 | 54 | Galaxy in a Cube in der Overworld | neue Welt; `/locate structure swgc:ewok_village`; Wüste absuchen | kein Ewok-Dorf, keine Jawas | ⏳ |
 | 55 | Airship und Transmutation | JEI: Airship; `config/alexsmobs.toml` | Airship mit 2 Stahlplatten; `limitTransmutingToLootTables = true` | ⏳ |
+| 56 | Kryo-Raketentreibstoff | JEI: Rezepte der IE Refinery; Flüssigkeit „Kryo-Raketentreibstoff“ | 10 Benzin + 10 Cryo Fuel → 10; eigene Flüssigkeit mit Eimer | ⏳ |
+| 57 | Treibstoffe T4–T7 | Rakete T4 mit Kryo-Treibstoff und mit Kerosin betanken; Verbrauch beim Start ablesen; T5 mit flüssigem D-T-Gemisch; T6 mit beliebigem Treibstoff; Cryo Fuel in T1–T4 | T4 nur Kryo-Treibstoff, verbraucht 1 Eimer pro Start; T5 nimmt D-T-Gemisch; T6 nimmt nichts; Cryo Fuel nimmt keine Rakete | ⏳ |
 
 ### Noch ohne Testweg
 

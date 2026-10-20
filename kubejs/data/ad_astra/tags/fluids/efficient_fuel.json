@@ -1,0 +1,7 @@
+{
+  "replace": true,
+  "values": [
+    "kubejs:kryo_treibstoff",
+    "mekanismgenerators:fusion_fuel"
+  ]
+}
