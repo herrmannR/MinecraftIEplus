@@ -103,7 +103,7 @@ Ergebnis jeweils hier eintragen: ✅ bestanden, ❌ Fehler (mit Beschreibung), �
 
 ### Runde 8 — Skripte für Teil 1 (2026-10-20)
 
-Vorher die neuen Dateien in die Testinstanz kopieren (`kubejs/startup_scripts/`, `server_scripts/`, `client_scripts/`, `data/`, `config-overrides/config/alexsmobs.toml`) und das Spiel **neu starten** (Startup-Skripte und eigene Items laden nur beim Start). Neue Welt für Test 54, sonst die bisherige Testwelt.
+🟢 Dateien am 2026-10-20 in die Testinstanz kopiert (Sicherungen: `config/alexsmobs.toml.vor-2026-10-20`, `kubejs/jei_ausblenden.js.vor-2026-10-20`). Vor dem Test das Spiel **neu starten** (Startup-Skripte und eigene Items laden nur beim Start). Neue Welt für Test 54, sonst die bisherige Testwelt.
 
 | Nr. | Test | Wie | Erwartet | Ergebnis |
 |---|---|---|---|---|

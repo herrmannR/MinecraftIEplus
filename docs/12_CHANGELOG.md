@@ -1051,3 +1051,12 @@ Status: 🟡 (Skripte ungetestet)
 
 ### Auswirkungen auf bestehende Welt
 Schon gebaute Digital Miner, Vibration Chambers und Crystal Resonance Generators bleiben stehen, lassen sich aber nicht neu bauen. Das `alexsmobs.toml` gehört beim Host nach `config/`.
+
+## 2026-10-20 — Skripte für Teil 1 in die Testinstanz kopiert
+
+Status: 🟡
+
+### Änderung
+- `kubejs/startup_scripts`, `server_scripts`, `client_scripts` und `data` aus dem Projekt in die Testinstanz `Minecraft1201withForge` kopiert (mit Zustimmung des Users); `config-overrides/config/alexsmobs.toml` nach `config/`.
+- Sicherungen: `config/alexsmobs.toml.vor-2026-10-20`, `kubejs/jei_ausblenden.js.vor-2026-10-20`.
+- Alle 15 neuen bzw. geänderten Dateien per Vergleich bestätigt. Getestet ist noch nichts (Tests 42–55).
