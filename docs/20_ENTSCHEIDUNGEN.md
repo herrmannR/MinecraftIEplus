@@ -37,6 +37,10 @@ Zutat von Glacio (Ice Shard gibt es auch auf Mond und Mars) oder ein Item vom Me
 - d) Jawas: welcher Mod stellt sie, welche Tauschverhältnisse?
 → `17_STAR_WARS_1.20.1.md`; `swplanets.md`
 
+**F28 · Galaxy in a Cube: Fahrzeuge** (Teil 3, erst wenn man auf den Star-Wars-Planeten ist)
+AT-RT, AT-ST und Delta-7B (`swgc:atrt`, `swgc:atst`, `swgc:delta7b`) haben im Mod weder Rezept noch Fundort, also nur Kreativmodus (G8). Wie kommen sie ins Pack: eigene Rezepte per KubeJS (Werkbank oder hinter Bauplan wie die Rüstungen) oder Questbelohnung? Vorher Steuerung und Werte auslesen (WISSEN.md „Offen“).
+→ `17_STAR_WARS_1.20.1.md`; `modpfade/swgc/WISSEN.md`, `swgc.md`
+
 **F20 · Kostenrahmen je Meilenstein** (Schritt 5, Balance)
 → `01_PROGRESSION.md`
 
