@@ -90,12 +90,12 @@ function kanonisch(x) {
 function ersetze(knoten) {
   if (Array.isArray(knoten)) return knoten.map(ersetze)
   if (knoten !== null && typeof knoten === 'object') {
-    const schluessel = Object.keys(knoten)
+    let schluessel = Object.keys(knoten)
     if (typeof knoten.item === 'string' && Array.isArray(ERSETZEN[knoten.item]) &&
         schluessel.every(k => k === 'item' || k === 'count')) {
       return ERSETZEN[knoten.item].map(i => ({ item: i }))
     }
-    const neu = {}
+    let neu = {}
     schluessel.forEach(k => { neu[k] = (k === 'block' || k === 'tag') ? knoten[k] : ersetze(knoten[k]) })
     return neu
   }
@@ -119,7 +119,7 @@ function ausgaben(knoten, inAusgabe, liste) {
 
 function schluesselVon(j) {
   if (KOCHTYPEN.indexOf(j.type) >= 0) return j.type + '|' + kanonisch(j.ingredient)
-  const kopie = {}
+  let kopie = {}
   Object.keys(j).forEach(k => { if (UNWICHTIG.indexOf(k) < 0) kopie[k] = j[k] })
   return kanonisch(kopie)
 }
@@ -134,21 +134,21 @@ function schneiden(event, id, zutat, ergebnisse) {
 }
 
 ServerEvents.recipes(event => {
-  const verlierer = Object.keys(ERSETZEN)
-  const gewinner = []
+  let verlierer = Object.keys(ERSETZEN)
+  let gewinner = []
   verlierer.forEach(v => [].concat(ERSETZEN[v]).forEach(g => gewinner.push(g)))
-  const enthaelt = (s, ids) => ids.some(i => s.indexOf('"' + i + '"') >= 0)
+  let enthaelt = (s, ids) => ids.some(i => s.indexOf('"' + i + '"') >= 0)
 
-  const vorhanden = new Set()
-  const kandidaten = []
+  let vorhanden = new Set()
+  let kandidaten = []
   event.forEachRecipe('*', r => {
     let s
     try { s = String(r.json) } catch (e) { return }
     if (!s || s.charAt(0) !== '{') return
     // Nur Rezepte einlesen, die uns betreffen (Kandidaten oder mögliche Dubletten)
-    const istKandidat = enthaelt(s, verlierer)
+    let istKandidat = enthaelt(s, verlierer)
     if (!istKandidat && !enthaelt(s, gewinner) && !KOCHTYPEN.some(t => s.indexOf('"' + t + '"') >= 0)) return
-    const j = JSON.parse(s)
+    let j = JSON.parse(s)
     if (j.type === 'kaleidoscope_cookery:chopping_board') return   // Brett entfällt, siehe unten
     if (istKandidat) kandidaten.push({ id: String(r.getId()), j: j })
     else vorhanden.add(schluesselVon(j))
@@ -157,11 +157,11 @@ ServerEvents.recipes(event => {
   let neu = 0, doppelt = 0, ersatzlos = 0
   kandidaten.forEach(k => {
     event.remove({ id: k.id })
-    const raus = ausgaben(k.j, false, [])
+    let raus = ausgaben(k.j, false, [])
     if (OHNE_ERSATZ.indexOf(k.id) >= 0 || raus.some(a => GERAETE.indexOf(a) >= 0)) { ersatzlos++; return }
-    const j = ersetze(k.j)
+    let j = ersetze(k.j)
     delete j.conditions
-    const schl = schluesselVon(j)
+    let schl = schluesselVon(j)
     if (vorhanden.has(schl)) { doppelt++; return }
     vorhanden.add(schl)
     event.custom(j).id('ieplus:einheitlich/' + k.id.replace(':', '/'))
@@ -193,7 +193,7 @@ ServerEvents.recipes(event => {
 })
 
 ServerEvents.tags('item', event => {
-  const messer = ['farmersdelight:iron_knife', 'farmersdelight:golden_knife', 'farmersdelight:diamond_knife', 'farmersdelight:netherite_knife']
+  let messer = ['farmersdelight:iron_knife', 'farmersdelight:golden_knife', 'farmersdelight:diamond_knife', 'farmersdelight:netherite_knife']
   Object.keys(ERSETZEN).forEach(v => { if (messer.indexOf(v) < 0) event.removeAllTagsFrom(v) })
 
   // Gewinner in die Tags, in denen bisher nur der Verlierer stand (Abgleich der JARs 2026-10-20)

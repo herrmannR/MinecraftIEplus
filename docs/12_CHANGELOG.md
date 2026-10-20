@@ -1260,3 +1260,4 @@ Status: 🔵 ungetestet (Tests 65–72)
 
 ### Teststatus
 - Offline geprüft: `kubejs_check.py` ohne Befund; das Skript lief in Node gegen alle 14.937 Rezepte der JARs (123 betroffen, 103 neu, 10 Dubletten verworfen, 10 ersatzlos, kein Verlierer in neuen Rezepten). Im Spiel offen: Tests 65–72.
+- Erster Start (Test 65): „KubeJS error“ beim Betreten der Welt. Rhino bricht bei `const` in der rekursiven Funktion `ersetze` ab („redeclaration of var schluessel“); Node hatte das im Offline-Lauf nicht bemängelt. In allen Funktionen des Skripts `let` statt `const`. `tools/kubejs_check.py` warnt jetzt vor `const` in rekursiven Funktionen. In die Testinstanz kopiert, `/reload` genügt.

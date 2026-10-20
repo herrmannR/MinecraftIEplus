@@ -166,6 +166,15 @@ def pruefe_rhino(text):
         for m in muster.finditer(text):
             zeile = text.count("\n", 0, m.start()) + 1
             funde.append(f"Z.{zeile:<4} RHINO   {name} – läuft in KubeJS evtl. nicht")
+    # Rhino: const in einer Funktion, die sich selbst aufruft, bricht beim zweiten Aufruf ab
+    # ("redeclaration of var", Fund 2026-10-20 in kaleidoscope_einheitlich.js). Dort let nehmen.
+    for m in re.finditer(r"^function\s+(\w+)\s*\(", text, re.M):
+        ende = re.search(r"^\}", text[m.end():], re.M)
+        rumpf = text[m.end():m.end() + (ende.start() if ende else len(text))]
+        if re.search(r"\b" + m.group(1) + r"\s*\(", rumpf):
+            for c in re.finditer(r"\bconst\s", rumpf):
+                zeile = text.count("\n", 0, m.end() + c.start()) + 1
+                funde.append(f"Z.{zeile:<4} RHINO   const in rekursiver Funktion {m.group(1)} – 'let' nehmen")
     return funde
 
 
