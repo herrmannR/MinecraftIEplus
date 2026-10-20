@@ -1,7 +1,7 @@
 // Stahl nur über IE (Hochofen, Lichtbogenofen); User, 2026-10-20.
 // Ad Astra (Etrionic Blast Furnace) ist schon in raumfahrt/ad_astra_regeln.js entfernt.
 // Tinkers (Stahlsplitter, Nebenprodukt der Foundry) bleibt bewusst.
-// Stand 2026-10-20, KubeJS 2001. UNGETESTET.
+// Stand 2026-10-20, KubeJS 2001. Getestet (Test 59, 2026-10-20).
 
 ServerEvents.recipes(event => {
   // Mekanism: Enriched Iron + 10 Carbon → Stahlstaub im Metallurgic Infuser.

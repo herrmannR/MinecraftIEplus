@@ -1163,7 +1163,7 @@ Status: 🟡
 
 ## 2026-10-20 — Stahl nur über IE, Bioethanol ausgeblendet, JEI-Info für Cryo Fuel (O41)
 
-Status: 🟡
+Status: 🟢 (Test 59 bestanden, User 2026-10-20)
 
 ### Änderung
 - Funde des Users beim Testen. Neu `kubejs/server_scripts/progression/stahl_nur_ie.js`: entfernt `mekanism:processing/steel/enriched_iron_to_dust` (Metallurgic Infuser). Ad Astra war schon entfernt, Tinkers bleibt.

@@ -124,7 +124,7 @@ Ergebnis jeweils hier eintragen: ✅ bestanden, ❌ Fehler (mit Beschreibung), �
 | 56 | Kryo-Raketentreibstoff | JEI: Rezepte der IE Refinery; Flüssigkeit „Kryo-Raketentreibstoff“ | 10 Benzin + 10 Cryo Fuel → 10; eigene Flüssigkeit mit Eimer | ⏳ |
 | 57 | Treibstoffe T4–T7 | Rakete T4 mit Kryo-Treibstoff und mit Kerosin betanken; Verbrauch beim Start ablesen; T5 mit flüssigem D-T-Gemisch; T6 mit beliebigem Treibstoff; Cryo Fuel in T1–T4 | T4 nur Kryo-Treibstoff, verbraucht 1 Eimer pro Start; T5 nimmt D-T-Gemisch; T6 nimmt nichts; Cryo Fuel nimmt keine Rakete | ⏳ |
 | 58 | Truhe in der Station | `/reload`; im Endless Realm durch die Minen bis zu einer Station (großer Raum mit Gleisen, 32 × 41); alle Truhen öffnen. Schneller: `/loot give @s loot bloodmagic:chests/mines/smithy_loot` | genau eine Truhe enthält neben Erz, Werkzeug und Co. das Relikt und „Tagebuch des Meisters“; die anderen Truhen nicht | ⏳ |
-| 59 | Stahl, Bioethanol, Cryo Fuel | Neustart; JEI: R auf Stahlstaub; Suche „Bioethanol“; R auf Cryo-Fuel-Eimer | kein Metallurgic-Infuser-Rezept für Stahlstaub mehr (Crusher-Rezept aus Barren bleibt); Bioethanol weder als Eimer noch als Flüssigkeit sichtbar; Cryo Fuel zeigt eine Info-Seite | ⏳ |
+| 59 | Stahl, Bioethanol, Cryo Fuel | Neustart; JEI: R auf Stahlstaub; Suche „Bioethanol“; R auf Cryo-Fuel-Eimer | kein Metallurgic-Infuser-Rezept für Stahlstaub mehr (Crusher-Rezept aus Barren bleibt); Bioethanol weder als Eimer noch als Flüssigkeit sichtbar; Cryo Fuel zeigt eine Info-Seite | ✅ 2026-10-20 (User) |
 
 ### Noch ohne Testweg
 

@@ -1,5 +1,5 @@
 // Info-Seiten in JEI für Items und Flüssigkeiten, deren Rezept JEI nicht findet.
-// Stand 2026-10-20, KubeJS 2001. UNGETESTET.
+// Stand 2026-10-20, KubeJS 2001. Getestet (Test 59, 2026-10-20).
 
 JEIEvents.information(event => {
   // Cryo Fuel: Ad Astra zeigt das Ergebnis des Cryo Freezer in JEI nur als Füllbalken,
