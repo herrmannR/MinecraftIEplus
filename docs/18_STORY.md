@@ -115,6 +115,7 @@
   4. Rückkehr zur Erde: Material für die Reparatur beschaffen und auf die Altar-Dimension vorbereiten, im Roguelike-Dungeon (Wesley's) und mit den Welt-Bossen von Blue Skies. Für die Reparatur braucht es auch etwas aus dem Strang um das Blue-Skies-Haus (siehe unten).
   5. Rückkehr zum Merkur, Reparatur des Altars, Betreten der Dimension.
   6. Erkenntnis in der Dimension: Der Meister war dort, ist aber weg.
+- 🟢 **Welches Ritual** (User, 2026-10-20, Variante B): Der Altar im Tempel ist **Pathway to the Endless Realm**. Nur das Endless Realm gilt in der Story als die Dimension, in der der Meister gefangen war. **Edge of the Hidden Realm** bleibt ohne Story und ist überall nutzbar. Es ist ein normaler Teil der Blood-Magic-Progression (Tau Fruit → Weak Blood Shard → Altar-Stufe 4). Grund: Der Mini-Dungeon hat nur einen Startraum mit 4 Türen, und jeder Raum dahinter ist eine Sackgasse (JAR geprüft, siehe `modpfade/bloodmagic/WISSEN.md`). Für die Story ist er zu klein. Folge: Die Spieler kennen die Dimension beim Betreten des Endless Realm schon vom Mini-Dungeon.
 - 🔵 Offen: Texte, Fundorte und Reihenfolge der Schriftrollen; die Zutaten der Reparatur; ob der Altar nach der Reparatur sofort öffnet oder weitere Bedingungen hat.
 
 **Wendung**

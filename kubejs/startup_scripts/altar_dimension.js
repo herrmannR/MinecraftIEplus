@@ -1,5 +1,6 @@
 // Altar-Dimension von Blood Magic (Demon Realm, bloodmagic:dungeon).
-// 1. Die Rituale zur Dimension gelingen nur auf dem Merkur (Tempel; docs/01_PROGRESSION.md Pfad D, Test E19/P9).
+// 1. Pathway to the Endless Realm gelingt nur auf dem Merkur (Tempel; docs/01_PROGRESSION.md Pfad D, Test E19/P9).
+//    Edge of the Hidden Realm (Mini-Dungeon, Tau Fruit für Altar-Stufe 4) bleibt überall erlaubt (Story-Variante B, User 2026-10-20).
 // 2. Hinein kommt nur, wer einen Benevolent Goddess' Charm trägt (F18, User 2026-10-20). Kreativ und Zuschauer ausgenommen.
 // Forge-Ereignisse gehen in KubeJS 2001 nur aus startup_scripts.
 // Fehler in einem Handler brechen das Ereignis ab (Test 47: Ritual ging nirgends). Deshalb fängt jeder Handler
@@ -7,7 +8,7 @@
 // Innerhalb der Funktionen nur var: Rhino meldet bei const in try-Blöcken „redeclaration of var“ (Test 47/48, 2026-10-20).
 // Stand 2026-10-20, KubeJS 2001. Fassung 3 nach Test 47/48, UNGETESTET.
 
-const IEPLUS_DUNGEON_RITUALE = ['ritualSimpleDungeon', 'ritualStandardDungeon']
+const IEPLUS_DUNGEON_RITUALE = ['ritualStandardDungeon']
 const IEPLUS_TEMPEL_DIMENSION = 'ad_astra:mercury'
 const IEPLUS_ALTAR_DIMENSION = 'bloodmagic:dungeon'
 const IEPLUS_AMULETT = 'botania:goddess_charm'

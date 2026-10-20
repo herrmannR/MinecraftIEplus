@@ -1103,3 +1103,15 @@ Status: 🟡
 
 ### Auswirkungen auf bestehende Welt
 Keine. Der Host braucht zusätzlich den Ordner `patchouli_books/`.
+
+## 2026-10-20 — Story-Variante B: nur Pathway to the Endless Realm im Tempel
+
+- JAR geprüft: Edge of the Hidden Realm ist ein Mini-Dungeon. Der Startraum hat 4 Türen, jeder Raum dahinter ist eine Sackgasse. Der User hat Variante B gewählt: Der Altar im Tempel ist Pathway to the Endless Realm, der Mini-Dungeon bleibt ohne Story (`18_STORY.md`, BM4 in `meilensteine/data.js`, `modpfade/bloodmagic/WISSEN.md`).
+- `altar_dimension.js`: Die Ritual-Sperre auf den Merkur gilt nur noch für `ritualStandardDungeon`. Edge of the Hidden Realm geht überall, sonst gäbe es vor dem Merkur keine Tau Fruit und keine Altar-Stufe 4 (K7). Nicht in die Testinstanz kopiert.
+- Offen: Die Amulett-Sperre gilt für die ganze Dimension `bloodmagic:dungeon`, also auch für den Mini-Dungeon.
+
+### Betroffene Bereiche
+- `kubejs/startup_scripts/altar_dimension.js`, Doku
+
+### Auswirkungen auf bestehende Welt
+Keine.

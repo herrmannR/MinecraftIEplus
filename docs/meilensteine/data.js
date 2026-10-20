@@ -277,7 +277,7 @@ const MILESTONES = [
   // ───── K9 Der Tempel
   {id:"BM4", path:"D", stage:9, name:"Tempel · Demon Dungeon", status:"open",
    req:[["BM3","Ritual"],["RF3","Flug zum Merkur"],["BO4","Schutz-Item ?"]], must:true,
-   what:"Die Spieler finden im verlassenen Tempel vier Schriftrollen, holen auf der Erde das Material, reparieren den Altar auf dem Merkur und öffnen mit dem Ritual den Blood-Magic-Dungeon.",
+   what:"Die Spieler finden im verlassenen Tempel vier Schriftrollen, holen auf der Erde das Material, reparieren den Altar auf dem Merkur und öffnen mit dem Ritual Pathway to the Endless Realm das eigentliche Demon Realm. Den kleinen Mini-Dungeon (Edge of the Hidden Realm, Tau Fruit für Altar-Stufe 4) kennen sie da schon. Er ist überall nutzbar und hat keine Story.",
    cross:"Verbindet Blood Magic, Botania, Raumfahrt, Blue Skies (Strang um das Blue-Skies-Haus, Welt-Bosse) und Wesley's Roguelike Dungeons (Vorbereitung). Zutaten der Reparatur offen.",
    story:"Aus den Schriftrollen schließt der Droide, dass der Meister in der Altar-Dimension gefangen ist. Dort ist er aber nicht mehr: Er ist selbst entkommen. Bei der Rückkehr ist der Droide weg oder zerstört. Ein Text des Meisters verweist auf das Elfenportal.",
    spoiler:"Der Tempel war ein Sith-Tempel. Der Meister suchte dort ein altes Relikt.",

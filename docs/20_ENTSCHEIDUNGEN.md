@@ -66,6 +66,7 @@ Welche Jedi- und Sith-Artefakte, und wie hängen sie an den Machtpunkten?
 | O15 | Schicksal des Droiden: weg oder zerstört? Wer gibt danach die großen Ziele? Kommt er zurück? |
 | O25 | Einsiedler: Name, Volk; welche Quest gewinnt sein Vertrauen? (User: später) |
 | O34 | Blue-Skies-Haus: Ist der „Herrscher“ die Figur im Haus oder eine zweite? Wann erzählt der Droide davon? Was heißt „aus seiner eigenen Welt“? Was liefert der Strang für die Altar-Reparatur, und was handelt die Figur? |
+| O39 | Die Amulett-Sperre (F18) gilt für die ganze Dimension `bloodmagic:dungeon`, also auch für den Mini-Dungeon (Edge of the Hidden Realm), der nach F27 frei sein soll. Goddess' Charm schon für den Mini-Dungeon verlangen, oder die Sperre nur beim Weg über das Endless Realm? |
 
 ### Story, Part 2 und 3 (später)
 
@@ -157,4 +158,5 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 | T4 | **Geändert:** Das Questbuch gibt der Droide nach der ersten Quest („Würdig sein“). Nach dem Einsiedler erscheinen dort zusätzlich seine Quests und Nebenquests; der User erklärt das in Dialogen | 2026-10-20 | `18_STORY.md` |
 | T5 | Tagebuch des Droiden und Tagebuch des Meisters als geschriebene Bücher: per `give` aus dem Dialog bzw. per Datapack in der Truhe der Altar-Dimension | 2026-10-20 | `18_STORY.md` |
 | F26 | Questbuch vor dem Mond: a) alle Quests werden ganz normal abgehakt (keine „Notizen“); b) Nebenquests aus K1–K3 sind Aufgaben des **Droiden**, „um uns intelligenter zu machen“: Belohnung nur Kleinigkeiten und XP, **keine Credits** (Credits erst beim Einsiedler); c) erste Quest im Buch ist **„Würdig sein“ als Klick-Quest** (Checkmark): schon im Dialog erfüllt, erklärt das Questsystem. Ersetzt F1 und die Startquest an der Schmelze aus F23 | 2026-10-20 | `18_STORY.md`, Questtexte vor dem Mond |
+| F27 | Story-Variante B: Der Altar im Tempel ist **Pathway to the Endless Realm**; nur das Endless Realm ist die Dimension der Story. Edge of the Hidden Realm (Mini-Dungeon, 4 Räume, Sackgassen) bleibt überall nutzbar und hat keine Story. Ritual-Sperre in `altar_dimension.js` angepasst | 2026-10-20 | `18_STORY.md`, `meilensteine/`, `kubejs/` |
 | F3 | Treibstoffe: T4 **Kryo-Raketentreibstoff** (eigene Flüssigkeit, IE Refinery: Benzin + Cryo Fuel), T5 **flüssiges D-T-Fusionsgemisch** (Mekanism Generators), T6 **Antimaterie-Treibstoff** (D-T-Gemisch + Antimaterie-Pellet, IE Mixer), T7 Antimaterie-Treibstoff + Life Essence oder Demon Will (Name offen). Ab T4 sparsam (`ad_astra:efficient_fuel`, 1 Eimer pro Start). Cryo Freezer bleibt nur als Zulieferer für T4; Cryo Fuel allein nimmt keine Rakete. Analyse: `recherche/f3_treibstoffe.md` | 2026-10-20 | `15_RAUMFAHRT.md`, `01_PROGRESSION.md` |
