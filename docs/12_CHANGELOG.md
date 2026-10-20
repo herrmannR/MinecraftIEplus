@@ -1277,3 +1277,12 @@ Status: 🟡
 ### Änderung
 - Auch nach Fassung 2 von Kaleidoscope blieb die NullPointerException. Sie kam nicht von dort (das Skript legt keine Rezepte mehr an), sondern aus `crossmod/mekanism_erze.js` (O42): Das Washing-Rezept gab Wasser als Tag an (`fluidInput: { amount: 5, tag: 'minecraft:water' }`). Das Schema von KubeJS Mekanism stürzt daran ab und bricht das ganze Skript ab, schon beim ersten Metall. Damit fehlten die Kristall-Rezepte und alle Rezepte für Nickel und Aluminium (Test 64 wäre gescheitert). Auch die NPE nach Fassung 1 kam von hier, nicht von der Bottling Machine.
 - Jetzt `fluid: 'minecraft:water'`. `tools/kubejs_check.py` warnt vor Flüssigkeiten als Tag in `event.custom`. In die Testinstanz kopiert, `/reload` genügt.
+
+## 2026-10-20 — Tests 62, 64, 65 bestanden; Plastoid-Rezept geht
+
+Status: 🟡
+
+### Änderung
+- Nach dem dritten Fix lädt alles ohne KubeJS-Fehler (Test 65 ✅, Log geprüft: 17/17 Skripte, nur bekannte Fallback-Meldungen; `alexsdelight:barbecue_on_a_stick` verweist auf den fehlenden Mod `amfd` und war schon im Original kaputt).
+- Test 62 ✅ und Test 64 ✅ (User).
+- Test 63 (User): Das Plastoid-Rezept ist bis zum Bauplan gesperrt und danach frei. Im Buch fehlt noch das Rezeptbild. Der Eintrag ist wie die funktionierenden Rüstungseinträge gebaut und in der Instanz aktuell. Vermutlich hat Patchouli die Seite beim Betreten der Welt gebaut, als das Rezept noch fehlte; `/reload` baut sie nicht neu (die Buch-Meldungen von 21:17 im Log stammen von Modonomicon). Prüfen nach erneutem Betreten der Welt.
