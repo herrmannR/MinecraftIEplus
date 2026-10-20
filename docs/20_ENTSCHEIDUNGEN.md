@@ -82,7 +82,6 @@ Name und Charakter. Welche Boss-Items (von welchen der vier Bosse) und welche Te
 
 | Nr. | Frage |
 |---|---|
-
 | O4 | Aus welchem Grund musste der Meister vorzeitig fliehen? (Ziel Glacio und der „Helle Elf“ entschieden 2026-10-20) |
 | O6 | Tagebuch: wie viele Ausschnitte, wann freigegeben, welche Rätsel? |
 | O7 | Name des Droiden; bleibt er in der Basis oder taucht er an weiteren Orten auf? |
