@@ -1,6 +1,6 @@
 // Blendet in JEI alle Items aus, die wir nicht im Spiel haben wollen und deren Rezepte entfernt sind.
 // Regel des Users (2026-10-13): Was per Skript entfernt wird, kommt immer auch hier hinein.
-// Stand 2026-10-13, KubeJS 2001. UNGETESTET.
+// Stand 2026-10-20, KubeJS 2001. Teil von 2026-10-20 UNGETESTET.
 
 JEIEvents.hideItems(event => {
   const ausgeblendet = [
@@ -18,7 +18,17 @@ JEIEvents.hideItems(event => {
     'ad_astra:desh_fluid_pipe',
     'ad_astra:ostrum_fluid_pipe',
     'ad_astra:cable_duct',
-    'ad_astra:fluid_pipe_duct'
+    'ad_astra:fluid_pipe_duct',
+    // Ideenimport (server_scripts/progression/ideenimport_entfernt.js, 2026-10-20)
+    'mekanism:digital_miner',
+    'ae2:vibration_chamber',
+    'ae2:crystal_resonance_generator',
+    'swplanets:plastic_plate',
+    // Rezepte hinter Bauplänen (server_scripts/starwars/einsiedler_shop.js): in JEI ausgeblendet, der Bauplan zeigt sie im Tooltip
+    'swgc:assembly_bench',
+    'swgc:droid_fabricator',
+    'swgc:gas_harvester',
+    'swgc:empty_gas_vessel'
   ]
   ausgeblendet.forEach(id => event.hide(id))
 })

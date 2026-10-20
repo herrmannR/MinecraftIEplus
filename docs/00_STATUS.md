@@ -7,7 +7,7 @@
 
 Minecraft **1.20.1, Forge 47.4.26** (Wechsel von 1.18.2 am 2026-10-11). Erledigt sind die Grundlagen, die Erzverteilung (umgesetzt und nachgezählt, 2026-10-17) und die erste Fassung der Skripte (Tests 1–31 bestanden). Die Story schreibt der User (`18_STORY.md`, Part 1 im Umriss). Questtexte gibt es für alle großen Mods im Entwurf.
 
-**Als Nächstes:** Schritt 1 und 2 des Fahrplans, also Entscheidungen aus `20_ENTSCHEIDUNGEN.md` und Tests 33–41. Am meisten hängt an F1, F2, F3, F5 und F6.
+**Als Nächstes (Ziel: Teil 1 fertig, 2026-10-20):** Die Entscheidungen für Teil 1 sind getroffen, bis auf F3 (Treibstoffe, gesonderte Analyse). Die Skripte für Teil 1 sind geschrieben (`10_KUBEJS.md`, Abschnitt „Teil 1“) und müssen in der Testinstanz getestet werden (Tests 42–55). Danach bleiben für Teil 1 nur Easy-NPC-Dialoge und Questbuch.
 
 ### Fahrplan
 
@@ -15,10 +15,10 @@ Die Schritte laufen in dieser Reihenfolge; 1 und 2 gehen parallel. Alle offenen 
 
 | Schritt | Inhalt | Stand | Hängt an |
 |---|---|---|---|
-| 1 Entscheidungen | F1–F25 und die O-Fragen für Part 1 | 🟡 offen | User |
-| 2 Tests im Spiel | Tests 33–41 (`11_TESTING.md`), Prüfpunkte P1–P15 | 🟡 offen | User spielt |
-| 3 Story von Part 1 fertig | `18_STORY.md` bis zur Rückkehr des Meisters | 🟡 Umriss | User; F1, F4, F8, F14, O-Fragen |
-| 4 Skripte und Raketen | Ideenimport (Star Manual, Plastic Plate, Digital Miner, AE2-Energieerzeuger, IE-Crusher statt Mekanism-Crusher, Beskar, Kyber); Etrium; T4-Treibstoff; Planetenstufen T5–T7; Galaxy in a Cube aus der Overworld (Ewok-Dörfer, Jawas); Ritual nur im Tempel | 🔵 | Schritt 3 (Regel des Users, 2026-10-14: Skripte erst, wenn Part 1 steht); F2, F3, F5, F12, F21 |
+| 1 Entscheidungen | Teil 1: alles entschieden bis auf F3; Teil 2 und 3 offen | 🟡 Teil 1 bis auf F3 erledigt (2026-10-20) | User; F3 |
+| 2 Tests im Spiel | Tests 33–55 (`11_TESTING.md`), Prüfpunkte P1–P15 | 🟡 offen | User spielt |
+| 3 Story von Part 1 fertig | `18_STORY.md` bis zur Rückkehr des Meisters; reine Story-Texte (Tagebücher, Schriftrollen, Dialoge) schreibt der User beim Bau der NPCs | 🟡 Handlung steht, Texte offen | User; O4, O6–O9, O15, O25, O34 |
+| 4 Skripte und Raketen | Teil 1 geschrieben (2026-10-20): Raketen T1–T4, Rover, eigene Items, Altar-Dimension (Ritual, Amulett, Truhe), Ideenimport-Entfernungen, IE-Crusher, AE2, Airship, Shop und Baupläne, Galaxy in a Cube aus der Overworld. Offen: T4-Treibstoff und Cryo Freezer (F3); Etrium, Planetenstufen T5–T7, Beskar, Kyber (Teil 2 und 3) | 🟡 Teil 1 ungetestet | Tests 42–55; F3 |
 | 5 Balance (frühere Phasen 3–6) | Erträge der Erzverarbeitung, Energie, AE2 zweistufig, Cross-Mod-Rezepte (`07_CROSSMOD_INTEGRATION.md`) | 🔵 nicht begonnen | F10, F19, F20, F24 |
 | 6 Questbuch einbauen | FTB Quests aus `questtexte/`, Easy-NPC-Figuren (Droide, Einsiedler, Elf, Figur im Blue-Skies-Haus) | 🟡 Texte im Entwurf | Schritte 3–5 |
 | 7 Hauptwelt umstellen | Aufgaben beim Host (H1–H5 unten) | 🔵 | Schritte 4–6; nur, was in `11_TESTING.md` ✅ hat |
@@ -44,7 +44,7 @@ Die Schritte laufen in dieser Reihenfolge; 1 und 2 gehen parallel. Alle offenen 
 | `03_ERZGENERATION.md` | 🟢 Verteilung beschlossen und im Spiel nachgezählt (2026-10-17) |
 | `07_CROSSMOD_INTEGRATION.md` | 🟡 Tinkers in den höheren Stufen, Schmelzregeln, Blood-Smeltery |
 | `10_KUBEJS.md` | 🟡 Stand der Skripte, was noch fehlt |
-| `11_TESTING.md` | 🟢 Testplan; Tests 1–31 und 32a bestanden, 32 entfällt (O22), 33–41 offen |
+| `11_TESTING.md` | 🟢 Testplan; Tests 1–31 und 32a bestanden, 32 entfällt (O22), 33–55 offen |
 | `12_CHANGELOG.md` | 🟢 fortlaufend |
 | `14_ERZ_MOD_MATRIX.md` | 🟢 Ist und Soll |
 | `15_RAUMFAHRT.md` | 🟢 |

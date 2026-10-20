@@ -101,11 +101,31 @@ Ergebnis jeweils hier eintragen: ✅ bestanden, ❌ Fehler (mit Beschreibung), �
 | 40 | Alfheim-Sperre | Elfenportal öffnen und ohne Mead of Kvasir hineingehen; dann Met trinken (`mythicbotany:kvasir_mead`, Kreativ) und erneut | ohne Met kein Durchgang, mit Met nach Alfheim (`lockAlfheim`); sonst BO5-02/BO6-01 in `questtexte/botania.md` anpassen | ⏳ |
 | 41 | Gaia-Pylon-Rezept | `botania:gaia_pylon` in JEI ansehen | nur das Rezept über den Alfsteel Pylon (MythicBotany `replaceGaiaRecipe`); gilt das Botania-Original, liegt Gaia nicht hinter Alfsteel (Ü P1) | ⏳ |
 
+### Runde 8 — Skripte für Teil 1 (2026-10-20)
+
+Vorher die neuen Dateien in die Testinstanz kopieren (`kubejs/startup_scripts/`, `server_scripts/`, `client_scripts/`, `data/`, `config-overrides/config/alexsmobs.toml`) und das Spiel **neu starten** (Startup-Skripte und eigene Items laden nur beim Start). Neue Welt für Test 54, sonst die bisherige Testwelt.
+
+| Nr. | Test | Wie | Erwartet | Ergebnis |
+|---|---|---|---|---|
+| 42 | Skripte laden | `logs/kubejs/startup.log`, `server.log`, `client.log` | keine Zeile mit `ERROR` zu den neuen Dateien; in `server.log` die Zeile „ie_crusher_uebernimmt.js: … Rezepte“ | ⏳ |
+| 43 | Eigene Items | JEI nach „Strahlenschutz“, „Relikt“, „Steuerkern“, „Bauplan“ durchsuchen | deutsche Namen, Tooltips; Baupläne zeigen ihr Rezept | ⏳ |
+| 44 | Triebwerke | JEI: Steel, Desh, Ostrum, Calorite Engine | je ein Control Circuit der Stufe (Basic, Advanced, Elite, Ultimate); Calorite Engine zusätzlich mit Galaktischem Strahlenschutz | ⏳ |
+| 45 | Tanks | JEI: Desh, Ostrum, Calorite Tank | je 2 Ventium, Imbued Slate bzw. Elementium; Steel Tank unverändert | ⏳ |
+| 46 | Rover-Treibstoff | Rover mit Biodiesel und mit Diesel betanken | nur Biodiesel geht | ⏳ |
+| 47 | Ritual nur auf dem Merkur | „Edge of the Hidden Realm“ (Altar-Stufe 3, Kreativ) in der Overworld aktivieren, dann auf dem Merkur | Overworld: Abbruch mit roter Meldung; Merkur: Ritual startet | ⏳ |
+| 48 | Amulett beim Betreten | Überlebensmodus; Weg in die Altar-Dimension ohne Charm, mit Charm nur im Inventar, mit Charm im Curios-Slot | nur mit Charm im Curios-Slot hinein, sonst rote Meldung. Falls man ohne Charm doch hineinkommt: notieren (dann löst Blood Magic das Forge-Ereignis nicht aus, und es braucht einen anderen Weg) | ⏳ |
+| 49 | Truhe des Meisters | in `bloodmagic:dungeon`: `/setblock ~ ~ ~1 minecraft:chest{LootTable:"ieplus:chests/meister_truhe"}` und öffnen | Relikt und „Tagebuch des Meisters“ (Platzhaltertext) | ⏳ |
+| 50 | AE2 | JEI: ME Controller, ME Drive, Vibration Chamber, Crystal Resonance Generator | Controller und Drive mit Advanced Control Circuit und Stahlplatten; die beiden Generatoren nicht in JEI, kein Rezept | ⏳ |
+| 51 | Entfernt | JEI: Digital Miner, Plastic Plate; Rakete T3 per `/give` ins Inventar | beide nicht in JEI; kein Star Manual | ⏳ |
+| 52 | IE-Crusher | JEI: Rezepte des IE-Crushers, z. B. Osmium-Barren, Bio Fuel aus Pflanzen, Clump → Dirty Dust | vorhanden; keine Meldungen über doppelte Rezepte im Log | ⏳ |
+| 53 | Shop-Waren und Baupläne | Werkbank: Credits aus Kupfer, Plastoid, Durasteel; Assembly Bench nach dem Muster legen; dann `/give @s kubejs:bauplan_assembly_bench` und erneut; zweiter Spieler ohne Bauplan; neu einloggen; Droid Fabricator: B-1 ohne Steuerkern | keine Credits, kein Plastoid, kein Durasteel; Assembly Bench erst nach dem Bauplan (Meldung im Chat), dann auch für den zweiten Spieler und nach dem Neustart; B-1 nur mit Steuerkern | ⏳ |
+| 54 | Galaxy in a Cube in der Overworld | neue Welt; `/locate structure swgc:ewok_village`; Wüste absuchen | kein Ewok-Dorf, keine Jawas | ⏳ |
+| 55 | Airship und Transmutation | JEI: Airship; `config/alexsmobs.toml` | Airship mit 2 Stahlplatten; `limitTransmutingToLootTables = true` | ⏳ |
+
 ### Noch ohne Testweg
 
-- Blood-Magic-Ritual nur auf dem Merkur (braucht erst ein Skript).
 - Blood-Smeltery: `forge:coins`, Hellforged-Flüssigkeiten.
-- Nach der Umsetzung (Skripte fehlen noch): IE-Crusher deckt die Rezepte des Mekanism-Crushers ab; Digital Miner entfernt; Plastic Plate entfernt; Beskar nur im starken Ofen, ergibt ein Nugget; Kyber nur über Galaxy in a Cube; Star Manual kommt nicht an; mit T5 erscheint nur Endor auf der Karte; Machtfortschritt nur über Quests.
+- Nach der Umsetzung (Skripte fehlen noch): Beskar nur im starken Ofen, ergibt ein Nugget; Kyber nur über Galaxy in a Cube; mit T5 erscheint nur Endor auf der Karte; Machtfortschritt nur über Quests; T4-Treibstoff (F3).
 
 ## Regeln
 

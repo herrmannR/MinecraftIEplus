@@ -34,6 +34,21 @@ Die fünf Skripte für 1.18.2 (`space_oxygen.js`, `moon_ores.js`, `tf_industrial
 | `server_scripts/crossmod/blood_smeltery.js` | Entfernt die Life-Essence-Legierung und das Gießen von Blank Slate und Blank Rune. ✅ In JEI bestätigt (2026-10-17). | `07_CROSSMOD_INTEGRATION.md` |
 | `client_scripts/jei_ausblenden.js` | Blendet alle entfernten Items in JEI aus (Regel: was ein Skript entfernt, kommt auch hierher). | User, 2026-10-13 |
 
+#### Teil 1 (2026-10-20, 🔵 ungetestet, Tests 42–55 in `11_TESTING.md`)
+
+| Datei | Aufgabe | Entscheidung |
+|---|---|---|
+| `startup_scripts/teil1_items.js` | Eigene Items: Galaktischer Strahlenschutz, Relikt, Steuerkerne B-1/B-2/Droideka, Baupläne Assembly Bench, Droid Fabricator, Gas Harvester. | F2f, F2e, O28 |
+| `startup_scripts/altar_dimension.js` | Dungeon-Rituale von Blood Magic nur auf dem Merkur; in die Altar-Dimension nur mit getragenem Benevolent Goddess' Charm (Curios). Forge-Ereignisse, deshalb in `startup_scripts`. | Pfad D, F18 |
+| `server_scripts/raumfahrt/raketen_t1_t4.js` | Triebwerke T1–T4 mit Control Circuit der Stufe; Tanks T2–T4 mit Ventium, Imbued Slate, Elementium; Calorite-Triebwerk mit Galaktischem Strahlenschutz. | F2, F2a, F2f |
+| `server_scripts/progression/ae2_verteuerung.js` | ME Controller und ME Drive mit Advanced Control Circuit und Stahlplatten. | F10 |
+| `server_scripts/progression/aircraft_stahl.js` | Airship mit IE-Stahlplatten. | F17 |
+| `server_scripts/progression/ideenimport_entfernt.js` | Entfernt Digital Miner, Vibration Chamber, Crystal Resonance Generator, Plastic Plate. | Ideenimport |
+| `server_scripts/crossmod/ie_crusher_uebernimmt.js` | Legt für jedes Rezept des Mekanism-Crushers ein gleiches im IE-Crusher an (wenn der IE-Crusher die Eingabe noch nicht kennt). | Ideenimport |
+| `server_scripts/starwars/einsiedler_shop.js` | Credits nicht mehr aus Metall; Plastoid und Durasteel nur im Shop; Droiden mit Steuerkern; Assembly Bench, Droid Fabricator, Gas Harvester, Empty Gas Vessel erst nach dem Bauplan (Weltwert, gilt für alle). | O28, F5c/d |
+| `client_scripts/tooltips_teil1.js` | Tooltips der eigenen Items; die Baupläne zeigen ihr Rezept. | Baupläne (2026-10-14) |
+| `config-overrides/config/alexsmobs.toml` | `limitTransmutingToLootTables = true`. | F16 |
+
 ### Datapack (`kubejs/data/`)
 
 Erz-Features für Blue Skies und die Planeten, Kyber-Override, Treibstoff-Tags, seltenere Excavator-Adern, abgeschaltete Ölquellen und Mekanism-Planeten-Erze. Tabelle mit Begründungen: `kubejs/data/README.md`.
@@ -45,19 +60,17 @@ Erz-Features für Blue Skies und die Planeten, Kyber-Override, Treibstoff-Tags, 
 | `config/Mekanism/world.toml` | `config/Mekanism/` | Overworld-Erze, Retrogen |
 | `config/blue_skies-common.toml` | `config/` | Freigabe des Namensraums `ieplus` für Erz-Features |
 | `serverconfig/immersiveengineering-server.toml` | `saves/<Welt>/serverconfig/` | IE-Erze |
+| `config/alexsmobs.toml` | `config/` | Transmutation Table nur noch Truhenbeute (F16) |
 
 Unter `_original/` liegen die unveränderten Standarddateien zum Vergleich.
 
 ### Noch nicht umgesetzt
 
-- 🔵 Blood-Smeltery: `forge:coins` und die fehlenden Hellforged-Flüssigkeiten (Ursache geklärt: Mod-Bug bzw. fehlendes Thermal, siehe `00_MODBASIS.md` „Bekannte Fehler“; Entscheidung über Skript-Workaround offen).
+- 🔵 Eigener Raketentreibstoff für T4 (Fluid, Rezept, Tag `tier_4_rocket_fuel`) und Cryo Freezer: wartet auf F3.
 - 🔵 Tinkers in den höheren Stufen (Wege A, C, D, E, F und fehlende Schmelzrezepte, `07_CROSSMOD_INTEGRATION.md`): beschlossen, Rezepte und Werte offen.
-- 🔵 Eigener Raketentreibstoff für T4 (Fluid, Rezept, Tag `tier_4_rocket_fuel`); Treibstoff des Rovers.
-- 🔵 Cryo Freezer (Entscheidung offen, F3).
 - 🔵 Rezept vom Kyber-Erz zum Kyber-Kristall; Lichtschwerter von Star Wars Planets entfernen (`17_STAR_WARS_1.20.1.md`).
-- 🔵 Blood-Magic-Ritual nur auf dem Merkur (Machbarkeit ungetestet).
-- 🔵 Etrium-Rezepte (`15_RAUMFAHRT.md`), Planetenstufen T5–T7, Ewok-Dörfer und Jawas aus der Overworld.
-- 🔵 Aus dem Ideenimport (erst wenn die Story von Part 1 steht, `00_STATUS.md` Block D): Star Manual, Plastic Plate, Digital Miner, AE2-Energieerzeuger, IE-Crusher statt Mekanism-Crusher, Beskar, Kyber.
+- 🔵 Etrium-Rezepte (`15_RAUMFAHRT.md`), Planetenstufen T5–T7 (Teil 2 und 3).
+- 🔵 Aus dem Ideenimport noch offen: Beskar, Kyber (Teil 3, F5, F12). Der Mekanism-Crusher bleibt vorerst neben dem IE-Crusher.
 - 🔵 Alles aus den Phasen 3 bis 6 (Erträge, Energie, AE2-Gates, Cross-Mod-Rezepte).
 
 ## Workflow

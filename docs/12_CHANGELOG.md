@@ -1035,3 +1035,19 @@ Status: 🟢
 
 ### Auswirkungen auf bestehende Welt
 Keine.
+
+## 2026-10-20 — Entscheidungen und Skripte für Teil 1
+
+Status: 🟡 (Skripte ungetestet)
+
+### Änderung
+- Entscheidungen für Teil 1 getroffen (F1–F26 außer F3, O3, O16, O17, O22, O23, O27–O30, O33, T1–T6), eingetragen in `20_ENTSCHEIDUNGEN.md` und `18_STORY.md`. Neu in der Story: Relikt und Tagebuch des Meisters in der Altar-Dimension, der „Helle Elf“, Galaktischer Strahlenschutz; Questbuch vom Droiden nach „Würdig sein“; Mars-Station ohne Prüfskript (Test 32 entfällt).
+- Skripte für Teil 1 (`10_KUBEJS.md`, Abschnitt „Teil 1“): Raketen T1–T4 mit Control Circuits, Ventium, Imbued Slate, Elementium und Strahlenschutz; Rover nur Biodiesel; eigene Items; Ritual nur auf dem Merkur; Altar-Dimension nur mit Goddess' Charm; Truhe mit Relikt und Tagebuch; Digital Miner, AE2-Generatoren, Plastic Plate und Star Manual entfernt; IE-Crusher übernimmt die Rezepte des Mekanism-Crushers; ME Controller und Drive teurer; Airship mit Stahl; Credits, Plastoid, Durasteel und Steuerkerne nur im Shop; Baupläne schalten Rezepte global frei; Jawas und Ewok-Dörfer aus der Overworld; Transmutation Table nur Truhenbeute.
+- Plastoid nur im Shop (O28); das HDPE-Rezept entfällt.
+- Testrunde 8 (Tests 42–55) in `11_TESTING.md`.
+
+### Betroffene Bereiche
+- `kubejs/`, `config-overrides/config/alexsmobs.toml`, Doku
+
+### Auswirkungen auf bestehende Welt
+Schon gebaute Digital Miner, Vibration Chambers und Crystal Resonance Generators bleiben stehen, lassen sich aber nicht neu bauen. Das `alexsmobs.toml` gehört beim Host nach `config/`.

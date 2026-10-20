@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [ { "type": "minecraft:item", "name": "kubejs:relikt" } ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:written_book",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{title:\"Tagebuch des Meisters\",author:\"Der Meister\",resolved:1b,pages:['{\"text\":\"Platzhalter. Den Text schreibt der User (docs/18_STORY.md, Relikt und Tagebuch des Meisters).\"}']}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
