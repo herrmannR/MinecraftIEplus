@@ -1152,3 +1152,11 @@ Status: 🟡
 - Wunsch des Users: Alle Baupläne sehen gleich aus, als Schriftrolle (eigene Textur `kubejs/assets/kubejs/textures/item/bauplan_rolle.png`). Freigeschaltet wird per Rechtsklick: Die Rolle verschwindet, Rezept und Bucheintrag werden frei; ist der Bauplan schon im Buch, bleibt die Rolle und es kommt nur eine Meldung. Das Inventar-Ereignis aus Fassung 5 entfällt.
 - Neuer Befehl `/bauplan zuruecksetzen`: sperrt alle Baupläne der Welt, nimmt die Bucheinträge bei allen Spielern zurück (Advancement `ieplus:bauplan/root` samt Unterpunkten) und gibt das Buch beim nächsten Lesen erneut aus. Beim Einloggen gleicht das Skript jeden Spieler an den Weltstand an.
 - Texte im Buch angepasst. In die Testinstanz kopiert (Neustart nötig).
+
+## 2026-10-20 — Relikt und Tagebuch automatisch in der Station (O40)
+
+Status: 🟡
+
+### Änderung
+- Wunsch des Users: Die Truhe des Meisters entsteht von selbst in einem großen Raum der Minen; mehrere Funde sind erlaubt.
+- Neu `kubejs/data/bloodmagic/loot_tables/chests/mines/smithy_loot.json`: Kopie der Blood-Magic-Tabelle mit einem Pool, der `ieplus:chests/meister_truhe` einbindet. Die Tabelle gibt es nur in einer Truhe der Station, dem größten Mine-Raum. Test 58.

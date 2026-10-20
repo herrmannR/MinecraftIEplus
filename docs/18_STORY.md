@@ -124,7 +124,7 @@
 - Danach geht es auf der Erde mit dem Elfen weiter, um nach Glacio zu kommen (User, 2026-10-17).
 
 **Relikt und Tagebuch des Meisters (User, 2026-10-20)**
-- Die Spieler finden ein **Relikt** und das **Tagebuch des Meisters**, das er dort verloren hat. Fundort: in der Altar-Dimension (User, 2026-10-20); per Datapack sicher in einer Truhe oder vom Host von Hand gelegt.
+- Die Spieler finden ein **Relikt** und das **Tagebuch des Meisters**, das er dort verloren hat. Fundort: in der Altar-Dimension (User, 2026-10-20). Sie liegen automatisch in einer Truhe der **Station**, des größten Raums der Minen im Endless Realm; jede Station hat eine solche Truhe, mehrere Funde sind erlaubt (O40, User 2026-10-20). Notweg: Truhe per `/setblock` vom Host.
 - Das Tagebuch erzählt seine Geschichte ab dem Moment, in dem er sich vom Droiden getrennt hat. Darin schreibt er, dass er zur Erde gehen muss, um den **„Hellen Elfen“** zu finden, der ihm helfen soll, die Macht des Relikts zu erkunden.
 - Aus einem noch offenen Grund musste er vorzeitig fliehen und versteckt sich nun auf Glacio.
 - Die Spieler kehren zur Erde zurück, finden den Elfen durch das Portal und geben ihm das Relikt. Er will oder kann dazu nicht viel sagen, bietet aber an, ihnen nach Glacio zu helfen.
