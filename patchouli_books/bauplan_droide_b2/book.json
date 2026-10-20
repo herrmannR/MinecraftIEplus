@@ -4,6 +4,5 @@
   "book_texture": "patchouli:textures/gui/book_red.png",
   "model": "kubejs:bauplan_droide_b2",
   "show_progress": false,
-  "use_resource_pack": true,
   "i18n": false
 }
