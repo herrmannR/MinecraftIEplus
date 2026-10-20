@@ -30,9 +30,11 @@ Argumente: eine oder mehrere Item-IDs (`modid:name`) oder Item-Namen, optional e
 
 4. **In JEI ausblenden** wie im Skill `remove-jei` beschrieben (Vorgabe des Users: entfernte Items immer auch ausblenden). Nur weglassen, wenn der User ausdrücklich sagt, das Item solle sichtbar bleiben.
 
-5. **Hinweis prüfen:** Wird das Item in anderen Rezepten als Zutat gebraucht, die bleiben sollen? Schnell prüfen mit der WISSEN.md des Mods; fehlt die Angabe, dem User als offene Frage melden, nicht selbst im JAR graben.
+5. **Skripte prüfen:** `python tools/kubejs_check.py kubejs/server_scripts/entfernt/rezepte.js kubejs/client_scripts/jei_ausblenden.js`. Syntaxfehler und `ID?` (unbekannte ID, meist Tippfehler) vor dem Kopieren beheben. `DUMP`-Zeilen heißen nur „nicht prüfbar, ProbeJS-Dump veraltet“.
 
-6. **In die Testinstanz kopieren**, aber nur bei geschlossenem Spiel. Prüfen mit dem Befehl unten (Ergebnis 0 = geschlossen; `tasklist` reicht nicht, weil der ATLauncher selbst als javaw läuft). Läuft das Spiel, nicht kopieren und dem User sagen, dass die Kopie nach dem Schließen folgt (das laufende Spiel kann Dateien beim Beenden überschreiben).
+6. **Hinweis prüfen:** Wird das Item in anderen Rezepten als Zutat gebraucht, die bleiben sollen? Schnell prüfen mit der WISSEN.md des Mods; fehlt die Angabe, dem User als offene Frage melden, nicht selbst im JAR graben.
+
+7. **In die Testinstanz kopieren**, aber nur bei geschlossenem Spiel. Prüfen mit dem Befehl unten (Ergebnis 0 = geschlossen; `tasklist` reicht nicht, weil der ATLauncher selbst als javaw läuft). Läuft das Spiel, nicht kopieren und dem User sagen, dass die Kopie nach dem Schließen folgt (das laufende Spiel kann Dateien beim Beenden überschreiben).
    ```bash
    # Spiel geschlossen? Muss 0 ausgeben:
    powershell -NoProfile -Command "(Get-CimInstance Win32_Process -Filter \"Name='javaw.exe'\" | Where-Object { \$_.CommandLine -match 'Minecraft1201withForge' } | Measure-Object).Count"
@@ -41,6 +43,6 @@ Argumente: eine oder mehrere Item-IDs (`modid:name`) oder Item-Namen, optional e
    cp kubejs/server_scripts/entfernt/rezepte.js "$I/kubejs/server_scripts/entfernt/"
    ```
 
-7. **Dokumentieren:** eine Zeile in `docs/12_CHANGELOG.md` (Datum, Items, Grund). Betrifft es ein Thema mit eigenem Dokument (z. B. Raumfahrt), dort ebenfalls eine Zeile.
+8. **Dokumentieren:** eine Zeile in `docs/12_CHANGELOG.md` (Datum, Items, Grund). Betrifft es ein Thema mit eigenem Dokument (z. B. Raumfahrt), dort ebenfalls eine Zeile.
 
-8. **Melden** in zwei, drei Sätzen: welche Items, wo eingetragen, ob kopiert. Wirkung: Rezepte nach `/reload` im Spiel, JEI-Ausblendung erst nach einem Neustart. Im Spiel ungetestet, bis der User es bestätigt.
+9. **Melden** in zwei, drei Sätzen: welche Items, wo eingetragen, ob kopiert. Wirkung: Rezepte nach `/reload` im Spiel, JEI-Ausblendung erst nach einem Neustart. Im Spiel ungetestet, bis der User es bestätigt.
