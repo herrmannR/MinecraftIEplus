@@ -12,7 +12,7 @@
 // - Alle Rezepte stark verteuert (User, Test 43, 2026-10-20).
 // - Befehle für den Host: /bauplan buch gibt ein Buch (Ersatz); /bauplan <name> gibt eine Bauplan-Seite.
 // Rezept-IDs ieplus:bauplan/<ergebnis> werden in den Patchouli-Einträgen verwendet; beim Ändern dort mitziehen.
-// Stand 2026-10-20, KubeJS 2001. Fassung 4 (ein Buch), UNGETESTET.
+// Stand 2026-10-20, KubeJS 2001. Fassung 5 (Seite per /clear entfernt, Test 53), UNGETESTET.
 
 const IEPLUS_ADV = 'mekanism:advanced_control_circuit'
 const IEPLUS_BAUPLAN_BUCH = 'patchouli:bauplaene'
@@ -110,22 +110,29 @@ PlayerEvents.inventoryChanged(event => {
   var b = IEPLUS_BAUPLAENE[name]
   if (!b) return
   var server = event.server
-  var daten = server.persistentData
-  var ersterKauf = !daten.getBoolean('ieplus_bauplan_buch_gegeben')
+  var player = event.player
+  var spieler = String(player.username)
 
-  event.item.shrink(event.item.count)   // Seite wird ins Buch eingeklebt
-  if (ersterKauf) {
-    daten.putBoolean('ieplus_bauplan_buch_gegeben', true)
-    event.player.give(ieplusBauplanBuch())
-    event.player.tell(Text.aqua('Der Einsiedler drückt dir ein Buch in die Hand: „Baupläne des Einsiedlers“.'))
-  }
-  if (!daten.getBoolean(ieplusSchluessel(name))) {
-    daten.putBoolean(ieplusSchluessel(name), true)
-    server.tell(Text.gold('Neuer Bauplan im Buch: ' + b.titel + '. Das Rezept ist jetzt für alle herstellbar.'))
-  } else {
-    event.player.tell(Text.gray('Diesen Bauplan habt ihr schon.'))
-  }
-  ieplusEintraegeGeben(server, '@a')
+  // Einen Tick später: Seite per /clear entfernen („ins Buch eingeklebt“). event.item.shrink() wirkte nur auf eine Kopie,
+  // die Seite blieb liegen und jede Inventaränderung meldete erneut (Test 53, 2026-10-20). Der Rückgabewert von /clear
+  // ist die Zahl der entfernten Seiten; 0 heißt: schon erledigt, nichts melden.
+  server.scheduleInTicks(1, () => {
+    var entfernt = server.runCommandSilent(`clear ${spieler} kubejs:bauplan_${name}`)
+    if (!entfernt || entfernt <= 0) return
+    var daten = server.persistentData
+    if (!daten.getBoolean('ieplus_bauplan_buch_gegeben')) {
+      daten.putBoolean('ieplus_bauplan_buch_gegeben', true)
+      player.give(ieplusBauplanBuch())
+      player.tell(Text.aqua('Der Einsiedler drückt dir ein Buch in die Hand: „Baupläne des Einsiedlers“.'))
+    }
+    if (!daten.getBoolean(ieplusSchluessel(name))) {
+      daten.putBoolean(ieplusSchluessel(name), true)
+      server.tell(Text.gold('Neuer Bauplan im Buch: ' + b.titel + '. Das Rezept ist jetzt für alle herstellbar.'))
+    } else {
+      player.tell(Text.gray('Diesen Bauplan habt ihr schon.'))
+    }
+    ieplusEintraegeGeben(server, '@a')
+  })
 })
 
 // Wer offline war, bekommt die Einträge beim Einloggen

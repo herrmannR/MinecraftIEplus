@@ -1136,3 +1136,10 @@ Status: 🟡
 
 ### Betroffene Bereiche
 - `kubejs/`, `patchouli_books/`, Doku
+
+## 2026-10-20 — Test 53: Chat-Spam durch Bauplan-Seiten behoben
+
+Status: 🟡
+
+### Änderung
+- Die Bauplan-Seite blieb im Inventar (`event.item.shrink()` wirkte nur auf eine Kopie), jede Inventaränderung meldete erneut. `einsiedler_shop.js` entfernt die Seite jetzt einen Tick später per `/clear` und meldet nur, wenn wirklich eine Seite entfernt wurde. In die Testinstanz kopiert.
