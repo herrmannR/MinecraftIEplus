@@ -47,6 +47,7 @@
 - Der Tempel mit dem Blood-Magic-Dungeon war ein **Sith-Tempel**. Der Meister suchte dort nach einem alten Relikt. Das stellt sich erst später heraus.
 - Blood Magic steht in der Story für die Sith-Seite.
 - Der Droide, oder der Meister über Nachrichten, deutet an, dass die Spieler machtsensitive Wesen sind, also Jedi werden können.
+- 🟢 **Wer verrät was** (User, 2026-10-21, O9): Das Geheimnis legt der **Meister** offen, Stück für Stück im Training (Teil 2). In Teil 1 gibt es nur Anspielungen, und zwar allein in den Dialogen der Figuren (Droide, Einsiedler, Elf usw.); die schreibt der User. **Die Questtexte erwähnen Star Wars nicht.**
 
 ## 3. Handlung
 
@@ -54,7 +55,8 @@
 
 | Figur | Was feststeht |
 |---|---|
-| Droide | Easy NPC aus der Star-Wars-Welt. Guide der Spieler. Charakter: lustig, aber mechanisch ernst. Verrät seine Herkunft nicht. |
+| Droide **DD3R8** | Easy NPC aus der Star-Wars-Welt. Guide der Spieler. Charakter: lustig, aber mechanisch ernst. Verrät seine Herkunft nicht. Orte (User, 2026-10-21, O7/O15): zuerst in der Basis auf der Overworld, dann in der Mars-Station; verschwindet, sobald die Spieler das Relikt haben; taucht am Ende von Teil 1 beim Meister auf Glacio wieder auf (der Meister hat ihn mit der Macht zu sich geholt, das erfahren die Spieler dort). |
+| Einsiedler | Easy NPC auf dem Mond, ein **Klon-Veteran** (User, 2026-10-21, O25). Name offen. |
 | Meister | Jedi. Suchte im Sith-Tempel ein altes Relikt, wurde in die Dungeon-Dimension gezogen, ist selbst entkommen und hält sich auf Glacio auf. Bildet die Spieler später zu Jedi aus. |
 | Weitere Easy NPCs | Auftraggeber für Kopfgeldjäger-Quests in den Star-Wars-Welten. |
 
@@ -63,6 +65,8 @@
 - Der Meister war auf einer Mission auf dem Planeten, auf dem der Zugang zur Blood-Magic-Dimension liegt (laut Progression der Merkur).
 - In einem dunklen Tempel wurde er in diese Dimension gezogen.
 - Kurz davor rief er dem Droiden zu, er solle bei der nächsten Lebensform Hilfe suchen: bei drei Individuen (der User und seine Mitspieler).
+- 🟢 **Flucht aus der Dimension** (User, 2026-10-21, O4): Im Dungeon umzingelten ihn dunkle Wesen, er saß fest. Die Macht des Relikts war zu stark und hätte ihn fast von innen zerstört; fliehen konnte er nur ohne das Relikt, mit seiner ganzen verbliebenen Kraft. Sein Ziel war **Glacio, die Heimat der hellen Macht**, wo er sich erholen kann. Ins Tagebuch (das im Dungeon) schrieb er das für den, der als Nächster dort ankommt: Wer noch **unbefleckt von der Macht** ist, ist gegen das dunkle Relikt immun und soll es holen und zu ihm bringen.
+  - Folge (abgeleitet): Die Spieler dürfen in Teil 1 keine Macht haben. Das passt zur Sperre `forceObtainment false` (Test 33); die Macht kommt erst im Training in Teil 2. Der Droide kann das Relikt nicht holen, die Spieler schon.
 
 ### Teil 1
 
@@ -84,6 +88,7 @@
 - Die Spieler müssen die Station zuerst bauen. Umsetzung ohne Prüfskript (User, 2026-10-20, O22): Quest 1 ist eine Checkliste aller Items für die Basis; Quest 2 heißt „Baut die Basis und haltet euch zu dritt dort auf“. Sind alle drei da, setzt der User den Tag per Befehl, und die Quest ist erfüllt.
 - Erst dann kommt der Droide auf den Mars und bleibt dort: Er erscheint per Befehl in der Station und verschwindet gleichzeitig aus der Basis auf der Erde (O23, 2026-10-20).
 - Von dort fängt er die Spur auf, die zum Merkur führt.
+- 🟢 **Venus** (User, 2026-10-21, O8): ohne eigene Story, interessant wegen guter Rohstoffe (Uran, Blei, Calorite; `03_ERZGENERATION.md`). Mehr Story brauchen Mars und Venus nicht.
 - Die Spieler müssen zum Mars fliegen, um beim Droiden Quest-Items abzugeben und die nächsten Schritte freizuschalten (User, 2026-10-14). Die großen Ziele kommen also nicht per Funk.
 
 **Der Einsiedler auf dem Mond (User, 2026-10-14)**
@@ -104,7 +109,8 @@
 - 🟢 **Bauplan und Kauf** (User, 2026-10-14): Der Bauplan ist ein Item wie ein Buch und zeigt das Rezept; bei Droiden das Rezept für den Steuerkern und für den Droiden. Freigeschaltet wird **einmalig beim Kauf**, für alle Spieler der ganzen Welt; Lesen ist dafür nicht nötig. Umsetzung: KubeJS bemerkt, wenn ein Bauplan zum ersten Mal in das Inventar eines Spielers kommt (Ereignis „Inventar geändert“), und setzt dann den Wert der Welt. Das klappt mit dem normalen Handelsfenster von Easy NPC. Easy NPC hat zwar ein Ereignis `ON_TRADE`, ob es den gekauften Artikel kennt, ist aber ungeprüft; der Weg über KubeJS braucht es nicht. 🔵 Im Spiel prüfen.
 - 🟢 **Droiden einzeln freischalten** (User, 2026-10-14). Weg (vom User übernommen am 2026-10-14; die Fabricator-Rezepte kennen keinen Spieler): Jeder Droide bekommt im Fabricator-Rezept eine zusätzliche Zutat, einen eigenen Steuerkern je Typ (B-1, B-2, Droideka; eigene KubeJS-Items). Den Steuerkern baut man an der Werkbank, und dieses Rezept schaltet der jeweilige Bauplan global frei. Der Kern wird bei jedem Droiden verbraucht. Die Fabricator-Rezepte sind JSON (`swgc:fabrication`, Zutatenliste mit Anzahl) und lassen sich per KubeJS (`event.custom`) ersetzen. 🔵 Im Spiel prüfen.
 - 🟢 **Umsetzung nach Test 43** (User, 2026-10-20): Ein gemeinsames Buch „Baupläne des Einsiedlers“ (Patchouli, wie die Mod-Bücher) mit je einem Eintrag für Assembly Bench, Droid Fabricator, Gas Harvester (mit Empty Gas Vessel), Droide B-1, B-2 und Droideka: kurze Beschreibung und das Rezept als Bild. Der Einsiedler verkauft Baupläne als Schriftrollen (alle gleich). Rechtsklick liest eine Rolle: Sie verschwindet, der passende Eintrag öffnet sich bei allen Spielern, das Rezept ist frei; ist er schon da, kommt nur eine Meldung. Wer als Erster eine Rolle liest (gedacht: Assembly Bench), bekommt das Buch dazu (User, 2026-10-20). Die Droiden-Baupläne schalten das Werkbank-Rezept ihres Steuerkerns frei. Ein Bauplan „Blaster“ öffnet die Seiten aller sieben Blaster-Modelle, die Assembly Bench wird nicht gesperrt (wer das Rezept vorher findet, darf es nutzen; User, 2026-10-20). Rüstungen (Klon Phase 2, Jedi, Sith, Royal Guard, Vader) gibt es ebenfalls nur per Bauplan; ohne ihn lassen sie sich nicht herstellen. Das Buch hat drei Kapitel: Maschinen, Waffen (Blaster und Droiden), Rüstung. Durasteel hat kein Rezept, es gibt ihn nur beim Einsiedler. Plastoid: Der Einsiedler verkauft nur die ersten 20, danach Rezept aus 2 HDPE Pellets hinter dem Bauplan „Plastoid“ (O42, 2026-10-20). Alle Rezepte stark verteuert.
-- Später festlegen: Name, Volk, die Quest, die sein Vertrauen gewinnt; Credits je Spieler oder je Team; wiederholbare Aufgaben.
+- 🟢 **Wer er ist und wie man sein Vertrauen gewinnt** (User, 2026-10-21, O25): Er ist ein **Klon-Veteran**. Die Spieler finden in einer nahegelegenen Höhle (ein kleiner Dungeon) ein Teil seiner alten Ausrüstung: seinen **Klonhelm**, kaputt. Sie reparieren ihn mit Technik und bringen ihn ihm. Dafür braucht es ein eigenes Item „Kaputter Klonhelm“. Name offen. Vorschläge zu Höhle und Reparatur in Abschnitt 5 („Einsiedler: Höhle und Klonhelm“).
+- Credits je Team, keine wiederholbaren Aufgaben in Teil 1 (O27, 2026-10-20).
 
 **Der Tempel (präzisiert durch den Ideenimport, User, 2026-10-17)**
 - 🟢 Der Tempel liegt auf dem **Merkur**. Der Altar dort ist das „Portal“ in die Blood-Magic-Dimension (man kommt über den Altar hinein); beides ist dasselbe.
@@ -120,23 +126,24 @@
 
 **Wendung**
 - Es stellt sich heraus, dass der Meister selbst aus der Dungeon-Dimension entkommen ist.
-- Wenn die Spieler aus dem Dungeon zurückkommen, ist der Droide entweder weg oder bei einer Explosion kaputtgegangen. Er kann nicht mehr weiterhelfen.
+- 🟢 (User, 2026-10-21, O7/O15) Sobald die Spieler das Relikt haben, ist der Droide aus der Mars-Station **verschwunden**. Später finden sie ihn beim Meister auf Glacio wieder: Der Meister hat ihn mit der Macht zu sich geholt. Bis dahin geben das Tagebuch des Meisters und der Elf die Richtung vor.
 - Danach geht es auf der Erde mit dem Elfen weiter, um nach Glacio zu kommen (User, 2026-10-17).
 
 **Relikt und Tagebuch des Meisters (User, 2026-10-20)**
 - Die Spieler finden ein **Relikt** und das **Tagebuch des Meisters**, das er dort verloren hat. Fundort: in der Altar-Dimension (User, 2026-10-20). Sie liegen automatisch in einer Truhe der **Station**, des größten Raums der Minen im Endless Realm; jede Station hat eine solche Truhe, mehrere Funde sind erlaubt (O40, User 2026-10-20). Notweg: Truhe per `/setblock` vom Host.
 - Das Tagebuch erzählt seine Geschichte ab dem Moment, in dem er sich vom Droiden getrennt hat. Darin schreibt er, dass er zur Erde gehen muss, um den **„Hellen Elfen“** zu finden, der ihm helfen soll, die Macht des Relikts zu erkunden.
-- Aus einem noch offenen Grund musste er vorzeitig fliehen und versteckt sich nun auf Glacio.
+- Er musste vorzeitig fliehen, ohne das Relikt, und erholt sich auf Glacio (Grund siehe Vorgeschichte, O4). Im Tagebuch bittet er den Finder, das Relikt zu ihm zu bringen.
 - Die Spieler kehren zur Erde zurück, finden den Elfen durch das Portal und geben ihm das Relikt. Er will oder kann dazu nicht viel sagen, bietet aber an, ihnen nach Glacio zu helfen.
 - Dafür fertigt er den **Galaktischen Strahlenschutz** (Bauteil der Rakete T4). Er braucht dazu das Relikt, die Boss-Items aus Blue Skies und Tech-Erzeugnisse (F14).
 - **Schutz beim Betreten** (F18, User 2026-10-20): Jeder Spieler muss einen Benevolent Goddess’ Charm tragen, wenn er durch den Altar in die Dimension geht; ein Skript lässt nur Spieler mit Amulett hinein. Die Reparatur selbst braucht Terrasteel. 🟢 Das Amulett gilt für beide Rituale, also auch schon für den Mini-Dungeon (O39, User 2026-10-20). Machbar ist es ab dem Runenaltar (BO3).
-- Damit ist O16 beantwortet (der Text des Meisters ist sein Tagebuch); O3 und O4 sind zum großen Teil beantwortet (offen: der Grund der Flucht).
+- Damit ist O16 beantwortet (der Text des Meisters ist sein Tagebuch); O3 und O4 sind beantwortet (O4 am 2026-10-21).
 
 **Das Blue-Skies-Haus (neuer Strang, User, 2026-10-17)**
 - „Haus“ ist die Overworld-Struktur von Blue Skies, das Gatekeeper's House (`#blue_skies:gatekeeper_houses`). Die Portale nach Everbright und Everdawn stehen dort **nicht**, die bauen die Spieler selbst; im Haus kauft man beim Guard den Zünder (Zeal Lighter) und das Buch (Blue Journal) (Test 39, 2026-10-21). Der User plant dort später mehr. Everbright und Everdawn sind die „Traumwelten des Lichts und der Dunkelheit“.
 - Der Mob-Händler, den Blue Skies dort von sich aus hinstellt (Guard, `blue_skies:gatekeeper`), wird durch eine eigene **Easy-NPC-Figur** ersetzt.
 - Der Strang wird **zuerst als Nebenquest** freigeschaltet: Erst erledigen die Spieler einige Quests bei dieser Figur, später folgt eine Boss-Reihe; der Alchemy Table von Blue Skies gehört mit hinein.
 - Später wird er für die Reparatur des Altars in der Hauptstory **Pflicht** (erst optional, dann Pflicht).
+- 🟢 **Der Strang ist der Einstieg in die Blue-Skies-Welten** (User, 2026-10-21, O34): Über das Haus kommen die Spieler zum ersten Mal nach Everbright und Everdawn. Rest offen, Vorschläge in Abschnitt 5 („Blue-Skies-Haus einbinden“).
 - Aus den Notizen des Users (Wortlaut sinngemäß): Der Droide findet den Meister nicht, hat aber „etwas aus seiner eigenen Welt“ gefunden, das Haus, über das man in die Traumwelten reisen kann. Er empfiehlt, den dortigen Herrscher aufzusuchen; der hilft, an Erze aus seiner Welt zu kommen, vor allem die Mekanism-Erze, die es in der Overworld nur wenig gibt. 🔵 Offen: siehe O34.
 - Ein hinterlassener Text des Meisters gibt den Hinweis: Die Spieler brauchen das Elfenportal beziehungsweise die Macht daraus.
 - Das Betreten der Elfenwelt (Alfheim, über MythicBotany) kommt erst später: zusammen mit der Jedi-Ausbildung und den Raketen T5 und T6.
@@ -247,6 +254,61 @@ Durchsetzung im Spiel (🔵 alles ungeprüft):
 - **Checkliste per KubeJS:** Eine eigene FTB-Quests-Aufgabe prüft, ob im Umkreis des Spielers auf dem Mars bestimmte Blöcke stehen (Sauerstoffverteiler, Energiespeicher, Landeplatz, Bett, Mekanism-Maschinen).
 - **Block nur auf dem Mars:** Ein eigenes „Relais“ lässt sich per KubeJS nur auf dem Mars setzen und wird für die nächste Quest gebraucht.
 - **Wirtschaftlicher Druck:** Treibstoff ist teuer; wer Ostrum und Fluorit vor Ort verarbeitet, spart Flüge. Erzwingt nichts, macht die Basis aber sinnvoll.
+
+### Tagebuch-Ausschnitte vom Droiden (O6, Vorschlag 2026-10-21)
+
+Zwei Texte auseinanderhalten: Die **Ausschnitte** gibt der Droide ab dem Einschlag (Zeit vor dem Tempel); das **Tagebuch des Meisters** liegt mit dem Relikt in der Altar-Dimension (Zeit danach, O4).
+
+- **Form:** Der Datenspeicher des Meisters ist beim Einschlag beschädigt worden. DD3R8 entschlüsselt ihn Stück für Stück; jeder entschlüsselte Teil ist ein geschriebenes Buch „Logbuch des Meisters, Teil n“. Das erklärt, warum die Teile nach und nach kommen.
+- **Freigabe:** als Belohnung der Story-Quest, die ein Kapitel abschließt (FTB-Belohnung „Item“, Team Reward), nicht über Dialog-Befehle. So verpasst keiner einen Teil.
+- **Rätsel:** Jeder Teil deutet auf das nächste Ziel, ohne es zu nennen. Die Spieler raten, die nächste Quest bestätigt es. Keine Rätsel mit Eingabe, nur Hinweise.
+- **Fünf Teile:**
+
+| Teil | Wann | Kern (den Wortlaut schreibt der User) | Deutet auf |
+|---|---|---|---|
+| 1 | Einschlag, K1 | Mission in einem fremden System; „die dritte Welt trägt Leben“ | warum der Droide auf der Erde ist |
+| 2 | nach „Würdig sein“, K2 | Notiz über Welten aus Licht und Dämmerung „hinter Toren aus blauem und mondhellem Stein“; Metalle, die diese Welt nicht hat | Blue-Skies-Haus, Zinn und Osmium (O34) |
+| 3 | vor dem Mondflug, K3/K4 | „Der Begleiter dieser Welt schweigt. Jemand verbirgt sich dort.“ | Mond, Einsiedler, Abschirmung |
+| 4 | Mars-Station steht, K7 | Bruchstück eines Signals: „die heißeste Welt nahe dem Stern“, ein alter Tempel | Merkur |
+| 5 | vor dem Altar, K8/K9 | Warnung: Das Relikt „ruft im Blut“; wer sich ihm nähert, braucht Schutz | Blood Magic als dunkle Seite, Amulett (F18) |
+
+### Einsiedler: Höhle und Klonhelm (O25, Vorschlag 2026-10-21)
+
+- **Höhle:** auf dem Mond, wenige Dutzend Blöcke von der Mondbasis. Der User baut sie von Hand wie die Mondbasis (oder als Struktur per `/place template`). Klein: ein Gang, zwei, drei Räume, eine Truhe mit dem kaputten Helm. Gegner: zwei, drei Spawner mit Ad-Astra-Wesen (welche auf den Mond passen, im Spiel prüfen). Ohne Raumanzug geht es nicht, das ist gewollt. Eine Schutzzone (`schutzzonen.js`) um die Höhle verhindert, dass man sich einfach zur Truhe gräbt.
+- **Wie die Spieler davon erfahren:** Der Einsiedler erwähnt im ersten Gespräch nur, dass er „da unten etwas verloren“ hat und nicht mehr hinwill. Damit startet die Quest.
+- **Item:** `kubejs:kaputter_klonhelm` (Textur: Helm von `swgc:clone_phase_2_helmet`, abgedunkelt, mit Riss). Nicht tragbar, liegt nur in der Truhe.
+- **Reparatur an der Werkbank** mit Technik aus K3/K4, die die Spieler zu dem Zeitpunkt haben:
+
+```
+S C S
+G H G
+S T S
+```
+
+  H kaputter Helm, S Stahlplatte (`immersiveengineering:plate_steel`), G Isolierglas für das Visier (`immersiveengineering:insulating_glass`), C Basic Control Circuit (`mekanism:basic_control_circuit`) für die Anzeige im Helm, T Elektronenröhre (`immersiveengineering:electron_tube`) für den Funk. Alle IDs stehen im ProbeJS-Dump.
+- **Ergebnis:** eigenes Item `kubejs:klonhelm_repariert` („Klonhelm des Einsiedlers“), nicht der tragbare Helm aus Galaxy in a Cube; sonst gäbe es die Klonrüstung ohne Bauplan. Abgabe im Dialog (Bedingung „Item im Inventar“, `clear`, `tag @a add einsiedler_vertrauen`). Danach öffnen Shop und Nebenquests.
+- **Geste zum Dank (Vorschlag):** Er schenkt den Spielern ihren ersten Bauplan (Assembly Bench) und damit das Bauplan-Buch.
+- Alternative zur Werkbank: Reparatur im Metallurgic Infuser oder an der Engineer's Workbench von IE. Die Werkbank ist am einfachsten und zeigt die Zutaten in JEI.
+
+### Blue-Skies-Haus einbinden (O34, Vorschlag 2026-10-21)
+
+Vorgabe des Users: Der Strang ist der Start der Blue-Skies-Welten.
+
+- **Wann:** Anfang K3, dort kommt laut Kapiteltabelle Everbright. Anlass: Für Bronze und den Ausbau von Mekanism braucht es Zinn, das es in der Overworld gar nicht gibt, und mehr Osmium. Zinn gibt es reichlich in Everbright, Osmium in Everdawn (`03_ERZGENERATION.md`). Das deckt sich mit der Notiz des Users, der Herrscher helfe an die Mekanism-Erze.
+- **Wann erzählt der Droide davon:** gleich nach „Würdig sein“, zusammen mit Logbuch-Teil 2. DD3R8 hat beim Absturz ein Haus in der Nähe „gemessen“: Die Steine dort schwingen ähnlich wie Dinge aus seiner Heimat. Das ist „etwas aus seiner eigenen Welt“, aber nur eine Ähnlichkeit: Licht und Dämmerung, wie die helle und die dunkle Seite der Macht. Der Droide versteht es selbst nicht.
+- **Herrscher und Figur sind eine Person:** Die Easy-NPC-Figur im Haus **ist** der Herrscher der Traumwelten, im Exil. Die vier Blue-Skies-Bosse haben seine Welten an sich gerissen. So erklärt sich die Boss-Reihe von selbst (er will sie zurück), und eine zweite Figur ist nicht nötig.
+- **Ablauf:**
+  1. (K3, Hauptquest) Das Haus finden, mit dem Herrscher reden.
+  2. (K3) Bei ihm Zünder (Zeal Lighter) und Buch (Blue Journal) holen, das Portal nach Everbright bauen, erstes Zinn bringen.
+  3. (K4) Portal nach Everdawn, Osmium bringen. Danach ist der Strang zunächst Nebenquest.
+  4. (K5/K6, Nebenquest) Boss-Reihe: Summoner, Alchemist, Starlit Crusher, Arachnarch; Alchemy Table nach dem Alchemist.
+  5. (K8, ab hier Pflicht) Die vier Arcs stecken schon im Galaktischen Strahlenschutz (F14). Für die Altar-Reparatur gibt der Herrscher nach dem letzten Boss als Dank ein eigenes Item, etwa „Siegel der Traumwelten“, das als Zutat dient. Alternativ reichen die Arcs, und der Herrscher steuert nur Story bei.
+- **Was die Figur handelt:** was sonst der Gatekeeper verkauft (Zeal Lighter, Blue Journal; nach den Blinding Dungeons die Schlüssel), zu ähnlichen Preisen wie das Original (Preise im JAR noch nicht ausgelesen). Keine Credits, die gibt es nur beim Einsiedler.
+- **Technik:** Den echten Gatekeeper per Skript nicht mehr erscheinen lassen (wie `galaxy_overworld.js`), sonst kauft man in jedem Haus. Die Figur steht in genau einem Haus, das der User auswählt; der Droide nennt Richtung oder Koordinaten.
+
+### Relikt und Strahlenschutz (Widerspruch aus O4, Vorschlag 2026-10-21)
+
+Laut F14 geht das Relikt im Galaktischen Strahlenschutz auf. Nach O4 sollen die Spieler es aber zum Meister bringen. Vorschlag, ohne die Skripte zu ändern: Der Strahlenschutz ist das Gehäuse, das der Elf **um** das Relikt baut. Es schirmt die Rakete gegen das Relikt ab und kommt zugleich durch die Barriere des Meisters, weil die das Relikt erkennt. Das Relikt fliegt also im Triebwerk mit nach Glacio, dort nimmt der Meister es heraus. Der Tooltip des Strahlenschutzes kann das andeuten.
 
 ### Übrige
 

@@ -70,14 +70,11 @@ Welche Jedi- und Sith-Artefakte, und wie hängen sie an den Machtpunkten?
 
 | Nr. | Frage |
 |---|---|
-| O4 | Aus welchem Grund musste der Meister vorzeitig fliehen? (Ziel Glacio und der „Helle Elf“ entschieden 2026-10-20) |
-| O6 | Tagebuch: wie viele Ausschnitte, wann freigegeben, welche Rätsel? |
-| O7 | Name des Droiden; bleibt er in der Basis oder taucht er an weiteren Orten auf? |
-| O8 | Große Ziele zwischen Mond und Tempel: Mars und Venus haben noch keine Story; ebenso Everbright, Everdawn, Mekanism und AE2. |
-| O9 | Welche Anspielungen auf Star Wars streut Part 1, und wann wird das Geheimnis offen ausgesprochen? |
-| O15 | Schicksal des Droiden: weg oder zerstört? Wer gibt danach die großen Ziele? Kommt er zurück? |
-| O25 | Einsiedler: Name, Volk; welche Quest gewinnt sein Vertrauen? (User: später) |
-| O34 | Blue-Skies-Haus: Ist der „Herrscher“ die Figur im Haus oder eine zweite? Wann erzählt der Droide davon? Was heißt „aus seiner eigenen Welt“? Was liefert der Strang für die Altar-Reparatur, und was handelt die Figur? |
+| O6 | Tagebuch-Ausschnitte vom Droiden: Vorschlag liegt vor (fünf Teile „Logbuch des Meisters“, `18_STORY.md` Abschnitt 5), wartet auf den User |
+| O8 | Rest: Brauchen Mekanism und AE2 in Teil 1 Story, oder reichen Questtexte? (Mars, Venus, Everbright und Everdawn beantwortet 2026-10-21) |
+| O25 | Einsiedler: Name offen; Höhle und Reparatur des Klonhelms als Vorschlag in `18_STORY.md` Abschnitt 5, wartet auf den User (Klon-Veteran und Helm-Quest entschieden 2026-10-21) |
+| O34 | Blue-Skies-Haus: Vorschlag liegt vor (`18_STORY.md` Abschnitt 5: Figur = Herrscher im Exil, Start K3, Handel wie der Gatekeeper), wartet auf den User. Entschieden: Start der Blue-Skies-Welten |
+| O43 | Relikt und Strahlenschutz: Das Relikt steckt im Strahlenschutz (F14), soll aber zum Meister (O4). Vorschlag in `18_STORY.md` Abschnitt 5 |
 ### Story, Part 2 und 3 (später)
 
 | Nr. | Frage |
@@ -124,6 +121,10 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 
 | Nr. | Antwort | Datum | Eingetragen in |
 |---|---|---|---|
+| O4 | Im Dungeon von dunklen Wesen umzingelt; das Relikt hätte ihn von innen zerstört, er floh ohne es nach Glacio (Heimat der hellen Macht) und schrieb ins Tagebuch, wer unbefleckt von der Macht sei, solle es ihm bringen | 2026-10-21 | `18_STORY.md` |
+| O7, O15 | Droide **DD3R8**: Overworld, dann Mars-Station; verschwindet, sobald die Spieler das Relikt haben; wieder da beim Meister auf Glacio (mit der Macht geholt). Danach führen Tagebuch und Elf | 2026-10-21 | `18_STORY.md` |
+| O8 (Teil) | Mars ist der Horchposten, Venus nur wegen der Rohstoffe interessant; keine weitere Story | 2026-10-21 | `18_STORY.md` |
+| O9 | Das Geheimnis legt der Meister im Training offen (Teil 2). Anspielungen nur in den Dialogen der Figuren, die der User schreibt; Questtexte erwähnen Star Wars nicht | 2026-10-21 | `18_STORY.md` |
 | O13 | T5 Endor, T6 Tatooine, Hoth, Mustafar, T7 Mandalore | 2026-10-14 | `18_STORY.md`, `15_RAUMFAHRT.md` |
 | O32 | Bauplan schaltet beim Kauf frei, bleibt erhalten; Steuerkern je Droide | 2026-10-14 | `18_STORY.md` |
 | – | Rumpf T5 aus Etrium | 2026-10-19 | `15_RAUMFAHRT.md`, Meilensteinkarte |
