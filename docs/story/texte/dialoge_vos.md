@@ -5,7 +5,7 @@
 > **Leitlinien dieses Entwurfs**
 > - Teil 1 endet hier. Das Geheimnis legt der Meister erst im Training offen (O9, Teil 2). Hier gibt es nur Andeutungen: Er spürt das Relikt, er „liest“ Dinge, er erkennt, dass die Spieler „hell“ sind, er bietet an, ihnen etwas zu zeigen.
 > - Charakter (Vorschlag nach dem Kanon): ein Abenteurer mit Charme und losem Mundwerk, müde, aber nicht gebrochen. Er macht Witze über seine Lage. Ein Schatten bleibt: Er sagt ehrlich, dass er das Relikt wollte.
-> - Sein Name fällt in Teil 1 nicht; er lässt sich „Meister“ nennen wie vom Droiden (siehe „Offen“).
+> - Er stellt sich auf Glacio als **Quinlan** vor (User, 2026-10-21, O59), nur mit Vornamen; „Meister“ darf bleiben. Was er ist, erfahren die Spieler erst im Training.
 > - Psychometrie als leiser Humor: Er berührt die Hand eines Spielers und erzählt, was er „sieht“, aus dem Alltag der Spieler.
 > - Er kennt Meister Cerina nicht (User, 2026-10-21, O58); er weiß nur von einem „Hellen Elfen“.
 > - Das Relikt steckt im Galaktischen Strahlenschutz im Triebwerk der Rakete T4 (O43). Er nimmt es heraus, ohne dass die Spieler etwas abgeben müssen.
@@ -21,7 +21,7 @@ Scoreboard `story`, Eintrag `#vos` (B2): 1 = im Versteck erschienen (Belohnung v
 - **[Bist du der Meister?]** → `q1_meister`
 
 #### `q1_meister` · Prio 0
-> So nennt mich der Droide. Bleibt dabei, das macht ihn glücklich, und ein glücklicher Droide redet weniger. Meistens. Ihr habt mein Tagebuch gelesen.
+> Quinlan. Der Droide sagt Meister, bleibt ruhig dabei, das macht ihn glücklich. Ein glücklicher Droide redet weniger. Meistens. Ihr habt mein Tagebuch gelesen.
 - **[Und dein Relikt gebracht]** → `q1_relikt`
 
 #### `q1_relikt` · Prio 0
@@ -102,7 +102,7 @@ Ab Teil 2 folgen hier die Dialoge der Ausbildung.
 
 ## Offen beim Überarbeiten
 
-- **Sein Name:** Im Entwurf nennt er ihn nicht und lässt sich „Meister“ nennen. Soll er sich in Teil 1 schon als Quinlan vorstellen, oder erst im Training?
+- 🟢 **Sein Name** (User, 2026-10-21, O59): Er stellt sich als Quinlan vor (`q1_meister`).
 - **Aussehen** (`q1_treffen`): „Haut gezeichnet von Kälte und Narben“ passt auf jeden Skin. Vos hat als Kiffar eine gelbe Gesichtsmarkierung; die kann der Text nennen, wenn der Skin sie zeigt (`skin/Quinlan-Vos.png`).
 - **„Ich wollte es trotzdem“** (`q1_was`) nimmt den Hang zur dunklen Seite aus Logbuch Teil 5 auf.
 - **Davijaan:** Vos erwähnt ihn nicht. Ein späteres Wiedersehen (Teil 2) bleibt offen.

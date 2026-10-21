@@ -118,6 +118,7 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 
 | Nr. | Antwort | Datum | Eingetragen in |
 |---|---|---|---|
+| O59 | Der Meister stellt sich auf Glacio als „Quinlan“ vor (nur Vorname); was er ist, kommt erst im Training | 2026-10-21 | `story/texte/dialoge_vos.md` |
 | O58 | Quinlan Vos und Meister Cerina (Vernestra Rwoh) kennen sich nicht; er weiß nur vom „Hellen Elfen“ | 2026-10-21 | `18_STORY.md`, `story/texte/dialoge_cerina.md` |
 | O57 | Der Altar im Tempel war intakt und zerbrach beim Sog, der den Meister in die Dimension zog | 2026-10-21 | `18_STORY.md`, `story/texte/logbuch.md` |
 | O53 | K5 schließt mit dem Auftrag „Treibstoff für den Mars“: Abgabe von entschwefeltem Diesel und Advanced Control Circuit beim Droiden | 2026-10-21 | `story/ABLAUF.md` |
