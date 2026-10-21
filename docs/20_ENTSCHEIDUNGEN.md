@@ -71,6 +71,7 @@ Welche Jedi- und Sith-Artefakte, und wie hängen sie an den Machtpunkten?
 | Nr. | Frage |
 |---|---|
 | O8 | Rest: Brauchen Mekanism und AE2 in Teil 1 Story, oder reichen Questtexte? (Mars, Venus, Everbright und Everdawn beantwortet 2026-10-21) |
+| O46 | Wer steckt hinter Meister Cerina (weibliche, nicht menschliche Jedi)? Vorschlag Katooni (Alternative Vernestra Rwoh) in `18_STORY.md` Abschnitt 5, wartet auf den User |
 ### Story, Part 2 und 3 (später)
 
 | Nr. | Frage |

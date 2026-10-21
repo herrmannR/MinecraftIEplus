@@ -338,6 +338,19 @@ Wunsch des Users: ein eher unbekannter Jedi mit Hang zur dunklen Seite. 🟢 Ent
 - **Haken:** Vos ist bei Star-Wars-Fans bekannter als Odd Ball, in den Filmen aber nicht zu sehen.
 - **Andere Möglichkeit:** Taron Malicos (Spiel „Jedi: Fallen Order“): Jedi-Meister, nach Order 66 auf Dathomir gestrandet und durch die Magie der Nachtschwestern gefallen, also noch dunkler. Er ist im Spiel ein Gegner und wird dort besiegt, wahrscheinlich tot; als Lehrer passt er schlechter.
 
+### Der Elf: wer hinter Meister Cerina steckt (O46, Vorschlag 2026-10-21)
+
+Wunsch des Users: eine Jedi, weiblich, nicht menschlich. Der Name „Meister Cerina“ bleibt; Vorschlag: So nennen sie die Elfen von Alfheim, ihr alter Name kommt erst in Teil 2 durch den Meister heraus.
+
+- **Vorschlag: Katooni**, Tholothianerin (Kopf mit Fühlern statt Haaren, große Augen). In „The Clone Wars“ (Staffel 5, „The Gathering“) ist sie ein Jüngling (Jedi-Kind), das mit Ahsoka und dem Droiden Huyang nach Ilum fliegt und dort in der Kristallhöhle ihren Kyberkristall findet. Erst zweifelt sie an sich, dann gibt sie nicht auf. Ihr Schicksal nach Order 66 bestätigt der Kanon nicht; Fan-Wikis halten sie für tot beim Angriff auf den Tempel, belegt ist das nicht (Stand der Suche 2026-10-21).
+- **Warum sie passt:**
+  - Als Jüngling ist sie dem Tempel entkommen und als Kind in eine fremde Welt geflohen. Die Elfen haben sie aufgenommen und groß werden lassen; daher der Elfenname.
+  - Sie kennt Kristalle. Das erklärt, warum der Meister zu ihr will, um die Macht des Relikts zu erkunden, und warum sie den Galaktischen Strahlenschutz **um** das Relikt bauen kann (O43): Sie bändigt, was im Relikt steckt, wie man einen Kristall zur Ruhe bringt.
+  - Ilum ist ein Eisplanet mit Kristallhöhlen, Glacio ist auch einer. Sie ahnt, wo sich der Meister versteckt.
+  - Als Gegenstück zu Vos steht sie fest auf der hellen Seite. Sie misstraut dem Relikt und sagt darum wenig dazu (passt zu „will oder kann nicht viel sagen“).
+  - Sie war nie Meisterin im Orden; „Meister“ ist der Titel, den ihr die Elfen geben. Das kann Vos in Teil 2 mit einem Lächeln anmerken.
+- **Andere Möglichkeit: Vernestra Rwoh**, Mirialanerin (grüne Haut, Gesichtsmarkierungen), aus den Büchern der Hohen Republik und der Serie „The Acolyte“, kämpft mit einer Lichtpeitsche. Mirialaner sollen je nach Verbindung zur Macht bis zu 200 Jahre alt werden, das klingt sehr nach Elfen. Haken: Zur Zeit der Klonkriege wäre sie schon rund 230 Jahre alt, und am Ende von „The Acolyte“ vertuscht sie die Wahrheit vor dem Senat, ist also nicht ganz sauber.
+
 ### Übrige
 
 - **Kaputte Multiblöcke:** Die Druckwelle des Einschlags erklärt, warum alle IE-Multiblöcke neu geformt werden müssen; „Basis wieder aufbauen“ als Teil der ersten Quest.
