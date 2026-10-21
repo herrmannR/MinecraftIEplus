@@ -118,6 +118,7 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 
 | Nr. | Antwort | Datum | Eingetragen in |
 |---|---|---|---|
+| O57 | Der Altar im Tempel war intakt und zerbrach beim Sog, der den Meister in die Dimension zog | 2026-10-21 | `18_STORY.md`, `story/texte/logbuch.md` |
 | O53 | K5 schließt mit dem Auftrag „Treibstoff für den Mars“: Abgabe von entschwefeltem Diesel und Advanced Control Circuit beim Droiden | 2026-10-21 | `story/ABLAUF.md` |
 | O54 | Das Wesley's-Item der Altar-Reparatur ist der Orb of the Deep (`wrd:orb_of_the_deep`) | 2026-10-21 | `story/ABLAUF.md`, F8 |
 | O55 | Figuren an Orten, die die Spieler bauen (Mars-Station, Elfenportal, Vos in der Basis), setzt der User von Hand per fertigem Befehl | 2026-10-21 | `story/ABLAUF.md` |
