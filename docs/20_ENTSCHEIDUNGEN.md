@@ -70,7 +70,9 @@ Welche Jedi- und Sith-Artefakte, und wie hängen sie an den Machtpunkten?
 
 | Nr. | Frage |
 |---|---|
-| O8 | Rest: Brauchen Mekanism und AE2 in Teil 1 Story, oder reichen Questtexte? (Mars, Venus, Everbright und Everdawn beantwortet 2026-10-21) |### Story, Part 2 und 3 (später)
+| – | Alle Story-Fragen für Part 1 sind beantwortet (2026-10-21). |
+
+### Story, Part 2 und 3 (später)
 
 | Nr. | Frage |
 |---|---|
@@ -124,7 +126,7 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 | O46 | Hinter Meister Cerina steckt die Mirialanerin **Vernestra Rwoh** (Jedi, Lichtpeitsche); Katooni verworfen | 2026-10-21 | `18_STORY.md` |
 | O4 | Im Dungeon von dunklen Wesen umzingelt; das Relikt hätte ihn von innen zerstört, er floh ohne es nach Glacio (Heimat der hellen Macht) und schrieb ins Tagebuch, wer unbefleckt von der Macht sei, solle es ihm bringen | 2026-10-21 | `18_STORY.md` |
 | O7, O15 | Droide **DD3R8**: Overworld, dann Mars-Station; verschwindet, sobald die Spieler das Relikt haben; wieder da beim Meister auf Glacio (mit der Macht geholt). Danach führen Tagebuch und Elf | 2026-10-21 | `18_STORY.md` |
-| O8 (Teil) | Mars ist der Horchposten, Venus nur wegen der Rohstoffe interessant; keine weitere Story | 2026-10-21 | `18_STORY.md` |
+| O8 | Mars ist der Horchposten, Venus nur wegen der Rohstoffe interessant; Mekanism und AE2 brauchen in Teil 1 keine Story, die Questtexte reichen | 2026-10-21 | `18_STORY.md` |
 | O9 | Das Geheimnis legt der Meister im Training offen (Teil 2). Anspielungen nur in den Dialogen der Figuren, die der User schreibt; Questtexte erwähnen Star Wars nicht | 2026-10-21 | `18_STORY.md` |
 | O13 | T5 Endor, T6 Tatooine, Hoth, Mustafar, T7 Mandalore | 2026-10-14 | `18_STORY.md`, `15_RAUMFAHRT.md` |
 | O32 | Bauplan schaltet beim Kauf frei, bleibt erhalten; Steuerkern je Droide | 2026-10-14 | `18_STORY.md` |

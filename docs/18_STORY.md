@@ -90,7 +90,7 @@
 - Die Spieler müssen die Station zuerst bauen. Umsetzung ohne Prüfskript (User, 2026-10-20, O22): Quest 1 ist eine Checkliste aller Items für die Basis; Quest 2 heißt „Baut die Basis und haltet euch zu dritt dort auf“. Sind alle drei da, setzt der User den Tag per Befehl, und die Quest ist erfüllt.
 - Erst dann kommt der Droide auf den Mars und bleibt dort: Er erscheint per Befehl in der Station und verschwindet gleichzeitig aus der Basis auf der Erde (O23, 2026-10-20).
 - Von dort fängt er die Spur auf, die zum Merkur führt.
-- 🟢 **Venus** (User, 2026-10-21, O8): ohne eigene Story, interessant wegen guter Rohstoffe (Uran, Blei, Calorite; `03_ERZGENERATION.md`). Mehr Story brauchen Mars und Venus nicht.
+- 🟢 **Venus** (User, 2026-10-21, O8): ohne eigene Story, interessant wegen guter Rohstoffe (Uran, Blei, Calorite; `03_ERZGENERATION.md`). Mehr Story brauchen Mars und Venus nicht; Mekanism und AE2 bekommen in Teil 1 keine Story, die Questtexte reichen (User, 2026-10-21).
 - Die Spieler müssen zum Mars fliegen, um beim Droiden Quest-Items abzugeben und die nächsten Schritte freizuschalten (User, 2026-10-14). Die großen Ziele kommen also nicht per Funk.
 
 **Der Einsiedler auf dem Mond (User, 2026-10-14)**
