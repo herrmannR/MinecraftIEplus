@@ -55,12 +55,12 @@ Die fünf Skripte für 1.18.2 (`space_oxygen.js`, `moon_ores.js`, `tf_industrial
 | `config-overrides/config/alexsmobs.toml` | `limitTransmutingToLootTables = true`. | F16 |
 | `server_scripts/starwars/galaxy_overworld.js` | Keine Tusken Raider von Galaxy in a Cube in der Overworld (eigener Spawner im Code, per Datapack nicht abschaltbar). Ewok-Dörfer und Jawas laufen über `kubejs/data/swgc/`. | E20, Test 54 |
 
-#### Kaleidoscope ohne Dopplungen (2026-10-20, 🔵 ungetestet, Tests 65–72)
+#### Kaleidoscope ohne Dopplungen (2026-10-20, 🟢 getestet, Tests 65–72 am 2026-10-21)
 
 | Datei | Aufgabe | Entscheidung |
 |---|---|---|
-| `server_scripts/crossmod/kaleidoscope_einheitlich.js` | Tabelle `ERSETZEN` (Verlierer → Gewinner, 25 Einträge; einzige Quelle) und die Tags: Verlierer raus (außer FD-Messer), Gewinner rein. | User, 2026-10-20 |
-| 193 Dateien in `kubejs/data/` (Liste: `tools/kaleidoscope_daten.liste`) | Erzeugt mit `tools/kaleidoscope_daten.py` aus der Tabelle. Rezepte: 103 mit Gewinner unter derselben ID überschrieben, 10 Dubletten und 10 ersatzlose (Geräte) sowie alle 22 Rezepte des Kaleidoscope-Bretts mit `forge:false` abgeschaltet; neu in `ieplus/recipes/einheitlich/`: 9 Brett-Rezepte (Umzug aufs FD-Brett, Rindfleisch → Hackfleisch + Würfel), 10 Umwandlungen von FD-Altbestand. Loot: 29 Tabellen und Modifier (Pflanzen, Truhen, Zwiebel von Zombies, FD-Herd → KC-Herd). Fassung 1 legte die Rezepte per `event.custom` an; das scheiterte an den Schemas der KubeJS-Addons (Test 65). Nach Mod-Updates neu laufen lassen. | wie oben |
+| `server_scripts/crossmod/kaleidoscope_einheitlich.js` | Tabelle `ERSETZEN` (Verlierer → Gewinner, 26 Einträge, seit Test 66 mit dem Blackstone-Herd von Nether's Delight; einzige Quelle) und die Tags: Verlierer raus (außer FD-Messer), Gewinner rein. | User, 2026-10-20 |
+| 196 Dateien in `kubejs/data/` (Liste: `tools/kaleidoscope_daten.liste`) | Erzeugt mit `tools/kaleidoscope_daten.py` aus der Tabelle. Rezepte: 103 mit Gewinner unter derselben ID überschrieben, 10 Dubletten und 11 ersatzlose (Geräte) sowie alle 22 Rezepte des Kaleidoscope-Bretts mit `forge:false` abgeschaltet; neu in `ieplus/recipes/einheitlich/`: 9 Brett-Rezepte (Umzug aufs FD-Brett, Rindfleisch → Hackfleisch + Würfel), 11 Umwandlungen von Altbestand (FD-Zutaten, FD-Herd, Blackstone-Herd). Loot: 30 Tabellen und Modifier (Pflanzen, Truhen, Zwiebel von Zombies, FD- und Blackstone-Herd → KC-Herd). Fassung 1 legte die Rezepte per `event.custom` an; das scheiterte an den Schemas der KubeJS-Addons (Test 65). Nach Mod-Updates neu laufen lassen. | wie oben |
 | `config-overrides/config/farmersdelight-common.toml` | Bauern- und Händler-Handel von Farmer's Delight aus, keine FD-Pflanzen in Dorffeldern (sonst kämen Verlierer-Items ins Spiel). | wie oben |
 
 ### Datapack (`kubejs/data/`)

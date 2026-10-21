@@ -38,6 +38,7 @@
 
 - Rezepte nutzen Forge-Tags (`#forge:ingots/iron`, `#forge:crops/*`, `#forge:milk`, `#forge:raw_*`) – Mekanism (12 Rezepte) und Alex's Delight (eigener Ordner `recipes/cooking`) docken an.
 - Engineer's Delight überschreibt die IE-Sawmill-Rezepte für 11 Holzarten (Tree Bark statt nur Sägemehl) – bei KubeJS-Änderungen am Sawmill beachten.
+- Zusammenführung mit Kaleidoscope (2026-10-20, getestet 2026-10-21): Tabelle `ERSETZEN` in `kubejs/server_scripts/crossmod/kaleidoscope_einheitlich.js`. Im Pack entfallen von FD/ND: Tomato, Tomato Seeds, Rice, Rice Panicle, Cooked Rice, Fried Egg, Wheat Dough, Raw Pasta, Onion, Stove, Blackstone Stove, Iron-/Golden-/Diamond-/Netherite Knife (Flint Knife bleibt), dazu Engineer's-Delight-Mehl. FD gewinnt bei Mutton Chops, Dumplings, Bacon, Chicken Cuts, Cod/Salmon Slice, Rice Bale und beim Cutting Board. Die Seite zeigt die Original-Items.
 - Siehe `CROSSMOD_AUFFAELLIGKEITEN.md` I7 und FD1–FD4.
 
 ## Offen

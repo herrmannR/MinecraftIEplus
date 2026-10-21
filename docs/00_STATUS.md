@@ -9,7 +9,7 @@ Minecraft **1.20.1, Forge 47.4.26** (Wechsel von 1.18.2 am 2026-10-11). Erledigt
 
 **Als Nächstes (Ziel: Teil 1 fertig):** Die Entscheidungen und Skripte für Teil 1 stehen (`10_KUBEJS.md`, Abschnitt „Teil 1“). Die Tests 42–61 sind alle bestanden (2026-10-20); Test 49 entfällt (O40). Danach bleiben für Teil 1 nur Easy-NPC-Dialoge und Questbuch.
 
-**Neu (2026-10-20):** Kaleidoscope (Wunsch eines Mitspielers) ist ohne Dopplungen mit Farmer's Delight zusammengeführt; Tests 65–72 bestanden (2026-10-21).
+**Abgeschlossen (2026-10-21):** Kaleidoscope (Wunsch eines Mitspielers) ist ohne Dopplungen mit Farmer's Delight zusammengeführt und getestet (Tests 65–72). Offen dazu nur F30 (Mühlstein vervielfacht Erze) und die Pflichtgewürze (P16).
 
 ### Fahrplan
 

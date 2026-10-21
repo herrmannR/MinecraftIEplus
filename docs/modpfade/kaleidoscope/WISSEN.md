@@ -44,13 +44,13 @@
 
 ## Pack-Bezug
 
-- Zusammenführung mit Farmer's Delight per KubeJS (Gewinner/Verlierer-Tabelle `ERSETZEN`); Rezepte und Loot als Datapack-Dateien von `tools/kaleidoscope_daten.py`. Auf der Seite stehen die Original-Items (z. B. Chopping Board, Raw Pork Belly), im Pack gelten teils die FD-Gewinner.
+- Zusammenführung mit Farmer's Delight per KubeJS (Gewinner/Verlierer-Tabelle `ERSETZEN`); Rezepte und Loot als Datapack-Dateien von `tools/kaleidoscope_daten.py`. Auf der Seite stehen die Original-Items (z. B. Chopping Board, Raw Pork Belly), im Pack gelten teils die FD-Gewinner. Getestet 2026-10-21 (Tests 65–72). Herd vor dem Kochen mit Feuerzeug anzünden; Wok per Rechtsklick (Öl, Zutaten, Kochschaufel zum Wenden, Gefäß zum Anrichten).
 - Mühlstein = Erzvervielfachung ohne Strom (CROSSMOD KS1).
 - Siehe `CROSSMOD_AUFFAELLIGKEITEN.md` KS1–KS4.
 
 ## Offen
 
-- Effekte und Dauer je Gericht/Getränk (außer Spießen), Sättigung, Wachstumszeiten, Handel des Chef, die drei Pflichtgewürze, Herkunft Dragon Egg Powder, Beute des Suspicious Purpur Block, Wildreben-Entstehung (Code).
+- Effekte und Dauer je Gericht/Getränk (außer Spießen), Sättigung, Wachstumszeiten, Preise des Chef (Angebote nur Kaleidoscope-Items, Test 72), die drei Pflichtgewürze, Herkunft Dragon Egg Powder, Beute des Suspicious Purpur Block, Wildreben-Entstehung (Code).
 
 ## IDs der Seite
 

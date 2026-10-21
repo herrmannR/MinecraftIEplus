@@ -45,6 +45,10 @@ AT-RT, AT-ST und Delta-7B (`swgc:atrt`, `swgc:atst`, `swgc:delta7b`) haben im Mo
 Galaxy in a Cube setzt sie nur über einen eigenen Spawner im Code, der nur in der Overworld läuft (Test 54); in der Overworld sind sie jetzt per `galaxy_overworld.js` abgefangen. Auf Tatooine kommen sie also nicht von selbst. Weg: Forge-Biome-Modifier `add_spawns` für `swgc:tusken_raider` in `swplanets:tatooine_desert` und `swplanets:tatooine_rocky_desert` (oder Tag `swplanets:tatooine_like`); vorher prüfen, ob das Wesen eine Spawn-Regel hat und ob Gruppe und Häuptling dann fehlen. Wie häufig, und neben den Pillar-Tusken von Star Wars Planets?
 → `17_STAR_WARS_1.20.1.md`; `modpfade/swgc/WISSEN.md`
 
+**F30 · Kaleidoscope-Mühlstein vervielfacht Erze** (Teil 1; Befund KS1, 2026-10-21)
+Mit einem angespannten Esel macht der Millstone aus Iron und Gold Ore 3 Raw, aus Copper Ore 5 Raw Copper, aus Diamond Ore 2 – ohne Strom, gleich nach Eisen. Lassen, abschwächen (z. B. 2× wie der IE-Crusher) oder die Erzrezepte entfernen und in JEI ausblenden?
+→ `modpfade/CROSSMOD_AUFFAELLIGKEITEN.md` KS1, Ü2; `questtexte/kueche.md` KU4-06
+
 **F20 · Kostenrahmen je Meilenstein** (Schritt 5, Balance)
 → `01_PROGRESSION.md`
 
@@ -106,6 +110,7 @@ Hier musst du nichts entscheiden, nur nachsehen. Testwege und Ergebnisse stehen 
 | P13 | IE | In welchem Eintrag des Handbuchs das Seismic Survey Tool steht |
 | P14 | alle | Mob-Stärke je Gebiet „schwer, aber fair“ (Test 35) |
 | P15 | FTB Quests, Easy NPC | Ist eine Stage-Aufgabe erfüllt, wenn nur ein Party-Mitglied den Tag hat? Öffnet der Shop des Einsiedlers nur unter Bedingung? Globale Bauplan-Freischaltung per Weltwert |
+| P16 | Kaleidoscope | Welche drei Gewürze die Gewürzflasche verlangt (JEI „Mixing Seasoning“). Zusammenführung und Handel des Chef: erledigt (Tests 65–72, 2026-10-21) |
 
 ### Story-Technik (noch zu klären)
 

@@ -14,7 +14,7 @@
 //    Nicht über event.custom: die Schemas der KubeJS-Addons lehnen gültige Rezepte ab (Test 65, 2026-10-20).
 //    Nach jeder Änderung der Tabelle das Werkzeug neu laufen lassen.
 //  - client_scripts/jei_ausblenden.js, config-overrides/config/farmersdelight-common.toml.
-// Stand 2026-10-20, KubeJS 2001. Fassung 2 (Rezepte als Dateien), UNGETESTET.
+// Stand 2026-10-21, KubeJS 2001. Fassung 2 (Rezepte als Dateien), getestet (Tests 65–72).
 
 // Verlierer -> Gewinner. Eine Liste heißt: Der Verlierer wird als Zutat durch jedes der Items ersetzt.
 // tools/kaleidoscope_daten.py liest diese Tabelle zwischen den Markierungen.

@@ -1287,3 +1287,45 @@ Status: 🟡
 - Test 62 ✅ und Test 64 ✅ (User).
 - Test 63 (User): Das Plastoid-Rezept ist bis zum Bauplan gesperrt und danach frei. Im Buch fehlt noch das Rezeptbild. Der Eintrag ist wie die funktionierenden Rüstungseinträge gebaut und in der Instanz aktuell. Vermutlich hat Patchouli die Seite beim Betreten der Welt gebaut, als das Rezept noch fehlte; `/reload` baut sie nicht neu (die Buch-Meldungen von 21:17 im Log stammen von Modonomicon). Prüfen nach erneutem Betreten der Welt.
 - Test 63 ✅ (User): Nach erneutem Betreten der Welt zeigt das Buch das Plastoid-Rezept. Patchouli baut die Rezeptbilder nur beim Betreten der Welt; nach `/reload` mit neuen Rezepten also Welt neu betreten.
+
+## 2026-10-21 — Modpfad-Seite Kaleidoscope und Questtexte Küche
+
+Status: 🟡
+
+### Änderung
+- Modpfad-Seite Kaleidoscope (Cookery, Tavern, Grilling, End, ImmersiveEating), sparsam gebaut: https://claude.ai/artifact/ARtUyrGSeAuncutGR6r6oV; Quelle `modpfade/kaleidoscope/`, Notiz `WISSEN.md`, Oberseite nachgezogen, Sammelseite nur in den Quellen (Handbuch nicht neu gebaut).
+- Crossmod-Befunde KS1–KS4; neu F30 (Mühlstein vervielfacht Vanilla-Erze ohne Strom) und P16.
+- Questtexte `questtexte/kueche.md`: Farmer's Delight und Kaleidoscope in einer Datei, 39 Nebenquests (KU1–KU9), Aufgaben mit den Gewinner-Items der Zusammenführung vom 2026-10-20.
+
+### Begründung
+- Wunsch des Users: Seite für den neuen Food-Mod, beide Küchen-Mods in einer Questtext-Datei.
+
+### Betroffene Bereiche
+- `docs/modpfade/`, `docs/sammelseite/` (Quellen), `docs/questtexte/`, `docs/20_ENTSCHEIDUNGEN.md`
+
+### Auswirkungen auf bestehende Welt
+- keine
+
+## 2026-10-21 — Tests 66–68 bestanden, Blackstone-Herd entfällt
+
+Status: 🟡
+
+### Änderung
+- Tests 66, 67, 68 ✅ (User).
+- Fund bei Test 66: Der Blackstone-Herd von Nether's Delight war als zweiter Herd noch da. Neu in `ERSETZEN`: `nethersdelight:blackstone_stove` → Kaleidoscope-Herd (Rezept per `forge:false` aus, JEI ausgeblendet, Abbau gibt den KC-Herd, Altbestand 1:1 umwandelbar). Den Seelenfeuer-Weg deckt das KC-Rezept mit Seelen-Lagerfeuer ab. `tools/kaleidoscope_daten.py` neu gelaufen: 196 Dateien. In die Testinstanz kopiert.
+- Test 69: „Missing heat source“ auf dem Kaleidoscope-Herd. Der Herd muss erst mit Feuerzeug oder Feuerkugel angezündet werden (Tooltip „lit with flint and steel“, Tag `kaleidoscope_cookery:lit_stove`; aus mit einer Schaufel). Kein Fehler im Pack. Wok-Ablauf (Lang-Datei und Code, `PotBlock` kennt nur Rechtsklick): Wok auf angezündete Hitzequelle, Öl hinein (Öl vom Schwein/Piglin/Hoglin mit Küchenmesser oder aus der Ölkanne unter dem Mühlstein), Zutaten per Rechtsklick, dann mit der Kochschaufel (`kaleidoscope_cookery:kitchen_shovel`) per Rechtsklick wenden, so oft wie JEI angibt („Stir-fry at least N times“), kurz warten, mit dem Gefäß (z. B. Schüssel) per Rechtsklick anrichten; ohne Gefäß Schleichen + Rechtsklick mit der Kochschaufel. Zu lange oder falsche Zutaten ergeben ein misslungenes Gericht.
+
+## 2026-10-21 — Kaleidoscope-Integration abgeschlossen
+
+Status: 🟢
+
+### Änderung
+- Tests 69–72 ✅ (User). Damit sind alle Tests der Zusammenführung bestanden (65–72). Wilder Kohl gibt FD-Kohl: so gewollt, Kohl und Salat bleiben getrennt (User).
+- Docs auf den Abschluss gezogen: `00_STATUS.md`, `10_KUBEJS.md`, `kubejs/data/README.md`, `20_ENTSCHEIDUNGEN.md` (P16 nur noch Pflichtgewürze), `questtexte/kueche.md` (⚙️-Zeilen 🟢, Herd anzünden, Blackstone-Herd, Koch-Handel), `modpfade/farmersdelight/WISSEN.md` und `modpfade/kaleidoscope/WISSEN.md` (Pack-Bezug).
+- `12_CHANGELOG.md` und `20_ENTSCHEIDUNGEN.md` waren beim Bearbeiten in einer anderen Session auf CRLF-Zeilenenden gerutscht; zurück auf LF (sonst ist im Diff jede Zeile geändert). `questtexte/kueche.md` ebenfalls LF.
+
+### Offen
+- F30: Mühlstein vervielfacht Vanilla-Erze ohne Strom (KS1). P16: Pflichtgewürze der Gewürzflasche.
+
+### Beim Host (Schritt 7)
+- Mods: Kaleidoscope Cookery, Tavern, Grilling, End, ImmersiveEating, GeckoLib; **ohne** Kaleidoscope Compat. Dazu `kubejs/` (Skript, 196 Datapack-Dateien, JEI) und `config-overrides/config/farmersdelight-common.toml`.
