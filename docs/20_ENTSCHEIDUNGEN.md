@@ -118,6 +118,10 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 
 | Nr. | Antwort | Datum | Eingetragen in |
 |---|---|---|---|
+| O53 | K5 schließt mit dem Auftrag „Treibstoff für den Mars“: Abgabe von entschwefeltem Diesel und Advanced Control Circuit beim Droiden | 2026-10-21 | `story/ABLAUF.md` |
+| O54 | Das Wesley's-Item der Altar-Reparatur ist der Orb of the Deep (`wrd:orb_of_the_deep`) | 2026-10-21 | `story/ABLAUF.md`, F8 |
+| O55 | Figuren an Orten, die die Spieler bauen (Mars-Station, Elfenportal, Vos in der Basis), setzt der User von Hand per fertigem Befehl | 2026-10-21 | `story/ABLAUF.md` |
+| O56 | Nach der Reparatur steht das komplette Ritual Pathway to the Endless Realm; aktivieren müssen es die Spieler selbst | 2026-10-21 | `story/ABLAUF.md` |
 | O47 | „Siegel der Traumwelten“ (Bodhi Bad Dur, nach dem letzten Boss) ersetzt den Dusk Arc in der Altar-Reparatur (ändert F8) | 2026-10-21 | `18_STORY.md` |
 | O48 | Altar-Reparatur per Rechtsklick mit den Zutaten; KubeJS ersetzt den kaputten Altar | 2026-10-21 | `18_STORY.md` |
 | O49 | Vier Tempelrollen als eigene KubeJS-Items; Text im Patchouli-Logbuch, Rolle bleibt für die Abgabe | 2026-10-21 | `18_STORY.md` |
@@ -161,7 +165,7 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 | O3 | Relikt und Tagebuch des Meisters liegen in der Altar-Dimension | 2026-10-20 | `18_STORY.md` |
 | F1 | 🔴 Überholt durch F26 (2026-10-20). Ursprünglich: Hauptquests aus K1–K3 stehen als „Notizen des Roboters“ im Buch und haken sich beim Öffnen selbst ab, wenn das Item da ist; Nebenquests aus K1–K3 normal mit Credits; erste Quest ist die Tinkers-Schmelze (Startgeschenk, Einführung) | 2026-10-20 | `18_STORY.md`, Questtexte |
 | F4 | „Würdig sein“: Smeltery Controller (Tinkers), LV-Kondensator (IE), 4 Manasteel-Barren (Botania) | 2026-10-20 | `18_STORY.md`, `questtexte/tinkers.md`, `ie.md`, `botania.md` |
-| F8 | Altar-Reparatur: Terrasteel, 4 Imbued Slate, ~~Dusk Arc~~ Siegel der Traumwelten (O47; Alchemist, Strang des Blue-Skies-Hauses), ein Item aus dem Pflicht-Dungeon von Wesley's (F15). Texte der Schriftrollen schreibt der User | 2026-10-20 | `18_STORY.md`, `questtexte/bloodmagic.md` |
+| F8 | Altar-Reparatur: Terrasteel, 4 Imbued Slate, ~~Dusk Arc~~ Siegel der Traumwelten (O47; Alchemist, Strang des Blue-Skies-Hauses), Orb of the Deep aus dem Pflicht-Dungeon von Wesley's (F15, O54). Texte der Schriftrollen schreibt der User | 2026-10-20 | `18_STORY.md`, `questtexte/bloodmagic.md` |
 | F14 | Der Elf fertigt den Galaktischen Strahlenschutz aus: Relikt, vier Arcs (`blue_skies:ethereal_arc`, `dusk_arc`, `nature_arc`, `poison_arc`, je sicher im Loot Bag des Bosses), Elite Control Circuit, 4 Elementium. Name und Charakter legt der User fest | 2026-10-20 | `18_STORY.md`, `questtexte/blue_skies.md` |
 | F15 | Wesley's in Teil 1: Pflicht sind Stufe 1 (Vorbereitung, Kreide) und ein Oberwelt-Dungeon (liefert das Item für F8); Rest Nebenquest bzw. Training in Teil 2 | 2026-10-20 | `18_STORY.md`, `questtexte/rld.md` |
 | O22 | Mars-Station ohne Prüfskript („wir schummeln“): Quest 1 = Checkliste aller Items für die Basis (Item-Aufgaben); Quest 2 = Basis bauen und sich zu dritt dort aufhalten. Sind alle drei da, setzt der User den Tag per Befehl und die Quest ist erfüllt | 2026-10-20 | `18_STORY.md`; Test 32 entfällt |

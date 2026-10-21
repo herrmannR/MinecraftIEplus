@@ -53,6 +53,7 @@ Die Schritte laufen in dieser Reihenfolge; 1 und 2 gehen parallel. Alle offenen 
 | `16_MODLISTE_1.20.1.md` | 🟢 Befunde zu Blue Skies und Welt-Test |
 | `17_STAR_WARS_1.20.1.md`, `recherche/` | 🟢 |
 | `18_STORY.md` | 🟡 Part 1 im Umriss, Part 2 und 3 folgen; schreibt der User |
+| `story/ABLAUF.md` | 🟡 technischer Ablauf von Teil 1: Story-Quests ST1–ST11, Auslöser, Figuren, Texte (2026-10-21) |
 | `19_HILFEBUECHER.md` | 🟢 welche Mods ein Buch im Spiel haben; Regel für die Erklärtiefe im Questbuch |
 | `meilensteine/` (samt Artifact-Seite) | 🟡 nach der Story umgebaut (2026-10-14): 51 Meilensteine, 9 Pfade, 16 Kapitel in drei Parts |
 | `erzatlas/` (samt Artifact-Seite) | 🟢 Erzverteilung |

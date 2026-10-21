@@ -365,4 +365,6 @@ Wunsch des Users: eine Jedi, weiblich, nicht menschlich. 🟢 Entschieden: **Ver
 
 ## 6. Zuordnung zur Meilensteinkarte
 
+Der technische Ablauf von Teil 1 (Story-Quests, Auslöser, Dialogstufen, Figuren) steht in `story/ABLAUF.md`.
+
 Die Kapiteltabelle (Kapitel, Progression, Story) steht nur noch in `01_PROGRESSION.md`, Abschnitt „Kapitel“; die Meilensteine selbst in `meilensteine/data.js`.
