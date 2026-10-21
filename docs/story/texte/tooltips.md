@@ -27,7 +27,7 @@ Gelesene Rollen und das Tagebuch bleiben im Inventar (B6); die Zeile „Rechtskl
 | Untertitel | Entschlüsselt von DD3R8 |
 | Startseite | Der Datenspeicher des Meisters hat beim Einschlag gelitten. DD3R8 entschlüsselt ihn Stück für Stück. Neue Teile erscheinen hier, sobald sie fertig sind. |
 | Kapitel | Logbuch (Teil 1–5) · Tempelrollen (1–4) · Tagebuch |
-| Gesperrte Einträge | Patchouli zeigt Einträge hinter einem Advancement ausgegraut an, außer sie sind als `secret` markiert; dann sind sie unsichtbar. Das Bauplan-Buch macht es schon so. 🔵 Im Spiel ansehen, wie es aussieht. |
+| Gesperrte Einträge | Patchouli zeigt Einträge hinter einem Advancement ausgegraut an, außer sie sind als `secret` markiert; dann sind sie unsichtbar. Das Bauplan-Buch nutzt kein `secret`, seine gesperrten Einträge sind also ausgegraut zu sehen. 🔵 Im Spiel ansehen, wie es aussieht. |
 
 ## Offen beim Überarbeiten
 
