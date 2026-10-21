@@ -151,4 +151,4 @@ Scoreboard `story`, Eintrag `#bodhi` (B2): 0 = noch nie gesprochen, 1 = Zinn-Auf
 - **Mengen** 16 Zinn, 16 Osmium sind weiter ein Vorschlag (ABLAUF).
 - **Handel:** Zeal Lighter, Blue Journal, nach dem ersten Turm die Blinding-Schlüssel. Preise des Gatekeepers stehen im Code und sind nicht ausgelesen (`modpfade/blue_skies/WISSEN.md`); du stellst sie im Spiel ein.
 - **Das Siegel** (`kubejs:siegel_der_traumwelten`) gibt es noch nicht als Item (`ABLAUF.md`, Abschnitt 6).
-- **Wann das Siegel kommt:** Nach dem letzten Boss, also womöglich schon in K6, lange vor dem Tempel. Die Quest ST9-01 in K9 ist dann sofort erfüllt. Gewollt so, oder soll Bodhi das Siegel erst nach den Tempelrollen herausgeben (zusätzliche Bedingung `#dd3r8 ≥ 8`)?
+- 🟢 **Wann das Siegel kommt** (User, 2026-10-21): gleich nach dem letzten Boss, auch wenn das schon in K6 ist. Die Quest ST9-01 in K9 ist dann sofort erfüllt.
