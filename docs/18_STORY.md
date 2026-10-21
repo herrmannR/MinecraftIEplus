@@ -57,7 +57,7 @@
 |---|---|
 | Droide **DD3R8** | Easy NPC aus der Star-Wars-Welt. Guide der Spieler. Charakter: lustig, aber mechanisch ernst. Verrät seine Herkunft nicht. Orte (User, 2026-10-21, O7/O15): zuerst in der Basis auf der Overworld, dann in der Mars-Station; verschwindet, sobald die Spieler das Relikt haben; taucht am Ende von Teil 1 beim Meister auf Glacio wieder auf (der Meister hat ihn mit der Macht zu sich geholt, das erfahren die Spieler dort). |
 | Einsiedler | Easy NPC auf dem Mond, ein **Klon-Veteran** (User, 2026-10-21, O25): **Odd Ball** (CC-2237, Davijaan), Klon-Pilot und Flügelmann von Obi-Wan Kenobi (User, 2026-10-21). Hintergrund in Abschnitt 5 („Einsiedler: Odd Ball“). |
-| Meister | Jedi. Suchte im Sith-Tempel ein altes Relikt, wurde in die Dungeon-Dimension gezogen, ist selbst entkommen und hält sich auf Glacio auf. Bildet die Spieler später zu Jedi aus. |
+| Meister | Jedi **Quinlan Vos** (User, 2026-10-21, O44), mit Hang zur dunklen Seite; Hintergrund in Abschnitt 5 („Der Meister: Quinlan Vos“). Suchte im Sith-Tempel ein altes Relikt, wurde in die Dungeon-Dimension gezogen, ist selbst entkommen und hält sich auf Glacio auf. Bildet die Spieler später zu Jedi aus. |
 | Weitere Easy NPCs | Auftraggeber für Kopfgeldjäger-Quests in den Star-Wars-Welten. |
 
 ### Vorgeschichte
@@ -320,9 +320,9 @@ Laut F14 geht das Relikt im Galaktischen Strahlenschutz auf. Nach O4 sollen die 
 - **Humor und Zuschauen:** passt zum Rufnamen („schräger Vogel“); ein Pilot schaut gern von oben zu.
 - **Helm und Abschirmung:** Der kaputte Klonhelm ist sein Pilotenhelm mit Funk (passt zur Elektronenröhre im Reparaturrezept). Die Abschirmung des Mondes ist die Tarnung, die er seit seiner Flucht laufen lässt.
 
-### Der Meister: Quinlan Vos (O44, Vorschlag 2026-10-21)
+### Der Meister: Quinlan Vos (O44, vom User gewählt 2026-10-21, Hintergrund als Vorschlag)
 
-Wunsch des Users: ein eher unbekannter Jedi mit Hang zur dunklen Seite.
+Wunsch des Users: ein eher unbekannter Jedi mit Hang zur dunklen Seite. 🟢 Entschieden: Quinlan Vos (User, 2026-10-21).
 
 - **Kanon:** Quinlan Vos, Kiffar, Jedi-Meister und Freund von Obi-Wan. In „Dark Disciple“ wurde er als Doppelagent Dookus Schüler, fiel zur dunklen Seite und kehrte zurück; er liebte Asajj Ventress. Er hat Order 66 überlebt (in der Serie „Obi-Wan Kenobi“ steht „Quinlan was here“ an einem Versteck des „Pfads“, der Machtsensitive in Sicherheit bringt). Sein weiteres Schicksal ist offen (Stand der Suche 2026-10-21, Fan- und Presseseiten).
 - **Hang zur dunklen Seite:** Er war schon einmal gefallen. Dass er im Sith-Tempel nach einem Relikt sucht und in die Blood-Magic-Dimension (die dunkle Seite) gerät, passt dazu; die Spieler wissen nie ganz, wie fest er auf der hellen Seite steht.

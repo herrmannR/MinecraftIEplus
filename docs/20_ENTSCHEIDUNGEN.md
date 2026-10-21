@@ -72,9 +72,7 @@ Welche Jedi- und Sith-Artefakte, und wie hängen sie an den Machtpunkten?
 |---|---|
 | O6 | Tagebuch-Ausschnitte vom Droiden: Vorschlag liegt vor (fünf Teile „Logbuch des Meisters“, `18_STORY.md` Abschnitt 5), wartet auf den User |
 | O8 | Rest: Brauchen Mekanism und AE2 in Teil 1 Story, oder reichen Questtexte? (Mars, Venus, Everbright und Everdawn beantwortet 2026-10-21) |
-| O25 | Einsiedler: Höhle und Reparatur des Klonhelms als Vorschlag in `18_STORY.md` Abschnitt 5, wartet auf den User (Klon-Veteran und Helm-Quest entschieden 2026-10-21; Name: Odd Ball, 2026-10-21) |
-| O44 | Wer ist der Meister? Vorschlag Quinlan Vos (Alternative Taron Malicos) in `18_STORY.md` Abschnitt 5, wartet auf den User |
-| O34 | Blue-Skies-Haus: Vorschlag liegt vor (`18_STORY.md` Abschnitt 5: Figur = Herrscher im Exil, Start K3, Handel wie der Gatekeeper), wartet auf den User. Entschieden: Start der Blue-Skies-Welten |
+| O25 | Einsiedler: Höhle und Reparatur des Klonhelms als Vorschlag in `18_STORY.md` Abschnitt 5, wartet auf den User (Klon-Veteran und Helm-Quest entschieden 2026-10-21; Name: Odd Ball, 2026-10-21) || O34 | Blue-Skies-Haus: Vorschlag liegt vor (`18_STORY.md` Abschnitt 5: Figur = Herrscher im Exil, Start K3, Handel wie der Gatekeeper), wartet auf den User. Entschieden: Start der Blue-Skies-Welten |
 | O43 | Relikt und Strahlenschutz: Das Relikt steckt im Strahlenschutz (F14), soll aber zum Meister (O4). Vorschlag in `18_STORY.md` Abschnitt 5 |
 ### Story, Part 2 und 3 (später)
 
@@ -162,6 +160,7 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 | O28, F5c, F5d | Shop des Einsiedlers: Plastoid, Durasteel, Baupläne (Assembly Bench, Droid Fabricator, Gas Harvester), Steuerkerne B-1, B-2, Droideka; nur bei ihm erhältlich. Preise als Entwurf von Claude. **Ergänzt nach Test 43 (User, 2026-10-20):** Baupläne sind öffenbare Bücher mit Beschreibung und Rezept; es gibt auch Baupläne für B-1, B-2 und Droideka, die das Werkbank-Rezept des Steuerkerns freischalten (Steuerkerne nicht mehr direkt im Shop); alle Rezepte stark verteuert | 2026-10-20 | `18_STORY.md`, `17_STAR_WARS_1.20.1.md` |
 | O29 | Mondbasis baut der Host von Hand, mit Luft darin; der Einsiedler ist verwundbar | 2026-10-20 | `18_STORY.md` |
 | O30 | K4 „Der Mond“ bleibt das Kapitel, das mit der ersten Quest für den Einsiedler endet | 2026-10-20 | `meilensteine/` |
+| O44 | Der Meister ist der Jedi Quinlan Vos (Hang zur dunklen Seite); der Einsiedler heißt Odd Ball (Teil von O25) | 2026-10-21 | `18_STORY.md` |
 | O33 | Der Meister fliegt in der Rakete mit und erscheint per Befehl in der Basis der Spieler | 2026-10-20 | `18_STORY.md` |
 | O17 | Glacio ist ein anderes Sonnensystem; die „andere Galaxie“ bleibt Teil 3 vorbehalten | 2026-10-20 | `18_STORY.md` |
 | T1, T6 | Kapsel und Sith-Tempel baut der Host von Hand | 2026-10-20 | `18_STORY.md` |
