@@ -148,7 +148,7 @@ Neustart nötig (Tags, Loot, Config). Zuordnung: `12_CHANGELOG.md`, Eintrag vom 
 
 ### Runde 10 — Logbuch und Story-Items (2026-10-21)
 
-Neustart nötig (Startup-Skript, Texturen). In die Testinstanz: `kubejs/` und `patchouli_books/logbuch/` (in den Ordner `patchouli_books/` der Instanz). Zuordnung: `12_CHANGELOG.md`, Eintrag vom 2026-10-21 „Logbuch und Story-Items“.
+Neustart nötig (Startup-Skript, Texturen). `kubejs/` und `patchouli_books/logbuch/` liegen seit 2026-10-21 in der Testinstanz. Zuordnung: `12_CHANGELOG.md`, Eintrag vom 2026-10-21 „Logbuch und Story-Items“.
 
 | Nr. | Test | Wie | Erwartet | Ergebnis |
 |---|---|---|---|---|

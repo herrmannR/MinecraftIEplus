@@ -1349,5 +1349,6 @@ Status: 🔵
 - Story-Texte (Logbuch, Tempelrollen, Tagebuch, Dialoge, Questtexte der Story, Tooltips) als Entwurf in `docs/story/texte/`; Ablauf in `docs/story/ABLAUF.md`. Entscheidungen O47–O60.
 
 ### Teststatus
-- `tools/kubejs_check.py`: 26 Dateien ohne Fehler. Im Spiel noch nicht getestet (Tests 73–78). Noch nicht in der Testinstanz.
+- `tools/kubejs_check.py`: 26 Dateien ohne Fehler. Im Spiel noch nicht getestet (Tests 73–78).
+- In die Testinstanz kopiert (2026-10-21, Spiel geschlossen): alle Repo-Dateien aus `kubejs/` (21 neu oder geändert, darunter auch `schutzzonen.js` mit leerer Zonenliste) und `patchouli_books/logbuch/`. Die Instanz hatte vorher genau den vorigen Repo-Stand; Dateien, die nur in der Instanz liegen, sind unberührt.
 
