@@ -70,10 +70,7 @@ Welche Jedi- und Sith-Artefakte, und wie hängen sie an den Machtpunkten?
 
 | Nr. | Frage |
 |---|---|
-| O6 | Tagebuch-Ausschnitte vom Droiden: Vorschlag liegt vor (fünf Teile „Logbuch des Meisters“, `18_STORY.md` Abschnitt 5), wartet auf den User |
 | O8 | Rest: Brauchen Mekanism und AE2 in Teil 1 Story, oder reichen Questtexte? (Mars, Venus, Everbright und Everdawn beantwortet 2026-10-21) |
-| O25 | Einsiedler: Höhle und Reparatur des Klonhelms als Vorschlag in `18_STORY.md` Abschnitt 5, wartet auf den User (Klon-Veteran und Helm-Quest entschieden 2026-10-21; Name: Odd Ball, 2026-10-21) || O34 | Blue-Skies-Haus: Vorschlag liegt vor (`18_STORY.md` Abschnitt 5: Figur = Herrscher im Exil, Start K3, Handel wie der Gatekeeper), wartet auf den User. Entschieden: Start der Blue-Skies-Welten |
-| O43 | Relikt und Strahlenschutz: Das Relikt steckt im Strahlenschutz (F14), soll aber zum Meister (O4). Vorschlag in `18_STORY.md` Abschnitt 5 |
 ### Story, Part 2 und 3 (später)
 
 | Nr. | Frage |
@@ -120,6 +117,11 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 
 | Nr. | Antwort | Datum | Eingetragen in |
 |---|---|---|---|
+| O6 | Fünf Teile „Logbuch des Meisters“, vom Droiden entschlüsselt, je als Belohnung am Kapitelende; jeder deutet auf das nächste Ziel | 2026-10-21 | `18_STORY.md` Abschnitt 5 |
+| O25 | Einsiedler **Davijaan** (geheim: Odd Ball, CC-2237, Obi-Wans Flügelmann, nach Order 66 zum Mond geflohen). Vertrauen über den kaputten Klonhelm aus der Höhle beim Mond; Reparatur an der Werkbank (Stahlplatten, Isolierglas, Basic Control Circuit, Elektronenröhre) zu `kubejs:klonhelm_repariert` | 2026-10-21 | `18_STORY.md` |
+| O34 | Blue-Skies-Haus: Figur ist der Herrscher **Bodhi Bad Dur** im Exil; Start Anfang K3 (Zinn, Osmium); Handel wie der Gatekeeper, echter Gatekeeper abgeschaltet; ab K8 Pflicht („Siegel der Traumwelten“ für den Altar) | 2026-10-21 | `18_STORY.md` Abschnitt 5 |
+| O43 | Der Galaktische Strahlenschutz ist das Gehäuse um das Relikt; das Relikt fliegt mit nach Glacio | 2026-10-21 | `18_STORY.md` Abschnitt 5 |
+| O45 | Namen: Elf **Meister Cerina** (weiblich), Herrscher **Bodhi Bad Dur**, Einsiedler **Davijaan**, Meister **Quinlan Vos** | 2026-10-21 | `18_STORY.md` |
 | O4 | Im Dungeon von dunklen Wesen umzingelt; das Relikt hätte ihn von innen zerstört, er floh ohne es nach Glacio (Heimat der hellen Macht) und schrieb ins Tagebuch, wer unbefleckt von der Macht sei, solle es ihm bringen | 2026-10-21 | `18_STORY.md` |
 | O7, O15 | Droide **DD3R8**: Overworld, dann Mars-Station; verschwindet, sobald die Spieler das Relikt haben; wieder da beim Meister auf Glacio (mit der Macht geholt). Danach führen Tagebuch und Elf | 2026-10-21 | `18_STORY.md` |
 | O8 (Teil) | Mars ist der Horchposten, Venus nur wegen der Rohstoffe interessant; keine weitere Story | 2026-10-21 | `18_STORY.md` |

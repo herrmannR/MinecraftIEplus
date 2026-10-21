@@ -56,7 +56,9 @@
 | Figur | Was feststeht |
 |---|---|
 | Droide **DD3R8** | Easy NPC aus der Star-Wars-Welt. Guide der Spieler. Charakter: lustig, aber mechanisch ernst. Verrät seine Herkunft nicht. Orte (User, 2026-10-21, O7/O15): zuerst in der Basis auf der Overworld, dann in der Mars-Station; verschwindet, sobald die Spieler das Relikt haben; taucht am Ende von Teil 1 beim Meister auf Glacio wieder auf (der Meister hat ihn mit der Macht zu sich geholt, das erfahren die Spieler dort). |
-| Einsiedler | Easy NPC auf dem Mond, ein **Klon-Veteran** (User, 2026-10-21, O25): **Odd Ball** (CC-2237, Davijaan), Klon-Pilot und Flügelmann von Obi-Wan Kenobi (User, 2026-10-21). Hintergrund in Abschnitt 5 („Einsiedler: Odd Ball“). |
+| Einsiedler | Easy NPC auf dem Mond, ein **Klon-Veteran** (User, 2026-10-21, O25): **Odd Ball** (CC-2237, Davijaan), Klon-Pilot und Flügelmann von Obi-Wan Kenobi (User, 2026-10-21). Hintergrund in Abschnitt 5 („Einsiedler: Odd Ball“). Die Spieler kennen ihn nur als **Davijaan**; wer er ist (Odd Ball, CC-2237, Obi-Wans Flügelmann, nach Order 66 zum Mond geflohen), bleibt vorerst geheim (User, 2026-10-21). |
+| Herrscher der Traumwelten | Easy NPC im Blue-Skies-Haus (statt des Gatekeepers): **Bodhi Bad Dur** (User, 2026-10-21). |
+| Elf | Easy NPC am Elfenportal: **Meister Cerina**, weiblich (User, 2026-10-21); in Texten bisher „der Helle Elf“. |
 | Meister | Jedi **Quinlan Vos** (User, 2026-10-21, O44), mit Hang zur dunklen Seite; Hintergrund in Abschnitt 5 („Der Meister: Quinlan Vos“). Suchte im Sith-Tempel ein altes Relikt, wurde in die Dungeon-Dimension gezogen, ist selbst entkommen und hält sich auf Glacio auf. Bildet die Spieler später zu Jedi aus. |
 | Weitere Easy NPCs | Auftraggeber für Kopfgeldjäger-Quests in den Star-Wars-Welten. |
 
@@ -144,11 +146,11 @@
 - Der Strang wird **zuerst als Nebenquest** freigeschaltet: Erst erledigen die Spieler einige Quests bei dieser Figur, später folgt eine Boss-Reihe; der Alchemy Table von Blue Skies gehört mit hinein.
 - Später wird er für die Reparatur des Altars in der Hauptstory **Pflicht** (erst optional, dann Pflicht).
 - 🟢 **Der Strang ist der Einstieg in die Blue-Skies-Welten** (User, 2026-10-21, O34): Über das Haus kommen die Spieler zum ersten Mal nach Everbright und Everdawn. Rest offen, Vorschläge in Abschnitt 5 („Blue-Skies-Haus einbinden“).
-- Aus den Notizen des Users (Wortlaut sinngemäß): Der Droide findet den Meister nicht, hat aber „etwas aus seiner eigenen Welt“ gefunden, das Haus, über das man in die Traumwelten reisen kann. Er empfiehlt, den dortigen Herrscher aufzusuchen; der hilft, an Erze aus seiner Welt zu kommen, vor allem die Mekanism-Erze, die es in der Overworld nur wenig gibt. 🔵 Offen: siehe O34.
+- Aus den Notizen des Users (Wortlaut sinngemäß): Der Droide findet den Meister nicht, hat aber „etwas aus seiner eigenen Welt“ gefunden, das Haus, über das man in die Traumwelten reisen kann. Er empfiehlt, den dortigen Herrscher aufzusuchen; der hilft, an Erze aus seiner Welt zu kommen, vor allem die Mekanism-Erze, die es in der Overworld nur wenig gibt. 🟢 Ausgearbeitet in Abschnitt 5 („Blue-Skies-Haus einbinden“, O34); der Herrscher ist Bodhi Bad Dur.
 - Ein hinterlassener Text des Meisters gibt den Hinweis: Die Spieler brauchen das Elfenportal beziehungsweise die Macht daraus.
 - Das Betreten der Elfenwelt (Alfheim, über MythicBotany) kommt erst später: zusammen mit der Jedi-Ausbildung und den Raketen T5 und T6.
 
-**Der Elf**
+**Der Elf: Meister Cerina** (Name User, 2026-10-21)
 - Die Spieler bauen das Elfenportal. Sie gehen nicht hinein, stattdessen tritt ein Elf (Easy NPC) heraus.
 - Um den Meister zu finden, braucht der Elf Boss-Items aus den Blue-Skies-Dimensionen und technologische Erzeugnisse aus den Tech-Mods.
 - Wenn die Spieler das geliefert haben, gibt er ihnen das Rezept für die Rakete T4, mit der sie zum Meister kommen.
@@ -255,7 +257,7 @@ Durchsetzung im Spiel (🔵 alles ungeprüft):
 - **Block nur auf dem Mars:** Ein eigenes „Relais“ lässt sich per KubeJS nur auf dem Mars setzen und wird für die nächste Quest gebraucht.
 - **Wirtschaftlicher Druck:** Treibstoff ist teuer; wer Ostrum und Fluorit vor Ort verarbeitet, spart Flüge. Erzwingt nichts, macht die Basis aber sinnvoll.
 
-### Tagebuch-Ausschnitte vom Droiden (O6, Vorschlag 2026-10-21)
+### Tagebuch-Ausschnitte vom Droiden (O6, 🟢 vom User übernommen 2026-10-21)
 
 Zwei Texte auseinanderhalten: Die **Ausschnitte** gibt der Droide ab dem Einschlag (Zeit vor dem Tempel); das **Tagebuch des Meisters** liegt mit dem Relikt in der Altar-Dimension (Zeit danach, O4).
 
@@ -272,7 +274,7 @@ Zwei Texte auseinanderhalten: Die **Ausschnitte** gibt der Droide ab dem Einschl
 | 4 | Mars-Station steht, K7 | Bruchstück eines Signals: „die heißeste Welt nahe dem Stern“, ein alter Tempel | Merkur |
 | 5 | vor dem Altar, K8/K9 | Warnung: Das Relikt „ruft im Blut“; wer sich ihm nähert, braucht Schutz | Blood Magic als dunkle Seite, Amulett (F18) |
 
-### Einsiedler: Höhle und Klonhelm (O25, Vorschlag 2026-10-21)
+### Einsiedler: Höhle und Klonhelm (O25, 🟢 vom User übernommen 2026-10-21)
 
 - **Höhle:** auf dem Mond, wenige Dutzend Blöcke von der Mondbasis. Der User baut sie von Hand wie die Mondbasis (oder als Struktur per `/place template`). Klein: ein Gang, zwei, drei Räume, eine Truhe mit dem kaputten Helm. Gegner: zwei, drei Spawner mit Ad-Astra-Wesen (welche auf den Mond passen, im Spiel prüfen). Ohne Raumanzug geht es nicht, das ist gewollt. Eine Schutzzone (`schutzzonen.js`) um die Höhle verhindert, dass man sich einfach zur Truhe gräbt.
 - **Wie die Spieler davon erfahren:** Der Einsiedler erwähnt im ersten Gespräch nur, dass er „da unten etwas verloren“ hat und nicht mehr hinwill. Damit startet die Quest.
@@ -290,7 +292,9 @@ S T S
 - **Geste zum Dank (Vorschlag):** Er schenkt den Spielern ihren ersten Bauplan (Assembly Bench) und damit das Bauplan-Buch.
 - Alternative zur Werkbank: Reparatur im Metallurgic Infuser oder an der Engineer's Workbench von IE. Die Werkbank ist am einfachsten und zeigt die Zutaten in JEI.
 
-### Blue-Skies-Haus einbinden (O34, Vorschlag 2026-10-21)
+### Blue-Skies-Haus einbinden (O34, 🟢 vom User übernommen 2026-10-21)
+
+Der Herrscher heißt **Bodhi Bad Dur** (User, 2026-10-21).
 
 Vorgabe des Users: Der Strang ist der Start der Blue-Skies-Welten.
 
@@ -306,11 +310,13 @@ Vorgabe des Users: Der Strang ist der Start der Blue-Skies-Welten.
 - **Was die Figur handelt:** was sonst der Gatekeeper verkauft (Zeal Lighter, Blue Journal; nach den Blinding Dungeons die Schlüssel), zu ähnlichen Preisen wie das Original (Preise im JAR noch nicht ausgelesen). Keine Credits, die gibt es nur beim Einsiedler.
 - **Technik:** Den echten Gatekeeper per Skript nicht mehr erscheinen lassen (wie `galaxy_overworld.js`), sonst kauft man in jedem Haus. Die Figur steht in genau einem Haus, das der User auswählt; der Droide nennt Richtung oder Koordinaten.
 
-### Relikt und Strahlenschutz (Widerspruch aus O4, Vorschlag 2026-10-21)
+### Relikt und Strahlenschutz (O43, 🟢 vom User übernommen 2026-10-21)
 
 Laut F14 geht das Relikt im Galaktischen Strahlenschutz auf. Nach O4 sollen die Spieler es aber zum Meister bringen. Vorschlag, ohne die Skripte zu ändern: Der Strahlenschutz ist das Gehäuse, das der Elf **um** das Relikt baut. Es schirmt die Rakete gegen das Relikt ab und kommt zugleich durch die Barriere des Meisters, weil die das Relikt erkennt. Das Relikt fliegt also im Triebwerk mit nach Glacio, dort nimmt der Meister es heraus. Der Tooltip des Strahlenschutzes kann das andeuten.
 
 ### Einsiedler: Odd Ball (Name vom User gewählt 2026-10-21, Hintergrund als Vorschlag)
+
+- 🟢 **Name und Geheimnis** (User, 2026-10-21): Er nennt sich **Davijaan**. Dass er Odd Ball ist, Klon-Pilot CC-2237 und Obi-Wans Flügelmann, und dass er nach Order 66 zum Mond geflohen ist, bleibt vorerst geheim. Dialoge und Questtexte in Teil 1 nennen nur „Davijaan“ bzw. „der Einsiedler“.
 
 - **Kanon:** Odd Ball (CC-2237, Davijaan) flog als Klon-Pilot an der Seite von Obi-Wan Kenobi (Teth, Umbara, Coruscant). Bei Order 66 kämpfte er in der Raumschlacht über Utapau. Was danach aus ihm wurde, erzählt der Kanon nicht; die Lücke ist frei für die Story (Stand der Suche 2026-10-21, nicht in Wookieepedia selbst geprüft).
 - **Warum er schweigt:** Er hat den Befehl gegen seinen eigenen General miterlebt und ist danach mit seinem Jäger geflohen. Ob er gefeuert oder sich geweigert hat, bleibt sein Geheimnis.
