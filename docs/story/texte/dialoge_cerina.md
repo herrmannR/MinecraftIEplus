@@ -89,11 +89,7 @@ Scoreboard `story`, Eintrag `#cerina` (B2): 1 = gerade aus dem Portal getreten (
 
 #### `c2_rakete` · Prio 0
 > Baut es in das Triebwerk eurer stärksten Rakete. Der Schleier eures Meisters erkennt, was darin ist, und lässt euch durch. Den Rest wisst ihr besser als ich.
-- **[Danke, Meister Cerina]** → `c2_abschied`
-
-#### `c2_abschied` · Prio 0
-> Eine Bitte noch. Sagt eurem Meister nicht, wer ihm geholfen hat. Er wird es ohnehin ahnen. Aber ich möchte ihm das Vergnügen nicht nehmen, es selbst herauszufinden.
-- **[Versprochen]** → schließen
+- **[Danke, Meister Cerina]** → schließen
 
 ---
 
@@ -122,8 +118,8 @@ Scoreboard `story`, Eintrag `#cerina` (B2): 1 = gerade aus dem Portal getreten (
 ## Offen beim Überarbeiten
 
 - **„Grün wie junges Laub, mit Zeichen im Gesicht“** (`c1_portal`) beschreibt eine Mirialanerin, ohne das Wort zu nennen. Passt zum Skin, den du aussuchst.
-- **„Den Hellen Elfen … hat mich nie gesehen“** (`c1_elf`) löst den Widerspruch aus dem Tagebuch (dort „er“): Vos kennt sie nur vom Hörensagen. Wenn er sie persönlich kennen soll, ändert sich der Satz.
-- **„Sagt eurem Meister nicht, wer ihm geholfen hat“** (`c2_abschied`) setzt voraus, dass Vos und Vernestra sich kennen oder voneinander wissen. Das ist neu und nicht entschieden; streichen, wenn nicht gewollt.
+- **„Den Hellen Elfen … hat mich nie gesehen“** (`c1_elf`) löst den Widerspruch aus dem Tagebuch (dort „er“): Vos kennt sie nur vom Hörensagen (passt dazu, dass sie sich nicht kennen).
+- 🟢 **Vos und Cerina kennen sich nicht** (User, 2026-10-21); der Abschiedssatz ist gestrichen.
 - **„Einmal geschwiegen, wo sie hätte reden sollen“** (`c3_wer`) spielt auf die Vertuschung am Ende von „The Acolyte“ an.
 - **Elfenhandel** (`c2_handel`): Manasteel gegen Elementium stimmt mit Botania überein; mehr Tauschwaren nennt sie nicht.
 - **Arcs bei der Abgabe:** Arcs stecken in Blue Skies in eigenen Feldern im Inventar. 🔵 Prüfen, ob die Bedingung „Item im Inventar“ und `clear` sie dort sehen; sonst müssen die Spieler sie vorher in den normalen Rucksack legen (dann gehört ein Satz dazu in `c2_liste`). Abgegeben wird jede Stufe (Common bis Empowered), auch ein starker Arc geht dabei verloren.
