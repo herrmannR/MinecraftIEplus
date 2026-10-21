@@ -1,0 +1,17 @@
+{
+  "name": "Teil 4: Signal",
+  "icon": "minecraft:writable_book",
+  "category": "patchouli:logbuch",
+  "advancement": "ieplus:logbuch/teil4",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(o)Aufgefangen auf der vierten Welt, Kanal des Meisters$()$(br2)$(l)Signal, Bruchstück$()$(br2)… Kurs auf die heißeste Welt … nah am Stern, Tag und Nacht wie Schmiede und Grab … dort ein Tempel, älter als … […]"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "… niemand mehr da … nur ein Altar, ganz, als hätte jemand gestern noch geopfert … […]$(br2)… etwas darin, das mich kennt, bevor ich es kenne … […]$(br2)… Droide, falls du das hörst: Ich komme nicht … […] … warte nicht … such …$(br2)$(o)[Signal endet]$()"
+    }
+  ]
+}

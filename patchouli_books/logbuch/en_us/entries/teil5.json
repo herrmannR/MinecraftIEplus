@@ -1,0 +1,21 @@
+{
+  "name": "Teil 5: Was im Blut ruft",
+  "icon": "minecraft:writable_book",
+  "category": "patchouli:logbuch",
+  "advancement": "ieplus:logbuch/teil5",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(o)Entschlüsselt: 100 %$()$(br2)$(l)Eintrag 21$()$(br2)Ich stehe vor dem Tempel. Ich spüre ihn, seit ich gelandet bin: einen Zug, ganz leise, wie Hunger, der nicht der eigene ist."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Was dort liegt, ist alt. Es ruft. Nicht mit Worten – es ruft im Blut. Es sucht nach Leben, das es nehmen kann, und es bietet dafür Kraft. Ich kenne diese Art Handel. Ich habe ihn schon einmal angenommen. […]$(br2)$(l)Eintrag 22$()$(br2)Für den Fall, dass jemand nach mir kommt:"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Geh nicht ungeschützt hinein. Trag etwas bei dir, das aus Lebendigem gemacht ist, aus dem, was wächst und gibt, statt zu nehmen. Es hält den Zug fern, zumindest eine Weile. […]$(br2)Ich gehe jetzt hinein. DD3R8, sei nicht beleidigt."
+    }
+  ]
+}

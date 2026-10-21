@@ -1,0 +1,25 @@
+{
+  "name": "Teil 3: Der Begleiter schweigt",
+  "icon": "minecraft:writable_book",
+  "category": "patchouli:logbuch",
+  "advancement": "ieplus:logbuch/teil3",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(o)Entschlüsselt: 47 %$()$(br2)$(l)Eintrag 12$()$(br2)Die dritte Welt hat einen Begleiter, grau und kahl, nah genug, dass man nachts seine Narben sieht. Ich wollte ihn als Horchposten nutzen. Es geht nicht."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Der Begleiter schweigt. Nicht wie Stein schweigt – Stein ist nie ganz still. Er schweigt, wie ein Raum schweigt, in dem jemand den Atem anhält."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Eintrag 13$()$(br2)Jemand verbirgt sich dort. Die Abschirmung ist alt, sauber gebaut und mit Sorgfalt gepflegt. Wer immer dahinter sitzt, will nicht gefunden werden, und er ist gut darin.$(br2)Ich respektiere das. Vorerst. […]"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Wer ihn besucht, sollte höflich sein und nicht zu viele Fragen stellen. Und den Droiden vielleicht draußen lassen. […]"
+    }
+  ]
+}

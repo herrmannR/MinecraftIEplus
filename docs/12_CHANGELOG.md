@@ -1337,3 +1337,17 @@ Status: 🔵
 ### Änderung
 - Neu: `kubejs/server_scripts/story/schutzzonen.js`. Story-Bauten sollen nicht aus Versehen zerstört werden. Geschützt wird nur gegen Spieleraktionen (Abbauen, Setzen, verändernde Werkzeuge per Rechtsklick); der Kreativmodus ist ausgenommen. Freistellen erlauben an festen Orten bestimmte Blöcke, z. B. damit das Ritual im Tempel neu aufgebaut werden kann (User).
 - Die Zonenliste ist noch leer (nur ein auskommentiertes Beispiel); die Koordinaten liefert der User, sobald die Bauten stehen. `tools/kubejs_check.py`: ohne Fehler. Noch nicht in der Testinstanz.
+
+## 2026-10-21 — Logbuch und Story-Items
+
+Status: 🔵
+
+### Änderung
+- Neue Items für Teil 1: vier Tempelrollen, Tagebuch des Meisters, Verbeulter Pilotenhelm und Pilotenhelm des Einsiedlers (IDs `kaputter_klonhelm`/`klonhelm_repariert`, Name ohne „Klon“, O60), Siegel der Traumwelten. Texturen aus `tools/story_texturen.py`.
+- Patchouli-Buch „Logbuch des Meisters“ mit Kapiteln Logbuch, Tempelrollen, Tagebuch, erzeugt aus den Textentwürfen (`tools/logbuch_gen.py`). Freischaltung für die ganze Welt über `/logbuch` und über die Lese-Items (`server_scripts/story/logbuch.js`), wie bei den Bauplänen.
+- Reparaturrezept des Helms, neue Tooltips, Tagebuch in der Truhe als Item.
+- Story-Texte (Logbuch, Tempelrollen, Tagebuch, Dialoge, Questtexte der Story, Tooltips) als Entwurf in `docs/story/texte/`; Ablauf in `docs/story/ABLAUF.md`. Entscheidungen O47–O60.
+
+### Teststatus
+- `tools/kubejs_check.py`: 26 Dateien ohne Fehler. Im Spiel noch nicht getestet (Tests 73–78). Noch nicht in der Testinstanz.
+

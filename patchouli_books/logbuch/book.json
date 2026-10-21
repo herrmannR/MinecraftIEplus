@@ -1,0 +1,9 @@
+{
+  "name": "Logbuch des Meisters",
+  "subtitle": "Entschlüsselt von DD3R8",
+  "landing_text": "Der Datenspeicher des Meisters hat beim Einschlag gelitten. DD3R8 entschlüsselt ihn Stück für Stück. Neue Teile erscheinen hier, sobald sie fertig sind.",
+  "book_texture": "patchouli:textures/gui/book_gray.png",
+  "model": "patchouli:book_gray",
+  "show_progress": false,
+  "i18n": false
+}

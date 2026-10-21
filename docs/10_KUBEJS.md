@@ -63,6 +63,17 @@ Die fünf Skripte für 1.18.2 (`space_oxygen.js`, `moon_ores.js`, `tf_industrial
 | 196 Dateien in `kubejs/data/` (Liste: `tools/kaleidoscope_daten.liste`) | Erzeugt mit `tools/kaleidoscope_daten.py` aus der Tabelle. Rezepte: 103 mit Gewinner unter derselben ID überschrieben, 10 Dubletten und 11 ersatzlose (Geräte) sowie alle 22 Rezepte des Kaleidoscope-Bretts mit `forge:false` abgeschaltet; neu in `ieplus/recipes/einheitlich/`: 9 Brett-Rezepte (Umzug aufs FD-Brett, Rindfleisch → Hackfleisch + Würfel), 11 Umwandlungen von Altbestand (FD-Zutaten, FD-Herd, Blackstone-Herd). Loot: 30 Tabellen und Modifier (Pflanzen, Truhen, Zwiebel von Zombies, FD- und Blackstone-Herd → KC-Herd). Fassung 1 legte die Rezepte per `event.custom` an; das scheiterte an den Schemas der KubeJS-Addons (Test 65). Nach Mod-Updates neu laufen lassen. | wie oben |
 | `config-overrides/config/farmersdelight-common.toml` | Bauern- und Händler-Handel von Farmer's Delight aus, keine FD-Pflanzen in Dorffeldern (sonst kämen Verlierer-Items ins Spiel). | wie oben |
 
+#### Story Teil 1: Logbuch und Story-Items (2026-10-21, 🔵 ungetestet, Tests 73–78)
+
+| Datei | Aufgabe | Entscheidung |
+|---|---|---|
+| `startup_scripts/teil1_items.js` (Fassung 5) | Neu: `kubejs:tempelrolle_1` bis `_4`, `kubejs:tagebuch_des_meisters`, `kubejs:kaputter_klonhelm` („Verbeulter Pilotenhelm“), `kubejs:klonhelm_repariert` („Pilotenhelm des Einsiedlers“), `kubejs:siegel_der_traumwelten`. Texturen `tempelrolle`, `pilotenhelm`, `pilotenhelm_kaputt` erzeugt `tools/story_texturen.py` aus dem Minecraft-Client; Siegel mit der Moonstone-Textur von Blue Skies, Tagebuch mit dem Buch aus Minecraft. | O49, O51, O47, O60 |
+| `server_scripts/story/logbuch.js` | Patchouli-Buch „Logbuch des Meisters“ (`patchouli:logbuch`): Weltwert je Eintrag, Advancement `ieplus:logbuch/<eintrag>` an alle, Abgleich beim Einloggen, Buch an jeden Spieler einmal (Merker am Spieler). Rechtsklick mit Tempelrolle oder Tagebuch schaltet frei und öffnet den Eintrag (Patchouli-API, Rückfall: Meldung); das Item bleibt. Befehle `/logbuch <eintrag>`, `buch`, `zuruecksetzen`, `alles` (Rechte nötig; aus FTB-Quests-Belohnungen mit erhöhten Rechten). | O51, ABLAUF B5, B6 |
+| `patchouli_books/logbuch/`, `data/ieplus/advancements/logbuch/` | Buch und Advancements, **erzeugt** mit `tools/logbuch_gen.py` aus `docs/story/texte/logbuch.md`, `tempelrollen.md`, `tagebuch.md`. Nach Textänderungen neu laufen lassen, nicht von Hand ändern. Schalter `GEHEIM` im Generator: gesperrte Einträge unsichtbar statt ausgegraut. | O51 |
+| `server_scripts/story/story_rezepte.js` | Pilotenhelm reparieren (Werkbank: Stahlplatten, Basic Control Circuit, Isolierglas, Elektronenröhre). | O25 |
+| `client_scripts/tooltips_teil1.js` (Fassung 3) | Tooltips der Story-Items nach `docs/story/texte/tooltips.md`; Strahlenschutz jetzt „von Meister Cerina“. | – |
+| `data/ieplus/loot_tables/chests/meister_truhe.json` | Tagebuch als Item `kubejs:tagebuch_des_meisters` statt geschriebenem Buch. | O51 |
+
 #### Story-Schutzzonen (2026-10-21, 🔵 ungetestet, noch ohne Koordinaten)
 
 | Datei | Aufgabe | Entscheidung |

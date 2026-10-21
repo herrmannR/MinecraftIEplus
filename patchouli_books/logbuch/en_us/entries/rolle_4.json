@@ -1,0 +1,21 @@
+{
+  "name": "Von der Heilung",
+  "icon": "kubejs:tempelrolle_4",
+  "category": "patchouli:tempelrollen",
+  "advancement": "ieplus:logbuch/rolle_4",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Ist das Tor gebrochen, so heilt es nicht mit Blut allein. Blut hat es gebrochen; Blut allein macht es nur hungriger."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Bringe ihm vier Dinge:$(li)Metall, das lebt, geboren aus dem, was wächst.$(li)Stein, der Blut getrunken hat.$(li)Ein Zeichen aus den Welten, die träumen.$(li)Etwas, das in der Tiefe lag, wo kein Licht hinkommt."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Leg sie an den Altar und berühre ihn. Dann sieh zu, dass du ihn wieder recht umstellst, und weck ihn, wenn du musst.$(br2)Und wenn du musst: Komm nicht allein zurück. Allein kommt niemand zurück."
+    }
+  ]
+}

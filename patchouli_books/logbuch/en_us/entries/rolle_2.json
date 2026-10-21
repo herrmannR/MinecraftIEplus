@@ -1,0 +1,17 @@
+{
+  "name": "Vom Blut",
+  "icon": "kubejs:tempelrolle_2",
+  "category": "patchouli:tempelrollen",
+  "advancement": "ieplus:logbuch/rolle_2",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Das Tor nimmt nichts umsonst und gibt nichts umsonst.$(br2)Es trinkt, was in den Adern ist, und gibt dafür Kraft, mehr Kraft, als ein Leib tragen kann. Viele von uns haben getrunken. Wenige sind satt geworden."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Merke: Das Tor ruft im Blut. Wer nichts Lebendiges bei sich trägt, das den Ruf übertönt, hört bald nichts anderes mehr.$(br2)Wir zählen die, die hindurchgingen und nicht wiederkamen, nicht mehr. Es wurde zu mühsam."
+    }
+  ]
+}

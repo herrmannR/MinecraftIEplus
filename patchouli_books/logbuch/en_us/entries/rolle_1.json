@@ -1,0 +1,21 @@
+{
+  "name": "Das Tor",
+  "icon": "kubejs:tempelrolle_1",
+  "category": "patchouli:tempelrollen",
+  "advancement": "ieplus:logbuch/rolle_1",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Wer dies liest, steht in unserem Haus. Tritt leise auf."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Hier steht das Tor zur dunklen Seite. Es ist kein Tor aus Holz oder Eisen; es ist der Altar selbst. Wer ihn mit Blut weckt und die Steine recht um ihn legt, dem öffnet er sich, und er geht hindurch, ohne einen Schritt zu tun.$(br2)Wir haben dieses Haus nicht gebaut, um zu beten. Wir haben es gebaut, um das Tor zu bewachen."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Wenn du nicht weißt, was du tust, geh wieder. Das Tor wird es dir nicht übel nehmen. Es hat Zeit."
+    }
+  ]
+}

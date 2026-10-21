@@ -1,0 +1,69 @@
+{
+  "name": "Tagebuch des Meisters",
+  "icon": "kubejs:tagebuch_des_meisters",
+  "category": "patchouli:tagebuch",
+  "advancement": "ieplus:logbuch/tagebuch",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Erster Eintrag$()$(br2)Ich bin im Tempel. Er ist leer, aber nicht verlassen. Etwas wohnt hier, das keine Füße braucht."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Der Altar ist ganz. Ich habe ihn nicht geweckt, ich habe nur die Hand darauf gelegt, um zu sehen, wer ihn zuletzt berührt hat. Das war ein Fehler. Er hat zurückgesehen.$(br2)Es zog. Nicht an meinem Arm, an allem, was ich bin. Ich hörte Stein brechen, als ich fiel. Ich glaube, ich war schwerer, als er erwartet hatte."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Zweiter Eintrag$()$(br2)Gänge. Endlose Gänge, in den Fels getrieben von Leuten, die schon lange nicht mehr graben. Rotes Licht, kein Himmel. Der Weg zurück ist zu; dort, wo das Tor sein müsste, ist nur Fels."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Ich habe gefunden, was ich suchte. Es lag in der großen Halle, wo die Gänge sich treffen, als hätte es auf mich gewartet. Vielleicht hat es das.$(br2)$(l)Dritter Eintrag$()$(br2)Ich habe es berührt. Ich hätte es nicht berühren sollen; ich wusste das, bevor ich es tat, und tat es trotzdem. So bin ich."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Ich habe darin gelesen. Tausend Hände haben es gehalten, und jede wollte mehr. Es erinnert sich an jede. Es hat versucht, sich an mich zu erinnern, und für einen Moment habe ich es zugelassen."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Es ist zu stark. Nicht für jeden – für mich. Was in ihm ist, sucht in mir nach etwas, an dem es sich festhalten kann, und es findet zu viel. Ich spüre es von innen an mir arbeiten."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Vierter Eintrag$()$(br2)Sie sind gekommen. Wesen aus diesen Gängen, dunkel und geduldig. Sie greifen nicht an. Sie stehen nur da, in jedem Gang, und warten, dass ich müde werde.$(br2)Ich werde müde."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Fünfter Eintrag$()$(br2)Ich habe entschieden. Mit dem Relikt komme ich hier nicht heraus, es würde mich auf dem Weg zerreißen. Ohne es vielleicht, wenn ich alles nehme, was mir noch geblieben ist."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Ich gehe nach Glacio, auf die Welt aus Eis, weit hinter diesem Stern. Sie ist die Heimat der hellen Macht. Dort kann ich mich erholen. Ich werde einen Schleier um sie legen, damit mir nichts von hier folgen kann. Durch ihn kommt nur, wer das Relikt bei sich trägt, wohl verwahrt, denn nur dann weiß ich, dass ihr es seid."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Das Relikt und dieses Buch lasse ich hier, in der Truhe der Halle."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)An den, der als Nächster hier ankommt$()$(br2)Wenn du dies liest, bist du hindurchgekommen, und das Tor hat dich nicht genommen. Gut."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Hör mir zu. Dieses Relikt ist gefährlich für jeden, der von der Macht schon berührt ist. Wer noch unbefleckt von der Macht ist, dem kann es nichts anhaben. Es findet in dir nichts, woran es sich halten kann. Darum kannst du tragen, was ich nicht tragen konnte."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Nimm es mit. Bring es nicht zu mir, noch nicht. Bring es zuerst zum Hellen Elfen."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Ich wollte selbst zu ihm, auf die dritte Welt. Er versteht Dinge wie dieses besser als ich und kann es so verwahren, dass es niemandem schadet. Er lebt hinter einem Tor, das kein Stein ist: Es ist aus Holz gebaut, das noch lebt, und es öffnet sich nur, wenn das Licht der Blumen es speist. Bau es, und er wird kommen."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Hineingehen musst du nicht.$(br2)Dann komm nach Glacio. Bring das Relikt mit, so wie der Elf es dir gibt, und mein Schleier lässt dich durch.$(br2)Und beeil dich nicht zu sehr. Ich warte. Das kann ich gut."
+    }
+  ]
+}

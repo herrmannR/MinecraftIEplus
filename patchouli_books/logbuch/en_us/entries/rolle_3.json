@@ -1,0 +1,17 @@
+{
+  "name": "Vom Endlosen",
+  "icon": "kubejs:tempelrolle_3",
+  "category": "patchouli:tempelrollen",
+  "advancement": "ieplus:logbuch/rolle_3",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Jenseits des Tores beginnen die Gänge, die wir ins Endlose trieben. Wir gruben, weil wir dachten, unten liege, was wir suchten. Es lag dort. Wir wünschten, es hätte nicht dort gelegen."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Unseren größten Schatz brachten wir in die große Halle, wo die Gänge sich treffen. Dort ruht er, und dort soll er bleiben.$(br2)Eines noch: Das Tor nimmt jeden, aber nicht jeden gern. Zieht es einen hinüber, der stärker ist, als es tragen kann, so bricht es an ihm. Dann schweigt es, bis jemand es heilt."
+    }
+  ]
+}

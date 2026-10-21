@@ -1,0 +1,25 @@
+{
+  "name": "Teil 1: Die dritte Welt",
+  "icon": "minecraft:writable_book",
+  "category": "patchouli:logbuch",
+  "advancement": "ieplus:logbuch/teil1",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(o)Entschlüsselt: 12 %$()$(br2)$(l)Eintrag 1$()$(br2)Wir sind angekommen. Das System ist kleiner als auf den Karten, und älter. Ein gelber Stern, ruhig, ohne Launen. Acht Welten, wenn man die Brocken am Rand nicht mitzählt; ich zähle sie nicht mit."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Die ersten beiden sind Glut und Dunst. Die vierte ist rot und still. Die dritte aber trägt Leben – viel davon, laut und durcheinander, wie ein Markt am Morgen.$(br2)DD3R8 meint, Leben sei „statistisch unaufgeräumt“. Ich habe ihm gesagt, dass genau das der Punkt ist."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Eintrag 2$()$(br2)Ich habe die dritte Welt lange beobachtet. Ein Lebenszeichen fällt aus dem Rauschen: nicht eines, drei, dicht beieinander. Sie bauen. Sie graben. Sie haben Feuer und Eisen und, wenn ich mich nicht täusche, Blumen, die mehr tun, als nur zu blühen.$(br2)Ich weiß nicht, was sie sind. Aber sie sind hell. […]"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Sollte ich nicht zurückkehren, weiß der Droide, wohin. […]"
+    }
+  ]
+}

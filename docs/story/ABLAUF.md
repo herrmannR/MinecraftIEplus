@@ -13,8 +13,8 @@
 | B2 | **Dialogstufe je Figur** | Ein Scoreboard `story` mit einem Platzhalter-Namen je Figur (`#dd3r8`, `#davijaan`, `#bodhi`, `#cerina`, `#vos`). Der Wert sagt, welcher Dialogteil gerade gilt (Bedingung „Scoreboard“). Gilt für die ganze Welt, also für alle drei Spieler. Gesetzt per `scoreboard players set #dd3r8 story <n>` aus Dialog oder Quest-Belohnung. Anlegen einmalig: `scoreboard objectives add story dummy`. | 🟡 |
 | B3 | **Quest → Dialog** | Braucht ein Dialog eine erledigte Quest (z. B. „Bosse besiegt“), setzt deren Belohnung die Dialogstufe (B2). | 🟡 |
 | B4 | **Figur erscheinen/verschwinden** | Befehl in der Quest-Belohnung (Team Reward): `easy_npc spawn|despawn <uuid>` oder `execute in <dim> run easy_npc preset import …` (Test 30). | 🟢 |
-| B5 | **Logbuch-Eintrag freischalten** | Befehl `/logbuch <eintrag>` (neues KubeJS-Skript nach dem Muster von `/bauplan`): setzt für alle Spieler das Advancement `ieplus:logbuch/<eintrag>`, das den Eintrag im Patchouli-Buch „Logbuch des Meisters“ öffnet; Offline-Spieler beim Einloggen. Der erste Aufruf gibt das Buch an alle. Aufruf aus Quest-Belohnung oder Dialog. | 🟡 (O51 entschieden, Skript fehlt) |
-| B6 | **Lese-Items** | Tempelrollen 1–4 und das Tagebuch des Meisters sind KubeJS-Items. Rechtsklick ruft B5 auf (Eintrag öffnet sich bei allen); das Item bleibt erhalten. | 🟢 O49; Tagebuch 🟡 (bisher geschriebenes Buch in `meister_truhe.json`) |
+| B5 | **Logbuch-Eintrag freischalten** | Befehl `/logbuch <eintrag>` (neues KubeJS-Skript nach dem Muster von `/bauplan`): setzt für alle Spieler das Advancement `ieplus:logbuch/<eintrag>`, das den Eintrag im Patchouli-Buch „Logbuch des Meisters“ öffnet; Offline-Spieler beim Einloggen. Der erste Aufruf gibt das Buch an alle. Aufruf aus Quest-Belohnung oder Dialog. | 🟢 gebaut (`server_scripts/story/logbuch.js`), 🔵 Tests 74–77. FTB-Belohnungen mit `/logbuch` brauchen erhöhte Rechte (Befehls-Belohnung „elevate“) |
+| B6 | **Lese-Items** | Tempelrollen 1–4 und das Tagebuch des Meisters sind KubeJS-Items. Rechtsklick ruft B5 auf (Eintrag öffnet sich bei allen); das Item bleibt erhalten. | 🟢 gebaut (`logbuch.js`, Items in `teil1_items.js`), 🔵 Test 75 |
 | B7 | **Kapitel freischalten** | Die letzte Story-Quest eines Kapitels setzt als Belohnung die Stage `kapitel_k<n+1>`; damit erscheinen die Mod-Abschnitte des nächsten Kapitels (Aufbau wie in den Probe-Büchern). | 🟢 Aufbau, 🔵 P15 (Stage bei Offline-Spielern) |
 | B8 | **Eingriff des Hosts** | Wo nichts automatisch prüfbar ist (Mars-Station zu dritt, O22), erledigt der User die Quest per Befehl. | 🟢 |
 
@@ -172,9 +172,9 @@ Ablage geplant in `docs/story/texte/`, je Figur oder Buch eine Datei. Der User �
 
 | Was | Wer | Hängt an |
 |---|---|---|
-| Skript `/logbuch` + Patchouli-Buch „Logbuch des Meisters“ (B5) | Claude | Texte L, R, TB |
-| Items: 4 Tempelrollen, Tagebuch, Siegel, kaputter/reparierter Klonhelm; Reparaturrezept | Claude | – |
-| `meister_truhe.json`: Tagebuch als Item statt geschriebenes Buch | Claude | – |
+| ✅ Skript `/logbuch` + Patchouli-Buch „Logbuch des Meisters“ (B5), 2026-10-21 | Claude | 🔵 Tests 73–77 |
+| ✅ Items: 4 Tempelrollen, Tagebuch, Siegel, Pilotenhelm (kaputt/repariert); Reparaturrezept, 2026-10-21 | Claude | 🔵 Tests 73, 78 |
+| ✅ `meister_truhe.json`: Tagebuch als Item, 2026-10-21 | Claude | 🔵 Test 78 |
 | Skript Altar per Rechtsklick (O48, O56) | Claude | Bauplan des kaputten Altars vom Host |
 | Gatekeeper abschalten (O34) | Claude | – |
 | Buch 1 im Questbuch mit ST-Quests | Claude | dieser Plan |

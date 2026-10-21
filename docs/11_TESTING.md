@@ -146,6 +146,19 @@ Neustart nötig (Tags, Loot, Config). Zuordnung: `12_CHANGELOG.md`, Eintrag vom 
 | 71 | Altbestand | `/give @s farmersdelight:tomato 9`, `farmersdelight:iron_knife`; Werkbank; Messer am FD-Brett | FD-Tomate wird 1:1 zur Kaleidoscope-Tomate; altes FD-Messer schneidet weiter | ✅ 2026-10-21 (User) |
 | 72 | Koch-Dorfbewohner | Kaleidoscope-Herd neben einen arbeitslosen Dorfbewohner stellen | er wird Koch; seine Angebote nennen nur Kaleidoscope-Items (Tomate, Reis, Spiegelei, Küchenmesser) | ✅ 2026-10-21 (User) |
 
+### Runde 10 — Logbuch und Story-Items (2026-10-21)
+
+Neustart nötig (Startup-Skript, Texturen). In die Testinstanz: `kubejs/` und `patchouli_books/logbuch/` (in den Ordner `patchouli_books/` der Instanz). Zuordnung: `12_CHANGELOG.md`, Eintrag vom 2026-10-21 „Logbuch und Story-Items“.
+
+| Nr. | Test | Wie | Erwartet | Ergebnis |
+|---|---|---|---|---|
+| 73 | Laden | Welt laden; `python tools/kubejs_check.py --nur-log` | keine Fehler zu `teil1_items.js`, `logbuch.js`, `story_rezepte.js`; Texturen der neuen Items sichtbar (JEI: „Tempelrolle“, „Pilotenhelm“, „Siegel“) | |
+| 74 | Logbuch per Befehl | `/logbuch teil1` | Meldung im Chat, jeder Online-Spieler bekommt das Buch „Logbuch des Meisters“; Teil 1 lesbar, die übrigen Einträge ausgegraut; Seiten nicht abgeschnitten | |
+| 75 | Lese-Item | `/give @s kubejs:tempelrolle_1`, Rechtsklick; dann `/give @s kubejs:tagebuch_des_meisters`, Rechtsklick | Eintrag wird frei und öffnet sich (sonst Meldung „steht jetzt im Logbuch“, dann Log ansehen); Item bleibt im Inventar; zweiter Rechtsklick öffnet nur | |
+| 76 | Offline-Spieler | zweiter Spieler offline, `/logbuch teil2`; dann einloggen lassen | er bekommt das Buch (falls noch nicht) und sieht Teil 2 | |
+| 77 | Zurücksetzen | `/logbuch zuruecksetzen`, Buch öffnen; `/logbuch alles` | erst alles gesperrt, dann alles frei | |
+| 78 | Helm und Truhe | `/give @s kubejs:kaputter_klonhelm`, Werkbank mit Stahlplatten, Basic Control Circuit, Isolierglas, Elektronenröhre; `/loot give @s loot ieplus:chests/meister_truhe` | Pilotenhelm des Einsiedlers entsteht (JEI zeigt das Rezept); Truhe gibt Relikt und Tagebuch des Meisters (Item) | |
+
 ### Noch ohne Testweg
 
 - Blood-Smeltery: `forge:coins`, Hellforged-Flüssigkeiten.

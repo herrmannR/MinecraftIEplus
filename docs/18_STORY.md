@@ -282,7 +282,7 @@ Zwei Texte auseinanderhalten: Die **Ausschnitte** gibt der Droide ab dem Einschl
 
 - **Höhle:** auf dem Mond, wenige Dutzend Blöcke von der Mondbasis. Der User baut sie von Hand wie die Mondbasis (oder als Struktur per `/place template`). Klein: ein Gang, zwei, drei Räume, eine Truhe mit dem kaputten Helm. Gegner: zwei, drei Spawner mit Ad-Astra-Wesen (welche auf den Mond passen, im Spiel prüfen). Ohne Raumanzug geht es nicht, das ist gewollt. Eine Schutzzone (`schutzzonen.js`) um die Höhle verhindert, dass man sich einfach zur Truhe gräbt.
 - **Wie die Spieler davon erfahren:** Der Einsiedler erwähnt im ersten Gespräch nur, dass er „da unten etwas verloren“ hat und nicht mehr hinwill. Damit startet die Quest.
-- **Item:** `kubejs:kaputter_klonhelm` (Textur: Helm von `swgc:clone_phase_2_helmet`, abgedunkelt, mit Riss). Nicht tragbar, liegt nur in der Truhe.
+- **Item:** `kubejs:kaputter_klonhelm`, im Spiel „Verbeulter Pilotenhelm“ (User, 2026-10-21, O60: kein „Klon“ im Namen, das Geheimnis bleibt). Textur: Eisenhelm aus Minecraft, schmutzig grau mit Riss (eigene PNG aus `tools/story_texturen.py`) (der Klonhelm von Galaxy in a Cube hat nur ein 3D-Modell). Nicht tragbar, liegt nur in der Truhe.
 - **Reparatur an der Werkbank** mit Technik aus K3/K4, die die Spieler zu dem Zeitpunkt haben:
 
 ```
@@ -292,7 +292,7 @@ S T S
 ```
 
   H kaputter Helm, S Stahlplatte (`immersiveengineering:plate_steel`), G Isolierglas für das Visier (`immersiveengineering:insulating_glass`), C Basic Control Circuit (`mekanism:basic_control_circuit`) für die Anzeige im Helm, T Elektronenröhre (`immersiveengineering:electron_tube`) für den Funk. Alle IDs stehen im ProbeJS-Dump.
-- **Ergebnis:** eigenes Item `kubejs:klonhelm_repariert` („Klonhelm des Einsiedlers“), nicht der tragbare Helm aus Galaxy in a Cube; sonst gäbe es die Klonrüstung ohne Bauplan. Abgabe im Dialog (Bedingung „Item im Inventar“, `clear`, `tag @a add einsiedler_vertrauen`). Danach öffnen Shop und Nebenquests.
+- **Ergebnis:** eigenes Item `kubejs:klonhelm_repariert` („Pilotenhelm des Einsiedlers“, O60; weiß gefärbter Eisenhelm), nicht der tragbare Helm aus Galaxy in a Cube; sonst gäbe es die Klonrüstung ohne Bauplan. Abgabe im Dialog (Bedingung „Item im Inventar“, `clear`, `tag @a add einsiedler_vertrauen`). Danach öffnen Shop und Nebenquests.
 - **Geste zum Dank (Vorschlag):** Er schenkt den Spielern ihren ersten Bauplan (Assembly Bench) und damit das Bauplan-Buch.
 - Alternative zur Werkbank: Reparatur im Metallurgic Infuser oder an der Engineer's Workbench von IE. Die Werkbank ist am einfachsten und zeigt die Zutaten in JEI.
 
