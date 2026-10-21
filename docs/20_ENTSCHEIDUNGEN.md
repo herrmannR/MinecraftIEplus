@@ -118,6 +118,12 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 
 | Nr. | Antwort | Datum | Eingetragen in |
 |---|---|---|---|
+| O47 | „Siegel der Traumwelten“ (Bodhi Bad Dur, nach dem letzten Boss) ersetzt den Dusk Arc in der Altar-Reparatur (ändert F8) | 2026-10-21 | `18_STORY.md` |
+| O48 | Altar-Reparatur per Rechtsklick mit den Zutaten; KubeJS ersetzt den kaputten Altar | 2026-10-21 | `18_STORY.md` |
+| O49 | Vier Tempelrollen als eigene KubeJS-Items; Text im Patchouli-Logbuch, Rolle bleibt für die Abgabe | 2026-10-21 | `18_STORY.md` |
+| O50 | Story-Texte (Logbuch, Rollen, Tagebuch, Dialoge) entwirft Claude, der User überarbeitet; Dialoge baut der User von Hand im Easy-NPC-Editor; Hauptquests in Buch 1 als mehrere Story-Schritte je Kapitel | 2026-10-21 | `18_STORY.md` |
+| O51 | Logbuch-Teile und Tagebuch als Patchouli-Buch „Logbuch des Meisters“ (statt geschriebener Bücher, ändert T5) | 2026-10-21 | `18_STORY.md` |
+| O52 | Ende Teil 1: Versteck des Hosts auf Glacio, Vos und DD3R8 erscheinen dort per Befehl | 2026-10-21 | `18_STORY.md` |
 | O6 | Fünf Teile „Logbuch des Meisters“, vom Droiden entschlüsselt, je als Belohnung am Kapitelende; jeder deutet auf das nächste Ziel | 2026-10-21 | `18_STORY.md` Abschnitt 5 |
 | O25 | Einsiedler **Davijaan** (geheim: Odd Ball, CC-2237, Obi-Wans Flügelmann, nach Order 66 zum Mond geflohen). Vertrauen über den kaputten Klonhelm aus der Höhle beim Mond; Reparatur an der Werkbank (Stahlplatten, Isolierglas, Basic Control Circuit, Elektronenröhre) zu `kubejs:klonhelm_repariert` | 2026-10-21 | `18_STORY.md` |
 | O34 | Blue-Skies-Haus: Figur ist der Herrscher **Bodhi Bad Dur** im Exil; Start Anfang K3 (Zinn, Osmium); Handel wie der Gatekeeper, echter Gatekeeper abgeschaltet; ab K8 Pflicht („Siegel der Traumwelten“ für den Altar) | 2026-10-21 | `18_STORY.md` Abschnitt 5 |
@@ -155,7 +161,7 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 | O3 | Relikt und Tagebuch des Meisters liegen in der Altar-Dimension | 2026-10-20 | `18_STORY.md` |
 | F1 | 🔴 Überholt durch F26 (2026-10-20). Ursprünglich: Hauptquests aus K1–K3 stehen als „Notizen des Roboters“ im Buch und haken sich beim Öffnen selbst ab, wenn das Item da ist; Nebenquests aus K1–K3 normal mit Credits; erste Quest ist die Tinkers-Schmelze (Startgeschenk, Einführung) | 2026-10-20 | `18_STORY.md`, Questtexte |
 | F4 | „Würdig sein“: Smeltery Controller (Tinkers), LV-Kondensator (IE), 4 Manasteel-Barren (Botania) | 2026-10-20 | `18_STORY.md`, `questtexte/tinkers.md`, `ie.md`, `botania.md` |
-| F8 | Altar-Reparatur: Terrasteel, 4 Imbued Slate, Dusk Arc (Alchemist, Strang des Blue-Skies-Hauses), ein Item aus dem Pflicht-Dungeon von Wesley's (F15). Texte der Schriftrollen schreibt der User | 2026-10-20 | `18_STORY.md`, `questtexte/bloodmagic.md` |
+| F8 | Altar-Reparatur: Terrasteel, 4 Imbued Slate, ~~Dusk Arc~~ Siegel der Traumwelten (O47; Alchemist, Strang des Blue-Skies-Hauses), ein Item aus dem Pflicht-Dungeon von Wesley's (F15). Texte der Schriftrollen schreibt der User | 2026-10-20 | `18_STORY.md`, `questtexte/bloodmagic.md` |
 | F14 | Der Elf fertigt den Galaktischen Strahlenschutz aus: Relikt, vier Arcs (`blue_skies:ethereal_arc`, `dusk_arc`, `nature_arc`, `poison_arc`, je sicher im Loot Bag des Bosses), Elite Control Circuit, 4 Elementium. Name und Charakter legt der User fest | 2026-10-20 | `18_STORY.md`, `questtexte/blue_skies.md` |
 | F15 | Wesley's in Teil 1: Pflicht sind Stufe 1 (Vorbereitung, Kreide) und ein Oberwelt-Dungeon (liefert das Item für F8); Rest Nebenquest bzw. Training in Teil 2 | 2026-10-20 | `18_STORY.md`, `questtexte/rld.md` |
 | O22 | Mars-Station ohne Prüfskript („wir schummeln“): Quest 1 = Checkliste aller Items für die Basis (Item-Aufgaben); Quest 2 = Basis bauen und sich zu dritt dort aufhalten. Sind alle drei da, setzt der User den Tag per Befehl und die Quest ist erfüllt | 2026-10-20 | `18_STORY.md`; Test 32 entfällt |
@@ -170,7 +176,7 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 | T1, T6 | Kapsel und Sith-Tempel baut der Host von Hand | 2026-10-20 | `18_STORY.md` |
 | T3 | Droide als Easy NPC mit eigenem Skin; den Skin sucht der User aus | 2026-10-20 | `18_STORY.md` |
 | T4 | **Geändert:** Das Questbuch gibt der Droide nach der ersten Quest („Würdig sein“). Nach dem Einsiedler erscheinen dort zusätzlich seine Quests und Nebenquests; der User erklärt das in Dialogen | 2026-10-20 | `18_STORY.md` |
-| T5 | Tagebuch des Droiden und Tagebuch des Meisters als geschriebene Bücher: per `give` aus dem Dialog bzw. per Datapack in der Truhe der Altar-Dimension | 2026-10-20 | `18_STORY.md` |
+| T5 | 🔴 Geändert durch O51 (Patchouli-Buch). Ursprünglich: Tagebuch des Droiden und Tagebuch des Meisters als geschriebene Bücher: per `give` aus dem Dialog bzw. per Datapack in der Truhe der Altar-Dimension | 2026-10-20 | `18_STORY.md` |
 | F26 | Questbuch vor dem Mond: a) alle Quests werden ganz normal abgehakt (keine „Notizen“); b) Nebenquests aus K1–K3 sind Aufgaben des **Droiden**, „um uns intelligenter zu machen“: Belohnung nur Kleinigkeiten und XP, **keine Credits** (Credits erst beim Einsiedler); c) erste Quest im Buch ist **„Würdig sein“ als Klick-Quest** (Checkmark): schon im Dialog erfüllt, erklärt das Questsystem. Ersetzt F1 und die Startquest an der Schmelze aus F23 | 2026-10-20 | `18_STORY.md`, Questtexte vor dem Mond |
 | F27 | Story-Variante B: Der Altar im Tempel ist **Pathway to the Endless Realm**; nur das Endless Realm ist die Dimension der Story. Edge of the Hidden Realm (Mini-Dungeon, 4 Räume, Sackgassen) bleibt überall nutzbar und hat keine Story. Ritual-Sperre in `altar_dimension.js` angepasst | 2026-10-20 | `18_STORY.md`, `meilensteine/`, `kubejs/` |
 | O39 | Die Amulett-Sperre (F18) gilt für **beide** Rituale, also die ganze Dimension `bloodmagic:dungeon` einschließlich Mini-Dungeon. Der Goddess' Charm ist ab BO3 machbar (Rune of Water, Rune of Spring, Mana Diamond), also vor Altar-Stufe 4. Das Skript bleibt unverändert | 2026-10-20 | `18_STORY.md`, `kubejs/` |

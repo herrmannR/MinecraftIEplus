@@ -124,12 +124,15 @@
   5. Rückkehr zum Merkur, Reparatur des Altars, Betreten der Dimension.
   6. Erkenntnis in der Dimension: Der Meister war dort, ist aber weg.
 - 🟢 **Welches Ritual** (User, 2026-10-20, Variante B): Der Altar im Tempel ist **Pathway to the Endless Realm**. Nur das Endless Realm gilt in der Story als die Dimension, in der der Meister gefangen war. **Edge of the Hidden Realm** bleibt ohne Story und ist überall nutzbar. Es ist ein normaler Teil der Blood-Magic-Progression (Tau Fruit → Weak Blood Shard → Altar-Stufe 4). Grund: Der Mini-Dungeon hat nur einen Startraum mit 4 Türen, und jeder Raum dahinter ist eine Sackgasse (JAR geprüft, siehe `modpfade/bloodmagic/WISSEN.md`). Für die Story ist er zu klein. Folge: Die Spieler kennen die Dimension beim Betreten des Endless Realm schon vom Mini-Dungeon.
-- 🔵 Offen: Texte, Fundorte und Reihenfolge der Schriftrollen; die Zutaten der Reparatur; ob der Altar nach der Reparatur sofort öffnet oder weitere Bedingungen hat.
+- 🟢 **Reparatur per Rechtsklick** (User, 2026-10-21, O48): Mit den Zutaten (Terrasteel, 4 Imbued Slate, Siegel der Traumwelten, Item aus dem Wesley's-Dungeon; F8, O47) klicken die Spieler den kaputten Altar an; ein KubeJS-Skript ersetzt ihn durch den heilen. Neues Skript, noch ungeschrieben.
+- 🟢 **Schriftrollen als eigene Items** (User, 2026-10-21, O49): vier KubeJS-Items, vom Host in den Tempel gelegt. Rechtsklick öffnet ihren Text im Patchouli-Buch des Logbuchs (wie die Baupläne); die Rolle bleibt erhalten und wird beim Droiden abgegeben (Bedingung „Item im Inventar“).
+- 🔵 Offen: Fundorte und Reihenfolge der Schriftrollen im Tempel; ob der Altar nach der Reparatur sofort öffnet oder weitere Bedingungen hat. Texte entwirft Claude, der User überarbeitet (O50).
 
 **Wendung**
 - Es stellt sich heraus, dass der Meister selbst aus der Dungeon-Dimension entkommen ist.
 - 🟢 (User, 2026-10-21, O7/O15) Sobald die Spieler das Relikt haben, ist der Droide aus der Mars-Station **verschwunden**. Später finden sie ihn beim Meister auf Glacio wieder: Der Meister hat ihn mit der Macht zu sich geholt. Bis dahin geben das Tagebuch des Meisters und der Elf die Richtung vor.
 - Danach geht es auf der Erde mit dem Elfen weiter, um nach Glacio zu kommen (User, 2026-10-17).
+- 🟢 **Ende auf Glacio** (User, 2026-10-21, O52): Der Host baut ein Versteck an festen Koordinaten. Quinlan Vos und DD3R8 stehen dort schon (despawned) und erscheinen per Befehl, sobald die Spieler auf Glacio sind; Tagebuch bzw. Elf nennen die Richtung.
 
 **Relikt und Tagebuch des Meisters (User, 2026-10-20)**
 - Die Spieler finden ein **Relikt** und das **Tagebuch des Meisters**, das er dort verloren hat. Fundort: in der Altar-Dimension (User, 2026-10-20). Sie liegen automatisch in einer Truhe der **Station**, des größten Raums der Minen im Endless Realm; jede Station hat eine solche Truhe, mehrere Funde sind erlaubt (O40, User 2026-10-20). Notweg: Truhe per `/setblock` vom Host.
@@ -261,8 +264,8 @@ Durchsetzung im Spiel (🔵 alles ungeprüft):
 
 Zwei Texte auseinanderhalten: Die **Ausschnitte** gibt der Droide ab dem Einschlag (Zeit vor dem Tempel); das **Tagebuch des Meisters** liegt mit dem Relikt in der Altar-Dimension (Zeit danach, O4).
 
-- **Form:** Der Datenspeicher des Meisters ist beim Einschlag beschädigt worden. DD3R8 entschlüsselt ihn Stück für Stück; jeder entschlüsselte Teil ist ein geschriebenes Buch „Logbuch des Meisters, Teil n“. Das erklärt, warum die Teile nach und nach kommen.
-- **Freigabe:** als Belohnung der Story-Quest, die ein Kapitel abschließt (FTB-Belohnung „Item“, Team Reward), nicht über Dialog-Befehle. So verpasst keiner einen Teil.
+- **Form:** Der Datenspeicher des Meisters ist beim Einschlag beschädigt worden. DD3R8 entschlüsselt ihn Stück für Stück. 🟢 Geändert (User, 2026-10-21, O51): Die Teile sind keine geschriebenen Bücher, sondern Einträge eines **Patchouli-Buchs „Logbuch des Meisters“** (wie die Baupläne): Jeder Teil erscheint für alle Spieler, auch offline. Das Tagebuch aus der Altar-Dimension und die vier Tempelrollen stehen als eigene Kapitel darin.
+- **Freigabe:** als Belohnung der Story-Quest, die ein Kapitel abschließt (Befehl, der den Eintrag freischaltet, Team Reward), nicht über Dialog-Befehle. So verpasst keiner einen Teil.
 - **Rätsel:** Jeder Teil deutet auf das nächste Ziel, ohne es zu nennen. Die Spieler raten, die nächste Quest bestätigt es. Keine Rätsel mit Eingabe, nur Hinweise.
 - **Fünf Teile:**
 
@@ -306,7 +309,7 @@ Vorgabe des Users: Der Strang ist der Start der Blue-Skies-Welten.
   2. (K3) Bei ihm Zünder (Zeal Lighter) und Buch (Blue Journal) holen, das Portal nach Everbright bauen, erstes Zinn bringen.
   3. (K4) Portal nach Everdawn, Osmium bringen. Danach ist der Strang zunächst Nebenquest.
   4. (K5/K6, Nebenquest) Boss-Reihe: Summoner, Alchemist, Starlit Crusher, Arachnarch; Alchemy Table nach dem Alchemist.
-  5. (K8, ab hier Pflicht) Die vier Arcs stecken schon im Galaktischen Strahlenschutz (F14). Für die Altar-Reparatur gibt der Herrscher nach dem letzten Boss als Dank ein eigenes Item, etwa „Siegel der Traumwelten“, das als Zutat dient. Alternativ reichen die Arcs, und der Herrscher steuert nur Story bei.
+  5. (K8, ab hier Pflicht) Die vier Arcs stecken schon im Galaktischen Strahlenschutz (F14). 🟢 Für die Altar-Reparatur gibt der Herrscher nach dem letzten Boss als Dank ein eigenes Item **„Siegel der Traumwelten“** (`kubejs:siegel_der_traumwelten`); es **ersetzt den Dusk Arc** in der Reparatur (User, 2026-10-21, O47).
 - **Was die Figur handelt:** was sonst der Gatekeeper verkauft (Zeal Lighter, Blue Journal; nach den Blinding Dungeons die Schlüssel), zu ähnlichen Preisen wie das Original (Preise im JAR noch nicht ausgelesen). Keine Credits, die gibt es nur beim Einsiedler.
 - **Technik:** Den echten Gatekeeper per Skript nicht mehr erscheinen lassen (wie `galaxy_overworld.js`), sonst kauft man in jedem Haus. Die Figur steht in genau einem Haus, das der User auswählt; der Droide nennt Richtung oder Koordinaten.
 
