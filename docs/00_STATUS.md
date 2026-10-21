@@ -9,7 +9,7 @@ Minecraft **1.20.1, Forge 47.4.26** (Wechsel von 1.18.2 am 2026-10-11). Erledigt
 
 **Als Nächstes (Ziel: Teil 1 fertig):** Die Entscheidungen und Skripte für Teil 1 stehen (`10_KUBEJS.md`, Abschnitt „Teil 1“). Die Tests 42–61 sind alle bestanden (2026-10-20); Test 49 entfällt (O40). Danach bleiben für Teil 1 nur Easy-NPC-Dialoge und Questbuch.
 
-**Neu (2026-10-20):** Kaleidoscope (Wunsch eines Mitspielers) ist ohne Dopplungen mit Farmer's Delight zusammengeführt; Skripte laden fehlerfrei (Test 65), Tests 66–72 offen.
+**Neu (2026-10-20):** Kaleidoscope (Wunsch eines Mitspielers) ist ohne Dopplungen mit Farmer's Delight zusammengeführt; Tests 65–72 bestanden (2026-10-21).
 
 ### Fahrplan
 
@@ -46,7 +46,7 @@ Die Schritte laufen in dieser Reihenfolge; 1 und 2 gehen parallel. Alle offenen 
 | `03_ERZGENERATION.md` | 🟢 Verteilung beschlossen und im Spiel nachgezählt (2026-10-17) |
 | `07_CROSSMOD_INTEGRATION.md` | 🟡 Tinkers in den höheren Stufen, Schmelzregeln, Blood-Smeltery |
 | `10_KUBEJS.md` | 🟡 Stand der Skripte, was noch fehlt |
-| `11_TESTING.md` | 🟢 Testplan; Tests 1–31, 32a, 42–48, 50–65 bestanden; 32 (O22) und 49 (O40) entfallen; offen 33–41, 66–72 (Kaleidoscope) |
+| `11_TESTING.md` | 🟢 Testplan; Tests 1–31, 32a, 42–48, 50–72 bestanden; 32 (O22) und 49 (O40) entfallen; offen 33–41 |
 | `12_CHANGELOG.md` | 🟢 fortlaufend |
 | `14_ERZ_MOD_MATRIX.md` | 🟢 Ist und Soll |
 | `15_RAUMFAHRT.md` | 🟢 |
