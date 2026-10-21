@@ -30,7 +30,7 @@ LISTE = Path(__file__).with_suffix(".liste")
 
 # Geräte: Rezepte, die sie herstellen, entfallen ersatzlos (der Gewinner hat sein eigenes Rezept).
 GERAETE = {
-    "farmersdelight:stove", "kaleidoscope_cookery:chopping_board", "kaleidoscope_cookery:straw_block",
+    "farmersdelight:stove", "nethersdelight:blackstone_stove", "kaleidoscope_cookery:chopping_board", "kaleidoscope_cookery:straw_block",
     "farmersdelight:iron_knife", "farmersdelight:golden_knife", "farmersdelight:diamond_knife",
     "farmersdelight:netherite_knife",
 }
@@ -45,7 +45,7 @@ OHNE_ERSATZ = {
 UMWANDELN = [
     "farmersdelight:tomato", "farmersdelight:tomato_seeds", "farmersdelight:rice", "farmersdelight:rice_panicle",
     "farmersdelight:cooked_rice", "farmersdelight:fried_egg", "farmersdelight:wheat_dough",
-    "farmersdelight:raw_pasta", "farmersdelight:onion", "farmersdelight:stove",
+    "farmersdelight:raw_pasta", "farmersdelight:onion", "farmersdelight:stove", "nethersdelight:blackstone_stove",
 ]
 # Kaleidoscope-Brett -> Farmer's-Delight-Brett: nur Zutaten, die das FD-Brett noch nicht zerlegt.
 # Huhn, Hammel, Schwein, Fisch und Teig zerlegt das FD-Brett selbst; Kaninchen und Tropenfisch entfallen.

@@ -84,6 +84,7 @@ kubejs/data/ieplus/recipes/einheitlich/schneiden/kartoffel.json
 kubejs/data/ieplus/recipes/einheitlich/schneiden/mantou.json
 kubejs/data/ieplus/recipes/einheitlich/schneiden/rind.json
 kubejs/data/ieplus/recipes/einheitlich/schneiden/suesskartoffel.json
+kubejs/data/ieplus/recipes/einheitlich/umwandeln/blackstone_stove.json
 kubejs/data/ieplus/recipes/einheitlich/umwandeln/cooked_rice.json
 kubejs/data/ieplus/recipes/einheitlich/umwandeln/fried_egg.json
 kubejs/data/ieplus/recipes/einheitlich/umwandeln/onion.json
@@ -178,6 +179,8 @@ kubejs/data/minecraft/recipes/cooked_lamb_chops_from_smoking.json
 kubejs/data/minecraft/recipes/cooked_pork_belly_from_campfire_cooking.json
 kubejs/data/minecraft/recipes/cooked_pork_belly_from_smelting.json
 kubejs/data/minecraft/recipes/cooked_pork_belly_from_smoking.json
+kubejs/data/nethersdelight/loot_tables/blocks/blackstone_stove.json
+kubejs/data/nethersdelight/recipes/blackstone_stove.json
 kubejs/data/tconstruct/recipes/compat/wheat_dough.json
 kubejs/data/tmted/recipes/bottling/wheat_dough.json
 kubejs/data/tmted/recipes/cloche/onion_rich_soil.json

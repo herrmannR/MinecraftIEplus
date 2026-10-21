@@ -49,7 +49,7 @@ JEIEvents.hideItems(event => {
     'kaleidoscope_cookery:raw_pork_belly', 'kaleidoscope_cookery:cooked_pork_belly',
     'kaleidoscope_cookery:raw_cut_small_meats', 'kaleidoscope_cookery:cooked_cut_small_meats',
     'kaleidoscope_cookery:sashimi', 'kaleidoscope_cookery:straw_block',
-    'farmersdelight:stove', 'kaleidoscope_cookery:chopping_board',
+    'farmersdelight:stove', 'nethersdelight:blackstone_stove', 'kaleidoscope_cookery:chopping_board',
     'farmersdelight:iron_knife', 'farmersdelight:golden_knife', 'farmersdelight:diamond_knife', 'farmersdelight:netherite_knife'
   ]
   ausgeblendet.forEach(id => event.hide(id))

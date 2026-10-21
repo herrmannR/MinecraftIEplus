@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "nethersdelight:blackstone_stove"
+    }
+  ],
+  "result": {
+    "item": "kaleidoscope_cookery:stove"
+  }
+}

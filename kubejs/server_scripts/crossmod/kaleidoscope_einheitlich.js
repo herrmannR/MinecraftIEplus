@@ -43,6 +43,7 @@ const ERSETZEN = {
   'kaleidoscope_cookery:straw_block': 'farmersdelight:rice_bale',
   // Geräte
   'farmersdelight:stove': 'kaleidoscope_cookery:stove',
+  'nethersdelight:blackstone_stove': 'kaleidoscope_cookery:stove',   // Test 66 (User, 2026-10-21)
   'kaleidoscope_cookery:chopping_board': 'farmersdelight:cutting_board',
   'farmersdelight:iron_knife': 'kaleidoscope_cookery:iron_kitchen_knife',
   'farmersdelight:golden_knife': 'kaleidoscope_cookery:gold_kitchen_knife',
