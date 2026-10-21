@@ -49,7 +49,7 @@ Galaxy in a Cube setzt sie nur über einen eigenen Spawner im Code, der nur in d
 Mit einem angespannten Esel macht der Millstone aus Iron und Gold Ore 3 Raw, aus Copper Ore 5 Raw Copper, aus Diamond Ore 2 – ohne Strom, gleich nach Eisen. Lassen, abschwächen (z. B. 2× wie der IE-Crusher) oder die Erzrezepte entfernen und in JEI ausblenden?
 → `modpfade/CROSSMOD_AUFFAELLIGKEITEN.md` KS1, Ü2; `questtexte/kueche.md` KU4-06
 
-**F20 · Kostenrahmen je Meilenstein** (Schritt 5, Balance)
+**F20 · Kostenrahmen je Meilenstein** (Schritt 5, Balance; User macht das später bei Bedarf, 2026-10-21)
 → `01_PROGRESSION.md`
 
 **F24 · Automatisierung teuer freischalten** (Idee des Users; verschoben auf Schritt 5, Balance, 2026-10-20)
@@ -91,24 +91,22 @@ Welche Jedi- und Sith-Artefakte, und wie hängen sie an den Machtpunkten?
 
 ## Teil 3 · Im Spiel prüfen
 
-Hier musst du nichts entscheiden, nur nachsehen. Testwege und Ergebnisse stehen in `11_TESTING.md` (Tests 33–41); Funde gehen in `11_TESTING.md` und `modpfade/<mod>/WISSEN.md`.
+Hier musst du nichts entscheiden, nur nachsehen. Testwege und Ergebnisse stehen in `11_TESTING.md` (Tests 33–41 erledigt, 2026-10-21); Funde gehen in `11_TESTING.md` und `modpfade/<mod>/WISSEN.md`.
 
 | Nr. | Mod | Was prüfen |
 |---|---|---|
-| P1 | Mekanism | **Wichtigste Lücke:** Größen der Multiblöcke (Dynamic Tank, Thermal Evaporation, Fission, Boiler, Turbine, Induction Matrix, Teleporter, Fusion, SPS); Zündenergie der Fusion; Eingang des SPS (auch Test 37) |
-| P2 | Botania | Test 40 (`lockAlfheim`) und Test 41 (Rezept des Gaia-Pylons) |
-| P3 | AE2 | Test 36 nach dem Entfernen der Energieerzeuger; Storage Bus an Storage Drawers; Quantum Bridge Card, Magnet Card; Chunkloading der Quantum Bridge auf dem Server |
+| P1 | Mekanism | **Wichtigste Lücke:** Größen der Multiblöcke (Dynamic Tank, Thermal Evaporation, Fission, Boiler, Turbine, Induction Matrix, Teleporter, Fusion, SPS); Zündenergie der Fusion; Eingang des SPS (Test 37 bestanden: Grundmaschinen bis Elite ohne Konflikte) |
+| P3 | AE2 | Storage Bus an Storage Drawers; Quantum Bridge Card, Magnet Card; Chunkloading der Quantum Bridge auf dem Server |
 | P4 | Ad Astra | Automation NASA Workbench; Sauerstoffverbrauch der Giselle-Verzauberungen; Boss-Mobs und Beute der More-Structures-Dungeons; nimmt Ad Astra Planetenstufen über 4 an? |
-| P5 | Star Wars Planets | Ölquellen auf Tatooine, Reiten des Bantha, Kälte auf Mandalore, Structure-Task in FTB Quests; Zusammenspiel mit Galaxy in a Cube (Test 38) |
-| P6 | Galaxy in a Cube | Machtfortschritt sperren und Punkte per Befehl vergeben (Tests 33, 34; T10); Befehle an Droiden, Lichtschwert-Formen, Zerlegen an der Assembly Bench; IDs der bemalten Klonrüstung |
+| P5 | Star Wars Planets | Ölquellen auf Tatooine, Reiten des Bantha, Kälte auf Mandalore, Structure-Task in FTB Quests; Dopplungen mit Galaxy in a Cube (Test 38: laufen zusammen; genauer für Teil 2) |
+| P6 | Galaxy in a Cube | Befehle an Droiden, Lichtschwert-Formen, Zerlegen an der Assembly Bench; IDs der bemalten Klonrüstung |
 | P7 | Tinkers | Blood-Smeltery: Flüssigkeiten und Rezepte; Platten bei Mighty Smelting; Trait Oxygenated; Fundorte der Ancient Tools; reicht die Tinkers-Werkbank den Spieler durch (Bauplan-Rezepte)? |
-| P8 | Blue Skies | Zeal Lighter (Währung), Werkzeugrezepte und Sticks in JEI, Schild gegen den Arachnarch, erklärt das Journal die Progression? Name von Haus und Guard (Test 39, T11) |
+| P8 | Blue Skies | Zeal Lighter (Währung), Werkzeugrezepte und Sticks in JEI, Schild gegen den Arachnarch, erklärt das Journal die Progression? |
 | P9 | Blood Magic | Demon Realm auf dem Server; Zahl der Steine je Ritual; Ritual nur im Tempel abfangbar (T7, ehemals E19) |
 | P10 | Alex's Mobs | Ruft der Skreecher den Warden? Rückweg vom Weltrand |
 | P11 | Roguelike Dungeons | Rückweg des Sentient Pathfinder, Herkunft der Kreide, Seltenheit des Portalbaums |
 | P12 | Immersive Aircraft | Blaze Powder trotz `disableSolidFuel`, Fliegen auf Planeten, Item für den Booster-Platz |
 | P13 | IE | In welchem Eintrag des Handbuchs das Seismic Survey Tool steht |
-| P14 | alle | Mob-Stärke je Gebiet „schwer, aber fair“ (Test 35) |
 | P15 | FTB Quests, Easy NPC | Ist eine Stage-Aufgabe erfüllt, wenn nur ein Party-Mitglied den Tag hat? Öffnet der Shop des Einsiedlers nur unter Bedingung? Globale Bauplan-Freischaltung per Weltwert |
 | P16 | Kaleidoscope | Welche drei Gewürze die Gewürzflasche verlangt (JEI „Mixing Seasoning“). Zusammenführung und Handel des Chef: erledigt (Tests 65–72, 2026-10-21) |
 

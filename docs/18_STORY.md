@@ -133,8 +133,8 @@
 - Damit ist O16 beantwortet (der Text des Meisters ist sein Tagebuch); O3 und O4 sind zum großen Teil beantwortet (offen: der Grund der Flucht).
 
 **Das Blue-Skies-Haus (neuer Strang, User, 2026-10-17)**
-- „Haus“ ist die Overworld-Struktur von Blue Skies, in der die Portale nach Everbright und Everdawn stehen. Everbright und Everdawn sind die „Traumwelten des Lichts und der Dunkelheit“.
-- Der Mob-Händler, den Blue Skies dort von sich aus hinstellt (Guard), wird durch eine eigene **Easy-NPC-Figur** ersetzt.
+- „Haus“ ist die Overworld-Struktur von Blue Skies, das Gatekeeper's House (`#blue_skies:gatekeeper_houses`). Die Portale nach Everbright und Everdawn stehen dort **nicht**, die bauen die Spieler selbst; im Haus kauft man beim Guard den Zünder (Zeal Lighter) und das Buch (Blue Journal) (Test 39, 2026-10-21). Der User plant dort später mehr. Everbright und Everdawn sind die „Traumwelten des Lichts und der Dunkelheit“.
+- Der Mob-Händler, den Blue Skies dort von sich aus hinstellt (Guard, `blue_skies:gatekeeper`), wird durch eine eigene **Easy-NPC-Figur** ersetzt.
 - Der Strang wird **zuerst als Nebenquest** freigeschaltet: Erst erledigen die Spieler einige Quests bei dieser Figur, später folgt eine Boss-Reihe; der Alchemy Table von Blue Skies gehört mit hinein.
 - Später wird er für die Reparatur des Altars in der Hauptstory **Pflicht** (erst optional, dann Pflicht).
 - Aus den Notizen des Users (Wortlaut sinngemäß): Der Droide findet den Meister nicht, hat aber „etwas aus seiner eigenen Welt“ gefunden, das Haus, über das man in die Traumwelten reisen kann. Er empfiehlt, den dortigen Herrscher aufzusuchen; der hilft, an Erze aus seiner Welt zu kommen, vor allem die Mekanism-Erze, die es in der Overworld nur wenig gibt. 🔵 Offen: siehe O34.
@@ -164,7 +164,7 @@
 
 **Macht und Training (Ideenimport, User, 2026-10-17)**
 - 🟢 Das Training liegt in Teil 2 und beginnt, sobald der Meister zurück ist. Es beginnt beim Meister mit einer **Machtprobe** (Quest).
-- 🟢 Die Macht ist zu Beginn nicht frei verfügbar; die Spieler müssen sie erst freischalten. Die Macht kommt aus Galaxy in a Cube (helle Seite über XP, dunkle über das Töten von Zivilisten; Spielregel `forceObtainment`). Ob sich der normale Fortschritt abschalten und Punkte gezielt vergeben lassen, ist eine technische Prüfung (T10).
+- 🟢 Die Macht ist zu Beginn nicht frei verfügbar; die Spieler müssen sie erst freischalten. Die Macht kommt aus Galaxy in a Cube (helle Seite über XP, dunkle über das Töten von Zivilisten; Spielregel `forceObtainment`). 🟢 Geprüft (Tests 33, 34, 2026-10-21): `forceObtainment false` schaltet den Gewinn über XP und Töten ab, Holocrons wirken weiter (gewollt: die gibt es später vom Meister im Training). Punkte setzt `/swgcforce light|dark set <Wert> [Spieler]` (absolut), Befehle in `modpfade/swgc/WISSEN.md`.
 - 🟢 **Machtpunkte** werden als Questbelohnung vergeben; Jedi- und Sith-Artefakte können Belohnungen sein und mit Machtpunkten verknüpft werden.
 - 🟢 Trainingspfade: **helle Seite** mit Aufgaben rund um Botania, **dunkle Seite** rund um Blood Magic, **allgemeines Training** im Roguelike-Dungeon (Wesley's). Den Abschluss der ersten Trainingsreihe bildet der Sieg über den **Gaia Guardian** (Gaia I).
 - 🔵 Ideen des Users, nicht entschieden: Freischaltung über ein **Machtmessgerät**, das hergestellt werden muss (angelehnt an Episode I); alternativ oder zusätzlich ein sehr teures Ritual oder ein Handel.

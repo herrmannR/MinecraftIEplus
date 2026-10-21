@@ -18,11 +18,11 @@ Die Schritte laufen in dieser Reihenfolge; 1 und 2 gehen parallel. Alle offenen 
 | Schritt | Inhalt | Stand | Hängt an |
 |---|---|---|---|
 | 1 Entscheidungen | Teil 1 entschieden; Teil 2 und 3 offen | 🟢 Teil 1 erledigt (2026-10-20) | User |
-| 2 Tests im Spiel | Teil 1 fertig; offen noch 33–41 (`11_TESTING.md`), Prüfpunkte P1–P15 | 🟢 Teil 1 bestanden (2026-10-20) | User spielt |
+| 2 Tests im Spiel | Teil 1 fertig; 33–41 erledigt (2026-10-21, 35 entfällt); offen nur noch Prüfpunkte aus `20_ENTSCHEIDUNGEN.md` (P1, P3–P13, P15, P16) | 🟢 Teil 1 bestanden (2026-10-20) | User spielt |
 | 3 Story von Part 1 fertig | `18_STORY.md` bis zur Rückkehr des Meisters; reine Story-Texte (Tagebücher, Schriftrollen, Dialoge) schreibt der User beim Bau der NPCs | 🟡 Handlung steht, Texte offen | User; O4, O6–O9, O15, O25, O34 |
 | 4 Skripte und Raketen | Teil 1 geschrieben (2026-10-20): Raketen T1–T4, Rover, eigene Items, Altar-Dimension (Ritual, Amulett, Truhe), Ideenimport-Entfernungen, IE-Crusher, AE2, Airship, Shop und Baupläne, Galaxy in a Cube aus der Overworld. Offen: Antimaterie-Treibstoffe T6/T7, Etrium, Planetenstufen T5–T7, Beskar, Kyber (Teil 2 und 3) | 🟢 Teil 1 getestet (2026-10-20) | – |
-| 5 Balance (frühere Phasen 3–6) | Erträge der Erzverarbeitung, Energie, AE2 zweistufig, Cross-Mod-Rezepte (`07_CROSSMOD_INTEGRATION.md`) | 🔵 nicht begonnen | F10, F19, F20, F24 |
-| 6 Questbuch einbauen | FTB Quests aus `questtexte/`, Easy-NPC-Figuren (Droide, Einsiedler, Elf, Figur im Blue-Skies-Haus) | 🟡 Texte im Entwurf | Schritte 3–5 |
+| 5 Balance (frühere Phasen 3–6) | Erträge der Erzverarbeitung, Energie, AE2 zweistufig, Cross-Mod-Rezepte (`07_CROSSMOD_INTEGRATION.md`). Macht der User später bei Bedarf (2026-10-21); bremst Teil 1 nicht | 🔵 später | F20, F24 |
+| 6 Questbuch einbauen | FTB Quests aus `questtexte/`, Easy-NPC-Figuren (Droide, Einsiedler, Elf, Figur im Blue-Skies-Haus) | 🟡 Texte im Entwurf | Schritte 3 und 4 |
 | 7 Hauptwelt umstellen | Aufgaben beim Host (H1–H5 unten) | 🔵 | Schritte 4–6; nur, was in `11_TESTING.md` ✅ hat |
 
 ### Aufgaben beim Host (Schritt 7)
@@ -46,7 +46,7 @@ Die Schritte laufen in dieser Reihenfolge; 1 und 2 gehen parallel. Alle offenen 
 | `03_ERZGENERATION.md` | 🟢 Verteilung beschlossen und im Spiel nachgezählt (2026-10-17) |
 | `07_CROSSMOD_INTEGRATION.md` | 🟡 Tinkers in den höheren Stufen, Schmelzregeln, Blood-Smeltery |
 | `10_KUBEJS.md` | 🟡 Stand der Skripte, was noch fehlt |
-| `11_TESTING.md` | 🟢 Testplan; Tests 1–31, 32a, 42–48, 50–72 bestanden; 32 (O22) und 49 (O40) entfallen; offen 33–41 |
+| `11_TESTING.md` | 🟢 Testplan; Tests 1–31, 32a, 33, 34, 36–48, 50–72 bestanden; 32 (O22), 35 und 49 (O40) entfallen |
 | `12_CHANGELOG.md` | 🟢 fortlaufend |
 | `14_ERZ_MOD_MATRIX.md` | 🟢 Ist und Soll |
 | `15_RAUMFAHRT.md` | 🟢 |

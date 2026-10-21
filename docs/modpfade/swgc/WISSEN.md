@@ -16,6 +16,7 @@
   - Assembly Bench: `inventory/AssemblyBenchMenu`, `block/AssemblyBenchBlock`
   - Gas Harvester: `block/entity/GasHarvesterBlockEntity` (Zähler bis 400, Nether/End doppelt)
   - Macht: `force/ForceUser`, `ForceSkill`, `ForceAction`, `LightsaberForm`, `StaminaFunction`; Hooks in `SwgcHooks`; Spielregel `forceObtainment`
+  - Befehle: `ForceCommands` (2026-10-21, aus dem Bytecode): `/swgcforce light get [Ziel]`, `/swgcforce light set <Wert ≥ 0> [Spieler]`, ebenso `dark`; `/swgcforce sensitivity get [Spieler]`, `/swgcforce sensitivity set true|false|default [Spieler]`. `set` braucht OP-Stufe 2 und setzt absolut (kein Addieren). `sensitivity` (`ForceUser$ForceSensitivity`): `true` = kann Macht gewinnen trotz Regel, `false` = nie, `default` = wie `forceObtainment`. Test 33: Die Regel sperrt nur XP und Töten, Holocrons wirken weiter
   - Kyber färben: `item/lightsaber/kyber/{KyberCrystalItem,RedKyberCrystalItem,KyberColor}`, `client/gui/KyberCrystalScreen`; Vorkommen `levelgen/feature/KyberCrystalFeature`
   - Lichtschwerter: `item/lightsaber/{LightsaberItem,LightsaberHiltItem,LightsaberConnectorItem,LightsaberVariant,DoubleLightsaberItem,DarkSaberItem}`
   - Holocrons `item/HolocronItem`, Credits `item/CreditItem`

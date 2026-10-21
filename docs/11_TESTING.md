@@ -86,20 +86,20 @@ Ergebnis jeweils hier eintragen: ✅ bestanden, ❌ Fehler (mit Beschreibung), �
 
 | Nr. | Test | Wie | Erwartet | Ergebnis |
 |---|---|---|---|---|
-| 33 | Macht gesperrt | neue Welt, `/gamerule forceObtainment false`; XP sammeln, Zivilisten (`swgc:civilians`) töten | kein Machtfortschritt; notieren, was die Regel genau abschaltet | ⏳ |
-| 34 | Machtpunkte per Befehl | Befehle von Galaxy in a Cube suchen (Tab-Vervollständigung) | Punkte hell/dunkel lassen sich gezielt setzen → als Quest-Belohnung „Befehl“ nutzbar | ⏳ |
-| 35 | Mob-Stärke | Overworld, Blue Skies, Wesley's-Dungeons, Planeten mit typischer Ausrüstung der Stufe | „schwer, aber fair“; Eindruck je Gebiet notieren | ⏳ |
-| 36 | AE2 ohne Generatoren | nach dem Entfernen von Vibration Chamber und Crystal Resonance Generator JEI ansehen | kein Rezept fehlt, das eine der beiden als Zutat braucht | ⏳ |
-| 37 | Mekanism-Maschinen grob | Grundmaschinen bis Elite in JEI und kurz im Spiel | keine Rezeptkonflikte, keine fehlenden Eingaben, keine Umgehung der Progression | ⏳ |
-| 38 | Star Wars Planets und Galaxy in a Cube | beide Mods, Planeten besuchen | läuft zusammen; Dopplungen notieren (Liste in `17_STAR_WARS_1.20.1.md`) | ⏳ |
-| 39 | Blue-Skies-Haus | Struktur mit den Portalen suchen | Name der Struktur und des Guard notieren (für T11 in `18_STORY.md`) | ⏳ |
+| 33 | Macht gesperrt | neue Welt, `/gamerule forceObtainment false`; XP sammeln, Zivilisten (`swgc:civilians`) töten | kein Machtfortschritt; notieren, was die Regel genau abschaltet | ✅ 2026-10-21 (User): Die Regel schaltet Machtgewinn durch XP und Töten ab; über Holocrons geht es weiter. So gewollt: Holocrons gibt es später vom Meister im Training (F13) |
+| 34 | Machtpunkte per Befehl | Befehle von Galaxy in a Cube suchen (Tab-Vervollständigung) | Punkte hell/dunkel lassen sich gezielt setzen → als Quest-Belohnung „Befehl“ nutzbar | ✅ 2026-10-21 (aus dem JAR, `che/swgc/ForceCommands`): `/swgcforce light get [Spieler]`, `/swgcforce light set <Wert> [Spieler]`, ebenso `dark`; `/swgcforce sensitivity get [Spieler]`, `/swgcforce sensitivity set true|false|default [Spieler]`. `set` braucht OP-Stufe 2 und setzt den Wert absolut (kein Addieren), Wert ≥ 0. `sensitivity true` erlaubt einem Spieler Machtgewinn trotz `forceObtainment false`, `default` folgt der Regel. Im Spiel noch nicht ausprobiert |
+| 35 | Mob-Stärke | Overworld, Blue Skies, Wesley's-Dungeons, Planeten mit typischer Ausrüstung der Stufe | „schwer, aber fair“; Eindruck je Gebiet notieren | entfällt (User, 2026-10-21): keine Anpassung der Mob-Stärke |
+| 36 | AE2 ohne Generatoren | nach dem Entfernen von Vibration Chamber und Crystal Resonance Generator JEI ansehen | kein Rezept fehlt, das eine der beiden als Zutat braucht | ✅ 2026-10-21 (Claude, alle Rezepte aller JARs und `kubejs/` durchsucht): Vibration Chamber und Crystal Resonance Generator stehen nur in ihren eigenen Rezepten, nie als Zutat; durch das Entfernen fehlt also nichts |
+| 37 | Mekanism-Maschinen grob | Grundmaschinen bis Elite in JEI und kurz im Spiel | keine Rezeptkonflikte, keine fehlenden Eingaben, keine Umgehung der Progression | ✅ 2026-10-21 (User) |
+| 38 | Star Wars Planets und Galaxy in a Cube | beide Mods, Planeten besuchen | läuft zusammen; Dopplungen notieren (Liste in `17_STAR_WARS_1.20.1.md`) | ✅ 2026-10-21 (User): beide laufen zusammen; Dopplungen genauer erst für Teil 2 |
+| 39 | Blue-Skies-Haus | Struktur mit den Portalen suchen | Name der Struktur und des Guard notieren (für T11 in `18_STORY.md`) | ✅ 2026-10-21 (User): In der Struktur stehen **keine** Portale (die bauen die Spieler selbst), aber der Guard. Bei ihm kauft man den Zünder für die Portale und ein Buch. Aus dem JAR: Struktur `blue_skies:gatekeeper_house_plains`/`_mountain`/`_snowy` (Tag `#blue_skies:gatekeeper_houses`), „Gatekeeper's House“; Guard `blue_skies:gatekeeper` („Gatekeeper“); Zünder `blue_skies:zeal_lighter`, Buch `blue_skies:blue_journal`. Der User plant dort später mehr |
 
 ### Runde 7 — Questtexte Botania (2026-10-17)
 
 | Nr. | Test | Wie | Erwartet | Ergebnis |
 |---|---|---|---|---|
-| 40 | Alfheim-Sperre | Elfenportal öffnen und ohne Mead of Kvasir hineingehen; dann Met trinken (`mythicbotany:kvasir_mead`, Kreativ) und erneut | ohne Met kein Durchgang, mit Met nach Alfheim (`lockAlfheim`); sonst BO5-02/BO6-01 in `questtexte/botania.md` anpassen | ⏳ |
-| 41 | Gaia-Pylon-Rezept | `botania:gaia_pylon` in JEI ansehen | nur das Rezept über den Alfsteel Pylon (MythicBotany `replaceGaiaRecipe`); gilt das Botania-Original, liegt Gaia nicht hinter Alfsteel (Ü P1) | ⏳ |
+| 40 | Alfheim-Sperre | Elfenportal öffnen und ohne Mead of Kvasir hineingehen; dann Met trinken (`mythicbotany:kvasir_mead`, Kreativ) und erneut | ohne Met kein Durchgang, mit Met nach Alfheim (`lockAlfheim`); sonst BO5-02/BO6-01 in `questtexte/botania.md` anpassen | ✅ 2026-10-21 (User): erst nach dem Met kommt man nach Alfheim |
+| 41 | Gaia-Pylon-Rezept | `botania:gaia_pylon` in JEI ansehen | nur das Rezept über den Alfsteel Pylon (MythicBotany `replaceGaiaRecipe`); gilt das Botania-Original, liegt Gaia nicht hinter Alfsteel (Ü P1) | ✅ 2026-10-21 (User): nur das eine richtige Rezept |
 
 ### Runde 8 — Skripte für Teil 1 (2026-10-20)
 

@@ -39,7 +39,7 @@ Werkzeug-Icons als Ebenen: `blue_skies:item/tools/handles/handle+/item/tools/hea
 
 ## Progression in Kürze
 
-1. Gatekeeper's House (Oberwelt): Blue Journal und Zeal Lighter beim Gatekeeper; Portale aus Turquoise/Lunar Stone Bricks. Danach Holz-/Steinwerkzeuge der Welten (fremde Werkzeuge abgeschwächt).
+1. Gatekeeper's House (Oberwelt; `blue_skies:gatekeeper_house_plains`/`_mountain`/`_snowy`, Tag `#blue_skies:gatekeeper_houses`, Händler `blue_skies:gatekeeper`): Blue Journal und Zeal Lighter beim Gatekeeper; im Haus stehen keine Portale (Test 39), die Spieler bauen sie aus Turquoise/Lunar Stone Bricks. Danach Holz-/Steinwerkzeuge der Welten (fremde Werkzeuge abgeschwächt).
 2. Everbright: Ventium (Eimer, Schere, Tool Box), Falsite (Haltbarkeit über Tool Box, Lapis-Ersatz), Snowcap Oven, Warding Pearl.
 3. Everdawn: Horizonite (Auto-Smelt), Horizonite Forge (ohne Brennstoff, Sunstone lädt), Moonstone Shield.
 4. Beide Welten: Pyrope → Aquite → Diopside / Charoite; Enchanting Table mit Charoite.
