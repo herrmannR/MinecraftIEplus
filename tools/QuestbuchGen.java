@@ -387,13 +387,13 @@ public class QuestbuchGen {
             l = l.trim(); if (l.isEmpty() || l.startsWith("#")) continue;
             int eq = l.indexOf('='); titles.put(l.substring(0, eq).trim(), l.substring(eq + 1).trim());
         }
-        StringBuilder sb = null; String file = null, prev = null; double x = 0, y = 0; int n = 0, book = 0;
+        StringBuilder sb = null; String file = null, prev = null; double x = 0, y = 0; int n = 0, book = 0; boolean firstInBook = false;
         for (String l : Files.readAllLines(src, StandardCharsets.UTF_8)) {
             if (!l.startsWith("| ")) continue;
             String[] c = cells(l);
             if (c[0].startsWith("**Part")) {
                 if (sb != null) write(outDir.resolve(file + ".snbt"), sb.append(chapterTail(titles.get(file))).toString());
-                book++; file = "buch" + book; x = 0;
+                book++; file = "buch" + book; x = 0; firstInBook = true;
                 if (!titles.containsKey(file)) throw new RuntimeException("Titel für " + file + " fehlt in " + cfg);
                 sb = new StringBuilder(chapterHead(file, titles.get(file), "minecraft:written_book", String.valueOf(book - 1)));
                 continue;
@@ -403,6 +403,9 @@ public class QuestbuchGen {
             String k = m.group(1);
             sb.append("\t\t{\n");
             if (prev != null) sb.append("\t\t\tdependencies: [\"").append(hex(HQ + ":" + prev)).append("\"]\n");
+            // erste Quest eines späteren Buchs: unsichtbar, bis das vorige Buch fertig ist; der Tab bleibt so verborgen
+            if (prev != null && firstInBook) sb.append("\t\t\thide_until_deps_complete: true\n");
+            firstInBook = false;
             sb.append("\t\t\tdescription: [\n\t\t\t\t\"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r\"\n")
               .append("\t\t\t\t\"\"\n\t\t\t\t\"&eFortschritt:&r ").append(esc(fmt(c.length > 1 ? c[1] : ""))).append("\"\n\t\t\t]\n");
             sb.append("\t\t\ticon: \"minecraft:book\"\n\t\t\tid: \"").append(hex(HQ + ":" + k)).append("\"\n");

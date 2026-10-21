@@ -10,6 +10,7 @@
 	quests: [
 		{
 			dependencies: ["7AC6FA1861C2D3B0"]
+			hide_until_deps_complete: true
 			description: [
 				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
 				""
