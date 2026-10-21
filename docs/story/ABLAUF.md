@@ -74,7 +74,7 @@ In der Hauptwelt sind K1 und K2 schon erreicht (IE-Stahl, Runenaltar). Der Absch
 | ST4-02 | Der Einsiedler | – | Erstes Gespräch mit Davijaan (er erwähnt, „da unten“ etwas verloren zu haben) | `#davijaan = 1` | D-DAVIJAAN-0 |
 | ST4-03 | Die Höhle | `kubejs:kaputter_klonhelm` | Truhe in der Höhle | – | Q |
 | ST4-04 | Reparatur | `kubejs:klonhelm_repariert` | Werkbank (Rezept in `18_STORY.md`) | – | Q |
-| ST4-05 | Vertrauen | – | Dialog (B1): reparierter Helm | Shop offen, `#davijaan = 2`, 🟡 Bauplan Assembly Bench geschenkt, Credits | D-DAVIJAAN-1 |
+| ST4-05 | Vertrauen | – | Dialog (B1): reparierter Helm | `#davijaan = 2` (Dialog); Credits. Bauplan Assembly Bench schenkt er im Dialog; danach `#davijaan = 3`, Laden offen | D-DAVIJAAN-1 |
 | ST4-06 | Everdawn | Dimension `blue_skies:everdawn`, dann Dialog (B1): 🟡 16 × `mekanism:raw_osmium` | Bodhi | `#bodhi = 3`; danach ist Bodhis Strang Nebenquest | D-BODHI-2 |
 | ST4-07 | Warum der Mond schweigt | – | Dialog DD3R8 (Bedingung `#davijaan ≥ 2`): Bericht, dass es vom Mars aus geht | Stage `kapitel_k5`, `#dd3r8 = 4` | D-DAVIJAAN-1 (Hinweis Mars), D-DD3R8-3 |
 
