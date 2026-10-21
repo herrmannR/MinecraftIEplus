@@ -58,7 +58,7 @@
 | Droide **DD3R8** | Easy NPC aus der Star-Wars-Welt. Guide der Spieler. Charakter: lustig, aber mechanisch ernst. Verrät seine Herkunft nicht. Orte (User, 2026-10-21, O7/O15): zuerst in der Basis auf der Overworld, dann in der Mars-Station; verschwindet, sobald die Spieler das Relikt haben; taucht am Ende von Teil 1 beim Meister auf Glacio wieder auf (der Meister hat ihn mit der Macht zu sich geholt, das erfahren die Spieler dort). |
 | Einsiedler | Easy NPC auf dem Mond, ein **Klon-Veteran** (User, 2026-10-21, O25): **Odd Ball** (CC-2237, Davijaan), Klon-Pilot und Flügelmann von Obi-Wan Kenobi (User, 2026-10-21). Hintergrund in Abschnitt 5 („Einsiedler: Odd Ball“). Die Spieler kennen ihn nur als **Davijaan**; wer er ist (Odd Ball, CC-2237, Obi-Wans Flügelmann, nach Order 66 zum Mond geflohen), bleibt vorerst geheim (User, 2026-10-21). |
 | Herrscher der Traumwelten | Easy NPC im Blue-Skies-Haus (statt des Gatekeepers): **Bodhi Bad Dur** (User, 2026-10-21). |
-| Elf | Easy NPC am Elfenportal: **Meister Cerina**, weiblich (User, 2026-10-21); in Texten bisher „der Helle Elf“. |
+| Elf | Easy NPC am Elfenportal: **Meister Cerina**, weiblich (User, 2026-10-21); dahinter steckt die Mirialanerin **Vernestra Rwoh** (User, 2026-10-21, O46; Abschnitt 5); in Texten bisher „der Helle Elf“. |
 | Meister | Jedi **Quinlan Vos** (User, 2026-10-21, O44), mit Hang zur dunklen Seite; Hintergrund in Abschnitt 5 („Der Meister: Quinlan Vos“). Suchte im Sith-Tempel ein altes Relikt, wurde in die Dungeon-Dimension gezogen, ist selbst entkommen und hält sich auf Glacio auf. Bildet die Spieler später zu Jedi aus. |
 | Weitere Easy NPCs | Auftraggeber für Kopfgeldjäger-Quests in den Star-Wars-Welten. |
 
@@ -338,9 +338,9 @@ Wunsch des Users: ein eher unbekannter Jedi mit Hang zur dunklen Seite. 🟢 Ent
 - **Haken:** Vos ist bei Star-Wars-Fans bekannter als Odd Ball, in den Filmen aber nicht zu sehen.
 - **Andere Möglichkeit:** Taron Malicos (Spiel „Jedi: Fallen Order“): Jedi-Meister, nach Order 66 auf Dathomir gestrandet und durch die Magie der Nachtschwestern gefallen, also noch dunkler. Er ist im Spiel ein Gegner und wird dort besiegt, wahrscheinlich tot; als Lehrer passt er schlechter.
 
-### Der Elf: wer hinter Meister Cerina steckt (O46, Vorschlag 2026-10-21)
+### Der Elf: wer hinter Meister Cerina steckt (O46, vom User entschieden 2026-10-21)
 
-Wunsch des Users: eine Jedi, weiblich, nicht menschlich. Der Name „Meister Cerina“ bleibt; Vorschlag: So nennen sie die Elfen von Alfheim, ihr alter Name kommt erst in Teil 2 durch den Meister heraus.
+Wunsch des Users: eine Jedi, weiblich, nicht menschlich. 🟢 Entschieden: **Vernestra Rwoh** (User, 2026-10-21); Katooni ist damit verworfen. Ihr hohes Alter und die Vertuschung am Ende von „The Acolyte“ gehören zur Figur und lassen sich in der Story nutzen (Ausgestaltung offen, schreibt der User). Der Name „Meister Cerina“ bleibt; Vorschlag: So nennen sie die Elfen von Alfheim, ihr alter Name kommt erst in Teil 2 durch den Meister heraus.
 
 - **Vorschlag: Katooni**, Tholothianerin (Kopf mit Fühlern statt Haaren, große Augen). In „The Clone Wars“ (Staffel 5, „The Gathering“) ist sie ein Jüngling (Jedi-Kind), das mit Ahsoka und dem Droiden Huyang nach Ilum fliegt und dort in der Kristallhöhle ihren Kyberkristall findet. Erst zweifelt sie an sich, dann gibt sie nicht auf. Ihr Schicksal nach Order 66 bestätigt der Kanon nicht; Fan-Wikis halten sie für tot beim Angriff auf den Tempel, belegt ist das nicht (Stand der Suche 2026-10-21).
 - **Warum sie passt:**

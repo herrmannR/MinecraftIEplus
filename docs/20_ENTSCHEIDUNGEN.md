@@ -70,9 +70,7 @@ Welche Jedi- und Sith-Artefakte, und wie hängen sie an den Machtpunkten?
 
 | Nr. | Frage |
 |---|---|
-| O8 | Rest: Brauchen Mekanism und AE2 in Teil 1 Story, oder reichen Questtexte? (Mars, Venus, Everbright und Everdawn beantwortet 2026-10-21) |
-| O46 | Wer steckt hinter Meister Cerina (weibliche, nicht menschliche Jedi)? Vorschlag Katooni (Alternative Vernestra Rwoh) in `18_STORY.md` Abschnitt 5, wartet auf den User |
-### Story, Part 2 und 3 (später)
+| O8 | Rest: Brauchen Mekanism und AE2 in Teil 1 Story, oder reichen Questtexte? (Mars, Venus, Everbright und Everdawn beantwortet 2026-10-21) |### Story, Part 2 und 3 (später)
 
 | Nr. | Frage |
 |---|---|
@@ -123,6 +121,7 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 | O34 | Blue-Skies-Haus: Figur ist der Herrscher **Bodhi Bad Dur** im Exil; Start Anfang K3 (Zinn, Osmium); Handel wie der Gatekeeper, echter Gatekeeper abgeschaltet; ab K8 Pflicht („Siegel der Traumwelten“ für den Altar) | 2026-10-21 | `18_STORY.md` Abschnitt 5 |
 | O43 | Der Galaktische Strahlenschutz ist das Gehäuse um das Relikt; das Relikt fliegt mit nach Glacio | 2026-10-21 | `18_STORY.md` Abschnitt 5 |
 | O45 | Namen: Elf **Meister Cerina** (weiblich), Herrscher **Bodhi Bad Dur**, Einsiedler **Davijaan**, Meister **Quinlan Vos** | 2026-10-21 | `18_STORY.md` |
+| O46 | Hinter Meister Cerina steckt die Mirialanerin **Vernestra Rwoh** (Jedi, Lichtpeitsche); Katooni verworfen | 2026-10-21 | `18_STORY.md` |
 | O4 | Im Dungeon von dunklen Wesen umzingelt; das Relikt hätte ihn von innen zerstört, er floh ohne es nach Glacio (Heimat der hellen Macht) und schrieb ins Tagebuch, wer unbefleckt von der Macht sei, solle es ihm bringen | 2026-10-21 | `18_STORY.md` |
 | O7, O15 | Droide **DD3R8**: Overworld, dann Mars-Station; verschwindet, sobald die Spieler das Relikt haben; wieder da beim Meister auf Glacio (mit der Macht geholt). Danach führen Tagebuch und Elf | 2026-10-21 | `18_STORY.md` |
 | O8 (Teil) | Mars ist der Horchposten, Venus nur wegen der Rohstoffe interessant; keine weitere Story | 2026-10-21 | `18_STORY.md` |
