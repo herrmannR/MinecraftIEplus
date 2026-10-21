@@ -173,6 +173,8 @@ Die Spalte „Gebraucht von“ stammt aus der Installation, nicht aus einer Ausw
 | Controlling | 12.0.2 | Suche in der Tastenbelegung |
 | Embeddium | 0.3.31 | schnellerer Renderer |
 | FerriteCore | 6.0.1 | weniger Arbeitsspeicher |
+| Forgematica | 0.1.13 | Litematica-Port: Strukturen als Vorlage einblenden und einfügen (seit 2026-10-21); **nur Client, nicht beim Host** |
+| MaFgLib | 0.1.14 | Bibliothek für Forgematica; **nur Client, nicht beim Host** |
 | ModernFix | 5.27.88 | kürzere Ladezeiten |
 | Inventory Sorter | 23.0.11 | Sortieren per Mittelklick |
 | Jade | 11.13.3 | Block- und Wesen-Anzeige |
@@ -188,6 +190,8 @@ Die Spalte „Gebraucht von“ stammt aus der Installation, nicht aus einer Ausw
 | Spark | 1.10.53 | Profiler |
 | Stack Refill | 5.1 | Stapel in der Hand nachfüllen |
 | Toast Control | 8.0.3 | Hinweis-Einblendungen ausblenden |
+
+Forgematica und MaFgLib laufen nur beim Spieler, der sie nutzt; **beim Host müssen sie nicht liegen.** Bekannter Absturz nur mit Embeddium **und** Valkyrien Skies zusammen; Valkyrien Skies ist nicht im Pack.
 
 ## Entfallen gegenüber 1.18.2
 
