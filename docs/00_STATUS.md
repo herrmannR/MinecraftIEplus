@@ -1,13 +1,13 @@
 # Minecraft-Modpack „Immersive Engineering+“ (1.20.1) — Projektstatus
 
 > Einstiegspunkt. Nur der aktuelle Stand und das Offene; Erledigtes, Phasenbeschreibungen und Entscheidungslog stehen in `00_STATUS_ARCHIV.md`.
-> Letzte Überarbeitung: 2026-10-20 (Stand der Tests für Teil 1).
+> Letzte Überarbeitung: 2026-10-21 (Story-Texte und Logbuch für Teil 1).
 
 ## ▶ Wo wir stehen
 
-Minecraft **1.20.1, Forge 47.4.26** (Wechsel von 1.18.2 am 2026-10-11). Erledigt sind die Grundlagen, die Erzverteilung (umgesetzt und nachgezählt, 2026-10-17) und die erste Fassung der Skripte (Tests 1–31 bestanden). Die Story schreibt der User (`18_STORY.md`, Part 1 im Umriss). Questtexte gibt es für alle großen Mods im Entwurf.
+Minecraft **1.20.1, Forge 47.4.26** (Wechsel von 1.18.2 am 2026-10-11). Erledigt sind die Grundlagen, die Erzverteilung (umgesetzt und nachgezählt, 2026-10-17) und die erste Fassung der Skripte (Tests 1–31 bestanden). Die Handlung legt der User fest (`18_STORY.md`); die Story-Texte von Teil 1 hat Claude entworfen, der User liest gegen (O50). Questtexte gibt es für alle großen Mods im Entwurf.
 
-**Als Nächstes (Ziel: Teil 1 fertig):** Die Entscheidungen und Skripte für Teil 1 stehen (`10_KUBEJS.md`, Abschnitt „Teil 1“). Die Tests 42–61 sind alle bestanden (2026-10-20); Test 49 entfällt (O40). Danach bleiben für Teil 1 nur Easy-NPC-Dialoge und Questbuch.
+**Als Nächstes (Ziel: Teil 1 fertig):** Die Entscheidungen und Skripte für Teil 1 stehen (`10_KUBEJS.md`, Abschnitt „Teil 1“). Die Tests 42–61 sind alle bestanden (2026-10-20); Test 49 entfällt (O40). Der Ablauf der Story steht in `story/ABLAUF.md` (Story-Quests ST2–ST11, Dialogstufen, Figuren). Alle Texte liegen als Entwurf in `story/texte/`: Logbuch, Tempelrollen, Tagebuch, Dialoge der fünf Figuren, Questtexte der Story-Quests, Tooltips. Logbuch-Buch, Lese-Items, Story-Items und Helm-Rezept sind gebaut und in der Testinstanz (Tests 73–78 offen). Danach: Texte gegenlesen (User), Altar-Skript, Gatekeeper abschalten, `QuestbuchGen` für Buch 1, Dialoge im Easy-NPC-Editor (User).
 
 **Abgeschlossen (2026-10-21):** Kaleidoscope (Wunsch eines Mitspielers) ist ohne Dopplungen mit Farmer's Delight zusammengeführt und getestet (Tests 65–72). Offen dazu nur F30 (Mühlstein vervielfacht Erze) und die Pflichtgewürze (P16).
 
@@ -19,10 +19,10 @@ Die Schritte laufen in dieser Reihenfolge; 1 und 2 gehen parallel. Alle offenen 
 |---|---|---|---|
 | 1 Entscheidungen | Teil 1 entschieden; Teil 2 und 3 offen | 🟢 Teil 1 erledigt (2026-10-20) | User |
 | 2 Tests im Spiel | Teil 1 fertig; 33–41 erledigt (2026-10-21, 35 entfällt); offen nur noch Prüfpunkte aus `20_ENTSCHEIDUNGEN.md` (P1, P3–P13, P15, P16) | 🟢 Teil 1 bestanden (2026-10-20) | User spielt |
-| 3 Story von Part 1 fertig | `18_STORY.md` bis zur Rückkehr des Meisters; reine Story-Texte (Tagebücher, Schriftrollen, Dialoge) schreibt der User beim Bau der NPCs | 🟡 Handlung steht, Texte offen; O4, O7, O9, O15 beantwortet (2026-10-21) | User; alle O-Fragen für Part 1 beantwortet (2026-10-21) |
+| 3 Story von Part 1 fertig | `18_STORY.md` bis zur Rückkehr des Meisters; Ablauf `story/ABLAUF.md`; Texte `story/texte/` (Entwurf Claude, O50) | 🟡 Handlung steht, alle Texte im Entwurf (2026-10-21); O47–O60 entschieden | User liest gegen |
 | 4 Skripte und Raketen | Teil 1 geschrieben (2026-10-20): Raketen T1–T4, Rover, eigene Items, Altar-Dimension (Ritual, Amulett, Truhe), Ideenimport-Entfernungen, IE-Crusher, AE2, Airship, Shop und Baupläne, Galaxy in a Cube aus der Overworld. Offen: Antimaterie-Treibstoffe T6/T7, Etrium, Planetenstufen T5–T7, Beskar, Kyber (Teil 2 und 3) | 🟢 Teil 1 getestet (2026-10-20) | – |
 | 5 Balance (frühere Phasen 3–6) | Erträge der Erzverarbeitung, Energie, AE2 zweistufig, Cross-Mod-Rezepte (`07_CROSSMOD_INTEGRATION.md`). Macht der User später bei Bedarf (2026-10-21); bremst Teil 1 nicht | 🔵 später | F20, F24 |
-| 6 Questbuch einbauen | FTB Quests aus `questtexte/`, Easy-NPC-Figuren (Droide, Einsiedler, Elf, Figur im Blue-Skies-Haus) | 🟡 Texte im Entwurf | Schritte 3 und 4 |
+| 6 Questbuch einbauen | FTB Quests aus `questtexte/` und `story/texte/questtexte_story.md`, Easy-NPC-Figuren (DD3R8, Davijaan, Bodhi Bad Dur, Meister Cerina, Quinlan Vos) | 🟡 Logbuch und Story-Items gebaut (2026-10-21, Tests 73–78 offen); offen: Altar-Skript, Gatekeeper, Generator für Buch 1, Dialoge (User), Skins DD3R8, Bodhi, Cerina (User) | Schritt 3 |
 | 7 Hauptwelt umstellen | Aufgaben beim Host (H1–H5 unten) | 🔵 | Schritte 4–6; nur, was in `11_TESTING.md` ✅ hat |
 
 ### Aufgaben beim Host (Schritt 7)

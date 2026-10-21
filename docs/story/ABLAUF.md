@@ -153,7 +153,7 @@ Item-Aufgaben in ST7-01 (je eine Aufgabe, Mengen für drei Spieler): 🔵 IDs vo
 
 ## 5. Texte, die Claude entwirft (O50)
 
-Ablage geplant in `docs/story/texte/`, je Figur oder Buch eine Datei. Der User überarbeitet.
+Ablage in `docs/story/texte/`, je Figur oder Buch eine Datei. Der User überarbeitet. Druckfassung zum Gegenlesen: `py tools/story_druck.py` → `docs/story/druck/story_teil1.pdf` (nicht im Git, jederzeit neu erzeugbar).
 
 | Kürzel | Text | Wann | Muss verraten |
 |---|---|---|---|

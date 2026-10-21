@@ -118,6 +118,7 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 
 | Nr. | Antwort | Datum | Eingetragen in |
 |---|---|---|---|
+| O61 | Teil 1 hat keine Entscheidungen mit Folgen; Dialoge haben nur Gesprächszweige, die zum selben Ziel führen. Die große Wahl (hell/dunkel, O36) kommt in Teil 2 | 2026-10-21 | `story/texte/dialoge_dd3r8.md` |
 | O60 | Der Helm heißt im Spiel „Verbeulter Pilotenhelm“ bzw. „Pilotenhelm des Einsiedlers“ (kein „Klon“, Geheimnis bleibt); IDs bleiben | 2026-10-21 | `18_STORY.md`, `story/texte/tooltips.md` |
 | O59 | Der Meister stellt sich auf Glacio als „Quinlan“ vor (nur Vorname); was er ist, kommt erst im Training | 2026-10-21 | `story/texte/dialoge_vos.md` |
 | O58 | Quinlan Vos und Meister Cerina (Vernestra Rwoh) kennen sich nicht; er weiß nur vom „Hellen Elfen“ | 2026-10-21 | `18_STORY.md`, `story/texte/dialoge_cerina.md` |

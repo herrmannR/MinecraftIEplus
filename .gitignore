@@ -3,3 +3,4 @@ welten_backups/
 
 # Build-Ausgabe der Sammelseite, entsteht mit docs/sammelseite/build.sh
 docs/sammelseite/out/
+docs/story/druck/

@@ -7,6 +7,7 @@
 > - Er verrät seine Herkunft nicht („von woanders“). Erlaubt sind kleine Anspielungen (O9): „Meister“, Prozentangaben, einmal „Ich habe ein schlechtes Gefühl dabei“ (K7) und dessen Umkehrung in K3.
 > - Er erklärt im Klartext, was die Rätseltexte nur andeuten (Zutaten in K9). Er ist der Guide.
 > - Keine Item-IDs im gesprochenen Text, nur Namen, wie sie im Spiel heißen.
+> - **Keine Entscheidungen mit Folgen** (User, 2026-10-21, O61): Knöpfe verzweigen nur das Gespräch, alle Wege führen zum selben Ergebnis. Gilt für alle Figuren in Teil 1.
 
 ## So ist der Entwurf zu lesen
 
