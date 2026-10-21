@@ -248,8 +248,8 @@
 				type: "item"
 			}]
 			title: "Energy Cube und Universal Cable"
-			x: 5.5d
-			y: 0.0d
+			x: 4.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["1594BB213B1B4F4A"]

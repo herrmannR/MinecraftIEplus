@@ -144,8 +144,51 @@ public class QuestbuchGen {
         // Nebenquests in der Spalte rechts daneben (Layout oben ist zeilenweise gerechnet, hier gedreht)
         for (Quest q : qs) { double t = q.x; q.x = q.y; q.y = t; }
 
+        // Im Spiel verschobene Positionen behalten (tools/questbuch/<kapitel>.pos)
+        Map<String, Quest> byCode2 = new HashMap<>();
+        for (Quest q : qs) byCode2.put(q.code, q);
+        Path pos = Paths.get(a[1]).toAbsolutePath().getParent().resolve(chapter + ".pos");
+        applyPositions(pos, a.length > 3 ? Paths.get(a[3]) : null, new ArrayList<>(byCode2.keySet()), c -> depId(c),
+            (c, xy) -> { Quest q = byCode2.get(c); if (q != null) { q.x = xy[0]; q.y = xy[1]; } });
+
         write(Paths.get(a[2]), snbt(qs));
         System.out.println(qs.size() + " Quests geschrieben nach " + a[2]);
+    }
+
+    /**
+     * Positionsdatei "CODE = x, y" lesen und anwenden. Ist ingame angegeben (ein Kapitel aus der Instanz,
+     * in dem im Spiel Quests verschoben wurden), werden dessen Positionen vorher übernommen und in die
+     * Positionsdatei geschrieben. Quests ohne Eintrag behalten das gerechnete Layout.
+     */
+    static void applyPositions(Path pos, Path ingame, List<String> codes, java.util.function.Function<String, String> idOf,
+                               java.util.function.BiConsumer<String, double[]> set) throws Exception {
+        Map<String, double[]> p = new LinkedHashMap<>();
+        if (Files.exists(pos)) for (String l : Files.readAllLines(pos, StandardCharsets.UTF_8)) {
+            l = l.trim(); if (l.isEmpty() || l.startsWith("#")) continue;
+            String[] kv = l.split("=", 2), xy = kv[1].split(",");
+            p.put(kv[0].trim(), new double[] { Double.parseDouble(xy[0].trim()), Double.parseDouble(xy[1].trim()) });
+        }
+        if (ingame != null) {
+            Map<String, double[]> byId = new HashMap<>();
+            String t = new String(Files.readAllBytes(ingame), StandardCharsets.UTF_8);
+            Matcher m = Pattern.compile("\\n\\t\\t\\{(.*?)\\n\\t\\t\\}", Pattern.DOTALL).matcher(t);
+            while (m.find()) {
+                String b = m.group(1);
+                Matcher id = Pattern.compile("\\n\\t\\t\\tid: \"(\\w+)\"").matcher(b);
+                Matcher x = Pattern.compile("\\n\\t\\t\\tx: ([-\\d.]+)d").matcher(b);
+                Matcher y = Pattern.compile("\\n\\t\\t\\ty: ([-\\d.]+)d").matcher(b);
+                if (id.find() && x.find() && y.find())
+                    byId.put(id.group(1), new double[] { Double.parseDouble(x.group(1)), Double.parseDouble(y.group(1)) });
+            }
+            int n = 0;
+            for (String c : codes) { double[] xy = byId.get(idOf.apply(c)); if (xy != null) { p.put(c, xy); n++; } }
+            StringBuilder sb = new StringBuilder("# Positionen aus dem Spiel (übernommen aus " + ingame.getFileName() + "); CODE = x, y\n");
+            for (Map.Entry<String, double[]> e : p.entrySet())
+                sb.append(e.getKey()).append(" = ").append(e.getValue()[0]).append(", ").append(e.getValue()[1]).append("\n");
+            write(pos, sb.toString());
+            System.out.println(n + " Positionen aus " + ingame + " übernommen nach " + pos);
+        }
+        for (Map.Entry<String, double[]> e : p.entrySet()) set.accept(e.getKey(), e.getValue());
     }
 
     static void write(Path p, String s) throws Exception {
@@ -383,6 +426,9 @@ public class QuestbuchGen {
      */
     static void hauptquests(Path src, Path cfg, Path outDir) throws Exception {
         Map<String, String> titles = new HashMap<>();
+        // im Spiel verschobene Positionen (tools/questbuch/hauptquests.pos, CODE = x, y mit CODE = K1 …)
+        Map<String, double[]> hqPos = new HashMap<>();
+        applyPositions(cfg.toAbsolutePath().getParent().resolve(HQ + ".pos"), null, List.of(), c -> c, hqPos::put);
         for (String l : Files.readAllLines(cfg, StandardCharsets.UTF_8)) {
             l = l.trim(); if (l.isEmpty() || l.startsWith("#")) continue;
             int eq = l.indexOf('='); titles.put(l.substring(0, eq).trim(), l.substring(eq + 1).trim());
@@ -416,7 +462,8 @@ public class QuestbuchGen {
             sb.append("\t\t\trewards: [{\n\t\t\t\tauto: \"enabled\"\n\t\t\t\tid: \"").append(hex(HQ + ":" + k + ":reward0"))
               .append("\"\n\t\t\t\tstage: \"").append(stage(k)).append("\"\n\t\t\t\ttype: \"gamestage\"\n\t\t\t}]\n");
             sb.append("\t\t\ttitle: \"").append(esc(kapitel(k + " " + m.group(2)))).append("\"\n");
-            sb.append("\t\t\tx: ").append(x).append("d\n\t\t\ty: ").append(y).append("d\n\t\t}\n");
+            double[] xy = hqPos.getOrDefault(k, new double[] { x, y });
+            sb.append("\t\t\tx: ").append(xy[0]).append("d\n\t\t\ty: ").append(xy[1]).append("d\n\t\t}\n");
             prev = k; x += 1.75; n++;
         }
         if (sb != null) write(outDir.resolve(file + ".snbt"), sb.append(chapterTail(titles.get(file))).toString());
