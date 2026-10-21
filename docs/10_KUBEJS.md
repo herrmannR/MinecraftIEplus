@@ -63,6 +63,12 @@ Die fünf Skripte für 1.18.2 (`space_oxygen.js`, `moon_ores.js`, `tf_industrial
 | 196 Dateien in `kubejs/data/` (Liste: `tools/kaleidoscope_daten.liste`) | Erzeugt mit `tools/kaleidoscope_daten.py` aus der Tabelle. Rezepte: 103 mit Gewinner unter derselben ID überschrieben, 10 Dubletten und 11 ersatzlose (Geräte) sowie alle 22 Rezepte des Kaleidoscope-Bretts mit `forge:false` abgeschaltet; neu in `ieplus/recipes/einheitlich/`: 9 Brett-Rezepte (Umzug aufs FD-Brett, Rindfleisch → Hackfleisch + Würfel), 11 Umwandlungen von Altbestand (FD-Zutaten, FD-Herd, Blackstone-Herd). Loot: 30 Tabellen und Modifier (Pflanzen, Truhen, Zwiebel von Zombies, FD- und Blackstone-Herd → KC-Herd). Fassung 1 legte die Rezepte per `event.custom` an; das scheiterte an den Schemas der KubeJS-Addons (Test 65). Nach Mod-Updates neu laufen lassen. | wie oben |
 | `config-overrides/config/farmersdelight-common.toml` | Bauern- und Händler-Handel von Farmer's Delight aus, keine FD-Pflanzen in Dorffeldern (sonst kämen Verlierer-Items ins Spiel). | wie oben |
 
+#### Story-Schutzzonen (2026-10-21, 🔵 ungetestet, noch ohne Koordinaten)
+
+| Datei | Aufgabe | Entscheidung |
+|---|---|---|
+| `server_scripts/story/schutzzonen.js` | Liste `SCHUTZZONEN` (Name, Dimension, `von`/`bis`). In einer Zone können Spieler im Überlebensmodus keine Blöcke abbauen oder setzen. Ein Rechtsklick mit Axt, Schaufel, Hacke, Feuerzeug, Feuerkugel, Knochenmehl oder Eimer ist dort ebenfalls gesperrt, alles andere bleibt erlaubt (Truhen, Türen, Ritual aktivieren). Hinweis in der Aktionsleiste. `freistellen` je Zone: Stelle (`pos`) oder Bereich (`von`/`bis`) mit erlaubten Blöcken (IDs oder `#tags`), die dort gesetzt und abgebaut werden dürfen, z. B. Ritualsteine im Tempel. Nur gegen Spieler, nicht gegen Explosionen, Mobs oder Maschinen; Kreativmodus ausgenommen. | User, 2026-10-21 |
+
 ### Datapack (`kubejs/data/`)
 
 Erz-Features für Blue Skies und die Planeten, Kyber-Override, Treibstoff-Tags, seltenere Excavator-Adern, abgeschaltete Ölquellen und Mekanism-Planeten-Erze. Tabelle mit Begründungen: `kubejs/data/README.md`.

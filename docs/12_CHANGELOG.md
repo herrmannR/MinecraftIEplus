@@ -1329,3 +1329,11 @@ Status: 🟢
 
 ### Beim Host (Schritt 7)
 - Mods: Kaleidoscope Cookery, Tavern, Grilling, End, ImmersiveEating, GeckoLib; **ohne** Kaleidoscope Compat. Dazu `kubejs/` (Skript, 196 Datapack-Dateien, JEI) und `config-overrides/config/farmersdelight-common.toml`.
+
+## 2026-10-21 — Schutzzonen für Story-Bauten
+
+Status: 🔵
+
+### Änderung
+- Neu: `kubejs/server_scripts/story/schutzzonen.js`. Story-Bauten sollen nicht aus Versehen zerstört werden. Geschützt wird nur gegen Spieleraktionen (Abbauen, Setzen, verändernde Werkzeuge per Rechtsklick); der Kreativmodus ist ausgenommen. Freistellen erlauben an festen Orten bestimmte Blöcke, z. B. damit das Ritual im Tempel neu aufgebaut werden kann (User).
+- Die Zonenliste ist noch leer (nur ein auskommentiertes Beispiel); die Koordinaten liefert der User, sobald die Bauten stehen. `tools/kubejs_check.py`: ohne Fehler. Noch nicht in der Testinstanz.
