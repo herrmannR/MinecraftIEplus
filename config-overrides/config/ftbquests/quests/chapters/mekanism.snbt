@@ -37,7 +37,7 @@
 			subtitle: "MK1 · Infuser und Sauerstoff"
 			tasks: [{
 				id: "4B75EABC71B87420"
-				item: { Count: 1b, id: "itemfilters:or", tag: { items: [{ Count: 1b, id: "mekanism:raw_osmium" }, { Count: 1b, id: "mekanism:ingot_osmium" }] } }
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(mekanism:raw_osmium)item(mekanism:ingot_osmium))" } }
 				title: "Raw Osmium oder Osmium Ingot"
 				type: "item"
 			}]
@@ -109,7 +109,7 @@
 			}
 			{
 				id: "6FB2DD2806F093DB"
-				item: { Count: 1b, id: "itemfilters:or", tag: { items: [{ Count: 1b, id: "mekanism:ingot_steel" }, { Count: 1b, id: "immersiveengineering:ingot_steel" }] } }
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(mekanism:ingot_steel)item(immersiveengineering:ingot_steel))" } }
 				title: "Steel Ingot (Mekanism oder IE)"
 				type: "item"
 			}]
@@ -264,7 +264,7 @@
 			subtitle: "MK2 · Grundmaschinen · Nebenquest"
 			tasks: [{
 				id: "37F4901AB7F36BB9"
-				item: { Count: 1b, id: "itemfilters:or", tag: { items: [{ Count: 1b, id: "mekanism:upgrade_speed" }, { Count: 1b, id: "mekanism:upgrade_energy" }] } }
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(mekanism:upgrade_speed)item(mekanism:upgrade_energy))" } }
 				title: "Speed oder Energy Upgrade"
 				type: "item"
 			}]
@@ -368,7 +368,7 @@
 			subtitle: "MK2 · Grundmaschinen · Nebenquest"
 			tasks: [{
 				id: "7C96B71E252608C7"
-				item: { Count: 1b, id: "itemfilters:or", tag: { items: [{ Count: 1b, id: "mekanismgenerators:solar_generator" }, { Count: 1b, id: "mekanismgenerators:wind_generator" }, { Count: 1b, id: "mekanismgenerators:bio_generator" }] } }
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(mekanismgenerators:solar_generator)item(mekanismgenerators:wind_generator)item(mekanismgenerators:bio_generator))" } }
 				title: "Solar, Wind oder Bio-Generator"
 				type: "item"
 			}]
@@ -405,7 +405,7 @@
 			subtitle: "MK3 · Advanced, Erz ×3"
 			tasks: [{
 				id: "4C12B94043CCD832"
-				item: { Count: 1b, id: "itemfilters:or", tag: { items: [{ Count: 1b, id: "mekanism:raw_tin" }, { Count: 1b, id: "mekanism:ingot_tin" }] } }
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(mekanism:raw_tin)item(mekanism:ingot_tin))" } }
 				title: "Raw Tin oder Tin Ingot"
 				type: "item"
 			}]
@@ -473,7 +473,7 @@
 			subtitle: "MK3 · Advanced, Erz ×3"
 			tasks: [{
 				id: "556A015DB57942B6"
-				item: { Count: 1b, id: "itemfilters:or", tag: { items: [{ Count: 1b, id: "mekanism:basic_tier_installer" }, { Count: 1b, id: "mekanism:basic_enriching_factory" }, { Count: 1b, id: "mekanism:basic_smelting_factory" }, { Count: 1b, id: "mekanism:basic_crushing_factory" }, { Count: 1b, id: "mekanism:basic_compressing_factory" }, { Count: 1b, id: "mekanism:basic_combining_factory" }, { Count: 1b, id: "mekanism:basic_purifying_factory" }, { Count: 1b, id: "mekanism:basic_injecting_factory" }, { Count: 1b, id: "mekanism:basic_infusing_factory" }, { Count: 1b, id: "mekanism:basic_sawing_factory" }] } }
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(mekanism:basic_tier_installer)item(mekanism:basic_enriching_factory)item(mekanism:basic_smelting_factory)item(mekanism:basic_crushing_factory)item(mekanism:basic_compressing_factory)item(mekanism:basic_combining_factory)item(mekanism:basic_purifying_factory)item(mekanism:basic_injecting_factory)item(mekanism:basic_infusing_factory)item(mekanism:basic_sawing_factory))" } }
 				title: "Tier Installer oder Factory"
 				type: "item"
 			}]
@@ -652,7 +652,7 @@
 			subtitle: "MK4 · Elite und Chemie"
 			tasks: [{
 				id: "187A1167EB6476CC"
-				item: { Count: 1b, id: "itemfilters:or", tag: { items: [{ Count: 1b, id: "mekanism:shard_iron" }, { Count: 1b, id: "mekanism:shard_gold" }, { Count: 1b, id: "mekanism:shard_copper" }, { Count: 1b, id: "mekanism:shard_tin" }, { Count: 1b, id: "mekanism:shard_osmium" }, { Count: 1b, id: "mekanism:shard_lead" }, { Count: 1b, id: "mekanism:shard_uranium" }] } }
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(mekanism:shard_iron)item(mekanism:shard_gold)item(mekanism:shard_copper)item(mekanism:shard_tin)item(mekanism:shard_osmium)item(mekanism:shard_lead)item(mekanism:shard_uranium))" } }
 				title: "Ein Shard"
 				type: "item"
 			}]
@@ -778,7 +778,7 @@
 			subtitle: "Erzvervielfachung · Nebenquest"
 			tasks: [{
 				id: "283CA43B998592D9"
-				item: { Count: 1b, id: "itemfilters:or", tag: { items: [{ Count: 1b, id: "mekanism:crystal_iron" }, { Count: 1b, id: "mekanism:crystal_gold" }, { Count: 1b, id: "mekanism:crystal_copper" }, { Count: 1b, id: "mekanism:crystal_tin" }, { Count: 1b, id: "mekanism:crystal_osmium" }, { Count: 1b, id: "mekanism:crystal_lead" }, { Count: 1b, id: "mekanism:crystal_uranium" }] } }
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(mekanism:crystal_iron)item(mekanism:crystal_gold)item(mekanism:crystal_copper)item(mekanism:crystal_tin)item(mekanism:crystal_osmium)item(mekanism:crystal_lead)item(mekanism:crystal_uranium))" } }
 				title: "Ein Crystal"
 				type: "item"
 			}]

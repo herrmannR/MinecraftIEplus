@@ -185,7 +185,7 @@
 			subtitle: "BO2 · Mana und Manasteel"
 			tasks: [{
 				id: "6C11445465D145B4"
-				item: { Count: 1b, id: "itemfilters:or", tag: { items: [{ Count: 1b, id: "botania:endoflame" }, { Count: 1b, id: "botania:hydroangeas" }] } }
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(botania:endoflame)item(botania:hydroangeas))" } }
 				title: "Erste Mana-Blume"
 				type: "item"
 			}]
@@ -498,7 +498,7 @@
 			subtitle: "BO3 · Runenaltar · Nebenquest"
 			tasks: [{
 				id: "4ACB03CAC9009C8A"
-				item: { Count: 1b, id: "itemfilters:or", tag: { items: [{ Count: 1b, id: "botania:thermalily" }, { Count: 1b, id: "botania:gourmaryllis" }, { Count: 1b, id: "botania:munchdew" }, { Count: 1b, id: "botania:rosa_arcana" }, { Count: 1b, id: "botania:entropinnyum" }, { Count: 1b, id: "botania:kekimurus" }, { Count: 1b, id: "botania:narslimmus" }] } }
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(botania:thermalily)item(botania:gourmaryllis)item(botania:munchdew)item(botania:rosa_arcana)item(botania:entropinnyum)item(botania:kekimurus)item(botania:narslimmus))" } }
 				title: "Bessere Mana-Blumen"
 				type: "item"
 			}]
@@ -520,7 +520,7 @@
 			subtitle: "BO3 · Runenaltar · Nebenquest"
 			tasks: [{
 				id: "64A4E50D13DC8BB9"
-				item: { Count: 1b, id: "itemfilters:or", tag: { items: [{ Count: 1b, id: "botania:hopperhock" }, { Count: 1b, id: "botania:agricarnation" }, { Count: 1b, id: "botania:rannuncarpus" }, { Count: 1b, id: "botania:exoflame" }, { Count: 1b, id: "botania:clayconia" }, { Count: 1b, id: "botania:jaded_amaranthus" }] } }
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(botania:hopperhock)item(botania:agricarnation)item(botania:rannuncarpus)item(botania:exoflame)item(botania:clayconia)item(botania:jaded_amaranthus))" } }
 				title: "Funktionale Blumen"
 				type: "item"
 			}]
@@ -765,7 +765,7 @@
 			subtitle: "BO4 · Terrasteel · Nebenquest"
 			tasks: [{
 				id: "728208BE0E948102"
-				item: { Count: 1b, id: "itemfilters:or", tag: { items: [{ Count: 1b, id: "botania:terra_sword" }, { Count: 1b, id: "botania:terra_pick" }, { Count: 1b, id: "botania:terrasteel_helmet" }] } }
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(botania:terra_sword)item(botania:terra_pick)item(botania:terrasteel_helmet))" } }
 				title: "Terra-Ausrüstung"
 				type: "item"
 			}]
@@ -1103,7 +1103,7 @@
 			subtitle: "BO6 · Alfheim betreten · Nebenquest"
 			tasks: [{
 				id: "3A58591C713AE337"
-				item: { Count: 1b, id: "itemfilters:or", tag: { items: [{ Count: 1b, id: "mythicbotany:alfsteel_pick" }, { Count: 1b, id: "mythicbotany:alfsteel_sword" }, { Count: 1b, id: "mythicbotany:alfsteel_axe" }] } }
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(mythicbotany:alfsteel_pick)item(mythicbotany:alfsteel_sword)item(mythicbotany:alfsteel_axe))" } }
 				title: "Alfsteel-Werkzeuge"
 				type: "item"
 			}]
@@ -1144,7 +1144,7 @@
 			subtitle: "BO6 · Alfheim betreten · Nebenquest"
 			tasks: [{
 				id: "2B3E2640A8540731"
-				item: { Count: 1b, id: "itemfilters:or", tag: { items: [{ Count: 1b, id: "mythicbotany:aquapanthus" }, { Count: 1b, id: "mythicbotany:exoblaze" }, { Count: 1b, id: "mythicbotany:hellebore" }, { Count: 1b, id: "mythicbotany:wither_aconite" }, { Count: 1b, id: "mythicbotany:raindeletia" }] } }
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(mythicbotany:aquapanthus)item(mythicbotany:exoblaze)item(mythicbotany:hellebore)item(mythicbotany:wither_aconite)item(mythicbotany:raindeletia))" } }
 				title: "Blumen von MythicBotany"
 				type: "item"
 			}]
@@ -1272,7 +1272,7 @@
 			subtitle: "BO7 · Gaia · Nebenquest"
 			tasks: [{
 				id: "3E42276D412BC355"
-				item: { Count: 1b, id: "itemfilters:or", tag: { items: [{ Count: 1b, id: "botania:flight_tiara" }, { Count: 1b, id: "botania:gaia_spreader" }] } }
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(botania:flight_tiara)item(botania:gaia_spreader))" } }
 				title: "Gaia-Ausrüstung"
 				type: "item"
 			}]
@@ -1340,7 +1340,7 @@
 			subtitle: "BO7 · Gaia · Nebenquest"
 			tasks: [{
 				id: "1C5440BC3D307AD0"
-				item: { Count: 1b, id: "itemfilters:or", tag: { items: [{ Count: 1b, id: "botania:corporea_funnel" }, { Count: 1b, id: "botania:corporea_interceptor" }, { Count: 1b, id: "botania:corporea_crystal_cube" }] } }
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(botania:corporea_funnel)item(botania:corporea_interceptor)item(botania:corporea_crystal_cube))" } }
 				title: "Corporea ausbauen"
 				type: "item"
 			}]
@@ -1572,7 +1572,7 @@
 			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
 			tasks: [{
 				id: "6FBDFADCCAFE0B23"
-				item: { Count: 1b, id: "itemfilters:or", tag: { items: [{ Count: 1b, id: "appbot:mana_cell_housing" }, { Count: 1b, id: "appbot:mana_p2p_tunnel" }] } }
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(appbot:mana_cell_housing)item(appbot:mana_p2p_tunnel))" } }
 				title: "Mana im ME-Netz"
 				type: "item"
 			}]

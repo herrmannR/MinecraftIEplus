@@ -112,7 +112,9 @@ Kaleidoscope und Farmer's Delight sind ohne Dopplungen zusammengeführt (`server
 | FTB Quests | 2001.4.22 | CF | Questbuch |
 | FTB Library | 2001.2.13 | CF | Basis der FTB-Mods |
 | FTB Teams | 2001.3.2 | CF | geteilter Quest-Fortschritt |
-| Item Filters | 2001.1.0-build.59 | CF | Filter-Items für Quests |
+| Item Filters | 2001.1.0-build.59 | CF | Filter-Items; von FTB Quests 2001.4 nicht erkannt (kein Adapter), für Quests nicht nutzen |
+| FTB Filter System | 20.0.1 | CF | Smart Filter für Oder-Aufgaben im Questbuch (seit 2026-10-21) |
+| FTB XMod Compat | 🔵 fehlt noch | CF | Brücke FTB Quests ↔ FTB Filter System; ohne sie zählen Oder-Aufgaben nicht |
 | Easy NPC (+ Bundle, Config UI) | 7.14.0 | — | Story-Figuren mit Dialogen |
 | Easy NPC Dialogue Immersion | 0.3.0 | — | Dialoge im Rollenspiel-Stil |
 

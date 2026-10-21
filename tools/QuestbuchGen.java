@@ -16,7 +16,7 @@ import java.util.regex.*;
  *   "### Nebenquest-Reihe Name" + Tabelle mit Spalten "Quest | Aufgabe | …" = je Zeile eine Nebenquest
  *   Tabelle mit "Quest | Aufgabe | …" direkt unter "## …" ebenso.
  * Aufgaben aus der Zeile: Item-IDs in Backticks; "4 × `id`" = Anzahl; "oder"/"eine von" = eine Aufgabe
- * mit Item-Filter (itemfilters:or); "Dimension `id` betreten" = Dimensions-Aufgabe. Zeilen mit
+ * mit Smart Filter (FTB Filter System, braucht FTB XMod Compat); "Dimension `id` betreten" = Dimensions-Aufgabe. Zeilen mit
  * "Flüssigkeit" oder "Gas " müssen in der Steuerdatei stehen, sonst bricht der Lauf ab.
  *
  * Steuerdatei tools/questbuch/<mod>.cfg:
@@ -301,13 +301,16 @@ public class QuestbuchGen {
             case "or": {
                 int s = arg.indexOf(';');
                 String title = arg.substring(0, s).trim();
-                StringBuilder items = new StringBuilder();
+                // Smart Filter von FTB Filter System: "or(item(a)item(b)…)"; FTB Quests erkennt ihn nur
+                // mit FTB XMod Compat (Item Filters wird von FTB Quests 2001.4 nicht erkannt)
+                StringBuilder f = new StringBuilder("or(");
                 for (String i : arg.substring(s + 1).split(",")) {
                     i = i.trim(); if (q.icon == null) q.icon = i;
-                    items.append(items.length() > 0 ? ", " : "").append("{ Count: 1b, id: \"").append(i).append("\" }");
+                    f.append("item(").append(i).append(")");
                 }
-                return "{\n\t\t\t\tid: \"" + id + "\"\n\t\t\t\titem: { Count: 1b, id: \"itemfilters:or\", tag: { items: [" + items
-                    + "] } }\n\t\t\t\ttitle: \"" + esc(title) + "\"\n\t\t\t\ttype: \"item\"\n\t\t\t}";
+                f.append(")");
+                return "{\n\t\t\t\tid: \"" + id + "\"\n\t\t\t\titem: { Count: 1b, id: \"ftbfiltersystem:smart_filter\", tag: { \"ftbfiltersystem:filter\": \""
+                    + f + "\" } }\n\t\t\t\ttitle: \"" + esc(title) + "\"\n\t\t\t\ttype: \"item\"\n\t\t\t}";
             }
             case "fluid": {
                 String[] p = arg.split(",");
