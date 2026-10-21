@@ -1,6 +1,6 @@
 # Auffälligkeiten für die Crossmod-Planung
 
-> Stand 2026-10-17, Minecraft 1.20.1. Gesammelt beim Erstellen der Modpfad-Seiten für Tinkers' Construct, Immersive Engineering, Botania, Mekanism, Ad Astra, Star Wars Planets, Star Wars: Galaxy in a Cube und weitere (zuletzt Farmer's Delight). Wird mit jeder weiteren Seite fortgeschrieben.
+> Stand 2026-10-21, Minecraft 1.20.1. Gesammelt beim Erstellen der Modpfad-Seiten für Tinkers' Construct, Immersive Engineering, Botania, Mekanism, Ad Astra, Star Wars Planets, Star Wars: Galaxy in a Cube und weitere (zuletzt Kaleidoscope). Wird mit jeder weiteren Seite fortgeschrieben.
 
 ## Zweck
 
@@ -40,6 +40,7 @@ Jeder Befund ist aus den JARs oder der Config der Testinstanz belegt (🟢). Was
 | Blood Magic Alchemy Table (Cutting Fluid) | 2 Sand | – |
 | Blood Magic ARC (Cutting Fluid) | 3 Sand | im Schnitt 1,5 |
 | Blood Magic ARC (Explosive, Resonator, Cutting Fluid) | laut Buch 4,5 Barren | laut Buch 2,5 Barren |
+| Kaleidoscope Millstone (Tier angespannt, kein Strom) | Iron/Gold 3 Raw, Copper 5 Raw (nur Vanilla-Erze) | – |
 
 🟢 Mekanism schlägt alle anderen ab der dritten Stufe deutlich. Erzblöcke bringen überall mehr als Raw Ore; der Mekanism Combiner macht aus 8 Raw Ore + Cobblestone wieder einen Erzblock.
 
@@ -233,6 +234,13 @@ Jeder Befund ist aus den JARs oder der Config der Testinstanz belegt (🟢). Was
 - **FD2** 🟢 Rich Soil ist die Brücke zur IE-Landwirtschaft: In der Garden Cloche gibt es auf Rich Soil meist 3 statt 2 Ernte, und die Bottling Machine macht Rich Soil aus Organic Compost + Wasser (Rich Soul Soil aus Soul Compost + Lava). Organic Compost braucht nur Straw, Dirt, Bone Meal und Rotten Flesh oder Tree Bark.
 - **FD3** 🟢 Gunpowder aus Pflanzen: Propelplant Cane (Crimson Forest) gibt am Cutting Board 1, im IE-Crusher 2 Gunpowder – eine erneuerbare Quelle für Sprengstoff und Munition (Rotary Cannon von Immersive Aircraft).
 - **FD4** 🟢 Ethanol und Plant Oil: Farmer's Delight bringt eigene IE-Rezepte für Ethanol aus Tomaten und Plant Oil aus Cabbage- und Tomato-Seeds; damit hängen Kochzutaten an der Biodiesel-Kette (I4).
+
+## Kaleidoscope (+ Tavern, Grilling, End)
+
+- **KS1** 🟢 Der Millstone vervielfacht Vanilla-Erzblöcke ohne Strom, sobald ein Tier (Esel) angespannt ist: Iron und Gold Ore zu 3 Raw, Copper Ore zu 5 Raw Copper, Diamond- und Emerald Ore zu 2, Redstone- und Lapis Ore zu 7, Nether Gold Ore zu 5 Gold Nugget (`data/kaleidoscope_cookery/recipes/millstone/`). Kosten: Grindstone, 3 Smooth Stone, Zaun, Stick. Das liegt in der Steinzeit über Ofen, Tinkers-Melter und IE-Crusher (Ü2) und braucht nur Silk Touch (Erzblock statt Raw Ore). Mod-Erze (Osmium, Silber, Nickel, Aluminium …) kennt er nicht.
+- **KS2** 🟢 Weitere Abkürzungen am Millstone: Flint zu Gunpowder, Cobblestone zu Smooth Stone, Stein zu poliertem Stein, Wolle zu 3 String, Bone zu 5 Bone Meal. Das Bamboo Tray macht ohne Gerät Rotten Flesh zu Leather und Mud zu Clay.
+- **KS3** 🟢 Kaleidoscope und Farmer's Delight teilen die Hitzequellen (`farmersdelight:heat_sources` ↔ `kaleidoscope_cookery:heat_source_blocks_without_lit`); Reis wächst auch auf FD Rich Soil Farmland. Die Rezepte nehmen Zutaten über Forge-Tags an – im Pack per KubeJS zusammengeführt (2026-10-20).
+- **KS4** 🟢 Grilling bringt Create-Rezepte mit (Bedingung `modid=create`), die ohne Create nicht laden; Ponder (Anleitungsszenen von Cookery und Tavern) ist nicht installiert, Kaleidoscope hat damit im Spiel keine Anleitung außer Tooltips und JEI. End: Dragon Tooth Knife und Smithing Template brauchen Dragon Dust aus dem abgepinselten Drachenei, also nach dem Enderdrachen.
 
 ## Zu prüfen
 

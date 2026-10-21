@@ -31,6 +31,7 @@ sub_links() {
     -e 's#https://claude.ai/artifact/Tf1bokH9S871MVquTbiiAJ#alexsmobs.html#g' \
     -e 's#https://claude.ai/artifact/BfUwZLQdeo3DugNVASvxYh#aircraft.html#g' \
     -e 's#https://claude.ai/artifact/Rj7tWAhmGLAmje66fHT9sX#farmersdelight.html#g' \
+    -e 's#https://claude.ai/artifact/ARtUyrGSeAuncutGR6r6oV#kaleidoscope.html#g' \
     -e 's#https://claude.ai/artifact/LWwdvCpXRwaHCa8NstSc4g#erzatlas.html#g' \
     -e 's#https://claude.ai/artifact/Hdy6LMxESx5CJ9omjkAMEX#meilensteine.html#g'
 }
@@ -40,7 +41,7 @@ sub_links() {
 cp shell.html out/start.html
 { echo "$head"; sub_links < ../modpfade/uebersicht.html; echo "$nav"; } > out/uebersicht.html
 
-for f in ../modpfade/{tinkers,ie,botania,mekanism,adastra,swplanets,swgc,bloodmagic,rld,ae2,blue_skies,alexsmobs,aircraft,farmersdelight}.html ../erzatlas/erzatlas.html ../meilensteine/meilensteine.html; do
+for f in ../modpfade/{tinkers,ie,botania,mekanism,adastra,swplanets,swgc,bloodmagic,rld,ae2,blue_skies,alexsmobs,aircraft,farmersdelight,kaleidoscope}.html ../erzatlas/erzatlas.html ../meilensteine/meilensteine.html; do
   n=$(basename "$f")
   { echo "$head"; cat "$f"; echo "$back"; echo "$nav"; } > "out/$n"
 done

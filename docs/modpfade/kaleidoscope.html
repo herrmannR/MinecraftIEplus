@@ -1,0 +1,939 @@
+<title>Modpfad Kaleidoscope</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: links Phasen-Navigation, rechts der Weg als nummerierte Schritte – je Schritt Bilder (Inventar-Slots, Bauplan, Buchbild), Erklärung, Zutaten.
+   Farben und Schriften wie im Erzatlas ("Deepslate"-Grund zuerst); --accent kommt je Mod aus den Daten. */
+:root{
+  --bg:#1b1d20; --panel:#24272b; --line:#34383e; --fg:#e7e5e1; --muted:#9a9890;
+  --accent:#e0a33a;
+  --slot:#2f3338; --slot-edge:#15171a; --slot-hi:#474c53;
+  --chip:#2c3035;
+  --o-v:#9a9890; --o-m:#e0a33a; --o-a:#5fb3a0; --o-x:#6aa7e6;
+  --f-display:"Pixelify Sans","Courier New",monospace;
+  --f-body:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-data:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){
+  --bg:#f1efea; --panel:#fbfaf7; --line:#d9d5cc; --fg:#24221f; --muted:#6c675e;
+  --slot:#c9c5bb; --slot-edge:#8f8a7f; --slot-hi:#e9e6de;
+  --chip:#ebe7df;
+  --o-v:#6c675e; --o-m:#a36a12; --o-a:#2f7f6d; --o-x:#2f6fb5; color-scheme:light}}
+:root[data-theme="light"]{
+  --bg:#f1efea; --panel:#fbfaf7; --line:#d9d5cc; --fg:#24221f; --muted:#6c675e;
+  --slot:#c9c5bb; --slot-edge:#8f8a7f; --slot-hi:#e9e6de;
+  --chip:#ebe7df;
+  --o-v:#6c675e; --o-m:#a36a12; --o-a:#2f7f6d; --o-x:#2f6fb5; color-scheme:light}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:16px;padding-block:28px 56px}
+a{color:var(--accent)}
+code{font-family:var(--f-data);font-size:.86em;background:var(--chip);padding:1px 5px;border-radius:3px}
+
+header.top{display:grid;gap:10px;margin-bottom:24px}
+h1{font-family:var(--f-display);font-weight:700;font-size:clamp(28px,4vw,40px);letter-spacing:.02em;margin:0;text-wrap:balance}
+h1 span{color:var(--accent)}
+.lede{color:var(--muted);max-width:70ch;margin:0}
+.mods{display:flex;flex-wrap:wrap;gap:6px}
+.mod{font:12px var(--f-data);background:var(--chip);border:1px solid var(--line);border-radius:3px;padding:3px 8px;color:var(--muted)}
+.mod b{color:var(--fg);font-weight:600}
+.mod.main{border-color:var(--o-m)} .mod.addon{border-color:var(--o-a)} .mod.bridge{border-color:var(--o-x)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:var(--muted);align-items:center}
+.legend b{color:var(--fg);font-weight:600}
+
+.cols{display:grid;grid-template-columns:210px minmax(0,1fr);gap:32px;align-items:start}
+nav.toc{position:sticky;top:calc(env(safe-area-inset-top, 0px) + 12px);display:grid;gap:2px;max-height:calc(100vh - 24px);overflow:auto;font-size:13.5px}
+nav.toc a{display:block;padding:5px 8px;border-left:2px solid var(--line);color:var(--muted);text-decoration:none}
+nav.toc a:hover,nav.toc a:focus-visible{color:var(--fg);border-left-color:var(--accent);outline:none}
+nav.toc a .n{font-family:var(--f-data);font-size:11px;margin-right:6px;color:var(--accent)}
+nav.toc .sep{height:10px}
+main{display:grid;gap:44px;min-width:0}
+
+section.phase{display:grid;gap:18px;min-width:0}
+.phase-head{display:grid;gap:4px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.phase-head .eyebrow{font:600 12px var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h2{font-family:var(--f-display);font-weight:700;font-size:24px;letter-spacing:.02em;margin:0;text-wrap:balance}
+.phase-head p{margin:0;color:var(--muted);max-width:70ch}
+
+.step{display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;min-width:0}
+.step .num{font:700 18px var(--f-data);font-variant-numeric:tabular-nums;color:var(--bg);background:var(--accent);width:44px;height:44px;display:grid;place-items:center;border-radius:3px}
+.step-body{display:grid;gap:12px;min-width:0;padding-bottom:18px;border-bottom:1px dashed var(--line)}
+.step:last-child .step-body{border-bottom:none}
+h3{font:700 18px var(--f-body);margin:0;display:flex;flex-wrap:wrap;gap:8px;align-items:center;min-height:44px}
+.tag{font:600 11px var(--f-data);padding:2px 7px;border-radius:3px;border:1px solid var(--o-a);color:var(--o-a);letter-spacing:.02em}
+.tag.x{border-color:var(--o-x);color:var(--o-x)}
+.prose{max-width:70ch;display:grid;gap:8px}
+.prose p,.prose ul{margin:0}
+.prose ul{padding-left:20px}
+.prose b{font-weight:700}
+
+/* Inventar-Slots */
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.it{display:grid;grid-template-columns:44px minmax(0,1fr);gap:9px;align-items:start}
+.slot{width:44px;height:44px;background:var(--slot);border:2px solid;border-color:var(--slot-edge) var(--slot-hi) var(--slot-hi) var(--slot-edge);display:grid;place-items:center;flex:none}
+.slot img{width:32px;height:32px;image-rendering:pixelated;object-fit:cover;object-position:top}
+.slot img.r{width:38px;height:38px;image-rendering:auto;object-fit:contain}
+.cell img.r{image-rendering:auto;object-fit:contain}
+figure img.r{max-height:230px;width:auto;border:none;background:none}
+.slot span{font:700 12px var(--f-data);color:var(--muted)}
+.it .nm{font-weight:600;line-height:1.25;overflow-wrap:anywhere}
+.it .nt{font-size:13px;color:var(--muted);line-height:1.3;overflow-wrap:anywhere}
+
+/* Buchbilder */
+.pics{display:flex;flex-wrap:wrap;gap:10px}
+figure{margin:0;display:grid;gap:4px;max-width:420px}
+figure img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:3px;background:var(--panel)}
+figure img.px{image-rendering:pixelated;width:260px}
+figcaption{font-size:12.5px;color:var(--muted)}
+
+/* Bauplan */
+.plan{border:1px solid var(--line);border-radius:4px;background:var(--panel);padding:12px;display:grid;gap:10px;min-width:0}
+.plan-title{font:600 12px var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.plan-title b{color:var(--fg);letter-spacing:0;text-transform:none;font-size:14px;margin-right:8px}
+.layers{display:flex;gap:16px;overflow-x:auto;padding-bottom:4px;align-items:flex-end}
+.layer{display:grid;gap:4px;flex:none}
+.layer .cap{font:11px var(--f-data);color:var(--muted)}
+.grid{display:grid;gap:1px}
+.cell{width:22px;height:22px;background:var(--slot);display:grid;place-items:center;font:700 10px var(--f-data);color:var(--fg)}
+.cell img{width:22px;height:22px;image-rendering:pixelated;object-fit:cover;object-position:top;display:block}
+.cell.air{background:transparent;outline:1px dotted var(--line);outline-offset:-1px}
+.parts{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px}
+.part{display:inline-flex;align-items:center;gap:6px}
+.part .cell{width:18px;height:18px}.part .cell img{width:18px;height:18px}
+.part b{font-family:var(--f-data);font-weight:600}
+.plan .form{font-size:13px;color:var(--muted);margin:0}
+
+/* Zutaten */
+.needs{display:flex;flex-wrap:wrap;gap:5px;align-items:center;font-size:13px}
+.needs .lbl{font:600 12px var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:4px}
+.need{background:var(--chip);border:1px solid var(--line);border-left:3px solid var(--o-v);border-radius:3px;padding:2px 8px}
+.need.m{border-left-color:var(--o-m)} .need.a{border-left-color:var(--o-a)} .need.x{border-left-color:var(--o-x)}
+.need small{color:var(--muted);font-family:var(--f-data);font-size:11px;margin-left:4px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+
+/* Tabellen (Materialien, Listen) */
+.scroller{overflow-x:auto;border:1px solid var(--line);border-radius:4px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th{font:600 11.5px var(--f-body);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:6px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td.ic{width:34px;padding-right:0}
+td.ic .slot{width:28px;height:28px;border-width:1px}
+td.ic .slot img{width:22px;height:22px}
+td.ic .slot span{font-size:9px}
+td .sub{color:var(--muted);font-size:12.5px}
+
+.solo-group{display:grid;gap:10px}
+.solo-group h3{min-height:0}
+.note{border-left:3px solid var(--accent);background:var(--panel);padding:10px 14px;max-width:72ch;font-size:14px}
+.note p{margin:0}
+footer{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:14px;max-width:80ch}
+
+@media (max-width:900px){
+  .cols{grid-template-columns:minmax(0,1fr);gap:20px}
+  nav.toc{position:static;display:flex;flex-wrap:wrap;gap:6px;max-height:none}
+  nav.toc a{border:1px solid var(--line);border-radius:3px;padding:4px 8px}
+  nav.toc .sep{display:none}
+}
+@media (max-width:520px){
+  .step{grid-template-columns:minmax(0,1fr)}
+  .step .num{width:36px;height:36px;font-size:15px}
+  h3{min-height:0}
+}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1 id="h1"></h1>
+    <p class="lede" id="lede"></p>
+    <div class="mods" id="mods"></div>
+    <div class="legend"><b>Zutaten:</b>
+      <span><i class="dot" style="background:var(--o-v)"></i>Vanilla</span>
+      <span><i class="dot" style="background:var(--o-m)"></i>dieser Mod</span>
+      <span><i class="dot" style="background:var(--o-a)"></i>Addon</span>
+      <span><i class="dot" style="background:var(--o-x)"></i>anderer Mod im Pack</span>
+    </div>
+  </header>
+  <div class="cols">
+    <nav class="toc" id="toc" aria-label="Phasen"></nav>
+    <main id="main"></main>
+  </div>
+</div>
+
+<script>
+const ICONS = {
+  "kaleidoscope_cookery:block/bamboo_tray": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABpUlEQVR4Xu2VO0tDQRCF7/+xsgqkEdHgAwIWgthpoSCCZcDCVlJFTCMopFGw0AjBB2IhIgg22mgt1vkTq9/IudysN+p9dO7AYfbuZGeOZ2bXqLlacdGntdar5rPa++2SEx46ddd/OzGf3H85W3BXO9MWwxMXos3FUSssIlmNApwlD3i6b5tnr71RNa94MoY3Amv1kUIE+Os4+3g07653Zwysn3vLrrtXM7BOxvmOCUgB+axGEs5SoP/acDfdSQNrtUUtYe/uYs5ddmbtDO2IFchLgL4iLUl/KgoURwXOcLYwASlA0mTR8+MpQxopWnDQGPtSoOgQagZI+pv8IsVvD7fGB4cwrwK6BSRNK5pGCrVKJcB1I+mwnvukevsT5RFQC7huw3ruk+LGMAMDBPK+hAyS3gG/aJr8QARKvYZ/fQdQCbXia6jCRRWgr8OK+qSYl9IU0Az4zzAPE/CfYcW/zUBRApwnKdLimXKB77RYaQSE5L9cvtUK4McEP19mU/LT7Zp5QfuKpcVNgaLWXKmYrCjIWl77QN/JuGJ+vmDBggULFuz/2QfxX0a9SQ/E/wAAAABJRU5ErkJggg==",
+  "kaleidoscope_cookery:block/chopping_board": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAuUlEQVR4Xo1QMQrDMBDLZzoVsnUrnTpmygOyFToV+oOMfUD+m6BQHbIuNjGIOHeS7uSu+5/3cF2J79gHtK496uL8Xve1hnm6pVohBkEn+BYO9KFJBj6ltkEyYJHkFsDBFkUMNFAkySMw3mkDEnTyKQOKGGd6XkLoBrg3DfilmRqkR9SpakDoVO2HgebSyYA+ppoVb+AGLRwacCqKCgochxF83RbIDQMWa9n575y0wfJ57PCVPQrjQrsB2pC9CGUMvH0AAAAASUVORK5CYII=",
+  "kaleidoscope_cookery:block/oil_block": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA8klEQVR4XnWSsQ7CMAxE8/+fwsSExMLAgMTKwlSBkCqBxIAKnaHn5o6rKYOVOHGez47Lq92+Yd1xIXs2yzjr74fY0/pHE0YfMYUbroRxTwhj4ANCvzhxDhIPBuO5IBVU5FTzbIJYRkFu+9iXCRk1ZslVYZaOPRIUb5pL9JJcjceOJaQeuBKHAsBYJbruRgWUk1V4RkESWCU4PeRZIIMJ9rhooi7O668CK4MPOGgOD4B/lzcr1zxJVv3pNw4X3Wk1G8gz3Pt3a5Rxwaz/VFCtIPhGXMouGz1Qc9MAZSVRAiX56lnp/5TDSfQZiAcJ4qU4COsHfsGVbsIPSD4AAAAASUVORK5CYII=",
+  "kaleidoscope_cookery:block/oil_pot_with_oil": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABrklEQVR4Xu2WMUsDQRCF8xNsLRXBQhBBuxRaGJEIphYhraVgY2EhCHYKWiiktBPsAlYW/gyLdJYWYmO98i2MjMNt9jLZKEgePLK3szfzsjuzN42T0/NQxYZCGJyF9k4nfDxvB8b88ix2xnBvvxvJmHXaRxIE46X1jc1IxlYAz/cP/Rj48Og4OtdrxH5x1Yt2aH0kwUICL8zORDK2L9/07sLb+2cMTBDszFm7iLD2oagjAMcvg9ekALG7BeSOAMf9x6dkgJx9KFhcRb0mFyBnHxs4xmEqQM4+NshqORopNebq2qfIQi6Oy+vbb9pk7DSXQre1Gg52m5GMmYPalwsIWF5Zi0yVowSzRIj25QKBCC6XkVxIOpH0P9ZkN7QvFxAgt+Hc/GKlAALZ4BMRIGRH9BGkBBQ5AqljOX/JBy0gdQRQ+3JBf0JtJcga/Y9tJWhfU4wMtp4PB7SXkOSGfacohp1tsSQrARFm538Nfy5gYiVX1dPrnj8FLqzWVvvHPeHaIbJdWqlRenqC6wpxC/D29PZzLVWk19SCt6cvKsDTUv8vAZ6e3iahW4C3py9Vhl/1lvw+oliafAAAAABJRU5ErkJggg==",
+  "kaleidoscope_cookery:block/stockpot": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB90lEQVR4XsWWz2rCQBDG8yYeNGCtQhuMNYfmUCKYk4Ui2KOH4nP0KfoEfc5tJ/CFyZfZTeKfduBHNpuZnW9nJ9Hoa1+479O+AuPoL+3zJXMaEcE+IXtarRzI89zEeoaYaLfbOfB+OFScjscGmJOr9he0gHOIyu3WCbywBj4WvCDv1KIhYLFInJAkw0AcCxhK9PiQOA07APbr8u8L99TZNo1jN4Q6kM/R6lqet3aAheezWZCWAJwl+oDHPMf3WoAkSJfLimy9rsG9XCGiFnAtgwBJtP2t6mazcUVRVMhY5uSZV0A8uXN9GY0mrQV0BSRhlmUNZC5Yga7Oxjx8OF5XQHYtSXFkMpa5oAA0GD4wGHMjYszxfQSs0jQsAFgJGY63BPARBHuAy89HwUfE8VpAWZZVQk1nE47HUwfuZwsT7cPxodcQr2CwBy41WRQiQsCP4y82LNwXjjctnj83HPn+pla+fjghL96qpHIF7Avj/xFdcHxtOqmeRwV8lbD+vPD3BPdeAZJUdu5LgqpYzyGAd8rIa2wKwKKShJ9p81VIC7CqgMRy3xIQ2pllVqVYAJcfAloV8O2oy1ApxFkC8CWFiJaAoTtn0/G6vPw74q3AubuH6XgtgDtfCzB74BrGR4DG05VoVeCapgWEuLkAX/k1NxMwBI7/F/sBB2Xk9Fu5ZXMAAAAASUVORK5CYII=",
+  "kaleidoscope_cookery:block/stove_front": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA/klEQVR4XqWTsYrCQBCG9xXSpLBLe7WFkEthffgABrQwTe7sxS5whSA2RivBh8gbjvwDv/zZW7S44mN35p+ZHWZ3w2peWMz26+MPqmls+F1P7fxdOtirrcQa7RCf/q6DmLCYTuw/hPvtbl3X2el4MuwJbAUxCnxN01iAsd/tnwL2EFIwjuuoABPrZW1FUSSBxkKMD3oik7MsS6JFGO8zIK+StYjmeAccFMQ8z524ffXrYH0GcYHPskzCAhw4crwD0vf9qL0UiNEbCxgE0StTf6yp7k9Zn2rbtsnnnNL8KR82M7tuK7v8VIb9MAy+xp+Jmtrg+Re0A7UJfOyANngAYwoAmRCWbCsAAAAASUVORK5CYII=",
+  "kaleidoscope_cookery:block/stove_front_lit": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABJElEQVR4XqWTMUsDQRCF5w9Y2Npdk0IrIYUQrgjYiaWFAS285pL0Id2BhSBpPK2EtPZX+Ue0t80/SDnhDbzjZbOQwuJjd3bevB3m9uxhXHjK/Ob8AM2p1p4fh/42HQXYa6ykOcaW3n6sgxS7HZ75f7D159qbpvHV68qxJ4gVaBScVVXlhmC5WPYJ7JHIQR3XPQMWTu4nXhSFDy4uY1WQoxH1pjdq8ff4JFYwur7rDWlCfcyAsPhvYVEEYIQY0ERrogMOCkkI/bfsi2CAePN1GobQ6GBjBmoAsW9/sitMoOHAURMdkLZt99rLAY1+McMgiH4yPU9zmo+nrE+1ruvsc87l4im/PF35x7z091np2HddF2v6MzGnMej/Be1AY4IzdsAY7AAC3yAHpeSytAAAAABJRU5ErkJggg==",
+  "kaleidoscope_cookery:block/trash_can": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAC+klEQVR4Xu1awWrbQBTML/jqD/APBAqBhAaMewo0GIwpoQQKAdOAHZeGnEIJDfQUnPYU6BcE+oM+qcyWMevxytVGsvXk7MDgp93VezujlazEu7e3Ifx6fMz+x+93dyvsdbuOb/b3FzGPSf+YsdavHRA4urjIvk6nS0RbHmmAL7YotX7tgAEQ/K7XW/Dt0dGChwcHS300gII6nU4hNsKAD8PhWsKMkAHtdnstaQBWjdavHWrAp/PzbDIeLxFt6MtbASpYadoAiIEoXF2IhOD3JyfZcDBwRIy2nV4BagCEfzw7c0SsBuAcPgQbb0BoBeQZ0D0+dreL/y0QY4DJh2DIgLxbgAZgBezMLUADijwEYVIZAxqxAtYRJtGAl9wC5leA/yI06Pcd9UUoZEARmjeA5Kvw+PJyif5rsm9ADM0a4FP/CPKPfUIM6QtUwUqtXxlmDw+ZMiSK/DmbuT49x+p5qncFn0cj97QG/Rj8cnXl6Lfxad+U81TvCvKWnt6HecvV+nmqNyEh4R/6p6ev+x5JBmzZgFarlVVJzR+NZEAyIBmw1gD0YYy2vxQqoCw1fzRevQHbhgooS81vHiqgLDW/eaiAstT85qECylLz1wadmDXqfCuHFrRGnW/l0ILWqPNNqBvz+XzlqoTadhYhsaG2hISGQv8/XzW1njlgkvoLbx4pStvz2CgD9Ld+pRqg/cpkQDIgGZAMSAYkA5IBzTGgCH0DirAxBmySWm/jwGYj7PebTiZu4xFjEDHa/NjaeNUTDST5cX+ffbu9dQmxG+v305PbgsadWejzd2lZGq96ooEkKMCCKPTn+XlRlAVvrq8XE7Q0XvVEI7agtfGqJxpIwiWHvXf4ZEFOQidoabzqiQaKoCASIsYnimkbY2vjVU80kAROMiGvAI4RsyBja+NVTzRYhAlDBf1+Pa57vOqJhibEJ4tpQbyoWBuveqKBJNgpwoSIQwW548TaeNUTDRZhQsYkCvr91sarnmggCZKCfhxq4wRDfaG2bYz/Cyc8ZwrEN+TrAAAAAElFTkSuQmCC",
+  "kaleidoscope_cookery:item/bamboo_tube_rice": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA2ElEQVR4XmNgGDIgO1n6Pwj7ewqDMbo8TgDT2N2g/H/7SgswBrEJGgLT+O5k2v9vDyeB6f/ftoENuHTYG+4adH0YGv//vgDHYD7QEJABGK6AaQTZgKwRxgbRMANQvIGsESaBrBHGBrkIhL88nwBWA/fCilLb/3cXxoMxyGnohnxc4Y2iGSSPHCNwAwo9ZcH0/0cr4H5E1ohuM9z/IANAmkAGgDCyAXg1wgDMABANcwWyM7FpfLrKC2EIstNhbLw2YgMwjTCMTeOvm3X/UWxGB7AwAGF0OZoCAHovZe17d9vYAAAAAElFTkSuQmCC",
+  "kaleidoscope_cookery:item/baozi": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAk0lEQVR4XmNgGLRgTkvWfxhGlyMKgDQ+u3UCjBvTfIg3BGbr2V0L/3//8Pj/gTWTiDcEZitII7oB146tBxuC0yBsmrEZsntpO6Yh2DSD+MhsvIYQMgCkCWQAiMZpAEgCpBiGYQbCbEXWjNMAmCZkQ7BpxjAABEACyIpxacSqGQZg0YSuAVkjTs3IAKYQHaOrGxwAAIsxbpWc3CbeAAAAAElFTkSuQmCC",
+  "kaleidoscope_cookery:item/baozi_plate": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA60lEQVR4XmNgoDWY05L1H4TRxXECZA0w9rVj6/83pvkQZwiyBhD94dG5//9/vIaL4TUIpBmmAUQjuwDEB9E4XYOu+cCaSWB699J2DENAYiiGoGuGKUTWADMEw4BgS06wALJ/kZ0LkoMZgMxuS5D4D9LLYKnOBubADEHXCNMAshEWJiD1IdZi/+VFmSAGFPrzgzGyJmTNIPz5wyMwfv/2yf9zZw6jGgByCshUEIYZhoxBGo6V2v3fHeMNxiB+kAUnxAAQgBkC0wAzDIZBGpAximYYABkCwyDDYBikGIZBmmAYRTM6QFZItKYBAwD60n5lm/9d5wAAAABJRU5ErkJggg==",
+  "kaleidoscope_cookery:item/beef_noodle": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA5ElEQVR4XmNgoAXwVZf8D8PocgQBSFOamTock2QISHFPoDUYwzSD8JZCFzgbr4EgjYuSPVFsB2ku7zEHi8PksBpycm0V2GaQ4pRybbjm/z8f/n91cTHcVTADQGIYBoAUgzQtTLECYxgfhJtddP4nFKuCDYAZCtdsqc72P8iC8z/IEJAETAHMMBgfhkFq5UWZUA1oiZcES4AwTCPMMJiLQOpAON+XH9UAZENmFKjADQJhmCYQDjTnBGMMzTADCvz4wQaAMMgwEAbZBsIwzTgNAAFkJ6JrgmnEqRkZwBSiY3R1wwQAACdL9z3bZcPrAAAAAElFTkSuQmCC",
+  "kaleidoscope_cookery:item/blaze_lamb_chop": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABGklEQVR4XsWQsWoCURBFH3YxLEFI0krKNbKEdFttFyuRJZWdEKuAiK1pUlkHLE2z35DaL/AL/IL8QooHo3eSO7y3LDFdBq47jHPmzhvnTsRu6mR976Re/zUAUd7PDGaNeeNg/CGyV/Breye+cioOQ63OWDTCPzkER7pykyjU5Qg9vfXtCYTKrCvPeWqqsw5NcAdcLm8km/YioJqPZTN5UCGPhtCZAvw5XMm20zYIT8H3dZBrjj6D+W4U6QD4/TIxZ96DJnaP8LpYixeHE2Tb+Q/tC+9S3J6Lww8PRhiuVAjTGcxidPE9oHvVsgIHYZOXIlOl10k0HH2EweodkDzmZyoOgQBz3XDtCGagQHEYFUJUBNcjbPwz9G9xAD2eYGEmth0yAAAAAElFTkSuQmCC",
+  "kaleidoscope_cookery:item/borscht": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA+ElEQVR4XmNgoCaIkhX/jy5GNABp7tXRI88AkOYCMV4wDpcSAWOYXJGF2H8QBrEt4xn+gzBCJxIAadpXWPF/i7v3/0Xq2nCDbi2q+X+pLwlsiF8NF3YDYIphmkEu2azNAMYr443ABoBokAEgGsMQkOYcKYgGEG6RR2icqwphg2gYG6RWXpQJYYilOtv/fF9+sCRM8+2ljWAMMgQkBsIwPkgthgEt8ZL/gyw4wRhmO0gDzHaY4SCMYQCyITMKVMCGwJwMwiBNIPlAc04wxtAMM6DAjx9sAAiDDANjqI0wzTgNAAGQIbDwQNcE04hTMzKAKUTH6OqGCQAAnYfUrQ0z7lMAAAAASUVORK5CYII=",
+  "kaleidoscope_cookery:item/braised_beef": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAzklEQVR4XmNgGNQgWUv2PzJGl8cAFdpS/0EYpLi8xxyOF/vqg7G3rBAYo+sDA5DGQ3nu/9+uqAEbAOLvOJMNxiBDQHIwC7AagmwAyDaQRpgGEB8kDjMEwwB0zSAM4sMwskEYrrDT44dLomsGGQgzFN2AE+5a/9Vkef6DDXhabIUiiU0zskYQBumBG9CfrQaXWGwoCcFQ1yBrBmkCYZC6wiAJiAEwb4AMQVaAbBMyBmlE0QwDIENgBsEwTDEyBmnE0IwMYAbBMEwDQY1DFwAA8qgODJltkfQAAAAASUVORK5CYII=",
+  "kaleidoscope_cookery:item/buddha_jumps_over_the_wall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA60lEQVR4XmNgoAVIaNL6D8Lo4kQBkMbtJwr/9672BBtirWkEx+hqsQKQJpBmmCEgjXGhkWCaoMv0dFT/n+tSB2sE4YfXV/z/+OYKmAYZAHMVuj44ABng6mQGNwSk+eXjY2ADVucKgeVAatD1wQFIEmZIalo4HMM0wjC6PjBIMFH73+FljqIQpBFdM0idt5okwhCQAAwvTvJDwSADYTjdUguMQWyQAXCDQAyYQSBNJ5pzwBjdEJgBIDGYC8A0iICZCFKIzQCYZmQDYBjFKyDF2LyArBnmBbhGZAAzFV0jst9xakYGyE7E6txBBQCk3Qo67r+K8QAAAABJRU5ErkJggg==",
+  "kaleidoscope_cookery:item/caterpillar": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAmElEQVR4XmNgGDLAOkr1PzJGl8cLQBqiG51RsI6zOPGGgAwoWxoBxjrWsmAXEG0AzHaQ5kUXWsG0d645dgNAgsj+Q9YMczpI88pT+bgNACmCBRQ2m3Hajh5QMD8j82G2g2icmmGasNkM0vzlSz9uA0AaYJqIshkGkP2L7HRkm3FqBgGQATDFyDaDNOJ0NjoAhSw2jK5u8AEA4j7goYhJHowAAAAASUVORK5CYII=",
+  "kaleidoscope_cookery:item/chicken_and_mushroom_stew": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAxklEQVR4XmNgGFSgzd3gPwijixMNQJqfbJ4LNoQsg4IsOP/vq4j7/+nsRrhBIDFkjK4HDizV2f7n+/KDDQBpBmEQG2TI/1MS//8/bgfjQHNOMMaqGaTg+zZJuGaYAcgGgtTIizKBMYYBP65EwTHMAJCBIAzjgwwAqcUwoCVeEu5PmHORnQ7jwyxDMQDZkBkFKiiBBtMEomH+x9AMM6DAjx9sAAiDDANhkG3g8CFkAAiADIE5EYRhGpA14tSMDGAK0TG6umECAB1k5wDleQH5AAAAAElFTkSuQmCC",
+  "kaleidoscope_cookery:item/chili_seed": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAi0lEQVR4XmNgGPRgWa7mfxBGFycKnJnq///Pw5X/n53oJM8QkKZby5LBeF+Xz/9iByn8hhzpdcNQADIEpJEozWQ7FQRAGkH+BTkXl214AxTmX1x+BcmDXIjPAgZkvyKHB0wzyIW4LMAAIA3ohhAVmCAACw+QIURpQAcgA0BOXV9uSp4BIEC0cwccAADQhYXZEGBrIgAAAABJRU5ErkJggg==",
+  "kaleidoscope_cookery:item/cooked_rice": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAk0lEQVR4XmNgGL5g+8r+/8gYXR4vAGl48fgGGF86tgVMz2hOJM4QZM3///0lzRBLdTa4RphmZENAhoPUoOsDA5AEyAaYbSAaXTOIBqnBaghIMMiCE4yRNcACEaYRhOVFmbAb0BIvCcYwg0AYpgnZAqwGgABIUYEfP9wgEBuEkQ3EqRkG0G1D1khQMzKAaSBZ49ADAF+Dy2mZ8pvvAAAAAElFTkSuQmCC",
+  "kaleidoscope_cookery:item/crystal_lamb_chop": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABFUlEQVR4XmNgoBbI81v5H4aR+ejqcAKQ4j+/Lv3/ffIxWCOIhrGR1WAYimzzxp4PcENAbGQDkOVRDIHZDJKEKUqeoPO/O/MUGFcE74GLg/ggdpalJsIQmHNhhoA0B1Yp/tdL0QIrhOGF+ZH/Zye4gTGIDRKDGwBzLogG2QjS/Ny37f9eQS64JmSvImMUQ0CaYTaANM8R4QWz0f0PczHYAHtt7v8gDOKADABpaPOz/9/gbgnGyC6EhQHMtSB9YANgHJC/qu31wIYg24xNc6E/P8QAeVEmMAMkAAtIWCjDYgKmGYZhmkF6wWEAYgRbcsKjMlBPHow1xXgxNMEwXDMMgARgGGQYMkbWBMMomtEBskKiNQ0YAAD0zortGcGyAQAAAABJRU5ErkJggg==",
+  "kaleidoscope_cookery:item/dark_cuisine": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAsElEQVR4Xu2RMQ7CMAxFLTbEwFSJDSkrJ2DiCAwdsvYKbDkB1w58029+o1Ri64Klr8SO/0vkmP2jGznn+l4gSylVCLW53o/xuq+QfYxugjTHCsjctzTjsJTCWwLAmsJul8MXgg0KOFAz9/L0gKE/IExIX7u1mUNAHPC4Hz1pB9abA3N67DzsfINCC9KXsec5naIPXozBIfwFCE0qhVNhZqBAKYxDpolamNvQxp9Nm8ULPzC99gbXB3QAAAAASUVORK5CYII=",
+  "kaleidoscope_cookery:item/diamond_kitchen_knife": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAjUlEQVR4XmNgIALw2Zv9h2F0OYIApOnu/19gHH3vBGmGoGvWWzMNjIkyBKYZpBFZs7CvM5jPoaqA2xBcmkGYbM0yjfk01gwDIENgmkEaQXj616fEaYYBkCFka4YBmEvI0uxuIgrWSLbmNB+5/yAaXQ4vAGkA4dZU9f/qctykaQYBmM1kaQYBkEayNVMCAMKMta0wyH3GAAAAAElFTkSuQmCC",
+  "kaleidoscope_cookery:item/dongpo_pork": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA90lEQVR4XsWQPwtBURjGZVB3YfKnDJSBoq5BcjPckU0hm2KwyCJJNgujhfIxTEZfxJc5el49p/ceBhNvPd173/P8fp1uLPaLCcdZg7jvkfl0MCsVDXK5zc361JUz/S4z3foC6gOC91Fozo2a6eSTEt23AgwWONDg47iRJyXYU8Q+EpHs/LqUNegGIgosPAg8WV7DpgQiyggh/EYXjIWH7YwYH/uFRIs0yJtBAEYkQTnxVnBF3K+qFQkFhXT8JVj2UrJgQYs0yJ+ILhgrwFUOk5xEi3gzguwA7re8lwBDCQ4QFglyD4ixMAcSBjLGhZgI7I4ufg39bZ6jVCcc3AkveQAAAABJRU5ErkJggg==",
+  "kaleidoscope_cookery:item/donkey_burger": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAt0lEQVR4XmNgoBeYmiD5H4TRxQkCmMZ7G9PAmGiD0DWem+4NxyB+oYMIdkOwadzf6vJ/Y6YymAaJvT47BdMAZI0wm0AaQBjGB2kEYQwXIGuE2YZuI0xjXhErpmZkBcj+RBav1lMG497J4mCD4YbADIA5F6YJWSNIE8jm2c5mYD5OA0CKQBhmG0gDCIPEYDbDNKMYAHMuTCGybTAbMTQiA5Agsp+J1ogMYIpgmojWiA5gmkjWOGAAAMabPWcEZ6coAAAAAElFTkSuQmCC",
+  "kaleidoscope_cookery:item/dried_tea_leaves": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAiElEQVR4XmNgoDdwMFT8D8Lo4kQBkMYIR13SDIDZCMLV0W5gA7SVhIgzAKSpJzcSjGGaiTYAWTNMI9EugPkV5l9k54Mwuno4gClG1gizGYSJthmkEN0gkBhRBsA0k6QRBmA2wjRh04w3HcA0o4uDAHIsoMuBAS7NyIEI8xa6GpwAOTywGT44AACadIpYzrF2sgAAAABJRU5ErkJggg==",
+  "kaleidoscope_cookery:item/egg_fried_rice": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAtUlEQVR4XmNgGL5g+8r+/8gYXR4vAGl4ce/E/0mTTf5XVimD2TOaE4kzBKYZpPHbRSsw+8cV5/+PlssRNsRSnQ2sGIT//3gC1gyjYYaA1KDrAwOQxKzm+P+Xjm0BK0TWBBIDuQjkJZAarIaABIMsOMEYpGHn4mo4DdIMwiA1ICwvyoTdgJZ4STCGGQTCME3IFmA1AARAigr8+OEGgdggjGwgTs0wgG4bskaCmpEBTAPJGoceAAAVp7yOEz4MeAAAAABJRU5ErkJggg==",
+  "kaleidoscope_cookery:item/empty_cup": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAkUlEQVR4XmNgGJ4gx0D1PzJ2lxcHY3R1GKDJ3ew/CJ/sLEPBCxP8wNhVXhSM0fWBAUgjSBFIA4iN7gqY4WAXKUlhGgIzAES7S/BixTCDcBoAsx1dI0kGvFo+Ce5cdK+AXEjQCzBDQBg9EPGGAQgguwJZI1GaQQDmTHTNRBsAAiAFIIweBjBxdPU4AUwDyRrpDgDkQtWg7hVkRwAAAABJRU5ErkJggg==",
+  "kaleidoscope_cookery:item/enamel_basin": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAv0lEQVR4XmNgGJSgO1X7PzaMrg4DwBR+vr4WBZ9Zkf9/cY3t/ywXfjBG1wcGyBofH+wB096urmAM4sMMgRmEoRmkAKYZZgAyH68hyAaga0LWjNcAe1eIAmSDYP5H1gjCILUYBsAkfMLaURQjYy3DaDDGGpjIgQgyBGQYzECYRqzORzYAFnggOijR939Sg9//Cx36cI3I0YmuH2tAgjSfMjYDG4QzAJFBgafQfxCGBRx6AGL1OzYAU4iO0dUNDgAAEzpUnB6o4+IAAAAASUVORK5CYII=",
+  "kaleidoscope_cookery:item/farmer_boots": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAApUlEQVR4Xs2QMQqAMBAE8wS7gI2dIBZWgoW+QCztbfyBlU/xs8oGV85LVKz0YCFcbid7MeZ3VafJqqVngsXhrsjW3EaHXgGkce5bByPgMRWayzQ60VzGNphKgj2IXAUA9HEG+HI1moamcoIhBGA6yDPrAYD4CgEAUicATdKsAfwXnc4BaJCSL8GAHhNyzQMio3kR93uYdEo9d1uEyI9+BUDdpfyuNpzSzXWB7jVOAAAAAElFTkSuQmCC",
+  "kaleidoscope_cookery:item/farmer_chest_plate": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA1klEQVR4XmNgoAVI97b5D8NBpupwjK4OKwBpyrdT/P/15QM4vnVkH1iMoCEgzSANIMUgTVsmtIExzACQHE5DYJphirFhkBxWQ2CaQXhDjhtY8fRoCxQME8NqCLLtIAOWbdgOpkEYZgBIDKsByJqRnQ8zAGYIsjdQDAEZgKwZZiOy7TBc76WNYghOA5BtR3YFTgNWdjeDMUgSpAjdBSAxGAapgalHCQdYAoIpxKYZFhY4UyZyGCBrhGkG0b7aEpgaYQAkiZ4GYKEPw3gNAAGQAnwYXT3FAABkLYa+2ktrhQAAAABJRU5ErkJggg==",
+  "kaleidoscope_cookery:item/farmer_leggings": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAsUlEQVR4XmNgGJTAySHzPwhrqwViYHS1GACkcW6sAhy3OzPDcak+J35DYJpBipiYpFEwSAxkCEEDQLbAbER3iatrG2EDfKOm/08p3gnGIDYyH68BIM0whciKkQ0laEB9z2kMhTADQHIgmiwDQHyYHFYDYLaAMEgxNgOQwwLDEJCideuOgvGMGZvBGFkReuBiNaCubuZ/J+csMAax0Q3AZwEYgASQMbIcIQuIAvgsoAgAAH8oAl4Pg77nAAAAAElFTkSuQmCC",
+  "kaleidoscope_cookery:item/fish_flavored_shredded_pork": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA3UlEQVR4XtWRMQrCQBBFUwdRLEUsRAyIILaCiIVVCquUtgbExtIriEewUI9g6T08gEfwBit/wpNNImipA4/AzPy/fzdB8HM1H0ZOFPtfFeJ0NrLvbtx5ofk5DJ0o6qwQimmvbdwPa3fdxIaEt0bDeGvCqYhZFNt90yVp1T2SrlEy0FBLinpcTAyWMdKchDooalUyk8mgZsPTpW+RBUbqk8IXK+EqrmcmMtgts8iCR8NUKCFirlMyUIPYiFnGFEP2c9dQkwFC4G8wz4kpmfhG/rKPhCWxXxgBgo/C/60n2v72QaUFFlMAAAAASUVORK5CYII=",
+  "kaleidoscope_cookery:item/flour": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAoUlEQVR4XmNgGNSgvSjyPwyjy+EFME2/vn8E49cPThFvCEghSAOyZhguiXEmbAjIgFun18M1I9MgcbyGoGuGYZAYjMZpALKf0W2HaQbhzXPqMA0BaQZJIGv68/s7imaQPE5DYAGH7FRkW5ENgWEMV8BcgK4ZWSNW20EApAHmDRDevnoSWBEIo2uEYZAaFENgAKYAnY9uKzofDEAuwWnyoAUAzbhPbwg/8wwAAAAASUVORK5CYII=",
+  "kaleidoscope_cookery:item/fresh_tea_leaves": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAkklEQVR4XmNgoDdwDJX7D8Lo4kQBkMbYEl3iDYDZBsNd873ABqhaCuA3AFnD2t1pYAzTTNAAmEZkzTCNBF0A8yOybciuAWG8/ocZgKwRZiBB20EApgGkCNkwbH4H8ZH1ggFIE0wzzACYGLJmmBiyXpQ4hmlA14gXYDUVDcAsQBcHA3yakQMSpwG4AHKY4LNk4AAAtMSqwZOgep0AAAAASUVORK5CYII=",
+  "kaleidoscope_cookery:item/frost_lamb_chop": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABJklEQVR4XsVRPUvDUBQN3bQEKVjX0DG1ZE+XkkUnkdCpmQp1CoXgqotTJwf3dHH1B7i5OvgD+g+KQ0cXocNtzk3Pa15qwUW8cOB9nI/37nWcv640/xYiyt6lfm/q8XUtLx+iJBIhQuEc91FywKBKVJMtEevFshTT4MdXwABkPnXy1JNheKRkGsaBJ2noG+wZqHsBiOO7jgQ3XUvwnI0kH18osLZMvP5U00iG+PNqJm+tYyMiHi5DuR8E4p+5pQGbBxOImQDx/NQ1yZwCxQC+qY1iA3UC268gCYABavVlT2Nw3tS9w0YxgWYQAkjkdMChwe31iZo4XrthJRuzZPdc9qjKgxjasonFAv/h6Dg2iGGINCYSRszCAUEzoioiLHG9qsRfi/6tNk1Xc4EvzgMOAAAAAElFTkSuQmCC",
+  "kaleidoscope_cookery:item/fruit_basket": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAwUlEQVR4XmNgoDXYOiHyPwhf31j6H12OIABpjLFXAmOQAbUxJsQbgqwZxCfKgHhn1f8tyVYYGKR5TXvgf5C8mQIvdkNgmkE0CDtqCcMxsgFYDUHWDNJgqMADxyDNk4qdwWyQHEgNiI9iCEwQ5G9kzegGgDBIDU4DYIbc31ENxrAohInD2MiBCwcgAZgh+DBWzTADQNEEwsnuamAM48M0wTBGIMIMQDYEWSM6H6sBIACSAGF8GnFqRgYwhegYXd3gAACe3Pz1nKaZYgAAAABJRU5ErkJggg==",
+  "kaleidoscope_cookery:item/gold_kitchen_knife": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAjklEQVR4XmNgIAI0xYr9h2F0OYIApOn/v29g/P1dPmmGoGt+uVEUjIkyBKYZpBFZc3ccB5hvr8eH2xBcmkGYbM13pgnTWDMMgAyBaQZpBOH/v/cQpxkGQIaQrRkGYC4hS7O7iShYI9ma03zk/oNodDm8AKQBhFtT1f+ry3GTphkEYDaTpRkEQBrJ1kwJAABsk8pB5tsNCwAAAABJRU5ErkJggg==",
+  "kaleidoscope_cookery:item/golden_salad": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA/ElEQVR4Xs2RwQpBURCGZUUWIspCZClZWFrxBpIXUFaW1vYeQZ7CWrY2vAgbDyB1G32j/3SuxEqZ+rvnzpnvnznnZDK/juO8bctWzl7zHwNIYAxvhkWT4vpUAN4OY7tfZ3ZeN1zkdpW6nbo9//9qQFdLLm6CGSDrbalmyb7shsGEQoom/XwYW0egmzoDI00UJsFZ8LvRgcnLgAkAgwHwoFPwYuB4dHIC1V0G4XWAZUABINIEWsewXgfODRajZ1KFSJPISBeHtOcGzWrWF7EJX8HqJlGnqWD9JVhwF4iN1bSWEhDScVGAFSQkmUl66rgmBb9GXIh0HPb0/Z94AMrHXmBmB4ccAAAAAElFTkSuQmCC",
+  "kaleidoscope_cookery:item/green_chili": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAhklEQVR4XmNgoBcwteX8jy5GEgAZQLEhyrrs5Bug58z1H2SAnhMv6YYE5vP/L5ur+T+uSuq/SxT/f20LDtIMARmw/EgB3JCBMQCkGYTJ9gLBMABJ+meIgjGyOIiPbLuKEY6oBEUTCIMMQjYMphlmO04DYABmELJGmBhBzcgApgGG0eUHDwAAK05v63c7Hi8AAAAASUVORK5CYII=",
+  "kaleidoscope_cookery:item/iron_kitchen_knife": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAhElEQVR4XrXOMQqAIBTGcffmFgdXL9Dq3NIJ3Osm4XHsJh7J+IQPQrDsRX94iMjvlVIdee8zp357DIillN4tqfERY5muJcSAV+ycK3etdXtJC2PEOITwM2ZYQgyIQV2YYYkYM/6JCM/TWKAYb4vJOOu32wAw+2qzNcM7jPhlEUaAYvylE0DS0RILOkM/AAAAAElFTkSuQmCC",
+  "kaleidoscope_cookery:item/kitchen_shovel_no_oil": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAcklEQVR4XmNgoDdwdXX9D8Lo4kQBkEYQOHr0KOmGIGuGYSkpKeIMgWletmQJGIM0gwBJBoA0FhYWgmmSNIMAyACKNYM0wTC6GpzA00wUrhldjiAAae5MV/+vIcdNnubyCJkB0kyRs8nWDAIgjWRrpgQAAJz6d7Ym2/X1AAAAAElFTkSuQmCC",
+  "kaleidoscope_cookery:item/kitchenware_racks": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAhElEQVR4XmNgGDIgxF7lPwyjy+EFVeGm/0F4UaU3mAZhgobAFILw7a3VcIzXEFya9kxJAGtExhgGgARACnFpAvFhYs6eUdgNQNcI04Ssub6pk7AB6BimMTUrD6yZoAEgBciakDUi+x+vAdg0IWvEiAGQAHIIE6UJHSAbQrQmdECWpgEHAJYoCemV1kitAAAAAElFTkSuQmCC",
+  "kaleidoscope_cookery:item/laba_congee": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAv0lEQVR4XmNgGAUYINCc8z8+jK4eDmAK/u/S/n89X+r/CXsjMP57fff/F4trwOIg2lKdDYxRNMMEQYpAGkC430QbjA/424ExyFAQTrTR/B9kwYlqCIjTEi8J1wSyCYRBGkGGwlzzY4EvWCzfl/+/vCgTpgEgk0F4q5oG2CCYd2AGw1yKYQCyITMKVOAGwZwKw7BwwtAMM6DAjx9sAAiDDANhkG0gjBwTWA0AAWQnomuCacSpGRnAFKJjdHXDBAAA6fK9vFGPWQQAAAAASUVORK5CYII=",
+  "kaleidoscope_cookery:item/lamb_and_radish_soup": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAyElEQVR4XmNgGH5gnav4fxBGFycKgDT+6Zf+f7deBmxIkAUnHB9KlsdvMEwRyAAQDcLfv1z8n7HO/L9zoQqKwfKiTKgGWaqz/QfhhfmRYEXIhrx4vAaMQXIgA0EYZACKISDN+b78KDbevT4TbivIoAZ3S7AhIHmQWgwDWuIl4f6FKZbshYQJzEUwl2IYgGzIjAIVlMCDaQLhQHNOMMbQDDOgwI8fbAAIgwwDYZBtIAzTjNMAEEB2IrommEacmpEBTCE6Rlc3TAAAWHXK62KtZHkAAAAASUVORK5CYII=",
+  "kaleidoscope_cookery:item/lettuce": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA0UlEQVR4XmNgGHTAq1DhPwjjY+MEMEXVS6zA9Lz9EWAaxoaJo+uDA5hmmOKoVi0wG90gxyhlTEOQNYMwTDNIDCaeN9EMbAhOA0AKkG2HaQZhkBzMABBt4CSJxZBMHQzbYS6CGQCSAxmC0wB0vx+6Ug43ACQOwlg1gwDMBSDFII3v3h4F0zCNIGwZKA92gZ6DBKohIM0pE0zhtsI0w1wE0gjTjNOAh09XgjXCNE9c741VI4ZmmAEwm0EYpBldE1aNyABmCMgreG3DB0CJhCyN5AIAMrYhzuwNw0gAAAAASUVORK5CYII=",
+  "kaleidoscope_cookery:item/lettuce_seed": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAiUlEQVR4XmNgGBIgwNnwf7y/FRijyxENqjN9/x9cWkucISAb0cVAAKQZZJCjmTpWeTAAKQLZhC4GsxmkGacBMM3IzsQmhhOgOxGmGSRGlAHIzgPRJGkGAWSFIANgmpH9jNMwbH5FDzBsauAA5n9cCpDDA2cswJyN7m9QuiCoGQZgzkZWiE1s8AAAPcaOyqH2PO8AAAAASUVORK5CYII=",
+  "kaleidoscope_cookery:item/mantou": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAl0lEQVR4Xs2SMQqAMBRDPaTHcPAQ4uAlRK/g5uzg7ujqKniAQuUXAmnaDm4GQiv/vxCkVfVbTUPr2TovCsB5bJH7pg7W/UgG7uvsn/uKjBCbFUMUds4Fa8gydvkQ1AasIO7ZFgzj5Dv/CwtIWmh9hT4FaIMcnATYhw3NCjEMJwEIsQFCGGAwC0N4LFhkCGARZmFRrXv/0Avkb5T43YoPYQAAAABJRU5ErkJggg==",
+  "kaleidoscope_cookery:item/millstone": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA0klEQVR4XrWRMQqDQBBFbXICryCIRZrUgk1ImpR29grKQk6xp9lTeLENf8MMP7Nq0mTgge7OfzuuRfGPutR13ML2ZXXvugi893Fd10QIIb2DQxGCQ99nIdBUVQL7YFMiAhsWJHwoYAmLOIyeXQGaWWSDQibgy3PznAXAtSnjcqtU8GjbtwQLyzTpqRAIfPq5PCUgAfpHsOnG8afxEYBEpgE6vkhYdAQkkBV44FNY9HRO4bCMrwIs2nFtM/MxAX8Ti/aEElYByt7wHhzUMJdsfIMzL9WQcQoPakNxAAAAAElFTkSuQmCC",
+  "kaleidoscope_cookery:item/netherite_kitchen_knife": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAi0lEQVR4XmNgIAJ4aTr8h2F0OYIApGnf5n1gXFVQRZoh6JoDXfzAmChDYJpBGpE1G0hI/a/MrfivLCCE2xBcmkGYbM3Gmro01gwDIENgmkEaQRjEJkozDIAMIVszDMAMIUuzvqLS/wQTI/I1F7s6k64ZltatLa1J1wwCIM1G6urkaQYBMQ4R8jVTAgBC1pqcv3IDnQAAAABJRU5ErkJggg==",
+  "kaleidoscope_cookery:item/oil": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAApklEQVR4Xs2SsQmAMBBFnctVHMbGHbR3BwtHEKvsYBmwF4n8wJfLmRjUxg+HEe+/+0ksil9qGWunS/dExebVdG63ky+sUUNT5iEww+Q2exZB+HYLoVkDCMmmAEAbNSB5FjK6TsB3ab4kkdN5gBIQgwSa28ob9WR9E0kAxOuTSeQV4olB6I3CaEIz42LN/a6mP9f8XwKAbI7tV37PCtMY95Vg/gR4ogO7DGz7OR05PAAAAABJRU5ErkJggg==",
+  "kaleidoscope_cookery:item/pork_bone_soup": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAwklEQVR4XmNgGDTg+KGF/0EYXZwoANL48+d3MCbLEHQDgiw4cWJ0vXCAbsjd84tR8IcnB8HYVpP7v7woE6pBIJMt1dn+P7p/FsWQT++P/v/z6wkYg9ggA0CGgQxAMQSkOd+XH6zg29fnYANgGmGaQRjmGpBaDANa4iXh/kRWDDIAxgapg1mG4Q2YITMKVMAGoBsG0xhozompGWZAgR8/2AAQBhkGwiBvwTTCMFYDQADZieiaYBpxakYGMIXoGF3dMAEAgvsOwDyYbEYAAAAASUVORK5CYII=",
+  "kaleidoscope_cookery:item/pot_has_oil": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA8ElEQVR4XrWSMQ8BQRCF78doaIQCHQXXECRXUlxFgURNpdH4P1qNTumX6K4yvOFdZjd324hJXmZvd963O7sXRf+MabsmkD8fjNk8FWqf9GQ76Uqj2cnl1zsxGidyOJ7kcr1phjnttwTzq81WcxDCQpghjCmsBQHc3bYwiIcq2wJqkON65QMimULBI3tqG1Y8VXbfKQDtKcT2jTEKFsu1A8Vcdq5qxjfuJQcgYAAEGYXckf1jTvN3d3gAKQQgI+yxebGlALZBgDU7gPdJSgF8qhCAzwhzKYB9W7MP4AXmAEKwaCG+mTWO0Q/70xTJr/85XmNucWwA7QX7AAAAAElFTkSuQmCC",
+  "kaleidoscope_cookery:item/pot_no_oil": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA4ElEQVR4XrWSIQ/CMBCF92NQGAICcCBgBjJIJkFMgQCSeRQGw4/CzPFrcCiOvJLXXI/RLCFc8nJLe+/rXbsk+WcsB22B7Ho0VutCqGM+lnIxkm5v6GXrg5hnuZzOF7lWN5dhLiZ9wfruULochbAQZgjfFPaiAJ6uR5imMyc9AmqQ007rDSKZQsH98XRjaLErdoHxHETPTchmuw+gVrgXD0DAAAgy5uWJ+g4g/RKA1AKQEbptXizb/wBwDAK0uTGAT9UEAPNXAOfVZgvgBXoAIdjUEGtmTWC0oX+aOtn6n+MF/WFmGO1AM58AAAAASUVORK5CYII=",
+  "kaleidoscope_cookery:item/qingtuan": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAh0lEQVR4XmNgGJ7AI0fmPzaMrg4rACmsWGz2f/nxTDgG8UHYPpYHvyEwzVfeLgFjZM0EDUG2GWZAx3pXFM1RTRpgWsOLF9MQdKcja4QZBDIAhPEagKwB3XYQBqnDaQBMEbpGWCzgNQAUOMiGINuIjrEaAAIgQ5ANwqYRp2ZkAFOIjtHVDRMAADcVz/TaRxLAAAAAAElFTkSuQmCC",
+  "kaleidoscope_cookery:item/raw_cow_offal": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAj0lEQVR4XmNgGL6gW07yPwynCPH9R5fHC0Carof5/n+YlfT/oLk+aQbANP9cMOP/DhPd/9OV5cGYaENABoA0gGwHYZBBIAwylGhDQABmM8gLMO8Q7RJY4IE0w1xAdHiANKI7H6aZJANAimerKYAxyAsgPlFegMUCumaibIcBmCEwzSCNRGuGAZgmkjXSHQAAOwqc9m0aK5kAAAAASUVORK5CYII=",
+  "kaleidoscope_cookery:item/raw_cut_small_meats": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAArElEQVR4XmNgGNRgU3nyfxhGl8MJkDW9P74bjK/P6yLOEJAikGKYxt+PzsPZMANwugim+c2uVWCNyJqRXQBitwS6YDcAZivMEJhGosICJPno/lm4ITDNMFfAXILVdhAAaT5+aCFYE0wzLDyQvYTTAJBmEA1SAFMEopENIegKdABSiOwSmMuwGoAcTSCFMHGYK2CaQV7FagAMwGxFF4NhkFdBhiDLkwxg4TU4AACIRRnj7G94OAAAAABJRU5ErkJggg==",
+  "kaleidoscope_cookery:item/raw_dough_0": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAm0lEQVR4XmNgGJSgNT/0PzpGV4MVwBTfO78RjH++uwXGIHZhhD0Yo+uBA2SN/3+9h2sGsUEYJH5881TchsAMgGlGdgG6S9D1gjWDTEc24MzOmWAMMwhGY3UFsgHotiJ7Bac3YAagGwLzP0wzCG+aU4PdAJAEsiHYMEgNVgNAACSIbAg6xqsZBmBxjWwQska8mpEBTDEyRlczjAAA9ZhVuVjiqZQAAAAASUVORK5CYII=",
+  "kaleidoscope_cookery:item/raw_lamb_chops": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAh0lEQVR4XmNgoCWYrCz7Hxmjy+MFIA332urA+EZCBBhniAkTZwhM80FtFRRMtCEgA0CKQZoWyEqAMYgNMpSgAbg0k20AzP8gDOITZQDM/8gGgTQS1AwCMANgmonWCAPILiBJIwyADCBbMwjADEAXJxrs2T6TfNuvXT74f9miRvI0gwDFBpADAJCunJOVr9HFAAAAAElFTkSuQmCC",
+  "kaleidoscope_cookery:item/raw_noodles": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAr0lEQVR4Xs2SvQ2DMBSEvVwGyAjUUSYgJcoAqamYIUrFEqFkAegyAuie9FnOizElOenkH97dO2OH8JdorucF+m+7kOgzj8bufom8VSejr/8C4ml4Lq+2thGzd/+IRl5nkFhFEmlEJCOotZg1wQAhKRBpLWZTSEwxR2AO0xRZA+LuxS8a0Ml3J77201vZNCGBT4FYZj8GmPA/fHcJ0pvKGgAeTUrt8y6K4hI4ht8/FituwV4/SaMx4QAAAABJRU5ErkJggg==",
+  "kaleidoscope_cookery:item/raw_pork_belly": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAArklEQVR4XmNgGPRgvq/vfxhGlyMKgDT+Wb36/5/+/v+NpqZgjK4GJwBp/pidDTbgfHDw/1epqWBMlCEwzc8SE8E0yIA/ZWUQDDQQryEgzSCNIAxyOsx2sGYg/8+RI9gNgAUWTs0gDNQMCw8MzSAJuGYkf4MDEcl2kFqsBiDbimEzVDNO/8MMQA5tuO0gjfg0wwBIEq4JTSNWf6MDmAFgQ0BOJicBwRQjY3Q1gwsAAKqQFcPlh/qUAAAAAElFTkSuQmCC",
+  "kaleidoscope_cookery:item/recipe_item_no_recipe": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAArElEQVR4Xo2SMQ5AQBREXc0NlBoXkDiCRuESTqByAb3CBVR6p1j5kpEx6y+TTGP/vNmNn2Wiri4CW8+TssCxzbeXqQ9Nmd/W+UgKgPd1/A8zyNBWly2kIIVp/gLYgBkghaEkAiCMJrS9wXCLCMBhD2Rzr2FtVwPitn8BAHmEsTD6Pg0mAbw4KVAUNtkHDPA/V5D7dt4ublSQuzgsBgHGoE8ApCC+hc4mxc/zwicdctoMMnK2tQAAAABJRU5ErkJggg==",
+  "kaleidoscope_cookery:item/red_chili": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAeklEQVR4XmNgoBfwzlP6jy5GEgAZQLEhFuFi5BsQKML7H2SAjosA6YZ0Kyn932Fp+R9E50pJ/AcZhq4GLwBpvN7bDDdkYAwAaQZhsr1AMAxWWumBFYAwsjjRtoMkQBhkELJhMM14bUcGMIOQNcLECGpGBsiaSNJIdwAA0pFwlyluxjYAAAAASUVORK5CYII=",
+  "kaleidoscope_cookery:item/rice": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAo0lEQVR4XmNgGNRgclP2fxBGFycKgDS+eHz5/4+vb0k3BKTh7qVdYM0gDGLnxPoTZwiyzSAMYxNlCEwzzHZkzad2z/+/cX4jbkOw2QzTiMzGaghIM0gSpAjdEGQXwQwAqUcxBBZdIIUwQ2A2wzSCxEGaYRjDAJgEskuQnY1sO4yPYQhMEIRhGpBthBkIUwPXDALogjA+DMO8ieF8UgC6JYMDAAAUlUgIBSbtNwAAAABJRU5ErkJggg==",
+  "kaleidoscope_cookery:item/rice_panicle": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA2klEQVR4XrWQMQ8BURCET2hcSZRX8Du0CoWOVns9nUaFhKi0WrQi0av9DH9kZVbmZW9znIuYZLN79+abt3lR9G8tRrGg7MzvQsEo9748Dm3Zp00tzPhXGAKDBQGhvg5hwG3TUjM6iqHXWaKz51RptxpgdJi5iQ30XNBgWJHLsaMmwgji7dwGQZ6Nxr1YppNXAG9nEXy7PmAcYgOGoGwI3oY9AxNCZ8h21RC8Bwoe2zMBhE/nRNa7usIWzFM48zA6N3FMvmCcL2sKAywFUwgAZN/Bez7KAqXhX/UEN0/5v0YSMYMAAAAASUVORK5CYII=",
+  "kaleidoscope_cookery:item/sashimi": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAtUlEQVR4XmNgGAUoYJ278n90jK4GJwApfhzF9f/3npn/b4VxwDFRhsE0/7997P+PQkUwBhmEbNiXffPBuEVbGNMgkAEgxSCNyAbB2CCM7CoMQ2AGYNMMZ68o/f95YjgYYxgAMwRkOswl6JrPxVqC8d1ik//ZepyYBoAAyOR9gTrwwETWvCtAH2w7XgNAAGQIyCUgg0A0SBPIgOs5umCMVzMMwFwCMgBZI1GaYQBkCEwTSRrpDgDkauci3i+2/AAAAABJRU5ErkJggg==",
+  "kaleidoscope_cookery:item/scarecrow": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA9klEQVR4XmNgwAKenvf/f3m77v+tU0z+T6tWgGN0dTgBTDMMgzRXRfASNqAuThGsuDPJCYyzPHTAGMaviBD8n+ItiNsgkAEgfLZM4v/fFQ5g/HYShF/lyAHWjNcAEAAZsCKGH6wJpBndAHT1WAHMABAGsUEYZAC6OjhI81H/P7PC4//SCfH/XxxvAGMQO9TdHozRxUFqQXrgBrgaiv4viTAAY5CCE+tKwYpBdFORL5wNkoOpA+lBcgMqgNkIcwGIXZHpjlsDOoC5AuYCEE2SASAAMyQ1wIA8A0A2gwILZADJmmEAZAAowNDFiQYDbwAoseCNbyAAAJxv7jyVQJjSAAAAAElFTkSuQmCC",
+  "kaleidoscope_cookery:item/scramble_egg_with_tomatoes": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA30lEQVR4XtWPIQoCURRFp1kEowaNfsOAiGmCGMwmo8lmsChY3IBVsFhMguAK3IDBFYgbEIwmo3w5f7jyZ0aYqg9uGO87532D4KdnaarWT7r/OttW3T7PPXs/hPY67Nj1JrLTecMeozBfBAz0uo2c5LFfuG+CwJenWQcL4CKXBRK+2UGeEXSbJVf6AJcUder5zdSKsQRYi3qmLukaoF6n/jIuxxIJWFYpoQ/rZfSnfiEpWE2MWyaUxH+ysmubDzwbVJJ/AwmhJBIJUAATsAaJLyJa9gOYgf2RSBGQC/7vvAFvHx7HCtOxHQAAAABJRU5ErkJggg==",
+  "kaleidoscope_cookery:item/shawarma_spit": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAjklEQVR4Xp2RQQqAIBBFPYBtpUMUdIhadI9o0f33xQ8+TD+1sQ+z0PE9Bw2hkpT6E6X7nyE4DtNdbpGCWlURGvt2vCAtnMlKPAL0iwKEI6rIgkXYxoqaQM1vkAEcY9cu4M0UuCfhQT4eBXZdFKGxzOvj9QFbAX8kK6FAJQqjnxUgHFElFizCNlbUBGo84AVUOLOPExSZQgAAAABJRU5ErkJggg==",
+  "kaleidoscope_cookery:item/sickle": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAlUlEQVR4XtWRsQmAMBRE7W2CA9gqOoHiCi4gtuIkDhLcJytFL3CgMZoYKw+OFD/vEfKTxJG6LHUmxKX2PWcAr1JqpZTpOAy6axrTIBEELCBIIKQEQq/kGMo+SRBICEZJji9BXwnaSmh0mYrTZwYJAM59buAiT03tO7ch/BpE+GSc9sybH8JcEz/Mnj+GYBSMcEVR8J4NASOLu5FhtZQAAAAASUVORK5CYII=",
+  "kaleidoscope_cookery:item/steamer_no_items": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAvUlEQVR4XmNgGHSgIkj6Py4caSf1H109HMAUbW93/v/9ZCcYP9mUh4JBciBDMAwCaYRpAmGQQmwYZhBIDdwQmGaYDSAcbS0Exr3xmmAM4yMbBDcEZABIAFkhukZsfBQDYLZiU4iLDwsPuBdwKcTFx3ABciDi0ogcM1OStCAGgAhY4NxYFgfGyIYhY+SAxmoAukEwjCwH0gjC8DAAAZgh6BpgipExTA4jMcFSGLrt6C7AmhKRAUwBLoyunmIAAA7zm2zQf+l1AAAAAElFTkSuQmCC",
+  "kaleidoscope_cookery:item/stir_fried_pork_with_peppers": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAvklEQVR4XtWRIQ7CQBBFewASLAhSV8kN6CEqCCfAoDAINIJgKrkBhgROguIcnGHIX/I2s0soyDLJz4r973U2LYpez34xM5LfdQ7Q43YOuWznv0tUvJ92AdQpGEHnNvV0aIrKAjeHsTXLMgAIPm7jQUrHaxUlPEX3bBUlwL7kV5bAP0VSydfNyKrJwJKvKwL8NjqRAauTCNrVy6gCpXyj/FlRwDMkUZCo4GFBJIEZ/gIitsoj8A32g4gAfAX/d56ithiSZ+L8PgAAAABJRU5ErkJggg==",
+  "kaleidoscope_cookery:item/straw_hat": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAArklEQVR4XmNgGJSgIor9PzIucBEAY3R1WAFIw73D3lgxQUNAmv++7AcrPrNG8//6LgMwBrGJMgRmO8gQGEZ2AcgwrAYg+xdZA8hmGIa5BhYecINggXRkvgWY7os2h2tGNgSkGSQHUrMyXwphCMgAkGaQYpgCGAbxsYmBDIAZgmIAiMamCdkwkBoUA2DegBkCMwhGI2OYRhTNMAALRGTNMBpdI4ZmZIArFRLUOHQBAFzgKUDLRz4FAAAAAElFTkSuQmCC",
+  "kaleidoscope_cookery:item/straw_hat_flower": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA1ElEQVR4XmNgGJSgIor9PzIucBEAY3R1WAFIw73D3lgxQUNAmv++7AcrPrNG8//6LgMwBrGJMgRmO8gQGEZ2AcgwrAaANAbnc4Pxcw9XuAaQzTAMcw1MHdwgWCC1r1cCa/5fWwWmQZoKe9/9T2gQAGOQ5stPn4LVwQwAGwIy4Mh8C7CNMBeANIA0z9/0CW4ISPOXL1/A9Mp8KTDGMABE90Wbw20FaYbZBBIHaQapQTEA5g2YITCDYDQyhmlE0QwDsESDrBlGo2vE0IwMcKVCghqHLgAADI01so+zyqQAAAAASUVORK5CYII=",
+  "kaleidoscope_cookery:item/sweet_and_sour_ender_pearls": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA6ElEQVR4Xs2RrwrCUBjFxwRxSYPCytDkwopgcKtWg7A9gAsmTXb/tL2BiNVHMSkIdqNvYZqcb5zL3VXQpgcOF+6+3++7MMv661S6nZw1v30MIG8+Ua0No88SfSOg4H4UEPXjRNXkJID6u0wVEDcDSg/rfHudyfkiIaxvpATD58dN4ObAl3O6X+aNoFdIksgpAbbnykmZKRhtwnx1uogArBX51ZKA1QXY+E7QbtmFYDGuKwlAwvwDkADUYTBKgKdkqSvlCzCAUgKIxX0cOoUAoYQQZSzvAbEKZiBhIWNNiC3BZvTBr6Gf5Qmi9vsqu6fvTgAAAABJRU5ErkJggg==",
+  "kaleidoscope_cookery:item/sweet_and_sour_pork": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAuklEQVR4XmNgGHRgoQ73fxjGxscLQIr+P9j6/3Y6GxjvduYC459rfMHieA2BaQYpBmkG0TD20SBOOBtmKLp+sAHImkGGwVwD0oAsDqJRDMGmGdlGZAORxcGa7fT4wX4DCaIrgnkD5mxkLxQGSfxXk+X5j2IAsnORNcEwsuEoBvRnq4EVw6ILpgHd6cjOhxsA8wbIEJhB6IGI7DqQRhTNMAAyBNkgEIYpRsYgjRiakQHMIBiGaSCocegCAHi1Nr7YrQPGAAAAAElFTkSuQmCC",
+  "kaleidoscope_cookery:item/tea_banner": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAzElEQVR4XmNgoCaozon5jw/nxnqBMbo+huxgvf+LW/z+f/z4Fid+dv84GJ87uAqsFqQHxYC2DCsURTAaGwapRTEABGK8zP+DcENeJBiDnAqjkTFMHYpmGAApQLdt+8oJKBinZhAAGQBy+uyEQDBuC3eHY4IGgJwL8/uWwgQMQ0gyAKQRZgjMAJAc1iiEAZABMNthmkE0SDMsRnAagM35yC6ABSheA2BpAN3vMANA/sdrAMwF6AkJRIM0E3QBSAE+Gm8MwEyGKSBEUxUAAE9Vj9qpmSdKAAAAAElFTkSuQmCC",
+  "kaleidoscope_cookery:item/tea_seed": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAmElEQVR4XmNgGF4gPcf8v3uoHhyjy+MFIM390x3AGMYm2hCYhmf3Zv/fvCEIjEkyBKQYphGEkV1h5qgCNyDezui/u7YiGCPrh7sAphlmM0gcZgBIc2+sLxjDDIIbAFIMsxWGcRmA0xUghbg0gwBIA0gzCDcGu2IaAAIgDcgY3akwm7FqRgfoTkaXJwiQnUyWASBAtHMHFAAATUemsQ/yYOwAAAAASUVORK5CYII=",
+  "kaleidoscope_cookery:item/teapot": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAvElEQVR4XmNgoDYI1ZD432Zr8h8bja4WA6BrQKcJGjI/wAqvApBB6GIoANkAkG11xloothJlAEjToSS3/3easuAYxId5BV0PCgBphuF1vtZwDBPDGwYwTSDb3s2uBmNkF4AwSB5mCIgP0gPWCHM6TOP/MzvAGMaHGQbzCkwz2DCwKQwQ/8M0wQyA2YweFiA2XgOQnY3LAHh4IHsBFgbYMCxAsUUvPPS7LDXBGDkGYBgmhzdFwiTxYXQ9Aw8AZAMnHFDJf3cAAAAASUVORK5CYII=",
+  "kaleidoscope_cookery:item/tieguanyin": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAsElEQVR4XmNgGJ4gIi3zPzJ2CQwDY3R1GACm4fnz53C87/hxOMZrEEjj8nXrwJo6Jk/5v/18BhhP2xMOxiAxkCGVLW3YDYHZDNN873kVHBdPsQWLgTTCXIKuH8UAkAaYzSA20Qb4zNwNNwSGYf4GYZAX9aMn4zcga9NNjAAEaYRpxmkACMACEWQIDIMMhWnEGYAwAHIFyEZcLiBoAAgg+xemCaaRoGZkgBx4JGmkOwAAMQQdD4AQ3rIAAAAASUVORK5CYII=",
+  "kaleidoscope_cookery:item/tieguanyin_tea_bag": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA20lEQVR4XrWRMQrCQBBF9zyewMILCIqNnaUgpLH2CJouvScQLyH2XsJWi5xg9W34yzhZTKMDH0wy783sGsK/qt6to8LzfDaKxPcVC+hxvyaANPtlrDbjLBiUIWjbZ2oCRICQeFmxJLCAIAk9kwv4fDykIJFIArJdTcsC4NvllKILRKR3hGcEvS0E26nEihQEbDQI67c2qhbvY0y6Y+RLFCxI8WsrCPJkCfjgIQ/Tx+ppAy/hg70sO1GwBPQj0HG+SgQp6hWIJAsomuxfZ2/9ozF0cE+gslP99J/XC0iCg+Oti+LfAAAAAElFTkSuQmCC",
+  "kaleidoscope_cookery:item/tomato": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAArElEQVR4XmNgGBlAp0v9v1GA/H90caxgspTsf5AGEK6RlQfTIM2BLOxgjK4eBYA0rzUwAWPVSl2wRhANY4MMxGkITPNhdyswDdMMo0GaYRirISADQJpfJ0WCNcH4IBpm+yxNYzAmaMDXtor/H45uB9MgMZAmkAEwNl4DYIbA2DAM0gii8XoBpggdw5wOcwlWA0AA3RB0jXg1wwAsvpFDHaaRoGZkANNAska6AwAt1MAsMO0wmAAAAABJRU5ErkJggg==",
+  "kaleidoscope_cookery:item/tomato_seed": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAg0lEQVR4XmNgGBng2YaM/7eazf+jixMNQJr/nOn+vy9dGbchIFtgCtBtBImDcJMOA24DkBXAbCTb2SDDQJrRnYzsSoIA5Bp0J4M0g1yGLg4H2GxFBjBvYjUA5DyQ6bvCOOCSsMAkKixAilb7opqOHH1YbSUEQJpgAUqWASCA08+DBgAAgkx4376xKewAAAAASUVORK5CYII=",
+  "kaleidoscope_cookery:item/transmutation_lunch_bag_no_items": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAqUlEQVR4XmNgoCZocdb4D8PocgTB0kij/7EGimAMMuDRTD3SDIEZcK/V8//hXOv/P79Gwg1EV4sVgAxA1vz/ZACYDcJEGwTzP8gAkIEwA0AY5kJ0PRgA5HeQ7TAXfVpVAaZBmKAhIM0wA0AugRkAM4QoA0A0zACQ02G2w8KHoCEwAFIE8z9MM8kGYAtIkMuINgCkGKYJGRNlAAjADCFLMwzAEhHRiYnuAADi2tZT6NCuqQAAAABJRU5ErkJggg==",
+  "kaleidoscope_cookery:item/wild_rice": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAiklEQVR4XmNgGAVYwaP9Df/Pz4z/j8wHYWQ1WMHCDEuwIpBmGBsEQJq/vrsBNgRZnGgA0gQy9Nm1TfgNAUmgOx9ZDmYIVgNgmkFOxaqAAaIGlxzY3yADkG2ABR5OTcgApAikGTkAQWxY4MHU4fIiGKA7EVvAoccQXkAw4HCB9VV+cA0wQ0gygK4AAFz2qlqPNI1KAAAAAElFTkSuQmCC",
+  "kaleidoscope_end:block/end_stove_front_lit": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABK0lEQVR4Xo2TMWsCQRCFF/ILrk51KYKF+QW2aVOaf5BOCIhd+pjSRm20MQkoCIErTScBERJLu5AmhYVoI2lSjLyBt8wuq1h8zM7Mm3fL3Y3r3/fE8lJ/VuL6ob4bP4yleCw8KKJGILY5+lbvJu2JgNlwphECnJmn+syBa921xAKBPds8hZu+PwkYDRrKctmWxaITxLgGHSLm3Pr/zYtwXu0KBfn376tG1tBHzeZqYIsYyPNcsiwLQI1m0ANvwCenhi8uy1K5rgYmvHVgAEcOY6B7c6XD89qZnhFpEhjwAAMO/AzONW6/bhXkMP1sllTD2wYGKKJJsew+PNaIBrxFYLD5m58EX6Qa8PvzfzgVzuku2AWJ/32bp/p+F+I9SO0C9+DoLgC7rnHPgv4etZDaznzRjj8AAAAASUVORK5CYII=",
+  "kaleidoscope_end:block/suspicious_end_stone_0": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA6klEQVR4XmWSoQ6CMQyE+/gkWB6BR8ARECTgkBgEEon8BQZyS77lo4hla3ft3XWrx3P7ud03Y+X8WnZjOT4f15/rZT1xyRFXL+aCRonJQQY2e3VWs3Hnhr1JucDST/vVn7Ks5X34UVf2xqXlAgyRcSEYFpIIIImAexMagOu50cBebcdyjXNcJBLg002QShEzI66w4M0DZYhu7jnMVzALxZbqRrY4LXBAlqcPEEW56887/oGBMMdaQACx51zw8yvDbqk067+TfVigkOIw8xJIdlFXOX5iggB5kTB6Bn5KCMHNn2j5XSq7cdj6AkJkV595DfjJAAAAAElFTkSuQmCC",
+  "kaleidoscope_end:block/suspicious_purpur_block_0": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA4ElEQVR4Xp2SoRLCQAxE+498A5oZLFOLrsGBAoGoquwP9LPKbGZeZi8cBrG9a7LZJJcM23vb19u66/S7zuk45R3AE+QfZFyuSxeP0z1I1Y4tBebL3BD1D4EE2JwTAioFpweOhzFOQfYeJwXIDlF4nZ/5BlXAE0QLblAgoAUEXRx/CHiQg0eEXP0hoI+IgH96VGVud14I1Pl7IPe6A/xnC5B7Y3Jf5YRAHU8lsAcI6fRR5h7wyj5O9eqLRgVwswVelUA5qoALN1OoY/RsEqBkr1K+L4Ffi6QARLA1FZDtX3wAljy/FAaFRkIAAAAASUVORK5CYII=",
+  "kaleidoscope_end:item/chorus_seed": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAcklEQVR4XmNgGN5ARS//Pwyjy+EFME1+zrP/VwcfI80AkKZTuT/BGKQZxCfaAJDimem3UQwgWTMMg/hk2U6WZhCABRi6ZqJjATnKkDWA2LCwIMogbACkEeQ1kgIVGcBcAYoZksMGBkCayEpYyABbGFEMAGrDi7/ANOOiAAAAAElFTkSuQmCC",
+  "kaleidoscope_end:item/dark_dragon_egg_stew": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA4ElEQVR4XmNgoCaoDj72H4TRxWHAVCj7PzpGUQAzwM95NhjDxGGKK5XO/w9SnwHHGAaAwMz02/9BGGSAnIw6GIMUgjSADIBhrC4AaYIZAHKJga4NHCPbiuEFmE0gA5C90RAyFYwXWzyFY6w2gzSDbFlVvvz/ib7zYAwzCNkAdC8QZQBIDDkQcRrgYOkDxjADYBhmAHroYxigpmQMxjCDQBphYQDCIBdiDUBkA2AhjuwiGIYFNAjz8ohixj+yK5ANgmGYHEEDYJqRNRC0HQZAkiCMy1a8mpEBTDEyRldDNQAAWZI20/sREokAAAAASUVORK5CYII=",
+  "kaleidoscope_end:item/dark_dragon_steak": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA+0lEQVR4XsWQwQoBURSGZSek1OxEzcIspJQsphRlK8o8hIUsLOUVPABpXsPKxsbCggfwBJKlhdXVf+qfzp2ZhWyc+riu+b57m0zmH7MKTobE/0vMaLAzBL8hnedvgXuJ2YehIXhoO70JWEPE+rU2yQCly/EgYF1zsiLhZIj4TpV7jbx5Pu4CA9WKZ+puW2AEe6BYcATrZAa0CFrNrkC57w8FCeDkuEy0zDVl3kICuG5aIC2kb2LdgC9v4m0idIBwr1OeyQuWwGJcMoGfE3Rg6V4FrHUAchTAByM6BBjQMA5HAhgstMiYRgcsmYMNomMAAiViyfHRD34t/Tofq5FZHVvDxxkAAAAASUVORK5CYII=",
+  "kaleidoscope_end:item/dragon_dust": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAmElEQVR4XmNgoBYIUp/xH4TRxbGBSqXzmOpgmk2FsjElkQBedSBBZAmYq9BdhlUzMoBpWmzxFIwJakAHyJpJNgBZMyiwQDRIDN0QdG/BBWGasNEwQ2CaMQyBGQDDsLBA5sPUYWgGmY7sdPSAhBmC7hW4ZphTCRmALTzg8Q/CMCfDDED3AnpaQQEwlyBrRjYcp0YYIFrhoAIAlTzdXrHjkQUAAAAASUVORK5CYII=",
+  "kaleidoscope_end:item/dragon_egg_liquid": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAxElEQVR4XrWSPQrCQBCFczd7Gw9gYWFlL+YK1oJIrpHKxsbCwgt4AhFLC6vIt/CFdTV/gg8eO8PuezOTSZb9A2VRVJtV/sb0zVcghOfDPtBcw/T9B3h4v10DMRiPdjW5W05nzSaxGCLazi81yXsbEJ8Wz8DHuqryyTGw1YQZnZ1YA0cYbABtvbdBvIHYBNINJo0GwC7cggaKyXsZeNIRBoo7/wcuqe7pNpxd81RXwyrECIj9iOatIwArpBXJO8UxBgt+xQuttVRqJnExaAAAAABJRU5ErkJggg==",
+  "kaleidoscope_end:item/dragon_egg_shell": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAf0lEQVR4XmNgGN5ATkb9PzpGV4MBkBUb6NpgYKwG4dKkpmSMgmHyWA3ApQkdw9Ty8ogiDEE2GVkhLozVAAdLHzBGV4yOYRZhGACzGZdB6IGI1QDkcIAZhMtAFAOQDUE2CFkDcthgaEY2AD02CNqMDLDZhqwRr2ZkgK6JaI3kAABHisIj6lprrAAAAABJRU5ErkJggg==",
+  "kaleidoscope_end:item/dragon_tooth": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAApklEQVR4XmNgoCUI9vH6j4zR5fECL0fH/wV5mSgYJIauDisAKUxPigdjmObKijLiDIgNCwErRjYAxAdhkBxeQ2CaYbZOm9oPxjDNRBvQ1dEMxjADQC6BGYDXEFBIIxsAcgXMKzCM1wAQgEUZukZkjNcAGAhwcwHbhhyYJBkAAujRSZQXkAHMALJsB4UDciok2nZYIOLSTJQBMOcixztBjcgApoEYjQB4dPSXM2udGQAAAABJRU5ErkJggg==",
+  "kaleidoscope_end:item/dragon_tooth_knife": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAnUlEQVR4XmNgIBH4Oc/+D8OqWkX/0eXxApCm6uBjcEySATDNX3v+k+4CmOZTuT/BGkmyHaQQWTPMZqIMgGmemX6bjjbDFIE0kGSznIz6fxBWUzKGa+LlEQVjomwGaTbQtQFjkCEgjSA2iEZXixOAFIMMcrD0AWOYC9DV4QTItoIMIlkzTBMIw7yBrg4DwDSg20i080myDRuA2USuAQBTHanorQTJqwAAAABJRU5ErkJggg==",
+  "kaleidoscope_end:item/dream_berry": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAtUlEQVR4XmNgGBLAz3n2fxCuDj4GxujycABTCMIwMVWtov+ncn/CMUEDZqbfBmOQRphmEP9rz38wxmsASANIMUgRzBBkzU6ml/5zszeAMbpeOEA2BIRBGkGugGmEGYKuDwzE5df/B2GY8yPj74H5MM0gNkEDMiZ9BmOQQhAGGQIzCIRBbKIMmHjuP4ommIE4NYMAsmKYZpihMG8QbQAMwzSjq8UJYIbAMEFb0QGy00EYXX7wAQCyyOkT9kvjNgAAAABJRU5ErkJggg==",
+  "kaleidoscope_end:item/end_caterpillar": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAsUlEQVR4Xo2QPQoCQQyF9wBabicWgisIgmBrt72NN7H1KN7Ha4284ltCEnfyIOzOTN6Xn2HoaL87NYW/72q7GZtiOtzqAKpZs74+Lwjj9XJfQmYAQPgPHelCyRmAt9WRSOLRny00mCXIWZQBtiqJGThd6vH8ao/5s7SveD+/AQA0QARQ+LPCbt7uJx3FSmZ14UdgjFWAzLRLRZYY2vey+8haLwFo30O6ZmQX+HfzFVWMP3T7yqgVsRx1AAAAAElFTkSuQmCC",
+  "kaleidoscope_end:item/ender_dragon_smithing_template": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAtUlEQVR4XmNgoBeQk1H/j4zR5TEAugYDXZv/DpY+YIzTAFwa0DFeA7BpVFMyRsG8PKL4DQBhmGKQGNEGgCRgXoBp/trzH8MQnF5ANgCmuTr42P+Z6bdRDMFrALLNII2ncn9iGILTAJgCWDj4Oc8GawbRyGGDMwzQ/QrSCLIZRCOHDdEGgDSDXADCyHI4DYCFAcyfIP8j20yUAegxARODGYpTMwzANIAwyOnI4kQZgAvADEUXBwCi1uNwJ96eqQAAAABJRU5ErkJggg==",
+  "kaleidoscope_end:item/ender_mint": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAlklEQVR4XmNgGFKgOvjYfxhGl8ML/Jxn/wfhU7k/4RirQTCFqlpFYAwSA9EwTTPTb4MxiP215z/CAJhGmAIYRtcM0wjDKAbANMGchmwbiEbWBMIwb6AYgGwjskEwzSB1UN/CAxTMQfYzzDBkg2DyyAbgBcgBCTMAXQ3RAKQZ5CKibUcHFBsAAiDNIK+QbQgsnZBtAE0BAGnP7s5UZZyjAAAAAElFTkSuQmCC",
+  "kaleidoscope_end:item/ender_mint_tea": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA4ElEQVR4XmNgoDdQ1Sr6D8PocgQBSJOf82wwxmuAqZbBf2QMs7E6+BicjdUVMA2Ht637v2xyHxyja56Zfvv/157/qAaANE4oLgZrBik+lfsTjGHOhdEgzSB5DAO87Zz+3794CK4ZpACEkQ0CYZg8hvNhBsAUgjBMM0gTCMNcgaEZZoCT6SW4ISCngjCygSDvicuvB4cTun6wASAFMENgGCQGwyDNoHDCagAIwAyJjL8HxiDDMiZ9BmOCmkEAZAAo2pBtRY7S7JAI/AaAAMgQmEHIGJZG0NXjBOipEV1+8AAAT0MqgbH/rpMAAAAASUVORK5CYII=",
+  "kaleidoscope_end:item/optic_nerve": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAmklEQVR4XmNgGL5AXH79fxjmZm8AY3Q1WAFMU2T8vf8Zkz7DMYgvLGwPxuh6UABIM7JGZANghqDrgQNsmp1ML6FgvIagGzDx3H8wBmlE9hpBA0AaYP4FYVggwgzAGaAgCWRnIxsCcwFIHq8BIBvQ/Y0cpXgNAAGQbdgMAWGQZpAh6HpQAMzJsGhDTg8wV6DrwQrQAxCvswcUAADWFNujO+xbVAAAAABJRU5ErkJggg==",
+  "kaleidoscope_end:item/raw_ender_dragon_meat": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAv0lEQVR4Xr2PMQrCQBREcwBtBDuxSGEqQRBBwcJarLyGJ/Am9h7IwjN4BVtlFibOzv5s6YcXsmHm/U3T/GPGo+nH8Uw4DM9nXcaiXddFWkQYaJkUAt/I4Gq5T/A7z5kguqqGXZb9Qm2rng+7U4LlJPBNWmJBy8iyvJlcfgLfzoJfm9lzd4sFkQzoZpR7AR7X9pHARxcQ3TwoAPftK4F3FxRlDA6RgDyP74TmCoEyJNAlfTkalbGsgmrZx28HPPMF06BHf+Bz1+AAAAAASUVORK5CYII=",
+  "kaleidoscope_end:item/raw_endermite_meat": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAkElEQVR4XmNgGN4gN6rmPwgHu2bCMboanACkcXLNAjBePWEzGIPYBA2B2dqUNQGOkQ1pzpqI3RCYRpitMM0wjUQZAFJwYN5+MIY5Gdl2kDheA5A1w/DlDRfAGCSOHKjo+lEMAGGYRhiGacZpAEgQ5Gd0A5BtxqkZBGAGYMMENcMAPkMIaoYB5FSHjNHVDR4AANc/DIiSLNxpAAAAAElFTkSuQmCC",
+  "kaleidoscope_end:item/shulker_shell_meat": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAjklEQVR4Xs2RwQmAMBRD3dSDS4ju4a1rePLiAu4h4gxKCoEQa9uDBwOh0N/3WrRpfps5hGsaxlifFQN4W5dYFVXJCJ/HHkuRy5yLwQGCDlOKNSlw2AXcA9y33VOAgR/28vlFQUqkH/JVwLpIZ1mB/j6CWLHPZgV+MyUqSMIIBqi/ogrWUKSyatijMp99lhvD3W3WeeaESQAAAABJRU5ErkJggg==",
+  "kaleidoscope_end:item/stuffed_shulker": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA2UlEQVR4Xq2RMQrCQBBFcxYbbyCewVI9iiBq4wnsFJtUFgEPYGVjZ2UKz5AiiK1t5A38MG6yGMEPn81O5r+dTZLkXxr395UcvuskgodhYfaw3XJVndLUHGZqLXp5hWOA56M0R0GE76OX2YcxAQFul7PtJ4OZuQbQKICmoaagwpjgdZM3Acd5Zg4Bqmt8guvp9hOAaCqywpo1vgDUCQFgpdYA6AWrH5t9ZwB3E0R3Vp3VP0cBnKYTw5AHRQGyQLI+ZmtYAExTG0iA1rCXH11/QICv4VAe9nO4q96tBp67Fh09nQAAAABJRU5ErkJggg==",
+  "kaleidoscope_end:item/void_conch": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAlUlEQVR4Xs2QsQqAMAxE+wE6uomDg06C4CQ4+AH9/99RIly4xhSLOHhwhNK8S9MQfqG6ag7Y3hVJwK4dL78O8kKKgwAP/aIV5mAxMzoATVIFmqftdoYB4j55BU+WBgH2NSps77MBWIMns7GawgjgXT3AOgngEKne3u7uVmhkmF/mPt+KA+xajzAEgD+zGIYwOftpX+gEAuqlpD4QVz8AAAAASUVORK5CYII=",
+  "kaleidoscope_end:item/void_conch_noodle_soup": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA3UlEQVR4Xr2QOwoCMRiEFztRsdpOFCwUC2HBQgQFD6CFp9jS3tYzeIXF1hN4AsFbCN7AKjKBCbN5bCUODFmSfDN/Nsv+rV43N2r/vFGEhoOpdTSgOpWG5p6Ck/HCFPN1HIYAPm4X83pebQguAoL1OzqBtiOAABq3q51dCQb/gBDNdkBqncYF6NhYNawpIGgH/Hnf3TMYChMM2qHNrOPGhhFCcyKWYB3lLetagIKA2M49LTiXRT2AIcd93z0jNsFh2bYOYAbgEE0ISjkZAOEAAWxSiGASVvGib//eT/QFiKM+j3QfuscAAAAASUVORK5CYII=",
+  "kaleidoscope_grilling:block/big_vat": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAADy0lEQVR4Xu2azWoVQRCF7xMIWQSCoK7MIgs3cZmNbvMA4tZX8P1R6sKBw2dVV9+ZDPmxDxw69lR11zn9MxPi6dv93Z/g48P9mT8fvw+pOOV9uL468/P76zPvPt6k1HPFM6+j4lnj718/hmTtJyJEqMivt5/OfPhym1LPFS8DRsJJiXHDNG5FN1D1aQF88UiPUf3Uf4rAmID9HSInciWiW1E9lxgZQpMruonZIrlYCXbKSOo4G5A60yByaIAXmdENyFZyRIlw87hTKio+cqnjFGdjqwGR64NTMMniMwOy7esGPPkdEA9icPZ3iJwjDKgoA7I8nv3MROVTx4syYEaA5zozw5zKpY4XYwDF0wSJ4Bgz9Pmp48UY0FEGhClv4g5wE2aolcyM467h7nEDqWO3ARJ16WuQu2FExSknMy7bMZmB1LH7NegGXPIh1MWTHj9rXGYgdez+EGJRHSWG41XYahTHKREiojD2d4gcGeAFUrAL31Kgj8uVJX0ejlMizouK1EA8P36OfEtFboi5uXr3T5v1STz7RvGai7VUVDx1luBN6q+NjLxhJeooakF4yVXUQlFnCU3UbWGRW/loVgZwIXYZwEFmGbkyg23W5+axzfqirQyoeLEBMQkHmaUEHcnMgE0fPBViEgqbJYs9gjSA4mnCxQboNt9CvxOOIg3o+OYMiDlGr2ZSr2nqLLHXAJnANuvbEu95+g6p6ONTZ4lIoLBZakIV523VN3qW9fkbYoaKp84SMQmFzdILn+GW+P/eAAmbyfN46iyx14CYmBdRRRXK/ooSFeSzioqnzhJ7DdDqjFZIz301Z+NlGOeuKOOos0RMwkFmqTPH3+BGv91lfaP4ygB+AInPYsCRrAyoeLEBMQkHmSWLPYKZAdVncHCTAUGez4p83ehntlmf57LN+qKlARRPE3Yb0FHxyufzpyYN6HixAZpodCuLvgOYfxRVF193FVWnaxxCW5sDVVS88lnwEdScXBDSj6lrHELucitVlMvKZ7FPzb1HtEVlAC+XygA5zjbr8xVim/VFq2+EWbq2KVQGVMwM0Pb0tuobPcv6KLCja5tCZkD1iqkMiH/P0IXO8FkMoHia8OYN6EgDlD9DCWN/xYilwI6ubQpaEU5eUSujfL/cuIK+kkG/7GbjKbCja5vCTEFZYXEs/E9m/J8ZJP+8xjoqUGBH5rfY+p4NQ2JH+PHgvcH7IztCHSiwI/MPQ3V0sjtjdIQ6UGBH5h+GS45OdoQ4XgUK7Mj8Vw8K7Mj8Vw8K7Mj8hYWFhYWFhYWFhYWFhYWFBeIvRDckhB3LO80AAAAASUVORK5CYII=",
+  "kaleidoscope_grilling:block/grill": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAEoklEQVR4XsWYvU4cQRCEeQISSxCckGwkbAtxEkY4cAKS5cgkJJBYInLgN3DsN3Dmxz1TK32rcm3P3tydgZFaPds7P1VdvTMHezc3N6v7u7vV94eHwdTnudXnWXP3Htvh4aL0i8XrMu7v3d6dnAx2fLRYHR0cDPZqf3/wimnOpAlIxnqb5jqA4+O3gy3PzifGuwTtsSSAh0TuP7RdCchnZjdRwAl45p0Efc2ZNJVDxnqb5vZkf04FZZw+2SbjePq5/9BeUoEfH96sfl6fTxRIP0vgfyjQk/1KBWV/uVxOFEj/pCUkn5ntVaAi4DWfXnMmbdcSGuXvUCG/AU4dnrPm0+f+Q3tpBVDh4+Xl6vrq6h9TTO+eRYF1KmT2K4NQKvOkBOQzs70KOGhUcFNM7/gONGfSdv0pkVnsNe0NAWItBWZv4vePA2UaKIl5bhll4POU0U0sCWB+4viFNltCAnFxcTHY2enp2G+Zj4EARp37d+CxlgJYAk5CiX1oWhhgKKB+ZSgACUBlhtdZi0AC77oHUKAn+6mCK1Blf04F7Z0EsnR47lYAP2c+1gFtSsC/KTx91lPfFShPIgi4EnmcYZ55J5Alss40h4RQsu69jPNGTvxDCWmgK5HAk4DGshkZbalQZV/m5Vipi4GzqUBFYM4qApnhdea1T/lQVl5KeFlTgSyhHssS2sYgQGK8dNIPCW6dRJl5FnLpPROphH506UbmRs8bO294bnCZ5npiWDcVlzVPoirzvkC1GAYhfR8Q4VekE1K/GqO5UmHud1DeDYl/8lPCs53Ge+oVAvLa0IFBLJ81RmOZmyWFEc+7IfHv7VoCgM+MVkbNk2HNTTyt1lRg1xJQ30k7eY/JIIya3ifjGaffVGDXEvC4QP76/Gkk/+fuy7im5jA+y68n1jyFAL9tCeiZ+fL8q0RE1GddCPghUZ08rVjzFNq0BPjAJC8kIOhZS+LEeJ+lsq6EmgQ8gwIo2al7ZRHgrpAWllcsLyhOlIxpD81zkvR7Ys0SgoC8AEl2AVcZqO/lwVg/u8kaWYRcxjVW8SwN93Ox5imErFn7zt5jAEkCgOYdfSdA3FVy9d0Y73+RlQpQyym1b+LAUEYq/f72tQQNMcVYYwRka3vt69mNOOCbJcSGKXWWAuPub2/HrKnPqQMxnjMusiLtmYd4BZiScV9+xIBJqTOrLQKM89Ii7msp5mXEeDwEsmSSTOIfCbCIb6q+Z0vPXGTbEnB1uCcqAoD251IBajmlzlJIAg7UM6k49wUxJ0DMlXQCACXz+Zz498hkZiozia+A9hJwwPmcCqSnn/i3JiATUDZW3D929eV576XH3IpAVf+zpxAEPFMQyEyyoQPVprxLAiQFAr5Wi4CXTqpQfgOeaQgolgRYBHBk3QkMJWCZdwIAZb4nxQkAuFKhVACgKXVuxiIA3YYAMSfg4PLUqZ4T/3CRkWkIoIaXAgs5AfpOwOMtAjxrbS8PgFanUOIeG0BT6sxkpYAT8DKo4k7KCSSejZuD9kwlgZxHAyjfhYPko64I4HO9jVuLQG6W87ZtSSjfb9xYLBf2vt7lvG0bSj0rgf9Sq0/U/gLbA0Q1GVcp7QAAAABJRU5ErkJggg==",
+  "kaleidoscope_grilling:block/oil_press": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAABECAYAAADUZvakAAAGc0lEQVR4Xt2YQWtkRRSF51/MIhsZGBFxxJEYRxSCkJCFrlyoiCvBUUTUhYKOK3EhCoo6G3HhTlzqP2zzvZkv3D5d1e+97jaxU3B4r6pu3XfOvbeqOrnx4N27C/Dd/aMLPPzsePHHg7MlMFZtXHdycrJ46d69i3Xgt89fXVnPmPPYsoa1BwdPzAbr77/+9PB+69aTi6du314CY8zdoEHyzjPPDR/kycIv3ny2CeaqLWt5x2EFcy2kHWuT/BQg8NM3HnF54fBw8FPBGHODwBpNnggxOwnmqq3ZhGzajoE1rE3yU0AVwIX30QzykczKOlRby1KBZHgKFMjaJD8FlDsCJ2fQskwxPViuLYGUDsjydnyXAnkfzaDpTgEtpI0HiplXYGZMVIGsYW2Sn4JZGeSEa5FvIW08IatAxn1W1DkFsjbJT4ECDdwgpNf2UaBVd20Fek1ca4GKGxW4j4cMh8g6LAncx2tC5PXg+IpAorlPF/2SgLF21T/Vbt48WIsMptuiBedr0q78xzYiMkOCOdeZfUu9B+3kMQgEZsNIeUIKIyNc1/pziQ9A0E3Pe52vVTMmcOsM5v6YCyIFmRwfA2tYOyZw6wy2FmVp5klYnUHkfCuvCBgDaxSRwqpAA2Eg3Ztpm+vAcMgoMAmMIdf0gpCo+xmsI2sGLXXencv9XKHNisAk00NP4Dtnz6/YJuYKrH8t8L5RBv1gkm5Bm0rScQTmWPrMMcn0kAIVkVlbm8GrFAihWoa1HJlLgdo6lnODqNoq2STTwq4FQsqrpoIx78/cgwjPn2lmLvXtRKB7b8oeTIFmQzGilmQtvUvNIILM2n8lsB4ovl9aBlsC0zZ95tiYQAX1Mlez1xQp2Up+HapAnoqsYqtt+syxKQJr5jJ7tXy126nAHvGpY4hZd8jsJIN+0I+Poa4RCAZpm9DOdWPXxE4ymGSnINdsKnDbv2b0sySqNsm2SCTSjrWPI7YSgDGwhrX2x76dHBr+2i0N58LyyPExWHLJZ0rr7cfmXchgbx+09gTvrUMhDweF1z3id7YtS31NugvnRhF7hGRQFOUcyEvacbO4aVnqUyTHpbaS0pHmHeWzwrF6olU4tosMThZI9HNsXbP2fZ6eng6oY5ZKC5eewasQuBcZ3KZEd5HByYfMpgK3OWQMhpkDCMDOYGGPmNa/Av1uBlgeK4SXBkYa9tteE85nJhElsM/MuT45rW2bCGxlIP8Ju+6fsSl8ar+XuZo91ywRLvxHW3WUGeghM5ClPda3xKvw3HsKW/nBPTflfnBuRBWJj7pGIev6tWx70Cb5bvRLZpOIbiNQEfptQZvkO3ysZqMHszE3ogqzlP3mOkHZZ//qwzux+k1NS60a5sLs62xOROtaBeYeG+vLg/UKrHt7WVG0niCdpcCMZs5nJisRBdbgZLBafU5hL31PZd71m5qWmgRcLJHsa2f0egGYIrCWd5Z7q891o0Cvn40EsrAKrH3tMpo5PyYwAzKFZE9g2jXbXIH5sZy/9gJ7/qcI6bX85rUTmNvCfto1WxU45ZCZK3AbYbbeNZF2zVajO+WayGhepkA52k+7ZusJbPUdU1BrPv3vXcto/u8F/vj+0UL88+3Z4pcPjwZk3/ev3757Mf/woxcXf311vPjpXChPbEDPJ3jtlTsX66tfx/Snn+Q7u+noh/cOB8II4APZB5DDHhJAAT9/cLT4/tyeJ2t6Phn3yZzj+NWn/gDvyXd240N/f/PogxKCbPaNNMTp84SERP/88vii3/P58VvHg60CDQZ+9ak/fSXf2Q0igCjiFKJ8IPtGXyJEG4LMMw75Xx8HoOeTd0ucOcb1q0/94QsfyXd2g2QlAX7/5OWVvnuGccQwBgnLTMGWac8nAdIP4/rVp/7wAZLv7ObH/DhO+Vj2AdGWPOWDQLNkObJuzKfzjrvvWF/9YZd8Zzcc1gOCPsSzT6QVJwFFWHaMe2i0fGKHvf4Zr371aTkzn3xnNyLogUHNUyYg+56YPOm7zzxMmIMc8z2fCjQY1W/1qVD8JN/ZLZ3TZz9lX/KWFQSZIxtky9Lzbmv5xFaBjteg4FN/+km+s5t3nHtCstnngx7tzFmqAHKKAz2fVSDP6rf61B8+ku/s5unmHnBzZ987qp5wgr1iBizHlk/Gcx/rN/3pK/nObpROjb5ll32vAYSYYU9ASHrcg55P4InpuH71qT/9JN+57V/8TsRwhX69wwAAAABJRU5ErkJggg==",
+  "kaleidoscope_grilling:block/pepper_sapling": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABUUlEQVR4XmNgoCFgxsEmCOCKp663/48sgQSwGohiY3Gbzn/bBIX/iW26yIaA1GDVDANgyWWWLv8dtaX+J5Sp/W9faoFsCH4DOtZYgxQy64iJ/z1q6fHfXlPy/xp1E7AYSF5BQYEjuFUPzscAIMnWlZb//RNV/lsKCf2PL1UD0yC5tFqN//XLzf9bZ6rhChcGZhVH8f8ghaZJymBFncstwLaBNKX16PyPzFfBbXvlQrP/XqXa/1WEVPhAGKQhx98QbiNMHKoc0xAhFSG+qkVm/7O6dOAu8DCU+x9urw621TJZ9X9emzZyYKICkO0gzeru4v+9qiAKUz21wAYYRCn8967W+6/mJg52JbperEDZQfS/l7H8fyUgreIkBnYV1GX4oxIGFDRl95urihFnGw7AbCAv8D/SHne0EQLMIP+bqYiSZ4CGtNALZz3Z/7qyfHgNAACUcX9DdUwV0AAAAABJRU5ErkJggg==",
+  "kaleidoscope_grilling:item/advanced_rack": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAtElEQVR4XmNgoBcIsVf5D8PocnhBVbjpfxBeVOkNpkGYoCEwhSB8e2s1HIMMcfaMwm4ILk0gDBJLzcr7X9/UCTYAwysgBXumJMA1gNgg22CaQDRII8x2DBfAbAUpAGmEaULWCGKD5GBhgWEAyFaYQmRbQRpAcjBXYQ0DmAtAimAaYZqQNcPCAK8B6BjZS8jhgNMAfOGA7H+8BmDThKwRIw2ABJBDmChN6ADZEKI1oQOyNFEKAJFlRNFkDE6CAAAAAElFTkSuQmCC",
+  "kaleidoscope_grilling:item/canola_oil_brush": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABdklEQVR4Xr2QPUgCUQDHnaslMkQbtFOCKBRM0cmlLvEzjwrM6IPLrToxMEMrlEokRbTILYwGr7aIwBokMAiCWhpCIXCJoL3J5d/dUUuDZwX94PEePH6/9yGR/AdRrQqLhByUvAvf90SJG9RA/QBFtx7begJuLuLhBqWQisc2OeH9lMZD2IX88ADOfUbgJohD6yA8YoGYRYfbgA13QRsYQoanrXFc0hbchxzwyDqbyzwF2oZ62ofSGo2CXYfHiB2o7iNi7BNu45KJ/EeRmUDtKIVKdh2vF2m8lHLYMPcLsQT/F80CyeVpVAu7uM5G8XycwdvVHvKjWhQpgxAQfX+R1IAlCS6SQjkTARtnUOPWgSmruMySajRyUTTKZzgZIcDGlhCecyM042ou8jjN3Uj4CawYelGZ1Avz6vyYuMjjNEuxs0BglpRj1atEcEjVmsjjMPEnq8FQSoS9KhCKttZlHodJiqRf8ym3/0z+wsU9QdPT8Tv5L3wAk5fC6UbUt84AAAAASUVORK5CYII=",
+  "kaleidoscope_grilling:item/canola_oil_bucket": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAxklEQVR4XrWQsQ3CMBREs5RLWmrEKK4sFoAFsNxQpHOVLhOgNIgB3MEAFBT0Rveljz7hxw4SnHSyY98922maf8gYkzWPcx/ioHOOHEJ4cxHExUu7yPfznnwbduTHsMnX3tIeMioEi1zmAsxzCZkExBgpwGUuyLL3fhqQUsrddknhY1jR/HRYv76ttXUAQ2DciIEYAcBaFQBhRBieDcCmBuAbVQEIaAC8G3vFfwDJZ2iAYhmSz2AASrMBkIR8dboUgprHuZ/oCTwKer1ugKUkAAAAAElFTkSuQmCC",
+  "kaleidoscope_grilling:item/canola_powder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABMUlEQVR4XmNgGAV4QW2E0X8Qbk2y/48uRxCANP54Uvv/47Wk/1fWexJvCEghCH9/VPX/9lbv/+8vxf9/dynx/6GZFoQNAdkK0vDzWf3/vVNN/z87Ev7//ZV4IE4Ce2XvVLP/uYEm2A0BKdjUY/j/14vW/7e3+Pz//bL1/7uref9rIo3/390T8v/H46r/9VHG/9+ejwUbhqH5wAzL/4Emwv8f7fL9v6HT5P+Hy4n/X52M+P/mXDTQRQ3/t00w/V8NVHdwuhl2A04tcvj//mrq/x39xv9fHIv8v7XP9P/JhXZg71zf5As0wOT/yflW/+9s9fp/cZUbqiEgf4GcDHI+yACQ7Z1pKmCXbOkz+b+t3+T/7AotsGYQBrkC5B0kN0AMQY53GIaJgQIVRIPUEYyNoQUA1lbolkkKMzAAAAAASUVORK5CYII=",
+  "kaleidoscope_grilling:item/canola_seeds": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHElEQVR4Xs1S7W6CQBD0DaQKKgcCQvnmFFNDUbT1T9Om7fu/znQXlKTUlvrPSTbZ3O7M7s3dYHDzMCZ3iBYC3fN/wZ6N8FZk+CgScN6t94Kn77IA28yHUIf9Ag+ph5dNSiS/buap0jUhvTmEpvQLvBaSpjUT9dNEczoCb8L55zbHMY/gGNplscf0HpvQRWwLyCRA5luQgV03P+cxKhliT8FbdbkteNXpeIiSCGzgcR3XzSWJ75chsoUJc/KLobzqnFZmgSLxcCBCRWHNxjWB6+f8B9jlSgbYUbCIrattM/uRxy7yk7kXweqHVYSnVYilZ7WNLPZeyqZGBv75Go5Qa/eZdD7jnO+e0t0TR8DQmhe5Crqq0EdSvgnfDr4A6CR1RkERvokAAAAASUVORK5CYII=",
+  "kaleidoscope_grilling:item/dragon_egg_powder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABFElEQVR4Xu2PvUoDQRSFozN3Jrvr/mTXGNzEMWyChRYhKyER09kEVq3sQyoL38AHEMSXsbP0OYQ8SuS4d0CLDYTYiqcahnu++91a7T8bY2iARBlU/7fK2+kHEspw4RYIVOt3EKNznLiX6Mkxnpqv6IkJHIq2gxTOvNTO8B4vce7OEIkUsTxGg46gKdwMKeI57sQD4lK9SyNcBwsEooXF7iNWL5/wxYEFVXs2ulTcpz5yZ2a3Myjc6WBcv8FIXyGUKe79Zyjlw6PmOsSjBA1p0NYDSOkiq09gxBARdXBIZzByiK7M0XemcFW8DuAya0+9Wwsg8hCpFJFu27dSexbEJ1W7P2ELLnORh783sw2fwfrVzh/IF0JHZ+TwMFDJAAAAAElFTkSuQmCC",
+  "kaleidoscope_grilling:item/green_chili_powder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA10lEQVR4XmNgGAV4gUOg8H8Q9ogS/48uhxeANIA07r+T9H/WIb3/tbM1iDcEpBCkAaS5d7U12ACiDUHW3DDH+P/ioy5wA0AuAsnZ+wvjNgSkCKQYZPO2SzH/D96q/h+ZL/N/2Uk3MB8kv+xgEHYDQJJzdnmAFVbOUP2/+048WDFMM0gMZFhxvxrYIHT9YAPAtgE1gQwCaQDRIO+ANOV0SoHpzFZZ3AaANIM0gmwFKQSxQRpBGGQ4SCylVh67ASAACkQYBikGYWSNIIw3EJEBLBGhY3R1Aw8AN77AJgZ7aD8AAAAASUVORK5CYII=",
+  "kaleidoscope_grilling:item/houttuynia": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABU0lEQVR4XmNgoAWIqVX/H1Ss9B9dnCgQWKTwv3mZ6X+rYPH/YWXK/91TZUkzKKJC5X/lXMP/Bk7C/43chP9rWPDCDYit0/jvkyVHnIHJpQooCg3dhf/bRUv+L51h8N8rS56wIYVlihiKvDPk/xu6Cf1XNeLAkMMKvr0+8n9KsTdccUI+qqsIgu/vzv1f35cA1vTxye7/GSnSxBtwblvb/+9vT/7vz3f/f3x11f+vrw+TFpjf357+353jBlb07d2Z/3vm5YHZII2wwETVgQRuHOz735bh8n91T/z/70DNh5aWoijGGRaOIcpAZ5/5/w3o9Kt7e8CaFzVFwBVf3df9/9HFVdjDwj9Z7/83YKCt6U38D2KDvAAysCPT7f+Xlwf/f39/7v/e+QX/5zWEY2pOKLf5v2h2A1gCpAnE76tPREQfkN9b4ImpERsAKZ5WEUCcYmoAANWkwD4z4klmAAAAAElFTkSuQmCC",
+  "kaleidoscope_grilling:item/oil_cake": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABOElEQVR4XmNgGH5gUrLifxheVqyDgdHVwwFM0/4Gjf+P59v+T3KT/7+uWPX/88UO//fWq/7fUan6vyLCELtBII0lIVr/N5ao/j/fq///dJfO/4ONWv8vTTD6v70KIrarRu3/5QkG/58usvu/tUIN1RCQASAb7sww/b8NKLm6QOn/3AyF/+e69P7XRWoCDdP8/3Sh/f8z3Xr/DzVpgdVhGHBthi1WW7G5CKQWw4CHS/3BEg/nWoNtBdm0uVz1/84qtf/Xp5r/X1uo9P9Euw5EDVAtigEVAZL/vx+pBGOQApCB++rV/z+ab/P/aKsW0FZ1cKCC5D5tTwJjkB4UA0CmgjDMIHQM0whS059uimkAyPQZedZwg3BhkDoQRjEAZgjMIBAGBRgIgwwF0cgaMTQjA5gCXBhd/cADAOeLT0zZQjWpAAAAAElFTkSuQmCC",
+  "kaleidoscope_grilling:item/onion": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA70lEQVR4XmNgGFLAKVnjPzKNEzyfpv8fhK80a4AxSAykyadU579HvgFhzd8Pxf//f6f4/7/ni/+/XBX2Pz3C6L9jnBZYM8wgdH1gANP8999fMP7389b/Dxv9wRgkBzMEXR8cgBSBbAVpBLkApPHbzqD/3w6F/b/arQ92CboeFADyL8zpyJpB9MUmif/nmrX/LwgXxG3I6RWuYD+DNUM1gjBIDGQAyBUrI4TwG4CsGaQRphlEX2rTxm3Ak8Pp4ICCOR3kHZBGmGaQ7Xi98OHOErDEjQ0OcE0wTFAzMgC5BKQQZBDIuTBMlGaYK2D00AAAaVYEa3e1s4gAAAAASUVORK5CYII=",
+  "kaleidoscope_grilling:item/onion_powder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA6ElEQVR4XmNgGLTg542Jm9DFCAJkTWQZgA7qMvT+g/DcRov/6HJ4AUgDSOP/Dwf//3+87P/PGxOIN+TI0nCwBpDmHdNd/r+7OJl4Q9A1H5xpAdYMMgTkIoKGgJ0N1ADS/P3Juv/391f9b8kx+H93awiYjzc8QJKnV4X9///+4P9NE2z+PzpS+f/UiiC4ZpAYyLDDS8LBBqHrBxsAUgDSBDIIpAFsINA7IE0LW+0hdIsdbgNAmkEaQbaCFILYII0gDDIcJLaqwwi7ASDQX2r4H4ZBikEYWSMIH1kagV0zOoAlInSMrm7gAQBRtvPBPBggzwAAAABJRU5ErkJggg==",
+  "kaleidoscope_grilling:item/premium_chili_oil_bucket": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAxElEQVR4XrWRMQrCQBBFcwQLW4tAwEoIXi6VYOMNtNAuWOQE2thYegTvkEOsvIEPk3WzUdCBzw47/79kkqL4R9VVFVKKfW8lY7vbmu7deaAsSMFDuTB161V4LEuTeu7xJCFcKoh8r7DOUUAzn5lkjkH0zEcBz9vVDN6slXyfBSAACngg0seM8wOAVsEsACudNk0ewBBA6Hs79fsIA5oEYEgB9EbML8d9GkD5NTyA0GSY8msIQOhjAOUhXz3dF8aUYt9P6gUcaj+lNitrzwAAAABJRU5ErkJggg==",
+  "kaleidoscope_grilling:item/raw_beef_skewer": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAy0lEQVR4XmPIYeb9D8LV4sL/r8pq/X+UFAWmYfi2tsl/BnxgDrco2AAQBikGGQDCy/kkwZhoA0AuACmG2Ywsjq4HBYAUvz+6HMOQVUK8///r6YFpdD0oAOZkmI0wZ1+XkPj/f1oLYQNAtoE0gQwAuQBmAFAX2AUgg9D1oADkkAcphjkdWQ2Ij9M7IP+DDADbClIIdDa6rXhdA3LyRmFZsP9x2QQOD6gcsjjRAOQCsCFgJhkA5iqsXiAGwAIWqwtgJpPtP1jUoQfc0AEAwybFs/EICHgAAAAASUVORK5CYII=",
+  "kaleidoscope_grilling:item/secret_chili_oil_bucket": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAx0lEQVR4XrWQMQ7CIBSGew13E6eOODgYvYF6CA/QqYdwJuxdWLyBu7Mbt8F8JI/QSqEm+id/eND/fTzaNP+QUsrnPM19SIJ93wcbY0YugqTxft7712nrn9dLMPXjsIk1mSyEQ5oJ0kBYmtOVzCzAWhsnELOXCai11vMA55y/tavQOBzbUA+7ddx3XVcHCAQzESu3swLgrApArITxYgAfcwCZqAogkAPwbr4V/wFKn5EDFJtR+gwB0LQYgFLIV7enIpjzNPcTvQGTu12aDDL42AAAAABJRU5ErkJggg==",
+  "kaleidoscope_grilling:item/sichuan_pepper": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA9ElEQVR4XmNgGLTgqJnJf39d8f+3diX/R5cjCPrk5P5vbzT7byDO+j/SUOz/5bUhpBkCMgCE15UZgjX3S8uSZgAItCvK/d+irQ3W7MvLQ7oBIADSiKx5lbr6fxBGVkM0OGJq/P+QodH/Feqa/9OEhLAbUiYq+j9NTvR/gw+mLUtV1P7ri7L+t5Hn+W/HzY4hz1AhJvb/iIHB/zhT6f/qoryYCoAApLnAQRmrHEOavDjYgOkycv+tuTnAii6vCf0fqi/+f4mSKnZN6CBbWBiuGQQ2VhkBnc3y//qWGOINQQabtDThmsMFBUg3AATqJaXJ10wXAADu8WmmXO/wVgAAAABJRU5ErkJggg==",
+  "kaleidoscope_grilling:item/skewer_recipe_book": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA5UlEQVR4Xo2SIQ5CMRBEv0djv4UT4JEYgsQgUBASjoBBQDgDAoFCcQEkCYILEASeU5RMwzTT3f7AJmO6ndfZ/b+qTK0Xo6Cy/WJ161YY9NrR8H5ckm7nTViO+0nWlwqA3awTIQqgXvfTb5hC9qtJFEwWZGGNEFwiyMIwKs4cAA1A5sM6QvhaCcYUDgCTJtHYBOFe0YwLNGiS43YaRUjj6wTg8vN6yJLgTBeYGbkUnY+g0k4cQH+cEkiTuOg44Nz6zS1IkzgApUu0IPQ1SQZhKYgwBf0FQVmQpkAfEMj6XOl4bnnf+gBaoseFHg6kXgAAAABJRU5ErkJggg==",
+  "kaleidoscope_grilling:item/sweet_potato": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAx0lEQVR4XmNgoDWwqpT4D8LRreJgGl0eL4BpAtEa3hxgrGDLTZohMOAuxQPXTJRL3OSF/sMwSDOIBhkAcgVe74AUFhoI/18RZQTGIH6ppRLcEGRvoesFA5jmGQE6/2MVBMGaM3SF4S4BqcFpAEgRSHO3qyJYY72dKhjDDEE2AF0vGIBsB2mG2YxsCLIBWAHIdpBmZFtBGGQYSHO0Gj9hA2A2I9tKlGYQgIU+CCPbSpRmEAAZkKYtBNcE00i0Zlg0IWN0dYMTAAALzaoQCkapcwAAAABJRU5ErkJggg==",
+  "kaleidoscope_grilling:item/totem_powder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABQElEQVR4XmNgGN7gytrk/yCMLk4UAGn8+3bJ/79/Tv4/N9OUNEPAmp9N+v/v597/389F/X+325t4Q8CaX8z4/+/P+f9/X075/3af7/8/97v+n11iRdgQkOb/vw/9Lz63DWzIz6v5///9OvR//QTV/8sWhP9/u8Ph/7p6deyGgEx/t8f5/89vu/5/PR/x/+f1yv9vTqT+/3kl8n/esVn/N8+x/L+4U/F/a6UUpiEgzT3V8v/XrUv6/+lUNNAg7/8/zof9v3Uk8v/22br/z2xx/X9igeH/xZPN/2eeWP8/O00M0zsggfp6g/9Hd4b9370h+P/OtXb/z222+79tnvH/p5sd/1c/uQXmgzBOA0C2gnBOjvz/+nK5/+un2/xvr1H4X1Yg+b8wWxLMBmEMzTAAkgD5D0TDMIgPwzAxdH1DHAAAdoH7Zp1sRX8AAAAASUVORK5CYII=",
+  "kaleidoscope_tavern:block/brew/pressing_tub": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACOUlEQVR4Xq1Wu0oEQRC8DxEEMThBREQET0EDjcREEeQC4QI1MNFMjMRI8Av82pVaqba22L2eubWhb6anpx/TXTO3k++X0+br8bjBSK6RMX+4nLYj+P3uoLmZrYeMPaqHDD32QZ7QAZ2tIj9d7w3qMUKPOYJS7iSAjGjAE6isDlVPh62jSgq785OjZnd7q8HYx9CRfS/mPLUHyCjsphtrjTKD+foQsyoeIKOwY0kxvt7+ciajJZQxh94DZBR2BA1LUovi0RjAzxgUkz1ARmGnAelUE8IaZeq9QmAPkFHY0SEE9LQvAb12ngD24gAeIKOwo0OCyjHQl6BiguwBMgo7v+f+Bvhb4GusigfIKOz8Xte+A6MxwJLrPa+R0ctV3oGwgyP2lGXxt3+Z3jHhGMK+Ze9IpwJkvnRk16sMJ2PekcnbfL9R/rw/7LCv+x4vbTXBCU60uNhpGfP52WY7f776Y+opY9+/JQDHH4tZyzihzskIqjJsMLq/amIFeGow5ljjOmVfL6kAseDrQawATuj99zWtCmxKEiAwfT2I5aVzlpp919KzNWCuuz8not/XgzSo912xoToCsSSB+PAYIjjRXjsGHAvcU3oLUgxoP/WUjgdn4sP9OaUYoDMtteJBy+34KGlB+mfFBLy/GljZde7PKf1gQQLL3gHV6ZsALkkgbQExgLKzv3rV+vquOvfnFH86Q6QJ0LH2Gqy44Fj6EKUYgDOU03vPq8a2uL60BekHC5xomR10md791dIP5hwFd06yDaAAAAAASUVORK5CYII=",
+  "kaleidoscope_tavern:block/deco/bar_counter": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAgCAYAAACinX6EAAACdElEQVR4XuWYQUrFMBCG3wXcCPLQhfIWCu7EB+IBXOvWG3gHj+FVBHcuHngVF95BrE71r5O/mTaTxFax8FEmTSYzf5Im7WK9Pm1KWC53/jSL1eqgKYVFSUUC4LIpaQVgRbxAABZlDATA5VPRCfB8f9mA5u3pm5e7KG29r7uAJOS+2Ww6xzHkmdTRbeYgEODqZK+5uTjs8NpwKPeh5IEeeX4Ghp7VIBDgeHerTQqJna22m+vz/Z4tiC31tQ2H3MkYVhurPJWU9j0BdMKp9k8JUEKqz0AAHnErYcv2dMxBcNlURAXQU1wvCbZZMDjkTsbIaVOLngCSDASAbY34vxBgKGEWBA65kzGmahMjKgAnbAnCSwIO5V5rG4zhrc/o9j0BYiOeI8BvPQhxX4EAvK3xFGebBYEzuXvQM6EGnPQQUj8QQJLCUvDacJaDBMBluXhECAR4uD3qzvU457e8Pn4S+RYQpJ3AzuegSAB+6GWRcfHoeanqiws8iJI6mNSL16+Xqr64IJUSAXgWeanqiwssMOq8jelgUq/gnYN3Db1vYu8l2NoXtuRcogIgOQYjXyqAdCxbKPDY8uKt5UvoCWAlz5QIwIcpPlvwYUyfVViAEl9RAVIpFWDosGXZAi8Bq+6YPasAPEpWkDGbBSjxNbsAGAWexmzrJC0BcnzNKoAEgKBhW6M0JkCur18lwFCQY0sg15dbgFrbII8ST+NY0KhvCZDjyyVAzYMQB+UJmrdBruvx1QogieRQchTGNESQPC3Z1kmwACW+WgH4A8dDiQASCKavx44JYNVNsZOXgIUOJvXCvwT9L6L3H+ID/T0goI32JaNYwju8iHqVHnU+5gAAAABJRU5ErkJggg==",
+  "kaleidoscope_tavern:block/deco/tilted_rack": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA3klEQVR4Xu2WQQoCMQxF5xBd9wy9Sg/jRtC9CxHxHi7EI4l4i8ofCGSKtW0mGIQ+CAMf8vub6TCdpoE1McYUQhAVenO/bmDkvRcVesnneL4kFPduQmsC4gBaPJ6vhMr1KtiFxru83u4JletVaJy53os4gNYEMH5RAC3MA2Bx069gBFh9Bshgs93NJnh+05bdChPgxvvDaX5yU9JKAUp6M3wx2nFN46wOQAa0Uz7uT9qyuxzsZ5gH+F+0LiTinxqM8qtWa/HfOPlw7yao0TnXVeoBJKUSQPMMiAIMBta8AY3vpeltkKZiAAAAAElFTkSuQmCC",
+  "kaleidoscope_tavern:block/plant/trellis": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAiElEQVR4XmPwN5D6H2Eh999GVeR/uovqfxAfJgbiMxAC2AwwUxQCY5A4unoMANIIUgjSCDIAxIYZABJDV48B0A2AGQLzCrp6DGCtgnA6UU5GBzCbKTYA5hV0eYIAORbIMgCmERaN6PIEAXo6QJcnCCgOA5jNFBsAcwm6PEFAsQGwQKTYAHJjAQAp4YIjjUu6qAAAAABJRU5ErkJggg==",
+  "kaleidoscope_tavern:item/barrel": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA00lEQVR4Xq2SPQoCMRCF9xLa2rgg2i3YLVgJina2gjY2FlZ6AlvP4EU8XOQbfMsmO8EfDDzIZt58MztJUfxz1aN+QOvpwJXiaV6TWE3KsFktwnVXh/t5GYkzYngiEJvDfGyGTwHsyTEIraUAEh63bSTOUgC5BlBFgpfTsZMsEcOjjgyg6hiogCltXyKGB6+6yALS6l8BckN0Ad4M9L2flaY2oDMD7xZyAPcWcu/AUwpoHlM17AXTC0DQkwDyt1+z/QpqYBnJFyULYFN9s5iJC/h1PQE+v4Zuz3jJeQAAAABJRU5ErkJggg==",
+  "kaleidoscope_tavern:item/bell_pendant_lamp": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAjElEQVR4XmNgoDewsPP9D8Ie/in/0eWIAiDNIJpsA0AaQRhmEEmALE0wQLSTL0wx/I+MSXIuSMPvyxb//7z0+//v/ykwhhmCrhYFIGtE1gxig8RnuYvhN2BTiibcyTCNyJhoA2A0smtIcgGIhrFhmkFsggaAALohIAOI1gwDyGFBsmYYAGlCxujyVAcAyGi+uzLxUYEAAAAASUVORK5CYII=",
+  "kaleidoscope_tavern:item/bloody_mary": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAzElEQVR4XmNgoCVI42D+D8IgtmmK7X8QRleDAmCKQBik8Y5r7f/F7AxgNggTNAAEnHv8/7tsSgJrgGlGNginS8oWX/iPDcMMauBm/Q8zHERjGLL4xOv/IHzx0Rc4DWMjewGmGcMAEADZCGPjsg1ZDQYA2fbB0vL//7p9/7fLy6NgkDgIg9Sg64MDkCRMQxIDAwqGieM1AARgYYEemDBxdPV4AUhDTO8B0jQhA1AsUGwA3lAnBGBhgS5OEKAnJJID0KNxP0YsgMTQ1YEAAAXR/HUBjtGmAAAAAElFTkSuQmCC",
+  "kaleidoscope_tavern:item/chalkboard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAkklEQVR4XmNgoAaw0Zb7D8NuBvI4MbI6EMYwQMPM9L+uvS1eDFKD1QCYZiM3Z7wY2RAUA4jRjGwIigEg/8EMOHjy+P+Fa1f/X7RuDZgNwyA+CGM1gBwXgCzF6gKYTTDbYGyYSwgaQAzG8AJ6GKBjdFdhGEBqGOCNRmyhD9OI7AKUMKBKQkI2BB/GmZTJwXADKAEAPOdsqhZiv2cAAAAASUVORK5CYII=",
+  "kaleidoscope_tavern:item/empty_bottle": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAfklEQVR4XmNgwAFulAT8B+Hlbqr/0eWIAiCNIDzVTIw8AzaeffkfhAsWXCbPgFsvvv8HYZAh6HJEAYpcgG4rSYagawZ5A0QTbQi6ASAAMoRoA2A2IgOSwgKbASBAtAHYvAACI8kAkEKQIbCkDEvOkR07iDMABECK0TG6GhgAADECk+S7y/v0AAAAAElFTkSuQmCC",
+  "kaleidoscope_tavern:item/empty_glassware": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAaklEQVR4XmNgGAXUBfmzT/wnBqPrg4N5R17+h+GLj76gYGQ5dH0oAKQYXQwG8MnBAUwRzGZscngBsgG45PACfH7EJ4cCYIEFC3WiAg8bADkZb7QRAmQbgJwOiI5/ZODRuB8j9YHE0NWBAAAF5qpn2zXaMwAAAABJRU5ErkJggg==",
+  "kaleidoscope_tavern:item/gold_grape": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAtklEQVR4XmNgGLQgTUjwPzJGl3fn5MQQwwDLbDX+g3CHtgQYw8RBmnEasL9c6D8Iw9gwQ0AY5BKCmv/8+fP/490ksCEg+uF60//z3ATBLsDmFRSArgndBTCvYDUIpBimCcYGGYSsCVt4wDWDnI7uBZAhyHxkQ1BcAXM6sheQXYHMxxm1yIbAFMMwiI9sCEg9VgPQXQCjkTHMAAzNIL+iOxeba9D1ggHMNlj0wRTi1YQOCNpCKwAAajMTe6Bj9b0AAAAASUVORK5CYII=",
+  "kaleidoscope_tavern:item/grape": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAx0lEQVR4XmNgGLTAIMbkPwir2WuCMbq8sZYshhgKAGm2rQkBY5hBMDl7E7X/OA3wNy7+D8IwNswQEAYZQlDzhcVf/s9MvwA2pMFvOxjj8woKQNakq2QDNgTmFWRDsBoEUgzTBGM3uO1C0Qhim5f5gmkMzSCno3sBZAgyH2YIeqDCnY7sBZgBufbLwBjGx+kNZENgimEYWQ7EB6nHagAIg5wLsxGZjWwwikaYZphfYU5GD1AYRtcLBiBFyBphCvFqQgcEbaEVAABeJ/UBeKvxMwAAAABJRU5ErkJggg==",
+  "kaleidoscope_tavern:item/grape_bucket": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAvklEQVR4XrWQzQkCMRCFtwfBGiwgFWgJnreIeMnJFsRDSANCsKF4t4+A8gZmmWRnxxX0wSM/+96XZIfhH3LOvTT3uZk4GEIgp5QamyAunndX8u1wJ/MaHjcnyqgQbCL0vDyoiJHnEgaICeCgLMqyCcg5T0FZ4Pl+eyQvAkopUwkw730DwBo2AXCtlUZAYowNAHuLAHzsATDf6iMAAQ2AW/D1MVcBkHyGBjDLkHyG/AerAZCEfHW6FIKa+9xP9AbBklixhNtMEQAAAABJRU5ErkJggg==",
+  "kaleidoscope_tavern:item/grapevine": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAsElEQVR4XmNgGJTAO17tPzKGibuoyP0HYTM5KbgYVgDSVD1D//+UNU7/k+sUUAxItFAjbAAIgDSCDAAZBDIQpLHN1w63AehOBtEwQ0A0Xs0gANIAUoxsALIhMAPQ9cEBzACYk2HiIE0TC1zw2w4DMBtBhoD4IE0E/Y4OYE6HaSRJMyya0DXCXIYcyBgApBldo5atKFwzyFswQ9D1ggHMAPSUBjMEp0YYAGmCYXS5wQ0A9aiuivWevj0AAAAASUVORK5CYII=",
+  "kaleidoscope_tavern:item/green_grape": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAyUlEQVR4XmNgGLRA1kzpPzJGl9dWEcUQwwAGBd7/QVg9QA/FEDNd2f84DVDPMPoPwnA2UDPMIJAhBDXf/jTnf9dxP7AhIBqExazUMVyBFcA0xSy1gmgC8uHeSLADGwKisRoEUgzTBGODXQLSBLUdbggQY2gGOR3dCyBDkPnIhqC4AuZ0EA1yPgjDDEDn44xamGZkL8AwshyID1KP1QCYS2CK3SZbwA1ENhhFI0wzyK8gDcg2YXMNul4wgNkGwsgK8WpCBwRtoRUAAJr84f7ZHlADAAAAAElFTkSuQmCC",
+  "kaleidoscope_tavern:item/ice_grape": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAu0lEQVR4XmNgGLRAwcToPzJGl9dREcUQwwDOWWn/QVjXwxXFEHM92f84DQhOm/QfhGFskGaYQSBDCGoGgU13f4ANAdFVsw//dzAKx3AFVoCuCcSH2Q7zCswl6HrBmmGaYGyQQSBNMNthhoAwhmYQQPcCyBBkPrIhKK6AOR3ZC8iuQObLmivBMZIbUA2BKYZhEB/ZEJB6rAaguwBGI2OYARiaQQDdudhcg64XDGC2waIPphCvJnRA0BZaAQCsXxOhpd3/BAAAAABJRU5ErkJggg==",
+  "kaleidoscope_tavern:item/mojito": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA2klEQVR4XmNgoAXI8lT7728q9R9dvP+M038QRhfHALgMOPQhgzQDYDamLtUhrAkEQApBGNkAkK0gMaIMA0luPPsSjmEaYAbADEPXhwJAGm+9/IWBkQ1D14MCQAbgCkSQHLoYBrj46Mt/3yWv/9d+/A+mkXFM7wHCrgAZEHr22/89////9y7ZD8YgzSAxkAEEAxLZAEP3+WAMM6Br7cX/wT0KYIyuDw5A/oR5AZsB6OoxAMgAkLMpNgCkCRYGMD4oDNDVYwCQLbC4h6UJWMIiygAQACnEhtHVgQAABo45j1PrZ5UAAAAASUVORK5CYII=",
+  "kaleidoscope_tavern:item/molotov": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAoUlEQVR4XmNgwAFulAT8B+Hlbqr/0eWIAiCNIDzVTIw8AzaeffkfhAsWXCbPgFsvvv8HYZAh6HJEAYpcANL4f4oJBB+NJM0QuGagRjD+n02aIXADoBphhhBtACjgYAa8CtCFs8ky4LiNDMQQcrwA0gg3gBQXIIcBZQYAnU1WGIANAIU8UjogyQCQQpAhsKQMS86RHTuIMwAEQIrRMboaGAAAPIQGebLa8AYAAAAASUVORK5CYII=",
+  "kaleidoscope_tavern:item/sakura_incense": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAxklEQVR4XmNgwAP+H3zy///9H//RxYkGYAOAGF2cIABpej9x/399WQ3SNYMASHOwiRPYALJcAAIgA0AGgTC6HFEA5gIQm6ywgIUByCCSYwOkGRaQIAPQ5YkC9tpm/9sTi/+DaBBGl8cLapee+x/TewAFg8TQ1eEEG8++/A/Cd15+B2MYH10dVoBPIVGuABnwsn73//9fv4ExiA3DRBvwddPd/1+vvft/PKgbjEFskBjRBlx89AWMYX6HYaIMgIU4tpgAYXT1AKas5qsn/1/KAAAAAElFTkSuQmCC",
+  "kaleidoscope_tavern:item/shaker": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAmUlEQVR4XmNgoBXw8PD/b2xs8x9Eo8sRBS5du/m/pWMi2BB0ObwApAGEo6JT4Rgmhq4WA4CcC9IAsh3mAhiGGYSuBwWADAAphgGYZqK9Y2lp9x+EkW0FYRAbJE7QAJALQLaBALIXiHYBsheQXQAygKQwgNk4eAyAsUkygKx0AAKwxATCsGglWjMI4HIF0QaAACztI2N0NTAAAIGaDLBguh6JAAAAAElFTkSuQmCC",
+  "kaleidoscope_tavern:item/stepladder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAu0lEQVR4XpVRMQ4CMQzrJ5BYeQULCzMrIyzMrOx8oAMrIyN/oeInPCHIJxkVN2khkqWTYztNLqVB7dZzI7TXrdN2YcDjfrTX8zrhpxDPiG+gG9Az3s6bqTcMiIzA5bCy/XIWB0DAF9TGuj8MgCCaSD5cQw0ayLXCY8JQNxigR8V63QBMgwggp0cF19yjlGI5508ADAzQo1L7FaA78wXkaq37AiVh4iQVqzYmU/t3UK4WREMmP+CvcqdV9QZ0Bxz90jSsYwAAAABJRU5ErkJggg==",
+  "kaleidoscope_tavern:item/tap": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA0ElEQVR4XmNgoBUoVtf7P8PcAYxB7DgpdTBGV4cVgBSCNN4JSQZjmEEkGYANo6sjCDS1df/bu/r9B9HocngBSBNMIzpGV4sVgDTPXLzh/8NXX8A0CEclZBNvAAjAXAHSCGOjq0EBMEUwXNXYDbcdxAZhmAswvAOzCaYBhkFeAGGYYTCNjm5eqF6CGQBTDGLD+DA2LBxgNLKLUFwAkoDxkQ2DsfEaABMEYfTwQJbD8ALMZJjpIDGYYmQMVowkB+ODXeBedhCMUSRIBQ3bHpCsGQC9fg+jOvVJBAAAAABJRU5ErkJggg==",
+  "kaleidoscope_tavern:item/vodka": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAuElEQVR4XmNgwAHclXj/I2N0ebwg1kT6/5JMrf9P5nuBaRAmyRCQATBDQDTZroC5AMRGlycI0F2ALo8XKDm5/Adh48RYMBZQ1ABjdHVYAUxj66EDYBw+uR/MB9FEGQIyAKR46YtnpBuA7GyYRhCGeQmE8RqCbjuyC4hyBVUMgClGxsixgtcAEy2T/wsmTPi/c/VyFAwS6ywrA2MFcXkaG5ASlgZWCNIEwyA+SByE8RoAAiAF+DC6egA8JQIP3E98bwAAAABJRU5ErkJggg==",
+  "kaleidoscope_tavern:item/wine": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAoUlEQVR4XmNgwAFK+GT/r9T3+g+i0eWIAiCNJyPKBtAAEQ7V/6rSlv8ZGTgGwACQZhA2VHIBG0CSITCNsaENYEyyS2AGbN9+G24AzCXoarECZBeAaJINKOaQAEcfDIMSEwiDxNHVYgXxQan/v375BsaH9x37v3DaIjANEkdXixVQbADFXqA4EDkZRP6riNvCsRCHOhgTbQAIwFIfMkZXAwMA9q6h2B8L+IsAAAAASUVORK5CYII=",
+};
+// Stand 2026-10-21, Minecraft 1.20.1. Quelle: Advancements, Rezepte, Loot-Modifier, Loot-Tabellen, Biome-Modifier, Tags,
+// Spieß-Daten (grilling/skewers.json) und Sprachdateien (Ponder-Texte, Tooltips) aus kaleidoscopecookery-1.6.0-forge+mc1.20.1.jar,
+// kaleidoscopetavern-1.2.0-forge+mc1.20.1.jar, kaleidoscope_grilling-1.1.1-forge1.20.1.jar, kaleidoscope_end-1.0.14-forge+mc1.20.1.jar
+// und kaleidoscope_immersiveEating-forge1.20.1-1.5.1.jar. Kein Buch; die Ponder-Szenen brauchen den Mod Ponder, der im Pack fehlt.
+// Zeigt den Weg, wie ihn der Mod selbst vorsieht (ohne unsere KubeJS-Änderungen). Schema: Skill modpfad-seite, references/data-schema.md.
+// Zutaten: [Name, Herkunft, Zusatz] – Herkunft v = Vanilla, m = dieser Mod, a = Addon, x = anderer Mod im Pack
+const PAGE = {
+  pageTitle: "Modpfad Kaleidoscope",
+  title: "Kaleidoscope",
+  accent: ["#e0855a", "#a24a22"],
+  lede: "Chinesisch geprägte Küche mit Geräten, die man von Hand bedient: Mit dem Strohhut findet man im Gras neue Saaten, mit dem Küchenmesser Öl und Fleischteile, auf dem Herd stehen Wok, Suppentopf, Dampfgarer und Teekanne, ein angespannter Esel dreht den Mühlstein. Tavern ergänzt Weinreben, Kelter, Fass und Shaker, Grilling Grill, Spieße, Ölpresse und Gewürzflaschen, End Zutaten und Gerichte aus dem End bis zum Dragon Tooth Knife. Kein Buch; die Reihenfolge folgt den Advancement-Bäumen von Cookery, Grilling und End, Tavern hat keine Advancements.",
+  mods: [
+    ["Kaleidoscope Cookery", "1.6.0", "main"],
+    ["Kaleidoscope Tavern", "1.2.0", "addon"],
+    ["Kaleidoscope Grilling", "1.1.1", "addon"],
+    ["Kaleidoscope End", "1.0.14", "addon"],
+    ["Kaleidoscope: ImmersiveEating", "1.5.1", "addon"],
+  ],
+  phases: [
+    {
+      t: "Feld und Messer",
+      sub: "Advancements „Become the Pirate King!“, „Seed Project“, „Even a Kung Fu Master Would Fear the Kitchen Knife“ und „Intensive Farming“. Alles beginnt mit einem Strohhut aus Weizen.",
+      steps: [
+        {
+          t: "Straw Hat und neue Saaten",
+          items: [
+            ["kaleidoscope_cookery:item/straw_hat", "Straw Hat", "4 Wheat + 1 String"],
+            ["kaleidoscope_cookery:item/straw_hat_flower", "Flowery Straw Hat", "Straw Hat + 8 Blumen"],
+            ["kaleidoscope_cookery:item/tomato_seed", "Tomato Seed", "Gras, 12,5 %"],
+            ["kaleidoscope_cookery:item/chili_seed", "Chili Seed", "Gras, 12,5 %"],
+            ["kaleidoscope_cookery:item/lettuce_seed", "Lettuce Seed", "Gras, 12,5 %"],
+            ["kaleidoscope_cookery:item/wild_rice", "Wild Rice Seed", "Gras, 12,5 %"],
+            ["kaleidoscope_cookery:item/tea_seed", "Tea Seed", "Gras, 12,5 %"],
+          ],
+          text: `<p>„When worn, breaking grass drops seeds from this mod.“ Mit dem Hut auf dem Kopf gibt jedes abgebaute Gras mit je 12,5 % eine der fünf Saaten, mit 2 % auch Beetroot-, Pumpkin- und Melon Seeds (Loot-Modifier <code>straw_hat_seed_drop</code>). Grilling hängt drei weitere Pflanzen an denselben Weg: Onion, Canola Seeds und Sweet Potato „May drop when breaking grass while wearing a Kaleidoscope Cookery straw hat“.</p>
+<p>Aus geernteten Tomaten und Chilis macht man in der Werkbank wieder Saatgut (1 Tomato zu 1 Tomato Seed, Green oder Red Chili zu 1 Chili Seed).</p>`,
+          needs: [["Wheat", "v", "4"], ["String", "v"], ["Gras", "v"]],
+        },
+        {
+          t: "Feldfrüchte und Reisfeld",
+          items: [
+            ["kaleidoscope_cookery:item/tomato", "Tomato", "reif: Tomato + Tomato Seed"],
+            ["kaleidoscope_cookery:item/red_chili", "Red Chili", "reif; 20 % zusätzlich Green Chili"],
+            ["kaleidoscope_cookery:item/green_chili", "Green Chili", "Nebenernte der Chili"],
+            ["kaleidoscope_cookery:item/lettuce", "Lettuce", "reif; 10 % Caterpillar"],
+            ["kaleidoscope_cookery:item/rice_panicle", "Rice Panicle", "reifer Reis"],
+            ["kaleidoscope_cookery:item/rice", "Rice Seed", "Mühlstein: Rice Panicle zu 3"],
+            ["kaleidoscope_cookery:item/fresh_tea_leaves", "Fresh Tea Leaves", "Teestrauch, reif"],
+            ["kaleidoscope_cookery:item/caterpillar", "Caterpillar", "beim Salat-Ernten"],
+          ],
+          text: `<p>Reis braucht ein Reisfeld: „Use a hoe to make farmland under water to create paddy fields for rice.“ Fische im Reisfeld (Cod, Salmon, Tropical Fish, Pufferfish, Tadpole, Axolotl) lassen ihn schneller wachsen. Die Ernte sind Rice Panicles; neun davon ergeben einen Straw Bale. Der Teestrauch (Tea Seed) gibt reif Fresh Tea Leaves, die man im Ofen, am Lagerfeuer oder auf dem Bamboo Tray trocknet.</p>
+<p>Die Raupe ist Zutat (Fried Caterpillar, Raupen-Spieß) und Futter: an ein Küken verfüttert gibt sie das Advancement „High-Quality Protein“.</p>`,
+          needs: [["Saaten", "m"], ["Hoe", "v"], ["Water", "v"]],
+        },
+        {
+          t: "Kitchen Knife und Öl",
+          items: [
+            ["kaleidoscope_cookery:item/iron_kitchen_knife", "Iron Kitchen Knife", "3 Iron Ingot + 1 Stick"],
+            ["kaleidoscope_cookery:item/gold_kitchen_knife", "Gold Kitchen Knife", "3 Gold Ingot + 1 Stick"],
+            ["kaleidoscope_cookery:item/diamond_kitchen_knife", "Diamond Kitchen Knife", "3 Diamond + 1 Stick"],
+            ["kaleidoscope_cookery:item/netherite_kitchen_knife", "Netherite Kitchen Knife", "Smithing Table: + Netherite Ingot"],
+            ["kaleidoscope_cookery:item/oil", "Oil", "Messer an Schwein, Piglin, Hoglin"],
+            ["kaleidoscope_cookery:block/oil_block", "Oil Block", "9 Oil"],
+          ],
+          text: `<p>Das Küchenmesser ist Waffe und Werkzeug. Tötet man damit Pig, Piglin, Piglin Brute, Hoglin, Zombified Piglin oder Zoglin, fällt zusätzlich Oil. Öl ist der Einstieg in den Wok; eine zweite Quelle ist der Mühlstein (Samen zu Oil). Mit Grilling geben auch Kühe (Raw Cow Offal), Hühner (Chicken Wing) und Tintenfische (Squid Tentacle) Extrabeute, wenn man sie mit dem Messer tötet.</p>`,
+          needs: [["Iron Ingot", "v", "3"], ["Stick", "v"]],
+        },
+        {
+          t: "Sickle, Farmer-Kleidung und Scarecrow",
+          items: [
+            ["kaleidoscope_cookery:item/sickle", "Sickle", "3 Flint + 1 String + 2 Stick"],
+            ["kaleidoscope_cookery:item/farmer_chest_plate", "Farmer's Overalls", "2 Iron Ingot + 6 Leather"],
+            ["kaleidoscope_cookery:item/farmer_leggings", "Farmer's Work Pants", "1 Iron Ingot + 6 Leather"],
+            ["kaleidoscope_cookery:item/farmer_boots", "Farmer's Boots", "2 Iron Ingot + 2 Leather"],
+            ["kaleidoscope_cookery:item/scarecrow", "Scarecrow", "Straw Hat + Straw Bale + Pumpkin + 2 Stick"],
+          ],
+          text: `<p>Die Sichel erntet Felder mit Rechtsklick und entfernt Unkraut. Das vollständige Farmer-Set „greatly increase[s] movement speed in water“. Die Vogelscheuche „protect[s] surrounding farmland“; sie trägt Schädel, Laternen oder Werkzeuge.</p>`,
+          needs: [["Leather", "v"], ["Iron Ingot", "v"], ["Straw Bale", "m"]],
+        },
+      ],
+    },
+    {
+      t: "Herd und Brett",
+      sub: "Advancements „Heat Up the Wok“ und „Chop! Chop! Chop!“. Alle Kochgeräte stehen auf einer Hitzequelle.",
+      steps: [
+        {
+          t: "Stove",
+          pics: [["kaleidoscope_cookery:block/stove_front_lit", "Stove, angezündet"]],
+          items: [
+            ["kaleidoscope_cookery:block/stove_front", "Stove", "8 Cobblestone + 1 Campfire oder Soul Campfire"],
+          ],
+          text: `<p>„Heat source for cookware lit with flint and steel.“ Neben dem Herd gelten Fire, Soul Fire, Lava, Magma Block und alles im Tag <code>farmersdelight:heat_sources</code> als Hitzequelle; der Herd selbst steht auch in diesem Farmer's-Delight-Tag. Der Herd ist außerdem der Arbeitsplatz des Kochs (Chef) im Dorf.</p>`,
+          needs: [["Cobblestone", "v", "8"], ["Campfire", "v"], ["Flint and Steel", "v"]],
+        },
+        {
+          t: "Chopping Board",
+          items: [
+            ["kaleidoscope_cookery:block/chopping_board", "Chopping Board", "6 Holz-Druckplatten"],
+            ["kaleidoscope_cookery:item/raw_lamb_chops", "Raw Lamb Chops", "Raw Mutton zu 3"],
+            ["kaleidoscope_cookery:item/raw_pork_belly", "Raw Pork Belly", "Raw Porkchop zu 3"],
+            ["kaleidoscope_cookery:item/raw_cut_small_meats", "Raw Meat Cuts", "Raw Chicken oder Rabbit zu 3 + Bone"],
+            ["kaleidoscope_cookery:item/raw_cow_offal", "Raw Cow Offal", "Raw Beef zu 3"],
+            ["kaleidoscope_cookery:item/sashimi", "Sashimi", "Raw Cod, Salmon, Tropical Fish zu 3"],
+            ["kaleidoscope_cookery:item/raw_noodles", "Raw Noodles", "Teig zu 3"],
+          ],
+          text: `<p>„Use with kitchen knife to cut meat.“ Das Brett braucht vier Messerschnitte je Stück und gibt meist drei Teile. Gekochtes Fleisch lässt sich ebenso zerteilen (Cooked Lamb Chops, Cooked Pork Belly, Cooked Meat Cuts, Cooked Cow Offal); gebratener Kabeljau und Lachs geben 3 Bone. Grilling ergänzt Carrot Dice, Potato Slice, Raw Mantou Slice, Minced Houttuynia und Raw Sweet Potato Sheet und ändert das Rindfleisch-Rezept: Raw Beef gibt dann 2 Beef Chunks statt Innereien.</p>`,
+          needs: [["Kitchen Knife", "m"], ["Wooden Pressure Plate", "v", "6"]],
+        },
+      ],
+    },
+    {
+      t: "Die Kochgeräte",
+      sub: "Advancements „First Steps of Stir-Frying“, „First Steps of Soup Making“, „996“ und „First Steps of Steaming“. Die Bedienung steht in den Ponder-Texten und Tooltips.",
+      steps: [
+        {
+          t: "Wok und Kitchen Shovel",
+          pics: [["kaleidoscope_cookery:item/pot_has_oil", "Wok mit Öl"]],
+          items: [
+            ["kaleidoscope_cookery:item/pot_no_oil", "Wok", "7 Iron Ingot"],
+            ["kaleidoscope_cookery:item/kitchen_shovel_no_oil", "Kitchen Shovel", "1 Iron Ingot + 1 Iron Nugget + 1 Stick"],
+            ["kaleidoscope_cookery:item/enamel_basin", "Grease Crock", "Stone Button + Heavy Weighted Pressure Plate + Bucket"],
+            ["kaleidoscope_cookery:block/oil_pot_with_oil", "Oil Can", "Heavy Weighted Pressure Plate + Bucket + Stick"],
+            ["kaleidoscope_cookery:item/recipe_item_no_recipe", "Recipe", "4 Paper"],
+          ],
+          text: `<p>Ablauf laut Ponder: Wok auf die Hitzequelle, Öl hinein (Oil, Oil Can oder eine gefettete Kitchen Shovel aus der Grease Crock), Zutaten dazu, dann mit der Kitchen Shovel rühren; nach genug Rührschlägen (meist 3) und etwas Zeit ist das Gericht fertig und wird mit einer Schale (meist Bowl) aufgenommen. „Cooking will fail if you use the wrong ingredients or take too long“ – das Ergebnis ist dann Suspicious Stir-Fry. Wer falsche Zutaten wieder herausnimmt, verbrennt sich.</p>
+<p>Es gibt feste Rezepte (genaue Mengen, 27 Gerichte) und „Flex Recipes“ mit weniger festen Zutaten. Daneben brät der Wok rohes Fleisch, Eier und Kartoffeln (1 bis 4 Stück). Ein Recipe speichert den Inhalt eines Woks oder Suppentopfs und füllt ihn später mit einem Klick aus dem Inventar.</p>`,
+          table: {
+            head: ["Gericht", "Hauptzutaten (fest)"],
+            rows: [
+              ["kaleidoscope_cookery:item/scramble_egg_with_tomatoes", "Scramble Egg with Tomatoes", "3 Eier + 3 Tomaten"],
+              ["kaleidoscope_cookery:item/egg_fried_rice", "Egg Fried Rice", "2 Eier + Cooked Rice"],
+              ["kaleidoscope_cookery:item/braised_beef", "Braised Beef", "3 Rindfleisch + 3 Red Chili"],
+              ["kaleidoscope_cookery:item/sweet_and_sour_pork", "Sweet and Sour Pork", "3 Schwein + 3 Sugar"],
+              ["kaleidoscope_cookery:item/stir_fried_pork_with_peppers", "Stir-fried Pork with Peppers", "3 Schwein + 3 Green Chili"],
+              ["kaleidoscope_cookery:item/fish_flavored_shredded_pork", "Fish Flavored Shredded Pork", "2 Schwein + 2 Pilze + 2 Chili"],
+              ["kaleidoscope_cookery:item/dongpo_pork", "Dongpo Pork", "6 Schwein + 2 Bamboo"],
+              ["kaleidoscope_cookery:item/crystal_lamb_chop", "Crystal Lamb Chop", "3 Hammel + 3 Amethyst Shard"],
+              ["kaleidoscope_cookery:item/blaze_lamb_chop", "Blaze Lamb Chop", "3 Hammel + 3 Blaze Powder"],
+              ["kaleidoscope_cookery:item/frost_lamb_chop", "Frost Lamb Chop", "3 Hammel + 3 Blue Ice"],
+              ["kaleidoscope_cookery:item/sweet_and_sour_ender_pearls", "Sweet and Sour Ender Pearls", "2 Ender Pearl + Eye of Ender"],
+              ["kaleidoscope_cookery:item/donkey_burger", "Donkey Burger", "2 Teig + 2 Raw Meat Cuts + 2 Chili"],
+            ],
+          },
+          needs: [["Iron Ingot", "v", "7"], ["Oil", "m"], ["Bowl", "v"]],
+        },
+        {
+          t: "Stockpot",
+          pics: [["kaleidoscope_cookery:block/stockpot", "Stockpot"]],
+          items: [
+            ["kaleidoscope_cookery:block/stockpot", "Stockpot", "5 Iron Ingot + 2 Brick"],
+            [null, "Stockpot Lid", "3 Iron Ingot + 1 Brick; auch Schild"],
+            ["kaleidoscope_cookery:item/cooked_rice", "Cooked Rice", "Reis + Wasser"],
+            ["kaleidoscope_cookery:item/borscht", "Borscht", "Ziel „Apprentice Chef“"],
+          ],
+          text: `<p>Ablauf laut Ponder: Topf auf die Hitzequelle, erst die Suppenbasis, dann die Zutaten, Deckel drauf, warten, Deckel ab und mit der Schale schöpfen. „Opening lid pauses cooking. Wrong steps result in suspicious stew.“ Die Basis entscheidet das Gericht: Water (71 Rezepte), Lava (17, etwa Hot Dry Noodles, Numbing Spicy Chicken, Shengjian Mantou), Milk (9, etwa Clay Pot Milk Tea), dazu Fischeimer (Cod, Salmon, Tropical Fish, Pufferfish) für Seafood Miso Soup und Pufferfish Soup. Wer bei Lava-Basis falsche Zutaten herausnimmt, verbrennt sich.</p>
+<p>Der Topf kocht Reis (1 bis 9 Rice zu Cooked Rice), Dumpling, Cooked Zongzi und Tea Egg ohne Schale, Pot Soups in einen Flower Pot. Cooked Rice macht aus fünf Wok-Gerichten ein „… on Rice“.</p>`,
+          table: {
+            head: ["Suppe", "Zutaten (Basis Wasser)"],
+            rows: [
+              ["kaleidoscope_cookery:item/borscht", "Borscht", "2 Rindfleisch + 4 Tomaten"],
+              ["kaleidoscope_cookery:item/beef_noodle", "Beef Noodle", "4 Rindfleisch + 3 Raw Noodles"],
+              ["kaleidoscope_cookery:item/pork_bone_soup", "Pork Bone Soup", "7 Bone"],
+              ["kaleidoscope_cookery:item/chicken_and_mushroom_stew", "Chicken and Mushroom Stew", "2 Huhn + 3 Pilze"],
+              ["kaleidoscope_cookery:item/lamb_and_radish_soup", "Mutton and Radish Soup", "2 Hammel + 3 Carrot"],
+              ["kaleidoscope_cookery:item/laba_congee", "Laba Congee", "6 Samen + 3 Sugar"],
+              ["kaleidoscope_cookery:item/buddha_jumps_over_the_wall", "Buddha Jumps Over the Wall", "Eier, Phantom Membrane, Lettuce …; im Flower Pot"],
+            ],
+          },
+          needs: [["Iron Ingot", "v", "8"], ["Brick", "v", "3"], ["Water Bucket", "v"]],
+        },
+        {
+          t: "Millstone",
+          pics: [["kaleidoscope_cookery:item/millstone", "Millstone"]],
+          items: [
+            ["kaleidoscope_cookery:item/millstone", "Millstone", "Grindstone + 3 Smooth Stone + Holzzaun + Stick"],
+            ["kaleidoscope_cookery:item/flour", "Flour", "Wheat"],
+            ["kaleidoscope_cookery:item/raw_dough_0", "Raw Dough", "Flour + Water Bucket"],
+            ["kaleidoscope_cookery:item/oil", "Oil", "Samen (#forge:seeds)"],
+          ],
+          text: `<p>„Certain animals placed above the millstone will be harnessed to drive it“; das Advancement „996“ nennt den Esel. Spieler lassen sich nicht anspannen. Zutaten legt man per Rechtsklick ein oder lässt sie von oben hineinfallen; nach einer vollen Umdrehung kommt das Ergebnis aus der Öffnung.</p>
+<p>Neben Mehl, Öl, Reis aus Rispen und Farbstoffen aus Blumen <b>verdoppelt und verdreifacht der Mühlstein Erze</b>: Iron und Gold Ore zu 3 Raw, Copper Ore zu 5 Raw Copper, Diamond- und Emerald Ore zu 2, Redstone- und Lapis Ore zu 7, Nether Gold Ore zu 5 Gold Nugget, Nether Quartz Ore zu 3. Dazu Stein zu poliertem Stein, Wolle zu 3 String, Flint zu Gunpowder, Bone zu 5 Bone Meal.</p>
+<p>Teig (Raw Dough) zieht man mit gehaltenem Rechtsklick zu Nudeln („La La La La La La Noodles“) oder schneidet ihn auf dem Brett zu 3 Raw Noodles. Mit Fleisch und Gemüse wird er zu Stuffed Dough, der Grundlage für Baozi, Dumpling, Samsa, Meat Pie und Shengjian Mantou.</p>`,
+          needs: [["Grindstone", "v"], ["Smooth Stone", "v", "3"], ["Donkey", "v", "oder anderes Tier"]],
+        },
+        {
+          t: "Steamer",
+          items: [
+            ["kaleidoscope_cookery:item/steamer_no_items", "Steamer", "3 Bamboo Trapdoor + 3 Block of Bamboo"],
+            ["kaleidoscope_cookery:item/baozi", "Baozi", "Stuffed Dough, 1200 Ticks"],
+            ["kaleidoscope_cookery:item/mantou", "Mantou", "Teig"],
+            ["kaleidoscope_cookery:item/qingtuan", "Qingtuan", "Slimeball"],
+            ["kaleidoscope_cookery:item/bamboo_tube_rice", "Bamboo Tube Rice", "Bamboo + Reis + Fleisch"],
+          ],
+          text: `<p>Dampfgarer stapelt man auf der Hitzequelle; „a single heat source can only provide heat for up to 8 steamers“. Zutaten von oben einlegen, Deckel per Rechtsklick schließen, nach dem Garen Lage für Lage abnehmen. Gefüllte Dampfgarer gibt es auch aus der Werkbank (Steamer + 4 Raw Dough bzw. 4 Stuffed Dough). Ein Baozi, schleichend nach einem Wolf geworfen, heilt ihn.</p>`,
+          needs: [["Bamboo", "v"], ["Raw Dough", "m"]],
+        },
+        {
+          t: "Teapot und Tee",
+          items: [
+            ["kaleidoscope_cookery:item/teapot", "Teapot", "6 Copper Ingot + 1 Bucket"],
+            ["kaleidoscope_cookery:item/dried_tea_leaves", "Dried Tea Leaves", "Fresh Tea Leaves trocknen"],
+            ["kaleidoscope_cookery:item/tieguanyin_tea_bag", "Tieguanyin Tea Bag", "8 Dried Tea Leaves + Iron Nugget"],
+            ["kaleidoscope_cookery:item/tieguanyin", "Tieguanyin", "Teapot, Wasser"],
+            ["kaleidoscope_cookery:item/empty_cup", "Empty Teacup", "Flower Pot"],
+          ],
+          text: `<p>Die Teekanne braucht eine Hitzequelle, mindestens 1000 mB Flüssigkeit (Wasser, für Butter Tea Milch) und einen Teebeutel; ein Aufguss dauert 240 Sekunden. Sechs Beutel unterscheiden sich in der Zutat zu den 8 Dried Tea Leaves: Wheat Seeds (Wheat Aroma Oolong Tea), Nautilus Shell (Biluochun), Oil (Butter Tea), Dragon's Breath (Dong Ding Oolong Tea), Pink Petals (Sakura Fubuki), Iron Nugget (Tieguanyin). Flower Tea entsteht aus Blüten. Im Stockpot ergeben Teebeutel mit Milch Clay Pot Milk Tea, der alle schädlichen Effekte entfernt.</p>`,
+          needs: [["Copper Ingot", "v", "6"], ["Tea Seed", "m"]],
+        },
+        {
+          t: "Bamboo Tray und Shawarma Spit",
+          items: [
+            ["kaleidoscope_cookery:block/bamboo_tray", "Bamboo Tray", "4 String + 1 Bamboo Trapdoor"],
+            ["kaleidoscope_cookery:item/shawarma_spit", "Shawarma Spit", "4 Chain + 2 Campfire"],
+          ],
+          text: `<p>Das Bambustablett trocknet bei klarem Himmel (1800 Ticks: Tee, Kelp, Mud zu Clay, Rotten Flesh zu Leather, Wet Sponge) und befeuchtet bei Regen (900 Ticks: Concrete Powder zu Concrete, Copper zu Oxidized Copper, Dirt zu Mud).</p>
+<p>Der Drehspieß hat zwei Lagen mit je bis zu 8 gleichen Lebensmitteln, die man im Ofen braten könnte. Ein Redstone-Signal schaltet ihn ein. Wer das Essen mit bloßer Hand vom laufenden Spieß nimmt, verbrennt sich; sicher geht es mit dem Küchenmesser oder nach dem Abschalten.</p>`,
+          needs: [["Bamboo", "v"], ["Chain", "v", "4"], ["Redstone", "v"]],
+        },
+      ],
+    },
+    {
+      t: "Gerichte und Dorf",
+      sub: "Advancements „Apprentice Chef“, „Dark Cuisine“ und „Lunch Bag!“. Was man mit den Geräten kocht, und wo der Koch wohnt.",
+      steps: [
+        {
+          t: "Platten, Effekte und Lunch Bag",
+          items: [
+            ["kaleidoscope_cookery:item/baozi_plate", "Plate of Baozi", "5 Baozi + Bowl, aufstellbar"],
+            ["kaleidoscope_cookery:item/golden_salad", "Golden Salad", "2 Golden Apple, 2 Golden Carrot, 2 Glistering Melon Slice"],
+            ["kaleidoscope_cookery:item/transmutation_lunch_bag_no_items", "Transmutation Lunch Bag", "6 Leather + Amethyst Shard"],
+            ["kaleidoscope_cookery:item/dark_cuisine", "Dark Cuisine", "misslungenes Gericht"],
+          ],
+          text: `<p>Viele Gerichte lassen sich als Platte aufstellen (Baozi, Qingtuan, Zongzi, Sticky Candy, Sticky Rice Cake, Shengjian Mantou, Obstplatten). Gerichte haben eine Qualität (Poor bis Superb) und geben eigene Effekte, darunter Flatulence (Aufsteigen in die Luft, Advancements bis 3000 Blöcke), Warmth, Tundra Strider, Satiation Shield, Vigor, Projectile Dodge und Instant Smelting. Welcher Effekt zu welchem Gericht gehört, ist nicht ausgelesen.</p>
+<p>Der Lunch Bag „Stores food and potions“ und isst per Rechtsklick, bis der Hunger voll ist.</p>`,
+          needs: [["Bowl", "v"], ["Leather", "v", "6"]],
+        },
+        {
+          t: "Chef und Dorfküchen",
+          items: [
+            ["kaleidoscope_cookery:block/stove_front_lit", "Stove", "Arbeitsplatz des Chef"],
+          ],
+          text: `<p>Cookery fügt den Dorfberuf Chef hinzu (Arbeitsplatz: Stove) und fünf Dorfhäuser (<code>plains/desert/savanna/snowy/taiga_kitchen</code>). Die Dorftruhe enthält Tomaten, Chilis, Oil, Saaten, Reis, Straw Bale, Recipe, Iron Kitchen Knife und Straw Hat, eine versteckte Truhe fertige Suppen. Die Handelsangebote des Kochs stehen im Code und sind nicht ausgelesen.</p>`,
+        },
+      ],
+    },
+    {
+      t: "Taverne",
+      sub: "Kaleidoscope Tavern, ohne Advancements; Reihenfolge nach den Ponder-Texten. Vom Weinstock über die Kelter ins Fass.",
+      steps: [
+        {
+          t: "Grapevine und Trellis",
+          addon: "Kaleidoscope Tavern",
+          items: [
+            ["kaleidoscope_tavern:item/grapevine", "Grapevine", "wild an Eichen"],
+            ["kaleidoscope_tavern:block/plant/trellis", "Trellis", "3 Grapevine zu 8"],
+            ["kaleidoscope_tavern:item/grape", "Grape", "Boden unter dem Gerüst: Dirt, Gras"],
+            ["kaleidoscope_tavern:item/ice_grape", "Ice Grape", "Ice oder Snow Block"],
+            ["kaleidoscope_tavern:item/gold_grape", "Gold Grape", "Netherrack oder Magma Block"],
+            ["kaleidoscope_tavern:item/green_grape", "Green Grape", "Zufall beim Ernten"],
+          ],
+          text: `<p>Wilde Reben hängen an Bäumen („Found under oak trees in the wild“); Knochenmehl auf einen Setzling nahe Blumen kann ebenfalls Reben erzeugen. Abbauen mit der Hand. Unter Blöcken gepflanzt wachsen sie nur nach unten, ohne Trauben; die Schere stoppt das.</p>
+<p>Für Trauben setzt man die Rebe auf ein Trellis einen Block über dem Boden; sie wächst nach oben und dann seitlich über weitere Gerüste. Trauben hängen dort, wo unter dem Gerüst Luft ist. Der Block unter dem Gerüst bestimmt die Sorte. Ernte mit der Hand 1–2, mit der Schere 2–3 Trauben.</p>`,
+          needs: [["Grapevine", "a"], ["Shears", "v"]],
+        },
+        {
+          t: "Pressing Tub",
+          addon: "Kaleidoscope Tavern",
+          items: [
+            ["kaleidoscope_tavern:block/brew/pressing_tub", "Pressing Tub", "1 Barrel zu 2"],
+            ["kaleidoscope_tavern:item/grape_bucket", "Grape Bucket", "Grape Juice"],
+          ],
+          text: `<p>Man legt pressbare Früchte hinein und springt darauf; jedes Stück gibt 125 mB Saft (Grape, Ice Grape, Gold Grape, Green Grape, Sweet Berries, Glow Berries). Nicht pressbare Items verstreut das Springen. An einer Wand wird die Kelter schräg und dient nur noch als Ablage.</p>`,
+          needs: [["Barrel", "v"], ["Trauben", "a"]],
+        },
+        {
+          t: "Barrel und Tap",
+          addon: "Kaleidoscope Tavern",
+          items: [
+            ["kaleidoscope_tavern:item/barrel", "Barrel", "9 Barrel"],
+            ["kaleidoscope_tavern:item/tap", "Tap", "Lever + Hopper"],
+            ["kaleidoscope_tavern:item/empty_bottle", "Empty Bottle", "Glass Bottle"],
+            ["kaleidoscope_tavern:item/wine", "Wine", "Grape Juice"],
+            ["kaleidoscope_tavern:item/vodka", "Vodka", "Wasser + Potato"],
+            ["kaleidoscope_tavern:item/molotov", "Molotov Cocktail", "Lava"],
+          ],
+          text: `<p>Deckel auf, Flüssigkeit und Zutat hinein, Deckel zu, warten: „The longer it brews, the higher the quality of the wine.“ Rechtsklick zeigt den Fortschritt, unter dem Zapfhahn füllt man in eine Glasflasche ab. 25 Getränke; die Grundflüssigkeit entscheidet: Grape Juice (Wine, Champagne, Brandy, Carignan, Sakura Wine), Ice Grape Juice (Ice Wine, Sherry, Mother Snow …), Gold Grape Juice (Honey Wine, Miner's Star, Sunset Glow, Madame Shexiang), Wasser (Vodka, Whiskey, Rum), Lava (Molotov Cocktail). Jedes Getränk gibt einen Effekt (37 Einträge), etwa Slightly Tipsy, Long Reach, Tomb Raider, Zenith.</p>`,
+          needs: [["Barrel", "v", "9"], ["Saft", "a"], ["Glass Bottle", "v"]],
+        },
+        {
+          t: "Shaker und Cocktails",
+          addon: "Kaleidoscope Tavern",
+          items: [
+            ["kaleidoscope_tavern:item/shaker", "Shaker", "1 Iron Ingot + 1 Bucket"],
+            ["kaleidoscope_tavern:item/empty_glassware", "Empty Glassware", "3 Glass Pane"],
+            ["kaleidoscope_tavern:item/mojito", "Mojito", "2 weiß + 1 grün"],
+            ["kaleidoscope_tavern:item/bloody_mary", "Bloody Mary", "3 rot"],
+          ],
+          text: `<p>Der Shaker mischt drei Getränke zu einem Cocktail; die Rezepte verlangen Farben statt fester Getränke (Tags <code>cocktail_ingredient_*</code>): weiß Vodka, Whiskey, Rum, Potion; rot Plum Wine, Sweet Berry Wine, Red Queen; hellviolett Wine, Champagne, Sakura Wine, Brandy, Carignan; gold Honey Wine, Miner's Star u. a.; blau Ice Wine, Sherry u. a.; gelb Glowflower Brew, Luminous Bride; grün die zwei Weißweine. 12 Cocktails, dazu Signature und Mystery Cocktail.</p>`,
+          needs: [["Iron Ingot", "v"], ["Getränke", "a"]],
+        },
+      ],
+    },
+    {
+      t: "Grill und Spieße",
+      sub: "Kaleidoscope Grilling, Advancements ab „Human Fireworks“. Neue Pflanzen, Öle und Gewürze rund um den Grill.",
+      steps: [
+        {
+          t: "Neue Pflanzen",
+          addon: "Kaleidoscope Grilling",
+          items: [
+            ["kaleidoscope_grilling:item/onion", "Onion", "Gras mit Strohhut"],
+            ["kaleidoscope_grilling:item/canola_seeds", "Canola Seeds", "Gras mit Strohhut"],
+            ["kaleidoscope_grilling:item/sweet_potato", "Sweet Potato", "Gras mit Strohhut"],
+            ["kaleidoscope_grilling:block/pepper_sapling", "Pepper Sapling", "Pfefferbaum in Wäldern"],
+            ["kaleidoscope_grilling:item/sichuan_pepper", "Sichuan Pepper", "vom Pfefferbaum"],
+            ["kaleidoscope_grilling:item/houttuynia", "Houttuynia", "Netherfestungen und ihre Truhen"],
+          ],
+          text: `<p>Der Pfefferbaum wächst in allen Wald-Biomen (<code>#minecraft:is_forest</code>); Sichuan Pepper gibt es auch in Dörfern. Pepper Log zerfällt in der Werkbank zu 4 Oak Planks. Houttuynia trägt man für das Advancement „Nether Taste“ im Nether herum.</p>`,
+          needs: [["Straw Hat", "m"]],
+        },
+        {
+          t: "Grill und Skewer",
+          addon: "Kaleidoscope Grilling",
+          items: [
+            ["kaleidoscope_grilling:block/grill", "Grill", "5 Iron Ingot + 2 Brick + Kohle"],
+            ["kaleidoscope_grilling:item/raw_beef_skewer", "Raw Beef Skewer", "Beef Chunks + Red Chili + Beef Chunks"],
+            ["kaleidoscope_grilling:item/skewer_recipe_book", "Skewer Recipe Book", "Recipe + roher Spieß"],
+            ["kaleidoscope_grilling:item/advanced_rack", "Advanced Kitchen Rack", "Kitchenware Racks + 3 Iron Ingot + 3 Holzstufen"],
+          ],
+          text: `<p>„An unlimited-charcoal grill. Use a flint and steel to light it.“ Spieße baut man ohne Werkbank: Stick in die Zweithand, Zutaten der Reihe nach anklicken. 20 feste Spieße stehen in <code>grilling/skewers.json</code>, jeder mit Effekt beim Essen, etwa Beef (Strength 10 s), Pork Belly (Vigor 30 s), Squid Tentacle (Water Breathing 30 s), Mushroom (Night Vision 30 s), Golden (Golden Apple, Totem of Undying, Golden Carrot: Invincible 10 s). Eigene Mischungen ergeben einen Secret Mix Skewer; doppelte Zutaten senken den Nährwert. Auf dem Grill muss man die Spieße wenden.</p>
+<p>Das Rezeptbuch speichert einen Spieß und baut ihn mit Stick in der Zweithand schnell nach. Heiß gegessen („Eat It Hot!“) halten Öl-bestrichene Spieße die „smoky warmth“.</p>`,
+          needs: [["Iron Ingot", "v", "5"], ["Brick", "v", "2"], ["Stick", "v"]],
+        },
+        {
+          t: "Ölpresse und Öle",
+          addon: "Kaleidoscope Grilling",
+          items: [
+            ["kaleidoscope_grilling:item/canola_powder", "Canola Powder", "Mühlstein: Canola Seeds"],
+            ["kaleidoscope_grilling:item/oil_cake", "Oil Cake", "8 Canola Powder + 1 Wheat"],
+            ["kaleidoscope_grilling:block/oil_press", "Wooden Oil Press", "4 Logs + Iron Ingot + 2 Fences + Hopper"],
+            ["kaleidoscope_grilling:block/big_vat", "Big Vat", "7 Brick + 1 Bucket"],
+            ["kaleidoscope_grilling:item/canola_oil_bucket", "Canola Oil Bucket", "aus der Presse"],
+            ["kaleidoscope_grilling:item/secret_chili_oil_bucket", "Chili Oil Bucket", "Canola Oil Bucket + 3 Red Chili Powder"],
+            ["kaleidoscope_grilling:item/premium_chili_oil_bucket", "Magma Chili Oil Bucket", "Chili Oil + Lava + Redstone + Houttuynia Powder"],
+            ["kaleidoscope_grilling:item/canola_oil_brush", "Canola Oil Brush", "Spieße bestreichen"],
+          ],
+          text: `<p>Die Presse nimmt genau 4 Oil Cakes und wird mit einem Amboss (+4 Fortschritt) geschlagen, früh auch mit Stein (+1; Stone, Cobblestone, Deepslate, Blackstone). Daneben muss ein Big Vat stehen, das das Öl auffängt; als Rest fällt Oil Residue. Die drei Öle halten die Wärme unterschiedlich lange („short time“, „longer“, „very long time“).</p>`,
+          needs: [["Canola Seeds", "a"], ["Wheat", "v"], ["Anvil", "v"], ["Brick", "v", "7"]],
+        },
+        {
+          t: "Gewürzflasche",
+          addon: "Kaleidoscope Grilling",
+          items: [
+            ["kaleidoscope_grilling:item/green_chili_powder", "Green Chili Powder", "Mühlstein"],
+            [null, "Red Chili Powder", "Mühlstein"],
+            ["kaleidoscope_grilling:item/onion_powder", "Onion Powder", "Mühlstein"],
+            ["kaleidoscope_grilling:item/totem_powder", "Totem Powder", "Mühlstein: Totem of Undying"],
+            ["kaleidoscope_grilling:item/dragon_egg_powder", "Dragon Egg Powder", "nicht ausgelesen"],
+            [null, "Empty Seasoning Bottle", "6 Glass + Holzknopf"],
+          ],
+          text: `<p>„Place it down, add seasonings, then pick it up and shake“: Die Flasche fasst bis zu acht Zutaten und wird 4 Sekunden geschüttelt. Drei Pflichtgewürze bilden die Basis („Three Flavors Base“; welche, zeigt JEI unter „Mixing Seasoning“, nicht ausgelesen). Zusätze geben Buffs: Redstone Tempo, Gunpowder Stärke, Houttuynia Powder Dauer, Totem Powder Totem-Wirkung, Dragon Egg Powder Vitality, Sichuan Pepper Taubheit. Mit Totem Powder droht Heavy Metal Poisoning.</p>`,
+          needs: [["Chili", "m"], ["Onion", "a"], ["Glass", "v", "6"]],
+        },
+      ],
+    },
+    {
+      t: "End",
+      sub: "Kaleidoscope End, Advancements ab „Kaleidoscope: End“. Zutaten aus dem End und der Weg zum Dragon Tooth Knife.",
+      steps: [
+        {
+          t: "Pflanzen und Beute im End",
+          addon: "Kaleidoscope End",
+          items: [
+            ["kaleidoscope_end:item/ender_mint", "Ender Mint", "End-Biome"],
+            ["kaleidoscope_end:item/dream_berry", "Dream Berry", "äußere End-Inseln"],
+            ["kaleidoscope_end:item/end_caterpillar", "End Caterpillar", "Chorus Plant, 1 %"],
+            ["kaleidoscope_end:item/chorus_seed", "Chorus Seed", "Brett: Chorus Fruit zu 2"],
+            ["kaleidoscope_end:item/optic_nerve", "Optic Nerve", "Messer: Enderman"],
+            ["kaleidoscope_end:item/raw_endermite_meat", "Raw Endermite Meat", "Messer: Endermite"],
+            ["kaleidoscope_end:item/shulker_shell_meat", "Shulker Meat", "Messer: Shulker"],
+            ["kaleidoscope_end:item/raw_ender_dragon_meat", "Raw Ender Dragon Meat", "Messer: Ender Dragon"],
+            ["kaleidoscope_end:item/dragon_tooth", "Dragon Tooth", "Messer: Ender Dragon"],
+          ],
+          text: `<p>Ender Mint und Dream Berry wachsen in allen End-Biomen (<code>#minecraft:is_end</code>). Dream Berries geben den Effekt Dream („Walk through the air“). Wer End-Mobs mit dem Küchenmesser tötet, bekommt Fleisch und Teile für die End-Gerichte; der Drache gibt Fleisch und einen Zahn.</p>`,
+          needs: [["Kitchen Knife", "m"], ["End", "v"]],
+        },
+        {
+          t: "Abpinseln",
+          addon: "Kaleidoscope End",
+          items: [
+            ["kaleidoscope_end:block/suspicious_end_stone_0", "Suspicious End Stone", "im End-Stein, drei Größen"],
+            ["kaleidoscope_end:block/suspicious_purpur_block_0", "Suspicious Purpur Block", "Beute nicht ausgelesen"],
+            [null, "Suspicious Dragon Egg", "Dragon Egg abpinseln"],
+            ["kaleidoscope_end:item/void_conch", "Void Conch", "aus Suspicious End Stone"],
+            ["kaleidoscope_end:item/dragon_dust", "Dragon Dust", "aus dem Drachenei"],
+            ["kaleidoscope_end:item/dragon_egg_liquid", "Dragon Egg Liquid", "aus dem Drachenei"],
+          ],
+          text: `<p>Mit dem Pinsel (Brush) gibt Suspicious End Stone Diamond, Void Conch, Enchanted Book oder Gold Ingot (Archäologie-Tabelle), das Drachenei Dragon Egg Liquid und Dragon Dust. Die Void Conch führt zu Void Conch Noodle Soup und dem Effekt Void Erosion („Boundary of Death“).</p>`,
+          needs: [["Brush", "v"], ["Dragon Egg", "v"]],
+        },
+        {
+          t: "Dragon Egg Shell und Dragon Tooth Knife",
+          addon: "Kaleidoscope End",
+          items: [
+            ["kaleidoscope_end:item/dragon_egg_shell", "Dragon Egg Shell", "3 Obsidian + Dragon Dust"],
+            ["kaleidoscope_end:item/ender_dragon_smithing_template", "Smithing Template", "7 Obsidian + Netherite Upgrade + Dragon Dust"],
+            ["kaleidoscope_end:item/dragon_tooth_knife", "Dragon Tooth Knife", "Netherite Kitchen Knife + Dragon Dust"],
+            ["kaleidoscope_end:block/end_stove_front_lit", "End Stove", "8 End Stone Bricks + Campfire"],
+          ],
+          text: `<p>Die Eierschale ist Gefäß für die großen Drachengerichte (Dragon Egg Stew, Dragon Egg Custard; Ziel „Feast on Dragons“). Das Messer aus Drachenzahn „displays overwhelming sharpness against End creatures“. Drei Verzauberungen kommen dazu: Void Assault (Zufallsschaden mal Faktor), Void Echo (Flächenschaden), Void Walker (Gehen im Void).</p>`,
+          table: {
+            head: ["Gericht", "Gerät, Hauptzutaten"],
+            rows: [
+              ["kaleidoscope_end:item/dark_dragon_steak", "Dark Dragon Steak", "Wok, 6 Rührschläge: Drachenfleisch, 2 Optic Nerve, 3 Ender Mint"],
+              ["kaleidoscope_end:item/dark_dragon_egg_stew", "Dragon Egg Stew", "Stockpot, in Dragon Egg Shell"],
+              ["kaleidoscope_end:item/stuffed_shulker", "Stuffed Shulker", "Wok, in Shulker Shell"],
+              ["kaleidoscope_end:item/void_conch_noodle_soup", "Void Conch Noodle Soup", "Stockpot: Void Conch, Eier, Nudeln"],
+              ["kaleidoscope_end:item/ender_mint_tea", "Ender Mint Tea", "Teapot; auch Void Tea, Chorus Flower Tea, Ender Dragon Tea"],
+            ],
+          },
+          needs: [["Obsidian", "v"], ["Dragon Dust", "a"], ["Netherite Kitchen Knife", "m"]],
+        },
+      ],
+    },
+  ],
+  solo: [
+    {
+      t: "Küchenmöbel",
+      items: [
+        [null, "Oak Chair", "Stühle, Tische, Cook's Stools je Holzart"],
+        [null, "Long Bench", "3 Oak Planks + 2 Oak Fence + Stick"],
+        [null, "Eight Immortals Table", "4 Oak Fence + 5 Oak Planks"],
+        ["kaleidoscope_cookery:item/fruit_basket", "Fruit Basket", "8 Stapel wie eine Shulker Box"],
+        ["kaleidoscope_cookery:item/kitchenware_racks", "Kitchenware Racks", "hängt Küchengeräte auf"],
+        ["kaleidoscope_cookery:block/trash_can", "Trash Can", "8 Iron Ingot + Composter; sitzbar"],
+        [null, "Red Lantern", "4 Paper + Chain + 3 Red Dye + Candle"],
+        ["kaleidoscope_cookery:item/tea_banner", "Tea Banner", "6 Red Wool + Stick"],
+        [null, "Chili Ristra", "6 Red Chili"],
+        [null, "Strung Mushrooms", "6 Brown Mushroom"],
+      ],
+    },
+    {
+      t: "Tavernen-Einrichtung", addon: "Kaleidoscope Tavern",
+      items: [
+        [null, "White Sofa", "Sofas und Bar Stools in 16 Farben"],
+        ["kaleidoscope_tavern:block/deco/bar_counter", "Bar Counter", "3 Gold Nugget + 6 Planks"],
+        [null, "Bar Cabinet", "8 Grapevine; auch Glass Bar und Cellar Cabinet"],
+        ["kaleidoscope_tavern:block/deco/tilted_rack", "Tilted Rack", "Flaschenregal; auch Circular Rack, Bottle Holder"],
+        ["kaleidoscope_tavern:item/chalkboard", "Chalkboard", "8 Ink Sac + Schild"],
+        [null, "Sandwich Board", "Aufsteller mit Blume"],
+        [null, "String Lights (Colorless)", "Lichterketten in Farben"],
+        [null, "Painting", "Gemälde"],
+        ["kaleidoscope_tavern:item/sakura_incense", "Sakura Incense", "acht Räucherstäbchen"],
+        ["kaleidoscope_tavern:item/bell_pendant_lamp", "Bell Pendant Lamp", "Hängelampen"],
+        ["kaleidoscope_tavern:item/stepladder", "Stepladder", "6 Ladder"],
+      ],
+    },
+    {
+      t: "Ess-Animationen", addon: "Kaleidoscope: ImmersiveEating",
+      text: `<p>ImmersiveEating (Mod-ID <code>food</code>) bringt nur Animationen und Modelle für das Essen (Ordner <code>geo</code>, <code>animations</code>), keine Items und keine Daten.</p>`,
+    },
+  ],
+  bridges: [
+    {
+      t: "Farmer's Delight", x: true,
+      text: `<p>Kaleidoscope Cookery trägt seinen Stove in den Tag <code>farmersdelight:heat_sources</code> ein und nimmt umgekehrt alles aus diesem Tag als Hitzequelle; Reis lässt sich auch auf Rich Soil Farmland von Farmer's Delight pflanzen. Beide Mods haben eigene Tomaten, Reis, Spiegelei, Teig, Nudeln, Messer, Herd und Schneidebrett; die Rezepte nehmen die Zutaten über Forge-Tags (<code>#forge:crops/tomato</code>, <code>#forge:raw_pork</code>, <code>#forge:dough</code> …) an. Im Pack sind die Dopplungen per KubeJS zusammengeführt (siehe <code>docs/12_CHANGELOG.md</code>, 2026-10-20).</p>`,
+    },
+    {
+      t: "Create (nicht installiert)", addon: "Kaleidoscope Grilling", x: true,
+      text: `<p>Grilling bringt Rezepte für Millstone, Crushing Wheels, Mixer und Spout von Create mit (Pulver, Öle, Abfüllen); Create fehlt im Pack, sie gelten nicht. Ebenso ohne Wirkung sind die Tags für Diet, Serene Seasons, Ecliptic Seasons und FTB Ultimine. Tavern trägt Getränke in Curios-Tags ein (Curios ist installiert).</p>`,
+    },
+    {
+      t: "Erze ohne Maschine", x: true,
+      text: `<p>Der Mühlstein vervielfacht Erzblöcke ohne Strom und ohne Erzmod: Iron und Gold Ore zu 3 Raw, Copper Ore zu 5 Raw Copper, Diamond zu 2. Er steht damit neben den Erzketten von IE und Mekanism (siehe <code>CROSSMOD_AUFFAELLIGKEITEN.md</code> Ü2). Mod-Erze (Osmium, Silber, Nickel …) hat er nicht.</p>`,
+    },
+  ],
+  foot: "Quellen: kaleidoscopecookery-1.6.0, kaleidoscopetavern-1.2.0, kaleidoscope_grilling-1.1.1, kaleidoscope_end-1.0.14, kaleidoscope_immersiveEating-1.5.1 (Rezepte, Advancements, Loot-Modifier, Loot-Tabellen, Biome-Modifier, Tags, grilling/skewers.json, Sprachdateien mit Ponder-Texten und Tooltips). Grilling bringt seine Daten doppelt mit (Ordner im 1.20.1- und im 1.21-Format); gelesen sind die 1.20.1-Ordner. Die Ponder-Szenen erscheinen im Spiel nicht, weil der Mod Ponder fehlt. Nicht ausgelesen: Effekte und Dauer je Gericht und Getränk (außer Spießen), Sättigung, Wachstumszeiten, Handel des Chef, die drei Pflichtgewürze der Gewürzflasche, Herkunft des Dragon Egg Powder, Beute des Suspicious Purpur Block, wo die Wildreben genau entstehen (im Code).",
+};
+
+const $ = (tag, cls, html) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; };
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const initials = n => n.replace(/[^A-Za-zÄÖÜäöü0-9 ]/g, '').split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0].toUpperCase()).join('');
+
+function slot(icon, name) {
+  const s = $('div', 'slot');
+  if (icon && ICONS[icon]) { const i = $("img"); i.src = ICONS[icon]; i.alt = ""; if (icon.startsWith("render:")) i.className = "r"; s.append(i); }
+  else s.append($('span', '', esc(initials(name || '?'))));
+  return s;
+}
+function itemTile([icon, name, note]) {
+  const d = $('div', 'it');
+  d.append(slot(icon, name));
+  d.append($('div', '', `<div class="nm">${name}</div>${note ? `<div class="nt">${note}</div>` : ''}`));
+  return d;
+}
+function needsRow(needs) {
+  const d = $('div', 'needs', '<span class="lbl">Braucht</span>');
+  for (const [name, origin, from] of needs) d.append($('span', 'need ' + (origin || 'v'), name + (from ? `<small>${from}</small>` : '')));
+  return d;
+}
+function planBox(p) {
+  const box = $('div', 'plan');
+  box.append($('div', 'plan-title', `<b>${p.name}</b>Bauplan ${p.size ? p.size + " (B×H×T)" : ""}`));
+  const counts = {};
+  if (p.layers) {
+    const row = $('div', 'layers');
+    p.layers.forEach((layer, y) => {
+      const rows = layer.split(' ');
+      const l = $('div', 'layer');
+      const g = $('div', 'grid');
+      g.style.gridTemplateColumns = `repeat(${rows[0].length}, 22px)`;
+      for (const r of rows) for (const ch of r) {
+        if (ch === '.') { g.append($('div', 'cell air')); continue; }
+        counts[ch] = (counts[ch] || 0) + 1;
+        g.append(planCell(p.key[ch], ch));
+      }
+      l.append(g);
+      l.append($('div', 'cap', p.caps ? p.caps[y] : `Ebene ${y + 1}${y === 0 ? " (unten)" : ""}`));
+      row.append(l);
+    });
+    box.append(row);
+  }
+  const parts = $('div', 'parts');
+  for (const ch of Object.keys(p.key)) {
+    const n = p.count ? p.count[ch] : counts[ch];
+    if (!n) continue;
+    const s = $('span', 'part');
+    s.append(planCell(p.key[ch], ch));
+    s.append($('span', '', `<b>${n}×</b> ${p.key[ch][0]}`));
+    parts.append(s);
+  }
+  box.append(parts);
+  if (p.form) box.append($('p', 'form', p.form));
+  return box;
+}
+function planCell([name, icon], ch) {
+  const c = $('div', 'cell');
+  c.title = name;
+  if (icon && ICONS[icon]) { const i = $("img"); i.src = ICONS[icon]; i.alt = name; if (icon.startsWith("render:")) i.className = "r"; c.append(i); }
+  else c.textContent = ch;
+  return c;
+}
+function tableBox(t) {
+  const sc = $('div', 'scroller');
+  const tb = $('table');
+  tb.append($('thead', '', '<tr><th></th>' + t.head.map(h => `<th>${h}</th>`).join('') + '</tr>'));
+  const body = $('tbody');
+  for (const [icon, ...cells] of t.rows) {
+    const tr = $('tr');
+    const td = $('td', 'ic'); td.append(slot(icon, cells[0])); tr.append(td);
+    cells.forEach((c, i) => tr.append($('td', '', i === 0 ? `<b>${c}</b>` : c)));
+    body.append(tr);
+  }
+  tb.append(body); sc.append(tb);
+  return sc;
+}
+function picRow(pics) {
+  const d = $('div', 'pics');
+  for (const [icon, cap] of pics) {
+    if (!ICONS[icon]) continue;
+    const f = $('figure'); const i = $('img'); i.src = ICONS[icon]; i.alt = cap || '';
+    if (icon.includes("gui/entries")) i.className = "px"; if (icon.startsWith("render:")) i.className = "r";
+    f.append(i); if (cap) f.append($('figcaption', '', cap));
+    d.append(f);
+  }
+  return d;
+}
+
+document.documentElement.style.setProperty('--accent', matchMedia('(prefers-color-scheme: light)').matches && document.documentElement.dataset.theme !== 'dark' || document.documentElement.dataset.theme === 'light' ? PAGE.accent[1] : PAGE.accent[0]);
+document.getElementById('h1').innerHTML = `${PAGE.title} <span>Modpfad</span>`;
+document.getElementById('lede').innerHTML = PAGE.lede;
+for (const [n, v, kind] of PAGE.mods) document.getElementById('mods').append($('span', 'mod ' + kind, `<b>${n}</b> ${v}`));
+
+const main = document.getElementById('main'), toc = document.getElementById('toc');
+let stepNo = 0;
+PAGE.phases.forEach((ph, pi) => {
+  const sec = $('section', 'phase'); sec.id = 'phase-' + (pi + 1);
+  sec.append($('div', 'phase-head', `<div class="eyebrow">Phase ${pi + 1}</div><h2>${ph.t}</h2>${ph.sub ? `<p>${ph.sub}</p>` : ''}`));
+  { const a = $("a", "", `<span class="n">${pi + 1}</span>${ph.t}`); a.href = "#" + sec.id; toc.append(a); }
+  for (const st of ph.steps) {
+    stepNo++;
+    const step = $('div', 'step');
+    step.append($('div', 'num', String(stepNo)));
+    const body = $('div', 'step-body');
+    body.append($('h3', '', st.t + (st.addon ? ` <span class="tag">${st.addon}</span>` : '')));
+    if (st.pics) body.append(picRow(st.pics));
+    if (st.plan) for (const p of [].concat(st.plan)) body.append(planBox(p));
+    if (st.items) { const g = $('div', 'slots'); st.items.forEach(it => g.append(itemTile(it))); body.append(g); }
+    if (st.text) body.append($('div', 'prose', st.text));
+    if (st.table) for (const t of [].concat(st.table)) body.append(tableBox(t));
+    if (st.needs) body.append(needsRow(st.needs));
+    step.append(body); sec.append(step);
+  }
+  main.append(sec);
+});
+
+function extraSection(id, eyebrow, title, sub, groups) {
+  if (!groups || !groups.length) return;
+  const sec = $('section', 'phase'); sec.id = id;
+  sec.append($('div', 'phase-head', `<div class="eyebrow">${eyebrow}</div><h2>${title}</h2><p>${sub}</p>`));
+  for (const g of groups) {
+    const d = $('div', 'solo-group');
+    d.append($('h3', '', g.t + (g.addon ? ` <span class="tag${g.x ? ' x' : ''}">${g.addon}</span>` : '')));
+    if (g.text) d.append($('div', 'prose', g.text));
+    if (g.items) { const grid = $('div', 'slots'); g.items.forEach(it => grid.append(itemTile(it))); d.append(grid); }
+    if (g.table) d.append(tableBox(g.table));
+    sec.append(d);
+  }
+  main.append(sec);
+  toc.append($('div', 'sep'));
+  { const a = $("a", "", title); a.href = "#" + id; toc.append(a); }
+}
+extraSection('solo', 'Abseits des Pfads', 'Für sich stehend', 'Maschinen, Werkzeuge und Items, die man nutzen kann, die aber kein Schritt auf dem Hauptweg des Mods sind.', PAGE.solo);
+extraSection('bruecken', 'Crossmod', 'Brücken zu anderen Mods', 'Was der Mod und seine Addons von sich aus mit anderen Mods des Packs verbinden – Ausgangslage vor unseren eigenen KubeJS-Änderungen.', PAGE.bridges);
+
+if (PAGE.foot) main.append($('footer', '', PAGE.foot));
+</script>

@@ -91,6 +91,12 @@ const MODS = [
     phases: 5, steps: 14, icon: "farmersdelight:item/cooking_pot",
     accent: ["#c6b24a", "#7a6a14"], url: "https://claude.ai/artifact/Rj7tWAhmGLAmje66fHT9sX",
   },
+  {
+    name: "Kaleidoscope", version: "1.6.0", addons: "Tavern, Grilling, End, ImmersiveEating",
+    text: "Strohhut und Küchenmesser, Herd mit Wok, Suppentopf, Dampfgarer und Teekanne, ein Mühlstein mit Zugtier (vervielfacht auch Erze); Tavern mit Reben, Kelter, Fass und Shaker, Grilling mit Grill, Spießen und Ölpresse, End bis zum Dragon Tooth Knife. Kein Buch; Reihenfolge aus den Advancement-Bäumen.",
+    phases: 7, steps: 25, icon: "kaleidoscope_cookery:item/pot_has_oil",
+    accent: ["#e0855a", "#a24a22"], url: "https://claude.ai/artifact/ARtUyrGSeAuncutGR6r6oV",
+  },
 ];
 // Mods ohne Seite, in der Reihenfolge der Mod-Liste
 const PLANNED = [];
