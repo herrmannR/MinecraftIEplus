@@ -82,7 +82,7 @@ In der Hauptwelt sind K1 und K2 schon erreicht (IE-Stahl, Runenaltar). Der Absch
 
 | Code | Schritt | Aufgabe | Auslöser | Folge | Text |
 |---|---|---|---|---|---|
-| ST5-01 | Treibstoff für den Mars | – | Dialog DD3R8 (B1): 1 Eimer entschwefelter Diesel (`immersivepetroleum:diesel_bucket`, 🔵 ID prüfen) und 1 `mekanism:advanced_control_circuit` – beides braucht die Rakete T2 (O53) | Stage `kapitel_k6`, `#dd3r8 = 5` | D-DD3R8-4 |
+| ST5-01 | Treibstoff für den Mars | – | Dialog DD3R8 (B1): 1 Eimer entschwefelter Diesel (`immersivepetroleum:diesel_bucket`, im JAR geprüft) und 1 `mekanism:advanced_control_circuit` – beides braucht die Rakete T2 (O53) | Stage `kapitel_k6`, `#dd3r8 = 5` | D-DD3R8-4 |
 
 Nebenquest in K5/K6: Bodhis Boss-Reihe (BS3, BS4). Belohnung der letzten Boss-Quest (BS4) setzt `#bodhi = 4` (B3); damit bietet Bodhi das Siegel an.
 
