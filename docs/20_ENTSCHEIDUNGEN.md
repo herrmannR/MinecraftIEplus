@@ -72,7 +72,8 @@ Welche Jedi- und Sith-Artefakte, und wie hängen sie an den Machtpunkten?
 |---|---|
 | O6 | Tagebuch-Ausschnitte vom Droiden: Vorschlag liegt vor (fünf Teile „Logbuch des Meisters“, `18_STORY.md` Abschnitt 5), wartet auf den User |
 | O8 | Rest: Brauchen Mekanism und AE2 in Teil 1 Story, oder reichen Questtexte? (Mars, Venus, Everbright und Everdawn beantwortet 2026-10-21) |
-| O25 | Einsiedler: Name offen; Höhle und Reparatur des Klonhelms als Vorschlag in `18_STORY.md` Abschnitt 5, wartet auf den User (Klon-Veteran und Helm-Quest entschieden 2026-10-21) |
+| O25 | Einsiedler: Höhle und Reparatur des Klonhelms als Vorschlag in `18_STORY.md` Abschnitt 5, wartet auf den User (Klon-Veteran und Helm-Quest entschieden 2026-10-21; Name: Odd Ball, 2026-10-21) |
+| O44 | Wer ist der Meister? Vorschlag Quinlan Vos (Alternative Taron Malicos) in `18_STORY.md` Abschnitt 5, wartet auf den User |
 | O34 | Blue-Skies-Haus: Vorschlag liegt vor (`18_STORY.md` Abschnitt 5: Figur = Herrscher im Exil, Start K3, Handel wie der Gatekeeper), wartet auf den User. Entschieden: Start der Blue-Skies-Welten |
 | O43 | Relikt und Strahlenschutz: Das Relikt steckt im Strahlenschutz (F14), soll aber zum Meister (O4). Vorschlag in `18_STORY.md` Abschnitt 5 |
 ### Story, Part 2 und 3 (später)

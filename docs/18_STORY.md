@@ -56,7 +56,7 @@
 | Figur | Was feststeht |
 |---|---|
 | Droide **DD3R8** | Easy NPC aus der Star-Wars-Welt. Guide der Spieler. Charakter: lustig, aber mechanisch ernst. Verrät seine Herkunft nicht. Orte (User, 2026-10-21, O7/O15): zuerst in der Basis auf der Overworld, dann in der Mars-Station; verschwindet, sobald die Spieler das Relikt haben; taucht am Ende von Teil 1 beim Meister auf Glacio wieder auf (der Meister hat ihn mit der Macht zu sich geholt, das erfahren die Spieler dort). |
-| Einsiedler | Easy NPC auf dem Mond, ein **Klon-Veteran** (User, 2026-10-21, O25). Name offen. |
+| Einsiedler | Easy NPC auf dem Mond, ein **Klon-Veteran** (User, 2026-10-21, O25): **Odd Ball** (CC-2237, Davijaan), Klon-Pilot und Flügelmann von Obi-Wan Kenobi (User, 2026-10-21). Hintergrund in Abschnitt 5 („Einsiedler: Odd Ball“). |
 | Meister | Jedi. Suchte im Sith-Tempel ein altes Relikt, wurde in die Dungeon-Dimension gezogen, ist selbst entkommen und hält sich auf Glacio auf. Bildet die Spieler später zu Jedi aus. |
 | Weitere Easy NPCs | Auftraggeber für Kopfgeldjäger-Quests in den Star-Wars-Welten. |
 
@@ -309,6 +309,28 @@ Vorgabe des Users: Der Strang ist der Start der Blue-Skies-Welten.
 ### Relikt und Strahlenschutz (Widerspruch aus O4, Vorschlag 2026-10-21)
 
 Laut F14 geht das Relikt im Galaktischen Strahlenschutz auf. Nach O4 sollen die Spieler es aber zum Meister bringen. Vorschlag, ohne die Skripte zu ändern: Der Strahlenschutz ist das Gehäuse, das der Elf **um** das Relikt baut. Es schirmt die Rakete gegen das Relikt ab und kommt zugleich durch die Barriere des Meisters, weil die das Relikt erkennt. Das Relikt fliegt also im Triebwerk mit nach Glacio, dort nimmt der Meister es heraus. Der Tooltip des Strahlenschutzes kann das andeuten.
+
+### Einsiedler: Odd Ball (Name vom User gewählt 2026-10-21, Hintergrund als Vorschlag)
+
+- **Kanon:** Odd Ball (CC-2237, Davijaan) flog als Klon-Pilot an der Seite von Obi-Wan Kenobi (Teth, Umbara, Coruscant). Bei Order 66 kämpfte er in der Raumschlacht über Utapau. Was danach aus ihm wurde, erzählt der Kanon nicht; die Lücke ist frei für die Story (Stand der Suche 2026-10-21, nicht in Wookieepedia selbst geprüft).
+- **Warum er schweigt:** Er hat den Befehl gegen seinen eigenen General miterlebt und ist danach mit seinem Jäger geflohen. Ob er gefeuert oder sich geweigert hat, bleibt sein Geheimnis.
+- **Weg zum Mond:** Er ist geflogen, bis er in dieser Galaxis gestrandet ist. Sein alter Jäger kann Teil der Mondbasis sein.
+- **Alt:** Klone altern doppelt so schnell; ein Veteran jener Zeit ist heute ein alter Mann.
+- **Misstrauen gegen den Droiden:** Jahre lang hat er Droidenjäger abgeschossen; ein Droide aus seiner alten Galaxis macht ihn nervös.
+- **Humor und Zuschauen:** passt zum Rufnamen („schräger Vogel“); ein Pilot schaut gern von oben zu.
+- **Helm und Abschirmung:** Der kaputte Klonhelm ist sein Pilotenhelm mit Funk (passt zur Elektronenröhre im Reparaturrezept). Die Abschirmung des Mondes ist die Tarnung, die er seit seiner Flucht laufen lässt.
+
+### Der Meister: Quinlan Vos (O44, Vorschlag 2026-10-21)
+
+Wunsch des Users: ein eher unbekannter Jedi mit Hang zur dunklen Seite.
+
+- **Kanon:** Quinlan Vos, Kiffar, Jedi-Meister und Freund von Obi-Wan. In „Dark Disciple“ wurde er als Doppelagent Dookus Schüler, fiel zur dunklen Seite und kehrte zurück; er liebte Asajj Ventress. Er hat Order 66 überlebt (in der Serie „Obi-Wan Kenobi“ steht „Quinlan was here“ an einem Versteck des „Pfads“, der Machtsensitive in Sicherheit bringt). Sein weiteres Schicksal ist offen (Stand der Suche 2026-10-21, Fan- und Presseseiten).
+- **Hang zur dunklen Seite:** Er war schon einmal gefallen. Dass er im Sith-Tempel nach einem Relikt sucht und in die Blood-Magic-Dimension (die dunkle Seite) gerät, passt dazu; die Spieler wissen nie ganz, wie fest er auf der hellen Seite steht.
+- **Psychometrie:** Vos liest Erinnerungen aus Dingen, die er berührt. Das erklärt, warum ihn ein Relikt anzieht, und gibt dem Tagebuch und dem Relikt Gewicht: Er hat darin gelesen, was er nicht hätte lesen sollen.
+- **Lehrer für Machtsensitive:** Nach Order 66 hat er Machtsensitiven zur Flucht geholfen. Dass er die Spieler als machtsensitiv erkennt und ausbildet (Teil 2), passt genau.
+- **Verbindung zum Einsiedler:** Odd Ball flog für Obi-Wan und dürfte Vos kennen, auch als den Jedi, der einmal Dookus Schüler war. Das wäre ein Grund, sich vor ihm abzuschirmen und dem Droiden (seinem Droiden) zu misstrauen. Ein Wiedersehen in Teil 2 ist möglich.
+- **Haken:** Vos ist bei Star-Wars-Fans bekannter als Odd Ball, in den Filmen aber nicht zu sehen.
+- **Andere Möglichkeit:** Taron Malicos (Spiel „Jedi: Fallen Order“): Jedi-Meister, nach Order 66 auf Dathomir gestrandet und durch die Magie der Nachtschwestern gefallen, also noch dunkler. Er ist im Spiel ein Gegner und wird dort besiegt, wahrscheinlich tot; als Lehrer passt er schlechter.
 
 ### Übrige
 
