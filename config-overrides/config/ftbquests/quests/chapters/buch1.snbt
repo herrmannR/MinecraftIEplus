@@ -1,10 +1,10 @@
 {
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
-	filename: "hauptquests"
+	filename: "buch1"
 	group: ""
-	icon: "minecraft:nether_star"
-	id: "252255E8D31149B5"
+	icon: "minecraft:written_book"
+	id: "490725A185B16B9E"
 	order_index: 0
 	quest_links: [ ]
 	quests: [
@@ -18,7 +18,6 @@
 			id: "49DA11DCC4D42945"
 			shape: "hexagon"
 			size: 1.25d
-			subtitle: "Part 1 · Finden des Meisters"
 			tasks: [{
 				id: "5A51334162609B60"
 				title: "Kapitel abgeschlossen"
@@ -30,9 +29,9 @@
 				stage: "kapitel_k1"
 				type: "gamestage"
 			}]
-			title: "K1 Ankunft"
+			title: "Kapitel 1: Ankunft"
 			x: 0.0d
-			y: 0.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["49DA11DCC4D42945"]
@@ -45,7 +44,6 @@
 			id: "7D17A2E727E32894"
 			shape: "hexagon"
 			size: 1.25d
-			subtitle: "Part 1 · Finden des Meisters"
 			tasks: [{
 				id: "2A1E37DCB99AF848"
 				title: "Kapitel abgeschlossen"
@@ -57,9 +55,9 @@
 				stage: "kapitel_k2"
 				type: "gamestage"
 			}]
-			title: "K2 Würdig sein"
+			title: "Kapitel 2: Würdig sein"
 			x: 1.75d
-			y: 0.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["7D17A2E727E32894"]
@@ -72,7 +70,6 @@
 			id: "0B2B8888238E82AD"
 			shape: "hexagon"
 			size: 1.25d
-			subtitle: "Part 1 · Finden des Meisters"
 			tasks: [{
 				id: "128BEAFFC97B99CF"
 				title: "Kapitel abgeschlossen"
@@ -84,9 +81,9 @@
 				stage: "kapitel_k3"
 				type: "gamestage"
 			}]
-			title: "K3 Industrie"
+			title: "Kapitel 3: Industrie"
 			x: 3.5d
-			y: 0.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["0B2B8888238E82AD"]
@@ -99,7 +96,6 @@
 			id: "4FBA50D1BBCB97FA"
 			shape: "hexagon"
 			size: 1.25d
-			subtitle: "Part 1 · Finden des Meisters"
 			tasks: [{
 				id: "04CE469D2ED20FEC"
 				title: "Kapitel abgeschlossen"
@@ -111,9 +107,9 @@
 				stage: "kapitel_k4"
 				type: "gamestage"
 			}]
-			title: "K4 Der Mond"
+			title: "Kapitel 4: Der Mond"
 			x: 5.25d
-			y: 0.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["4FBA50D1BBCB97FA"]
@@ -126,7 +122,6 @@
 			id: "6AF68093B3F6D97F"
 			shape: "hexagon"
 			size: 1.25d
-			subtitle: "Part 1 · Finden des Meisters"
 			tasks: [{
 				id: "3BB6CF2E3B516C7D"
 				title: "Kapitel abgeschlossen"
@@ -138,9 +133,9 @@
 				stage: "kapitel_k5"
 				type: "gamestage"
 			}]
-			title: "K5 Erzketten"
+			title: "Kapitel 5: Erzketten"
 			x: 7.0d
-			y: 0.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["6AF68093B3F6D97F"]
@@ -153,7 +148,6 @@
 			id: "1102A1D22CF06A0C"
 			shape: "hexagon"
 			size: 1.25d
-			subtitle: "Part 1 · Finden des Meisters"
 			tasks: [{
 				id: "36708D29263D9008"
 				title: "Kapitel abgeschlossen"
@@ -165,9 +159,9 @@
 				stage: "kapitel_k6"
 				type: "gamestage"
 			}]
-			title: "K6 Der Mars"
+			title: "Kapitel 6: Der Mars"
 			x: 8.75d
-			y: 0.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["1102A1D22CF06A0C"]
@@ -180,7 +174,6 @@
 			id: "4432DA367BD815DD"
 			shape: "hexagon"
 			size: 1.25d
-			subtitle: "Part 1 · Finden des Meisters"
 			tasks: [{
 				id: "24524B70D9AEC222"
 				title: "Kapitel abgeschlossen"
@@ -192,9 +185,9 @@
 				stage: "kapitel_k7"
 				type: "gamestage"
 			}]
-			title: "K7 Horchposten"
+			title: "Kapitel 7: Horchposten"
 			x: 10.5d
-			y: 0.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["4432DA367BD815DD"]
@@ -207,7 +200,6 @@
 			id: "436D5852356AD565"
 			shape: "hexagon"
 			size: 1.25d
-			subtitle: "Part 1 · Finden des Meisters"
 			tasks: [{
 				id: "635935D7F5FCE8C3"
 				title: "Kapitel abgeschlossen"
@@ -219,9 +211,9 @@
 				stage: "kapitel_k8"
 				type: "gamestage"
 			}]
-			title: "K8 Hitze"
+			title: "Kapitel 8: Hitze"
 			x: 12.25d
-			y: 0.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["436D5852356AD565"]
@@ -234,7 +226,6 @@
 			id: "7264B19A966F455A"
 			shape: "hexagon"
 			size: 1.25d
-			subtitle: "Part 1 · Finden des Meisters"
 			tasks: [{
 				id: "15D64D09CEFDA071"
 				title: "Kapitel abgeschlossen"
@@ -246,9 +237,9 @@
 				stage: "kapitel_k9"
 				type: "gamestage"
 			}]
-			title: "K9 Der Tempel"
+			title: "Kapitel 9: Der Tempel"
 			x: 14.0d
-			y: 0.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["7264B19A966F455A"]
@@ -261,7 +252,6 @@
 			id: "2596BAFEBEF00419"
 			shape: "hexagon"
 			size: 1.25d
-			subtitle: "Part 1 · Finden des Meisters"
 			tasks: [{
 				id: "3DC22494E3DEC37A"
 				title: "Kapitel abgeschlossen"
@@ -273,9 +263,9 @@
 				stage: "kapitel_k10"
 				type: "gamestage"
 			}]
-			title: "K10 Der Elf"
+			title: "Kapitel 10: Der Elf"
 			x: 15.75d
-			y: 0.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["2596BAFEBEF00419"]
@@ -288,7 +278,6 @@
 			id: "7AC6FA1861C2D3B0"
 			shape: "hexagon"
 			size: 1.25d
-			subtitle: "Part 1 · Finden des Meisters"
 			tasks: [{
 				id: "7B01F1665B500306"
 				title: "Kapitel abgeschlossen"
@@ -300,145 +289,10 @@
 				stage: "kapitel_k11"
 				type: "gamestage"
 			}]
-			title: "K11 Glacio"
+			title: "Kapitel 11: Glacio"
 			x: 17.5d
-			y: 0.5d
-		}
-		{
-			dependencies: ["7AC6FA1861C2D3B0"]
-			description: [
-				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
-				""
-				"&eFortschritt:&r Altar T5 · Alfheim betreten · Fusion"
-			]
-			icon: "minecraft:book"
-			id: "490DA592DDA71B52"
-			shape: "hexagon"
-			size: 1.25d
-			subtitle: "Part 2 · Ausbildung zum Jedi und Vorbereitung T5"
-			tasks: [{
-				id: "6B00A431C3A671F8"
-				title: "Kapitel abgeschlossen"
-				type: "checkmark"
-			}]
-			rewards: [{
-				auto: "enabled"
-				id: "1350411F975014D1"
-				stage: "kapitel_k12"
-				type: "gamestage"
-			}]
-			title: "K12 Ausbildung"
-			x: 0.0d
-			y: 3.0d
-		}
-		{
-			dependencies: ["490DA592DDA71B52"]
-			description: [
-				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
-				""
-				"&eFortschritt:&r Gaia · SPS und Antimaterie · AE2-Quantenbrücke · &eRakete T5&r"
-			]
-			icon: "minecraft:book"
-			id: "13CC768AFE8EB0F0"
-			shape: "hexagon"
-			size: 1.25d
-			subtitle: "Part 2 · Ausbildung zum Jedi und Vorbereitung T5"
-			tasks: [{
-				id: "41EBD8D0073D5854"
-				title: "Kapitel abgeschlossen"
-				type: "checkmark"
-			}]
-			rewards: [{
-				auto: "enabled"
-				id: "37E776898E437B31"
-				stage: "kapitel_k13"
-				type: "gamestage"
-			}]
-			title: "K13 Die Prüfung"
-			x: 1.75d
-			y: 3.0d
-		}
-		{
-			dependencies: ["13CC768AFE8EB0F0"]
-			description: [
-				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
-				""
-				"&eFortschritt:&r Altar T6 · &eRakete T6&r"
-			]
-			icon: "minecraft:book"
-			id: "7E3BF632DE197FB4"
-			shape: "hexagon"
-			size: 1.25d
-			subtitle: "Part 3 · Rückkehr in die weit, weit entfernte Galaxis"
-			tasks: [{
-				id: "796A3B35C3068F2B"
-				title: "Kapitel abgeschlossen"
-				type: "checkmark"
-			}]
-			rewards: [{
-				auto: "enabled"
-				id: "7B7DF7398D0D3233"
-				stage: "kapitel_k14"
-				type: "gamestage"
-			}]
-			title: "K14 Endor"
-			x: 0.0d
-			y: 5.5d
-		}
-		{
-			dependencies: ["7E3BF632DE197FB4"]
-			description: [
-				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
-				""
-				"&eFortschritt:&r Meka-Ausrüstung und QIO"
-			]
-			icon: "minecraft:book"
-			id: "3F54FB63312E353E"
-			shape: "hexagon"
-			size: 1.25d
-			subtitle: "Part 3 · Rückkehr in die weit, weit entfernte Galaxis"
-			tasks: [{
-				id: "58C4E9310ABCD7BD"
-				title: "Kapitel abgeschlossen"
-				type: "checkmark"
-			}]
-			rewards: [{
-				auto: "enabled"
-				id: "06FDC231B6CE79BA"
-				stage: "kapitel_k15"
-				type: "gamestage"
-			}]
-			title: "K15 Star-Wars-Welten"
-			x: 1.75d
-			y: 5.5d
-		}
-		{
-			dependencies: ["3F54FB63312E353E"]
-			description: [
-				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
-				""
-				"&eFortschritt:&r &eRakete T7&r"
-			]
-			icon: "minecraft:book"
-			id: "2E92F0E81C219781"
-			shape: "hexagon"
-			size: 1.25d
-			subtitle: "Part 3 · Rückkehr in die weit, weit entfernte Galaxis"
-			tasks: [{
-				id: "4194B9CF9CA49613"
-				title: "Kapitel abgeschlossen"
-				type: "checkmark"
-			}]
-			rewards: [{
-				auto: "enabled"
-				id: "73F754FE513C7CEE"
-				stage: "kapitel_k16"
-				type: "gamestage"
-			}]
-			title: "K16 Mandalore"
-			x: 3.5d
-			y: 5.5d
+			y: 0.0d
 		}
 	]
-	title: "Hauptquests"
+	title: "Buch 1: Die Suche nach dem Meister"
 }

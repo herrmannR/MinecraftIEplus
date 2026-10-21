@@ -8,7 +8,7 @@ import java.util.regex.*;
  * Baut FTB-Quests-Kapitel (SNBT, FTB Quests 2001.4.x für 1.20.1).
  *
  * Mod-Kapitel:   java tools/QuestbuchGen.java <questtexte.md> <steuer.cfg> <ausgabe.snbt>
- * Hauptquests:   java tools/QuestbuchGen.java --hauptquests docs/01_PROGRESSION.md <ausgabe.snbt>
+ * Hauptquests:   java tools/QuestbuchGen.java --hauptquests docs/01_PROGRESSION.md tools/questbuch/hauptquests.cfg <chapters-ordner>
  *
  * Mod-Kapitel aus docs/questtexte/<mod>.md:
  *   "## Abschnitt (Kn Name)"                  = eine Zeile im Kapitel; Kn schaltet sie frei (s. u.)
@@ -51,8 +51,8 @@ public class QuestbuchGen {
     static Map<String, String> cfgTasks = new HashMap<>(), cfgDeps = new HashMap<>(), cfgIcon = new HashMap<>(), kNames = new HashMap<>();
 
     public static void main(String[] a) throws Exception {
-        if (a.length == 3 && a[0].equals("--hauptquests")) { hauptquests(Paths.get(a[1]), Paths.get(a[2])); return; }
-        if (a.length < 3) { System.out.println("Aufruf: java QuestbuchGen.java <md> <cfg> <out.snbt> | --hauptquests <01_PROGRESSION.md> <out.snbt>"); return; }
+        if (a.length == 4 && a[0].equals("--hauptquests")) { hauptquests(Paths.get(a[1]), Paths.get(a[2]), Paths.get(a[3])); return; }
+        if (a.length < 3) { System.out.println("Aufruf: java QuestbuchGen.java <md> <cfg> <out.snbt> | --hauptquests <01_PROGRESSION.md> <hauptquests.cfg> <chapters-ordner>"); return; }
         readCfg(Paths.get(a[1]));
         List<Quest> qs = parse(Files.readAllLines(Paths.get(a[0]), StandardCharsets.UTF_8));
         Map<String, Quest> byCode = new LinkedHashMap<>();
@@ -128,17 +128,21 @@ public class QuestbuchGen {
                 sec = q.section;
                 if (q.kGate != null) {
                     Quest mk = new Quest(); mk.code = "M-" + q.kGate; mk.section = q.section; mk.main = true;
-                    mk.title = kNames.get(q.kGate); mk.marker = true; mk.icon = "minecraft:book";
+                    mk.title = "Kapitel " + q.kGate.substring(1) + ": " + chTitle; mk.marker = true; mk.icon = "minecraft:book";
                     mk.x = -1.75; mk.y = q.y;
                     mk.tasks.add("{\n\t\t\t\tid: \"" + hex(chapter + ":" + mk.code + ":task0") + "\"\n\t\t\t\tstage: \"" + stage(q.kGate)
                         + "\"\n\t\t\t\ttype: \"gamestage\"\n\t\t\t}");
-                    mk.desc.add("Freigeschaltet mit dem Kapitel " + mk.title + ".");
+                    mk.desc.add("Freigeschaltet mit " + kapitel(kNames.get(q.kGate)) + ".");
                     all.add(mk); q.deps.add(mk.code);
                 }
             }
             all.add(q);
         }
         qs = all;
+
+        // Anordnung horizontal: oben je Abschnitt eine Spalte, Marke darüber, Hauptweg nach unten,
+        // Nebenquests in der Spalte rechts daneben (Layout oben ist zeilenweise gerechnet, hier gedreht)
+        for (Quest q : qs) { double t = q.x; q.x = q.y; q.y = t; }
 
         write(Paths.get(a[2]), snbt(qs));
         System.out.println(qs.size() + " Quests geschrieben nach " + a[2]);
@@ -365,40 +369,55 @@ public class QuestbuchGen {
         return sb.append(chapterTail(chTitle)).toString();
     }
 
+    /** "Kapitel 3: Industrie" aus "K3 Industrie". */
+    static String kapitel(String kName) {
+        Matcher m = Pattern.compile("^K(\\d+)\\s*(.*)$").matcher(kName);
+        return m.matches() ? "Kapitel " + m.group(1) + (m.group(2).isEmpty() ? "" : ": " + m.group(2)) : kName;
+    }
+
     /**
-     * Hauptquest-Kapitel (Mock): je Zeile "| Kn Name | Progression | Story |" der Kapiteltabelle in
-     * 01_PROGRESSION.md eine Klick-Quest. Kn hängt an K(n-1); ein Part je Zeile im Kapitel.
-     * Die Story-Spalte bleibt draußen (Planungsnotizen, die Story schreibt der User).
+     * Hauptquest-Bücher (Mock): je Part der Kapiteltabelle in 01_PROGRESSION.md ein Tab (Titel aus der
+     * Steuerdatei, "buch1 = Buch 1: …"), je Zeile "| Kn Name | Progression | Story |" eine Klick-Quest
+     * "Kapitel n: Name". Kn hängt an K(n-1), auch über die Buchgrenze. Die Story-Spalte bleibt draußen
+     * (Planungsnotizen, die Story schreibt der User).
      */
-    static void hauptquests(Path src, Path out) throws Exception {
-        StringBuilder sb = new StringBuilder(chapterHead(HQ, "Hauptquests", "minecraft:nether_star", "0"));
-        String part = "", prev = null; double x = 0, y = -2; int n = 0;
+    static void hauptquests(Path src, Path cfg, Path outDir) throws Exception {
+        Map<String, String> titles = new HashMap<>();
+        for (String l : Files.readAllLines(cfg, StandardCharsets.UTF_8)) {
+            l = l.trim(); if (l.isEmpty() || l.startsWith("#")) continue;
+            int eq = l.indexOf('='); titles.put(l.substring(0, eq).trim(), l.substring(eq + 1).trim());
+        }
+        StringBuilder sb = null; String file = null, prev = null; double x = 0, y = 0; int n = 0, book = 0;
         for (String l : Files.readAllLines(src, StandardCharsets.UTF_8)) {
             if (!l.startsWith("| ")) continue;
             String[] c = cells(l);
             if (c[0].startsWith("**Part")) {
-                part = c[0].replace("**", "").replaceAll("\\s*\\(.*\\)", ""); y += 2.5; x = 0; continue;
+                if (sb != null) write(outDir.resolve(file + ".snbt"), sb.append(chapterTail(titles.get(file))).toString());
+                book++; file = "buch" + book; x = 0;
+                if (!titles.containsKey(file)) throw new RuntimeException("Titel für " + file + " fehlt in " + cfg);
+                sb = new StringBuilder(chapterHead(file, titles.get(file), "minecraft:written_book", String.valueOf(book - 1)));
+                continue;
             }
             Matcher m = Pattern.compile("^(K\\d+) (.+)$").matcher(c[0]);
-            if (!m.matches()) continue;
+            if (!m.matches() || sb == null) continue;
             String k = m.group(1);
             sb.append("\t\t{\n");
             if (prev != null) sb.append("\t\t\tdependencies: [\"").append(hex(HQ + ":" + prev)).append("\"]\n");
             sb.append("\t\t\tdescription: [\n\t\t\t\t\"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r\"\n")
               .append("\t\t\t\t\"\"\n\t\t\t\t\"&eFortschritt:&r ").append(esc(fmt(c.length > 1 ? c[1] : ""))).append("\"\n\t\t\t]\n");
             sb.append("\t\t\ticon: \"minecraft:book\"\n\t\t\tid: \"").append(hex(HQ + ":" + k)).append("\"\n");
-            sb.append("\t\t\tshape: \"hexagon\"\n\t\t\tsize: 1.25d\n\t\t\tsubtitle: \"").append(esc(part)).append("\"\n");
+            sb.append("\t\t\tshape: \"hexagon\"\n\t\t\tsize: 1.25d\n");
             sb.append("\t\t\ttasks: [{\n\t\t\t\tid: \"").append(hex(HQ + ":" + k + ":task0"))
               .append("\"\n\t\t\t\ttitle: \"Kapitel abgeschlossen\"\n\t\t\t\ttype: \"checkmark\"\n\t\t\t}]\n");
             // setzt die Stage, an der die Marken der Mod-Kapitel hängen (später setzt sie der NPC-Dialog)
             sb.append("\t\t\trewards: [{\n\t\t\t\tauto: \"enabled\"\n\t\t\t\tid: \"").append(hex(HQ + ":" + k + ":reward0"))
               .append("\"\n\t\t\t\tstage: \"").append(stage(k)).append("\"\n\t\t\t\ttype: \"gamestage\"\n\t\t\t}]\n");
-            sb.append("\t\t\ttitle: \"").append(esc(k + " " + m.group(2))).append("\"\n");
+            sb.append("\t\t\ttitle: \"").append(esc(kapitel(k + " " + m.group(2)))).append("\"\n");
             sb.append("\t\t\tx: ").append(x).append("d\n\t\t\ty: ").append(y).append("d\n\t\t}\n");
             prev = k; x += 1.75; n++;
         }
-        write(out, sb.append(chapterTail("Hauptquests")).toString());
-        System.out.println(n + " Hauptquests geschrieben nach " + out);
+        if (sb != null) write(outDir.resolve(file + ".snbt"), sb.append(chapterTail(titles.get(file))).toString());
+        System.out.println(n + " Hauptquests in " + book + " Büchern geschrieben nach " + outDir);
     }
 
     /** Stage, die ein Story-Kapitel freischaltet (Hauptquest-Belohnung, später NPC-Dialog). */

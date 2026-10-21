@@ -5,12 +5,12 @@
 	group: ""
 	icon: "mekanism:metallurgic_infuser"
 	id: "0BDC416925FD8252"
-	order_index: 1
+	order_index: 10
 	quest_links: [ ]
 	quests: [
 		{
 			description: [
-				"Freigeschaltet mit dem Kapitel K3 Industrie."
+				"Freigeschaltet mit Kapitel 3: Industrie."
 			]
 			invisible: true
 			icon: "minecraft:book"
@@ -22,9 +22,9 @@
 				stage: "kapitel_k3"
 				type: "gamestage"
 			}]
-			title: "K3 Industrie"
-			x: -1.75d
-			y: 0.5d
+			title: "Kapitel 3: Mekanism"
+			x: 0.5d
+			y: -1.75d
 		}
 		{
 			dependencies: ["12617912326846AC"]
@@ -42,8 +42,8 @@
 				type: "item"
 			}]
 			title: "Osmium"
-			x: 0.0d
-			y: 0.5d
+			x: 0.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["75C91E77E306DEEC"]
@@ -62,8 +62,8 @@
 				type: "item"
 			}]
 			title: "Metallurgic Infuser"
-			x: 1.5d
-			y: -0.25d
+			x: -0.25d
+			y: 1.5d
 		}
 		{
 			dependencies: ["75C91E77E306DEEC"]
@@ -81,8 +81,8 @@
 				type: "item"
 			}]
 			title: "Heat Generator"
-			x: 1.5d
-			y: 1.25d
+			x: 1.25d
+			y: 1.5d
 		}
 		{
 			dependencies: ["4BC3380EC1235A5D", "297CC840928521E9"]
@@ -114,8 +114,8 @@
 				type: "item"
 			}]
 			title: "Die drei Grundstoffe"
-			x: 3.0d
-			y: 0.5d
+			x: 0.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["67B226B1E72E2FD3"]
@@ -132,8 +132,8 @@
 				type: "item"
 			}]
 			title: "Steel Casing"
-			x: 4.5d
-			y: 0.5d
+			x: 0.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["01BEF4545E477DFA"]
@@ -152,8 +152,8 @@
 				type: "item"
 			}]
 			title: "Electrolytic Separator"
-			x: 6.0d
-			y: 0.5d
+			x: 0.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["3118A5050D4D56CD"]
@@ -181,12 +181,12 @@
 				type: "fluid"
 			}]
 			title: "Flüssiger Sauerstoff"
-			x: 7.5d
-			y: 0.5d
+			x: 0.5d
+			y: 7.5d
 		}
 		{
 			description: [
-				"Freigeschaltet mit dem Kapitel K4 Der Mond."
+				"Freigeschaltet mit Kapitel 4: Der Mond."
 			]
 			invisible: true
 			icon: "minecraft:book"
@@ -198,9 +198,9 @@
 				stage: "kapitel_k4"
 				type: "gamestage"
 			}]
-			title: "K4 Der Mond"
-			x: -1.75d
-			y: 4.0d
+			title: "Kapitel 4: Mekanism"
+			x: 4.0d
+			y: -1.75d
 		}
 		{
 			dependencies: ["6D928FB73894B839", "3E189EEF517F442D"]
@@ -222,8 +222,8 @@
 				type: "item"
 			}]
 			title: "Enrichment Chamber: Erz ×2"
-			x: 0.0d
-			y: 4.0d
+			x: 4.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["1594BB213B1B4F4A"]
@@ -248,8 +248,8 @@
 				type: "item"
 			}]
 			title: "Energy Cube und Universal Cable"
-			x: 0.0d
-			y: 5.5d
+			x: 5.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["1594BB213B1B4F4A"]
@@ -269,8 +269,8 @@
 				type: "item"
 			}]
 			title: "Upgrades"
-			x: 1.25d
-			y: 5.5d
+			x: 5.5d
+			y: 1.25d
 		}
 		{
 			dependencies: ["1594BB213B1B4F4A"]
@@ -294,8 +294,8 @@
 				type: "item"
 			}]
 			title: "Formulaic Assemblicator"
-			x: 2.5d
-			y: 5.5d
+			x: 5.5d
+			y: 2.5d
 		}
 		{
 			dependencies: ["1594BB213B1B4F4A"]
@@ -319,8 +319,8 @@
 				type: "item"
 			}]
 			title: "Logistik"
-			x: 3.75d
-			y: 5.5d
+			x: 5.5d
+			y: 3.75d
 		}
 		{
 			dependencies: ["1594BB213B1B4F4A"]
@@ -349,8 +349,8 @@
 				type: "item"
 			}]
 			title: "Lagern"
-			x: 5.0d
-			y: 5.5d
+			x: 5.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["1594BB213B1B4F4A"]
@@ -373,12 +373,12 @@
 				type: "item"
 			}]
 			title: "Weitere Generatoren"
-			x: 6.25d
-			y: 5.5d
+			x: 5.5d
+			y: 6.25d
 		}
 		{
 			description: [
-				"Freigeschaltet mit dem Kapitel K5 Erzketten."
+				"Freigeschaltet mit Kapitel 5: Erzketten."
 			]
 			invisible: true
 			icon: "minecraft:book"
@@ -390,9 +390,9 @@
 				stage: "kapitel_k5"
 				type: "gamestage"
 			}]
-			title: "K5 Erzketten"
-			x: -1.75d
-			y: 7.5d
+			title: "Kapitel 5: Mekanism"
+			x: 7.5d
+			y: -1.75d
 		}
 		{
 			dependencies: ["1594BB213B1B4F4A", "43567C1272BD2765"]
@@ -410,8 +410,8 @@
 				type: "item"
 			}]
 			title: "Zinn aus Everbright"
-			x: 0.0d
-			y: 7.5d
+			x: 7.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["4E293D6B64CEDD5B"]
@@ -436,8 +436,8 @@
 				type: "item"
 			}]
 			title: "Die Stufen von Mekanism"
-			x: 1.5d
-			y: 7.5d
+			x: 7.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["5FA26DC946224B1C"]
@@ -458,8 +458,8 @@
 				type: "item"
 			}]
 			title: "Purification Chamber: Erz ×3"
-			x: 3.0d
-			y: 7.5d
+			x: 7.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["455E41A4AE947DE5"]
@@ -478,8 +478,8 @@
 				type: "item"
 			}]
 			title: "Factories"
-			x: 4.5d
-			y: 7.5d
+			x: 7.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["481E87F8A3248F3D"]
@@ -505,8 +505,8 @@
 				type: "item"
 			}]
 			title: "Osmium Compressor und Refined Obsidian"
-			x: 6.0d
-			y: 7.5d
+			x: 7.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["7EAB9F168BFEB124"]
@@ -525,12 +525,12 @@
 				type: "item"
 			}]
 			title: "Dynamic Tank"
-			x: 6.0d
-			y: 9.0d
+			x: 9.0d
+			y: 6.0d
 		}
 		{
 			description: [
-				"Freigeschaltet mit dem Kapitel K7 Horchposten."
+				"Freigeschaltet mit Kapitel 7: Horchposten."
 			]
 			invisible: true
 			icon: "minecraft:book"
@@ -542,9 +542,9 @@
 				stage: "kapitel_k7"
 				type: "gamestage"
 			}]
-			title: "K7 Horchposten"
-			x: -1.75d
-			y: 11.0d
+			title: "Kapitel 7: Mekanism"
+			x: 11.0d
+			y: -1.75d
 		}
 		{
 			dependencies: ["7EAB9F168BFEB124", "3FA0B9BE762AE467"]
@@ -566,8 +566,8 @@
 				type: "item"
 			}]
 			title: "Reinforced Alloy"
-			x: 0.0d
-			y: 11.0d
+			x: 11.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["3CFF6061F5E536DA"]
@@ -592,8 +592,8 @@
 				type: "item"
 			}]
 			title: "Chemische Grundausstattung"
-			x: 1.5d
-			y: 11.0d
+			x: 11.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["0878C3A5623B60B2"]
@@ -617,8 +617,8 @@
 				type: "fluid"
 			}]
 			title: "Thermal Evaporation Plant: Brine"
-			x: 3.0d
-			y: 11.0d
+			x: 11.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["0DABBBDEEB7FA801"]
@@ -636,8 +636,8 @@
 				type: "item"
 			}]
 			title: "Hydrogen Chloride"
-			x: 4.5d
-			y: 11.0d
+			x: 11.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["34847A93057851E3"]
@@ -657,8 +657,8 @@
 				type: "item"
 			}]
 			title: "Chemical Injection Chamber: Erz ×4"
-			x: 6.0d
-			y: 11.0d
+			x: 11.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["7CB162916BAEA3F8"]
@@ -680,8 +680,8 @@
 				type: "fluid"
 			}]
 			title: "Schwefelsäure"
-			x: 7.5d
-			y: 11.0d
+			x: 11.0d
+			y: 7.5d
 		}
 		{
 			dependencies: ["154589E32601A4F1"]
@@ -709,8 +709,8 @@
 				type: "item"
 			}]
 			title: "Pressurized Reaction Chamber und HDPE"
-			x: 9.0d
-			y: 11.0d
+			x: 11.0d
+			y: 9.0d
 		}
 		{
 			dependencies: ["65FD91C69EED1303"]
@@ -729,8 +729,8 @@
 				type: "item"
 			}]
 			title: "Gas-Burning Generator"
-			x: 9.0d
-			y: 12.5d
+			x: 12.5d
+			y: 9.0d
 		}
 		{
 			dependencies: ["3CFF6061F5E536DA"]
@@ -757,8 +757,8 @@
 				type: "item"
 			}]
 			title: "Raw Ore zurück zum Erz"
-			x: 0.0d
-			y: 16.0d
+			x: 16.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["154589E32601A4F1", "39B05FAB9BD91D07"]
@@ -783,12 +783,12 @@
 				type: "item"
 			}]
 			title: "Kristalle · Erz ×5"
-			x: 1.25d
-			y: 16.0d
+			x: 16.0d
+			y: 1.25d
 		}
 		{
 			description: [
-				"Freigeschaltet mit dem Kapitel K9 Der Tempel."
+				"Freigeschaltet mit Kapitel 9: Der Tempel."
 			]
 			invisible: true
 			icon: "minecraft:book"
@@ -800,9 +800,9 @@
 				stage: "kapitel_k9"
 				type: "gamestage"
 			}]
-			title: "K9 Der Tempel"
-			x: -1.75d
-			y: 18.0d
+			title: "Kapitel 9: Mekanism"
+			x: 18.0d
+			y: -1.75d
 		}
 		{
 			dependencies: ["65FD91C69EED1303", "212009E2CEC4D2E8"]
@@ -821,8 +821,8 @@
 				type: "item"
 			}]
 			title: "Uran"
-			x: 0.0d
-			y: 18.0d
+			x: 18.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["438B171218CF8B69"]
@@ -860,8 +860,8 @@
 				type: "item"
 			}]
 			title: "Schutz"
-			x: 1.5d
-			y: 18.0d
+			x: 18.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["7B9237C64623DC2D"]
@@ -887,8 +887,8 @@
 				type: "checkmark"
 			}]
 			title: "Fissile Fuel"
-			x: 3.0d
-			y: 18.0d
+			x: 18.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["01C4EF0099DADAA6"]
@@ -922,8 +922,8 @@
 				type: "item"
 			}]
 			title: "Fission Reactor"
-			x: 4.5d
-			y: 18.0d
+			x: 18.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["20336D7F206AFA68"]
@@ -947,8 +947,8 @@
 				type: "item"
 			}]
 			title: "Boiler und Turbine"
-			x: 6.0d
-			y: 18.0d
+			x: 18.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["700827270D79A55E"]
@@ -971,8 +971,8 @@
 				type: "item"
 			}]
 			title: "Polonium und Plutonium"
-			x: 7.5d
-			y: 18.0d
+			x: 18.0d
+			y: 7.5d
 		}
 		{
 			dependencies: ["5727C86B5DB4F060"]
@@ -997,12 +997,12 @@
 				type: "item"
 			}]
 			title: "Induction Matrix"
-			x: 7.5d
-			y: 19.5d
+			x: 19.5d
+			y: 7.5d
 		}
 		{
 			description: [
-				"Freigeschaltet mit dem Kapitel K10 Der Elf."
+				"Freigeschaltet mit Kapitel 10: Der Elf."
 			]
 			invisible: true
 			icon: "minecraft:book"
@@ -1014,9 +1014,9 @@
 				stage: "kapitel_k10"
 				type: "gamestage"
 			}]
-			title: "K10 Der Elf"
-			x: -1.75d
-			y: 21.5d
+			title: "Kapitel 10: Mekanism"
+			x: 21.5d
+			y: -1.75d
 		}
 		{
 			dependencies: ["5727C86B5DB4F060", "4E6259B8C3E06E09"]
@@ -1038,8 +1038,8 @@
 				type: "item"
 			}]
 			title: "Atomic Alloy"
-			x: 0.0d
-			y: 21.5d
+			x: 21.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["39B05FAB9BD91D07"]
@@ -1056,8 +1056,8 @@
 				type: "item"
 			}]
 			title: "Teleportation Core"
-			x: 1.5d
-			y: 21.5d
+			x: 21.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["311387E5E5173165"]
@@ -1083,8 +1083,8 @@
 				type: "item"
 			}]
 			title: "Teleporter"
-			x: 1.5d
-			y: 23.0d
+			x: 23.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["311387E5E5173165"]
@@ -1104,8 +1104,8 @@
 				type: "item"
 			}]
 			title: "Quantum Entangloporter"
-			x: 2.75d
-			y: 23.0d
+			x: 23.0d
+			y: 2.75d
 		}
 		{
 			dependencies: ["311387E5E5173165"]
@@ -1124,8 +1124,8 @@
 				type: "item"
 			}]
 			title: "Dimensional Stabilizer"
-			x: 4.0d
-			y: 23.0d
+			x: 23.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["311387E5E5173165"]
@@ -1149,12 +1149,12 @@
 				type: "item"
 			}]
 			title: "Laser"
-			x: 3.0d
-			y: 21.5d
+			x: 21.5d
+			y: 3.0d
 		}
 		{
 			description: [
-				"Freigeschaltet mit dem Kapitel K12 Ausbildung, Part 2."
+				"Freigeschaltet mit Kapitel 12: Ausbildung, Part 2."
 			]
 			invisible: true
 			icon: "minecraft:book"
@@ -1166,9 +1166,9 @@
 				stage: "kapitel_k12"
 				type: "gamestage"
 			}]
-			title: "K12 Ausbildung, Part 2"
-			x: -1.75d
-			y: 25.0d
+			title: "Kapitel 12: Mekanism"
+			x: 25.0d
+			y: -1.75d
 		}
 		{
 			dependencies: ["015545685E8A0045", "4AFC5BA521A65285"]
@@ -1190,8 +1190,8 @@
 				type: "checkmark"
 			}]
 			title: "Deuterium"
-			x: 0.0d
-			y: 25.0d
+			x: 25.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["21B0A08A576D0BAC"]
@@ -1208,8 +1208,8 @@
 				type: "checkmark"
 			}]
 			title: "Tritium"
-			x: 1.5d
-			y: 25.0d
+			x: 25.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["6149722DCA9102E7"]
@@ -1226,8 +1226,8 @@
 				type: "item"
 			}]
 			title: "Hohlraum"
-			x: 3.0d
-			y: 25.0d
+			x: 25.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["0155AE2CF96F575B"]
@@ -1253,12 +1253,12 @@
 				type: "item"
 			}]
 			title: "Fusionsreaktor"
-			x: 4.5d
-			y: 25.0d
+			x: 25.0d
+			y: 4.5d
 		}
 		{
 			description: [
-				"Freigeschaltet mit dem Kapitel K13 Die Prüfung, Part 2."
+				"Freigeschaltet mit Kapitel 13: Die Prüfung, Part 2."
 			]
 			invisible: true
 			icon: "minecraft:book"
@@ -1270,9 +1270,9 @@
 				stage: "kapitel_k13"
 				type: "gamestage"
 			}]
-			title: "K13 Die Prüfung, Part 2"
-			x: -1.75d
-			y: 28.5d
+			title: "Kapitel 13: Mekanism"
+			x: 28.5d
+			y: -1.75d
 		}
 		{
 			dependencies: ["54F8124FDF2B9EF2", "207FA44D8DFA956F"]
@@ -1299,8 +1299,8 @@
 				type: "item"
 			}]
 			title: "Supercritical Phase Shifter"
-			x: 0.0d
-			y: 28.5d
+			x: 28.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["04BD7704B41907D7"]
@@ -1319,8 +1319,8 @@
 				type: "item"
 			}]
 			title: "Antimatter"
-			x: 1.5d
-			y: 28.5d
+			x: 28.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["24478A7934447EE3"]
@@ -1339,12 +1339,12 @@
 				type: "item"
 			}]
 			title: "Antiprotonic Nucleosynthesizer"
-			x: 1.5d
-			y: 30.0d
+			x: 30.0d
+			y: 1.5d
 		}
 		{
 			description: [
-				"Freigeschaltet mit dem Kapitel K15 Star-Wars-Welten, Part 3."
+				"Freigeschaltet mit Kapitel 15: Star-Wars-Welten, Part 3."
 			]
 			invisible: true
 			icon: "minecraft:book"
@@ -1356,9 +1356,9 @@
 				stage: "kapitel_k15"
 				type: "gamestage"
 			}]
-			title: "K15 Star-Wars-Welten, Part 3"
-			x: -1.75d
-			y: 33.5d
+			title: "Kapitel 15: Mekanism"
+			x: 33.5d
+			y: -1.75d
 		}
 		{
 			dependencies: ["24478A7934447EE3", "32158DE727BB126D"]
@@ -1382,8 +1382,8 @@
 				type: "item"
 			}]
 			title: "Modification Station"
-			x: 0.0d
-			y: 33.5d
+			x: 33.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["24478A7934447EE3"]
@@ -1419,8 +1419,8 @@
 				type: "item"
 			}]
 			title: "MekaSuit"
-			x: 1.25d
-			y: 33.5d
+			x: 33.5d
+			y: 1.25d
 		}
 		{
 			dependencies: ["24478A7934447EE3"]
@@ -1439,8 +1439,8 @@
 				type: "item"
 			}]
 			title: "Meka-Tool"
-			x: 2.5d
-			y: 33.5d
+			x: 33.5d
+			y: 2.5d
 		}
 		{
 			dependencies: ["24478A7934447EE3"]
@@ -1469,8 +1469,8 @@
 				type: "item"
 			}]
 			title: "QIO"
-			x: 3.75d
-			y: 33.5d
+			x: 33.5d
+			y: 3.75d
 		}
 	]
 	title: "Mekanism"

@@ -1,0 +1,91 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "buch3"
+	group: ""
+	icon: "minecraft:written_book"
+	id: "56D71E6517E311C8"
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["13CC768AFE8EB0F0"]
+			description: [
+				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
+				""
+				"&eFortschritt:&r Altar T6 · &eRakete T6&r"
+			]
+			icon: "minecraft:book"
+			id: "7E3BF632DE197FB4"
+			shape: "hexagon"
+			size: 1.25d
+			tasks: [{
+				id: "796A3B35C3068F2B"
+				title: "Kapitel abgeschlossen"
+				type: "checkmark"
+			}]
+			rewards: [{
+				auto: "enabled"
+				id: "7B7DF7398D0D3233"
+				stage: "kapitel_k14"
+				type: "gamestage"
+			}]
+			title: "Kapitel 14: Endor"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7E3BF632DE197FB4"]
+			description: [
+				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
+				""
+				"&eFortschritt:&r Meka-Ausrüstung und QIO"
+			]
+			icon: "minecraft:book"
+			id: "3F54FB63312E353E"
+			shape: "hexagon"
+			size: 1.25d
+			tasks: [{
+				id: "58C4E9310ABCD7BD"
+				title: "Kapitel abgeschlossen"
+				type: "checkmark"
+			}]
+			rewards: [{
+				auto: "enabled"
+				id: "06FDC231B6CE79BA"
+				stage: "kapitel_k15"
+				type: "gamestage"
+			}]
+			title: "Kapitel 15: Star-Wars-Welten"
+			x: 1.75d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3F54FB63312E353E"]
+			description: [
+				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
+				""
+				"&eFortschritt:&r &eRakete T7&r"
+			]
+			icon: "minecraft:book"
+			id: "2E92F0E81C219781"
+			shape: "hexagon"
+			size: 1.25d
+			tasks: [{
+				id: "4194B9CF9CA49613"
+				title: "Kapitel abgeschlossen"
+				type: "checkmark"
+			}]
+			rewards: [{
+				auto: "enabled"
+				id: "73F754FE513C7CEE"
+				stage: "kapitel_k16"
+				type: "gamestage"
+			}]
+			title: "Kapitel 16: Mandalore"
+			x: 3.5d
+			y: 0.0d
+		}
+	]
+	title: "Buch 3"
+}

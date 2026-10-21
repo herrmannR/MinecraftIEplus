@@ -1,0 +1,65 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "buch2"
+	group: ""
+	icon: "minecraft:written_book"
+	id: "68FDFA787606C0B4"
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["7AC6FA1861C2D3B0"]
+			description: [
+				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
+				""
+				"&eFortschritt:&r Altar T5 · Alfheim betreten · Fusion"
+			]
+			icon: "minecraft:book"
+			id: "490DA592DDA71B52"
+			shape: "hexagon"
+			size: 1.25d
+			tasks: [{
+				id: "6B00A431C3A671F8"
+				title: "Kapitel abgeschlossen"
+				type: "checkmark"
+			}]
+			rewards: [{
+				auto: "enabled"
+				id: "1350411F975014D1"
+				stage: "kapitel_k12"
+				type: "gamestage"
+			}]
+			title: "Kapitel 12: Ausbildung"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["490DA592DDA71B52"]
+			description: [
+				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
+				""
+				"&eFortschritt:&r Gaia · SPS und Antimaterie · AE2-Quantenbrücke · &eRakete T5&r"
+			]
+			icon: "minecraft:book"
+			id: "13CC768AFE8EB0F0"
+			shape: "hexagon"
+			size: 1.25d
+			tasks: [{
+				id: "41EBD8D0073D5854"
+				title: "Kapitel abgeschlossen"
+				type: "checkmark"
+			}]
+			rewards: [{
+				auto: "enabled"
+				id: "37E776898E437B31"
+				stage: "kapitel_k13"
+				type: "gamestage"
+			}]
+			title: "Kapitel 13: Die Prüfung"
+			x: 1.75d
+			y: 0.0d
+		}
+	]
+	title: "Buch 2"
+}

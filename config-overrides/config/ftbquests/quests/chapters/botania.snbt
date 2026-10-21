@@ -5,12 +5,12 @@
 	group: ""
 	icon: "botania:lexicon"
 	id: "57F6105C5D58B3B2"
-	order_index: 2
+	order_index: 11
 	quest_links: [ ]
 	quests: [
 		{
 			description: [
-				"Freigeschaltet mit dem Kapitel K1 Ankunft."
+				"Freigeschaltet mit Kapitel 1: Ankunft."
 			]
 			invisible: true
 			icon: "minecraft:book"
@@ -22,9 +22,9 @@
 				stage: "kapitel_k1"
 				type: "gamestage"
 			}]
-			title: "K1 Ankunft"
-			x: -1.75d
-			y: 0.5d
+			title: "Kapitel 1: Botania"
+			x: 0.5d
+			y: -1.75d
 		}
 		{
 			dependencies: ["7E871922B053F5CC"]
@@ -42,8 +42,8 @@
 				type: "item"
 			}]
 			title: "Lexica Botania"
-			x: 0.0d
-			y: 0.5d
+			x: 0.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["672EC395D28D9461"]
@@ -62,8 +62,8 @@
 				type: "item"
 			}]
 			title: "Mystical Flowers"
-			x: 1.5d
-			y: 0.5d
+			x: 0.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["6286EA3BAF407A45"]
@@ -81,8 +81,8 @@
 				type: "item"
 			}]
 			title: "Petal Apothecary"
-			x: 3.0d
-			y: 0.5d
+			x: 0.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["7583F8390031199F"]
@@ -110,8 +110,8 @@
 				type: "item"
 			}]
 			title: "Pure Daisy"
-			x: 4.5d
-			y: 0.5d
+			x: 0.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["77093286C0E2DB3B"]
@@ -131,8 +131,8 @@
 				type: "item"
 			}]
 			title: "Wand of the Forest"
-			x: 6.0d
-			y: 0.5d
+			x: 0.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["0E9E3687A3A51B2B"]
@@ -152,12 +152,12 @@
 				type: "item"
 			}]
 			title: "Flower Pouch"
-			x: 6.0d
-			y: 2.0d
+			x: 2.0d
+			y: 6.0d
 		}
 		{
 			description: [
-				"Freigeschaltet mit dem Kapitel K2 Würdig sein."
+				"Freigeschaltet mit Kapitel 2: Würdig sein."
 			]
 			invisible: true
 			icon: "minecraft:book"
@@ -169,9 +169,9 @@
 				stage: "kapitel_k2"
 				type: "gamestage"
 			}]
-			title: "K2 Würdig sein"
-			x: -1.75d
-			y: 4.0d
+			title: "Kapitel 2: Botania"
+			x: 4.0d
+			y: -1.75d
 		}
 		{
 			dependencies: ["0E9E3687A3A51B2B", "5015DD764B441CE1"]
@@ -190,8 +190,8 @@
 				type: "item"
 			}]
 			title: "Erste Mana-Blume"
-			x: 0.0d
-			y: 4.0d
+			x: 4.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["47845FF024A9DDBC"]
@@ -209,8 +209,8 @@
 				type: "item"
 			}]
 			title: "Mana Spreader"
-			x: 1.5d
-			y: 4.0d
+			x: 4.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["6A138084A4B791EF"]
@@ -228,8 +228,8 @@
 				type: "item"
 			}]
 			title: "Mana Pool"
-			x: 3.0d
-			y: 4.0d
+			x: 4.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["131F51EE29E22307"]
@@ -248,8 +248,8 @@
 				type: "item"
 			}]
 			title: "Manasteel"
-			x: 4.5d
-			y: 4.0d
+			x: 4.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["33A1ABD2FA5E2B9B"]
@@ -274,8 +274,8 @@
 				type: "item"
 			}]
 			title: "Mana Pearl und Mana Diamond"
-			x: 6.0d
-			y: 4.0d
+			x: 4.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["4FEAEAE56A2A8400"]
@@ -295,8 +295,8 @@
 				type: "item"
 			}]
 			title: "Manasteel-Ausrüstung"
-			x: 6.0d
-			y: 5.5d
+			x: 5.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["4FEAEAE56A2A8400"]
@@ -316,12 +316,12 @@
 				type: "item"
 			}]
 			title: "Mana Tablet"
-			x: 7.25d
-			y: 5.5d
+			x: 5.5d
+			y: 7.25d
 		}
 		{
 			description: [
-				"Freigeschaltet mit dem Kapitel K3 Industrie."
+				"Freigeschaltet mit Kapitel 3: Industrie."
 			]
 			invisible: true
 			icon: "minecraft:book"
@@ -333,9 +333,9 @@
 				stage: "kapitel_k3"
 				type: "gamestage"
 			}]
-			title: "K3 Industrie"
-			x: -1.75d
-			y: 7.5d
+			title: "Kapitel 3: Botania"
+			x: 7.5d
+			y: -1.75d
 		}
 		{
 			dependencies: ["4FEAEAE56A2A8400", "67DC8C91F9F786B9"]
@@ -353,8 +353,8 @@
 				type: "item"
 			}]
 			title: "Runic Altar"
-			x: 0.0d
-			y: 7.5d
+			x: 7.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["083AC076A6081BF5"]
@@ -390,8 +390,8 @@
 				type: "item"
 			}]
 			title: "Elementrunen"
-			x: 1.5d
-			y: 7.5d
+			x: 7.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["194C2ADA92F61A8F"]
@@ -430,8 +430,8 @@
 				type: "item"
 			}]
 			title: "Rune of Mana und Jahreszeiten"
-			x: 1.5d
-			y: 9.0d
+			x: 9.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["194C2ADA92F61A8F"]
@@ -481,8 +481,8 @@
 				type: "item"
 			}]
 			title: "Runen der Todsünden"
-			x: 2.75d
-			y: 9.0d
+			x: 9.0d
+			y: 2.75d
 		}
 		{
 			dependencies: ["194C2ADA92F61A8F"]
@@ -503,8 +503,8 @@
 				type: "item"
 			}]
 			title: "Bessere Mana-Blumen"
-			x: 4.0d
-			y: 9.0d
+			x: 9.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["194C2ADA92F61A8F"]
@@ -525,8 +525,8 @@
 				type: "item"
 			}]
 			title: "Funktionale Blumen"
-			x: 5.25d
-			y: 9.0d
+			x: 9.0d
+			y: 5.25d
 		}
 		{
 			dependencies: ["194C2ADA92F61A8F"]
@@ -551,8 +551,8 @@
 				type: "item"
 			}]
 			title: "Lenses und Sparks"
-			x: 6.5d
-			y: 9.0d
+			x: 9.0d
+			y: 6.5d
 		}
 		{
 			dependencies: ["194C2ADA92F61A8F"]
@@ -577,8 +577,8 @@
 				type: "item"
 			}]
 			title: "Botanical Brewery"
-			x: 7.75d
-			y: 9.0d
+			x: 9.0d
+			y: 7.75d
 		}
 		{
 			dependencies: ["194C2ADA92F61A8F"]
@@ -621,8 +621,8 @@
 				type: "item"
 			}]
 			title: "Mana Fluxfield"
-			x: 10.25d
-			y: 9.0d
+			x: 9.0d
+			y: 10.25d
 		}
 		{
 			dependencies: ["194C2ADA92F61A8F"]
@@ -647,8 +647,8 @@
 				type: "item"
 			}]
 			title: "Katalysatoren"
-			x: 11.5d
-			y: 9.0d
+			x: 9.0d
+			y: 11.5d
 		}
 		{
 			dependencies: ["194C2ADA92F61A8F"]
@@ -669,8 +669,8 @@
 				type: "item"
 			}]
 			title: "Orechid"
-			x: 12.75d
-			y: 9.0d
+			x: 9.0d
+			y: 12.75d
 		}
 		{
 			dependencies: ["194C2ADA92F61A8F"]
@@ -690,12 +690,12 @@
 				type: "item"
 			}]
 			title: "Mana Enchanter"
-			x: 14.0d
-			y: 9.0d
+			x: 9.0d
+			y: 14.0d
 		}
 		{
 			description: [
-				"Freigeschaltet mit dem Kapitel K6 Der Mars."
+				"Freigeschaltet mit Kapitel 6: Der Mars."
 			]
 			invisible: true
 			icon: "minecraft:book"
@@ -707,9 +707,9 @@
 				stage: "kapitel_k6"
 				type: "gamestage"
 			}]
-			title: "K6 Der Mars"
-			x: -1.75d
-			y: 11.0d
+			title: "Kapitel 6: Botania"
+			x: 11.0d
+			y: -1.75d
 		}
 		{
 			dependencies: ["194C2ADA92F61A8F", "7B4DA5D78FFB5629"]
@@ -727,8 +727,8 @@
 				type: "item"
 			}]
 			title: "Terrestrial Agglomeration Plate"
-			x: 0.0d
-			y: 11.0d
+			x: 11.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["51CEB2BFB723DB77"]
@@ -749,8 +749,8 @@
 				type: "item"
 			}]
 			title: "Terrasteel"
-			x: 1.5d
-			y: 11.0d
+			x: 11.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["32310B37BC9A953F"]
@@ -770,12 +770,12 @@
 				type: "item"
 			}]
 			title: "Terra-Ausrüstung"
-			x: 1.5d
-			y: 12.5d
+			x: 12.5d
+			y: 1.5d
 		}
 		{
 			description: [
-				"Freigeschaltet mit dem Kapitel K10 Der Elf."
+				"Freigeschaltet mit Kapitel 10: Der Elf."
 			]
 			invisible: true
 			icon: "minecraft:book"
@@ -787,9 +787,9 @@
 				stage: "kapitel_k10"
 				type: "gamestage"
 			}]
-			title: "K10 Der Elf"
-			x: -1.75d
-			y: 14.5d
+			title: "Kapitel 10: Botania"
+			x: 14.5d
+			y: -1.75d
 		}
 		{
 			dependencies: ["32310B37BC9A953F", "6DEC45FC4C7C3262"]
@@ -807,8 +807,8 @@
 				type: "item"
 			}]
 			title: "Natura Pylon"
-			x: 0.0d
-			y: 14.5d
+			x: 14.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["5D0A360656B07CDA"]
@@ -832,8 +832,8 @@
 				type: "item"
 			}]
 			title: "Portal to Alfheim"
-			x: 1.5d
-			y: 14.5d
+			x: 14.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["1324315F8E271AF5"]
@@ -869,8 +869,8 @@
 				type: "item"
 			}]
 			title: "Elfenhandel"
-			x: 3.0d
-			y: 14.5d
+			x: 14.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["20CA9735F369D8FB"]
@@ -889,8 +889,8 @@
 				type: "item"
 			}]
 			title: "Elementium-Ausrüstung"
-			x: 3.0d
-			y: 16.0d
+			x: 16.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["20CA9735F369D8FB"]
@@ -910,12 +910,12 @@
 				type: "item"
 			}]
 			title: "Elven Mana Spreader"
-			x: 4.25d
-			y: 16.0d
+			x: 16.0d
+			y: 4.25d
 		}
 		{
 			description: [
-				"Freigeschaltet mit dem Kapitel K12 Ausbildung."
+				"Freigeschaltet mit Kapitel 12: Ausbildung."
 			]
 			invisible: true
 			icon: "minecraft:book"
@@ -927,9 +927,9 @@
 				stage: "kapitel_k12"
 				type: "gamestage"
 			}]
-			title: "K12 Ausbildung"
-			x: -1.75d
-			y: 18.0d
+			title: "Kapitel 12: Botania"
+			x: 18.0d
+			y: -1.75d
 		}
 		{
 			dependencies: ["20CA9735F369D8FB", "055F8D8D38838F8D"]
@@ -948,8 +948,8 @@
 				type: "item"
 			}]
 			title: "Mead of Kvasir"
-			x: 0.0d
-			y: 18.0d
+			x: 18.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["69ABF49F86AF0E46"]
@@ -966,8 +966,8 @@
 				type: "dimension"
 			}]
 			title: "Alfheim"
-			x: 1.5d
-			y: 18.0d
+			x: 18.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["7D91CE0A05B9DBDF"]
@@ -1027,8 +1027,8 @@
 				type: "item"
 			}]
 			title: "Runen der neun Welten"
-			x: 3.0d
-			y: 18.0d
+			x: 18.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["7A9899404BD38A09"]
@@ -1046,8 +1046,8 @@
 				type: "item"
 			}]
 			title: "Mana Infuser"
-			x: 4.5d
-			y: 18.0d
+			x: 18.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["324B71F41207B3A2"]
@@ -1065,8 +1065,8 @@
 				type: "item"
 			}]
 			title: "Alfsteel"
-			x: 6.0d
-			y: 18.0d
+			x: 18.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["0EDBD93632DE4C31"]
@@ -1086,8 +1086,8 @@
 				type: "item"
 			}]
 			title: "Alfsteel Pylon"
-			x: 7.5d
-			y: 18.0d
+			x: 18.0d
+			y: 7.5d
 		}
 		{
 			dependencies: ["17D58AB389983771"]
@@ -1108,8 +1108,8 @@
 				type: "item"
 			}]
 			title: "Alfsteel-Werkzeuge"
-			x: 7.5d
-			y: 19.5d
+			x: 19.5d
+			y: 7.5d
 		}
 		{
 			dependencies: ["17D58AB389983771"]
@@ -1128,8 +1128,8 @@
 				type: "item"
 			}]
 			title: "Greatest Band of Mana"
-			x: 8.75d
-			y: 19.5d
+			x: 19.5d
+			y: 8.75d
 		}
 		{
 			dependencies: ["17D58AB389983771"]
@@ -1149,12 +1149,12 @@
 				type: "item"
 			}]
 			title: "Blumen von MythicBotany"
-			x: 10.0d
-			y: 19.5d
+			x: 19.5d
+			y: 10.0d
 		}
 		{
 			description: [
-				"Freigeschaltet mit dem Kapitel K13 Die Prüfung."
+				"Freigeschaltet mit Kapitel 13: Die Prüfung."
 			]
 			invisible: true
 			icon: "minecraft:book"
@@ -1166,9 +1166,9 @@
 				stage: "kapitel_k13"
 				type: "gamestage"
 			}]
-			title: "K13 Die Prüfung"
-			x: -1.75d
-			y: 21.5d
+			title: "Kapitel 13: Botania"
+			x: 21.5d
+			y: -1.75d
 		}
 		{
 			dependencies: ["17D58AB389983771", "29852188C2162654"]
@@ -1195,8 +1195,8 @@
 				type: "item"
 			}]
 			title: "Beacon und Gaia Pylons"
-			x: 0.0d
-			y: 21.5d
+			x: 21.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["36443A11DFC20ABF"]
@@ -1214,8 +1214,8 @@
 				type: "item"
 			}]
 			title: "Guardian of Gaia"
-			x: 1.5d
-			y: 21.5d
+			x: 21.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["6E9B54DF2046B698"]
@@ -1235,8 +1235,8 @@
 				type: "item"
 			}]
 			title: "Gaia Spirit Ingot"
-			x: 3.0d
-			y: 21.5d
+			x: 21.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["60CF6DFCC4F9EA7E"]
@@ -1256,8 +1256,8 @@
 				type: "item"
 			}]
 			title: "Guardian of Gaia II"
-			x: 3.0d
-			y: 23.0d
+			x: 23.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["60CF6DFCC4F9EA7E"]
@@ -1277,8 +1277,8 @@
 				type: "item"
 			}]
 			title: "Gaia-Ausrüstung"
-			x: 4.25d
-			y: 23.0d
+			x: 23.0d
+			y: 4.25d
 		}
 		{
 			dependencies: ["20CA9735F369D8FB"]
@@ -1299,8 +1299,8 @@
 				type: "item"
 			}]
 			title: "Ender Air"
-			x: 5.5d
-			y: 23.0d
+			x: 23.0d
+			y: 5.5d
 		}
 		{
 			dependencies: ["55607010B2685C35"]
@@ -1324,8 +1324,8 @@
 				type: "item"
 			}]
 			title: "Corporea Index"
-			x: 6.75d
-			y: 23.0d
+			x: 23.0d
+			y: 6.75d
 		}
 		{
 			dependencies: ["441C0B97D492F327"]
@@ -1345,8 +1345,8 @@
 				type: "item"
 			}]
 			title: "Corporea ausbauen"
-			x: 8.0d
-			y: 23.0d
+			x: 23.0d
+			y: 8.0d
 		}
 		{
 			dependencies: ["60CF6DFCC4F9EA7E"]
@@ -1372,8 +1372,8 @@
 				type: "item"
 			}]
 			title: "Well of Mimir"
-			x: 9.25d
-			y: 23.0d
+			x: 23.0d
+			y: 9.25d
 		}
 		{
 			dependencies: ["7E9224A05A4B230C"]
@@ -1392,8 +1392,8 @@
 				type: "item"
 			}]
 			title: "Rune Rituals"
-			x: 10.5d
-			y: 23.0d
+			x: 23.0d
+			y: 10.5d
 		}
 		{
 			dependencies: ["7686863347C305E9"]
@@ -1412,8 +1412,8 @@
 				type: "item"
 			}]
 			title: "Rune Tablet of Fimbultyr"
-			x: 11.75d
-			y: 23.0d
+			x: 23.0d
+			y: 11.75d
 		}
 		{
 			dependencies: ["414E854EF72E8A91"]
@@ -1432,8 +1432,8 @@
 				type: "item"
 			}]
 			title: "Mjöllnir"
-			x: 13.0d
-			y: 23.0d
+			x: 23.0d
+			y: 13.0d
 		}
 		{
 			dependencies: ["083AC076A6081BF5"]
@@ -1454,8 +1454,8 @@
 				type: "item"
 			}]
 			title: "Band of Mana"
-			x: 0.0d
-			y: 26.5d
+			x: 26.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["083AC076A6081BF5"]
@@ -1474,8 +1474,8 @@
 				type: "item"
 			}]
 			title: "Ring of Magnetization"
-			x: 1.25d
-			y: 26.5d
+			x: 26.5d
+			y: 1.25d
 		}
 		{
 			dependencies: ["083AC076A6081BF5"]
@@ -1494,8 +1494,8 @@
 				type: "item"
 			}]
 			title: "Sojourner's Sash"
-			x: 2.5d
-			y: 26.5d
+			x: 26.5d
+			y: 2.5d
 		}
 		{
 			dependencies: ["083AC076A6081BF5"]
@@ -1514,8 +1514,8 @@
 				type: "item"
 			}]
 			title: "Rod of the Lands"
-			x: 3.75d
-			y: 26.5d
+			x: 26.5d
+			y: 3.75d
 		}
 		{
 			dependencies: ["083AC076A6081BF5"]
@@ -1534,8 +1534,8 @@
 				type: "item"
 			}]
 			title: "Livingwood Bow"
-			x: 5.0d
-			y: 26.5d
+			x: 26.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["083AC076A6081BF5"]
@@ -1554,8 +1554,8 @@
 				type: "item"
 			}]
 			title: "Tiny Potato"
-			x: 6.25d
-			y: 26.5d
+			x: 26.5d
+			y: 6.25d
 		}
 		{
 			dependencies: ["083AC076A6081BF5"]
@@ -1577,8 +1577,8 @@
 				type: "item"
 			}]
 			title: "Mana im ME-Netz"
-			x: 7.5d
-			y: 26.5d
+			x: 26.5d
+			y: 7.5d
 		}
 	]
 	title: "Botania"
