@@ -9,16 +9,19 @@
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["0B2B8888238E82AD"]
 			description: [
-				"Freigeschaltet mit dem Kapitel K3 Industrie (Hauptquests)."
+				"Freigeschaltet mit dem Kapitel K3 Industrie."
 			]
-			hide_until_deps_complete: true
+			invisible: true
 			icon: "minecraft:book"
 			id: "12617912326846AC"
 			shape: "gear"
 			subtitle: "MK1 · Infuser und Sauerstoff"
-			tasks: []
+			tasks: [{
+				id: "0F8848D87796E3CD"
+				stage: "kapitel_k3"
+				type: "gamestage"
+			}]
 			title: "K3 Industrie"
 			x: -1.75d
 			y: 0.5d
@@ -182,16 +185,19 @@
 			y: 0.5d
 		}
 		{
-			dependencies: ["4FBA50D1BBCB97FA"]
 			description: [
-				"Freigeschaltet mit dem Kapitel K4 Der Mond (Hauptquests)."
+				"Freigeschaltet mit dem Kapitel K4 Der Mond."
 			]
-			hide_until_deps_complete: true
+			invisible: true
 			icon: "minecraft:book"
 			id: "3E189EEF517F442D"
 			shape: "gear"
 			subtitle: "MK2 · Grundmaschinen"
-			tasks: []
+			tasks: [{
+				id: "213419B8ABC71F8A"
+				stage: "kapitel_k4"
+				type: "gamestage"
+			}]
 			title: "K4 Der Mond"
 			x: -1.75d
 			y: 4.0d
@@ -371,16 +377,19 @@
 			y: 5.5d
 		}
 		{
-			dependencies: ["6AF68093B3F6D97F"]
 			description: [
-				"Freigeschaltet mit dem Kapitel K5 Erzketten (Hauptquests)."
+				"Freigeschaltet mit dem Kapitel K5 Erzketten."
 			]
-			hide_until_deps_complete: true
+			invisible: true
 			icon: "minecraft:book"
 			id: "43567C1272BD2765"
 			shape: "gear"
 			subtitle: "MK3 · Advanced, Erz ×3"
-			tasks: []
+			tasks: [{
+				id: "38FC107D69846523"
+				stage: "kapitel_k5"
+				type: "gamestage"
+			}]
 			title: "K5 Erzketten"
 			x: -1.75d
 			y: 7.5d
@@ -520,16 +529,19 @@
 			y: 9.0d
 		}
 		{
-			dependencies: ["4432DA367BD815DD"]
 			description: [
-				"Freigeschaltet mit dem Kapitel K7 Horchposten (Hauptquests)."
+				"Freigeschaltet mit dem Kapitel K7 Horchposten."
 			]
-			hide_until_deps_complete: true
+			invisible: true
 			icon: "minecraft:book"
 			id: "3FA0B9BE762AE467"
 			shape: "gear"
 			subtitle: "MK4 · Elite und Chemie"
-			tasks: []
+			tasks: [{
+				id: "5C01A44AA26529D8"
+				stage: "kapitel_k7"
+				type: "gamestage"
+			}]
 			title: "K7 Horchposten"
 			x: -1.75d
 			y: 11.0d
@@ -775,16 +787,19 @@
 			y: 16.0d
 		}
 		{
-			dependencies: ["7264B19A966F455A"]
 			description: [
-				"Freigeschaltet mit dem Kapitel K9 Der Tempel (Hauptquests)."
+				"Freigeschaltet mit dem Kapitel K9 Der Tempel."
 			]
-			hide_until_deps_complete: true
+			invisible: true
 			icon: "minecraft:book"
 			id: "212009E2CEC4D2E8"
 			shape: "gear"
 			subtitle: "MK5 · Kernkraft"
-			tasks: []
+			tasks: [{
+				id: "1CA45FF70AFE4D29"
+				stage: "kapitel_k9"
+				type: "gamestage"
+			}]
 			title: "K9 Der Tempel"
 			x: -1.75d
 			y: 18.0d
@@ -986,16 +1001,19 @@
 			y: 19.5d
 		}
 		{
-			dependencies: ["2596BAFEBEF00419"]
 			description: [
-				"Freigeschaltet mit dem Kapitel K10 Der Elf (Hauptquests)."
+				"Freigeschaltet mit dem Kapitel K10 Der Elf."
 			]
-			hide_until_deps_complete: true
+			invisible: true
 			icon: "minecraft:book"
 			id: "4E6259B8C3E06E09"
 			shape: "gear"
 			subtitle: "MK6 · Ultimate und Teleportation"
-			tasks: []
+			tasks: [{
+				id: "6DCA5021CB25A1B7"
+				stage: "kapitel_k10"
+				type: "gamestage"
+			}]
 			title: "K10 Der Elf"
 			x: -1.75d
 			y: 21.5d
@@ -1135,16 +1153,19 @@
 			y: 21.5d
 		}
 		{
-			dependencies: ["490DA592DDA71B52"]
 			description: [
-				"Freigeschaltet mit dem Kapitel K12 Ausbildung, Part 2 (Hauptquests)."
+				"Freigeschaltet mit dem Kapitel K12 Ausbildung, Part 2."
 			]
-			hide_until_deps_complete: true
+			invisible: true
 			icon: "minecraft:book"
 			id: "4AFC5BA521A65285"
 			shape: "gear"
 			subtitle: "MK7 · Fusion"
-			tasks: []
+			tasks: [{
+				id: "2D490870DB772282"
+				stage: "kapitel_k12"
+				type: "gamestage"
+			}]
 			title: "K12 Ausbildung, Part 2"
 			x: -1.75d
 			y: 25.0d
@@ -1236,16 +1257,19 @@
 			y: 25.0d
 		}
 		{
-			dependencies: ["13CC768AFE8EB0F0"]
 			description: [
-				"Freigeschaltet mit dem Kapitel K13 Die Prüfung, Part 2 (Hauptquests)."
+				"Freigeschaltet mit dem Kapitel K13 Die Prüfung, Part 2."
 			]
-			hide_until_deps_complete: true
+			invisible: true
 			icon: "minecraft:book"
 			id: "207FA44D8DFA956F"
 			shape: "gear"
 			subtitle: "MK8 · SPS und Antimaterie"
-			tasks: []
+			tasks: [{
+				id: "6170662C7F3B0EC9"
+				stage: "kapitel_k13"
+				type: "gamestage"
+			}]
 			title: "K13 Die Prüfung, Part 2"
 			x: -1.75d
 			y: 28.5d
@@ -1319,16 +1343,19 @@
 			y: 30.0d
 		}
 		{
-			dependencies: ["3F54FB63312E353E"]
 			description: [
-				"Freigeschaltet mit dem Kapitel K15 Star-Wars-Welten, Part 3 (Hauptquests)."
+				"Freigeschaltet mit dem Kapitel K15 Star-Wars-Welten, Part 3."
 			]
-			hide_until_deps_complete: true
+			invisible: true
 			icon: "minecraft:book"
 			id: "32158DE727BB126D"
 			shape: "gear"
 			subtitle: "MK9 · Meka-Ausrüstung und QIO"
-			tasks: []
+			tasks: [{
+				id: "52BDCCDB1CCA62AD"
+				stage: "kapitel_k15"
+				type: "gamestage"
+			}]
 			title: "K15 Star-Wars-Welten, Part 3"
 			x: -1.75d
 			y: 33.5d

@@ -27,10 +27,11 @@ import java.util.regex.*;
  * Standard-Abhängigkeit: Hauptweg-Quest an der vorigen Hauptweg-Quest, Nebenquest einer Reihe an der
  * vorigen der Reihe, sonst Nebenquest an der letzten Hauptweg-Quest davor.
  *
- * Freischaltung: Ein Abschnitt mit "(Kn …)" bekommt am Zeilenanfang eine Marke ohne Aufgabe, die an der
- * Hauptquest Kn hängt (Kapitel "hauptquests") und erst erscheint, wenn Kn erledigt ist. Die erste Quest
- * des Abschnitts hängt an Marke und Vorgänger; alle Quests werden sichtbar, sobald ihre Voraussetzungen
- * sichtbar sind. So zeigt sich ein Abschnitt mit seinem Kn, abschließen geht aber nur der Reihe nach.
+ * Freischaltung: Ein Abschnitt mit "(Kn …)" bekommt am Zeilenanfang eine Marke mit der Aufgabe
+ * "Stage kapitel_kn"; sie ist unsichtbar, bis die Stage gesetzt ist (Belohnung der Mock-Hauptquest Kn,
+ * später der NPC-Dialog). Die erste Quest des Abschnitts hängt an Marke und Vorgänger; alle Quests werden
+ * sichtbar, sobald ihre Voraussetzungen sichtbar sind. So zeigt sich ein Abschnitt mit seinem Kn,
+ * abschließen geht aber nur der Reihe nach.
  *
  * Die IDs entstehen aus Kapitelname und Questcode und bleiben beim Neubauen gleich (sonst verlieren
  * Spieler ihren Fortschritt). Questcodes und K-Nummern deshalb nie umbenennen.
@@ -114,10 +115,12 @@ public class QuestbuchGen {
         }
         if (prevMain != null) prevMain.milestone = true;
 
-        // Freischaltung über die Hauptquests. FTB koppelt Sichtbarkeit und Voraussetzungen; deshalb
-        // je Abschnitt eine Marke ohne Aufgabe am Zeilenanfang: hängt an Kn, unsichtbar bis Kn erledigt,
-        // gilt dann sofort als erledigt. Die erste Quest des Abschnitts hängt an Marke UND Vorgänger und
-        // wird mit der Marke sichtbar (hide_until_deps_visible); abschließen geht erst mit dem Vorgänger.
+        // Freischaltung über die Story-Kapitel. FTB koppelt Sichtbarkeit und Voraussetzungen, und eine
+        // Quest ohne Aufgabe wird nie als erledigt gespeichert. Deshalb je Abschnitt eine Marke am
+        // Zeilenanfang mit der Aufgabe "Stage kapitel_kn", unsichtbar bis erledigt (invisible), ohne
+        // Voraussetzung. Die Stage setzt die Hauptquest Kn (Mock) bzw. später der NPC-Dialog.
+        // Die erste Quest des Abschnitts hängt an Marke UND Vorgänger und wird mit der Marke sichtbar
+        // (hide_until_deps_visible); abschließen geht erst mit dem Vorgänger.
         sec = null;
         List<Quest> all = new ArrayList<>();
         for (Quest q : qs) {
@@ -125,9 +128,11 @@ public class QuestbuchGen {
                 sec = q.section;
                 if (q.kGate != null) {
                     Quest mk = new Quest(); mk.code = "M-" + q.kGate; mk.section = q.section; mk.main = true;
-                    mk.title = kNames.get(q.kGate); mk.gated = true; mk.marker = true; mk.icon = "minecraft:book";
-                    mk.deps.add(q.kGate); mk.x = -1.75; mk.y = q.y;
-                    mk.desc.add("Freigeschaltet mit dem Kapitel " + mk.title + " (Hauptquests).");
+                    mk.title = kNames.get(q.kGate); mk.marker = true; mk.icon = "minecraft:book";
+                    mk.x = -1.75; mk.y = q.y;
+                    mk.tasks.add("{\n\t\t\t\tid: \"" + hex(chapter + ":" + mk.code + ":task0") + "\"\n\t\t\t\tstage: \"" + stage(q.kGate)
+                        + "\"\n\t\t\t\ttype: \"gamestage\"\n\t\t\t}");
+                    mk.desc.add("Freigeschaltet mit dem Kapitel " + mk.title + ".");
                     all.add(mk); q.deps.add(mk.code);
                 }
             }
@@ -339,7 +344,8 @@ public class QuestbuchGen {
             sb.append("\t\t\tdescription: [\n");
             for (String d : q.desc) sb.append("\t\t\t\t\"").append(esc(d)).append("\"\n");
             sb.append("\t\t\t]\n");
-            if (q.gated) sb.append("\t\t\thide_until_deps_complete: true\n");
+            if (q.marker) sb.append("\t\t\tinvisible: true\n");
+            else if (q.gated) sb.append("\t\t\thide_until_deps_complete: true\n");
             else if (!q.deps.isEmpty()) sb.append("\t\t\thide_until_deps_visible: true\n");
             if (q.icon != null) sb.append("\t\t\ticon: \"").append(q.icon).append("\"\n");
             sb.append("\t\t\tid: \"").append(depId(q.code)).append("\"\n");
@@ -375,12 +381,15 @@ public class QuestbuchGen {
             String k = m.group(1);
             sb.append("\t\t{\n");
             if (prev != null) sb.append("\t\t\tdependencies: [\"").append(hex(HQ + ":" + prev)).append("\"]\n");
-            sb.append("\t\t\tdescription: [\n\t\t\t\t\"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r\"\n")
+            sb.append("\t\t\tdescription: [\n\t\t\t\t\"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r\"\n")
               .append("\t\t\t\t\"\"\n\t\t\t\t\"&eFortschritt:&r ").append(esc(fmt(c.length > 1 ? c[1] : ""))).append("\"\n\t\t\t]\n");
             sb.append("\t\t\ticon: \"minecraft:book\"\n\t\t\tid: \"").append(hex(HQ + ":" + k)).append("\"\n");
             sb.append("\t\t\tshape: \"hexagon\"\n\t\t\tsize: 1.25d\n\t\t\tsubtitle: \"").append(esc(part)).append("\"\n");
             sb.append("\t\t\ttasks: [{\n\t\t\t\tid: \"").append(hex(HQ + ":" + k + ":task0"))
               .append("\"\n\t\t\t\ttitle: \"Kapitel abgeschlossen\"\n\t\t\t\ttype: \"checkmark\"\n\t\t\t}]\n");
+            // setzt die Stage, an der die Marken der Mod-Kapitel hängen (später setzt sie der NPC-Dialog)
+            sb.append("\t\t\trewards: [{\n\t\t\t\tauto: \"enabled\"\n\t\t\t\tid: \"").append(hex(HQ + ":" + k + ":reward0"))
+              .append("\"\n\t\t\t\tstage: \"").append(stage(k)).append("\"\n\t\t\t\ttype: \"gamestage\"\n\t\t\t}]\n");
             sb.append("\t\t\ttitle: \"").append(esc(k + " " + m.group(2))).append("\"\n");
             sb.append("\t\t\tx: ").append(x).append("d\n\t\t\ty: ").append(y).append("d\n\t\t}\n");
             prev = k; x += 1.75; n++;
@@ -388,6 +397,9 @@ public class QuestbuchGen {
         write(out, sb.append(chapterTail("Hauptquests")).toString());
         System.out.println(n + " Hauptquests geschrieben nach " + out);
     }
+
+    /** Stage, die ein Story-Kapitel freischaltet (Hauptquest-Belohnung, später NPC-Dialog). */
+    static String stage(String k) { return "kapitel_" + k.toLowerCase(); }
 
     static String esc(String s) { return s.replace("\\", "\\\\").replace("\"", "\\\""); }
 

@@ -10,7 +10,7 @@
 	quests: [
 		{
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
 				""
 				"&eFortschritt:&r Tinkers: Werkzeuge und Melter · IE: Koks und erster Stahl · Botania: Blüten und Lebendholz"
 			]
@@ -24,6 +24,12 @@
 				title: "Kapitel abgeschlossen"
 				type: "checkmark"
 			}]
+			rewards: [{
+				auto: "enabled"
+				id: "43DB22F4DE0784F8"
+				stage: "kapitel_k1"
+				type: "gamestage"
+			}]
 			title: "K1 Ankunft"
 			x: 0.0d
 			y: 0.5d
@@ -31,7 +37,7 @@
 		{
 			dependencies: ["49DA11DCC4D42945"]
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
 				""
 				"&eFortschritt:&r Smeltery · IE: Strom und Förderbänder · Mana und Manasteel"
 			]
@@ -45,6 +51,12 @@
 				title: "Kapitel abgeschlossen"
 				type: "checkmark"
 			}]
+			rewards: [{
+				auto: "enabled"
+				id: "1EA147C316AD1DB4"
+				stage: "kapitel_k2"
+				type: "gamestage"
+			}]
 			title: "K2 Würdig sein"
 			x: 1.75d
 			y: 0.5d
@@ -52,7 +64,7 @@
 		{
 			dependencies: ["7D17A2E727E32894"]
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
 				""
 				"&eFortschritt:&r IE: Schwermaschinen und Biodiesel · Runenaltar · Blutaltar · Mekanism: Infuser und Sauerstoff · AE2: Storage-Layer · Everbright"
 			]
@@ -66,6 +78,12 @@
 				title: "Kapitel abgeschlossen"
 				type: "checkmark"
 			}]
+			rewards: [{
+				auto: "enabled"
+				id: "380BA9371F73FC43"
+				stage: "kapitel_k3"
+				type: "gamestage"
+			}]
 			title: "K3 Industrie"
 			x: 3.5d
 			y: 0.5d
@@ -73,7 +91,7 @@
 		{
 			dependencies: ["0B2B8888238E82AD"]
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
 				""
 				"&eFortschritt:&r Erdöl und Destillation · Mekanism-Grundmaschinen · Everdawn · &eRakete T1&r"
 			]
@@ -87,6 +105,12 @@
 				title: "Kapitel abgeschlossen"
 				type: "checkmark"
 			}]
+			rewards: [{
+				auto: "enabled"
+				id: "21980992CF2CBFEB"
+				stage: "kapitel_k4"
+				type: "gamestage"
+			}]
 			title: "K4 Der Mond"
 			x: 5.25d
 			y: 0.5d
@@ -94,7 +118,7 @@
 		{
 			dependencies: ["4FBA50D1BBCB97FA"]
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
 				""
 				"&eFortschritt:&r Alloyer und Foundry · entschwefelter Diesel · Altar T3 und Soul Forge · Mekanism Advanced · Blinding-Bosse (Blue Skies)"
 			]
@@ -108,6 +132,12 @@
 				title: "Kapitel abgeschlossen"
 				type: "checkmark"
 			}]
+			rewards: [{
+				auto: "enabled"
+				id: "44F45AA0FD3C7D34"
+				stage: "kapitel_k5"
+				type: "gamestage"
+			}]
 			title: "K5 Erzketten"
 			x: 7.0d
 			y: 0.5d
@@ -115,7 +145,7 @@
 		{
 			dependencies: ["6AF68093B3F6D97F"]
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
 				""
 				"&eFortschritt:&r IE-Großindustrie · Terrasteel · Nature- und Poison-Boss (Blue Skies) · &eRakete T2&r"
 			]
@@ -129,6 +159,12 @@
 				title: "Kapitel abgeschlossen"
 				type: "checkmark"
 			}]
+			rewards: [{
+				auto: "enabled"
+				id: "75EA4C7A0B00FABC"
+				stage: "kapitel_k6"
+				type: "gamestage"
+			}]
 			title: "K6 Der Mars"
 			x: 8.75d
 			y: 0.5d
@@ -136,7 +172,7 @@
 		{
 			dependencies: ["1102A1D22CF06A0C"]
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
 				""
 				"&eFortschritt:&r Planetenmetalle gießen · Altar T4 und Rituale · Mekanism Elite und Chemie"
 			]
@@ -150,6 +186,12 @@
 				title: "Kapitel abgeschlossen"
 				type: "checkmark"
 			}]
+			rewards: [{
+				auto: "enabled"
+				id: "48C4E8959DAC1C26"
+				stage: "kapitel_k7"
+				type: "gamestage"
+			}]
 			title: "K7 Horchposten"
 			x: 10.5d
 			y: 0.5d
@@ -157,7 +199,7 @@
 		{
 			dependencies: ["4432DA367BD815DD"]
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
 				""
 				"&eFortschritt:&r &eRakete T3&r"
 			]
@@ -171,6 +213,12 @@
 				title: "Kapitel abgeschlossen"
 				type: "checkmark"
 			}]
+			rewards: [{
+				auto: "enabled"
+				id: "5BAAC1E8421FC0DA"
+				stage: "kapitel_k8"
+				type: "gamestage"
+			}]
 			title: "K8 Hitze"
 			x: 12.25d
 			y: 0.5d
@@ -178,7 +226,7 @@
 		{
 			dependencies: ["436D5852356AD565"]
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
 				""
 				"&eFortschritt:&r Tempel und Dungeon (BM4) · Kernkraft · ME-System"
 			]
@@ -192,6 +240,12 @@
 				title: "Kapitel abgeschlossen"
 				type: "checkmark"
 			}]
+			rewards: [{
+				auto: "enabled"
+				id: "2825B52ABB335F9E"
+				stage: "kapitel_k9"
+				type: "gamestage"
+			}]
 			title: "K9 Der Tempel"
 			x: 14.0d
 			y: 0.5d
@@ -199,7 +253,7 @@
 		{
 			dependencies: ["7264B19A966F455A"]
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
 				""
 				"&eFortschritt:&r Elfenportal (BO5) · Mekanism Ultimate und Teleportation"
 			]
@@ -213,6 +267,12 @@
 				title: "Kapitel abgeschlossen"
 				type: "checkmark"
 			}]
+			rewards: [{
+				auto: "enabled"
+				id: "2CBCD53BCBA4B49A"
+				stage: "kapitel_k10"
+				type: "gamestage"
+			}]
 			title: "K10 Der Elf"
 			x: 15.75d
 			y: 0.5d
@@ -220,7 +280,7 @@
 		{
 			dependencies: ["2596BAFEBEF00419"]
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
 				""
 				"&eFortschritt:&r &eRakete T4&r (RF4)"
 			]
@@ -234,6 +294,12 @@
 				title: "Kapitel abgeschlossen"
 				type: "checkmark"
 			}]
+			rewards: [{
+				auto: "enabled"
+				id: "4433E107D164C3B9"
+				stage: "kapitel_k11"
+				type: "gamestage"
+			}]
 			title: "K11 Glacio"
 			x: 17.5d
 			y: 0.5d
@@ -241,7 +307,7 @@
 		{
 			dependencies: ["7AC6FA1861C2D3B0"]
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
 				""
 				"&eFortschritt:&r Altar T5 · Alfheim betreten · Fusion"
 			]
@@ -255,6 +321,12 @@
 				title: "Kapitel abgeschlossen"
 				type: "checkmark"
 			}]
+			rewards: [{
+				auto: "enabled"
+				id: "1350411F975014D1"
+				stage: "kapitel_k12"
+				type: "gamestage"
+			}]
 			title: "K12 Ausbildung"
 			x: 0.0d
 			y: 3.0d
@@ -262,7 +334,7 @@
 		{
 			dependencies: ["490DA592DDA71B52"]
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
 				""
 				"&eFortschritt:&r Gaia · SPS und Antimaterie · AE2-Quantenbrücke · &eRakete T5&r"
 			]
@@ -276,6 +348,12 @@
 				title: "Kapitel abgeschlossen"
 				type: "checkmark"
 			}]
+			rewards: [{
+				auto: "enabled"
+				id: "37E776898E437B31"
+				stage: "kapitel_k13"
+				type: "gamestage"
+			}]
 			title: "K13 Die Prüfung"
 			x: 1.75d
 			y: 3.0d
@@ -283,7 +361,7 @@
 		{
 			dependencies: ["13CC768AFE8EB0F0"]
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
 				""
 				"&eFortschritt:&r Altar T6 · &eRakete T6&r"
 			]
@@ -297,6 +375,12 @@
 				title: "Kapitel abgeschlossen"
 				type: "checkmark"
 			}]
+			rewards: [{
+				auto: "enabled"
+				id: "7B7DF7398D0D3233"
+				stage: "kapitel_k14"
+				type: "gamestage"
+			}]
 			title: "K14 Endor"
 			x: 0.0d
 			y: 5.5d
@@ -304,7 +388,7 @@
 		{
 			dependencies: ["7E3BF632DE197FB4"]
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
 				""
 				"&eFortschritt:&r Meka-Ausrüstung und QIO"
 			]
@@ -318,6 +402,12 @@
 				title: "Kapitel abgeschlossen"
 				type: "checkmark"
 			}]
+			rewards: [{
+				auto: "enabled"
+				id: "06FDC231B6CE79BA"
+				stage: "kapitel_k15"
+				type: "gamestage"
+			}]
 			title: "K15 Star-Wars-Welten"
 			x: 1.75d
 			y: 5.5d
@@ -325,7 +415,7 @@
 		{
 			dependencies: ["3F54FB63312E353E"]
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Danach erscheinen die Quests dieses Kapitels in den Mod-Kapiteln.&r"
+				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
 				""
 				"&eFortschritt:&r &eRakete T7&r"
 			]
@@ -338,6 +428,12 @@
 				id: "4194B9CF9CA49613"
 				title: "Kapitel abgeschlossen"
 				type: "checkmark"
+			}]
+			rewards: [{
+				auto: "enabled"
+				id: "73F754FE513C7CEE"
+				stage: "kapitel_k16"
+				type: "gamestage"
 			}]
 			title: "K16 Mandalore"
 			x: 3.5d

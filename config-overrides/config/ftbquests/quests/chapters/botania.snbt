@@ -9,16 +9,19 @@
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["49DA11DCC4D42945"]
 			description: [
-				"Freigeschaltet mit dem Kapitel K1 Ankunft (Hauptquests)."
+				"Freigeschaltet mit dem Kapitel K1 Ankunft."
 			]
-			hide_until_deps_complete: true
+			invisible: true
 			icon: "minecraft:book"
 			id: "7E871922B053F5CC"
 			shape: "gear"
 			subtitle: "BO1 · Blüten und Lebendholz"
-			tasks: []
+			tasks: [{
+				id: "258B7FB78F6130CB"
+				stage: "kapitel_k1"
+				type: "gamestage"
+			}]
 			title: "K1 Ankunft"
 			x: -1.75d
 			y: 0.5d
@@ -153,16 +156,19 @@
 			y: 2.0d
 		}
 		{
-			dependencies: ["7D17A2E727E32894"]
 			description: [
-				"Freigeschaltet mit dem Kapitel K2 Würdig sein (Hauptquests)."
+				"Freigeschaltet mit dem Kapitel K2 Würdig sein."
 			]
-			hide_until_deps_complete: true
+			invisible: true
 			icon: "minecraft:book"
 			id: "5015DD764B441CE1"
 			shape: "gear"
 			subtitle: "BO2 · Mana und Manasteel"
-			tasks: []
+			tasks: [{
+				id: "3063C71F1E50D913"
+				stage: "kapitel_k2"
+				type: "gamestage"
+			}]
 			title: "K2 Würdig sein"
 			x: -1.75d
 			y: 4.0d
@@ -314,16 +320,19 @@
 			y: 5.5d
 		}
 		{
-			dependencies: ["0B2B8888238E82AD"]
 			description: [
-				"Freigeschaltet mit dem Kapitel K3 Industrie (Hauptquests)."
+				"Freigeschaltet mit dem Kapitel K3 Industrie."
 			]
-			hide_until_deps_complete: true
+			invisible: true
 			icon: "minecraft:book"
 			id: "67DC8C91F9F786B9"
 			shape: "gear"
 			subtitle: "BO3 · Runenaltar"
-			tasks: []
+			tasks: [{
+				id: "2080A35C350D51EE"
+				stage: "kapitel_k3"
+				type: "gamestage"
+			}]
 			title: "K3 Industrie"
 			x: -1.75d
 			y: 7.5d
@@ -685,16 +694,19 @@
 			y: 9.0d
 		}
 		{
-			dependencies: ["1102A1D22CF06A0C"]
 			description: [
-				"Freigeschaltet mit dem Kapitel K6 Der Mars (Hauptquests)."
+				"Freigeschaltet mit dem Kapitel K6 Der Mars."
 			]
-			hide_until_deps_complete: true
+			invisible: true
 			icon: "minecraft:book"
 			id: "7B4DA5D78FFB5629"
 			shape: "gear"
 			subtitle: "BO4 · Terrasteel"
-			tasks: []
+			tasks: [{
+				id: "5A248FC224C3BE23"
+				stage: "kapitel_k6"
+				type: "gamestage"
+			}]
 			title: "K6 Der Mars"
 			x: -1.75d
 			y: 11.0d
@@ -762,16 +774,19 @@
 			y: 12.5d
 		}
 		{
-			dependencies: ["2596BAFEBEF00419"]
 			description: [
-				"Freigeschaltet mit dem Kapitel K10 Der Elf (Hauptquests)."
+				"Freigeschaltet mit dem Kapitel K10 Der Elf."
 			]
-			hide_until_deps_complete: true
+			invisible: true
 			icon: "minecraft:book"
 			id: "6DEC45FC4C7C3262"
 			shape: "gear"
 			subtitle: "BO5 · Elfenportal"
-			tasks: []
+			tasks: [{
+				id: "44AF0F9CCF71B211"
+				stage: "kapitel_k10"
+				type: "gamestage"
+			}]
 			title: "K10 Der Elf"
 			x: -1.75d
 			y: 14.5d
@@ -899,16 +914,19 @@
 			y: 16.0d
 		}
 		{
-			dependencies: ["490DA592DDA71B52"]
 			description: [
-				"Freigeschaltet mit dem Kapitel K12 Ausbildung (Hauptquests)."
+				"Freigeschaltet mit dem Kapitel K12 Ausbildung."
 			]
-			hide_until_deps_complete: true
+			invisible: true
 			icon: "minecraft:book"
 			id: "055F8D8D38838F8D"
 			shape: "gear"
 			subtitle: "BO6 · Alfheim betreten"
-			tasks: []
+			tasks: [{
+				id: "60DE96FEA4D73829"
+				stage: "kapitel_k12"
+				type: "gamestage"
+			}]
 			title: "K12 Ausbildung"
 			x: -1.75d
 			y: 18.0d
@@ -1135,16 +1153,19 @@
 			y: 19.5d
 		}
 		{
-			dependencies: ["13CC768AFE8EB0F0"]
 			description: [
-				"Freigeschaltet mit dem Kapitel K13 Die Prüfung (Hauptquests)."
+				"Freigeschaltet mit dem Kapitel K13 Die Prüfung."
 			]
-			hide_until_deps_complete: true
+			invisible: true
 			icon: "minecraft:book"
 			id: "29852188C2162654"
 			shape: "gear"
 			subtitle: "BO7 · Gaia"
-			tasks: []
+			tasks: [{
+				id: "70656BCB4D825C95"
+				stage: "kapitel_k13"
+				type: "gamestage"
+			}]
 			title: "K13 Die Prüfung"
 			x: -1.75d
 			y: 21.5d
