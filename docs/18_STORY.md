@@ -356,6 +356,17 @@ Wunsch des Users: eine Jedi, weiblich, nicht menschlich. 🟢 Entschieden: **Ver
   - Sie war nie Meisterin im Orden; „Meister“ ist der Titel, den ihr die Elfen geben. Das kann Vos in Teil 2 mit einem Lächeln anmerken.
 - **Andere Möglichkeit: Vernestra Rwoh**, Mirialanerin (grüne Haut, Gesichtsmarkierungen), aus den Büchern der Hohen Republik und der Serie „The Acolyte“, kämpft mit einer Lichtpeitsche. Mirialaner sollen je nach Verbindung zur Macht bis zu 200 Jahre alt werden, das klingt sehr nach Elfen. Haken: Zur Zeit der Klonkriege wäre sie schon rund 230 Jahre alt, und am Ende von „The Acolyte“ vertuscht sie die Wahrheit vor dem Senat, ist also nicht ganz sauber.
 
+### Wer hat den Sith-Tempel gebaut? (O60, Vorschlag 2026-10-25)
+
+Wunsch des Users: ein einigermaßen bekannter Sith-Lord aus sehr früher Zeit, dem man den Bau des Tempels andichten kann. Der User schrieb „Tempel auf dem Mars“; laut Story liegt der Tempel auf dem **Merkur** (Abschnitt 3). Die Vorschläge gelten für beide Orte. Angaben aus dem Gedächtnis, nicht in Wookieepedia geprüft.
+
+- **Vorschlag: Naga Sadow** (Legends, um 5000 VSY). Dunkler Lord des alten Sith-Imperiums, verlor den Großen Hyperraumkrieg gegen die Republik und floh auf den abgelegenen Dschungelmond Yavin 4. Dort ließ er von seinen Massassi-Kriegern Tempel bauen und legte sich in einen Tiefschlaf. Meister der Sith-Alchemie: Er formte Lebewesen mit der dunklen Seite.
+  - Passt, weil er genau das schon einmal getan hat: auf der Flucht einen Tempel auf einer fernen Welt errichten und dort etwas verbergen. Ein zweiter Zufluchtsort in einem fremden Sonnensystem ist leicht anzudichten.
+  - Sith-Alchemie mit Blut und Leben passt zu Blood Magic als dunkler Seite, das Relikt kann eines seiner alchemistischen Werke sein.
+- **Exar Kun** (Legends, um 4000 VSY). Ein Jedi, der fiel, auf Yavin 4 die Tempel von Naga Sadow übernahm und neue baute. Am Ende war sein Geist an seine Tempel gebunden, bis er Jahrtausende später freikam. Der bekannteste der vier. Passt besonders zu Vos: ein gefallener Jedi, dessen Tempel einen anderen gefallenen Jedi anzieht. Ein Geist im Tempel könnte den Sog erklären, der Vos in die Dimension zog (O57).
+- **Darth Momin** (Kanon, Comics zu Darth Vader). Uralter Sith-Lord und Bildhauer, besessen von Bauwerken der dunklen Seite. Sein Entwurf wurde zu Vaders Festung auf dem Lavaplaneten Mustafar; seine Maske ist ein Relikt, das seinen Geist trägt. Passt zum heißen Merkur und zur Frage, wer den Tempel *entworfen* hat. Die Maske selbst könnte das Relikt sein. Weniger bekannt als die anderen, dafür Kanon; wann genau er lebte, sagt der Kanon nur ungenau („vor Jahrtausenden“).
+- **Ajunta Pall** (Legends, um 7000 VSY). Gefallener Jedi, gilt als erster Dunkler Lord der Sith; die verbannten dunklen Jedi landeten auf Korriban und herrschten dort über die Ur-Sith. Der früheste von allen und Erbauer der ersten Sith-Gräber. Selbst wenig erzählt, also viel Freiraum; dafür am wenigsten bekannt.
+
 ### Übrige
 
 - **Kaputte Multiblöcke:** Die Druckwelle des Einschlags erklärt, warum alle IE-Multiblöcke neu geformt werden müssen; „Basis wieder aufbauen“ als Teil der ersten Quest.

@@ -70,6 +70,7 @@ Welche Jedi- und Sith-Artefakte, und wie hängen sie an den Machtpunkten?
 
 | Nr. | Frage |
 |---|---|
+| O60 | Welcher Sith-Lord hat den Tempel gebaut? Vorschlag Naga Sadow (Alternativen Exar Kun, Darth Momin, Ajunta Pall) in `18_STORY.md` Abschnitt 5; dazu: Merkur oder Mars? (User schrieb Mars), wartet auf den User |
 | – | Alle Story-Fragen für Part 1 sind beantwortet (2026-10-21). |
 
 ### Story, Part 2 und 3 (später)
