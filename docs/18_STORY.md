@@ -358,7 +358,7 @@ Wunsch des Users: eine Jedi, weiblich, nicht menschlich. 🟢 Entschieden: **Ver
 
 ### Wer hat den Sith-Tempel gebaut? (O60, vom User entschieden 2026-10-25)
 
-Wunsch des Users: ein einigermaßen bekannter Sith-Lord aus sehr früher Zeit, dem man den Bau des Tempels andichten kann. 🟢 Entschieden: **Exar Kun** (User, 2026-10-25); die übrigen Vorschläge sind verworfen. Ausgestaltung (etwa sein Geist im Tempel) schreibt der User. Der User schrieb „Tempel auf dem Mars“; laut Story liegt der Tempel auf dem **Merkur** (Abschnitt 3). Die Vorschläge gelten für beide Orte. Angaben aus dem Gedächtnis, nicht in Wookieepedia geprüft.
+Wunsch des Users: ein einigermaßen bekannter Sith-Lord aus sehr früher Zeit, dem man den Bau des Tempels andichten kann. 🟢 Entschieden: **Exar Kun** (User, 2026-10-25); die übrigen Vorschläge sind verworfen. Ausgestaltung (etwa sein Geist im Tempel) schreibt der User. Der Tempel bleibt auf dem **Merkur**; „Mars“ in der Anfrage war ein Versehen (User, 2026-10-25). Angaben aus dem Gedächtnis, nicht in Wookieepedia geprüft.
 
 - **Vorschlag: Naga Sadow** (Legends, um 5000 VSY). Dunkler Lord des alten Sith-Imperiums, verlor den Großen Hyperraumkrieg gegen die Republik und floh auf den abgelegenen Dschungelmond Yavin 4. Dort ließ er von seinen Massassi-Kriegern Tempel bauen und legte sich in einen Tiefschlaf. Meister der Sith-Alchemie: Er formte Lebewesen mit der dunklen Seite.
   - Passt, weil er genau das schon einmal getan hat: auf der Flucht einen Tempel auf einer fernen Welt errichten und dort etwas verbergen. Ein zweiter Zufluchtsort in einem fremden Sonnensystem ist leicht anzudichten.
