@@ -338,7 +338,8 @@ Wunsch des Users: ein eher unbekannter Jedi mit Hang zur dunklen Seite. 🟢 Ent
 - **Hang zur dunklen Seite:** Er war schon einmal gefallen. Dass er im Sith-Tempel nach einem Relikt sucht und in die Blood-Magic-Dimension (die dunkle Seite) gerät, passt dazu; die Spieler wissen nie ganz, wie fest er auf der hellen Seite steht.
 - **Psychometrie:** Vos liest Erinnerungen aus Dingen, die er berührt. Das erklärt, warum ihn ein Relikt anzieht, und gibt dem Tagebuch und dem Relikt Gewicht: Er hat darin gelesen, was er nicht hätte lesen sollen.
 - **Lehrer für Machtsensitive:** Nach Order 66 hat er Machtsensitiven zur Flucht geholfen. Dass er die Spieler als machtsensitiv erkennt und ausbildet (Teil 2), passt genau.
-- **Verbindung zum Einsiedler:** Odd Ball flog für Obi-Wan und dürfte Vos kennen, auch als den Jedi, der einmal Dookus Schüler war. Das wäre ein Grund, sich vor ihm abzuschirmen und dem Droiden (seinem Droiden) zu misstrauen. Ein Wiedersehen in Teil 2 ist möglich.
+- 🟢 **Er kennt den Einsiedler** (User, 2026-10-25, O62): Im Logbuch (Teil 3) nennt er ihn „einen alten Bekannten aus meiner Welt“; sich ihm zu zeigen ist ihm unmöglich, „zu viel Schmerz birgt diese Erinnerung“. In Teil 1 nur dort, Auflösung in Teil 2.
+- **Verbindung zum Einsiedler (Hintergrund, Vorschlag):** Odd Ball flog für Obi-Wan und dürfte Vos kennen, auch als den Jedi, der einmal Dookus Schüler war. Das wäre ein Grund, sich vor ihm abzuschirmen und dem Droiden (seinem Droiden) zu misstrauen. Ein Wiedersehen in Teil 2 ist möglich.
 - **Haken:** Vos ist bei Star-Wars-Fans bekannter als Odd Ball, in den Filmen aber nicht zu sehen.
 - **Andere Möglichkeit:** Taron Malicos (Spiel „Jedi: Fallen Order“): Jedi-Meister, nach Order 66 auf Dathomir gestrandet und durch die Magie der Nachtschwestern gefallen, also noch dunkler. Er ist im Spiel ein Gegner und wird dort besiegt, wahrscheinlich tot; als Lehrer passt er schlechter.
 
