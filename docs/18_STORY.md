@@ -44,7 +44,7 @@
 - Der Meister ist ein **Jedi**. Er und der Droide kommen aus einer weit, weit entfernten Galaxis.
 - Der Droide verrät das nicht. Er gibt nur kleine Hinweise.
 - **Was wirklich geheim bleibt** (User, 2026-10-14): Dass Star Wars im Spiel ist, dürfen die Mitspieler früh erraten; spätestens die Waren des Einsiedlers verraten es. Die große Überraschung ist, dass man **wirklich zu den Star-Wars-Welten reisen** kann.
-- Der Tempel mit dem Blood-Magic-Dungeon war ein **Sith-Tempel**. Der Meister suchte dort nach einem alten Relikt. Das stellt sich erst später heraus.
+- Der Tempel mit dem Blood-Magic-Dungeon war ein **Sith-Tempel**, erbaut von **Exar Kun** (User, 2026-10-25, O60; Abschnitt 5). Der Meister suchte dort nach einem alten Relikt. Das stellt sich erst später heraus.
 - Blood Magic steht in der Story für die Sith-Seite.
 - Der Droide, oder der Meister über Nachrichten, deutet an, dass die Spieler machtsensitive Wesen sind, also Jedi werden können.
 - 🟢 **Wer verrät was** (User, 2026-10-21, O9): Das Geheimnis legt der **Meister** offen, Stück für Stück im Training (Teil 2). In Teil 1 gibt es nur Anspielungen, und zwar allein in den Dialogen der Figuren (Droide, Einsiedler, Elf usw.); die schreibt der User. **Die Questtexte erwähnen Star Wars nicht.**
@@ -356,9 +356,9 @@ Wunsch des Users: eine Jedi, weiblich, nicht menschlich. 🟢 Entschieden: **Ver
   - Sie war nie Meisterin im Orden; „Meister“ ist der Titel, den ihr die Elfen geben. Das kann Vos in Teil 2 mit einem Lächeln anmerken.
 - **Andere Möglichkeit: Vernestra Rwoh**, Mirialanerin (grüne Haut, Gesichtsmarkierungen), aus den Büchern der Hohen Republik und der Serie „The Acolyte“, kämpft mit einer Lichtpeitsche. Mirialaner sollen je nach Verbindung zur Macht bis zu 200 Jahre alt werden, das klingt sehr nach Elfen. Haken: Zur Zeit der Klonkriege wäre sie schon rund 230 Jahre alt, und am Ende von „The Acolyte“ vertuscht sie die Wahrheit vor dem Senat, ist also nicht ganz sauber.
 
-### Wer hat den Sith-Tempel gebaut? (O60, Vorschlag 2026-10-25)
+### Wer hat den Sith-Tempel gebaut? (O60, vom User entschieden 2026-10-25)
 
-Wunsch des Users: ein einigermaßen bekannter Sith-Lord aus sehr früher Zeit, dem man den Bau des Tempels andichten kann. Der User schrieb „Tempel auf dem Mars“; laut Story liegt der Tempel auf dem **Merkur** (Abschnitt 3). Die Vorschläge gelten für beide Orte. Angaben aus dem Gedächtnis, nicht in Wookieepedia geprüft.
+Wunsch des Users: ein einigermaßen bekannter Sith-Lord aus sehr früher Zeit, dem man den Bau des Tempels andichten kann. 🟢 Entschieden: **Exar Kun** (User, 2026-10-25); die übrigen Vorschläge sind verworfen. Ausgestaltung (etwa sein Geist im Tempel) schreibt der User. Der User schrieb „Tempel auf dem Mars“; laut Story liegt der Tempel auf dem **Merkur** (Abschnitt 3). Die Vorschläge gelten für beide Orte. Angaben aus dem Gedächtnis, nicht in Wookieepedia geprüft.
 
 - **Vorschlag: Naga Sadow** (Legends, um 5000 VSY). Dunkler Lord des alten Sith-Imperiums, verlor den Großen Hyperraumkrieg gegen die Republik und floh auf den abgelegenen Dschungelmond Yavin 4. Dort ließ er von seinen Massassi-Kriegern Tempel bauen und legte sich in einen Tiefschlaf. Meister der Sith-Alchemie: Er formte Lebewesen mit der dunklen Seite.
   - Passt, weil er genau das schon einmal getan hat: auf der Flucht einen Tempel auf einer fernen Welt errichten und dort etwas verbergen. Ein zweiter Zufluchtsort in einem fremden Sonnensystem ist leicht anzudichten.

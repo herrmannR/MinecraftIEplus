@@ -70,7 +70,7 @@ Welche Jedi- und Sith-Artefakte, und wie hängen sie an den Machtpunkten?
 
 | Nr. | Frage |
 |---|---|
-| O60 | Welcher Sith-Lord hat den Tempel gebaut? Vorschlag Naga Sadow (Alternativen Exar Kun, Darth Momin, Ajunta Pall) in `18_STORY.md` Abschnitt 5; dazu: Merkur oder Mars? (User schrieb Mars), wartet auf den User |
+| O60 | Rest: Der Tempel liegt laut Story auf dem Merkur, der User schrieb bei der Frage nach dem Erbauer „Mars“. Bleibt es beim Merkur? (Erbauer Exar Kun entschieden 2026-10-25) |
 | – | Alle Story-Fragen für Part 1 sind beantwortet (2026-10-21). |
 
 ### Story, Part 2 und 3 (später)
@@ -123,6 +123,7 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 | O63 | „Macht“, „helle/dunkle Seite“ dürfen in Teil 1 überall stehen außer in den Questtexten (ersetzt O9 für die übrigen Texte). Bestehende Texte werden erst angepasst, wenn der User alle Änderungen eingetragen hat | 2026-10-25 | `story/texte/` |
 | O61 | Teil 1 hat keine Entscheidungen mit Folgen; Dialoge haben nur Gesprächszweige, die zum selben Ziel führen. Die große Wahl (hell/dunkel, O36) kommt in Teil 2 | 2026-10-21 | `story/texte/dialoge_dd3r8.md` |
 | O60 | Der Helm heißt im Spiel „Verbeulter Pilotenhelm“ bzw. „Pilotenhelm des Einsiedlers“ (kein „Klon“, Geheimnis bleibt); IDs bleiben | 2026-10-21 | `18_STORY.md`, `story/texte/tooltips.md` |
+| O60 | Den Sith-Tempel hat **Exar Kun** gebaut (Naga Sadow, Darth Momin, Ajunta Pall verworfen) | 2026-10-25 | `18_STORY.md` |
 | O59 | Der Meister stellt sich auf Glacio als „Quinlan“ vor (nur Vorname); was er ist, kommt erst im Training | 2026-10-21 | `story/texte/dialoge_vos.md` |
 | O58 | Quinlan Vos und Meister Cerina (Vernestra Rwoh) kennen sich nicht; er weiß nur vom „Hellen Elfen“ | 2026-10-21 | `18_STORY.md`, `story/texte/dialoge_cerina.md` |
 | O57 | Der Altar im Tempel war intakt und zerbrach beim Sog, der den Meister in die Dimension zog | 2026-10-21 | `18_STORY.md`, `story/texte/logbuch.md` |
