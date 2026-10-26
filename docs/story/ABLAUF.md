@@ -75,7 +75,7 @@ In der Hauptwelt sind K1 und K2 schon erreicht (IE-Stahl, Runenaltar). Der Absch
 | ST4-01 | Auf zum Mond | Dimension `ad_astra:moon` | betreten (Rakete T1 steht in RF1) | – | Q |
 | ST4-02 | Der Einsiedler | – | Erstes Gespräch mit Davijaan (er erwähnt, „da unten“ etwas verloren zu haben) | `#davijaan = 1` | D-DAVIJAAN-0 |
 | ST4-03 | Die Höhle | `kubejs:kaputter_klonhelm` | Truhe in der Höhle | – | Q |
-| ST4-04 | Reparatur | `kubejs:klonhelm_repariert` | Werkbank (Rezept in `18_STORY.md`) | – | Q |
+| ST4-04 | Reparatur | `swgc:clone_212th_battalion_helmet` (O71; Rezept erst nach dem Bauplan von Davijaan) | Werkbank (Rezept in `18_STORY.md`) | – | Q |
 | ST4-05 | Vertrauen | – | Dialog (B1): reparierter Helm | `#davijaan = 2` (Dialog); Credits. Bauplan Assembly Bench schenkt er im Dialog; danach `#davijaan = 3`, Laden offen | D-DAVIJAAN-1 |
 | ST4-06 | Everdawn | Dimension `blue_skies:everdawn`, dann Dialog (B1): 🟡 16 × `mekanism:raw_osmium` | Bodhi | `#bodhi = 3`; danach ist Bodhis Strang Nebenquest | D-BODHI-2 |
 | ST4-07 | Warum der Mond schweigt | – | Dialog DD3R8 (Bedingung `#davijaan ≥ 2`): Bericht, dass es vom Mars aus geht | Stage `kapitel_k5`, `#dd3r8 = 4` | D-DAVIJAAN-1 (Hinweis Mars), D-DD3R8-3 |
@@ -177,6 +177,7 @@ Ablage in `docs/story/texte/`, je Figur oder Buch eine Datei. Der User überarbe
 | ✅ Skript `/logbuch` + Patchouli-Buch „Logbuch des Meisters“ (B5), 2026-10-21 | Claude | 🔵 Tests 73–77 |
 | ✅ Items: 4 Tempelrollen, Tagebuch, Siegel, Pilotenhelm (kaputt/repariert); Reparaturrezept, 2026-10-21 | Claude | 🔵 Tests 73, 78 |
 | ✅ `meister_truhe.json`: Tagebuch als Item, 2026-10-21 | Claude | 🔵 Test 78 |
+| Bauplan „Pilotenhelm“ (O71): Rolle `kubejs:bauplan_pilotenhelm`, neues Kapitel „Erinnerungsstücke“ im Buch „Baupläne des Einsiedlers“; das Reparaturrezept ergibt jetzt `swgc:clone_212th_battalion_helmet` und ist bis zum Lesen gesperrt (`einsiedler_shop.js`, `story_rezepte.js`, `teil1_items.js`, Patchouli-Eintrag); `kubejs:klonhelm_repariert` entfällt | Claude | – |
 | Skript Kobalthammer (O67): setzt den Spieler-Tag `ieplus_kobalthammer`, solange ein `tconstruct:sledge_hammer` mit allen Teilen aus Kobalt im Inventar ist, sonst entfernt es ihn (für die Abgabe „Würdig sein“) | Claude | – |
 | Peilsender (O69): Koordinaten des Platzes auf dem Mars in den Befehl von `d4_danke` und in die Belohnung von ST7-02 eintragen | Host, dann Claude | Bau der Ruine |
 | Ruine, kleiner Dungeon und Notiz auf dem Mars (O69); Schlucht der Zwerge (O68) | Host | – |
@@ -205,5 +206,6 @@ Der User trägt seine Änderungen gerade selbst ein (2026-10-25). Erst danach an
 - **Mars (O69):** ST7-01 bekommt einen Gravity Normalizer (`ad_astra:gravity_normalizer`, DD3R8 verlangt „eine vernünftige Gravitation“); ST6-01/ST7-02 nennen den festen Platz und den Peilsender. Neuer Text: Notiz der früheren Bewohner (Schutz vor Sonnenstürmen).
 - **Sonnensturm:** DD3R8 erzählt jetzt, dass er und der Meister in einem Sonnensturm getrennt wurden (`d0_meister`). Die Vorgeschichte in `18_STORY.md` sagt, der Meister rief ihm kurz vor dem Sog zu, Hilfe zu suchen; beides zusammen passt, klären.
 - **Kaputte Maschinen:** `d0_basis` erklärt nicht mehr, dass die Druckwelle die Multiblöcke zerlegt hat (Grund für das Neu-Formen nach dem Wechsel auf 1.20.1). Ein Satz dazu wieder aufnehmen?
+- **Davijaan (O70, O71):** Questtexte ST4-04/ST4-05 und Tooltips nennen noch den „Pilotenhelm des Einsiedlers“; der reparierte Helm ist jetzt der 212er-Helm. Tooltip des verbeulten Helms ggf. anpassen. `18_STORY.md`: „Die Spieler kennen ihn nur als Davijaan“ ist überholt.
 - Danach: `py tools/logbuch_gen.py`, `py tools/story_druck.py`, Logbuch in die Testinstanz.
 
