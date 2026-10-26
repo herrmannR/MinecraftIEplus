@@ -34,7 +34,7 @@ Scoreboard `story`, Eintrag `#bodhi` (B2): 0 = noch nie gesprochen, 1 = Zinn-Auf
 
 #### `b0_metalle` · Prio 0
 > Zinn? Osmium? Meine Welten sind voll davon. Ich lasse euch gern hinein. Bringt mir dafür etwas von dem, was ihr findet. Seht es als Wegzoll an. Aber hütet euch vor den vier Wesen!
-- **[Abgemacht]** → Befehle: `ftbquests change_progress @initiator complete <ST3-01>`, `scoreboard players set #bodhi story 1` → `b0_tor`
+- **[Abgemacht]** → Befehle: `tag @initiator add story_st3_01`, `scoreboard players set #bodhi story 1` → `b0_tor`
 
 #### `b0_tor` · Prio 0
 > Ein Tor baut ihr selbst, aus türkisem Ziegel für Everbright, aus mondhellem Ziegel für Everdawn. Entzündet wird es mit dem Zeal Lighter. Den und mein Buch über die Welten verkaufe ich euch.
@@ -52,7 +52,7 @@ Everdawn ist erst offen, wenn der Zinn-Zoll bezahlt ist (User, 2026-10-26, O73):
 - **[Wie kommen wir hinein?]** → `b0_tor`
 - **[Hier ist dein Zinn]** · Bedingung: im Inventar 32 × `mekanism:raw_tin` → Befehle:
   `clear @initiator mekanism:raw_tin 32`
-  `ftbquests change_progress @initiator complete <ST3-04>`
+  `tag @initiator add story_st3_04`
   `scoreboard players set #bodhi story 2`
   → `b1_danke`
 - **[Bis bald]** → schließen
@@ -74,7 +74,7 @@ Everdawn ist erst offen, wenn der Zinn-Zoll bezahlt ist (User, 2026-10-26, O73):
 - **[Handeln]** → Aktion: Handelsfenster öffnen
 - **[Hier ist das Osmium]** · Bedingung: im Inventar 32 × `mekanism:raw_osmium` → Befehle:
   `clear @initiator mekanism:raw_osmium 32`
-  `ftbquests change_progress @initiator complete <ST4-06>`
+  `tag @initiator add story_st4_06`
   `scoreboard players set #bodhi story 3`
   → `b2_danke`
 - **[Bis bald]** → schließen

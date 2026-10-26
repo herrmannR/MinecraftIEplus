@@ -9,7 +9,7 @@
 
 | Nr. | Baustein | Wie | Stand |
 |---|---|---|---|
-| B1 | **Abgabe im Dialog** | Knopf mit Bedingung „Item im Inventar“ → Befehle `clear @initiator <item> <n>` und `ftbquests change_progress @initiator complete <quest-id>`. Die Quest ist damit für die ganze Party erledigt. Rückfall: `tag @a add <stage>` und eine Stage-Aufgabe in der Quest (Test 29). | 🔵 `change_progress` aus einem Easy-NPC-Dialog im Spiel prüfen (Befehl gibt es in FTB Quests 2001.4.22, JAR geprüft 2026-10-21) |
+| B1 | **Abgabe im Dialog** | Knopf mit Bedingung „Item im Inventar“ → Befehle `clear @initiator <item> <n>` und `tag @initiator add story_<code>` (z. B. `story_st3_05`). Die Quest hat eine Stage-Aufgabe mit genau diesem Namen und ist damit für die ganze Party erledigt. Gespräche ohne Abgabe genauso, nur ohne `clear`. So brauchen die Dialoge keine Quest-IDs. | 🟢 Weg erprobt (Test 29); Vorschlag des User 2026-10-26 statt `ftbquests change_progress`. 🔵 P15: Stage-Aufgabe, wenn nur ein Party-Mitglied den Tag hat |
 | B2 | **Dialogstufe je Figur** | Ein Scoreboard `story` mit einem Platzhalter-Namen je Figur (`#dd3r8`, `#davijaan`, `#bodhi`, `#cerina`, `#vos`). Der Wert sagt, welcher Dialogteil gerade gilt (Bedingung „Scoreboard“). Gilt für die ganze Welt, also für alle drei Spieler. Gesetzt per `scoreboard players set #dd3r8 story <n>` aus Dialog oder Quest-Belohnung. Anlegen einmalig: `scoreboard objectives add story dummy`. | 🟡 |
 | B3 | **Quest → Dialog** | Braucht ein Dialog eine erledigte Quest (z. B. „Bosse besiegt“), setzt deren Belohnung die Dialogstufe (B2). | 🟡 |
 | B4 | **Figur erscheinen/verschwinden** | Befehl in der Quest-Belohnung (Team Reward): `easy_npc spawn|despawn <uuid>` oder `execute in <dim> run easy_npc preset import …` (Test 30). | 🟢 |
@@ -100,7 +100,7 @@ Nebenquest in K5/K6: Bodhis Boss-Reihe (BS3, BS4). Belohnung der letzten Boss-Qu
 | Code | Schritt | Aufgabe | Auslöser | Folge | Text |
 |---|---|---|---|---|---|
 | ST7-01 | Material für die Station | 🟡 Checkliste (Abschnitt 4) | Items im Inventar | – | Q |
-| ST7-02 | Die Station steht | Checkmark, nur für den User | User per Befehl, wenn alle drei dort sind (B8, O22) | DD3R8: `despawn` in der Basis; erscheint am festen Platz der Station (O69, Befehl mit festen Koordinaten in der Belohnung statt von Hand); `#dd3r8 = 6` | Q |
+| ST7-02 | Die Station steht | Checkmark, nur für den User | User setzt die Stage per Befehl (`tag <Spieler> add story_st7_02`), wenn alle drei dort sind (B8, O22) | DD3R8: `despawn` in der Basis; erscheint am festen Platz der Station (O69, Befehl mit festen Koordinaten in der Belohnung statt von Hand); `#dd3r8 = 6` | Q |
 | ST7-03 | Das Signal | – | Dialog DD3R8 auf dem Mars | `/logbuch teil4`, Stage `kapitel_k8`, `#dd3r8 = 7` | D-DD3R8-5 |
 
 ### K8 Hitze
@@ -120,7 +120,7 @@ Nebenquest in K5/K6: Bodhis Boss-Reihe (BS3, BS4). Belohnung der letzten Boss-Qu
 | ST9-01 | Siegel der Traumwelten | `kubejs:siegel_der_traumwelten` | Dialog Bodhi (Bedingung `#bodhi ≥ 4`): er gibt es (O47) | `#bodhi = 5` | D-BODHI-3 |
 | ST9-02 | Fund aus der Tiefe | `wrd:orb_of_the_deep` (O54; liegt in jeder Ancient Bone Chest) | Item im Inventar | – | Q |
 | ST9-03 | Schutz für drei | 3 × `botania:goddess_charm` (ID wie in `altar_dimension.js`) | Items im Inventar | – | Q |
-| ST9-04 | Der Altar | Terrasteel, 4 Imbued Slate, Siegel, Orb of the Deep (F8, O47, O54) | Rechtsklick am kaputten Altar (O48, neues Skript); das Skript erledigt die Quest per `change_progress` | Das Skript setzt das komplette Ritual Pathway to the Endless Realm hin; aktivieren müssen es die Spieler selbst (Aktivierungskristall, LP; O56) | Q |
+| ST9-04 | Der Altar | Terrasteel, 4 Imbued Slate, Siegel, Orb of the Deep (F8, O47, O54) | Rechtsklick am kaputten Altar (O48, neues Skript); das Skript setzt die Stage `story_st9_04` | Das Skript setzt das komplette Ritual Pathway to the Endless Realm hin; aktivieren müssen es die Spieler selbst (Aktivierungskristall, LP; O56) | Q |
 | ST9-05 | Das Endless Realm | `kubejs:relikt` | Truhe in der Station der Minen (O40) | DD3R8 `despawn` auf dem Mars (O7), Stage `kapitel_k10`, `#dd3r8 = 9` | Q, TB (beim Lesen des Tagebuchs) |
 
 Nicht als Aufgabe „Dimension `bloodmagic:dungeon` betreten“: Das ginge schon über den Mini-Dungeon (F27).

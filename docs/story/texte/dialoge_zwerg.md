@@ -33,7 +33,7 @@ Scoreboard `story`, Eintrag `#zwerg` (B2): 0 = noch nie gesprochen, 1 = hat die 
 
 #### `z0_auftrag` · Prio 0
 > Dann sagt ihm, die Schlucht hat ihn nicht vergessen. Und wenn ihr aus seinen Welten zurückkommt, bringt mir, was ihr findet. Ich zahle in Erz. Gut gemessen, das schwöre ich bei meinem Bart.
-- **[Abgemacht]** → Befehle: `ftbquests change_progress @initiator complete <ST3-00>`, `scoreboard players set #zwerg story 1` → `z0_weg`
+- **[Abgemacht]** → Befehle: `tag @initiator add story_st3_00`, `scoreboard players set #zwerg story 1` → `z0_weg`
 
 #### `z0_weg` · Prio 0
 > Weiter nach Süden, immer der Schlucht nach und dann darüber hinaus. Das Haus erkennt ihr an den Steinen. Sie sehen aus, als hätte jemand den Himmel zerbrochen und vermauert.

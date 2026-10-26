@@ -43,7 +43,7 @@ Scoreboard `story`, Eintrag `#cerina` (B2): 1 = gerade aus dem Portal getreten (
 > *Sie tritt einen Schritt zurück und hebt beschwichtigend die Hände.* Bitte legt es dort auf den Boden und nicht in meine Hand. Ich habe in meinem Leben gelernt, welchen Dingen man besser nicht zu nahe kommt, und dieses gehört ganz sicher dazu.
 - **[Hier, wir legen es ab]** → Befehle:
   `clear @initiator kubejs:relikt 1`
-  `ftbquests change_progress @initiator complete <ST10-03>`
+  `tag @initiator add story_st10_03`
   `scoreboard players set #cerina story 2`
   → `c1_danke`
 
@@ -66,7 +66,7 @@ Scoreboard `story`, Eintrag `#cerina` (B2): 1 = gerade aus dem Portal getreten (
   `clear @initiator mekanism:elite_control_circuit 1`
   `clear @initiator botania:elementium_ingot 4`
   `give @initiator kubejs:galaktischer_strahlenschutz 1`
-  `ftbquests change_progress @initiator complete <ST10-04>`
+  `tag @initiator add story_st10_04`
   `scoreboard players set #cerina story 3`
   → `c2_fertig`
 - **[Noch nicht]** → schließen

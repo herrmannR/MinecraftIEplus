@@ -39,7 +39,7 @@ Scoreboard `story`, Eintrag `#davijaan` (B2): 0 = noch nie gesprochen, 1 = Helm-
 
 #### `v0_verloren` · Prio 0
 > Euch vielleicht. Wenn ihr was für mich tut. Da unten in der Höhle hab ich was verloren. Ich geh da nicht mehr hin. Meine Knie und die Viecher da unten verstehen sich nicht allzu gut.
-- **[Was hast du verloren?]** → Befehle: `ftbquests change_progress @initiator complete <ST4-02>`, `scoreboard players set #davijaan story 1` → `v0_helm`
+- **[Was hast du verloren?]** → Befehle: `tag @initiator add story_st4_02`, `scoreboard players set #davijaan story 1` → `v0_helm`
 
 #### `v0_helm` · Prio 0
 > Einen Helm. Alt, verbeult, mit einem Funkgerät drin, das keiner mehr baut. Er hat mehr gesehen als ihr drei zusammen. Bringt ihn mir, dann reden wir weiter.
@@ -55,7 +55,7 @@ Scoreboard `story`, Eintrag `#davijaan` (B2): 0 = noch nie gesprochen, 1 = Helm-
 - **[Er ist kaputt]** · Bedingung: im Inventar `kubejs:kaputter_klonhelm` → `v1_kaputt`
 - **[Hier ist er, repariert]** · Bedingung: im Inventar `swgc:clone_212th_battalion_helmet` (der reparierte Helm ist der echte 212er-Helm, O71) → Befehle:
   `clear @initiator swgc:clone_212th_battalion_helmet 1`
-  `ftbquests change_progress @initiator complete <ST4-05>`
+  `tag @initiator add story_st4_05`
   `scoreboard players set #davijaan story 2`
   → `v2_helm`
 

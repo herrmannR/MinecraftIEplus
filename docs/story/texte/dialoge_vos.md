@@ -53,7 +53,7 @@ Scoreboard `story`, Eintrag `#vos` (B2): 1 = im Versteck erschienen (Belohnung v
 
 #### `q1_heim` · Prio 0
 > Auf eure Welt? Sehr gern, wenn ihr noch einen Platz in eurer Rakete für mich habt. Das Eis hier ist ehrlich, das muss man ihm lassen, aber es ist schlecht für die Knie, und außerdem habe ich euch noch so einiges zu erzählen, das man besser an einem warmen Feuer erzählt.
-- **[Dann fliegen wir]** → Befehle: `ftbquests change_progress @initiator complete <ST11-02>`, `scoreboard players set #vos story 2` → schließen
+- **[Dann fliegen wir]** → Befehle: `tag @initiator add story_st11_02`, `scoreboard players set #vos story 2` → schließen
 
 ---
 
@@ -84,7 +84,7 @@ Wenn die Spieler wieder auf der Erde sind (ST11-03), stellt der User Vos und DD3
 
 #### `q3_ende` · Prio 0
 > Gut, dann fangen wir bald an. Und danke euch, von Herzen: Ihr habt einem Fremden geholfen, ohne zu wissen, wer er ist oder was er getan hat, und das ist seltener, als ihr vielleicht glaubt.
-- **[Gern geschehen]** → Befehle: `ftbquests change_progress @initiator complete <ST11-04>`, `scoreboard players set #vos story 4` → schließen
+- **[Gern geschehen]** → Befehle: `tag @initiator add story_st11_04`, `scoreboard players set #vos story 4` → schließen
 
 ---
 

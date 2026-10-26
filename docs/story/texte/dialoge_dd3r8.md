@@ -90,7 +90,7 @@ Logbuch Teil 2 kommt mit dem Abhaken von „Würdig sein“ (ST2-01).
 
 #### `d2_bericht` · Prio 110 · `#dd3r8 = 2` und `#bodhi ≥ 2`
 > Ihr wart bei ihm. Und ihr habt Zinn mitgebracht. Mein Vertrauen in eure Spezies steigt um vier Prozent.
-- **[Was kommt jetzt?]** → Befehle: `ftbquests change_progress @initiator complete <ST3-05>`, `scoreboard players set #dd3r8 story 3` → `d2_mond`
+- **[Was kommt jetzt?]** → Befehle: `tag @initiator add story_st3_05`, `scoreboard players set #dd3r8 story 3` → `d2_mond`
 
 #### `d2_mond` · Prio 0
 > Der dritte Teil ist entschlüsselt. Mein Meister entdeckte einen alten Bekannten auf eurem Mond. Ihr müsst zu ihm gelangen. Vielleicht weiß er etwas.
@@ -119,7 +119,7 @@ Logbuch Teil 2 kommt mit dem Abhaken von „Würdig sein“ (ST2-01).
 
 #### `d3_bericht` · Prio 110 · `#dd3r8 = 3` und `#davijaan ≥ 2`
 > Ihr seht aus, als hättet ihr jemanden getroffen. Ein Einsiedler? Der den Mond abschirmt? Und mich nicht leiden kann? … Ich verstehe.
-- **[Er sagt, vom Mars könntest du das gesamte Sonnensystem scannen.]** → Befehle: `ftbquests change_progress @initiator complete <ST4-07>`, `scoreboard players set #dd3r8 story 4` → `d3_mars`
+- **[Er sagt, vom Mars könntest du das gesamte Sonnensystem scannen.]** → Befehle: `tag @initiator add story_st4_07`, `scoreboard players set #dd3r8 story 4` → `d3_mars`
 
 #### `d3_mars` · Prio 0
 > Ah, die vierte Welt. Weiter, kälter, mehr Staub. Ein Horchposten braucht Strom, Luft und eine vernünftige Gravitation. Kriegt ihr das hin?
@@ -146,7 +146,7 @@ Logbuch Teil 2 kommt mit dem Abhaken von „Würdig sein“ (ST2-01).
   `clear @initiator immersivepetroleum:diesel_bucket 1`
   `clear @initiator mekanism:advanced_control_circuit 1`
   `give @initiator minecraft:bucket 1`
-  `ftbquests change_progress @initiator complete <ST5-01>`
+  `tag @initiator add story_st5_01`
   `scoreboard players set #dd3r8 story 5`
   → `d4_danke`
 
@@ -180,7 +180,7 @@ DD3R8 erscheint am festen Platz der Station, wenn ST7-02 erledigt ist (O69; Befe
 
 #### `d6_signal` · Prio 0
 > Da. Ein Signal. Eine Signatur, alt, aber seine. Er lebt. Oder er hat gelebt, als er das gesendet hat.
-- **[Wohin führt es?]** → Befehle: `ftbquests change_progress @initiator complete <ST7-03>`, `scoreboard players set #dd3r8 story 7` → `d6_merkur`
+- **[Wohin führt es?]** → Befehle: `tag @initiator add story_st7_03`, `scoreboard players set #dd3r8 story 7` → `d6_merkur`
 
 #### `d6_merkur` · Prio 0
 > Zur heißesten Welt, nah am Stern. Dort steht ein Tempel. Ich habe ein schlechtes Gefühl dabei.
@@ -199,7 +199,7 @@ DD3R8 erscheint am festen Platz der Station, wenn ST7-02 erledigt ist (O69; Befe
 > Der Tempel. Habt ihr dort etwas gefunden? Schriften, Zeichen, Kratzer an der Wand? Ich nehme alles.
 - **[Vier Rollen]** · Bedingung: im Inventar `kubejs:tempelrolle_1` bis `_4` → Befehle:
   `clear @initiator kubejs:tempelrolle_1 1` (ebenso `_2`, `_3`, `_4`)
-  `ftbquests change_progress @initiator complete <ST8-03>`
+  `tag @initiator add story_st8_03`
   `scoreboard players set #dd3r8 story 8`
   → `d7_erkenntnis`
 - **[Noch nichts]** → schließen

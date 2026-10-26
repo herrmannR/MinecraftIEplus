@@ -14,9 +14,9 @@ Für den Bau von Buch 1 braucht `QuestbuchGen` diese Ergänzungen (Teil des Tech
 
 | Aufgabe im Text | Bedeutung | in der Steuerdatei |
 |---|---|---|
-| „Abgabe im Dialog“, „Gespräch mit …“ | Die Quest erledigt der Dialog per `ftbquests change_progress … complete` (B1). Die Aufgabe selbst darf von den Spielern nicht erfüllbar sein, sonst ginge es ohne Dialog. | `stage(dialog_<code>)`: Stage-Aufgabe mit einer Stage, die niemand setzt. 🔵 Prüfen, dass `change_progress complete` sie trotzdem abhakt |
+| „Abgabe im Dialog“, „Gespräch mit …“ | Stage-Aufgabe `story_<code>` (z. B. `story_st3_05`); der Dialog setzt sie mit `tag @initiator add story_st3_05` (B1, Vorschlag des Users 2026-10-26, erprobt in Test 29). | `stage(story_<code>)`, später automatisch |
 | „Häkchen“ | Die Spieler klicken selbst. | `check(Titel)` (gibt es schon) |
-| „Nur der Host“ | Der User hakt per Befehl ab (O22). | wie Dialog: `stage(dialog_<code>)` |
+| „Nur der Host“ | Der User setzt die Stage per Befehl (O22), z. B. `tag <Spieler> add story_st7_02`. | wie Dialog: `stage(story_<code>)` |
 | mehrere Aufgabenarten in einer Quest | z. B. Dimension und Dialog | Eintrag `tasks = …; …` |
 
 Item-Aufgaben nur **erkennen**, nicht verbrauchen (Standard in FTB Quests): Relikt, Rollen und Helm werden danach noch gebraucht.
@@ -66,7 +66,7 @@ Bodhi lässt euch in seine Welten, verlangt aber einen Wegzoll. Bring ihm 32 Roh
 
 Erzähl DD3R8, was ihr bei Bodhi erlebt habt. Vielleicht hat er inzwischen den nächsten Teil des Logbuchs entschlüsselt.
 
-**Steuerdatei:** `ST3-00 tasks = stage(dialog_st3-00)`, `ST3-01 tasks = stage(dialog_st3-01)`, `ST3-04 tasks = stage(dialog_st3-04)`, `ST3-05 tasks = stage(dialog_st3-05)`.
+**Steuerdatei:** `ST3-00 tasks = stage(story_st3_00)`, `ST3-01 tasks = stage(story_st3_01)`, `ST3-04 tasks = stage(story_st3_04)`, `ST3-05 tasks = stage(story_st3_05)`.
 
 ---
 
@@ -107,7 +107,7 @@ Bau ein Tor aus Lunar Stone Bricks und reise nach Everdawn, die Welt der ewigen 
 
 Davijaan schirmt den Mond ab, aber hat euch verraten, von wo aus man den Meister lokalisieren könnte. Erzähl es DD3R8.
 
-**Steuerdatei:** `ST4-02 tasks = stage(dialog_st4-02)`, `ST4-05 tasks = stage(dialog_st4-05)`, `ST4-06 tasks = dim(blue_skies:everdawn); stage(dialog_st4-06)`, `ST4-06 deps = ST3-05` (läuft neben dem Mond), `ST4-07 tasks = stage(dialog_st4-07)`, `ST4-07 deps = ST4-05`.
+**Steuerdatei:** `ST4-02 tasks = stage(story_st4_02)`, `ST4-05 tasks = stage(story_st4_05)`, `ST4-06 tasks = dim(blue_skies:everdawn); stage(story_st4_06)`, `ST4-06 deps = ST3-05` (läuft neben dem Mond), `ST4-07 tasks = stage(story_st4_07)`, `ST4-07 deps = ST4-05`.
 
 ---
 
@@ -118,7 +118,7 @@ Davijaan schirmt den Mond ab, aber hat euch verraten, von wo aus man den Meister
 
 Für den Mars reicht Biodiesel nicht. DD3R8 will einen Eimer entschwefelten Diesel und einen Advanced Control Circuit sehen, beides braucht die Rakete T2. Wie du den Diesel herstellst, steht im Kapitel Immersive Engineering, den Circuit im Kapitel Mekanism.
 
-**Steuerdatei:** `ST5-01 tasks = stage(dialog_st5-01)`.
+**Steuerdatei:** `ST5-01 tasks = stage(story_st5_01)`.
 
 ---
 
@@ -153,7 +153,7 @@ Baut die Station auf dem Mars nach den Plänen der ehemaligen Bewohner, dicht, m
 
 DD3R8 richtet seine Antenne aus. Sprich mit ihm in der Station.
 
-**Steuerdatei:** `ST7-01 tasks = …; or(Bett; minecraft:white_bed, … alle 16 Farben); …` (🔵 3 Betten beliebiger Farbe: Smart Filter mit Tag `#minecraft:beds`, falls FTB Filter System Tags kann), `ST7-02 tasks = stage(dialog_st7-02)`, `ST7-03 tasks = stage(dialog_st7-03)`.
+**Steuerdatei:** `ST7-01 tasks = …; or(Bett; minecraft:white_bed, … alle 16 Farben); …` (🔵 3 Betten beliebiger Farbe: Smart Filter mit Tag `#minecraft:beds`, falls FTB Filter System Tags kann), `ST7-02 tasks = stage(story_st7_02)`, `ST7-03 tasks = stage(story_st7_03)`.
 
 ---
 
@@ -174,7 +174,7 @@ Irgendwo auf dem Merkur steht ein alter Tempel. Durchsuch ihn und nimm alle vier
 
 Bring die vier Rollen zu DD3R8 in die Station auf dem Mars.
 
-**Steuerdatei:** `ST8-03 tasks = stage(dialog_st8-03)`.
+**Steuerdatei:** `ST8-03 tasks = stage(story_st8_03)`.
 
 ---
 
@@ -205,7 +205,7 @@ Geh mit Terrasteel, 4 Imbued Slate, dem Siegel der Traumwelten und dem Orb of th
 
 Geh durch das Tor ins Endless Realm. Folge den Gängen der Minen bis zur großen Halle, wo sie sich treffen. Dort liegt in einer Truhe, was der Meister zurückgelassen hat. Nimm alles mit und lies das Tagebuch. Tipp: Wechselt euch beim Tragen ab.
 
-**Steuerdatei:** `ST9-01 deps = ST8-03`, `ST9-02 deps = ST8-03`, `ST9-03 deps = ST8-03` (die drei laufen nebeneinander), `ST9-04 tasks = stage(dialog_st9-04)` (das Altar-Skript hakt ab), `ST9-04 deps = ST9-01, ST9-02, ST9-03`.
+**Steuerdatei:** `ST9-01 deps = ST8-03`, `ST9-02 deps = ST8-03`, `ST9-03 deps = ST8-03` (die drei laufen nebeneinander), `ST9-04 tasks = stage(story_st9_04)` (das Altar-Skript hakt ab), `ST9-04 deps = ST9-01, ST9-02, ST9-03`.
 
 ---
 
@@ -231,7 +231,7 @@ Wirf eine Rune des Frühlings (`botania:rune_spring`) in das offene Portal to Al
 
 Meisterin Cerina will euch helfen, zum Meister zu gelangen. Dafür braucht sie die vier Arcs der Wächter aus Blue Skies, einen Elite Control Circuit und vier Elementium. Elementium bekommst du durch das Portal: Wirf Manasteel hinein.
 
-**Steuerdatei:** `ST10-03 tasks = stage(dialog_st10-03)`, `ST10-04 tasks = stage(dialog_st10-04)`.
+**Steuerdatei:** `ST10-03 tasks = stage(story_st10_03)`, `ST10-04 tasks = stage(story_st10_04)`.
 
 ---
 
@@ -257,7 +257,7 @@ Der Meister und DD3R8 fliegen mit euch zur Erde. Bring sie nach Hause.
 
 Der Meister ist auf der Erde. Sprich mit ihm in eurer Basis.
 
-**Steuerdatei:** `ST11-02 tasks = stage(dialog_st11-02)`, `ST11-04 tasks = stage(dialog_st11-04)`.
+**Steuerdatei:** `ST11-02 tasks = stage(story_st11_02)`, `ST11-04 tasks = stage(story_st11_04)`.
 
 ## Offen beim Überarbeiten
 
