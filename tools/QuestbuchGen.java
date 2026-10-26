@@ -25,6 +25,7 @@ import java.util.regex.*;
  *
  * Steuerdatei tools/questbuch/<mod>.cfg:
  *   chapter = <dateiname>      title = <Kapiteltitel>      icon = <item-id>      order = <zahl>
+ *   bis = K11                  (optional) nur Abschnitte bis zu diesem Kapitel; spätere fallen weg
  *   <CODE> tasks = item(id[,anzahl]); or(Titel; id, id, ...); fluid(id, mB); dim(id); check(Titel); stage(name)
  *   <CODE> rewards = stage(name); command(/befehl …); item(id[,anzahl]); xp(menge)
  *             (alle als Team-Belohnung, automatisch abgeholt; Befehle mit erhöhten Rechten und ohne Chat-Ausgabe)
@@ -55,6 +56,7 @@ public class QuestbuchGen {
 
     static final String HQ = "hauptquests";
     static String chapter, chTitle = "", chIcon = "", order = "1";
+    static int bis = Integer.MAX_VALUE;
     static Map<String, String> cfgTasks = new HashMap<>(), cfgDeps = new HashMap<>(), cfgIcon = new HashMap<>(), cfgRewards = new HashMap<>(), kNames = new HashMap<>();
 
     public static void main(String[] a) throws Exception {
@@ -62,6 +64,9 @@ public class QuestbuchGen {
         if (a.length < 3) { System.out.println("Aufruf: java QuestbuchGen.java <md> <cfg> <out.snbt> | --hauptquests <01_PROGRESSION.md> <hauptquests.cfg> <chapters-ordner>"); return; }
         readCfg(Paths.get(a[1]));
         List<Quest> qs = parse(Files.readAllLines(Paths.get(a[0]), StandardCharsets.UTF_8));
+        int vorher = qs.size();
+        qs.removeIf(q -> q.kGate != null && Integer.parseInt(q.kGate.substring(1)) > bis);
+        if (qs.size() < vorher) System.out.println((vorher - qs.size()) + " Quests nach K" + bis + " ausgelassen");
         Map<String, Quest> byCode = new LinkedHashMap<>();
         for (Quest q : qs) if (byCode.put(q.code, q) != null) throw new RuntimeException("Questcode doppelt: " + q.code);
 
@@ -242,6 +247,7 @@ public class QuestbuchGen {
             if (kp.length == 1) switch (k) {
                 case "chapter": chapter = v; break; case "title": chTitle = v; break;
                 case "icon": chIcon = v; break; case "order": order = v; break;
+                case "bis": bis = Integer.parseInt(v.replaceAll("\\D", "")); break;
                 default: throw new RuntimeException("Unbekannter Schlüssel " + k);
             } else switch (kp[1]) {
                 case "tasks": cfgTasks.put(kp[0], v); break;
