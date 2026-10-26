@@ -1,0 +1,11 @@
+{
+  "name": "Pilotenhelm",
+  "icon": "swgc:clone_212th_battalion_helmet",
+  "category": "patchouli:erinnerungsstuecke",
+  "advancement": "ieplus:bauplan/pilotenhelm",
+  "sortnum": 1,
+  "pages": [
+    { "type": "patchouli:text", "text": "Der alte Helm des Einsiedlers, aus seiner Höhle auf dem Mond. Visier gesprungen, Funk tot.$(br2)Stahlplatten für die Schale, Isolierglas fürs Visier, eine Steuerschaltung für die Anzeige und eine Elektronenröhre für den Funk. In die Mitte der verbeulte Helm.$(br2)Bringt ihn danach dem Einsiedler zurück." },
+    { "type": "patchouli:crafting", "recipe": "ieplus:story/pilotenhelm" }
+  ]
+}

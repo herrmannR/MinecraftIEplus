@@ -1,0 +1,198 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "aircraft"
+	group: ""
+	icon: "immersive_aircraft:airship"
+	id: "7E7110FA2C82EE4F"
+	order_index: 21
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 4: Der Mond."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "3496A9D3803916D3"
+			shape: "gear"
+			subtitle: "IA1 · Erste Fluggeräte"
+			tasks: [{
+				id: "63D1AAFCB074F005"
+				stage: "kapitel_k4"
+				type: "gamestage"
+			}]
+			title: "Kapitel 4: Immersive Aircraft"
+			x: 2.0d
+			y: -1.75d
+		}
+		{
+			dependencies: ["3496A9D3803916D3"]
+			description: [
+				"Die kurze Reihe des Packs (F17): sechs Quests in zwei Abschnitten. Der Gyrodyne fliegt ohne Treibstoff und lässt sich schon früh bauen; die Quests erscheinen ab dem Mond."
+				""
+				"Aus diesen drei Teilen bestehen alle Fluggeräte."
+				"• &eHull&r (Rumpf): 6 Holzstämme + 3 Iron Ingot"
+				"• &eSail&r (Segel): 6 White Carpet + 3 String"
+				"• &ePropeller&r: 5 Iron Ingot"
+			]
+			hide_until_deps_visible: true
+			icon: "immersive_aircraft:hull"
+			id: "4C48D7003EFCCB36"
+			optional: true
+			shape: "square"
+			subtitle: "IA1 · Erste Fluggeräte · Nebenquest"
+			tasks: [{
+				id: "16207056633586BB"
+				item: "immersive_aircraft:hull"
+				type: "item"
+			}
+			{
+				id: "1B9E490F0F4C3FD5"
+				item: "immersive_aircraft:sail"
+				type: "item"
+			}
+			{
+				id: "6DB918FC70CA2D14"
+				item: "immersive_aircraft:propeller"
+				type: "item"
+			}]
+			title: "Hull, Sail und Propeller"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4C48D7003EFCCB36"]
+			description: [
+				"Der Gyrodyne fliegt mit Muskelkraft und braucht weder Engine noch Treibstoff. Steig ein und treib den Rotor an, bis „Minimum rotor speed reached, ready for takeoff!“ erscheint. Das kostet Hunger: Mit leerem Magen hebst du nicht ab."
+				"Er ist langsam, aber das einfachste Fluggerät im Pack."
+			]
+			hide_until_deps_visible: true
+			icon: "immersive_aircraft:gyrodyne"
+			id: "606196CD670CB983"
+			optional: true
+			shape: "square"
+			subtitle: "IA1 · Erste Fluggeräte · Nebenquest"
+			tasks: [{
+				id: "783E3B7792B71E4F"
+				item: "immersive_aircraft:gyrodyne"
+				type: "item"
+			}]
+			title: "Gyrodyne"
+			x: 2.0d
+			y: 1.25d
+		}
+		{
+			dependencies: ["4C48D7003EFCCB36"]
+			description: [
+				"Fluggeräte mit Engine tanken flüssigen Treibstoff, nicht Kohle."
+				"So geht's: Fülle ein IE &eMetal Barrel&r mit Treibstoff und lege das Fass in den Treibstoffplatz des Fluggeräts."
+				"Geeignet sind Biodiesel aus der IE Refinery und von Immersive Petroleum Diesel, Sulfurized Diesel und Kerosene. Gasoline geht nicht."
+				"&6⚙&r Fester Brennstoff ist abgeschaltet (Config von iaie: disableSolidFuel = true). &9(ungeprüft)&r Ob Blaze Powder trotzdem noch brennt, im Spiel prüfen."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:metal_barrel"
+			id: "2699D7367B6CCE4E"
+			optional: true
+			shape: "square"
+			subtitle: "IA1 · Erste Fluggeräte · Nebenquest"
+			tasks: [{
+				id: "523A3B564AF47F9A"
+				item: "immersiveengineering:metal_barrel"
+				type: "item"
+			}
+			{
+				amount: 1000L
+				fluid: "immersiveengineering:biodiesel"
+				id: "1FD68462DFB78435"
+				type: "fluid"
+			}]
+			title: "Treibstoff im Metal Barrel"
+			x: 2.0d
+			y: 2.5d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 5: Erzketten."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "130A93651EA2305F"
+			shape: "gear"
+			subtitle: "IA2 · Luftschiffe"
+			tasks: [{
+				id: "3B7136DAF40801DE"
+				stage: "kapitel_k5"
+				type: "gamestage"
+			}]
+			title: "Kapitel 5: Immersive Aircraft"
+			x: 5.5d
+			y: -1.75d
+		}
+		{
+			dependencies: ["2699D7367B6CCE4E", "130A93651EA2305F"]
+			description: [
+				"Das erste Fluggerät mit Engine. Langsam, aber leicht zu steuern. Drei Upgrade-Plätze und ein Inventarplatz."
+				"&6⚙&r Im Pack mit IE-Stahl: 4 Sail + 2 Steel Plate + 2 Hull + 1 Engine (Rezept in JEI)."
+				"Die &eEngine&r baust du so:"
+				"• &eBoiler&r: 7 Copper Ingot + 1 Furnace"
+				"• &eEngine&r: Boiler + Blast Furnace + 2 Piston + 3 Cobblestone"
+			]
+			hide_until_deps_visible: true
+			icon: "immersive_aircraft:airship"
+			id: "49F91214DE919443"
+			optional: true
+			shape: "square"
+			subtitle: "IA2 · Luftschiffe · Nebenquest"
+			tasks: [{
+				id: "24758F0F3B917A81"
+				item: "immersive_aircraft:airship"
+				type: "item"
+			}]
+			title: "Airship"
+			x: 5.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["49F91214DE919443"]
+			description: [
+				"Airship + 1 Hull + 4 Chest; der Stahl steckt im Airship schon drin. Langsam und durstig, trägt aber fünf Inventarplätze, also ein ganzes Lager."
+			]
+			hide_until_deps_visible: true
+			icon: "immersive_aircraft:cargo_airship"
+			id: "5015A43A7B88A706"
+			optional: true
+			shape: "square"
+			subtitle: "IA2 · Luftschiffe · Nebenquest"
+			tasks: [{
+				id: "3A2C46CB246A5509"
+				item: "immersive_aircraft:cargo_airship"
+				type: "item"
+			}]
+			title: "Cargo Airship"
+			x: 5.5d
+			y: 1.25d
+		}
+		{
+			dependencies: ["5015A43A7B88A706"]
+			description: [
+				"Cargo Airship + 2 Engine + Industrial Gears (3 Iron + 3 Copper Ingot + 1 Lever). Die fliegende Festung: dreifache Haltbarkeit, drei Treibstoffplätze, zwei Waffen, sechs Upgrades. Langsam, aber mit 0,8 überraschend sparsam."
+			]
+			hide_until_deps_visible: true
+			icon: "immersive_aircraft:warship"
+			id: "72C03921EE484BF1"
+			optional: true
+			shape: "square"
+			subtitle: "IA2 · Luftschiffe · Nebenquest"
+			tasks: [{
+				id: "08376D23FF1CA372"
+				item: "immersive_aircraft:warship"
+				type: "item"
+			}]
+			title: "Warship"
+			x: 5.5d
+			y: 2.5d
+		}
+	]
+	title: "Immersive Aircraft"
+}

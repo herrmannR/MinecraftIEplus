@@ -12,11 +12,11 @@
 - **Aufgaben nennen die Gewinner-Items des Packs** ⚙️: Wo beide Mods dasselbe Ding hatten, gibt es im Pack nur noch eins (Tabelle am Ende). Die Verlierer sind in JEI ausgeblendet; Altbestand wandelst du in der Werkbank 1:1 um.
 - Rezepte stehen in JEI. Die Texte nennen sie nur, wo sie für den nächsten Schritt zählen.
 - **Pack-Änderungen** mit ⚙️. 🔵 = noch nicht entschieden, nicht belegt oder im Spiel zu prüfen.
-- Einordnung: Fast alles geht ab Eisen; die Reihen KU8 (Nether) und KU9 (End) folgen dem Fortschritt. Da es vor dem Mond kein Questbuch gibt, stehen KU1–KU7 praktisch gleich offen.
+- Einordnung: Fast alles geht ab Eisen; die Reihen KU8 (Nether) und KU9 (End) folgen dem Fortschritt. Kapitel (Vorschlag 2026-10-26, damit die Küche in die Breite wächst statt auf einmal): KU1 mit K1, KU2 und KU3 mit K2, KU4 mit K3, KU5 und KU6 mit K4, KU7 mit K5, KU8 mit K6, KU9 mit K7.
 
 ---
 
-## KU1 · Messer und Feld
+## KU1 · Messer und Feld (K1 Ankunft)
 
 ### KU1-01 Das erste Messer · Nebenquest
 **Aufgabe:** `farmersdelight:flint_knife`, `kaleidoscope_cookery:iron_kitchen_knife` (eins davon)
@@ -35,7 +35,7 @@ Mit dem Messer schneidest du Stroh von Gras, Weizen und Reis. Tötest du Tiere d
 Trag den Hut, solange du Saatgut sammelst.
 
 ### KU1-03 Wildpflanzen · Nebenquest
-**Aufgabe:** `kaleidoscope_cookery:tomato`, `farmersdelight:cabbage`, `kaleidoscope_grilling:onion` (zwei davon)
+**Aufgabe:** `kaleidoscope_cookery:tomato`, `farmersdelight:cabbage`, `kaleidoscope_grilling:onion` (eins davon)
 
 Wildpflanzen von Farmer's Delight wachsen in der Oberwelt: Wild Cabbage und Sea Beet an Stränden, Wild Carrot und Wild Onion in gemäßigten Gebieten, Wild Potato im Kalten, Tomato Shrub im Heißen, Wild Rice an nassen Stellen. Abbauen gibt Feldfrüchte und Saatgut.
 ⚙️ Wilde Tomaten, wilder Reis und wilde Zwiebeln geben im Pack die Kaleidoscope-Items (Tomato, Rice Seed, Onion). Wilder Kohl gibt FD-Kohl (Kohl und Salat bleiben getrennt). 🟢 Test 70.
@@ -48,7 +48,7 @@ Wildpflanzen von Farmer's Delight wachsen in der Oberwelt: Wild Cabbage und Sea 
 
 ---
 
-## KU2 · Anbau
+## KU2 · Anbau (K2 Würdig sein)
 
 ### KU2-01 Stroh, Canvas und Rope · Nebenquest
 **Aufgabe:** `farmersdelight:straw`, `farmersdelight:rope`
@@ -65,7 +65,7 @@ Auf Rich Soil wachsen Pflanzen schneller (Config `richSoilBoostChance` = 0,2). D
 **Aufgabe:** `kaleidoscope_cookery:rice_panicle`
 
 Reis wächst im Wasser. Mach mit der Hacke Ackerboden **unter Wasser** – das ist das Reisfeld. Pflanze Rice Seed hinein. Fische im Reisfeld (Cod, Salmon, Tropical Fish, Pufferfish, Tadpole, Axolotl) lassen den Reis schneller wachsen. Reis wächst auch auf Rich Soil Farmland.
-Reif gibt er Rice Panicles. Neun davon pressen sich zu einem Rice Bale; am Mühlstein wird eine Rispe zu 3 Rice Seed (KU4-05).
+Reif gibt er Rice Panicles. Neun davon pressen sich zu einem Rice Bale; am Mühlstein wird eine Rispe zu 3 Rice Seed (KU4-06).
 ⚙️ Reis ist im Pack der von Kaleidoscope; den Ballen liefert Farmer's Delight (`farmersdelight:rice_bale`).
 
 ### KU2-04 Tomaten, Chili, Salat, Tee · Nebenquest
@@ -79,7 +79,7 @@ Die Saaten vom Strohhut wachsen auf normalem Ackerboden.
 
 ---
 
-## KU3 · Herd und Brett
+## KU3 · Herd und Brett (K2 Würdig sein)
 
 ### KU3-01 Stove · Nebenquest
 **Aufgabe:** `kaleidoscope_cookery:stove`
@@ -106,7 +106,7 @@ Schneide Raw Porkchop, Raw Chicken und Raw Mutton am Brett. Diese Teile brauchen
 
 ---
 
-## KU4 · Kochgeräte
+## KU4 · Kochgeräte (K3 Industrie)
 
 ### KU4-01 Cooking Pot · Nebenquest
 **Aufgabe:** `farmersdelight:cooking_pot`
@@ -128,7 +128,7 @@ Falsche Zutaten oder zu langes Warten ergeben **Suspicious Stir-Fry**. Nimmst du
 Ein **Recipe** (4 Paper) merkt sich den Inhalt eines Woks und füllt ihn später mit einem Klick aus dem Inventar.
 
 ### KU4-03 Erste Wok-Gerichte · Nebenquest
-**Aufgabe:** `kaleidoscope_cookery:scramble_egg_with_tomatoes`, `kaleidoscope_cookery:egg_fried_rice`, `kaleidoscope_cookery:sweet_and_sour_pork` (zwei davon)
+**Aufgabe:** `kaleidoscope_cookery:scramble_egg_with_tomatoes`, `kaleidoscope_cookery:egg_fried_rice`, `kaleidoscope_cookery:sweet_and_sour_pork` (eins davon)
 
 - Scramble Egg with Tomatoes: 3 Eier + 3 Tomaten.
 - Egg Fried Rice: 2 Eier + Cooked Rice.
@@ -187,7 +187,7 @@ Im Stockpot ergeben Teebeutel mit Milch **Clay Pot Milk Tea**, der alle schädli
 
 ---
 
-## KU5 · Festessen und Dorf
+## KU5 · Festessen und Dorf (K4 Der Mond)
 
 ### KU5-01 Ein Festessen · Nebenquest
 **Aufgabe:** `farmersdelight:roast_chicken_block`, `farmersdelight:honey_glazed_ham_block`, `farmersdelight:shepherds_pie_block`, `farmersdelight:stuffed_pumpkin_block` (eins davon)
@@ -196,7 +196,7 @@ Festessen stellst du als Block auf und teilst sie in Portionen. Stuffed Pumpkin 
 Mahlzeiten aus dem Cooking Pot geben **Nourishment** (Hunger sinkt nicht) oder **Comfort** (natürliche Heilung, egal wie hungrig).
 
 ### KU5-02 Der Koch · Nebenquest
-**Aufgabe:** Checkmark
+**Aufgabe:** Häkchen „Ein Dorfbewohner ist Chef“
 
 Stell einen Stove neben einen arbeitslosen Dorfbewohner: Er wird **Chef**. In neuen Dörfern stehen eigene Küchenhäuser mit Truhen voller Zutaten und Suppen.
 🟢 Test 72: Seine Angebote nennen nur Kaleidoscope-Items (laut Code u. a. Tomate, Chili, Salat, Reis, Spiegelei, Küchenmesser, Kochschaufel, Suppen); Preise nicht ausgelesen.
@@ -208,7 +208,7 @@ Stell einen Stove neben einen arbeitslosen Dorfbewohner: Er wird **Chef**. In ne
 
 ---
 
-## KU6 · Taverne
+## KU6 · Taverne (K4 Der Mond)
 
 ### KU6-01 Reben und Trellis · Nebenquest
 **Aufgabe:** `kaleidoscope_tavern:grapevine`, `kaleidoscope_tavern:trellis`
@@ -241,7 +241,7 @@ Wine aus reinem Grape Juice, Vodka aus Wasser + Potato. Jedes Getränk gibt eine
 
 ---
 
-## KU7 · Grill
+## KU7 · Grill (K5 Erzketten)
 
 ### KU7-01 Grill · Nebenquest
 **Aufgabe:** `kaleidoscope_grilling:grill`
@@ -271,7 +271,7 @@ Stell die Empty Seasoning Bottle (6 Glass + Holzknopf) ab, füll bis zu acht Zut
 
 ---
 
-## KU8 · Nether (Nether's Delight)
+## KU8 · Nether mit Nether's Delight (K6 Der Mars)
 
 ### KU8-01 Machete und Hoglin · Nebenquest
 **Aufgabe:** `nethersdelight:iron_machete`, `nethersdelight:hoglin_loin`
@@ -295,7 +295,7 @@ Das Festessen des Nethers: Raw Stuffed Hoglin (2 Hoglin Loin, 2 Ham, Hoglin Hide
 
 ---
 
-## KU9 · End (Kaleidoscope End)
+## KU9 · End mit Kaleidoscope End (K7 Horchposten)
 
 ### KU9-01 Ender Mint und Dream Berry · Nebenquest
 **Aufgabe:** `kaleidoscope_end:ender_mint`, `kaleidoscope_end:dream_berry`
@@ -336,7 +336,9 @@ Dragon Egg Shell (3 Obsidian + Dragon Dust) als Gefäß. Im Stockpot: 3 Ender Mi
 ## 🔵 Offen vor dem Einbau
 
 - **Mühlstein-Erze (KS1):** Iron Ore zu 3 Raw Iron mit einem Esel ist billiger als alle frühen Erzwege. Bleibt das, kann KU4-06 eine eigene Quest dazu bekommen; sonst die Rezepte entfernen und in JEI ausblenden.
-- **Koch-Handel** (KU5-02): FTB Quests prüft keinen Berufswechsel, deshalb Checkmark.
+- **Koch-Handel** (KU5-02): FTB Quests prüft keinen Berufswechsel, deshalb Kontrollhaken.
+- **Kapitel-Zuordnung** (Vorschlag, im Entwurf ohne Kn): KU1 K1, KU2/KU3 K2, KU4 K3, KU5/KU6 K4, KU7 K5, KU8 K6, KU9 K7. Bestätigen oder ändern (nur die Kn in den Abschnittstiteln).
+- **„zwei davon“** bei KU1-03 und KU4-03 auf „eins davon“ gesenkt: Der Generator kennt kein „zwei aus drei“.
 - **Pflichtgewürze** der Gewürzflasche (KU7-04) in JEI nachsehen.
 - **Rich Soil**: Zerfallszeit und was ihn beschleunigt, nicht ausgelesen (KU2-02).
 - **Ponder fehlt:** Wer die Anleitungsszenen von Kaleidoscope im Spiel will, braucht den Mod Ponder; sonst ersetzen diese Texte sie.

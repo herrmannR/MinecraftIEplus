@@ -1,0 +1,1198 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "adastra"
+	group: ""
+	icon: "ad_astra:tier_1_rocket"
+	id: "7509F30DCF49B10B"
+	order_index: 17
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 4: Der Mond."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "76675F0BE49207E9"
+			shape: "gear"
+			subtitle: "RF1 · Rakete T1 → Mond"
+			tasks: [{
+				id: "701CD748B616D309"
+				stage: "kapitel_k4"
+				type: "gamestage"
+			}]
+			title: "Kapitel 4: Ad Astra"
+			x: 0.5d
+			y: -1.75d
+		}
+		{
+			dependencies: ["76675F0BE49207E9"]
+			description: [
+				"Das Astrodux führt durch die ganze Raumfahrt bis Proxima Centauri. Lies es kapitelweise, aber achte auf die &6⚙&r-Hinweise in diesen Quests: Einiges im Buch gilt hier nicht."
+				"Buch: The First Launch."
+				"&6⚙&r Die ersten drei Einträge stimmen im Pack nicht. Coal Generator und Compressor gibt es nicht, und die Etrionic Blast Furnace macht keinen Stahl. Strom, Stahl und Platten kommen aus Immersive Engineering."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:astrodux"
+			id: "292FF893CE689E1B"
+			subtitle: "RF1 · Rakete T1 → Mond"
+			tasks: [{
+				id: "012BDEF6A00A150E"
+				item: "ad_astra:astrodux"
+				type: "item"
+			}]
+			title: "Astrodux"
+			x: 0.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["292FF893CE689E1B"]
+			description: [
+				"Für Rakete, Anzug und Werkbank brauchst du viel Stahl, Stahlplatten und Eisenplatten. Ad Astra nimmt die Teile aus Immersive Engineering ohne Umweg an."
+				"Buch: The First Launch → Creating Plates, Making Steel (beide nur zur Einordnung)."
+				"&6⚙&r Stahl kommt aus dem IE Blast Furnace, Platten aus der Metal Press oder mit dem Engineer's Hammer. Der Compressor und das Stahl-Rezept der Etrionic Blast Furnace sind entfernt."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:ingot_steel"
+			id: "4BBF62035ACC750D"
+			subtitle: "RF1 · Rakete T1 → Mond"
+			tasks: [{
+				id: "24D910ACED0C4BB2"
+				item: "immersiveengineering:ingot_steel"
+				type: "item"
+			}
+			{
+				id: "1614E1BD18122137"
+				item: "immersiveengineering:plate_steel"
+				type: "item"
+			}
+			{
+				id: "7FFE7AD82920F700"
+				item: "immersiveengineering:plate_iron"
+				type: "item"
+			}]
+			title: "Stahl und Platten aus IE"
+			x: 0.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["4BBF62035ACC750D"]
+			description: [
+				"An der NASA Workbench baust du jede Rakete. Gestartet wird vom Launch Pad."
+				"Buch: The First Launch → Your First Rocket."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:nasa_workbench"
+			id: "499EC397EBA8F93C"
+			subtitle: "RF1 · Rakete T1 → Mond"
+			tasks: [{
+				id: "3792032CBFCC5CFB"
+				item: "ad_astra:nasa_workbench"
+				type: "item"
+			}
+			{
+				id: "48B733FDCCE34BF7"
+				item: "ad_astra:launch_pad"
+				type: "item"
+			}]
+			title: "NASA Workbench und Launch Pad"
+			x: 0.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["499EC397EBA8F93C"]
+			description: [
+				"Nose Cone, Flossen, Tanks und Triebwerk entstehen in der normalen Werkbank. Dazu kommen sechs Stahlblöcke."
+				"Buch: The First Launch → Your First Rocket."
+				"&6⚙&r Stahlblöcke aus IE gelten ebenso wie die von Ad Astra. In der Steel Engine sitzt oben in der Mitte ein Basic Control Circuit aus Mekanism statt einer Platte. Jedes höhere Triebwerk baut auf dem davor auf."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:rocket_nose_cone"
+			id: "2D0C1755A2F72F7F"
+			subtitle: "RF1 · Rakete T1 → Mond"
+			tasks: [{
+				id: "44424A3FCCD04208"
+				item: "ad_astra:rocket_nose_cone"
+				type: "item"
+			}
+			{
+				count: 4L
+				id: "0E4E39BCFAB075BA"
+				item: "ad_astra:rocket_fin"
+				type: "item"
+			}
+			{
+				count: 2L
+				id: "2DA1B1415A1AEA6A"
+				item: "ad_astra:steel_tank"
+				type: "item"
+			}
+			{
+				id: "532E2E288FBBA556"
+				item: "ad_astra:steel_engine"
+				type: "item"
+			}]
+			title: "Raketenteile"
+			x: 0.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["2D0C1755A2F72F7F"]
+			description: [
+				"Die erste Rakete fliegt zum Mond und in seinen Orbit."
+				"Buch: The First Launch → Your First Rocket, Preparing to Launch."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:tier_1_rocket"
+			id: "356321F07D2E9B1C"
+			subtitle: "RF1 · Rakete T1 → Mond"
+			tasks: [{
+				id: "2D6B5EC1B31C77B3"
+				item: "ad_astra:tier_1_rocket"
+				type: "item"
+			}]
+			title: "Tier 1 Rocket"
+			x: 0.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["356321F07D2E9B1C"]
+			description: [
+				"Ein Start verbraucht 3 Eimer. Für Hin- und Rückflug brauchst du also 6: drei im Tank, drei im Gepäck."
+				"Buch: The First Launch → Fuel (nur zur Einordnung)."
+				"&6⚙&r Die Rakete T1 fliegt nur mit Biodiesel aus der IE Refinery. Fuel, Oil und die Fuel Refinery gibt es im Pack nicht; Ölquellen von Ad Astra sind abgeschaltet."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:biodiesel_bucket"
+			id: "1DCED9FAE9209EEE"
+			subtitle: "RF1 · Rakete T1 → Mond"
+			tasks: [{
+				amount: 6000L
+				fluid: "immersiveengineering:biodiesel"
+				id: "456ED0925BED68D2"
+				type: "fluid"
+			}]
+			title: "Biodiesel tanken"
+			x: 0.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["1DCED9FAE9209EEE"]
+			description: [
+				"Der Oxygen Loader füllt Raumanzug und Gas Tanks mit Sauerstoff."
+				"Kette: Wasser → Electrolytic Separator → Oxygen (Gas) → Rotary Condensentrator → Liquid Oxygen → Oxygen Loader."
+				"Buch: The First Launch → Oxygen."
+				"&6⚙&r Der Oxygen Loader nimmt kein Wasser an, nur flüssigen Sauerstoff aus Mekanism (25 mB ergeben 25 mB). Wie du ihn herstellst, steht im Mekanism-Kapitel in der Quest „Flüssiger Sauerstoff“."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:oxygen_loader"
+			id: "1335B14FA1D8A955"
+			subtitle: "RF1 · Rakete T1 → Mond"
+			tasks: [{
+				id: "2CB1A9D38DC6F6C4"
+				item: "ad_astra:oxygen_loader"
+				type: "item"
+			}
+			{
+				amount: 1000L
+				fluid: "mekanism:oxygen"
+				id: "67EC05635D54DA3E"
+				type: "fluid"
+			}]
+			title: "Sauerstoff aus Mekanism"
+			x: 0.5d
+			y: 9.0d
+		}
+		{
+			dependencies: ["1335B14FA1D8A955"]
+			description: [
+				"Ohne Anzug überlebst du auf dem Mond nicht: keine Luft, −173 °C. Fülle den Anzug vor dem Start im Oxygen Loader."
+				"Buch: The First Launch → Oxygen."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:space_helmet"
+			id: "25E5B2BA4FC3E361"
+			subtitle: "RF1 · Rakete T1 → Mond"
+			tasks: [{
+				id: "49A0EDD1082309D8"
+				item: "ad_astra:space_helmet"
+				type: "item"
+			}
+			{
+				id: "38983E0F86022772"
+				item: "ad_astra:space_suit"
+				type: "item"
+			}
+			{
+				id: "199AD19FA25FC409"
+				item: "ad_astra:space_pants"
+				type: "item"
+			}
+			{
+				id: "063BC0A139F19345"
+				item: "ad_astra:space_boots"
+				type: "item"
+			}]
+			title: "Space Suit"
+			x: 0.5d
+			y: 10.5d
+		}
+		{
+			dependencies: ["25E5B2BA4FC3E361"]
+			description: [
+				"Ein Gas Tank ist Sauerstoff zum Nachfüllen, der Capacitor ein tragbarer Energiespeicher."
+				"Buch: The First Launch → Portable Resources."
+				"&6⚙&r Den Capacitor lädst du in der IE Charging Station oder am Mekanism Energy Cube. Den Energizer gibt es im Pack nicht."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:gas_tank"
+			id: "1A9BCF963F0801FC"
+			optional: true
+			shape: "square"
+			subtitle: "RF1 · Rakete T1 → Mond · Nebenquest"
+			tasks: [{
+				id: "5D05F7FDC239D2EF"
+				item: "ad_astra:gas_tank"
+				type: "item"
+			}
+			{
+				id: "56B9705DD89CE5F6"
+				item: "ad_astra:etrionic_capacitor"
+				type: "item"
+			}]
+			title: "Gas Tank und Etrionic Capacitor"
+			x: 2.0d
+			y: 10.5d
+		}
+		{
+			dependencies: ["25E5B2BA4FC3E361"]
+			description: [
+				"Ein Radio für unterwegs; es gehört auch in den Rover."
+				"Buch: The First Launch → Radio."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:radio"
+			id: "2F58C3A495020A8D"
+			optional: true
+			shape: "square"
+			subtitle: "RF1 · Rakete T1 → Mond · Nebenquest"
+			tasks: [{
+				id: "0ED5BB4CC3E1233B"
+				item: "ad_astra:radio"
+				type: "item"
+			}]
+			title: "Radio"
+			x: 2.0d
+			y: 11.75d
+		}
+		{
+			dependencies: ["25E5B2BA4FC3E361"]
+			description: [
+				"Rakete auf das Launch Pad stellen, einsteigen, betanken, starten. Oben wählst du das Ziel; als Lander kommst du herunter."
+				"Buch: The First Launch → Preparing to Launch, The Moon."
+				""
+				"&c&eVor dem Start:&r&c Anzug voll Sauerstoff, 3 Eimer Biodiesel im Gepäck für den Rückflug. Wer ohne Treibstoff auf dem Mond steht, kommt nicht zurück.&r"
+			]
+			hide_until_deps_visible: true
+			id: "5E6257AA082F40C8"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "RF1 · Rakete T1 → Mond"
+			tasks: [{
+				dimension: "ad_astra:moon"
+				id: "1DD42A8730CEABE7"
+				type: "dimension"
+			}]
+			title: "Start zum Mond"
+			x: 0.5d
+			y: 12.0d
+		}
+		{
+			dependencies: ["356321F07D2E9B1C"]
+			description: [
+				"Das Giselle Addon steht nicht im Astrodux. Alle Quests dieser Reihe sind optional."
+				""
+				"Der Fuel Loader betankt Raketen und Rover, die höchstens 2 Blöcke entfernt stehen. Er fasst 8000 mB, also genug für einen Hin- und Rückflug. Füll ihn per Rohr oder Eimer mit dem Treibstoff der Rakete."
+				"&6⚙&r Auch hier zählt nur der Treibstoff der jeweiligen Stufe."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra_giselle_addon:fuel_loader"
+			id: "2E99BE918D6FDC91"
+			optional: true
+			shape: "square"
+			subtitle: "RF1 · Rakete T1 → Mond · Nebenquest"
+			tasks: [{
+				id: "22C790C752EC2954"
+				item: "ad_astra_giselle_addon:fuel_loader"
+				type: "item"
+			}]
+			title: "Fuel Loader"
+			x: 2.0d
+			y: 13.0d
+		}
+		{
+			dependencies: ["356321F07D2E9B1C"]
+			description: [
+				"Der Sensor gibt den Zustand einer Rakete in seiner Nähe als Redstone-Signal aus; ein Comparator liest ihn ab. Damit lässt sich zum Beispiel der Fuel Loader schalten."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra_giselle_addon:rocket_sensor"
+			id: "4F4D2FCAA683CDD8"
+			optional: true
+			shape: "square"
+			subtitle: "RF1 · Rakete T1 → Mond · Nebenquest"
+			tasks: [{
+				id: "29DEFEE26DF50935"
+				item: "ad_astra_giselle_addon:rocket_sensor"
+				type: "item"
+			}]
+			title: "Rocket Sensor"
+			x: 2.0d
+			y: 14.25d
+		}
+		{
+			dependencies: ["499EC397EBA8F93C"]
+			description: [
+				"Eine NASA Workbench, die sich mit Trichtern und Rohren beschicken lässt. &9(ungeprüft)&r Wie sie genau arbeitet, ist nicht ausgelesen; Text im Spiel prüfen."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra_giselle_addon:automation_nasa_workbench"
+			id: "707FEBC601E1DAD6"
+			optional: true
+			shape: "square"
+			subtitle: "RF1 · Rakete T1 → Mond · Nebenquest"
+			tasks: [{
+				id: "7EA0F7437F9F498E"
+				item: "ad_astra_giselle_addon:automation_nasa_workbench"
+				type: "item"
+			}]
+			title: "Automation NASA Workbench"
+			x: 2.0d
+			y: 15.5d
+		}
+		{
+			dependencies: ["25E5B2BA4FC3E361"]
+			description: [
+				"Eine Sauerstoff-Reserve mit 500 mB, die du als Curio tragen kannst. Sie füllt den Anzug unterwegs nach. Die Netherite Oxygen Can (1000 mB) kommt mit Ostrum (Quest „Netherite Oxygen Can“)."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra_giselle_addon:oxygen_can"
+			id: "5ACFECC62827B5B1"
+			optional: true
+			shape: "square"
+			subtitle: "RF1 · Rakete T1 → Mond · Nebenquest"
+			tasks: [{
+				id: "0850C8D693A532F3"
+				item: "ad_astra_giselle_addon:oxygen_can"
+				type: "item"
+			}]
+			title: "Oxygen Can"
+			x: 2.0d
+			y: 16.75d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 6: Der Mars."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "28BD871410DFDDEE"
+			shape: "gear"
+			subtitle: "RF2 · Rakete T2 → Mars"
+			tasks: [{
+				id: "26771AA0124A6902"
+				stage: "kapitel_k6"
+				type: "gamestage"
+			}]
+			title: "Kapitel 6: Ad Astra"
+			x: 4.0d
+			y: -1.75d
+		}
+		{
+			dependencies: ["5E6257AA082F40C8", "28BD871410DFDDEE"]
+			description: [
+				"Desh liegt nur auf dem Mond. Es ist das Metall der Rakete T2 und vieler Maschinen."
+				"Buch: The First Launch → The Moon."
+				"&6⚙&r Desh-Platten presst du in der IE Metal Press oder schlägst sie mit dem Engineer's Hammer. Auf dem Mond liegt außerdem Osmium in Menge (Erz von Mekanism in Moon Stone)."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:desh_ingot"
+			id: "4BE018C1418BD094"
+			subtitle: "RF2 · Rakete T2 → Mars"
+			tasks: [{
+				id: "58FB567F98132EB5"
+				item: "ad_astra:desh_ingot"
+				type: "item"
+			}
+			{
+				id: "2313092B69F62183"
+				item: "ad_astra:desh_plate"
+				type: "item"
+			}]
+			title: "Desh"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4BE018C1418BD094"]
+			description: [
+				"Im Orbit kannst du eine Raumstation errichten. Für Erde und Mond kostet sie 64 Iron Plate, 32 Steel Ingot, 32 Desh Ingot und 32 Desh Plate; wie man sie setzt, zeigt das Buch."
+				"Buch: The Moon → Space Station."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:launch_pad"
+			id: "20E320AB36DFEF88"
+			optional: true
+			shape: "square"
+			subtitle: "RF2 · Rakete T2 → Mars · Nebenquest"
+			tasks: [{
+				id: "3E81349E7CEDCEEF"
+				title: "Orbit von Erde oder Mond erreicht"
+				type: "checkmark"
+			}]
+			title: "Space Station"
+			x: 5.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4BE018C1418BD094"]
+			description: [
+				"Der Distributor füllt einen abgedichteten Raum mit Luft, bis 6000 Blöcke. Ist der Raum undicht, bläst die Luft hinaus."
+				"Buch: The Moon → Oxygen Distributor."
+				"&6⚙&r Die Water Pump gibt es im Pack nicht; Wasser und Sauerstoff kommen über Mekanism. Strom bringst du mit dem IE Feedthrough Insulator oder einem Energiespeicher in Wand oder Boden hinein, ohne die Abdichtung zu brechen."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:oxygen_distributor"
+			id: "768855C9B5F7B936"
+			optional: true
+			shape: "square"
+			subtitle: "RF2 · Rakete T2 → Mars · Nebenquest"
+			tasks: [{
+				id: "54A579B98DD03B2D"
+				item: "ad_astra:oxygen_distributor"
+				type: "item"
+			}
+			{
+				id: "5C2B1E2CECF7D759"
+				item: "ad_astra:vent"
+				type: "item"
+			}]
+			title: "Oxygen Distributor"
+			x: 5.5d
+			y: 1.25d
+		}
+		{
+			dependencies: ["4BE018C1418BD094"]
+			description: [
+				"Stellt in seiner Umgebung die Schwerkraft der Overworld her."
+				"Buch: The Moon → Gravity Normalizer."
+				"&6⚙&r Die Etrionic Capacitors dafür lädst du in der IE Charging Station oder am Mekanism Energy Cube."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:gravity_normalizer"
+			id: "6891F431A6B0AF0F"
+			optional: true
+			shape: "square"
+			subtitle: "RF2 · Rakete T2 → Mars · Nebenquest"
+			tasks: [{
+				id: "17CBEE34EF7A368B"
+				item: "ad_astra:gravity_normalizer"
+				type: "item"
+			}]
+			title: "Gravity Normalizer"
+			x: 5.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["4BE018C1418BD094"]
+			description: [
+				"Ein Messgerät für unterwegs; was es anzeigt, steht im Buch."
+				"Buch: The Moon → Ti-69."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:ti_69"
+			id: "74F8F30BB1442277"
+			optional: true
+			shape: "square"
+			subtitle: "RF2 · Rakete T2 → Mars · Nebenquest"
+			tasks: [{
+				id: "2DACF9DBABB895B8"
+				item: "ad_astra:ti_69"
+				type: "item"
+			}]
+			title: "TI-69"
+			x: 5.5d
+			y: 3.75d
+		}
+		{
+			dependencies: ["4BE018C1418BD094"]
+			description: [
+				"Ein Fahrzeug für weite Wege auf Mond und Mars, mit Radio und Stauraum."
+				"Buch: The Moon → Rover."
+				"&6⚙&r Der Rover fährt nur mit Biodiesel, wie die Rakete T1."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:tier_1_rover"
+			id: "2908469A28830F98"
+			optional: true
+			shape: "square"
+			subtitle: "RF2 · Rakete T2 → Mars · Nebenquest"
+			tasks: [{
+				id: "4432554AC57ED7DA"
+				item: "ad_astra:tier_1_rover"
+				type: "item"
+			}]
+			title: "Rover"
+			x: 5.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["4BE018C1418BD094"]
+			description: [
+				"Unter der Mondoberfläche leben Lunarians. Sie handeln gegen Smaragde mit Planetenmaterial und Ausrüstung; ein wandernder Händler taucht auf jedem Planeten auf."
+				"Buch: The Moon → Lunarians."
+				"&6⚙&r Der Händler verkauft Fuel. Damit fliegt im Pack keine Rakete; kauf es nicht für den Rückflug."
+			]
+			hide_until_deps_visible: true
+			id: "5FFC13149F9EF18F"
+			optional: true
+			shape: "square"
+			subtitle: "RF2 · Rakete T2 → Mars · Nebenquest"
+			tasks: [{
+				id: "62DDDD653D474A65"
+				title: "Lunarian-Dorf gefunden"
+				type: "checkmark"
+			}]
+			title: "Lunarians"
+			x: 5.5d
+			y: 6.25d
+		}
+		{
+			dependencies: ["4BE018C1418BD094"]
+			description: [
+				"&c&eVorsicht:&r&c Am Ende des Dungeons wartet ein Boss. Gute Rüstung mitnehmen; der Anzug muss den Kampf über Luft haben.&r"
+				""
+				"Das Addon More Structures setzt auf jeden Himmelskörper einen Dungeon mit Boss. Der Mond-Turm steht in den Lunar Wastelands. Der Boss lässt Cheese, Raw Desh, Raw Iron und Ice Shards fallen. Als Trophäe liegt dort der Moon Globe, der einzige Globus, den man im Überlebensmodus bekommt."
+				"Buch: Surviving Mars → Trophies (der Globus); den Dungeon kennt das Buch nicht."
+				"&9(ungeprüft)&r Welcher Mob der Boss ist, ist nicht ausgelesen."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:moon_globe"
+			id: "7D9036D210967E78"
+			optional: true
+			shape: "square"
+			subtitle: "RF2 · Rakete T2 → Mars · Nebenquest"
+			tasks: [{
+				id: "41EF7785D8BA7B7A"
+				item: "ad_astra:moon_globe"
+				type: "item"
+			}]
+			title: "Moon Tower Dungeon"
+			x: 5.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["4BE018C1418BD094"]
+			description: [
+				"Ab jetzt baut jede Stufe auf der davor auf: In jedem Desh Tank steckt ein Steel Tank, in der Desh Engine eine Steel Engine."
+				"Buch: The Moon → Mars."
+				"&6⚙&r Jeder Desh Tank braucht zusätzlich 2 Ventium Ingot aus Blue Skies (blue_skies:ventium_ingot, Everbright) und einen Steel Rod. In der Desh Engine sitzt ein Advanced Control Circuit aus Mekanism."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:desh_tank"
+			id: "5396A1C55E6CCA7B"
+			subtitle: "RF2 · Rakete T2 → Mars"
+			tasks: [{
+				count: 2L
+				id: "45B6BA134590E893"
+				item: "ad_astra:desh_tank"
+				type: "item"
+			}
+			{
+				id: "309709FAEA26B604"
+				item: "ad_astra:desh_engine"
+				type: "item"
+			}]
+			title: "Desh Tank und Desh Engine"
+			x: 4.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["5396A1C55E6CCA7B"]
+			description: [
+				"Wie die erste Rakete, aber mit sechs Desh-Blöcken. Sie fliegt bis zum Mars."
+				"Buch: The Moon → Mars."
+				"&6⚙&r Die Rakete T2 fliegt nur mit entschwefeltem Diesel aus dem Hydrotreater, nicht mit schwefelhaltigem Diesel und nicht mit Biodiesel. Für Hin- und Rückflug brauchst du 6 Eimer."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:tier_2_rocket"
+			id: "1B7973B17472DA07"
+			subtitle: "RF2 · Rakete T2 → Mars"
+			tasks: [{
+				id: "43921A0D0D637BE0"
+				item: "ad_astra:tier_2_rocket"
+				type: "item"
+			}
+			{
+				amount: 6000L
+				fluid: "immersivepetroleum:diesel"
+				id: "4FCB037ACE1931B2"
+				type: "fluid"
+			}]
+			title: "Tier 2 Rocket"
+			x: 4.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["1B7973B17472DA07"]
+			description: [
+				"Kalt (−65 °C), ohne Luft. Der Anzug reicht."
+				"Buch: The Moon → Mars."
+			]
+			hide_until_deps_visible: true
+			id: "48930BE935D20A9C"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "RF2 · Rakete T2 → Mars"
+			tasks: [{
+				dimension: "ad_astra:mars"
+				id: "7A7193DCCC5D7A4D"
+				type: "dimension"
+			}]
+			title: "Landung auf dem Mars"
+			x: 4.0d
+			y: 4.5d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 8: Hitze."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "4739E0EE0E57F37E"
+			shape: "gear"
+			subtitle: "RF3 · Rakete T3 → Merkur, Venus"
+			tasks: [{
+				id: "12A53E96666245CC"
+				stage: "kapitel_k8"
+				type: "gamestage"
+			}]
+			title: "Kapitel 8: Ad Astra"
+			x: 7.5d
+			y: -1.75d
+		}
+		{
+			dependencies: ["48930BE935D20A9C", "4739E0EE0E57F37E"]
+			description: [
+				"Ostrum liegt nur auf dem Mars. Es ist das Metall der Rakete T3."
+				"Buch: The Moon → Mars."
+				"&6⚙&r Platten über die IE Metal Press oder den Engineer's Hammer. Auf dem Mars liegt außerdem Fluorit (Erz von Mekanism in Mars Stone)."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:ostrum_ingot"
+			id: "2DFA1E07C7C17767"
+			subtitle: "RF3 · Rakete T3 → Merkur, Venus"
+			tasks: [{
+				id: "6306955534403F6C"
+				item: "ad_astra:ostrum_ingot"
+				type: "item"
+			}
+			{
+				id: "67130006FBB21BB5"
+				item: "ad_astra:ostrum_plate"
+				type: "item"
+			}]
+			title: "Ostrum"
+			x: 7.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2DFA1E07C7C17767"]
+			description: [
+				"Schiebetüren halten einen Raum dicht, auch wenn du hindurchgehst. Ideal für eine Basis mit Oxygen Distributor."
+				"Buch: Surviving Mars → Sliding Doors."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:iron_sliding_door"
+			id: "23BBF4FFEF3F07D0"
+			optional: true
+			shape: "square"
+			subtitle: "RF3 · Rakete T3 → Merkur, Venus · Nebenquest"
+			tasks: [{
+				id: "34C70E8171AF58E2"
+				item: "ad_astra:iron_sliding_door"
+				type: "item"
+			}
+			{
+				id: "18D255974010253E"
+				item: "ad_astra:airlock"
+				type: "item"
+			}]
+			title: "Sliding Doors und Airlock"
+			x: 9.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2DFA1E07C7C17767"]
+			description: [
+				"Gibt ein Redstone-Signal, solange Luft im Raum ist. Mit dem Wrench stellst du ihn auf Temperatur oder Schwerkraft um."
+				"Buch: Surviving Mars → Detection."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:oxygen_sensor"
+			id: "518D852D425B82B7"
+			optional: true
+			shape: "square"
+			subtitle: "RF3 · Rakete T3 → Merkur, Venus · Nebenquest"
+			tasks: [{
+				id: "28D11A688792E6BF"
+				item: "ad_astra:oxygen_sensor"
+				type: "item"
+			}]
+			title: "Oxygen Sensor"
+			x: 9.0d
+			y: 1.25d
+		}
+		{
+			dependencies: ["2DFA1E07C7C17767"]
+			description: [
+				"Der Freezer macht aus Eis Cryo Fuel; am ergiebigsten sind Ice Shards (25 mB je Stück)."
+				"Buch: Surviving Mars → Better Fuel."
+				"&6⚙&r Cryo Fuel allein fliegt im Pack keine Rakete. Du brauchst es als Zutat für den Treibstoff der Rakete T4 (Quest „Tier 4 Rocket“). Fang früh an, Ice Shards zu sammeln."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:cryo_freezer"
+			id: "7FD71820275E4C2E"
+			subtitle: "RF3 · Rakete T3 → Merkur, Venus"
+			tasks: [{
+				id: "367F159AC302DF45"
+				item: "ad_astra:cryo_freezer"
+				type: "item"
+			}]
+			title: "Cryo Freezer"
+			x: 7.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["7FD71820275E4C2E"]
+			description: [
+				"Der stärkere Anzug aus Ostrum und einer vollen Netherite-Rüstung. Er schützt besser und gibt dauerhafte Feuerresistenz."
+				"Buch: Surviving Mars → Netherite Space Suit."
+				"Hinweis: Das Buch nennt ihn Pflicht für Venus und Merkur. Im Spiel stimmt das nicht; dort reicht jeder Anzug."
+				"&6⚙&r Im Pack ist er trotzdem Pflicht vor dem Flug zum Merkur: Die Story-Quest „Die heißeste Welt“ verlangt ihn."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:netherite_space_helmet"
+			id: "119C0376D6DB3782"
+			subtitle: "RF3 · Rakete T3 → Merkur, Venus"
+			tasks: [{
+				id: "383E3E82DBAA1D50"
+				item: "ad_astra:netherite_space_helmet"
+				type: "item"
+			}
+			{
+				id: "2BD2E3530B550AC3"
+				item: "ad_astra:netherite_space_suit"
+				type: "item"
+			}
+			{
+				id: "2CE6A57F550223EA"
+				item: "ad_astra:netherite_space_pants"
+				type: "item"
+			}
+			{
+				id: "3BBCC6C3F2F3601A"
+				item: "ad_astra:netherite_space_boots"
+				type: "item"
+			}]
+			title: "Netherite Space Suit"
+			x: 7.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["119C0376D6DB3782"]
+			description: [
+				"&c&eVorsicht:&r&c Boss am Ende des Turms.&r"
+				""
+				"Der zweite Dungeon von More Structures. Der Boss lässt Ice Shards, Diamanten, Raw Ostrum und Raw Iron fallen."
+				"&9(ungeprüft)&r Boss-Mob und eine prüfbare Beute für die Aufgabe nicht ausgelesen."
+			]
+			hide_until_deps_visible: true
+			id: "4B2AF9DC33C0E552"
+			optional: true
+			shape: "square"
+			subtitle: "RF3 · Rakete T3 → Merkur, Venus · Nebenquest"
+			tasks: [{
+				id: "3564D350E7A9F7B4"
+				title: "Boss im Mars-Turm besiegt"
+				type: "checkmark"
+			}]
+			title: "Mars Tower Dungeon"
+			x: 9.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["119C0376D6DB3782"]
+			description: [
+				"In jedem Ostrum-Teil steckt das Desh-Teil der Stufe davor."
+				"Buch: Surviving Mars → Venus and Mercury."
+				"&6⚙&r Jeder Ostrum Tank braucht zusätzlich 2 Imbued Slate aus Blood Magic (bloodmagic:infusedslate, Blood Altar Stufe 3) und einen Steel Rod. In der Ostrum Engine sitzt ein Elite Control Circuit aus Mekanism."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:ostrum_tank"
+			id: "504D1B9E15C17965"
+			subtitle: "RF3 · Rakete T3 → Merkur, Venus"
+			tasks: [{
+				count: 2L
+				id: "6AEF695FCB84209C"
+				item: "ad_astra:ostrum_tank"
+				type: "item"
+			}
+			{
+				id: "3020820CC6BFA4BB"
+				item: "ad_astra:ostrum_engine"
+				type: "item"
+			}]
+			title: "Ostrum Tank und Ostrum Engine"
+			x: 7.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["504D1B9E15C17965"]
+			description: [
+				"Sechs Ostrum-Blöcke. Die Rakete erreicht Merkur und Venus."
+				"Buch: Surviving Mars → Venus and Mercury."
+				"&6⚙&r Die Rakete T3 fliegt nur mit Kerosene aus Immersive Petroleum. Für Hin- und Rückflug brauchst du 6 Eimer."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:tier_3_rocket"
+			id: "44E2B3F2841F03A8"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "RF3 · Rakete T3 → Merkur, Venus"
+			tasks: [{
+				id: "3B6E303694500754"
+				item: "ad_astra:tier_3_rocket"
+				type: "item"
+			}
+			{
+				amount: 6000L
+				fluid: "immersivepetroleum:kerosene"
+				id: "03ED964E417BFD30"
+				type: "fluid"
+			}]
+			title: "Tier 3 Rocket"
+			x: 7.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["44E2B3F2841F03A8"]
+			description: [
+				"Die größere Reserve aus dem Giselle Addon: 1000 mB. Du baust sie aus der Oxygen Can, einem Netherite Ingot und Ostrum-Platten."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra_giselle_addon:netherite_oxygen_can"
+			id: "4A8203B5D41EAD99"
+			optional: true
+			shape: "square"
+			subtitle: "RF3 · Rakete T3 → Merkur, Venus · Nebenquest"
+			tasks: [{
+				id: "4502B86C00194129"
+				item: "ad_astra_giselle_addon:netherite_oxygen_can"
+				type: "item"
+			}]
+			title: "Netherite Oxygen Can"
+			x: 9.0d
+			y: 6.0d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 11: Glacio."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "346FCF584BFE5BEB"
+			shape: "gear"
+			subtitle: "RF4 · Rakete T4 → Glacio"
+			tasks: [{
+				id: "7A5DA2A60C58C55D"
+				stage: "kapitel_k11"
+				type: "gamestage"
+			}]
+			title: "Kapitel 11: Ad Astra"
+			x: 11.0d
+			y: -1.75d
+		}
+		{
+			dependencies: ["44E2B3F2841F03A8", "346FCF584BFE5BEB"]
+			description: [
+				"&c&eVorsicht, heiße Planeten:&r&c Venus hat 464 °C und sauren Regen, Merkur 167 °C. Ohne Anzug brennst du sofort. Jeder Anzug schützt, auch der einfache Space Suit.&r"
+				""
+				"Der Merkur hat im Hauptmod nur Eisen."
+				"Buch: Surviving Mars → Venus and Mercury."
+				"&6⚙&r Auf dem Merkur liegen Uran und Blei als Mekanism-Erze. Uran gibt es hier und auf der Venus in Menge, in der Overworld kaum."
+			]
+			hide_until_deps_visible: true
+			id: "36474DCE9973F69E"
+			subtitle: "RF4 · Rakete T4 → Glacio"
+			tasks: [{
+				dimension: "ad_astra:mercury"
+				id: "2C78F15167A82D31"
+				type: "dimension"
+			}]
+			title: "Merkur"
+			x: 11.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["36474DCE9973F69E"]
+			description: [
+				"Calorite gibt es nur auf der Venus. Es ist das Metall der Rakete T4."
+				"Buch: Surviving Mars → Venus and Mercury."
+				"&6⚙&r Platten über die IE Metal Press oder den Engineer's Hammer. Auf der Venus liegen außerdem Uran und Blei."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:calorite_ingot"
+			id: "0A4869DC0EA5A984"
+			subtitle: "RF4 · Rakete T4 → Glacio"
+			tasks: [{
+				id: "33F118927607CC1B"
+				item: "ad_astra:calorite_ingot"
+				type: "item"
+			}
+			{
+				id: "2A2DA2FDBC4C5C39"
+				item: "ad_astra:calorite_plate"
+				type: "item"
+			}]
+			title: "Venus und Calorite"
+			x: 11.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["0A4869DC0EA5A984"]
+			description: [
+				"Der beste Anzug: Er fliegt mit Energie. Du baust ihn aus dem Netherite Space Suit und Calorite."
+				"Buch: The Hot Planets → Jet Suit."
+				"&6⚙&r Laden in der IE Charging Station oder am Mekanism Energy Cube; den Energizer gibt es im Pack nicht."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:jet_suit_helmet"
+			id: "07B0BAAFAF969FE8"
+			optional: true
+			shape: "square"
+			subtitle: "RF4 · Rakete T4 → Glacio · Nebenquest"
+			tasks: [{
+				id: "576EDA7A67D6E675"
+				item: "ad_astra:jet_suit_helmet"
+				type: "item"
+			}
+			{
+				id: "1DB432AD5C148BBD"
+				item: "ad_astra:jet_suit"
+				type: "item"
+			}
+			{
+				id: "23A96C5986DB2FE5"
+				item: "ad_astra:jet_suit_pants"
+				type: "item"
+			}
+			{
+				id: "1BF525949E6D4439"
+				item: "ad_astra:jet_suit_boots"
+				type: "item"
+			}]
+			title: "Jet Suit"
+			x: 12.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["0A4869DC0EA5A984"]
+			description: [
+				"&c&eVorsicht:&r&c Zwei Bosse, dazu Hitze und saurer Regen auf der Venus.&r"
+				""
+				"More Structures setzt auf die Venus den Venus Tree Dungeon und auf den Merkur den Mercury Arena Dungeon. Der Venus-Boss lässt Raw Calorite, Diamanten, Raw Gold, Kohle und Blaze Rods fallen, der Merkur-Boss Raw Iron, Magma Cream und Blaze Rods."
+				"&9(ungeprüft)&r Boss-Mobs nicht ausgelesen."
+			]
+			hide_until_deps_visible: true
+			id: "54C02EFCA426CD84"
+			optional: true
+			shape: "square"
+			subtitle: "RF4 · Rakete T4 → Glacio · Nebenquest"
+			tasks: [{
+				id: "776F66F64B417CB7"
+				title: "Bosse von Venus und Merkur besiegt"
+				type: "checkmark"
+			}]
+			title: "Venus- und Merkur-Dungeon"
+			x: 12.5d
+			y: 2.75d
+		}
+		{
+			dependencies: ["0A4869DC0EA5A984"]
+			description: [
+				"In jedem Calorite-Teil steckt das Ostrum-Teil davor, also die Teile aller vier Stufen."
+				"Buch: The Hot Planets → Proxima Centauri."
+				"&6⚙&r Jeder Calorite Tank braucht zusätzlich 2 Elementium Ingot aus Botania (botania:elementium_ingot) und einen Steel Rod. In der Calorite Engine sitzen ein Ultimate Control Circuit aus Mekanism und der &eGalaktische Strahlenschutz&r (kubejs:galaktischer_strahlenschutz). Den Strahlenschutz kann man nicht selbst herstellen; du bekommst ihn im Lauf der Hauptquests."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:calorite_tank"
+			id: "2CEDF62B9BB37417"
+			subtitle: "RF4 · Rakete T4 → Glacio"
+			tasks: [{
+				count: 2L
+				id: "0A8FE7353C530200"
+				item: "ad_astra:calorite_tank"
+				type: "item"
+			}
+			{
+				id: "7B51FEAAB22ABAD1"
+				item: "ad_astra:calorite_engine"
+				type: "item"
+			}]
+			title: "Calorite Tank und Calorite Engine"
+			x: 11.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["2CEDF62B9BB37417"]
+			description: [
+				"Sechs Calorite-Blöcke. Die letzte Rakete des Hauptmods verlässt das Sonnensystem."
+				"Buch: The Hot Planets → Proxima Centauri."
+				"&6⚙&r Die Rakete T4 fliegt nur mit Kryo-Raketentreibstoff. Den mischt die IE Refinery aus Gasoline (Immersive Petroleum) und Cryo Fuel aus dem Cryo Freezer, 10 mB und 10 mB zu 10 mB. Er ist sparsam: Ein Start verbraucht nur einen Eimer, für Hin- und Rückflug brauchst du also 2. &9(ungeprüft)&r Mengen sind ein Entwurf."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:tier_4_rocket"
+			id: "01378B5AFA1D04CD"
+			subtitle: "RF4 · Rakete T4 → Glacio"
+			tasks: [{
+				id: "7B2774CA3ECA3A94"
+				item: "ad_astra:tier_4_rocket"
+				type: "item"
+			}
+			{
+				amount: 2000L
+				fluid: "kubejs:kryo_treibstoff"
+				id: "3E6A95E311665C91"
+				type: "fluid"
+			}]
+			title: "Tier 4 Rocket"
+			x: 11.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["01378B5AFA1D04CD"]
+			description: [
+				"Glacio im System Proxima Centauri ist kalt (−20 °C), hat aber Luft. Hier brauchst du keinen Anzug. Ein eigenes Metall gibt es nicht. Das Astrodux endet hier."
+				"Buch: The Hot Planets → Proxima Centauri."
+				"&6⚙&r Auf Glacio liegen Osmium und Uran als Mekanism-Erze."
+			]
+			hide_until_deps_visible: true
+			id: "7FA6CF2E44079A2F"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "RF4 · Rakete T4 → Glacio"
+			tasks: [{
+				dimension: "ad_astra:glacio"
+				id: "44F421FF5D67D024"
+				type: "dimension"
+			}]
+			title: "Glacio"
+			x: 11.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["7FA6CF2E44079A2F"]
+			description: [
+				"&c&eVorsicht:&r&c Boss am Ende des Turms.&r"
+				""
+				"Der letzte Dungeon von More Structures. Der Boss lässt Raw Iron, Ice Shards, Eis, Obsidian, Pfeile und Knochen fallen."
+			]
+			hide_until_deps_visible: true
+			id: "7ED664E93A344874"
+			optional: true
+			shape: "square"
+			subtitle: "RF4 · Rakete T4 → Glacio · Nebenquest"
+			tasks: [{
+				id: "53C7B2FF95A7D7AA"
+				title: "Boss im Glacio-Turm besiegt"
+				type: "checkmark"
+			}]
+			title: "Glacio Tower Dungeon"
+			x: 12.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["5E6257AA082F40C8"]
+			description: [
+				"Das Giselle Addon macht die vier Schutzwirkungen der Raumanzüge auf anderer Ausrüstung verfügbar: als Verzauberung, als Tinkers-Modifier und als MekaSuit-Modul. Jede Wirkung braucht das Gestein des Planeten, auf dem du sie brauchst. Kein Buch erklärt das; die Quests stehen deshalb ausführlicher."
+				""
+				"• &eWirkung&r: Was sie tut · Planetengestein · ab dem"
+				"• &eSpace Breathing&r: Atmen ohne Luft · Moon Stone · Mond"
+				"• &eGravity Normalizing&r: Schwerkraft wie in der Overworld · Mars Stone · Mars"
+				"• &eSpace Fire Proof&r: kein Feuer am Körper auf heißen Planeten · Mercury Stone · Merkur"
+				"• &eAcid Rain Proof&r: kein Schaden durch sauren Regen · Venus Stone · Venus"
+				""
+				"Die Bücher entstehen in der Werkbank: 7 Gestein des Planeten, ein Book und ein Anzug- oder Metallteil (Space Suit, Space Boots, Ostrum Plate oder Calorite Plate). Am Amboss kommt die Verzauberung auf beliebige Rüstung."
+				"&9(ungeprüft)&r Wie viel Sauerstoff die Verzauberung verbraucht und woher sie ihn nimmt, regelt die Config des Addons; im Spiel prüfen."
+			]
+			hide_until_deps_visible: true
+			icon: "minecraft:enchanted_book"
+			id: "00007691DEF1650A"
+			optional: true
+			shape: "square"
+			subtitle: "Nebenquest-Reihe RFX · Schutz ohne Raumanzug · Nebenquest"
+			tasks: [{
+				id: "288839AE4B5FDBDF"
+				title: "Verzauberungsbuch Space Breathing hergestellt"
+				type: "checkmark"
+			}]
+			title: "Verzauberungsbücher"
+			x: 16.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["00007691DEF1650A"]
+			description: [
+				"Für Tinkers-Rüstung gibt es dieselben vier Wirkungen als Modifier. Jeder kostet einen Upgrade-Slot. Space Breathing kommt auf den Helm, Gravity Normalizing auf die Stiefel, Fire Proof und Acid Rain Proof auf die Brustplatte. Zutaten: das Anzug- oder Metallteil und 4 Gestein des Planeten."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:plate_chestplate"
+			id: "516A2213260F8F14"
+			optional: true
+			shape: "square"
+			subtitle: "Nebenquest-Reihe RFX · Schutz ohne Raumanzug · Nebenquest"
+			tasks: [{
+				id: "587A9866ACCF922C"
+				title: "Tinkers-Rüstung mit einem Raumfahrt-Modifier"
+				type: "checkmark"
+			}]
+			title: "Tinkers-Modifier"
+			x: 16.0d
+			y: 1.25d
+		}
+		{
+			dependencies: ["48930BE935D20A9C"]
+			description: [
+				"Aus 5 Moon Stone und 4 Mars Stone entsteht Sky Stone. Im Inscriber oder im Crusher wird daraus Sky Dust für AE2; Meteoriten musst du dafür nicht suchen."
+				"&6⚙&r Der Weg bleibt im Pack."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:sky_stone"
+			id: "40460B05195FE83C"
+			optional: true
+			shape: "square"
+			subtitle: "Nebenquest RFY · Sky Stone für AE2 · Nebenquest"
+			tasks: [{
+				id: "061E7D68F4976D49"
+				item: "ad_astra:sky_stone"
+				type: "item"
+			}]
+			title: "Sky Stone"
+			x: 19.5d
+			y: 0.0d
+		}
+	]
+	title: "Ad Astra"
+}

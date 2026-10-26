@@ -7,7 +7,8 @@
 
 - **Reine Sachtexte.** Keine Story, keine Figuren. Die Reihe dient in Part 1 der Vorbereitung auf die Altar-Dimension und in Part 2 dem allgemeinen Training; wo der User sie an die Story hängt, setzt er einen Satz davor.
 - **Anrede „du“**, Item- und Mob-Namen englisch wie im Spiel.
-- **Alle Quests sind Nebenquests**, bis O35 entschieden ist (welche Stufen Pflicht werden). Alle Nebenquests geben Credits (User, 2026-10-17).
+- **Pflicht in Teil 1** (F15, 2026-10-20): Stufe 1 (WD1-01 bis WD1-03, mit Kreide) und ein Oberwelt-Dungeon bis zur Bone Chest (WD2-01, WD2-02; liefert den Orb of the Deep für die Altar-Reparatur). Diese Quests sind Hauptweg, alle anderen Nebenquests. Alle Nebenquests geben Credits (User, 2026-10-17).
+- **Kapitel** (Vorschlag 2026-10-26): WD1 und WD2 mit K8 Hitze (Rückkehr zur Erde, Vorbereitung auf die Altar-Dimension; der Orb wird in K9 gebraucht), WD3 und WD4 mit K10 Der Elf (Nebenquests nach dem Pflicht-Dungeon), WD5 mit K12 Ausbildung (Training in Teil 2, fällt im Questbuch für Teil 1 weg).
 - **Pack-Änderungen** mit ⚙️. Für Wesley's gibt es bisher keine; der Mod läuft mit seiner Standard-Config.
 - 🔵 = noch nicht entschieden oder nicht belegt.
 - Viele Quests lassen sich am einfachsten über die **Trophäe** prüfen: Jeder Boss lässt seine Trophäe fallen, und sie ist ein Item mit eigener ID.
@@ -16,16 +17,16 @@
 
 ---
 
-## WD1 · Vorbereitung
+## WD1 · Vorbereitung (K8 Hitze)
 
-### WD1-01 Vessel of Vision · Nebenquest
+### WD1-01 Vessel of Vision · Hauptweg
 **Aufgabe:** `wrd:magic_cauldron`
 
 Dungeons entstehen in diesem Pack nicht von selbst. Erst die Vessel of Vision erschafft einen.
 Rezept: 6 Iron Ingot, 1 Blaze Powder, 1 Ender Pearl, 1 Cauldron. Für Blaze Powder brauchst du einen Ausflug in den Nether.
 So geht's: Der erste Rechtsklick aktiviert die Vessel. Der zweite sucht 5000 bis 10000 Blöcke entfernt einen Ort und baut dort den Dungeon. Findet sie nichts, versuch es an einem anderen Ort noch einmal.
 
-### WD1-02 Sentient Pathfinder · Nebenquest
+### WD1-02 Sentient Pathfinder · Hauptweg
 **Aufgabe:** `wrd:dungeon_locator_item`
 
 Der Dungeon liegt tausende Blöcke weit weg. Der Pathfinder bringt dich hin.
@@ -33,7 +34,7 @@ Rezept: Eye of Ender, Soul Lantern, Iron Ingot (formlos, ergibt 2).
 So geht's: Pathfinder auf einen Block setzen, mit der benutzten Vessel rechtsklicken (er merkt sich den Ort), noch einmal rechtsklicken. Nach dem Countdown teleportiert er alle Spieler in seiner Nähe zum Dungeon.
 🔵 Wie der Rückweg funktioniert, ist nicht ausgelesen; im Spiel prüfen. Bis dahin: Nimm einen zweiten Pathfinder mit oder merk dir die Koordinaten.
 
-### WD1-03 Key Bag und Kreide · Nebenquest
+### WD1-03 Key Bag und Kreide · Hauptweg
 **Aufgabe:** `wrd:key_bag`, `wrd:chalk_marker_red`
 
 Jede Truhe im Dungeon braucht ihren eigenen Schlüssel, und die Stockwerke sind Labyrinthe.
@@ -52,7 +53,7 @@ Die normale Vessel bringt in gemäßigten Biomen je zur Hälfte einen normalen o
 
 ---
 
-## WD2 · Die Dungeons der Oberwelt
+## WD2 · Die Dungeons der Oberwelt (K8 Hitze)
 
 Jeder Dungeon hat ein oberes Stockwerk ohne Boss und darunter tiefere Stockwerke mit Miniboss und Boss. Ziel jedes Dungeons ist die **Ancient Bone Chest** im Schatzraum.
 Ablauf in jedem Dungeon:
@@ -63,13 +64,13 @@ Ablauf in jedem Dungeon:
 
 > **Vorsicht:** Die Bosse kämpfen in mehreren Phasen. Geh nicht mit Eisenausrüstung hinein.
 
-### WD2-01 Erster Dungeon · Nebenquest
+### WD2-01 Erster Dungeon · Hauptweg
 **Aufgabe:** `wrd:keystrongholdchest_bonechest`
 
 Besiege den ersten Miniboss. Sein Bone Chest Key öffnet die Ancient Bone Chest.
 Die Schlüsselfarben: Der gewöhnliche Stronghold Chest Key ist häufig, Iron, Library, Dungeon, Golden, Redstone, Treasure und Diamond werden immer seltener. Jede Truhenart hat ihren Schlüssel.
 
-### WD2-02 Ancient Bone Chest · Nebenquest
+### WD2-02 Ancient Bone Chest · Hauptweg
 **Aufgabe:** `wrd:orb_of_the_deep`, `wrd:all_seeing_eye`, `wrd:bleeding_corruption`
 
 Öffne die Bone Chest im Schatzraum. Bewahre alles auf: Orbs of the Deep, das All Seeing Eye und Bleeding Corruption brauchst du für das End und das Portal.
@@ -100,13 +101,13 @@ Lush Vessel. Oben der Temple, darunter die Ruins mit dem **Ancient Golem**, ganz
 Snowy Vessel. Oben der Glacier, darunter Frosthold mit dem **Heart of Ice**, ganz unten das Tomb of Ice mit dem **Ice Mage**.
 
 ### WD2-08 Acht Orbs of the Deep · Nebenquest
-**Aufgabe:** `wrd:orb_of_the_deep` ×8
+**Aufgabe:** 8 × `wrd:orb_of_the_deep`
 
 Für das Portal (WD5) brauchst du acht Orbs. Jede Bone Chest gibt einen oder zwei, also brauchst du vier bis acht Dungeons. Sammle dabei Bleeding Corruption: 8 für das Heart of the Deceiver, dazu 2 je Lauf in der Dungeon-Dimension.
 
 ---
 
-## WD3 · Der Purpur-Palast im End
+## WD3 · Der Purpur-Palast im End (K10 Der Elf)
 
 > **Vorsicht:** Drei Gegner hintereinander, dazu das End selbst. Nimm Ender Pearls und Slow Falling mit.
 
@@ -129,7 +130,7 @@ Der Schlüssel zum Portal: 8 Bleeding Corruption um 1 Ender Heart in der Werkban
 
 ---
 
-## WD4 · Der Nether
+## WD4 · Der Nether (K10 Der Elf)
 
 ### WD4-01 Quartz Vessel of Vision · Nebenquest
 **Aufgabe:** `wrd:magic_cauldron_nether`
@@ -145,7 +146,7 @@ Oben die Magma Chambers, darunter The Forge mit dem **Doom Pillar**, ganz unten 
 
 ---
 
-## WD5 · Wesley's Infinite Dungeons
+## WD5 · Wesley's Infinite Dungeons (K12 Ausbildung)
 
 ### WD5-01 Der Portalbaum · Nebenquest
 **Aufgabe:** Dimension `wrd:wesleys_infinite_dungeons` betreten
@@ -212,7 +213,7 @@ Die **City of Gold** verlangt Erfahrungsstufe 80. Wer The Great Creator besiegt,
 
 ## 🔵 Offen vor dem Einbau
 
-1. **O35:** Welche Stufen werden für die Vorbereitung auf die Altar-Dimension Pflicht (Part 1), welche gehören zum Training (Part 2)? Bis dahin sind alle Quests Nebenquests.
+1. ~~O35~~ entschieden (F15): Stufe 1 und ein Oberwelt-Dungeon Pflicht. **Offen:** Kapitel-Zuordnung ist ein Vorschlag (WD1/WD2 K8, WD3/WD4 K10, WD5 K12 = Teil 2). Ob WD3 und WD4 schon in Teil 1 als Nebenquests erscheinen oder mit WD5 ins Training gehören, entscheidet der User. Die Kill-Aufgabe fehlt nicht: Bosse werden über ihre Trophäen geprüft.
 2. Die Story nennt für Stufe 2 „die acht Oberwelt-Dungeons, je eine Quest“. Der Mod hat in der Oberwelt fünf Dungeon-Gruppen (normal, besonders, Wüste, Dschungel, Eis) und dazu die Nether-Gruppe. Die Texte machen eine Quest je Gruppe; mit WD2-01, WD2-02 und WD2-08 sind es acht Quests. Gemeint waren vielleicht die acht Dungeons der Infinite-Dimension (WD5).
 3. Rückweg des Sentient Pathfinder (WD1-02) und Herkunft der Kreide (WD1-03) im Spiel prüfen.
 4. Prüfbare Aufgabe für den Purpur-Palast (WD3-01): FTB Quests kann keine Struktur prüfen; Kontrollhaken oder `wrd:pur_pur_key`.

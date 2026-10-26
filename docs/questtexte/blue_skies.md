@@ -33,7 +33,8 @@ Der Zeal Lighter entzündet die Portale nach Everbright und Everdawn, so wie Feu
 **Aufgabe:** Dimension `blue_skies:everbright` betreten
 
 Das Portal mit dem Rahmen aus Turquoise Stone Bricks führt nach Everbright: immer Tag, kalt, viel Schnee. Entzünde es mit dem Zeal Lighter. Weitere Portale baust du aus Turquoise Stone Bricks, die du in Everbright aus Turquoise Stone herstellst (4 Stein ergeben 4 Ziegel).
-Beide Welten sind sofort offen. Everbright ist die leichtere; fang hier an.
+Everbright ist die leichtere Welt; hier fängst du an.
+⚙️ Everdawn ist im Pack anfangs gesperrt: Das Portal dorthin lässt dich erst durch, wenn der Wegzoll von 32 Raw Tin aus Everbright bezahlt ist (Buch 1).
 Buch: Blue Journal → Everbright → Everbright Portal.
 
 > ⚠️ **Deine Werkzeuge taugen hier nicht.** Werkzeuge und Waffen von außerhalb, auch die aus Tinkers' Construct, arbeiten in Everbright und Everdawn deutlich schlechter (Tooltip: „It seems this tool doesn't work as well here.“). Ein Erz mit einer Tinkers-Spitzhacke abzubauen dauert ewig. Rechne damit, dass du in den Welten neu anfängst.
@@ -55,7 +56,7 @@ Buch: Blue Journal → Everbright → Ventium; General → Tool Box.
 ### BS1-06 Zinn, Blei und Bauxit · Hauptweg
 **Aufgabe:** `mekanism:raw_tin`, `mekanism:raw_lead`, `immersiveengineering:raw_aluminum`
 
-⚙️ Im Pack liegen in Everbright drei Industriemetalle, die anderswo fehlen oder selten sind: **Zinn** gibt es nur hier, **Blei** und **Bauxit** reichlich, in der Overworld nur sehr selten. Alle drei stecken im Turquoise Stone. Zinn brauchst du für Bronze und den Ausbau von Mekanism, Blei und Aluminium für Immersive Engineering.
+⚙️ Im Pack liegen in Everbright drei Industriemetalle, die anderswo fehlen oder selten sind: **Zinn** gibt es nur hier, **Blei** und **Bauxit** reichlich, in der Overworld nur sehr selten. Alle drei stecken im Turquoise Stone. Zinn brauchst du für Bronze und den Ausbau von Mekanism, Blei und Aluminium für Immersive Engineering. Leg außerdem 32 Raw Tin für den Wegzoll nach Everdawn beiseite (Buch 1).
 Abbauen kannst du sie mit den Werkzeugen der Welt, am besten ab Pyrope oder Aquite (BS1-10).
 
 ### BS1-07 Falsite · Nebenquest
@@ -90,12 +91,13 @@ Buch: Blue Journal → General → Pyrope, Aquite, Moonstone.
 **Aufgabe:** Dimension `blue_skies:everdawn` betreten
 
 Das zweite Portal mit dem Rahmen aus Lunar Stone Bricks führt nach Everdawn: ewiger Sonnenaufgang, heiß und feucht, mit Spinnen, Käfern und Echsen. Die Gegner sind härter als in Everbright. Nimm Werkzeuge aus Everbright mit; deine Oberwelt-Werkzeuge sind hier ebenso abgeschwächt.
+⚙️ Durch das Portal kommst du erst, wenn der Wegzoll von 32 Raw Tin bezahlt ist; vorher schickt es dich zurück (Buch 1).
 Buch: Blue Journal → Everdawn → Everdawn Portal.
 
 ### BS2-02 Osmium · Hauptweg
 **Aufgabe:** `mekanism:raw_osmium`
 
-⚙️ Im Pack liegt Osmium in Everdawn reichlich, im Lunar Stone in allen Höhen. In der Overworld ist es selten. Mit diesem Vorrat lohnt sich der Ausbau von Mekanism, schon bevor der Mond erreichbar ist.
+⚙️ Im Pack liegt Osmium in Everdawn reichlich, im Lunar Stone in allen Höhen. In der Overworld ist es selten. Mit diesem Vorrat lohnt sich der Ausbau von Mekanism, schon bevor der Mond erreichbar ist. 32 Raw Osmium sind die zweite Abgabe in Buch 1.
 
 ### BS2-03 Horizonite · Hauptweg
 **Aufgabe:** `blue_skies:horizonite_pickaxe`
@@ -213,7 +215,7 @@ Buch: Blue Journal → General → Arcs.
 
 ---
 
-## Nebenquest-Reihe BSN · Leben in den Welten
+## Nebenquest-Reihe BSN · Leben in den Welten (K3 Industrie)
 
 Ohne Bezug zum Hauptweg; zeigt, wie man sich in den Welten einrichtet. Frei ab BS1-03.
 
@@ -231,6 +233,7 @@ Ohne Bezug zum Hauptweg; zeigt, wie man sich in den Welten einrichtet. Frei ab B
 |---|---|---|
 | Zinn (nur hier), Blei und Bauxit in Everbright | BS1-06 | 🟡 Features in `kubejs/data/ieplus/` angelegt, Mengen im Test bestätigt (`03_ERZGENERATION.md`) |
 | Osmium reichlich in Everdawn | BS2-02 | 🟡 wie oben; Everdawn bleibt früh erreichbar (User, 2026-10-19) |
+| Everdawn erst nach dem Zinn-Zoll (32 Raw Tin), zweite Abgabe 32 Raw Osmium (Buch 1) | BS1-03, BS1-06, BS2-01, BS2-02 | 🟢 beschlossen (O72, O73, 2026-10-26); Sperr-Skript noch nicht gebaut |
 | Freigabe `allowed_mods_for_feature_gen = ["ieplus"]` (ohne sie keine fremden Erze) | Voraussetzung für BS1-06, BS2-02 | 🟢 in der Config der Testinstanz |
 | Figur im Blue-Skies-Haus statt des Händlers (Guard) | BS1-01, BS1-02, BS3-01 | 🟢 beschlossen (2026-10-17), nicht gebaut; Handel mit Journal, Zeal Lighter und Blinding-Schlüsseln muss die Figur übernehmen 🔵 |
 | Boss-Beute wird später gebraucht | BS3-02, BS3-03, BS4-02, BS4-04 | 🔵 welche Items, O1 |
@@ -244,4 +247,6 @@ Ohne Bezug zum Hauptweg; zeigt, wie man sich in den Welten einrichtet. Frei ab B
 - **Arachnarch:** welcher Schild genügt (BS4-04).
 - **Bosse wiederholen** (BS4-05) und welcher Loot Bag (common/uncommon/rare) fällt.
 - **BSN-02:** ob FTB Quests das Zähmen direkt prüfen kann; sonst Sattel oder Camel Saddle als Aufgabe.
+- **Kill-Aufgaben:** Der Questbuch-Generator kennt noch keine Aufgabe „Mob besiegen“. BS3-02, BS3-03, BS4-02, BS4-04 und BSN-02 sind deshalb vorerst Kontrollhaken (`tools/questbuch/blue_skies.cfg`).
+- **Reihe BSN:** ohne Kapitel im Entwurf; eingebaut mit K3 Industrie (Vorschlag, 2026-10-26: Everbright ist ab K3 offen, die Reihe beginnt nach BS1-03).
 - **Journal:** ob es die Progression wirklich nicht erklärt. Wenn doch, lassen sich BS1–BS4 auf „mit Buch“ kürzen.

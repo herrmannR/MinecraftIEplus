@@ -1,0 +1,932 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "ae2"
+	group: ""
+	icon: "ae2:controller"
+	id: "19F27B111E9BFC51"
+	order_index: 15
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 3: Industrie."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "4B12135DB847F4B8"
+			shape: "gear"
+			subtitle: "AE1 · Storage-Layer"
+			tasks: [{
+				id: "3A120A21440CC5E4"
+				stage: "kapitel_k3"
+				type: "gamestage"
+			}]
+			title: "Kapitel 3: Applied Energistics 2"
+			x: 0.5d
+			y: -1.75d
+		}
+		{
+			dependencies: ["4B12135DB847F4B8"]
+			description: [
+				"Ziel des Meilensteins: Meteorit finden, Prozessoren prägen und vorhandene Kisten und Storage Drawers über ein kleines Netz zentral durchsuchen. Braucht IE-Stahl (Meilenstein IE1)."
+				""
+				"AE2 erklärt sich im eigenen Handbuch. Halte über einem AE2-Item die Taste G gedrückt, dann springt der Guide auf die passende Seite."
+				"Buch: Guide → Getting Started (1.20+)."
+				"&6⚙&r Im Pack erzeugt AE2 keinen eigenen Strom, und einige Rezepte können vom Guide abweichen. Gültig ist immer, was JEI zeigt."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:guide"
+			id: "47435CAF48E9E684"
+			subtitle: "AE1 · Storage-Layer"
+			tasks: [{
+				id: "1BB6EDD8F1142AC8"
+				item: "ae2:guide"
+				type: "item"
+			}]
+			title: "Guide"
+			x: 0.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["47435CAF48E9E684"]
+			description: [
+				"Der Charger lädt Certus Quartz auf und macht aus einem Kompass den Meteorite Compass. Strom gibt die Kurbel oder jede FE-Quelle."
+				"Buch: Items, Blocks, and Machines → Charger, Crank."
+				"&6⚙&r Statt der Kurbel kannst du den Charger direkt an IE-Strom hängen."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:charger"
+			id: "6B132A79F89EE95B"
+			subtitle: "AE1 · Storage-Layer"
+			tasks: [{
+				id: "64A40E1152EF5226"
+				item: "ae2:charger"
+				type: "item"
+			}
+			{
+				id: "1CC156F48E3C358A"
+				item: "ae2:crank"
+				type: "item"
+			}]
+			title: "Charger und Crank"
+			x: 0.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["6B132A79F89EE95B"]
+			description: [
+				"Der Kompass zeigt zum nächsten Meteoriten."
+				"Buch: Items, Blocks, and Machines → Meteorite Compass; Getting Started → Getting The Initial Materials."
+				"&6⚙&r Meteoriten gibt es nur in der Overworld, etwa einer je 32 × 32 Chunks."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:meteorite_compass"
+			id: "1F4DFC2D78D6B7A6"
+			subtitle: "AE1 · Storage-Layer"
+			tasks: [{
+				id: "5FF8405DD977043C"
+				item: "ae2:meteorite_compass"
+				type: "item"
+			}]
+			title: "Meteorite Compass"
+			x: 0.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["1F4DFC2D78D6B7A6"]
+			description: [
+				"Im Kern des Meteoriten steckt der Mysterious Cube mit den vier Inscriber-Pressen. Daneben findest du Budding Certus Quartz und Sky Stone. Ein Meteorit reicht: Pressen lassen sich später im Inscriber kopieren."
+				"Buch: AE2 Mechanics → Meteorites; Items, Blocks, and Machines → Mysterious Cube, Presses, Sky Stone."
+				"&6⚙&r Certus gibt es im Pack nur an Budding-Blöcken, kein Certus-Erz. Flawless Budding Certus lässt sich nicht abbauen; merk dir den Ort."
+				"&6⚙&r Später gibt es weitere Quellen: Sky Stone aus 5 Moon Stone und 4 Mars Stone (Ad Astra), Budding Quartz aus einem Blood-Magic-Meteor mit Certus Quartz Crystal (Mark of the Falling Tower)."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:silicon_press"
+			id: "66B6782FBA73917A"
+			subtitle: "AE1 · Storage-Layer"
+			tasks: [{
+				id: "5BFDCD2D15D93063"
+				item: "ae2:silicon_press"
+				type: "item"
+			}
+			{
+				id: "694749ADF7DA43FC"
+				item: "ae2:logic_processor_press"
+				type: "item"
+			}
+			{
+				id: "0D2EDB570EC621A7"
+				item: "ae2:calculation_processor_press"
+				type: "item"
+			}
+			{
+				id: "4FC93E7BFDBD2F37"
+				item: "ae2:engineering_processor_press"
+				type: "item"
+			}
+			{
+				id: "70BCACD31DF40982"
+				item: "ae2:sky_stone_block"
+				type: "item"
+			}]
+			title: "Der Meteorit"
+			x: 0.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["66B6782FBA73917A"]
+			description: [
+				"Certus wächst als Cluster an Budding-Blöcken; der Growth Accelerator beschleunigt das stark. Bau ihn zuerst."
+				"Buch: Getting Started → Growing Certus Quartz; AE2 Mechanics → Certus Growth; Items, Blocks, and Machines → Budding Certus Quartz, Growth Accelerator."
+				"&6⚙&r Der Growth Accelerator braucht Strom. AE2 erzeugt im Pack keinen eigenen; nimm IE-Strom."
+				"&6⚙&r Mekanism hat eigene Rezepte für AE2-Material (Staub, Kristalle); JEI zeigt sie."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:growth_accelerator"
+			id: "5B9E6DE11968B925"
+			subtitle: "AE1 · Storage-Layer"
+			tasks: [{
+				id: "6CEEBCECD02BEB53"
+				item: "ae2:growth_accelerator"
+				type: "item"
+			}
+			{
+				count: 16L
+				id: "56C4826E35AEC396"
+				item: "ae2:certus_quartz_crystal"
+				type: "item"
+			}]
+			title: "Certus wachsen lassen"
+			x: 0.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["5B9E6DE11968B925"]
+			description: [
+				"Fluix ist das zweite Grundmaterial: Charged Certus, Redstone und Nether Quartz, zusammen ins Wasser geworfen."
+				"Buch: Getting Started → A Quick Aside on Fluix; Items, Blocks, and Machines → Fluix Crystal, Charged Certus Quartz Crystal."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:fluix_crystal"
+			id: "753A22B2C47AAA1C"
+			subtitle: "AE1 · Storage-Layer"
+			tasks: [{
+				id: "652BABABD917137B"
+				item: "ae2:fluix_crystal"
+				type: "item"
+			}]
+			title: "Fluix"
+			x: 0.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["753A22B2C47AAA1C"]
+			description: [
+				"Im Inscriber prägst du mit den Pressen die Schaltkreise. Eine Presse mit einem Eisenblock ergibt eine Kopie."
+				"Buch: Items, Blocks, and Machines → Inscriber, Presses."
+				"&6⚙&r Der Inscriber nimmt FE direkt an; Strom aus IE."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:inscriber"
+			id: "3FA949F1EE0DAFA6"
+			subtitle: "AE1 · Storage-Layer"
+			tasks: [{
+				id: "2CFE4DF9D54108A0"
+				item: "ae2:inscriber"
+				type: "item"
+			}]
+			title: "Inscriber"
+			x: 0.5d
+			y: 9.0d
+		}
+		{
+			dependencies: ["3FA949F1EE0DAFA6"]
+			description: [
+				"Aus Gold, Certus, Diamant und Silicon entstehen Printed Circuits und daraus die drei Prozessoren. Fast jedes ME-Gerät braucht einen davon."
+				"Buch: Getting Started → Inscribing Some Processors; Items, Blocks, and Machines → Processors."
+				"&6⚙&r &9(ungeprüft)&r Ob die Prozessoren im Pack teurer werden (Teil des „teuren“ Storage-Layers), ist offen."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:silicon"
+			id: "310E3E632CF41446"
+			subtitle: "AE1 · Storage-Layer"
+			tasks: [{
+				id: "261714EE168ABAE5"
+				item: "ae2:silicon"
+				type: "item"
+			}
+			{
+				id: "0E6316BF79BD8E94"
+				item: "ae2:logic_processor"
+				type: "item"
+			}
+			{
+				id: "6F8CBAFAD5E0CA68"
+				item: "ae2:calculation_processor"
+				type: "item"
+			}
+			{
+				id: "76E12A59B828D971"
+				item: "ae2:engineering_processor"
+				type: "item"
+			}]
+			title: "Die drei Prozessoren"
+			x: 0.5d
+			y: 10.5d
+		}
+		{
+			dependencies: ["310E3E632CF41446"]
+			description: [
+				"Die beiden Kerne stecken in Terminals, Bussen und Ebenen."
+				"Buch: Items, Blocks, and Machines → Formation and Annihilation Cores."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:formation_core"
+			id: "07E6336DB123AB07"
+			subtitle: "AE1 · Storage-Layer"
+			tasks: [{
+				id: "3232560976CAB855"
+				item: "ae2:formation_core"
+				type: "item"
+			}
+			{
+				id: "2387FC5A80CF6A23"
+				item: "ae2:annihilation_core"
+				type: "item"
+			}]
+			title: "Formation Core und Annihilation Core"
+			x: 0.5d
+			y: 12.0d
+		}
+		{
+			dependencies: ["07E6336DB123AB07"]
+			description: [
+				"Das Netz läuft mit AE. Der Energy Acceptor wandelt Forge Energy um, 2 FE ergeben 1 AE."
+				"Buch: AE2 Mechanics → Energy; Items, Blocks, and Machines → Energy Acceptor."
+				"&6⚙&r Vibration Chamber und Crystal Resonance Generator gibt es im Pack nicht. Strom kommt aus IE oder Mekanism."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:energy_acceptor"
+			id: "79332D21193BB39F"
+			subtitle: "AE1 · Storage-Layer"
+			tasks: [{
+				id: "19DC9F032929850D"
+				item: "ae2:energy_acceptor"
+				type: "item"
+			}]
+			title: "Energy Acceptor"
+			x: 0.5d
+			y: 13.5d
+		}
+		{
+			dependencies: ["79332D21193BB39F"]
+			description: [
+				"Kabel verbinden die Geräte, das Terminal zeigt alles, was im Netz liegt. Ein Netz ohne Controller trägt höchstens 8 Geräte."
+				"Buch: Getting Started → Matter Energy Tech: ME Networks and Storage; Items, Blocks, and Machines → Cables, Terminals; AE2 Mechanics → Channels."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:fluix_glass_cable"
+			id: "694BB95567703A4A"
+			subtitle: "AE1 · Storage-Layer"
+			tasks: [{
+				id: "4492F9F47D3FE614"
+				item: "ae2:fluix_glass_cable"
+				type: "item"
+			}
+			{
+				id: "5B4E6EF407A14C74"
+				item: "ae2:terminal"
+				type: "item"
+			}]
+			title: "Kabel und ME Terminal"
+			x: 0.5d
+			y: 15.0d
+		}
+		{
+			dependencies: ["694BB95567703A4A"]
+			description: [
+				"Der Storage Bus macht eine Kiste oder einen Storage Drawer zum Teil des Netzes. Ein Bus je Lager, und das Terminal durchsucht alles auf einmal. Das ist der Storage-Layer."
+				"Buch: Items, Blocks, and Machines → ME Storage Bus; AE2 Mechanics → Import, Export, and Storage."
+				"&6⚙&r &9(ungeprüft)&r Ob ein Storage Bus an einem Drawer Controller alle angeschlossenen Drawers erfasst, im Spiel prüfen."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:storage_bus"
+			id: "7293C4C03756CCF1"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "AE1 · Storage-Layer"
+			tasks: [{
+				id: "307D00B2D79026EF"
+				item: "ae2:storage_bus"
+				type: "item"
+			}]
+			title: "Kisten anbinden"
+			x: 0.5d
+			y: 16.5d
+		}
+		{
+			dependencies: ["7293C4C03756CCF1"]
+			description: [
+				"Quartz Glass und Panels sind Bauteile für Terminals und Zellen und zugleich Baumaterial."
+				"Buch: Items, Blocks, and Machines → Quartz Glass, Illuminated Panels."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:quartz_glass"
+			id: "1BBED7497AF9A2C5"
+			optional: true
+			shape: "square"
+			subtitle: "AE1 · Storage-Layer · Nebenquest"
+			tasks: [{
+				id: "7E9776A6828494DB"
+				item: "ae2:quartz_glass"
+				type: "item"
+			}
+			{
+				id: "1CEDE8A9846A7666"
+				item: "ae2:semi_dark_monitor"
+				type: "item"
+			}]
+			title: "Quartz Glass und Illuminated Panel"
+			x: 2.0d
+			y: 16.5d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 9."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "45E818ED398B26CE"
+			shape: "gear"
+			subtitle: "AE2 · ME-System"
+			tasks: [{
+				id: "3610B051CEC608B6"
+				stage: "kapitel_k9"
+				type: "gamestage"
+			}]
+			title: "Kapitel 9: Applied Energistics 2"
+			x: 4.0d
+			y: -1.75d
+		}
+		{
+			dependencies: ["7293C4C03756CCF1", "45E818ED398B26CE"]
+			description: [
+				"Ziel des Meilensteins: echte Speicherzellen, Autocrafting und Applied Mekanistics. Braucht die Prozessoren (AE1) und den Mekanism-Ausbau (MK3). AE2 soll vorhandene Produktion verbinden, nicht ersetzen."
+				""
+				"Eine Zelle besteht aus Housing und Component. Sie zählt Bytes und Sorten: höchstens 63 Sorten je Zelle, egal wie groß."
+				"Buch: Items, Blocks, and Machines → Storage Cells; AE2 Mechanics → Bytes and Types."
+				"&6⚙&r &9(ungeprüft)&r Ob Housing oder Components im Pack teurer werden (AE2 als Endgame), ist offen."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:item_storage_cell_1k"
+			id: "61C378527699CA8B"
+			subtitle: "AE2 · ME-System"
+			tasks: [{
+				id: "1899ECCE7BD8BFA3"
+				item: "ae2:item_storage_cell_1k"
+				type: "item"
+			}]
+			title: "Storage Cells"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["61C378527699CA8B"]
+			description: [
+				"Der Drive hält mehrere Zellen und macht sie fürs Netz sichtbar."
+				"Buch: Items, Blocks, and Machines → ME Drive; Getting Started → Your Very First ME System."
+				"&6⚙&r Rezept anders als im Guide: 4 Steel Plate, 2 Engineering Processor, 2 Fluix Glass Cable und ein Advanced Control Circuit aus Mekanism (Quest „Die Stufen von Mekanism“). Siehe JEI."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:drive"
+			id: "71B568676039B4D7"
+			subtitle: "AE2 · ME-System"
+			tasks: [{
+				id: "0F97DF85F428D041"
+				item: "ae2:drive"
+				type: "item"
+			}]
+			title: "ME Drive"
+			x: 4.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["71B568676039B4D7"]
+			description: [
+				"Ab 9 Geräten braucht das Netz einen Controller. Er verteilt Kanäle: 8 je normalem Kabel, 32 je Dense Cable."
+				"Buch: Items, Blocks, and Machines → Controller; AE2 Mechanics → Channels; Getting Started → Expanding your Network, Overcoming Limits."
+				"&6⚙&r Rezept anders als im Guide: 2 Steel Plate, 3 Fluix Crystal, ein Engineering Processor, 2 Smooth Sky Stone Block und ein Advanced Control Circuit aus Mekanism. Siehe JEI."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:controller"
+			id: "151524197B359CFC"
+			subtitle: "AE2 · ME-System"
+			tasks: [{
+				id: "6870D63669315A55"
+				item: "ae2:controller"
+				type: "item"
+			}]
+			title: "ME Controller"
+			x: 4.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["151524197B359CFC"]
+			description: [
+				"Jede Stufe braucht drei Components der vorigen."
+				"Buch: Items, Blocks, and Machines → Storage Cells."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:item_storage_cell_4k"
+			id: "60DAAEB5A4DE755D"
+			optional: true
+			shape: "square"
+			subtitle: "AE2 · ME-System · Nebenquest"
+			tasks: [{
+				id: "63CC5C604718C5DA"
+				item: "ae2:item_storage_cell_4k"
+				type: "item"
+			}
+			{
+				id: "35A2B53E84481382"
+				item: "ae2:item_storage_cell_16k"
+				type: "item"
+			}]
+			title: "Größere Zellen"
+			x: 5.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["151524197B359CFC"]
+			description: [
+				"Auch Flüssigkeiten lassen sich im Netz lagern."
+				"Buch: Items, Blocks, and Machines → Storage Cells."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:fluid_cell_housing"
+			id: "74C36AE2EF6ABDAB"
+			optional: true
+			shape: "square"
+			subtitle: "AE2 · ME-System · Nebenquest"
+			tasks: [{
+				id: "3DFADC27A3CF4F1F"
+				item: "ae2:fluid_cell_housing"
+				type: "item"
+			}]
+			title: "Fluid Cell"
+			x: 5.5d
+			y: 4.25d
+		}
+		{
+			dependencies: ["151524197B359CFC"]
+			description: [
+				"Ein Puffer für 200.000 AE, damit das Netz Stromspitzen übersteht."
+				"Buch: Items, Blocks, and Machines → Energy Cells."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:energy_cell"
+			id: "3C508CC79599FD35"
+			optional: true
+			shape: "square"
+			subtitle: "AE2 · ME-System · Nebenquest"
+			tasks: [{
+				id: "24998E125F2CF910"
+				item: "ae2:energy_cell"
+				type: "item"
+			}]
+			title: "Energy Cell"
+			x: 5.5d
+			y: 5.5d
+		}
+		{
+			dependencies: ["151524197B359CFC"]
+			description: [
+				"Busse ziehen Items ins Netz und geben sie an Maschinen ab; das Interface ist ein Puffer zwischen Netz und Außenwelt. So hängst du IE- und Mekanism-Maschinen an."
+				"Buch: Items, Blocks, and Machines → ME Import Bus, ME Export Bus, Interface; AE2 Mechanics → Import, Export, and Storage."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:import_bus"
+			id: "1CBB16C6B92B4186"
+			optional: true
+			shape: "square"
+			subtitle: "AE2 · ME-System · Nebenquest"
+			tasks: [{
+				id: "67B03610C4B74D9C"
+				item: "ae2:import_bus"
+				type: "item"
+			}
+			{
+				id: "77BB75692AA2F006"
+				item: "ae2:export_bus"
+				type: "item"
+			}
+			{
+				id: "1B7811EEDF4E94D5"
+				item: "ae2:interface"
+				type: "item"
+			}]
+			title: "Import, Export, Interface"
+			x: 5.5d
+			y: 6.75d
+		}
+		{
+			dependencies: ["151524197B359CFC"]
+			description: [
+				"Gibt ein Redstone-Signal, wenn ein Vorrat eine Grenze über- oder unterschreitet. Damit schaltest du Maschinen nach Bedarf."
+				"Buch: Items, Blocks, and Machines → Level Emitter; Example Setups → Level Emitter Autostocking."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:level_emitter"
+			id: "6D7F156453A34B99"
+			optional: true
+			shape: "square"
+			subtitle: "AE2 · ME-System · Nebenquest"
+			tasks: [{
+				id: "657D9ADA78CF2C6A"
+				item: "ae2:level_emitter"
+				type: "item"
+			}]
+			title: "Level Emitter"
+			x: 5.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["151524197B359CFC"]
+			description: [
+				"Karten machen Busse schneller oder genauer; in der Cell Workbench stellst du Filter für Zellen ein."
+				"Buch: Items, Blocks, and Machines → Upgrade Cards, Cell Workbench."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:basic_card"
+			id: "7861DE5C00BF5B58"
+			optional: true
+			shape: "square"
+			subtitle: "AE2 · ME-System · Nebenquest"
+			tasks: [{
+				id: "519608AEAE0DC9E6"
+				item: "ae2:basic_card"
+				type: "item"
+			}
+			{
+				id: "26EA0B7E309E3603"
+				item: "ae2:advanced_card"
+				type: "item"
+			}
+			{
+				id: "73941EB2974BC821"
+				item: "ae2:cell_workbench"
+				type: "item"
+			}]
+			title: "Upgrade Cards und Cell Workbench"
+			x: 5.5d
+			y: 9.25d
+		}
+		{
+			dependencies: ["151524197B359CFC"]
+			description: [
+				"Ein Terminal mit eigenem Werkbank-Raster, das direkt aus dem Netz nimmt."
+				"Buch: Items, Blocks, and Machines → Terminals."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:crafting_terminal"
+			id: "473B379DA5850F5F"
+			subtitle: "AE2 · ME-System"
+			tasks: [{
+				id: "3061CEFC5D1F62CF"
+				item: "ae2:crafting_terminal"
+				type: "item"
+			}]
+			title: "Crafting Terminal"
+			x: 4.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["473B379DA5850F5F"]
+			description: [
+				"Ein Pattern speichert ein Rezept. Crafting Patterns gelten für die Werkbank, Processing Patterns für Maschinen anderer Mods."
+				"Buch: AE2 Mechanics → Autocrafting; Items, Blocks, and Machines → Patterns, Terminals."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:blank_pattern"
+			id: "0F5670F69765BA49"
+			subtitle: "AE2 · ME-System"
+			tasks: [{
+				id: "6390DEA4F756B71B"
+				item: "ae2:blank_pattern"
+				type: "item"
+			}
+			{
+				id: "2BDD6B37CCBA529F"
+				item: "ae2:pattern_encoding_terminal"
+				type: "item"
+			}]
+			title: "Patterns"
+			x: 4.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0F5670F69765BA49"]
+			description: [
+				"Der Provider schickt die Zutaten eines Patterns los, der Assembler craftet Werkbank-Rezepte. Für Processing Patterns stellst du den Provider an eine Maschine."
+				"Buch: Items, Blocks, and Machines → Pattern Provider, Molecular Assembler."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:pattern_provider"
+			id: "31D3ABFCF244549A"
+			subtitle: "AE2 · ME-System"
+			tasks: [{
+				id: "4156641443C53AD3"
+				item: "ae2:pattern_provider"
+				type: "item"
+			}
+			{
+				id: "2C8A253127D73C15"
+				item: "ae2:molecular_assembler"
+				type: "item"
+			}]
+			title: "Pattern Provider und Molecular Assembler"
+			x: 4.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["31D3ABFCF244549A"]
+			description: [
+				"Ohne CPU kein Autocrafting: Sie plant den Auftrag und hält die Zwischenprodukte. Mindestens ein Crafting Storage gehört dazu."
+				"Buch: Items, Blocks, and Machines → Crafting CPU Multiblock (Storage, Coprocessor, Monitor, Unit)."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:crafting_unit"
+			id: "7F8A2EA9729C9026"
+			subtitle: "AE2 · ME-System"
+			tasks: [{
+				id: "02584658ED8BFFA4"
+				item: "ae2:crafting_unit"
+				type: "item"
+			}
+			{
+				id: "439FC804B563BB05"
+				item: "ae2:1k_crafting_storage"
+				type: "item"
+			}]
+			title: "Crafting CPU"
+			x: 4.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["7F8A2EA9729C9026"]
+			description: [
+				"Applied Mekanistics lagert Mekanism-Chemikalien wie Gase im ME-Netz. Das Housing braucht 2 Quartz Glass, 3 Redstone und 3 Osmium Ingot; die Zelle entsteht wie eine Item-Zelle aus Housing und Component. Mit Processing Patterns läuft dann auch Autocrafting über Mekanism-Maschinen, die Gase brauchen."
+				"Das Addon steht nicht im Guide."
+			]
+			hide_until_deps_visible: true
+			icon: "appmek:chemical_cell_housing"
+			id: "066045B9476DF7B7"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "AE2 · ME-System"
+			tasks: [{
+				id: "333E50C117807730"
+				item: "appmek:chemical_cell_housing"
+				type: "item"
+			}
+			{
+				id: "4FBB7FC58321A216"
+				item: "appmek:chemical_storage_cell_4k"
+				type: "item"
+			}]
+			title: "Applied Mekanistics"
+			x: 4.0d
+			y: 10.5d
+		}
+		{
+			dependencies: ["066045B9476DF7B7"]
+			description: [
+				"Der Access Point macht das Netz in seiner Umgebung kabellos erreichbar, das Wireless Terminal greift von dort darauf zu. Wireless Booster im Access Point erhöhen die Reichweite."
+				"Buch: Items, Blocks, and Machines → Fluix Pearl, Wireless Receiver, Wireless Access Point, Wireless Terminals."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:fluix_pearl"
+			id: "25075690125C9FC9"
+			optional: true
+			shape: "square"
+			subtitle: "AE2 · ME-System · Nebenquest"
+			tasks: [{
+				id: "667424E65D2D320E"
+				item: "ae2:fluix_pearl"
+				type: "item"
+			}
+			{
+				id: "3A80F1045B091389"
+				item: "ae2:wireless_access_point"
+				type: "item"
+			}
+			{
+				id: "0F776F92B0D5A3D2"
+				item: "ae2:wireless_terminal"
+				type: "item"
+			}]
+			title: "Kabelloser Zugriff"
+			x: 5.5d
+			y: 10.5d
+		}
+		{
+			dependencies: ["066045B9476DF7B7"]
+			description: [
+				"Das Addon AE2 Wireless Terminals bringt auch kabellose Pattern-Terminals. Zwei kabellose Terminals lassen sich zum Universal Terminal kombinieren. Die Magnet Card im Wireless Crafting Terminal zieht laut Beschreibung Items an."
+				"Das Addon steht nicht im Guide."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2wtlib:wireless_universal_terminal"
+			id: "6FD9529FED79D0F9"
+			optional: true
+			shape: "square"
+			subtitle: "AE2 · ME-System · Nebenquest"
+			tasks: [{
+				id: "409B82ED15A5D29C"
+				item: "ae2wtlib:wireless_universal_terminal"
+				type: "item"
+			}]
+			title: "Wireless Universal Terminal"
+			x: 5.5d
+			y: 11.75d
+		}
+		{
+			dependencies: ["066045B9476DF7B7"]
+			description: [
+				"P2P Tunnels tragen Kanäle, Items, Flüssigkeiten, Strom oder Redstone durch ein einziges Kabel. Ein ME P2P trägt 32 Kanäle. Abgestimmt wird mit einem Item in der Hand."
+				"Buch: AE2 Mechanics → P2P Tunnels; Items, Blocks, and Machines → P2P Tunnels."
+				"Ein Chemical P2P Tunnel (Applied Mekanistics) wird mit einem Mekanism Chemical Tank abgestimmt."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:me_p2p_tunnel"
+			id: "0923680B32998242"
+			optional: true
+			shape: "square"
+			subtitle: "AE2 · ME-System · Nebenquest"
+			tasks: [{
+				id: "2CF16340F2BECEB7"
+				item: "ae2:me_p2p_tunnel"
+				type: "item"
+			}]
+			title: "P2P Tunnels"
+			x: 5.5d
+			y: 13.0d
+		}
+		{
+			dependencies: ["066045B9476DF7B7"]
+			description: [
+				"More Immersive Wires führt ME-Kabel als IE-Draht über Masten, auch über weite Strecken. Die Spule braucht 4 Aluminiumdraht aus IE und 4 Glass Cable; Anschluss und Relais setzt du wie bei IE. Für 32 Kanäle gibt es Dense-Spule, -Anschluss und -Relais."
+				"Das Addon steht nicht im Guide; das Verlegen erklärt das Engineer's Manual bei den Drähten."
+			]
+			hide_until_deps_visible: true
+			icon: "more_immersive_wires:ae_coil"
+			id: "1E7CCCB98735A4FD"
+			optional: true
+			shape: "square"
+			subtitle: "AE2 · ME-System · Nebenquest"
+			tasks: [{
+				id: "4201B3450A100DD5"
+				item: "more_immersive_wires:ae_coil"
+				type: "item"
+			}
+			{
+				id: "405B0B3DAD9728F7"
+				item: "more_immersive_wires:ae_connector"
+				type: "item"
+			}]
+			title: "ME über IE-Drähte"
+			x: 5.5d
+			y: 14.25d
+		}
+		{
+			dependencies: ["47435CAF48E9E684"]
+			description: [
+				"Ab AE1 freigeschaltet, ohne Reihenfolge."
+				""
+				"Dreht Geräte und baut sie ohne Spitzhacke ab."
+				"Buch: Items, Blocks, and Machines → Wrenches."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:certus_quartz_wrench"
+			id: "53462FF5E11A29F1"
+			optional: true
+			shape: "square"
+			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
+			tasks: [{
+				id: "36AF3AC34ED46486"
+				item: "ae2:certus_quartz_wrench"
+				type: "item"
+			}]
+			title: "Certus Quartz Wrench"
+			x: 9.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["47435CAF48E9E684"]
+			description: [
+				"Zeigt Kanäle und Strom eines Netzes und hat Platz für Upgrade Cards."
+				"Buch: Items, Blocks, and Machines → Network Tool."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:network_tool"
+			id: "55318ECB561E58CD"
+			optional: true
+			shape: "square"
+			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
+			tasks: [{
+				id: "2E19DB46E681FDFC"
+				item: "ae2:network_tool"
+				type: "item"
+			}]
+			title: "Network Tool"
+			x: 9.0d
+			y: 1.25d
+		}
+		{
+			dependencies: ["47435CAF48E9E684"]
+			description: [
+				"Kopiert Einstellungen von einem Gerät aufs nächste und verbindet P2P Tunnels."
+				"Buch: Items, Blocks, and Machines → Memory Card."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:memory_card"
+			id: "1015E66E8F08A3E0"
+			optional: true
+			shape: "square"
+			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
+			tasks: [{
+				id: "303A158D4BF2A77E"
+				item: "ae2:memory_card"
+				type: "item"
+			}]
+			title: "Memory Card"
+			x: 9.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["47435CAF48E9E684"]
+			description: [
+				"Ein kleiner Speicher für unterwegs."
+				"Buch: Items, Blocks, and Machines → Storage Cells."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:portable_item_cell_1k"
+			id: "169962C83C8E8634"
+			optional: true
+			shape: "square"
+			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
+			tasks: [{
+				id: "35B39F6B52E6322B"
+				item: "ae2:portable_item_cell_1k"
+				type: "item"
+			}]
+			title: "Portable Cell"
+			x: 9.0d
+			y: 3.75d
+		}
+		{
+			dependencies: ["47435CAF48E9E684"]
+			description: [
+				"Werkzeuge aus Fluix, über das Fluix Smithing Template."
+				"Buch: Items, Blocks, and Machines → Quartz Tools, Fluix Tools, Fluix Smithing Template."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:fluix_pickaxe"
+			id: "4363BDB209FD5894"
+			optional: true
+			shape: "square"
+			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
+			tasks: [{
+				id: "2BF96D2021CAE873"
+				item: "ae2:fluix_pickaxe"
+				type: "item"
+			}]
+			title: "Fluix-Werkzeuge"
+			x: 9.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["47435CAF48E9E684"]
+			description: [
+				"Verschießt Matter Balls oder Nuggets und braucht 1.600 AE je Schuss."
+				"Buch: Items, Blocks, and Machines → Matter Cannon, Matter Ball."
+			]
+			hide_until_deps_visible: true
+			icon: "ae2:matter_cannon"
+			id: "2F78E61D0513D6D4"
+			optional: true
+			shape: "square"
+			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
+			tasks: [{
+				id: "4741F2BD725A7F1F"
+				item: "ae2:matter_cannon"
+				type: "item"
+			}]
+			title: "Matter Cannon"
+			x: 9.0d
+			y: 6.25d
+		}
+	]
+	title: "Applied Energistics 2"
+}

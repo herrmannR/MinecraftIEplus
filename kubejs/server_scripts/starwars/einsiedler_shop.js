@@ -21,7 +21,9 @@
 // Rezept-IDs ieplus:bauplan/<ergebnis> werden in den Patchouli-Einträgen verwendet; beim Ändern dort mitziehen.
 // - Buch in drei Kapiteln (User, 2026-10-20): Maschinen (Assembly Bench, Droid Fabricator, Gas Harvester), Waffen (Blaster,
 //   Droiden), Rüstung (Klon, Jedi, Sith, Royal Guard, Vader; deren Werkbank-Rezepte sind bis zum Bauplan gesperrt).
-// Stand 2026-10-20, KubeJS 2001. Fassung 11 (Plastoid-Rezept nicht mehr über output entfernt, Test 63; Fassung 10: Bauplan Plastoid), UNGETESTET.
+// - Kapitel „Erinnerungsstücke“ (O71, 2026-10-26): Bauplan „Pilotenhelm“, gibt Davijaan beim Helm-Auftrag. Sein Rezept
+//   (Reparatur des verbeulten Helms) steht in server_scripts/story/story_rezepte.js und fragt denselben Weltwert ab.
+// Stand 2026-10-26, KubeJS 2001. Fassung 12 (Bauplan Pilotenhelm; Fassung 11: Plastoid-Rezept nicht mehr über output entfernt, Test 63), UNGETESTET.
 
 const IEPLUS_ADV = 'mekanism:advanced_control_circuit'
 const IEPLUS_BAUPLAN_BUCH = 'patchouli:bauplaene'
@@ -78,7 +80,9 @@ const IEPLUS_BAUPLAENE = {
     { ergebnis: 'swgc:vader_helmet', muster: ['DPD', 'AOA', 'D D'], zutaten: { A: 'minecraft:amethyst_shard', D: 'swgc:durasteel_ingot', O: 'minecraft:obsidian', P: 'swgc:plastoid' } },
     { ergebnis: 'swgc:vader_chestplate', muster: ['DRD', 'DOD', 'DPD'], zutaten: { D: 'swgc:durasteel_ingot', O: 'minecraft:obsidian', P: 'swgc:plastoid', R: 'minecraft:redstone' } },
     { ergebnis: 'swgc:vader_leggings', muster: ['DOD', 'D D', 'D D'], zutaten: { D: 'swgc:durasteel_ingot', O: 'minecraft:obsidian' } },
-    { ergebnis: 'swgc:vader_boots', muster: ['O O', 'D D'], zutaten: { D: 'swgc:durasteel_ingot', O: 'minecraft:obsidian' } }] }
+    { ergebnis: 'swgc:vader_boots', muster: ['O O', 'D D'], zutaten: { D: 'swgc:durasteel_ingot', O: 'minecraft:obsidian' } }] },
+  // Erinnerungsstücke (O71): Rezept in story_rezepte.js (ieplus:story/pilotenhelm), deshalb rezepteAnderswo
+  pilotenhelm: { titel: 'Pilotenhelm', rezepte: [], rezepteAnderswo: true }
 }
 
 function ieplusSchluessel(name) { return 'ieplus_bauplan_' + name }
@@ -173,7 +177,7 @@ ItemEvents.rightClicked(event => {
   }
   event.item.shrink(1)
   daten.putBoolean(ieplusSchluessel(name), true)
-  server.tell(Text.gold('Neuer Bauplan im Buch: ' + b.titel + (b.rezepte.length > 0 ? '. Das Rezept ist jetzt für alle herstellbar.' : '.')))
+  server.tell(Text.gold('Neuer Bauplan im Buch: ' + b.titel + ((b.rezepte.length > 0 || b.rezepteAnderswo) ? '. Das Rezept ist jetzt für alle herstellbar.' : '.')))
   if (!daten.getBoolean('ieplus_bauplan_buch_gegeben')) {
     daten.putBoolean('ieplus_bauplan_buch_gegeben', true)
     player.give(ieplusBauplanBuch())

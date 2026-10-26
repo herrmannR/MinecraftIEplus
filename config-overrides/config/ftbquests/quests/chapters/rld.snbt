@@ -1,0 +1,479 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "rld"
+	group: ""
+	icon: "wrd:magic_cauldron"
+	id: "4466B3A33E6F6DC1"
+	order_index: 20
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 8: Hitze."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "156FF25A9C28B0C9"
+			shape: "gear"
+			subtitle: "WD1 · Vorbereitung"
+			tasks: [{
+				id: "190840B22F9CD60E"
+				stage: "kapitel_k8"
+				type: "gamestage"
+			}]
+			title: "Kapitel 8: Roguelike Dungeons"
+			x: 0.5d
+			y: -1.75d
+		}
+		{
+			dependencies: ["156FF25A9C28B0C9"]
+			description: [
+				"Dungeons entstehen in diesem Pack nicht von selbst. Erst die Vessel of Vision erschafft einen."
+				"Rezept: 6 Iron Ingot, 1 Blaze Powder, 1 Ender Pearl, 1 Cauldron. Für Blaze Powder brauchst du einen Ausflug in den Nether."
+				"So geht's: Der erste Rechtsklick aktiviert die Vessel. Der zweite sucht 5000 bis 10000 Blöcke entfernt einen Ort und baut dort den Dungeon. Findet sie nichts, versuch es an einem anderen Ort noch einmal."
+			]
+			hide_until_deps_visible: true
+			icon: "wrd:magic_cauldron"
+			id: "64F39ED5163ED88E"
+			subtitle: "WD1 · Vorbereitung"
+			tasks: [{
+				id: "44D9A84DB95B457F"
+				item: "wrd:magic_cauldron"
+				type: "item"
+			}]
+			title: "Vessel of Vision"
+			x: 0.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["64F39ED5163ED88E"]
+			description: [
+				"Der Dungeon liegt tausende Blöcke weit weg. Der Pathfinder bringt dich hin."
+				"Rezept: Eye of Ender, Soul Lantern, Iron Ingot (formlos, ergibt 2)."
+				"So geht's: Pathfinder auf einen Block setzen, mit der benutzten Vessel rechtsklicken (er merkt sich den Ort), noch einmal rechtsklicken. Nach dem Countdown teleportiert er alle Spieler in seiner Nähe zum Dungeon."
+				"&9(ungeprüft)&r Wie der Rückweg funktioniert, ist nicht ausgelesen; im Spiel prüfen. Bis dahin: Nimm einen zweiten Pathfinder mit oder merk dir die Koordinaten."
+			]
+			hide_until_deps_visible: true
+			icon: "wrd:dungeon_locator_item"
+			id: "7A6EF9579E3C5994"
+			subtitle: "WD1 · Vorbereitung"
+			tasks: [{
+				id: "2FB35AE25280E44D"
+				item: "wrd:dungeon_locator_item"
+				type: "item"
+			}]
+			title: "Sentient Pathfinder"
+			x: 0.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["7A6EF9579E3C5994"]
+			description: [
+				"Jede Truhe im Dungeon braucht ihren eigenen Schlüssel, und die Stockwerke sind Labyrinthe."
+				"Der &eKey Bag&r (1 Lead, 3 Leather, 1 Iron Ingot) nimmt alle Schlüssel und Kreidemarker auf; Schlösser erkennen den Schlüssel auch im Beutel."
+				"Mit &eKreide&r im Beutel setzt Shift-Rechtsklick eine Markierung auf den Boden. Die Taste R wechselt die Farbe (rot, blau, grün). Markiere so, woher du kommst."
+				"&9(ungeprüft)&r Woher die Kreide kommt (Rezept oder Truhen), ist nicht ausgelesen."
+			]
+			hide_until_deps_visible: true
+			icon: "wrd:key_bag"
+			id: "5698E6E085F5F81B"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "WD1 · Vorbereitung"
+			tasks: [{
+				id: "52A4AF2D7C0AAEF8"
+				item: "wrd:key_bag"
+				type: "item"
+			}
+			{
+				id: "0FC00EB7FC33CDF9"
+				item: "wrd:chalk_marker_red"
+				type: "item"
+			}]
+			title: "Key Bag und Kreide"
+			x: 0.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["64F39ED5163ED88E"]
+			description: [
+				"Welcher Dungeon entsteht, entscheidet das Biom am Zielort. Mit den drei Varianten suchst du gezielt eine Gruppe; sie suchen 8000 bis 16000 Blöcke weit."
+				"• &eSandy&r (Sand statt Ender Pearl): heißes Biom → Wüsten-Dungeon"
+				"• &eLush&r (Wheat Seeds): feuchtwarmes Biom → Dschungel-Dungeon"
+				"• &eSnowy&r (Snowball): kaltes Biom → Eis-Dungeon"
+				"Die normale Vessel bringt in gemäßigten Biomen je zur Hälfte einen normalen oder einen besonderen Dungeon."
+			]
+			hide_until_deps_visible: true
+			icon: "wrd:magic_cauldron_desert"
+			id: "40179BF426C17492"
+			optional: true
+			shape: "square"
+			subtitle: "WD1 · Vorbereitung · Nebenquest"
+			tasks: [{
+				id: "77E7821D0CC7B86D"
+				item: "wrd:magic_cauldron_desert"
+				type: "item"
+			}
+			{
+				id: "72154A4BA4B89899"
+				item: "wrd:magic_cauldron_jungle"
+				type: "item"
+			}
+			{
+				id: "777B9114126EF293"
+				item: "wrd:magic_cauldron_ice"
+				type: "item"
+			}]
+			title: "Biom-Vessels"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 8: Hitze."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "156FF25A9C28B0C9"
+			shape: "gear"
+			subtitle: "WD2 · Die Dungeons der Oberwelt"
+			tasks: [{
+				id: "190840B22F9CD60E"
+				stage: "kapitel_k8"
+				type: "gamestage"
+			}]
+			title: "Kapitel 8: Roguelike Dungeons"
+			x: 4.0d
+			y: -1.75d
+		}
+		{
+			dependencies: ["5698E6E085F5F81B", "156FF25A9C28B0C9"]
+			description: [
+				"Jeder Dungeon hat ein oberes Stockwerk ohne Boss und darunter tiefere Stockwerke mit Miniboss und Boss. Ziel jedes Dungeons ist die &eAncient Bone Chest&r im Schatzraum."
+				"Ablauf in jedem Dungeon:"
+				"1. Truhen öffnen, Schlüssel sammeln. Rätselräume geben 5 bis 8 Schlüssel auf einmal."
+				"2. Im Minibossraum erscheint ein Corrupted-Gegner. Er lässt den &eBone Chest Key&r und 2 bis 4 &eBleeding Corruption&r fallen."
+				"3. Der Boss lässt Boss Room Key, Treasure Room Key, zwei Diamond Chest Keys und seine Trophäe fallen."
+				"4. Die Bone Chest gibt &eOrb of the Deep&r (1–2), &eAll Seeing Eye&r (1–4), Bleeding Corruption und einen Trialstone."
+				""
+				"&c&eVorsicht:&r&c Die Bosse kämpfen in mehreren Phasen. Geh nicht mit Eisenausrüstung hinein.&r"
+				""
+				"Besiege den ersten Miniboss. Sein Bone Chest Key öffnet die Ancient Bone Chest."
+				"Die Schlüsselfarben: Der gewöhnliche Stronghold Chest Key ist häufig, Iron, Library, Dungeon, Golden, Redstone, Treasure und Diamond werden immer seltener. Jede Truhenart hat ihren Schlüssel."
+			]
+			hide_until_deps_visible: true
+			icon: "wrd:keystrongholdchest_bonechest"
+			id: "38CE2691D0C9EB92"
+			subtitle: "WD2 · Die Dungeons der Oberwelt"
+			tasks: [{
+				id: "7605373A75E06DB0"
+				item: "wrd:keystrongholdchest_bonechest"
+				type: "item"
+			}]
+			title: "Erster Dungeon"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["38CE2691D0C9EB92"]
+			description: [
+				"Öffne die Bone Chest im Schatzraum. Bewahre alles auf: Orbs of the Deep, das All Seeing Eye und Bleeding Corruption brauchst du für das End und das Portal."
+			]
+			hide_until_deps_visible: true
+			icon: "wrd:orb_of_the_deep"
+			id: "7D41CCDEF6A2699A"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "WD2 · Die Dungeons der Oberwelt"
+			tasks: [{
+				id: "6280C90335B167F6"
+				item: "wrd:orb_of_the_deep"
+				type: "item"
+			}
+			{
+				id: "14B95F4DDEA0DD67"
+				item: "wrd:all_seeing_eye"
+				type: "item"
+			}
+			{
+				id: "1A652615ED0783F8"
+				item: "wrd:bleeding_corruption"
+				type: "item"
+			}]
+			title: "Ancient Bone Chest"
+			x: 4.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["7D41CCDEF6A2699A"]
+			description: [
+				"Gemäßigtes Biom, normale Vessel. Oben das Prison, darunter die Catacombs mit dem &eUndead Mage&r, ganz unten die Necropolis mit dem &eNecromancer&r."
+			]
+			hide_until_deps_visible: true
+			icon: "wrd:trophy_um"
+			id: "6382884E225D2DEC"
+			optional: true
+			shape: "square"
+			subtitle: "WD2 · Die Dungeons der Oberwelt · Nebenquest"
+			tasks: [{
+				id: "05C6A4AA06BE60AA"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(wrd:trophy_um)item(wrd:trophy_ne))" } }
+				title: "Normaler Dungeon: Catacombs oder Necropolis"
+				type: "item"
+			}]
+			title: "Normaler Dungeon: Catacombs oder Necropolis"
+			x: 5.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["7D41CCDEF6A2699A"]
+			description: [
+				"Ebenfalls gemäßigtes Biom; die normale Vessel bringt ihn in der Hälfte der Fälle. Oben die Illager Archives, darunter die Crypt mit &eThe Sad King&r, ganz unten die Cursed Sepulchres mit &eThe Overseer&r."
+			]
+			hide_until_deps_visible: true
+			icon: "wrd:trophy_sk"
+			id: "774D200A88633D5A"
+			optional: true
+			shape: "square"
+			subtitle: "WD2 · Die Dungeons der Oberwelt · Nebenquest"
+			tasks: [{
+				id: "15D1CE0F619A17D9"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(wrd:trophy_sk)item(wrd:trophy_tas))" } }
+				title: "Besonderer Dungeon: Crypt oder Cursed Sepulchres"
+				type: "item"
+			}]
+			title: "Besonderer Dungeon: Crypt oder Cursed Sepulchres"
+			x: 5.5d
+			y: 2.75d
+		}
+		{
+			dependencies: ["7D41CCDEF6A2699A", "40179BF426C17492"]
+			description: [
+				"Sandy Vessel. Oben das Maze, darunter die Mines mit der &eAncient Mummy&r, ganz unten das Tomb mit &eThe Host&r und seinen Wraiths. Dessen Trophäe heißt King Wraith Trophy."
+			]
+			hide_until_deps_visible: true
+			icon: "wrd:trophy_am"
+			id: "2024DAE37E1A95E6"
+			optional: true
+			shape: "square"
+			subtitle: "WD2 · Die Dungeons der Oberwelt · Nebenquest"
+			tasks: [{
+				id: "1CD1D7D690ED6B00"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(wrd:trophy_am)item(wrd:trophy_kw))" } }
+				title: "Wüsten-Dungeon: Mines oder Tomb"
+				type: "item"
+			}]
+			title: "Wüsten-Dungeon: Mines oder Tomb"
+			x: 5.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["7D41CCDEF6A2699A", "40179BF426C17492"]
+			description: [
+				"Lush Vessel. Oben der Temple, darunter die Ruins mit dem &eAncient Golem&r, ganz unten das Labyrinth mit dem &eAncient Guardian Golem&r. Beide Trophäen heißen im Spiel „Ancient Guardian Trophy“."
+			]
+			hide_until_deps_visible: true
+			icon: "wrd:trophy_ag"
+			id: "30EBAF8AC9A0EF9E"
+			optional: true
+			shape: "square"
+			subtitle: "WD2 · Die Dungeons der Oberwelt · Nebenquest"
+			tasks: [{
+				id: "4C54242FE0608B76"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(wrd:trophy_ag)item(wrd:trophy_agu))" } }
+				title: "Dschungel-Dungeon: Ruins oder Labyrinth"
+				type: "item"
+			}]
+			title: "Dschungel-Dungeon: Ruins oder Labyrinth"
+			x: 5.5d
+			y: 5.25d
+		}
+		{
+			dependencies: ["7D41CCDEF6A2699A", "40179BF426C17492"]
+			description: [
+				"Snowy Vessel. Oben der Glacier, darunter Frosthold mit dem &eHeart of Ice&r, ganz unten das Tomb of Ice mit dem &eIce Mage&r."
+			]
+			hide_until_deps_visible: true
+			icon: "wrd:trophy_hoi"
+			id: "441A146B105D69F3"
+			optional: true
+			shape: "square"
+			subtitle: "WD2 · Die Dungeons der Oberwelt · Nebenquest"
+			tasks: [{
+				id: "4B1115B71A8EC0B2"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(wrd:trophy_hoi)item(wrd:trophy_im))" } }
+				title: "Eis-Dungeon: Frosthold oder Tomb of Ice"
+				type: "item"
+			}]
+			title: "Eis-Dungeon: Frosthold oder Tomb of Ice"
+			x: 5.5d
+			y: 6.5d
+		}
+		{
+			dependencies: ["7D41CCDEF6A2699A"]
+			description: [
+				"Für das Portal (WD5) brauchst du acht Orbs. Jede Bone Chest gibt einen oder zwei, also brauchst du vier bis acht Dungeons. Sammle dabei Bleeding Corruption: 8 für das Heart of the Deceiver, dazu 2 je Lauf in der Dungeon-Dimension."
+			]
+			hide_until_deps_visible: true
+			icon: "wrd:orb_of_the_deep"
+			id: "0EAC78B46B72B508"
+			optional: true
+			shape: "square"
+			subtitle: "WD2 · Die Dungeons der Oberwelt · Nebenquest"
+			tasks: [{
+				count: 8L
+				id: "13F97BEB6A4445D6"
+				item: "wrd:orb_of_the_deep"
+				type: "item"
+			}]
+			title: "Acht Orbs of the Deep"
+			x: 5.5d
+			y: 7.75d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 10: Der Elf."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "2B81A4421E911A83"
+			shape: "gear"
+			subtitle: "WD3 · Der Purpur-Palast im End"
+			tasks: [{
+				id: "04ED4815CE117452"
+				stage: "kapitel_k10"
+				type: "gamestage"
+			}]
+			title: "Kapitel 10: Roguelike Dungeons"
+			x: 9.0d
+			y: -1.75d
+		}
+		{
+			dependencies: ["7D41CCDEF6A2699A", "2B81A4421E911A83"]
+			description: [
+				"&c&eVorsicht:&r&c Drei Gegner hintereinander, dazu das End selbst. Nimm Ender Pearls und Slow Falling mit.&r"
+				""
+				"Das All Seeing Eye aus der Bone Chest funktioniert nur im End. Rechtsklick teleportiert dich zum Purpur-Palast (Koordinaten 1000 / 800 / 50) und baut beim ersten Mal seinen Eingang."
+				"In den Truhen liegt der &ePurpur Stronghold Chest Key&r. Er öffnet die verschlossenen Purpur- und Endstone-Truhen mit verzauberter Diamantausrüstung."
+				"Voraussetzung: Zugang zum End."
+			]
+			hide_until_deps_visible: true
+			icon: "wrd:all_seeing_eye"
+			id: "353C699590114D14"
+			optional: true
+			shape: "square"
+			subtitle: "WD3 · Der Purpur-Palast im End · Nebenquest"
+			tasks: [{
+				id: "435487112EA12C5E"
+				title: "Purpur-Palast betreten"
+				type: "checkmark"
+			}]
+			title: "All Seeing Eye"
+			x: 9.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["353C699590114D14"]
+			description: [
+				"Ein Spawner im Palast ruft den &eEnder King&r, den &eEnder Super Enforcer&r und das &eHeart Of Ender&r. Nur das Heart Of Ender ist Pflicht: Es lässt das Ender Heart fallen. Der Ender King gibt die Acid Wand."
+			]
+			hide_until_deps_visible: true
+			icon: "wrd:ender_heart"
+			id: "2C93E723E5808333"
+			optional: true
+			shape: "square"
+			subtitle: "WD3 · Der Purpur-Palast im End · Nebenquest"
+			tasks: [{
+				id: "7E29369B1B2821D2"
+				item: "wrd:ender_heart"
+				type: "item"
+			}]
+			title: "Heart of Ender"
+			x: 9.0d
+			y: 1.25d
+		}
+		{
+			dependencies: ["2C93E723E5808333"]
+			description: [
+				"Der Schlüssel zum Portal: 8 Bleeding Corruption um 1 Ender Heart in der Werkbank."
+			]
+			hide_until_deps_visible: true
+			icon: "wrd:heart_of_the_deceiver"
+			id: "0F7187ED5C3069E0"
+			optional: true
+			shape: "square"
+			subtitle: "WD3 · Der Purpur-Palast im End · Nebenquest"
+			tasks: [{
+				id: "5B619C370D62BEAF"
+				item: "wrd:heart_of_the_deceiver"
+				type: "item"
+			}]
+			title: "Heart of the Deceiver"
+			x: 9.0d
+			y: 2.5d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 10: Der Elf."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "2B81A4421E911A83"
+			shape: "gear"
+			subtitle: "WD4 · Der Nether"
+			tasks: [{
+				id: "04ED4815CE117452"
+				stage: "kapitel_k10"
+				type: "gamestage"
+			}]
+			title: "Kapitel 10: Roguelike Dungeons"
+			x: 12.5d
+			y: -1.75d
+		}
+		{
+			dependencies: ["7D41CCDEF6A2699A", "2B81A4421E911A83"]
+			description: [
+				"Die Nether-Variante der Vessel (Nether Quartz statt Ender Pearl) funktioniert nur im Nether und sucht 1500 bis 3000 Blöcke entfernt."
+			]
+			hide_until_deps_visible: true
+			icon: "wrd:magic_cauldron_nether"
+			id: "1D21F9C6AE71BBDF"
+			optional: true
+			shape: "square"
+			subtitle: "WD4 · Der Nether · Nebenquest"
+			tasks: [{
+				id: "2C1433774504B0A8"
+				item: "wrd:magic_cauldron_nether"
+				type: "item"
+			}]
+			title: "Quartz Vessel of Vision"
+			x: 12.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1D21F9C6AE71BBDF"]
+			description: [
+				"&c&eVorsicht:&r&c Feuer und Lava. Fire Resistance mitnehmen.&r"
+				""
+				"Oben die Magma Chambers, darunter The Forge mit dem &eDoom Pillar&r, ganz unten das Fiery Tomb mit dem &eDoom Golem&r. Der Miniboss ist hier ein Corrupted Blaze. Truhen hier brauchen auch den Bastion Stronghold Chest Key."
+			]
+			hide_until_deps_visible: true
+			icon: "wrd:trophy_dp"
+			id: "16F38E36067E7DD3"
+			optional: true
+			shape: "square"
+			subtitle: "WD4 · Der Nether · Nebenquest"
+			tasks: [{
+				id: "2516AE81BC90DCFB"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(wrd:trophy_dp)item(wrd:trophy_db))" } }
+				title: "Nether-Dungeon"
+				type: "item"
+			}]
+			title: "Nether-Dungeon"
+			x: 12.5d
+			y: 1.25d
+		}
+	]
+	title: "Roguelike Dungeons"
+}

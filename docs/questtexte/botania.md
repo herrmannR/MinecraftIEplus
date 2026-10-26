@@ -1,6 +1,6 @@
 # Questtexte Botania und MythicBotany
 
-> Stand 2026-10-17, Minecraft 1.20.1. Entwurf für FTB Quests. Botania hat das **Lexica Botania** (`botania:lexicon`, Patchouli); MythicBotany hängt sich mit den Kategorien *Alfheim* und *MythicBotany* hinein, Applied Botanics bringt kein eigenes Kapitel (`../19_HILFEBUECHER.md`). Die Texte nennen deshalb nur Ziel, Fundstelle im Buch und die Abweichungen des Packs. Gegliedert nach den Meilensteinen BO1 bis BO7 der Meilensteinkarte; die Kapitel sind dort Arbeitstitel.
+> Stand 2026-10-17, ergänzt 2026-10-26 (O67, O75, Goddess' Charm), Minecraft 1.20.1. Entwurf für FTB Quests. Botania hat das **Lexica Botania** (`botania:lexicon`, Patchouli); MythicBotany hängt sich mit den Kategorien *Alfheim* und *MythicBotany* hinein, Applied Botanics bringt kein eigenes Kapitel (`../19_HILFEBUECHER.md`). Die Texte nennen deshalb nur Ziel, Fundstelle im Buch und die Abweichungen des Packs. Gegliedert nach den Meilensteinen BO1 bis BO7 der Meilensteinkarte; die Kapitel sind dort Arbeitstitel.
 > Quellen: `../modpfade/botania/WISSEN.md`, Meilensteinkarte, `../01_PROGRESSION.md`, `../18_STORY.md` (Abschnitt 5, Funde), `../modpfade/CROSSMOD_AUFFAELLIGKEITEN.md`. Kategorie- und Eintragstitel aus `assets/botania/patchouli_books/lexicon/en_us/` und den Sprachdateien der JARs (Botania 456, MythicBotany 4.0.4). Item-IDs gegen die Sprachdateien geprüft. Für Botania gibt es keine KubeJS-Änderungen.
 
 ## Hinweise zur Verwendung
@@ -78,10 +78,9 @@ Buch: Mana Manipulation → Mana Pool.
 ### BO2-04 Manasteel · Hauptweg
 **Aufgabe:** `botania:manasteel_ingot`
 
-⚙️ Für „Würdig sein“ bei DD3R8 braucht ihr einen ganzen Manastahlblock (`botania:manasteel_block`, 9 Barren; O67).
-
 Eisen in einen gefüllten Pool werfen. Manasteel ist das erste Metall des Mods.
 Buch: Mana Manipulation → Mana Pool.
+⚙️ Für „Würdig sein“ in Buch 1 brauchst du einen ganzen Block of Manasteel (`botania:manasteel_block`, 9 Barren).
 ⚙️ Mit TCIntegrations ist Manasteel auch ein Werkzeugmaterial für Tinkers, ebenso Livingwood, Livingrock und Mana Infused String.
 
 ### BO2-05 Mana Pearl und Mana Diamond · Hauptweg
@@ -123,6 +122,7 @@ Hinweis: Die Rune of Fire braucht Zutaten aus dem Nether.
 **Aufgabe:** `botania:rune_mana`, `botania:rune_spring`, `botania:rune_summer`, `botania:rune_autumn`, `botania:rune_winter`
 
 Buch: Basics and Mechanics → Runic Altar.
+Die Rune of Spring brauchst du öfter: für den Benevolent Goddess' Charm und später in Buch 1 am Portal to Alfheim.
 
 ### BO3-04 Runen der Todsünden · Nebenquest
 **Aufgabe:** `botania:rune_lust`, `botania:rune_gluttony`, `botania:rune_greed`, `botania:rune_sloth`, `botania:rune_wrath`, `botania:rune_envy`, `botania:rune_pride`
@@ -187,6 +187,13 @@ Buch: Functional Flora → Orechid.
 Verzaubert Items mit Mana, gezielt und ohne Zufall.
 Buch: Natural Apparatus → Mana Pylon, Enchanting with Mana.
 
+### BO3-14 Benevolent Goddess' Charm · Nebenquest
+**Aufgabe:** `botania:goddess_charm`
+
+Ein Amulett, das gegen Mana verhindert, dass Explosionen in deiner Nähe Blöcke zerstören. Du machst es aus Rune of Water, Rune of Spring, Mana Diamond und zwei rosa Petals.
+Buch: Trinkets and Accessories → Benevolent Goddess' Charm.
+⚙️ Im Pack lässt der Demon Realm von Blood Magic nur hinein, wer den Charm trägt. Für Buch 1 braucht jeder von euch einen eigenen.
+
 ---
 
 ## BO4 · Terrasteel (K6 Der Mars)
@@ -224,7 +231,7 @@ Buch: Alfhomancy → The Portal to Alfheim.
 
 Rahmen aus Livingwood, in der Mitte der Elven Gateway Core. Mit dem Wand of the Forest öffnest du es.
 Buch: Alfhomancy → The Portal to Alfheim, A Message from Elven Garde.
-⚙️ Hindurchgehen kannst du noch nicht: MythicBotany lässt nur durch, wer den Mead of Kvasir getrunken hat (BO6-01). Bis dahin dient das Portal dem Handel.
+⚙️ Hindurchgehen kannst du noch nicht: MythicBotany lässt nur durch, wer den Mead of Kvasir getrunken hat (späteres Kapitel). Bis dahin dient das Portal dem Handel.
 
 ### BO5-03 Elfenhandel · Hauptweg
 **Aufgabe:** `botania:elementium_ingot`, `botania:pixie_dust`, `botania:dragonstone`, `botania:dreamwood`
@@ -394,6 +401,8 @@ Ab dem Runic Altar machbar, ohne feste Stelle im Weg.
 | Netherite-Vervielfachung über die ARC von Blood Magic | BO6-03 | 🟢 Fund (Ü BM5) |
 | Weitere Autocrafter neben der Crafty Crate | BO3-09 | 🟢 |
 | Applied Botanics hinter AE2 | BOX-07 | 🟢 AE2 Endgame |
+| Demon Realm (Blood Magic) nur mit getragenem Benevolent Goddess' Charm | BO3-14 | 🟢 Skript `altar_dimension.js` (F18, O39) |
+| „Würdig sein“ verlangt einen Block of Manasteel | BO2-04 | 🟢 O67 |
 
 ## 🔵 Offen vor dem Einbau
 
@@ -401,6 +410,7 @@ Ab dem Runic Altar machbar, ohne feste Stelle im Weg.
 - **Mead of Kvasir:** Weg im Pack festlegen, dann BO6-01 umschreiben. Hängt an der Story (Meister in Part 2).
 - **Gaia-Pylon-Rezept** in JEI prüfen (Test 41 in `../11_TESTING.md`). Gilt doch das Botania-Original, liegt Gaia nicht mehr von selbst hinter Alfsteel; dann die ⚙️-Zeilen in BO6-06 und BO7-01 streichen.
 - **`lockAlfheim`** in 1.20.1 im Spiel prüfen (Test 40): Kommt man ohne Met wirklich nicht durch das Portal?
-- **Botania-Items für Story und Raketen** legt der User fest: Beweis-Item für „Würdig sein“ (K2), Schutz-Item für den Altar im Tempel (Rune oder Terrasteel), magische Komponente der Rakete T4 (Item aus dem Elfenportal oder Terrasteel), Rumpf-Material T5 aus Alfheim. Die betroffenen Quests (BO2, BO3, BO4, BO5-03, BO6-02) bekommen dann eine zusätzliche Aufgabe oder einen Story-Satz.
+- **Botania-Items für Story und Raketen:** entschieden sind „Würdig sein“ (Block of Manasteel, O67, Satz in BO2-04), Schutz beim Betreten (Goddess' Charm, F18/O39, BO3-14), Rune of Spring am Portal (O75, Satz in BO3-03) und Elementium im Tank der Rakete T4 (F2). Offen bleibt das Rumpf-Material T5 aus Alfheim (BO6-02). Ob BO2-04 statt des Barrens gleich den Block als Aufgabe bekommen soll, entscheidet der User.
+- **Questbuch bis K11 (2026-10-26):** gebaut sind BO1 bis BO5 und die Nebenquests ohne Meilenstein; BO6 (K12) und BO7 (K13) fallen per `bis = K11` weg. Die Corporea-Reihe hängt deshalb noch nicht im Buch, obwohl sie technisch ab BO5 geht.
 - **Corporea:** bei BO7 lassen (wie auf der Karte) oder schon nach BO5 anbieten.
 - **Aufgabe BO1-02:** Statt weißer Petals ginge auch „eine beliebige Mystical Flower“ über einen Tag; beim Einbau entscheiden.

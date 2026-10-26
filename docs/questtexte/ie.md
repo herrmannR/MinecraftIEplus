@@ -301,3 +301,6 @@ Kurze Einzelquests, freizuschalten nach Bedarf. Je Quest nur Ziel und Fundstelle
 3. In welchem Eintrag das Seismic Survey Tool beschrieben ist (IE4-01).
 4. Liste der Crusher-Rezepte, die der IE-Crusher übernimmt (IE3-04).
 5. Formatierung für FTB Quests erst beim Einbau.
+6. **Multiblöcke als Aufgabe** (Einbau 2026-10-26): Die 24 Multiblock-IDs (Coke Oven, Alloy Kiln, Crude/Improved Blast Furnace, Metal Press, Crusher, Sawmill, Squeezer, Fermenter, Refinery, Diesel Generator, Mixer, Bottling Machine, Arc Furnace, Excavator, Bucket Wheel, Assembler, Automated Workbench; Petroleum: Derrick, Pumpjack, Oil Tank, Distillation Tower, High-Pressure Refinery Unit, Coker) gibt es im Überlebensmodus nie als Item; beim Abbau fallen nur die Bauteile (Loot-Typ `immersiveengineering:multiblock`). In `tools/questbuch/ie.cfg` deshalb vorerst Kontrollhaken „… gebaut“, das Produkt (Coal Coke, Stahl, Biodiesel …) bleibt Aufgabe. Besser wäre die FTB-Aufgabe *observation* (gebauten Multiblock ansehen); die kann der Generator noch nicht.
+7. Werkzeuge und Ausrüstung (IEX-01 bis IEX-06) hängen im Questbuch einzeln an der Werkbank (IE1-08), nicht als Kette. Passt das?
+8. `order = 11` hat auch das Botania-Kapitel; Reihenfolge der Mod-Kapitel festlegen.

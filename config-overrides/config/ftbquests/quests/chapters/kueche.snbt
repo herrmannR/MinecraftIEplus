@@ -1,0 +1,1144 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "kueche"
+	group: ""
+	icon: "farmersdelight:cooking_pot"
+	id: "7D09A5CC1CB89354"
+	order_index: 23
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 1: Ankunft."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "432B753E00404698"
+			shape: "gear"
+			subtitle: "KU1 · Messer und Feld"
+			tasks: [{
+				id: "0C38F0F30E711FA3"
+				stage: "kapitel_k1"
+				type: "gamestage"
+			}]
+			title: "Kapitel 1: Küche"
+			x: 2.0d
+			y: -1.75d
+		}
+		{
+			dependencies: ["432B753E00404698"]
+			description: [
+				"Das Messer ist dein wichtigstes Küchenwerkzeug."
+				"• &eFlint Knife&r: 1 Flint + 1 Stick, der Einstieg."
+				"• &eIron Kitchen Knife&r: 3 Iron Ingot + 1 Stick. Danach Gold, Diamond und am Smithing Table Netherite."
+				""
+				"Mit dem Messer schneidest du Stroh von Gras, Weizen und Reis. Tötest du Tiere damit, lassen sie Extrabeute fallen: Kühe Leather, Schweine Ham, Spinnen String. Schweine, Piglins und Hoglins geben zusätzlich &eOil&r, Kühe Raw Cow Offal, Hühner Chicken Wing, Tintenfische Squid Tentacle."
+				"&6⚙&r Im Pack gibt es nur die Küchenmesser von Kaleidoscope (Eisen bis Netherite) und das Flint Knife von Farmer's Delight. Alte FD-Messer schneiden weiter."
+			]
+			hide_until_deps_visible: true
+			icon: "farmersdelight:flint_knife"
+			id: "574543DA6E41527F"
+			optional: true
+			shape: "square"
+			subtitle: "KU1 · Messer und Feld · Nebenquest"
+			tasks: [{
+				id: "756062911A0ADE1F"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(farmersdelight:flint_knife)item(kaleidoscope_cookery:iron_kitchen_knife))" } }
+				title: "Ein Messer"
+				type: "item"
+			}]
+			title: "Das erste Messer"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["574543DA6E41527F"]
+			description: [
+				"4 Wheat + 1 String. Mit dem Strohhut auf dem Kopf gibt abgebautes Gras neue Saaten, je 12,5 %: Tomato Seed, Chili Seed, Lettuce Seed, Wild Rice Seed, Tea Seed. Dazu kommen Onion, Canola Seeds und Sweet Potato (Grilling) und selten Vanilla-Samen."
+				"Trag den Hut, solange du Saatgut sammelst."
+			]
+			hide_until_deps_visible: true
+			icon: "kaleidoscope_cookery:straw_hat"
+			id: "4888FEAE96A437A8"
+			optional: true
+			shape: "square"
+			subtitle: "KU1 · Messer und Feld · Nebenquest"
+			tasks: [{
+				id: "532ACBAD5CBBDE4A"
+				item: "kaleidoscope_cookery:straw_hat"
+				type: "item"
+			}]
+			title: "Straw Hat"
+			x: 2.0d
+			y: 1.25d
+		}
+		{
+			dependencies: ["574543DA6E41527F"]
+			description: [
+				"Wildpflanzen von Farmer's Delight wachsen in der Oberwelt: Wild Cabbage und Sea Beet an Stränden, Wild Carrot und Wild Onion in gemäßigten Gebieten, Wild Potato im Kalten, Tomato Shrub im Heißen, Wild Rice an nassen Stellen. Abbauen gibt Feldfrüchte und Saatgut."
+				"&6⚙&r Wilde Tomaten, wilder Reis und wilde Zwiebeln geben im Pack die Kaleidoscope-Items (Tomato, Rice Seed, Onion). Wilder Kohl gibt FD-Kohl (Kohl und Salat bleiben getrennt). 🟢 Test 70."
+			]
+			hide_until_deps_visible: true
+			icon: "kaleidoscope_cookery:tomato"
+			id: "7FFA84BA10640C2F"
+			optional: true
+			shape: "square"
+			subtitle: "KU1 · Messer und Feld · Nebenquest"
+			tasks: [{
+				id: "0DD71AA1A3F53910"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(kaleidoscope_cookery:tomato)item(farmersdelight:cabbage)item(kaleidoscope_grilling:onion))" } }
+				title: "Wildpflanzen"
+				type: "item"
+			}]
+			title: "Wildpflanzen"
+			x: 2.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["574543DA6E41527F"]
+			description: [
+				"• &eSickle&r: 3 Flint + 1 String + 2 Stick. Erntet reife Felder mit Rechtsklick und entfernt Unkraut."
+				"• &eFarmer's Overalls&r, Work Pants und Boots: Leder mit etwas Eisen. Das ganze Set macht dich im Wasser deutlich schneller, praktisch im Reisfeld."
+			]
+			hide_until_deps_visible: true
+			icon: "kaleidoscope_cookery:sickle"
+			id: "0C6E4E3B3DA4D6E4"
+			optional: true
+			shape: "square"
+			subtitle: "KU1 · Messer und Feld · Nebenquest"
+			tasks: [{
+				id: "718A3576AD5ADD38"
+				item: "kaleidoscope_cookery:sickle"
+				type: "item"
+			}
+			{
+				id: "284A3A866FFDC9B6"
+				item: "kaleidoscope_cookery:farmer_chest_plate"
+				type: "item"
+			}]
+			title: "Sense und Arbeitskleidung"
+			x: 2.0d
+			y: 3.75d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 2: Würdig sein."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "6F4C082B66C371BD"
+			shape: "gear"
+			subtitle: "KU2 · Anbau"
+			tasks: [{
+				id: "2E8DDD3AEAD7A4C2"
+				stage: "kapitel_k2"
+				type: "gamestage"
+			}]
+			title: "Kapitel 2: Küche"
+			x: 5.5d
+			y: -1.75d
+		}
+		{
+			dependencies: ["574543DA6E41527F", "6F4C082B66C371BD"]
+			description: [
+				"Stroh schneidest du mit dem Messer von Gras, Weizen oder Reis. Aus 4 Straw wird Canvas, aus 2 Straw 4 Rope. Rope brauchst du gleich für die Tomaten."
+			]
+			hide_until_deps_visible: true
+			icon: "farmersdelight:straw"
+			id: "6AE2D0ADAFC9AEDC"
+			optional: true
+			shape: "square"
+			subtitle: "KU2 · Anbau · Nebenquest"
+			tasks: [{
+				id: "79ADABD40631C5AF"
+				item: "farmersdelight:straw"
+				type: "item"
+			}
+			{
+				id: "64DF675F038E97FF"
+				item: "farmersdelight:rope"
+				type: "item"
+			}]
+			title: "Stroh, Canvas und Rope"
+			x: 5.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6AE2D0ADAFC9AEDC"]
+			description: [
+				"&eOrganic Compost&r: 1 Dirt + 2 Straw + 2 Rotten Flesh + 4 Bone Meal (oder 4 Tree Bark + 2 Bone Meal). Gesetzt zerfällt er mit der Zeit zu &eRich Soil&r."
+				"Auf Rich Soil wachsen Pflanzen schneller (Config richSoilBoostChance = 0,2). Darauf gedeihen auch Pilzkolonien."
+			]
+			hide_until_deps_visible: true
+			icon: "farmersdelight:organic_compost"
+			id: "351F474E4281EA46"
+			optional: true
+			shape: "square"
+			subtitle: "KU2 · Anbau · Nebenquest"
+			tasks: [{
+				id: "70B26AF49CCBA878"
+				item: "farmersdelight:organic_compost"
+				type: "item"
+			}
+			{
+				id: "3E6AF663496D6616"
+				item: "farmersdelight:rich_soil"
+				type: "item"
+			}]
+			title: "Rich Soil"
+			x: 5.5d
+			y: 1.25d
+		}
+		{
+			dependencies: ["6AE2D0ADAFC9AEDC"]
+			description: [
+				"Reis wächst im Wasser. Mach mit der Hacke Ackerboden &eunter Wasser&r – das ist das Reisfeld. Pflanze Rice Seed hinein. Fische im Reisfeld (Cod, Salmon, Tropical Fish, Pufferfish, Tadpole, Axolotl) lassen den Reis schneller wachsen. Reis wächst auch auf Rich Soil Farmland."
+				"Reif gibt er Rice Panicles. Neun davon pressen sich zu einem Rice Bale; am Mühlstein wird eine Rispe zu 3 Rice Seed (Quest „Millstone“)."
+				"&6⚙&r Reis ist im Pack der von Kaleidoscope; den Ballen liefert Farmer's Delight (farmersdelight:rice_bale)."
+			]
+			hide_until_deps_visible: true
+			icon: "kaleidoscope_cookery:rice_panicle"
+			id: "0CFFF31F42B49001"
+			optional: true
+			shape: "square"
+			subtitle: "KU2 · Anbau · Nebenquest"
+			tasks: [{
+				id: "4DB75EDA90FA66C4"
+				item: "kaleidoscope_cookery:rice_panicle"
+				type: "item"
+			}]
+			title: "Reisfeld"
+			x: 5.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["6AE2D0ADAFC9AEDC", "4888FEAE96A437A8"]
+			description: [
+				"Die Saaten vom Strohhut wachsen auf normalem Ackerboden."
+				"• &eChili&r gibt Red Chili, mit 20 % zusätzlich Green Chili."
+				"• &eLettuce&r lässt mit 10 % eine Caterpillar fallen (Zutat, und Futter für Küken)."
+				"• &eTea Seed&r wird ein Teestrauch; reif gibt er Fresh Tea Leaves."
+				"• &eTomaten&r klettern an Rope höher."
+			]
+			hide_until_deps_visible: true
+			icon: "kaleidoscope_cookery:red_chili"
+			id: "0380E7F6772FD1EB"
+			optional: true
+			shape: "square"
+			subtitle: "KU2 · Anbau · Nebenquest"
+			tasks: [{
+				id: "0EF495FA83811700"
+				item: "kaleidoscope_cookery:red_chili"
+				type: "item"
+			}
+			{
+				id: "7F6F4A088C4D8E9F"
+				item: "kaleidoscope_cookery:lettuce"
+				type: "item"
+			}
+			{
+				id: "3B638DD09D2BC413"
+				item: "kaleidoscope_cookery:fresh_tea_leaves"
+				type: "item"
+			}]
+			title: "Tomaten, Chili, Salat, Tee"
+			x: 5.5d
+			y: 3.75d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 2: Würdig sein."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "6F4C082B66C371BD"
+			shape: "gear"
+			subtitle: "KU3 · Herd und Brett"
+			tasks: [{
+				id: "2E8DDD3AEAD7A4C2"
+				stage: "kapitel_k2"
+				type: "gamestage"
+			}]
+			title: "Kapitel 2: Küche"
+			x: 9.0d
+			y: -1.75d
+		}
+		{
+			dependencies: ["574543DA6E41527F", "6F4C082B66C371BD"]
+			description: [
+				"8 Cobblestone + 1 Campfire (oder Soul Campfire). Mit Flint and Steel anzünden. Der Herd ist die Hitzequelle für alle Kochgeräte beider Mods. Wärme geben auch Campfire, Feuer, Lava und Magma Block."
+				"Der Herd ist außerdem der Arbeitsplatz des Kochs im Dorf (Quest „Der Koch“)."
+				"&6⚙&r Im Pack gibt es nur noch diesen Herd; der FD-Herd und der Blackstone Stove von Nether's Delight entfallen. Ein gesetzter alter Herd gibt beim Abbauen einen Kaleidoscope-Herd. Ohne Anzünden meldet der Wok „Missing heat source“ (Test 69)."
+			]
+			hide_until_deps_visible: true
+			icon: "kaleidoscope_cookery:stove"
+			id: "3161B258FA6C3ADB"
+			optional: true
+			shape: "square"
+			subtitle: "KU3 · Herd und Brett · Nebenquest"
+			tasks: [{
+				id: "49FC0AFEDD903E4C"
+				item: "kaleidoscope_cookery:stove"
+				type: "item"
+			}]
+			title: "Stove"
+			x: 9.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3161B258FA6C3ADB"]
+			description: [
+				"4 Planks + 2 Stick. Leg ein Item auf das Brett und klick mit dem passenden Werkzeug darauf:"
+				"• &eMesser&r: Fleisch und Fisch in Stücke (Bacon, Mutton Chops, Chicken Cuts, Cod und Salmon Slice), Teig in Nudeln, Kuchen in Stücke, Gemüse in Würfel und Scheiben."
+				"• &eAxt&r: Stämme entrinden (Tree Bark)."
+				"• &eHacke&r: Holzmöbel zerlegen."
+				"Die Config gibt 10 % Glücksbonus."
+				"&6⚙&r Im Pack gibt es nur das Brett von Farmer's Delight; es hat die Rezepte des Kaleidoscope-Bretts übernommen. Raw Beef gibt dort 1 Minced Beef und 1 Beef Chunks. 🟢 Test 68."
+			]
+			hide_until_deps_visible: true
+			icon: "farmersdelight:cutting_board"
+			id: "3FA337C19CA6F9B1"
+			optional: true
+			shape: "square"
+			subtitle: "KU3 · Herd und Brett · Nebenquest"
+			tasks: [{
+				id: "048666D93C5A69B8"
+				item: "farmersdelight:cutting_board"
+				type: "item"
+			}]
+			title: "Cutting Board"
+			x: 9.0d
+			y: 1.25d
+		}
+		{
+			dependencies: ["3FA337C19CA6F9B1"]
+			description: [
+				"Schneide Raw Porkchop, Raw Chicken und Raw Mutton am Brett. Diese Teile brauchen Wok, Spieß und Kochtopf."
+				"&6⚙&r Kaleidoscope hatte eigene Teile (Raw Pork Belly, Raw Meat Cuts, Raw Lamb Chops); im Pack gelten die von Farmer's Delight."
+			]
+			hide_until_deps_visible: true
+			icon: "farmersdelight:bacon"
+			id: "4F5FE7EDF3FC9E6D"
+			optional: true
+			shape: "square"
+			subtitle: "KU3 · Herd und Brett · Nebenquest"
+			tasks: [{
+				id: "4A24590DF63FBBF3"
+				item: "farmersdelight:bacon"
+				type: "item"
+			}
+			{
+				id: "7085520F5D9EDE64"
+				item: "farmersdelight:chicken_cuts"
+				type: "item"
+			}
+			{
+				id: "4E906D85785728BD"
+				item: "farmersdelight:mutton_chops"
+				type: "item"
+			}]
+			title: "Fleischteile"
+			x: 9.0d
+			y: 2.5d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 3: Industrie."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "6555E3CE29DA6F76"
+			shape: "gear"
+			subtitle: "KU4 · Kochgeräte"
+			tasks: [{
+				id: "48890271EE6DBC7C"
+				stage: "kapitel_k3"
+				type: "gamestage"
+			}]
+			title: "Kapitel 3: Küche"
+			x: 12.5d
+			y: -1.75d
+		}
+		{
+			dependencies: ["3161B258FA6C3ADB", "6555E3CE29DA6F76"]
+			description: [
+				"5 Iron Ingot + 2 Brick + 1 Wooden Shovel + 1 Water Bucket. Stell ihn auf eine Hitzequelle, leg bis zu sechs Zutaten hinein und warte. Die meisten Mahlzeiten brauchen eine Bowl als Behälter; sie kommt ins eigene Fach."
+				"Probier: Beef Stew, Fried Rice, Pasta with Meatballs, Tomato Sauce."
+			]
+			hide_until_deps_visible: true
+			icon: "farmersdelight:cooking_pot"
+			id: "799CAC82CF943BEE"
+			optional: true
+			shape: "square"
+			subtitle: "KU4 · Kochgeräte · Nebenquest"
+			tasks: [{
+				id: "057E815D3D3998B3"
+				item: "farmersdelight:cooking_pot"
+				type: "item"
+			}]
+			title: "Cooking Pot"
+			x: 12.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["799CAC82CF943BEE"]
+			description: [
+				"&eWok&r: 7 Iron Ingot. &eKitchen Shovel&r: 1 Iron Ingot + 1 Iron Nugget + 1 Stick."
+				"So brätst du:"
+				"1. Wok auf den angezündeten Herd stellen."
+				"2. &eÖl&r hinein (Oil vom Messer, Quest „Das erste Messer“)."
+				"3. Zutaten hineinlegen, genau nach Rezept."
+				"4. Mit der Kitchen Shovel rühren, bis genug Rührschläge erreicht sind (meist 3)."
+				"5. Kurz warten, dann mit einer Bowl aufnehmen."
+				"Falsche Zutaten oder zu langes Warten ergeben &eSuspicious Stir-Fry&r. Nimmst du falsche Zutaten wieder heraus, verbrennst du dich."
+				"Ein &eRecipe&r (4 Paper) merkt sich den Inhalt eines Woks und füllt ihn später mit einem Klick aus dem Inventar."
+			]
+			hide_until_deps_visible: true
+			icon: "kaleidoscope_cookery:pot"
+			id: "4532F1FEAB4ECD08"
+			optional: true
+			shape: "square"
+			subtitle: "KU4 · Kochgeräte · Nebenquest"
+			tasks: [{
+				id: "14D0CD71F6D0E587"
+				item: "kaleidoscope_cookery:pot"
+				type: "item"
+			}
+			{
+				id: "4CD733F60D553435"
+				item: "kaleidoscope_cookery:kitchen_shovel"
+				type: "item"
+			}]
+			title: "Wok"
+			x: 12.5d
+			y: 1.25d
+		}
+		{
+			dependencies: ["4532F1FEAB4ECD08"]
+			description: [
+				"• Scramble Egg with Tomatoes: 3 Eier + 3 Tomaten."
+				"• Egg Fried Rice: 2 Eier + Cooked Rice."
+				"• Sweet and Sour Pork: 3 Schweinefleisch + 3 Sugar."
+				"Fünf Wok-Gerichte gibt es zusätzlich als Reisschale mit Cooked Rice („… on Rice“, Rezept in JEI)."
+			]
+			hide_until_deps_visible: true
+			icon: "kaleidoscope_cookery:scramble_egg_with_tomatoes"
+			id: "65F3E04D90C02E0F"
+			optional: true
+			shape: "square"
+			subtitle: "KU4 · Kochgeräte · Nebenquest"
+			tasks: [{
+				id: "323072BEEB8C4C30"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(kaleidoscope_cookery:scramble_egg_with_tomatoes)item(kaleidoscope_cookery:egg_fried_rice)item(kaleidoscope_cookery:sweet_and_sour_pork))" } }
+				title: "Erste Wok-Gerichte"
+				type: "item"
+			}]
+			title: "Erste Wok-Gerichte"
+			x: 12.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["799CAC82CF943BEE"]
+			description: [
+				"&eStockpot&r: 5 Iron Ingot + 2 Brick. &eLid&r: 3 Iron Ingot + 1 Brick (taugt auch als Schild)."
+				"So kochst du Suppe:"
+				"1. Topf auf die Hitzequelle."
+				"2. Erst die &eSuppenbasis&r: meist Wasser, für manche Gerichte Lava, Milch oder ein Fischeimer."
+				"3. Zutaten in der richtigen Reihenfolge dazu."
+				"4. Deckel drauf, warten, Deckel ab, mit der Schale schöpfen."
+				"Den Deckel zwischendurch zu öffnen hält das Kochen an. Falsche Schritte ergeben Suspicious Stew."
+				"Im Stockpot kochst du auch Reis (Rice Seed + Wasser zu Cooked Rice), Dumplings und Zongzi."
+			]
+			hide_until_deps_visible: true
+			icon: "kaleidoscope_cookery:stockpot"
+			id: "43A5C9A837B0E15A"
+			optional: true
+			shape: "square"
+			subtitle: "KU4 · Kochgeräte · Nebenquest"
+			tasks: [{
+				id: "14546952771640AE"
+				item: "kaleidoscope_cookery:stockpot"
+				type: "item"
+			}
+			{
+				id: "50E66194B59EB913"
+				item: "kaleidoscope_cookery:stockpot_lid"
+				type: "item"
+			}]
+			title: "Stockpot"
+			x: 12.5d
+			y: 3.75d
+		}
+		{
+			dependencies: ["43A5C9A837B0E15A"]
+			description: [
+				"Wasser als Basis, dann 2 Rindfleisch und 4 Tomaten. Das Gericht schaltet bei Kaleidoscope das Ziel „Apprentice Chef“ frei."
+			]
+			hide_until_deps_visible: true
+			icon: "kaleidoscope_cookery:borscht"
+			id: "05475E63B1FB3AA6"
+			optional: true
+			shape: "square"
+			subtitle: "KU4 · Kochgeräte · Nebenquest"
+			tasks: [{
+				id: "10134628B5925662"
+				item: "kaleidoscope_cookery:borscht"
+				type: "item"
+			}]
+			title: "Borscht"
+			x: 12.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["799CAC82CF943BEE"]
+			description: [
+				"&eMillstone&r: Grindstone + 3 Smooth Stone + 1 Holzzaun + 1 Stick."
+				"Der Mühlstein dreht sich nur mit einem &eZugtier&r: Stell einen Esel (oder ein anderes Tier) daneben, es wird angespannt. Spieler gehen nicht."
+				"Items legst du per Rechtsklick ein oder lässt sie von oben hineinfallen. Nach einer Umdrehung kommt das Ergebnis aus der Öffnung."
+				"• Wheat → Flour; Flour + Water Bucket → Raw Dough."
+				"• Samen → Oil."
+				"• Rice Panicle → 3 Rice Seed."
+				"• Chili, Onion, Canola → Pulver für den Grill (KU7)."
+				"&9(ungeprüft)&r Der Mühlstein vervielfacht auch Vanilla-Erzblöcke (Iron Ore zu 3 Raw Iron, Copper Ore zu 5); ob das im Pack bleibt, ist nicht entschieden (F30 in ../20_ENTSCHEIDUNGEN.md). Bis dahin nennt der Text es nicht als Weg."
+			]
+			hide_until_deps_visible: true
+			icon: "kaleidoscope_cookery:millstone"
+			id: "647E060A67759D95"
+			optional: true
+			shape: "square"
+			subtitle: "KU4 · Kochgeräte · Nebenquest"
+			tasks: [{
+				id: "29320C1AB369A746"
+				item: "kaleidoscope_cookery:millstone"
+				type: "item"
+			}
+			{
+				id: "265682307B76560E"
+				item: "kaleidoscope_cookery:flour"
+				type: "item"
+			}]
+			title: "Millstone"
+			x: 12.5d
+			y: 6.25d
+		}
+		{
+			dependencies: ["647E060A67759D95"]
+			description: [
+				"Raw Dough ziehst du mit gehaltenem Rechtsklick zu Nudeln, oder du schneidest ihn am Brett zu 3 Raw Noodles. Mit Fleisch und Gemüse wird Teig zu &eStuffed Dough&r, der Grundlage für Baozi, Dumplings und Meat Pie."
+				"&6⚙&r Im Pack gibt es nur diesen Teig, dieses Mehl (auch der IE-Crusher macht es, Engineer's Delight) und diese Nudeln; FD-Pasta ist ersetzt."
+			]
+			hide_until_deps_visible: true
+			icon: "kaleidoscope_cookery:raw_dough"
+			id: "19D17D50871C51EC"
+			optional: true
+			shape: "square"
+			subtitle: "KU4 · Kochgeräte · Nebenquest"
+			tasks: [{
+				id: "55B39EC3BDA89D92"
+				item: "kaleidoscope_cookery:raw_dough"
+				type: "item"
+			}
+			{
+				id: "320555C67229C105"
+				item: "kaleidoscope_cookery:raw_noodles"
+				type: "item"
+			}]
+			title: "Teig und Nudeln"
+			x: 12.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["19D17D50871C51EC"]
+			description: [
+				"&eSteamer&r: 3 Bamboo Trapdoor + 3 Block of Bamboo. Stapel bis zu 8 Dampfgarer auf einer Hitzequelle. Zutaten von oben einlegen, Deckel per Rechtsklick schließen, warten (1200 Ticks = 1 Minute), Lage für Lage abnehmen."
+				"Baozi aus Stuffed Dough, Mantou aus Teig, Qingtuan aus Slimeball."
+			]
+			hide_until_deps_visible: true
+			icon: "kaleidoscope_cookery:steamer"
+			id: "3C005C78FC715C4E"
+			optional: true
+			shape: "square"
+			subtitle: "KU4 · Kochgeräte · Nebenquest"
+			tasks: [{
+				id: "6CF26D9203779C15"
+				item: "kaleidoscope_cookery:steamer"
+				type: "item"
+			}
+			{
+				id: "26012A5033C277F5"
+				item: "kaleidoscope_cookery:baozi"
+				type: "item"
+			}]
+			title: "Steamer"
+			x: 12.5d
+			y: 8.75d
+		}
+		{
+			dependencies: ["799CAC82CF943BEE"]
+			description: [
+				"&eTeapot&r: 6 Copper Ingot + 1 Bucket."
+				"1. Fresh Tea Leaves trocknen: im Ofen, am Lagerfeuer oder auf dem &eBamboo Tray&r (4 String + 1 Bamboo Trapdoor, trocknet bei klarem Himmel)."
+				"2. Teebeutel: 8 Dried Tea Leaves + eine Zutat, z. B. Iron Nugget für Tieguanyin."
+				"3. Kanne auf die Hitzequelle, mindestens 1000 mB Wasser (für Butter Tea Milch), Beutel dazu, 240 Sekunden warten."
+				"Im Stockpot ergeben Teebeutel mit Milch &eClay Pot Milk Tea&r, der alle schädlichen Effekte entfernt."
+			]
+			hide_until_deps_visible: true
+			icon: "kaleidoscope_cookery:teapot"
+			id: "3262321B77D7B026"
+			optional: true
+			shape: "square"
+			subtitle: "KU4 · Kochgeräte · Nebenquest"
+			tasks: [{
+				id: "7E26E6EA9F4E94EB"
+				item: "kaleidoscope_cookery:teapot"
+				type: "item"
+			}
+			{
+				id: "1AA4F94DBFB60609"
+				item: "kaleidoscope_cookery:tieguanyin"
+				type: "item"
+			}]
+			title: "Teapot"
+			x: 12.5d
+			y: 10.0d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 4: Der Mond."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "418A4538C21176B2"
+			shape: "gear"
+			subtitle: "KU5 · Festessen und Dorf"
+			tasks: [{
+				id: "667F0D913328A30E"
+				stage: "kapitel_k4"
+				type: "gamestage"
+			}]
+			title: "Kapitel 4: Küche"
+			x: 16.0d
+			y: -1.75d
+		}
+		{
+			dependencies: ["799CAC82CF943BEE", "418A4538C21176B2"]
+			description: [
+				"Festessen stellst du als Block auf und teilst sie in Portionen. Stuffed Pumpkin kochst du im Cooking Pot, die anderen setzt du aus ihren Zutaten zusammen (Rezepte in JEI)."
+				"Mahlzeiten aus dem Cooking Pot geben &eNourishment&r (Hunger sinkt nicht) oder &eComfort&r (natürliche Heilung, egal wie hungrig)."
+			]
+			hide_until_deps_visible: true
+			icon: "farmersdelight:roast_chicken_block"
+			id: "69C4B64B16DEE8C7"
+			optional: true
+			shape: "square"
+			subtitle: "KU5 · Festessen und Dorf · Nebenquest"
+			tasks: [{
+				id: "40D76E15E5847019"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(farmersdelight:roast_chicken_block)item(farmersdelight:honey_glazed_ham_block)item(farmersdelight:shepherds_pie_block)item(farmersdelight:stuffed_pumpkin_block))" } }
+				title: "Ein Festessen"
+				type: "item"
+			}]
+			title: "Ein Festessen"
+			x: 16.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["69C4B64B16DEE8C7"]
+			description: [
+				"Stell einen Stove neben einen arbeitslosen Dorfbewohner: Er wird &eChef&r. In neuen Dörfern stehen eigene Küchenhäuser mit Truhen voller Zutaten und Suppen."
+				"🟢 Test 72: Seine Angebote nennen nur Kaleidoscope-Items (laut Code u. a. Tomate, Chili, Salat, Reis, Spiegelei, Küchenmesser, Kochschaufel, Suppen); Preise nicht ausgelesen."
+			]
+			hide_until_deps_visible: true
+			icon: "kaleidoscope_cookery:stove"
+			id: "571321E72FF5FDDB"
+			optional: true
+			shape: "square"
+			subtitle: "KU5 · Festessen und Dorf · Nebenquest"
+			tasks: [{
+				id: "5339B2AD46B49D3D"
+				title: "Ein Dorfbewohner ist Chef"
+				type: "checkmark"
+			}]
+			title: "Der Koch"
+			x: 16.0d
+			y: 1.25d
+		}
+		{
+			dependencies: ["69C4B64B16DEE8C7"]
+			description: [
+				"6 Leather + 1 Amethyst Shard. Die Tasche nimmt Essen und Tränke auf und isst per Rechtsklick, bis dein Hunger voll ist."
+			]
+			hide_until_deps_visible: true
+			icon: "kaleidoscope_cookery:transmutation_lunch_bag"
+			id: "5F36EC167CECD9E4"
+			optional: true
+			shape: "square"
+			subtitle: "KU5 · Festessen und Dorf · Nebenquest"
+			tasks: [{
+				id: "1D7FC7AF95D888C0"
+				item: "kaleidoscope_cookery:transmutation_lunch_bag"
+				type: "item"
+			}]
+			title: "Lunch Bag"
+			x: 16.0d
+			y: 2.5d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 4: Der Mond."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "418A4538C21176B2"
+			shape: "gear"
+			subtitle: "KU6 · Taverne"
+			tasks: [{
+				id: "667F0D913328A30E"
+				stage: "kapitel_k4"
+				type: "gamestage"
+			}]
+			title: "Kapitel 4: Küche"
+			x: 19.5d
+			y: -1.75d
+		}
+		{
+			dependencies: ["418A4538C21176B2"]
+			description: [
+				"Wilde Reben hängen an Eichen; mit der Hand abbauen. 3 Grapevine ergeben 8 Trellis."
+				"So wachsen Trauben:"
+				"1. Trellis einen Block über den Boden setzen, Rebe darauf pflanzen."
+				"2. Sie wächst hoch und dann seitlich über weitere Gerüste."
+				"3. Trauben hängen dort, wo unter dem Gerüst Luft ist."
+				"Der &eBoden unter dem Gerüst&r bestimmt die Sorte: Erde und Gras → Grape, Eis und Schnee → Ice Grape, Netherrack und Magma → Gold Grape. Green Grape fällt zufällig beim Ernten. Mit der Schere erntest du 2–3 statt 1–2."
+			]
+			hide_until_deps_visible: true
+			icon: "kaleidoscope_tavern:grapevine"
+			id: "2987CB18F3496AC6"
+			optional: true
+			shape: "square"
+			subtitle: "KU6 · Taverne · Nebenquest"
+			tasks: [{
+				id: "3CC54415D3B7E08D"
+				item: "kaleidoscope_tavern:grapevine"
+				type: "item"
+			}
+			{
+				id: "000F8CD5CADD93F3"
+				item: "kaleidoscope_tavern:trellis"
+				type: "item"
+			}]
+			title: "Reben und Trellis"
+			x: 19.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2987CB18F3496AC6"]
+			description: [
+				"1 Barrel ergibt 2 Pressing Tubs. Leg Trauben oder Beeren hinein und &espring darauf&r. Jedes Stück gibt 125 mB Saft. An einer Wand wird die Kelter schräg und taugt nur noch als Ablage."
+			]
+			hide_until_deps_visible: true
+			icon: "kaleidoscope_tavern:pressing_tub"
+			id: "0CCEB587E1810C04"
+			optional: true
+			shape: "square"
+			subtitle: "KU6 · Taverne · Nebenquest"
+			tasks: [{
+				id: "7BCFC10C5A958FE5"
+				item: "kaleidoscope_tavern:pressing_tub"
+				type: "item"
+			}
+			{
+				id: "3534654279E19936"
+				item: "kaleidoscope_tavern:grape_bucket"
+				type: "item"
+			}]
+			title: "Pressing Tub"
+			x: 19.5d
+			y: 1.25d
+		}
+		{
+			dependencies: ["0CCEB587E1810C04"]
+			description: [
+				"&eBarrel&r: 9 Vanilla-Barrel. &eTap&r: Lever + Hopper."
+				"1. Deckel öffnen, Saft (oder Wasser) und Zutat hinein, Deckel schließen."
+				"2. Warten. Je länger, desto besser der Wein. Rechtsklick zeigt den Stand."
+				"3. Glasflasche unter den Zapfhahn, abfüllen."
+				"Wine aus reinem Grape Juice, Vodka aus Wasser + Potato. Jedes Getränk gibt einen Effekt."
+			]
+			hide_until_deps_visible: true
+			icon: "kaleidoscope_tavern:barrel"
+			id: "79000B1DDC0EE929"
+			optional: true
+			shape: "square"
+			subtitle: "KU6 · Taverne · Nebenquest"
+			tasks: [{
+				id: "5C21AA65B3ED9374"
+				item: "kaleidoscope_tavern:barrel"
+				type: "item"
+			}
+			{
+				id: "029E5151EC1C5CE3"
+				item: "kaleidoscope_tavern:tap"
+				type: "item"
+			}
+			{
+				id: "42384F0EA2397D4F"
+				item: "kaleidoscope_tavern:wine"
+				type: "item"
+			}]
+			title: "Barrel und Tap"
+			x: 19.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["79000B1DDC0EE929"]
+			description: [
+				"&eShaker&r: 1 Iron Ingot + 1 Bucket. Er mischt drei Getränke nach &eFarbe&r: weiß (Vodka, Whiskey, Rum), rot (Plum Wine, Sweet Berry Wine, Red Queen), hellviolett (Wine, Champagne …) usw. Mojito = 2 weiß + 1 grün, Bloody Mary = 3 rot. Gläser: Empty Glassware aus 3 Glass Pane."
+			]
+			hide_until_deps_visible: true
+			icon: "kaleidoscope_tavern:shaker"
+			id: "1C10F28C68375EC8"
+			optional: true
+			shape: "square"
+			subtitle: "KU6 · Taverne · Nebenquest"
+			tasks: [{
+				id: "4304DB7264A99E66"
+				item: "kaleidoscope_tavern:shaker"
+				type: "item"
+			}
+			{
+				id: "6A4524236C850D0D"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(kaleidoscope_tavern:mojito)item(kaleidoscope_tavern:bloody_mary))" } }
+				title: "Mojito oder Bloody Mary"
+				type: "item"
+			}]
+			title: "Cocktail"
+			x: 19.5d
+			y: 3.75d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 5: Erzketten."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "22F8574A06153984"
+			shape: "gear"
+			subtitle: "KU7 · Grill"
+			tasks: [{
+				id: "292B1711A1D251FA"
+				stage: "kapitel_k5"
+				type: "gamestage"
+			}]
+			title: "Kapitel 5: Küche"
+			x: 23.0d
+			y: -1.75d
+		}
+		{
+			dependencies: ["3161B258FA6C3ADB", "22F8574A06153984"]
+			description: [
+				"5 Iron Ingot + 2 Brick + 1 Kohle. Mit Flint and Steel anzünden; danach brennt er ohne Brennstoff."
+			]
+			hide_until_deps_visible: true
+			icon: "kaleidoscope_grilling:grill"
+			id: "7D72C132DD3D3843"
+			optional: true
+			shape: "square"
+			subtitle: "KU7 · Grill · Nebenquest"
+			tasks: [{
+				id: "6EEB7AF6895517B4"
+				item: "kaleidoscope_grilling:grill"
+				type: "item"
+			}]
+			title: "Grill"
+			x: 23.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7D72C132DD3D3843"]
+			description: [
+				"Spieße baust du ohne Werkbank: &eStick in die Zweithand&r, dann die Zutaten der Reihe nach anklicken. Für den Beef Skewer: Beef Chunks, Red Chili, Beef Chunks. Leg ihn auf den Grill und &ewende&r ihn."
+				"Jeder der 20 festen Spieße gibt beim Essen einen Effekt (Beef: Strength 10 s). Eigene Mischungen werden zum Secret Mix Skewer."
+				"Das &eSkewer Recipe Book&r merkt sich einen Spieß und baut ihn schnell nach."
+			]
+			hide_until_deps_visible: true
+			icon: "kaleidoscope_grilling:grilled_beef_skewer"
+			id: "7FEFB974D92C5B6B"
+			optional: true
+			shape: "square"
+			subtitle: "KU7 · Grill · Nebenquest"
+			tasks: [{
+				id: "7FD6C0683E23F243"
+				item: "kaleidoscope_grilling:grilled_beef_skewer"
+				type: "item"
+			}]
+			title: "Der erste Spieß"
+			x: 23.0d
+			y: 1.25d
+		}
+		{
+			dependencies: ["7D72C132DD3D3843", "647E060A67759D95"]
+			description: [
+				"Kette: Canola Seeds → Mühlstein → Canola Powder → 8 Powder + 1 Wheat → Oil Cake → Wooden Oil Press → Canola Oil."
+				"• &eWooden Oil Press&r: 4 Logs + Iron Ingot + 2 Fences + Hopper. Sie nimmt genau 4 Oil Cakes."
+				"• &eBig Vat&r: 7 Brick + 1 Bucket, direkt daneben; es fängt das Öl auf."
+				"• Schlag die Presse mit einem &eAnvil&r (früh geht auch Stein, aber viel langsamer)."
+				"Mit dem Oil Brush bestreichst du Spieße; sie bleiben dann länger warm. Chili Oil: Canola Oil Bucket + 3 Red Chili Powder."
+			]
+			hide_until_deps_visible: true
+			icon: "kaleidoscope_grilling:canola_oil_bucket"
+			id: "3D7F707286D24A60"
+			optional: true
+			shape: "square"
+			subtitle: "KU7 · Grill · Nebenquest"
+			tasks: [{
+				id: "3B4A9E68DE90C4AB"
+				item: "kaleidoscope_grilling:canola_oil_bucket"
+				type: "item"
+			}]
+			title: "Canola-Öl"
+			x: 23.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["7D72C132DD3D3843"]
+			description: [
+				"Stell die Empty Seasoning Bottle (6 Glass + Holzknopf) ab, füll bis zu acht Zutaten hinein, nimm sie auf und schüttle sie 4 Sekunden. Drei Pflichtgewürze bilden die Basis &9(ungeprüft)&r (welche, zeigt JEI unter „Mixing Seasoning“). Redstone, Gunpowder, Houttuynia Powder u. a. geben Zusatz-Buffs."
+			]
+			hide_until_deps_visible: true
+			icon: "kaleidoscope_grilling:special_seasoning"
+			id: "26D6A1636D3AE1A1"
+			optional: true
+			shape: "square"
+			subtitle: "KU7 · Grill · Nebenquest"
+			tasks: [{
+				id: "52223959A617B454"
+				item: "kaleidoscope_grilling:special_seasoning"
+				type: "item"
+			}]
+			title: "Gewürzflasche"
+			x: 23.0d
+			y: 3.75d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 6: Der Mars."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "514491943178D00A"
+			shape: "gear"
+			subtitle: "KU8 · Nether mit Nether's Delight"
+			tasks: [{
+				id: "591ACC84DC6574E6"
+				stage: "kapitel_k6"
+				type: "gamestage"
+			}]
+			title: "Kapitel 6: Küche"
+			x: 26.5d
+			y: -1.75d
+		}
+		{
+			dependencies: ["514491943178D00A"]
+			description: [
+				"Iron Machete: 2 Iron Ingot + 1 Stick. Hoglins geben mit Messer oder Machete Hoglin Hide und Hoglin Loin. Hoglin Hide wird am Brett zu 4 Leather."
+			]
+			hide_until_deps_visible: true
+			icon: "nethersdelight:iron_machete"
+			id: "7DBBE5EA05C146BF"
+			optional: true
+			shape: "square"
+			subtitle: "KU8 · Nether mit Nether's Delight · Nebenquest"
+			tasks: [{
+				id: "6DD293D2C366FA0A"
+				item: "nethersdelight:iron_machete"
+				type: "item"
+			}
+			{
+				id: "1401BD6BC7C2FBD9"
+				item: "nethersdelight:hoglin_loin"
+				type: "item"
+			}]
+			title: "Machete und Hoglin"
+			x: 26.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7DBBE5EA05C146BF"]
+			description: [
+				"Wächst im Crimson Forest. Am Brett gibt sie Gunpowder, im IE-Crusher 2 – eine erneuerbare Quelle für Schießpulver."
+			]
+			hide_until_deps_visible: true
+			icon: "nethersdelight:propelplant_cane"
+			id: "218F82BD2DD8BC4B"
+			optional: true
+			shape: "square"
+			subtitle: "KU8 · Nether mit Nether's Delight · Nebenquest"
+			tasks: [{
+				id: "169FD7E28884F230"
+				item: "nethersdelight:propelplant_cane"
+				type: "item"
+			}]
+			title: "Propelplant"
+			x: 26.5d
+			y: 1.25d
+		}
+		{
+			dependencies: ["7DBBE5EA05C146BF"]
+			description: [
+				"1 Soul Soil + 2 Twisting Vines + 4 Warped Roots + 2 Bone Meal. Zerfällt wie Organic Compost zu Rich Soul Soil, auf dem Fungus-Kolonien wachsen."
+			]
+			hide_until_deps_visible: true
+			icon: "nethersdelight:soul_compost"
+			id: "17480A604C6A4D09"
+			optional: true
+			shape: "square"
+			subtitle: "KU8 · Nether mit Nether's Delight · Nebenquest"
+			tasks: [{
+				id: "5F8364A63526801B"
+				item: "nethersdelight:soul_compost"
+				type: "item"
+			}
+			{
+				id: "4CB559254CD6B8E4"
+				item: "nethersdelight:rich_soul_soil"
+				type: "item"
+			}]
+			title: "Soul Compost"
+			x: 26.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["7DBBE5EA05C146BF", "799CAC82CF943BEE"]
+			description: [
+				"Das Festessen des Nethers: Raw Stuffed Hoglin (2 Hoglin Loin, 2 Ham, Hoglin Hide, Nether Salad …) mit 2 Nether Salad im Cooking Pot. Zerteilen geht nur mit einem Messer."
+			]
+			hide_until_deps_visible: true
+			icon: "nethersdelight:stuffed_hoglin"
+			id: "0F5A5C2DD1708FB9"
+			optional: true
+			shape: "square"
+			subtitle: "KU8 · Nether mit Nether's Delight · Nebenquest"
+			tasks: [{
+				id: "53661CE4C0F3E33C"
+				item: "nethersdelight:stuffed_hoglin"
+				type: "item"
+			}]
+			title: "Stuffed Hoglin"
+			x: 26.5d
+			y: 3.75d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 7: Horchposten."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "6B06DCD8046C545E"
+			shape: "gear"
+			subtitle: "KU9 · End mit Kaleidoscope End"
+			tasks: [{
+				id: "517EFA03E71D22B8"
+				stage: "kapitel_k7"
+				type: "gamestage"
+			}]
+			title: "Kapitel 7: Küche"
+			x: 30.0d
+			y: -1.75d
+		}
+		{
+			dependencies: ["6B06DCD8046C545E"]
+			description: [
+				"Beide wachsen im End, Dream Berries auf den äußeren Inseln. Dream Berries geben den Effekt Dream: Du läufst durch die Luft."
+			]
+			hide_until_deps_visible: true
+			icon: "kaleidoscope_end:ender_mint"
+			id: "275069B68F3C579E"
+			optional: true
+			shape: "square"
+			subtitle: "KU9 · End mit Kaleidoscope End · Nebenquest"
+			tasks: [{
+				id: "5A01E174E23E81A6"
+				item: "kaleidoscope_end:ender_mint"
+				type: "item"
+			}
+			{
+				id: "62B5E3FA6E27B8AF"
+				item: "kaleidoscope_end:dream_berry"
+				type: "item"
+			}]
+			title: "Ender Mint und Dream Berry"
+			x: 30.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["275069B68F3C579E"]
+			description: [
+				"Mit dem Brush legst du Suspicious End Stone frei (Void Conch, manchmal Diamond oder Enchanted Book). Das &eDrachenei&r gibt beim Abpinseln Dragon Dust und Dragon Egg Liquid – das geht erst nach dem Enderdrachen."
+			]
+			hide_until_deps_visible: true
+			icon: "kaleidoscope_end:void_conch"
+			id: "0F0AD2D733CE32DF"
+			optional: true
+			shape: "square"
+			subtitle: "KU9 · End mit Kaleidoscope End · Nebenquest"
+			tasks: [{
+				id: "40D8C96D02E3A735"
+				item: "kaleidoscope_end:void_conch"
+				type: "item"
+			}
+			{
+				id: "73D64017CF01DFAB"
+				item: "kaleidoscope_end:dragon_dust"
+				type: "item"
+			}]
+			title: "Abpinseln"
+			x: 30.0d
+			y: 1.25d
+		}
+		{
+			dependencies: ["0F0AD2D733CE32DF"]
+			description: [
+				"1. Smithing Template: 7 Obsidian + Netherite Upgrade + Dragon Dust."
+				"2. Am Smithing Table: Netherite Kitchen Knife + Dragon Dust."
+				"Das Messer ist besonders scharf gegen End-Kreaturen. Tötest du damit End-Mobs, lassen sie Zutaten fallen (Optic Nerve, Shulker Meat, Raw Endermite Meat)."
+			]
+			hide_until_deps_visible: true
+			icon: "kaleidoscope_end:dragon_tooth_knife"
+			id: "557A0D326CB41634"
+			optional: true
+			shape: "square"
+			subtitle: "KU9 · End mit Kaleidoscope End · Nebenquest"
+			tasks: [{
+				id: "46046AA927A5C3FE"
+				item: "kaleidoscope_end:dragon_tooth_knife"
+				type: "item"
+			}]
+			title: "Dragon Tooth Knife"
+			x: 30.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0F0AD2D733CE32DF", "43A5C9A837B0E15A"]
+			description: [
+				"Dragon Egg Shell (3 Obsidian + Dragon Dust) als Gefäß. Im Stockpot: 3 Ender Mint, 2 Eier, Drachenfleisch (Ender Dragon mit dem Küchenmesser)."
+			]
+			hide_until_deps_visible: true
+			icon: "kaleidoscope_end:dark_dragon_egg_stew"
+			id: "5F44155984C6880D"
+			optional: true
+			shape: "square"
+			subtitle: "KU9 · End mit Kaleidoscope End · Nebenquest"
+			tasks: [{
+				id: "27C1C552C0FF7685"
+				item: "kaleidoscope_end:dark_dragon_egg_stew"
+				type: "item"
+			}]
+			title: "Dragon Egg Stew"
+			x: 30.0d
+			y: 3.75d
+		}
+	]
+	title: "Küche"
+}

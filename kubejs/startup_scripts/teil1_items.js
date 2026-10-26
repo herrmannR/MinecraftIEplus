@@ -2,7 +2,9 @@
 // Entscheidungen: docs/20_ENTSCHEIDUNGEN.md (F2f, F2e, O28), docs/18_STORY.md (2026-10-20).
 // Baupläne: Schriftrollen (Items) für den Shop, ein gemeinsames Patchouli-Buch mit gesperrten Einträgen (patchouli_books/bauplaene).
 // Story-Items (Lese-Items, Helm, Siegel): docs/story/ABLAUF.md, Texte in docs/story/texte/ (2026-10-21).
-// Stand 2026-10-21, KubeJS 2001. Fassung 5 (Story-Items), UNGETESTET.
+// Bauplan „Pilotenhelm“ (O71, 2026-10-26): Davijaan gibt ihn beim Helm-Auftrag; die Reparatur ergibt den echten
+// 212er-Helm swgc:clone_212th_battalion_helmet, kubejs:klonhelm_repariert entfällt.
+// Stand 2026-10-26, KubeJS 2001. Fassung 6 (Bauplan Pilotenhelm), UNGETESTET.
 
 StartupEvents.registry('item', event => {
   // Bauteil der Rakete T4, fertigt Meisterin Cerina (der „Helle Elf“) aus Relikt, Arcs, Elite Control Circuit und Elementium (F14)
@@ -37,7 +39,9 @@ StartupEvents.registry('item', event => {
     ruestung_jedi: 'Jedi-Gewand',
     ruestung_sith: 'Sith-Gewand',
     ruestung_royal_guard: 'Rüstung der Royal Guard',
-    ruestung_vader: 'Vader-Rüstung'
+    ruestung_vader: 'Vader-Rüstung',
+    // Erster Bauplan der Welt, von Davijaan beim Helm-Auftrag (O71); schaltet das Reparaturrezept frei
+    pilotenhelm: 'Pilotenhelm'
   }
   Object.keys(rollen).forEach(name => {
     event.create('bauplan_' + name)
@@ -68,15 +72,11 @@ StartupEvents.registry('item', event => {
     .rarity('rare').maxStackSize(1)
 
   // Helm des Einsiedlers (O25, O64: im Spiel „Pilotenhelm“, kein „Klon“ im Namen). Nicht tragbar.
-  // Texturen aus tools/story_texturen.py (Eisenhelm, umgefärbt).
+  // Textur aus tools/story_texturen.py (Eisenhelm, umgefärbt). Repariert wird er zu swgc:clone_212th_battalion_helmet (O71).
   event.create('kaputter_klonhelm')
     .displayName('Verbeulter Pilotenhelm')
     .texture('kubejs:item/pilotenhelm_kaputt')
     .maxStackSize(1)
-  event.create('klonhelm_repariert')
-    .displayName('Pilotenhelm des Einsiedlers')
-    .texture('kubejs:item/pilotenhelm')
-    .rarity('uncommon').maxStackSize(1)
 
   // Geschenk von Bodhi Bad Dur nach dem letzten Blue-Skies-Boss; Zutat der Altar-Reparatur (O47)
   event.create('siegel_der_traumwelten')

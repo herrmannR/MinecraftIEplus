@@ -1,0 +1,420 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "swgc"
+	group: ""
+	icon: "swgc:assembly_bench"
+	id: "1027B1FDDCD516FB"
+	order_index: 18
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 4: Der Mond."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "2A4278ABD8AAA4AE"
+			shape: "gear"
+			subtitle: "SW2 · Shop des Einsiedlers"
+			tasks: [{
+				id: "64FF9067C5486B06"
+				stage: "kapitel_k4"
+				type: "gamestage"
+			}]
+			title: "Kapitel 4: Galaxy in a Cube"
+			x: 0.5d
+			y: -1.75d
+		}
+		{
+			dependencies: ["2A4278ABD8AAA4AE"]
+			description: [
+				"&6⚙&r Alles aus diesem Kapitel beginnt im Shop des Einsiedlers auf dem Mond: Credits, Durasteel, die ersten Plastoid und die &eBaupläne&r. Ein Bauplan ist eine Schriftrolle. Ein Rechtsklick liest sie: Die Rolle verschwindet, und das Rezept ist für die ganze Welt freigeschaltet, für alle Spieler. Rezept und Beschreibung stehen danach im Buch „Baupläne des Einsiedlers“. Ohne Bauplan liefert die Werkbank nichts."
+				""
+				"Credits sind die Währung des Shops. Es gibt drei Sorten: 5 Copper Credit sind ein Iron Credit, 3 Iron Credit ein Gold Credit. Ein Rechtsklick zerlegt einen Credit in die kleinere Sorte, kleine Sorten tauschst du an der Werkbank in die größere."
+				"&6⚙&r Credits gibt es nur als Belohnung für Quests. Aus Kupfer, Eisen oder Gold lassen sie sich nicht herstellen."
+			]
+			hide_until_deps_visible: true
+			icon: "swgc:copper_credit"
+			id: "0985C494F42DD4D2"
+			subtitle: "SW2 · Shop des Einsiedlers"
+			tasks: [{
+				id: "4C923A2B1E707B6F"
+				item: "swgc:copper_credit"
+				type: "item"
+			}]
+			title: "Credits"
+			x: 0.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0985C494F42DD4D2"]
+			description: [
+				"Die Werkbank für Blaster, Lichtschwerter und Rüstungsbemalungen. Ihre Rezepte stehen im Code und erscheinen &enicht in JEI&r; die Quests dieses Kapitels nennen sie."
+				"&6⚙&r Kauf den Bauplan „Assembly Bench“ und lies ihn. Danach baust du sie an der Werkbank: 1 Advanced Control Circuit (Mekanism), 2 Desh Plate, 1 Engineer's Workbench (IE) und 3 Block of Steel. Der Block ist zwei Felder breit."
+				""
+				"So funktioniert die Bank: links ein &eHauptfeld&r, darunter zwei &eNebenfelder&r, rechts das &eErgebnis&r. Was im Hauptfeld liegt, bestimmt das Rezept. Gibt es mehrere Ausführungen (Blaster-Modelle, Griffdesigns, Bemalungen), wählst du sie in der Liste der Oberfläche. Jeder Zusammenbau verbraucht genau ein Item aus jedem belegten Feld."
+			]
+			hide_until_deps_visible: true
+			icon: "swgc:assembly_bench"
+			id: "0415A1311660BD21"
+			subtitle: "SW2 · Shop des Einsiedlers"
+			tasks: [{
+				id: "0DA1E52B094CA83E"
+				item: "swgc:assembly_bench"
+				type: "item"
+			}]
+			title: "Assembly Bench"
+			x: -0.25d
+			y: 1.5d
+		}
+		{
+			dependencies: ["0985C494F42DD4D2"]
+			description: [
+				"Das Metall von Galaxy in a Cube, für Droid Fabricator, Blaster, die Steuerkerne der Droiden und die schweren Rüstungen. Es steht in keinem Tag; kein anderer Mod verarbeitet es."
+				"&6⚙&r Durasteel gibt es nur im Shop. Ein Rezept hat es im Pack nicht."
+			]
+			hide_until_deps_visible: true
+			icon: "swgc:durasteel_ingot"
+			id: "2B3941559F9CE63E"
+			subtitle: "SW2 · Shop des Einsiedlers"
+			tasks: [{
+				id: "6452212145C1C70D"
+				item: "swgc:durasteel_ingot"
+				type: "item"
+			}]
+			title: "Durasteel Ingot"
+			x: 1.25d
+			y: 1.5d
+		}
+		{
+			dependencies: ["2B3941559F9CE63E"]
+			description: [
+				"Die Maschine baut Kampfdroiden aus Metallblöcken. Sie braucht keinen Strom und keinen Brennstoff. Die Droiden-Rezepte erscheinen &enicht in JEI&r; sie stehen in den Droiden-Quests."
+				"&6⚙&r Kauf den Bauplan „Droid Fabricator“ und lies ihn. Danach baust du ihn an der Werkbank: 2 Steel Plate, 1 Advanced Control Circuit, 2 Durasteel Ingot, 1 Steel Casing (Mekanism) und 3 Block of Steel."
+				"&6⚙&r Jeder Droide braucht im Fabricator zusätzlich seinen &eSteuerkern&r, der dabei verbraucht wird. Das Werkbank-Rezept des Kerns schaltet der Bauplan des Droiden frei."
+			]
+			hide_until_deps_visible: true
+			icon: "swgc:droid_fabricator"
+			id: "478F2A80BA51DFA1"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "SW2 · Shop des Einsiedlers"
+			tasks: [{
+				id: "7FA2D022B1F5E14D"
+				item: "swgc:droid_fabricator"
+				type: "item"
+			}]
+			title: "Droid Fabricator"
+			x: 0.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["478F2A80BA51DFA1"]
+			description: [
+				"Der B-2 ist der erste Droide, den du ohne Plastoid und ohne Blaster bauen kannst. Leg die Zutaten in den Droid Fabricator und warte, bis er fertig ist."
+				"Zutaten: 5 Block of Steel, 6 Redstone Dust, 2 Block of Copper, 3 Diamond und 1 Steuerkern B-2. Zeit 240 (&9(ungeprüft)&r vermutlich Ticks, also 12 Sekunden)."
+				"&6⚙&r Den Steuerkern B-2 (kubejs:steuerkern_b2) baust du nach dem Bauplan „Droide B-2“ an der Werkbank: 4 Durasteel Ingot, 4 Advanced Control Circuit, 1 Block of Diamond."
+				"Das Ergebnis ist ein Item. Beim Platzieren entsteht der Droide mit dir als Besitzer. Eigene Droiden nehmen Befehle an: Follow, Hold Position, Stand Still, Combat Aid und Eliminate Mobs. &9(ungeprüft)&r Wie man die Befehle gibt, im Spiel prüfen."
+			]
+			hide_until_deps_visible: true
+			icon: "swgc:b2"
+			id: "72498281B8CD6F96"
+			optional: true
+			shape: "square"
+			subtitle: "SW2 · Shop des Einsiedlers · Nebenquest"
+			tasks: [{
+				id: "7295B1A4ECE1E2AA"
+				item: "swgc:b2"
+				type: "item"
+			}]
+			title: "B-2"
+			x: 2.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0985C494F42DD4D2"]
+			description: [
+				"Der Gas Harvester füllt einen Empty Gas Vessel mit Tibanna-Gas. Er braucht keinen Strom, keinen Brennstoff und keinen besonderen Standort. Tibanna ist die Munition der Blaster."
+				"&6⚙&r Beide Rezepte schaltet der Bauplan „Gas Harvester“ frei."
+				"Rezept Gas Harvester: 4 Block of Steel, 1 Advanced Control Circuit, 2 Desh Plate, 1 Basic Fluid Tank (Mekanism), 1 Redstone Engineering Block (IE)."
+				"Rezept Empty Gas Vessel: 1 Desh Plate, 3 Steel Plate, 1 Glass."
+			]
+			hide_until_deps_visible: true
+			icon: "swgc:gas_harvester"
+			id: "5EAB6931D4F58A85"
+			optional: true
+			shape: "square"
+			subtitle: "SW2 · Shop des Einsiedlers · Nebenquest"
+			tasks: [{
+				id: "6F50F8030E0A1105"
+				item: "swgc:gas_harvester"
+				type: "item"
+			}
+			{
+				id: "12166ABCE1A9CF7D"
+				item: "swgc:empty_gas_vessel"
+				type: "item"
+			}]
+			title: "Gas Harvester"
+			x: 2.0d
+			y: 4.25d
+		}
+		{
+			dependencies: ["5EAB6931D4F58A85"]
+			description: [
+				"Setz einen leeren Behälter per Rechtsklick in den Gas Harvester. Nach 20 Sekunden ist er voll, im Nether und im End nach 10. Per Rechtsklick nimmst du ihn wieder heraus."
+				"Mit Tibanna Vessels lädst du Blaster nach. Ein zweiter Harvester lohnt sich, wenn du viel schießt."
+			]
+			hide_until_deps_visible: true
+			icon: "swgc:tibanna_vessel"
+			id: "16831D294602AB2A"
+			optional: true
+			shape: "square"
+			subtitle: "SW2 · Shop des Einsiedlers · Nebenquest"
+			tasks: [{
+				id: "17500AA8A0618CD0"
+				item: "swgc:tibanna_vessel"
+				type: "item"
+			}]
+			title: "Tibanna Vessel"
+			x: 2.0d
+			y: 5.5d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 7: Horchposten."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "70F1DDEE036F77A7"
+			shape: "gear"
+			subtitle: "SW3 · Plastoid, Blaster und Truppen"
+			tasks: [{
+				id: "2B74839686BB2BE4"
+				stage: "kapitel_k7"
+				type: "gamestage"
+			}]
+			title: "Kapitel 7: Galaxy in a Cube"
+			x: 4.0d
+			y: -1.75d
+		}
+		{
+			dependencies: ["478F2A80BA51DFA1", "70F1DDEE036F77A7"]
+			description: [
+				"&6⚙&r Plastoid machst du ab hier selbst aus HDPE Pellets von Mekanism. Damit beginnen Blaster, B-1, Droideka und die Rüstungen."
+				""
+				"Der Kunststoff von Galaxy in a Cube, für Blaster, den Steuerkern B-1, Droideka und die Rüstungen."
+				"&6⚙&r Der Einsiedler verkauft nur die ersten 20 Plastoid. Danach baust du es selbst: Mit dem Bauplan „Plastoid“ ergeben 2 HDPE Pellets an der Werkbank 1 Plastoid. HDPE Pellets kommen aus der Pressurized Reaction Chamber (Mekanism-Quest „Pressurized Reaction Chamber und HDPE“)."
+			]
+			hide_until_deps_visible: true
+			icon: "swgc:plastoid"
+			id: "3243CD20D9B44F54"
+			subtitle: "SW3 · Plastoid, Blaster und Truppen"
+			tasks: [{
+				id: "79829BB9C21030FC"
+				item: "swgc:plastoid"
+				type: "item"
+			}]
+			title: "Plastoid"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3243CD20D9B44F54"]
+			description: [
+				"An der Assembly Bench: &eDiamond&r ins Hauptfeld, &ePlastoid&r und &eDurasteel Ingot&r in die Nebenfelder. Dann wählst du eines von sieben Modellen: DC-15A, DC-15S, DC-17, DH-17, E-5, TL-50 oder Amban Sniper Rifle."
+				"Ein Blaster hat ein Magazin. Nachladen geht mit Tibanna Vessels („No ammo“, „Ammo full“). Jedes Modell hat eigene Werte für Schaden, Tempo, Streuung und Magazin (&9(ungeprüft)&r Zahlen nicht ausgelesen)."
+				"&6⚙&r Der Bauplan „Blaster“ aus dem Shop erklärt alle sieben Modelle im Buch. Gesperrt ist an der Bank nichts; du brauchst nur die Assembly Bench."
+			]
+			hide_until_deps_visible: true
+			icon: "swgc:dc15a"
+			id: "2FF89C4C1271B68C"
+			subtitle: "SW3 · Plastoid, Blaster und Truppen"
+			tasks: [{
+				id: "350405B71B24F519"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(swgc:dc15a)item(swgc:dc15s)item(swgc:dc17)item(swgc:dh17)item(swgc:e5)item(swgc:tl50)item(swgc:amban_sniper_rifle))" } }
+				title: "Blaster"
+				type: "item"
+			}]
+			title: "Blaster"
+			x: 4.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["2FF89C4C1271B68C"]
+			description: [
+				"Der einfache Kampfdroide. Er bekommt den Blaster, den du in den Fabricator legst, als Waffe."
+				"Zutaten: 3 Block of Steel, 3 Redstone Dust, 2 Block of Copper, 1 Blaster (jedes der sieben Modelle) und 1 Steuerkern B-1. Zeit 160 (&9(ungeprüft)&r vermutlich 8 Sekunden)."
+				"&6⚙&r Den Steuerkern B-1 (kubejs:steuerkern_b1) baust du nach dem Bauplan „Droide B-1“ an der Werkbank: 4 Plastoid, 4 Basic Control Circuit, 1 Block of Redstone."
+			]
+			hide_until_deps_visible: true
+			icon: "swgc:b1"
+			id: "15166DF19696B212"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "SW3 · Plastoid, Blaster und Truppen"
+			tasks: [{
+				id: "589612232E4DF6D7"
+				item: "swgc:b1"
+				type: "item"
+			}]
+			title: "B-1"
+			x: 4.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["15166DF19696B212"]
+			description: [
+				"Der schwere Droide mit eigenem Schild. &9(ungeprüft)&r Kampfwerte nicht ausgelesen."
+				"Zutaten: 4 Block of Steel, 8 Redstone Dust, 3 Block of Copper, 4 Diamond, 1 Plastoid und 1 Steuerkern Droideka. Zeit 200 (&9(ungeprüft)&r vermutlich 10 Sekunden)."
+				"&6⚙&r Den Steuerkern Droideka (kubejs:steuerkern_droideka) baust du nach dem Bauplan „Droideka“ an der Werkbank: 4 Durasteel Ingot, 4 Elite Control Circuit, 1 Netherite Ingot."
+			]
+			hide_until_deps_visible: true
+			icon: "swgc:droideka"
+			id: "301A93FAAA841C8A"
+			optional: true
+			shape: "square"
+			subtitle: "SW3 · Plastoid, Blaster und Truppen · Nebenquest"
+			tasks: [{
+				id: "6E9ADD4A0BF190CF"
+				item: "swgc:droideka"
+				type: "item"
+			}]
+			title: "Droideka"
+			x: 5.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["3243CD20D9B44F54"]
+			description: [
+				"Die Rüstung Clone Phase 2, ganz aus Plastoid an der Werkbank: Helm 5, Brust 8, Hose 7, Stiefel 4, zusammen 24 Plastoid. &9(ungeprüft)&r Rüstungswerte nicht ausgelesen."
+				"&6⚙&r Die Rezepte schaltet der Bauplan „Klon-Rüstung (Phase 2)“ frei."
+			]
+			hide_until_deps_visible: true
+			icon: "swgc:clone_phase_2_helmet"
+			id: "7424DEF5E96A7114"
+			optional: true
+			shape: "square"
+			subtitle: "SW3 · Plastoid, Blaster und Truppen · Nebenquest"
+			tasks: [{
+				id: "1E58D87EE5A9E389"
+				item: "swgc:clone_phase_2_helmet"
+				type: "item"
+			}
+			{
+				id: "19D04B4036300672"
+				item: "swgc:clone_phase_2_chestplate"
+				type: "item"
+			}
+			{
+				id: "73C76416CBD941BA"
+				item: "swgc:clone_phase_2_leggings"
+				type: "item"
+			}
+			{
+				id: "335C701BEE95FC34"
+				item: "swgc:clone_phase_2_boots"
+				type: "item"
+			}]
+			title: "Klonrüstung"
+			x: 5.5d
+			y: 4.25d
+		}
+		{
+			dependencies: ["7424DEF5E96A7114"]
+			description: [
+				"Leg ein Teil der Klonrüstung ins Hauptfeld der Assembly Bench und lass die Nebenfelder leer. In der Liste wählst du eine von 16 Einheiten, ohne weitere Zutaten: 104th, 13th, 442nd, 497th und 212th Battalion, 187th, 305th, 31st, 501st, 615th und 7th Legion, 332nd Company, 41st Elite Corps, 87th Sentinel Corps, 91st Recon Corps, Coruscant Guard. Umbemalen geht beliebig oft. Für diese Quest zählt jede Einheit außer der 212th."
+			]
+			hide_until_deps_visible: true
+			icon: "swgc:clone_501st_legion_helmet"
+			id: "0C77470E27DEEF82"
+			optional: true
+			shape: "square"
+			subtitle: "SW3 · Plastoid, Blaster und Truppen · Nebenquest"
+			tasks: [{
+				id: "39BAE562AFFEF339"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(swgc:clone_104th_battalion_helmet)item(swgc:clone_13th_battalion_helmet)item(swgc:clone_187th_legion_helmet)item(swgc:clone_305th_legion_helmet)item(swgc:clone_31st_legion_helmet)item(swgc:clone_332nd_company_helmet)item(swgc:clone_41st_elite_corps_helmet)item(swgc:clone_442nd_battalion_helmet)item(swgc:clone_497th_battalion_helmet)item(swgc:clone_501st_legion_helmet)item(swgc:clone_615th_legion_helmet)item(swgc:clone_7th_legion_helmet)item(swgc:clone_87th_sentinel_corps_helmet)item(swgc:clone_91st_recon_corps_helmet)item(swgc:clone_coruscant_guard_helmet)item(swgc:clone_104th_battalion_chestplate)item(swgc:clone_13th_battalion_chestplate)item(swgc:clone_187th_legion_chestplate)item(swgc:clone_305th_legion_chestplate)item(swgc:clone_31st_legion_chestplate)item(swgc:clone_332nd_company_chestplate)item(swgc:clone_41st_elite_corps_chestplate)item(swgc:clone_442nd_battalion_chestplate)item(swgc:clone_497th_battalion_chestplate)item(swgc:clone_501st_legion_chestplate)item(swgc:clone_615th_legion_chestplate)item(swgc:clone_7th_legion_chestplate)item(swgc:clone_87th_sentinel_corps_chestplate)item(swgc:clone_91st_recon_corps_chestplate)item(swgc:clone_coruscant_guard_chestplate)item(swgc:clone_104th_battalion_leggings)item(swgc:clone_13th_battalion_leggings)item(swgc:clone_187th_legion_leggings)item(swgc:clone_305th_legion_leggings)item(swgc:clone_31st_legion_leggings)item(swgc:clone_332nd_company_leggings)item(swgc:clone_41st_elite_corps_leggings)item(swgc:clone_442nd_battalion_leggings)item(swgc:clone_497th_battalion_leggings)item(swgc:clone_501st_legion_leggings)item(swgc:clone_615th_legion_leggings)item(swgc:clone_7th_legion_leggings)item(swgc:clone_87th_sentinel_corps_leggings)item(swgc:clone_91st_recon_corps_leggings)item(swgc:clone_coruscant_guard_leggings)item(swgc:clone_104th_battalion_boots)item(swgc:clone_13th_battalion_boots)item(swgc:clone_187th_legion_boots)item(swgc:clone_305th_legion_boots)item(swgc:clone_31st_legion_boots)item(swgc:clone_332nd_company_boots)item(swgc:clone_41st_elite_corps_boots)item(swgc:clone_442nd_battalion_boots)item(swgc:clone_497th_battalion_boots)item(swgc:clone_501st_legion_boots)item(swgc:clone_615th_legion_boots)item(swgc:clone_7th_legion_boots)item(swgc:clone_87th_sentinel_corps_boots)item(swgc:clone_91st_recon_corps_boots)item(swgc:clone_coruscant_guard_boots))" } }
+				title: "Ein bemaltes Teil der Klonrüstung"
+				type: "item"
+			}]
+			title: "Bemalung einer Einheit"
+			x: 5.5d
+			y: 5.5d
+		}
+		{
+			dependencies: ["3243CD20D9B44F54"]
+			description: [
+				"Die rote Rüstung Royal Guard, an der Werkbank aus Durasteel, Plastoid und Red Wool (zusammen 10 Durasteel)."
+				"&6⚙&r Die Rezepte schaltet der Bauplan „Rüstung der Royal Guard“ frei."
+				"Dazu passt die Force Pike: 2 Redstone Dust, 1 Lightning Rod, 2 Diamond."
+			]
+			hide_until_deps_visible: true
+			icon: "swgc:royal_guard_helmet"
+			id: "59C48AB648C0C939"
+			optional: true
+			shape: "square"
+			subtitle: "SW3 · Plastoid, Blaster und Truppen · Nebenquest"
+			tasks: [{
+				id: "5AF0C52214AEF029"
+				item: "swgc:royal_guard_helmet"
+				type: "item"
+			}
+			{
+				id: "16F4BF957211E37B"
+				item: "swgc:royal_guard_chestplate"
+				type: "item"
+			}
+			{
+				id: "415B36CEE1574440"
+				item: "swgc:royal_guard_leggings"
+				type: "item"
+			}
+			{
+				id: "4BDC8C65881F7FBB"
+				item: "swgc:royal_guard_boots"
+				type: "item"
+			}]
+			title: "Royal Guard"
+			x: 5.5d
+			y: 6.75d
+		}
+		{
+			dependencies: ["3243CD20D9B44F54"]
+			description: [
+				"Die schwerste Rüstung des Mods: zusammen 18 Durasteel, dazu Obsidian, Plastoid, Redstone Dust und 2 Amethyst Shard für den Helm. Mit Atemgeräusch."
+				"&6⚙&r Die Rezepte schaltet der Bauplan „Vader-Rüstung“ frei."
+			]
+			hide_until_deps_visible: true
+			icon: "swgc:vader_helmet"
+			id: "172476DC4088B888"
+			optional: true
+			shape: "square"
+			subtitle: "SW3 · Plastoid, Blaster und Truppen · Nebenquest"
+			tasks: [{
+				id: "65DC1DAF41B1106C"
+				item: "swgc:vader_helmet"
+				type: "item"
+			}
+			{
+				id: "60B7FF96BFFBC5BF"
+				item: "swgc:vader_chestplate"
+				type: "item"
+			}
+			{
+				id: "4E99D1B8921ED6EE"
+				item: "swgc:vader_leggings"
+				type: "item"
+			}
+			{
+				id: "0CCCEAFAAC6C505A"
+				item: "swgc:vader_boots"
+				type: "item"
+			}]
+			title: "Vader"
+			x: 5.5d
+			y: 8.0d
+		}
+	]
+	title: "Galaxy in a Cube"
+}

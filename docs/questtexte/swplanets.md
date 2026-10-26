@@ -12,6 +12,7 @@
 - **Pack-Änderungen** sind mit ⚙️ markiert. Grundsatz des Packs: Was Star Wars Planets doppelt zu Galaxy in a Cube hat, fliegt bei Star Wars Planets raus (Lichtschwerter, Kyber, Kunststoff). Die Texte sind so geschrieben, dass sie nach der Umsetzung stimmen; den Stand nennt die Tabelle am Ende.
 - 🔵 = nicht aus den JAR-Daten belegt oder noch nicht entschieden. Vor dem Einbau im Spiel prüfen.
 - Aufgaben vom Typ „Bauwerk finden“ setzen den Structure-Task von FTB Quests voraus (🔵 prüfen, ob die Version im Pack ihn hat; sonst als Checkmark-Quest).
+- **Ins Questbuch** (2026-10-26): noch kein Kapitel. Alle Abschnitte liegen ab K13 (Teil 2/3); Teil 1 wird nur bis K11 gebaut. IDs am 2026-10-26 erneut gegen die JAR geprüft, alle vorhanden. Beim Einbau beachten: Biom- und Bauwerk-Aufgaben kann `tools/QuestbuchGen.java` noch nicht erzeugen.
 - **Nicht als Bedingung verwenden:** die Advancements des Mods `craft_saber` („May the force be with you!“, ohne Rezept unerreichbar) und „A hyperspace pro!“ (verlangt laut Datei Kamino, den es nicht gibt).
 
 ---

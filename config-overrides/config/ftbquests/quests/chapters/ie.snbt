@@ -1,0 +1,1079 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "ie"
+	group: ""
+	icon: "immersiveengineering:hammer"
+	id: "46680A665D08484A"
+	order_index: 11
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 1: Ankunft."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "265F45AED58F83FB"
+			shape: "gear"
+			subtitle: "IE1 · Koks und erster Stahl"
+			tasks: [{
+				id: "07C18CC81877F1EC"
+				stage: "kapitel_k1"
+				type: "gamestage"
+			}]
+			title: "Kapitel 1: Immersive Engineering"
+			x: 0.5d
+			y: -1.75d
+		}
+		{
+			dependencies: ["265F45AED58F83FB"]
+			description: [
+				"Immersive Engineering erklärt sich selbst: Das Handbuch zeigt jede Maschine, jeden Bauplan und alle Rezepte. Lies es, wann immer eine Quest darauf verweist."
+				"Buch: Overview and Resources → Introduction."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:manual"
+			id: "62A35FCF574906B1"
+			subtitle: "IE1 · Koks und erster Stahl"
+			tasks: [{
+				id: "11217C459111D0AE"
+				item: "immersiveengineering:manual"
+				type: "item"
+			}]
+			title: "Engineer's Manual"
+			x: 0.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["62A35FCF574906B1"]
+			description: [
+				"Mit dem Hammer formst du Multiblöcke: Steine richtig aufstellen, dann mit dem Hammer auf den markierten Block schlagen. Er macht auch die ersten Platten von Hand."
+				"Buch: Construction → Multiblock Constructions; Overview and Resources → Metal Plates."
+				"Tipp: Der &eMultiblock Projector&r aus Immersive Petroleum zeigt den Bauplan als Hologramm in der Welt (Buch: Oil Processing → Multiblock Projector)."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:hammer"
+			id: "798B4A631B67A9BD"
+			subtitle: "IE1 · Koks und erster Stahl"
+			tasks: [{
+				id: "7EBD959C1C83243E"
+				item: "immersiveengineering:hammer"
+				type: "item"
+			}]
+			title: "Engineer's Hammer"
+			x: 0.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["798B4A631B67A9BD"]
+			description: [
+				"Buch: Overview and Resources → Ores."
+				"&6⚙&r Das Pack verteilt die Erze anders, als das Buch beschreibt:"
+				"• &eBlei und Uran&r kommen nicht als IE-Erz vor, sondern als Erz von Mekanism. Die Barren passen in jedes IE-Rezept. Blei ist in der Overworld sehr selten und reichlich in Everbright, Uran reichlich auf Merkur und Venus."
+				"• &eBauxit&r (Aluminium) ist in der Overworld selten und reichlich in Everbright."
+				"• Silber und Nickel liegen wie gewohnt in der Overworld."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:raw_aluminum"
+			id: "54E983B56C80E743"
+			optional: true
+			shape: "square"
+			subtitle: "IE1 · Koks und erster Stahl · Nebenquest"
+			tasks: [{
+				id: "4B9BAAE192D3E0BD"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(immersiveengineering:raw_aluminum)item(immersiveengineering:raw_silver)item(immersiveengineering:raw_nickel))" } }
+				title: "Erze"
+				type: "item"
+			}]
+			title: "Erze"
+			x: 2.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["798B4A631B67A9BD"]
+			description: [
+				"Aus Kohle wird Coal Coke, nebenbei fällt Creosote Oil an."
+				"Buch: Workbenches & Furnaces → Coke Oven."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:coke_oven"
+			id: "3ED5B6EA0E802EA4"
+			subtitle: "IE1 · Koks und erster Stahl"
+			tasks: [{
+				id: "4F8CA2557D66DEA9"
+				title: "Coke Oven gebaut"
+				type: "checkmark"
+			}
+			{
+				id: "357AD5A77F23B4C1"
+				item: "immersiveengineering:coal_coke"
+				type: "item"
+			}]
+			title: "Coke Oven"
+			x: 0.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["3ED5B6EA0E802EA4"]
+			description: [
+				"Holz in Creosote getränkt: Baustoff für viele frühe Maschinen."
+				"Buch: Overview and Resources → Treated Wood."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:treated_wood_horizontal"
+			id: "7C2566B2919AA47D"
+			subtitle: "IE1 · Koks und erster Stahl"
+			tasks: [{
+				id: "5BBD8BD9A35F2A58"
+				item: "immersiveengineering:treated_wood_horizontal"
+				type: "item"
+			}]
+			title: "Treated Wood"
+			x: 0.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["7C2566B2919AA47D"]
+			description: [
+				"Legiert ohne Strom, etwa Electrum und Constantan."
+				"Buch: Workbenches & Furnaces → Alloy Kiln; Overview and Resources → Alloys."
+				"&6⚙&r Bronze, Constantan, Electrum und Invar lassen sich auch in der Smeltery von Tinkers legieren."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:alloy_smelter"
+			id: "317CE07CD2F64A71"
+			optional: true
+			shape: "square"
+			subtitle: "IE1 · Koks und erster Stahl · Nebenquest"
+			tasks: [{
+				id: "081E4A39EF08B6BE"
+				title: "Alloy Kiln gebaut"
+				type: "checkmark"
+			}]
+			title: "Alloy Kiln"
+			x: 2.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["7C2566B2919AA47D"]
+			description: [
+				"Die Crude Blast Furnace macht aus Eisen und Coal Coke Stahl. Für die Blast Bricks brauchst du Zutaten aus dem Nether."
+				"Buch: Workbenches & Furnaces → Crude Blast Furnace."
+				"&6⚙&r Stahl ist die Grundwährung des Packs: Mekanism, AE2 und die erste Rakete brauchen ihn. Stahl aus Mekanism zählt genauso."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:blast_furnace"
+			id: "4C46CEFFAA6628FB"
+			subtitle: "IE1 · Koks und erster Stahl"
+			tasks: [{
+				id: "55642AD56D544B54"
+				title: "Crude Blast Furnace gebaut"
+				type: "checkmark"
+			}
+			{
+				id: "6DBFEA1E254E2835"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(immersiveengineering:ingot_steel)item(mekanism:ingot_steel))" } }
+				title: "Steel Ingot (IE oder Mekanism)"
+				type: "item"
+			}]
+			title: "Erster Stahl"
+			x: 0.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["4C46CEFFAA6628FB"]
+			description: [
+				"An der Engineer's Workbench entstehen mit &eBlueprints&r die Bauteile, die keine normale Werkbank kann: Vacuum Tubes, Light Bulbs, Electronic Components."
+				"Buch: Workbenches & Furnaces → Workbench & Blueprints, Engineer's Blueprints; Overview and Resources → Crafting Components."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:workbench"
+			id: "5525EF1C1A588A2E"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "IE1 · Koks und erster Stahl"
+			tasks: [{
+				id: "2B840D9934ADF0C5"
+				item: "immersiveengineering:workbench"
+				type: "item"
+			}
+			{
+				id: "40282A39AC78850F"
+				item: "immersiveengineering:component_iron"
+				type: "item"
+			}]
+			title: "Werkbank und Baupläne"
+			x: 0.5d
+			y: 7.5d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 2: Würdig sein."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "66D4020D2C561309"
+			shape: "gear"
+			subtitle: "IE2 · Strom und Förderbänder"
+			tasks: [{
+				id: "36D199BD6AD7733F"
+				stage: "kapitel_k2"
+				type: "gamestage"
+			}]
+			title: "Kapitel 2: Immersive Engineering"
+			x: 4.0d
+			y: -1.75d
+		}
+		{
+			dependencies: ["5525EF1C1A588A2E", "66D4020D2C561309"]
+			description: [
+				"Windmühle oder Wasserrad treiben den Kinetic Dynamo an."
+				"Buch: Power, wires, generators → Power Generation."
+				"&6⚙&r Strom im Pack kommt nur aus IE, Immersive Petroleum und Mekanism. Die Generatoren von Ad Astra sind entfernt."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:dynamo"
+			id: "14D912DF8CA57B5C"
+			subtitle: "IE2 · Strom und Förderbänder"
+			tasks: [{
+				id: "5BB26C265E5C30D8"
+				item: "immersiveengineering:dynamo"
+				type: "item"
+			}
+			{
+				id: "32E85E341FDE802B"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(immersiveengineering:windmill)item(immersiveengineering:watermill))" } }
+				title: "Windmill oder Water Wheel"
+				type: "item"
+			}]
+			title: "Erster Strom"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["14D912DF8CA57B5C"]
+			description: [
+				"Strom fließt über Drähte zwischen Connectors. LV (Kupfer) trägt 256 Flux je Tick, MV (Electrum) 1024, HV (Stahl und Aluminium) 4096."
+				"Buch: Power, wires, generators → Basic Wiring."
+				"&6⚙&r Die Kabel von Ad Astra sind entfernt. Raumbasen versorgst du mit IE oder Mekanism. In einen abgedichteten Raum bringt ein &eFeedthrough Insulator&r (oder ein Energiespeicher in der Wand) den Strom, ohne die Luftdichtung zu brechen."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:connector_lv"
+			id: "6403D8B9B81865B5"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "IE2 · Strom und Förderbänder"
+			tasks: [{
+				id: "2484A32BE9CCB460"
+				item: "immersiveengineering:connector_lv"
+				type: "item"
+			}
+			{
+				id: "67B5B5324D023462"
+				item: "immersiveengineering:wirecoil_copper"
+				type: "item"
+			}]
+			title: "Kabel"
+			x: 4.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["6403D8B9B81865B5"]
+			description: [
+				"&6⚙&r Der LV-Kondensator ist Teil von „Würdig sein“ bei DD3R8 (O67)."
+				""
+				"Buch: Power, wires, generators → Accumulators."
+				"&6⚙&r Der LV Accumulator braucht Blei. Das gibt es in der Overworld kaum, reichlich in Everbright (Mekanism-Bleierz)."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:capacitor_lv"
+			id: "5E70E6C62F7A1DA7"
+			optional: true
+			shape: "square"
+			subtitle: "IE2 · Strom und Förderbänder · Nebenquest"
+			tasks: [{
+				id: "62640FF847EEB979"
+				item: "immersiveengineering:capacitor_lv"
+				type: "item"
+			}]
+			title: "Speichern"
+			x: 5.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["6403D8B9B81865B5"]
+			description: [
+				"Buch: Simple Machines → Conveyor Belts, Item Router, Fluid Transport."
+				"&6⚙&r Die Fluid Pipes und die Water Pump von Ad Astra sind entfernt; IE-Rohre und die Fluid Pump übernehmen."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:conveyor_basic"
+			id: "3611D2E724C0176D"
+			optional: true
+			shape: "square"
+			subtitle: "IE2 · Strom und Förderbänder · Nebenquest"
+			tasks: [{
+				id: "1C79EB870E870CB8"
+				item: "immersiveengineering:conveyor_basic"
+				type: "item"
+			}
+			{
+				id: "05593B5BD764A069"
+				item: "immersiveengineering:fluid_pipe"
+				type: "item"
+			}]
+			title: "Förderbänder und Rohre"
+			x: 5.5d
+			y: 2.75d
+		}
+		{
+			dependencies: ["6403D8B9B81865B5"]
+			description: [
+				"Lädt Werkzeuge und Akkus."
+				"Buch: Simple Machines → Charging Station."
+				"&6⚙&r Der Energizer von Ad Astra ist entfernt. Jet Suit und Etrionic Capacitor lädst du hier oder an einem Mekanism Energy Cube."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:charging_station"
+			id: "7D1F1377A778B12A"
+			optional: true
+			shape: "square"
+			subtitle: "IE2 · Strom und Förderbänder · Nebenquest"
+			tasks: [{
+				id: "4D3E07447CF43DFF"
+				item: "immersiveengineering:charging_station"
+				type: "item"
+			}]
+			title: "Charging Station"
+			x: 5.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["6403D8B9B81865B5"]
+			description: [
+				"Buch: Simple Machines → Garden Cloche. Pflanzen für den Squeezer und Fermenter (IE3) wachsen hier automatisch."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:cloche"
+			id: "6218ACEDA163AC97"
+			optional: true
+			shape: "square"
+			subtitle: "IE2 · Strom und Förderbänder · Nebenquest"
+			tasks: [{
+				id: "7C419FE9A8F68D96"
+				item: "immersiveengineering:cloche"
+				type: "item"
+			}]
+			title: "Garden Cloche"
+			x: 5.5d
+			y: 5.25d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 3: Industrie."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "32AF81643E27273E"
+			shape: "gear"
+			subtitle: "IE3 · Schwermaschinen und Biodiesel"
+			tasks: [{
+				id: "63E308529C272F16"
+				stage: "kapitel_k3"
+				type: "gamestage"
+			}]
+			title: "Kapitel 3: Immersive Engineering"
+			x: 7.5d
+			y: -1.75d
+		}
+		{
+			dependencies: ["6403D8B9B81865B5", "32AF81643E27273E"]
+			description: [
+				"Stahl automatisch und schneller."
+				"Buch: Workbenches & Furnaces → Improved Blast Furnace."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:advanced_blast_furnace"
+			id: "3B00BFD409EAA884"
+			subtitle: "IE3 · Schwermaschinen und Biodiesel"
+			tasks: [{
+				id: "3B4EC47F0E739229"
+				title: "Improved Blast Furnace gebaut"
+				type: "checkmark"
+			}
+			{
+				id: "0AF007B6B92EC92F"
+				item: "immersiveengineering:blastfurnace_preheater"
+				type: "item"
+			}]
+			title: "Improved Blast Furnace"
+			x: 7.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3B00BFD409EAA884"]
+			description: [
+				"Buch: Construction → Metal Constructions."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:light_engineering"
+			id: "562BFD38258C9AEE"
+			subtitle: "IE3 · Schwermaschinen und Biodiesel"
+			tasks: [{
+				id: "5383C9E43EB84232"
+				item: "immersiveengineering:light_engineering"
+				type: "item"
+			}
+			{
+				id: "622637BC9DAD7606"
+				item: "immersiveengineering:heavy_engineering"
+				type: "item"
+			}
+			{
+				id: "64BD3C7E56B53106"
+				item: "immersiveengineering:steel_scaffolding_standard"
+				type: "item"
+			}]
+			title: "Bauteile für Schwermaschinen"
+			x: 7.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["562BFD38258C9AEE"]
+			description: [
+				"Presst Platten, Stäbe und Drähte."
+				"Buch: Heavy Machinery → Metal Press."
+				"&6⚙&r Alle Platten für die Raketen kommen aus dieser Presse, auch Desh, Ostrum und Calorite. Der Compressor von Ad Astra entfällt &9(ungeprüft)&r (Skript fehlt)."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:metal_press"
+			id: "20ABB5E0F22B9859"
+			subtitle: "IE3 · Schwermaschinen und Biodiesel"
+			tasks: [{
+				id: "776578560166BC45"
+				title: "Metal Press gebaut"
+				type: "checkmark"
+			}]
+			title: "Metal Press"
+			x: 7.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["20ABB5E0F22B9859"]
+			description: [
+				"Mahlt Erz zu zwei Stäuben, dazu Nebenprodukte wie Schwefel."
+				"Buch: Heavy Machinery → Crusher."
+				"&6⚙&r &9(ungeprüft)&r Der Crusher soll alles übernehmen, was der Crusher von Mekanism kann (Liste und Umsetzung offen). Für mehr als die doppelte Ausbeute führt Mekanism weiter (mekanism.md, Erzvervielfachung)."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:crusher"
+			id: "4BBC049D29718225"
+			subtitle: "IE3 · Schwermaschinen und Biodiesel"
+			tasks: [{
+				id: "571B3A9A985CD1B3"
+				title: "Crusher gebaut"
+				type: "checkmark"
+			}]
+			title: "Crusher"
+			x: 7.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["4BBC049D29718225"]
+			description: [
+				"Buch: Heavy Machinery → Sawmill. Sägemehl passt auch in Mekanism-Rezepte."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:sawmill"
+			id: "38CE5B749E6CD00A"
+			optional: true
+			shape: "square"
+			subtitle: "IE3 · Schwermaschinen und Biodiesel · Nebenquest"
+			tasks: [{
+				id: "0F2FAECF2A38FD3E"
+				title: "Sawmill gebaut"
+				type: "checkmark"
+			}]
+			title: "Sawmill"
+			x: 9.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["4BBC049D29718225"]
+			description: [
+				"Plant Oil aus dem Squeezer und Ethanol aus dem Fermenter ergeben in der Refinery Biodiesel."
+				"Buch: Heavy Machinery → Squeezer, Fermenter, Refinery."
+				"&6⚙&r &eBiodiesel ist der Treibstoff der Rakete T1.&r Die Rakete nimmt nur diesen Treibstoff."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:refinery"
+			id: "314870713B15C085"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "IE3 · Schwermaschinen und Biodiesel"
+			tasks: [{
+				id: "4C1ED3ADC6D3C675"
+				title: "Industrial Squeezer gebaut"
+				type: "checkmark"
+			}
+			{
+				id: "7EDFC8E7E74A1CB9"
+				title: "Industrial Fermenter gebaut"
+				type: "checkmark"
+			}
+			{
+				id: "3FA55C49B81F5ADC"
+				title: "Refinery gebaut"
+				type: "checkmark"
+			}
+			{
+				amount: 1000L
+				fluid: "immersiveengineering:biodiesel"
+				id: "75F89F7ADF4F8BF6"
+				type: "fluid"
+			}]
+			title: "Biodiesel"
+			x: 7.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["314870713B15C085"]
+			description: [
+				"4096 Flux je Tick aus Biodiesel oder Diesel, genug für HV."
+				"Buch: Power, wires, generators → Diesel Generator."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:diesel_generator"
+			id: "05AC75A6FF5A4E3C"
+			optional: true
+			shape: "square"
+			subtitle: "IE3 · Schwermaschinen und Biodiesel · Nebenquest"
+			tasks: [{
+				id: "4E8D5EC9DA5C6AE8"
+				title: "Diesel Generator gebaut"
+				type: "checkmark"
+			}]
+			title: "Diesel Generator"
+			x: 9.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["314870713B15C085"]
+			description: [
+				"Buch: Heavy Machinery → Mixer, Bottling Machine. Mit dem Mixer entsteht flüssiger Beton (Construction → Concrete), den der Derrick in IE4 braucht."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:mixer"
+			id: "1C699BB7EFE48DF9"
+			optional: true
+			shape: "square"
+			subtitle: "IE3 · Schwermaschinen und Biodiesel · Nebenquest"
+			tasks: [{
+				id: "33246BE7571854DC"
+				title: "Mixer gebaut"
+				type: "checkmark"
+			}
+			{
+				id: "7D03BA43F102EE77"
+				title: "Bottling Machine gebaut"
+				type: "checkmark"
+			}]
+			title: "Mixer und Bottling Machine"
+			x: 9.0d
+			y: 7.25d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 4: Der Mond."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "2E8C5B6F057B77E6"
+			shape: "gear"
+			subtitle: "IE4 · Erdöl und Destillation"
+			tasks: [{
+				id: "5E35694991FF90FE"
+				stage: "kapitel_k4"
+				type: "gamestage"
+			}]
+			title: "Kapitel 4: Immersive Engineering"
+			x: 11.0d
+			y: -1.75d
+		}
+		{
+			dependencies: ["314870713B15C085", "2E8C5B6F057B77E6"]
+			description: [
+				"Das Seismic Survey Tool zeigt, wo unter dir ein Ölvorkommen liegt."
+				"Buch: Oil Processing → Derrick &9(ungeprüft)&r (Eintrag prüfen, in dem das Werkzeug beschrieben ist)."
+				"&6⚙&r Immersive Petroleum ist die einzige Ölquelle im Pack; die Ölquellen von Ad Astra sind abgeschaltet."
+			]
+			hide_until_deps_visible: true
+			icon: "immersivepetroleum:seismic_survey"
+			id: "2DC16D7466689218"
+			subtitle: "IE4 · Erdöl und Destillation"
+			tasks: [{
+				id: "0FA517443C8F42DA"
+				item: "immersivepetroleum:seismic_survey"
+				type: "item"
+			}
+			{
+				id: "4D905499A657BF65"
+				item: "immersivepetroleum:survey_result"
+				type: "item"
+			}]
+			title: "Öl finden"
+			x: 11.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2DC16D7466689218"]
+			description: [
+				"Der Derrick bohrt das Vorkommen an, der Pumpjack fördert."
+				"Buch: Oil Processing → Derrick, Pumpjack."
+			]
+			hide_until_deps_visible: true
+			icon: "immersivepetroleum:pumpjack"
+			id: "3618A099F6094A9C"
+			subtitle: "IE4 · Erdöl und Destillation"
+			tasks: [{
+				id: "0D64E291222D7F82"
+				title: "Derrick gebaut"
+				type: "checkmark"
+			}
+			{
+				id: "41DAFD1CA7EEA271"
+				title: "Pumpjack gebaut"
+				type: "checkmark"
+			}]
+			title: "Derrick und Pumpjack"
+			x: 11.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["3618A099F6094A9C"]
+			description: [
+				"Fasst 1024 Eimer."
+				"Buch: Oil Processing → Oil Tank."
+			]
+			hide_until_deps_visible: true
+			icon: "immersivepetroleum:oiltank"
+			id: "1F16796D0C170F63"
+			optional: true
+			shape: "square"
+			subtitle: "IE4 · Erdöl und Destillation · Nebenquest"
+			tasks: [{
+				id: "244E396C9E4984E0"
+				title: "Oil Tank gebaut"
+				type: "checkmark"
+			}]
+			title: "Oil Tank"
+			x: 12.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["3618A099F6094A9C"]
+			description: [
+				"Zerlegt Rohöl in Lubricant, Diesel (schwefelhaltig), Kerosene und Naphtha, dazu Bitumen."
+				"Buch: Oil Processing → Distillation Tower, Petroleum Products."
+				"&6⚙&r &eKerosene ist der Treibstoff der Rakete T3&r und Grundlage des Treibstoffs T4."
+			]
+			hide_until_deps_visible: true
+			icon: "immersivepetroleum:distillation_tower"
+			id: "717FEB79354DEDAF"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "IE4 · Erdöl und Destillation"
+			tasks: [{
+				id: "583A63FDF4FB6AB3"
+				title: "Distillation Tower gebaut"
+				type: "checkmark"
+			}
+			{
+				amount: 1000L
+				fluid: "immersivepetroleum:kerosene"
+				id: "398CA3259A39F246"
+				type: "fluid"
+			}]
+			title: "Distillation Tower"
+			x: 11.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["717FEB79354DEDAF"]
+			description: [
+				"Schmiermittel beschleunigt Maschinen wie Pumpjack und Excavator."
+				"Buch: Oil Processing → Lubrication."
+			]
+			hide_until_deps_visible: true
+			id: "18AE5A93BBDBCC4E"
+			optional: true
+			shape: "square"
+			subtitle: "IE4 · Erdöl und Destillation · Nebenquest"
+			tasks: [{
+				amount: 1000L
+				fluid: "immersivepetroleum:lubricant"
+				id: "435A6A396A95B7E8"
+				type: "fluid"
+			}]
+			title: "Lubricant"
+			x: 12.5d
+			y: 3.0d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 5: Erzketten."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "4ECD17AB09DE0513"
+			shape: "gear"
+			subtitle: "IE5 · Entschwefelter Diesel"
+			tasks: [{
+				id: "0AD817EC86950F88"
+				stage: "kapitel_k5"
+				type: "gamestage"
+			}]
+			title: "Kapitel 5: Immersive Engineering"
+			x: 14.5d
+			y: -1.75d
+		}
+		{
+			dependencies: ["717FEB79354DEDAF", "4ECD17AB09DE0513"]
+			description: [
+				"Entschwefelt den Diesel aus dem Turm; dabei fallen 5 Schwefelstaub je Eimer an."
+				"Buch: Oil Processing → High-Pressure Refinery Unit."
+				"&6⚙&r &eEntschwefelter Diesel ist der Treibstoff der Rakete T2.&r Schwefelhaltiger Diesel (Sulfurized Diesel) zählt nicht."
+				"&6⚙&r Der Schwefel wird für die Schwefelsäure von Mekanism gebraucht."
+			]
+			hide_until_deps_visible: true
+			icon: "immersivepetroleum:hydrotreater"
+			id: "604E7F0E3AB26675"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "IE5 · Entschwefelter Diesel"
+			tasks: [{
+				id: "1C6F33FE60D46A98"
+				title: "High-Pressure Refinery Unit gebaut"
+				type: "checkmark"
+			}
+			{
+				amount: 1000L
+				fluid: "immersivepetroleum:diesel"
+				id: "2B6E7E5AFEAD7352"
+				type: "fluid"
+			}]
+			title: "High-Pressure Refinery Unit"
+			x: 14.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["604E7F0E3AB26675"]
+			description: [
+				"Der größte Multiblock: macht aus Bitumen Petcoke."
+				"Buch: Oil Processing → Coker."
+			]
+			hide_until_deps_visible: true
+			icon: "immersivepetroleum:coker_unit"
+			id: "2B35E329CA5D669C"
+			optional: true
+			shape: "square"
+			subtitle: "IE5 · Entschwefelter Diesel · Nebenquest"
+			tasks: [{
+				id: "69E0173CEE45872B"
+				title: "Coker gebaut"
+				type: "checkmark"
+			}
+			{
+				id: "2E512CFFBB7ADB06"
+				item: "immersivepetroleum:petcoke"
+				type: "item"
+			}]
+			title: "Coker"
+			x: 16.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 6: Der Mars."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "708D975D37B2714A"
+			shape: "gear"
+			subtitle: "IE6 · Großindustrie"
+			tasks: [{
+				id: "351645E0ED529382"
+				stage: "kapitel_k6"
+				type: "gamestage"
+			}]
+			title: "Kapitel 6: Immersive Engineering"
+			x: 19.5d
+			y: -1.75d
+		}
+		{
+			dependencies: ["604E7F0E3AB26675", "708D975D37B2714A"]
+			description: [
+				"Schmilzt Erze mit doppelter Ausbeute, legiert und recycelt. Den Bauplan für die Elektroden findest du nur in Truhen oder bei Dorfbewohnern."
+				"Buch: Heavy Machinery → Arc Furnace; Overview and Resources → Graphite, Villagers."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:arc_furnace"
+			id: "3163A1FDC8D5989F"
+			optional: true
+			shape: "square"
+			subtitle: "IE6 · Großindustrie · Nebenquest"
+			tasks: [{
+				id: "50687089E6EB72C9"
+				title: "Arc Furnace gebaut"
+				type: "checkmark"
+			}
+			{
+				id: "06E8DA6E03BE192F"
+				item: "immersiveengineering:graphite_electrode"
+				type: "item"
+			}]
+			title: "Arc Furnace"
+			x: 19.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["604E7F0E3AB26675"]
+			description: [
+				"Mit den Mineral Survey Tools und dem Core Sample Drill findest du heraus, welche Erzader unter einem Chunk liegt."
+				"Buch: Heavy Machinery → Excavator, darin der Verweis auf Mineral Deposits."
+				"&6⚙&r Die Adern sind angepasst: Cassiterite (Zinn) gibt es nicht, Zinn kommt nur aus Everbright. Galena (Blei) und Uraninite (Uran) sind seltener."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:survey_tools"
+			id: "078CA5B5B44BFF17"
+			optional: true
+			shape: "square"
+			subtitle: "IE6 · Großindustrie · Nebenquest"
+			tasks: [{
+				id: "7FF83C8E94E417CB"
+				item: "immersiveengineering:survey_tools"
+				type: "item"
+			}
+			{
+				id: "22689446051D096D"
+				item: "immersiveengineering:sample_drill"
+				type: "item"
+			}]
+			title: "Erzadern finden"
+			x: 19.5d
+			y: 1.25d
+		}
+		{
+			dependencies: ["604E7F0E3AB26675"]
+			description: [
+				"Baut eine Erzader ab, ohne die Welt aufzugraben."
+				"Buch: Heavy Machinery → Excavator."
+				"&6⚙&r Der Digital Miner von Mekanism ist im Pack entfernt; der Excavator ist der Weg zur automatischen Erzgewinnung."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:excavator"
+			id: "690D7D5B87093152"
+			optional: true
+			shape: "square"
+			subtitle: "IE6 · Großindustrie · Nebenquest"
+			tasks: [{
+				id: "01FDD056E9D0BCA6"
+				title: "Excavator mit Bucket Wheel gebaut"
+				type: "checkmark"
+			}]
+			title: "Excavator"
+			x: 19.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["604E7F0E3AB26675"]
+			description: [
+				"Buch: Overview and Resources → Resin and Duroplast; Oil Processing → Petroleum Plastics."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:plate_duroplast"
+			id: "6299875A2D12F3C3"
+			optional: true
+			shape: "square"
+			subtitle: "IE6 · Großindustrie · Nebenquest"
+			tasks: [{
+				id: "1DDA89A0AC3ACA00"
+				item: "immersiveengineering:plate_duroplast"
+				type: "item"
+			}]
+			title: "Kunststoff"
+			x: 19.5d
+			y: 3.75d
+		}
+		{
+			dependencies: ["604E7F0E3AB26675"]
+			description: [
+				"Buch: Power, wires, generators → Logic Circuits."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:circuit_table"
+			id: "5B447F9A1B3D7220"
+			optional: true
+			shape: "square"
+			subtitle: "IE6 · Großindustrie · Nebenquest"
+			tasks: [{
+				id: "0E861D91A2B0194D"
+				item: "immersiveengineering:circuit_table"
+				type: "item"
+			}
+			{
+				id: "2803D27C71A1F633"
+				item: "immersiveengineering:logic_circuit"
+				type: "item"
+			}]
+			title: "Logic Circuits"
+			x: 19.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["604E7F0E3AB26675"]
+			description: [
+				"Autocrafting mit IE."
+				"Buch: Heavy Machinery → Assembler, Automated Workbench."
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:assembler"
+			id: "32E82D078CAFE96C"
+			optional: true
+			shape: "square"
+			subtitle: "IE6 · Großindustrie · Nebenquest"
+			tasks: [{
+				id: "3691977473C8BFA6"
+				title: "Assembler oder Automated Engineer's Workbench gebaut"
+				type: "checkmark"
+			}]
+			title: "Assembler"
+			x: 19.5d
+			y: 6.25d
+		}
+		{
+			dependencies: ["5525EF1C1A588A2E"]
+			description: [
+				"Kurze Einzelquests, freizuschalten nach Bedarf. Je Quest nur Ziel und Fundstelle."
+				""
+				"Buch: Tools → Mining Drill (fährt mit Diesel oder Biodiesel)"
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:drill"
+			id: "5A982967B2B58B88"
+			optional: true
+			shape: "square"
+			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
+			tasks: [{
+				id: "0FD17A685D3006CF"
+				item: "immersiveengineering:drill"
+				type: "item"
+			}]
+			title: "Mining Drill"
+			x: 23.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5525EF1C1A588A2E"]
+			description: [
+				"Buch: Tools → Engineer's Toolbox"
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:toolbox"
+			id: "5261834EC4D5CE7F"
+			optional: true
+			shape: "square"
+			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
+			tasks: [{
+				id: "3E64D065EE8EC8CB"
+				item: "immersiveengineering:toolbox"
+				type: "item"
+			}]
+			title: "Engineer's Toolbox"
+			x: 23.0d
+			y: 1.25d
+		}
+		{
+			dependencies: ["5525EF1C1A588A2E"]
+			description: [
+				"Buch: Tools → Engineer's Skyhook (fährt an Drähten entlang)"
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:skyhook"
+			id: "2FF2620DD872FB22"
+			optional: true
+			shape: "square"
+			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
+			tasks: [{
+				id: "30DBF58F0D2F4493"
+				item: "immersiveengineering:skyhook"
+				type: "item"
+			}]
+			title: "Skyhook"
+			x: 23.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["5525EF1C1A588A2E"]
+			description: [
+				"Buch: Tools → Revolver, Revolver Cartridges"
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:revolver"
+			id: "6BA62092B7E3EC4D"
+			optional: true
+			shape: "square"
+			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
+			tasks: [{
+				id: "6FAC0597D28E33A7"
+				item: "immersiveengineering:revolver"
+				type: "item"
+			}]
+			title: "Revolver"
+			x: 23.0d
+			y: 3.75d
+		}
+		{
+			dependencies: ["5525EF1C1A588A2E"]
+			description: [
+				"Buch: Tools → Railgun"
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:railgun"
+			id: "5DADD4F6432CB6BC"
+			optional: true
+			shape: "square"
+			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
+			tasks: [{
+				id: "2B6E867C1F07C14F"
+				item: "immersiveengineering:railgun"
+				type: "item"
+			}]
+			title: "Railgun"
+			x: 23.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["5525EF1C1A588A2E"]
+			description: [
+				"Buch: Tools → Accumulator Backpack"
+			]
+			hide_until_deps_visible: true
+			icon: "immersiveengineering:powerpack"
+			id: "2AF2061CCC078189"
+			optional: true
+			shape: "square"
+			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
+			tasks: [{
+				id: "35AA6DDA8B8B383F"
+				item: "immersiveengineering:powerpack"
+				type: "item"
+			}]
+			title: "Accumulator Backpack"
+			x: 23.0d
+			y: 6.25d
+		}
+	]
+	title: "Immersive Engineering"
+}

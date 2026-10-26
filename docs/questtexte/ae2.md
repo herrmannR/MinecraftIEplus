@@ -11,7 +11,7 @@
 - **Hauptweg** = nötig für spätere Ziele. **Nebenquest** = stellt den Mod in der Breite vor.
 - **Pack-Änderungen** mit ⚙️. Sie stehen nicht im Guide.
 - 🔵 = noch nicht entschieden oder nicht belegt.
-- **Pfad F ist zweistufig** (`../01_PROGRESSION.md`): AE1 ist der frühe, teure Storage-Layer (Kisten und Drawers zentral durchsuchen), AE2 das ME-System mit Zellen und Autocrafting. Wie AE2 im Pack verteuert wird, ist noch nicht entschieden; die Texte nennen deshalb keine Rezepte und verweisen auf JEI.
+- **Pfad F ist zweistufig** (`../01_PROGRESSION.md`): AE1 ist der frühe, teure Storage-Layer (Kisten und Drawers zentral durchsuchen), AE2 das ME-System mit Zellen und Autocrafting. ⚙️ Verteuert sind ME Controller und ME Drive (F10): Beide brauchen zusätzlich einen Advanced Control Circuit aus Mekanism und Stahlplatten. Sonst gelten die Rezepte des Mods; JEI zeigt sie.
 - AE1 liegt in K3, also vor dem Mond. Laut Story gibt es dort noch kein Questbuch (`../18_STORY.md`, O31 offen). Die Texte sind trotzdem geschrieben, damit sie nachgereicht oder als Notizen genutzt werden können.
 
 ---
@@ -127,12 +127,14 @@ Buch: Items, Blocks, and Machines → Storage Cells; AE2 Mechanics → Bytes and
 
 Der Drive hält mehrere Zellen und macht sie fürs Netz sichtbar.
 Buch: Items, Blocks, and Machines → ME Drive; Getting Started → Your Very First ME System.
+⚙️ Rezept anders als im Guide: 4 Steel Plate, 2 Engineering Processor, 2 Fluix Glass Cable und ein Advanced Control Circuit aus Mekanism (Quest „Die Stufen von Mekanism“). Siehe JEI.
 
 ### AE2-03 ME Controller · Hauptweg
 **Aufgabe:** `ae2:controller`
 
 Ab 9 Geräten braucht das Netz einen Controller. Er verteilt Kanäle: 8 je normalem Kabel, 32 je Dense Cable.
 Buch: Items, Blocks, and Machines → Controller; AE2 Mechanics → Channels; Getting Started → Expanding your Network, Overcoming Limits.
+⚙️ Rezept anders als im Guide: 2 Steel Plate, 3 Fluix Crystal, ein Engineering Processor, 2 Smooth Sky Stone Block und ein Advanced Control Circuit aus Mekanism. Siehe JEI.
 
 ### AE2-04 Größere Zellen · Nebenquest
 **Aufgabe:** `ae2:item_storage_cell_4k`, `ae2:item_storage_cell_16k`
@@ -327,8 +329,8 @@ Buch: Items, Blocks, and Machines → Matter Cannon, Matter Ball.
 
 | Änderung | Steht in | Stand |
 |---|---|---|
-| AE2 erzeugt keinen Strom: Vibration Chamber und Crystal Resonance Generator entfernt | AE1-01, AE1-02, AE1-05, AE1-07, AE1-10 | 🟢 entschieden 2026-10-17; 🔵 noch nicht umgesetzt (KubeJS, JEI ausblenden, Test 36) |
-| Früher Storage-Layer „teuer“, ME-System Endgame | Hinweise, AE1-08, AE2-01 | 🟢 Grundsatz; 🔵 welche Rezepte teurer werden, offen (Einhakpunkte in `WISSEN.md`) |
+| AE2 erzeugt keinen Strom: Vibration Chamber und Crystal Resonance Generator entfernt | AE1-01, AE1-02, AE1-05, AE1-07, AE1-10 | 🟢 entschieden 2026-10-17, umgesetzt (`ideenimport_entfernt.js`, JEI ausgeblendet), Test 36 ✅ |
+| Storage-Layer bleibt in K3; ME Controller und ME Drive brauchen zusätzlich Advanced Control Circuit und Stahlplatten (F10) | Hinweise, AE2-02, AE2-03 | 🟢 entschieden 2026-10-20, Skript `ae2_verteuerung.js` liegt vor (ungetestet) |
 | Kein Certus-Erz, Meteoriten nur in der Overworld | AE1-03, AE1-04 | 🟢 Mod-Verhalten, so belassen (`03_ERZGENERATION.md`) |
 | Sky Stone aus Moon und Mars Stone (Ad Astra) | AE1-04 | 🟢 Fund (Ü A9) |
 | Budding Quartz aus dem Blood-Magic-Meteor | AE1-04 | 🟢 Fund (Ü BM4), Meteore bleiben unverändert |
@@ -341,8 +343,9 @@ Buch: Items, Blocks, and Machines → Matter Cannon, Matter Ball.
 ## 🔵 Offen vor dem Einbau
 
 - **O31:** AE1 liegt vor dem Mond. Ob AE1 im Questbuch nachgereicht wird oder als Notiz steht, entscheidet der User.
-- **Verteuerung:** Erst wenn feststeht, welche Rezepte KubeJS ändert (Pressen, Prozessoren, Drive, Controller, Housings), die ⚙️-Zeilen in AE1-08 und AE2-01 konkret machen. Der Storage-Layer soll früh erreichbar bleiben.
-- **Energieerzeuger entfernen** umsetzen und Test 36 laufen lassen; danach den Satz im Guide-Hinweis (AE1-01) prüfen.
+- **Verteuerung (F10):** Controller und Drive sind eingearbeitet (AE2-02, AE2-03). Die ⚙️-🔵-Zeilen in AE1-08 (Prozessoren) und AE2-01 (Housing, Components) fragen, ob noch mehr teurer wird; F10 nennt nur Controller und Drive. Rezepte im Spiel prüfen (Skript ungetestet).
+- **Bezug AE2 → Mekanism:** Controller und Drive brauchen den Advanced Control Circuit (Mekanism MK3, K5). Das Questbuch kann nicht kapitelübergreifend verknüpfen; die Quests nennen es nur im Text.
+- **AEX (Werkzeuge):** im Kapitel an den Guide (AE1-01) gehängt, also ab K3 sichtbar. AEX-06 Matter Cannon braucht Matter Balls aus dem Condenser (AE3, K13), der in Teil 1 fehlt; Nadeln (Nuggets) gehen auch.
 - **Storage Bus an Storage Drawers** (AE1-12) im Spiel prüfen: ein Bus am Drawer Controller oder je Drawer.
 - **Quantum Bridge auf dem Server** (AE3-03): Chunkloading beider Enden klären; zugleich, ob Spatial Anchor und Spatial-Storage-Dimension erlaubt sind (AE3-05, AE3-06).
 - **Quantum Bridge Card** (AE3-04) und **Magnet Card** (AE2-16): nur aus Rezept und Sprachdatei bekannt, im Spiel prüfen.

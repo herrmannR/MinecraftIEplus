@@ -11,11 +11,11 @@
 - **Buch zuerst:** AM1-01 ist das Animal Dictionary. Alle weiteren Quests verweisen auf den Eintrag des Tiers, das die Beute liefert. Dort stehen Lebensraum, Verhalten, Beute und Rezept.
 - Zähmen kann FTB Quests nicht prüfen. Die Aufgaben sind deshalb Items, die man erst nach dem Zähmen oder Erlegen hat; reine Zähm-Quests sind 🔵 als Checkmark gedacht.
 - **Pack-Änderungen** mit ⚙️. Für Alex's Mobs gibt es bisher keine; der Mod läuft mit seiner Standard-Config (Werte unten aus `config/alexsmobs.toml`). 🔵 = noch nicht entschieden oder nicht belegt.
-- Einordnung: Vor dem Mond gibt es kein Questbuch, die Reihe steht also ab dem Mond offen. Oberwelt und Meer gehen sofort, AM4 braucht den Nether, AM5 und AM6 das End.
+- Einordnung: Die ganze Reihe erscheint mit K4 Der Mond (F16). Oberwelt und Meer gehen sofort, AM4 braucht den Nether, AM5 und AM6 das End.
 
 ---
 
-## AM1 · Tiere der Oberwelt
+## AM1 · Tiere der Oberwelt (K4 Der Mond)
 
 ### AM1-01 Animal Dictionary · Nebenquest
 **Aufgabe:** `alexsmobs:animal_dictionary`
@@ -43,7 +43,7 @@ Buch: Animal Dictionary → Bald Eagle; für die Zutaten Blobfish, Grizzly Bear,
 
 ---
 
-## AM2 · Beute der Oberwelt
+## AM2 · Beute der Oberwelt (K4 Der Mond)
 
 Jedes Stück kopiert eine Fähigkeit seines Tiers. Die Reihe ist in drei Ketten geteilt: Rüstung, Werkzeuge, Ameisen.
 
@@ -66,7 +66,7 @@ Ausweichen wie ein Emu, an Wänden klettern, schnell über Sand laufen oder aus 
 Buch: Animal Dictionary → Emu und Kangaroo, Cave Centipede, Roadrunner, Flying Fish.
 
 ### AM2-04 Werkzeuge der Tiere · Nebenquest
-**Aufgabe:** `alexsmobs:vine_lasso`, `alexsmobs:maraca`, `alexsmobs:stink_ray`, `alexsmobs:pocket_sand` (zwei davon)
+**Aufgabe:** `alexsmobs:vine_lasso` oder `alexsmobs:maraca`, dazu `alexsmobs:stink_ray` oder `alexsmobs:pocket_sand`
 
 Lasso aus Schlangenhaut, Rassel, Stinkstrahler und eine Handvoll Sand ins Gesicht.
 Buch: Animal Dictionary → Anaconda, Rattlesnake, Skunk, Guster.
@@ -91,7 +91,7 @@ Buch: Animal Dictionary → Leafcutter Ant.
 
 ---
 
-## AM3 · Meer und Untergrund
+## AM3 · Meer und Untergrund (K4 Der Mond)
 
 Die Ortungsgeräte bauen aufeinander auf: Echolocator → Endolocator und Strange Fish Finder.
 
@@ -154,7 +154,7 @@ Buch: Animal Dictionary → Underminer.
 
 ---
 
-## AM4 · Nether
+## AM4 · Nether (K4 Der Mond)
 
 Hier beginnt die lange Kette zur Void Worm: Die **Crimson Mosquito Larva** (AM4-02) wird in AM5 gebraucht.
 
@@ -190,7 +190,7 @@ Buch: Animal Dictionary → Straddler.
 
 ---
 
-## AM5 · End
+## AM5 · End (K4 Der Mond)
 
 Der Capsid ist das Werkzeug für alle Umwandlungen bis zur Transmutation Table.
 
@@ -222,7 +222,7 @@ Buch: Animal Dictionary → Warped Mosco.
 
 ---
 
-## AM6 · Void Worm und Weltrand
+## AM6 · Void Worm und Weltrand (K4 Der Mond)
 
 Der längste Pfad des Mods. Er braucht Capsid, Crimson Mosquito Larva, 2 Netheritebarren und einen Nether Star.
 
@@ -235,7 +235,7 @@ Die Crimson Mosquito Larva im Capsid wird zum Mysterious Worm. Wirf ihn im End i
 Buch: Animal Dictionary → Void Worm.
 
 ### AM6-02 Void Worm · Nebenquest
-**Aufgabe:** `alexsmobs:void_worm_eye`, `alexsmobs:void_worm_mandible` ×2
+**Aufgabe:** `alexsmobs:void_worm_eye`, 2 × `alexsmobs:void_worm_mandible`
 
 Besiege die Void Worm. Sie lässt ein Auge und zwei Mandibeln fallen.
 Buch: Animal Dictionary → Void Worm.
@@ -247,7 +247,7 @@ Er öffnet ein Portal zu deinem Spawnpunkt, 20 Benutzungen. Die zwei Mandibeln r
 Buch: Animal Dictionary → Void Worm.
 
 ### AM6-04 Farseer am Weltrand · Nebenquest
-**Aufgabe:** `alexsmobs:shattered_dimensional_carver`, `alexsmobs:farseer_arm` ×2
+**Aufgabe:** `alexsmobs:shattered_dimensional_carver`, 2 × `alexsmobs:farseer_arm`
 
 Der Carver im Capsid zerbricht. Der zerbrochene Carver öffnet ein Portal eine Million Blöcke weit; mehrmals in dieselbe Richtung, und du stehst am Weltrand. Nur dort erscheint der Farseer.
 Buch: Animal Dictionary → Farseer.
@@ -259,18 +259,18 @@ Buch: Animal Dictionary → Farseer.
 
 Wandelt einen ganzen Stack gegen Erfahrung in einen anderen Gegenstand um. Die Auswahl wächst mit dem, was du hineinlegst.
 Buch: Animal Dictionary → Farseer.
-⚙️ Kosten 3 Erfahrung je Umwandlung, Beacon gesperrt (Config, Standardwerte). 🔵 Ob die Rohmetalle und Diamanten aus dem Tisch das Erz-Gating umgehen dürfen, ist nicht entschieden (Befund AM1).
+⚙️ Kosten 3 Erfahrung je Umwandlung, Beacon gesperrt (Config, Standardwerte). Im Pack wandelt der Tisch nur noch in Gegenstände um, die auch als Truhenbeute vorkommen (Config `limitTransmutingToLootTables = true`, F16).
 
 > **Achtung, Abbau:** Baust du den Tisch ab, explodiert er und verliert alles, was er gelernt hat. Nur der Nether Star bleibt.
 
 ---
 
-## AM7 · Essen (mit Alex's Delight)
+## AM7 · Essen mit Alex's Delight (K4 Der Mond)
 
 Kurze Reihe für die Küche. Messer und Cooking Pot kommen aus Farmer's Delight.
 
 ### AM7-01 Tierisch gekocht · Nebenquest
-**Aufgabe:** `alexsmobs:cooked_kangaroo_meat`, `alexsmobs:cooked_moose_ribs`, `alexsmobs:cooked_lobster_tail`, `alexsmobs:boiled_emu_egg` (zwei davon)
+**Aufgabe:** `alexsmobs:cooked_kangaroo_meat` oder `alexsmobs:cooked_moose_ribs`, dazu `alexsmobs:cooked_lobster_tail` oder `alexsmobs:boiled_emu_egg`
 
 Fleisch und Eier neuer Tiere einfach braten.
 Buch: Animal Dictionary → Kangaroo, Moose, Lobster, Emu.
@@ -292,7 +292,7 @@ Zwei Burger. Alex's Delight ersetzt das Rezept des Kangaroo Burger durch ein eig
 | Änderung | Wo im Text | Stand |
 |---|---|---|
 | keine eigene Änderung; Config auf Standard (Transmutation 3 Erfahrung, Beacon gesperrt, Tisch explodiert, Void Worm 160 HP, nur End) | Hinweise, AM6, AM6-05 | 🟢 so in `config/alexsmobs.toml` |
-| Transmutation Table als Umweg am Erz-Gating vorbei (Befund AM1) | AM6-05 | 🔵 nicht entschieden; falls gesperrt oder eingeschränkt, AM6-05 anpassen |
+| Transmutation Table nur noch für Truhenbeute (`limitTransmutingToLootTables = true`, Befund AM1) | AM6-05 | 🟢 F16 (2026-10-20), `config-overrides/config/alexsmobs.toml` |
 | Rezept `alexsdelight:barbecue_on_a_stick` kaputt (Befund AM4) | nicht verwendet | 🔵 nicht entschieden (entfernen und in JEI ausblenden?) |
 
 ## 🔵 Offen vor dem Einbau
@@ -300,7 +300,9 @@ Zwei Burger. Alex's Delight ersetzt das Rezept des Kangaroo Burger durch ein eig
 - **Zähm-Quests:** FTB Quests prüft kein Zähmen. Wer Capuchin, Elefant oder Bald Eagle als eigene Quest will, braucht Checkmarks.
 - **AM3-08:** Ruft der Skreecher wirklich den Warden? Steht nicht in den Quellen; im Spiel prüfen.
 - **AM6-04:** Rückweg vom Weltrand (Bett, zweiter Carver) ist Spielwissen, nicht belegt; im Spiel prüfen.
-- **AM6-05:** Entscheidung zu Befund AM1 (Transmutation Table und Erz-Gating).
-- **Freischaltung:** Steht die ganze Reihe ab dem Mond offen, oder AM4–AM6 erst später (Nether, End)? Das Pack sperrt Nether und End bisher nicht.
+- ~~AM6-05~~ entschieden (F16): Tisch bleibt, nur Truhenbeute.
+- ~~Freischaltung~~ entschieden (F16): ganze Reihe ab dem Mond, alle Abschnitte mit K4. **Offen:** Mit K4 erscheinen 37 Quests auf einmal. Wer sie verteilen will (Vorschlag: AM4 Nether mit K5, AM5 und AM6 End mit K7), ändert nur die Kn in den Abschnittstiteln.
+- **Oder-Aufgaben:** „eins davon“ ist in `tools/questbuch/alexsmobs.cfg` als Oder-Aufgabe gebaut; „zwei davon“ (AM2-04, AM7-01) als zwei Oder-Aufgaben aus je zwei Items (Text angepasst), weil der Generator kein „zwei aus vier“ kennt.
+- **AM6:** Die Kette zur Transmutation Table hat fünf Quests und ist damit länger als die übrigen Ketten (höchstens vier); so verlangt es der Mod.
 - **Alex's Delight:** Barbecue on a Stick ist nicht herstellbar (Befund AM4).
 - **Spectre und Ad Astra:** Falls Alex's-Mobs-Tiere auf Planeten überleben sollen, gilt der Hinweis zu den überschriebenen Entity-Tags in `../15_RAUMFAHRT.md`. Für die Quests nicht nötig.

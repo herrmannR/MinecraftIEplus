@@ -171,6 +171,23 @@ Kapitel `buch1.snbt` (und `buch2.snbt`) aus `config-overrides/config/ftbquests/q
 | 82 | Tag nur bei einem Mitglied (P15) | zweiter Spieler hat den Tag nicht | Quest gilt trotzdem für alle | |
 | 83 | Übergang zu Buch 2 | ST11-04 per Tag erledigen | Buch 2 wird sichtbar | |
 
+### Runde 12 — Story-Skripte aus ABLAUF Abschnitt 6 (2026-10-26)
+
+Neustart nötig (Startup-Skripte, neues Item). `kubejs/` und `patchouli_books/bauplaene/` in die Testinstanz; Überlebensmodus, wo nicht anders gesagt. Vorher `scoreboard objectives add story dummy`.
+
+| Nr. | Test | Wie | Erwartet | Ergebnis |
+|---|---|---|---|---|
+| 84 | Laden | Welt laden; `python tools/kubejs_check.py --nur-log` | keine Fehler zu `kobalthammer.js`, `relikt_fluch.js`, `relikt_sperre.js`, `altar_reparatur.js`, `everdawn_sperre.js`, `elfenportal.js`, `gatekeeper.js`; JEI kennt „Bauplan: Pilotenhelm“, aber nicht mehr „Pilotenhelm des Einsiedlers“ | |
+| 85 | Kobalthammer | Vorschlaghammer ganz aus Kobalt bauen, ins Inventar; `tag @s list`; dann einen Hammer mit einem Teil aus Eisen nehmen bzw. den Hammer ablegen | erst `ieplus_kobalthammer` dabei, ohne (oder mit Mischhammer) nach spätestens 1 s wieder weg | |
+| 86 | Relikt-Fluch | `/give @s kubejs:relikt`, 20 s warten; dann `/clear @s kubejs:relikt` | nach 15 s Meldung, Blindheit, Langsamkeit, Vergiftung (nicht tödlich); ohne Relikt laufen die Effekte nach 3 s aus | |
+| 87 | Relikt nicht ablegbar | mit Relikt: Q drücken; in Truhe, Fass, Shulker, Ender-Truhe, Trichter legen; in ein Bündel stecken; Itemrahmen, Rüstungsständer, Blood-Magic-Altar, Topf rechtsklicken; Menü mit Relikt am Mauszeiger bei vollem Inventar schließen | Relikt bleibt jedes Mal im Inventar (Meldung „lässt sich nicht ablegen“ bzw. „Finger lassen nicht los“); nichts geht verloren, kein Doppel entsteht | |
+| 88 | Relikt beim Tod | mit Relikt sterben (`/kill @s`), Grabstein ansehen, wiederbeleben; zweiter Versuch: auf dem Todesbildschirm abmelden, wieder einloggen | Relikt nicht im Grabstein, nach dem Wiedereinstieg wieder im Inventar (Meldung) | |
+| 89 | Everdawn-Sperre | Everdawn-Portal betreten mit `#bodhi` 0 (`scoreboard players set #bodhi story 0`), dann 2 | erst Meldung, man bleibt draußen; mit 2 geht es hinein; im Kreativmodus immer | |
+| 90 | Elfe rufen | Platzhalter in `elfenportal.js` ausgefüllt; Portal to Alfheim öffnen, `botania:rune_spring` hineinwerfen; danach eine zweite Rune | Rune verschwindet, Cerina steht vor dem Portal, `#cerina` = 1 (`scoreboard players get #cerina story`); die zweite Rune ruft niemanden mehr. Ohne ausgefüllten Platzhalter: Hinweis im Chat (Kreativ) und Log | |
+| 91 | Altar reparieren | Platzhalter in `altar_reparatur.js` und `altar_heil.nbt` vom Host; auf dem Merkur Altar rechtsklicken, erst ohne, dann mit allen Zutaten | erst Meldung mit fehlenden Zutaten; dann Zutaten weg, heiles Ritual steht, Stage `story_st9_04` (Quest ST9-04 erledigt); Ritual lässt sich mit Aktivierungskristall starten; weitere Rechtsklicks ändern nichts | |
+| 92 | Bauplan Pilotenhelm | `/bauplan zuruecksetzen`; Reparaturrezept an der Werkbank legen; `/bauplan pilotenhelm`, Rolle lesen; Rezept erneut | erst kein Ergebnis; nach dem Lesen Meldung, Buch (erste Rolle der Welt), Kapitel „Erinnerungsstücke“ mit Eintrag und Rezept; Werkbank liefert den 212er-Helm mit Tooltip „Der Funk rauscht wieder.“ | |
+| 93 | Kein Gatekeeper | neue Welt oder unbesuchte Gegend, Gatekeeper-Haus suchen (`/locate structure #blue_skies:gatekeeper_houses`) | Haus steht, kein Gatekeeper darin | |
+
 ### Noch ohne Testweg
 
 - Blood-Smeltery: `forge:coins`, Hellforged-Flüssigkeiten.

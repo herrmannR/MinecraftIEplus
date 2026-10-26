@@ -1,7 +1,7 @@
 // Tooltips für die eigenen Items aus Teil 1 (startup_scripts/teil1_items.js).
 // Die Baupläne sind geschriebene Bücher mit Beschreibung und Rezept (server_scripts/starwars/einsiedler_shop.js).
 // Texte der Story-Items: docs/story/texte/tooltips.md (Entwurf, User überarbeitet).
-// Stand 2026-10-21, KubeJS 2001. Fassung 3 (Story-Items).
+// Stand 2026-10-26, KubeJS 2001. Fassung 4 (Tooltip am 212er-Helm statt kubejs:klonhelm_repariert, O71).
 
 ItemEvents.tooltip(event => {
   event.add('kubejs:galaktischer_strahlenschutz', [
@@ -22,7 +22,8 @@ ItemEvents.tooltip(event => {
     Text.gray('Visier gesprungen, Funk tot.'),
     Text.gray('Davijaan will ihn zurück, aber heil.')
   ])
-  event.add('kubejs:klonhelm_repariert', [
+  // Der reparierte Helm ist der echte 212er-Helm (O71); den gibt es nur über die Reparatur
+  event.add('swgc:clone_212th_battalion_helmet', [
     Text.gray('Der Funk rauscht wieder.'),
     Text.gray('Bring ihn Davijaan auf dem Mond.')
   ])

@@ -1,0 +1,994 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "bloodmagic"
+	group: ""
+	icon: "bloodmagic:altar"
+	id: "106AE742809ED262"
+	order_index: 13
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 3: Industrie."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "68FA25A94F9E873A"
+			shape: "gear"
+			subtitle: "BM1 · Blutaltar und erste Orbs"
+			tasks: [{
+				id: "43C08BA0B10D083E"
+				stage: "kapitel_k3"
+				type: "gamestage"
+			}]
+			title: "Kapitel 3: Blood Magic"
+			x: 0.5d
+			y: -1.75d
+		}
+		{
+			dependencies: ["68FA25A94F9E873A"]
+			description: [
+				"Blood Magic erklärt sich in seinem eigenen Buch: Altar, Runen, Rituale und alle Rezepte. Du machst es aus einem Buch und einem Glas."
+				"Buch: Utility Blocks & Items → Tiers & Getting Started. Diese Seite gibt die ganze Reihenfolge des Mods vor."
+			]
+			hide_until_deps_visible: true
+			icon: "patchouli:guide_book"
+			id: "0D3EEAE5E814AD47"
+			subtitle: "BM1 · Blutaltar und erste Orbs"
+			tasks: [{
+				id: "53AA114D89EA49F5"
+				item: "patchouli:guide_book"
+				type: "item"
+			}]
+			title: "Sanguine Scientiem"
+			x: 0.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0D3EEAE5E814AD47"]
+			description: [
+				"Der Altar sammelt Life Essence (LP), das Blut des Mods. Mit dem Sacrificial Knife gibst du ihm deine eigene Gesundheit."
+				"Buch: Blood Altars → The Blood Altar."
+				""
+				"&c&eVorsicht:&r&c Jeder Stich kostet ein Herz. Mit wenig Leben stirbst du am eigenen Messer. Iss vorher und stich nicht im Kampf.&r"
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:altar"
+			id: "5507C16F016711A1"
+			subtitle: "BM1 · Blutaltar und erste Orbs"
+			tasks: [{
+				id: "15C6AB5436A4FA94"
+				item: "bloodmagic:altar"
+				type: "item"
+			}
+			{
+				id: "22C55338C2F3354F"
+				item: "bloodmagic:sacrificialdagger"
+				type: "item"
+			}]
+			title: "Blood Altar"
+			x: 0.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["5507C16F016711A1"]
+			description: [
+				"Der Orb bindet dich an dein Soul Network: Er speichert LP, mit dem Sigils und Rituale später arbeiten. Er entsteht aus einem Diamanten im Altar."
+				"Buch: Blood Altars → Soul Network."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:weakbloodorb"
+			id: "4B38F76E3D7E95AC"
+			subtitle: "BM1 · Blutaltar und erste Orbs"
+			tasks: [{
+				id: "590E429F8A5BD4DD"
+				item: "bloodmagic:weakbloodorb"
+				type: "item"
+			}]
+			title: "Weak Blood Orb"
+			x: 0.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["4B38F76E3D7E95AC"]
+			description: [
+				"Slates sind die Grundzutat jeder Stufe. Jede Slate braucht die vorige und einen stärkeren Altar."
+				"Buch: Blood Altars → Tiers of Slates."
+				"&6⚙&r Slates und Runen entstehen im Pack nur am Altar, nicht im Gießtisch der Smeltery."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:blankslate"
+			id: "28DBA24F5173352E"
+			subtitle: "BM1 · Blutaltar und erste Orbs"
+			tasks: [{
+				id: "4A72025BC0BB50D6"
+				item: "bloodmagic:blankslate"
+				type: "item"
+			}]
+			title: "Blank Slate"
+			x: 0.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["28DBA24F5173352E"]
+			description: [
+				"Am Alchemy Table machst du Reagenzien, Arcane Ashes und später Tränke. Mit den Ashes zeichnest du Alchemy Arrays auf den Boden, in denen Sigils entstehen."
+				"Buch: Alchemy Table → Alchemy Table; Alchemy Arrays → Alchemy Array Basics, Crafting with Arrays."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:alchemytable"
+			id: "37F36A64A11B29DA"
+			subtitle: "BM1 · Blutaltar und erste Orbs"
+			tasks: [{
+				id: "2525A91CC5E34822"
+				item: "bloodmagic:alchemytable"
+				type: "item"
+			}
+			{
+				id: "5FAAC15C0F77F845"
+				item: "bloodmagic:arcaneashes"
+				type: "item"
+			}]
+			title: "Alchemy Table und Arcane Ashes"
+			x: 0.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["37F36A64A11B29DA"]
+			description: [
+				"Das wichtigste Werkzeug des Mods: Es zeigt LP im Netzwerk, Füllstand und Stufe des Altars."
+				"Buch: Alchemy Arrays → Sigils → Divination Sigil."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:divinationsigil"
+			id: "602E0718188B0B92"
+			subtitle: "BM1 · Blutaltar und erste Orbs"
+			tasks: [{
+				id: "34BCE975EBF2FB8B"
+				item: "bloodmagic:divinationsigil"
+				type: "item"
+			}]
+			title: "Divination Sigil"
+			x: 0.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["602E0718188B0B92"]
+			description: [
+				"Wasser und Lava gegen LP, ohne Eimer."
+				"Buch: Alchemy Arrays → Sigils → Water Sigil, Lava Sigil."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:watersigil"
+			id: "54D7667CA84068AE"
+			optional: true
+			shape: "square"
+			subtitle: "BM1 · Blutaltar und erste Orbs · Nebenquest"
+			tasks: [{
+				id: "1A9566A2B9096833"
+				item: "bloodmagic:watersigil"
+				type: "item"
+			}
+			{
+				id: "1F9A5EA40E191D49"
+				item: "bloodmagic:lavasigil"
+				type: "item"
+			}]
+			title: "Water und Lava Sigil"
+			x: 2.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["602E0718188B0B92"]
+			description: [
+				"Demon Will ist die zweite Ressource des Mods. Mit der Soul Snare fängst du sie aus Monstern."
+				"Buch: Demon Will → Will Manipulation → Your First Will, Demon Will."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:soulsnare"
+			id: "653319CBA100B8CF"
+			optional: true
+			shape: "square"
+			subtitle: "BM1 · Blutaltar und erste Orbs · Nebenquest"
+			tasks: [{
+				id: "049885027CD32F73"
+				item: "bloodmagic:soulsnare"
+				type: "item"
+			}
+			{
+				id: "380D651A513CABE6"
+				item: "bloodmagic:basemonstersoul"
+				type: "item"
+			}]
+			title: "Your First Will"
+			x: 2.0d
+			y: 8.75d
+		}
+		{
+			dependencies: ["602E0718188B0B92"]
+			description: [
+				"Die Hellfire Forge verarbeitet Will; der Gem speichert sie."
+				"Buch: Demon Will → Will Manipulation → Hellfire Forge, Tartaric Gems."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:soulforge"
+			id: "04938CE4A541B20F"
+			optional: true
+			shape: "square"
+			subtitle: "BM1 · Blutaltar und erste Orbs · Nebenquest"
+			tasks: [{
+				id: "5B6F99B43030C7F4"
+				item: "bloodmagic:soulforge"
+				type: "item"
+			}
+			{
+				id: "40338C01DCE42233"
+				item: "bloodmagic:soulgempetty"
+				type: "item"
+			}]
+			title: "Hellfire Forge und Petty Tartaric Gem"
+			x: 2.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["602E0718188B0B92"]
+			description: [
+				"Das Schwert sammelt Will bei jedem Kill und wird mit mehr Will im Gem stärker."
+				"Buch: Demon Will → Demonic Items → Sentient Sword."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:soulsword"
+			id: "55171DF2F3915219"
+			optional: true
+			shape: "square"
+			subtitle: "BM1 · Blutaltar und erste Orbs · Nebenquest"
+			tasks: [{
+				id: "15B7D14FC0A3005E"
+				item: "bloodmagic:soulsword"
+				type: "item"
+			}]
+			title: "Sentient Sword"
+			x: 2.0d
+			y: 11.25d
+		}
+		{
+			dependencies: ["602E0718188B0B92"]
+			description: [
+				"Erhöht, was ein Stich mit dem Messer bringt."
+				"Buch: Utility Blocks & Items → Incense Altar."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:incensealtar"
+			id: "3E84591E72A9538E"
+			optional: true
+			shape: "square"
+			subtitle: "BM1 · Blutaltar und erste Orbs · Nebenquest"
+			tasks: [{
+				id: "202A144701D1A30B"
+				item: "bloodmagic:incensealtar"
+				type: "item"
+			}]
+			title: "Incense Altar"
+			x: 2.0d
+			y: 12.5d
+		}
+		{
+			dependencies: ["602E0718188B0B92"]
+			description: [
+				"Acht Runen um den Altar heben ihn auf Stufe 2. Das Divination Sigil zeigt, ob es geklappt hat."
+				"Buch: Blood Altars → Blood Runes; Utility Blocks & Items → Tiers & Getting Started."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:blankrune"
+			id: "4B9D4443E6EC0C72"
+			subtitle: "BM1 · Blutaltar und erste Orbs"
+			tasks: [{
+				count: 8L
+				id: "60DA55AB16F7BA8C"
+				item: "bloodmagic:blankrune"
+				type: "item"
+			}]
+			title: "Altar Stufe 2"
+			x: 0.5d
+			y: 9.0d
+		}
+		{
+			dependencies: ["4B9D4443E6EC0C72"]
+			description: [
+				"Mehr Platz im Netzwerk und die Slate der nächsten Stufe."
+				"Buch: Blood Altars → Soul Network, Tiers of Slates."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:apprenticebloodorb"
+			id: "2CD1B14012721177"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "BM1 · Blutaltar und erste Orbs"
+			tasks: [{
+				id: "782ED5E5ACA18D76"
+				item: "bloodmagic:apprenticebloodorb"
+				type: "item"
+			}
+			{
+				id: "3E3632B7613DE910"
+				item: "bloodmagic:reinforcedslate"
+				type: "item"
+			}]
+			title: "Apprentice Blood Orb"
+			x: 0.5d
+			y: 10.5d
+		}
+		{
+			dependencies: ["2CD1B14012721177"]
+			description: [
+				"Statt dich selbst opferst du Tiere und Monster in der Nähe des Altars."
+				"Buch: Blood Altars → The Blood Altar."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:daggerofsacrifice"
+			id: "3CA98804378F81DF"
+			optional: true
+			shape: "square"
+			subtitle: "BM1 · Blutaltar und erste Orbs · Nebenquest"
+			tasks: [{
+				id: "240382520982F099"
+				item: "bloodmagic:daggerofsacrifice"
+				type: "item"
+			}]
+			title: "Dagger of Sacrifice"
+			x: 2.0d
+			y: 13.75d
+		}
+		{
+			dependencies: ["2CD1B14012721177"]
+			description: [
+				"Ersetze Blank Runes nach und nach: schneller füllen, mehr LP je Opfer."
+				"Buch: Blood Altars → Blood Runes → Speed Rune, Rune of Sacrifice, Rune of Self Sacrifice."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:speedrune"
+			id: "1E1D401921CE3496"
+			optional: true
+			shape: "square"
+			subtitle: "BM1 · Blutaltar und erste Orbs · Nebenquest"
+			tasks: [{
+				id: "1B790A0C4C5452FE"
+				item: "bloodmagic:speedrune"
+				type: "item"
+			}
+			{
+				id: "572E6BE006F1C979"
+				item: "bloodmagic:sacrificerune"
+				type: "item"
+			}
+			{
+				id: "69979441401A8086"
+				item: "bloodmagic:selfsacrificerune"
+				type: "item"
+			}]
+			title: "Bessere Runen"
+			x: 2.0d
+			y: 15.0d
+		}
+		{
+			dependencies: ["2CD1B14012721177"]
+			description: [
+				"Eine wiederbefüllbare Trankflasche, die du am Alchemy Table verbesserst."
+				"Buch: Alchemy Table → Potion Crafting."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:alchemy_flask"
+			id: "1C106C59C2A54C90"
+			optional: true
+			shape: "square"
+			subtitle: "BM1 · Blutaltar und erste Orbs · Nebenquest"
+			tasks: [{
+				id: "0B6FC7BD751EC161"
+				item: "bloodmagic:alchemy_flask"
+				type: "item"
+			}]
+			title: "Alchemy Flask"
+			x: 2.0d
+			y: 16.25d
+		}
+		{
+			dependencies: ["2CD1B14012721177"]
+			description: [
+				"Öle für Werkzeuge und Waffen: Schaden, Glück, Behutsamkeit für eine Weile."
+				"Buch: Alchemy Table → Anointments."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:melee_anointment"
+			id: "19B4E8FC4A539F03"
+			optional: true
+			shape: "square"
+			subtitle: "BM1 · Blutaltar und erste Orbs · Nebenquest"
+			tasks: [{
+				id: "3CE3E80075562AF6"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(bloodmagic:melee_anointment)item(bloodmagic:fortune_anointment)item(bloodmagic:silk_touch_anointment))" } }
+				title: "Anointments"
+				type: "item"
+			}]
+			title: "Anointments"
+			x: 2.0d
+			y: 17.5d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 5: Erzketten."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "45BC7A0784066A0E"
+			shape: "gear"
+			subtitle: "BM2 · Altar Stufe 3"
+			tasks: [{
+				id: "07388249777AF18F"
+				stage: "kapitel_k5"
+				type: "gamestage"
+			}]
+			title: "Kapitel 5: Blood Magic"
+			x: 4.0d
+			y: -1.75d
+		}
+		{
+			dependencies: ["2CD1B14012721177", "45BC7A0784066A0E"]
+			description: [
+				"Stufe 3 braucht deutlich mehr Runen, vier Säulen und Glowstone auf den Säulen. Die Imbued Slate geht erst auf diesem Altar."
+				"Buch: Utility Blocks & Items → Tiers & Getting Started; Blood Altars → Tiers of Slates."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:infusedslate"
+			id: "5E79F6E054F6B955"
+			subtitle: "BM2 · Altar Stufe 3"
+			tasks: [{
+				id: "57C5F5DC8DE8B7AE"
+				item: "bloodmagic:infusedslate"
+				type: "item"
+			}]
+			title: "Altar Stufe 3"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5E79F6E054F6B955"]
+			description: [
+				"Genug LP-Speicher für die ersten Rituale."
+				"Buch: Blood Altars → Soul Network."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:magicianbloodorb"
+			id: "524A9268A075D693"
+			subtitle: "BM2 · Altar Stufe 3"
+			tasks: [{
+				id: "7F3C8D5439291393"
+				item: "bloodmagic:magicianbloodorb"
+				type: "item"
+			}]
+			title: "Magician's Blood Orb"
+			x: 4.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["524A9268A075D693"]
+			description: [
+				"Ein Brennstoff, der LP statt Kohle verbrennt. Du brauchst ihn außerdem für den Activation Crystal."
+				"Buch: Utility Blocks & Items → Lava Crystal."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:lavacrystal"
+			id: "6629539CC91EDD4C"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "BM2 · Altar Stufe 3"
+			tasks: [{
+				id: "75303C6C66F24B0D"
+				item: "bloodmagic:lavacrystal"
+				type: "item"
+			}]
+			title: "Lava Crystal"
+			x: 4.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["6629539CC91EDD4C"]
+			description: [
+				"Bewegung, Abbau, Wachstum und Aufräumen gegen LP."
+				"Buch: Alchemy Arrays → Sigils."
+				"Für das Air Sigil brauchst du eine Ghast Tear aus dem Nether."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:airsigil"
+			id: "6C54BABDFE1967E8"
+			optional: true
+			shape: "square"
+			subtitle: "BM2 · Altar Stufe 3 · Nebenquest"
+			tasks: [{
+				id: "77C240C17F5C668E"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(bloodmagic:airsigil)item(bloodmagic:miningsigil)item(bloodmagic:growthsigil)item(bloodmagic:voidsigil)item(bloodmagic:sigilofmagnetism))" } }
+				title: "Sigils mit Reinforced Slate"
+				type: "item"
+			}]
+			title: "Sigils mit Reinforced Slate"
+			x: 5.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["6629539CC91EDD4C"]
+			description: [
+				"Trägt mehrere Sigils in einem Slot."
+				"Buch: Alchemy Arrays → Sigils → Sigil of Holding."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:sigilofholding"
+			id: "6D354AC0B7AB709C"
+			optional: true
+			shape: "square"
+			subtitle: "BM2 · Altar Stufe 3 · Nebenquest"
+			tasks: [{
+				id: "3A576DED95C07BC9"
+				item: "bloodmagic:sigilofholding"
+				type: "item"
+			}]
+			title: "Sigil of Holding"
+			x: 5.5d
+			y: 4.25d
+		}
+		{
+			dependencies: ["6629539CC91EDD4C"]
+			description: [
+				"Mehr Will im Gem schaltet stärkere Rezepte der Hellfire Forge frei."
+				"Buch: Demon Will → Will Manipulation → Tartaric Gems."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:soulgemlesser"
+			id: "28B6F98633A1E0DA"
+			optional: true
+			shape: "square"
+			subtitle: "BM2 · Altar Stufe 3 · Nebenquest"
+			tasks: [{
+				id: "09B79B0EEA74AE88"
+				item: "bloodmagic:soulgemlesser"
+				type: "item"
+			}
+			{
+				id: "2EA2BA4250A4A609"
+				item: "bloodmagic:soulgemcommon"
+				type: "item"
+			}]
+			title: "Größere Gems"
+			x: 5.5d
+			y: 5.5d
+		}
+		{
+			dependencies: ["6629539CC91EDD4C"]
+			description: [
+				"Werkzeuge, die wie das Schwert aus der Will ihre Kraft ziehen."
+				"Buch: Demon Will → Demonic Items → Sentient Tools."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:soulpickaxe"
+			id: "02B63CE1156D01F1"
+			optional: true
+			shape: "square"
+			subtitle: "BM2 · Altar Stufe 3 · Nebenquest"
+			tasks: [{
+				id: "15E86A85A2246D65"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(bloodmagic:soulpickaxe)item(bloodmagic:soulaxe)item(bloodmagic:soulshovel)item(bloodmagic:soulscythe))" } }
+				title: "Sentient Tools"
+				type: "item"
+			}]
+			title: "Sentient Tools"
+			x: 5.5d
+			y: 6.75d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 7: Horchposten."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "0A3D06DCC14B62A9"
+			shape: "gear"
+			subtitle: "BM3 · Rituale"
+			tasks: [{
+				id: "0E73582BC2DBA255"
+				stage: "kapitel_k7"
+				type: "gamestage"
+			}]
+			title: "Kapitel 7: Blood Magic"
+			x: 7.5d
+			y: -1.75d
+		}
+		{
+			dependencies: ["6629539CC91EDD4C", "0A3D06DCC14B62A9"]
+			description: [
+				"&c&eVorsicht Nether:&r&c Für die Inscription Tools brauchst du Magma Cream (Fire) und eine Ghast Tear (Air).&r"
+				""
+				"Mit den Tools beschriftest du Ritual Stones mit den vier Elementen."
+				"Buch: Rituals → Ritual Stones."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:waterscribetool"
+			id: "3CA477340B84F9A1"
+			subtitle: "BM3 · Rituale"
+			tasks: [{
+				id: "3BAF86781ADCC836"
+				item: "bloodmagic:waterscribetool"
+				type: "item"
+			}
+			{
+				id: "0B9DDD8DD0FACB32"
+				item: "bloodmagic:firescribetool"
+				type: "item"
+			}
+			{
+				id: "62369110FE27518D"
+				item: "bloodmagic:earthscribetool"
+				type: "item"
+			}
+			{
+				id: "60CA5ED9192E8CE6"
+				item: "bloodmagic:airscribetool"
+				type: "item"
+			}]
+			title: "Inscription Tools"
+			x: 7.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3CA477340B84F9A1"]
+			description: [
+				"Der Master Ritual Stone ist das Herz jedes Rituals, die Ritual Stones bilden das Muster drumherum."
+				"Buch: Rituals → Rituals - Getting Started, Ritual Stones."
+				"&9(ungeprüft)&r Die Zahl 16 ist ein Platzhalter; wie viele Steine das erste geplante Ritual braucht, ist nicht ausgelesen."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:masterritualstone"
+			id: "08D5F10EA6F3325A"
+			subtitle: "BM3 · Rituale"
+			tasks: [{
+				id: "6F5235D0496E4D53"
+				item: "bloodmagic:masterritualstone"
+				type: "item"
+			}
+			{
+				count: 16L
+				id: "0A5CAE61C8DEF93E"
+				item: "bloodmagic:ritualstone"
+				type: "item"
+			}]
+			title: "Master Ritual Stone"
+			x: 7.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["08D5F10EA6F3325A"]
+			description: [
+				"Der Diviner setzt das Muster für dich, der Crystal startet das Ritual."
+				"Buch: Rituals → The Ritual Diviner, Activation Crystals."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:ritualdiviner"
+			id: "73FC65D12CE4879C"
+			subtitle: "BM3 · Rituale"
+			tasks: [{
+				id: "0EFFE768B0A8222C"
+				item: "bloodmagic:ritualdiviner"
+				type: "item"
+			}
+			{
+				id: "38AAAD7B6F250696"
+				item: "bloodmagic:activationcrystalweak"
+				type: "item"
+			}]
+			title: "Ritual Diviner und Weak Activation Crystal"
+			x: 7.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["73FC65D12CE4879C"]
+			description: [
+				"Starte ein Ritual, zum Beispiel Ritual of the Full Spring, Ritual of the Green Grove oder Ritual of Magnetism."
+				"Buch: Rituals → List of Rituals."
+			]
+			hide_until_deps_visible: true
+			id: "53DCF1A23D454871"
+			optional: true
+			shape: "square"
+			subtitle: "BM3 · Rituale · Nebenquest"
+			tasks: [{
+				id: "380BBAF86340CF71"
+				title: "Ritual gestartet"
+				type: "checkmark"
+			}]
+			title: "Erstes Ritual"
+			x: 9.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["73FC65D12CE4879C"]
+			description: [
+				"Die ARC verarbeitet Erze und macht später die Weak Blood Shards. Ohne sie gibt es keine Stufe 4."
+				"Buch: Utility Blocks & Items → Alchemical Reaction Chamber, Ore Processing, ARC Hydration."
+				"ARC-Erzketten gibt es nur für Eisen, Gold, Kupfer, Netherite Scrap und Demonite; Pack-Erze wie Osmium oder Zinn gehen hier nicht."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:alchemicalreactionchamber"
+			id: "222A17EBEA3175D1"
+			subtitle: "BM3 · Rituale"
+			tasks: [{
+				id: "1BF37A07C8DE252B"
+				item: "bloodmagic:alchemicalreactionchamber"
+				type: "item"
+			}]
+			title: "Alchemical Reaction Chamber"
+			x: 7.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["222A17EBEA3175D1"]
+			description: [
+				"&6⚙&r Im Pack steckt in jedem Ostrum Tank zwei Imbued Slate, eine Rakete T3 braucht also vier (Kapitel Ad Astra). Mach gleich ein paar mehr: Auch der Altar im Tempel braucht später vier."
+				"Buch: Blood Altars → Tiers of Slates."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:infusedslate"
+			id: "5269A83140F783E1"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "BM3 · Rituale"
+			tasks: [{
+				count: 4L
+				id: "107C4A5910C49BF7"
+				item: "bloodmagic:infusedslate"
+				type: "item"
+			}]
+			title: "Imbued Slate für die Rakete T3"
+			x: 7.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["5269A83140F783E1"]
+			description: [
+				"Rüstung, die beim Tragen lernt und Upgrades bekommt."
+				"Buch: Alchemy Arrays → Living Equipment → Living Equipment Basics, Living Equipment Upgrades."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:reagentbinding"
+			id: "6AB0A7358A8419EB"
+			optional: true
+			shape: "square"
+			subtitle: "BM3 · Rituale · Nebenquest"
+			tasks: [{
+				id: "126BFD331519DFCA"
+				item: "bloodmagic:reagentbinding"
+				type: "item"
+			}
+			{
+				id: "54ED681ACF58C21C"
+				item: "bloodmagic:livingplate"
+				type: "item"
+			}]
+			title: "Living Armour"
+			x: 9.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["5269A83140F783E1"]
+			description: [
+				"Lenkt, welche Upgrades die Rüstung lernt."
+				"Buch: Alchemy Arrays → Living Equipment → Training Bracelet."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:upgradetrainer"
+			id: "5A884EB0E2D40210"
+			optional: true
+			shape: "square"
+			subtitle: "BM3 · Rituale · Nebenquest"
+			tasks: [{
+				id: "0E6B9E756BFD3E21"
+				item: "bloodmagic:upgradetrainer"
+				type: "item"
+			}]
+			title: "Training Bracelet"
+			x: 9.0d
+			y: 7.25d
+		}
+		{
+			dependencies: ["5269A83140F783E1"]
+			description: [
+				"Blood Magics eigene Logistik: Knoten verteilen Items zwischen Kisten."
+				"Buch: Demon Will → Item Routing → Routing Nodes, Node Router."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:masterroutingnode"
+			id: "31E398421437F95E"
+			optional: true
+			shape: "square"
+			subtitle: "BM3 · Rituale · Nebenquest"
+			tasks: [{
+				id: "2F04BDC8AD7D66F1"
+				item: "bloodmagic:masterroutingnode"
+				type: "item"
+			}
+			{
+				id: "0BC5C470CFA1F7C2"
+				item: "bloodmagic:itemroutingnode"
+				type: "item"
+			}]
+			title: "Item Routing"
+			x: 9.0d
+			y: 8.5d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 9: Der Tempel."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "2115BB2A5F479FB7"
+			shape: "gear"
+			subtitle: "BM4 · Demon Realm und Altar Stufe 4"
+			tasks: [{
+				id: "6EA56B77E92AA88A"
+				stage: "kapitel_k9"
+				type: "gamestage"
+			}]
+			title: "Kapitel 9: Blood Magic"
+			x: 11.0d
+			y: -1.75d
+		}
+		{
+			dependencies: ["5269A83140F783E1", "2115BB2A5F479FB7"]
+			description: [
+				"&c&eVorsicht Demon Realm:&r&c Fallen, Spike Traps und Ethereal Mimics. Nimm Essen und Heilung mit und merk dir den Rückweg. Ohne getragenen Benevolent Goddess' Charm kommst du nicht hinein (Kapitel Botania).&r"
+				""
+				"Das große Dungeon-Ritual öffnet den Demon Realm mit seinen Räumen. Ist das Muster aus Ritual Stones vollständig, startest du es wie jedes Ritual mit dem Weak Activation Crystal am Master Ritual Stone. Es kostet 150 000 LP, so viel fasst ein voller Magician's Blood Orb. Hinein und wieder hinaus geht es über den Inversion Pillar."
+				"Buch: Rituals → List of Rituals → Pathway to the Endless Realm; Dungeon Delving → The Endless Realm."
+				"&6⚙&r Im Pack gelingt dieses Ritual nur im Tempel auf dem Merkur (Buch 1). Dort steht das Muster nach der Reparatur des Altars schon fertig."
+			]
+			hide_until_deps_visible: true
+			id: "6C53489212B0A712"
+			subtitle: "BM4 · Demon Realm und Altar Stufe 4"
+			tasks: [{
+				dimension: "bloodmagic:dungeon"
+				id: "0EFB4CA351CD5E39"
+				type: "dimension"
+			}]
+			title: "Pathway to the Endless Realm"
+			x: 11.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["73FC65D12CE4879C"]
+			description: [
+				"Das kleine Dungeon-Ritual führt in die Antechamber, einen Mini-Dungeon aus wenigen Räumen ohne Ausgang nach vorn. Es kostet 80 000 LP und geht überall. Gut, um Tau Fruit zu sammeln, ohne zum Merkur zu fliegen."
+				"Buch: Rituals → List of Rituals → Edge of the Hidden Realm; Dungeon Delving → The Antechamber."
+			]
+			hide_until_deps_visible: true
+			id: "1FFFC3F40626434D"
+			optional: true
+			shape: "square"
+			subtitle: "BM4 · Demon Realm und Altar Stufe 4 · Nebenquest"
+			tasks: [{
+				id: "6BC7E0172FC13C2A"
+				title: "Ritual gestartet"
+				type: "checkmark"
+			}]
+			title: "Edge of the Hidden Realm"
+			x: 12.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6C53489212B0A712"]
+			description: [
+				"Tau Fruit liegt in vielen Truhen des Demon Realm, in der Antechamber wie im Endless Realm."
+				"Buch: Dungeon Delving → Tau Fruit."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:weak_tau"
+			id: "017FA53038DBE35C"
+			subtitle: "BM4 · Demon Realm und Altar Stufe 4"
+			tasks: [{
+				id: "019C90363D71DDAB"
+				item: "bloodmagic:weak_tau"
+				type: "item"
+			}]
+			title: "Tau Fruit"
+			x: 11.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["017FA53038DBE35C"]
+			description: [
+				"Aus Tau wird Saturated Tau (manchmal auch direkt in Truhen), daraus in der ARC der Weak Blood Shard. Er ist der Schlüssel zu Stufe 4."
+				"Buch: Dungeon Delving → Tau Fruit."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:strong_tau"
+			id: "7FFA53B2AC6339B1"
+			subtitle: "BM4 · Demon Realm und Altar Stufe 4"
+			tasks: [{
+				id: "4C2DBBFBB76F8467"
+				item: "bloodmagic:strong_tau"
+				type: "item"
+			}
+			{
+				id: "798168DBB53661E3"
+				item: "bloodmagic:weakbloodshard"
+				type: "item"
+			}]
+			title: "Weak Blood Shard"
+			x: 11.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["6C53489212B0A712"]
+			description: [
+				"Die Mines, die tiefsten Gänge des Endless Realm, öffnet nur der Foreman's Key. Meldet der Chat eine Spatial Distortion, liegt in diesem Raum entweder der Eingang zu den Mines oder eine kleine Kammer mit dem Key; die Kammer öffnest du mit einem Iron Key aus den Truhen. Der Eingang kommt immer zuerst, du musst also eventuell zurück."
+				"Buch: Dungeon Delving → Dungeon Keys, The Endless Realm."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:mineentrancekey"
+			id: "0B93284142AD1ADA"
+			subtitle: "BM4 · Demon Realm und Altar Stufe 4"
+			tasks: [{
+				id: "01885330EF7D8B06"
+				item: "bloodmagic:mineentrancekey"
+				type: "item"
+			}]
+			title: "Foreman's Key"
+			x: 11.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["7FFA53B2AC6339B1"]
+			description: [
+				"Stufe 4 braucht noch mehr Runen und Bloodstone als Kappen auf den Säulen."
+				"Buch: Utility Blocks & Items → Bloodstone Bricks, Tiers & Getting Started; Blood Altars → Tiers of Slates."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:largebloodstonebrick"
+			id: "6EE33044D2FCF2A4"
+			subtitle: "BM4 · Demon Realm und Altar Stufe 4"
+			tasks: [{
+				count: 4L
+				id: "0C55FF68CFE5B8E3"
+				item: "bloodmagic:largebloodstonebrick"
+				type: "item"
+			}
+			{
+				id: "073C332F2AABA041"
+				item: "bloodmagic:demonslate"
+				type: "item"
+			}]
+			title: "Altar Stufe 4"
+			x: 11.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["6EE33044D2FCF2A4"]
+			description: [
+				"Eine Million LP Speicher, genug für die großen Rituale."
+				"Buch: Blood Altars → Soul Network."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:masterbloodorb"
+			id: "489730F501F1D8F3"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "BM4 · Demon Realm und Altar Stufe 4"
+			tasks: [{
+				id: "2E83A7A9A6243BA2"
+				item: "bloodmagic:masterbloodorb"
+				type: "item"
+			}]
+			title: "Master Blood Orb"
+			x: 11.0d
+			y: 7.5d
+		}
+	]
+	title: "Blood Magic"
+}

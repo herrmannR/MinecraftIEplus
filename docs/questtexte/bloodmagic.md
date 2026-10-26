@@ -1,6 +1,6 @@
 # Questtexte Blood Magic
 
-> Stand 2026-10-19, Minecraft 1.20.1. Entwurf für FTB Quests. Blood Magic hat das Buch **Sanguine Scientiem** (Patchouli, `../19_HILFEBUECHER.md`). Die Texte nennen deshalb nur Ziel, Fundstelle im Buch und die Abweichungen des Packs. Gegliedert nach den Meilensteinen BM1 bis BM6 der Meilensteinkarte; die Kapitel sind dort Arbeitstitel. Blood-Smeltery steht bei Tinkers (`tinkers.md`, TK3-07).
+> Stand 2026-10-19, BM3-06 und BM4 überarbeitet 2026-10-26 (F2, F27), Minecraft 1.20.1. Entwurf für FTB Quests. Blood Magic hat das Buch **Sanguine Scientiem** (Patchouli, `../19_HILFEBUECHER.md`). Die Texte nennen deshalb nur Ziel, Fundstelle im Buch und die Abweichungen des Packs. Gegliedert nach den Meilensteinen BM1 bis BM6 der Meilensteinkarte; die Kapitel sind dort Arbeitstitel. Blood-Smeltery steht bei Tinkers (`tinkers.md`, TK3-07).
 > Quellen: `../modpfade/bloodmagic/WISSEN.md`, Meilensteinkarte, `../01_PROGRESSION.md`, `../15_RAUMFAHRT.md`, `../18_STORY.md`, `../modpfade/CROSSMOD_AUFFAELLIGKEITEN.md`, `kubejs/server_scripts/crossmod/blood_smeltery.js`. Kategorie- und Eintragstitel aus `assets/bloodmagic/patchouli_books/guide/en_us/` der JAR (Blood Magic 3.3.8-50). Item-IDs aus der ID-Tabelle von `WISSEN.md`, die übrigen gegen die JAR geprüft.
 
 ## Hinweise zur Verwendung
@@ -194,7 +194,7 @@ Der Diviner setzt das Muster für dich, der Crystal startet das Ritual.
 Buch: Rituals → The Ritual Diviner, Activation Crystals.
 
 ### BM3-04 Erstes Ritual · Nebenquest
-**Aufgabe:** Abhaken
+**Aufgabe:** Häkchen „Ritual gestartet“
 
 Starte ein Ritual, zum Beispiel Ritual of the Full Spring, Ritual of the Green Grove oder Ritual of Magnetism.
 Buch: Rituals → List of Rituals.
@@ -206,10 +206,11 @@ Die ARC verarbeitet Erze und macht später die Weak Blood Shards. Ohne sie gibt 
 Buch: Utility Blocks & Items → Alchemical Reaction Chamber, Ore Processing, ARC Hydration.
 ARC-Erzketten gibt es nur für Eisen, Gold, Kupfer, Netherite Scrap und Demonite; Pack-Erze wie Osmium oder Zinn gehen hier nicht.
 
-### BM3-06 Blood-Magic-Teil für die Rakete T3 · Hauptweg
-**Aufgabe:** 🔵 offen (O20)
+### BM3-06 Imbued Slate für die Rakete T3 · Hauptweg
+**Aufgabe:** 4 × `bloodmagic:infusedslate`
 
-⚙️ Die Rakete T3 braucht ein Teil aus Blood Magic, weil der Tempel auf dem Merkur den Planeten abschirmt. Welches Teil das ist, legt der User fest; der Text folgt dann.
+⚙️ Im Pack steckt in jedem Ostrum Tank zwei Imbued Slate, eine Rakete T3 braucht also vier (Kapitel Ad Astra). Mach gleich ein paar mehr: Auch der Altar im Tempel braucht später vier.
+Buch: Blood Altars → Tiers of Slates.
 
 ### BM3-07 Living Armour · Nebenquest
 **Aufgabe:** `bloodmagic:reagentbinding`, `bloodmagic:livingplate`
@@ -231,38 +232,40 @@ Buch: Demon Will → Item Routing → Routing Nodes, Node Router.
 
 ---
 
-## BM4 · Tempel · Demon Dungeon (K9 Der Tempel)
+## BM4 · Demon Realm und Altar Stufe 4 (K9 Der Tempel)
 
-> **Vorsicht Demon Realm:** Fallen, Spike Traps und Ethereal Mimics. Nimm Essen und Heilung mit und merk dir den Rückweg.
+> **Vorsicht Demon Realm:** Fallen, Spike Traps und Ethereal Mimics. Nimm Essen und Heilung mit und merk dir den Rückweg. Ohne getragenen Benevolent Goddess' Charm kommst du nicht hinein (Kapitel Botania).
 
-### BM4-01 Der Altar im Tempel · Hauptweg
-**Aufgabe:** 🔵 offen (O2: Zutaten der Reparatur; Botania-Schutz-Item)
-
-⚙️ Im verlassenen Tempel auf dem Merkur steht ein zerstörter Altar. Du baust ihn neu auf; dazu brauchst du ein Gegengewicht aus Botania. Welche Zutaten das sind, legt der User fest.
-
-### BM4-02 Edge of the Hidden Realm · Hauptweg
+### BM4-01 Pathway to the Endless Realm · Hauptweg
 **Aufgabe:** Dimension `bloodmagic:dungeon` betreten
 
-Das Ritual öffnet den Weg in den Demon Realm. Es kostet 80 000 LP.
+Das große Dungeon-Ritual öffnet den Demon Realm mit seinen Räumen. Ist das Muster aus Ritual Stones vollständig, startest du es wie jedes Ritual mit dem Weak Activation Crystal am Master Ritual Stone. Es kostet 150 000 LP, so viel fasst ein voller Magician's Blood Orb. Hinein und wieder hinaus geht es über den Inversion Pillar.
+Buch: Rituals → List of Rituals → Pathway to the Endless Realm; Dungeon Delving → The Endless Realm.
+⚙️ Im Pack gelingt dieses Ritual nur im Tempel auf dem Merkur (Buch 1). Dort steht das Muster nach der Reparatur des Altars schon fertig.
+
+### BM4-02 Edge of the Hidden Realm · Nebenquest
+**Aufgabe:** Häkchen „Ritual gestartet“
+
+Das kleine Dungeon-Ritual führt in die Antechamber, einen Mini-Dungeon aus wenigen Räumen ohne Ausgang nach vorn. Es kostet 80 000 LP und geht überall. Gut, um Tau Fruit zu sammeln, ohne zum Merkur zu fliegen.
 Buch: Rituals → List of Rituals → Edge of the Hidden Realm; Dungeon Delving → The Antechamber.
-⚙️ Das Ritual geht überall; der Mini-Dungeon hat keine Story (F27, 2026-10-20). Hinein nur mit getragenem Benevolent Goddess' Charm (O39). 🔵 Die Quests BM4/BM5 müssen nach F27 neu geordnet werden: Der Altar im Tempel ist Pathway to the Endless Realm.
 
 ### BM4-03 Tau Fruit · Hauptweg
 **Aufgabe:** `bloodmagic:weak_tau`
 
-Tau Fruit findest du in den Truhen der Antechamber.
-Buch: Dungeon Delving → Tau Fruit, Dungeon Keys.
+Tau Fruit liegt in vielen Truhen des Demon Realm, in der Antechamber wie im Endless Realm.
+Buch: Dungeon Delving → Tau Fruit.
 
 ### BM4-04 Weak Blood Shard · Hauptweg
 **Aufgabe:** `bloodmagic:strong_tau`, `bloodmagic:weakbloodshard`
 
-Aus Tau wird Saturated Tau, daraus in der ARC der Weak Blood Shard. Er ist der Schlüssel zu Stufe 4.
+Aus Tau wird Saturated Tau (manchmal auch direkt in Truhen), daraus in der ARC der Weak Blood Shard. Er ist der Schlüssel zu Stufe 4.
 Buch: Dungeon Delving → Tau Fruit.
 
-### BM4-05 Fund für die Rakete T4 · Hauptweg
-**Aufgabe:** 🔵 offen
+### BM4-05 Foreman's Key · Hauptweg
+**Aufgabe:** `bloodmagic:mineentrancekey`
 
-⚙️ Im Demon Realm liegt ein Pflicht-Item für die Rakete T4. Welches, legt der User fest.
+Die Mines, die tiefsten Gänge des Endless Realm, öffnet nur der Foreman's Key. Meldet der Chat eine Spatial Distortion, liegt in diesem Raum entweder der Eingang zu den Mines oder eine kleine Kammer mit dem Key; die Kammer öffnest du mit einem Iron Key aus den Truhen. Der Eingang kommt immer zuerst, du musst also eventuell zurück.
+Buch: Dungeon Delving → Dungeon Keys, The Endless Realm.
 
 ### BM4-06 Altar Stufe 4 · Hauptweg
 **Aufgabe:** 4 × `bloodmagic:largebloodstonebrick`, `bloodmagic:demonslate`
@@ -317,17 +320,10 @@ Das Ritual ruft gegen eine Opfergabe einen Erz-Meteor.
 Buch: Rituals → List of Rituals → Mark of the Falling Tower.
 Im Pack gibt es auch Meteore mit IE-Erzen (LV Wire Coil), Mekanism-Erzen (Infused Alloy) und Certus Quartz (Certus Quartz Crystal).
 
-### BM5-07 Pathway to the Endless Realm · Hauptweg
-**Aufgabe:** `bloodmagic:mineentrancekey`
-
-Das zweite Dungeon-Ritual öffnet die tieferen Räume. Den Foreman's Key brauchst du für die Mines.
-Buch: Rituals → List of Rituals → Pathway to the Endless Realm; Dungeon Delving → The Endless Realm, Dungeon Keys.
-⚙️ 🔵 Ob auch dieses Ritual nur im Tempel gelingt, ist offen.
-
 ### BM5-08 Demonite · Hauptweg
 **Aufgabe:** `bloodmagic:dungeon_ore`, `bloodmagic:hellforgedparts`
 
-Demonite gibt es nur in den Mines, Intricate Hellforged Parts nur in deren Truhen.
+Demonite gibt es nur in den Mines (Foreman's Key, Kapitel 9), Intricate Hellforged Parts nur in deren Truhen.
 Buch: Dungeon Delving → Demonite.
 
 ### BM5-09 Hellforged · Hauptweg
@@ -379,18 +375,20 @@ Buch: Rituals → List of Rituals → Reverence of the Condor.
 | Änderung | Steht in | Stand |
 |---|---|---|
 | Life Essence, Blank Slates und Blank Runes nicht über die Smeltery (Blood-Smeltery) | BM1-04 | 🟢 umgesetzt (`crossmod/blood_smeltery.js`), in JEI bestätigt 2026-10-17 |
-| Edge of the Hidden Realm geht überall, ohne Story (F27); Amulett nötig (O39) | BM4-02 | 🟡 Skript `altar_dimension.js`, Tests 47–48 |
-| Pathway to the Endless Realm nur im Tempel auf dem Merkur (F27); Amulett nötig | BM5-07 | 🟡 Skript `altar_dimension.js`, Test 47 |
-| Altar im Tempel neu aufbauen, mit Botania-Schutz-Item | BM4-01 | 🔵 Zutaten offen (O2) |
-| Blood-Magic-Teil für die Rakete T3 | BM3-06 | 🟢 beschlossen; 🔵 welches Teil (O20) |
-| Pflicht-Item aus dem Demon Realm für die Rakete T4 | BM4-05 | 🟡 beschlossen; 🔵 welches Item |
+| Edge of the Hidden Realm geht überall, ohne Story (F27); Amulett nötig (O39) | BM4-02 | 🟢 Skript `altar_dimension.js`, Tests 47–48 bestanden |
+| Pathway to the Endless Realm nur im Tempel auf dem Merkur (F27); Amulett nötig | BM4-01 | 🟢 Skript `altar_dimension.js`, Test 47 bestanden |
+| Altar im Tempel reparieren (Terrasteel, 4 Imbued Slate, Siegel der Traumwelten, Orb of the Deep; F8, O47, O54) | nur Buch 1 (ST9-04), BM3-06 nennt die Slates | 🟢 entschieden |
+| Imbued Slate im Ostrum Tank (Rakete T3, 2 je Tank) | BM3-06 | 🟢 F2, `raumfahrt/raketen_t1_t4.js` |
 | Meteore unverändert, auch mit Mekanism- und AE2-Erzen | BM5-06 | 🟢 Entscheidung 2026-10-17, keine Änderung |
 | ARC verarbeitet keine Pack-Erze (nur Eisen, Gold, Kupfer, Netherite Scrap, Demonite) | BM3-05 | 🟢 Fund, keine Änderung |
 
 ## 🔵 Offen vor dem Einbau
 
-- **Zuschnitt der Meilensteine.** Die Karte nennt BM2 „Altar T3 · Soul Forge“, BM3 „Altar T4 · Rituale“, BM5 „Altar T5“, BM6 „Altar T6“. Im Mod ist es anders: Die Hellfire Forge kommt schon auf Stufe 1, Rituale auf Stufe 3, Stufe 4 braucht Weak Blood Shards aus dem Demon Realm (also erst nach dem Tempel), und Stufe 6 gibt es nicht. Vorschlag, dem die Texte folgen: BM2 = Altar Stufe 3, BM3 = Rituale (Stufe 3), BM4 = Tempel, Demon Realm, Stufe 4, BM5 = Endless Realm und Stufe 5, BM6 = Hellforged-Ausbau. Die Karte ändert der User.
-- **Folge für die Rakete T3:** Vor dem Tempel ist höchstens Altar-Stufe 3 erreichbar. Das Teil für T3 (O20) muss also aus Stufe 3 kommen.
+- **Zuschnitt der Meilensteine** (🟢 entschieden in F7, die Texte folgen ihm). Die Karte nennt BM2 „Altar T3 · Soul Forge“, BM3 „Altar T4 · Rituale“, BM5 „Altar T5“, BM6 „Altar T6“. Im Mod ist es anders: Die Hellfire Forge kommt schon auf Stufe 1, Rituale auf Stufe 3, Stufe 4 braucht Weak Blood Shards aus dem Demon Realm (also erst nach dem Tempel), und Stufe 6 gibt es nicht. Vorschlag, dem die Texte folgen: BM2 = Altar Stufe 3, BM3 = Rituale (Stufe 3), BM4 = Tempel, Demon Realm, Stufe 4, BM5 = Endless Realm und Stufe 5, BM6 = Hellforged-Ausbau. Die Karte ändert der User.
+- **BM4 nach F27 geordnet (2026-10-26):** BM4-01 ist jetzt Pathway to the Endless Realm (Technik; Reparatur, Endless Realm und Relikt stehen nur in Buch 1, ST9-04/05), Edge of the Hidden Realm ist Nebenquest (BM4-02), BM4-05 ist der Foreman's Key statt des T4-Funds (F2e: kein Dungeon-Item für T4, stattdessen das Relikt). BM5-07 entfällt, weil Pathway und Foreman's Key nach BM4 gewandert sind. Der Platzhalter BM3-06 ist nach F2 die Imbued Slate.
+- **Mines und Miner's Keys:** Laut Buch öffnen Miner's Keys (Hellfire Forge, 1 200 Will, also Greater Tartaric Gem) alle weiteren Türen hinter dem Mines-Eingang. Ob der Weg zur Station (Truhe mit Relikt, O40) eine solche Tür kreuzt, ist nicht geprüft. Falls ja, braucht K9 schon einen Miner's Key; dann eine Quest dazu.
+- **Questbuch bis K11 (2026-10-26):** gebaut sind BM1 bis BM4; BM5 (K12) und BM6 (K14) fallen per `bis = K11` weg.
+- **Ritual-Aufgaben:** BM3-04 und BM4-02 sind Kontrollhaken (`check`), weil FTB Quests Rituale nicht prüfen kann.
 - **O31:** BM1 liegt vor dem Mond. Ob die Quests im Questbuch nachgereicht werden oder als Notizen stehen, entscheidet der User.
 - **Ritual-Stein-Zahlen** sind nicht ausgelesen (WISSEN „Offen“); BM3-02 hat einen Platzhalter.
 - **Aufgabe BM1-01:** Das Buch ist `patchouli:guide_book` mit NBT; beim Einbau prüfen, ob FTB Quests es mit NBT richtig erkennt.

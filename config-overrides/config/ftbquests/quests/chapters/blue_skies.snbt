@@ -1,0 +1,766 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "blue_skies"
+	group: ""
+	icon: "blue_skies:zeal_lighter"
+	id: "17CB2390194BE609"
+	order_index: 16
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 3: Industrie."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "1ECA8C4658E46B1F"
+			shape: "gear"
+			subtitle: "BS1 · Everbright"
+			tasks: [{
+				id: "204067C3442997E2"
+				stage: "kapitel_k3"
+				type: "gamestage"
+			}]
+			title: "Kapitel 3: Blue Skies"
+			x: 0.5d
+			y: -1.75d
+		}
+		{
+			dependencies: ["1ECA8C4658E46B1F"]
+			description: [
+				"In der Oberwelt stehen Häuser mit zwei Portalen, eines aus Turquoise Stone Bricks, eines aus Lunar Stone Bricks. Du findest sie in Ebenen, Savannen, Bergen und Schnee, nie nahe beim Spawn; im Raster liegt etwa alle 33 Chunks eines. Im Haus bekommst du das Blue Journal. Es ist das Buch des Mods: Seine Einträge kommen dazu, sobald du die Welten betrittst und die Bosse besiegst. Nimm es mit, es erklärt Tiere, Pflanzen und Rohstoffe der Welten."
+				"&6⚙&r Im Pack steht im Haus eine eigene Figur statt des Händlers aus dem Mod. Von ihr bekommst du Journal und Zeal Lighter. &9(ungeprüft)&r Handel der Figur noch nicht gebaut."
+			]
+			hide_until_deps_visible: true
+			icon: "blue_skies:blue_journal"
+			id: "388814E694813951"
+			subtitle: "BS1 · Everbright"
+			tasks: [{
+				id: "745AEA2893B76798"
+				item: "blue_skies:blue_journal"
+				type: "item"
+			}]
+			title: "Gatekeeper's House"
+			x: 0.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["388814E694813951"]
+			description: [
+				"Der Zeal Lighter entzündet die Portale nach Everbright und Everdawn, so wie Feuerzeug und Feuerstein das Netherportal. Er kostet 8 &9(ungeprüft)&r (Währung im Spiel prüfen, laut Meilensteinkarte Smaragde). Später kannst du ihn selbst bauen: 1 Charoite + 1 Moonstone Shard, formlos."
+			]
+			hide_until_deps_visible: true
+			icon: "blue_skies:zeal_lighter"
+			id: "2BA9940A19FF9205"
+			subtitle: "BS1 · Everbright"
+			tasks: [{
+				id: "6D82783F33AC8C41"
+				item: "blue_skies:zeal_lighter"
+				type: "item"
+			}]
+			title: "Zeal Lighter"
+			x: 0.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["2BA9940A19FF9205"]
+			description: [
+				"Das Portal mit dem Rahmen aus Turquoise Stone Bricks führt nach Everbright: immer Tag, kalt, viel Schnee. Entzünde es mit dem Zeal Lighter. Weitere Portale baust du aus Turquoise Stone Bricks, die du in Everbright aus Turquoise Stone herstellst (4 Stein ergeben 4 Ziegel)."
+				"Everbright ist die leichtere Welt; hier fängst du an."
+				"&6⚙&r Everdawn ist im Pack anfangs gesperrt: Das Portal dorthin lässt dich erst durch, wenn der Wegzoll von 32 Raw Tin aus Everbright bezahlt ist (Buch 1)."
+				"Buch: Blue Journal → Everbright → Everbright Portal."
+				""
+				"&c⚠ &eDeine Werkzeuge taugen hier nicht.&r&c Werkzeuge und Waffen von außerhalb, auch die aus Tinkers' Construct, arbeiten in Everbright und Everdawn deutlich schlechter (Tooltip: „It seems this tool doesn't work as well here.“). Ein Erz mit einer Tinkers-Spitzhacke abzubauen dauert ewig. Rechne damit, dass du in den Welten neu anfängst.&r"
+			]
+			hide_until_deps_visible: true
+			id: "3EAE987B6BD74C1B"
+			subtitle: "BS1 · Everbright"
+			tasks: [{
+				dimension: "blue_skies:everbright"
+				id: "0E4482A5A9C929FE"
+				type: "dimension"
+			}]
+			title: "Durch das Portal nach Everbright"
+			x: 0.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["3EAE987B6BD74C1B"]
+			description: [
+				"Bau dir Werkzeuge aus dem Material der Welt: erst aus Bluebright-Holz, dann aus Turquoise Cobblestone. Die Sticks der Welten haben eigene Werte; welcher Stick im Werkzeug steckt, ändert Tempo, Haltbarkeit und Wurfschaden ein wenig. &9(ungeprüft)&r Die Werkzeugrezepte stehen nur im Code; in JEI nachsehen, welche Sticks sie annehmen."
+				"Ein Speer (1 Moonstone Shard + 2 Sticks) ist billig, fliegt wie ein Dreizack und hilft später gegen die Bosse."
+				"Buch: Blue Journal → General → Stick Variations, Spears."
+			]
+			hide_until_deps_visible: true
+			icon: "blue_skies:turquoise_stone_pickaxe"
+			id: "5C718D62FB8B816A"
+			subtitle: "BS1 · Everbright"
+			tasks: [{
+				id: "57AC5E137F8422FF"
+				item: "blue_skies:turquoise_stone_pickaxe"
+				type: "item"
+			}]
+			title: "Neu anfangen: Holz und Stein"
+			x: 0.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["5C718D62FB8B816A"]
+			description: [
+				"Ventium ist das Eisen von Everbright. Das Erz liegt bis Y 63, Raw Ventium schmilzt im Ofen. Daraus entstehen Ventium Bucket, Ventium Shears, Anvil und Stonecutter."
+				"Die Tool Box (2 Ventium Ingot + 4 Planks) verbessert Werkzeuge der Welten: Falsite erhöht ihre Haltbarkeit, und ein anderer Stick lässt sich in ein fertiges Werkzeug einsetzen."
+				"Buch: Blue Journal → Everbright → Ventium; General → Tool Box."
+			]
+			hide_until_deps_visible: true
+			icon: "blue_skies:ventium_ingot"
+			id: "5C71431D3D22E211"
+			subtitle: "BS1 · Everbright"
+			tasks: [{
+				id: "65B10608D94F2D36"
+				item: "blue_skies:ventium_ingot"
+				type: "item"
+			}
+			{
+				id: "3BBB68702D23D6B8"
+				item: "blue_skies:tool_box"
+				type: "item"
+			}]
+			title: "Ventium und Tool Box"
+			x: 0.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["5C71431D3D22E211"]
+			description: [
+				"&6⚙&r Im Pack liegen in Everbright drei Industriemetalle, die anderswo fehlen oder selten sind: &eZinn&r gibt es nur hier, &eBlei&r und &eBauxit&r reichlich, in der Overworld nur sehr selten. Alle drei stecken im Turquoise Stone. Zinn brauchst du für Bronze und den Ausbau von Mekanism, Blei und Aluminium für Immersive Engineering. Leg außerdem 32 Raw Tin für den Wegzoll nach Everdawn beiseite (Buch 1)."
+				"Abbauen kannst du sie mit den Werkzeugen der Welt, am besten ab Pyrope oder Aquite (Quest „Pyrope, Aquite und Moonstone“)."
+			]
+			hide_until_deps_visible: true
+			icon: "mekanism:raw_tin"
+			id: "534472CA68E78922"
+			subtitle: "BS1 · Everbright"
+			tasks: [{
+				id: "199BE20080158032"
+				item: "mekanism:raw_tin"
+				type: "item"
+			}
+			{
+				id: "45AD743AF4B85766"
+				item: "mekanism:raw_lead"
+				type: "item"
+			}
+			{
+				id: "73C65DF62721A972"
+				item: "immersiveengineering:raw_aluminum"
+				type: "item"
+			}]
+			title: "Zinn, Blei und Bauxit"
+			x: 0.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["534472CA68E78922"]
+			description: [
+				"Ein magisches Metall aus Everbright, bis Y 63. Hauptsächlich für die Tool Box: Es verlängert die Haltbarkeit der Werkzeuge. Falsite Nuggets ersetzen außerdem Lapis Lazuli am Zaubertisch."
+				"Buch: Blue Journal → Everbright → Falsite."
+			]
+			hide_until_deps_visible: true
+			icon: "blue_skies:falsite_ingot"
+			id: "2395C10DF73283B3"
+			optional: true
+			shape: "square"
+			subtitle: "BS1 · Everbright · Nebenquest"
+			tasks: [{
+				id: "6DA31EB879B0F8EB"
+				item: "blue_skies:falsite_ingot"
+				type: "item"
+			}]
+			title: "Falsite"
+			x: 2.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["534472CA68E78922"]
+			description: [
+				"Ein Ofen, der mit Kälte kocht. Er brennt mit Snowcap Mushrooms (4 Snowcap Pinheads ergeben einen Pilzblock) und macht nebenbei aus Horizonite Eisen."
+				"Buch: Blue Journal → Everbright → Snowcap Mushroom, Snowcap Oven."
+			]
+			hide_until_deps_visible: true
+			icon: "blue_skies:snowcap_oven"
+			id: "5036F3048DCFCEA3"
+			optional: true
+			shape: "square"
+			subtitle: "BS1 · Everbright · Nebenquest"
+			tasks: [{
+				id: "4AFC1310DFD43A3D"
+				item: "blue_skies:snowcap_oven"
+				type: "item"
+			}]
+			title: "Snowcap Oven"
+			x: 2.0d
+			y: 8.75d
+		}
+		{
+			dependencies: ["534472CA68E78922"]
+			description: [
+				"In den Welten hält Licht keine Monster ab. Die Warding Pearl verhindert das Spawnen in großem Umkreis, etwa um deinen Stützpunkt. Rezept: 6 Falsite Nugget + 2 Soul Fragment + 1 Pearl. Die Pearl steckt in einem Seclam in der Tiefsee, die Soul Fragments lassen vor allem die Frost Spirits fallen."
+				"Buch: Blue Journal → Everbright → Warding Pearl, Seclam, Soul Fragment."
+			]
+			hide_until_deps_visible: true
+			icon: "blue_skies:warding_pearl"
+			id: "6C8D015D4B89CB75"
+			optional: true
+			shape: "square"
+			subtitle: "BS1 · Everbright · Nebenquest"
+			tasks: [{
+				id: "62FBC4278329D090"
+				item: "blue_skies:warding_pearl"
+				type: "item"
+			}]
+			title: "Warding Pearl"
+			x: 2.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["534472CA68E78922"]
+			description: [
+				"Diese Erze liegen in beiden Welten. &ePyrope&r (bis Y 83) gibt sehr schnelle, aber kurzlebige Werkzeuge, die Diopside und Charoite nicht abbauen. &eAquite&r (bis Y 54) entspricht dem Eisen der Oberwelt, für Werkzeug und Rüstung. &eMoonstone&r (bis Y 127) ist eine Lichtquelle, die auch unter Wasser leuchtet. Mit Aquite-Werkzeug und -Rüstung bist du für Everdawn gerüstet."
+				"Buch: Blue Journal → General → Pyrope, Aquite, Moonstone."
+			]
+			hide_until_deps_visible: true
+			icon: "blue_skies:aquite_pickaxe"
+			id: "0F0A9BCA8E40F502"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "BS1 · Everbright"
+			tasks: [{
+				id: "40D5D52878E095FE"
+				item: "blue_skies:aquite_pickaxe"
+				type: "item"
+			}]
+			title: "Pyrope, Aquite und Moonstone"
+			x: 0.5d
+			y: 9.0d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 4: Der Mond."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "0EE6CBCC4BF5AA64"
+			shape: "gear"
+			subtitle: "BS2 · Everdawn"
+			tasks: [{
+				id: "10B93E242940137A"
+				stage: "kapitel_k4"
+				type: "gamestage"
+			}]
+			title: "Kapitel 4: Blue Skies"
+			x: 4.0d
+			y: -1.75d
+		}
+		{
+			dependencies: ["0F0A9BCA8E40F502", "0EE6CBCC4BF5AA64"]
+			description: [
+				"Das zweite Portal mit dem Rahmen aus Lunar Stone Bricks führt nach Everdawn: ewiger Sonnenaufgang, heiß und feucht, mit Spinnen, Käfern und Echsen. Die Gegner sind härter als in Everbright. Nimm Werkzeuge aus Everbright mit; deine Oberwelt-Werkzeuge sind hier ebenso abgeschwächt."
+				"&6⚙&r Durch das Portal kommst du erst, wenn der Wegzoll von 32 Raw Tin bezahlt ist; vorher schickt es dich zurück (Buch 1)."
+				"Buch: Blue Journal → Everdawn → Everdawn Portal."
+			]
+			hide_until_deps_visible: true
+			id: "54B24C3F06316816"
+			subtitle: "BS2 · Everdawn"
+			tasks: [{
+				dimension: "blue_skies:everdawn"
+				id: "021D35DC76F3E253"
+				type: "dimension"
+			}]
+			title: "Durch das Portal nach Everdawn"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["54B24C3F06316816"]
+			description: [
+				"&6⚙&r Im Pack liegt Osmium in Everdawn reichlich, im Lunar Stone in allen Höhen. In der Overworld ist es selten. Mit diesem Vorrat lohnt sich der Ausbau von Mekanism, schon bevor der Mond erreichbar ist. 32 Raw Osmium sind die zweite Abgabe in Buch 1."
+			]
+			hide_until_deps_visible: true
+			icon: "mekanism:raw_osmium"
+			id: "2EC898204E3F7965"
+			subtitle: "BS2 · Everdawn"
+			tasks: [{
+				id: "4BFA43384F84EA18"
+				item: "mekanism:raw_osmium"
+				type: "item"
+			}]
+			title: "Osmium"
+			x: 4.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["2EC898204E3F7965"]
+			description: [
+				"Ein sehr heißes Metall, tief unten (bis Y 24) in den heißen Biomen: Crystal Dunes, Crystal Roughs, Searing Grassland, Sunset Maple Forest. Werkzeuge daraus schmelzen abgebaute Erze sofort. Rüstung ebenfalls möglich."
+				"Buch: Blue Journal → Everdawn → Horizonite."
+			]
+			hide_until_deps_visible: true
+			icon: "blue_skies:horizonite_pickaxe"
+			id: "130284B9336D0DE5"
+			subtitle: "BS2 · Everdawn"
+			tasks: [{
+				id: "7C9553D94F3A5A92"
+				item: "blue_skies:horizonite_pickaxe"
+				type: "item"
+			}]
+			title: "Horizonite"
+			x: 4.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["130284B9336D0DE5"]
+			description: [
+				"Ein Ofen ohne Brennstoff: Er lädt sich langsam selbst auf, schneller mit Horizonite oder Sunstone Crystals. Rezept: 5 Horizonite Ingot + 1 Furnace + 3 Lunar Cobblestone. Mehrere Forges nebeneinander sind praktisch."
+				"Buch: Blue Journal → Everdawn → Horizonite Forge, Sunstone Crystal."
+			]
+			hide_until_deps_visible: true
+			icon: "blue_skies:horizonite_forge"
+			id: "3FE842EF138D3181"
+			optional: true
+			shape: "square"
+			subtitle: "BS2 · Everdawn · Nebenquest"
+			tasks: [{
+				id: "09A76D00A86A3EAD"
+				item: "blue_skies:horizonite_forge"
+				type: "item"
+			}]
+			title: "Horizonite Forge"
+			x: 5.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["130284B9336D0DE5"]
+			description: [
+				"In Everdawn brauchst du einen Schild: Gift der Venom Spider, Atem der Emberbacks und später die Pfeile des Alchemist und die Sprünge des Arachnarch fängst du damit ab. Der Moonstone Shield hält mehr aus als der Holzschild. Rezept: 6 Vitreous Moonstone + 1 Stick; Vitreous Moonstone lässt das Crystal Camel fallen."
+				"Buch: Blue Journal → Everdawn → Moonstone Shield, Crystal Camel."
+			]
+			hide_until_deps_visible: true
+			icon: "blue_skies:moonstone_shield"
+			id: "140363A653179B26"
+			subtitle: "BS2 · Everdawn"
+			tasks: [{
+				id: "390D6EEB309AA2AC"
+				item: "blue_skies:moonstone_shield"
+				type: "item"
+			}]
+			title: "Moonstone Shield"
+			x: 4.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["140363A653179B26"]
+			description: [
+				"Die beiden besten Materialien der Welten liegen ganz unten, in beiden Welten: Diopside bis Y 19, Charoite bis Y 13, je eine kleine Ader pro Chunk. Pyrope baut sie nicht ab, nimm Aquite oder Horizonite."
+				"&eDiopside&r: schwere, langsame Werkzeuge mit sehr hohem Schaden. &eCharoite&r: ausgewogen wie Diamant; Charoite-Werkzeuge bauen alles in den Welten ab. Für die Dungeons willst du eines davon als Waffe und Rüstung."
+				"Buch: Blue Journal → General → Diopside, Charoite."
+			]
+			hide_until_deps_visible: true
+			icon: "blue_skies:diopside_gem"
+			id: "646CB6EC8370C3A3"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "BS2 · Everdawn"
+			tasks: [{
+				id: "0C3FEDCB4F4E52E0"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(blue_skies:diopside_gem)item(blue_skies:charoite))" } }
+				title: "Diopside oder Charoite"
+				type: "item"
+			}]
+			title: "Diopside oder Charoite"
+			x: 4.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["646CB6EC8370C3A3"]
+			description: [
+				"Mit Material der Welten kannst du verzaubern: Enchanting Table aus 1 Book + 2 Charoite + 4 Obsidian (Obsidian gibt es in Everdawn), Falsite Nuggets statt Lapis. Aquite lässt sich besonders gut verzaubern."
+				"Buch: Blue Journal → General → Enchanting."
+			]
+			hide_until_deps_visible: true
+			icon: "minecraft:enchanting_table"
+			id: "5B51EC9DAD2A3460"
+			optional: true
+			shape: "square"
+			subtitle: "BS2 · Everdawn · Nebenquest"
+			tasks: [{
+				id: "71A968C4D13DC2D5"
+				item: "minecraft:enchanting_table"
+				type: "item"
+			}]
+			title: "Verzaubern ohne Oberwelt"
+			x: 5.5d
+			y: 6.0d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 5: Erzketten."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "0D0F206F569E37DD"
+			shape: "gear"
+			subtitle: "BS3 · Die Blinding-Bosse"
+			tasks: [{
+				id: "0A8A5C6E08A51D43"
+				stage: "kapitel_k5"
+				type: "gamestage"
+			}]
+			title: "Kapitel 5: Blue Skies"
+			x: 7.5d
+			y: -1.75d
+		}
+		{
+			dependencies: ["646CB6EC8370C3A3", "0D0F206F569E37DD"]
+			description: [
+				"&c⚠ &eBosskämpfe.&r&c Geh nicht ohne Waffe aus Diopside oder Charoite, Rüstung, Schild, Speere und Essen. Beide Bosse teleportieren sich weg, wenn du zu nahe kommst. Wer stirbt, lässt seine Sachen im obersten Stockwerk eines Turms voller Illager liegen.&r"
+				""
+				"In jeder Welt steht ein hoher Turm, bewohnt von Illagern. In Everbright findest du ihn in Calming Skies, Brisk Meadow, Brightlands und Snow Covered Pines. Die Schlüssel liegen in den Kisten der Bibliotheks-, Gefängnis- und Studierzimmer. Mit vier Schlüsseln öffnest du den Keystone im obersten Stockwerk und kommst zum Boss."
+				"Hast du einen Keystone benutzt, kannst du weitere Blinding-Schlüssel kaufen."
+				"Buch: Blue Journal → General → Blinding Dungeon."
+				"&6⚙&r &9(ungeprüft)&r Ob die Figur im Haus die Schlüssel verkauft, wie es der Händler des Mods tut, ist offen."
+			]
+			hide_until_deps_visible: true
+			icon: "blue_skies:blinding_key"
+			id: "555D5A857EF94B29"
+			subtitle: "BS3 · Die Blinding-Bosse"
+			tasks: [{
+				count: 4L
+				id: "337991017711D33C"
+				item: "blue_skies:blinding_key"
+				type: "item"
+			}]
+			title: "Blinding Dungeon"
+			x: 7.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["555D5A857EF94B29"]
+			description: [
+				"Der Boss des Turms in Everbright (Keystone blue_skies:bright_blinding_keystone). Er kämpft nicht selbst, sondern ruft Golems aus Dungeonstein, erst Fernkämpfer, dann Nahkämpfer. Treffen kannst du ihn nur, während er zaubert."
+				"Beute ist ein Summoner Loot Bag mit dem Ethereal Arc, dem Soulbound Spear, der Summoning Table und manchmal dem Summoning Tome. Sein Sieg öffnet in Everbright den Weg zum Nature Dungeon."
+				"Buch: Blue Journal → Everbright → Summoner."
+				"&6⚙&r Behalte die Beute; ein Teil davon wird später gebraucht (&9(ungeprüft)&r welche Items, O1)."
+			]
+			hide_until_deps_visible: true
+			icon: "blue_skies:bright_blinding_keystone"
+			id: "70D675EC3E41624E"
+			subtitle: "BS3 · Die Blinding-Bosse"
+			tasks: [{
+				id: "0649D19D58861A28"
+				title: "Summoner besiegt"
+				type: "checkmark"
+			}]
+			title: "Summoner"
+			x: 7.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["70D675EC3E41624E"]
+			description: [
+				"Der Boss des Turms in Everdawn (Keystone blue_skies:dawn_blinding_keystone). Er kämpft selbst: Pfeilbündel (mit dem Schild abwehren), Steinstacheln aus dem Boden und Trankwolken in den Ecken des Raums. Auch er teleportiert sich weg, außer beim Zaubern."
+				"Beute ist ein Alchemist Loot Bag mit dem Dusk Arc, dem Spike Shield, der Alchemy Table und manchmal der Alchemy Scroll. Sein Sieg öffnet in Everdawn den Weg zum Poison Dungeon."
+				"Buch: Blue Journal → Everdawn → Alchemist."
+				"&6⚙&r Behalte die Beute (&9(ungeprüft)&r welche Items, O1)."
+			]
+			hide_until_deps_visible: true
+			icon: "blue_skies:dawn_blinding_keystone"
+			id: "65D0CD0CCDD4216D"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "BS3 · Die Blinding-Bosse"
+			tasks: [{
+				id: "634C8204DFDE8882"
+				title: "Alchemist besiegt"
+				type: "checkmark"
+			}]
+			title: "Alchemist"
+			x: 7.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["65D0CD0CCDD4216D"]
+			description: [
+				"Die Alchemy Table wandelt Stoffe um. Sie tauscht innerhalb einer Gruppe (Iron Ingot gegen Ventium Ingot, Stein der Oberwelt gegen Stein der Welten) und wandelt mit einem Hilfsstoff um: Iron Ingot mit Soul Fragment zu Falsite, mit Blaze Rod zu Horizonite. Zusammen mit dem Snowcap Oven kannst du damit Eisen und die Metalle der Welten in beide Richtungen tauschen."
+				"Buch: Blue Journal → Everdawn → Alchemy Table."
+			]
+			hide_until_deps_visible: true
+			icon: "blue_skies:alchemy_table"
+			id: "4F2DF684B0E9530E"
+			optional: true
+			shape: "square"
+			subtitle: "BS3 · Die Blinding-Bosse · Nebenquest"
+			tasks: [{
+				id: "514B856076FB6EC0"
+				item: "blue_skies:alchemy_table"
+				type: "item"
+			}]
+			title: "Alchemy Table"
+			x: 9.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["65D0CD0CCDD4216D"]
+			description: [
+				"Arcs sind Artefakte der Dungeon-Wächter und kommen in eigene Felder im Inventar. Der Ethereal Arc macht schneller, der Dusk Arc unsichtbar beim Schleichen. Jeder Arc hat vier Stufen (Common bis Empowered); welche du bekommst, entscheidet der Loot Bag."
+				"Buch: Blue Journal → General → Arcs."
+			]
+			hide_until_deps_visible: true
+			icon: "blue_skies:ethereal_arc"
+			id: "11F8FB1401ACF692"
+			optional: true
+			shape: "square"
+			subtitle: "BS3 · Die Blinding-Bosse · Nebenquest"
+			tasks: [{
+				id: "184FF1FD707041EC"
+				item: "blue_skies:ethereal_arc"
+				type: "item"
+			}
+			{
+				id: "65AF122A4EDE2A7E"
+				item: "blue_skies:dusk_arc"
+				type: "item"
+			}]
+			title: "Arcs tragen"
+			x: 9.0d
+			y: 4.25d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 6: Der Mars."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "33126A4794FD48D8"
+			shape: "gear"
+			subtitle: "BS4 · Nature- und Poison-Boss"
+			tasks: [{
+				id: "2B53E5A7EB9B697A"
+				stage: "kapitel_k6"
+				type: "gamestage"
+			}]
+			title: "Kapitel 6: Blue Skies"
+			x: 11.0d
+			y: -1.75d
+		}
+		{
+			dependencies: ["65D0CD0CCDD4216D", "33126A4794FD48D8"]
+			description: [
+				"&c⚠ &eZweite Boss-Stufe.&r&c Beide Dungeons sind lang und voller Gegner, die Bosse brauchen eine bestimmte Taktik. Für den Starlit Crusher brauchst du eine Axt und Speere, für den Arachnarch einen starken Schild.&r"
+				""
+				"Eine grüne Pyramide in den Snow Covered Pines von Everbright. Ihre Wächter, die Stonelets, nehmen wie die Frost Spirits mehr Schaden von Pickaxes; weiter oben spucken Spewters Samenbomben. Die Schlüssel liegen in den Kisten, der Nature Keystone am Ende."
+				"Buch: Blue Journal → Everbright → Nature Dungeon, Stonelet (offen nach dem Summoner)."
+			]
+			hide_until_deps_visible: true
+			icon: "blue_skies:nature_key"
+			id: "03E68B56B5FF4556"
+			subtitle: "BS4 · Nature- und Poison-Boss"
+			tasks: [{
+				id: "33A85DC617F33939"
+				item: "blue_skies:nature_key"
+				type: "item"
+			}]
+			title: "Nature Dungeon"
+			x: 11.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["03E68B56B5FF4556"]
+			description: [
+				"Der Starlit Crusher versteckt sich hinter vier Holzwänden und lässt Wurzeln, Spewters und hölzerne Schneeeulen wachsen. Eine Wand fällst du nur mit der Axt (andere Waffen: „maybe an axe would work?“). Danach schlägt er auf den Boden und ist für Speere verwundbar."
+				"Beute: Nature Arc (zusätzliche Herzen), Falsite, Cryo Root, seltener der Crushing Hammer und Diopside."
+				"Buch: Blue Journal → Everbright → Starlit Crusher."
+				"&6⚙&r Behalte die Beute (&9(ungeprüft)&r welche Items, O1)."
+			]
+			hide_until_deps_visible: true
+			icon: "blue_skies:nature_key"
+			id: "468DA32D7DB0FD55"
+			subtitle: "BS4 · Nature- und Poison-Boss"
+			tasks: [{
+				id: "5A4022E497488F4D"
+				title: "Starlit Crusher besiegt"
+				type: "checkmark"
+			}]
+			title: "Starlit Crusher"
+			x: 11.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["468DA32D7DB0FD55"]
+			description: [
+				"Ein mit Netzen überzogener Baum im Sunset Maple Forest von Everdawn, innen ein Spinnennest voller Venom Spiders und Cave Spiders. Jedes Stockwerk hat einen Schlüssel; der Poison Keystone liegt am Ende der Tunnel. Nimm Milch oder Mittel gegen Gift mit (schwarze Brewberries heilen Gift)."
+				"Buch: Blue Journal → Everdawn → Poison Dungeon (offen nach dem Alchemist)."
+			]
+			hide_until_deps_visible: true
+			icon: "blue_skies:poison_key"
+			id: "437B0DB53A740456"
+			subtitle: "BS4 · Nature- und Poison-Boss"
+			tasks: [{
+				id: "704B0ECC6D38E42B"
+				item: "blue_skies:poison_key"
+				type: "item"
+			}]
+			title: "Poison Dungeon"
+			x: 11.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["437B0DB53A740456"]
+			description: [
+				"Der Arachnarch hängt sich an die Decke und ist dort kaum zu verwunden. Halte durch, bis er herunterkommt, und wehre seine Sprünge mit dem Schild ab. Nicht jeder Schild hält ihn aus (Tooltip: „It seems this shield isn't strong enough!“); der Spike Shield des Alchemist ist stärker als der Moonstone Shield. &9(ungeprüft)&r Welcher Schild genügt, steht nur im Code."
+				"Beute: Poisonous Arc (mehr Schaden, wenn du vergiftet bist), Horizonite, seltener Venom Sac, Diopside und das Different Sword."
+				"Buch: Blue Journal → Everdawn → Arachnarch."
+				"&6⚙&r Behalte die Beute (&9(ungeprüft)&r welche Items, O1)."
+			]
+			hide_until_deps_visible: true
+			icon: "blue_skies:poison_key"
+			id: "6ED6E7E09F66A770"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "BS4 · Nature- und Poison-Boss"
+			tasks: [{
+				id: "5BD15EA8A61E8FA1"
+				title: "Arachnarch besiegt"
+				type: "checkmark"
+			}]
+			title: "Arachnarch"
+			x: 11.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["6ED6E7E09F66A770"]
+			description: [
+				"Jeder Boss trägt einen Arc. Wer alle vier besitzt, kann sie zusammen tragen: schneller, unsichtbar, mehr Herzen, mehr Schaden unter Gift."
+				"&9(ungeprüft)&r Ob man einen Boss erneut bekämpfen kann (für einen besseren Arc) oder einen neuen Dungeon suchen muss, im Spiel prüfen."
+				"Buch: Blue Journal → General → Arcs."
+			]
+			hide_until_deps_visible: true
+			icon: "blue_skies:ethereal_arc"
+			id: "0A1FD698CF33352A"
+			optional: true
+			shape: "square"
+			subtitle: "BS4 · Nature- und Poison-Boss · Nebenquest"
+			tasks: [{
+				id: "6F39CED0B950BDC7"
+				item: "blue_skies:ethereal_arc"
+				type: "item"
+			}
+			{
+				id: "16B4FA6CEA5FA3C2"
+				item: "blue_skies:dusk_arc"
+				type: "item"
+			}
+			{
+				id: "611C81D0119A07F8"
+				item: "blue_skies:nature_arc"
+				type: "item"
+			}
+			{
+				id: "77FB17D45EB65F58"
+				item: "blue_skies:poison_arc"
+				type: "item"
+			}]
+			title: "Alle vier Arcs"
+			x: 12.5d
+			y: 4.5d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 3: Industrie."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "1ECA8C4658E46B1F"
+			shape: "gear"
+			subtitle: "Nebenquest-Reihe BSN · Leben in den Welten"
+			tasks: [{
+				id: "204067C3442997E2"
+				stage: "kapitel_k3"
+				type: "gamestage"
+			}]
+			title: "Kapitel 3: Blue Skies"
+			x: 16.0d
+			y: -1.75d
+		}
+		{
+			dependencies: ["3EAE987B6BD74C1B", "1ECA8C4658E46B1F"]
+			description: [
+				"Ohne Bezug zum Hauptweg; zeigt, wie man sich in den Welten einrichtet. Frei ab Quest „Durch das Portal nach Everbright“."
+				""
+				"Text: Macht aus drei bis fünf verschiedenen Zutaten bessere Gerichte."
+				"Buch: General → Food Prep Table"
+			]
+			hide_until_deps_visible: true
+			icon: "blue_skies:food_prep_table"
+			id: "3044683138D65009"
+			optional: true
+			shape: "square"
+			subtitle: "Nebenquest-Reihe BSN · Leben in den Welten · Nebenquest"
+			tasks: [{
+				id: "067A243828956FA2"
+				item: "blue_skies:food_prep_table"
+				type: "item"
+			}]
+			title: "Food Prep Table"
+			x: 16.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3044683138D65009"]
+			description: [
+				"Text: Reindeer mit Pine Fruit, Crystal Camel mit Scalefruit zähmen; Sattel bzw. Camel Saddle drauf."
+				"Buch: Everbright → Reindeer; Everdawn → Crystal Camel"
+			]
+			hide_until_deps_visible: true
+			icon: "blue_skies:pine_fruit"
+			id: "7F4F826675474480"
+			optional: true
+			shape: "square"
+			subtitle: "Nebenquest-Reihe BSN · Leben in den Welten · Nebenquest"
+			tasks: [{
+				id: "5A8735942C67907E"
+				title: "Reindeer oder Crystal Camel gezähmt"
+				type: "checkmark"
+			}]
+			title: "Reittiere"
+			x: 16.0d
+			y: 1.25d
+		}
+		{
+			dependencies: ["7F4F826675474480"]
+			description: [
+				"Text: Das Astrolabe (vom Stargazer im Dorf) springt zurück zu deinem Star Emitter. Praktisch als Heimweg."
+				"Buch: General → Star Emitter, Astrolabe"
+			]
+			hide_until_deps_visible: true
+			icon: "blue_skies:star_emitter"
+			id: "701A55C7E216A051"
+			optional: true
+			shape: "square"
+			subtitle: "Nebenquest-Reihe BSN · Leben in den Welten · Nebenquest"
+			tasks: [{
+				id: "7AE2FA310E6D2171"
+				item: "blue_skies:star_emitter"
+				type: "item"
+			}
+			{
+				id: "4BBC3790C54C525E"
+				item: "blue_skies:astrolabe"
+				type: "item"
+			}]
+			title: "Star Emitter und Astrolabe"
+			x: 16.0d
+			y: 2.5d
+		}
+	]
+	title: "Blue Skies"
+}

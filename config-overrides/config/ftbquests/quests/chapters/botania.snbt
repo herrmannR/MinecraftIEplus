@@ -5,7 +5,7 @@
 	group: ""
 	icon: "botania:lexicon"
 	id: "57F6105C5D58B3B2"
-	order_index: 11
+	order_index: 12
 	quest_links: [ ]
 	quests: [
 		{
@@ -236,6 +236,7 @@
 			description: [
 				"Eisen in einen gefüllten Pool werfen. Manasteel ist das erste Metall des Mods."
 				"Buch: Mana Manipulation → Mana Pool."
+				"&6⚙&r Für „Würdig sein“ in Buch 1 brauchst du einen ganzen Block of Manasteel (botania:manasteel_block, 9 Barren)."
 				"&6⚙&r Mit TCIntegrations ist Manasteel auch ein Werkzeugmaterial für Tinkers, ebenso Livingwood, Livingrock und Mana Infused String."
 			]
 			hide_until_deps_visible: true
@@ -397,6 +398,7 @@
 			dependencies: ["194C2ADA92F61A8F"]
 			description: [
 				"Buch: Basics and Mechanics → Runic Altar."
+				"Die Rune of Spring brauchst du öfter: für den Benevolent Goddess' Charm und später in Buch 1 am Portal to Alfheim."
 			]
 			hide_until_deps_visible: true
 			icon: "botania:rune_mana"
@@ -694,6 +696,28 @@
 			y: 3.0d
 		}
 		{
+			dependencies: ["2EA654EA36EC4AC7"]
+			description: [
+				"Ein Amulett, das gegen Mana verhindert, dass Explosionen in deiner Nähe Blöcke zerstören. Du machst es aus Rune of Water, Rune of Spring, Mana Diamond und zwei rosa Petals."
+				"Buch: Trinkets and Accessories → Benevolent Goddess' Charm."
+				"&6⚙&r Im Pack lässt der Demon Realm von Blood Magic nur hinein, wer den Charm trägt. Für Buch 1 braucht jeder von euch einen eigenen."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:goddess_charm"
+			id: "52038E88BE836763"
+			optional: true
+			shape: "square"
+			subtitle: "BO3 · Runenaltar · Nebenquest"
+			tasks: [{
+				id: "27F4EFB1480AACB0"
+				item: "botania:goddess_charm"
+				type: "item"
+			}]
+			title: "Benevolent Goddess' Charm"
+			x: 12.5d
+			y: 4.0d
+		}
+		{
 			description: [
 				"Freigeschaltet mit Kapitel 6: Der Mars."
 			]
@@ -815,7 +839,7 @@
 			description: [
 				"Rahmen aus Livingwood, in der Mitte der Elven Gateway Core. Mit dem Wand of the Forest öffnest du es."
 				"Buch: Alfhomancy → The Portal to Alfheim, A Message from Elven Garde."
-				"&6⚙&r Hindurchgehen kannst du noch nicht: MythicBotany lässt nur durch, wer den Mead of Kvasir getrunken hat (Quest „Mead of Kvasir“). Bis dahin dient das Portal dem Handel."
+				"&6⚙&r Hindurchgehen kannst du noch nicht: MythicBotany lässt nur durch, wer den Mead of Kvasir getrunken hat (späteres Kapitel). Bis dahin dient das Portal dem Handel."
 			]
 			hide_until_deps_visible: true
 			icon: "botania:alfheim_portal"
@@ -912,528 +936,6 @@
 			title: "Elven Mana Spreader"
 			x: 16.0d
 			y: 4.25d
-		}
-		{
-			description: [
-				"Freigeschaltet mit Kapitel 12: Ausbildung."
-			]
-			invisible: true
-			icon: "minecraft:book"
-			id: "055F8D8D38838F8D"
-			shape: "gear"
-			subtitle: "BO6 · Alfheim betreten"
-			tasks: [{
-				id: "60DE96FEA4D73829"
-				stage: "kapitel_k12"
-				type: "gamestage"
-			}]
-			title: "Kapitel 12: Botania"
-			x: 18.0d
-			y: -1.75d
-		}
-		{
-			dependencies: ["20CA9735F369D8FB", "055F8D8D38838F8D"]
-			description: [
-				"Der Met öffnet dir das Portal nach Alfheim."
-				"Buch: Alfheim → The Mead of Kvasir."
-				"&6⚙&r &9(ungeprüft)&r Im Buch liegt der Met hinter dem Guardian of Gaia II (Blood of Kvasir). Im Pack kommt Alfheim vor Gaia; wie du den Met bekommst (Quest-Belohnung oder gesperrtes Rezept), ist noch nicht entschieden. Text nach der Entscheidung anpassen."
-			]
-			hide_until_deps_visible: true
-			icon: "mythicbotany:kvasir_mead"
-			id: "69ABF49F86AF0E46"
-			subtitle: "BO6 · Alfheim betreten"
-			tasks: [{
-				id: "33B568D5F22569CC"
-				item: "mythicbotany:kvasir_mead"
-				type: "item"
-			}]
-			title: "Mead of Kvasir"
-			x: 18.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["69ABF49F86AF0E46"]
-			description: [
-				"Die Welt der Elfen. Elementium und Dragonstone liegen hier als Erz, dazu viel Gold."
-				"Buch: Alfheim → Alfheim Landscape, Resources of Alfheim."
-			]
-			hide_until_deps_visible: true
-			id: "7D91CE0A05B9DBDF"
-			subtitle: "BO6 · Alfheim betreten"
-			tasks: [{
-				dimension: "mythicbotany:alfheim"
-				id: "530B0488459EAF73"
-				type: "dimension"
-			}]
-			title: "Alfheim"
-			x: 18.0d
-			y: 1.5d
-		}
-		{
-			dependencies: ["7D91CE0A05B9DBDF"]
-			description: [
-				"Neun neue Runen am Runic Altar."
-				"Buch: MythicBotany → Runes of the Nine Worlds."
-				"Hinweis: Die Rune of Asgard braucht einen Netherite-Barren."
-				"&6⚙&r Netherite lässt sich im Pack über die Alchemical Reaction Chamber (ARC) von Blood Magic vervielfachen."
-			]
-			hide_until_deps_visible: true
-			icon: "mythicbotany:midgard_rune"
-			id: "7A9899404BD38A09"
-			subtitle: "BO6 · Alfheim betreten"
-			tasks: [{
-				id: "2B7EEE934F181E50"
-				item: "mythicbotany:midgard_rune"
-				type: "item"
-			}
-			{
-				id: "578228C653034837"
-				item: "mythicbotany:alfheim_rune"
-				type: "item"
-			}
-			{
-				id: "16F735C02DC93AFF"
-				item: "mythicbotany:nidavellir_rune"
-				type: "item"
-			}
-			{
-				id: "4EDA426F781859FE"
-				item: "mythicbotany:joetunheim_rune"
-				type: "item"
-			}
-			{
-				id: "27A89E6C99447D61"
-				item: "mythicbotany:muspelheim_rune"
-				type: "item"
-			}
-			{
-				id: "58F95D5AE2F22F72"
-				item: "mythicbotany:niflheim_rune"
-				type: "item"
-			}
-			{
-				id: "6A1B25D2F1159491"
-				item: "mythicbotany:asgard_rune"
-				type: "item"
-			}
-			{
-				id: "5E38B74EC96ADDC8"
-				item: "mythicbotany:vanaheim_rune"
-				type: "item"
-			}
-			{
-				id: "2B4109B986B8EE69"
-				item: "mythicbotany:helheim_rune"
-				type: "item"
-			}]
-			title: "Runen der neun Welten"
-			x: 18.0d
-			y: 3.0d
-		}
-		{
-			dependencies: ["7A9899404BD38A09"]
-			description: [
-				"Die Weiterentwicklung der Terra Plate, mit eigenem Unterbau."
-				"Buch: MythicBotany → The Mana Infuser."
-			]
-			hide_until_deps_visible: true
-			icon: "mythicbotany:mana_infuser"
-			id: "324B71F41207B3A2"
-			subtitle: "BO6 · Alfheim betreten"
-			tasks: [{
-				id: "25B409AD309A6CF9"
-				item: "mythicbotany:mana_infuser"
-				type: "item"
-			}]
-			title: "Mana Infuser"
-			x: 18.0d
-			y: 4.5d
-		}
-		{
-			dependencies: ["324B71F41207B3A2"]
-			description: [
-				"Elementium, Dragonstone und Pixie Dust im Infuser, mit noch mehr Mana als Terrasteel."
-				"Buch: MythicBotany → The Mana Infuser."
-			]
-			hide_until_deps_visible: true
-			icon: "mythicbotany:alfsteel_ingot"
-			id: "0EDBD93632DE4C31"
-			subtitle: "BO6 · Alfheim betreten"
-			tasks: [{
-				id: "3B4A2D9805D59FD2"
-				item: "mythicbotany:alfsteel_ingot"
-				type: "item"
-			}]
-			title: "Alfsteel"
-			x: 18.0d
-			y: 6.0d
-		}
-		{
-			dependencies: ["0EDBD93632DE4C31"]
-			description: [
-				"Buch: MythicBotany → Alfsteel Pylons."
-				"&6⚙&r Im Pack braucht der Gaia Pylon den Alfsteel Pylon (Quest „Beacon und Gaia Pylons“)."
-			]
-			hide_until_deps_visible: true
-			icon: "mythicbotany:alfsteel_pylon"
-			id: "17D58AB389983771"
-			shape: "hexagon"
-			size: 1.5d
-			subtitle: "BO6 · Alfheim betreten"
-			tasks: [{
-				id: "3B415F4AEB1480F7"
-				item: "mythicbotany:alfsteel_pylon"
-				type: "item"
-			}]
-			title: "Alfsteel Pylon"
-			x: 18.0d
-			y: 7.5d
-		}
-		{
-			dependencies: ["17D58AB389983771"]
-			description: [
-				"Upgrade der Terra-Werkzeuge am Smithing Table."
-				"Buch: MythicBotany → Alfsteel Tools."
-			]
-			hide_until_deps_visible: true
-			icon: "mythicbotany:alfsteel_pick"
-			id: "04434370156D7BD0"
-			optional: true
-			shape: "square"
-			subtitle: "BO6 · Alfheim betreten · Nebenquest"
-			tasks: [{
-				id: "3A58591C713AE337"
-				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(mythicbotany:alfsteel_pick)item(mythicbotany:alfsteel_sword)item(mythicbotany:alfsteel_axe))" } }
-				title: "Alfsteel-Werkzeuge"
-				type: "item"
-			}]
-			title: "Alfsteel-Werkzeuge"
-			x: 19.5d
-			y: 7.5d
-		}
-		{
-			dependencies: ["17D58AB389983771"]
-			description: [
-				"Buch: MythicBotany → Alfsteel Mana Bands, Elemental Rings."
-			]
-			hide_until_deps_visible: true
-			icon: "mythicbotany:mana_ring_greatest"
-			id: "1ADCA0BDBA82E112"
-			optional: true
-			shape: "square"
-			subtitle: "BO6 · Alfheim betreten · Nebenquest"
-			tasks: [{
-				id: "4E31E0FFA3E0A388"
-				item: "mythicbotany:mana_ring_greatest"
-				type: "item"
-			}]
-			title: "Greatest Band of Mana"
-			x: 19.5d
-			y: 8.75d
-		}
-		{
-			dependencies: ["17D58AB389983771"]
-			description: [
-				"Buch: MythicBotany → Generating Flora, Functional Flora."
-			]
-			hide_until_deps_visible: true
-			icon: "mythicbotany:aquapanthus"
-			id: "64ECBD71AE6B240B"
-			optional: true
-			shape: "square"
-			subtitle: "BO6 · Alfheim betreten · Nebenquest"
-			tasks: [{
-				id: "2B3E2640A8540731"
-				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(mythicbotany:aquapanthus)item(mythicbotany:exoblaze)item(mythicbotany:hellebore)item(mythicbotany:wither_aconite)item(mythicbotany:raindeletia))" } }
-				title: "Blumen von MythicBotany"
-				type: "item"
-			}]
-			title: "Blumen von MythicBotany"
-			x: 19.5d
-			y: 10.0d
-		}
-		{
-			description: [
-				"Freigeschaltet mit Kapitel 13: Die Prüfung."
-			]
-			invisible: true
-			icon: "minecraft:book"
-			id: "29852188C2162654"
-			shape: "gear"
-			subtitle: "BO7 · Gaia"
-			tasks: [{
-				id: "70656BCB4D825C95"
-				stage: "kapitel_k13"
-				type: "gamestage"
-			}]
-			title: "Kapitel 13: Botania"
-			x: 21.5d
-			y: -1.75d
-		}
-		{
-			dependencies: ["17D58AB389983771", "29852188C2162654"]
-			description: [
-				"&c⚠ &eDer Guardian of Gaia ist ein schwerer Bosskampf.&r&c Lies den Eintrag im Buch vor dem Ritual ganz. Lass keine Wertsachen in der Arena liegen.&r"
-				""
-				"Das Ritual braucht einen aktiven Beacon mit Gaia Pylons darum."
-				"Buch: Alfhomancy → Ritual of Gaia."
-				"&6⚙&r Im Pack wird der Gaia Pylon aus dem Alfsteel Pylon gebaut, nicht wie im Buch beschrieben."
-				"Hinweis: Der Beacon braucht einen Nether Star."
-			]
-			hide_until_deps_visible: true
-			icon: "minecraft:beacon"
-			id: "36443A11DFC20ABF"
-			subtitle: "BO7 · Gaia"
-			tasks: [{
-				id: "31D77209200EE2DB"
-				item: "minecraft:beacon"
-				type: "item"
-			}
-			{
-				id: "50AB43DF35A5AA3D"
-				item: "botania:gaia_pylon"
-				type: "item"
-			}]
-			title: "Beacon und Gaia Pylons"
-			x: 21.5d
-			y: 0.0d
-		}
-		{
-			dependencies: ["36443A11DFC20ABF"]
-			description: [
-				"Besiege den Guardian. Er lässt Gaia Spirits fallen."
-				"Buch: Alfhomancy → Ritual of Gaia."
-			]
-			hide_until_deps_visible: true
-			icon: "botania:life_essence"
-			id: "6E9B54DF2046B698"
-			subtitle: "BO7 · Gaia"
-			tasks: [{
-				id: "5128BAF9F934D4C9"
-				item: "botania:life_essence"
-				type: "item"
-			}]
-			title: "Guardian of Gaia"
-			x: 21.5d
-			y: 1.5d
-		}
-		{
-			dependencies: ["6E9B54DF2046B698"]
-			description: [
-				"Grundstoff der stärksten Items und Schlüssel zum zweiten Ritual."
-				"Buch: Alfhomancy → Ritual of Gaia, Ritual of Gaia II."
-			]
-			hide_until_deps_visible: true
-			icon: "botania:gaia_ingot"
-			id: "60CF6DFCC4F9EA7E"
-			shape: "hexagon"
-			size: 1.5d
-			subtitle: "BO7 · Gaia"
-			tasks: [{
-				id: "138440093F969825"
-				item: "botania:gaia_ingot"
-				type: "item"
-			}]
-			title: "Gaia Spirit Ingot"
-			x: 21.5d
-			y: 3.0d
-		}
-		{
-			dependencies: ["60CF6DFCC4F9EA7E"]
-			description: [
-				"Die härtere Fassung des Kampfs. Der Dice of Fate verwandelt sich in eins der Relikte."
-				"Buch: Alfhomancy → Ritual of Gaia II, The Relics of the Aesir, The Relics of the Aesir II."
-			]
-			hide_until_deps_visible: true
-			icon: "botania:dice"
-			id: "22FEDC94EFAD93E1"
-			optional: true
-			shape: "square"
-			subtitle: "BO7 · Gaia · Nebenquest"
-			tasks: [{
-				id: "07DBAB672F56C22C"
-				item: "botania:dice"
-				type: "item"
-			}]
-			title: "Guardian of Gaia II"
-			x: 23.0d
-			y: 3.0d
-		}
-		{
-			dependencies: ["60CF6DFCC4F9EA7E"]
-			description: [
-				"Buch: Ender Artifacts → Flügel Tiara; Mana Manipulation → Elven Mana Spreaders."
-			]
-			hide_until_deps_visible: true
-			icon: "botania:flight_tiara"
-			id: "2EF3E0BAD669D170"
-			optional: true
-			shape: "square"
-			subtitle: "BO7 · Gaia · Nebenquest"
-			tasks: [{
-				id: "3E42276D412BC355"
-				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(botania:flight_tiara)item(botania:gaia_spreader))" } }
-				title: "Gaia-Ausrüstung"
-				type: "item"
-			}]
-			title: "Gaia-Ausrüstung"
-			x: 23.0d
-			y: 4.25d
-		}
-		{
-			dependencies: ["20CA9735F369D8FB"]
-			description: [
-				"Corporea ist Botanias Lagersystem. Technisch geht es schon ab dem Elfenhandel (BO5), die Karte führt es hier."
-				""
-				"Buch: Ender Artifacts → Extracting Ender Air"
-			]
-			hide_until_deps_visible: true
-			icon: "botania:ender_air_bottle"
-			id: "55607010B2685C35"
-			optional: true
-			shape: "square"
-			subtitle: "BO7 · Gaia · Nebenquest"
-			tasks: [{
-				id: "65E8030E2891785A"
-				item: "botania:ender_air_bottle"
-				type: "item"
-			}]
-			title: "Ender Air"
-			x: 23.0d
-			y: 5.5d
-		}
-		{
-			dependencies: ["55607010B2685C35"]
-			description: [
-				"Buch: Ender Artifacts → Basics of Corporea, Corporea Index"
-			]
-			hide_until_deps_visible: true
-			icon: "botania:corporea_spark"
-			id: "441C0B97D492F327"
-			optional: true
-			shape: "square"
-			subtitle: "BO7 · Gaia · Nebenquest"
-			tasks: [{
-				id: "32C8EC4A98F7D510"
-				item: "botania:corporea_spark"
-				type: "item"
-			}
-			{
-				id: "2E93243105069596"
-				item: "botania:corporea_index"
-				type: "item"
-			}]
-			title: "Corporea Index"
-			x: 23.0d
-			y: 6.75d
-		}
-		{
-			dependencies: ["441C0B97D492F327"]
-			description: [
-				"Buch: Ender Artifacts → Corporea Funnel, Corporea Interceptor, Corporea Crystal Cube"
-			]
-			hide_until_deps_visible: true
-			icon: "botania:corporea_funnel"
-			id: "6167978084DF330B"
-			optional: true
-			shape: "square"
-			subtitle: "BO7 · Gaia · Nebenquest"
-			tasks: [{
-				id: "1C5440BC3D307AD0"
-				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(botania:corporea_funnel)item(botania:corporea_interceptor)item(botania:corporea_crystal_cube))" } }
-				title: "Corporea ausbauen"
-				type: "item"
-			}]
-			title: "Corporea ausbauen"
-			x: 23.0d
-			y: 8.0d
-		}
-		{
-			dependencies: ["60CF6DFCC4F9EA7E"]
-			description: [
-				"Der späte Weg von MythicBotany. Im Buch führt er zum Mead of Kvasir; den hast du im Pack schon (Quest „Mead of Kvasir“)."
-				""
-				"Buch: MythicBotany → The well of Mimir"
-			]
-			hide_until_deps_visible: true
-			icon: "mythicbotany:yggdrasil_branch"
-			id: "7E9224A05A4B230C"
-			optional: true
-			shape: "square"
-			subtitle: "BO7 · Gaia · Nebenquest"
-			tasks: [{
-				id: "000C98B02696E37A"
-				item: "mythicbotany:yggdrasil_branch"
-				type: "item"
-			}
-			{
-				id: "713B16EEE0A17D81"
-				item: "mythicbotany:gjallar_horn_full"
-				type: "item"
-			}]
-			title: "Well of Mimir"
-			x: 23.0d
-			y: 9.25d
-		}
-		{
-			dependencies: ["7E9224A05A4B230C"]
-			description: [
-				"Buch: MythicBotany → Rune Rituals"
-			]
-			hide_until_deps_visible: true
-			icon: "mythicbotany:central_rune_holder"
-			id: "7686863347C305E9"
-			optional: true
-			shape: "square"
-			subtitle: "BO7 · Gaia · Nebenquest"
-			tasks: [{
-				id: "1E4D11FFB873669A"
-				item: "mythicbotany:central_rune_holder"
-				type: "item"
-			}]
-			title: "Rune Rituals"
-			x: 23.0d
-			y: 10.5d
-		}
-		{
-			dependencies: ["7686863347C305E9"]
-			description: [
-				"Buch: MythicBotany → Rune Rituals"
-			]
-			hide_until_deps_visible: true
-			icon: "mythicbotany:fimbultyr_tablet"
-			id: "414E854EF72E8A91"
-			optional: true
-			shape: "square"
-			subtitle: "BO7 · Gaia · Nebenquest"
-			tasks: [{
-				id: "3D30D31507C5E7D9"
-				item: "mythicbotany:fimbultyr_tablet"
-				type: "item"
-			}]
-			title: "Rune Tablet of Fimbultyr"
-			x: 23.0d
-			y: 11.75d
-		}
-		{
-			dependencies: ["414E854EF72E8A91"]
-			description: [
-				"Buch: MythicBotany → Mjöllnir"
-			]
-			hide_until_deps_visible: true
-			icon: "mythicbotany:mjoellnir"
-			id: "73E43725772CB339"
-			optional: true
-			shape: "square"
-			subtitle: "BO7 · Gaia · Nebenquest"
-			tasks: [{
-				id: "0EBAB9918C8A6923"
-				item: "mythicbotany:mjoellnir"
-				type: "item"
-			}]
-			title: "Mjöllnir"
-			x: 23.0d
-			y: 13.0d
 		}
 		{
 			dependencies: ["083AC076A6081BF5"]

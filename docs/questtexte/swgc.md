@@ -1,6 +1,6 @@
 # Questtexte Star Wars: Galaxy in a Cube (Ersatz für das fehlende Buch)
 
-> Stand 2026-10-17, Minecraft 1.20.1. Entwurf für FTB Quests. Galaxy in a Cube hat kein Buch und kein JEI-Plugin (`../19_HILFEBUECHER.md`, `../modpfade/swgc/WISSEN.md`): Assembly Bench, Droid Fabricator und das Färben der Kyber-Kristalle erscheinen nie in JEI. Diese Texte führen deshalb Schritt für Schritt und enthalten alle Rezepte dieser Wege (Anhang am Ende).
+> Stand 2026-10-17, überarbeitet 2026-10-26 (Shop, Baupläne und Rezepte nach O28, O42, Test 43; Einbau ins Questbuch bis K11), Minecraft 1.20.1. Entwurf für FTB Quests. Galaxy in a Cube hat kein Buch und kein JEI-Plugin (`../19_HILFEBUECHER.md`, `../modpfade/swgc/WISSEN.md`): Assembly Bench, Droid Fabricator und das Färben der Kyber-Kristalle erscheinen nie in JEI. Diese Texte führen deshalb Schritt für Schritt und enthalten alle Rezepte dieser Wege (Anhang am Ende).
 > Gegliedert nach den Star-Wars-Meilensteinen SW2 bis SW5 der Meilensteinkarte (SW1 hat kein Questbuch). Die Kapitel sind dort Arbeitstitel.
 > Quellen: `../modpfade/swgc/WISSEN.md` und `data.js`, `../17_STAR_WARS_1.20.1.md`, `../18_STORY.md` (nur Entscheidungen), `../03_ERZGENERATION.md`, `../meilensteine/data.js`. Rezepte des Droid Fabricator aus den Rezeptdateien der JAR, Verbrauch an der Assembly Bench aus `AssemblyBenchMenu$ResultSlot` (javap), IDs gegen die Sprachdatei und die Rezeptdateien geprüft.
 
@@ -11,11 +11,14 @@
 - **Hauptweg** = nötig für spätere Ziele. **Nebenquest** = stellt den Mod in der Breite vor.
 - **Pack-Änderungen** sind mit ⚙️ markiert. Galaxy in a Cube wird im Pack stark umgebaut (aus allen Nicht-Star-Wars-Dimensionen entfernt, Baupläne aus dem Shop, Macht über Quests). Die Texte sind so geschrieben, dass sie nach der Umsetzung stimmen; den Stand nennt die Tabelle am Ende.
 - 🔵 = nicht aus den JAR-Daten belegt oder noch nicht entschieden. Vor dem Einbau im Spiel prüfen.
-- Platzhalter-IDs für Items, die es erst per KubeJS geben wird (Baupläne, Steuerkerne), stehen als `kubejs:…` und sind 🔵.
+- Eigene Items aus KubeJS (`kubejs/startup_scripts/teil1_items.js`): Baupläne `kubejs:bauplan_<name>`, Steuerkerne `kubejs:steuerkern_b1`, `_b2`, `_droideka`. Rezepte nach `kubejs/server_scripts/starwars/einsiedler_shop.js` (Fassung 11).
+- **Ins Questbuch** (2026-10-26): Kapitel „Galaxy in a Cube“, Steuerdatei `tools/questbuch/swgc.cfg`, nur bis K11 (SW2, SW3). SW4 und SW5 fallen mit `bis = K11` weg; der Anhang hat keine Quests (Überschriften mit `####`, damit der Generator sie nicht als Quests liest).
 
 ---
 
 ## SW2 · Shop des Einsiedlers (K4 Der Mond)
+
+⚙️ Alles aus diesem Kapitel beginnt im Shop des Einsiedlers auf dem Mond: Credits, Durasteel, die ersten Plastoid und die **Baupläne**. Ein Bauplan ist eine Schriftrolle. Ein Rechtsklick liest sie: Die Rolle verschwindet, und das Rezept ist für die ganze Welt freigeschaltet, für alle Spieler. Rezept und Beschreibung stehen danach im Buch „Baupläne des Einsiedlers“. Ohne Bauplan liefert die Werkbank nichts.
 
 ### SW2-01 Credits · Hauptweg
 **Aufgabe:** `swgc:copper_credit`
@@ -23,100 +26,106 @@
 Credits sind die Währung des Shops. Es gibt drei Sorten: 5 Copper Credit sind ein Iron Credit, 3 Iron Credit ein Gold Credit. Ein Rechtsklick zerlegt einen Credit in die kleinere Sorte, kleine Sorten tauschst du an der Werkbank in die größere.
 ⚙️ Credits gibt es nur als Belohnung für Quests. Aus Kupfer, Eisen oder Gold lassen sie sich nicht herstellen.
 
-### SW2-02 Gas Harvester · Hauptweg
-**Aufgabe:** `swgc:gas_harvester`, `swgc:empty_gas_vessel`
+### SW2-05 Assembly Bench · Hauptweg
+**Aufgabe:** `swgc:assembly_bench`
 
-Der Gas Harvester füllt einen Empty Gas Vessel mit Tibanna-Gas. Er braucht keinen Strom, keinen Brennstoff und keinen besonderen Standort.
-Rezept Gas Harvester: 2 Block of Iron, 3 Redstone Dust, 2 Copper Ingot, 1 Glass, 1 Iron Ingot.
-Rezept Empty Gas Vessel: 1 Iron Nugget, 1 Glass, 1 Iron Ingot.
+Die Werkbank für Blaster, Lichtschwerter und Rüstungsbemalungen. Ihre Rezepte stehen im Code und erscheinen **nicht in JEI**; die Quests dieses Kapitels nennen sie.
+⚙️ Kauf den Bauplan „Assembly Bench“ und lies ihn. Danach baust du sie an der Werkbank: 1 Advanced Control Circuit (Mekanism), 2 Desh Plate, 1 Engineer's Workbench (IE) und 3 Block of Steel. Der Block ist zwei Felder breit.
 
-### SW2-03 Tibanna Vessel · Hauptweg
-**Aufgabe:** `swgc:tibanna_vessel`
-
-Setz einen leeren Behälter per Rechtsklick in den Gas Harvester. Nach 20 Sekunden ist er voll, im Nether und im End nach 10. Per Rechtsklick nimmst du ihn wieder heraus.
-Tibanna Vessels brauchst du für Plastoid und als Munition für Blaster. Ein zweiter Harvester lohnt sich, wenn du viel schießt.
+So funktioniert die Bank: links ein **Hauptfeld**, darunter zwei **Nebenfelder**, rechts das **Ergebnis**. Was im Hauptfeld liegt, bestimmt das Rezept. Gibt es mehrere Ausführungen (Blaster-Modelle, Griffdesigns, Bemalungen), wählst du sie in der Liste der Oberfläche. Jeder Zusammenbau verbraucht genau ein Item aus jedem belegten Feld.
 
 ### SW2-04 Durasteel Ingot · Hauptweg
 **Aufgabe:** `swgc:durasteel_ingot`
 
-Das Metall von Galaxy in a Cube, an der normalen Werkbank: 4 Iron Ingot und 1 Diamond ergeben 4 Durasteel Ingot, formlos. Kein Ofen, keine Maschine.
-Durasteel brauchst du für Blaster und die schweren Rüstungen. Es steht in keinem Tag; kein anderer Mod verarbeitet es.
-
-### SW2-05 Assembly Bench · Hauptweg
-**Aufgabe:** `swgc:assembly_bench`
-
-Die Werkbank für Blaster, Lichtschwerter und Rüstungsbemalungen. Ihre Rezepte stehen im Code und erscheinen **nicht in JEI**; alle stehen im Anhang dieses Kapitels.
-⚙️ Das Rezept ist gesperrt. Es wird mit dem Bauplan aus dem Shop freigeschaltet, einmal für die ganze Welt, sobald einer von euch den Bauplan im Inventar hat. Danach baust du sie an der Werkbank: 1 Paper, 3 Iron Ingot, 3 Planks. Der Block ist zwei Felder breit.
-
-So funktioniert die Bank: links ein **Hauptfeld**, darunter zwei **Nebenfelder**, rechts das **Ergebnis**. Was im Hauptfeld liegt, bestimmt das Rezept. Gibt es mehrere Ausführungen (Blaster-Modelle, Griffdesigns, Bemalungen), wählst du sie in der Liste der Oberfläche. Jeder Zusammenbau verbraucht genau ein Item aus jedem belegten Feld.
+Das Metall von Galaxy in a Cube, für Droid Fabricator, Blaster, die Steuerkerne der Droiden und die schweren Rüstungen. Es steht in keinem Tag; kein anderer Mod verarbeitet es.
+⚙️ Durasteel gibt es nur im Shop. Ein Rezept hat es im Pack nicht.
 
 ### SW2-06 Droid Fabricator · Hauptweg
 **Aufgabe:** `swgc:droid_fabricator`
 
-Die Maschine baut Kampfdroiden aus Metallblöcken. Sie braucht keinen Strom und keinen Brennstoff. Die Droiden-Rezepte erscheinen **nicht in JEI**; sie stehen im Anhang.
-⚙️ Das Rezept ist gesperrt und wird mit dem Bauplan aus dem Shop freigeschaltet, für die ganze Welt. Danach baust du ihn an der Werkbank: 5 Block of Iron, 2 Iron Ingot, 1 Redstone Dust, 1 Copper Ingot.
+Die Maschine baut Kampfdroiden aus Metallblöcken. Sie braucht keinen Strom und keinen Brennstoff. Die Droiden-Rezepte erscheinen **nicht in JEI**; sie stehen in den Droiden-Quests.
+⚙️ Kauf den Bauplan „Droid Fabricator“ und lies ihn. Danach baust du ihn an der Werkbank: 2 Steel Plate, 1 Advanced Control Circuit, 2 Durasteel Ingot, 1 Steel Casing (Mekanism) und 3 Block of Steel.
+⚙️ Jeder Droide braucht im Fabricator zusätzlich seinen **Steuerkern**, der dabei verbraucht wird. Das Werkbank-Rezept des Kerns schaltet der Bauplan des Droiden frei.
 
 ### SW2-07 B-2 · Nebenquest
 **Aufgabe:** `swgc:b2`
 
 Der B-2 ist der erste Droide, den du ohne Plastoid und ohne Blaster bauen kannst. Leg die Zutaten in den Droid Fabricator und warte, bis er fertig ist.
-Zutaten: 5 Block of Iron, 6 Redstone Dust, 2 Block of Copper, 3 Diamond. Zeit 240 (🔵 vermutlich Ticks, also 12 Sekunden).
-⚙️ Dazu kommt ein **B-2-Steuerkern** (`kubejs:steuerkern_b2` 🔵), der bei jedem Droiden verbraucht wird. Sein Werkbank-Rezept schaltet der Bauplan „B-2“ aus dem Shop frei.
+Zutaten: 5 Block of Steel, 6 Redstone Dust, 2 Block of Copper, 3 Diamond und 1 Steuerkern B-2. Zeit 240 (🔵 vermutlich Ticks, also 12 Sekunden).
+⚙️ Den Steuerkern B-2 (`kubejs:steuerkern_b2`) baust du nach dem Bauplan „Droide B-2“ an der Werkbank: 4 Durasteel Ingot, 4 Advanced Control Circuit, 1 Block of Diamond.
 Das Ergebnis ist ein Item. Beim Platzieren entsteht der Droide mit dir als Besitzer. Eigene Droiden nehmen Befehle an: Follow, Hold Position, Stand Still, Combat Aid und Eliminate Mobs. 🔵 Wie man die Befehle gibt, im Spiel prüfen.
+
+### SW2-02 Gas Harvester · Nebenquest
+**Aufgabe:** `swgc:gas_harvester`, `swgc:empty_gas_vessel`
+
+Der Gas Harvester füllt einen Empty Gas Vessel mit Tibanna-Gas. Er braucht keinen Strom, keinen Brennstoff und keinen besonderen Standort. Tibanna ist die Munition der Blaster.
+⚙️ Beide Rezepte schaltet der Bauplan „Gas Harvester“ frei.
+Rezept Gas Harvester: 4 Block of Steel, 1 Advanced Control Circuit, 2 Desh Plate, 1 Basic Fluid Tank (Mekanism), 1 Redstone Engineering Block (IE).
+Rezept Empty Gas Vessel: 1 Desh Plate, 3 Steel Plate, 1 Glass.
+
+### SW2-03 Tibanna Vessel · Nebenquest
+**Aufgabe:** `swgc:tibanna_vessel`
+
+Setz einen leeren Behälter per Rechtsklick in den Gas Harvester. Nach 20 Sekunden ist er voll, im Nether und im End nach 10. Per Rechtsklick nimmst du ihn wieder heraus.
+Mit Tibanna Vessels lädst du Blaster nach. Ein zweiter Harvester lohnt sich, wenn du viel schießt.
 
 ---
 
 ## SW3 · Plastoid, Blaster und Truppen (K7 Horchposten)
 
-⚙️ Plastoid braucht im Pack HDPE aus Mekanism (MK4-07, Pressurized Reaction Chamber). Deshalb beginnen Blaster, B-1, Droideka und Klonrüstung erst hier.
+⚙️ Plastoid machst du ab hier selbst aus HDPE Pellets von Mekanism. Damit beginnen Blaster, B-1, Droideka und die Rüstungen.
 
 ### SW3-01 Plastoid · Hauptweg
 **Aufgabe:** `swgc:plastoid`
 
-Der Kunststoff von Galaxy in a Cube, für Blaster, Klonrüstung, Droideka und die schweren Rüstungen. Im Mod: 1 Tibanna Vessel und 3 Kohle oder Holzkohle, formlos.
-⚙️ Im Pack gehört HDPE ins Rezept (`mekanism:hdpe_sheet` oder `mekanism:hdpe_pellet` 🔵, Rezept noch nicht festgelegt). Das Rezept steht in JEI.
+Der Kunststoff von Galaxy in a Cube, für Blaster, den Steuerkern B-1, Droideka und die Rüstungen.
+⚙️ Der Einsiedler verkauft nur die ersten 20 Plastoid. Danach baust du es selbst: Mit dem Bauplan „Plastoid“ ergeben 2 HDPE Pellets an der Werkbank 1 Plastoid. HDPE Pellets kommen aus der Pressurized Reaction Chamber (Mekanism-Quest „Pressurized Reaction Chamber und HDPE“).
 
 ### SW3-02 Blaster · Hauptweg
-**Aufgabe:** `swgc:dc15a`, `swgc:dc15s`, `swgc:dc17`, `swgc:dh17`, `swgc:e5`, `swgc:tl50`, `swgc:amban_sniper_rifle` (eins davon)
+**Aufgabe:** eines von `swgc:dc15a`, `swgc:dc15s`, `swgc:dc17`, `swgc:dh17`, `swgc:e5`, `swgc:tl50`, `swgc:amban_sniper_rifle`
 
 An der Assembly Bench: **Diamond** ins Hauptfeld, **Plastoid** und **Durasteel Ingot** in die Nebenfelder. Dann wählst du eines von sieben Modellen: DC-15A, DC-15S, DC-17, DH-17, E-5, TL-50 oder Amban Sniper Rifle.
 Ein Blaster hat ein Magazin. Nachladen geht mit Tibanna Vessels („No ammo“, „Ammo full“). Jedes Modell hat eigene Werte für Schaden, Tempo, Streuung und Magazin (🔵 Zahlen nicht ausgelesen).
-⚙️ Alle Blaster hängen an der Assembly Bench; ohne deren Bauplan gibt es keine.
+⚙️ Der Bauplan „Blaster“ aus dem Shop erklärt alle sieben Modelle im Buch. Gesperrt ist an der Bank nichts; du brauchst nur die Assembly Bench.
 
 ### SW3-03 B-1 · Hauptweg
 **Aufgabe:** `swgc:b1`
 
 Der einfache Kampfdroide. Er bekommt den Blaster, den du in den Fabricator legst, als Waffe.
-Zutaten: 3 Block of Iron, 3 Redstone Dust, 2 Block of Copper, 1 Blaster (jeder Blaster aus dem Tag `swgc:blasters`). Zeit 160 (🔵 vermutlich 8 Sekunden).
-⚙️ Dazu ein **B-1-Steuerkern** (`kubejs:steuerkern_b1` 🔵), freigeschaltet mit dem Bauplan „B-1“ aus dem Shop.
+Zutaten: 3 Block of Steel, 3 Redstone Dust, 2 Block of Copper, 1 Blaster (jedes der sieben Modelle) und 1 Steuerkern B-1. Zeit 160 (🔵 vermutlich 8 Sekunden).
+⚙️ Den Steuerkern B-1 (`kubejs:steuerkern_b1`) baust du nach dem Bauplan „Droide B-1“ an der Werkbank: 4 Plastoid, 4 Basic Control Circuit, 1 Block of Redstone.
 
 ### SW3-04 Droideka · Nebenquest
 **Aufgabe:** `swgc:droideka`
 
 Der schwere Droide mit eigenem Schild. 🔵 Kampfwerte nicht ausgelesen.
-Zutaten: 4 Block of Iron, 8 Redstone Dust, 3 Block of Copper, 4 Diamond, 1 Plastoid. Zeit 200 (🔵 vermutlich 10 Sekunden).
-⚙️ Dazu ein **Droideka-Steuerkern** (`kubejs:steuerkern_droideka` 🔵), freigeschaltet mit dem Bauplan „Droideka“ aus dem Shop.
+Zutaten: 4 Block of Steel, 8 Redstone Dust, 3 Block of Copper, 4 Diamond, 1 Plastoid und 1 Steuerkern Droideka. Zeit 200 (🔵 vermutlich 10 Sekunden).
+⚙️ Den Steuerkern Droideka (`kubejs:steuerkern_droideka`) baust du nach dem Bauplan „Droideka“ an der Werkbank: 4 Durasteel Ingot, 4 Elite Control Circuit, 1 Netherite Ingot.
 
 ### SW3-05 Klonrüstung · Nebenquest
 **Aufgabe:** `swgc:clone_phase_2_helmet`, `swgc:clone_phase_2_chestplate`, `swgc:clone_phase_2_leggings`, `swgc:clone_phase_2_boots`
 
-Die Phase-2-Rüstung der Klone, ganz aus Plastoid an der Werkbank: Helm 5, Brust 8, Hose 7, Stiefel 4, zusammen 24 Plastoid. Die Rezepte stehen in JEI. 🔵 Rüstungswerte nicht ausgelesen.
+Die Rüstung Clone Phase 2, ganz aus Plastoid an der Werkbank: Helm 5, Brust 8, Hose 7, Stiefel 4, zusammen 24 Plastoid. 🔵 Rüstungswerte nicht ausgelesen.
+⚙️ Die Rezepte schaltet der Bauplan „Klon-Rüstung (Phase 2)“ frei.
 
 ### SW3-06 Bemalung einer Einheit · Nebenquest
-**Aufgabe:** Checkmark (🔵 die IDs der bemalten Teile sind nicht ausgelesen)
+**Aufgabe:** ein bemaltes Teil der Klonrüstung, eines von `swgc:clone_<einheit>_helmet`, `_chestplate`, `_leggings`, `_boots` (15 Einheiten, ohne die 212th)
+**Steuerdatei:** Oder-Aufgabe mit 60 IDs in `tools/questbuch/swgc.cfg`. Die 212th fehlt absichtlich: Den 212er-Helm bekommt man in der Story (O71), er würde die Quest sonst ohne Bemalen erfüllen.
 
-Leg ein Teil der Klonrüstung ins Hauptfeld der Assembly Bench und lass die Nebenfelder leer. In der Liste wählst du eine von 16 Einheiten, ohne weitere Zutaten: 104th, 13th, 442nd, 497th und 212th Battalion, 187th, 305th, 31st, 501st, 615th und 7th Legion, 332nd Company, 41st Elite Corps, 87th Sentinel Corps, 91st Recon Corps, Coruscant Guard. Umbemalen geht beliebig oft.
+Leg ein Teil der Klonrüstung ins Hauptfeld der Assembly Bench und lass die Nebenfelder leer. In der Liste wählst du eine von 16 Einheiten, ohne weitere Zutaten: 104th, 13th, 442nd, 497th und 212th Battalion, 187th, 305th, 31st, 501st, 615th und 7th Legion, 332nd Company, 41st Elite Corps, 87th Sentinel Corps, 91st Recon Corps, Coruscant Guard. Umbemalen geht beliebig oft. Für diese Quest zählt jede Einheit außer der 212th.
 
 ### SW3-07 Royal Guard · Nebenquest
 **Aufgabe:** `swgc:royal_guard_helmet`, `swgc:royal_guard_chestplate`, `swgc:royal_guard_leggings`, `swgc:royal_guard_boots`
 
-Die rote Rüstung der Imperialen Garde, an der Werkbank aus Durasteel, Plastoid und Red Wool (zusammen 10 Durasteel). Die Rezepte stehen in JEI.
-Dazu passt die Force Pike, die Waffe der Garde: 2 Redstone Dust, 1 Lightning Rod, 2 Diamond.
+Die rote Rüstung Royal Guard, an der Werkbank aus Durasteel, Plastoid und Red Wool (zusammen 10 Durasteel).
+⚙️ Die Rezepte schaltet der Bauplan „Rüstung der Royal Guard“ frei.
+Dazu passt die Force Pike: 2 Redstone Dust, 1 Lightning Rod, 2 Diamond.
 
 ### SW3-08 Vader · Nebenquest
 **Aufgabe:** `swgc:vader_helmet`, `swgc:vader_chestplate`, `swgc:vader_leggings`, `swgc:vader_boots`
 
-Die schwerste Rüstung des Mods: zusammen 18 Durasteel, dazu Obsidian, Plastoid, Redstone Dust und 2 Amethyst Shard für den Helm. Die Rezepte stehen in JEI. Mit Atemgeräusch.
+Die schwerste Rüstung des Mods: zusammen 18 Durasteel, dazu Obsidian, Plastoid, Redstone Dust und 2 Amethyst Shard für den Helm. Mit Atemgeräusch.
+⚙️ Die Rezepte schaltet der Bauplan „Vader-Rüstung“ frei.
 
 ---
 
@@ -229,7 +238,7 @@ Ein werfbarer Speer aus 1 Iron Ingot, 2 String und 2 Bamboo, an der Werkbank (Re
 
 Diese Wege zeigt JEI nie. Für das Questbuch als eigene Info-Quest oder in den Text der jeweiligen Quest.
 
-### Assembly Bench
+#### Assembly Bench
 
 Jeder Zusammenbau verbraucht ein Item je belegtem Feld.
 
@@ -244,19 +253,19 @@ Jeder Zusammenbau verbraucht ein Item je belegtem Feld.
 
 Der Name eines Items bleibt beim Umbau erhalten. 🔵 Im Code legt ein Lichtschwert im Ergebnisfeld Griff und Kristall zurück in die Felder (Zerlegen); im Spiel prüfen.
 
-### Droid Fabricator
+#### Droid Fabricator
 
 Rezepttyp `swgc:fabrication`, kein Strom.
 
 | Droide | Zutaten | Zeit |
 |---|---|---|
-| B-1 (`swgc:b1`) | 3 Block of Iron, 3 Redstone Dust, 2 Block of Copper, 1 Blaster (Tag `swgc:blasters`, wird seine Waffe) | 160 |
-| B-2 (`swgc:b2`) | 5 Block of Iron, 6 Redstone Dust, 2 Block of Copper, 3 Diamond | 240 |
-| Droideka (`swgc:droideka`) | 4 Block of Iron, 8 Redstone Dust, 3 Block of Copper, 4 Diamond, 1 Plastoid | 200 |
+| B-1 (`swgc:b1`) | 3 Block of Steel, 3 Redstone Dust, 2 Block of Copper, 1 Blaster (Tag `swgc:blasters`, wird seine Waffe), Steuerkern B-1 | 160 |
+| B-2 (`swgc:b2`) | 5 Block of Steel, 6 Redstone Dust, 2 Block of Copper, 3 Diamond, Steuerkern B-2 | 240 |
+| Droideka (`swgc:droideka`) | 4 Block of Steel, 8 Redstone Dust, 3 Block of Copper, 4 Diamond, 1 Plastoid, Steuerkern Droideka | 200 |
 
-⚙️ Im Pack zusätzlich je ein Steuerkern des Typs. 🔵 Zeiteinheit vermutlich Ticks.
+⚙️ Im Pack Stahl- statt Eisenblöcke und je ein Steuerkern des Typs (Test 43). 🔵 Zeiteinheit vermutlich Ticks.
 
-### Kyber färben
+#### Kyber färben
 
 Eigener Bildschirm per Rechtsklick, Tabelle in SW5-02. Weiß nur durch Reinigen eines roten Kristalls (SW5-07).
 
@@ -267,22 +276,22 @@ Eigener Bildschirm per Rechtsklick, Tabelle in SW5-02. Weiß nur durch Reinigen 
 | Änderung | wo im Text | Stand |
 |---|---|---|
 | Galaxy in a Cube aus allen Nicht-Star-Wars-Dimensionen entfernt (Kyber, Jawas, Tusken, Ewok-Dörfer) | SW5-01, SW5-08 | 🟢 entschieden; Kyber-Override 🟡 angelegt, ungetestet; Mobs und Strukturen offen |
-| Credits nur als Quest-Belohnung, Herstellungsrezepte aus Metall weg | SW2-01 | 🔵 vorgeschlagen (`18_STORY.md`), nicht umgesetzt |
-| Assembly Bench nur mit Bauplan aus dem Shop, global für die Welt | SW2-05, SW3-02 | 🟢 entschieden, nicht umgesetzt |
-| Droid Fabricator nur mit Bauplan, global | SW2-06 | 🟢 entschieden, nicht umgesetzt |
-| Steuerkern je Droidentyp als Zutat im Fabricator, Rezept per Bauplan | SW2-07, SW3-03, SW3-04, Anhang | 🟢 entschieden, nicht umgesetzt; Item-IDs offen |
-| Plastoid mit HDPE aus Mekanism | SW3 (Einleitung), SW3-01 | 🟢 entschieden, erst wenn Story Part 1 steht; Rezept offen |
+| Credits nur als Quest-Belohnung, Herstellungsrezepte aus Metall weg | SW2-01 | 🟢 Skript `einsiedler_shop.js` |
+| Baupläne (Schriftrollen) aus dem Shop schalten Rezepte für die ganze Welt frei: Assembly Bench, Droid Fabricator, Gas Harvester mit Empty Gas Vessel, Plastoid, Steuerkerne, Rüstungen; Blaster nur Buchseite; alle Rezepte verteuert | SW2, SW3 | 🟢 O28, Test 43; Skript `einsiedler_shop.js` 🔵 ungetestet |
+| Durasteel nur im Shop, ohne Rezept | SW2-04 | 🟢 O28, Skript |
+| Steuerkern je Droidentyp als Zutat im Fabricator, Rezept per Bauplan; Stahl- statt Eisenblöcke | SW2-07, SW3-03, SW3-04, Anhang | 🟢 Skript |
+| Plastoid: die ersten 20 im Shop, danach 2 HDPE Pellets → 1 Plastoid hinter dem Bauplan | SW3 (Einleitung), SW3-01 | 🟢 O42, Skript; Handelsgrenze stellt der User in Easy NPC ein |
 | Macht wächst nicht von selbst, Punkte über Quests | SW4-01 | 🟢 entschieden; Technik offen (T10, Tests 33/34) |
 | Kyber nur auf Star-Wars-Welten, selten, aus dem Kyber-Erz von Star Wars Planets | SW5-01 | 🟢 entschieden; Weg (Drop oder Rezept) offen |
 
 ## 🔵 Offen vor dem Einbau
 
-- **Plastoid erst ab K7:** Mit HDPE im Rezept gibt es Blaster, B-1, Droideka und Klonrüstung erst nach MK4-07. Im Shop ab K4 wären dann nur Assembly Bench, Droid Fabricator und B-2 sinnvoll. Gewollt, oder soll der Einsiedler Plastoid verkaufen?
-- **Gas Harvester, Empty Gas Vessel, Durasteel:** Ob sie ebenfalls nur über den Shop kommen, ist nicht entschieden. Die Texte nehmen an, dass sie frei baubar sind.
-- **Platzhalter-IDs** `kubejs:steuerkern_b1`, `kubejs:steuerkern_b2`, `kubejs:steuerkern_droideka` und die Bauplan-Items: echte IDs nach der Umsetzung eintragen.
-- **Machtpunkte als Belohnung** (T10): Lassen sie sich per Befehl vergeben? Davon hängen SW4-01 und alle Farbbedingungen ab.
+- **Preise und Handel** im Shop: stellt der User in Easy NPC ein (Plastoid nur 20-mal). Die Quests nennen keine Preise.
+- **Bauplan „Pilotenhelm“** (O71, Kapitel „Erinnerungsstücke“): baut eine andere Session; im Kapitel dieses Mods kommt er nicht vor, er gehört zur Story.
+- **Reihenfolge SW2:** Die Quests folgen dem Gedanken „Assembly Bench als erster Kauf“ (Kommentar im Shop-Skript). Gas Harvester und Tibanna sind Nebenquest, weil Plastoid kein Tibanna mehr braucht; Tibanna ist nur noch Blaster-Munition.
+- **SW3-06:** Die 212th zählt nicht (Story-Helm, O71). Soll stattdessen nur ein bestimmtes Teil (z. B. Helm) zählen?
+- **Machtpunkte als Belohnung** (T10): Lassen sie sich per Befehl vergeben? Davon hängen SW4-01 und alle Farbbedingungen ab (Teil 2).
 - **Holocrons** (`swgc:jedi_holocron`, `swgc:sith_holocron`, je 5 Punkte) wären eine Belohnung für die Ausbildung; Einordnung offen (O37).
 - Befehle an Droiden geben, Formwechsel der Lichtschwerter, Doppelschwert-Handhabung, Zerlegen an der Assembly Bench: im Spiel prüfen.
 - Zeiteinheit des Droid Fabricator (vermutlich Ticks).
-- IDs der bemalten Klonrüstung (für eine Item-Aufgabe in SW3-06).
 - Werte von Blastern, Lichtschwertern und Rüstungen sind nicht ausgelesen; die Texte nennen deshalb keine Zahlen.

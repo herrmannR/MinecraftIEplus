@@ -38,7 +38,7 @@ Hier setzt du die Teile zu Werkzeugen zusammen, reparierst und tauschst Teile.
 Buch: Materials and You → Introduction → Tinker Station; Tools → Repairing, Part Swapping.
 
 ### TK1-04 Das erste Werkzeug · Hauptweg
-**Aufgabe:** `tconstruct:pickaxe`, `tconstruct:hand_axe`, `tconstruct:sword`
+**Aufgabe:** `tconstruct:pickaxe` oder `tconstruct:hand_axe` oder `tconstruct:sword`
 
 Bau eine Pickaxe, eine Hand Axe oder ein Sword. Kupfer ist das einzige Metall, das ohne Schmelze geht.
 Buch: Materials and You → Tools; Tier 1 General Materials.
@@ -214,9 +214,10 @@ Buch: Fantastic Foundry → Tier 4 General Materials; Fantastic Armor.
 ⚙️ Refined Obsidian kannst du hier nicht legieren. Es entsteht nur über Mekanism. Fertige Barren lassen sich trotzdem einschmelzen und gießen.
 ⚙️ 🔵 Auch Manyullyn und Queen's Slime sollen Zutat anderer Mods werden (Weg A, offen).
 
-### TK3-07 Blood-Smeltery · Nebenquest (nach Blutaltar, BM1)
+### TK3-07 Blood-Smeltery · Nebenquest
 **Aufgabe:** Flüssigkeit `bloodsmeltery:demon_will`, `bloodsmeltery:molten_bloodbrass`
 
+Erst nach dem Blutaltar von Blood Magic (BM1).
 Das Addon verbindet Smeltery und Blood Magic: Demon Will wird flüssig, daraus entstehen Bloodbrass und Blood-Seared Stone als Werkzeugmaterial. Kein Buch.
 ⚙️ Life Essence entsteht nur am Blutaltar, nicht als Legierung in der Smeltery. Blank Slates und Runen werden nicht gegossen, sondern am Altar gemacht. Einschmelzen von Slates und Runen zu Blood-Seared Stone geht weiter.
 🔵 Das Addon ist in Version 1.2.1a teilweise defekt (nur eine von fünf Demonite-Flüssigkeiten). Vor dem Einbau im Spiel prüfen, was davon geht.
@@ -239,9 +240,10 @@ Die Metalle von Mond und Mars lassen sich in der Smeltery schmelzen und gießen.
 Werkzeugteile aus Desh, Ostrum und später Calorite tragen den Trait Oxygenated.
 🔵 Was Oxygenated genau tut, steht noch nicht in den Quellen.
 
-### TK4-03 Calorite · Nebenquest (nach Rakete T3)
+### TK4-03 Calorite · Nebenquest
 **Aufgabe:** Flüssigkeit `tcintegrations:molten_calorite`, `ad_astra:calorite_ingot`
 
+Erst nach der Rakete T3.
 Das Metall der Venus, wie Desh und Ostrum gieß- und verbaubar.
 
 ### TK4-04 Raumfahrt-Modifier · Nebenquest
@@ -249,7 +251,7 @@ Das Metall der Venus, wie Desh und Ostrum gieß- und verbaubar.
 
 Das Giselle Addon bringt Space Breathing, Space Fire Proof, Acid Rain Proof und Gravity Normalizing als Tinkers-Modifier. Beschrieben in `adastra.md`, RFX-02; hier nur als Verweis, damit die Quest nicht doppelt steht.
 
-⚙️ 🔵 Weitere geplante Wege ohne eigene Quest, bis sie entschieden sind: eigene Tinkers-Materialien für Metalle ohne Material (Weg D, z. B. Terrasteel, Hellforged, Blue-Skies- und Star-Wars-Metalle), Modifier an späte Items (Weg E), einzelne Raketenteile nur gegossen (Weg F). Kommt einer davon, gehört er als Quest hierher.
+⚙️ 🔵 Weitere geplante Wege ohne eigene Quest, bis sie entschieden sind: eigene Tinkers-Materialien für Metalle ohne Material (Weg D, z. B. Terrasteel, Hellforged, Metalle aus Blue Skies und weiteren Mods), Modifier an späte Items (Weg E), einzelne Raketenteile nur gegossen (Weg F). Kommt einer davon, gehört er als Quest hierher.
 
 ---
 
@@ -297,7 +299,7 @@ Stäbe aus Slime-Kristallen und Slimewood, gebaut für Interaktions-Abilities. D
 Buch: Tinkers' Gadgetry → Staffs.
 
 ### TKA-06 Ancient Tools · Nebenquest
-**Aufgabe:** `tconstruct:melting_pan`, `tconstruct:war_pick`, `tconstruct:battlesign`, `tconstruct:swasher`, `tconstruct:minotaur_axe`
+**Aufgabe:** `tconstruct:melting_pan` oder `tconstruct:war_pick` oder `tconstruct:battlesign` oder `tconstruct:swasher` oder `tconstruct:minotaur_axe`
 
 Diese Werkzeuge kannst du nicht bauen, nur finden. Eins reicht.
 Buch: Tinkers' Gadgetry → Ancient Tools.
@@ -333,3 +335,7 @@ Keine Pack-Änderung, aber nicht im Buch: Fremdmetalle von IE und Mekanism (TK1-
 6. Blood-Smeltery 1.2.1a: welche Flüssigkeiten und Rezepte im Spiel gehen.
 7. Trait Oxygenated (TK4-02): Wirkung nicht ausgelesen.
 8. Ancient Tools: welche Fundorte im Pack existieren.
+9. Abhängigkeit über Kapitelgrenzen (TK3-07 erst nach BM1, TK4-03 erst nach Rakete T3) kann der Generator nicht. Im Questbuch hängen beide vorerst an der letzten Hauptweg-Quest davor; der Satz steht im Text.
+10. Flüssigkeitsmengen im Questbuch (Einbau 2026-10-26): Blazing Blood und Demon Will 1000 mB, geschmolzene Metalle (Bloodbrass, Desh, Ostrum, Calorite) 90 mB = ein Barren. Passt das?
+11. Zu 3.: TK1-14 und TK4-02 vorerst Item `tconstruct:pick_head` plus Kontrollhaken mit dem Material. TK1-14 hat damit dasselbe Item wie TK1-11; erst der Haken unterscheidet sie.
+12. `order = 10` hat auch das Mekanism-Kapitel; Reihenfolge der Mod-Kapitel festlegen.

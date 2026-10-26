@@ -1,0 +1,998 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "alexsmobs"
+	group: ""
+	icon: "alexsmobs:animal_dictionary"
+	id: "03DD8EF9C9615597"
+	order_index: 22
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 4: Der Mond."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "01F1F996ED155903"
+			shape: "gear"
+			subtitle: "AM1 · Tiere der Oberwelt"
+			tasks: [{
+				id: "53547F52A94188D3"
+				stage: "kapitel_k4"
+				type: "gamestage"
+			}]
+			title: "Kapitel 4: Alex's Mobs"
+			x: 2.0d
+			y: -1.75d
+		}
+		{
+			dependencies: ["01F1F996ED155903"]
+			description: [
+				"Das Nachschlagewerk zu allen Tieren des Mods. Du brauchst dafür ein Beutestück irgendeines Tiers."
+				"Buch: Das Animal Dictionary selbst; Rezept in JEI."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:animal_dictionary"
+			id: "27EC624AA254E2F1"
+			optional: true
+			shape: "square"
+			subtitle: "AM1 · Tiere der Oberwelt · Nebenquest"
+			tasks: [{
+				id: "175C8F995057AE68"
+				item: "alexsmobs:animal_dictionary"
+				type: "item"
+			}]
+			title: "Animal Dictionary"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["27EC624AA254E2F1"]
+			description: [
+				"Zwei neue Futtermittel aus Vanilla-Laub: Bananen fallen aus Jungle Leaves, Akazienblüten aus Acacia Leaves. Damit zähmst du Affen, Gorillas und Elefanten."
+				"Buch: Animal Dictionary → Capuchin Monkey, Gorilla, Elephant."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:banana"
+			id: "450304E2C340D50E"
+			optional: true
+			shape: "square"
+			subtitle: "AM1 · Tiere der Oberwelt · Nebenquest"
+			tasks: [{
+				id: "08BF670C186781A3"
+				item: "alexsmobs:banana"
+				type: "item"
+			}
+			{
+				id: "0F8B443FAE7CB1AA"
+				item: "alexsmobs:acacia_blossom"
+				type: "item"
+			}]
+			title: "Bananen und Akazienblüten"
+			x: 2.0d
+			y: 1.25d
+		}
+		{
+			dependencies: ["27EC624AA254E2F1"]
+			description: [
+				"Ein gefüllter Futterspender hält Kolibris in der Nähe."
+				"Buch: Animal Dictionary → Hummingbird."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:hummingbird_feeder"
+			id: "63F879285C6FFD7E"
+			optional: true
+			shape: "square"
+			subtitle: "AM1 · Tiere der Oberwelt · Nebenquest"
+			tasks: [{
+				id: "757BE84D0BCDE92D"
+				item: "alexsmobs:hummingbird_feeder"
+				type: "item"
+			}]
+			title: "Hummingbird Feeder"
+			x: 2.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["27EC624AA254E2F1"]
+			description: [
+				"Zähme einen Bald Eagle mit Fish Oil und rüste dich zum Falkner aus. Die Zutaten kommen von drei Tieren: Blobfish (tiefe Ozeane), Grizzly Bear und Roadrunner."
+				"Buch: Animal Dictionary → Bald Eagle; für die Zutaten Blobfish, Grizzly Bear, Roadrunner."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:fish_oil"
+			id: "24B22430C11D9321"
+			optional: true
+			shape: "square"
+			subtitle: "AM1 · Tiere der Oberwelt · Nebenquest"
+			tasks: [{
+				id: "52227CC6C012A7A3"
+				item: "alexsmobs:fish_oil"
+				type: "item"
+			}
+			{
+				id: "36257ED091862140"
+				item: "alexsmobs:falconry_glove"
+				type: "item"
+			}
+			{
+				id: "6C1305A2E9A25630"
+				item: "alexsmobs:falconry_hood"
+				type: "item"
+			}]
+			title: "Falknerei"
+			x: 2.0d
+			y: 3.75d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 4: Der Mond."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "01F1F996ED155903"
+			shape: "gear"
+			subtitle: "AM2 · Beute der Oberwelt"
+			tasks: [{
+				id: "53547F52A94188D3"
+				stage: "kapitel_k4"
+				type: "gamestage"
+			}]
+			title: "Kapitel 4: Alex's Mobs"
+			x: 5.5d
+			y: -1.75d
+		}
+		{
+			dependencies: ["27EC624AA254E2F1", "01F1F996ED155903"]
+			description: [
+				"Jedes Stück kopiert eine Fähigkeit seines Tiers. Die Reihe ist in drei Ketten geteilt: Rüstung, Werkzeuge, Ameisen."
+				""
+				"Drei Helme von drei Tieren. Der Elch wirft sein Geweih nur alle paar Tage ab, man erlegt ihn dafür nicht."
+				"Buch: Animal Dictionary → Froststalker, Moose, Raccoon und Grizzly Bear."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:froststalker_helmet"
+			id: "52C67FB84B2DF1F9"
+			optional: true
+			shape: "square"
+			subtitle: "AM2 · Beute der Oberwelt · Nebenquest"
+			tasks: [{
+				id: "62488EA255D40379"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(alexsmobs:froststalker_helmet)item(alexsmobs:moose_headgear)item(alexsmobs:frontier_cap))" } }
+				title: "Ein Helm aus Tierbeute"
+				type: "item"
+			}]
+			title: "Ein Helm aus Tierbeute"
+			x: 5.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["52C67FB84B2DF1F9"]
+			description: [
+				"Die Spiked Scutes für den Schildkrötenpanzer gibt es nur durch Scheren einer bemoosten Alligator Snapping Turtle."
+				"Buch: Animal Dictionary → Crocodile, Rocky Roller, Alligator Snapping Turtle."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:crocodile_chestplate"
+			id: "730B961C975FF15B"
+			optional: true
+			shape: "square"
+			subtitle: "AM2 · Beute der Oberwelt · Nebenquest"
+			tasks: [{
+				id: "282B2E317319EFF1"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(alexsmobs:crocodile_chestplate)item(alexsmobs:rocky_chestplate)item(alexsmobs:spiked_turtle_shell))" } }
+				title: "Ein Brustpanzer"
+				type: "item"
+			}]
+			title: "Brustpanzer"
+			x: 5.5d
+			y: 1.25d
+		}
+		{
+			dependencies: ["730B961C975FF15B"]
+			description: [
+				"Ausweichen wie ein Emu, an Wänden klettern, schnell über Sand laufen oder aus dem Wasser springen."
+				"Buch: Animal Dictionary → Emu und Kangaroo, Cave Centipede, Roadrunner, Flying Fish."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:emu_leggings"
+			id: "6BBB0708A1D0A119"
+			optional: true
+			shape: "square"
+			subtitle: "AM2 · Beute der Oberwelt · Nebenquest"
+			tasks: [{
+				id: "4FD78DCA89653085"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(alexsmobs:emu_leggings)item(alexsmobs:centipede_leggings)item(alexsmobs:roadrunner_boots)item(alexsmobs:flying_fish_boots))" } }
+				title: "Beine oder Stiefel"
+				type: "item"
+			}]
+			title: "Beine und Stiefel"
+			x: 5.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["27EC624AA254E2F1"]
+			description: [
+				"Lasso aus Schlangenhaut, Rassel, Stinkstrahler und eine Handvoll Sand ins Gesicht."
+				"Buch: Animal Dictionary → Anaconda, Rattlesnake, Skunk, Guster."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:vine_lasso"
+			id: "080472E8F456EE46"
+			optional: true
+			shape: "square"
+			subtitle: "AM2 · Beute der Oberwelt · Nebenquest"
+			tasks: [{
+				id: "46F7D3C418C65E3B"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(alexsmobs:vine_lasso)item(alexsmobs:maraca))" } }
+				title: "Vine Lasso oder Maraca"
+				type: "item"
+			}
+			{
+				id: "08D1AED3BD83AE8B"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(alexsmobs:stink_ray)item(alexsmobs:pocket_sand))" } }
+				title: "Stink Ray oder Pocket Sand"
+				type: "item"
+			}]
+			title: "Werkzeuge der Tiere"
+			x: 5.5d
+			y: 3.75d
+		}
+		{
+			dependencies: ["080472E8F456EE46"]
+			description: [
+				"Die Peitsche verbindet zwei Welten: die Elastic Tendon vom Murmur tief unter der Erde, die Dropbear Claw aus dem Nether."
+				"Buch: Animal Dictionary → Murmur, Dropbear."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:tendon_whip"
+			id: "7F7C4D18773AC647"
+			optional: true
+			shape: "square"
+			subtitle: "AM2 · Beute der Oberwelt · Nebenquest"
+			tasks: [{
+				id: "199BBFFC07EC8DFA"
+				item: "alexsmobs:tendon_whip"
+				type: "item"
+			}]
+			title: "Tendon Whip"
+			x: 5.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["7F7C4D18773AC647"]
+			description: [
+				"Eine verbesserte Elytra aus den Flügeln der Tarantula Hawk. Du brauchst dafür eine Elytra."
+				"Buch: Animal Dictionary → Tarantula Hawk."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:tarantula_hawk_elytra"
+			id: "7E95DDB4342F81A3"
+			optional: true
+			shape: "square"
+			subtitle: "AM2 · Beute der Oberwelt · Nebenquest"
+			tasks: [{
+				id: "60135DA85F29AE8F"
+				item: "alexsmobs:tarantula_hawk_elytra"
+				type: "item"
+			}]
+			title: "Tarantula Hawk Elytra"
+			x: 5.5d
+			y: 6.25d
+		}
+		{
+			dependencies: ["27EC624AA254E2F1"]
+			description: [
+				"Finde einen Ameisenhügel, ernte den Pilz in der Kammer darunter und gründe mit einer Puppe eine eigene Kolonie. Tritt nicht auf den Hügel, sonst kommt die Königin heraus."
+				"Buch: Animal Dictionary → Leafcutter Ant."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:gongylidia"
+			id: "5B996ECE96F97394"
+			optional: true
+			shape: "square"
+			subtitle: "AM2 · Beute der Oberwelt · Nebenquest"
+			tasks: [{
+				id: "16AF168D77008607"
+				item: "alexsmobs:gongylidia"
+				type: "item"
+			}
+			{
+				id: "060E9B4B8AD6AB78"
+				item: "alexsmobs:leafcutter_ant_pupa"
+				type: "item"
+			}]
+			title: "Blattschneiderameisen"
+			x: 5.5d
+			y: 7.5d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 4: Der Mond."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "01F1F996ED155903"
+			shape: "gear"
+			subtitle: "AM3 · Meer und Untergrund"
+			tasks: [{
+				id: "53547F52A94188D3"
+				stage: "kapitel_k4"
+				type: "gamestage"
+			}]
+			title: "Kapitel 4: Alex's Mobs"
+			x: 9.0d
+			y: -1.75d
+		}
+		{
+			dependencies: ["27EC624AA254E2F1", "01F1F996ED155903"]
+			description: [
+				"Die Ortungsgeräte bauen aufeinander auf: Echolocator → Endolocator und Strange Fish Finder."
+				""
+				"Bei schweren Gewittern stranden Pottwale an Stränden. Schieb einen unverletzt ins Wasser zurück, dann bedankt er sich mit Ambergris. Ambergris ist auch Brennstoff für 64 Items und lässt sich an Fischer verkaufen."
+				"Buch: Animal Dictionary → Cachalot Whale."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:ambergris"
+			id: "14EBCB67E37C7289"
+			optional: true
+			shape: "square"
+			subtitle: "AM3 · Meer und Untergrund · Nebenquest"
+			tasks: [{
+				id: "0AF493E1C0923BF1"
+				item: "alexsmobs:ambergris"
+				type: "item"
+			}]
+			title: "Ambergris"
+			x: 9.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["14EBCB67E37C7289"]
+			description: [
+				"Zeigt Höhlen in der Nähe. Die Zähne verliert der Pottwal beim Rammen."
+				"Buch: Animal Dictionary → Cachalot Whale."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:echolocator"
+			id: "2D128048115C5C7F"
+			optional: true
+			shape: "square"
+			subtitle: "AM3 · Meer und Untergrund · Nebenquest"
+			tasks: [{
+				id: "203E2532CF54498B"
+				item: "alexsmobs:echolocator"
+				type: "item"
+			}]
+			title: "Echolocator"
+			x: 9.0d
+			y: 1.25d
+		}
+		{
+			dependencies: ["2D128048115C5C7F"]
+			description: [
+				"Der Echolocator mit Ender Pearls: Nahe einer Festung zeigt er das End-Portal."
+				"Buch: Animal Dictionary → Cachalot Whale."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:endolocator"
+			id: "037A297A13F43133"
+			optional: true
+			shape: "square"
+			subtitle: "AM3 · Meer und Untergrund · Nebenquest"
+			tasks: [{
+				id: "2CB43D1BA237D81D"
+				item: "alexsmobs:endolocator"
+				type: "item"
+			}]
+			title: "Endolocator"
+			x: 9.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["2D128048115C5C7F"]
+			description: [
+				"Der seltenste Fisch der Welt lebt in einem einzigen Chunk. Der Fish Finder zeigt die Richtung. Die Fish Bones kommen vom Skelewag an gesunkenen Schiffen."
+				"Buch: Animal Dictionary → Devil's Hole Pupfish, Skelewag."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:pupfish_locator"
+			id: "20B19C1A9513CB4F"
+			optional: true
+			shape: "square"
+			subtitle: "AM3 · Meer und Untergrund · Nebenquest"
+			tasks: [{
+				id: "5BA550A615BA0951"
+				item: "alexsmobs:pupfish_locator"
+				type: "item"
+			}]
+			title: "Strange Fish Finder"
+			x: 9.0d
+			y: 3.75d
+		}
+		{
+			dependencies: ["27EC624AA254E2F1"]
+			description: [
+				"Ein Enterhaken aus Tentakeln. Ein Lost Tentacle fällt nur, wenn ein Giant Squid mit einem Pottwal kämpft."
+				"Buch: Animal Dictionary → Giant Squid."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:squid_grapple"
+			id: "58B2177E65574B06"
+			optional: true
+			shape: "square"
+			subtitle: "AM3 · Meer und Untergrund · Nebenquest"
+			tasks: [{
+				id: "15121BCD534E4E82"
+				item: "alexsmobs:squid_grapple"
+				type: "item"
+			}]
+			title: "Grappling Squok"
+			x: 9.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["27EC624AA254E2F1"]
+			description: [
+				"Ein Schild aus Haizähnen von zwei Haiarten, dazu ein Heart of the Sea."
+				"Buch: Animal Dictionary → Frilled Shark, Hammerhead Shark."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:shield_of_the_deep"
+			id: "366C1884451FCA71"
+			optional: true
+			shape: "square"
+			subtitle: "AM3 · Meer und Untergrund · Nebenquest"
+			tasks: [{
+				id: "317C04D16374E028"
+				item: "alexsmobs:shield_of_the_deep"
+				type: "item"
+			}]
+			title: "Shield Of The Deep"
+			x: 9.0d
+			y: 6.25d
+		}
+		{
+			dependencies: ["27EC624AA254E2F1"]
+			description: [
+				"Glas, dessen Farbe vom Ort abhängt. Rainbow Jelly gibt es nachts in gefrorenen Ozeanen."
+				"Buch: Animal Dictionary → Comb Jelly."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:rainbow_glass"
+			id: "5E69355820AE4CEB"
+			optional: true
+			shape: "square"
+			subtitle: "AM3 · Meer und Untergrund · Nebenquest"
+			tasks: [{
+				id: "1B4CB4D85F441F16"
+				item: "alexsmobs:rainbow_glass"
+				type: "item"
+			}]
+			title: "Rainbow Glass"
+			x: 9.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["27EC624AA254E2F1"]
+			description: [
+				"Der Skreecher hängt an der Decke des Deep Dark; seine Seele steckt im Boomer."
+				"Buch: Animal Dictionary → Skreecher."
+				""
+				"&c&eAchtung, Deep Dark:&r&c Der Skreecher ruft mit seinem Schrei den Warden. Leise bleiben, Fluchtweg frei halten.&r"
+				"&c&9(ungeprüft)&r&c Ob der Schrei den Warden ruft, steht so nicht in den Quellen; im Spiel prüfen oder den Satz streichen.&r"
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:sculk_boomer"
+			id: "2BEAE4B2305A989D"
+			optional: true
+			shape: "square"
+			subtitle: "AM3 · Meer und Untergrund · Nebenquest"
+			tasks: [{
+				id: "4BDBE4E2EB70D88C"
+				item: "alexsmobs:sculk_boomer"
+				type: "item"
+			}]
+			title: "Sculk Boomer"
+			x: 9.0d
+			y: 8.75d
+		}
+		{
+			dependencies: ["27EC624AA254E2F1"]
+			description: [
+				"Underminer spuken in verlassenen Minen. Wirf ein Erz in ihre Nähe, dann zeigen sie dir verdeckte Blöcke dieses Erzes. Mit Magie getötet, lassen sie manchmal die Ghostly Pickaxe fallen."
+				"Buch: Animal Dictionary → Underminer."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:ghostly_pickaxe"
+			id: "2E0B98AC98EE94DF"
+			optional: true
+			shape: "square"
+			subtitle: "AM3 · Meer und Untergrund · Nebenquest"
+			tasks: [{
+				id: "3CAE50C518B49A74"
+				item: "alexsmobs:ghostly_pickaxe"
+				type: "item"
+			}]
+			title: "Ghostly Pickaxe"
+			x: 9.0d
+			y: 10.0d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 4: Der Mond."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "01F1F996ED155903"
+			shape: "gear"
+			subtitle: "AM4 · Nether"
+			tasks: [{
+				id: "53547F52A94188D3"
+				stage: "kapitel_k4"
+				type: "gamestage"
+			}]
+			title: "Kapitel 4: Alex's Mobs"
+			x: 12.5d
+			y: -1.75d
+		}
+		{
+			dependencies: ["27EC624AA254E2F1", "01F1F996ED155903"]
+			description: [
+				"Hier beginnt die lange Kette zur Void Worm: Die &eCrimson Mosquito Larva&r (Quest „Crimson Mosquito Larva“) wird in AM5 gebraucht."
+				""
+				"Die Crimson Mosquito im Crimson Forest saugt sich an dir fest. Den Blood Sac lässt nur eine vollgesogene Mücke fallen."
+				"Buch: Animal Dictionary → Crimson Mosquito."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:blood_sprayer"
+			id: "1B98B8611DB172BD"
+			optional: true
+			shape: "square"
+			subtitle: "AM4 · Nether · Nebenquest"
+			tasks: [{
+				id: "34D60E87C7D654D5"
+				item: "alexsmobs:blood_sprayer"
+				type: "item"
+			}]
+			title: "Blood Sprayer"
+			x: 12.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1B98B8611DB172BD"]
+			description: [
+				"Aus einer Maggot und dem Rüssel der Mücke. Die Larve zähmt Warped Toads, lässt Stradpoles wachsen und wird im End zum Köder für die Void Worm. Nimm gleich mehrere mit."
+				"Buch: Animal Dictionary → Fly, Crimson Mosquito."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:mosquito_larva"
+			id: "30CD7A30445CC831"
+			optional: true
+			shape: "square"
+			subtitle: "AM4 · Nether · Nebenquest"
+			tasks: [{
+				id: "776A8EE9708A7CE7"
+				item: "alexsmobs:mosquito_larva"
+				type: "item"
+			}]
+			title: "Crimson Mosquito Larva"
+			x: 12.5d
+			y: 1.25d
+		}
+		{
+			dependencies: ["27EC624AA254E2F1"]
+			description: [
+				"Soul Vultures kreisen über dem Soul Sand Valley. Ein Soul Heart fällt nur von einem Geier, der vorher Leben gesaugt hat. Im End lockt es Spectres an."
+				"Buch: Animal Dictionary → Soul Vulture, Spectre."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:soul_heart"
+			id: "2A05C9B4C68E9374"
+			optional: true
+			shape: "square"
+			subtitle: "AM4 · Nether · Nebenquest"
+			tasks: [{
+				id: "57FE4F0EF6DE9301"
+				item: "alexsmobs:soul_heart"
+				type: "item"
+			}]
+			title: "Soul Heart"
+			x: 12.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["27EC624AA254E2F1"]
+			description: [
+				"Reite einen Laviathan über die Lavaseen des Nethers. Straddlite fällt selten vom Straddler in den Basalt Deltas."
+				"Buch: Animal Dictionary → Straddler, Laviathan."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:straddle_saddle"
+			id: "4C899BC065E1E350"
+			optional: true
+			shape: "square"
+			subtitle: "AM4 · Nether · Nebenquest"
+			tasks: [{
+				id: "59DF30B20A32FF0B"
+				item: "alexsmobs:straddle_saddle"
+				type: "item"
+			}
+			{
+				id: "64DA65010E2A63AD"
+				item: "alexsmobs:straddle_helmet"
+				type: "item"
+			}]
+			title: "Auf dem Laviathan"
+			x: 12.5d
+			y: 3.75d
+		}
+		{
+			dependencies: ["4C899BC065E1E350"]
+			description: [
+				"Ein Brett, das auf Lava schwimmt. Es kostet 3 Netheritebarren."
+				"Buch: Animal Dictionary → Straddler."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:straddleboard"
+			id: "10B7814E9E4C32E7"
+			optional: true
+			shape: "square"
+			subtitle: "AM4 · Nether · Nebenquest"
+			tasks: [{
+				id: "6C5507AC2470C4F6"
+				item: "alexsmobs:straddleboard"
+				type: "item"
+			}]
+			title: "Straddleboard"
+			x: 12.5d
+			y: 5.0d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 4: Der Mond."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "01F1F996ED155903"
+			shape: "gear"
+			subtitle: "AM5 · End"
+			tasks: [{
+				id: "53547F52A94188D3"
+				stage: "kapitel_k4"
+				type: "gamestage"
+			}]
+			title: "Kapitel 4: Alex's Mobs"
+			x: 16.0d
+			y: -1.75d
+		}
+		{
+			dependencies: ["27EC624AA254E2F1", "01F1F996ED155903"]
+			description: [
+				"Der Capsid ist das Werkzeug für alle Umwandlungen bis zur Transmutation Table."
+				""
+				"Der Enderiophage in den End Midlands lässt ihn fallen. Er steckt dich mit Ender Flu an; Milch oder Chorus Fruit heilen. Ein Capsid wandelt einen hineingelegten Gegenstand um und fördert Gegenstände ohne Strom senkrecht nach oben."
+				"Buch: Animal Dictionary → Enderiophage."
+				""
+				"&c&eAchtung, Ender Flu:&r&c Bleibt die Krankheit zehn Minuten unbehandelt, platzen Phagen aus dir heraus und töten dich. Milch mitnehmen.&r"
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:capsid"
+			id: "177821A29B6F8659"
+			optional: true
+			shape: "square"
+			subtitle: "AM5 · End · Nebenquest"
+			tasks: [{
+				id: "18D7143B996675D5"
+				item: "alexsmobs:capsid"
+				type: "item"
+			}]
+			title: "Capsid"
+			x: 16.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["177821A29B6F8659"]
+			description: [
+				"Ein Cod im Capsid wird zum Cosmic Cod. Damit zähmst du den Cosmaw der äußeren End-Inseln."
+				"Buch: Animal Dictionary → Cosmic Cod, Cosmaw."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:cosmic_cod"
+			id: "6C2B4E03378CF326"
+			optional: true
+			shape: "square"
+			subtitle: "AM5 · End · Nebenquest"
+			tasks: [{
+				id: "48E2595F458B78EB"
+				item: "alexsmobs:cosmic_cod"
+				type: "item"
+			}]
+			title: "Cosmic Cod"
+			x: 16.0d
+			y: 1.25d
+		}
+		{
+			dependencies: ["177821A29B6F8659"]
+			description: [
+				"Der Mimicube bewacht die End-Städte und kopiert deine Waffen. Mit Mimicream kopierst du selbst Ausrüstung samt Verzauberungen; die Kopie muss danach repariert werden."
+				"Buch: Animal Dictionary → Mimicube."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:mimicream"
+			id: "703ABD5C133172DF"
+			optional: true
+			shape: "square"
+			subtitle: "AM5 · End · Nebenquest"
+			tasks: [{
+				id: "148050209456771D"
+				item: "alexsmobs:mimicream"
+				type: "item"
+			}]
+			title: "Mimicream"
+			x: 16.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["703ABD5C133172DF", "1B98B8611DB172BD"]
+			description: [
+				"Den Warped Mosco gibt es nicht wild: Eine Crimson Mosquito, die an einem mit Warped Fungus bedeckten Wesen saugt, verwandelt sich in ihn. Der Blaster braucht seine Beute, den Blood Sprayer und Mimicream."
+				"Buch: Animal Dictionary → Warped Mosco."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:hemolymph_blaster"
+			id: "47C8B58BD5A5358E"
+			optional: true
+			shape: "square"
+			subtitle: "AM5 · End · Nebenquest"
+			tasks: [{
+				id: "600C3A42194D3E92"
+				item: "alexsmobs:hemolymph_blaster"
+				type: "item"
+			}]
+			title: "Hemolymph Blaster"
+			x: 16.0d
+			y: 3.75d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 4: Der Mond."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "01F1F996ED155903"
+			shape: "gear"
+			subtitle: "AM6 · Void Worm und Weltrand"
+			tasks: [{
+				id: "53547F52A94188D3"
+				stage: "kapitel_k4"
+				type: "gamestage"
+			}]
+			title: "Kapitel 4: Alex's Mobs"
+			x: 19.5d
+			y: -1.75d
+		}
+		{
+			dependencies: ["177821A29B6F8659", "30CD7A30445CC831", "01F1F996ED155903"]
+			description: [
+				"Der längste Pfad des Mods. Er braucht Capsid, Crimson Mosquito Larva, 2 Netheritebarren und einen Nether Star."
+				""
+				"&c&eAchtung, Bosskampf:&r&c Die Void Worm (160 Lebenspunkte) kämpft über der Leere des End. Wer fällt, verliert alles. Schaden gehört an den Kopf; triffst du ein Körpersegment, spaltet sie sich in zwei Würmer.&r"
+				""
+				"Die Crimson Mosquito Larva im Capsid wird zum Mysterious Worm. Wirf ihn im End in die Leere, um die Void Worm herauszulocken."
+				"Buch: Animal Dictionary → Void Worm."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:mysterious_worm"
+			id: "241DC4D4A663EFB1"
+			optional: true
+			shape: "square"
+			subtitle: "AM6 · Void Worm und Weltrand · Nebenquest"
+			tasks: [{
+				id: "0DBD2D69EED996FA"
+				item: "alexsmobs:mysterious_worm"
+				type: "item"
+			}]
+			title: "Mysterious Worm"
+			x: 19.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["241DC4D4A663EFB1"]
+			description: [
+				"Besiege die Void Worm. Sie lässt ein Auge und zwei Mandibeln fallen."
+				"Buch: Animal Dictionary → Void Worm."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:void_worm_eye"
+			id: "56A6D79FE2B0BB91"
+			optional: true
+			shape: "square"
+			subtitle: "AM6 · Void Worm und Weltrand · Nebenquest"
+			tasks: [{
+				id: "3E26E916808DEB17"
+				item: "alexsmobs:void_worm_eye"
+				type: "item"
+			}
+			{
+				count: 2L
+				id: "0F16416973F5E1F8"
+				item: "alexsmobs:void_worm_mandible"
+				type: "item"
+			}]
+			title: "Void Worm"
+			x: 19.5d
+			y: 1.25d
+		}
+		{
+			dependencies: ["56A6D79FE2B0BB91"]
+			description: [
+				"Er öffnet ein Portal zu deinem Spawnpunkt, 20 Benutzungen. Die zwei Mandibeln reichen nur für den Carver oder für den Void Worm Beak, nicht für beides."
+				"Buch: Animal Dictionary → Void Worm."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:dimensional_carver"
+			id: "27EC7A4B6E1D3DF8"
+			optional: true
+			shape: "square"
+			subtitle: "AM6 · Void Worm und Weltrand · Nebenquest"
+			tasks: [{
+				id: "5285FBA6D0C38118"
+				item: "alexsmobs:dimensional_carver"
+				type: "item"
+			}]
+			title: "Dimensional Carver"
+			x: 19.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["27EC7A4B6E1D3DF8"]
+			description: [
+				"Der Carver im Capsid zerbricht. Der zerbrochene Carver öffnet ein Portal eine Million Blöcke weit; mehrmals in dieselbe Richtung, und du stehst am Weltrand. Nur dort erscheint der Farseer."
+				"Buch: Animal Dictionary → Farseer."
+				""
+				"&c&eAchtung, Farseer:&r&c Klauen und Augenstrahl gehen durch Rüstung und Verzauberungen. Der Weg zurück ist weit: Bett oder zweiten Carver mitnehmen.&r"
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:shattered_dimensional_carver"
+			id: "30A35D1D6D2CD59F"
+			optional: true
+			shape: "square"
+			subtitle: "AM6 · Void Worm und Weltrand · Nebenquest"
+			tasks: [{
+				id: "0B637EA3C1231926"
+				item: "alexsmobs:shattered_dimensional_carver"
+				type: "item"
+			}
+			{
+				count: 2L
+				id: "73A21A63A2A5B577"
+				item: "alexsmobs:farseer_arm"
+				type: "item"
+			}]
+			title: "Farseer am Weltrand"
+			x: 19.5d
+			y: 3.75d
+		}
+		{
+			dependencies: ["30A35D1D6D2CD59F"]
+			description: [
+				"Wandelt einen ganzen Stack gegen Erfahrung in einen anderen Gegenstand um. Die Auswahl wächst mit dem, was du hineinlegst."
+				"Buch: Animal Dictionary → Farseer."
+				"&6⚙&r Kosten 3 Erfahrung je Umwandlung, Beacon gesperrt (Config, Standardwerte). Im Pack wandelt der Tisch nur noch in Gegenstände um, die auch als Truhenbeute vorkommen (Config limitTransmutingToLootTables = true, F16)."
+				""
+				"&c&eAchtung, Abbau:&r&c Baust du den Tisch ab, explodiert er und verliert alles, was er gelernt hat. Nur der Nether Star bleibt.&r"
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:transmutation_table"
+			id: "265CD9F4F2386CC2"
+			optional: true
+			shape: "square"
+			subtitle: "AM6 · Void Worm und Weltrand · Nebenquest"
+			tasks: [{
+				id: "7EBFE56C3BE87287"
+				item: "alexsmobs:transmutation_table"
+				type: "item"
+			}]
+			title: "Transmutation Table"
+			x: 19.5d
+			y: 5.0d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 4: Der Mond."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "01F1F996ED155903"
+			shape: "gear"
+			subtitle: "AM7 · Essen mit Alex's Delight"
+			tasks: [{
+				id: "53547F52A94188D3"
+				stage: "kapitel_k4"
+				type: "gamestage"
+			}]
+			title: "Kapitel 4: Alex's Mobs"
+			x: 23.0d
+			y: -1.75d
+		}
+		{
+			dependencies: ["27EC624AA254E2F1", "01F1F996ED155903"]
+			description: [
+				"Kurze Reihe für die Küche. Messer und Cooking Pot kommen aus Farmer's Delight."
+				""
+				"Fleisch und Eier neuer Tiere einfach braten."
+				"Buch: Animal Dictionary → Kangaroo, Moose, Lobster, Emu."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:cooked_kangaroo_meat"
+			id: "4DA73D2621DF8C1F"
+			optional: true
+			shape: "square"
+			subtitle: "AM7 · Essen mit Alex's Delight · Nebenquest"
+			tasks: [{
+				id: "09CC3E1E794A4127"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(alexsmobs:cooked_kangaroo_meat)item(alexsmobs:cooked_moose_ribs))" } }
+				title: "Kangaroo oder Moose"
+				type: "item"
+			}
+			{
+				id: "7703E3ECF1D81942"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(alexsmobs:cooked_lobster_tail)item(alexsmobs:boiled_emu_egg))" } }
+				title: "Lobster oder Emu"
+				type: "item"
+			}]
+			title: "Tierisch gekocht"
+			x: 23.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4DA73D2621DF8C1F"]
+			description: [
+				"Alex's Delight kocht Tierbeute mit Farmer's-Delight-Zutaten. Rezepte in JEI; Alex's Delight hat kein eigenes Buch."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsdelight:kangaroo_stew"
+			id: "1FAC188534B5690F"
+			optional: true
+			shape: "square"
+			subtitle: "AM7 · Essen mit Alex's Delight · Nebenquest"
+			tasks: [{
+				id: "208D2239B4E637A3"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(alexsdelight:kangaroo_stew)item(alexsdelight:lobster_pasta)item(alexsdelight:acacia_blossom_soup))" } }
+				title: "Aus dem Cooking Pot"
+				type: "item"
+			}]
+			title: "Aus dem Cooking Pot"
+			x: 23.0d
+			y: 1.25d
+		}
+		{
+			dependencies: ["4DA73D2621DF8C1F"]
+			description: [
+				"Zwei Burger. Alex's Delight ersetzt das Rezept des Kangaroo Burger durch ein eigenes; es steht in JEI."
+			]
+			hide_until_deps_visible: true
+			icon: "alexsmobs:kangaroo_burger"
+			id: "7EB23E2E93CC3B5F"
+			optional: true
+			shape: "square"
+			subtitle: "AM7 · Essen mit Alex's Delight · Nebenquest"
+			tasks: [{
+				id: "7F2CBBC90306816D"
+				item: "alexsmobs:kangaroo_burger"
+				type: "item"
+			}
+			{
+				id: "2531042FE1411840"
+				item: "alexsdelight:bison_burger"
+				type: "item"
+			}]
+			title: "Burger"
+			x: 23.0d
+			y: 2.5d
+		}
+	]
+	title: "Alex's Mobs"
+}

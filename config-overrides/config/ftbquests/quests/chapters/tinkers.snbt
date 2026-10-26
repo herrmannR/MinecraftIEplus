@@ -1,0 +1,1182 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "tinkers"
+	group: ""
+	icon: "tconstruct:smeltery_controller"
+	id: "1B767C6FEC0C5847"
+	order_index: 10
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 1: Ankunft."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "7E6BCE7DE39882E8"
+			shape: "gear"
+			subtitle: "TK1 · Werkzeuge und Melter"
+			tasks: [{
+				id: "705BF4A59127BD24"
+				stage: "kapitel_k1"
+				type: "gamestage"
+			}]
+			title: "Kapitel 1: Tinkers' Construct"
+			x: 0.5d
+			y: -1.75d
+		}
+		{
+			dependencies: ["7E6BCE7DE39882E8"]
+			description: [
+				"Tinkers baut Werkzeuge aus Teilen, und jedes Teil kann aus einem anderen Material sein. Das erste Buch erklärt Werkbänke, Werkzeuge und Materialien der ersten Stufe."
+				"Buch: Materials and You → Introduction."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:materials_and_you"
+			id: "7DCB85A285033033"
+			subtitle: "TK1 · Werkzeuge und Melter"
+			tasks: [{
+				id: "0055CB9FF033874B"
+				item: "tconstruct:materials_and_you"
+				type: "item"
+			}]
+			title: "Materials and You"
+			x: 0.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7DCB85A285033033"]
+			description: [
+				"Aus Patterns schneidet der Part Builder Werkzeugteile aus Holz, Stein, Flint, Knochen oder Kupfer."
+				"Buch: Materials and You → Introduction → Pattern, Part Builder."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:pattern"
+			id: "0EAD8E17462059D6"
+			subtitle: "TK1 · Werkzeuge und Melter"
+			tasks: [{
+				id: "3B7E475FA900A5BA"
+				item: "tconstruct:pattern"
+				type: "item"
+			}
+			{
+				id: "6C11E5354317582F"
+				item: "tconstruct:part_builder"
+				type: "item"
+			}]
+			title: "Pattern und Part Builder"
+			x: 0.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["0EAD8E17462059D6"]
+			description: [
+				"Hier setzt du die Teile zu Werkzeugen zusammen, reparierst und tauschst Teile."
+				"Buch: Materials and You → Introduction → Tinker Station; Tools → Repairing, Part Swapping."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:tinker_station"
+			id: "118B6F9081AFD4AD"
+			subtitle: "TK1 · Werkzeuge und Melter"
+			tasks: [{
+				id: "15334EBC9926F670"
+				item: "tconstruct:tinker_station"
+				type: "item"
+			}]
+			title: "Tinker Station"
+			x: 0.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["118B6F9081AFD4AD"]
+			description: [
+				"Bau eine Pickaxe, eine Hand Axe oder ein Sword. Kupfer ist das einzige Metall, das ohne Schmelze geht."
+				"Buch: Materials and You → Tools; Tier 1 General Materials."
+				"Gut zu wissen: In den Welten von Blue Skies sind Tinkers-Werkzeuge abgeschwächt, bis die Bosse dort besiegt sind. Das ist gewollt; Blue Skies bringt eigene Werkzeuge mit."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:pickaxe"
+			id: "52D1DC126D8F44AD"
+			subtitle: "TK1 · Werkzeuge und Melter"
+			tasks: [{
+				id: "334C06FBB37E64B9"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(tconstruct:pickaxe)item(tconstruct:hand_axe)item(tconstruct:sword))" } }
+				title: "Das erste Werkzeug"
+				type: "item"
+			}]
+			title: "Das erste Werkzeug"
+			x: 0.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["52D1DC126D8F44AD"]
+			description: [
+				"Bogen, Armbrust und Wurfwaffen aus Teilen, wie die Werkzeuge."
+				"Buch: Materials and You → Tools (Ranged); Tier 1 Ranged Materials; Basic Ammo Materials."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:crossbow"
+			id: "1A45482FFA693BF0"
+			optional: true
+			shape: "square"
+			subtitle: "TK1 · Werkzeuge und Melter · Nebenquest"
+			tasks: [{
+				id: "26ABC14CF6359383"
+				item: "tconstruct:crossbow"
+				type: "item"
+			}
+			{
+				id: "71C96D8F8D7236F1"
+				item: "tconstruct:arrow"
+				type: "item"
+			}
+			{
+				id: "2E29926F176A5B3A"
+				item: "tconstruct:shuriken"
+				type: "item"
+			}
+			{
+				id: "413FCBEF6115C082"
+				item: "tconstruct:throwing_axe"
+				type: "item"
+			}]
+			title: "Fernkampf"
+			x: 2.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["52D1DC126D8F44AD"]
+			description: [
+				"Leichte Rüstung mit viel Platz für Modifier, ohne seltene Zutaten."
+				"Buch: Materials and You → Basic Armor."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:travelers_helmet"
+			id: "059BC4A610219C86"
+			optional: true
+			shape: "square"
+			subtitle: "TK1 · Werkzeuge und Melter · Nebenquest"
+			tasks: [{
+				id: "151287A29294AD63"
+				item: "tconstruct:travelers_helmet"
+				type: "item"
+			}
+			{
+				id: "7979B572B3382A23"
+				item: "tconstruct:travelers_chestplate"
+				type: "item"
+			}
+			{
+				id: "7F1FE0C4BEE04F96"
+				item: "tconstruct:travelers_leggings"
+				type: "item"
+			}
+			{
+				id: "3D72A9934B414376"
+				item: "tconstruct:travelers_boots"
+				type: "item"
+			}]
+			title: "Traveler's Gear"
+			x: 2.0d
+			y: 5.75d
+		}
+		{
+			dependencies: ["52D1DC126D8F44AD"]
+			description: [
+				"Die Crafting Station behält ihren Inhalt, die Part Chest nimmt Teile und Patterns auf."
+				"Buch: Materials and You → Introduction → Storage."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:crafting_station"
+			id: "291C4A272632FE6B"
+			optional: true
+			shape: "square"
+			subtitle: "TK1 · Werkzeuge und Melter · Nebenquest"
+			tasks: [{
+				id: "1CB0E725C51153D1"
+				item: "tconstruct:crafting_station"
+				type: "item"
+			}
+			{
+				id: "169FDE601C2E3DCC"
+				item: "tconstruct:part_chest"
+				type: "item"
+			}]
+			title: "Ordnung in der Werkstatt"
+			x: 2.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["52D1DC126D8F44AD"]
+			description: [
+				"Für Metallteile musst du schmelzen. Grout wird im Ofen zu Seared Brick, dem Baustoff aller frühen Schmelzgeräte. Das zweite Buch erklärt den Weg."
+				"Buch: Materials and You → Further Reading; Puny Smelting → Introduction."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:puny_smelting"
+			id: "6B119E65A8778DC9"
+			subtitle: "TK1 · Werkzeuge und Melter"
+			tasks: [{
+				id: "112F0B64210342D2"
+				item: "tconstruct:puny_smelting"
+				type: "item"
+			}
+			{
+				id: "6B768C5A5BE7EBF4"
+				item: "tconstruct:grout"
+				type: "item"
+			}
+			{
+				id: "1AE6A0638DA41113"
+				item: "tconstruct:seared_brick"
+				type: "item"
+			}]
+			title: "Puny Smelting und Seared Bricks"
+			x: 0.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["6B119E65A8778DC9"]
+			description: [
+				"Der Melter schmilzt Erze und Barren, der Heater darunter liefert die Hitze."
+				"Buch: Puny Smelting → Melter."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:seared_melter"
+			id: "57780D6E51D5F36C"
+			subtitle: "TK1 · Werkzeuge und Melter"
+			tasks: [{
+				id: "7E53FB5B55EAE910"
+				item: "tconstruct:seared_melter"
+				type: "item"
+			}
+			{
+				id: "041F0980DA6D5846"
+				item: "tconstruct:seared_heater"
+				type: "item"
+			}]
+			title: "Seared Melter mit Heater"
+			x: 0.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["57780D6E51D5F36C"]
+			description: [
+				"Mit dem Faucet läuft das flüssige Metall auf den Casting Table (Barren, Teile) oder ins Casting Basin (Blöcke)."
+				"Buch: Puny Smelting → Moving Fluids → Faucets, Channels; Casting → Casting."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:seared_faucet"
+			id: "3064E3AD8CEEE905"
+			subtitle: "TK1 · Werkzeuge und Melter"
+			tasks: [{
+				id: "54EA76566FDC3D96"
+				item: "tconstruct:seared_faucet"
+				type: "item"
+			}
+			{
+				id: "51545FB8A22680F9"
+				item: "tconstruct:seared_table"
+				type: "item"
+			}
+			{
+				id: "19983343A81BBFC3"
+				item: "tconstruct:seared_basin"
+				type: "item"
+			}]
+			title: "Faucet und Casting Table"
+			x: 0.5d
+			y: 9.0d
+		}
+		{
+			dependencies: ["3064E3AD8CEEE905"]
+			description: [
+				"Formen aus Sand halten einen Guss, Formen aus Gold halten ewig. Gieß damit das erste Werkzeugteil aus Metall."
+				"Buch: Puny Smelting → Casting → Sand Cast, Gold Cast; Tier 2 General Materials."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:ingot_cast"
+			id: "1CCEEA499FC45CA5"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "TK1 · Werkzeuge und Melter"
+			tasks: [{
+				id: "132A2B5813856358"
+				item: "tconstruct:ingot_cast"
+				type: "item"
+			}
+			{
+				id: "495FDED17B929998"
+				item: "tconstruct:pick_head"
+				type: "item"
+			}]
+			title: "Gießen in Formen"
+			x: 0.5d
+			y: 10.5d
+		}
+		{
+			dependencies: ["1CCEEA499FC45CA5"]
+			description: [
+				"Ein Erz im Melter gibt mehr als im Ofen. Das gilt auch für die Erze von IE und Mekanism."
+				"Buch: Puny Smelting → Melter."
+				"Im Pack: IE und Mekanism verdoppeln Erze ebenfalls. Für mehr als die doppelte Ausbeute führt Mekanism weiter (mekanism.md, Erzvervielfachung)."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:seared_melter"
+			id: "7383E70CAC6769FD"
+			optional: true
+			shape: "square"
+			subtitle: "TK1 · Werkzeuge und Melter · Nebenquest"
+			tasks: [{
+				id: "0476AFCE63484808"
+				title: "Erz im Melter geschmolzen"
+				type: "checkmark"
+			}]
+			title: "Erze schmelzen"
+			x: 2.0d
+			y: 10.5d
+		}
+		{
+			dependencies: ["1CCEEA499FC45CA5"]
+			description: [
+				"Werkzeuge bekommen in der Tinker Station Modifier aus Items. Am Worktable entfernst und sortierst du sie wieder."
+				"Buch: Puny Smelting → Modifier Worktable; Upgrades; Slotless Modifier."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:modifier_worktable"
+			id: "7960AF5C9713A098"
+			optional: true
+			shape: "square"
+			subtitle: "TK1 · Werkzeuge und Melter · Nebenquest"
+			tasks: [{
+				id: "3D3132DF133082F5"
+				item: "tconstruct:modifier_worktable"
+				type: "item"
+			}]
+			title: "Modifier Worktable"
+			x: 2.0d
+			y: 11.75d
+		}
+		{
+			dependencies: ["1CCEEA499FC45CA5"]
+			description: [
+				"Die Metalle von IE und Mekanism sind auch Tinkers-Materialien: Aluminum, Lead, Silver, Steel, Osmium, Bronze, Constantan, Electrum und Uran (als Necronium). Treated Wood aus Creosote zählt als Holz."
+				"Buch: Puny Smelting → Tier 2 General Materials (zeigt nur, was im Spiel geladen ist)."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:pick_head"
+			id: "7077D358EF892DC3"
+			optional: true
+			shape: "square"
+			subtitle: "TK1 · Werkzeuge und Melter · Nebenquest"
+			tasks: [{
+				id: "11BB79820FBBCFB8"
+				item: "tconstruct:pick_head"
+				type: "item"
+			}
+			{
+				id: "7303AF9C7B5F85EC"
+				title: "Teil aus Silver, Lead oder Aluminum"
+				type: "checkmark"
+			}]
+			title: "Fremdmetalle"
+			x: 2.0d
+			y: 13.0d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 2: Würdig sein."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "5F12A524C20EEA3D"
+			shape: "gear"
+			subtitle: "TK2 · Smeltery"
+			tasks: [{
+				id: "7826BC9D345372AF"
+				stage: "kapitel_k2"
+				type: "gamestage"
+			}]
+			title: "Kapitel 2: Tinkers' Construct"
+			x: 4.0d
+			y: -1.75d
+		}
+		{
+			dependencies: ["1CCEEA499FC45CA5", "5F12A524C20EEA3D"]
+			description: [
+				"Das dritte Buch erklärt die Smeltery, das Legieren und die großen Werkzeuge."
+				"Buch: Puny Smelting → Further Reading."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:mighty_smelting"
+			id: "0F99929080E4C2A3"
+			subtitle: "TK2 · Smeltery"
+			tasks: [{
+				id: "5DDF5C85CF23A873"
+				item: "tconstruct:mighty_smelting"
+				type: "item"
+			}]
+			title: "Mighty Smelting"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0F99929080E4C2A3"]
+			description: [
+				"Die Smeltery schmilzt viele Dinge gleichzeitig und hält mehrere Flüssigkeiten. Sie ist ein Bau aus Seared Bricks mit Controller, Drain und Tank."
+				"Buch: Mighty Smelting → Smeltery → Controller, Structure, Seared Drain."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:smeltery_controller"
+			id: "2CE34F8A88C5F005"
+			subtitle: "TK2 · Smeltery"
+			tasks: [{
+				id: "39C651F81A333D9D"
+				item: "tconstruct:smeltery_controller"
+				type: "item"
+			}
+			{
+				id: "412028653D36DD59"
+				item: "tconstruct:seared_drain"
+				type: "item"
+			}]
+			title: "Smeltery"
+			x: 4.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["2CE34F8A88C5F005"]
+			description: [
+				"Liegen die richtigen Metalle zusammen in der Smeltery, entsteht eine Legierung. Sie öffnen die Materialien der dritten Stufe."
+				"Buch: Mighty Smelting → Smeltery → Alloying; Tier 3 General Materials."
+				"Im Pack: Bronze, Constantan und Electrum kannst du auch hier legieren, nicht nur bei IE und Mekanism."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:slimesteel_ingot"
+			id: "522593DDBC3557D3"
+			subtitle: "TK2 · Smeltery"
+			tasks: [{
+				id: "4EFC541B6F623173"
+				item: "tconstruct:slimesteel_ingot"
+				type: "item"
+			}
+			{
+				id: "06363481A79FC11F"
+				item: "tconstruct:rose_gold_ingot"
+				type: "item"
+			}
+			{
+				id: "7B9A4EDF96239258"
+				item: "tconstruct:pig_iron_ingot"
+				type: "item"
+			}
+			{
+				id: "7BB601EC57E190FD"
+				item: "tconstruct:amethyst_bronze_ingot"
+				type: "item"
+			}]
+			title: "Legieren"
+			x: 4.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["522593DDBC3557D3"]
+			description: [
+				"&c&eVorsicht Nether:&r&c Für Kobalt musst du in den Nether. Es liegt tief, am häufigsten auf Höhe 8 bis 32.&r"
+				""
+				"Kobalt ist das Metall des Nethers und Zutat der starken Legierungen. Die Smeltery schmilzt es mit Lava."
+				"Buch: Tinkers' Gadgetry → Exploration → Cobalt Ore."
+				"&6⚙&r Im Pack schon in K2 (User, 2026-10-26, O78): Der Vorschlaghammer aus Kobalt ist Teil von „Würdig sein“. (Früher TK3-01.)"
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:raw_cobalt"
+			id: "5B96EB7CD84D822B"
+			subtitle: "TK2 · Smeltery"
+			tasks: [{
+				id: "4C90256B2812BFE1"
+				item: "tconstruct:raw_cobalt"
+				type: "item"
+			}
+			{
+				id: "4C7329BE8A08A01F"
+				item: "tconstruct:cobalt_ingot"
+				type: "item"
+			}]
+			title: "Kobalt"
+			x: 4.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["5B96EB7CD84D822B"]
+			description: [
+				"Werkzeuge mit vier Teilen brauchen den Anvil statt der Tinker Station."
+				"Buch: Mighty Smelting → Introduction → Tinker's Anvil."
+				"Im Pack: Der Anvil nimmt auch Blöcke aus Bronze, Electrum, Constantan, Refined Obsidian und Refined Glowstone. Bronze aus dem Metallurgic Infuser von Mekanism ist ein früher Weg dorthin."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:tinkers_anvil"
+			id: "3989A3F058DCBA0C"
+			subtitle: "TK2 · Smeltery"
+			tasks: [{
+				id: "6CF28AC09299A3F2"
+				item: "tconstruct:tinkers_anvil"
+				type: "item"
+			}]
+			title: "Tinker's Anvil"
+			x: 4.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["3989A3F058DCBA0C"]
+			description: [
+				"Bau am Anvil einen Vorschlaghammer, bei dem jedes Teil aus Kobalt ist: zwei Hammerköpfe, ein schwerer Griff und eine große Platte. DD3R8 nimmt ihn als Beweis eures handwerklichen Geschicks."
+				"Buch: Mighty Smelting → Broad Tools → Sledge Hammer."
+				"&6⚙&r Die Quest erkennt nur den Hammer; dass alle Teile aus Kobalt sind, prüft ein Skript bei der Abgabe an DD3R8 (O67)."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:sledge_hammer"
+			id: "5C8310D9F4DA825C"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "TK2 · Smeltery"
+			tasks: [{
+				id: "1E213AECDF352093"
+				item: "tconstruct:sledge_hammer"
+				type: "item"
+			}]
+			title: "Vorschlaghammer aus Kobalt"
+			x: 4.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["5C8310D9F4DA825C"]
+			description: [
+				"In der Welt schweben Slime-Inseln, im Boden liegen Slime-Geoden. Ihr Slime ist Zutat vieler Legierungen. Steel Shards aus Skyslime-Inseln und Geoden sind Stahl ohne IE."
+				"Buch: Tinkers' Gadgetry → Exploration (Buch erst in der Reihe „Ausbau“, Quest „Tinkers' Gadgetry“)."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:sky_slime_ball"
+			id: "5B0A26469C5B8BA5"
+			optional: true
+			shape: "square"
+			subtitle: "TK2 · Smeltery · Nebenquest"
+			tasks: [{
+				id: "301F4301A2CB8264"
+				item: "tconstruct:sky_slime_ball"
+				type: "item"
+			}
+			{
+				id: "3D1D925874F8AFDD"
+				item: "tconstruct:steel_shard"
+				type: "item"
+			}]
+			title: "Slime-Inseln und Geoden"
+			x: 5.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["5C8310D9F4DA825C"]
+			description: [
+				"Werkzeuge für Flächen, Adern und ganze Bäume."
+				"Buch: Mighty Smelting → Broad Tools."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:vein_hammer"
+			id: "1A4D87F89330646E"
+			optional: true
+			shape: "square"
+			subtitle: "TK2 · Smeltery · Nebenquest"
+			tasks: [{
+				id: "76B19CAC9A35776E"
+				item: "tconstruct:vein_hammer"
+				type: "item"
+			}
+			{
+				id: "4F20D80DD048199E"
+				item: "tconstruct:excavator"
+				type: "item"
+			}
+			{
+				id: "4C2A2E81E4A9AE81"
+				item: "tconstruct:broad_axe"
+				type: "item"
+			}
+			{
+				id: "24DD8C2925471B41"
+				item: "tconstruct:scythe"
+				type: "item"
+			}
+			{
+				id: "421E4957C49D7847"
+				item: "tconstruct:cleaver"
+				type: "item"
+			}
+			{
+				id: "73EA0D33AB1F1FE5"
+				item: "tconstruct:longbow"
+				type: "item"
+			}]
+			title: "Große Werkzeuge"
+			x: 5.5d
+			y: 8.75d
+		}
+		{
+			dependencies: ["5C8310D9F4DA825C"]
+			description: [
+				"Schwere Rüstung aus Plating und Maille. Das Metall bestimmt die Schutzart."
+				"Buch: Mighty Smelting → Mighty Armor (Materialien); Fantastic Foundry → Fantastic Armor (die Teile). &9(ungeprüft)&r Prüfen, ob das Mighty-Smelting-Buch die Teile schon selbst zeigt."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:plate_helmet"
+			id: "06D9E90998FD442F"
+			optional: true
+			shape: "square"
+			subtitle: "TK2 · Smeltery · Nebenquest"
+			tasks: [{
+				id: "3499CD2AF4E18A70"
+				item: "tconstruct:plate_helmet"
+				type: "item"
+			}
+			{
+				id: "53439BE8186930D0"
+				item: "tconstruct:plate_chestplate"
+				type: "item"
+			}
+			{
+				id: "212EC04F2C2AF597"
+				item: "tconstruct:plate_leggings"
+				type: "item"
+			}
+			{
+				id: "08196229707DAC67"
+				item: "tconstruct:plate_boots"
+				type: "item"
+			}]
+			title: "Plate Armor"
+			x: 5.5d
+			y: 10.0d
+		}
+		{
+			dependencies: ["5C8310D9F4DA825C"]
+			description: [
+				"Lebewesen in einer laufenden Smeltery geben Flüssigkeiten ab, Dorfbewohner etwa Smaragd."
+				"Buch: Mighty Smelting → Entity Melting."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:smeltery_controller"
+			id: "151B10151FE12588"
+			optional: true
+			shape: "square"
+			subtitle: "TK2 · Smeltery · Nebenquest"
+			tasks: [{
+				id: "01B696031E97A919"
+				title: "Lebewesen in der Smeltery geschmolzen"
+				type: "checkmark"
+			}]
+			title: "Entity Melting"
+			x: 5.5d
+			y: 11.25d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 5: Erzketten."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "53920E3D25E0830E"
+			shape: "gear"
+			subtitle: "TK3 · Alloyer und Foundry"
+			tasks: [{
+				id: "20F55608649BA5FD"
+				stage: "kapitel_k5"
+				type: "gamestage"
+			}]
+			title: "Kapitel 5: Tinkers' Construct"
+			x: 7.5d
+			y: -1.75d
+		}
+		{
+			dependencies: ["5C8310D9F4DA825C", "53920E3D25E0830E"]
+			description: [
+				"&c&eVorsicht Nether:&r&c Für Nether Grout und Blazing Blood musst du in den Nether. (Kobalt kommt seit O78 schon in Quest „Kobalt“.)&r"
+				""
+				"Das vierte Buch. Aus Nether Grout werden Scorched Bricks, der Baustoff von Alloyer und Foundry."
+				"Buch: Materials and You → Further Reading; Fantastic Foundry → Introduction."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:fantastic_foundry"
+			id: "70E79DDEEB63AC8A"
+			subtitle: "TK3 · Alloyer und Foundry"
+			tasks: [{
+				id: "67E9EE68D2B27184"
+				item: "tconstruct:fantastic_foundry"
+				type: "item"
+			}
+			{
+				id: "683450272DDE5CD5"
+				item: "tconstruct:nether_grout"
+				type: "item"
+			}
+			{
+				id: "5F6259DDBEB72031"
+				item: "tconstruct:scorched_brick"
+				type: "item"
+			}]
+			title: "Fantastic Foundry"
+			x: 7.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["70E79DDEEB63AC8A"]
+			description: [
+				"Ein einzelner Block, der Legierungen ohne Smeltery herstellt."
+				"Buch: Fantastic Foundry → Alloyer."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:scorched_alloyer"
+			id: "0BC1AC8D9AEA15B2"
+			optional: true
+			shape: "square"
+			subtitle: "TK3 · Alloyer und Foundry · Nebenquest"
+			tasks: [{
+				id: "4138EC75180A80C0"
+				item: "tconstruct:scorched_alloyer"
+				type: "item"
+			}]
+			title: "Scorched Alloyer"
+			x: 9.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["70E79DDEEB63AC8A"]
+			description: [
+				"Die Foundry legiert nicht, gibt aber beim Erzschmelzen ein zweites Metall dazu: Kupfer gibt Gold, Kobalt gibt Eisen, Eisen gibt Stahl."
+				"Buch: Fantastic Foundry → Foundry → Controller, Structure, Byproducts."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:foundry_controller"
+			id: "5BF3A9635A7DA2CE"
+			subtitle: "TK3 · Alloyer und Foundry"
+			tasks: [{
+				id: "724A032E2FADE6E1"
+				item: "tconstruct:foundry_controller"
+				type: "item"
+			}]
+			title: "Foundry"
+			x: 7.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["5BF3A9635A7DA2CE"]
+			description: [
+				"Der heißeste Brennstoff. Er braucht die Legierungen der vierten Stufe."
+				"Buch: Fantastic Foundry → Blazing Blood."
+				"&6⚙&r &9(ungeprüft)&r Blazing Blood soll im Pack auch Zutat in Rezepten anderer Mods werden (Weg A); welche Rezepte, ist offen."
+			]
+			hide_until_deps_visible: true
+			id: "3F7BC68BFB14323D"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "TK3 · Alloyer und Foundry"
+			tasks: [{
+				amount: 1000L
+				fluid: "tconstruct:blazing_blood"
+				id: "72F1D96A8FADC38A"
+				type: "fluid"
+			}]
+			title: "Blazing Blood"
+			x: 7.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["3F7BC68BFB14323D"]
+			description: [
+				"Die stärksten Metalle des Mods, nur mit Blazing Blood als Brennstoff."
+				"Buch: Fantastic Foundry → Tier 4 General Materials; Fantastic Armor."
+				"&6⚙&r Refined Obsidian kannst du hier nicht legieren. Es entsteht nur über Mekanism. Fertige Barren lassen sich trotzdem einschmelzen und gießen."
+				"&6⚙&r &9(ungeprüft)&r Auch Manyullyn und Queen's Slime sollen Zutat anderer Mods werden (Weg A, offen)."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:manyullyn_ingot"
+			id: "1C3D78507510DD8B"
+			optional: true
+			shape: "square"
+			subtitle: "TK3 · Alloyer und Foundry · Nebenquest"
+			tasks: [{
+				id: "2245D00585E55E4D"
+				item: "tconstruct:manyullyn_ingot"
+				type: "item"
+			}
+			{
+				id: "04391F00F7B594C0"
+				item: "tconstruct:hepatizon_ingot"
+				type: "item"
+			}
+			{
+				id: "50B078327448CED5"
+				item: "tconstruct:queens_slime_ingot"
+				type: "item"
+			}]
+			title: "Legierungen der vierten Stufe"
+			x: 9.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["3F7BC68BFB14323D"]
+			description: [
+				"Erst nach dem Blutaltar von Blood Magic (BM1)."
+				"Das Addon verbindet Smeltery und Blood Magic: Demon Will wird flüssig, daraus entstehen Bloodbrass und Blood-Seared Stone als Werkzeugmaterial. Kein Buch."
+				"&6⚙&r Life Essence entsteht nur am Blutaltar, nicht als Legierung in der Smeltery. Blank Slates und Runen werden nicht gegossen, sondern am Altar gemacht. Einschmelzen von Slates und Runen zu Blood-Seared Stone geht weiter."
+				"&9(ungeprüft)&r Das Addon ist in Version 1.2.1a teilweise defekt (nur eine von fünf Demonite-Flüssigkeiten). Vor dem Einbau im Spiel prüfen, was davon geht."
+			]
+			hide_until_deps_visible: true
+			id: "4AB259F9833F8B18"
+			optional: true
+			shape: "square"
+			subtitle: "TK3 · Alloyer und Foundry · Nebenquest"
+			tasks: [{
+				amount: 1000L
+				fluid: "bloodsmeltery:demon_will"
+				id: "0592D8701491ED28"
+				type: "fluid"
+			}
+			{
+				amount: 90L
+				fluid: "bloodsmeltery:molten_bloodbrass"
+				id: "39AC35380BCBED5E"
+				type: "fluid"
+			}]
+			title: "Blood-Smeltery"
+			x: 9.0d
+			y: 4.25d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 7: Horchposten."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "460FB75821C34356"
+			shape: "gear"
+			subtitle: "TK4 · Planetenmetalle gießen"
+			tasks: [{
+				id: "6C2BBB1052103B56"
+				stage: "kapitel_k7"
+				type: "gamestage"
+			}]
+			title: "Kapitel 7: Tinkers' Construct"
+			x: 11.0d
+			y: -1.75d
+		}
+		{
+			dependencies: ["3F7BC68BFB14323D", "460FB75821C34356"]
+			description: [
+				"TCIntegrations hat kein Buch. Desh, Ostrum und Calorite erscheinen aber in den Materiallisten der Tinkers-Bücher, sobald sie geladen sind."
+				""
+				"Die Metalle von Mond und Mars lassen sich in der Smeltery schmelzen und gießen."
+				"&6⚙&r &9(ungeprüft)&r Im Mod liegen sie nur auf Eisen-Niveau. Das Pack hebt Stufe und Werte an (Weg C); die Werte sind offen."
+			]
+			hide_until_deps_visible: true
+			id: "6E53DA877D72BDAC"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "TK4 · Planetenmetalle gießen"
+			tasks: [{
+				amount: 90L
+				fluid: "tcintegrations:molten_desh"
+				id: "01F18CC3EE341D96"
+				type: "fluid"
+			}
+			{
+				amount: 90L
+				fluid: "tcintegrations:molten_ostrum"
+				id: "15E74C372B42F156"
+				type: "fluid"
+			}]
+			title: "Desh und Ostrum schmelzen"
+			x: 11.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6E53DA877D72BDAC"]
+			description: [
+				"Werkzeugteile aus Desh, Ostrum und später Calorite tragen den Trait Oxygenated."
+				"&9(ungeprüft)&r Was Oxygenated genau tut, steht noch nicht in den Quellen."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:pick_head"
+			id: "266766DBCBF19385"
+			optional: true
+			shape: "square"
+			subtitle: "TK4 · Planetenmetalle gießen · Nebenquest"
+			tasks: [{
+				id: "4E1E4A1FF4645226"
+				item: "tconstruct:pick_head"
+				type: "item"
+			}
+			{
+				id: "5E4CFEAB55C6CC12"
+				title: "Teil aus Desh oder Ostrum"
+				type: "checkmark"
+			}]
+			title: "Werkzeug aus dem All"
+			x: 12.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6E53DA877D72BDAC"]
+			description: [
+				"Erst nach der Rakete T3."
+				"Das Metall der Venus, wie Desh und Ostrum gieß- und verbaubar."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:calorite_ingot"
+			id: "7EDD64D2BE896363"
+			optional: true
+			shape: "square"
+			subtitle: "TK4 · Planetenmetalle gießen · Nebenquest"
+			tasks: [{
+				amount: 90L
+				fluid: "tcintegrations:molten_calorite"
+				id: "1F19D68556B9D711"
+				type: "fluid"
+			}
+			{
+				id: "0590854CE619343A"
+				item: "ad_astra:calorite_ingot"
+				type: "item"
+			}]
+			title: "Calorite"
+			x: 12.5d
+			y: 1.25d
+		}
+		{
+			dependencies: ["6E53DA877D72BDAC"]
+			description: [
+				"Das Giselle Addon bringt Space Breathing, Space Fire Proof, Acid Rain Proof und Gravity Normalizing als Tinkers-Modifier. Beschrieben in adastra.md, RFX-02; hier nur als Verweis, damit die Quest nicht doppelt steht."
+				""
+				"&6⚙&r &9(ungeprüft)&r Weitere geplante Wege ohne eigene Quest, bis sie entschieden sind: eigene Tinkers-Materialien für Metalle ohne Material (Weg D, z. B. Terrasteel, Hellforged, Metalle aus Blue Skies und weiteren Mods), Modifier an späte Items (Weg E), einzelne Raketenteile nur gegossen (Weg F). Kommt einer davon, gehört er als Quest hierher."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:plate_chestplate"
+			id: "122F6541DEE579EE"
+			optional: true
+			shape: "square"
+			subtitle: "TK4 · Planetenmetalle gießen · Nebenquest"
+			tasks: [{
+				id: "3D0C0EE3D142B60A"
+				title: "Tinkers-Rüstung mit einem Raumfahrt-Modifier"
+				type: "checkmark"
+			}]
+			title: "Raumfahrt-Modifier"
+			x: 12.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0F99929080E4C2A3"]
+			description: [
+				"Stellt die späten Teile des Mods vor. Die Quests hängen jeweils am genannten Meilenstein."
+				""
+				"• &eQuest&r: Ab · Thema"
+				"• &eTKA-01&r: TK2 · Tinkers' Gadgetry"
+				"• &eTKA-02&r: TK2 · Encyclopedia of Tinkering"
+				"• &eTKA-03&r: TK2 · Werkzeuge leveln"
+				"• &eTKA-04&r: TK3 · Slime-Rüstung"
+				"• &eTKA-05&r: TK3 · Staffs"
+				"• &eTKA-06&r: TK2 · Ancient Tools"
+				"• &eTKA-07&r: TK2 · Gadgets"
+				""
+				"Das Buch über Erkundung, Slime-Inseln, Gadgets und die Slime-Ausrüstung."
+				"Buch: Materials and You → Further Reading; Tinkers' Gadgetry → Introduction, Exploration."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:tinkers_gadgetry"
+			id: "77975F43921D3BC9"
+			optional: true
+			shape: "square"
+			subtitle: "Ausbau · Nebenquest"
+			tasks: [{
+				id: "1A4975FB2EF73761"
+				item: "tconstruct:tinkers_gadgetry"
+				type: "item"
+			}]
+			title: "Tinkers' Gadgetry"
+			x: 16.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0F99929080E4C2A3"]
+			description: [
+				"Das Nachschlagewerk: alle Werkzeuge, Modifier und Flüssigkeiten in einem Band."
+				"Buch: Puny Smelting → Further Reading."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:encyclopedia"
+			id: "0F95CEFDA79F1004"
+			optional: true
+			shape: "square"
+			subtitle: "Ausbau · Nebenquest"
+			tasks: [{
+				id: "7D845CD6DDC632A8"
+				item: "tconstruct:encyclopedia"
+				type: "item"
+			}]
+			title: "Encyclopedia of Tinkering"
+			x: 16.0d
+			y: 1.25d
+		}
+		{
+			dependencies: ["0F99929080E4C2A3"]
+			description: [
+				"Jedes Werkzeug und jedes Rüstungsteil sammelt durch Benutzung Erfahrung (Modifier Improvable). Jede Stufe gibt einen zusätzlichen Modifier-Slot oder einen festen Bonus. Mit gehaltener Alt-Taste zeigt der Tooltip den Stand. Das kommt aus dem Tinkers Levelling Addon und steht in keinem Buch."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:pickaxe"
+			id: "71E1491FE21A9A21"
+			optional: true
+			shape: "square"
+			subtitle: "Ausbau · Nebenquest"
+			tasks: [{
+				id: "68C2FCEE1E0F7CFD"
+				title: "Ein Werkzeug ist eine Stufe aufgestiegen"
+				type: "checkmark"
+			}]
+			title: "Werkzeuge leveln"
+			x: 16.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["70E79DDEEB63AC8A"]
+			description: [
+				"Rüstung aus Slime und Mob-Teilen, mit besonderen Fähigkeiten statt hoher Rüstungswerte."
+				"Buch: Tinkers' Gadgetry → Slimy Armor; Slimesuit Materials."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:slime_helmet"
+			id: "32D280E08ABD0DF4"
+			optional: true
+			shape: "square"
+			subtitle: "Ausbau · Nebenquest"
+			tasks: [{
+				id: "112BD9C3DF7A3628"
+				item: "tconstruct:slime_helmet"
+				type: "item"
+			}
+			{
+				id: "613AC36ED9F0D325"
+				item: "tconstruct:slimy_chestplate"
+				type: "item"
+			}
+			{
+				id: "7C8E8D02CEDFC440"
+				item: "tconstruct:slime_leggings"
+				type: "item"
+			}
+			{
+				id: "29FEF3EF50B39DF8"
+				item: "tconstruct:slime_boots"
+				type: "item"
+			}
+			{
+				id: "5710F5782E7F8382"
+				item: "tconstruct:slime_wings"
+				type: "item"
+			}]
+			title: "Slime-Rüstung"
+			x: 16.0d
+			y: 3.75d
+		}
+		{
+			dependencies: ["70E79DDEEB63AC8A"]
+			description: [
+				"Stäbe aus Slime-Kristallen und Slimewood, gebaut für Interaktions-Abilities. Der Earthslime Staff braucht Kobalt."
+				"Buch: Tinkers' Gadgetry → Staffs."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:sky_staff"
+			id: "3069A947DFF290CC"
+			optional: true
+			shape: "square"
+			subtitle: "Ausbau · Nebenquest"
+			tasks: [{
+				id: "367982F451280B43"
+				item: "tconstruct:sky_staff"
+				type: "item"
+			}
+			{
+				id: "66CB288841F8CD7B"
+				item: "tconstruct:earth_staff"
+				type: "item"
+			}
+			{
+				id: "752AC75D416FA991"
+				item: "tconstruct:ichor_staff"
+				type: "item"
+			}
+			{
+				id: "73F68B93DA16953A"
+				item: "tconstruct:ender_staff"
+				type: "item"
+			}]
+			title: "Staffs"
+			x: 16.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["0F99929080E4C2A3"]
+			description: [
+				"Diese Werkzeuge kannst du nicht bauen, nur finden. Eins reicht."
+				"Buch: Tinkers' Gadgetry → Ancient Tools."
+				"&9(ungeprüft)&r Die Fundorte stammen aus dem Buch und setzen teils andere Mods voraus (Piratenorte, Labyrinthe). Prüfen, welche im Pack erreichbar sind; sonst die Quest auf die übrigen beschränken."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:melting_pan"
+			id: "41AB0B6D80CCEECD"
+			optional: true
+			shape: "square"
+			subtitle: "Ausbau · Nebenquest"
+			tasks: [{
+				id: "56622B19684E6820"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(tconstruct:melting_pan)item(tconstruct:war_pick)item(tconstruct:battlesign)item(tconstruct:swasher)item(tconstruct:minotaur_axe))" } }
+				title: "Ancient Tools"
+				type: "item"
+			}]
+			title: "Ancient Tools"
+			x: 16.0d
+			y: 6.25d
+		}
+		{
+			dependencies: ["0F99929080E4C2A3"]
+			description: [
+				"Kleinkram: Mobs auf dem Rücken tragen (passt zum Entity Melting), Flüssigkeiten verschießen, bessere Rahmen."
+				"Buch: Tinkers' Gadgetry → Gadgets; Puny Smelting → Moving Fluids → Fluid Cannon."
+			]
+			hide_until_deps_visible: true
+			icon: "tconstruct:piggy_backpack"
+			id: "732874996CBEF388"
+			optional: true
+			shape: "square"
+			subtitle: "Ausbau · Nebenquest"
+			tasks: [{
+				id: "33997C19DB27710A"
+				item: "tconstruct:piggy_backpack"
+				type: "item"
+			}
+			{
+				id: "3E2A64D01A6AF1F1"
+				item: "tconstruct:seared_fluid_cannon"
+				type: "item"
+			}
+			{
+				id: "6720CE1FB2105B36"
+				item: "tconstruct:clear_item_frame"
+				type: "item"
+			}]
+			title: "Gadgets"
+			x: 16.0d
+			y: 7.5d
+		}
+	]
+	title: "Tinkers' Construct"
+}
