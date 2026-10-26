@@ -22,7 +22,7 @@ Die Schritte laufen in dieser Reihenfolge; 1 und 2 gehen parallel. Alle offenen 
 | 3 Story von Part 1 fertig | `18_STORY.md` bis zur Rückkehr des Meisters; Ablauf `story/ABLAUF.md`; Texte `story/texte/` (Entwurf Claude, O50) | 🟡 Handlung steht, alle Texte im Entwurf (2026-10-21); O47–O66 entschieden | User liest gegen |
 | 4 Skripte und Raketen | Teil 1 geschrieben (2026-10-20): Raketen T1–T4, Rover, eigene Items, Altar-Dimension (Ritual, Amulett, Truhe), Ideenimport-Entfernungen, IE-Crusher, AE2, Airship, Shop und Baupläne, Galaxy in a Cube aus der Overworld. Offen: Antimaterie-Treibstoffe T6/T7, Etrium, Planetenstufen T5–T7, Beskar, Kyber (Teil 2 und 3) | 🟢 Teil 1 getestet (2026-10-20) | – |
 | 5 Balance (frühere Phasen 3–6) | Erträge der Erzverarbeitung, Energie, AE2 zweistufig, Cross-Mod-Rezepte (`07_CROSSMOD_INTEGRATION.md`). Macht der User später bei Bedarf (2026-10-21); bremst Teil 1 nicht | 🔵 später | F20, F24 |
-| 6 Questbuch einbauen | FTB Quests aus `questtexte/` und `story/texte/questtexte_story.md`, Easy-NPC-Figuren (DD3R8, Davijaan, Bodhi Bad Dur, Meisterin Cerina, Quinlan Vos) | 🟡 Logbuch und Story-Items gebaut (2026-10-21, Tests 73–78 offen); offen: Altar-Skript, Gatekeeper, Generator für Buch 1, Dialoge (User), Skins DD3R8, Bodhi, Cerina (User) | Schritt 3 |
+| 6 Questbuch einbauen | FTB Quests: Buch 1 (Story) und alle Mod-Kapitel bis K11 gebaut (2026-10-26, 545 Quests, IDs gegen die JARs geprüft); Story-Skripte gebaut (Kobalthammer, Relikt-Fluch, Altar, Everdawn-Sperre, Elfenportal, Bauplan Pilotenhelm, Gatekeeper aus). Offen: F31–F42, Belohnungen (F33), Tests 73–93, Dialoge im Easy-NPC-Editor und Skins DD3R8/Bodhi (User), Platzhalter beim Host (H6) | 🟡 gebaut, ungetestet, nicht in der Testinstanz | User: F31–F42 |
 | 7 Hauptwelt umstellen | Aufgaben beim Host (H1–H5 unten) | 🔵 | Schritte 4–6; nur, was in `11_TESTING.md` ✅ hat |
 
 ### Aufgaben beim Host (Schritt 7)
@@ -32,6 +32,7 @@ Die Schritte laufen in dieser Reihenfolge; 1 und 2 gehen parallel. Alle offenen 
 - H3. Vollständiges Backup beim Host (im Test-Backup fehlte `DIM-1/entities`).
 - H4. Alte `immersivepetroleum-server.toml` entfernen; Worldgen-Configs und Tag-Overrides vor dem ersten Start einspielen.
 - H5. Questbuch und Story-Figuren einspielen.
+- H6. Story-Bauten mit Platzhaltern: Kapsel, Höhle und Mondbasis, Blue-Skies-Haus und Schlucht des Zwergs, Ruine der Mars-Station (Koordinaten für den Peilsender), Tempel mit kaputtem Altar (Koordinaten und Strukturdatei `altar_heil.nbt` in `altar_reparatur.js`), Versteck auf Glacio; Easy-NPC-Presets (Cerina: `IEPLUS_CERINA_PRESET` in `elfenportal.js`; Befehle zum Erscheinen/Verschwinden in `tools/questbuch/buch1.cfg`); Koordinaten der Schutzzonen; Station für den 3D-Bauplan (O74). Einmalig `scoreboard objectives add story dummy`.
 
 (Die Nummern 9–28 und die Blöcke A–G aus früheren Fassungen gelten nicht mehr; sie stehen noch im Archiv.)
 

@@ -5,7 +5,6 @@ Aufruf (aus dem Projektordner):
 Der Client liegt bei ATLauncher unter libraries/net/minecraft/client/1.20.1/client-1.20.1.jar.
 
 Ergebnis in kubejs/assets/kubejs/textures/item/:
-    pilotenhelm.png          Eisenhelm, weiß (kubejs:klonhelm_repariert, „Pilotenhelm des Einsiedlers“)
     pilotenhelm_kaputt.png   Eisenhelm, schmutzig grau mit Riss (kubejs:kaputter_klonhelm)
     tempelrolle.png          Papier, vergilbt, mit rotem Siegel (kubejs:tempelrolle_1 bis _4)
 """
@@ -45,7 +44,7 @@ def main():
     ZIEL.mkdir(parents=True, exist_ok=True)
 
     helm = lade(jar, 'iron_helmet')
-    faerben(helm, (240, 240, 236)).save(ZIEL / 'pilotenhelm.png')
+    # Der reparierte Helm ist seit O71 der 212er-Helm von Galaxy in a Cube; keine eigene Textur mehr.
 
     kaputt = faerben(helm, (128, 120, 104))
     px = kaputt.load()

@@ -823,7 +823,7 @@
 			y: 3.0d
 		}
 		{
-			dependencies: ["3F7BC68BFB14323D"]
+			dependencies: ["3F7BC68BFB14323D", "5507C16F016711A1"]
 			description: [
 				"Erst nach dem Blutaltar von Blood Magic (BM1)."
 				"Das Addon verbindet Smeltery und Blood Magic: Demon Will wird flüssig, daraus entstehen Bloodbrass und Blood-Seared Stone als Werkzeugmaterial. Kein Buch."
@@ -925,7 +925,7 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["6E53DA877D72BDAC"]
+			dependencies: ["6E53DA877D72BDAC", "44E2B3F2841F03A8"]
 			description: [
 				"Erst nach der Rakete T3."
 				"Das Metall der Venus, wie Desh und Ostrum gieß- und verbaubar."

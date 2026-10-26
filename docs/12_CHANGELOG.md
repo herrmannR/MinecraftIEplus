@@ -1366,3 +1366,16 @@ Status: 🔵
 ### Teststatus
 - Generator läuft ohne Fehler. Im Spiel ungetestet (Tests 79–83). Noch nicht in der Testinstanz.
 
+## 2026-10-26 — Mod-Kapitel bis K11 und Story-Skripte
+
+Status: 🔵
+
+### Änderung
+- Sechs parallele Sessions: Questbuch-Kapitel IE, Tinkers, Mekanism, AE2, Botania, Blood Magic, Ad Astra, Galaxy in a Cube, Blue Skies, Roguelike Dungeons, Immersive Aircraft, Alex's Mobs, Küche (Star Wars Planets erst ab K13); Story-Skripte Teil 1 (Kobalthammer, Relikt-Fluch und -Sperre, Altar-Reparatur, Everdawn-Sperre, Elfenportal, Bauplan Pilotenhelm, Gatekeeper aus). Positionen von Mekanism und Botania aus der Instanz übernommen.
+- `tools/QuestbuchGen.java`: Option `bis = K11`; eindeutige Marken bei gleichem Kn (vorher doppelte IDs in Alex's Mobs und Küche); Quests ohne Voraussetzung hängen an der Marke; Aufgaben `kill(…)` und `observe(…)`; Abhängigkeiten in andere Kapitel (`kapitel:CODE`).
+- IE-Multiblöcke als Beobachtungs-Aufgabe, Blue-Skies-Bosse als Kill-Aufgabe, kapitelübergreifend TK3-07 → BM1-02, TK4-03 → RF3-08, AE2-02 → MK3-02.
+- Offene Fragen F31–F42, Prüfpunkte P17–P20 in `20_ENTSCHEIDUNGEN.md`; Host-Aufgaben H6 in `00_STATUS.md`.
+
+### Teststatus
+- Generator und `kubejs_check.py` ohne Fehler, 545 Quest-IDs ohne Doppel. Im Spiel ungetestet (Tests 73–93). Noch nicht in der Testinstanz.
+

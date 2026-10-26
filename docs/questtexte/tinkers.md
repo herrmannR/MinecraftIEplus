@@ -335,7 +335,7 @@ Keine Pack-Änderung, aber nicht im Buch: Fremdmetalle von IE und Mekanism (TK1-
 6. Blood-Smeltery 1.2.1a: welche Flüssigkeiten und Rezepte im Spiel gehen.
 7. Trait Oxygenated (TK4-02): Wirkung nicht ausgelesen.
 8. Ancient Tools: welche Fundorte im Pack existieren.
-9. Abhängigkeit über Kapitelgrenzen (TK3-07 erst nach BM1, TK4-03 erst nach Rakete T3) kann der Generator nicht. Im Questbuch hängen beide vorerst an der letzten Hauptweg-Quest davor; der Satz steht im Text.
+9. 🟢 Abhängigkeit über Kapitelgrenzen (2026-10-26): TK3-07 hängt an Blood Magic BM1-02 (Blutaltar), TK4-03 an Ad Astra RF3-08 (Rakete T3), über `deps = …, kapitel:CODE` in `tools/questbuch/tinkers.cfg`.
 10. Flüssigkeitsmengen im Questbuch (Einbau 2026-10-26): Blazing Blood und Demon Will 1000 mB, geschmolzene Metalle (Bloodbrass, Desh, Ostrum, Calorite) 90 mB = ein Barren. Passt das?
 11. Zu 3.: TK1-14 und TK4-02 vorerst Item `tconstruct:pick_head` plus Kontrollhaken mit dem Material. TK1-14 hat damit dasselbe Item wie TK1-11; erst der Haken unterscheidet sie.
 12. `order = 10` hat auch das Mekanism-Kapitel; Reihenfolge der Mod-Kapitel festlegen.

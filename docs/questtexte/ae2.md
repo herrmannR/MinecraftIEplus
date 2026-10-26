@@ -344,7 +344,7 @@ Buch: Items, Blocks, and Machines → Matter Cannon, Matter Ball.
 
 - **O31:** AE1 liegt vor dem Mond. Ob AE1 im Questbuch nachgereicht wird oder als Notiz steht, entscheidet der User.
 - **Verteuerung (F10):** Controller und Drive sind eingearbeitet (AE2-02, AE2-03). Die ⚙️-🔵-Zeilen in AE1-08 (Prozessoren) und AE2-01 (Housing, Components) fragen, ob noch mehr teurer wird; F10 nennt nur Controller und Drive. Rezepte im Spiel prüfen (Skript ungetestet).
-- **Bezug AE2 → Mekanism:** Controller und Drive brauchen den Advanced Control Circuit (Mekanism MK3, K5). Das Questbuch kann nicht kapitelübergreifend verknüpfen; die Quests nennen es nur im Text.
+- 🟢 **Bezug AE2 → Mekanism** (2026-10-26): AE2-02 (und damit AE2-03) hängt an Mekanism MK3-02 (Advanced Control Circuit), über `deps` in `tools/questbuch/ae2.cfg`.
 - **AEX (Werkzeuge):** im Kapitel an den Guide (AE1-01) gehängt, also ab K3 sichtbar. AEX-06 Matter Cannon braucht Matter Balls aus dem Condenser (AE3, K13), der in Teil 1 fehlt; Nadeln (Nuggets) gehen auch.
 - **Storage Bus an Storage Drawers** (AE1-12) im Spiel prüfen: ein Bus am Drawer Controller oder je Drawer.
 - **Quantum Bridge auf dem Server** (AE3-03): Chunkloading beider Enden klären; zugleich, ob Spatial Anchor und Spatial-Storage-Dimension erlaubt sind (AE3-05, AE3-06).

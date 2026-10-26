@@ -392,7 +392,7 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["61C378527699CA8B"]
+			dependencies: ["61C378527699CA8B", "5FA26DC946224B1C"]
 			description: [
 				"Der Drive hält mehrere Zellen und macht sie fürs Netz sichtbar."
 				"Buch: Items, Blocks, and Machines → ME Drive; Getting Started → Your Very First ME System."

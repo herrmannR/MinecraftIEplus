@@ -56,6 +56,58 @@ Mit einem angespannten Esel macht der Millstone aus Iron und Gold Ore 3 Raw, aus
 Welche Maschinen (IE Excavator, Mekanism-Factories, AE2-Autocrafting), welcher Meilenstein? Für Teil 1 nichts zusätzlich.
 → `01_PROGRESSION.md`
 
+### Questbuch Teil 1 (aus dem Einbau der Mod-Kapitel, 2026-10-26)
+
+Die Kapitel bis K11 sind gebaut (sechs parallele Sessions). Diese Punkte haben die Sessions bewusst nicht selbst entschieden; Einzelheiten stehen im Abschnitt „Offen vor dem Einbau“ der genannten Questtext-Datei.
+
+**F31 · Kapitel-Zuordnung der Nebenstränge** (Vorschläge der Session)
+Blue Skies BSN → K3; Roguelike WD1/WD2 → K8 (WD1-01 bis -03 und WD2-01/-02 Hauptweg nach F15), WD3/WD4 → K10, WD5 → K12; Aircraft IA1 → K4, Luftschiffe → K5, die übrigen 12 Quests → K12; Küche KU1 K1, KU2/KU3 K2, KU4 K3, KU5/KU6 K4, KU7 K5, KU8 K6, KU9 K7. Bestätigen? Sollen WD3/WD4 schon in Teil 1 erscheinen, und bleiben die 12 Aircraft-Quests überhaupt?
+→ `questtexte/rld.md`, `aircraft.md`, `kueche.md`, `blue_skies.md`
+
+**F32 · Alex's Mobs auf einmal** (F16: ganze Reihe ab dem Mond)
+37 Quests erscheinen zusammen mit K4. So lassen oder auf mehrere Kapitel verteilen?
+→ `questtexte/alexsmobs.md`
+
+**F33 · Belohnungen** (für alle Kapitel einheitlich, noch nicht eingetragen)
+Vor dem Mond (K1–K3) Aufgaben des Droiden: Kleinigkeiten und XP; ab dem Einsiedler (K4) Credits (F26, O27). Welche Mengen je Haupt- und Nebenquest, und wie viele Credits für den Helm (ST4-05)?
+→ `tools/questbuch/*.cfg` (`rewards`)
+
+**F34 · AE2 weiter verteuern?**
+F10 verteuert nur Controller und Drive. Auch Prozessoren (AE1-08) oder Housings und Components (AE2-01)?
+→ `questtexte/ae2.md`, `kubejs/server_scripts/progression/ae2_verteuerung.js`
+
+**F35 · Mengen in Aufgaben** (Vorschläge der Sessions)
+Liquid Oxygen in MK1-07 (offen); Kryo-Treibstoff in RF4-06 2000 mB (Hin- und Rückflug); Tinkers: Blazing Blood und Demon Will je 1000 mB, geschmolzene Metalle 90 mB (ein Barren).
+→ `questtexte/mekanism.md`, `adastra.md`, `tinkers.md`
+
+**F36 · RF2-02 „Orbit von Erde oder Mond“**
+Der Generator kennt keine Oder-Aufgabe für Dimensionen; jetzt ein Häkchen. Lieber eine feste Dimension?
+→ `questtexte/adastra.md`
+
+**F37 · MekaSuit-Module**
+F11 sagt Teil 2, `mekanism.md` hat den MekaSuit erst bei K15 (Teil 3). Was gilt?
+→ `questtexte/adastra.md` (RFX-03), `mekanism.md`
+
+**F38 · Galaxy in a Cube neu geordnet**
+SW2 beginnt jetzt mit der Assembly Bench als erstem Kauf; Gas Harvester und Tibanna sind Nebenquests (Plastoid braucht kein Tibanna mehr). SW3-06 (bemalte Einheit) zählt die 212th nicht, weil der Story-Helm (O71) die Quest sonst erfüllt. Gewollt?
+→ `questtexte/swgc.md`
+
+**F39 · Botania BO2-04 „Würdig sein“**
+Soll die Aufgabe gleich den Manastahlblock verlangen statt des Barrens?
+→ `questtexte/botania.md`
+
+**F40 · Relikt** (Story-Skripte)
+a) Beim Tod bleibt das Relikt beim Träger (so gebaut); Alternative: Es fällt, und nur die anderen können es aufheben. b) Wer die Truhe des Meisters öffnet, hat das Relikt sofort im Inventar und damit den Fluch. c) Die Altar-Reparatur verlangt 1 Terrasteel-Barren (kein Block). Passt alles?
+→ `kubejs/server_scripts/story/relikt_fluch.js`, `altar_reparatur.js`
+
+**F41 · Bauplan-Rollen öffnen ihren Eintrag?**
+Der Dialog von Davijaan sagt, das Lesen öffne den Eintrag im Buch; bisher schaltet keine Bauplan-Rolle das Buch auf (das Logbuch tut es). Für alle Rollen nachrüsten?
+→ `kubejs/server_scripts/starwars/einsiedler_shop.js`
+
+**F42 · BM1-01 Sanguine Scientiem**
+Die Aufgabe prüft nur `patchouli:guide_book` ohne NBT, also zählt jedes Patchouli-Buch (auch Logbuch und Bauplan-Buch). Hinnehmen oder dem Generator Aufgaben mit NBT beibringen?
+→ `questtexte/bloodmagic.md`
+
 ## Teil 2 · Entscheidungen zu Questbuch und Story
 
 Die Story schreibt der User. Diese Fragen braucht es, damit Questbuch und Skripte gebaut werden können.
@@ -103,6 +155,10 @@ Hier musst du nichts entscheiden, nur nachsehen. Testwege und Ergebnisse stehen 
 | P13 | IE | In welchem Eintrag des Handbuchs das Seismic Survey Tool steht |
 | P15 | FTB Quests, Easy NPC | Ist eine Stage-Aufgabe erfüllt, wenn nur ein Party-Mitglied den Tag hat? Öffnet der Shop des Einsiedlers nur unter Bedingung? Globale Bauplan-Freischaltung per Weltwert |
 | P16 | Kaleidoscope | Welche drei Gewürze die Gewürzflasche verlangt (JEI „Mixing Seasoning“). Zusammenführung und Handel des Chef: erledigt (Tests 65–72, 2026-10-21) |
+| P17 | Blood Magic | Braucht der Weg zur Station in den Mines des Endless Realm eine Tür mit Miner's Key? Dann bräuchte K9 schon einen Miner's Key (und einen Greater Tartaric Gem) |
+| P18 | Blood Magic | Zahl der Ritualsteine in BM3-02 (16 ist ein Platzhalter) |
+| P19 | Ad Astra | Bosse der Dungeons auslesen; bis dahin Häkchen |
+| P20 | FTB Quests | Beobachtungs-Aufgaben: Haben die gebauten IE- und IP-Multiblöcke die erwarteten Block-IDs? Kill-Aufgaben der vier Blue-Skies-Bosse; kapitelübergreifende Abhängigkeiten (TK3-07, TK4-03, AE2-02) |
 
 ### Story-Technik (noch zu klären)
 
