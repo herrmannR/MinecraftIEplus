@@ -175,6 +175,7 @@ Ablage in `docs/story/texte/`, je Figur oder Buch eine Datei. Der User überarbe
 | ✅ Skript `/logbuch` + Patchouli-Buch „Logbuch des Meisters“ (B5), 2026-10-21 | Claude | 🔵 Tests 73–77 |
 | ✅ Items: 4 Tempelrollen, Tagebuch, Siegel, Pilotenhelm (kaputt/repariert); Reparaturrezept, 2026-10-21 | Claude | 🔵 Tests 73, 78 |
 | ✅ `meister_truhe.json`: Tagebuch als Item, 2026-10-21 | Claude | 🔵 Test 78 |
+| Skript Relikt-Fluch (O66): nach 15 s im Inventar Blindheit, Langsamkeit, Vergiftung; nicht ablegbar (Truhe, Behälter, Wegwerfen, Itemrahmen …). 🔵 Offen: Was passiert beim Tod des Trägers (Relikt bleibt bei ihm oder fällt für die anderen)? | Claude | – |
 | Skript Altar per Rechtsklick (O48, O56) | Claude | Bauplan des kaputten Altars vom Host |
 | Gatekeeper abschalten (O34) | Claude | – |
 | Buch 1 im Questbuch mit ST-Quests | Claude | dieser Plan |
@@ -182,3 +183,14 @@ Ablage in `docs/story/texte/`, je Figur oder Buch eine Datei. Der User überarbe
 | Skins DD3R8, Bodhi, Cerina | User | – |
 | Testdurchlauf mit Befehlen (neue Tests in `11_TESTING.md`) | Claude schreibt, User spielt | alles oben |
 | Bauten, Koordinaten in `schutzzonen.js`, Figuren setzen | Host | H5 |
+
+## 7. Nach dem Gegenlesen nachziehen
+
+Der User trägt seine Änderungen gerade selbst ein (2026-10-25). Erst danach anpassen:
+
+- **O63:** „Macht“ und „helle/dunkle Seite“ sind überall erlaubt außer in den Questtexten; Stellen, die das Wort bisher umschreiben, ggf. anpassen.
+- **`d7_erkenntnis`** (DD3R8) zitiert noch „Das Tor bricht an einem, der zu stark ist“; Tempelrolle 3 sagt jetzt „so zerfällt es und versucht ihn in sich zu halten“.
+- **Tempelrollen 3/4:** Der Hinweis, das Ritual nach der Reparatur selbst zu wecken (O56), ist entfallen („Dann erweckst du ihn zu neuem Leben“). Klären, ob die Reparatur das Ritual gleich aktiviert oder die Spieler es noch wecken.
+- **Relikt-Fluch (O66):** Dialoge von DD3R8 (`d8_schutz`), Meister Cerina (`c1_tagebuch`) und Quest ST9-05 können ihn ankündigen.
+- Danach: `py tools/logbuch_gen.py`, `py tools/story_druck.py`, Logbuch in die Testinstanz.
+

@@ -5,7 +5,7 @@
 > **Leitlinien dieses Entwurfs**
 > - Zeit: vom Betreten des Tempels bis zur Flucht. Schließt direkt an Logbuch Teil 5 an („Ich gehe jetzt hinein“).
 > - Geschrieben in der Dimension, in Eile und zunehmend erschöpft: Die Einträge werden kürzer, der letzte ist ein Brief an den Finder.
-> - Muss sagen: hinübergezogen (der Altar brach dabei, O57); das Relikt gefunden und darin gelesen; von dunklen Wesen umzingelt; das Relikt hätte ihn von innen zerstört; Flucht nur ohne das Relikt nach Glacio, um sich zu erholen; der Helle Elf auf der dritten Welt kann helfen; wer unbefleckt ist, ist immun und soll das Relikt bringen (O4).
+> - Muss sagen: hinübergezogen (der Altar brach dabei, O57); das Relikt gefunden und darin gelesen; von dunklen Wesen umzingelt; das Relikt hätte ihn von innen zerstört; Flucht nur ohne das Relikt nach Glacio, um sich zu erholen; der Helle Elf auf der dritten Welt kann helfen; wer unbefleckt ist, wird vom Relikt nicht verschlungen, aber gequält (O66), und soll es bringen (O4).
 > - Muss **nicht** sagen: was mit DD3R8 geschieht (das erfahren die Spieler erst auf Glacio, O7/O15).
 > - Hinweis auf das Elfenportal, ohne Botania zu nennen. Hinweis auf die Barriere um Glacio, die das Relikt erkennt (O43).
 > - „Macht“ kommt nur in den Worten vor, die der User in O4 selbst gewählt hat (siehe „Offen“).
@@ -57,7 +57,7 @@ Das Relikt und dieses Buch lasse ich hier, in der Truhe der Halle.
 
 Wenn du dies liest, bist du hindurchgekommen, und das Tor hat dich nicht genommen. Gut.
 
-Hör mir zu. Dieses Relikt ist gefährlich für jeden, der von der Macht schon berührt ist. Wer noch unbefleckt von der Macht ist, dem kann es nichts anhaben. Es findet in dir nichts, woran es sich halten kann. Darum kannst du tragen, was ich nicht tragen konnte.
+Hör mir zu. Dieses Relikt ist gefährlich für jeden, der von der Macht schon berührt ist. Wer noch unbefleckt von der Macht ist, den kann es nicht verschlingen. Es findet in dir nichts, woran es sich halten kann. Quälen wird es dich trotzdem, also geh nicht allein. Darum kannst du tragen, was ich nicht tragen konnte.
 
 Nimm es mit. Bring es nicht zu mir, noch nicht. Bring es zuerst zum Hellen Elfen.
 

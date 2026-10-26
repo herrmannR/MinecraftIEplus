@@ -15,9 +15,9 @@ Item-IDs: `kubejs:tempelrolle_1` bis `kubejs:tempelrolle_4`. Anzeigename „Temp
 
 ## Rolle 1 · Das Tor
 
-Wer dies liest, steht in unserem Haus. Tritt leise auf.
+Dies ist ein Tempel der Dunkelheit, errichtet vom dunklen Lord Naga Sadow zur Zeit des Krieges gegen die alte Republik. Er dient seit jeher als Stützpfeiler und Rückzugsort der Anhänger der dunklen Seite und birgt ein altes Relikt des Exar Kun, das eines Tages dem Auserwählten dazu dienen wird, die Ausbreitung der hellen Macht im gesamten Universum zu ersticken. 
 
-Hier steht das Tor zur dunklen Seite. Es ist kein Tor aus Holz oder Eisen; es ist der Altar selbst. Wer ihn mit Blut weckt und die Steine recht um ihn legt, dem öffnet er sich, und er geht hindurch, ohne einen Schritt zu tun.
+Hier steht das Tor zur dunklen Seite. Es ist kein Tor aus Holz oder Eisen; es ist der Altar selbst. Wer ihn mit Blut weckt und die Steine recht um ihn legt, dem öffnet er sich und ihm wird die wahre Macht offenbart.
 
 Wir haben dieses Haus nicht gebaut, um zu beten. Wir haben es gebaut, um das Tor zu bewachen.
 
@@ -29,21 +29,19 @@ Wenn du nicht weißt, was du tust, geh wieder. Das Tor wird es dir nicht übel n
 
 Das Tor nimmt nichts umsonst und gibt nichts umsonst.
 
-Es trinkt, was in den Adern ist, und gibt dafür Kraft, mehr Kraft, als ein Leib tragen kann. Viele von uns haben getrunken. Wenige sind satt geworden.
+Es trinkt, was in den Adern ist, und gibt dafür Kraft, mehr Kraft, als ein Leib tragen kann. Viele von uns haben versucht, sich dieser Kraft zu bemächtigen. Doch sind sie nur verschlungen worden.
 
-Merke: Das Tor ruft im Blut. Wer nichts Lebendiges bei sich trägt, das den Ruf übertönt, hört bald nichts anderes mehr.
-
-Wir zählen die, die hindurchgingen und nicht wiederkamen, nicht mehr. Es wurde zu mühsam.
+Wer sein Blut opfert, gelangt hinein, doch muss er sich mit etwas Lebendigem verstärken. So entschied es Exar Kun vor 4000 Jahren, indem er seine treuesten Anhänger hier an diesem Ort dem dunklen Altar zum Opfer gab. 
 
 ---
 
 ## Rolle 3 · Vom Endlosen
 
-Jenseits des Tores beginnen die Gänge, die wir ins Endlose trieben. Wir gruben, weil wir dachten, unten liege, was wir suchten. Es lag dort. Wir wünschten, es hätte nicht dort gelegen.
+Jenseits des Tores beginnen die Gänge, die wir ins Endlose trieben. Wir gruben, weil wir dachten, unten liege, was wir suchten. Es lag dort. Doch will es nicht gefunden werden.
 
-Unseren größten Schatz brachten wir in die große Halle, wo die Gänge sich treffen. Dort ruht er, und dort soll er bleiben.
+Dieser, unser größter Schatz, liegt in der großen Halle, wo die Gänge sich treffen. Dort ruht er, und dort soll er bleiben, bis der Auserwählte sich ihm zeigt.
 
-Eines noch: Das Tor nimmt jeden, aber nicht jeden gern. Zieht es einen hinüber, der stärker ist, als es tragen kann, so bricht es an ihm. Dann schweigt es, bis jemand es heilt.
+Eines noch: Das Tor nimmt jeden, der sein Blut gibt. Zieht es einen hinüber, der stärker ist, als es tragen kann, so zerfällt es und versucht ihn in sich zu halten.
 
 ---
 
@@ -57,9 +55,7 @@ Bringe ihm vier Dinge:
 - Ein Zeichen aus den Welten, die träumen.
 - Etwas, das in der Tiefe lag, wo kein Licht hinkommt.
 
-Leg sie an den Altar und berühre ihn. Dann sieh zu, dass du ihn wieder recht umstellst, und weck ihn, wenn du musst.
-
-Und wenn du musst: Komm nicht allein zurück. Allein kommt niemand zurück.
+Leg sie an den Altar und berühre ihn. Dann erweckst du ihn zu neuem Leben.
 
 ---
 
@@ -76,7 +72,8 @@ Und wenn du musst: Komm nicht allein zurück. Allein kommt niemand zurück.
 
 ## Offen beim Überarbeiten
 
-- **„Tor zur dunklen Seite“** ist dein Wortlaut aus der Vorgabe. Er ist auch eine deutliche Star-Wars-Anspielung, steht hier aber in einem Gegenstand und nicht in einem Dialog (O9). Lassen oder abschwächen, etwa „Tor zur Nachtseite“?
-- **„Allein kommt niemand zurück“** (Rolle 4) ist nur Stimmung; die Amulett-Sperre gilt ohnehin für jeden einzeln. Streichen, falls es als Regel missverstanden wird.
-- **Wer die Rollen schrieb**, bleibt namenlos („wir“, „unser Haus“). Wenn der Orden einen Namen bekommen soll, legst du ihn fest.
-- **Fundorte im Tempel** (beim Bau durch den Host): Vorschlag, Rolle 1 nahe dem Eingang, Rolle 4 am Altar, 2 und 3 dazwischen. Dann lesen die Spieler sie in der richtigen Reihenfolge.
+Gegengelesen vom User am 2026-10-25; die früheren Punkte sind erledigt („Tor zur dunklen Seite“ bleibt, „Allein kommt niemand zurück“ ist gestrichen, Fundorte wie vorgeschlagen: Rolle 1 am Eingang, Rolle 4 am Altar).
+
+- 🟢 **Namen** (User, 2026-10-26, O65): **Naga Sadow** hat den Tempel errichtet, **Exar Kun** hat ihn später genutzt und das Relikt geschaffen; das Opfer seiner Anhänger brachte Exar Kun. Die Zahl in Rolle 2 ist deshalb „vor 4000 Jahren“ (Kun lebte um 4000, Sadow um 5000 vor Yavin); bitte prüfen.
+- **Der Auserwählte** (Rolle 1 und 3) ist neu: Das Relikt wartet auf ihn, um die helle Macht zu ersticken. Wer das ist, legst du fest (Teil 2 oder 3).
+- 🟢 **Fluch des Relikts** (User, 2026-10-25/26, O66): steht in `../ABLAUF.md` (Technik) und `../../18_STORY.md`.

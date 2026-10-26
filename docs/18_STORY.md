@@ -44,7 +44,7 @@
 - Der Meister ist ein **Jedi**. Er und der Droide kommen aus einer weit, weit entfernten Galaxis.
 - Der Droide verrät das nicht. Er gibt nur kleine Hinweise.
 - **Was wirklich geheim bleibt** (User, 2026-10-14): Dass Star Wars im Spiel ist, dürfen die Mitspieler früh erraten; spätestens die Waren des Einsiedlers verraten es. Die große Überraschung ist, dass man **wirklich zu den Star-Wars-Welten reisen** kann.
-- Der Tempel mit dem Blood-Magic-Dungeon war ein **Sith-Tempel**, erbaut von **Exar Kun** (User, 2026-10-25, O60; Abschnitt 5). Der Meister suchte dort nach einem alten Relikt. Das stellt sich erst später heraus.
+- Der Tempel mit dem Blood-Magic-Dungeon war ein **Sith-Tempel**, errichtet von **Naga Sadow**, später genutzt von **Exar Kun**, der dort das Relikt schuf (User, 2026-10-26, O65; Abschnitt 5). Der Meister suchte dort nach einem alten Relikt. Das stellt sich erst später heraus.
 - Blood Magic steht in der Story für die Sith-Seite.
 - Der Droide, oder der Meister über Nachrichten, deutet an, dass die Spieler machtsensitive Wesen sind, also Jedi werden können.
 - 🟢 **Wer verrät was** (User, 2026-10-21, O9): Das Geheimnis legt der **Meister** offen, Stück für Stück im Training (Teil 2). In Teil 1 gibt es nur Anspielungen, und zwar allein in den Dialogen der Figuren (Droide, Einsiedler, Elf usw.); die schreibt der User. **Die Questtexte erwähnen Star Wars nicht.**
@@ -68,6 +68,7 @@
 - In einem dunklen Tempel wurde er in diese Dimension gezogen.
 - Kurz davor rief er dem Droiden zu, er solle bei der nächsten Lebensform Hilfe suchen: bei drei Individuen (der User und seine Mitspieler).
 - 🟢 **Flucht aus der Dimension** (User, 2026-10-21, O4): Im Dungeon umzingelten ihn dunkle Wesen, er saß fest. Die Macht des Relikts war zu stark und hätte ihn fast von innen zerstört; fliehen konnte er nur ohne das Relikt, mit seiner ganzen verbliebenen Kraft. Sein Ziel war **Glacio, die Heimat der hellen Macht**, wo er sich erholen kann. Ins Tagebuch (das im Dungeon) schrieb er das für den, der als Nächster dort ankommt: Wer noch **unbefleckt von der Macht** ist, ist gegen das dunkle Relikt immun und soll es holen und zu ihm bringen.
+  - 🟢 **Fluch des Relikts** (User, 2026-10-25/26, O66): Unbefleckte verschlingt das Relikt nicht, aber es quält sie. Wer es bei sich trägt, bekommt nach 15 Sekunden starke Blindheit, Langsamkeit und Vergiftung; die anderen Spieler müssen ihn leiten und schützen. Das Relikt lässt sich nicht ablegen (keine Truhe, kein Rucksack, kein Wegwerfen). Der Fluch endet, wenn Meister Cerina es im Strahlenschutz verwahrt. Tagebuch angepasst („den kann es nicht verschlingen … Quälen wird es dich trotzdem“).
   - Folge (abgeleitet): Die Spieler dürfen in Teil 1 keine Macht haben. Das passt zur Sperre `forceObtainment false` (Test 33); die Macht kommt erst im Training in Teil 2. Der Droide kann das Relikt nicht holen, die Spieler schon.
 
 ### Teil 1
@@ -282,7 +283,7 @@ Zwei Texte auseinanderhalten: Die **Ausschnitte** gibt der Droide ab dem Einschl
 
 - **Höhle:** auf dem Mond, wenige Dutzend Blöcke von der Mondbasis. Der User baut sie von Hand wie die Mondbasis (oder als Struktur per `/place template`). Klein: ein Gang, zwei, drei Räume, eine Truhe mit dem kaputten Helm. Gegner: zwei, drei Spawner mit Ad-Astra-Wesen (welche auf den Mond passen, im Spiel prüfen). Ohne Raumanzug geht es nicht, das ist gewollt. Eine Schutzzone (`schutzzonen.js`) um die Höhle verhindert, dass man sich einfach zur Truhe gräbt.
 - **Wie die Spieler davon erfahren:** Der Einsiedler erwähnt im ersten Gespräch nur, dass er „da unten etwas verloren“ hat und nicht mehr hinwill. Damit startet die Quest.
-- **Item:** `kubejs:kaputter_klonhelm`, im Spiel „Verbeulter Pilotenhelm“ (User, 2026-10-21, O60: kein „Klon“ im Namen, das Geheimnis bleibt). Textur: Eisenhelm aus Minecraft, schmutzig grau mit Riss (eigene PNG aus `tools/story_texturen.py`) (der Klonhelm von Galaxy in a Cube hat nur ein 3D-Modell). Nicht tragbar, liegt nur in der Truhe.
+- **Item:** `kubejs:kaputter_klonhelm`, im Spiel „Verbeulter Pilotenhelm“ (User, 2026-10-21, O64: kein „Klon“ im Namen, das Geheimnis bleibt). Textur: Eisenhelm aus Minecraft, schmutzig grau mit Riss (eigene PNG aus `tools/story_texturen.py`) (der Klonhelm von Galaxy in a Cube hat nur ein 3D-Modell). Nicht tragbar, liegt nur in der Truhe.
 - **Reparatur an der Werkbank** mit Technik aus K3/K4, die die Spieler zu dem Zeitpunkt haben:
 
 ```
@@ -292,7 +293,7 @@ S T S
 ```
 
   H kaputter Helm, S Stahlplatte (`immersiveengineering:plate_steel`), G Isolierglas für das Visier (`immersiveengineering:insulating_glass`), C Basic Control Circuit (`mekanism:basic_control_circuit`) für die Anzeige im Helm, T Elektronenröhre (`immersiveengineering:electron_tube`) für den Funk. Alle IDs stehen im ProbeJS-Dump.
-- **Ergebnis:** eigenes Item `kubejs:klonhelm_repariert` („Pilotenhelm des Einsiedlers“, O60; weiß gefärbter Eisenhelm), nicht der tragbare Helm aus Galaxy in a Cube; sonst gäbe es die Klonrüstung ohne Bauplan. Abgabe im Dialog (Bedingung „Item im Inventar“, `clear`, `tag @a add einsiedler_vertrauen`). Danach öffnen Shop und Nebenquests.
+- **Ergebnis:** eigenes Item `kubejs:klonhelm_repariert` („Pilotenhelm des Einsiedlers“, O64; weiß gefärbter Eisenhelm), nicht der tragbare Helm aus Galaxy in a Cube; sonst gäbe es die Klonrüstung ohne Bauplan. Abgabe im Dialog (Bedingung „Item im Inventar“, `clear`, `tag @a add einsiedler_vertrauen`). Danach öffnen Shop und Nebenquests.
 - **Geste zum Dank (Vorschlag):** Er schenkt den Spielern ihren ersten Bauplan (Assembly Bench) und damit das Bauplan-Buch.
 - Alternative zur Werkbank: Reparatur im Metallurgic Infuser oder an der Engineer's Workbench von IE. Die Werkbank ist am einfachsten und zeigt die Zutaten in JEI.
 
@@ -358,7 +359,7 @@ Wunsch des Users: eine Jedi, weiblich, nicht menschlich. 🟢 Entschieden: **Ver
 
 ### Wer hat den Sith-Tempel gebaut? (O60, vom User entschieden 2026-10-25)
 
-Wunsch des Users: ein einigermaßen bekannter Sith-Lord aus sehr früher Zeit, dem man den Bau des Tempels andichten kann. 🟢 Entschieden: **Exar Kun** (User, 2026-10-25); die übrigen Vorschläge sind verworfen. Ausgestaltung (etwa sein Geist im Tempel) schreibt der User. Der Tempel bleibt auf dem **Merkur**; „Mars“ in der Anfrage war ein Versehen (User, 2026-10-25). Angaben aus dem Gedächtnis, nicht in Wookieepedia geprüft.
+Wunsch des Users: ein einigermaßen bekannter Sith-Lord aus sehr früher Zeit, dem man den Bau des Tempels andichten kann. 🟢 Entschieden: **Exar Kun** (User, 2026-10-25); die übrigen Vorschläge sind verworfen. 🟢 Ergänzt (User, 2026-10-26, O65): **Naga Sadow** hat den Tempel errichtet, Exar Kun nutzte ihn später (wie auf Yavin 4), schuf das Relikt und opferte dort seine Anhänger (Tempelrollen 1 und 2). Ausgestaltung (etwa sein Geist im Tempel) schreibt der User. Der Tempel bleibt auf dem **Merkur**; „Mars“ in der Anfrage war ein Versehen (User, 2026-10-25). Angaben aus dem Gedächtnis, nicht in Wookieepedia geprüft.
 
 - **Vorschlag: Naga Sadow** (Legends, um 5000 VSY). Dunkler Lord des alten Sith-Imperiums, verlor den Großen Hyperraumkrieg gegen die Republik und floh auf den abgelegenen Dschungelmond Yavin 4. Dort ließ er von seinen Massassi-Kriegern Tempel bauen und legte sich in einen Tiefschlaf. Meister der Sith-Alchemie: Er formte Lebewesen mit der dunklen Seite.
   - Passt, weil er genau das schon einmal getan hat: auf der Flucht einen Tempel auf einer fernen Welt errichten und dort etwas verbergen. Ein zweiter Zufluchtsort in einem fremden Sonnensystem ist leicht anzudichten.

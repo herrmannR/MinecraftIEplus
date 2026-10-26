@@ -119,9 +119,11 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 | Nr. | Antwort | Datum | Eingetragen in |
 |---|---|---|---|
 | O62 | Der Meister kennt den Einsiedler („ein alter Bekannter aus meiner Welt“) und meidet ihn aus Schmerz. In Teil 1 steht das nur im Logbuch (Teil 3); Davijaan weiß nichts vom Meister, Vos erwähnt ihn nicht. Auflösung in Teil 2 | 2026-10-25 | `story/texte/logbuch.md`, `18_STORY.md` |
+| O65 | Naga Sadow hat den Sith-Tempel errichtet; Exar Kun nutzte ihn später, schuf das Relikt und opferte dort seine Anhänger (ergänzt O60) | 2026-10-26 | `18_STORY.md`, `story/texte/tempelrollen.md` |
+| O66 | Fluch des Relikts: nach 15 s beim Träger Blindheit, Langsamkeit, Vergiftung; die anderen führen ihn. Nicht ablegbar (Truhen, Behälter, Wegwerfen). Endet bei Meister Cerina. Unbefleckte werden nicht verschlungen, aber gequält (ändert O4) | 2026-10-26 | `18_STORY.md`, `story/texte/tagebuch.md`, `story/ABLAUF.md` |
 | O63 | „Macht“, „helle/dunkle Seite“ dürfen in Teil 1 überall stehen außer in den Questtexten (ersetzt O9 für die übrigen Texte). Bestehende Texte werden erst angepasst, wenn der User alle Änderungen eingetragen hat | 2026-10-25 | `story/texte/` |
 | O61 | Teil 1 hat keine Entscheidungen mit Folgen; Dialoge haben nur Gesprächszweige, die zum selben Ziel führen. Die große Wahl (hell/dunkel, O36) kommt in Teil 2 | 2026-10-21 | `story/texte/dialoge_dd3r8.md` |
-| O60 | Der Helm heißt im Spiel „Verbeulter Pilotenhelm“ bzw. „Pilotenhelm des Einsiedlers“ (kein „Klon“, Geheimnis bleibt); IDs bleiben | 2026-10-21 | `18_STORY.md`, `story/texte/tooltips.md` |
+| O64 | Der Helm heißt im Spiel „Verbeulter Pilotenhelm“ bzw. „Pilotenhelm des Einsiedlers“ (kein „Klon“, Geheimnis bleibt); IDs bleiben | 2026-10-21 | `18_STORY.md`, `story/texte/tooltips.md` |
 | O60 | Den Sith-Tempel hat **Exar Kun** gebaut (Naga Sadow, Darth Momin, Ajunta Pall verworfen); der Tempel bleibt auf dem Merkur („Mars“ war ein Versehen) | 2026-10-25 | `18_STORY.md` |
 | O59 | Der Meister stellt sich auf Glacio als „Quinlan“ vor (nur Vorname); was er ist, kommt erst im Training | 2026-10-21 | `story/texte/dialoge_vos.md` |
 | O58 | Quinlan Vos und Meister Cerina (Vernestra Rwoh) kennen sich nicht; er weiß nur vom „Hellen Elfen“ | 2026-10-21 | `18_STORY.md`, `story/texte/dialoge_cerina.md` |

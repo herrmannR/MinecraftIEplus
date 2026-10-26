@@ -1343,7 +1343,7 @@ Status: 🔵
 Status: 🔵
 
 ### Änderung
-- Neue Items für Teil 1: vier Tempelrollen, Tagebuch des Meisters, Verbeulter Pilotenhelm und Pilotenhelm des Einsiedlers (IDs `kaputter_klonhelm`/`klonhelm_repariert`, Name ohne „Klon“, O60), Siegel der Traumwelten. Texturen aus `tools/story_texturen.py`.
+- Neue Items für Teil 1: vier Tempelrollen, Tagebuch des Meisters, Verbeulter Pilotenhelm und Pilotenhelm des Einsiedlers (IDs `kaputter_klonhelm`/`klonhelm_repariert`, Name ohne „Klon“, O64, früher als O60 doppelt vergeben), Siegel der Traumwelten. Texturen aus `tools/story_texturen.py`.
 - Patchouli-Buch „Logbuch des Meisters“ mit Kapiteln Logbuch, Tempelrollen, Tagebuch, erzeugt aus den Textentwürfen (`tools/logbuch_gen.py`). Freischaltung für die ganze Welt über `/logbuch` und über die Lese-Items (`server_scripts/story/logbuch.js`), wie bei den Bauplänen.
 - Reparaturrezept des Helms, neue Tooltips, Tagebuch in der Truhe als Item.
 - Story-Texte (Logbuch, Tempelrollen, Tagebuch, Dialoge, Questtexte der Story, Tooltips) als Entwurf in `docs/story/texte/`; Ablauf in `docs/story/ABLAUF.md`. Entscheidungen O47–O60.

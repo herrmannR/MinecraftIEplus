@@ -8,7 +8,7 @@
 |---|---|---|---|
 | `kubejs:relikt` | Relikt | „Warm, obwohl es kalt sein müsste.“ / „Es ruft. Nur nicht dich.“ | ersetzt den bisherigen Tooltip |
 | `kubejs:galaktischer_strahlenschutz` | Galaktischer Strahlenschutz | „Gefertigt von Meister Cerina. Darin schläft das Relikt.“ / „Bauteil des Calorite-Triebwerks (Rakete T4).“ | ersetzt „Gefertigt vom Hellen Elfen“ |
-| `kubejs:kaputter_klonhelm` | **Verbeulter Pilotenhelm** | „Visier gesprungen, Funk tot.“ / „Davijaan will ihn zurück, aber heil.“ | neu; Name 🟢 (O60) |
+| `kubejs:kaputter_klonhelm` | **Verbeulter Pilotenhelm** | „Visier gesprungen, Funk tot.“ / „Davijaan will ihn zurück, aber heil.“ | neu; Name 🟢 (O64) |
 | `kubejs:klonhelm_repariert` | **Pilotenhelm des Einsiedlers** | „Der Funk rauscht wieder.“ / „Bring ihn Davijaan auf dem Mond.“ | neu |
 | `kubejs:siegel_der_traumwelten` | Siegel der Traumwelten | „Licht und Dämmerung zugleich.“ / „Geschenk von Bodhi Bad Dur.“ | neu |
 | `kubejs:tempelrolle_1` | Tempelrolle: Das Tor | „Alt und brüchig. Rechtsklick zum Lesen.“ | neu |
@@ -31,5 +31,5 @@ Gelesene Rollen und das Tagebuch bleiben im Inventar (B6); die Zeile „Rechtskl
 
 ## Offen beim Überarbeiten
 
-- 🟢 **Pilotenhelm statt Klonhelm** (User, 2026-10-21, O60): „Verbeulter Pilotenhelm“ und „Pilotenhelm des Einsiedlers“; die IDs `kubejs:kaputter_klonhelm` und `kubejs:klonhelm_repariert` bleiben.
+- 🟢 **Pilotenhelm statt Klonhelm** (User, 2026-10-21, O64): „Verbeulter Pilotenhelm“ und „Pilotenhelm des Einsiedlers“; die IDs `kubejs:kaputter_klonhelm` und `kubejs:klonhelm_repariert` bleiben.
 - **Gesperrte Einträge im Logbuch:** unsichtbar lassen (Spieler sehen nicht, wie viel noch kommt) oder sichtbar als „Noch nicht entschlüsselt“?

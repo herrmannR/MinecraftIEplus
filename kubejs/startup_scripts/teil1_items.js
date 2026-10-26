@@ -67,7 +67,7 @@ StartupEvents.registry('item', event => {
     .texture('minecraft:item/book')
     .rarity('rare').maxStackSize(1)
 
-  // Helm des Einsiedlers (O25, O60: im Spiel „Pilotenhelm“, kein „Klon“ im Namen). Nicht tragbar.
+  // Helm des Einsiedlers (O25, O64: im Spiel „Pilotenhelm“, kein „Klon“ im Namen). Nicht tragbar.
   // Texturen aus tools/story_texturen.py (Eisenhelm, umgefärbt).
   event.create('kaputter_klonhelm')
     .displayName('Verbeulter Pilotenhelm')
