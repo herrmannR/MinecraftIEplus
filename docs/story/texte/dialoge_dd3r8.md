@@ -244,7 +244,7 @@ Sobald die Spieler das Relikt haben, verschwindet DD3R8 (ST9-05). Danach spricht
 - **[Zurück]** → `d8_warten`
 
 #### `d8_zeichen` · Prio 0
-> Die Welten, die träumen, sind die hinter dem Haus. Fragt ihren Herrscher. Wenn ihr ihm seine Welten zurückgebt, gibt er euch vielleicht ein Siegel.
+> Die Welten, die träumen, sind die hinter dem Haus. Fragt ihren Wächter. Wenn ihr ihm seine Welten zurückgebt, gibt er euch vielleicht ein Siegel.
 - **[Zurück]** → `d8_warten`
 
 #### `d8_tiefe` · Prio 0

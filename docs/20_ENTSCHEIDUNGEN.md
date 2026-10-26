@@ -119,6 +119,8 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 | Nr. | Antwort | Datum | Eingetragen in |
 |---|---|---|---|
 | O62 | Der Meister kennt den Einsiedler („ein alter Bekannter aus meiner Welt“) und meidet ihn aus Schmerz. In Teil 1 steht das nur im Logbuch (Teil 3); Davijaan weiß nichts vom Meister, Vos erwähnt ihn nicht. Auflösung in Teil 2 | 2026-10-25 | `story/texte/logbuch.md`, `18_STORY.md` |
+| O72 | Bodhi Bad Dur ist der **Wächter** der Traumwelten, nicht ihr Herrscher (ändert O34, O45); Abgaben je 32 Rohzinn und 32 Rohosmium | 2026-10-26 | `story/texte/dialoge_bodhi.md`, `18_STORY.md` |
+| O73 | Everdawn ist erst betretbar, wenn der Zinn-Zoll bei Bodhi bezahlt ist (`#bodhi ≥ 2`); Skript schickt sonst zurück | 2026-10-26 | `story/ABLAUF.md` |
 | O70 | Davijaan gibt sich in Teil 1 zu erkennen: „Nennt mich Odd Ball“, Outer Rim, Geonosis, „die Order“ (ändert das Geheimnis aus O25/O45) | 2026-10-26 | `story/texte/dialoge_davijaan.md`, `18_STORY.md` |
 | O71 | Davijaan gibt beim Helm-Auftrag den ersten Bauplan („Pilotenhelm“, Kapitel „Erinnerungsstücke“, gibt das Bauplan-Buch); die Reparatur ergibt den echten 212er-Helm `swgc:clone_212th_battalion_helmet` (3D), der bei ihm abgegeben wird; der verbeulte Helm bleibt ein eigenes Item | 2026-10-26 | `story/texte/dialoge_davijaan.md`, `story/ABLAUF.md` |
 | O67 | „Würdig sein“ verlangt jetzt einen Vorschlaghammer ganz aus Kobalt (Tinkers), einen LV-Kondensator und einen Manastahlblock; den Hammer prüft ein Skript (Tag `ieplus_kobalthammer`) (ändert F4) | 2026-10-26 | `story/texte/dialoge_dd3r8.md`, `story/ABLAUF.md` |

@@ -57,7 +57,7 @@
 |---|---|
 | Droide **DD3R8** | Easy NPC aus der Star-Wars-Welt. Guide der Spieler. Charakter: lustig, aber mechanisch ernst. Verrät seine Herkunft nicht. Orte (User, 2026-10-21, O7/O15): zuerst in der Basis auf der Overworld, dann in der Mars-Station; verschwindet, sobald die Spieler das Relikt haben; taucht am Ende von Teil 1 beim Meister auf Glacio wieder auf (der Meister hat ihn mit der Macht zu sich geholt, das erfahren die Spieler dort). |
 | Einsiedler | Easy NPC auf dem Mond, ein **Klon-Veteran** (User, 2026-10-21, O25): **Odd Ball** (CC-2237, Davijaan), Klon-Pilot und Flügelmann von Obi-Wan Kenobi (User, 2026-10-21). Hintergrund in Abschnitt 5 („Einsiedler: Odd Ball“). Die Spieler kennen ihn nur als **Davijaan**; wer er ist (Odd Ball, CC-2237, Obi-Wans Flügelmann, nach Order 66 zum Mond geflohen), bleibt vorerst geheim (User, 2026-10-21). 🟢 Geändert (User, 2026-10-26, O70): Beim Abschied nach dem Helm sagt er „Nennt mich Odd Ball“ und spricht von Outer Rim, Geonosis und „der Order“; Einzelheiten (Obi-Wan, CC-2237) bleiben offen. |
-| Herrscher der Traumwelten | Easy NPC im Blue-Skies-Haus (statt des Gatekeepers): **Bodhi Bad Dur** (User, 2026-10-21). |
+| Wächter der Traumwelten | Easy NPC im Blue-Skies-Haus (statt des Gatekeepers): **Bodhi Bad Dur** (User, 2026-10-21). 🟢 Er ist der **Wächter**, nicht der Herrscher der Traumwelten (User, 2026-10-26, O72). |
 | Elf | Easy NPC am Elfenportal: **Meister Cerina**, weiblich (User, 2026-10-21); dahinter steckt die Mirialanerin **Vernestra Rwoh** (User, 2026-10-21, O46; Abschnitt 5); in Texten bisher „der Helle Elf“. Sie und der Meister kennen sich nicht; er weiß nur vom „Hellen Elfen“ (User, 2026-10-21, O58). |
 | Meister | Jedi **Quinlan Vos** (User, 2026-10-21, O44), mit Hang zur dunklen Seite; Hintergrund in Abschnitt 5 („Der Meister: Quinlan Vos“). Suchte im Sith-Tempel ein altes Relikt, wurde in die Dungeon-Dimension gezogen, ist selbst entkommen und hält sich auf Glacio auf. Bildet die Spieler später zu Jedi aus. |
 | Weitere Easy NPCs | Auftraggeber für Kopfgeldjäger-Quests in den Star-Wars-Welten. |
@@ -305,19 +305,19 @@ S T S
 
 ### Blue-Skies-Haus einbinden (O34, 🟢 vom User übernommen 2026-10-21)
 
-Der Herrscher heißt **Bodhi Bad Dur** (User, 2026-10-21).
+Der Wächter heißt **Bodhi Bad Dur** (User, 2026-10-21; Wächter statt Herrscher seit 2026-10-26, O72).
 
 Vorgabe des Users: Der Strang ist der Start der Blue-Skies-Welten.
 
 - **Wann:** Anfang K3, dort kommt laut Kapiteltabelle Everbright. Anlass: Für Bronze und den Ausbau von Mekanism braucht es Zinn, das es in der Overworld gar nicht gibt, und mehr Osmium. Zinn gibt es reichlich in Everbright, Osmium in Everdawn (`03_ERZGENERATION.md`). Das deckt sich mit der Notiz des Users, der Herrscher helfe an die Mekanism-Erze.
 - **Wann erzählt der Droide davon:** gleich nach „Würdig sein“, zusammen mit Logbuch-Teil 2. DD3R8 hat beim Absturz ein Haus in der Nähe „gemessen“: Die Steine dort schwingen ähnlich wie Dinge aus seiner Heimat. Das ist „etwas aus seiner eigenen Welt“, aber nur eine Ähnlichkeit: Licht und Dämmerung, wie die helle und die dunkle Seite der Macht. Der Droide versteht es selbst nicht.
-- **Herrscher und Figur sind eine Person:** Die Easy-NPC-Figur im Haus **ist** der Herrscher der Traumwelten, im Exil. Die vier Blue-Skies-Bosse haben seine Welten an sich gerissen. So erklärt sich die Boss-Reihe von selbst (er will sie zurück), und eine zweite Figur ist nicht nötig.
+- **Wächter und Figur sind eine Person:** Die Easy-NPC-Figur im Haus **ist** der Wächter der Traumwelten, im Exil. Die vier Blue-Skies-Bosse haben seine Welten an sich gerissen. So erklärt sich die Boss-Reihe von selbst (er will sie zurück), und eine zweite Figur ist nicht nötig.
 - **Ablauf:**
-  1. (K3, Hauptquest) Das Haus finden, mit dem Herrscher reden.
+  1. (K3, Hauptquest) Das Haus finden, mit dem Wächter reden.
   2. (K3) Bei ihm Zünder (Zeal Lighter) und Buch (Blue Journal) holen, das Portal nach Everbright bauen, erstes Zinn bringen.
   3. (K4) Portal nach Everdawn, Osmium bringen. Danach ist der Strang zunächst Nebenquest.
   4. (K5/K6, Nebenquest) Boss-Reihe: Summoner, Alchemist, Starlit Crusher, Arachnarch; Alchemy Table nach dem Alchemist.
-  5. (K8, ab hier Pflicht) Die vier Arcs stecken schon im Galaktischen Strahlenschutz (F14). 🟢 Für die Altar-Reparatur gibt der Herrscher nach dem letzten Boss als Dank ein eigenes Item **„Siegel der Traumwelten“** (`kubejs:siegel_der_traumwelten`); es **ersetzt den Dusk Arc** in der Reparatur (User, 2026-10-21, O47).
+  5. (K8, ab hier Pflicht) Die vier Arcs stecken schon im Galaktischen Strahlenschutz (F14). 🟢 Für die Altar-Reparatur gibt der Wächter nach dem letzten Boss als Dank ein eigenes Item **„Siegel der Traumwelten“** (`kubejs:siegel_der_traumwelten`); es **ersetzt den Dusk Arc** in der Reparatur (User, 2026-10-21, O47).
 - **Was die Figur handelt:** was sonst der Gatekeeper verkauft (Zeal Lighter, Blue Journal; nach den Blinding Dungeons die Schlüssel), zu ähnlichen Preisen wie das Original (Preise im JAR noch nicht ausgelesen). Keine Credits, die gibt es nur beim Einsiedler.
 - **Technik:** Den echten Gatekeeper per Skript nicht mehr erscheinen lassen (wie `galaxy_overworld.js`), sonst kauft man in jedem Haus. Die Figur steht in genau einem Haus, das der User auswählt; der Droide nennt Richtung oder Koordinaten.
 
