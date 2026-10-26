@@ -131,11 +131,11 @@
 			]
 			invisible: true
 			icon: "minecraft:book"
-			id: "01F1F996ED155903"
+			id: "60466A613A53F18A"
 			shape: "gear"
 			subtitle: "AM2 · Beute der Oberwelt"
 			tasks: [{
-				id: "53547F52A94188D3"
+				id: "362A5BD2BA40D6F8"
 				stage: "kapitel_k4"
 				type: "gamestage"
 			}]
@@ -144,7 +144,7 @@
 			y: -1.75d
 		}
 		{
-			dependencies: ["27EC624AA254E2F1", "01F1F996ED155903"]
+			dependencies: ["27EC624AA254E2F1", "60466A613A53F18A"]
 			description: [
 				"Jedes Stück kopiert eine Fähigkeit seines Tiers. Die Reihe ist in drei Ketten geteilt: Rüstung, Werkzeuge, Ameisen."
 				""
@@ -313,11 +313,11 @@
 			]
 			invisible: true
 			icon: "minecraft:book"
-			id: "01F1F996ED155903"
+			id: "22BF98339CBF1A61"
 			shape: "gear"
 			subtitle: "AM3 · Meer und Untergrund"
 			tasks: [{
-				id: "53547F52A94188D3"
+				id: "311F118153B3E706"
 				stage: "kapitel_k4"
 				type: "gamestage"
 			}]
@@ -326,7 +326,7 @@
 			y: -1.75d
 		}
 		{
-			dependencies: ["27EC624AA254E2F1", "01F1F996ED155903"]
+			dependencies: ["27EC624AA254E2F1", "22BF98339CBF1A61"]
 			description: [
 				"Die Ortungsgeräte bauen aufeinander auf: Echolocator → Endolocator und Strange Fish Finder."
 				""
@@ -525,11 +525,11 @@
 			]
 			invisible: true
 			icon: "minecraft:book"
-			id: "01F1F996ED155903"
+			id: "3599C8F878A7DDF5"
 			shape: "gear"
 			subtitle: "AM4 · Nether"
 			tasks: [{
-				id: "53547F52A94188D3"
+				id: "00D72E3ABC3B5A4B"
 				stage: "kapitel_k4"
 				type: "gamestage"
 			}]
@@ -538,7 +538,7 @@
 			y: -1.75d
 		}
 		{
-			dependencies: ["27EC624AA254E2F1", "01F1F996ED155903"]
+			dependencies: ["27EC624AA254E2F1", "3599C8F878A7DDF5"]
 			description: [
 				"Hier beginnt die lange Kette zur Void Worm: Die &eCrimson Mosquito Larva&r (Quest „Crimson Mosquito Larva“) wird in AM5 gebraucht."
 				""
@@ -655,11 +655,11 @@
 			]
 			invisible: true
 			icon: "minecraft:book"
-			id: "01F1F996ED155903"
+			id: "0DA264F454D0E70F"
 			shape: "gear"
 			subtitle: "AM5 · End"
 			tasks: [{
-				id: "53547F52A94188D3"
+				id: "4A3E606562DCA9D7"
 				stage: "kapitel_k4"
 				type: "gamestage"
 			}]
@@ -668,7 +668,7 @@
 			y: -1.75d
 		}
 		{
-			dependencies: ["27EC624AA254E2F1", "01F1F996ED155903"]
+			dependencies: ["27EC624AA254E2F1", "0DA264F454D0E70F"]
 			description: [
 				"Der Capsid ist das Werkzeug für alle Umwandlungen bis zur Transmutation Table."
 				""
@@ -761,11 +761,11 @@
 			]
 			invisible: true
 			icon: "minecraft:book"
-			id: "01F1F996ED155903"
+			id: "52C84FFCFC886E76"
 			shape: "gear"
 			subtitle: "AM6 · Void Worm und Weltrand"
 			tasks: [{
-				id: "53547F52A94188D3"
+				id: "13609D81DD4EEC88"
 				stage: "kapitel_k4"
 				type: "gamestage"
 			}]
@@ -774,7 +774,7 @@
 			y: -1.75d
 		}
 		{
-			dependencies: ["177821A29B6F8659", "30CD7A30445CC831", "01F1F996ED155903"]
+			dependencies: ["177821A29B6F8659", "30CD7A30445CC831", "52C84FFCFC886E76"]
 			description: [
 				"Der längste Pfad des Mods. Er braucht Capsid, Crimson Mosquito Larva, 2 Netheritebarren und einen Nether Star."
 				""
@@ -905,11 +905,11 @@
 			]
 			invisible: true
 			icon: "minecraft:book"
-			id: "01F1F996ED155903"
+			id: "38D9621F0DC44E74"
 			shape: "gear"
 			subtitle: "AM7 · Essen mit Alex's Delight"
 			tasks: [{
-				id: "53547F52A94188D3"
+				id: "7EB6237AA0D4CF1B"
 				stage: "kapitel_k4"
 				type: "gamestage"
 			}]
@@ -918,7 +918,7 @@
 			y: -1.75d
 		}
 		{
-			dependencies: ["27EC624AA254E2F1", "01F1F996ED155903"]
+			dependencies: ["27EC624AA254E2F1", "38D9621F0DC44E74"]
 			description: [
 				"Kurze Reihe für die Küche. Messer und Cooking Pot kommen aus Farmer's Delight."
 				""

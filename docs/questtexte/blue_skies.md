@@ -247,6 +247,6 @@ Ohne Bezug zum Hauptweg; zeigt, wie man sich in den Welten einrichtet. Frei ab B
 - **Arachnarch:** welcher Schild genügt (BS4-04).
 - **Bosse wiederholen** (BS4-05) und welcher Loot Bag (common/uncommon/rare) fällt.
 - **BSN-02:** ob FTB Quests das Zähmen direkt prüfen kann; sonst Sattel oder Camel Saddle als Aufgabe.
-- **Kill-Aufgaben:** Der Questbuch-Generator kennt noch keine Aufgabe „Mob besiegen“. BS3-02, BS3-03, BS4-02, BS4-04 und BSN-02 sind deshalb vorerst Kontrollhaken (`tools/questbuch/blue_skies.cfg`).
+- 🟢 **Kill-Aufgaben** (2026-10-26): BS3-02, BS3-03, BS4-02 und BS4-04 prüfen jetzt das Besiegen des Bosses (`kill(…)` in `tools/questbuch/blue_skies.cfg`). Nur BSN-02 (Zähmen) bleibt ein Kontrollhaken.
 - **Reihe BSN:** ohne Kapitel im Entwurf; eingebaut mit K3 Industrie (Vorschlag, 2026-10-26: Everbright ist ab K3 offen, die Reihe beginnt nach BS1-03).
 - **Journal:** ob es die Progression wirklich nicht erklärt. Wenn doch, lassen sich BS1–BS4 auf „mit Buch“ kürzen.

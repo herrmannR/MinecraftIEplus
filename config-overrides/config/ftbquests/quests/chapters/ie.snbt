@@ -102,8 +102,10 @@
 			subtitle: "IE1 · Koks und erster Stahl"
 			tasks: [{
 				id: "4F8CA2557D66DEA9"
-				title: "Coke Oven gebaut"
-				type: "checkmark"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersiveengineering:coke_oven"
+				type: "observation"
 			}
 			{
 				id: "357AD5A77F23B4C1"
@@ -148,8 +150,10 @@
 			subtitle: "IE1 · Koks und erster Stahl · Nebenquest"
 			tasks: [{
 				id: "081E4A39EF08B6BE"
-				title: "Alloy Kiln gebaut"
-				type: "checkmark"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersiveengineering:alloy_smelter"
+				type: "observation"
 			}]
 			title: "Alloy Kiln"
 			x: 2.0d
@@ -168,8 +172,10 @@
 			subtitle: "IE1 · Koks und erster Stahl"
 			tasks: [{
 				id: "55642AD56D544B54"
-				title: "Crude Blast Furnace gebaut"
-				type: "checkmark"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersiveengineering:blast_furnace"
+				type: "observation"
 			}
 			{
 				id: "6DBFEA1E254E2835"
@@ -399,8 +405,10 @@
 			subtitle: "IE3 · Schwermaschinen und Biodiesel"
 			tasks: [{
 				id: "3B4EC47F0E739229"
-				title: "Improved Blast Furnace gebaut"
-				type: "checkmark"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersiveengineering:advanced_blast_furnace"
+				type: "observation"
 			}
 			{
 				id: "0AF007B6B92EC92F"
@@ -452,8 +460,10 @@
 			subtitle: "IE3 · Schwermaschinen und Biodiesel"
 			tasks: [{
 				id: "776578560166BC45"
-				title: "Metal Press gebaut"
-				type: "checkmark"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersiveengineering:metal_press"
+				type: "observation"
 			}]
 			title: "Metal Press"
 			x: 7.5d
@@ -472,8 +482,10 @@
 			subtitle: "IE3 · Schwermaschinen und Biodiesel"
 			tasks: [{
 				id: "571B3A9A985CD1B3"
-				title: "Crusher gebaut"
-				type: "checkmark"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersiveengineering:crusher"
+				type: "observation"
 			}]
 			title: "Crusher"
 			x: 7.5d
@@ -492,8 +504,10 @@
 			subtitle: "IE3 · Schwermaschinen und Biodiesel · Nebenquest"
 			tasks: [{
 				id: "0F2FAECF2A38FD3E"
-				title: "Sawmill gebaut"
-				type: "checkmark"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersiveengineering:sawmill"
+				type: "observation"
 			}]
 			title: "Sawmill"
 			x: 9.0d
@@ -514,18 +528,24 @@
 			subtitle: "IE3 · Schwermaschinen und Biodiesel"
 			tasks: [{
 				id: "4C1ED3ADC6D3C675"
-				title: "Industrial Squeezer gebaut"
-				type: "checkmark"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersiveengineering:squeezer"
+				type: "observation"
 			}
 			{
 				id: "7EDFC8E7E74A1CB9"
-				title: "Industrial Fermenter gebaut"
-				type: "checkmark"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersiveengineering:fermenter"
+				type: "observation"
 			}
 			{
 				id: "3FA55C49B81F5ADC"
-				title: "Refinery gebaut"
-				type: "checkmark"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersiveengineering:refinery"
+				type: "observation"
 			}
 			{
 				amount: 1000L
@@ -551,8 +571,10 @@
 			subtitle: "IE3 · Schwermaschinen und Biodiesel · Nebenquest"
 			tasks: [{
 				id: "4E8D5EC9DA5C6AE8"
-				title: "Diesel Generator gebaut"
-				type: "checkmark"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersiveengineering:diesel_generator"
+				type: "observation"
 			}]
 			title: "Diesel Generator"
 			x: 9.0d
@@ -571,13 +593,17 @@
 			subtitle: "IE3 · Schwermaschinen und Biodiesel · Nebenquest"
 			tasks: [{
 				id: "33246BE7571854DC"
-				title: "Mixer gebaut"
-				type: "checkmark"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersiveengineering:mixer"
+				type: "observation"
 			}
 			{
 				id: "7D03BA43F102EE77"
-				title: "Bottling Machine gebaut"
-				type: "checkmark"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersiveengineering:bottling_machine"
+				type: "observation"
 			}]
 			title: "Mixer und Bottling Machine"
 			x: 9.0d
@@ -638,13 +664,17 @@
 			subtitle: "IE4 · Erdöl und Destillation"
 			tasks: [{
 				id: "0D64E291222D7F82"
-				title: "Derrick gebaut"
-				type: "checkmark"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersivepetroleum:derrick"
+				type: "observation"
 			}
 			{
 				id: "41DAFD1CA7EEA271"
-				title: "Pumpjack gebaut"
-				type: "checkmark"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersivepetroleum:pumpjack"
+				type: "observation"
 			}]
 			title: "Derrick und Pumpjack"
 			x: 11.0d
@@ -664,8 +694,10 @@
 			subtitle: "IE4 · Erdöl und Destillation · Nebenquest"
 			tasks: [{
 				id: "244E396C9E4984E0"
-				title: "Oil Tank gebaut"
-				type: "checkmark"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersivepetroleum:oiltank"
+				type: "observation"
 			}]
 			title: "Oil Tank"
 			x: 12.5d
@@ -686,8 +718,10 @@
 			subtitle: "IE4 · Erdöl und Destillation"
 			tasks: [{
 				id: "583A63FDF4FB6AB3"
-				title: "Distillation Tower gebaut"
-				type: "checkmark"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersivepetroleum:distillation_tower"
+				type: "observation"
 			}
 			{
 				amount: 1000L
@@ -754,8 +788,10 @@
 			subtitle: "IE5 · Entschwefelter Diesel"
 			tasks: [{
 				id: "1C6F33FE60D46A98"
-				title: "High-Pressure Refinery Unit gebaut"
-				type: "checkmark"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersivepetroleum:hydrotreater"
+				type: "observation"
 			}
 			{
 				amount: 1000L
@@ -781,8 +817,10 @@
 			subtitle: "IE5 · Entschwefelter Diesel · Nebenquest"
 			tasks: [{
 				id: "69E0173CEE45872B"
-				title: "Coker gebaut"
-				type: "checkmark"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersivepetroleum:coker_unit"
+				type: "observation"
 			}
 			{
 				id: "2E512CFFBB7ADB06"
@@ -825,8 +863,10 @@
 			subtitle: "IE6 · Großindustrie · Nebenquest"
 			tasks: [{
 				id: "50687089E6EB72C9"
-				title: "Arc Furnace gebaut"
-				type: "checkmark"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersiveengineering:arc_furnace"
+				type: "observation"
 			}
 			{
 				id: "06E8DA6E03BE192F"
@@ -879,8 +919,10 @@
 			subtitle: "IE6 · Großindustrie · Nebenquest"
 			tasks: [{
 				id: "01FDD056E9D0BCA6"
-				title: "Excavator mit Bucket Wheel gebaut"
-				type: "checkmark"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersiveengineering:excavator"
+				type: "observation"
 			}]
 			title: "Excavator"
 			x: 19.5d

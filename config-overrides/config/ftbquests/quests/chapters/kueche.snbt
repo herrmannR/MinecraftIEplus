@@ -252,11 +252,11 @@
 			]
 			invisible: true
 			icon: "minecraft:book"
-			id: "6F4C082B66C371BD"
+			id: "08C5F786BBAF328C"
 			shape: "gear"
 			subtitle: "KU3 · Herd und Brett"
 			tasks: [{
-				id: "2E8DDD3AEAD7A4C2"
+				id: "5B73081966F6A01D"
 				stage: "kapitel_k2"
 				type: "gamestage"
 			}]
@@ -265,7 +265,7 @@
 			y: -1.75d
 		}
 		{
-			dependencies: ["574543DA6E41527F", "6F4C082B66C371BD"]
+			dependencies: ["574543DA6E41527F", "08C5F786BBAF328C"]
 			description: [
 				"8 Cobblestone + 1 Campfire (oder Soul Campfire). Mit Flint and Steel anzünden. Der Herd ist die Hitzequelle für alle Kochgeräte beider Mods. Wärme geben auch Campfire, Feuer, Lava und Magma Block."
 				"Der Herd ist außerdem der Arbeitsplatz des Kochs im Dorf (Quest „Der Koch“)."
@@ -690,11 +690,11 @@
 			]
 			invisible: true
 			icon: "minecraft:book"
-			id: "418A4538C21176B2"
+			id: "75FF64F97C7F1493"
 			shape: "gear"
 			subtitle: "KU6 · Taverne"
 			tasks: [{
-				id: "667F0D913328A30E"
+				id: "1B7DBAF227ADCA17"
 				stage: "kapitel_k4"
 				type: "gamestage"
 			}]
@@ -703,7 +703,7 @@
 			y: -1.75d
 		}
 		{
-			dependencies: ["418A4538C21176B2"]
+			dependencies: ["75FF64F97C7F1493"]
 			description: [
 				"Wilde Reben hängen an Eichen; mit der Hand abbauen. 3 Grapevine ergeben 8 Trellis."
 				"So wachsen Trauben:"

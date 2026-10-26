@@ -456,9 +456,10 @@
 			id: "70D675EC3E41624E"
 			subtitle: "BS3 · Die Blinding-Bosse"
 			tasks: [{
+				entity: "blue_skies:summoner"
 				id: "0649D19D58861A28"
-				title: "Summoner besiegt"
-				type: "checkmark"
+				type: "kill"
+				value: 1L
 			}]
 			title: "Summoner"
 			x: 7.5d
@@ -479,9 +480,10 @@
 			size: 1.5d
 			subtitle: "BS3 · Die Blinding-Bosse"
 			tasks: [{
+				entity: "blue_skies:alchemist"
 				id: "634C8204DFDE8882"
-				title: "Alchemist besiegt"
-				type: "checkmark"
+				type: "kill"
+				value: 1L
 			}]
 			title: "Alchemist"
 			x: 7.5d
@@ -586,9 +588,10 @@
 			id: "468DA32D7DB0FD55"
 			subtitle: "BS4 · Nature- und Poison-Boss"
 			tasks: [{
+				entity: "blue_skies:starlit_crusher"
 				id: "5A4022E497488F4D"
-				title: "Starlit Crusher besiegt"
-				type: "checkmark"
+				type: "kill"
+				value: 1L
 			}]
 			title: "Starlit Crusher"
 			x: 11.0d
@@ -628,9 +631,10 @@
 			size: 1.5d
 			subtitle: "BS4 · Nature- und Poison-Boss"
 			tasks: [{
+				entity: "blue_skies:arachnarch"
 				id: "5BD15EA8A61E8FA1"
-				title: "Arachnarch besiegt"
-				type: "checkmark"
+				type: "kill"
+				value: 1L
 			}]
 			title: "Arachnarch"
 			x: 11.0d
@@ -679,11 +683,11 @@
 			]
 			invisible: true
 			icon: "minecraft:book"
-			id: "1ECA8C4658E46B1F"
+			id: "7A6F27C6FFCB5C94"
 			shape: "gear"
 			subtitle: "Nebenquest-Reihe BSN · Leben in den Welten"
 			tasks: [{
-				id: "204067C3442997E2"
+				id: "5728331C22C2F384"
 				stage: "kapitel_k3"
 				type: "gamestage"
 			}]
@@ -692,7 +696,7 @@
 			y: -1.75d
 		}
 		{
-			dependencies: ["3EAE987B6BD74C1B", "1ECA8C4658E46B1F"]
+			dependencies: ["3EAE987B6BD74C1B", "7A6F27C6FFCB5C94"]
 			description: [
 				"Ohne Bezug zum Hauptweg; zeigt, wie man sich in den Welten einrichtet. Frei ab Quest „Durch das Portal nach Everbright“."
 				""

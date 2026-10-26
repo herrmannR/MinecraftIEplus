@@ -135,11 +135,11 @@
 			]
 			invisible: true
 			icon: "minecraft:book"
-			id: "156FF25A9C28B0C9"
+			id: "5E691AA6EA9649F6"
 			shape: "gear"
 			subtitle: "WD2 · Die Dungeons der Oberwelt"
 			tasks: [{
-				id: "190840B22F9CD60E"
+				id: "205762EE1B679B66"
 				stage: "kapitel_k8"
 				type: "gamestage"
 			}]
@@ -148,7 +148,7 @@
 			y: -1.75d
 		}
 		{
-			dependencies: ["5698E6E085F5F81B", "156FF25A9C28B0C9"]
+			dependencies: ["5698E6E085F5F81B", "5E691AA6EA9649F6"]
 			description: [
 				"Jeder Dungeon hat ein oberes Stockwerk ohne Boss und darunter tiefere Stockwerke mit Miniboss und Boss. Ziel jedes Dungeons ist die &eAncient Bone Chest&r im Schatzraum."
 				"Ablauf in jedem Dungeon:"
@@ -419,11 +419,11 @@
 			]
 			invisible: true
 			icon: "minecraft:book"
-			id: "2B81A4421E911A83"
+			id: "31C83082E72D710F"
 			shape: "gear"
 			subtitle: "WD4 · Der Nether"
 			tasks: [{
-				id: "04ED4815CE117452"
+				id: "648D6C94140C1104"
 				stage: "kapitel_k10"
 				type: "gamestage"
 			}]
@@ -432,7 +432,7 @@
 			y: -1.75d
 		}
 		{
-			dependencies: ["7D41CCDEF6A2699A", "2B81A4421E911A83"]
+			dependencies: ["7D41CCDEF6A2699A", "31C83082E72D710F"]
 			description: [
 				"Die Nether-Variante der Vessel (Nether Quartz statt Ender Pearl) funktioniert nur im Nether und sucht 1500 bis 3000 Blöcke entfernt."
 			]

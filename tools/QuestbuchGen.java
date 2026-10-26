@@ -26,10 +26,11 @@ import java.util.regex.*;
  * Steuerdatei tools/questbuch/<mod>.cfg:
  *   chapter = <dateiname>      title = <Kapiteltitel>      icon = <item-id>      order = <zahl>
  *   bis = K11                  (optional) nur Abschnitte bis zu diesem Kapitel; spätere fallen weg
- *   <CODE> tasks = item(id[,anzahl]); or(Titel; id, id, ...); fluid(id, mB); dim(id); check(Titel); stage(name)
+ *   <CODE> tasks = item(id[,anzahl]); or(Titel; id, id, ...); fluid(id, mB); dim(id); check(Titel); stage(name);
+ *                  kill(entity-id[,anzahl]); observe(block-id)   (observe = Block ansehen, z. B. gebauter Multiblock)
  *   <CODE> rewards = stage(name); command(/befehl …); item(id[,anzahl]); xp(menge)
  *             (alle als Team-Belohnung, automatisch abgeholt; Befehle mit erhöhten Rechten und ohne Chat-Ausgabe)
- *   <CODE> deps  = CODE, CODE        (ersetzt die Standard-Abhängigkeit)
+ *   <CODE> deps  = CODE, CODE        (ersetzt die Standard-Abhängigkeit; "kapitel:CODE" = Quest in einem anderen Kapitel)
  *   <CODE> icon  = <item-id>
  * Standard-Abhängigkeit: Hauptweg-Quest an der vorigen Hauptweg-Quest, Nebenquest einer Reihe an der
  * vorigen der Reihe, sonst Nebenquest an der letzten Hauptweg-Quest davor.
@@ -107,7 +108,7 @@ public class QuestbuchGen {
             if (cfgDeps.containsKey(q.code)) {
                 for (String d : cfgDeps.get(q.code).split(",")) {
                     d = d.trim(); if (d.isEmpty()) continue;
-                    if (!byCode.containsKey(d)) throw new RuntimeException(q.code + ": unbekannte Abhängigkeit " + d);
+                    if (!d.contains(":") && !byCode.containsKey(d)) throw new RuntimeException(q.code + ": unbekannte Abhängigkeit " + d);
                     q.deps.add(d);
                 }
             } else if (q.series != null && lastInSeries.containsKey(q.series)) q.deps.add(lastInSeries.get(q.series).code);
@@ -129,7 +130,7 @@ public class QuestbuchGen {
             } else if (q.main) { q.x = mainX; q.y = y; mainX += 1.5; prevMain = q; }
             else {
                 double px = 0;
-                for (String d : q.deps) { Quest p = byCode.get(d); if (p.section.equals(q.section)) px = Math.max(px, p.x); }
+                for (String d : q.deps) { Quest p = byCode.get(d); if (p != null && p.section.equals(q.section)) px = Math.max(px, p.x); }
                 q.x = Math.max(px, sideX); q.y = y + 1.5; sideX = q.x + 1.25;
             }
         }
@@ -143,11 +144,17 @@ public class QuestbuchGen {
         // (hide_until_deps_visible); abschließen geht erst mit dem Vorgänger.
         sec = null;
         List<Quest> all = new ArrayList<>();
+        Set<String> markerCodes = new HashSet<>(); String curMk = null;
         for (Quest q : qs) {
             if (!q.section.equals(sec)) {
-                sec = q.section;
+                sec = q.section; curMk = null;
                 if (q.kGate != null) {
-                    Quest mk = new Quest(); mk.code = "M-" + q.kGate; mk.section = q.section; mk.main = true;
+                    // erste Marke je Kn behält ihren Code "M-Kn" (IDs bleiben stabil), weitere Abschnitte mit demselben Kn
+                    // bekommen "M-Kn-2", "M-Kn-3" … (sonst doppelte Quest-IDs)
+                    String mc = "M-" + q.kGate; int n = 2;
+                    while (markerCodes.contains(mc)) mc = "M-" + q.kGate + "-" + n++;
+                    markerCodes.add(mc); curMk = mc;
+                    Quest mk = new Quest(); mk.code = mc; mk.section = q.section; mk.main = true;
                     mk.title = "Kapitel " + q.kGate.substring(1) + ": " + chTitle; mk.marker = true; mk.icon = "minecraft:book";
                     mk.x = -1.75; mk.y = q.y;
                     mk.tasks.add("{\n\t\t\t\tid: \"" + hex(chapter + ":" + mk.code + ":task0") + "\"\n\t\t\t\tstage: \"" + stage(q.kGate)
@@ -155,7 +162,7 @@ public class QuestbuchGen {
                     mk.desc.add("Freigeschaltet mit " + kapitel(kNames.get(q.kGate)) + ".");
                     all.add(mk); q.deps.add(mk.code);
                 }
-            }
+            } else if (curMk != null && q.deps.isEmpty()) q.deps.add(curMk); // sonst wäre die Quest sofort sichtbar
             all.add(q);
         }
         qs = all;
@@ -397,6 +404,15 @@ public class QuestbuchGen {
                 return "{\n\t\t\t\tid: \"" + id + "\"\n\t\t\t\ttitle: \"" + esc(arg) + "\"\n\t\t\t\ttype: \"checkmark\"\n\t\t\t}";
             case "stage":
                 return "{\n\t\t\t\tid: \"" + id + "\"\n\t\t\t\tstage: \"" + arg + "\"\n\t\t\t\ttype: \"gamestage\"\n\t\t\t}";
+            case "kill": {
+                String[] p = arg.split(",");
+                return "{\n\t\t\t\tentity: \"" + p[0].trim() + "\"\n\t\t\t\tid: \"" + id + "\"\n\t\t\t\ttype: \"kill\"\n\t\t\t\tvalue: "
+                    + (p.length > 1 ? p[1].trim() : "1") + "L\n\t\t\t}";
+            }
+            case "observe":
+                if (q.icon == null) q.icon = arg;
+                return "{\n\t\t\t\tid: \"" + id + "\"\n\t\t\t\tobserve_type: 0\n\t\t\t\ttimer: 0L\n\t\t\t\tto_observe: \"" + arg
+                    + "\"\n\t\t\t\ttype: \"observation\"\n\t\t\t}";
         }
         throw new RuntimeException(q.code + ": unbekannte Aufgabenart " + m.group(1));
     }
@@ -428,7 +444,10 @@ public class QuestbuchGen {
         throw new RuntimeException(q.code + ": unbekannte Belohnungsart " + m.group(1));
     }
 
-    static String depId(String code) { return code.matches("K\\d+") ? hex(HQ + ":" + code) : hex(chapter + ":" + code); }
+    static String depId(String code) {
+        if (code.contains(":")) return hex(code);           // Quest in einem anderen Kapitel ("kapitel:CODE")
+        return code.matches("K\\d+") ? hex(HQ + ":" + code) : hex(chapter + ":" + code);
+    }
 
     static String chapterHead(String file, String title, String icon, String ord) {
         return "{\n\tdefault_hide_dependency_lines: false\n\tdefault_quest_shape: \"\"\n\tfilename: \"" + file + "\"\n\tgroup: \"\"\n"
