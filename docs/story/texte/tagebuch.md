@@ -17,11 +17,11 @@
 
 **Erster Eintrag**
 
-Ich bin im Tempel. Er ist leer, aber nicht verlassen. Etwas wohnt hier, das keine Füße braucht.
+Ich bin im Tempel. Er ist leer, aber nicht verlassen. Etwas wohnt hier, das nach mir ruft.
 
-Der Altar ist ganz. Ich habe ihn nicht geweckt, ich habe nur die Hand darauf gelegt, um zu sehen, wer ihn zuletzt berührt hat. Das war ein Fehler. Er hat zurückgesehen.
+Der Altar ist ganz. Seltsam, ich habe das Gefühl, er ist wach. Ich habe die Hand darauf gelegt, um zu sehen, wer ihn zuletzt berührt hat. Das war ein Fehler.
 
-Es zog. Nicht an meinem Arm, an allem, was ich bin. Ich hörte Stein brechen, als ich fiel. Ich glaube, ich war schwerer, als er erwartet hatte.
+Es zog an mir. Nicht an meinem Arm, an allem, was ich bin. Ich hörte Stein brechen, als ich fiel. Ich glaube, ich war schwerer, als er erwartet hatte.
 
 **Zweiter Eintrag**
 
@@ -31,11 +31,11 @@ Ich habe gefunden, was ich suchte. Es lag in der großen Halle, wo die Gänge si
 
 **Dritter Eintrag**
 
-Ich habe es berührt. Ich hätte es nicht berühren sollen; ich wusste das, bevor ich es tat, und tat es trotzdem. So bin ich.
+Ich habe es berührt. Das hätte ich nicht tun sollen; ich wusste das, bevor ich es tat, und tat es trotzdem. So bin ich.
 
 Ich habe darin gelesen. Tausend Hände haben es gehalten, und jede wollte mehr. Es erinnert sich an jede. Es hat versucht, sich an mich zu erinnern, und für einen Moment habe ich es zugelassen.
 
-Es ist zu stark. Nicht für jeden – für mich. Was in ihm ist, sucht in mir nach etwas, an dem es sich festhalten kann, und es findet zu viel. Ich spüre es von innen an mir arbeiten.
+Es ist zu stark. Was in ihm ist, sucht in mir nach etwas, an dem es sich festhalten kann, und es findet zu viel. Ich spüre es. Es frisst mich auf.
 
 **Vierter Eintrag**
 
@@ -45,9 +45,9 @@ Ich werde müde.
 
 **Fünfter Eintrag**
 
-Ich habe entschieden. Mit dem Relikt komme ich hier nicht heraus, es würde mich auf dem Weg zerreißen. Ohne es vielleicht, wenn ich alles nehme, was mir noch geblieben ist.
+Es ist aussichtslos. Mit dem Relikt komme ich hier nicht heraus, es würde mich auf dem Weg zerreißen. Ohne es vielleicht, wenn ich alles nehme, was mir noch geblieben ist.
 
-Ich gehe nach Glacio, auf die Welt aus Eis, weit hinter diesem Stern. Sie ist die Heimat der hellen Macht. Dort kann ich mich erholen. Ich werde einen Schleier um sie legen, damit mir nichts von hier folgen kann. Durch ihn kommt nur, wer das Relikt bei sich trägt, wohl verwahrt, denn nur dann weiß ich, dass ihr es seid.
+Ich gehe nach Glacio, auf die Welt aus Eis, weit hinter diesem Stern. Sie ist die Heimat der hellen Macht. Dort kann ich mich erholen. Ich werde einen Schleier um mich legen, damit mir nichts von hier folgen kann. Durch ihn kommt nur, wer das Relikt bei sich trägt, wohl verwahrt, denn nur dann weiß ich, dass ihr es seid.
 
 Das Relikt und dieses Buch lasse ich hier, in der Truhe der Halle.
 
@@ -55,17 +55,11 @@ Das Relikt und dieses Buch lasse ich hier, in der Truhe der Halle.
 
 **An den, der als Nächster hier ankommt**
 
-Wenn du dies liest, bist du hindurchgekommen, und das Tor hat dich nicht genommen. Gut.
+Hör mir zu. Dieses Relikt ist gefährlich für jeden, der von der Macht schon berührt ist. Wer noch unbefleckt von der Macht ist, der kann ihm vielleicht widerstehen, wenn auch nur kurz.
 
-Hör mir zu. Dieses Relikt ist gefährlich für jeden, der von der Macht schon berührt ist. Wer noch unbefleckt von der Macht ist, den kann es nicht verschlingen. Es findet in dir nichts, woran es sich halten kann. Quälen wird es dich trotzdem, also geh nicht allein. Darum kannst du tragen, was ich nicht tragen konnte.
+Nimm es mit und bring es mir, wenn du kannst. Suche nach der Hellen Elfe. Rufe sie durch das grüne Portal, das aus Holz gebaut ist, das noch lebt. Es öffnet sich nur, wenn das Licht der Blumen es speist. Bau es, und sie wird kommen, wenn du sie rufst.
 
-Nimm es mit. Bring es nicht zu mir, noch nicht. Bring es zuerst zum Hellen Elfen.
-
-Ich wollte selbst zu ihm, auf die dritte Welt. Er versteht Dinge wie dieses besser als ich und kann es so verwahren, dass es niemandem schadet. Er lebt hinter einem Tor, das kein Stein ist: Es ist aus Holz gebaut, das noch lebt, und es öffnet sich nur, wenn das Licht der Blumen es speist. Bau es, und er wird kommen. Hineingehen musst du nicht.
-
-Dann komm nach Glacio. Bring das Relikt mit, so wie der Elf es dir gibt, und mein Schleier lässt dich durch.
-
-Und beeil dich nicht zu sehr. Ich warte. Das kann ich gut.
+Sie wird dir helfen, zu mir zu gelangen.
 
 ---
 
@@ -86,7 +80,7 @@ Und beeil dich nicht zu sehr. Ich warte. Das kann ich gut.
 
 ## Offen beim Überarbeiten
 
-- **„Macht“:** „Heimat der hellen Macht“ und „unbefleckt von der Macht“ sind deine Worte aus O4. Im Text sind sie die deutlichste Star-Wars-Spur von Teil 1, dazu in einem Gegenstand (O9 nennt nur Dialoge). Lassen, oder umschreiben, etwa „Heimat des hellen Lichts“ und „unberührt von dem, was in ihm wohnt“?
-- **Der Helle Elf** ist im Text männlich („er“), wie bisher in `18_STORY.md`. Meister Cerina ist aber eine Frau. Weiß Vos das nicht (er kennt nur den Ruf) oder soll es „die Helle Elfe“ heißen?
-- **„Weit hinter diesem Stern“** sagt, dass Glacio in einem anderen System liegt (O17), ohne es zu erklären. Reicht das als Grund für den neuen Treibstoff?
-- **Der letzte Satz** („Ich warte. Das kann ich gut.“) bringt etwas Humor ans Ende. Streichen, wenn der Brief ganz ernst bleiben soll.
+- **„Macht“:** „Heimat der hellen Macht“ und „unbefleckt von der Macht“ sind deine Worte aus O4. Im Text sind sie die deutlichste Star-Wars-Spur von Teil 1, dazu in einem Gegenstand (O9 nennt nur Dialoge). 🟢 Bleibt (User, 2026-10-26; O63).
+- **Der Helle Elf** ist im Text männlich („er“), wie bisher in `18_STORY.md`. Meister Cerina ist aber eine Frau. 🟢 Jetzt „die Helle Elfe“ (User, 2026-10-26).
+- **„Weit hinter diesem Stern“** sagt, dass Glacio in einem anderen System liegt (O17), ohne es zu erklären. 🟢 Reicht (User, 2026-10-26).
+- **Der letzte Satz** („Ich warte. Das kann ich gut.“) bringt etwas Humor ans Ende. 🟢 Gestrichen (User, 2026-10-26).

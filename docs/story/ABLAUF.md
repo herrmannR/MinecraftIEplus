@@ -192,5 +192,8 @@ Der User trägt seine Änderungen gerade selbst ein (2026-10-25). Erst danach an
 - **`d7_erkenntnis`** (DD3R8) zitiert noch „Das Tor bricht an einem, der zu stark ist“; Tempelrolle 3 sagt jetzt „so zerfällt es und versucht ihn in sich zu halten“.
 - **Tempelrollen 3/4:** Der Hinweis, das Ritual nach der Reparatur selbst zu wecken (O56), ist entfallen („Dann erweckst du ihn zu neuem Leben“). Klären, ob die Reparatur das Ritual gleich aktiviert oder die Spieler es noch wecken.
 - **Relikt-Fluch (O66):** Dialoge von DD3R8 (`d8_schutz`), Meister Cerina (`c1_tagebuch`) und Quest ST9-05 können ihn ankündigen.
+- **„Die Helle Elfe“** (Tagebuch, User 2026-10-26): Meister Cerina (`c1_elf`) spielt noch mit „den Hellen Elfen … hat mich nie gesehen“; Questtext ST10-02 sagt „einem Hellen Elfen“; Tooltip des Relikts früher „der Helle Elf“.
+- **Schleier um den Meister statt um Glacio** (Tagebuch, User 2026-10-26: „Ich werde einen Schleier um mich legen“): Meister Cerina (`c2_hilfe`: „einen Schleier um sie gelegt“), Questtext ST11-01 („Der Schleier um die Welt“) und `18_STORY.md` („Barriere um den Planeten“, Rakete T4) sagen noch „um den Planeten“. Klären, ob die Rakete T4 trotzdem wegen des Schleiers den Strahlenschutz braucht.
+- **Tagebuch-Brief** nennt Glacio nicht mehr als Ziel, nur der fünfte Eintrag. Meister Cerina nennt es (`c2_hilfe`), das reicht.
 - Danach: `py tools/logbuch_gen.py`, `py tools/story_druck.py`, Logbuch in die Testinstanz.
 
