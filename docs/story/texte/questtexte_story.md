@@ -240,7 +240,7 @@ Meisterin Cerina will euch helfen, zum Meister zu gelangen. Dafür braucht sie d
 ### ST11-01 Durch den Schleier · Hauptweg
 **Aufgabe:** Dimension `ad_astra:glacio` betreten
 
-Bau den Galaktischen Strahlenschutz in das Triebwerk der Rakete T4 (Kapitel Ad Astra) und flieg nach Glacio. Der Schleier um die Welt lässt dich durch, weil er erkennt, was im Triebwerk steckt.
+Bau den Galaktischen Strahlenschutz in das Triebwerk der Rakete T4 (Kapitel Ad Astra) und flieg nach Glacio. Der Schleier um das Versteck des Meisters lässt dich durch, weil er erkennt, was im Triebwerk steckt.
 
 ### ST11-02 Das Versteck · Hauptweg
 **Aufgabe:** Gespräch mit dem Meister (Dialog)

@@ -119,6 +119,9 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 | Nr. | Antwort | Datum | Eingetragen in |
 |---|---|---|---|
 | O62 | Der Meister kennt den Einsiedler („ein alter Bekannter aus meiner Welt“) und meidet ihn aus Schmerz. In Teil 1 steht das nur im Logbuch (Teil 3); Davijaan weiß nichts vom Meister, Vos erwähnt ihn nicht. Auflösung in Teil 2 | 2026-10-25 | `story/texte/logbuch.md`, `18_STORY.md` |
+| O77 | Der Schleier des Meisters liegt um sein Versteck auf Glacio, nicht um den Planeten; die Rakete T4 braucht den Strahlenschutz weiterhin, um durchzukommen | 2026-10-26 | `18_STORY.md`, `story/texte/` |
+| O78 | Kobalt kommt schon in K2 (Tinkers TK2-04, Nether), dazu Anvil als Hauptweg und Quest TK2-06 „Vorschlaghammer aus Kobalt“ für „Würdig sein“ | 2026-10-26 | `questtexte/tinkers.md` |
+| O79 | Sonnensturm und letzter Ruf gelten beide: Der letzte Funkspruch des Meisters kam an, dann trennte ein Sonnensturm die Verbindung und trieb die Kapsel ab. O56 bleibt (Spieler wecken das Ritual selbst) | 2026-10-26 | `18_STORY.md` |
 | O74 | Auf dem Mars liegen Aufzeichnungen der früheren Bewohner (Lese-Item, Quest ST6-02); sie stehen im Logbuch im Kapitel „Fundstücke“ mit einem 3D-Bauplan der Station (Patchouli-Multiblock), nach dem die Spieler die Station bauen | 2026-10-26 | `story/texte/questtexte_story.md`, `story/ABLAUF.md` |
 | O75 | Meisterin Cerina erscheint erst, wenn eine Rune des Frühlings ins offene Portal to Alfheim geworfen wird (Skript, Cerina erscheint an der Portalstelle) | 2026-10-26 | `story/ABLAUF.md` |
 | O76 | Der Netherite Space Suit (RF3-05) ist Pflicht vor dem Merkur (Hauptweg), obwohl das Spiel ihn für die Hitze nicht braucht | 2026-10-26 | `questtexte/adastra.md`, `story/texte/questtexte_story.md` |

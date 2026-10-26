@@ -7,19 +7,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(o)Entschlüsselt: 47 %$()$(br2)$(l)Eintrag 12$()$(br2)Die dritte Welt hat einen Begleiter, grau und kahl, nah genug, dass man nachts seine Narben sieht. Ich wollte ihn als Horchposten nutzen. Es geht nicht."
+      "text": "$(o)Entschlüsselt: 47 %$()$(br2)$(l)Eintrag 5$()$(br2)Die dritte Welt hat einen Begleiter, grau und kahl, nah genug, dass man nachts seine Narben sieht. Dort fand ich nicht, wonach ich suchte. Doch ich entdeckte etwas anderes. […]"
     },
     {
       "type": "patchouli:text",
-      "text": "Der Begleiter schweigt. Nicht wie Stein schweigt – Stein ist nie ganz still. Er schweigt, wie ein Raum schweigt, in dem jemand den Atem anhält."
+      "text": "Dieser Ort ist schon bewohnt. Nicht nur von Untoten, sondern von einem alten Bekannten aus meiner Welt. Aber mich ihm zu zeigen ist unmöglich. Es geht einfach nicht. Zu viel Schmerz birgt diese Erinnerung. […]"
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Eintrag 13$()$(br2)Jemand verbirgt sich dort. Die Abschirmung ist alt, sauber gebaut und mit Sorgfalt gepflegt. Wer immer dahinter sitzt, will nicht gefunden werden, und er ist gut darin.$(br2)Ich respektiere das. Vorerst. […]"
+      "text": "$(l)Eintrag 6$()$(br2)Der Bewohner dieses kalten Monds ist schon lange dort und verbirgt sich gut. Die Abschirmung ist alt, sauber gebaut und mit Sorgfalt gepflegt. Er will nicht gefunden werden, und er ist gut darin.$(br2)Ich respektiere das. Vorerst. […]"
     },
     {
       "type": "patchouli:text",
-      "text": "Wer ihn besucht, sollte höflich sein und nicht zu viele Fragen stellen. Und den Droiden vielleicht draußen lassen. […]"
+      "text": "Wer immer ihn besucht, sollte höflich sein und nicht zu viele Fragen stellen. Und Droiden sollte man lieber von ihm fernhalten. […]"
     }
   ]
 }

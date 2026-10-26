@@ -13,7 +13,7 @@
 - **Pack-Änderungen** mit ⚙️. Sie stehen nicht im Buch.
 - 🔵 = noch nicht entschieden oder nicht belegt.
 - TK1 und TK2 liegen vor dem Mond. Laut Story gibt es dort noch kein Questbuch (`../18_STORY.md`, O31 offen). Die Texte sind trotzdem geschrieben, damit sie nachgereicht oder als Notizen genutzt werden können.
-- 🔵 Welches Tinkers-Item der Würdigkeits-Beweis in K2 ist, ist offen (Meilensteinkarte TK1: „Liefert das Tinkers-Item für die erste Quest“). Kandidaten unten: TK1-04 (erstes Werkzeug), TK1-11 (gegossenes Werkzeugteil).
+- 🟢 Würdigkeits-Beweis in K2 (O67, O78): Vorschlaghammer ganz aus Kobalt (TK2-06); Kobalt deshalb schon in TK2-04.
 
 ---
 
@@ -128,32 +128,48 @@ Liegen die richtigen Metalle zusammen in der Smeltery, entsteht eine Legierung. 
 Buch: Mighty Smelting → Smeltery → Alloying; Tier 3 General Materials.
 Im Pack: Bronze, Constantan und Electrum kannst du auch hier legieren, nicht nur bei IE und Mekanism.
 
-### TK2-04 Slime-Inseln und Geoden · Nebenquest
-**Aufgabe:** `tconstruct:sky_slime_ball`, `tconstruct:steel_shard`
+### TK2-04 Kobalt · Hauptweg
+**Aufgabe:** `tconstruct:raw_cobalt`, `tconstruct:cobalt_ingot`
 
-In der Welt schweben Slime-Inseln, im Boden liegen Slime-Geoden. Ihr Slime ist Zutat vieler Legierungen. Steel Shards aus Skyslime-Inseln und Geoden sind Stahl ohne IE.
-Buch: Tinkers' Gadgetry → Exploration (Buch erst in der Reihe „Ausbau“, TKA-01).
+> **Vorsicht Nether:** Für Kobalt musst du in den Nether. Es liegt tief, am häufigsten auf Höhe 8 bis 32.
 
-### TK2-05 Tinker's Anvil · Nebenquest
+Kobalt ist das Metall des Nethers und Zutat der starken Legierungen. Die Smeltery schmilzt es mit Lava.
+Buch: Tinkers' Gadgetry → Exploration → Cobalt Ore.
+⚙️ Im Pack schon in K2 (User, 2026-10-26, O78): Der Vorschlaghammer aus Kobalt ist Teil von „Würdig sein“. (Früher TK3-01.)
+
+### TK2-05 Tinker's Anvil · Hauptweg
 **Aufgabe:** `tconstruct:tinkers_anvil`
 
 Werkzeuge mit vier Teilen brauchen den Anvil statt der Tinker Station.
 Buch: Mighty Smelting → Introduction → Tinker's Anvil.
 Im Pack: Der Anvil nimmt auch Blöcke aus Bronze, Electrum, Constantan, Refined Obsidian und Refined Glowstone. Bronze aus dem Metallurgic Infuser von Mekanism ist ein früher Weg dorthin.
 
-### TK2-06 Große Werkzeuge · Nebenquest
-**Aufgabe:** `tconstruct:sledge_hammer`, `tconstruct:vein_hammer`, `tconstruct:excavator`, `tconstruct:broad_axe`, `tconstruct:scythe`, `tconstruct:cleaver`, `tconstruct:longbow`
+### TK2-06 Vorschlaghammer aus Kobalt · Hauptweg
+**Aufgabe:** `tconstruct:sledge_hammer`
+
+Bau am Anvil einen Vorschlaghammer, bei dem jedes Teil aus Kobalt ist: zwei Hammerköpfe, ein schwerer Griff und eine große Platte. DD3R8 nimmt ihn als Beweis eures handwerklichen Geschicks.
+Buch: Mighty Smelting → Broad Tools → Sledge Hammer.
+⚙️ Die Quest erkennt nur den Hammer; dass alle Teile aus Kobalt sind, prüft ein Skript bei der Abgabe an DD3R8 (O67).
+
+### TK2-07 Slime-Inseln und Geoden · Nebenquest
+**Aufgabe:** `tconstruct:sky_slime_ball`, `tconstruct:steel_shard`
+
+In der Welt schweben Slime-Inseln, im Boden liegen Slime-Geoden. Ihr Slime ist Zutat vieler Legierungen. Steel Shards aus Skyslime-Inseln und Geoden sind Stahl ohne IE.
+Buch: Tinkers' Gadgetry → Exploration (Buch erst in der Reihe „Ausbau“, TKA-01).
+
+### TK2-09 Große Werkzeuge · Nebenquest
+**Aufgabe:** `tconstruct:vein_hammer`, `tconstruct:excavator`, `tconstruct:broad_axe`, `tconstruct:scythe`, `tconstruct:cleaver`, `tconstruct:longbow`
 
 Werkzeuge für Flächen, Adern und ganze Bäume.
 Buch: Mighty Smelting → Broad Tools.
 
-### TK2-07 Plate Armor · Nebenquest
+### TK2-10 Plate Armor · Nebenquest
 **Aufgabe:** `tconstruct:plate_helmet`, `tconstruct:plate_chestplate`, `tconstruct:plate_leggings`, `tconstruct:plate_boots`
 
 Schwere Rüstung aus Plating und Maille. Das Metall bestimmt die Schutzart.
 Buch: Mighty Smelting → Mighty Armor (Materialien); Fantastic Foundry → Fantastic Armor (die Teile). 🔵 Prüfen, ob das Mighty-Smelting-Buch die Teile schon selbst zeigt.
 
-### TK2-08 Entity Melting · Nebenquest
+### TK2-11 Entity Melting · Nebenquest
 **Aufgabe:** Kontrollhaken
 
 Lebewesen in einer laufenden Smeltery geben Flüssigkeiten ab, Dorfbewohner etwa Smaragd.
@@ -163,13 +179,7 @@ Buch: Mighty Smelting → Entity Melting.
 
 ## TK3 · Alloyer und Foundry (K5 Erzketten)
 
-> **Vorsicht Nether:** Für Kobalt, Nether Grout und Blazing Blood musst du in den Nether. Kobalt liegt tief, am häufigsten auf Höhe 8 bis 32.
-
-### TK3-01 Kobalt · Hauptweg
-**Aufgabe:** `tconstruct:raw_cobalt`, `tconstruct:cobalt_ingot`
-
-Kobalt ist das Metall des Nethers und Zutat der starken Legierungen. Die Smeltery schmilzt es mit Lava.
-Buch: Tinkers' Gadgetry → Exploration → Cobalt Ore.
+> **Vorsicht Nether:** Für Nether Grout und Blazing Blood musst du in den Nether. (Kobalt kommt seit O78 schon in TK2-04.)
 
 ### TK3-02 Fantastic Foundry · Hauptweg
 **Aufgabe:** `tconstruct:fantastic_foundry`, `tconstruct:nether_grout`, `tconstruct:scorched_brick`
@@ -316,10 +326,10 @@ Keine Pack-Änderung, aber nicht im Buch: Fremdmetalle von IE und Mekanism (TK1-
 ## 🔵 Offen vor dem Einbau
 
 1. Ob die Quests vor dem Mond (TK1, TK2) ins Questbuch kommen (O31 in `../18_STORY.md`).
-2. Welches Tinkers-Item der Würdigkeits-Beweis in K2 ist.
+2. 🟢 Erledigt: Würdigkeits-Beweis ist der Kobalthammer (TK2-06, O67, O78).
 3. Aufgaben mit Material-Bedingung (TK1-12, TK1-14, TK4-02): FTB Quests prüft das Material eines Teils nur über NBT; einfacher als Kontrollhaken. Entscheiden beim Einbau.
 4. Eintragstitel im Buch: hier nach internen Namen, im Spiel gegenlesen.
-5. TK2-07: Ob Mighty Smelting die Plate-Teile zeigt oder erst Fantastic Foundry.
+5. TK2-10: Ob Mighty Smelting die Plate-Teile zeigt oder erst Fantastic Foundry.
 6. Blood-Smeltery 1.2.1a: welche Flüssigkeiten und Rezepte im Spiel gehen.
 7. Trait Oxygenated (TK4-02): Wirkung nicht ausgelesen.
 8. Ancient Tools: welche Fundorte im Pack existieren.

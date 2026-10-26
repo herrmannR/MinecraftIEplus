@@ -31,6 +31,7 @@ TEILE = [
     ('logbuch.md', 'Logbuch des Meisters', 'prosa', 'L'),
     ('tempelrollen.md', 'Tempelrollen', 'prosa', 'R'),
     ('tagebuch.md', 'Tagebuch des Meisters', 'prosa', 'TB'),
+    ('fundstuecke.md', 'Fundstücke (Mars)', 'prosa', 'F'),
     ('dialoge_dd3r8.md', 'Dialoge: DD3R8', 'dialog', 'DD3R8'),
     ('dialoge_zwerg.md', 'Dialoge: Der Zwerg in der Schlucht', 'dialog', 'Zwerg'),
     ('dialoge_davijaan.md', 'Dialoge: Davijaan', 'dialog', 'Davijaan'),
@@ -190,7 +191,7 @@ def marke(art, kurz, abschnitt, nr):
     if art == 'quest':
         code = abschnitt if abschnitt.startswith('ST') else 'Q'
         return f'<span class="mk">{code}·{nr}</span>'
-    m = re.match(r'(?:Teil|Rolle) (\d)', abschnitt)
+    m = re.match(r'(?:Teil|Rolle|Fundstück) (\d)', abschnitt)
     pre = f'{kurz}{m.group(1)}' if m else kurz
     return f'<span class="mk">{pre}·{nr}</span>'
 

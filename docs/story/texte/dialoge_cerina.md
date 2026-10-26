@@ -6,7 +6,7 @@
 > - Geheim bleibt: Sie ist die Mirialanerin Vernestra Rwoh, eine Jedi. In Teil 1 heißt sie nur „Meisterin Cerina“, so nennen sie die Elfen; ihr alter Name kommt in Teil 2 durch den Meister heraus (Vorschlag aus O46).
 > - 🟢 Charakter (User, 2026-10-26): warmherzig und offen. Sie freut sich über Besuch, sorgt sich um die Spieler und spricht in ganzen, fließenden Sätzen, nicht kurz und abgehackt. Wenn sie etwas nicht verraten kann, sagt sie das klar („Das kann ich euch nicht sagen“) statt in Rätseln. Sehr alt, mit leisem Humor über ihr Alter und den Namen „Helle Elfe“.
 > - Anspielungen (O9), sparsam: Geduld, sie ist nicht bei den Elfen geboren, sie hat einmal etwas verschwiegen, das sie hätte sagen sollen (Ende von „The Acolyte“).
-> - Was sie tut: nimmt das Relikt, nennt, was sie für den Schutz braucht, und gibt den Galaktischen Strahlenschutz, das Gehäuse **um** das Relikt (O43). Er kommt ins Triebwerk der Rakete T4 und lässt die Rakete durch den Schleier des Meisters. Damit endet auch der Fluch (O66).
+> - Was sie tut: nimmt das Relikt, nennt, was sie für den Schutz braucht, und gibt den Galaktischen Strahlenschutz, das Gehäuse **um** das Relikt (O43). Er kommt ins Triebwerk der Rakete T4 und lässt die Rakete durch den Schleier um das Versteck des Meisters. Damit endet auch der Fluch (O66).
 > - Nach Alfheim dürfen die Spieler noch nicht (Mead of Kvasir in Teil 2, F9).
 > - Easy NPC: Text höchstens ~512 Zeichen, Knopf höchstens 64.
 
@@ -30,7 +30,7 @@ Scoreboard `story`, Eintrag `#cerina` (B2): 1 = gerade aus dem Portal getreten (
 - **[Wir haben ein Tagebuch]** → `c1_tagebuch`
 
 #### `c1_tagebuch` · Prio 0
-> Ein Tagebuch also. Dann hat es jemand geschrieben, der etwas berührt hat, das er besser hätte liegen lassen, denn ich spüre es an euch, seit ich aus dem Tor getreten bin. Ihr tragt es bei euch, nicht wahr? Und ich sehe euch an, dass es euch nicht gut behandelt hat.
+> Ein Tagebuch also. Dann hat es jemand geschrieben, der etwas berührt hat, das er besser hätte liegen lassen, denn ich spüre es an euch, seit ich aus dem Tor getreten bin. Ihr tragt es bei euch, nicht wahr? Und ich sehe euch an, dass es euch nicht gut behandelt hat. Es zehrt an dem, der es trägt; gebt es mir, bevor es euch noch mehr nimmt.
 - **[Das Relikt]** · Bedingung: im Inventar `kubejs:relikt` → `c1_relikt`
 - **[Woher weißt du das?]** → `c1_woher`
 
@@ -72,7 +72,7 @@ Scoreboard `story`, Eintrag `#cerina` (B2): 1 = gerade aus dem Portal getreten (
 - **[Noch nicht]** → schließen
 
 #### `c2_hilfe` · Prio 0
-> Euer Meister ist auf Glacio, der Welt aus Eis hinter diesem Stern, und er hat einen Schleier um sie gelegt, durch den nur das Relikt selbst hindurchkommt. Ihr müsst es also zu ihm bringen, aber so gut verwahrt, dass es niemandem mehr schaden kann. Diese Verwahrung baue ich euch gern.
+> Euer Meister ist auf Glacio, der Welt aus Eis hinter diesem Stern, und er hat einen Schleier um sein Versteck gelegt, durch den nur das Relikt selbst hindurchkommt. Ihr müsst es also zu ihm bringen, aber so gut verwahrt, dass es niemandem mehr schaden kann. Diese Verwahrung baue ich euch gern.
 - **[Was brauchst du dafür?]** → `c2_liste`
 
 #### `c2_liste` · Prio 0

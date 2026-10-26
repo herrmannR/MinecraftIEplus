@@ -78,6 +78,8 @@ Buch: Mana Manipulation → Mana Pool.
 ### BO2-04 Manasteel · Hauptweg
 **Aufgabe:** `botania:manasteel_ingot`
 
+⚙️ Für „Würdig sein“ bei DD3R8 braucht ihr einen ganzen Manastahlblock (`botania:manasteel_block`, 9 Barren; O67).
+
 Eisen in einen gefüllten Pool werfen. Manasteel ist das erste Metall des Mods.
 Buch: Mana Manipulation → Mana Pool.
 ⚙️ Mit TCIntegrations ist Manasteel auch ein Werkzeugmaterial für Tinkers, ebenso Livingwood, Livingrock und Mana Infused String.

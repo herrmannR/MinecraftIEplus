@@ -67,7 +67,7 @@
 - Der Meister war auf einer Mission auf dem Planeten, auf dem der Zugang zur Blood-Magic-Dimension liegt (laut Progression der Merkur).
 - In einem dunklen Tempel wurde er in diese Dimension gezogen.
 - Kurz davor rief er dem Droiden zu, er solle bei der nächsten Lebensform Hilfe suchen: bei drei Individuen (der User und seine Mitspieler).
-- 🟢 **Sonnensturm** (User, 2026-10-26, Dialog `d0_meister`): DD3R8 erzählt, sie seien in einem Sonnensturm getrennt worden, danach brach der Funk ab. Die Kapsel sollte eigentlich einen Kilometer östlich im Meer landen (`d0_basis`). Wie das zur Vorgeschichte passt, ist offen (`story/ABLAUF.md` Abschnitt 7).
+- 🟢 **Sonnensturm** (User, 2026-10-26, Dialog `d0_meister`): DD3R8 erzählt, sie seien in einem Sonnensturm getrennt worden, danach brach der Funk ab. Die Kapsel sollte eigentlich einen Kilometer östlich im Meer landen (`d0_basis`). 🟢 Beides gilt (User, 2026-10-26, O79): Der Meister landete allein auf dem Merkur; sein letzter Funkspruch („Such Hilfe bei der nächsten Lebensform“) kam noch an, dann zerriss ein Sonnensturm die Verbindung und trieb die Kapsel ab.
 - 🟢 **Flucht aus der Dimension** (User, 2026-10-21, O4): Im Dungeon umzingelten ihn dunkle Wesen, er saß fest. Die Macht des Relikts war zu stark und hätte ihn fast von innen zerstört; fliehen konnte er nur ohne das Relikt, mit seiner ganzen verbliebenen Kraft. Sein Ziel war **Glacio, die Heimat der hellen Macht**, wo er sich erholen kann. Ins Tagebuch (das im Dungeon) schrieb er das für den, der als Nächster dort ankommt: Wer noch **unbefleckt von der Macht** ist, ist gegen das dunkle Relikt immun und soll es holen und zu ihm bringen.
   - 🟢 **Fluch des Relikts** (User, 2026-10-25/26, O66): Unbefleckte verschlingt das Relikt nicht, aber es quält sie. Wer es bei sich trägt, bekommt nach 15 Sekunden starke Blindheit, Langsamkeit und Vergiftung; die anderen Spieler müssen ihn leiten und schützen. Das Relikt lässt sich nicht ablegen (keine Truhe, kein Rucksack, kein Wegwerfen). Der Fluch endet, wenn Meisterin Cerina es im Strahlenschutz verwahrt. Tagebuch angepasst („den kann es nicht verschlingen … Quälen wird es dich trotzdem“).
   - Folge (abgeleitet): Die Spieler dürfen in Teil 1 keine Macht haben. Das passt zur Sperre `forceObtainment false` (Test 33); die Macht kommt erst im Training in Teil 2. Der Droide kann das Relikt nicht holen, die Spieler schon.
@@ -165,7 +165,7 @@
 - Die Spieler bauen das Elfenportal. Sie gehen nicht hinein, stattdessen tritt ein Elf (Easy NPC) heraus.
 - Um den Meister zu finden, braucht der Elf Boss-Items aus den Blue-Skies-Dimensionen und technologische Erzeugnisse aus den Tech-Mods.
 - Wenn die Spieler das geliefert haben, gibt er ihnen das Rezept für die Rakete T4, mit der sie zum Meister kommen.
-- Die Rakete T4 braucht magische Komponenten, um die Barriere zu durchdringen, die der Meister um den Planeten gelegt hat.
+- Die Rakete T4 braucht magische Komponenten, um die Barriere zu durchdringen, die der Meister gelegt hat. 🟢 Der Schleier liegt um **sein Versteck** auf Glacio, nicht um den ganzen Planeten (User, 2026-10-26, O77); ohne das verwahrte Relikt im Triebwerk findet man ihn nicht.
 - Sie braucht außerdem einen deutlich komplizierteren Treibstoff, weil die Reise viel weiter führt („in eine andere Galaxie“; siehe O17).
 - Ziel danach: Glacio.
 

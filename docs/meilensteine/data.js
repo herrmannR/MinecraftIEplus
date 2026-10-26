@@ -79,7 +79,7 @@ const MILESTONES = [
    world:"Erreicht."},
 
   {id:"SW1", path:"I", stage:2, name:"Droide · Würdig sein", status:"open",
-   req:[["TK1","Tinkers-Item ?"],["IE1","IE-Item ?"],["BO1","Botania-Item ?"]], must:true,
+   req:[["TK2","Vorschlaghammer aus Kobalt"],["IE2","LV-Kondensator"],["BO2","Manastahlblock"]], must:true,
    what:"Erste Quest. Die Spieler bringen dem Droiden Items aus mehreren Mods als Beweis, dass sie eine weit entwickelte Spezies sind. Danach gibt der Droide die großen Ziele vor.",
    cross:"Bis zum Mond gibt es kein Questbuch: Der Droide führt allein über Easy-NPC-Quests. Welche Items genau verlangt werden, ist offen.",
    story:"Eine kugelförmige Kapsel schlägt in der Basis ein. Darin sitzt ein Droide: Sein Meister ist verschollen und hat ihn zur nächsten Lebensform geschickt, zu drei Individuen. Er übergibt Tagebuch-Ausschnitte mit Rätseln. Charakter: lustig, aber mechanisch ernst.",

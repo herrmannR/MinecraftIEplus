@@ -57,7 +57,7 @@ Das Relikt und dieses Buch lasse ich hier, in der Truhe der Halle.
 
 Hör mir zu. Dieses Relikt ist gefährlich für jeden, der von der Macht schon berührt ist. Wer noch unbefleckt von der Macht ist, der kann ihm vielleicht widerstehen, wenn auch nur kurz.
 
-Nimm es mit und bring es mir, wenn du kannst. Suche nach der Hellen Elfe. Rufe sie durch das grüne Portal, das aus Holz gebaut ist, das noch lebt. Es öffnet sich nur, wenn das Licht der Blumen es speist. Bau es, und sie wird kommen, wenn du sie rufst.
+Nimm es mit und bring es mir, wenn du kannst. Suche nach der Hellen Elfe. Rufe sie durch das grüne Portal, das aus Holz gebaut ist, das noch lebt. Es öffnet sich nur, wenn das Licht der Blumen es speist. Bau es, und sie wird kommen, wenn du sie rufst. Gib dem Portal ein Zeichen des Frühlings, dann hört sie dich.
 
 Sie wird dir helfen, zu mir zu gelangen.
 

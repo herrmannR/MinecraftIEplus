@@ -9,7 +9,7 @@
 | `kubejs:relikt` | Relikt | „Warm, obwohl es kalt sein müsste.“ / „Es ruft. Nur nicht dich.“ | ersetzt den bisherigen Tooltip |
 | `kubejs:galaktischer_strahlenschutz` | Galaktischer Strahlenschutz | „Gefertigt von Meisterin Cerina. Darin schläft das Relikt.“ / „Bauteil des Calorite-Triebwerks (Rakete T4).“ | ersetzt „Gefertigt vom Hellen Elfen“ |
 | `kubejs:kaputter_klonhelm` | **Verbeulter Pilotenhelm** | „Visier gesprungen, Funk tot.“ / „Davijaan will ihn zurück, aber heil.“ | neu; Name 🟢 (O64) |
-| `kubejs:klonhelm_repariert` | **Pilotenhelm des Einsiedlers** | „Der Funk rauscht wieder.“ / „Bring ihn Davijaan auf dem Mond.“ | neu |
+| `swgc:clone_212th_battalion_helmet` | (Name aus Galaxy in a Cube) | „Der Funk rauscht wieder.“ / „Bring ihn Davijaan auf dem Mond.“ | ersetzt `kubejs:klonhelm_repariert` (O71); Tooltip zusätzlich am Original-Helm, den es nur einmal gibt |
 | `kubejs:siegel_der_traumwelten` | Siegel der Traumwelten | „Licht und Dämmerung zugleich.“ / „Geschenk von Bodhi Bad Dur.“ | neu |
 | `kubejs:tempelrolle_1` | Tempelrolle: Das Tor | „Alt und brüchig. Rechtsklick zum Lesen.“ | neu |
 | `kubejs:tempelrolle_2` | Tempelrolle: Vom Blut | wie oben | neu |

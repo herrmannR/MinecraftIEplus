@@ -7,11 +7,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Wer dies liest, steht in unserem Haus. Tritt leise auf."
+      "text": "Dies ist ein Tempel der Dunkelheit, errichtet vom dunklen Lord Naga Sadow zur Zeit des Krieges gegen die alte Republik."
     },
     {
       "type": "patchouli:text",
-      "text": "Hier steht das Tor zur dunklen Seite. Es ist kein Tor aus Holz oder Eisen; es ist der Altar selbst. Wer ihn mit Blut weckt und die Steine recht um ihn legt, dem öffnet er sich, und er geht hindurch, ohne einen Schritt zu tun.$(br2)Wir haben dieses Haus nicht gebaut, um zu beten. Wir haben es gebaut, um das Tor zu bewachen."
+      "text": "Er dient seit jeher als Stützpfeiler und Rückzugsort der Anhänger der dunklen Seite und birgt ein altes Relikt des Exar Kun, das eines Tages dem Auserwählten dazu dienen wird, die Ausbreitung der hellen Macht im gesamten Universum zu ersticken."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Hier steht das Tor zur dunklen Seite. Es ist kein Tor aus Holz oder Eisen; es ist der Altar selbst. Wer ihn mit Blut weckt und die Steine recht um ihn legt, dem öffnet er sich und ihm wird die wahre Macht offenbart.$(br2)Wir haben dieses Haus nicht gebaut, um zu beten. Wir haben es gebaut, um das Tor zu bewachen."
     },
     {
       "type": "patchouli:text",

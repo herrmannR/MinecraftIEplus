@@ -197,22 +197,17 @@ Ablage in `docs/story/texte/`, je Figur oder Buch eine Datei. Der User überarbe
 
 ## 7. Nach dem Gegenlesen nachziehen
 
-Der User trägt seine Änderungen gerade selbst ein (2026-10-25). Erst danach anpassen:
+🟢 Erledigt am 2026-10-26. Ergebnis je Punkt:
 
-- **O63:** „Macht“ und „helle/dunkle Seite“ sind überall erlaubt außer in den Questtexten; Stellen, die das Wort bisher umschreiben, ggf. anpassen.
-- **`d7_erkenntnis`** (DD3R8) zitiert noch „Das Tor bricht an einem, der zu stark ist“; Tempelrolle 3 sagt jetzt „so zerfällt es und versucht ihn in sich zu halten“.
-- **Tempelrollen 3/4:** Der Hinweis, das Ritual nach der Reparatur selbst zu wecken (O56), ist entfallen („Dann erweckst du ihn zu neuem Leben“). Klären, ob die Reparatur das Ritual gleich aktiviert oder die Spieler es noch wecken.
-- **Relikt-Fluch (O66):** Dialoge von DD3R8 (`d8_schutz`), Meisterin Cerina (`c1_tagebuch`) und Quest ST9-05 können ihn ankündigen.
-- **„Die Helle Elfe“** (Tagebuch, User 2026-10-26): Meisterin Cerina (`c1_elf`) spielt noch mit „den Hellen Elfen … hat mich nie gesehen“; Questtext ST10-02 sagt „einem Hellen Elfen“; Tooltip des Relikts früher „der Helle Elf“.
-- **Schleier um den Meister statt um Glacio** (Tagebuch, User 2026-10-26: „Ich werde einen Schleier um mich legen“): Meisterin Cerina (`c2_hilfe`: „einen Schleier um sie gelegt“), Questtext ST11-01 („Der Schleier um die Welt“) und `18_STORY.md` („Barriere um den Planeten“, Rakete T4) sagen noch „um den Planeten“. Klären, ob die Rakete T4 trotzdem wegen des Schleiers den Strahlenschutz braucht.
-- **Tagebuch-Brief** nennt Glacio nicht mehr als Ziel, nur der fünfte Eintrag. Meisterin Cerina nennt es (`c2_hilfe`), das reicht.
-- **Würdig sein (O67):** Questtexte (`tinkers.md`, `ie.md`, `botania.md` nennen noch F4), ST2-01 und der Meilenstein SW1 auf neue Items.
-- **Zwerge (O68):** Questtext ST3-00 in `questtexte_story.md`; ST3-01 „Das Haus“ sagt noch „DD3R8 hat euch den Weg beschrieben“ (jetzt über den Zwerg).
-- **Mars (O69):** ST7-01 bekommt einen Gravity Normalizer (`ad_astra:gravity_normalizer`, DD3R8 verlangt „eine vernünftige Gravitation“); ST6-01/ST7-02 nennen den festen Platz und den Peilsender. Neuer Text: Notiz der früheren Bewohner (Schutz vor Sonnenstürmen).
-- **Sonnensturm:** DD3R8 erzählt jetzt, dass er und der Meister in einem Sonnensturm getrennt wurden (`d0_meister`). Die Vorgeschichte in `18_STORY.md` sagt, der Meister rief ihm kurz vor dem Sog zu, Hilfe zu suchen; beides zusammen passt, klären.
-- **Kaputte Maschinen:** `d0_basis` erklärt nicht mehr, dass die Druckwelle die Multiblöcke zerlegt hat (Grund für das Neu-Formen nach dem Wechsel auf 1.20.1). Ein Satz dazu wieder aufnehmen?
-- **Davijaan (O70, O71):** Questtexte ST4-04/ST4-05 und Tooltips nennen noch den „Pilotenhelm des Einsiedlers“; der reparierte Helm ist jetzt der 212er-Helm. Tooltip des verbeulten Helms ggf. anpassen. `18_STORY.md`: „Die Spieler kennen ihn nur als Davijaan“ ist überholt.
-- **Bodhi (O72):** „Herrscher“ heißt jetzt „Wächter“; in `questtexte_story.md` noch ST3-01 („Gespräch mit dem Herrscher“), ST3-04 und ST4-06 (16 statt 32 Erz, „Steuern“ statt Wegzoll).
-- **Elfe rufen (O75):** Das Tagebuch sagt nur „Rufe sie durch das grüne Portal“; ein Hinweis auf die Rune des Frühlings fehlt dort (Tagebuch ist gegengelesen, nur mit dem User ändern).
-- Danach: `py tools/logbuch_gen.py`, `py tools/story_druck.py`, Logbuch in die Testinstanz.
-
+- O63 (Macht-Begriffe): keine Änderung; der User hat die Texte bereits mit dieser Freiheit gegengelesen.
+- „bricht“ (DD3R8) neben „zerfällt“ (Tempelrolle 3): bleibt, Rolle 4 sagt selbst „gebrochen“.
+- Ritual nach der Reparatur: O56 gilt weiter, die Spieler wecken es selbst; „erweckst du ihn“ in Rolle 4 meint das Aktivieren.
+- Relikt-Fluch: Meisterin Cerina sieht ihn (`c1_tagebuch`); bei DD3R8 keine Warnung (User).
+- Helle Elfe: erledigt (Cerina, Questtexte, Tooltip).
+- Schleier: liegt um das Versteck des Meisters (O77); Cerina, ST11-01 und `18_STORY.md` angepasst.
+- Würdig sein (O67): `tinkers.md` (Kobalt jetzt TK2-04, Anvil Hauptweg, neue Quest TK2-06 Vorschlaghammer aus Kobalt; O78), `ie.md`, `botania.md`, Meilenstein SW1.
+- Zwerge, Mars, Davijaan, Bodhi: in den Questtexten erledigt; Tooltip des reparierten Helms jetzt am 212er-Helm.
+- Sonnensturm: beides gilt (O79), `18_STORY.md`.
+- Kaputte Maschinen: kein Satz in `d0_basis` (User).
+- Rune im Tagebuch: „Gib dem Portal ein Zeichen des Frühlings, dann hört sie dich.“
+- Neu zu schreiben: Text der Mars-Schriften (`texte/fundstuecke.md`).

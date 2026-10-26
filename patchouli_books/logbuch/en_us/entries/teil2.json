@@ -7,15 +7,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(o)Entschlüsselt: 31 %$()$(br2)$(l)Eintrag 7$()$(br2)Etwas stimmt nicht mit dieser Welt, und zwar auf eine schöne Weise. An manchen Orten liegt sie dünn, wie Stoff, der zu oft gewaschen wurde. Dahinter ist mehr."
+      "text": "$(o)Entschlüsselt: 31 %$()$(br2)$(l)Eintrag 3$()$(br2)Etwas stimmt nicht mit diesem blauen Planeten, aber auf eine schöne Weise. An manchen Orten ist seine Oberfläche so dünn wie Stoff, der zu oft gewaschen wurde. Dahinter ist mehr."
     },
     {
       "type": "patchouli:text",
-      "text": "Ich habe einen Stein berührt, der dort nicht hingehört. Ich sah zwei Welten hinter ihm, eine aus Licht und eine aus Dämmerung, jede mit einem Herrscher, und keiner von beiden ist mehr zu Hause. […] Man erreicht sie durch Tore, gebaut aus blauem Stein und aus Stein, der wie Mondlicht schimmert. Wer sie baut, weiß ich nicht."
+      "text": "Ich habe einen Stein berührt, der dort nicht hingehört. Ich sah zwei Welten hinter ihm, eine in ewigem Licht und eine in ewiger Dämmerung, mit einem Wächter, der jedoch besiegt wurde. […] Man erreicht sie durch Tore, gebaut aus blauem Stein und aus Stein, der wie Mondlicht schimmert. Wer sie baut, weiß ich nicht. Wer sie hütet, ahne ich."
     },
     {
       "type": "patchouli:text",
-      "text": "Wer sie hütet, ahne ich.$(br2)$(l)Eintrag 8$()$(br2)Ein praktisches Problem, für den Fall, dass wir länger bleiben: Dieser Welt fehlt das weiche graue Metall, aus dem man Bronze macht, ganz und gar. Und das schwere, bläuliche Metall, das wir für unsere Geräte brauchen, findet man hier nur in Krümeln."
+      "text": "$(l)Eintrag 4$()$(br2)Ein praktisches Problem, für den Fall, dass wir länger bleiben: Dieser Welt fehlt das weiche graue Metall, aus dem man Bronze macht, ganz und gar. Und das schwere, bläuliche Metall, das wir für unsere Geräte brauchen, findet man hier nur in Krümeln."
     },
     {
       "type": "patchouli:text",
