@@ -1352,3 +1352,17 @@ Status: 🔵
 - `tools/kubejs_check.py`: 26 Dateien ohne Fehler. Im Spiel noch nicht getestet (Tests 73–78).
 - In die Testinstanz kopiert (2026-10-21, Spiel geschlossen): alle Repo-Dateien aus `kubejs/` (21 neu oder geändert, darunter auch `schutzzonen.js` mit leerer Zonenliste) und `patchouli_books/logbuch/`. Die Instanz hatte vorher genau den vorigen Repo-Stand; Dateien, die nur in der Instanz liegen, sind unberührt.
 
+## 2026-10-26 — Gegenlesen abgeschlossen, Buch 1 aus den Story-Quests
+
+Status: 🔵
+
+### Änderung
+- Der User hat alle Story-Texte gegengelesen (Logbuch, Tempelrollen, Tagebuch, Dialoge, Questtexte). Entscheidungen O62–O79 in `20_ENTSCHEIDUNGEN.md`; Nachzieh-Liste in `story/ABLAUF.md` erledigt.
+- Dialog-Quests über Stages (Vorschlag des Users): Der Dialog setzt `tag @initiator add story_<code>`, die Quest hat die Stage-Aufgabe `story_<code>`; die Dialoge brauchen keine Quest-IDs.
+- `tools/QuestbuchGen.java`: Stage-Aufgaben automatisch aus „Dialog“, Kontrollhaken aus „Häkchen „…““, Belohnungen über die Steuerdatei (`rewards`), Mock-Buch überspringen und Vorgänger für Buch 2.
+- `tools/questbuch/buch1.cfg` neu; `chapters/buch1.snbt` jetzt aus `story/texte/questtexte_story.md` (36 Story-Quests), `buch2.snbt` hängt an ST11-04.
+- Tinkers: Kobalt nach K2 (TK2-04), Anvil Hauptweg, neue Quest TK2-06 „Vorschlaghammer aus Kobalt“ (O78). Ad Astra: Netherite Space Suit Hauptweg (O76).
+
+### Teststatus
+- Generator läuft ohne Fehler. Im Spiel ungetestet (Tests 79–83). Noch nicht in der Testinstanz.
+

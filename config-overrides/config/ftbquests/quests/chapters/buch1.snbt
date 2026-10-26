@@ -10,288 +10,1030 @@
 	quests: [
 		{
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
-				""
-				"&eFortschritt:&r Tinkers: Werkzeuge und Melter · IE: Koks und erster Stahl · Botania: Blüten und Lebendholz"
+				"Freigeschaltet mit Kapitel 2: Würdig sein."
 			]
+			invisible: true
 			icon: "minecraft:book"
-			id: "49DA11DCC4D42945"
-			shape: "hexagon"
-			size: 1.25d
+			id: "3AC6A4083671DD90"
+			shape: "gear"
+			subtitle: "ST2 · Würdig sein"
 			tasks: [{
-				id: "5A51334162609B60"
-				title: "Kapitel abgeschlossen"
-				type: "checkmark"
-			}]
-			rewards: [{
-				auto: "enabled"
-				id: "43DB22F4DE0784F8"
-				stage: "kapitel_k1"
-				type: "gamestage"
-			}]
-			title: "Kapitel 1: Ankunft"
-			x: 0.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["49DA11DCC4D42945"]
-			description: [
-				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
-				""
-				"&eFortschritt:&r Smeltery · IE: Strom und Förderbänder · Mana und Manasteel"
-			]
-			icon: "minecraft:book"
-			id: "7D17A2E727E32894"
-			shape: "hexagon"
-			size: 1.25d
-			tasks: [{
-				id: "2A1E37DCB99AF848"
-				title: "Kapitel abgeschlossen"
-				type: "checkmark"
-			}]
-			rewards: [{
-				auto: "enabled"
-				id: "1EA147C316AD1DB4"
+				id: "2BF6933C2E75C537"
 				stage: "kapitel_k2"
 				type: "gamestage"
 			}]
-			title: "Kapitel 2: Würdig sein"
-			x: 1.75d
+			title: "Kapitel 2: Buch 1: Die Suche nach dem Meister"
+			x: 0.5d
+			y: -1.75d
+		}
+		{
+			dependencies: ["3AC6A4083671DD90"]
+			description: [
+				"Du hast DD3R8 bewiesen, dass eure Spezies weit entwickelt ist, und er hat euch dieses Buch gegeben. Ab hier führt es euch. Links stehen die Bücher: In Buch 1 folgt ihr der Spur des Meisters. Zusätzlich gibt es für fast jeden Mod ein Buch. Die Mod-Bücher und dieses Hauptbuch sind in Kapitel aufgeteilt, die durch Fortschritt in der Hauptstory freigeschaltet werden. Einige Mod-Bücher werden erst beim Abschluss späterer Kapitel freigeschaltet und sichtbar. Klick auf das Häkchen, um diese Quest abzuschließen, und hol dir dann die Belohnung ab. Der Fortschritt gilt für euch alle drei."
+			]
+			hide_until_deps_visible: true
+			id: "4D24F2D6A1EBE54B"
+			rewards: [{
+				auto: "enabled"
+				command: "/logbuch teil2"
+				elevate_perms: true
+				id: "59B58248329783DE"
+				silent: true
+				team_reward: true
+				type: "command"
+			}
+			{
+				auto: "enabled"
+				id: "4F50E6FFF9C4D8D2"
+				stage: "kapitel_k3"
+				team_reward: true
+				type: "gamestage"
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "ST2 · Würdig sein"
+			tasks: [{
+				id: "23A28F798F222B79"
+				title: "Beweis erbracht"
+				type: "checkmark"
+			}]
+			title: "Würdig sein"
+			x: 0.5d
 			y: 0.0d
 		}
 		{
-			dependencies: ["7D17A2E727E32894"]
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
-				""
-				"&eFortschritt:&r IE: Schwermaschinen und Biodiesel · Runenaltar · Blutaltar · Mekanism: Infuser und Sauerstoff · AE2: Storage-Layer · Everbright"
+				"Freigeschaltet mit Kapitel 3: Industrie."
 			]
+			invisible: true
 			icon: "minecraft:book"
-			id: "0B2B8888238E82AD"
-			shape: "hexagon"
-			size: 1.25d
+			id: "1367D6EBDACFA44C"
+			shape: "gear"
+			subtitle: "ST3 · Der Weg zum Haus"
 			tasks: [{
-				id: "128BEAFFC97B99CF"
-				title: "Kapitel abgeschlossen"
-				type: "checkmark"
-			}]
-			rewards: [{
-				auto: "enabled"
-				id: "380BA9371F73FC43"
+				id: "0E892F0682A63E5F"
 				stage: "kapitel_k3"
 				type: "gamestage"
 			}]
-			title: "Kapitel 3: Industrie"
-			x: 3.5d
+			title: "Kapitel 3: Buch 1: Die Suche nach dem Meister"
+			x: 4.0d
+			y: -1.75d
+		}
+		{
+			dependencies: ["4D24F2D6A1EBE54B", "1367D6EBDACFA44C"]
+			description: [
+				"DD3R8 hat im Süden ein seltsames Signal geortet. Auf halbem Weg liegt eine Schlucht, in der Zwerge leben. Frag sie nach dem Haus und seinem Bewohner."
+			]
+			hide_until_deps_visible: true
+			id: "6BA547354B391EC1"
+			subtitle: "ST3 · Der Weg zum Haus"
+			tasks: [{
+				id: "0A042BF523916E8B"
+				stage: "story_st3_00"
+				type: "gamestage"
+			}]
+			title: "Die Schlucht"
+			x: 4.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["0B2B8888238E82AD"]
+			dependencies: ["6BA547354B391EC1"]
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
-				""
-				"&eFortschritt:&r Erdöl und Destillation · Mekanism-Grundmaschinen · Everdawn · &eRakete T1&r"
+				"DD3R8 hat in der Nähe ein Haus geortet, dessen Steine seltsam schwingen. Der Zwerg hat euch den Weg beschrieben. Finde es und sprich mit dem, der dort wohnt."
 			]
-			icon: "minecraft:book"
-			id: "4FBA50D1BBCB97FA"
-			shape: "hexagon"
-			size: 1.25d
+			hide_until_deps_visible: true
+			id: "5179623A0C5A5AE8"
+			subtitle: "ST3 · Der Weg zum Haus"
 			tasks: [{
-				id: "04CE469D2ED20FEC"
-				title: "Kapitel abgeschlossen"
-				type: "checkmark"
+				id: "0B68D740CCB49F28"
+				stage: "story_st3_01"
+				type: "gamestage"
 			}]
+			title: "Das Haus"
+			x: 4.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["5179623A0C5A5AE8"]
+			description: [
+				"Bodhi Bad Dur verkauft dir den Zeal Lighter, mit dem man die Tore in seine Welten entzündet, und sein Journal. Beides findest du in seinem Handel."
+			]
+			hide_until_deps_visible: true
+			icon: "blue_skies:zeal_lighter"
+			id: "15C19D5BD43D524B"
+			subtitle: "ST3 · Der Weg zum Haus"
+			tasks: [{
+				id: "149E09DEE293D446"
+				item: "blue_skies:zeal_lighter"
+				type: "item"
+			}
+			{
+				id: "40A609D1758CCBAE"
+				item: "blue_skies:blue_journal"
+				type: "item"
+			}]
+			title: "Zünder und Journal"
+			x: 4.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["15C19D5BD43D524B"]
+			description: [
+				"Bau ein Tor aus Turquoise Stone Bricks, entzünde es mit dem Zeal Lighter und tritt hindurch. Everbright ist die Welt des ewigen Lichts. Deine Werkzeuge taugen dort wenig; wie du neu anfängst, steht im Kapitel Blue Skies."
+			]
+			hide_until_deps_visible: true
+			id: "17206FBB8635CA80"
+			subtitle: "ST3 · Der Weg zum Haus"
+			tasks: [{
+				dimension: "blue_skies:everbright"
+				id: "204ADD024149A424"
+				type: "dimension"
+			}]
+			title: "Everbright"
+			x: 4.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["17206FBB8635CA80"]
+			description: [
+				"Bodhi lässt euch in seine Welten, verlangt aber einen Wegzoll. Bring ihm 32 Rohzinn aus Everbright. Erst dann öffnet sich auch der Weg nach Everdawn."
+			]
+			hide_until_deps_visible: true
+			id: "42BD14C8F5450C51"
+			subtitle: "ST3 · Der Weg zum Haus"
+			tasks: [{
+				id: "61AD4C4DD3C8E19B"
+				stage: "story_st3_04"
+				type: "gamestage"
+			}]
+			title: "Zinn für Bodhi"
+			x: 4.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["42BD14C8F5450C51"]
+			description: [
+				"Erzähl DD3R8, was ihr bei Bodhi erlebt habt. Vielleicht hat er inzwischen den nächsten Teil des Logbuchs entschlüsselt."
+			]
+			hide_until_deps_visible: true
+			id: "142594AD6A1F211D"
 			rewards: [{
 				auto: "enabled"
-				id: "21980992CF2CBFEB"
+				command: "/logbuch teil3"
+				elevate_perms: true
+				id: "37740711AC7D0207"
+				silent: true
+				team_reward: true
+				type: "command"
+			}
+			{
+				auto: "enabled"
+				id: "4247A18FD9521A76"
+				stage: "kapitel_k4"
+				team_reward: true
+				type: "gamestage"
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "ST3 · Der Weg zum Haus"
+			tasks: [{
+				id: "065BF986520F60ED"
+				stage: "story_st3_05"
+				type: "gamestage"
+			}]
+			title: "Bericht beim Droiden"
+			x: 4.0d
+			y: 7.5d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 4: Der Mond."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "181BC1A10B2DAA6F"
+			shape: "gear"
+			subtitle: "ST4 · Der Mond"
+			tasks: [{
+				id: "66B9715051E8BF29"
 				stage: "kapitel_k4"
 				type: "gamestage"
 			}]
-			title: "Kapitel 4: Der Mond"
-			x: 5.25d
+			title: "Kapitel 4: Buch 1: Die Suche nach dem Meister"
+			x: 7.5d
+			y: -1.75d
+		}
+		{
+			dependencies: ["142594AD6A1F211D", "181BC1A10B2DAA6F"]
+			description: [
+				"Der Meister bemerkte eine Präsenz auf dem Mond. Bau die Rakete T1 (Kapitel Ad Astra), nimm genug Sauerstoff mit und flieg hin, um herauszufinden, wer dort wohnt."
+			]
+			hide_until_deps_visible: true
+			id: "652C2328B02237B2"
+			subtitle: "ST4 · Der Mond"
+			tasks: [{
+				dimension: "ad_astra:moon"
+				id: "58F7C7B1D28B1F52"
+				type: "dimension"
+			}]
+			title: "Auf zum Mond"
+			x: 7.5d
 			y: 0.0d
 		}
 		{
-			dependencies: ["4FBA50D1BBCB97FA"]
+			dependencies: ["652C2328B02237B2"]
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
-				""
-				"&eFortschritt:&r Alloyer und Foundry · entschwefelter Diesel · Altar T3 und Soul Forge · Mekanism Advanced · Blinding-Bosse (Blue Skies)"
+				"Auf dem Mond lebt jemand in einer Station. Besuch ihn. Sei höflich, er bekommt selten Besuch und will das auch so."
 			]
-			icon: "minecraft:book"
-			id: "6AF68093B3F6D97F"
-			shape: "hexagon"
-			size: 1.25d
+			hide_until_deps_visible: true
+			id: "6E08C04CF488410A"
+			subtitle: "ST4 · Der Mond"
 			tasks: [{
-				id: "3BB6CF2E3B516C7D"
-				title: "Kapitel abgeschlossen"
-				type: "checkmark"
+				id: "33042CF970C17F0B"
+				stage: "story_st4_02"
+				type: "gamestage"
 			}]
+			title: "Der Einsiedler"
+			x: 7.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["6E08C04CF488410A"]
+			description: [
+				"Davijaan hat in einer Höhle in der Nähe seiner Station einen alten Helm verloren und will nicht mehr hin. Hol ihn aus der Truhe in der Höhle. Ohne Raumanzug kommst du dort nicht weit, und du bist dort nicht allein."
+			]
+			hide_until_deps_visible: true
+			icon: "kubejs:kaputter_klonhelm"
+			id: "3E6D53C0262AF74C"
+			subtitle: "ST4 · Der Mond"
+			tasks: [{
+				id: "17D5627208C1418A"
+				item: "kubejs:kaputter_klonhelm"
+				type: "item"
+			}]
+			title: "Die Höhle"
+			x: 7.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["3E6D53C0262AF74C"]
+			description: [
+				"Der Helm ist kaputt, so nimmt Davijaan ihn nicht. Reparier ihn nach dem Bauplan, den du von Davijaan erhalten hast."
+			]
+			hide_until_deps_visible: true
+			icon: "swgc:clone_212th_battalion_helmet"
+			id: "0CFFAA120AC837E9"
+			subtitle: "ST4 · Der Mond"
+			tasks: [{
+				id: "165CCDCA070CCAC9"
+				item: "swgc:clone_212th_battalion_helmet"
+				type: "item"
+			}]
+			title: "Reparatur"
+			x: 7.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["0CFFAA120AC837E9"]
+			description: [
+				"Bring Davijaan seinen Helm zurück."
+			]
+			hide_until_deps_visible: true
+			id: "13CCF6551DA3A2CA"
+			subtitle: "ST4 · Der Mond"
+			tasks: [{
+				id: "24FEFC1AE9B6A7F0"
+				stage: "story_st4_05"
+				type: "gamestage"
+			}]
+			title: "Vertrauen"
+			x: 7.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["142594AD6A1F211D"]
+			description: [
+				"Bau ein Tor aus Lunar Stone Bricks und reise nach Everdawn, die Welt der ewigen Dämmerung. Bring Bodhi 32 Rohosmium. Danach hat er eine größere Bitte an euch."
+			]
+			hide_until_deps_visible: true
+			id: "02B23BE202B34FE1"
+			subtitle: "ST4 · Der Mond"
+			tasks: [{
+				dimension: "blue_skies:everdawn"
+				id: "77AB5A7D2A6CA6CB"
+				type: "dimension"
+			}
+			{
+				id: "5C8D14546A70D2E3"
+				stage: "story_st4_06"
+				type: "gamestage"
+			}]
+			title: "Everdawn"
+			x: 7.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["13CCF6551DA3A2CA"]
+			description: [
+				"Davijaan schirmt den Mond ab, aber hat euch verraten, von wo aus man den Meister lokalisieren könnte. Erzähl es DD3R8."
+			]
+			hide_until_deps_visible: true
+			id: "1B0AD210C9E00C0A"
 			rewards: [{
 				auto: "enabled"
-				id: "44F45AA0FD3C7D34"
+				id: "759C3C2072B86173"
+				stage: "kapitel_k5"
+				team_reward: true
+				type: "gamestage"
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "ST4 · Der Mond"
+			tasks: [{
+				id: "05719B0F838B82EC"
+				stage: "story_st4_07"
+				type: "gamestage"
+			}]
+			title: "Warum der Mond schweigt"
+			x: 7.5d
+			y: 9.0d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 5: Erzketten."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "06FA2BFBBC460365"
+			shape: "gear"
+			subtitle: "ST5 · Treibstoff"
+			tasks: [{
+				id: "540F207EB5D84CEB"
 				stage: "kapitel_k5"
 				type: "gamestage"
 			}]
-			title: "Kapitel 5: Erzketten"
-			x: 7.0d
+			title: "Kapitel 5: Buch 1: Die Suche nach dem Meister"
+			x: 11.0d
+			y: -1.75d
+		}
+		{
+			dependencies: ["1B0AD210C9E00C0A", "06FA2BFBBC460365"]
+			description: [
+				"Für den Mars reicht Biodiesel nicht. DD3R8 will einen Eimer entschwefelten Diesel und einen Advanced Control Circuit sehen, beides braucht die Rakete T2. Wie du den Diesel herstellst, steht im Kapitel Immersive Engineering, den Circuit im Kapitel Mekanism."
+			]
+			hide_until_deps_visible: true
+			id: "656F9AD2B36083D8"
+			rewards: [{
+				auto: "enabled"
+				id: "702A32DF6A5ABF65"
+				stage: "kapitel_k6"
+				team_reward: true
+				type: "gamestage"
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "ST5 · Treibstoff"
+			tasks: [{
+				id: "32ED0086D8B417A7"
+				stage: "story_st5_01"
+				type: "gamestage"
+			}]
+			title: "Treibstoff für den Mars"
+			x: 11.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["6AF68093B3F6D97F"]
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
-				""
-				"&eFortschritt:&r IE-Großindustrie · Terrasteel · Nature- und Poison-Boss (Blue Skies) · &eRakete T2&r"
+				"Freigeschaltet mit Kapitel 6: Der Mars."
 			]
+			invisible: true
 			icon: "minecraft:book"
-			id: "1102A1D22CF06A0C"
-			shape: "hexagon"
-			size: 1.25d
+			id: "36E2766CC111C0BC"
+			shape: "gear"
+			subtitle: "ST6 · Der Mars"
 			tasks: [{
-				id: "36708D29263D9008"
-				title: "Kapitel abgeschlossen"
-				type: "checkmark"
-			}]
-			rewards: [{
-				auto: "enabled"
-				id: "75EA4C7A0B00FABC"
+				id: "42F2F459A4889089"
 				stage: "kapitel_k6"
 				type: "gamestage"
 			}]
-			title: "Kapitel 6: Der Mars"
-			x: 8.75d
+			title: "Kapitel 6: Buch 1: Die Suche nach dem Meister"
+			x: 14.5d
+			y: -1.75d
+		}
+		{
+			dependencies: ["656F9AD2B36083D8", "36E2766CC111C0BC"]
+			description: [
+				"Bau die Rakete T2 (Kapitel Ad Astra) und flieg zum Mars."
+			]
+			hide_until_deps_visible: true
+			id: "04BE1525B9FA4995"
+			subtitle: "ST6 · Der Mars"
+			tasks: [{
+				dimension: "ad_astra:mars"
+				id: "6445D739DCF04FC2"
+				type: "dimension"
+			}]
+			title: "Der rote Planet"
+			x: 14.5d
 			y: 0.0d
 		}
 		{
-			dependencies: ["1102A1D22CF06A0C"]
+			dependencies: ["04BE1525B9FA4995"]
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
-				""
-				"&eFortschritt:&r Planetenmetalle gießen · Altar T4 und Rituale · Mekanism Elite und Chemie"
+				"Folge dem Peilsender von DD3R8 zu den Resten einer alten Basis und erkunde sie. Irgendwo dort haben die früheren Bewohner Aufzeichnungen hinterlassen. Mit Rechtsklick liest du sie; danach stehen sie im Logbuch des Meisters unter „Fundstücke“, mit einem Bauplan der Station."
 			]
-			icon: "minecraft:book"
-			id: "4432DA367BD815DD"
-			shape: "hexagon"
-			size: 1.25d
-			tasks: [{
-				id: "24524B70D9AEC222"
-				title: "Kapitel abgeschlossen"
-				type: "checkmark"
-			}]
+			hide_until_deps_visible: true
+			icon: "kubejs:schrift_marsbasis"
+			id: "2D60B1D9528089B9"
 			rewards: [{
 				auto: "enabled"
-				id: "48C4E8959DAC1C26"
+				id: "51B779F421397054"
+				stage: "kapitel_k7"
+				team_reward: true
+				type: "gamestage"
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "ST6 · Der Mars"
+			tasks: [{
+				id: "313FFE02750FCCCB"
+				item: "kubejs:schrift_marsbasis"
+				type: "item"
+			}]
+			title: "Die verlassene Basis"
+			x: 14.5d
+			y: 1.5d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 7: Horchposten."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "03DEF56930A0CCB2"
+			shape: "gear"
+			subtitle: "ST7 · Horchposten"
+			tasks: [{
+				id: "77AF2568AC2991D1"
 				stage: "kapitel_k7"
 				type: "gamestage"
 			}]
-			title: "Kapitel 7: Horchposten"
-			x: 10.5d
+			title: "Kapitel 7: Buch 1: Die Suche nach dem Meister"
+			x: 18.0d
+			y: -1.75d
+		}
+		{
+			dependencies: ["2D60B1D9528089B9", "03DEF56930A0CCB2"]
+			description: [
+				"DD3R8 braucht eine Station mit normalen Erd-Bedingungen. Sammle alles, was dafür nötig ist: Luft, Strom, Gravitations-Normalisierer, einen Landeplatz, Betten und Glas für die Kuppel."
+			]
+			hide_until_deps_visible: true
+			icon: "ad_astra:oxygen_distributor"
+			id: "2E51BB9DCA5E8906"
+			subtitle: "ST7 · Horchposten"
+			tasks: [{
+				id: "7F8903BEFDE692F6"
+				item: "ad_astra:oxygen_distributor"
+				type: "item"
+			}
+			{
+				id: "228BC52A12461E8D"
+				item: "ad_astra:oxygen_loader"
+				type: "item"
+			}
+			{
+				id: "66E11B4ACC7DB5D3"
+				item: "ad_astra:gravity_normalizer"
+				type: "item"
+			}
+			{
+				id: "3E0219123BAD475C"
+				item: "ad_astra:launch_pad"
+				type: "item"
+			}
+			{
+				count: 4L
+				id: "6E67AE91F0C327DD"
+				item: "ad_astra:solar_panel"
+				type: "item"
+			}
+			{
+				id: "02575B3B28C734A8"
+				item: "mekanism:basic_energy_cube"
+				type: "item"
+			}
+			{
+				id: "009BCE0A9E878D97"
+				item: "mekanism:electrolytic_separator"
+				type: "item"
+			}
+			{
+				count: 3L
+				id: "1E502FF38ED8BE9B"
+				item: "minecraft:white_bed"
+				type: "item"
+			}
+			{
+				count: 64L
+				id: "15ACE4FDF2B98166"
+				item: "minecraft:glass"
+				type: "item"
+			}]
+			title: "Material für die Station"
+			x: 18.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["4432DA367BD815DD"]
+			dependencies: ["2E51BB9DCA5E8906"]
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
-				""
-				"&eFortschritt:&r &eRakete T3&r"
+				"Baut die Station auf dem Mars nach den Plänen der ehemaligen Bewohner, dicht, mit Luft und Strom. Haltet euch dann zu dritt darin auf."
 			]
-			icon: "minecraft:book"
-			id: "436D5852356AD565"
-			shape: "hexagon"
-			size: 1.25d
-			tasks: [{
-				id: "635935D7F5FCE8C3"
-				title: "Kapitel abgeschlossen"
-				type: "checkmark"
-			}]
+			hide_until_deps_visible: true
+			id: "4366AFEFC2007111"
 			rewards: [{
 				auto: "enabled"
-				id: "5BAAC1E8421FC0DA"
+				command: "/scoreboard players set #dd3r8 story 6"
+				elevate_perms: true
+				id: "38028A5FA8DF2C5B"
+				silent: true
+				team_reward: true
+				type: "command"
+			}]
+			subtitle: "ST7 · Horchposten"
+			tasks: [{
+				id: "236B01BD913D04AE"
+				stage: "story_st7_02"
+				type: "gamestage"
+			}]
+			title: "Die Station steht"
+			x: 18.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["4366AFEFC2007111"]
+			description: [
+				"DD3R8 richtet seine Antenne aus. Sprich mit ihm in der Station."
+			]
+			hide_until_deps_visible: true
+			id: "606C878A02F46900"
+			rewards: [{
+				auto: "enabled"
+				command: "/logbuch teil4"
+				elevate_perms: true
+				id: "2761DAA6CC4B1AB9"
+				silent: true
+				team_reward: true
+				type: "command"
+			}
+			{
+				auto: "enabled"
+				id: "7C468DEEFEA5059A"
+				stage: "kapitel_k8"
+				team_reward: true
+				type: "gamestage"
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "ST7 · Horchposten"
+			tasks: [{
+				id: "53F03ECBA310D0E4"
+				stage: "story_st7_03"
+				type: "gamestage"
+			}]
+			title: "Das Signal"
+			x: 18.0d
+			y: 3.0d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 8: Hitze."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "764A4C2D492825EC"
+			shape: "gear"
+			subtitle: "ST8 · Hitze"
+			tasks: [{
+				id: "0ADAEBFF1885A839"
 				stage: "kapitel_k8"
 				type: "gamestage"
 			}]
-			title: "Kapitel 8: Hitze"
-			x: 12.25d
+			title: "Kapitel 8: Buch 1: Die Suche nach dem Meister"
+			x: 21.5d
+			y: -1.75d
+		}
+		{
+			dependencies: ["606C878A02F46900", "764A4C2D492825EC"]
+			description: [
+				"Das Signal führt zur Welt, die dem Stern am nächsten ist. Bau die Rakete T3 (Kapitel Ad Astra) und flieg hin. Dort ist es glühend heiß. Zieh vorher den Netherite Space Suit an (Kapitel Ad Astra); er schützt besser und hält dich dauerhaft feuerfest."
+			]
+			hide_until_deps_visible: true
+			id: "7ECE7E4F362DF0EB"
+			subtitle: "ST8 · Hitze"
+			tasks: [{
+				dimension: "ad_astra:mercury"
+				id: "63F65687D4D50C82"
+				type: "dimension"
+			}]
+			title: "Die heißeste Welt"
+			x: 21.5d
 			y: 0.0d
 		}
 		{
-			dependencies: ["436D5852356AD565"]
+			dependencies: ["7ECE7E4F362DF0EB"]
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
-				""
-				"&eFortschritt:&r Tempel und Dungeon (BM4) · Kernkraft · ME-System"
+				"Irgendwo auf dem Merkur steht ein alter Tempel. Durchsuch ihn und nimm alle vier Schriftrollen mit. Mit Rechtsklick liest du eine Rolle; ihr Text steht danach auch im Logbuch des Meisters."
 			]
-			icon: "minecraft:book"
-			id: "7264B19A966F455A"
-			shape: "hexagon"
-			size: 1.25d
+			hide_until_deps_visible: true
+			icon: "kubejs:tempelrolle_1"
+			id: "3DC3BE93D5199E50"
+			subtitle: "ST8 · Hitze"
 			tasks: [{
-				id: "15D64D09CEFDA071"
-				title: "Kapitel abgeschlossen"
-				type: "checkmark"
+				id: "599C497186B44689"
+				item: "kubejs:tempelrolle_1"
+				type: "item"
+			}
+			{
+				id: "13AC27B333689313"
+				item: "kubejs:tempelrolle_2"
+				type: "item"
+			}
+			{
+				id: "199EE1946A05CF38"
+				item: "kubejs:tempelrolle_3"
+				type: "item"
+			}
+			{
+				id: "378413F400C7F299"
+				item: "kubejs:tempelrolle_4"
+				type: "item"
 			}]
+			title: "Der Tempel"
+			x: 21.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["3DC3BE93D5199E50"]
+			description: [
+				"Bring die vier Rollen zu DD3R8 in die Station auf dem Mars."
+			]
+			hide_until_deps_visible: true
+			id: "021EC3981EE8340E"
 			rewards: [{
 				auto: "enabled"
-				id: "2825B52ABB335F9E"
+				command: "/logbuch teil5"
+				elevate_perms: true
+				id: "6253BC3635F6AD9C"
+				silent: true
+				team_reward: true
+				type: "command"
+			}
+			{
+				auto: "enabled"
+				id: "17D902C742ED10D7"
+				stage: "kapitel_k9"
+				team_reward: true
+				type: "gamestage"
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "ST8 · Hitze"
+			tasks: [{
+				id: "59D42B1DC19B0E56"
+				stage: "story_st8_03"
+				type: "gamestage"
+			}]
+			title: "Die Rollen"
+			x: 21.5d
+			y: 3.0d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 9: Der Tempel."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "03DC0D76F0CBE6C3"
+			shape: "gear"
+			subtitle: "ST9 · Der Tempel"
+			tasks: [{
+				id: "64DF8D068897113F"
 				stage: "kapitel_k9"
 				type: "gamestage"
 			}]
-			title: "Kapitel 9: Der Tempel"
-			x: 14.0d
+			title: "Kapitel 9: Buch 1: Die Suche nach dem Meister"
+			x: 24.25d
+			y: -1.75d
+		}
+		{
+			dependencies: ["021EC3981EE8340E", "03DC0D76F0CBE6C3"]
+			description: [
+				"Bodhi Bad Dur hat euch ein Geschenk versprochen, wenn alle vier Wächter seiner Welten besiegt sind. Hast du es schon, ist diese Quest sofort erledigt. Die Bosse findest du im Kapitel Blue Skies."
+			]
+			hide_until_deps_visible: true
+			icon: "kubejs:siegel_der_traumwelten"
+			id: "4EE040CD5F41D0AC"
+			subtitle: "ST9 · Der Tempel"
+			tasks: [{
+				id: "34682941EB6BDFC0"
+				item: "kubejs:siegel_der_traumwelten"
+				type: "item"
+			}]
+			title: "Siegel der Traumwelten"
+			x: 24.25d
 			y: 0.0d
 		}
 		{
-			dependencies: ["7264B19A966F455A"]
+			dependencies: ["021EC3981EE8340E"]
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
-				""
-				"&eFortschritt:&r Elfenportal (BO5) · Mekanism Ultimate und Teleportation"
+				"In den alten Dungeons tief unter der Erde liegt in der Ancient Bone Chest ein Orb of the Deep. Wie du einen Dungeon findest und durchquerst, steht im Kapitel Roguelike Dungeons."
 			]
-			icon: "minecraft:book"
-			id: "2596BAFEBEF00419"
-			shape: "hexagon"
-			size: 1.25d
+			hide_until_deps_visible: true
+			icon: "wrd:orb_of_the_deep"
+			id: "60311D48E3582A10"
+			subtitle: "ST9 · Der Tempel"
 			tasks: [{
-				id: "3DC22494E3DEC37A"
-				title: "Kapitel abgeschlossen"
-				type: "checkmark"
+				id: "1093AB101F8F6F8B"
+				item: "wrd:orb_of_the_deep"
+				type: "item"
 			}]
+			title: "Fund aus der Tiefe"
+			x: 25.75d
+			y: 0.0d
+		}
+		{
+			dependencies: ["021EC3981EE8340E"]
+			description: [
+				"Jeder von euch muss beim Durchgang einen Benevolent Goddess' Charm tragen, sonst lässt das Tor ihn nicht hinein. Drei Stück, für jeden einen. Das Rezept steht in der Lexica Botania."
+			]
+			hide_until_deps_visible: true
+			icon: "botania:goddess_charm"
+			id: "4888C38F77E2ACA3"
+			subtitle: "ST9 · Der Tempel"
+			tasks: [{
+				count: 3L
+				id: "4E65008950A18372"
+				item: "botania:goddess_charm"
+				type: "item"
+			}]
+			title: "Schutz für drei"
+			x: 25.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["4EE040CD5F41D0AC", "60311D48E3582A10", "4888C38F77E2ACA3"]
+			description: [
+				"Geh mit Terrasteel, 4 Imbued Slate, dem Siegel der Traumwelten und dem Orb of the Deep zum kaputten Altar im Tempel und klick ihn mit Rechtsklick an. Danach steht das Ritual wieder. Wecke es wie jedes Ritual von Blood Magic. (Siehe Buch über Blood Magic)"
+			]
+			hide_until_deps_visible: true
+			id: "670A6440E611950C"
+			subtitle: "ST9 · Der Tempel"
+			tasks: [{
+				id: "6C37907FAB013EBD"
+				stage: "story_st9_04"
+				type: "gamestage"
+			}]
+			title: "Der Altar"
+			x: 25.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["670A6440E611950C"]
+			description: [
+				"Geh durch das Tor ins Endless Realm. Folge den Gängen der Minen bis zur großen Halle, wo sie sich treffen. Dort liegt in einer Truhe, was der Meister zurückgelassen hat. Nimm alles mit und lies das Tagebuch. Tipp: Wechselt euch beim Tragen ab."
+			]
+			hide_until_deps_visible: true
+			icon: "kubejs:relikt"
+			id: "7DD64B24B0FBEEE8"
 			rewards: [{
 				auto: "enabled"
-				id: "2CBCD53BCBA4B49A"
+				command: "/scoreboard players set #dd3r8 story 9"
+				elevate_perms: true
+				id: "4141C5BB6A489A81"
+				silent: true
+				team_reward: true
+				type: "command"
+			}
+			{
+				auto: "enabled"
+				id: "789AA73E1CACCDAF"
+				stage: "kapitel_k10"
+				team_reward: true
+				type: "gamestage"
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "ST9 · Der Tempel"
+			tasks: [{
+				id: "22C38077A2704DEE"
+				item: "kubejs:relikt"
+				type: "item"
+			}]
+			title: "Das Endless Realm"
+			x: 25.0d
+			y: 4.5d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 10: Der Elf."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "18B1E238442AB7A3"
+			shape: "gear"
+			subtitle: "ST10 · Der Elf"
+			tasks: [{
+				id: "6D4BE8A2B4E38AC3"
 				stage: "kapitel_k10"
 				type: "gamestage"
 			}]
-			title: "Kapitel 10: Der Elf"
-			x: 15.75d
+			title: "Kapitel 10: Buch 1: Die Suche nach dem Meister"
+			x: 28.5d
+			y: -1.75d
+		}
+		{
+			dependencies: ["7DD64B24B0FBEEE8", "18B1E238442AB7A3"]
+			description: [
+				"Als ihr das Relikt genommen habt, ist DD3R8 aus der Station verschwunden. Ab jetzt zeigt euch das Tagebuch des Meisters den Weg. Lies es noch einmal genau."
+			]
+			hide_until_deps_visible: true
+			id: "295AA116686A79CD"
+			subtitle: "ST10 · Der Elf"
+			tasks: [{
+				id: "3460DA108AF23C55"
+				title: "Gelesen"
+				type: "checkmark"
+			}]
+			title: "Die Station ist still"
+			x: 28.5d
 			y: 0.0d
 		}
 		{
-			dependencies: ["2596BAFEBEF00419"]
+			dependencies: ["295AA116686A79CD"]
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
-				""
-				"&eFortschritt:&r &eRakete T4&r (RF4)"
+				"Der Meister schreibt von der Hellen Elfe hinter einem Tor aus lebendem Holz. Bau das Portal to Alfheim nach der Lexica Botania und öffne es. Hineingehen musst du nicht."
 			]
-			icon: "minecraft:book"
-			id: "7AC6FA1861C2D3B0"
-			shape: "hexagon"
-			size: 1.25d
+			hide_until_deps_visible: true
+			icon: "botania:alfheim_portal"
+			id: "7BBC3AEA97ABA19B"
+			subtitle: "ST10 · Der Elf"
 			tasks: [{
-				id: "7B01F1665B500306"
-				title: "Kapitel abgeschlossen"
-				type: "checkmark"
+				id: "74BB61692E9F16D9"
+				item: "botania:alfheim_portal"
+				type: "item"
 			}]
+			title: "Das Elfenportal"
+			x: 28.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["7BBC3AEA97ABA19B"]
+			description: [
+				"Wirf eine Rune des Frühlings (botania:rune_spring) in das offene Portal to Alfheim. Dann ruft das Portal die Helle Elfe herbei. Sprich mit ihr und gib ihr das Relikt."
+			]
+			hide_until_deps_visible: true
+			id: "1355F32DAA30D984"
+			subtitle: "ST10 · Der Elf"
+			tasks: [{
+				id: "3C7B7AEF6EE8EC74"
+				stage: "story_st10_03"
+				type: "gamestage"
+			}]
+			title: "Meisterin Cerina"
+			x: 28.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["1355F32DAA30D984"]
+			description: [
+				"Meisterin Cerina will euch helfen, zum Meister zu gelangen. Dafür braucht sie die vier Arcs der Wächter aus Blue Skies, einen Elite Control Circuit und vier Elementium. Elementium bekommst du durch das Portal: Wirf Manasteel hinein."
+			]
+			hide_until_deps_visible: true
+			id: "780645CE1B131BE4"
 			rewards: [{
 				auto: "enabled"
-				id: "4433E107D164C3B9"
+				id: "35FAFE481936CABB"
+				stage: "kapitel_k11"
+				team_reward: true
+				type: "gamestage"
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "ST10 · Der Elf"
+			tasks: [{
+				id: "0B696C3E4C917778"
+				stage: "story_st10_04"
+				type: "gamestage"
+			}]
+			title: "Was sie braucht"
+			x: 28.5d
+			y: 4.5d
+		}
+		{
+			description: [
+				"Freigeschaltet mit Kapitel 11: Glacio."
+			]
+			invisible: true
+			icon: "minecraft:book"
+			id: "2ABC8C9D527A2C8E"
+			shape: "gear"
+			subtitle: "ST11 · Glacio"
+			tasks: [{
+				id: "6F46796293B6D026"
 				stage: "kapitel_k11"
 				type: "gamestage"
 			}]
-			title: "Kapitel 11: Glacio"
-			x: 17.5d
+			title: "Kapitel 11: Buch 1: Die Suche nach dem Meister"
+			x: 32.0d
+			y: -1.75d
+		}
+		{
+			dependencies: ["780645CE1B131BE4", "2ABC8C9D527A2C8E"]
+			description: [
+				"Bau den Galaktischen Strahlenschutz in das Triebwerk der Rakete T4 (Kapitel Ad Astra) und flieg nach Glacio. Der Schleier um das Versteck des Meisters lässt dich durch, weil er erkennt, was im Triebwerk steckt."
+			]
+			hide_until_deps_visible: true
+			id: "07D905C647F1A801"
+			rewards: [{
+				auto: "enabled"
+				command: "/scoreboard players set #vos story 1"
+				elevate_perms: true
+				id: "451BD385FEF34187"
+				silent: true
+				team_reward: true
+				type: "command"
+			}
+			{
+				auto: "enabled"
+				command: "/scoreboard players set #dd3r8 story 10"
+				elevate_perms: true
+				id: "695FB35730349AC2"
+				silent: true
+				team_reward: true
+				type: "command"
+			}]
+			subtitle: "ST11 · Glacio"
+			tasks: [{
+				dimension: "ad_astra:glacio"
+				id: "390FDDB119FAE02D"
+				type: "dimension"
+			}]
+			title: "Durch den Schleier"
+			x: 32.0d
 			y: 0.0d
+		}
+		{
+			dependencies: ["07D905C647F1A801"]
+			description: [
+				"Irgendwo auf Glacio hat sich der Meister versteckt. Such ihn."
+			]
+			hide_until_deps_visible: true
+			id: "5A55EA58598C8B73"
+			subtitle: "ST11 · Glacio"
+			tasks: [{
+				id: "45608263DB6AF14A"
+				stage: "story_st11_02"
+				type: "gamestage"
+			}]
+			title: "Das Versteck"
+			x: 32.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["5A55EA58598C8B73"]
+			description: [
+				"Der Meister und DD3R8 fliegen mit euch zur Erde. Bring sie nach Hause."
+			]
+			hide_until_deps_visible: true
+			id: "3C478FA5033ECC6C"
+			subtitle: "ST11 · Glacio"
+			tasks: [{
+				dimension: "minecraft:overworld"
+				id: "03AF4AEA246F4514"
+				type: "dimension"
+			}]
+			title: "Heimkehr"
+			x: 32.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["3C478FA5033ECC6C"]
+			description: [
+				"Der Meister ist auf der Erde. Sprich mit ihm in eurer Basis."
+			]
+			hide_until_deps_visible: true
+			id: "67C81927469F789D"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "ST11 · Glacio"
+			tasks: [{
+				id: "1BA9D2B269F810BA"
+				stage: "story_st11_04"
+				type: "gamestage"
+			}]
+			title: "Ende von Teil 1"
+			x: 32.0d
+			y: 4.5d
 		}
 	]
 	title: "Buch 1: Die Suche nach dem Meister"

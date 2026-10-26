@@ -18,10 +18,16 @@ import java.util.regex.*;
  * Aufgaben aus der Zeile: Item-IDs in Backticks; "4 × `id`" = Anzahl; "oder"/"eine von" = eine Aufgabe
  * mit Smart Filter (FTB Filter System, braucht FTB XMod Compat); "Dimension `id` betreten" = Dimensions-Aufgabe. Zeilen mit
  * "Flüssigkeit" oder "Gas " müssen in der Steuerdatei stehen, sonst bricht der Lauf ab.
+ * Story-Quests (docs/story/texte/questtexte_story.md, Buch 1): Steht in der Aufgabe "Dialog", "Stage (" oder
+ * "Nur der Host", wird daraus die Stage-Aufgabe story_<code> (ST3-05 -> story_st3_05), bei "Dimension ..." zusätzlich
+ * die Dimension. Den Tag setzt der Easy-NPC-Dialog (tag @initiator add story_st3_05). Häkchen „Titel“ = Kontrollhaken.
+ * Zeilen "**Steuerdatei:** ..." sind Notizen und kommen nicht in den Questtext.
  *
  * Steuerdatei tools/questbuch/<mod>.cfg:
  *   chapter = <dateiname>      title = <Kapiteltitel>      icon = <item-id>      order = <zahl>
- *   <CODE> tasks = item(id[,anzahl]); or(Titel; id, id, ...); fluid(id, mB); dim(id); check(Titel)
+ *   <CODE> tasks = item(id[,anzahl]); or(Titel; id, id, ...); fluid(id, mB); dim(id); check(Titel); stage(name)
+ *   <CODE> rewards = stage(name); command(/befehl …); item(id[,anzahl]); xp(menge)
+ *             (alle als Team-Belohnung, automatisch abgeholt; Befehle mit erhöhten Rechten und ohne Chat-Ausgabe)
  *   <CODE> deps  = CODE, CODE        (ersetzt die Standard-Abhängigkeit)
  *   <CODE> icon  = <item-id>
  * Standard-Abhängigkeit: Hauptweg-Quest an der vorigen Hauptweg-Quest, Nebenquest einer Reihe an der
@@ -43,12 +49,13 @@ public class QuestbuchGen {
         String aufgabe;
         List<String> tasks = new ArrayList<>(); // fertige SNBT-Blöcke
         List<String> deps = new ArrayList<>();
+        List<String> rewards = new ArrayList<>(); // fertige SNBT-Blöcke
         String icon; double x, y; boolean milestone, gated, marker;
     }
 
     static final String HQ = "hauptquests";
     static String chapter, chTitle = "", chIcon = "", order = "1";
-    static Map<String, String> cfgTasks = new HashMap<>(), cfgDeps = new HashMap<>(), cfgIcon = new HashMap<>(), kNames = new HashMap<>();
+    static Map<String, String> cfgTasks = new HashMap<>(), cfgDeps = new HashMap<>(), cfgIcon = new HashMap<>(), cfgRewards = new HashMap<>(), kNames = new HashMap<>();
 
     public static void main(String[] a) throws Exception {
         if (a.length == 4 && a[0].equals("--hauptquests")) { hauptquests(Paths.get(a[1]), Paths.get(a[2]), Paths.get(a[3])); return; }
@@ -79,7 +86,15 @@ public class QuestbuchGen {
                 q.tasks.add(task(q, n++, t));
             }
             if (cfgIcon.containsKey(q.code)) q.icon = cfgIcon.get(q.code);
+            if (cfgRewards.containsKey(q.code)) {
+                int r = 0;
+                for (String t : cfgRewards.get(q.code).split(";(?![^()]*\\))")) {
+                    t = t.trim(); if (t.isEmpty()) continue;
+                    q.rewards.add(reward(q, r++, t));
+                }
+            }
         }
+        for (String c : cfgRewards.keySet()) if (!byCode.containsKey(c)) throw new RuntimeException("Belohnung für unbekannte Quest " + c);
 
         // Abhängigkeiten
         Quest lastMain = null; Map<String, Quest> lastInSeries = new HashMap<>();
@@ -202,6 +217,10 @@ public class QuestbuchGen {
         if (a.matches(".*(Flüssigkeit|Gas ).*"))
             throw new RuntimeException(q.code + ": Aufgabe braucht Eintrag in der Steuerdatei: " + a);
         Matcher d = Pattern.compile("Dimension `([a-z0-9_]+:[a-z0-9_/]+)`").matcher(a);
+        if (a.matches(".*(Dialog|Stage \\(|Nur der Host).*"))
+            return (d.find() ? "dim(" + d.group(1) + "); " : "") + "stage(" + storyStage(q.code) + ")";
+        Matcher h = Pattern.compile("Häkchen „([^“]+)“").matcher(a);
+        if (h.find()) return "check(" + h.group(1) + ")";
         if (d.find()) return "dim(" + d.group(1) + ")";
         List<String> ids = new ArrayList<>();
         Matcher m = Pattern.compile("(?:(\\d+) × )?`([a-z0-9_]+:[a-z0-9_/]+)`").matcher(a);
@@ -228,6 +247,7 @@ public class QuestbuchGen {
                 case "tasks": cfgTasks.put(kp[0], v); break;
                 case "deps": cfgDeps.put(kp[0], v); break;
                 case "icon": cfgIcon.put(kp[0], v); break;
+                case "rewards": cfgRewards.put(kp[0], v); break;
                 default: throw new RuntimeException("Unbekannter Schlüssel " + k);
             }
         }
@@ -285,6 +305,7 @@ public class QuestbuchGen {
                 continue;
             }
             if (l.startsWith("**Aufgabe:**")) { cur.aufgabe = l; continue; }
+            if (l.startsWith("**Steuerdatei:**")) continue;
             if (l.isEmpty() && (cur.desc.isEmpty() || cur.desc.get(cur.desc.size() - 1).isEmpty())) continue;
             addText(cur.desc, l);
         }
@@ -368,8 +389,37 @@ public class QuestbuchGen {
                 return "{\n\t\t\t\tdimension: \"" + arg + "\"\n\t\t\t\tid: \"" + id + "\"\n\t\t\t\ttype: \"dimension\"\n\t\t\t}";
             case "check":
                 return "{\n\t\t\t\tid: \"" + id + "\"\n\t\t\t\ttitle: \"" + esc(arg) + "\"\n\t\t\t\ttype: \"checkmark\"\n\t\t\t}";
+            case "stage":
+                return "{\n\t\t\t\tid: \"" + id + "\"\n\t\t\t\tstage: \"" + arg + "\"\n\t\t\t\ttype: \"gamestage\"\n\t\t\t}";
         }
         throw new RuntimeException(q.code + ": unbekannte Aufgabenart " + m.group(1));
+    }
+
+    /** Stage einer Story-Quest, die der Dialog setzt: ST3-05 -> story_st3_05. */
+    static String storyStage(String code) { return "story_" + code.toLowerCase().replace("-", "_"); }
+
+    /** Belohnung aus der Steuerdatei; alle für das Team, automatisch abgeholt. */
+    static String reward(Quest q, int n, String t) {
+        String id = hex(chapter + ":" + q.code + ":reward" + n);
+        Matcher m = Pattern.compile("^(\\w+)\\((.*)\\)$").matcher(t);
+        if (!m.matches()) throw new RuntimeException(q.code + ": Belohnung nicht lesbar: " + t);
+        String arg = m.group(2).trim();
+        String head = "{\n\t\t\t\tauto: \"enabled\"\n\t\t\t\t", team = "\t\t\t\tteam_reward: true\n";
+        switch (m.group(1)) {
+            case "stage":
+                return head + "id: \"" + id + "\"\n\t\t\t\tstage: \"" + arg + "\"\n" + team + "\t\t\t\ttype: \"gamestage\"\n\t\t\t}";
+            case "command":
+                return head + "command: \"" + esc(arg) + "\"\n\t\t\t\televate_perms: true\n\t\t\t\tid: \"" + id
+                    + "\"\n\t\t\t\tsilent: true\n" + team + "\t\t\t\ttype: \"command\"\n\t\t\t}";
+            case "item": {
+                String[] p = arg.split(",");
+                return head + (p.length > 1 ? "count: " + p[1].trim() + "\n\t\t\t\t" : "") + "id: \"" + id + "\"\n\t\t\t\titem: \"" + p[0].trim()
+                    + "\"\n" + team + "\t\t\t\ttype: \"item\"\n\t\t\t}";
+            }
+            case "xp":
+                return head + "id: \"" + id + "\"\n" + team + "\t\t\t\ttype: \"xp\"\n\t\t\t\txp: " + arg + "\n\t\t\t}";
+        }
+        throw new RuntimeException(q.code + ": unbekannte Belohnungsart " + m.group(1));
     }
 
     static String depId(String code) { return code.matches("K\\d+") ? hex(HQ + ":" + code) : hex(chapter + ":" + code); }
@@ -400,6 +450,11 @@ public class QuestbuchGen {
             if (q.icon != null) sb.append("\t\t\ticon: \"").append(q.icon).append("\"\n");
             sb.append("\t\t\tid: \"").append(depId(q.code)).append("\"\n");
             if (!q.main) sb.append("\t\t\toptional: true\n\t\t\tshape: \"square\"\n");
+            if (!q.rewards.isEmpty()) {
+                sb.append("\t\t\trewards: [");
+                for (int i = 0; i < q.rewards.size(); i++) sb.append(i > 0 ? "\n\t\t\t" : "").append(q.rewards.get(i));
+                sb.append("]\n");
+            }
             if (q.milestone) sb.append("\t\t\tshape: \"hexagon\"\n\t\t\tsize: 1.5d\n");
             if (q.marker) sb.append("\t\t\tshape: \"gear\"\n");
             sb.append("\t\t\tsubtitle: \"").append(esc(q.section + (q.main ? "" : " · Nebenquest"))).append("\"\n");
@@ -433,13 +488,18 @@ public class QuestbuchGen {
             l = l.trim(); if (l.isEmpty() || l.startsWith("#")) continue;
             int eq = l.indexOf('='); titles.put(l.substring(0, eq).trim(), l.substring(eq + 1).trim());
         }
+        // ueberspringen = buch1: dieses Buch kommt nicht als Mock, sondern aus den Story-Questtexten (buch1.cfg);
+        // vorgaenger = buch1:ST11-04: daran hängt die erste Quest des nächsten Buchs
+        Set<String> skip = new HashSet<>(Arrays.asList(titles.getOrDefault("ueberspringen", "").split("\\s*,\\s*")));
+        String vorgaenger = titles.get("vorgaenger");
         StringBuilder sb = null; String file = null, prev = null; double x = 0, y = 0; int n = 0, book = 0; boolean firstInBook = false;
         for (String l : Files.readAllLines(src, StandardCharsets.UTF_8)) {
             if (!l.startsWith("| ")) continue;
             String[] c = cells(l);
             if (c[0].startsWith("**Part")) {
-                if (sb != null) write(outDir.resolve(file + ".snbt"), sb.append(chapterTail(titles.get(file))).toString());
+                if (sb != null && !skip.contains(file)) write(outDir.resolve(file + ".snbt"), sb.append(chapterTail(titles.get(file))).toString());
                 book++; file = "buch" + book; x = 0; firstInBook = true;
+                if (skip.contains(file)) { sb = new StringBuilder(); prev = null; continue; }
                 if (!titles.containsKey(file)) throw new RuntimeException("Titel für " + file + " fehlt in " + cfg);
                 sb = new StringBuilder(chapterHead(file, titles.get(file), "minecraft:written_book", String.valueOf(book - 1)));
                 continue;
@@ -447,10 +507,12 @@ public class QuestbuchGen {
             Matcher m = Pattern.compile("^(K\\d+) (.+)$").matcher(c[0]);
             if (!m.matches() || sb == null) continue;
             String k = m.group(1);
+            if (skip.contains(file)) continue;
             sb.append("\t\t{\n");
-            if (prev != null) sb.append("\t\t\tdependencies: [\"").append(hex(HQ + ":" + prev)).append("\"]\n");
+            String depHex = prev != null ? hex(HQ + ":" + prev) : (vorgaenger != null && book > 1 ? hex(vorgaenger) : null);
+            if (depHex != null) sb.append("\t\t\tdependencies: [\"").append(depHex).append("\"]\n");
             // erste Quest eines späteren Buchs: unsichtbar, bis das vorige Buch fertig ist; der Tab bleibt so verborgen
-            if (prev != null && firstInBook) sb.append("\t\t\thide_until_deps_complete: true\n");
+            if (depHex != null && firstInBook) sb.append("\t\t\thide_until_deps_complete: true\n");
             firstInBook = false;
             sb.append("\t\t\tdescription: [\n\t\t\t\t\"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r\"\n")
               .append("\t\t\t\t\"\"\n\t\t\t\t\"&eFortschritt:&r ").append(esc(fmt(c.length > 1 ? c[1] : ""))).append("\"\n\t\t\t]\n");
@@ -466,7 +528,7 @@ public class QuestbuchGen {
             sb.append("\t\t\tx: ").append(xy[0]).append("d\n\t\t\ty: ").append(xy[1]).append("d\n\t\t}\n");
             prev = k; x += 1.75; n++;
         }
-        if (sb != null) write(outDir.resolve(file + ".snbt"), sb.append(chapterTail(titles.get(file))).toString());
+        if (sb != null && !skip.contains(file)) write(outDir.resolve(file + ".snbt"), sb.append(chapterTail(titles.get(file))).toString());
         System.out.println(n + " Hauptquests in " + book + " Büchern geschrieben nach " + outDir);
     }
 

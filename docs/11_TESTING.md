@@ -159,6 +159,18 @@ Neustart nötig (Startup-Skript, Texturen). `kubejs/` und `patchouli_books/logbu
 | 77 | Zurücksetzen | `/logbuch zuruecksetzen`, Buch öffnen; `/logbuch alles` | erst alles gesperrt, dann alles frei | |
 | 78 | Helm und Truhe | `/give @s kubejs:kaputter_klonhelm`, Werkbank mit Stahlplatten, Basic Control Circuit, Isolierglas, Elektronenröhre; `/loot give @s loot ieplus:chests/meister_truhe` | Pilotenhelm des Einsiedlers entsteht (JEI zeigt das Rezept); Truhe gibt Relikt und Tagebuch des Meisters (Item) | |
 
+### Runde 11 — Buch 1 im Questbuch (2026-10-26)
+
+Kapitel `buch1.snbt` (und `buch2.snbt`) aus `config-overrides/config/ftbquests/quests/chapters/` bei geschlossenem Spiel in die Testinstanz; alle drei Spieler in einer Party. Vorher `scoreboard objectives add story dummy`.
+
+| Nr. | Test | Wie | Erwartet | Ergebnis |
+|---|---|---|---|---|
+| 79 | Buch 1 erscheint | `kubejs stages add @s kapitel_k2` | Buch 1 zeigt K2 mit „Würdig sein“; Mod-Bücher ohne freigeschaltetes Kapitel sind unsichtbar | |
+| 80 | Häkchen und Belohnung | „Würdig sein“ abhaken | Logbuch Teil 2 erscheint, Stage `kapitel_k3` gesetzt (K3-Abschnitte in den Mod-Büchern sichtbar), keine Chat-Ausgabe des Befehls | |
+| 81 | Dialog-Quest per Tag | `tag @s add story_st3_00` | ST3-00 „Die Schlucht“ ist erledigt, für die ganze Party | |
+| 82 | Tag nur bei einem Mitglied (P15) | zweiter Spieler hat den Tag nicht | Quest gilt trotzdem für alle | |
+| 83 | Übergang zu Buch 2 | ST11-04 per Tag erledigen | Buch 2 wird sichtbar | |
+
 ### Noch ohne Testweg
 
 - Blood-Smeltery: `forge:coins`, Hellforged-Flüssigkeiten.

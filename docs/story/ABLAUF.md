@@ -189,7 +189,7 @@ Ablage in `docs/story/texte/`, je Figur oder Buch eine Datei. Der User überarbe
 | Skript Relikt-Fluch (O66): nach 15 s im Inventar Blindheit, Langsamkeit, Vergiftung; nicht ablegbar (Truhe, Behälter, Wegwerfen, Itemrahmen …). 🔵 Offen: Was passiert beim Tod des Trägers (Relikt bleibt bei ihm oder fällt für die anderen)? | Claude | – |
 | Skript Altar per Rechtsklick (O48, O56) | Claude | Bauplan des kaputten Altars vom Host |
 | Gatekeeper abschalten (O34) | Claude | – |
-| Buch 1 im Questbuch mit ST-Quests | Claude | dieser Plan |
+| ✅ Buch 1 im Questbuch mit ST-Quests (2026-10-26): `tools/questbuch/buch1.cfg` → `chapters/buch1.snbt`, 36 Quests + 10 Marken; Belohnungen aus Abschnitt 3; Easy-NPC-Befehle (Figuren erscheinen/verschwinden) und Credits für ST4-05 fehlen noch | Claude | 🔵 Tests 79–83 |
 | Dialoge im Easy-NPC-Editor | User | Texte D |
 | Skins DD3R8, Bodhi, Cerina | User | – |
 | Testdurchlauf mit Befehlen (neue Tests in `11_TESTING.md`) | Claude schreibt, User spielt | alles oben |
