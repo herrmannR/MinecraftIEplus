@@ -92,7 +92,8 @@ Nebenquest in K5/K6: Bodhis Boss-Reihe (BS3, BS4). Belohnung der letzten Boss-Qu
 
 | Code | Schritt | Aufgabe | Auslöser | Folge | Text |
 |---|---|---|---|---|---|
-| ST6-01 | Der rote Planet | Dimension `ad_astra:mars` | betreten (Rakete T2 steht in RF2) | Stage `kapitel_k7` | Q |
+| ST6-01 | Der rote Planet | Dimension `ad_astra:mars` | betreten (Rakete T2 steht in RF2) | – | Q |
+| ST6-02 | Die verlassene Basis | `kubejs:schrift_marsbasis` | in der Ruine am Platz des Peilsenders (O69, O74) | Stage `kapitel_k7` | Q, Notiz der früheren Bewohner |
 
 ### K7 Horchposten
 
@@ -129,8 +130,8 @@ Nicht als Aufgabe „Dimension `bloodmagic:dungeon` betreten“: Das ginge schon
 | Code | Schritt | Aufgabe | Auslöser | Folge | Text |
 |---|---|---|---|---|---|
 | ST10-01 | Die Station ist still | Checkmark | Spieler klicken (der Droide ist weg; keine automatische Prüfung möglich) | – | Q |
-| ST10-02 | Das Elfenportal | `botania:alfheim_portal` | Item im Inventar | der User setzt Meisterin Cerina ans Portal (O55), `#cerina = 1` | Q |
-| ST10-03 | Meisterin Cerina | – | Dialog (B1): Relikt | `#cerina = 2` | D-CERINA-0, D-CERINA-1 |
+| ST10-02 | Das Elfenportal | `botania:alfheim_portal` | Item im Inventar | – | Q |
+| ST10-03 | Meisterin Cerina | – | Rune des Frühlings ins offene Portal werfen: Skript lässt Cerina erscheinen, `#cerina = 1` (O75); dann Dialog (B1): Relikt | `#cerina = 2` | D-CERINA-0, D-CERINA-1 |
 | ST10-04 | Was sie braucht | – | Dialog (B1): 4 Arcs, Elite Control Circuit, 4 Elementium (F14) | `give @a kubejs:galaktischer_strahlenschutz` (einer), Stage `kapitel_k11`, `#cerina = 3` | D-CERINA-2 |
 
 ### K11 Glacio
@@ -179,6 +180,9 @@ Ablage in `docs/story/texte/`, je Figur oder Buch eine Datei. Der User überarbe
 | ✅ `meister_truhe.json`: Tagebuch als Item, 2026-10-21 | Claude | 🔵 Test 78 |
 | Bauplan „Pilotenhelm“ (O71): Rolle `kubejs:bauplan_pilotenhelm`, neues Kapitel „Erinnerungsstücke“ im Buch „Baupläne des Einsiedlers“; das Reparaturrezept ergibt jetzt `swgc:clone_212th_battalion_helmet` und ist bis zum Lesen gesperrt (`einsiedler_shop.js`, `story_rezepte.js`, `teil1_items.js`, Patchouli-Eintrag); `kubejs:klonhelm_repariert` entfällt | Claude | – |
 | Sperre Everdawn (O73): Wer `blue_skies:everdawn` betritt, solange `#bodhi < 2` (Zinn-Zoll nicht bezahlt), wird zurückgeschickt, mit Meldung; Vorlage `altar_dimension.js` | Claude | – |
+| Mars-Schriften (O74): Lese-Item `kubejs:schrift_marsbasis` („Aufzeichnungen der früheren Bewohner“), Eintrag im Logbuch, neues Kapitel „Fundstücke“, mit Text (Entwurf Claude) und einer Patchouli-Multiblock-Seite der Station (3D, auf Klick als Geisterbild vor Ort). Die Station entwirft der User im Kreativmodus; Claude übernimmt sie aus der Strukturdatei in den Bauplan. `logbuch_gen.py` erweitern | User (Station), Claude | Bau der Station |
+| Elfe rufen (O75): Skript erkennt eine `botania:rune_spring`, die in ein aktives Portal to Alfheim geworfen wird, entfernt sie, lässt Meisterin Cerina am Portal erscheinen (`easy_npc preset import` an der Portalstelle) und setzt `#cerina = 1`. Ersetzt das Hinstellen von Hand (O55) für die Elfe | Claude | Preset von Cerina |
+| Mod-Bücher erst später sichtbar (ST2-01): Mod-Tabs im Questbuch bleiben unsichtbar, bis ihr erstes Kapitel freigeschaltet ist. 🔵 Prüfen, wie FTB Quests ein Kapitel ohne sichtbare Quest anzeigt | Claude | – |
 | Skript Kobalthammer (O67): setzt den Spieler-Tag `ieplus_kobalthammer`, solange ein `tconstruct:sledge_hammer` mit allen Teilen aus Kobalt im Inventar ist, sonst entfernt es ihn (für die Abgabe „Würdig sein“) | Claude | – |
 | Peilsender (O69): Koordinaten des Platzes auf dem Mars in den Befehl von `d4_danke` und in die Belohnung von ST7-02 eintragen | Host, dann Claude | Bau der Ruine |
 | Ruine, kleiner Dungeon und Notiz auf dem Mars (O69); Schlucht der Zwerge (O68) | Host | – |
@@ -209,5 +213,6 @@ Der User trägt seine Änderungen gerade selbst ein (2026-10-25). Erst danach an
 - **Kaputte Maschinen:** `d0_basis` erklärt nicht mehr, dass die Druckwelle die Multiblöcke zerlegt hat (Grund für das Neu-Formen nach dem Wechsel auf 1.20.1). Ein Satz dazu wieder aufnehmen?
 - **Davijaan (O70, O71):** Questtexte ST4-04/ST4-05 und Tooltips nennen noch den „Pilotenhelm des Einsiedlers“; der reparierte Helm ist jetzt der 212er-Helm. Tooltip des verbeulten Helms ggf. anpassen. `18_STORY.md`: „Die Spieler kennen ihn nur als Davijaan“ ist überholt.
 - **Bodhi (O72):** „Herrscher“ heißt jetzt „Wächter“; in `questtexte_story.md` noch ST3-01 („Gespräch mit dem Herrscher“), ST3-04 und ST4-06 (16 statt 32 Erz, „Steuern“ statt Wegzoll).
+- **Elfe rufen (O75):** Das Tagebuch sagt nur „Rufe sie durch das grüne Portal“; ein Hinweis auf die Rune des Frühlings fehlt dort (Tagebuch ist gegengelesen, nur mit dem User ändern).
 - Danach: `py tools/logbuch_gen.py`, `py tools/story_druck.py`, Logbuch in die Testinstanz.
 

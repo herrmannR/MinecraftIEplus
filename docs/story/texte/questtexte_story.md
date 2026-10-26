@@ -3,7 +3,7 @@
 > Entwurf von Claude, 2026-10-21 (O50). Der User überarbeitet. Ablauf, Auslöser und Belohnungen: `../ABLAUF.md` (führend). Diese Datei liefert Titel, Aufgabe und Text je Story-Quest im Format von `tools/QuestbuchGen.java` (wie `docs/questtexte/<mod>.md`), damit Buch 1 später daraus gebaut werden kann.
 >
 > **Leitlinien**
-> - Kein Star-Wars-Wort (O9). Figuren heißen, wie die Spieler sie kennen: DD3R8, Bodhi Bad Dur, Davijaan, Meister Cerina, Quinlan bzw. „der Meister“.
+> - Kein Star-Wars-Wort (O9). Figuren heißen, wie die Spieler sie kennen: DD3R8, Bodhi Bad Dur, Davijaan, Meisterin Cerina, Quinlan bzw. „der Meister“.
 > - Story hat kein Hilfebuch: Die Texte sagen klar, **wo** man hin muss und **was** zu tun ist (`docs/19_HILFEBUECHER.md`). Wie man Maschinen und Raketen baut, steht in den Mod-Kapiteln; hier nur der Verweis.
 > - Kurz: ein bis drei Sätze, Anrede „du“ wie in den übrigen Questtexten.
 > - K1 hat keine Quest: Das Questbuch gibt es erst nach „Würdig sein“ (T4).
@@ -30,16 +30,21 @@ Abhängigkeiten, die vom Standard (Hauptweg der Reihe nach) abweichen, stehen un
 ### ST2-01 Würdig sein · Hauptweg
 **Aufgabe:** Häkchen „Beweis erbracht“
 
-Du hast DD3R8 bewiesen, dass eure Spezies weit entwickelt ist, und er hat euch dieses Buch gegeben. Ab hier führt es euch. Links stehen die Bücher: In Buch 1 folgt ihr der Spur des Meisters, die übrigen Kapitel stellen die Mods vor. Klick auf das Häkchen, um diese Quest abzuschließen, und hol dir dann die Belohnung ab. Der Fortschritt gilt für euch alle drei.
+Du hast DD3R8 bewiesen, dass eure Spezies weit entwickelt ist, und er hat euch dieses Buch gegeben. Ab hier führt es euch. Links stehen die Bücher: In Buch 1 folgt ihr der Spur des Meisters. Zusätzlich gibt es für fast jeden Mod ein Buch. Die Mod-Bücher und dieses Hauptbuch sind in Kapitel aufgeteilt, die durch Fortschritt in der Hauptstory freigeschaltet werden. Einige Mod-Bücher werden erst beim Abschluss späterer Kapitel freigeschaltet und sichtbar. Klick auf das Häkchen, um diese Quest abzuschließen, und hol dir dann die Belohnung ab. Der Fortschritt gilt für euch alle drei.
 
 ---
 
-## ST3 · Das Haus (K3 Industrie)
+## ST3 · Der Weg zum Haus (K3 Industrie)
+
+### ST3-00 Die Schlucht · Hauptweg
+**Aufgabe:** Gespräch mit dem Zwerg in der Schlucht (Dialog)
+
+DD3R8 hat im Süden ein seltsames Signal geortet. Auf halbem Weg liegt eine Schlucht, in der Zwerge leben. Frag sie nach dem Haus und seinem Bewohner.
 
 ### ST3-01 Das Haus · Hauptweg
-**Aufgabe:** Gespräch mit dem Herrscher im Haus (Dialog)
+**Aufgabe:** Gespräch mit dem Wächter der Traumwelten (Dialog)
 
-DD3R8 hat in der Nähe ein Haus gemessen, dessen Steine seltsam schwingen. Er hat euch den Weg beschrieben. Sprich mit dem, der dort wohnt.
+DD3R8 hat in der Nähe ein Haus geortet, dessen Steine seltsam schwingen. Der Zwerg hat euch den Weg beschrieben. Finde es und sprich mit dem, der dort wohnt.
 
 ### ST3-02 Zünder und Journal · Hauptweg
 **Aufgabe:** `blue_skies:zeal_lighter`, `blue_skies:blue_journal`
@@ -52,16 +57,16 @@ Bodhi Bad Dur verkauft dir den Zeal Lighter, mit dem man die Tore in seine Welte
 Bau ein Tor aus Turquoise Stone Bricks, entzünde es mit dem Zeal Lighter und tritt hindurch. Everbright ist die Welt des ewigen Lichts. Deine Werkzeuge taugen dort wenig; wie du neu anfängst, steht im Kapitel Blue Skies.
 
 ### ST3-04 Zinn für Bodhi · Hauptweg
-**Aufgabe:** Abgabe im Dialog: 16 × `mekanism:raw_tin`
+**Aufgabe:** Abgabe im Dialog: 32 × `mekanism:raw_tin`
 
-Bodhi lässt euch in seine Welten, verlangt aber „Steuern“. Bring ihm 16 Rohzinn aus Everbright.
+Bodhi lässt euch in seine Welten, verlangt aber einen Wegzoll. Bring ihm 32 Rohzinn aus Everbright. Erst dann öffnet sich auch der Weg nach Everdawn.
 
 ### ST3-05 Bericht beim Droiden · Hauptweg
 **Aufgabe:** Gespräch mit DD3R8 (Dialog)
 
-Erzähl DD3R8, was ihr bei Bodhi erlebt habt. Er hat inzwischen den nächsten Teil des Logbuchs entschlüsselt.
+Erzähl DD3R8, was ihr bei Bodhi erlebt habt. Vielleicht hat er inzwischen den nächsten Teil des Logbuchs entschlüsselt.
 
-**Steuerdatei:** `ST3-01 tasks = stage(dialog_st3-01)`, `ST3-04 tasks = stage(dialog_st3-04)`, `ST3-05 tasks = stage(dialog_st3-05)`.
+**Steuerdatei:** `ST3-00 tasks = stage(dialog_st3-00)`, `ST3-01 tasks = stage(dialog_st3-01)`, `ST3-04 tasks = stage(dialog_st3-04)`, `ST3-05 tasks = stage(dialog_st3-05)`.
 
 ---
 
@@ -70,7 +75,7 @@ Erzähl DD3R8, was ihr bei Bodhi erlebt habt. Er hat inzwischen den nächsten Te
 ### ST4-01 Auf zum Mond · Hauptweg
 **Aufgabe:** Dimension `ad_astra:moon` betreten
 
-Der Meister wollte vom Mond aus horchen. Bau die Rakete T1 (Kapitel Ad Astra), nimm genug Sauerstoff mit und flieg hin.
+Der Meister bemerkte eine Präsenz auf dem Mond. Bau die Rakete T1 (Kapitel Ad Astra), nimm genug Sauerstoff mit und flieg hin, um herauszufinden, wer dort wohnt.
 
 ### ST4-02 Der Einsiedler · Hauptweg
 **Aufgabe:** Gespräch mit dem Einsiedler (Dialog)
@@ -83,24 +88,24 @@ Auf dem Mond lebt jemand in einer Station. Besuch ihn. Sei höflich, er bekommt 
 Davijaan hat in einer Höhle in der Nähe seiner Station einen alten Helm verloren und will nicht mehr hin. Hol ihn aus der Truhe in der Höhle. Ohne Raumanzug kommst du dort nicht weit, und du bist dort nicht allein.
 
 ### ST4-04 Reparatur · Hauptweg
-**Aufgabe:** `kubejs:klonhelm_repariert`
+**Aufgabe:** `swgc:clone_212th_battalion_helmet`
 
-Der Helm ist kaputt, so nimmt Davijaan ihn nicht. Reparier ihn an der Werkbank mit Stahlplatten, Isolierglas, einem Basic Control Circuit und einer Elektronenröhre.
+Der Helm ist kaputt, so nimmt Davijaan ihn nicht. Reparier ihn nach dem Bauplan, den du von Davijaan erhalten hast.
 
 ### ST4-05 Vertrauen · Hauptweg
-**Aufgabe:** Abgabe im Dialog: `kubejs:klonhelm_repariert`
+**Aufgabe:** Abgabe im Dialog: `swgc:clone_212th_battalion_helmet`
 
 Bring Davijaan seinen Helm zurück.
 
 ### ST4-06 Everdawn · Hauptweg
-**Aufgabe:** Dimension `blue_skies:everdawn` betreten, dann Abgabe im Dialog: 16 × `mekanism:raw_osmium`
+**Aufgabe:** Dimension `blue_skies:everdawn` betreten, dann Abgabe im Dialog: 32 × `mekanism:raw_osmium`
 
-Bau ein Tor aus Lunar Stone Bricks und reise nach Everdawn, die Welt der ewigen Dämmerung. Bring Bodhi 16 Rohosmium. Danach hat er eine größere Bitte an euch.
+Bau ein Tor aus Lunar Stone Bricks und reise nach Everdawn, die Welt der ewigen Dämmerung. Bring Bodhi 32 Rohosmium. Danach hat er eine größere Bitte an euch.
 
 ### ST4-07 Warum der Mond schweigt · Hauptweg
 **Aufgabe:** Gespräch mit DD3R8 (Dialog)
 
-Davijaan schirmt den Mond ab, und er hat euch verraten, von wo aus man besser horcht. Erzähl es DD3R8.
+Davijaan schirmt den Mond ab, aber hat euch verraten, von wo aus man den Meister lokalisieren könnte. Erzähl es DD3R8.
 
 **Steuerdatei:** `ST4-02 tasks = stage(dialog_st4-02)`, `ST4-05 tasks = stage(dialog_st4-05)`, `ST4-06 tasks = dim(blue_skies:everdawn); stage(dialog_st4-06)`, `ST4-06 deps = ST3-05` (läuft neben dem Mond), `ST4-07 tasks = stage(dialog_st4-07)`, `ST4-07 deps = ST4-05`.
 
@@ -122,21 +127,26 @@ Für den Mars reicht Biodiesel nicht. DD3R8 will einen Eimer entschwefelten Dies
 ### ST6-01 Der rote Planet · Hauptweg
 **Aufgabe:** Dimension `ad_astra:mars` betreten
 
-Bau die Rakete T2 (Kapitel Ad Astra) und flieg zum Mars. Sieh dich nach einem guten Platz für eine Station um.
+Bau die Rakete T2 (Kapitel Ad Astra) und flieg zum Mars.
+
+### ST6-02 Die verlassene Basis · Hauptweg
+**Aufgabe:** `kubejs:schrift_marsbasis`
+
+Folge dem Peilsender von DD3R8 zu den Resten einer alten Basis und erkunde sie. Irgendwo dort haben die früheren Bewohner Aufzeichnungen hinterlassen. Mit Rechtsklick liest du sie; danach stehen sie im Logbuch des Meisters unter „Fundstücke“, mit einem Bauplan der Station.
 
 ---
 
 ## ST7 · Horchposten (K7 Horchposten)
 
 ### ST7-01 Material für die Station · Hauptweg
-**Aufgabe:** `ad_astra:oxygen_distributor`, `ad_astra:oxygen_loader`, `ad_astra:launch_pad`, 4 × `ad_astra:solar_panel`, `mekanism:basic_energy_cube`, `mekanism:electrolytic_separator`, 3 × Bett, 64 × `minecraft:glass`
+**Aufgabe:** `ad_astra:oxygen_distributor`, `ad_astra:oxygen_loader`, `ad_astra:gravity_normalizer`, `ad_astra:launch_pad`, 4 × `ad_astra:solar_panel`, `mekanism:basic_energy_cube`, `mekanism:electrolytic_separator`, 3 × `minecraft:white_bed`, 64 × `minecraft:glass`
 
-DD3R8 braucht eine Station, in der drei Leute atmen können und einer immer zuhört. Sammle alles, was dafür nötig ist: Luft, Strom, einen Landeplatz, Betten und Glas für die Kuppel.
+DD3R8 braucht eine Station mit normalen Erd-Bedingungen. Sammle alles, was dafür nötig ist: Luft, Strom, Gravitations-Normalisierer, einen Landeplatz, Betten und Glas für die Kuppel.
 
 ### ST7-02 Die Station steht · Hauptweg
-**Aufgabe:** Nur der Host: Station gebaut, alle drei sind dort
+**Aufgabe:** Stage (heimlich von Host gesetzt, wird hier nicht beschrieben)
 
-Baut die Station auf dem Mars, dicht, mit Luft und Strom. Haltet euch dann zu dritt darin auf. Der Host hakt die Quest ab, wenn ihr alle dort seid, und holt DD3R8 zu euch.
+Baut die Station auf dem Mars nach den Plänen der ehemaligen Bewohner, dicht, mit Luft und Strom. Haltet euch dann zu dritt darin auf.
 
 ### ST7-03 Das Signal · Hauptweg
 **Aufgabe:** Gespräch mit DD3R8 auf dem Mars (Dialog)
@@ -152,7 +162,7 @@ DD3R8 richtet seine Antenne aus. Sprich mit ihm in der Station.
 ### ST8-01 Die heißeste Welt · Hauptweg
 **Aufgabe:** Dimension `ad_astra:mercury` betreten
 
-Das Signal führt zur Welt, die dem Stern am nächsten ist. Bau die Rakete T3 (Kapitel Ad Astra) und flieg hin. Dort ist es heiß; plane deinen Schutz.
+Das Signal führt zur Welt, die dem Stern am nächsten ist. Bau die Rakete T3 (Kapitel Ad Astra) und flieg hin. Dort ist es glühend heiß. Zieh vorher den Netherite Space Suit an (Kapitel Ad Astra); er schützt besser und hält dich dauerhaft feuerfest.
 
 ### ST8-02 Der Tempel · Hauptweg
 **Aufgabe:** `kubejs:tempelrolle_1`, `kubejs:tempelrolle_2`, `kubejs:tempelrolle_3`, `kubejs:tempelrolle_4`
@@ -186,14 +196,14 @@ In den alten Dungeons tief unter der Erde liegt in der Ancient Bone Chest ein Or
 Jeder von euch muss beim Durchgang einen Benevolent Goddess' Charm tragen, sonst lässt das Tor ihn nicht hinein. Drei Stück, für jeden einen. Das Rezept steht in der Lexica Botania.
 
 ### ST9-04 Der Altar · Hauptweg
-**Aufgabe:** Altar im Tempel geheilt
+**Aufgabe:** Altar im Tempel repariert
 
-Geh mit Terrasteel, 4 Imbued Slate, dem Siegel der Traumwelten und dem Orb of the Deep zum kaputten Altar im Tempel und klick ihn mit Rechtsklick an. Danach steht das Ritual wieder. Wecke es wie jedes Ritual von Blood Magic.
+Geh mit Terrasteel, 4 Imbued Slate, dem Siegel der Traumwelten und dem Orb of the Deep zum kaputten Altar im Tempel und klick ihn mit Rechtsklick an. Danach steht das Ritual wieder. Wecke es wie jedes Ritual von Blood Magic. (Siehe Buch über Blood Magic)
 
 ### ST9-05 Das Endless Realm · Hauptweg
 **Aufgabe:** `kubejs:relikt`
 
-Geh durch das Tor ins Endless Realm. Folge den Gängen der Minen bis zur großen Halle, wo sie sich treffen. Dort liegt in einer Truhe, was der Meister zurückgelassen hat. Nimm alles mit und lies das Tagebuch.
+Geh durch das Tor ins Endless Realm. Folge den Gängen der Minen bis zur großen Halle, wo sie sich treffen. Dort liegt in einer Truhe, was der Meister zurückgelassen hat. Nimm alles mit und lies das Tagebuch. Tipp: Wechselt euch beim Tragen ab.
 
 **Steuerdatei:** `ST9-01 deps = ST8-03`, `ST9-02 deps = ST8-03`, `ST9-03 deps = ST8-03` (die drei laufen nebeneinander), `ST9-04 tasks = stage(dialog_st9-04)` (das Altar-Skript hakt ab), `ST9-04 deps = ST9-01, ST9-02, ST9-03`.
 
@@ -209,17 +219,17 @@ Als ihr das Relikt genommen habt, ist DD3R8 aus der Station verschwunden. Ab jet
 ### ST10-02 Das Elfenportal · Hauptweg
 **Aufgabe:** `botania:alfheim_portal`
 
-Der Meister schreibt von einem Hellen Elfen hinter einem Tor aus lebendem Holz. Bau das Portal to Alfheim nach der Lexica Botania und öffne es. Hineingehen musst du nicht.
+Der Meister schreibt von der Hellen Elfe hinter einem Tor aus lebendem Holz. Bau das Portal to Alfheim nach der Lexica Botania und öffne es. Hineingehen musst du nicht.
 
-### ST10-03 Meister Cerina · Hauptweg
+### ST10-03 Meisterin Cerina · Hauptweg
 **Aufgabe:** Abgabe im Dialog: `kubejs:relikt`
 
-Jemand ist aus dem Portal getreten. Sprich mit ihr und gib ihr das Relikt.
+Wirf eine Rune des Frühlings (`botania:rune_spring`) in das offene Portal to Alfheim. Dann ruft das Portal die Helle Elfe herbei. Sprich mit ihr und gib ihr das Relikt.
 
 ### ST10-04 Was sie braucht · Hauptweg
 **Aufgabe:** Abgabe im Dialog: `blue_skies:ethereal_arc`, `blue_skies:dusk_arc`, `blue_skies:nature_arc`, `blue_skies:poison_arc`, `mekanism:elite_control_circuit`, 4 × `botania:elementium_ingot`
 
-Meister Cerina will euch helfen, zum Meister zu gelangen. Dafür braucht sie die vier Arcs der Wächter aus Blue Skies, einen Elite Control Circuit und vier Elementium. Elementium bekommst du durch das Portal: Wirf Manasteel hinein.
+Meisterin Cerina will euch helfen, zum Meister zu gelangen. Dafür braucht sie die vier Arcs der Wächter aus Blue Skies, einen Elite Control Circuit und vier Elementium. Elementium bekommst du durch das Portal: Wirf Manasteel hinein.
 
 **Steuerdatei:** `ST10-03 tasks = stage(dialog_st10-03)`, `ST10-04 tasks = stage(dialog_st10-04)`.
 
@@ -251,7 +261,6 @@ Der Meister ist auf der Erde. Sprich mit ihm in eurer Basis.
 
 ## Offen beim Überarbeiten
 
-- **Dopplungen mit den Mod-Kapiteln:** Zeal Lighter, Journal, Everbright, Everdawn und die Dimensionen der Planeten sind auch Aufgaben in den Kapiteln Blue Skies und Ad Astra. Beide haken sich gleichzeitig ab. Stört das, oder sollen die Story-Quests auf die Mod-Quests verweisen statt sie zu doppeln?
-- **ST7-01 Betten:** 3 Betten beliebiger Farbe brauchen eine Oder-Aufgabe; Mengen bei Oder-Aufgaben sind im Generator noch nicht vorgesehen. Einfachster Weg: 3 × `minecraft:white_bed`.
-- **ST9-04:** Die Aufgabe hakt das Altar-Skript per `change_progress` ab; das Skript gibt es noch nicht.
-- **ST11-03:** Die Dimension Overworld wäre schon erfüllt, wenn ein Spieler nach ST11-02 kurz zur Erde fliegt, ohne den Meister. Das ist harmlos, weil der User Vos erst danach hinstellt.
+Gegengelesen vom User am 2026-10-26: Dopplungen mit den Mod-Kapiteln bleiben (beide haken sich ab), ST7-01 mit 3 × `minecraft:white_bed`, ST9-04 und ST11-03 wie beschrieben.
+
+- 🟢 **Netherite Space Suit** (User, 2026-10-26, O76): RF3-05 ist jetzt Hauptweg vor dem Merkur. Der Anzug ist im Spiel für die Hitze nicht nötig (Befund in `questtexte/adastra.md`); Pflicht ist er nur über die Quest.

@@ -119,6 +119,9 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 | Nr. | Antwort | Datum | Eingetragen in |
 |---|---|---|---|
 | O62 | Der Meister kennt den Einsiedler („ein alter Bekannter aus meiner Welt“) und meidet ihn aus Schmerz. In Teil 1 steht das nur im Logbuch (Teil 3); Davijaan weiß nichts vom Meister, Vos erwähnt ihn nicht. Auflösung in Teil 2 | 2026-10-25 | `story/texte/logbuch.md`, `18_STORY.md` |
+| O74 | Auf dem Mars liegen Aufzeichnungen der früheren Bewohner (Lese-Item, Quest ST6-02); sie stehen im Logbuch im Kapitel „Fundstücke“ mit einem 3D-Bauplan der Station (Patchouli-Multiblock), nach dem die Spieler die Station bauen | 2026-10-26 | `story/texte/questtexte_story.md`, `story/ABLAUF.md` |
+| O75 | Meisterin Cerina erscheint erst, wenn eine Rune des Frühlings ins offene Portal to Alfheim geworfen wird (Skript, Cerina erscheint an der Portalstelle) | 2026-10-26 | `story/ABLAUF.md` |
+| O76 | Der Netherite Space Suit (RF3-05) ist Pflicht vor dem Merkur (Hauptweg), obwohl das Spiel ihn für die Hitze nicht braucht | 2026-10-26 | `questtexte/adastra.md`, `story/texte/questtexte_story.md` |
 | O72 | Bodhi Bad Dur ist der **Wächter** der Traumwelten, nicht ihr Herrscher (ändert O34, O45); Abgaben je 32 Rohzinn und 32 Rohosmium | 2026-10-26 | `story/texte/dialoge_bodhi.md`, `18_STORY.md` |
 | O73 | Everdawn ist erst betretbar, wenn der Zinn-Zoll bei Bodhi bezahlt ist (`#bodhi ≥ 2`); Skript schickt sonst zurück | 2026-10-26 | `story/ABLAUF.md` |
 | O70 | Davijaan gibt sich in Teil 1 zu erkennen: „Nennt mich Odd Ball“, Outer Rim, Geonosis, „die Order“ (ändert das Geheimnis aus O25/O45) | 2026-10-26 | `story/texte/dialoge_davijaan.md`, `18_STORY.md` |

@@ -229,12 +229,13 @@ Der Freezer macht aus Eis Cryo Fuel; am ergiebigsten sind Ice Shards (25 mB je S
 Buch: Surviving Mars → Better Fuel.
 ⚙️ 🔵 Nur einbauen, wenn der Cryo Freezer bleibt. Cryo Fuel fliegt im Pack keine Rakete T1 bis T3; ob er entfernt wird oder Zutat für den T4-Treibstoff wird, ist offen.
 
-### RF3-05 Netherite Space Suit · Nebenquest
+### RF3-05 Netherite Space Suit · Hauptweg
 **Aufgabe:** `ad_astra:netherite_space_helmet`, `ad_astra:netherite_space_suit`, `ad_astra:netherite_space_pants`, `ad_astra:netherite_space_boots`
 
 Der stärkere Anzug aus Ostrum und einer vollen Netherite-Rüstung. Er schützt besser und gibt dauerhafte Feuerresistenz.
 Buch: Surviving Mars → Netherite Space Suit.
 Hinweis: Das Buch nennt ihn Pflicht für Venus und Merkur. Im Spiel stimmt das nicht; dort reicht jeder Anzug.
+⚙️ Im Pack ist er trotzdem Pflicht vor dem Flug zum Merkur (User, 2026-10-26, O76): Die Story-Quest ST8-01 verlangt ihn.
 
 ### RF3-06 Mars Tower Dungeon · Nebenquest
 **Aufgabe:** Kontrollhaken (Boss besiegt) 🔵
