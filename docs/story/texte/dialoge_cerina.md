@@ -1,9 +1,9 @@
-# Dialoge Meister Cerina (Entwurf)
+# Dialoge Meisterin Cerina (Entwurf)
 
-> Entwurf von Claude, 2026-10-21 (O50), Redeweise überarbeitet 2026-10-26. Der User überarbeitet und baut die Dialoge von Hand im Easy-NPC-Editor. Ablauf: `../ABLAUF.md` (K10: ST10-02 bis ST10-04; D-CERINA-0 … 2). Figur: `../../18_STORY.md` („Der Elf: Meister Cerina“, Abschnitt 5 „Relikt und Strahlenschutz“ O43, „Der Elf: wer hinter Meister Cerina steckt“ O46). Lesart wie in `dialoge_dd3r8.md`.
+> Entwurf von Claude, 2026-10-21 (O50), Redeweise überarbeitet 2026-10-26. Der User überarbeitet und baut die Dialoge von Hand im Easy-NPC-Editor. Ablauf: `../ABLAUF.md` (K10: ST10-02 bis ST10-04; D-CERINA-0 … 2). Figur: `../../18_STORY.md` („Der Elf: Meisterin Cerina“, Abschnitt 5 „Relikt und Strahlenschutz“ O43, „Der Elf: wer hinter Meisterin Cerina steckt“ O46). Lesart wie in `dialoge_dd3r8.md`.
 >
 > **Leitlinien dieses Entwurfs**
-> - Geheim bleibt: Sie ist die Mirialanerin Vernestra Rwoh, eine Jedi. In Teil 1 heißt sie nur „Meister Cerina“, so nennen sie die Elfen; ihr alter Name kommt in Teil 2 durch den Meister heraus (Vorschlag aus O46).
+> - Geheim bleibt: Sie ist die Mirialanerin Vernestra Rwoh, eine Jedi. In Teil 1 heißt sie nur „Meisterin Cerina“, so nennen sie die Elfen; ihr alter Name kommt in Teil 2 durch den Meister heraus (Vorschlag aus O46).
 > - 🟢 Charakter (User, 2026-10-26): warmherzig und offen. Sie freut sich über Besuch, sorgt sich um die Spieler und spricht in ganzen, fließenden Sätzen, nicht kurz und abgehackt. Wenn sie etwas nicht verraten kann, sagt sie das klar („Das kann ich euch nicht sagen“) statt in Rätseln. Sehr alt, mit leisem Humor über ihr Alter und den Namen „Helle Elfe“.
 > - Anspielungen (O9), sparsam: Geduld, sie ist nicht bei den Elfen geboren, sie hat einmal etwas verschwiegen, das sie hätte sagen sollen (Ende von „The Acolyte“).
 > - Was sie tut: nimmt das Relikt, nennt, was sie für den Schutz braucht, und gibt den Galaktischen Strahlenschutz, das Gehäuse **um** das Relikt (O43). Er kommt ins Triebwerk der Rakete T4 und lässt die Rakete durch den Schleier des Meisters. Damit endet auch der Fluch (O66).
@@ -22,7 +22,7 @@ Scoreboard `story`, Eintrag `#cerina` (B2): 1 = gerade aus dem Portal getreten (
 - **[Wer bist du?]** → `c1_wer`
 
 #### `c1_wer` · Prio 0
-> Die Elfen auf der anderen Seite nennen mich Meister Cerina, und ich habe mich längst daran gewöhnt. Ich lebe schon so lange bei ihnen, dass sich selbst die Ältesten an keine Zeit ohne mich erinnern, und irgendwann habe ich aufgehört, die Jahre zu zählen. Aber jetzt erzählt ihr: Was führt euch zu mir?
+> Die Elfen auf der anderen Seite nennen mich Meisterin Cerina, und ich habe mich längst daran gewöhnt. Ich lebe schon so lange bei ihnen, dass sich selbst die Ältesten an keine Zeit ohne mich erinnern, und irgendwann habe ich aufgehört, die Jahre zu zählen. Aber jetzt erzählt ihr: Was führt euch zu mir?
 - **[Wir suchen die Helle Elfe]** → `c1_elf`
 
 #### `c1_elf` · Prio 0
@@ -90,7 +90,7 @@ Scoreboard `story`, Eintrag `#cerina` (B2): 1 = gerade aus dem Portal getreten (
 
 #### `c2_rakete` · Prio 0
 > Baut es in das Triebwerk eurer stärksten Rakete ein. Der Schleier eures Meisters erkennt, was darin liegt, und wird euch hindurchlassen. Wie man so eine Rakete fliegt, wisst ihr bestimmt besser als ich, da will ich euch gar nicht hineinreden. Passt gut auf euch auf, ja?
-- **[Danke, Meister Cerina]** → schließen
+- **[Danke, Meisterin Cerina]** → schließen
 
 ---
 

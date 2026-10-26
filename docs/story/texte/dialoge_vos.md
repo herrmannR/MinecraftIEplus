@@ -8,7 +8,7 @@
 > - 🟢 Redeweise (User, 2026-10-26): Er darf in Bildern und Rätseln sprechen, aber in ganzen, fließenden Sätzen, nicht kurz und abgehackt.
 > - Er stellt sich auf Glacio als **Quinlan** vor (User, 2026-10-21, O59), nur mit Vornamen; „Meister“ darf bleiben. Was er ist, erfahren die Spieler erst im Training.
 > - Psychometrie als leiser Humor: Er berührt die Hand eines Spielers und erzählt, was er „sieht“, aus dem Alltag der Spieler.
-> - Er kennt Meister Cerina nicht (User, 2026-10-21, O58); er weiß nur von einer „Hellen Elfe“.
+> - Er kennt Meisterin Cerina nicht (User, 2026-10-21, O58); er weiß nur von einer „Hellen Elfe“.
 > - Das Relikt steckt im Galaktischen Strahlenschutz im Triebwerk der Rakete T4 (O43). Er nimmt es heraus, ohne dass die Spieler etwas abgeben müssen.
 > - Easy NPC: Text höchstens ~512 Zeichen, Knopf höchstens 64.
 

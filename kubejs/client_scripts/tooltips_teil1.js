@@ -5,7 +5,7 @@
 
 ItemEvents.tooltip(event => {
   event.add('kubejs:galaktischer_strahlenschutz', [
-    Text.gray('Gefertigt von Meister Cerina. Darin schläft das Relikt.'),
+    Text.gray('Gefertigt von Meisterin Cerina. Darin schläft das Relikt.'),
     Text.gray('Bauteil des Calorite-Triebwerks (Rakete T4).')
   ])
   event.add('kubejs:relikt', [

@@ -81,6 +81,6 @@ Sie wird dir helfen, zu mir zu gelangen.
 ## Offen beim Überarbeiten
 
 - **„Macht“:** „Heimat der hellen Macht“ und „unbefleckt von der Macht“ sind deine Worte aus O4. Im Text sind sie die deutlichste Star-Wars-Spur von Teil 1, dazu in einem Gegenstand (O9 nennt nur Dialoge). 🟢 Bleibt (User, 2026-10-26; O63).
-- **Der Helle Elf** ist im Text männlich („er“), wie bisher in `18_STORY.md`. Meister Cerina ist aber eine Frau. 🟢 Jetzt „die Helle Elfe“ (User, 2026-10-26).
+- **Der Helle Elf** ist im Text männlich („er“), wie bisher in `18_STORY.md`. Meisterin Cerina ist aber eine Frau. 🟢 Jetzt „die Helle Elfe“ (User, 2026-10-26).
 - **„Weit hinter diesem Stern“** sagt, dass Glacio in einem anderen System liegt (O17), ohne es zu erklären. 🟢 Reicht (User, 2026-10-26).
 - **Der letzte Satz** („Ich warte. Das kann ich gut.“) bringt etwas Humor ans Ende. 🟢 Gestrichen (User, 2026-10-26).

@@ -58,7 +58,7 @@
 | Droide **DD3R8** | Easy NPC aus der Star-Wars-Welt. Guide der Spieler. Charakter: lustig, aber mechanisch ernst. Verrät seine Herkunft nicht. Orte (User, 2026-10-21, O7/O15): zuerst in der Basis auf der Overworld, dann in der Mars-Station; verschwindet, sobald die Spieler das Relikt haben; taucht am Ende von Teil 1 beim Meister auf Glacio wieder auf (der Meister hat ihn mit der Macht zu sich geholt, das erfahren die Spieler dort). |
 | Einsiedler | Easy NPC auf dem Mond, ein **Klon-Veteran** (User, 2026-10-21, O25): **Odd Ball** (CC-2237, Davijaan), Klon-Pilot und Flügelmann von Obi-Wan Kenobi (User, 2026-10-21). Hintergrund in Abschnitt 5 („Einsiedler: Odd Ball“). Die Spieler kennen ihn nur als **Davijaan**; wer er ist (Odd Ball, CC-2237, Obi-Wans Flügelmann, nach Order 66 zum Mond geflohen), bleibt vorerst geheim (User, 2026-10-21). 🟢 Geändert (User, 2026-10-26, O70): Beim Abschied nach dem Helm sagt er „Nennt mich Odd Ball“ und spricht von Outer Rim, Geonosis und „der Order“; Einzelheiten (Obi-Wan, CC-2237) bleiben offen. |
 | Wächter der Traumwelten | Easy NPC im Blue-Skies-Haus (statt des Gatekeepers): **Bodhi Bad Dur** (User, 2026-10-21). 🟢 Er ist der **Wächter**, nicht der Herrscher der Traumwelten (User, 2026-10-26, O72). |
-| Elf | Easy NPC am Elfenportal: **Meister Cerina**, weiblich (User, 2026-10-21); dahinter steckt die Mirialanerin **Vernestra Rwoh** (User, 2026-10-21, O46; Abschnitt 5); in Texten bisher „der Helle Elf“. Sie und der Meister kennen sich nicht; er weiß nur vom „Hellen Elfen“ (User, 2026-10-21, O58). |
+| Elf | Easy NPC am Elfenportal: **Meisterin Cerina**, weiblich (User, 2026-10-21); dahinter steckt die Mirialanerin **Vernestra Rwoh** (User, 2026-10-21, O46; Abschnitt 5); in Texten bisher „der Helle Elf“. Sie und der Meister kennen sich nicht; er weiß nur vom „Hellen Elfen“ (User, 2026-10-21, O58). |
 | Meister | Jedi **Quinlan Vos** (User, 2026-10-21, O44), mit Hang zur dunklen Seite; Hintergrund in Abschnitt 5 („Der Meister: Quinlan Vos“). Suchte im Sith-Tempel ein altes Relikt, wurde in die Dungeon-Dimension gezogen, ist selbst entkommen und hält sich auf Glacio auf. Bildet die Spieler später zu Jedi aus. |
 | Weitere Easy NPCs | Auftraggeber für Kopfgeldjäger-Quests in den Star-Wars-Welten. |
 
@@ -69,7 +69,7 @@
 - Kurz davor rief er dem Droiden zu, er solle bei der nächsten Lebensform Hilfe suchen: bei drei Individuen (der User und seine Mitspieler).
 - 🟢 **Sonnensturm** (User, 2026-10-26, Dialog `d0_meister`): DD3R8 erzählt, sie seien in einem Sonnensturm getrennt worden, danach brach der Funk ab. Die Kapsel sollte eigentlich einen Kilometer östlich im Meer landen (`d0_basis`). Wie das zur Vorgeschichte passt, ist offen (`story/ABLAUF.md` Abschnitt 7).
 - 🟢 **Flucht aus der Dimension** (User, 2026-10-21, O4): Im Dungeon umzingelten ihn dunkle Wesen, er saß fest. Die Macht des Relikts war zu stark und hätte ihn fast von innen zerstört; fliehen konnte er nur ohne das Relikt, mit seiner ganzen verbliebenen Kraft. Sein Ziel war **Glacio, die Heimat der hellen Macht**, wo er sich erholen kann. Ins Tagebuch (das im Dungeon) schrieb er das für den, der als Nächster dort ankommt: Wer noch **unbefleckt von der Macht** ist, ist gegen das dunkle Relikt immun und soll es holen und zu ihm bringen.
-  - 🟢 **Fluch des Relikts** (User, 2026-10-25/26, O66): Unbefleckte verschlingt das Relikt nicht, aber es quält sie. Wer es bei sich trägt, bekommt nach 15 Sekunden starke Blindheit, Langsamkeit und Vergiftung; die anderen Spieler müssen ihn leiten und schützen. Das Relikt lässt sich nicht ablegen (keine Truhe, kein Rucksack, kein Wegwerfen). Der Fluch endet, wenn Meister Cerina es im Strahlenschutz verwahrt. Tagebuch angepasst („den kann es nicht verschlingen … Quälen wird es dich trotzdem“).
+  - 🟢 **Fluch des Relikts** (User, 2026-10-25/26, O66): Unbefleckte verschlingt das Relikt nicht, aber es quält sie. Wer es bei sich trägt, bekommt nach 15 Sekunden starke Blindheit, Langsamkeit und Vergiftung; die anderen Spieler müssen ihn leiten und schützen. Das Relikt lässt sich nicht ablegen (keine Truhe, kein Rucksack, kein Wegwerfen). Der Fluch endet, wenn Meisterin Cerina es im Strahlenschutz verwahrt. Tagebuch angepasst („den kann es nicht verschlingen … Quälen wird es dich trotzdem“).
   - Folge (abgeleitet): Die Spieler dürfen in Teil 1 keine Macht haben. Das passt zur Sperre `forceObtainment false` (Test 33); die Macht kommt erst im Training in Teil 2. Der Droide kann das Relikt nicht holen, die Spieler schon.
 
 ### Teil 1
@@ -161,7 +161,7 @@
 - Ein hinterlassener Text des Meisters gibt den Hinweis: Die Spieler brauchen das Elfenportal beziehungsweise die Macht daraus.
 - Das Betreten der Elfenwelt (Alfheim, über MythicBotany) kommt erst später: zusammen mit der Jedi-Ausbildung und den Raketen T5 und T6.
 
-**Der Elf: Meister Cerina** (Name User, 2026-10-21)
+**Der Elf: Meisterin Cerina** (Name User, 2026-10-21)
 - Die Spieler bauen das Elfenportal. Sie gehen nicht hinein, stattdessen tritt ein Elf (Easy NPC) heraus.
 - Um den Meister zu finden, braucht der Elf Boss-Items aus den Blue-Skies-Dimensionen und technologische Erzeugnisse aus den Tech-Mods.
 - Wenn die Spieler das geliefert haben, gibt er ihnen das Rezept für die Rakete T4, mit der sie zum Meister kommen.
@@ -350,9 +350,9 @@ Wunsch des Users: ein eher unbekannter Jedi mit Hang zur dunklen Seite. 🟢 Ent
 - **Haken:** Vos ist bei Star-Wars-Fans bekannter als Odd Ball, in den Filmen aber nicht zu sehen.
 - **Andere Möglichkeit:** Taron Malicos (Spiel „Jedi: Fallen Order“): Jedi-Meister, nach Order 66 auf Dathomir gestrandet und durch die Magie der Nachtschwestern gefallen, also noch dunkler. Er ist im Spiel ein Gegner und wird dort besiegt, wahrscheinlich tot; als Lehrer passt er schlechter.
 
-### Der Elf: wer hinter Meister Cerina steckt (O46, vom User entschieden 2026-10-21)
+### Der Elf: wer hinter Meisterin Cerina steckt (O46, vom User entschieden 2026-10-21)
 
-Wunsch des Users: eine Jedi, weiblich, nicht menschlich. 🟢 Entschieden: **Vernestra Rwoh** (User, 2026-10-21); Katooni ist damit verworfen. Ihr hohes Alter und die Vertuschung am Ende von „The Acolyte“ gehören zur Figur und lassen sich in der Story nutzen (Ausgestaltung offen, schreibt der User). Der Name „Meister Cerina“ bleibt; Vorschlag: So nennen sie die Elfen von Alfheim, ihr alter Name kommt erst in Teil 2 durch den Meister heraus.
+Wunsch des Users: eine Jedi, weiblich, nicht menschlich. 🟢 Entschieden: **Vernestra Rwoh** (User, 2026-10-21); Katooni ist damit verworfen. Ihr hohes Alter und die Vertuschung am Ende von „The Acolyte“ gehören zur Figur und lassen sich in der Story nutzen (Ausgestaltung offen, schreibt der User). Der Name „Meisterin Cerina“ bleibt; Vorschlag: So nennen sie die Elfen von Alfheim, ihr alter Name kommt erst in Teil 2 durch den Meister heraus.
 
 - **Vorschlag: Katooni**, Tholothianerin (Kopf mit Fühlern statt Haaren, große Augen). In „The Clone Wars“ (Staffel 5, „The Gathering“) ist sie ein Jüngling (Jedi-Kind), das mit Ahsoka und dem Droiden Huyang nach Ilum fliegt und dort in der Kristallhöhle ihren Kyberkristall findet. Erst zweifelt sie an sich, dann gibt sie nicht auf. Ihr Schicksal nach Order 66 bestätigt der Kanon nicht; Fan-Wikis halten sie für tot beim Angriff auf den Tempel, belegt ist das nicht (Stand der Suche 2026-10-21).
 - **Warum sie passt:**
@@ -360,7 +360,7 @@ Wunsch des Users: eine Jedi, weiblich, nicht menschlich. 🟢 Entschieden: **Ver
   - Sie kennt Kristalle. Das erklärt, warum der Meister zu ihr will, um die Macht des Relikts zu erkunden, und warum sie den Galaktischen Strahlenschutz **um** das Relikt bauen kann (O43): Sie bändigt, was im Relikt steckt, wie man einen Kristall zur Ruhe bringt.
   - Ilum ist ein Eisplanet mit Kristallhöhlen, Glacio ist auch einer. Sie ahnt, wo sich der Meister versteckt.
   - Als Gegenstück zu Vos steht sie fest auf der hellen Seite. Sie misstraut dem Relikt und sagt darum wenig dazu (passt zu „will oder kann nicht viel sagen“).
-  - Sie war nie Meisterin im Orden; „Meister“ ist der Titel, den ihr die Elfen geben. Das kann Vos in Teil 2 mit einem Lächeln anmerken.
+  - Sie war nie Meisterin im Orden; „Meisterin“ ist der Titel, den ihr die Elfen geben (User, 2026-10-26: „Meisterin Cerina“ statt „Meister Cerina“). Das kann Vos in Teil 2 mit einem Lächeln anmerken.
 - **Andere Möglichkeit: Vernestra Rwoh**, Mirialanerin (grüne Haut, Gesichtsmarkierungen), aus den Büchern der Hohen Republik und der Serie „The Acolyte“, kämpft mit einer Lichtpeitsche. Mirialaner sollen je nach Verbindung zur Macht bis zu 200 Jahre alt werden, das klingt sehr nach Elfen. Haken: Zur Zeit der Klonkriege wäre sie schon rund 230 Jahre alt, und am Ende von „The Acolyte“ vertuscht sie die Wahrheit vor dem Senat, ist also nicht ganz sauber.
 
 ### Wer hat den Sith-Tempel gebaut? (O60, vom User entschieden 2026-10-25)

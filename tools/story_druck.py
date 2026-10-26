@@ -6,7 +6,7 @@ Ergebnis: docs/story/druck/story_teil1.html und story_teil1.pdf (nicht im Git, j
 Das PDF druckt Microsoft Edge im Hintergrund (--headless --print-to-pdf).
 
 Inhalt in dieser Reihenfolge: Logbuch, Tempelrollen, Tagebuch, Dialoge (DD3R8, Davijaan, Bodhi Bad Dur,
-Meister Cerina, Quinlan Vos), Questtexte der Story-Quests, Tooltips. Weggelassen wird Technik, die zum
+Meisterin Cerina, Quinlan Vos), Questtexte der Story-Quests, Tooltips. Weggelassen wird Technik, die zum
 Gegenlesen nicht nötig ist: Kopfnotizen der Dateien, Befehle in Dialogen, Steuerdatei-Zeilen.
 Jeder Absatz trägt am linken Rand eine Kennung (z. B. L2·3, R4·1, TB·7), Dialoge ihren Namen (d0_wer),
 Questtexte ihren Code (ST4-03), damit Rückmeldungen eine Stelle eindeutig nennen können.
@@ -35,7 +35,7 @@ TEILE = [
     ('dialoge_zwerg.md', 'Dialoge: Der Zwerg in der Schlucht', 'dialog', 'Zwerg'),
     ('dialoge_davijaan.md', 'Dialoge: Davijaan', 'dialog', 'Davijaan'),
     ('dialoge_bodhi.md', 'Dialoge: Bodhi Bad Dur', 'dialog', 'Bodhi'),
-    ('dialoge_cerina.md', 'Dialoge: Meister Cerina', 'dialog', 'Cerina'),
+    ('dialoge_cerina.md', 'Dialoge: Meisterin Cerina', 'dialog', 'Cerina'),
     ('dialoge_vos.md', 'Dialoge: Quinlan Vos', 'dialog', 'Quinlan'),
     ('questtexte_story.md', 'Questtexte der Story-Quests (Buch 1)', 'quest', 'Q'),
     ('tooltips.md', 'Anzeigenamen und Tooltips', 'prosa', 'T'),

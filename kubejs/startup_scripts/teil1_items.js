@@ -5,7 +5,7 @@
 // Stand 2026-10-21, KubeJS 2001. Fassung 5 (Story-Items), UNGETESTET.
 
 StartupEvents.registry('item', event => {
-  // Bauteil der Rakete T4, fertigt Meister Cerina (der „Helle Elf“) aus Relikt, Arcs, Elite Control Circuit und Elementium (F14)
+  // Bauteil der Rakete T4, fertigt Meisterin Cerina (der „Helle Elf“) aus Relikt, Arcs, Elite Control Circuit und Elementium (F14)
   event.create('galaktischer_strahlenschutz')
     .displayName('Galaktischer Strahlenschutz')
     .texture('minecraft:item/heart_of_the_sea')

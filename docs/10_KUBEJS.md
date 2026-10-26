@@ -71,7 +71,7 @@ Die fünf Skripte für 1.18.2 (`space_oxygen.js`, `moon_ores.js`, `tf_industrial
 | `server_scripts/story/logbuch.js` | Patchouli-Buch „Logbuch des Meisters“ (`patchouli:logbuch`): Weltwert je Eintrag, Advancement `ieplus:logbuch/<eintrag>` an alle, Abgleich beim Einloggen, Buch an jeden Spieler einmal (Merker am Spieler). Rechtsklick mit Tempelrolle oder Tagebuch schaltet frei und öffnet den Eintrag (Patchouli-API, Rückfall: Meldung); das Item bleibt. Befehle `/logbuch <eintrag>`, `buch`, `zuruecksetzen`, `alles` (Rechte nötig; aus FTB-Quests-Belohnungen mit erhöhten Rechten). | O51, ABLAUF B5, B6 |
 | `patchouli_books/logbuch/`, `data/ieplus/advancements/logbuch/` | Buch und Advancements, **erzeugt** mit `tools/logbuch_gen.py` aus `docs/story/texte/logbuch.md`, `tempelrollen.md`, `tagebuch.md`. Nach Textänderungen neu laufen lassen, nicht von Hand ändern. Schalter `GEHEIM` im Generator: gesperrte Einträge unsichtbar statt ausgegraut. | O51 |
 | `server_scripts/story/story_rezepte.js` | Pilotenhelm reparieren (Werkbank: Stahlplatten, Basic Control Circuit, Isolierglas, Elektronenröhre). | O25 |
-| `client_scripts/tooltips_teil1.js` (Fassung 3) | Tooltips der Story-Items nach `docs/story/texte/tooltips.md`; Strahlenschutz jetzt „von Meister Cerina“. | – |
+| `client_scripts/tooltips_teil1.js` (Fassung 3) | Tooltips der Story-Items nach `docs/story/texte/tooltips.md`; Strahlenschutz jetzt „von Meisterin Cerina“. | – |
 | `data/ieplus/loot_tables/chests/meister_truhe.json` | Tagebuch als Item `kubejs:tagebuch_des_meisters` statt geschriebenem Buch. | O51 |
 
 #### Story-Schutzzonen (2026-10-21, 🔵 ungetestet, noch ohne Koordinaten)

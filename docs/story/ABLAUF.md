@@ -32,7 +32,7 @@ Quest-Codes der Story: **ST\<Kapitel\>-\<Nr\>** (ST4-03 …). Die Quest-IDs ents
 | Schlucht der Zwerge (halber Weg nach Süden zum Blue-Skies-Haus) | `minecraft:overworld` | sucht der Host aus (O68) | Zwerg `[Name]` | offen |
 | Tempel mit kaputtem Altar und 4 Rollen | `ad_astra:mercury` | Host (T6) | – | ja, Freistellen für Ritualsteine |
 | Station der Minen (Truhe mit Relikt und Tagebuch) | `bloodmagic:dungeon` | automatisch (O40) | – | nein |
-| Elfenportal | `minecraft:overworld` | **die Spieler** | Meister Cerina ab K10 | nein |
+| Elfenportal | `minecraft:overworld` | **die Spieler** | Meisterin Cerina ab K10 | nein |
 | Versteck auf Glacio | `ad_astra:glacio` | Host (O52) | Quinlan Vos, DD3R8 | ja |
 | Basis (Rückkehr) | `minecraft:overworld` | – | Quinlan Vos ab Ende K11 | – |
 
@@ -129,8 +129,8 @@ Nicht als Aufgabe „Dimension `bloodmagic:dungeon` betreten“: Das ginge schon
 | Code | Schritt | Aufgabe | Auslöser | Folge | Text |
 |---|---|---|---|---|---|
 | ST10-01 | Die Station ist still | Checkmark | Spieler klicken (der Droide ist weg; keine automatische Prüfung möglich) | – | Q |
-| ST10-02 | Das Elfenportal | `botania:alfheim_portal` | Item im Inventar | der User setzt Meister Cerina ans Portal (O55), `#cerina = 1` | Q |
-| ST10-03 | Meister Cerina | – | Dialog (B1): Relikt | `#cerina = 2` | D-CERINA-0, D-CERINA-1 |
+| ST10-02 | Das Elfenportal | `botania:alfheim_portal` | Item im Inventar | der User setzt Meisterin Cerina ans Portal (O55), `#cerina = 1` | Q |
+| ST10-03 | Meisterin Cerina | – | Dialog (B1): Relikt | `#cerina = 2` | D-CERINA-0, D-CERINA-1 |
 | ST10-04 | Was sie braucht | – | Dialog (B1): 4 Arcs, Elite Control Circuit, 4 Elementium (F14) | `give @a kubejs:galaktischer_strahlenschutz` (einer), Stage `kapitel_k11`, `#cerina = 3` | D-CERINA-2 |
 
 ### K11 Glacio
@@ -198,10 +198,10 @@ Der User trägt seine Änderungen gerade selbst ein (2026-10-25). Erst danach an
 - **O63:** „Macht“ und „helle/dunkle Seite“ sind überall erlaubt außer in den Questtexten; Stellen, die das Wort bisher umschreiben, ggf. anpassen.
 - **`d7_erkenntnis`** (DD3R8) zitiert noch „Das Tor bricht an einem, der zu stark ist“; Tempelrolle 3 sagt jetzt „so zerfällt es und versucht ihn in sich zu halten“.
 - **Tempelrollen 3/4:** Der Hinweis, das Ritual nach der Reparatur selbst zu wecken (O56), ist entfallen („Dann erweckst du ihn zu neuem Leben“). Klären, ob die Reparatur das Ritual gleich aktiviert oder die Spieler es noch wecken.
-- **Relikt-Fluch (O66):** Dialoge von DD3R8 (`d8_schutz`), Meister Cerina (`c1_tagebuch`) und Quest ST9-05 können ihn ankündigen.
-- **„Die Helle Elfe“** (Tagebuch, User 2026-10-26): Meister Cerina (`c1_elf`) spielt noch mit „den Hellen Elfen … hat mich nie gesehen“; Questtext ST10-02 sagt „einem Hellen Elfen“; Tooltip des Relikts früher „der Helle Elf“.
-- **Schleier um den Meister statt um Glacio** (Tagebuch, User 2026-10-26: „Ich werde einen Schleier um mich legen“): Meister Cerina (`c2_hilfe`: „einen Schleier um sie gelegt“), Questtext ST11-01 („Der Schleier um die Welt“) und `18_STORY.md` („Barriere um den Planeten“, Rakete T4) sagen noch „um den Planeten“. Klären, ob die Rakete T4 trotzdem wegen des Schleiers den Strahlenschutz braucht.
-- **Tagebuch-Brief** nennt Glacio nicht mehr als Ziel, nur der fünfte Eintrag. Meister Cerina nennt es (`c2_hilfe`), das reicht.
+- **Relikt-Fluch (O66):** Dialoge von DD3R8 (`d8_schutz`), Meisterin Cerina (`c1_tagebuch`) und Quest ST9-05 können ihn ankündigen.
+- **„Die Helle Elfe“** (Tagebuch, User 2026-10-26): Meisterin Cerina (`c1_elf`) spielt noch mit „den Hellen Elfen … hat mich nie gesehen“; Questtext ST10-02 sagt „einem Hellen Elfen“; Tooltip des Relikts früher „der Helle Elf“.
+- **Schleier um den Meister statt um Glacio** (Tagebuch, User 2026-10-26: „Ich werde einen Schleier um mich legen“): Meisterin Cerina (`c2_hilfe`: „einen Schleier um sie gelegt“), Questtext ST11-01 („Der Schleier um die Welt“) und `18_STORY.md` („Barriere um den Planeten“, Rakete T4) sagen noch „um den Planeten“. Klären, ob die Rakete T4 trotzdem wegen des Schleiers den Strahlenschutz braucht.
+- **Tagebuch-Brief** nennt Glacio nicht mehr als Ziel, nur der fünfte Eintrag. Meisterin Cerina nennt es (`c2_hilfe`), das reicht.
 - **Würdig sein (O67):** Questtexte (`tinkers.md`, `ie.md`, `botania.md` nennen noch F4), ST2-01 und der Meilenstein SW1 auf neue Items.
 - **Zwerge (O68):** Questtext ST3-00 in `questtexte_story.md`; ST3-01 „Das Haus“ sagt noch „DD3R8 hat euch den Weg beschrieben“ (jetzt über den Zwerg).
 - **Mars (O69):** ST7-01 bekommt einen Gravity Normalizer (`ad_astra:gravity_normalizer`, DD3R8 verlangt „eine vernünftige Gravitation“); ST6-01/ST7-02 nennen den festen Platz und den Peilsender. Neuer Text: Notiz der früheren Bewohner (Schutz vor Sonnenstürmen).
