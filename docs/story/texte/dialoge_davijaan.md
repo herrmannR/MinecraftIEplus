@@ -1,6 +1,6 @@
 # Dialoge Davijaan (Entwurf)
 
-> Entwurf von Claude, 2026-10-21 (O50). Der User überarbeitet und baut die Dialoge von Hand im Easy-NPC-Editor. Ablauf: `../ABLAUF.md` (K4, D-DAVIJAAN). Figur: `../../18_STORY.md` („Der Einsiedler auf dem Mond“, Abschnitt 5 „Einsiedler: Odd Ball“, „Höhle und Klonhelm“). Lesart wie in `dialoge_dd3r8.md` (Name ≤ 32 Zeichen, Texte ≤ 190, Einstieg über Bedingung und Priorität).
+> Entwurf von Claude, 2026-10-21 (O50). Der User überarbeitet und baut die Dialoge von Hand im Easy-NPC-Editor. Ablauf: `../ABLAUF.md` (K4, D-DAVIJAAN). Figur: `../../18_STORY.md` („Der Einsiedler auf dem Mond“, Abschnitt 5 „Einsiedler: Odd Ball“, „Höhle und Klonhelm“). Lesart wie in `dialoge_dd3r8.md` (Name ≤ 32 Zeichen, Knopf ≤ 64, Text bis etwa 512, Einstieg über Bedingung und Priorität).
 >
 > **Leitlinien dieses Entwurfs**
 > - Charakter: alt, lustiger Typ, Pilot. Er schaut den Spielern gern vom Mond aus zu und kommentiert, was er gesehen hat. Über seine Vergangenheit redet er nicht; Fragen danach weicht er mit einem Witz aus.

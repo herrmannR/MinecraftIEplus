@@ -28,7 +28,8 @@ Quest-Codes der Story: **ST\<Kapitel\>-\<Nr\>** (ST4-03 …). Die Quest-IDs ents
 | Blue-Skies-Haus (ein bestimmtes Gatekeeper's House) | `minecraft:overworld` | steht schon; User wählt es | Bodhi Bad Dur | ja |
 | Mondbasis mit Luft | `ad_astra:moon` | Host (O29) | Davijaan | ja |
 | Höhle mit kaputtem Klonhelm | `ad_astra:moon` | Host | – (Spawner) | ja |
-| Mars-Station | `ad_astra:mars` | **die Spieler** | DD3R8 ab K7 | nein |
+| Mars-Station | `ad_astra:mars` | **die Spieler**, an einem festen Platz (O69): dort Reste einer alten Basis, kleiner Dungeon und Notiz der früheren Bewohner (baut der Host) | DD3R8 ab K7 | Ruine ja, Bauplatz nein |
+| Schlucht der Zwerge (halber Weg nach Süden zum Blue-Skies-Haus) | `minecraft:overworld` | sucht der Host aus (O68) | Zwerg `[Name]` | offen |
 | Tempel mit kaputtem Altar und 4 Rollen | `ad_astra:mercury` | Host (T6) | – | ja, Freistellen für Ritualsteine |
 | Station der Minen (Truhe mit Relikt und Tagebuch) | `bloodmagic:dungeon` | automatisch (O40) | – | nein |
 | Elfenportal | `minecraft:overworld` | **die Spieler** | Meister Cerina ab K10 | nein |
@@ -53,13 +54,14 @@ In der Hauptwelt sind K1 und K2 schon erreicht (IE-Stahl, Runenaltar). Der Absch
 
 | Code | Schritt | Aufgabe | Auslöser | Folge | Text |
 |---|---|---|---|---|---|
-| – | Beweis abgeben | – | Dialog (B1): Smeltery Controller, LV-Kondensator, 4 Manasteel (F4) | `give @a ftbquests:book`, Stages `kapitel_k1`, `kapitel_k2`, `#dd3r8 = 2` | D-DD3R8-1 |
+| – | Beweis abgeben | – | Dialog (B1): Vorschlaghammer ganz aus Kobalt (Skript setzt Tag `ieplus_kobalthammer`), LV-Kondensator, 1 Manastahlblock (O67, ersetzt F4) | `give @a ftbquests:book`, Stages `kapitel_k1`, `kapitel_k2`, `#dd3r8 = 2` | D-DD3R8-1 |
 | ST2-01 | Würdig sein | Checkmark (F26 c) | Spieler klicken im Buch | `/logbuch teil2`, Stage `kapitel_k3` | Q-ST2-01 (erklärt das Questsystem) |
 
 ### K3 Industrie
 
 | Code | Schritt | Aufgabe | Auslöser | Folge | Text |
 |---|---|---|---|---|---|
+| ST3-00 | Die Schlucht | Gespräch (Dialog) | Erstes Gespräch mit dem Zwerg (DD3R8 schickt die Spieler über `d2_weg` hin) | `#zwerg = 1`, Handel offen | D-ZWERG (`dialoge_zwerg.md`) |
 | ST3-01 | Das Haus | Checkmark-Ersatz: Dialog | Erstes Gespräch mit Bodhi (B1 ohne Item) | `#bodhi = 1` | D-BODHI-0 |
 | ST3-02 | Zünder und Journal | `blue_skies:zeal_lighter`, `blue_skies:blue_journal` | gekauft bei Bodhi | – | Q |
 | ST3-03 | Everbright | Dimension `blue_skies:everbright` | betreten | – | Q |
@@ -97,7 +99,7 @@ Nebenquest in K5/K6: Bodhis Boss-Reihe (BS3, BS4). Belohnung der letzten Boss-Qu
 | Code | Schritt | Aufgabe | Auslöser | Folge | Text |
 |---|---|---|---|---|---|
 | ST7-01 | Material für die Station | 🟡 Checkliste (Abschnitt 4) | Items im Inventar | – | Q |
-| ST7-02 | Die Station steht | Checkmark, nur für den User | User per Befehl, wenn alle drei dort sind (B8, O22) | DD3R8: `despawn` in der Basis; der User setzt ihn in der Station (O55); `#dd3r8 = 6` | Q |
+| ST7-02 | Die Station steht | Checkmark, nur für den User | User per Befehl, wenn alle drei dort sind (B8, O22) | DD3R8: `despawn` in der Basis; erscheint am festen Platz der Station (O69, Befehl mit festen Koordinaten in der Belohnung statt von Hand); `#dd3r8 = 6` | Q |
 | ST7-03 | Das Signal | – | Dialog DD3R8 auf dem Mars | `/logbuch teil4`, Stage `kapitel_k8`, `#dd3r8 = 7` | D-DD3R8-5 |
 
 ### K8 Hitze
@@ -175,6 +177,9 @@ Ablage in `docs/story/texte/`, je Figur oder Buch eine Datei. Der User überarbe
 | ✅ Skript `/logbuch` + Patchouli-Buch „Logbuch des Meisters“ (B5), 2026-10-21 | Claude | 🔵 Tests 73–77 |
 | ✅ Items: 4 Tempelrollen, Tagebuch, Siegel, Pilotenhelm (kaputt/repariert); Reparaturrezept, 2026-10-21 | Claude | 🔵 Tests 73, 78 |
 | ✅ `meister_truhe.json`: Tagebuch als Item, 2026-10-21 | Claude | 🔵 Test 78 |
+| Skript Kobalthammer (O67): setzt den Spieler-Tag `ieplus_kobalthammer`, solange ein `tconstruct:sledge_hammer` mit allen Teilen aus Kobalt im Inventar ist, sonst entfernt es ihn (für die Abgabe „Würdig sein“) | Claude | – |
+| Peilsender (O69): Koordinaten des Platzes auf dem Mars in den Befehl von `d4_danke` und in die Belohnung von ST7-02 eintragen | Host, dann Claude | Bau der Ruine |
+| Ruine, kleiner Dungeon und Notiz auf dem Mars (O69); Schlucht der Zwerge (O68) | Host | – |
 | Skript Relikt-Fluch (O66): nach 15 s im Inventar Blindheit, Langsamkeit, Vergiftung; nicht ablegbar (Truhe, Behälter, Wegwerfen, Itemrahmen …). 🔵 Offen: Was passiert beim Tod des Trägers (Relikt bleibt bei ihm oder fällt für die anderen)? | Claude | – |
 | Skript Altar per Rechtsklick (O48, O56) | Claude | Bauplan des kaputten Altars vom Host |
 | Gatekeeper abschalten (O34) | Claude | – |
@@ -195,5 +200,10 @@ Der User trägt seine Änderungen gerade selbst ein (2026-10-25). Erst danach an
 - **„Die Helle Elfe“** (Tagebuch, User 2026-10-26): Meister Cerina (`c1_elf`) spielt noch mit „den Hellen Elfen … hat mich nie gesehen“; Questtext ST10-02 sagt „einem Hellen Elfen“; Tooltip des Relikts früher „der Helle Elf“.
 - **Schleier um den Meister statt um Glacio** (Tagebuch, User 2026-10-26: „Ich werde einen Schleier um mich legen“): Meister Cerina (`c2_hilfe`: „einen Schleier um sie gelegt“), Questtext ST11-01 („Der Schleier um die Welt“) und `18_STORY.md` („Barriere um den Planeten“, Rakete T4) sagen noch „um den Planeten“. Klären, ob die Rakete T4 trotzdem wegen des Schleiers den Strahlenschutz braucht.
 - **Tagebuch-Brief** nennt Glacio nicht mehr als Ziel, nur der fünfte Eintrag. Meister Cerina nennt es (`c2_hilfe`), das reicht.
+- **Würdig sein (O67):** Questtexte (`tinkers.md`, `ie.md`, `botania.md` nennen noch F4), ST2-01 und der Meilenstein SW1 auf neue Items.
+- **Zwerge (O68):** Questtext ST3-00 in `questtexte_story.md`; ST3-01 „Das Haus“ sagt noch „DD3R8 hat euch den Weg beschrieben“ (jetzt über den Zwerg).
+- **Mars (O69):** ST7-01 bekommt einen Gravity Normalizer (`ad_astra:gravity_normalizer`, DD3R8 verlangt „eine vernünftige Gravitation“); ST6-01/ST7-02 nennen den festen Platz und den Peilsender. Neuer Text: Notiz der früheren Bewohner (Schutz vor Sonnenstürmen).
+- **Sonnensturm:** DD3R8 erzählt jetzt, dass er und der Meister in einem Sonnensturm getrennt wurden (`d0_meister`). Die Vorgeschichte in `18_STORY.md` sagt, der Meister rief ihm kurz vor dem Sog zu, Hilfe zu suchen; beides zusammen passt, klären.
+- **Kaputte Maschinen:** `d0_basis` erklärt nicht mehr, dass die Druckwelle die Multiblöcke zerlegt hat (Grund für das Neu-Formen nach dem Wechsel auf 1.20.1). Ein Satz dazu wieder aufnehmen?
 - Danach: `py tools/logbuch_gen.py`, `py tools/story_druck.py`, Logbuch in die Testinstanz.
 

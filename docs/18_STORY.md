@@ -67,6 +67,7 @@
 - Der Meister war auf einer Mission auf dem Planeten, auf dem der Zugang zur Blood-Magic-Dimension liegt (laut Progression der Merkur).
 - In einem dunklen Tempel wurde er in diese Dimension gezogen.
 - Kurz davor rief er dem Droiden zu, er solle bei der nächsten Lebensform Hilfe suchen: bei drei Individuen (der User und seine Mitspieler).
+- 🟢 **Sonnensturm** (User, 2026-10-26, Dialog `d0_meister`): DD3R8 erzählt, sie seien in einem Sonnensturm getrennt worden, danach brach der Funk ab. Die Kapsel sollte eigentlich einen Kilometer östlich im Meer landen (`d0_basis`). Wie das zur Vorgeschichte passt, ist offen (`story/ABLAUF.md` Abschnitt 7).
 - 🟢 **Flucht aus der Dimension** (User, 2026-10-21, O4): Im Dungeon umzingelten ihn dunkle Wesen, er saß fest. Die Macht des Relikts war zu stark und hätte ihn fast von innen zerstört; fliehen konnte er nur ohne das Relikt, mit seiner ganzen verbliebenen Kraft. Sein Ziel war **Glacio, die Heimat der hellen Macht**, wo er sich erholen kann. Ins Tagebuch (das im Dungeon) schrieb er das für den, der als Nächster dort ankommt: Wer noch **unbefleckt von der Macht** ist, ist gegen das dunkle Relikt immun und soll es holen und zu ihm bringen.
   - 🟢 **Fluch des Relikts** (User, 2026-10-25/26, O66): Unbefleckte verschlingt das Relikt nicht, aber es quält sie. Wer es bei sich trägt, bekommt nach 15 Sekunden starke Blindheit, Langsamkeit und Vergiftung; die anderen Spieler müssen ihn leiten und schützen. Das Relikt lässt sich nicht ablegen (keine Truhe, kein Rucksack, kein Wegwerfen). Der Fluch endet, wenn Meister Cerina es im Strahlenschutz verwahrt. Tagebuch angepasst („den kann es nicht verschlingen … Quälen wird es dich trotzdem“).
   - Folge (abgeleitet): Die Spieler dürfen in Teil 1 keine Macht haben. Das passt zur Sperre `forceObtainment false` (Test 33); die Macht kommt erst im Training in Teil 2. Der Droide kann das Relikt nicht holen, die Spieler schon.
@@ -83,11 +84,16 @@
 - Die Spieler beschaffen Items aus Botania, IE und anderen Mods als Beweis.
 - Danach ist der Droide der Guide und gibt fortan die großen, übergeordneten Ziele für die nächsten Story-Abschnitte (als Easy-NPC-Quests). Nach dieser Quest gibt er das Questbuch (T4, 2026-10-20).
 
+**Die Schlucht der Zwerge (User, 2026-10-26, O68)**
+- Auf halbem Weg nach Süden zum Blue-Skies-Haus liegt eine Schlucht mit Zwergen (eine Easy-NPC-Figur, Name und Skin offen). Sie kennen das Haus und seinen Wächter Bodhi Bad Dur („den Hüter des Hauses“), weil sie früher mit ihm Erze aus seinen Welten gehandelt haben. DD3R8 schickt die Spieler zuerst zu ihnen (`d2_weg`), der Zwerg weiter zum Haus.
+- Danach handelt der Zwerg, z. B. 16 Osmium gegen 1 Kobalt. Dialoge: `story/texte/dialoge_zwerg.md`.
+
 **Erstes großes Ziel: der Mond.**
 
 **Mars: der Horchposten (User, 2026-10-14)**
 - Von der Erde aus sind die Signale des Meisters zu schwach. Der Droide dachte, er könne den Meister vom Mond aus orten. Das klappt nicht, weil der Einsiedler den Mond abschirmt. Der Einsiedler sagt den Spielern, dass es vom Mars aus sehr gut geht (User, 2026-10-14).
 - Der Droide braucht eine dauerhaft besetzte Station auf dem Mars, um die Signale aufzufangen.
+- 🟢 **Fester Platz** (User, 2026-10-26, O69): DD3R8 hat den Platz schon geortet und gibt einen Peilsender mit. Dort liegen Reste einer alten Basis mit einem kleinen Dungeon und einer Notiz der früheren Bewohner: Hier ist man vor Sonnenstürmen geschützt. Die Station kommt an diesen Platz.
 - Die Spieler müssen die Station zuerst bauen. Umsetzung ohne Prüfskript (User, 2026-10-20, O22): Quest 1 ist eine Checkliste aller Items für die Basis; Quest 2 heißt „Baut die Basis und haltet euch zu dritt dort auf“. Sind alle drei da, setzt der User den Tag per Befehl, und die Quest ist erfüllt.
 - Erst dann kommt der Droide auf den Mars und bleibt dort: Er erscheint per Befehl in der Station und verschwindet gleichzeitig aus der Basis auf der Erde (O23, 2026-10-20).
 - Von dort fängt er die Spur auf, die zum Merkur führt.

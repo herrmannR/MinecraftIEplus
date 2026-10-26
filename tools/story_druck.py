@@ -32,6 +32,7 @@ TEILE = [
     ('tempelrollen.md', 'Tempelrollen', 'prosa', 'R'),
     ('tagebuch.md', 'Tagebuch des Meisters', 'prosa', 'TB'),
     ('dialoge_dd3r8.md', 'Dialoge: DD3R8', 'dialog', 'DD3R8'),
+    ('dialoge_zwerg.md', 'Dialoge: Der Zwerg in der Schlucht', 'dialog', 'Zwerg'),
     ('dialoge_davijaan.md', 'Dialoge: Davijaan', 'dialog', 'Davijaan'),
     ('dialoge_bodhi.md', 'Dialoge: Bodhi Bad Dur', 'dialog', 'Bodhi'),
     ('dialoge_cerina.md', 'Dialoge: Meister Cerina', 'dialog', 'Cerina'),
