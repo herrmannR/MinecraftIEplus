@@ -1377,5 +1377,6 @@ Status: 🔵
 - Offene Fragen F31–F42, Prüfpunkte P17–P20 in `20_ENTSCHEIDUNGEN.md`; Host-Aufgaben H6 in `00_STATUS.md`.
 
 ### Teststatus
-- Generator und `kubejs_check.py` ohne Fehler, 545 Quest-IDs ohne Doppel. Im Spiel ungetestet (Tests 73–93). Noch nicht in der Testinstanz.
+- Generator und `kubejs_check.py` ohne Fehler, 545 Quest-IDs ohne Doppel. Im Spiel ungetestet (Tests 73–93).
+- In die Testinstanz kopiert (2026-10-26, Spiel geschlossen): alle Repo-Dateien aus `kubejs/` und `patchouli_books/` (24 neu oder geändert), alle Questbuch-Kapitel (15), alte Textur `pilotenhelm.png` dort entfernt. Vorher geprüft: Die Instanz hatte nur frühere Repo-Stände, nichts war im Spiel verschoben oder von Hand geändert. `testchap.snbt` liegt nur in der Instanz und bleibt.
 

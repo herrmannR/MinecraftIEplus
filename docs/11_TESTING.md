@@ -161,7 +161,7 @@ Neustart nötig (Startup-Skript, Texturen). `kubejs/` und `patchouli_books/logbu
 
 ### Runde 11 — Buch 1 im Questbuch (2026-10-26)
 
-Kapitel `buch1.snbt` (und `buch2.snbt`) aus `config-overrides/config/ftbquests/quests/chapters/` bei geschlossenem Spiel in die Testinstanz; alle drei Spieler in einer Party. Vorher `scoreboard objectives add story dummy`.
+Alle Kapitel aus `config-overrides/config/ftbquests/quests/chapters/` liegen seit 2026-10-26 in der Testinstanz (Buch 1–3 und 13 Mod-Kapitel bis K11); alle drei Spieler in einer Party. Vorher `scoreboard objectives add story dummy`.
 
 | Nr. | Test | Wie | Erwartet | Ergebnis |
 |---|---|---|---|---|
@@ -173,7 +173,7 @@ Kapitel `buch1.snbt` (und `buch2.snbt`) aus `config-overrides/config/ftbquests/q
 
 ### Runde 12 — Story-Skripte aus ABLAUF Abschnitt 6 (2026-10-26)
 
-Neustart nötig (Startup-Skripte, neues Item). `kubejs/` und `patchouli_books/bauplaene/` in die Testinstanz; Überlebensmodus, wo nicht anders gesagt. Vorher `scoreboard objectives add story dummy`.
+Neustart nötig (Startup-Skripte, neues Item). `kubejs/` und `patchouli_books/bauplaene/` liegen seit 2026-10-26 in der Testinstanz; Tests 90 und 91 erst, wenn der Host die Platzhalter gefüllt hat (H6); Überlebensmodus, wo nicht anders gesagt. Vorher `scoreboard objectives add story dummy`.
 
 | Nr. | Test | Wie | Erwartet | Ergebnis |
 |---|---|---|---|---|
