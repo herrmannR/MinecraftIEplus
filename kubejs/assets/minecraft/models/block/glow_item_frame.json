@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/template_item_frame",
+    "textures": {
+        "particle": "kubejs:block/mana_rahmen",
+        "wood": "kubejs:block/mana_rahmen",
+        "back": "minecraft:block/item_frame"
+    }
+}

@@ -7,7 +7,8 @@
 // Gesperrt, bis jemand den Bauplan „Pilotenhelm“ gelesen hat (Weltwert ieplus_bauplan_pilotenhelm, gesetzt von
 // server_scripts/starwars/einsiedler_shop.js; dort auch /bauplan zuruecksetzen und /bauplan alles).
 // Die Rezept-ID ieplus:story/pilotenhelm steht im Patchouli-Eintrag patchouli_books/bauplaene/en_us/entries/pilotenhelm.json.
-// Stand 2026-10-26, KubeJS 2001. Fassung 2 (Bauplan-Sperre, 212er-Helm), UNGETESTET.
+// Mana-Diamant-Rahmen: siehe unten.
+// Stand 2026-10-27, KubeJS 2001. Fassung 2 (Bauplan-Sperre, 212er-Helm) getestet (Test 78); Mana-Diamant-Rahmen UNGETESTET.
 
 // Weltwert lesen; Werkstation und Autocrafter geben keinen Spieler mit (Test 56), dann über Utils.server
 function ieplusStoryBauplanGelesen(grid, name) {
@@ -26,4 +27,13 @@ ServerEvents.recipes(event => {
     T: 'immersiveengineering:electron_tube'
   }).modifyResult((grid, result) => ieplusStoryBauplanGelesen(grid, 'pilotenhelm') ? result : Item.empty)
     .id('ieplus:story/pilotenhelm')
+
+  // Mana-Diamant-Rahmen (Wunsch des Users, 2026-10-27): der Leuchtrahmen, umgebaut. Name und Aussehen in
+  // kubejs/assets/minecraft (lang, models/block/glow_item_frame*.json, Texturen aus tools/manarahmen_textur.py).
+  // Einziger Rahmen, in den sich das Relikt legen lässt (startup_scripts/relikt_sperre.js).
+  event.remove({ output: 'minecraft:glow_item_frame' })
+  event.shaped('minecraft:glow_item_frame', ['DDD', 'DLD', 'DDD'], {
+    D: 'botania:mana_diamond',
+    L: 'minecraft:leather'
+  }).id('ieplus:story/mana_rahmen')
 })

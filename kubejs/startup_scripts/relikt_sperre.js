@@ -2,14 +2,16 @@
 // Mit kubejs:relikt in einer Hand ist gesperrt:
 //   - Rechtsklick auf Blöcke (Altäre, Sockel, Töpfe, Regale, Maschinen, die Items aus der Hand nehmen …).
 //     Wer eine Truhe öffnen will, nimmt das Relikt vorher aus der Hand (auch darin kommt es nicht).
-//   - Rechtsklick auf Itemrahmen, leuchtende Itemrahmen, Rüstungsständer und Allays (Liste IEPLUS_RELIKT_OBJEKTE).
+//   - Rechtsklick auf Itemrahmen, Rüstungsständer und Allays (Liste IEPLUS_RELIKT_OBJEKTE); erlaubt ist der Mana-Diamant-Rahmen.
 //     Figuren von Easy NPC bleiben erreichbar (Meisterin Cerina).
 // Kreativ- und Zuschauermodus sind ausgenommen. Fehler im Handler lassen das Ereignis durch (wie altar_dimension.js).
 // Innerhalb der Funktionen nur var (Rhino, siehe altar_dimension.js).
-// Stand 2026-10-26, KubeJS 2001. Fassung 1, UNGETESTET.
+// Stand 2026-10-27, KubeJS 2001. Fassung 2 (Mana-Diamant-Rahmen erlaubt), UNGETESTET.
 
 const IEPLUS_RELIKT_ID = 'kubejs:relikt'
-const IEPLUS_RELIKT_OBJEKTE = ['minecraft:item_frame', 'minecraft:glow_item_frame', 'minecraft:armor_stand', 'minecraft:allay']
+// Nicht in der Liste: minecraft:glow_item_frame, im Pack der Mana-Diamant-Rahmen. Nur in ihn lässt sich das Relikt legen
+// (User, 2026-10-27). Wer es herausschlägt oder den Rahmen abbaut, bekommt es zurück (relikt_fluch.js, Item-Objekt).
+const IEPLUS_RELIKT_OBJEKTE = ['minecraft:item_frame', 'minecraft:armor_stand', 'minecraft:allay']
 // Letzte Meldung je Spieler (Millisekunden), damit der Chat nicht vollläuft
 const ieplusReliktMeldung = {}
 

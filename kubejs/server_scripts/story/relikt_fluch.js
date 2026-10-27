@@ -7,6 +7,7 @@
 //    - Wegwerfen und alles andere, was ein Item-Objekt in die Welt bringt (Q-Taste, Menü schließen mit vollem Inventar):
 //      Das Objekt entsteht nicht, das Relikt geht zurück an den Werfer (oder an den nächsten Spieler im Umkreis von 16 Blöcken).
 //    - Bündel: Ein Relikt im Bündel wird herausgeholt.
+//    - Ausnahme (O80): In den Mana-Diamant-Rahmen (umgebauter Leuchtrahmen) darf es; herausgeschlagen kommt es zurück.
 //    - Itemrahmen, Rüstungsständer, Allay und Rechtsklick auf Blöcke (Altäre, Sockel, Töpfe …) mit dem Relikt in der Hand:
 //      startup_scripts/relikt_sperre.js (Forge-Ereignisse gehen nur aus startup_scripts).
 // 3. Tod (🔵 offen, O66; einfachste sichere Variante, Vorschlag Claude): Das Relikt bleibt beim Träger. Beim Tod nimmt
