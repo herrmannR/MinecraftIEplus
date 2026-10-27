@@ -4,7 +4,7 @@
 // Story-Items (Lese-Items, Helm, Siegel): docs/story/ABLAUF.md, Texte in docs/story/texte/ (2026-10-21).
 // Bauplan „Pilotenhelm“ (O71, 2026-10-26): Davijaan gibt ihn beim Helm-Auftrag; die Reparatur ergibt den echten
 // 212er-Helm swgc:clone_212th_battalion_helmet, kubejs:klonhelm_repariert entfällt.
-// Stand 2026-10-26, KubeJS 2001. Fassung 6 (Bauplan Pilotenhelm), UNGETESTET.
+// Stand 2026-10-27, KubeJS 2001. Fassung 7 (eigene Textur für das Relikt), UNGETESTET.
 
 StartupEvents.registry('item', event => {
   // Bauteil der Rakete T4, fertigt Meisterin Cerina (der „Helle Elf“) aus Relikt, Arcs, Elite Control Circuit und Elementium (F14)
@@ -16,7 +16,7 @@ StartupEvents.registry('item', event => {
   // Liegt mit dem Tagebuch des Meisters in der Altar-Dimension (loot_tables/chests/meister_truhe)
   event.create('relikt')
     .displayName('Relikt')
-    .texture('minecraft:item/echo_shard')
+    .texture('kubejs:item/relikt')  // Echo-Splitter, 90 Grad gedreht (tools/story_texturen.py)
     .rarity('epic').glow(true).maxStackSize(1)
 
   // Baupläne: Schriftrollen, Ware des Einsiedlers (O28, Test 43). Alle sehen gleich aus (kubejs/assets/kubejs/textures/item/bauplan_rolle.png).

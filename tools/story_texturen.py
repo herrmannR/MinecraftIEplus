@@ -6,7 +6,8 @@ Der Client liegt bei ATLauncher unter libraries/net/minecraft/client/1.20.1/clie
 
 Ergebnis in kubejs/assets/kubejs/textures/item/:
     pilotenhelm_kaputt.png   Eisenhelm, schmutzig grau mit Riss (kubejs:kaputter_klonhelm)
-    tempelrolle.png          Papier, vergilbt, mit rotem Siegel (kubejs:tempelrolle_1 bis _4)
+    tempelrolle.png          offene Rolle mit schwarzen Schriftzeilen, von Hand gezeichnet (kubejs:tempelrolle_1 bis _4)
+    relikt.png               Echo-Splitter, um 90 Grad im Uhrzeigersinn gedreht (kubejs:relikt)
 """
 import io
 import sys
@@ -54,12 +55,36 @@ def main():
             px[x, y] = (40, 36, 30, 255)
     kaputt.save(ZIEL / 'pilotenhelm_kaputt.png')
 
-    rolle = faerben(lade(jar, 'paper'), (222, 190, 140))
-    px = rolle.load()
-    for x, y in [(7, 7), (8, 7), (7, 8), (8, 8)]:
-        if px[x, y][3] > 0:
-            px[x, y] = (130, 20, 20, 255)
+    # Offene Rolle: Stäbe oben und unten, dazwischen das Blatt mit drei schwarzen Schriftzeilen (User, 2026-10-27)
+    karte = [
+        '................',
+        '.OOOOOOOOOOOOOO.',
+        'OrhhhhhhhhhhhhrO',
+        'ORrrrrrrrrrrrrRO',
+        '.ORRRRRRRRRRRRO.',
+        '..OPPPPPPPPPPO..',
+        '..OPKKKKKKKKpO..',
+        '..OPPPPPPPPPpO..',
+        '..OPKKKPKKKKpO..',
+        '..OPPPPPPPPPpO..',
+        '..OPKKKKKPKKpO..',
+        '..OPPPPPPPPPpO..',
+        '.OrrrrrrrrrrrrO.',
+        'OrhhhhhhhhhhhhrO',
+        'ORRRRRRRRRRRRRRO',
+        '.OOOOOOOOOOOOOO.',
+    ]
+    farben = {'O': (66, 44, 24), 'R': (150, 108, 60), 'r': (196, 156, 98), 'h': (236, 212, 160),
+              'P': (232, 208, 158), 'p': (208, 178, 126), 'K': (22, 20, 18)}
+    rolle = Image.new('RGBA', (16, 16), (0, 0, 0, 0))
+    for y, zeile in enumerate(karte):
+        for x, zeichen in enumerate(zeile):
+            if zeichen in farben:
+                rolle.putpixel((x, y), farben[zeichen] + (255,))
     rolle.save(ZIEL / 'tempelrolle.png')
+
+    # Relikt: Echo-Splitter, 90 Grad im Uhrzeigersinn gedreht (User, 2026-10-27)
+    lade(jar, 'echo_shard').transpose(Image.ROTATE_270).save(ZIEL / 'relikt.png')
     print('geschrieben nach', ZIEL)
 
 
