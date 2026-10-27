@@ -17,6 +17,7 @@
 // Stand 2026-10-27, KubeJS 2001. Fassung 2: Fassung 1 brachte keine Effekte, ohne Fehler im Log (Test 78/86).
 // Verdacht: player.tickCount kam in Rhino nicht an, dann bricht die Sekundenprüfung still ab. Jetzt eigener
 // Tick-Zähler, Effekte per /effect, Log-Zeile „relikt_fluch.js: Fluch …“ in logs/kubejs/server.log.
+// Fassung 3 (2026-10-27): Wegwerfen ergab ein Doppel, weil catch den Abbruch von event.cancel() schluckte; behoben.
 
 const IEPLUS_RELIKT = 'kubejs:relikt'
 const IEPLUS_RELIKT_SEKUNDEN = 15
@@ -125,8 +126,12 @@ PlayerEvents.tick(event => {
   }
 })
 
-// Jedes Item-Objekt mit dem Relikt verhindern und das Relikt zurückgeben
+// Jedes Item-Objekt mit dem Relikt verhindern und das Relikt zurückgeben.
+// event.cancel() beendet den Handler über eine Ausnahme (EventExit); darum steht es AUSSERHALB von try/catch,
+// sonst schluckt catch den Abbruch, das Objekt bleibt liegen und das Relikt wäre doppelt (Test 86, Fassung 2).
+// Zusätzlich wird das Objekt geleert: Ein leeres Item-Objekt verschwindet von selbst, falls es doch in die Welt kommt.
 EntityEvents.spawned('minecraft:item', event => {
+  var abbrechen = false
   try {
     var entity = event.entity
     var stack = entity.getItem()
@@ -137,15 +142,17 @@ EntityEvents.spawned('minecraft:item', event => {
     if (!player) player = event.level.getNearestPlayer(entity, 16)
     if (!player || ieplusReliktAusgenommen(player)) return
     var kopie = stack.copy()
+    entity.setItem(Item.empty)
     var ziel = player
     event.server.scheduleInTicks(1, () => {
       ieplusReliktZurueck(ziel, kopie)
       ziel.tell(Text.darkPurple('Das Relikt lässt sich nicht ablegen. Es kehrt zu dir zurück.'))
     })
-    event.cancel()   // beendet den Handler, deshalb zuletzt
+    abbrechen = true
   } catch (err) {
     console.error('relikt_fluch.js (Item-Objekt): ' + err)
   }
+  if (abbrechen) event.cancel()   // beendet den Handler, deshalb zuletzt und außerhalb von try
 })
 
 // Tod: Relikt vor den Drops (und vor dem Grabstein) herausnehmen und merken
