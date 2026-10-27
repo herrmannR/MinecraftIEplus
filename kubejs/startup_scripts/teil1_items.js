@@ -57,7 +57,7 @@ StartupEvents.registry('item', event => {
   event.create('steuerkern_droideka').displayName('Steuerkern Droideka').rarity('rare')
 
   // ── Story Teil 1 (docs/story/ABLAUF.md) ──
-  // Lese-Items: Rechtsklick öffnet ihren Eintrag im Patchouli-Buch „Logbuch des Meisters“ (server_scripts/story/logbuch.js);
+  // Lese-Items: Rechtsklick schaltet ihren Eintrag frei (Chat-Meldung, nichts öffnet sich) im Patchouli-Buch „Logbuch des Meisters“ (server_scripts/story/logbuch.js);
   // das Item bleibt erhalten (B6). Rollen liegen im Tempel auf dem Merkur, das Tagebuch in der Truhe der Minen (meister_truhe).
   const tempelrollen = { 1: 'Das Tor', 2: 'Vom Blut', 3: 'Vom Endlosen', 4: 'Von der Heilung' }
   Object.keys(tempelrollen).forEach(n => {

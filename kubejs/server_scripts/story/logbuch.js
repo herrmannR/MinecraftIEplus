@@ -6,13 +6,14 @@
 // - Wer das Buch noch nicht hat, bekommt es beim ersten freigeschalteten Eintrag (oder beim Einloggen danach).
 // - Logbuch-Teile schaltet der Befehl frei: aus der Belohnung einer Story-Quest (FTB Quests, Befehl mit erhöhten
 //   Rechten) oder aus einem Easy-NPC-Dialog (Teil 1 beim Einschlag).
-// - Tempelrollen und Tagebuch sind Lese-Items: Rechtsklick schaltet ihren Eintrag frei und öffnet ihn; das Item bleibt.
+// - Tempelrollen und Tagebuch sind Lese-Items: Rechtsklick schaltet ihren Eintrag frei (Meldung im Chat), gelesen wird
+//   im Logbuch; es öffnet sich nichts. Das Item bleibt.
 // Befehle (nur mit Rechten):
 //   /logbuch <eintrag>       Eintrag freischalten (teil1 … teil5, rolle_1 … rolle_4, tagebuch)
 //   /logbuch buch            Ersatzbuch für den Ausführenden
 //   /logbuch zuruecksetzen   alle Einträge sperren, Buch-Merker zurücksetzen
 //   /logbuch alles           alle Einträge frei
-// Stand 2026-10-21, KubeJS 2001. Fassung 1, UNGETESTET.
+// Stand 2026-10-27, KubeJS 2001. Fassung 2 (Lese-Items öffnen nichts mehr), Fassung 1 getestet (Tests 73, 74, 77).
 
 const IEPLUS_LOGBUCH_BUCH = 'patchouli:logbuch'
 
@@ -79,26 +80,15 @@ function ieplusLogbuchFreischalten(server, eintrag) {
   return true
 }
 
-// Öffnet den Eintrag im Buch (Patchouli-API). Kurz warten, damit das Advancement beim Client angekommen ist.
-function ieplusLogbuchOeffnen(server, player, eintrag) {
-  server.scheduleInTicks(10, () => {
-    try {
-      var API = Java.loadClass('vazkii.patchouli.api.PatchouliAPI')
-      var RL = Java.loadClass('net.minecraft.resources.ResourceLocation')
-      API.get().openBookEntry(player, new RL(IEPLUS_LOGBUCH_BUCH), new RL('patchouli:' + eintrag), 0)
-    } catch (e) {
-      player.tell(Text.gray('Der Text steht jetzt im Logbuch des Meisters.'))
-      console.warn('logbuch.js: Eintrag ' + eintrag + ' ließ sich nicht öffnen: ' + e)
-    }
-  })
-}
-
-// Rechtsklick mit Tempelrolle oder Tagebuch: freischalten (falls nötig) und lesen; das Item bleibt erhalten
+// Rechtsklick mit Tempelrolle oder Tagebuch: Eintrag freischalten (Meldung an alle) und das Buch nachreichen.
+// Es öffnet sich nichts (Wunsch des Users, Test 75); gelesen wird im Logbuch. Das Item bleibt erhalten.
 ItemEvents.rightClicked(event => {
   var eintrag = IEPLUS_LOGBUCH_ITEMS[String(event.item.id)]
   if (!eintrag) return
-  ieplusLogbuchFreischalten(event.server, eintrag)
-  ieplusLogbuchOeffnen(event.server, event.player, eintrag)
+  if (!ieplusLogbuchFreischalten(event.server, eintrag)) {
+    event.player.tell(Text.gray(IEPLUS_LOGBUCH[eintrag] + ' steht schon im Logbuch des Meisters.'))
+  }
+  ieplusLogbuchBuchGeben(event.player)
   event.cancel()   // beendet den Handler (KubeJS 6), deshalb zuletzt
 })
 

@@ -31,9 +31,9 @@ ItemEvents.tooltip(event => {
     Text.gray('Licht und Dämmerung zugleich.'),
     Text.gray('Geschenk von Bodhi Bad Dur.')
   ])
-  ;[1, 2, 3, 4].forEach(n => event.add(`kubejs:tempelrolle_${n}`, Text.gray('Alt und brüchig. Rechtsklick zum Lesen.')))
+  ;[1, 2, 3, 4].forEach(n => event.add(`kubejs:tempelrolle_${n}`, [Text.gray('Alt und brüchig.'), Text.gray('Rechtsklick: Abschrift ins Logbuch des Meisters.')]))
   event.add('kubejs:tagebuch_des_meisters', [
     Text.gray('Eilig geschrieben, die letzten Seiten zittrig.'),
-    Text.gray('Rechtsklick zum Lesen.')
+    Text.gray('Rechtsklick: Abschrift ins Logbuch des Meisters.')
   ])
 })

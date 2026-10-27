@@ -152,12 +152,12 @@ Neustart nötig (Startup-Skript, Texturen). `kubejs/` und `patchouli_books/logbu
 
 | Nr. | Test | Wie | Erwartet | Ergebnis |
 |---|---|---|---|---|
-| 73 | Laden | Welt laden; `python tools/kubejs_check.py --nur-log` | keine Fehler zu `teil1_items.js`, `logbuch.js`, `story_rezepte.js`; Texturen der neuen Items sichtbar (JEI: „Tempelrolle“, „Pilotenhelm“, „Siegel“) | |
-| 74 | Logbuch per Befehl | `/logbuch teil1` | Meldung im Chat, jeder Online-Spieler bekommt das Buch „Logbuch des Meisters“; Teil 1 lesbar, die übrigen Einträge ausgegraut; Seiten nicht abgeschnitten | |
-| 75 | Lese-Item | `/give @s kubejs:tempelrolle_1`, Rechtsklick; dann `/give @s kubejs:tagebuch_des_meisters`, Rechtsklick | Eintrag wird frei und öffnet sich (sonst Meldung „steht jetzt im Logbuch“, dann Log ansehen); Item bleibt im Inventar; zweiter Rechtsklick öffnet nur | |
-| 76 | Offline-Spieler | zweiter Spieler offline, `/logbuch teil2`; dann einloggen lassen | er bekommt das Buch (falls noch nicht) und sieht Teil 2 | |
-| 77 | Zurücksetzen | `/logbuch zuruecksetzen`, Buch öffnen; `/logbuch alles` | erst alles gesperrt, dann alles frei | |
-| 78 | Helm und Truhe | `/give @s kubejs:kaputter_klonhelm`, Werkbank mit Stahlplatten, Basic Control Circuit, Isolierglas, Elektronenröhre; `/loot give @s loot ieplus:chests/meister_truhe` | Pilotenhelm des Einsiedlers entsteht (JEI zeigt das Rezept); Truhe gibt Relikt und Tagebuch des Meisters (Item) | |
+| 73 | Laden | Welt laden; `python tools/kubejs_check.py --nur-log` | keine Fehler zu `teil1_items.js`, `logbuch.js`, `story_rezepte.js`; Texturen der neuen Items sichtbar (JEI: „Tempelrolle“, „Pilotenhelm“, „Siegel“) | ✅ 2026-10-27 (User + Log): kein Absturz; `kubejs_check --nur-log` ohne Fehler zu den drei Skripten, nur der erwartete Platzhalter-Hinweis aus `altar_reparatur.js` und das bekannte kaputte `alexsdelight:barbecue_on_a_stick` (Test 65) |
+| 74 | Logbuch per Befehl | `/logbuch teil1` | Meldung im Chat, jeder Online-Spieler bekommt das Buch „Logbuch des Meisters“; Teil 1 lesbar, die übrigen Einträge ausgegraut; Seiten nicht abgeschnitten | ✅ 2026-10-27 (User) |
+| 75 | Lese-Item | `/give @s kubejs:tempelrolle_1`, Rechtsklick; dann `/give @s kubejs:tagebuch_des_meisters`, Rechtsklick | Eintrag wird frei und öffnet sich (sonst Meldung „steht jetzt im Logbuch“, dann Log ansehen); Item bleibt im Inventar; zweiter Rechtsklick öffnet nur | 🟡 2026-10-27 (User): funktioniert wie beschrieben, aber Wunsch: nichts soll sich öffnen, nur Meldung im Chat; gelesen wird im Logbuch. Rolle und Tagebuch bleiben im Inventar. Fassung 2 (`logbuch.js`): Rechtsklick schaltet frei („Neu im Logbuch des Meisters: …“ an alle), reicht das Buch nach, öffnet nichts; zweiter Rechtsklick nur „… steht schon im Logbuch des Meisters.“ Tooltip jetzt „Rechtsklick: Abschrift ins Logbuch des Meisters.“ **Erneut testen:** beide Items rechtsklicken, je zweimal |
+| 76 | Offline-Spieler | zweiter Spieler offline, `/logbuch teil2`; dann einloggen lassen | er bekommt das Buch (falls noch nicht) und sieht Teil 2 | ⏭ 2026-10-27: in Runde M (Multiplayer) verschoben |
+| 77 | Zurücksetzen | `/logbuch zuruecksetzen`, Buch öffnen; `/logbuch alles` | erst alles gesperrt, dann alles frei | ✅ 2026-10-27 (User) |
+| 78 | Helm und Truhe | `/give @s kubejs:kaputter_klonhelm`, Werkbank mit Stahlplatten, Basic Control Circuit, Isolierglas, Elektronenröhre; `/loot give @s loot ieplus:chests/meister_truhe` | Pilotenhelm des Einsiedlers entsteht (JEI zeigt das Rezept); Truhe gibt Relikt und Tagebuch des Meisters (Item) | 🟡 2026-10-27 (User): Rezept in JEI, aber weder an der Werkbank noch an der Tinkers-Werkstation craftbar. Kein Fehler: Seit Runde 12 (O71) ist das Rezept gesperrt, bis der Bauplan „Pilotenhelm“ gelesen ist, und ergibt den 212er-Helm (`swgc:clone_212th_battalion_helmet`) statt „Pilotenhelm des Einsiedlers“; der Test war veraltet. **Erneut testen:** `/bauplan pilotenhelm`, dann Rezept an Werkbank und Werkstation; Truhe (`/loot give @s loot ieplus:chests/meister_truhe`) noch offen. Sperre selbst prüft Test 92 |
 
 ### Runde 11 — Buch 1 im Questbuch (2026-10-26)
 
@@ -187,6 +187,14 @@ Neustart nötig (Startup-Skripte, neues Item). `kubejs/` und `patchouli_books/ba
 | 91 | Altar reparieren | Platzhalter in `altar_reparatur.js` und `altar_heil.nbt` vom Host; auf dem Merkur Altar rechtsklicken, erst ohne, dann mit allen Zutaten | erst Meldung mit fehlenden Zutaten; dann Zutaten weg, heiles Ritual steht, Stage `story_st9_04` (Quest ST9-04 erledigt); Ritual lässt sich mit Aktivierungskristall starten; weitere Rechtsklicks ändern nichts | |
 | 92 | Bauplan Pilotenhelm | `/bauplan zuruecksetzen`; Reparaturrezept an der Werkbank legen; `/bauplan pilotenhelm`, Rolle lesen; Rezept erneut | erst kein Ergebnis; nach dem Lesen Meldung, Buch (erste Rolle der Welt), Kapitel „Erinnerungsstücke“ mit Eintrag und Rezept; Werkbank liefert den 212er-Helm mit Tooltip „Der Funk rauscht wieder.“ | |
 | 93 | Kein Gatekeeper | neue Welt oder unbesuchte Gegend, Gatekeeper-Haus suchen (`/locate structure #blue_skies:gatekeeper_houses`) | Haus steht, kein Gatekeeper darin | |
+
+### Runde M — Multiplayer (sammelt Tests mit mehreren Spielern)
+
+Läuft, wenn mehrere Spieler gleichzeitig testen können (LAN oder beim Host). Nummern bleiben die der ursprünglichen Runde.
+
+| Nr. | Test | Wie | Erwartet | Ergebnis |
+|---|---|---|---|---|
+| 76 | Offline-Spieler (aus Runde 10) | zweiter Spieler offline, `/logbuch teil2`; dann einloggen lassen | er bekommt das Buch (falls noch nicht) und sieht Teil 2 | |
 
 ### Noch ohne Testweg
 

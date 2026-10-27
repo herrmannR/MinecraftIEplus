@@ -14,7 +14,7 @@
 | B3 | **Quest → Dialog** | Braucht ein Dialog eine erledigte Quest (z. B. „Bosse besiegt“), setzt deren Belohnung die Dialogstufe (B2). | 🟡 |
 | B4 | **Figur erscheinen/verschwinden** | Befehl in der Quest-Belohnung (Team Reward): `easy_npc spawn|despawn <uuid>` oder `execute in <dim> run easy_npc preset import …` (Test 30). | 🟢 |
 | B5 | **Logbuch-Eintrag freischalten** | Befehl `/logbuch <eintrag>` (neues KubeJS-Skript nach dem Muster von `/bauplan`): setzt für alle Spieler das Advancement `ieplus:logbuch/<eintrag>`, das den Eintrag im Patchouli-Buch „Logbuch des Meisters“ öffnet; Offline-Spieler beim Einloggen. Der erste Aufruf gibt das Buch an alle. Aufruf aus Quest-Belohnung oder Dialog. | 🟢 gebaut (`server_scripts/story/logbuch.js`), 🔵 Tests 74–77. FTB-Belohnungen mit `/logbuch` brauchen erhöhte Rechte (Befehls-Belohnung „elevate“) |
-| B6 | **Lese-Items** | Tempelrollen 1–4 und das Tagebuch des Meisters sind KubeJS-Items. Rechtsklick ruft B5 auf (Eintrag öffnet sich bei allen); das Item bleibt erhalten. | 🟢 gebaut (`logbuch.js`, Items in `teil1_items.js`), 🔵 Test 75 |
+| B6 | **Lese-Items** | Tempelrollen 1–4 und das Tagebuch des Meisters sind KubeJS-Items. Rechtsklick ruft B5 auf: Eintrag wird frei, Meldung im Chat, gelesen wird im Logbuch; es öffnet sich nichts (User, 2026-10-27). Das Item bleibt erhalten. | 🟢 gebaut (`logbuch.js`, Items in `teil1_items.js`), 🔵 Test 75 Fassung 2 |
 | B7 | **Kapitel freischalten** | Die letzte Story-Quest eines Kapitels setzt als Belohnung die Stage `kapitel_k<n+1>`; damit erscheinen die Mod-Abschnitte des nächsten Kapitels (Aufbau wie in den Probe-Büchern). | 🟢 Aufbau, 🔵 P15 (Stage bei Offline-Spielern) |
 | B8 | **Eingriff des Hosts** | Wo nichts automatisch prüfbar ist (Mars-Station zu dritt, O22), erledigt der User die Quest per Befehl. | 🟢 |
 
@@ -108,7 +108,7 @@ Nebenquest in K5/K6: Bodhis Boss-Reihe (BS3, BS4). Belohnung der letzten Boss-Qu
 | Code | Schritt | Aufgabe | Auslöser | Folge | Text |
 |---|---|---|---|---|---|
 | ST8-01 | Die heißeste Welt | Dimension `ad_astra:mercury` | betreten (Rakete T3 steht in RF3) | – | Q |
-| ST8-02 | Der Tempel | `kubejs:tempelrolle_1` bis `_4` | im Tempel gefunden; Lesen öffnet R1–R4 im Logbuch (B6) | – | Q, R1–R4 |
+| ST8-02 | Der Tempel | `kubejs:tempelrolle_1` bis `_4` | im Tempel gefunden; Rechtsklick schaltet R1–R4 im Logbuch frei (B6) | – | Q, R1–R4 |
 | ST8-03 | Die Rollen | – | Dialog DD3R8 auf dem Mars (B1): die vier Rollen | `/logbuch teil5`, Stage `kapitel_k9`, `#dd3r8 = 8` | D-DD3R8-6 |
 
 🟡 Die Rollen werden bei der Abgabe verbraucht; ihr Text bleibt im Logbuch.

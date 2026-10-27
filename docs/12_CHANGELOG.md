@@ -1380,3 +1380,15 @@ Status: 🔵
 - Generator und `kubejs_check.py` ohne Fehler, 545 Quest-IDs ohne Doppel. Im Spiel ungetestet (Tests 73–93).
 - In die Testinstanz kopiert (2026-10-26, Spiel geschlossen): alle Repo-Dateien aus `kubejs/` und `patchouli_books/` (24 neu oder geändert), alle Questbuch-Kapitel (15), alte Textur `pilotenhelm.png` dort entfernt. Vorher geprüft: Die Instanz hatte nur frühere Repo-Stände, nichts war im Spiel verschoben oder von Hand geändert. `testchap.snbt` liegt nur in der Instanz und bleibt.
 
+
+## 2026-10-27 — Testrunde 10: Ergebnisse, Lese-Items öffnen nichts mehr
+
+Status: 🟡
+
+### Änderung
+- `logbuch.js` Fassung 2 (Wunsch des Users): Tempelrollen und Tagebuch öffnen beim Rechtsklick nichts mehr. Der Eintrag wird frei, Meldung im Chat an alle, Buch wird nachgereicht; gelesen wird im Logbuch. Zweiter Rechtsklick: „… steht schon im Logbuch des Meisters.“ Items bleiben erhalten. Tooltips (`tooltips_teil1.js`) und `story/ABLAUF.md` (B6, ST8-02) angepasst.
+- Neue Testrunde M (Multiplayer) in `11_TESTING.md`; Test 76 dorthin verschoben.
+
+### Teststatus
+- 73, 74, 77 ✅. 75 🟡 (Fassung 2 erneut testen). 78 🟡: Rezept nicht craftbar ist die Bauplan-Sperre aus Runde 12 (O71), kein Fehler; mit `/bauplan pilotenhelm` erneut testen, Truhe noch offen.
+- `kubejs_check.py`: 33 Dateien ohne Fehler. Noch nicht in die Testinstanz kopiert.
