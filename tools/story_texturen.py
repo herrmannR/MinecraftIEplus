@@ -7,7 +7,7 @@ Der Client liegt bei ATLauncher unter libraries/net/minecraft/client/1.20.1/clie
 Ergebnis in kubejs/assets/kubejs/textures/item/:
     pilotenhelm_kaputt.png   Eisenhelm, schmutzig grau mit Riss (kubejs:kaputter_klonhelm)
     tempelrolle.png          offene Rolle mit schwarzen Schriftzeilen, von Hand gezeichnet (kubejs:tempelrolle_1 bis _4)
-    relikt.png               Echo-Splitter, um 90 Grad im Uhrzeigersinn gedreht (kubejs:relikt)
+    relikt.png               Echo-Splitter, 90 Grad im Uhrzeigersinn gedreht, dann an der Diagonale rechts oben - links unten gespiegelt (kubejs:relikt)
 """
 import io
 import sys
@@ -83,8 +83,8 @@ def main():
                 rolle.putpixel((x, y), farben[zeichen] + (255,))
     rolle.save(ZIEL / 'tempelrolle.png')
 
-    # Relikt: Echo-Splitter, 90 Grad im Uhrzeigersinn gedreht (User, 2026-10-27)
-    lade(jar, 'echo_shard').transpose(Image.ROTATE_270).save(ZIEL / 'relikt.png')
+    # Relikt: Echo-Splitter, 90 Grad im Uhrzeigersinn gedreht, dann an der Diagonale rechts oben - links unten gespiegelt (User, 2026-10-27)
+    lade(jar, 'echo_shard').transpose(Image.ROTATE_270).transpose(Image.TRANSVERSE).save(ZIEL / 'relikt.png')
     print('geschrieben nach', ZIEL)
 
 
