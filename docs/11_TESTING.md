@@ -165,11 +165,11 @@ Alle Kapitel aus `config-overrides/config/ftbquests/quests/chapters/` liegen sei
 
 | Nr. | Test | Wie | Erwartet | Ergebnis |
 |---|---|---|---|---|
-| 79 | Buch 1 erscheint | `kubejs stages add @s kapitel_k2` | Buch 1 zeigt K2 mit „Würdig sein“; Mod-Bücher ohne freigeschaltetes Kapitel sind unsichtbar | |
-| 80 | Häkchen und Belohnung | „Würdig sein“ abhaken | Logbuch Teil 2 erscheint, Stage `kapitel_k3` gesetzt (K3-Abschnitte in den Mod-Büchern sichtbar), keine Chat-Ausgabe des Befehls | |
-| 81 | Dialog-Quest per Tag | `tag @s add story_st3_00` | ST3-00 „Die Schlucht“ ist erledigt, für die ganze Party | |
-| 82 | Tag nur bei einem Mitglied (P15) | zweiter Spieler hat den Tag nicht | Quest gilt trotzdem für alle | |
-| 83 | Übergang zu Buch 2 | ST11-04 per Tag erledigen | Buch 2 wird sichtbar | |
+| 79 | Buch 1 erscheint | `kubejs stages add @s kapitel_k2` | Buch 1 zeigt K2 mit „Würdig sein“; Mod-Bücher ohne freigeschaltetes Kapitel sind unsichtbar | ✅ 2026-10-27 (User) |
+| 80 | Häkchen und Belohnung | „Würdig sein“ abhaken | Logbuch Teil 2 erscheint, Stage `kapitel_k3` gesetzt (K3-Abschnitte in den Mod-Büchern sichtbar), keine Chat-Ausgabe des Befehls | ✅ 2026-10-27 (User) |
+| 81 | Dialog-Quest per Tag | `tag @s add story_st3_00` | ST3-00 „Die Schlucht“ ist erledigt, für die ganze Party | ✅ 2026-10-27 (User) |
+| 82 | Tag nur bei einem Mitglied (P15) | zweiter Spieler hat den Tag nicht | Quest gilt trotzdem für alle | ⏭ 2026-10-27: in Runde M (Multiplayer) verschoben |
+| 83 | Übergang zu Buch 2 | ST11-04 per Tag erledigen | Buch 2 wird sichtbar | ✅ 2026-10-27 (User) |
 
 ### Runde 12 — Story-Skripte aus ABLAUF Abschnitt 6 (2026-10-26)
 
@@ -195,6 +195,7 @@ Läuft, wenn mehrere Spieler gleichzeitig testen können (LAN oder beim Host). N
 | Nr. | Test | Wie | Erwartet | Ergebnis |
 |---|---|---|---|---|
 | 76 | Offline-Spieler (aus Runde 10) | zweiter Spieler offline, `/logbuch teil2`; dann einloggen lassen | er bekommt das Buch (falls noch nicht) und sieht Teil 2 | |
+| 82 | Tag nur bei einem Mitglied (P15) (aus Runde 11) | zweiter Spieler hat den Tag nicht | Quest gilt trotzdem für alle | |
 
 ### Noch ohne Testweg
 
