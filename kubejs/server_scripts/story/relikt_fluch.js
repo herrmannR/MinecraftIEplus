@@ -14,13 +14,17 @@
 //    zurück (Merker im Weltwert, je Spieler-UUID; überlebt auch Abmelden auf dem Todesbildschirm).
 // Kreativ- und Zuschauermodus sind ausgenommen (Host baut und testet).
 // Das Ende des Fluchs bei Meisterin Cerina regelt die Story (Abgabe/Umbau zum Strahlenschutz), nicht dieses Skript.
-// Stand 2026-10-26, KubeJS 2001. Fassung 1, UNGETESTET.
+// Stand 2026-10-27, KubeJS 2001. Fassung 2: Fassung 1 brachte keine Effekte, ohne Fehler im Log (Test 78/86).
+// Verdacht: player.tickCount kam in Rhino nicht an, dann bricht die Sekundenprüfung still ab. Jetzt eigener
+// Tick-Zähler, Effekte per /effect, Log-Zeile „relikt_fluch.js: Fluch …“ in logs/kubejs/server.log.
 
 const IEPLUS_RELIKT = 'kubejs:relikt'
 const IEPLUS_RELIKT_SEKUNDEN = 15
 const IEPLUS_RELIKT_TOD_SCHLUESSEL = 'ieplus_relikt_tod'
 // Sekunden mit Relikt je Spieler (nur im Speicher; nach Neustart beginnt die Zeit neu)
 const ieplusReliktZeit = {}
+// Ticks je Spieler bis zur nächsten Sekundenprüfung (eigener Zähler statt player.tickCount)
+const ieplusReliktTicks = {}
 
 function ieplusIstRelikt(stack) {
   return stack && !stack.isEmpty() && String(stack.id) === IEPLUS_RELIKT
@@ -94,21 +98,27 @@ PlayerEvents.tick(event => {
     if (ieplusReliktAusgenommen(player)) return
     // Behälter jeden Tick (sonst könnte ein Trichter das Relikt schon weiterreichen)
     ieplusReliktAusMenue(player)
-    if (player.tickCount % 20 !== 0) return
-    ieplusReliktAusBuendeln(player)
     var name = String(player.username)
+    var t = (ieplusReliktTicks[name] || 0) + 1
+    if (t < 20) { ieplusReliktTicks[name] = t; return }
+    ieplusReliktTicks[name] = 0
+    ieplusReliktAusBuendeln(player)
     if (ieplusReliktAnzahl(player) === 0) {
       delete ieplusReliktZeit[name]
       return
     }
     var sek = (ieplusReliktZeit[name] || 0) + 1
     ieplusReliktZeit[name] = sek
-    if (sek === IEPLUS_RELIKT_SEKUNDEN) player.tell(Text.darkPurple('Das Relikt wird schwer. Dunkelheit kriecht dir in die Augen.'))
+    if (sek === IEPLUS_RELIKT_SEKUNDEN) {
+      player.tell(Text.darkPurple('Das Relikt wird schwer. Dunkelheit kriecht dir in die Augen.'))
+      console.info('relikt_fluch.js: Fluch beginnt bei ' + name)
+    }
     if (sek >= IEPLUS_RELIKT_SEKUNDEN) {
-      // 3 Sekunden, jede Sekunde erneuert; Stufe: Blindheit II, Langsamkeit III, Vergiftung II
-      player.potionEffects.add('minecraft:blindness', 60, 1, false, false)
-      player.potionEffects.add('minecraft:slowness', 60, 2, false, false)
-      player.potionEffects.add('minecraft:poison', 60, 1, false, false)
+      // 3 Sekunden, jede Sekunde erneuert; Stufe: Blindheit II, Langsamkeit III, Vergiftung II; ohne Partikel
+      var server = player.server
+      server.runCommandSilent(`effect give ${name} minecraft:blindness 3 1 true`)
+      server.runCommandSilent(`effect give ${name} minecraft:slowness 3 2 true`)
+      server.runCommandSilent(`effect give ${name} minecraft:poison 3 1 true`)
     }
   } catch (err) {
     console.error('relikt_fluch.js (Tick): ' + err)

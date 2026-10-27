@@ -1392,3 +1392,4 @@ Status: 🟡
 ### Teststatus
 - 73, 74, 77 ✅. 75 🟡 (Fassung 2 erneut testen). 78 🟡: Rezept nicht craftbar ist die Bauplan-Sperre aus Runde 12 (O71), kein Fehler; mit `/bauplan pilotenhelm` erneut testen, Truhe noch offen.
 - `kubejs_check.py`: 33 Dateien ohne Fehler. Noch nicht in die Testinstanz kopiert.
+- Nachtrag: Truhe aus Test 78 ✅ (Relikt und Tagebuch). Relikt-Fluch (Test 86) ❌, keine Effekte, Log ohne Fehler. `relikt_fluch.js` Fassung 2: eigener Tick-Zähler statt `player.tickCount`, Effekte per `/effect`, Log-Zeile beim Beginn des Fluchs. Kreativ bleibt ausgenommen.
