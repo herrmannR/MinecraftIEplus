@@ -19,6 +19,7 @@
 // Verdacht: player.tickCount kam in Rhino nicht an, dann bricht die Sekundenprüfung still ab. Jetzt eigener
 // Tick-Zähler, Effekte per /effect, Log-Zeile „relikt_fluch.js: Fluch …“ in logs/kubejs/server.log.
 // Fassung 3 (2026-10-27): Wegwerfen ergab ein Doppel, weil catch den Abbruch von event.cancel() schluckte; behoben.
+// Fassung 4 (2026-10-27): Schonfrist, Wegwerfen setzt die 15 Sekunden nicht mehr zurück; nur Ablegen im Rahmen (O80).
 
 const IEPLUS_RELIKT = 'kubejs:relikt'
 const IEPLUS_RELIKT_SEKUNDEN = 15
@@ -27,6 +28,10 @@ const IEPLUS_RELIKT_TOD_SCHLUESSEL = 'ieplus_relikt_tod'
 const ieplusReliktZeit = {}
 // Ticks je Spieler bis zur nächsten Sekundenprüfung (eigener Zähler statt player.tickCount)
 const ieplusReliktTicks = {}
+// Sekundenprüfungen hintereinander ohne Relikt. Erst ab IEPLUS_RELIKT_SCHONFRIST beginnt die Zeit neu, damit ein
+// kurzer Rücksprung (Wegwerfen: das Relikt ist einen Tick weg) den Fluch nicht unterbricht (User, 2026-10-27).
+const ieplusReliktFehlt = {}
+const IEPLUS_RELIKT_SCHONFRIST = 2
 
 function ieplusIstRelikt(stack) {
   return stack && !stack.isEmpty() && String(stack.id) === IEPLUS_RELIKT
@@ -106,9 +111,12 @@ PlayerEvents.tick(event => {
     ieplusReliktTicks[name] = 0
     ieplusReliktAusBuendeln(player)
     if (ieplusReliktAnzahl(player) === 0) {
-      delete ieplusReliktZeit[name]
+      var fehlt = (ieplusReliktFehlt[name] || 0) + 1
+      ieplusReliktFehlt[name] = fehlt
+      if (fehlt >= IEPLUS_RELIKT_SCHONFRIST) delete ieplusReliktZeit[name]
       return
     }
+    ieplusReliktFehlt[name] = 0
     var sek = (ieplusReliktZeit[name] || 0) + 1
     ieplusReliktZeit[name] = sek
     if (sek === IEPLUS_RELIKT_SEKUNDEN) {
