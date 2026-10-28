@@ -8,7 +8,7 @@
 > - Neue offene Fragen kommen **nur hierher** (nächste freie Nummer). Fachdokumente nennen nur die Nummer, keine eigene Fragenliste.
 > - Die Questtext-Dateien behalten ihre Abschnitte „Offen vor dem Einbau“ als Einzelheiten je Mod; führend ist diese Liste.
 >
-> Nummern: **F** = Entscheidung zu Progression und Pack, **O** = Story (Nummern wie bisher in `18_STORY.md`), **P** = im Spiel prüfen, **T** = Story-Technik (Nummern wie bisher in `18_STORY.md`).
+> Nummern: **F** = Entscheidung zu Progression und Pack, **O** = Story (Nummern wie bisher in `18_STORY.md`), **P** = im Spiel prüfen, **T** = Story-Technik (Nummern wie bisher in `18_STORY.md`), **B** = Balancing (`21_BALANCING.md`).
 
 ## Teil 1 · Entscheidungen zu Progression und Pack
 
@@ -119,6 +119,24 @@ Hier musst du nichts entscheiden, nur nachsehen. Testwege und Ergebnisse stehen 
 ## Teil 4 · Erst beim Einbau ins Questbuch
 
 Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zähmen, Rituale, Strukturen, Tinkers-Material), Patchouli-Buch mit NBT als Aufgabe, Platzhalter-IDs (`kubejs:steuerkern_*`), Mengen wie 16 Certus (AE1-05), weiße Petals oder beliebige Blume (BO1-02), Liste der Rezepte, die der IE-Crusher übernimmt.
+
+## Teil 5 · Balancing (seit 2026-10-28)
+
+Vorschläge und Begründungen stehen in `21_BALANCING.md`. Entschieden (2026-10-25): Energie-Abgabe nur bei der Mars-Station (3b), Verbrauch per Config anheben (3d, gebaut, ungetestet: Tests 97–99).
+
+**B1 · Story-Abgaben:** Welche Vorschläge aus Abschnitt 1 übernimmt der User?
+
+**B2 · Ad-Astra-Rezepte:** Welche aus Abschnitt 2, und kommt der optionale Hebel (Planetenmetall-Platten im Lichtbogenofen)?
+
+**B3 · AE2-Processor:** in T3 oder erst T4 (hängt an F19/F20)?
+
+**B4 · Altar-Slate:** 4 Demonic oder 8 Imbued Slate (Reihenfolge Altar-Stufe 4 gegen `meilensteine/` prüfen)?
+
+**B5 · Energie, Rest:** Multiplikator testen (97–99); offen die Hebel a, c, e, f.
+
+**B6 · Mekanism-Solar/-Wind auf Planeten:** erlauben (Vorteil der Planeten) oder abschwächen?
+
+→ `21_BALANCING.md`, danach `15_RAUMFAHRT.md`, `18_STORY.md`, `kubejs/server_scripts/raumfahrt/`
 
 ## Erledigt
 

@@ -22,7 +22,7 @@ Die Schritte laufen in dieser Reihenfolge; 1 und 2 gehen parallel. Alle offenen 
 | 2 Tests im Spiel | Teil 1 fertig; 33–41 erledigt (2026-10-21, 35 entfällt); offen nur noch Prüfpunkte aus `20_ENTSCHEIDUNGEN.md` (P1, P3–P13, P15, P16) | 🟢 Teil 1 bestanden (2026-10-20) | User spielt |
 | 3 Story von Part 1 fertig | `18_STORY.md` bis zur Rückkehr des Meisters; Ablauf `story/ABLAUF.md`; Texte `story/texte/` (Entwurf Claude, O50) | 🟡 Handlung steht, alle Texte im Entwurf (2026-10-21); O47–O66 entschieden | User liest gegen |
 | 4 Skripte und Raketen | Teil 1 geschrieben (2026-10-20): Raketen T1–T4, Rover, eigene Items, Altar-Dimension (Ritual, Amulett, Truhe), Ideenimport-Entfernungen, IE-Crusher, AE2, Airship, Shop und Baupläne, Galaxy in a Cube aus der Overworld. Offen: Antimaterie-Treibstoffe T6/T7, Etrium, Planetenstufen T5–T7, Beskar, Kyber (Teil 2 und 3) | 🟢 Teil 1 getestet (2026-10-20) | – |
-| 5 Balance (frühere Phasen 3–6) | Erträge der Erzverarbeitung, Energie, AE2 zweistufig, Cross-Mod-Rezepte (`07_CROSSMOD_INTEGRATION.md`). Macht der User später bei Bedarf (2026-10-21); bremst Teil 1 nicht | 🔵 später | F20, F24 |
+| 5 Balance (frühere Phasen 3–6) | Erträge der Erzverarbeitung, Energie, AE2 zweistufig, Cross-Mod-Rezepte (`07_CROSSMOD_INTEGRATION.md`). Vorschläge für Story-Abgaben, Raketen und Energie in `21_BALANCING.md`; Energie-Multiplikator als Config gebaut (2026-10-28, Tests 97–99) | 🟡 Vorschläge | B1–B6, F20, F24 |
 | 6 Questbuch einbauen | FTB Quests: Buch 1 (Story) und alle Mod-Kapitel bis K11 gebaut (2026-10-26, 545 Quests, IDs gegen die JARs geprüft); Story-Skripte gebaut (Kobalthammer, Relikt-Fluch, Altar, Everdawn-Sperre, Elfenportal, Bauplan Pilotenhelm, Gatekeeper aus). Offen: F31–F42, Belohnungen (F33), Tests 73–93, Dialoge im Easy-NPC-Editor und Skins DD3R8/Bodhi (User), Platzhalter beim Host (H6) | 🟡 gebaut, ungetestet, nicht in der Testinstanz | User: F31–F42 |
 | 7 Hauptwelt umstellen | Aufgaben beim Host (H1–H5 unten) | 🔵 | Schritte 4–6; nur, was in `11_TESTING.md` ✅ hat |
 
@@ -57,6 +57,7 @@ Die Schritte laufen in dieser Reihenfolge; 1 und 2 gehen parallel. Alle offenen 
 | `18_STORY.md` | 🟡 Part 1 im Umriss, Part 2 und 3 folgen; schreibt der User |
 | `story/ABLAUF.md` | 🟡 technischer Ablauf von Teil 1: Story-Quests ST1–ST11, Auslöser, Figuren, Texte (2026-10-21) |
 | `19_HILFEBUECHER.md` | 🟢 welche Mods ein Buch im Spiel haben; Regel für die Erklärtiefe im Questbuch |
+| `21_BALANCING.md` | 🔵 Vorschläge zu Story-Abgaben, Ad-Astra-Rezepten und Energie; Energie-Configs gebaut, ungetestet |
 | `meilensteine/` (samt Artifact-Seite) | 🟡 nach der Story umgebaut (2026-10-14): 51 Meilensteine, 9 Pfade, 16 Kapitel in drei Parts |
 | `erzatlas/` (samt Artifact-Seite) | 🟢 Erzverteilung |
 | `modpfade/` | je Mod eine Seite und `WISSEN.md` |
