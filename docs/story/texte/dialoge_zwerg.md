@@ -15,28 +15,28 @@ Scoreboard `story`, Eintrag `#zwerg` (B2): 0 = noch nie gesprochen, 1 = hat die 
 ## Stufe 0 · Fremde in der Schlucht (K3)
 
 #### `z0_gruss` · Prio 100 · `#zwerg = 0`
-> Halt! Wer so laut die Schlucht herunterpoltert, ist entweder ein Ochse oder ein Oberirdischer. Und Ochsen seid ihr nicht. Also, was wollt ihr hier unten?
+> Halt! Wer poltert denn da so laut die Schlucht runter? Ihr seid nicht von hier unten, das hört man. Was wollt ihr?
 - **[Wir suchen ein Haus]** → `z0_haus`
 - **[Wer bist du?]** → `z0_wer`
 
 #### `z0_wer` · Prio 0
-> [Name], Sohn von irgendwem, der auch schon hier gegraben hat. Wir leben in dieser Schlucht, seit es sie gibt. Vielleicht haben wir sie auch gegraben. Das weiß keiner mehr so genau.
+> Ich bin [Name]. Meine Familie gräbt hier schon ewig, mein Vater, sein Vater und so weiter. Wie lange genau, weiß keiner mehr. Vielleicht haben wir die Schlucht sogar selbst gegraben.
 - **[Wir suchen ein Haus]** → `z0_haus`
 
 #### `z0_haus` · Prio 0
-> Ein Haus aus fremdem Stein, weiter im Süden? Das Haus des Hüters. Wir haben jahrelang mit ihm gehandelt: Werkzeug gegen Erz aus seinen Welten. Das beste Zinn, das ich je in der Hand hatte.
+> Ein Haus aus fremdem Stein, weiter im Süden? Das ist das Haus des Hüters. Mit dem haben wir jahrelang gehandelt: unser Werkzeug gegen Erz aus seinen Welten. Das beste Zinn, das ich je gesehen habe.
 - **[Und jetzt nicht mehr?]** → `z0_still`
 
 #### `z0_still` · Prio 0
-> Seit einer Weile kommt nichts mehr. Kein Erz, kein Wort. Er soll seine Welten verloren haben, an vier Wesen, die man besser nicht trifft. Ich gehe da nicht mehr hin. Ein Zwerg weiß, wann ein Stollen einstürzt.
+> Seit einer Weile kommt von dort nichts mehr. Kein Erz, keine Nachricht. Es heißt, vier Ungeheuer hätten ihm seine Welten weggenommen. Ich geh da jedenfalls nicht mehr hin, ich bin doch nicht lebensmüde.
 - **[Wir gehen hin]** → `z0_auftrag`
 
 #### `z0_auftrag` · Prio 0
-> Dann sagt ihm, die Schlucht hat ihn nicht vergessen. Und wenn ihr aus seinen Welten zurückkommt, bringt mir, was ihr findet. Ich zahle in Erz. Gut gemessen, das schwöre ich bei meinem Bart.
+> Dann grüßt ihn von uns aus der Schlucht. Und wenn ihr aus seinen Welten Erz mitbringt, kommt zu mir. Ich zahle gut und wiege ehrlich ab, darauf mein Wort.
 - **[Abgemacht]** → Befehle: `tag @initiator add story_st3_00`, `scoreboard players set #zwerg story 1` → `z0_weg`
 
 #### `z0_weg` · Prio 0
-> Weiter nach Süden, immer der Schlucht nach und dann darüber hinaus. Das Haus erkennt ihr an den Steinen. Sie sehen aus, als hätte jemand den Himmel zerbrochen und vermauert.
+> Immer weiter nach Süden, erst die Schlucht entlang und dann noch ein gutes Stück weiter. Das Haus erkennt ihr sofort, es ist aus einem Stein, den es hier sonst nirgends gibt.
 - **[Danke]** → schließen
 
 ---
@@ -44,14 +44,14 @@ Scoreboard `story`, Eintrag `#zwerg` (B2): 0 = noch nie gesprochen, 1 = hat die 
 ## Stufe 1 · Der Handel (ab K3)
 
 #### `z1_hallo` · Prio 100 · `#zwerg ≥ 1`
-> Ah, die Oberirdischen. Wieder heil? Das wundert mich jedes Mal. Was bringt ihr mir?
+> Ah, ihr schon wieder. Noch alles dran? Was habt ihr mir mitgebracht?
 - **[Handeln]** → Aktion: Handelsfenster öffnen
 - **[Was nimmst du an?]** → `z1_waren`
 - **[Wo war das Haus noch mal?]** → `z0_weg`
 - **[Bis bald]** → schließen
 
 #### `z1_waren` · Prio 0
-> Erz aus den Welten des Hüters, das Blaue vor allem. Sechzehn Stück, und ihr bekommt ein Stück Kobalt. Das findet man hier oben nicht, nur tief im Feuer. Ein fairer Preis. Fast zu fair.
+> Erz aus den Welten des Hüters, vor allem das bläuliche. Für sechzehn Stück bekommt ihr einen Kobaltbarren. Kobalt gibt es hier oben nicht, das holt man sonst nur aus dem Nether. Ein guter Preis, glaubt mir.
 - **[Zurück]** → `z1_hallo`
 
 ---

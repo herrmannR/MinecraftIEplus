@@ -19,40 +19,40 @@ Scoreboard `story`, Eintrag `#vos` (B2): 1 = im Versteck erschienen (Belohnung v
 ## Stufe 1 · Das Versteck (K11, Glacio)
 
 #### `q1_treffen` · Prio 100 · `#vos = 1`
-> *Ein Mann sitzt am Feuer, in einen Mantel gewickelt, die Haut gezeichnet von Kälte und Narben, und er sieht nicht einmal auf, als ihr näher kommt.* Drei also, natürlich sind es drei. Ich habe euch kommen sehen, lange bevor eure Rakete den Himmel über diesem Eis angekratzt hat, so wie man einen Sturm spürt, bevor die erste Flocke fällt.
+> *Ein Mann sitzt am Feuer, in einen Mantel gewickelt, das Gesicht voller Narben. Er schaut nicht einmal auf.* Ihr seid also zu dritt. Ich hab euch schon gespürt, lange bevor eure Rakete hier gelandet ist.
 - **[Bist du der Meister?]** → `q1_meister`
 
 #### `q1_meister` · Prio 0
-> Nennt mich Quinlan. Der Droide sagt Meister zu mir, und ihr könnt das ruhig auch tun, denn es macht ihn glücklich, und ein glücklicher Droide redet weniger, jedenfalls an guten Tagen. Ihr habt mein Tagebuch gelesen, das sehe ich euch an der Nasenspitze an.
+> Nennt mich Quinlan. Der Droide sagt Meister zu mir. Ihr könnt das auch, dann freut er sich, und wenn er sich freut, redet er weniger. Und ihr habt mein Tagebuch gelesen, sonst wärt ihr nicht hier.
 - **[Und dein Relikt gebracht]** → `q1_relikt`
 
 #### `q1_relikt` · Prio 0
-> Ich weiß, ich spüre es dort draußen in eurem Triebwerk, schlafend und so sorgsam verpackt, wie ich es selbst nie gekonnt hätte. Wer immer das gebaut hat, versteht von solchen Dingen mehr als ich. Lasst es, wo es ist; ich hole es mir selbst heraus, wenn die Zeit reif ist.
+> Ich weiß. Ich spüre es da draußen in eurem Triebwerk. Es schläft, und es ist besser verpackt, als ich das je hinbekommen hätte. Wer auch immer das gebaut hat, kennt sich damit besser aus als ich. Lasst es, wo es ist, ich hole es später selbst raus.
 - **[Was ist es?]** → `q1_was`
 
 #### `q1_was` · Prio 0
-> Etwas, das ich nie hätte suchen sollen und das ich trotzdem gesucht habe, weil ein Teil von mir es haben wollte. Das sage ich euch lieber gleich selbst, bevor ihr es eines Tages von jemand anderem hört, denn eine Wahrheit, die man verschweigt, wird mit der Zeit nur schwerer.
+> Etwas, das ich nie hätte suchen sollen. Ich hab es trotzdem gesucht, weil ein Teil von mir es haben wollte. Das sage ich euch lieber gleich selbst, bevor ihr es irgendwann von jemand anderem hört.
 - **[Warum konnten wir es tragen?]** → `q1_hell`
 
 #### `q1_hell` · Prio 0
-> Weil es in euch nichts findet, woran es sich festhalten kann, jedenfalls noch nicht. Ihr seid hell, alle drei, wie grünes Holz, das einfach nicht brennen will, ich habe es schon von Weitem gesehen. Gequält hat es euch trotzdem, ich weiß, und das tut mir leid. Mehr darüber erzähle ich euch, wenn ich wieder auf eigenen Beinen stehen kann.
+> Weil es bei euch nichts findet, woran es sich festhalten kann. Noch nicht jedenfalls. Ihr seid alle drei hell, das hab ich schon von Weitem gesehen. Gequält hat es euch trotzdem, ich weiß, und das tut mir leid. Mehr erzähle ich euch, wenn ich wieder auf den Beinen bin.
 - **[Und der Droide?]** → `q1_droide`
 
 #### `q1_droide` · Prio 0
-> Ich habe ihn zu mir gerufen, als ich wieder genug Kraft dafür hatte, und er ist gekommen, wie er immer kommt. Seitdem beschwert er sich, dass ihn niemand gefragt hat, und damit hat er leider recht, denn fragen gehört nicht gerade zu meinen Stärken.
+> Ich hab ihn gerufen, als ich wieder genug Kraft dafür hatte, und er ist gekommen, wie immer. Seitdem beschwert er sich, dass ihn keiner gefragt hat. Da hat er leider recht, fragen ist nicht so meine Stärke.
 - **[Gib mir deine Hand]** → `q1_hand`
 - **[Kommst du mit uns?]** → `q1_heim`
 
 #### `q1_hand` · Prio 0
-> *Er nimmt eure Hand und hält sie einen Moment lang fest, die Augen halb geschlossen.* Hm, das ist ja interessant. Ich sehe eine Truhe voller Kohl, einen Dungeon, der euch überhaupt nicht leiden konnte, und einen Ofen, den einer von euch in die Luft gejagt hat, und zwar gleich zweimal.
+> *Er nimmt eure Hand, hält sie kurz fest und schließt halb die Augen.* Hm, interessant. Ich sehe eine Truhe voller Kohl, einen Dungeon, der euch gar nicht mochte, und einen Ofen, den einer von euch in die Luft gejagt hat. Zweimal.
 - **[Woher weißt du das?]** → `q1_woher`
 
 #### `q1_woher` · Prio 0
-> Dinge erinnern sich an die Hände, die sie gehalten haben, und Hände erinnern sich an alles, was sie getan haben. Ich höre nur ein wenig genauer hin als andere. Es ist ein Trick für lange Abende, und vielleicht zeige ich euch eines Tages, wie er geht.
+> Dinge merken sich, wer sie angefasst hat, und ich kann das ein bisschen lesen. Ein netter Trick für lange Abende. Vielleicht zeige ich euch irgendwann, wie das geht.
 - **[Kommst du mit uns?]** → `q1_heim`
 
 #### `q1_heim` · Prio 0
-> Auf eure Welt? Sehr gern, wenn ihr noch einen Platz in eurer Rakete für mich habt. Das Eis hier ist ehrlich, das muss man ihm lassen, aber es ist schlecht für die Knie, und außerdem habe ich euch noch so einiges zu erzählen, das man besser an einem warmen Feuer erzählt.
+> Mit zu euch? Sehr gern, wenn ihr noch Platz in der Rakete habt. Hier ist es kalt, und meine Knie sind dafür nicht mehr gemacht. Außerdem hab ich euch noch einiges zu erzählen, und das geht am Feuer besser als im Eis.
 - **[Dann fliegen wir]** → Befehle: `tag @initiator add story_st11_02`, `scoreboard players set #vos story 2` → schließen
 
 ---
@@ -60,7 +60,7 @@ Scoreboard `story`, Eintrag `#vos` (B2): 1 = im Versteck erschienen (Belohnung v
 ## Stufe 2 · Aufbruch (Glacio, bis zur Heimkehr)
 
 #### `q2_aufbruch` · Prio 100 · `#vos = 2`
-> Ich bin bereit, sobald ihr es seid, und der Droide auch: Er hat schon dreimal nachgezählt, ob er alles eingepackt hat. Er besitzt zwar gar nichts, aber gründlich ist er, das kann man ihm nicht absprechen.
+> Ich bin bereit, wenn ihr es seid. Der Droide auch, er hat schon dreimal nachgezählt, ob er alles eingepackt hat. Dabei besitzt er gar nichts.
 - **[Gleich geht es los]** → schließen
 
 Wenn die Spieler wieder auf der Erde sind (ST11-03), stellt der User Vos und DD3R8 in die Basis und setzt `#vos = 3` (O55).
@@ -70,20 +70,20 @@ Wenn die Spieler wieder auf der Erde sind (ST11-03), stellt der User Vos und DD3
 ## Stufe 3 · Angekommen (K11, Basis der Spieler)
 
 #### `q3_ankunft` · Prio 100 · `#vos = 3`
-> *Er sieht sich lange in eurer Basis um, und langsam breitet sich ein Lächeln auf seinem Gesicht aus.* Hier hat also alles angefangen. Viel Rauch, viel Lärm und herzlich wenig Ordnung, und doch spürt man an jeder Ecke, dass hier jemand mit ganzem Herzen gebaut hat. Mir gefällt es.
+> *Er schaut sich lange in eurer Basis um und fängt langsam an zu grinsen.* Hier hat also alles angefangen. Viel Rauch, viel Lärm, wenig Ordnung. Aber man sieht, dass ihr hier mit Spaß gebaut habt. Gefällt mir.
 - **[Was jetzt, Meister?]** → `q3_was`
 
 #### `q3_was` · Prio 0
-> Jetzt ruhe ich mich erst einmal aus. Und wenn ich wieder bei Kräften bin, zeige ich euch, was ihr in euch tragt, sofern ihr das wollt. Ihr habt mehr davon, als ihr ahnt, denn ein Licht, das man selbst in den Händen hält, sieht man am schlechtesten.
+> Jetzt ruhe ich mich erst mal aus. Und wenn ich wieder fit bin, zeige ich euch, was in euch steckt, wenn ihr wollt. Da ist mehr, als ihr denkt.
 - **[Was tragen wir in uns?]** → `q3_noch_nicht`
 - **[Wir wollen]** → `q3_ende`
 
 #### `q3_noch_nicht` · Prio 0
-> Nicht heute, dafür bin ich zu müde, und ihr verdient bessere Worte als die, die ich jetzt fände. Fragt mich morgen wieder, und übermorgen auch. Manche Antworten muss man ein paarmal anklopfen lassen, bevor man ihnen die Tür öffnet, aber irgendwann sage ich es euch, versprochen.
+> Heute nicht, dafür bin ich zu müde, und ihr habt eine bessere Erklärung verdient als die, die ich jetzt hinbekomme. Fragt mich morgen wieder. Irgendwann sag ich es euch, versprochen.
 - **[Wir wollen lernen]** → `q3_ende`
 
 #### `q3_ende` · Prio 0
-> Gut, dann fangen wir bald an. Und danke euch, von Herzen: Ihr habt einem Fremden geholfen, ohne zu wissen, wer er ist oder was er getan hat, und das ist seltener, als ihr vielleicht glaubt.
+> Gut, dann fangen wir bald an. Und danke. Ihr habt einem Fremden geholfen, ohne zu wissen, wer er ist oder was er getan hat. Das macht nicht jeder.
 - **[Gern geschehen]** → Befehle: `tag @initiator add story_st11_04`, `scoreboard players set #vos story 4` → schließen
 
 ---
@@ -91,7 +91,7 @@ Wenn die Spieler wieder auf der Erde sind (ST11-03), stellt der User Vos und DD3
 ## Stufe 4 · Ende von Teil 1
 
 #### `q4_ruhe` · Prio 100 · `#vos = 4`
-> Ich ruhe mich aus, und ihr solltet das auch einmal versuchen, es ist erstaunlich erholsam. Mit der Ausbildung beginnen wir, sobald ich wieder ohne Stöhnen aufstehen kann, und so wie sich meine Knie anfühlen, gebt mir noch ein paar Tage.
+> Ich ruhe mich aus. Solltet ihr auch mal probieren. Mit der Ausbildung fangen wir an, sobald ich wieder ohne Stöhnen aufstehen kann. Gebt mir noch ein paar Tage.
 - **[Bis bald, Meister]** → schließen
 
 Ab Teil 2 folgen hier die Dialoge der Ausbildung.
@@ -99,7 +99,7 @@ Ab Teil 2 folgen hier die Dialoge der Ausbildung.
 ## Rückfall
 
 #### `q_standard` · Prio 1 · ohne Bedingung
-> *Er hat die Augen geschlossen und scheint auf etwas zu lauschen, das ihr nicht hören könnt.* Später, Freunde, die Stille erzählt mir gerade eine Geschichte, und ich möchte das Ende nicht verpassen.
+> *Er hat die Augen geschlossen und scheint auf etwas zu horchen.* Später, Freunde. Ich bin gerade beschäftigt.
 - **[Später]** → schließen
 
 ## Offen beim Überarbeiten

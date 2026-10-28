@@ -17,30 +17,30 @@ Scoreboard `story`, Eintrag `#cerina` (B2): 1 = gerade aus dem Portal getreten (
 ## Stufe 1 · Aus dem Portal (K10)
 
 #### `c1_portal` · Prio 100 · `#cerina = 1`
-> *Licht flackert im Portal, dann tritt eine Frau heraus, grün wie junges Laub, mit feinen Zeichen im Gesicht. Sie lächelt, als hätte sie euch erwartet.* Willkommen! Es ist lange her, dass jemand von dieser Seite ein Tor für mich gebaut hat, und ihr habt es wirklich schön gemacht. Sagt mir, wer hat euch gezeigt, wie das geht?
+> *Aus dem Portal tritt eine Frau mit grüner Haut und feinen Mustern im Gesicht. Sie lächelt euch an.* Willkommen! Es ist lange her, dass jemand von dieser Seite ein Tor für mich gebaut hat, und ihr habt es wirklich schön gemacht. Sagt mal, wer hat euch gezeigt, wie das geht?
 - **[Ein Tagebuch]** → `c1_tagebuch`
 - **[Wer bist du?]** → `c1_wer`
 
 #### `c1_wer` · Prio 0
-> Die Elfen auf der anderen Seite nennen mich Meisterin Cerina, und ich habe mich längst daran gewöhnt. Ich lebe schon so lange bei ihnen, dass sich selbst die Ältesten an keine Zeit ohne mich erinnern, und irgendwann habe ich aufgehört, die Jahre zu zählen. Aber jetzt erzählt ihr: Was führt euch zu mir?
+> Die Elfen auf der anderen Seite nennen mich Meisterin Cerina, daran habe ich mich längst gewöhnt. Ich lebe schon so lange bei ihnen, dass sich nicht einmal die Ältesten an eine Zeit ohne mich erinnern. Die Jahre zähle ich schon lange nicht mehr. Aber jetzt erzählt ihr: Was führt euch zu mir?
 - **[Wir suchen die Helle Elfe]** → `c1_elf`
 
 #### `c1_elf` · Prio 0
-> *Sie lacht leise.* Die Helle Elfe, so nennt man mich also dort draußen? Das gefällt mir, auch wenn ich gar nicht bei den Elfen geboren bin. Aber das ist eine lange Geschichte, und die erzähle ich euch ein anderes Mal. Ihr habt jedenfalls die Richtige gefunden.
+> *Sie lacht leise.* Die Helle Elfe, so nennt man mich da draußen? Das gefällt mir, auch wenn ich gar keine echte Elfe bin. Das ist eine lange Geschichte, die erzähle ich euch ein andermal. Aber ihr seid bei der Richtigen.
 - **[Wir haben ein Tagebuch]** → `c1_tagebuch`
 
 #### `c1_tagebuch` · Prio 0
-> Ein Tagebuch also. Dann hat es jemand geschrieben, der etwas berührt hat, das er besser hätte liegen lassen, denn ich spüre es an euch, seit ich aus dem Tor getreten bin. Ihr tragt es bei euch, nicht wahr? Und ich sehe euch an, dass es euch nicht gut behandelt hat. Es zehrt an dem, der es trägt; gebt es mir, bevor es euch noch mehr nimmt.
+> Ein Tagebuch? Dann hat der, der es geschrieben hat, etwas gefunden, das er besser hätte liegen lassen. Ich spüre es, seit ich durch das Tor gekommen bin. Ihr habt es dabei, oder? Man sieht euch an, dass es euch nicht gut tut. Gebt es mir, bevor es noch schlimmer wird.
 - **[Das Relikt]** · Bedingung: im Inventar `kubejs:relikt` → `c1_relikt`
 - **[Woher weißt du das?]** → `c1_woher`
 
 #### `c1_woher` · Prio 0
-> Wenn man so lange lebt wie ich, lernt man, auf die leisen Dinge zu hören, und dieses hier ist alles andere als leise. Es ruft die ganze Zeit nach jemandem, der ihm nachgibt. Zum Glück hört ihr es nicht, und darüber bin ich sehr froh.
+> Wenn man so alt ist wie ich, merkt man so etwas einfach. Und dieses Ding ist alles andere als unauffällig, es sucht die ganze Zeit nach jemandem, der schwach wird. Zum Glück hört ihr es nicht.
 - **[Das Relikt]** · Bedingung: im Inventar `kubejs:relikt` → `c1_relikt`
 - **[Wir holen es]** → schließen
 
 #### `c1_relikt` · Prio 0
-> *Sie tritt einen Schritt zurück und hebt beschwichtigend die Hände.* Bitte legt es dort auf den Boden und nicht in meine Hand. Ich habe in meinem Leben gelernt, welchen Dingen man besser nicht zu nahe kommt, und dieses gehört ganz sicher dazu.
+> *Sie tritt einen Schritt zurück und hebt die Hände.* Bitte legt es dort auf den Boden, nicht in meine Hand. So etwas fasse ich nur an, wenn es gar nicht anders geht.
 - **[Hier, wir legen es ab]** → Befehle:
   `clear @initiator kubejs:relikt 1`
   `tag @initiator add story_st10_03`
@@ -48,7 +48,7 @@ Scoreboard `story`, Eintrag `#cerina` (B2): 1 = gerade aus dem Portal getreten (
   → `c1_danke`
 
 #### `c1_danke` · Prio 0
-> Danke, das war tapfer von euch. Ich weiß, ihr wollt jetzt wissen, was es ist, und das verstehe ich gut. Aber darüber kann ich euch nichts sagen, und das hat nichts mit Misstrauen zu tun: Manche Dinge werden stärker, wenn man über sie spricht, und dieses gehört dazu. Lasst uns lieber überlegen, wie ich euch helfen kann.
+> Danke, das war mutig von euch. Ich weiß, ihr wollt wissen, was das ist. Aber das kann ich euch nicht sagen, und das liegt nicht daran, dass ich euch nicht vertraue. Je weniger ihr darüber wisst, desto besser für euch. Reden wir lieber darüber, wie ich euch helfen kann.
 - **[Kannst du uns helfen?]** → `c2_hilfe`
 
 ---
@@ -56,7 +56,7 @@ Scoreboard `story`, Eintrag `#cerina` (B2): 1 = gerade aus dem Portal getreten (
 ## Stufe 2 · Was sie braucht (K10)
 
 #### `c2_auftrag` · Prio 100 · `#cerina = 2`
-> Da seid ihr ja wieder, wie schön! Habt ihr alles beisammen, worum ich euch gebeten habe? Ich frage nur, weil das Ding dort drüben nicht gerade geduldiger wird, während es auf uns wartet.
+> Da seid ihr ja wieder, wie schön! Habt ihr alles beisammen, worum ich euch gebeten habe? Ich frage nur, weil ich das Ding nicht länger als nötig hier herumliegen haben möchte.
 - **[Was brauchst du noch mal?]** → `c2_liste`
 - **[Hier ist alles]** · Bedingung: im Inventar `blue_skies:ethereal_arc`, `blue_skies:dusk_arc`, `blue_skies:nature_arc`, `blue_skies:poison_arc`, `mekanism:ultimate_control_circuit`, `botania:elementium_block` → Befehle:
   `clear @initiator blue_skies:ethereal_arc 1`
@@ -72,24 +72,24 @@ Scoreboard `story`, Eintrag `#cerina` (B2): 1 = gerade aus dem Portal getreten (
 - **[Noch nicht]** → schließen
 
 #### `c2_hilfe` · Prio 0
-> Euer Meister ist auf Glacio, der Welt aus Eis hinter diesem Stern, und er hat einen Schleier um sein Versteck gelegt, durch den nur das Relikt selbst hindurchkommt. Ihr müsst es also zu ihm bringen, aber so gut verwahrt, dass es niemandem mehr schaden kann. Diese Verwahrung baue ich euch gern.
+> Euer Meister ist auf Glacio, einer Welt aus Eis, weit weg von hier. Um sein Versteck hat er einen Schleier gelegt, und durch den kommt nur, wer das Relikt dabei hat. Ihr müsst es ihm also bringen, aber so gut verpackt, dass es niemandem mehr schaden kann. Diese Hülle baue ich euch.
 - **[Was brauchst du dafür?]** → `c2_liste`
 
 #### `c2_liste` · Prio 0
-> Dafür brauche ich die vier Arcs aus den Traumwelten, von jedem ihrer Wächter einen, außerdem einen Ultimate Control Circuit aus eurer Technik und einen Block Elementium. Das Elementium bekommt ihr von den Elfen, durch eben dieses Tor.
+> Dafür brauche ich die vier Arcs, von jedem der vier Wächter in den Himmelswelten einen. Dazu einen Ultimate Control Circuit aus eurer Technik und einen Block Elementium. Das Elementium bekommt ihr von den Elfen, durch dieses Tor hier.
 - **[Wie mit den Elfen?]** → `c2_handel`
 - **[Wir besorgen alles]** → schließen
 
 #### `c2_handel` · Prio 0
-> Werft einfach Manasteel durch das Tor, dann schicken euch die Elfen Elementium zurück; sie handeln gern und sind dabei recht großzügig. Hineingehen dürft ihr allerdings noch nicht. Warum, kann ich euch heute nicht erklären, aber ich verspreche euch, dass die Zeit dafür kommt.
+> Werft einfach Manasteel durch das Tor, dann schicken euch die Elfen Elementium zurück. Sie handeln gern und sind dabei ziemlich großzügig. Hineingehen dürft ihr aber noch nicht. Warum, kann ich euch heute nicht sagen, aber die Zeit dafür kommt, versprochen.
 - **[Zurück]** → `c2_auftrag`
 
 #### `c2_fertig` · Prio 0
-> *Sie arbeitet lange schweigend, und ihr Gesicht wird dabei sehr ernst. Dann reicht sie euch das fertige Stück.* Hier, es ist geschafft. Das Relikt liegt darin, eingeschlossen in Licht und Dämmerung und in eure Technik, und es schläft jetzt; ihr werdet merken, dass es euch nicht mehr quält. Bitte versprecht mir, dass ihr es nicht weckt.
+> *Sie arbeitet lange, ohne ein Wort zu sagen, und ihr Gesicht wird dabei sehr ernst. Dann reicht sie euch das fertige Stück.* Hier, fertig. Das Relikt ist jetzt sicher eingeschlossen und gibt Ruhe, ihr werdet merken, dass es euch nicht mehr quält. Versprecht mir bitte, dass ihr es nie wieder aufmacht.
 - **[Was machen wir damit?]** → `c2_rakete`
 
 #### `c2_rakete` · Prio 0
-> Baut es in das Triebwerk eurer stärksten Rakete ein. Der Schleier eures Meisters erkennt, was darin liegt, und wird euch hindurchlassen. Wie man so eine Rakete fliegt, wisst ihr bestimmt besser als ich, da will ich euch gar nicht hineinreden. Passt gut auf euch auf, ja?
+> Baut es in das Triebwerk eurer stärksten Rakete ein. Der Schleier eures Meisters erkennt, was darin steckt, und lässt euch durch. Wie man so eine Rakete fliegt, wisst ihr bestimmt besser als ich. Passt gut auf euch auf, ja?
 - **[Danke, Meisterin Cerina]** → schließen
 
 ---
@@ -97,31 +97,31 @@ Scoreboard `story`, Eintrag `#cerina` (B2): 1 = gerade aus dem Portal getreten (
 ## Stufe 3 · Danach
 
 #### `c3_hallo` · Prio 100 · `#cerina ≥ 3`
-> Ihr seid ja noch hier! Ich freue mich, euch zu sehen, aber Glacio wartet auf euch, und euer Meister wartet auch, und wenn ich raten müsste, ist er von den beiden der Ungeduldigere. Was kann ich noch für euch tun?
+> Ihr seid ja noch da! Schön, euch zu sehen. Aber euer Meister wartet auf Glacio, und ich wette, er ist nicht besonders geduldig. Kann ich noch etwas für euch tun?
 - **[Was ist auf der anderen Seite?]** → `c3_alfheim`
 - **[Wer bist du wirklich?]** → `c3_wer`
 - **[Bis bald]** → schließen
 
 #### `c3_alfheim` · Prio 0
-> Eine Welt, die älter ist als alles, woran ihr euch erinnern könnt, und die Elfen dort hüten viel Wissen über Reisende, die von den Sternen kamen. Ich würde sie euch gern zeigen, aber im Moment darf ich euch noch nicht hineinlassen. Wenn die Zeit gekommen ist, steht euch das Tor offen, das verspreche ich euch.
+> Das Reich der Elfen. Es ist sehr alt, und die Elfen dort wissen viel über Reisende, die von den Sternen kamen. Ich würde es euch gern zeigen, aber hinein dürft ihr noch nicht. Wenn es so weit ist, steht euch das Tor offen, das verspreche ich euch.
 - **[Zurück]** → `c3_hallo`
 
 #### `c3_wer` · Prio 0
-> *Sie schweigt einen Moment, dann lächelt sie.* Das ist die eine Frage, auf die ich euch heute keine Antwort geben kann, so gern ich es täte. Nur so viel: Ich habe einmal geschwiegen, wo ich hätte reden sollen, und seitdem bemühe ich mich, ehrlich zu sein. Deshalb sage ich euch lieber offen „noch nicht“, als euch etwas vorzumachen.
+> *Sie überlegt kurz, dann lächelt sie.* Das kann ich euch heute nicht sagen, so gern ich es würde. Nur so viel: Ich habe einmal etwas verschwiegen, das ich hätte sagen müssen. Seitdem bin ich lieber ehrlich. Deshalb sage ich euch offen: noch nicht.
 - **[Zurück]** → `c3_hallo`
 
 ## Rückfall
 
 #### `c_standard` · Prio 1 · ohne Bedingung
-> *Sie sieht ganz in Gedanken ins Portal und bemerkt euch erst, als ihr näher kommt.* Oh, verzeiht, ich war gerade weit weg. Kommt doch später wieder, dann habe ich mehr Ruhe für euch.
+> *Sie schaut ganz in Gedanken ins Portal und bemerkt euch erst, als ihr näher kommt.* Oh, entschuldigt, ich war gerade ganz woanders. Kommt doch später wieder, dann habe ich mehr Zeit für euch.
 - **[Später]** → schließen
 
 ## Offen beim Überarbeiten
 
-- **„Grün wie junges Laub, mit feinen Zeichen im Gesicht“** (`c1_portal`) beschreibt eine Mirialanerin, ohne das Wort zu nennen. Passt zum Skin, den du aussuchst.
-- **„Die Helle Elfe … nicht bei den Elfen geboren“** (`c1_elf`): passt zum Tagebuch („Helle Elfe“, 2026-10-26) und zur Vorgeschichte (als Kind zu den Elfen geflohen, O46). Sie sagt offen, dass sie die Geschichte später erzählt.
+- **„Grüne Haut und feine Muster im Gesicht“** (`c1_portal`) beschreibt eine Mirialanerin, ohne das Wort zu nennen. Passt zum Skin, den du aussuchst.
+- **„Die Helle Elfe … gar keine echte Elfe“** (`c1_elf`): passt zum Tagebuch („Helle Elfe“, 2026-10-26) und zur Vorgeschichte (als Kind zu den Elfen geflohen, O46). Sie sagt offen, dass sie die Geschichte später erzählt.
 - 🟢 **Vos und Cerina kennen sich nicht** (User, 2026-10-21); der Abschiedssatz ist gestrichen.
-- **„Einmal geschwiegen, wo ich hätte reden sollen“** (`c3_wer`) spielt auf die Vertuschung am Ende von „The Acolyte“ an; daraus folgt ihr offenes „noch nicht“.
+- **„Einmal etwas verschwiegen, das ich hätte sagen müssen“** (`c3_wer`) spielt auf die Vertuschung am Ende von „The Acolyte“ an; daraus folgt ihr offenes „noch nicht“.
 - **„Dass es euch nicht mehr quält“** (`c2_fertig`) nimmt das Ende des Fluchs auf (O66).
 - **Elfenhandel** (`c2_handel`): Manasteel gegen Elementium stimmt mit Botania überein; mehr Tauschwaren nennt sie nicht.
 - **Arcs bei der Abgabe:** Arcs stecken in Blue Skies in eigenen Feldern im Inventar. 🔵 Prüfen, ob die Bedingung „Item im Inventar“ und `clear` sie dort sehen; sonst müssen die Spieler sie vorher in den normalen Rucksack legen (dann gehört ein Satz dazu in `c2_liste`). Abgegeben wird jede Stufe (Common bis Empowered), auch ein starker Arc geht dabei verloren.
