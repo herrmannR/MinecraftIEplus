@@ -30,6 +30,7 @@ import java.util.regex.*;
  *                  kill(entity-id[,anzahl]); observe(block-id)   (observe = Block ansehen, z. B. gebauter Multiblock)
  *   <CODE> rewards = stage(name); command(/befehl …); item(id[,anzahl]); xp(menge)
  *             (alle als Team-Belohnung, automatisch abgeholt; Befehle mit erhöhten Rechten und ohne Chat-Ausgabe)
+ *             Dazu kommen Standard-Belohnungen je Kn und Haupt-/Nebenquest (standardRewards, F33).
  *   <CODE> deps  = CODE, CODE        (ersetzt die Standard-Abhängigkeit; "kapitel:CODE" = Quest in einem anderen Kapitel)
  *   <CODE> icon  = <item-id>
  * Standard-Abhängigkeit: Hauptweg-Quest an der vorigen Hauptweg-Quest, Nebenquest einer Reihe an der
@@ -102,6 +103,7 @@ public class QuestbuchGen {
         }
         for (String c : cfgRewards.keySet()) if (!byCode.containsKey(c)) throw new RuntimeException("Belohnung für unbekannte Quest " + c);
 
+
         // Abhängigkeiten
         Quest lastMain = null; Map<String, Quest> lastInSeries = new HashMap<>();
         for (Quest q : qs) {
@@ -116,6 +118,24 @@ public class QuestbuchGen {
             if (q.main) lastMain = q;
             if (q.series != null) lastInSeries.put(q.series, q);
         }
+
+        // Standard-Belohnungen (F33, User 2026-10-28), hinter den Belohnungen aus der Steuerdatei
+        Set<String> kapitelEnde = new HashSet<>();
+        if (chapter.equals("buch1")) {             // letzte Hauptquest je Story-Kapitel in Buch 1
+            Map<String, String> last = new HashMap<>();
+            for (Quest q : qs) if (q.main && q.kGate != null) last.put(q.kGate, q.code);
+            kapitelEnde.addAll(last.values());
+        }
+        // Quests ohne eigenes Kn (Nebenquests ohne Meilenstein) zählen zum Kn ihrer Vorgänger-Quest
+        int ohneK = 0;
+        for (Quest q : qs) {
+            String kEff = kEffektiv(q, byCode, new HashSet<>());
+            if (kEff == null) { ohneK++; continue; }
+            boolean eigeneCredits = cfgRewards.containsKey(q.code) && cfgRewards.get(q.code).contains("_credit");
+            int r = q.rewards.size();
+            for (String t : standardRewards(q, kEff, kapitelEnde.contains(q.code), eigeneCredits)) q.rewards.add(reward(q, r++, t));
+        }
+        if (ohneK > 0) System.out.println(ohneK + " Quests ohne Kn: keine Standard-Belohnung");
 
         // Layout: je Abschnitt eine Zeile; Hauptweg oben, Nebenquests darunter
         String sec = null; double y = -3, mainX = 0, sideX = 0; Quest prevMain = null;
@@ -442,6 +462,44 @@ public class QuestbuchGen {
                 return head + "id: \"" + id + "\"\n" + team + "\t\t\t\ttype: \"xp\"\n\t\t\t\txp: " + arg + "\n\t\t\t}";
         }
         throw new RuntimeException(q.code + ": unbekannte Belohnungsart " + m.group(1));
+    }
+
+    // Kleinigkeiten des Droiden für Nebenquests in K1–K3 (je Quest fest aus dem Code gewählt)
+    static final String[] KLEINIGKEITEN = {
+        "minecraft:bread,4", "minecraft:torch,16", "minecraft:iron_ingot,2", "minecraft:coal,8", "minecraft:cooked_beef,4"
+    };
+
+    /**
+     * Standard-Belohnungen (F33, User 2026-10-28):
+     *   K1–K3 (Aufgaben des Droiden): Hauptquest 50 XP + 2 Copper Credits, Nebenquest 20 XP + eine Kleinigkeit.
+     *   ab K4 (Einsiedler):            Hauptquest 1 Iron Credit, Nebenquest 2 Copper Credits,
+     *                                  letzte Hauptquest eines Story-Kapitels in Buch 1: 2 Iron Credits.
+     * Hat die Steuerdatei für die Quest schon Credits (z. B. ST4-05), entfallen die Standard-Credits.
+     */
+    static List<String> standardRewards(Quest q, String kGate, boolean kapitelEnde, boolean eigeneCredits) {
+        int k = Integer.parseInt(kGate.substring(1));
+        List<String> r = new ArrayList<>();
+        if (k <= 3) {
+            if (q.main) { r.add("xp(50)"); if (!eigeneCredits) r.add("item(swgc:copper_credit,2)"); }
+            else { r.add("xp(20)"); r.add("item(" + KLEINIGKEITEN[Math.floorMod(q.code.hashCode(), KLEINIGKEITEN.length)] + ")"); }
+        } else if (!eigeneCredits) {
+            if (q.main) r.add(kapitelEnde ? "item(swgc:iron_credit,2)" : "item(swgc:iron_credit,1)");
+            else r.add("item(swgc:copper_credit,2)");
+        }
+        return r;
+    }
+
+    /** Kn der Quest; fehlt es, das Kn der ersten Vorgänger-Quest im selben Kapitel, die eins hat. */
+    static String kEffektiv(Quest q, Map<String, Quest> byCode, Set<String> gesehen) {
+        if (q.kGate != null) return q.kGate;
+        if (!gesehen.add(q.code)) return null;
+        for (String d : q.deps) {
+            Quest p = byCode.get(d);
+            if (p == null) continue;
+            String k = kEffektiv(p, byCode, gesehen);
+            if (k != null) return k;
+        }
+        return null;
     }
 
     static String depId(String code) {

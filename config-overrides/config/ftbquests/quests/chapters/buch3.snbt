@@ -66,7 +66,7 @@
 			description: [
 				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
 				""
-				"&eFortschritt:&r &eRakete T7&r"
+				"&eFortschritt:&r &eRakete T7&r · MekaSuit Pflicht (F37, 2026-10-28)"
 			]
 			icon: "minecraft:book"
 			id: "2E92F0E81C219781"

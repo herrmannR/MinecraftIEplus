@@ -35,6 +35,21 @@
 			hide_until_deps_visible: true
 			icon: "blue_skies:blue_journal"
 			id: "388814E694813951"
+			rewards: [{
+				auto: "enabled"
+				id: "3E2E42284A138BE9"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "07155B3581053E85"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BS1 · Everbright"
 			tasks: [{
 				id: "745AEA2893B76798"
@@ -53,6 +68,21 @@
 			hide_until_deps_visible: true
 			icon: "blue_skies:zeal_lighter"
 			id: "2BA9940A19FF9205"
+			rewards: [{
+				auto: "enabled"
+				id: "6AD22FE5F95B3374"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "43F36BC3C81F872E"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BS1 · Everbright"
 			tasks: [{
 				id: "6D82783F33AC8C41"
@@ -75,6 +105,21 @@
 			]
 			hide_until_deps_visible: true
 			id: "3EAE987B6BD74C1B"
+			rewards: [{
+				auto: "enabled"
+				id: "6A786F923D7744AF"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "535C1F7FF224C7BA"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BS1 · Everbright"
 			tasks: [{
 				dimension: "blue_skies:everbright"
@@ -95,6 +140,21 @@
 			hide_until_deps_visible: true
 			icon: "blue_skies:turquoise_stone_pickaxe"
 			id: "5C718D62FB8B816A"
+			rewards: [{
+				auto: "enabled"
+				id: "2329DB639BF77FE8"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "3B81AED1318D485F"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BS1 · Everbright"
 			tasks: [{
 				id: "57AC5E137F8422FF"
@@ -115,6 +175,21 @@
 			hide_until_deps_visible: true
 			icon: "blue_skies:ventium_ingot"
 			id: "5C71431D3D22E211"
+			rewards: [{
+				auto: "enabled"
+				id: "1B29A138151DD54D"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "645A4177D29EC30E"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BS1 · Everbright"
 			tasks: [{
 				id: "65B10608D94F2D36"
@@ -139,6 +214,21 @@
 			hide_until_deps_visible: true
 			icon: "mekanism:raw_tin"
 			id: "534472CA68E78922"
+			rewards: [{
+				auto: "enabled"
+				id: "317169201E7A9697"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "1E2523CD0C08018C"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BS1 · Everbright"
 			tasks: [{
 				id: "199BE20080158032"
@@ -170,6 +260,21 @@
 			id: "2395C10DF73283B3"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "4C8B9B2BC51100BF"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "34F75361EBDF6669"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BS1 · Everbright · Nebenquest"
 			tasks: [{
 				id: "6DA31EB879B0F8EB"
@@ -191,6 +296,21 @@
 			id: "5036F3048DCFCEA3"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "1C7427E05C26E7DD"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "672DE9EC3D0A850F"
+				item: "minecraft:iron_ingot"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BS1 · Everbright · Nebenquest"
 			tasks: [{
 				id: "4AFC1310DFD43A3D"
@@ -212,6 +332,21 @@
 			id: "6C8D015D4B89CB75"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "27837661AA0CCA94"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 8
+				id: "3C87E1D1F29B5582"
+				item: "minecraft:coal"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BS1 · Everbright · Nebenquest"
 			tasks: [{
 				id: "62FBC4278329D090"
@@ -231,6 +366,21 @@
 			hide_until_deps_visible: true
 			icon: "blue_skies:aquite_pickaxe"
 			id: "0F0A9BCA8E40F502"
+			rewards: [{
+				auto: "enabled"
+				id: "306A39F19975A4BD"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "1C9BAA24E888CC36"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "BS1 · Everbright"
@@ -270,6 +420,14 @@
 			]
 			hide_until_deps_visible: true
 			id: "54B24C3F06316816"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "5B5430FDF4E3480C"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BS2 · Everdawn"
 			tasks: [{
 				dimension: "blue_skies:everdawn"
@@ -288,6 +446,14 @@
 			hide_until_deps_visible: true
 			icon: "mekanism:raw_osmium"
 			id: "2EC898204E3F7965"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "2141A6E8A8049972"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BS2 · Everdawn"
 			tasks: [{
 				id: "4BFA43384F84EA18"
@@ -307,6 +473,14 @@
 			hide_until_deps_visible: true
 			icon: "blue_skies:horizonite_pickaxe"
 			id: "130284B9336D0DE5"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "28290BC214FF6EC7"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BS2 · Everdawn"
 			tasks: [{
 				id: "7C9553D94F3A5A92"
@@ -328,6 +502,14 @@
 			id: "3FE842EF138D3181"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "0CEBE925602E8D07"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BS2 · Everdawn · Nebenquest"
 			tasks: [{
 				id: "09A76D00A86A3EAD"
@@ -347,6 +529,14 @@
 			hide_until_deps_visible: true
 			icon: "blue_skies:moonstone_shield"
 			id: "140363A653179B26"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "380F33DE0610EB94"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BS2 · Everdawn"
 			tasks: [{
 				id: "390D6EEB309AA2AC"
@@ -367,6 +557,14 @@
 			hide_until_deps_visible: true
 			icon: "blue_skies:diopside_gem"
 			id: "646CB6EC8370C3A3"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "2EC93F81423B50F3"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "BS2 · Everdawn"
@@ -391,6 +589,14 @@
 			id: "5B51EC9DAD2A3460"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "1901D87286A58A81"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BS2 · Everdawn · Nebenquest"
 			tasks: [{
 				id: "71A968C4D13DC2D5"
@@ -432,6 +638,14 @@
 			hide_until_deps_visible: true
 			icon: "blue_skies:blinding_key"
 			id: "555D5A857EF94B29"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "38FCF4AEF67B3B3F"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BS3 · Die Blinding-Bosse"
 			tasks: [{
 				count: 4L
@@ -454,6 +668,14 @@
 			hide_until_deps_visible: true
 			icon: "blue_skies:bright_blinding_keystone"
 			id: "70D675EC3E41624E"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "385F925939756124"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BS3 · Die Blinding-Bosse"
 			tasks: [{
 				entity: "blue_skies:summoner"
@@ -476,6 +698,14 @@
 			hide_until_deps_visible: true
 			icon: "blue_skies:dawn_blinding_keystone"
 			id: "65D0CD0CCDD4216D"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "016B3CF20C504225"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "BS3 · Die Blinding-Bosse"
@@ -500,6 +730,14 @@
 			id: "4F2DF684B0E9530E"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "54281F0393F68067"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BS3 · Die Blinding-Bosse · Nebenquest"
 			tasks: [{
 				id: "514B856076FB6EC0"
@@ -521,6 +759,14 @@
 			id: "11F8FB1401ACF692"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "18CB032D3199DAD2"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BS3 · Die Blinding-Bosse · Nebenquest"
 			tasks: [{
 				id: "184FF1FD707041EC"
@@ -565,6 +811,14 @@
 			hide_until_deps_visible: true
 			icon: "blue_skies:nature_key"
 			id: "03E68B56B5FF4556"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "2BF1D33174B877E0"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BS4 · Nature- und Poison-Boss"
 			tasks: [{
 				id: "33A85DC617F33939"
@@ -586,6 +840,14 @@
 			hide_until_deps_visible: true
 			icon: "blue_skies:nature_key"
 			id: "468DA32D7DB0FD55"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "5A2EFD2185E79FC3"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BS4 · Nature- und Poison-Boss"
 			tasks: [{
 				entity: "blue_skies:starlit_crusher"
@@ -606,6 +868,14 @@
 			hide_until_deps_visible: true
 			icon: "blue_skies:poison_key"
 			id: "437B0DB53A740456"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "0211338CA79A33BD"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BS4 · Nature- und Poison-Boss"
 			tasks: [{
 				id: "704B0ECC6D38E42B"
@@ -627,6 +897,14 @@
 			hide_until_deps_visible: true
 			icon: "blue_skies:poison_key"
 			id: "6ED6E7E09F66A770"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "0FEC57FC64B4EDB3"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "BS4 · Nature- und Poison-Boss"
@@ -652,6 +930,14 @@
 			id: "0A1FD698CF33352A"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "563955BB95837F20"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BS4 · Nature- und Poison-Boss · Nebenquest"
 			tasks: [{
 				id: "6F39CED0B950BDC7"
@@ -708,6 +994,21 @@
 			id: "3044683138D65009"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "3DC92F3EC898A10D"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "779B56F1EE4ED65E"
+				item: "minecraft:cooked_beef"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Nebenquest-Reihe BSN · Leben in den Welten · Nebenquest"
 			tasks: [{
 				id: "067A243828956FA2"
@@ -729,6 +1030,21 @@
 			id: "7F4F826675474480"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "7B08C056CA3279E5"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "02E4362F75F89941"
+				item: "minecraft:bread"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Nebenquest-Reihe BSN · Leben in den Welten · Nebenquest"
 			tasks: [{
 				id: "5A8735942C67907E"
@@ -750,6 +1066,21 @@
 			id: "701A55C7E216A051"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "7D7315511933FC8B"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "465C2924C88E506C"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Nebenquest-Reihe BSN · Leben in den Welten · Nebenquest"
 			tasks: [{
 				id: "7AE2FA310E6D2171"

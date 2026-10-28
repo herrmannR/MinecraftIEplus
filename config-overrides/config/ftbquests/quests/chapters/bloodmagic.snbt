@@ -35,6 +35,21 @@
 			hide_until_deps_visible: true
 			icon: "patchouli:guide_book"
 			id: "0D3EEAE5E814AD47"
+			rewards: [{
+				auto: "enabled"
+				id: "34DBF806F1C42975"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "490F96A9FE6F1C5D"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM1 · Blutaltar und erste Orbs"
 			tasks: [{
 				id: "53AA114D89EA49F5"
@@ -56,6 +71,21 @@
 			hide_until_deps_visible: true
 			icon: "bloodmagic:altar"
 			id: "5507C16F016711A1"
+			rewards: [{
+				auto: "enabled"
+				id: "6E616AC11618EDCD"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "5EB326CF812E3655"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM1 · Blutaltar und erste Orbs"
 			tasks: [{
 				id: "15C6AB5436A4FA94"
@@ -80,6 +110,21 @@
 			hide_until_deps_visible: true
 			icon: "bloodmagic:weakbloodorb"
 			id: "4B38F76E3D7E95AC"
+			rewards: [{
+				auto: "enabled"
+				id: "660B05CD94367762"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "182CE0F3D1726E05"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM1 · Blutaltar und erste Orbs"
 			tasks: [{
 				id: "590E429F8A5BD4DD"
@@ -100,6 +145,21 @@
 			hide_until_deps_visible: true
 			icon: "bloodmagic:blankslate"
 			id: "28DBA24F5173352E"
+			rewards: [{
+				auto: "enabled"
+				id: "71B4FA1025AE8E43"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "251B7ED3A3F8BF75"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM1 · Blutaltar und erste Orbs"
 			tasks: [{
 				id: "4A72025BC0BB50D6"
@@ -119,6 +179,21 @@
 			hide_until_deps_visible: true
 			icon: "bloodmagic:alchemytable"
 			id: "37F36A64A11B29DA"
+			rewards: [{
+				auto: "enabled"
+				id: "32CFB3E6B706EA5F"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "11AFBEC2C9D3C885"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM1 · Blutaltar und erste Orbs"
 			tasks: [{
 				id: "2525A91CC5E34822"
@@ -143,6 +218,21 @@
 			hide_until_deps_visible: true
 			icon: "bloodmagic:divinationsigil"
 			id: "602E0718188B0B92"
+			rewards: [{
+				auto: "enabled"
+				id: "5D7811C8B2103499"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "24D759B46B0828B2"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM1 · Blutaltar und erste Orbs"
 			tasks: [{
 				id: "34BCE975EBF2FB8B"
@@ -164,6 +254,21 @@
 			id: "54D7667CA84068AE"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "4625AEC92CD71805"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "7EDF246A7E98BC8D"
+				item: "minecraft:bread"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM1 · Blutaltar und erste Orbs · Nebenquest"
 			tasks: [{
 				id: "1A9566A2B9096833"
@@ -190,6 +295,21 @@
 			id: "653319CBA100B8CF"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "2BA6FE9DC17DB8C6"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "7B3044F5562A727C"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM1 · Blutaltar und erste Orbs · Nebenquest"
 			tasks: [{
 				id: "049885027CD32F73"
@@ -216,6 +336,21 @@
 			id: "04938CE4A541B20F"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "4744B555F1D34B5F"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "3437727C6847FC12"
+				item: "minecraft:iron_ingot"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM1 · Blutaltar und erste Orbs · Nebenquest"
 			tasks: [{
 				id: "5B6F99B43030C7F4"
@@ -242,6 +377,21 @@
 			id: "55171DF2F3915219"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "5ACFEACDDCF89AE7"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "184646DC3C3B258A"
+				item: "minecraft:cooked_beef"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM1 · Blutaltar und erste Orbs · Nebenquest"
 			tasks: [{
 				id: "15B7D14FC0A3005E"
@@ -263,6 +413,21 @@
 			id: "3E84591E72A9538E"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "49A2AF65508509F0"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "5E4F820952A41088"
+				item: "minecraft:bread"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM1 · Blutaltar und erste Orbs · Nebenquest"
 			tasks: [{
 				id: "202A144701D1A30B"
@@ -282,6 +447,21 @@
 			hide_until_deps_visible: true
 			icon: "bloodmagic:blankrune"
 			id: "4B9D4443E6EC0C72"
+			rewards: [{
+				auto: "enabled"
+				id: "230B5B8CBB5E45E5"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "53BE663D4ECFFE94"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM1 · Blutaltar und erste Orbs"
 			tasks: [{
 				count: 8L
@@ -302,6 +482,21 @@
 			hide_until_deps_visible: true
 			icon: "bloodmagic:apprenticebloodorb"
 			id: "2CD1B14012721177"
+			rewards: [{
+				auto: "enabled"
+				id: "47EDB7A7A28E8574"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "1402BF8E2BA5B300"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "BM1 · Blutaltar und erste Orbs"
@@ -330,6 +525,21 @@
 			id: "3CA98804378F81DF"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "6B3A9F7A3A3F76B3"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 8
+				id: "5DFABF39148EFA3C"
+				item: "minecraft:coal"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM1 · Blutaltar und erste Orbs · Nebenquest"
 			tasks: [{
 				id: "240382520982F099"
@@ -351,6 +561,21 @@
 			id: "1E1D401921CE3496"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "3AA0DA93CCDD47E4"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "2B5AE35D8CD674A9"
+				item: "minecraft:cooked_beef"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM1 · Blutaltar und erste Orbs · Nebenquest"
 			tasks: [{
 				id: "1B790A0C4C5452FE"
@@ -382,6 +607,21 @@
 			id: "1C106C59C2A54C90"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "473A6C21B8DBA645"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "782BE291C1B04A42"
+				item: "minecraft:bread"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM1 · Blutaltar und erste Orbs · Nebenquest"
 			tasks: [{
 				id: "0B6FC7BD751EC161"
@@ -403,6 +643,21 @@
 			id: "19B4E8FC4A539F03"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "32DFF21384FD2E72"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "21A69227AE7A57C3"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM1 · Blutaltar und erste Orbs · Nebenquest"
 			tasks: [{
 				id: "3CE3E80075562AF6"
@@ -441,6 +696,14 @@
 			hide_until_deps_visible: true
 			icon: "bloodmagic:infusedslate"
 			id: "5E79F6E054F6B955"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "29ABBF135F227A51"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM2 · Altar Stufe 3"
 			tasks: [{
 				id: "57C5F5DC8DE8B7AE"
@@ -460,6 +723,14 @@
 			hide_until_deps_visible: true
 			icon: "bloodmagic:magicianbloodorb"
 			id: "524A9268A075D693"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "1B03B04AC5E4B3A5"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM2 · Altar Stufe 3"
 			tasks: [{
 				id: "7F3C8D5439291393"
@@ -479,6 +750,14 @@
 			hide_until_deps_visible: true
 			icon: "bloodmagic:lavacrystal"
 			id: "6629539CC91EDD4C"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "082152609681BE89"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "BM2 · Altar Stufe 3"
@@ -503,6 +782,14 @@
 			id: "6C54BABDFE1967E8"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "3B4202BFA892EDB4"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM2 · Altar Stufe 3 · Nebenquest"
 			tasks: [{
 				id: "77C240C17F5C668E"
@@ -525,6 +812,14 @@
 			id: "6D354AC0B7AB709C"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "33A2859068AB7D54"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM2 · Altar Stufe 3 · Nebenquest"
 			tasks: [{
 				id: "3A576DED95C07BC9"
@@ -546,6 +841,14 @@
 			id: "28B6F98633A1E0DA"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "34341A131E0A9CFC"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM2 · Altar Stufe 3 · Nebenquest"
 			tasks: [{
 				id: "09B79B0EEA74AE88"
@@ -572,6 +875,14 @@
 			id: "02B63CE1156D01F1"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "76C548603F82BA09"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM2 · Altar Stufe 3 · Nebenquest"
 			tasks: [{
 				id: "15E86A85A2246D65"
@@ -612,6 +923,14 @@
 			hide_until_deps_visible: true
 			icon: "bloodmagic:waterscribetool"
 			id: "3CA477340B84F9A1"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "7DA0C61C0AA29F41"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM3 · Rituale"
 			tasks: [{
 				id: "3BAF86781ADCC836"
@@ -647,6 +966,14 @@
 			hide_until_deps_visible: true
 			icon: "bloodmagic:masterritualstone"
 			id: "08D5F10EA6F3325A"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "5393B4A672FE85A2"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM3 · Rituale"
 			tasks: [{
 				id: "6F5235D0496E4D53"
@@ -672,6 +999,14 @@
 			hide_until_deps_visible: true
 			icon: "bloodmagic:ritualdiviner"
 			id: "73FC65D12CE4879C"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "35E1553A196914DD"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM3 · Rituale"
 			tasks: [{
 				id: "0EFFE768B0A8222C"
@@ -697,6 +1032,14 @@
 			id: "53DCF1A23D454871"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "24744184D1AD7BF4"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM3 · Rituale · Nebenquest"
 			tasks: [{
 				id: "380BBAF86340CF71"
@@ -717,6 +1060,14 @@
 			hide_until_deps_visible: true
 			icon: "bloodmagic:alchemicalreactionchamber"
 			id: "222A17EBEA3175D1"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "16B31D5312E137D1"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM3 · Rituale"
 			tasks: [{
 				id: "1BF37A07C8DE252B"
@@ -736,6 +1087,14 @@
 			hide_until_deps_visible: true
 			icon: "bloodmagic:infusedslate"
 			id: "5269A83140F783E1"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "04B88359288DD4A4"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "BM3 · Rituale"
@@ -760,6 +1119,14 @@
 			id: "6AB0A7358A8419EB"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "4A9A81755F8917FB"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM3 · Rituale · Nebenquest"
 			tasks: [{
 				id: "126BFD331519DFCA"
@@ -786,6 +1153,14 @@
 			id: "5A884EB0E2D40210"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "3FAAA7B947D1BBE8"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM3 · Rituale · Nebenquest"
 			tasks: [{
 				id: "0E6B9E756BFD3E21"
@@ -807,6 +1182,14 @@
 			id: "31E398421437F95E"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "4BB999AD1B9FA8EF"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM3 · Rituale · Nebenquest"
 			tasks: [{
 				id: "2F04BDC8AD7D66F1"
@@ -851,6 +1234,14 @@
 			]
 			hide_until_deps_visible: true
 			id: "6C53489212B0A712"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "3133DC727BB06A92"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM4 · Demon Realm und Altar Stufe 4"
 			tasks: [{
 				dimension: "bloodmagic:dungeon"
@@ -871,6 +1262,14 @@
 			id: "1FFFC3F40626434D"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "368D3770709E7FF8"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM4 · Demon Realm und Altar Stufe 4 · Nebenquest"
 			tasks: [{
 				id: "6BC7E0172FC13C2A"
@@ -890,6 +1289,14 @@
 			hide_until_deps_visible: true
 			icon: "bloodmagic:weak_tau"
 			id: "017FA53038DBE35C"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "460B8CA67D6896E1"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM4 · Demon Realm und Altar Stufe 4"
 			tasks: [{
 				id: "019C90363D71DDAB"
@@ -909,6 +1316,14 @@
 			hide_until_deps_visible: true
 			icon: "bloodmagic:strong_tau"
 			id: "7FFA53B2AC6339B1"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "5934877DEEE67F24"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM4 · Demon Realm und Altar Stufe 4"
 			tasks: [{
 				id: "4C2DBBFBB76F8467"
@@ -933,6 +1348,14 @@
 			hide_until_deps_visible: true
 			icon: "bloodmagic:mineentrancekey"
 			id: "0B93284142AD1ADA"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "0488AA0E3E5A22B9"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM4 · Demon Realm und Altar Stufe 4"
 			tasks: [{
 				id: "01885330EF7D8B06"
@@ -952,6 +1375,14 @@
 			hide_until_deps_visible: true
 			icon: "bloodmagic:largebloodstonebrick"
 			id: "6EE33044D2FCF2A4"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "35DAA68FFA7BF3FA"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BM4 · Demon Realm und Altar Stufe 4"
 			tasks: [{
 				count: 4L
@@ -977,6 +1408,14 @@
 			hide_until_deps_visible: true
 			icon: "bloodmagic:masterbloodorb"
 			id: "489730F501F1D8F3"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "2C95C7759BF815AA"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "BM4 · Demon Realm und Altar Stufe 4"

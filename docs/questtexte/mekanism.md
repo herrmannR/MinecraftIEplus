@@ -393,12 +393,13 @@ Wandelt Stoffe mit Antimatter um: Kohle zu Diamant, Diamant zu Smaragd, Zinn zu 
 
 An der Modification Station setzt du **Module** in MekaSuit und Meka-Tool ein und nimmst sie heraus. Jedes Modul beginnt mit einer Module Base. Leer können die Geräte fast nichts.
 
-### MK9-02 MekaSuit · Nebenquest
+### MK9-02 MekaSuit · Hauptweg
 **Aufgabe:** `mekanism:mekasuit_helmet`, `mekanism:mekasuit_bodyarmor`, `mekanism:mekasuit_pants`, `mekanism:mekasuit_boots`
 
 Eine Netherite-Rüstung, die mit Strom läuft. Je Teil: 4 HDPE Sheet, Ultimate Control Circuit, das Netherite-Teil, 2 Polonium Pellet, Basic Induction Cell.
 Für die Raumfahrt gibt es eigene Module (Giselle Addon): **Space Breathing**, **Space Fire Proof**, **Acid Rain Proof** und **Gravity Normalizing**. 🔵 Ob der Space-Breathing-Unit-Sauerstoff im Pack aus Mekanism kommen muss, prüfen.
 Laden kannst du die Rüstung am Chargepad oder in einem Energy Cube.
+⚙️ Ohne MekaSuit kommst du nicht nach Mandalore (F37). 🔵 Wie die Sperre technisch aussieht, wird in Teil 3 gebaut.
 
 ### MK9-03 Meka-Tool · Nebenquest
 **Aufgabe:** `mekanism:meka_tool`

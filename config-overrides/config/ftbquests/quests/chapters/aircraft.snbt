@@ -41,6 +41,14 @@
 			id: "4C48D7003EFCCB36"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "3AA03B9334334415"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IA1 · Erste Fluggeräte · Nebenquest"
 			tasks: [{
 				id: "16207056633586BB"
@@ -72,6 +80,14 @@
 			id: "606196CD670CB983"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "7302223A5EFAD2D3"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IA1 · Erste Fluggeräte · Nebenquest"
 			tasks: [{
 				id: "783E3B7792B71E4F"
@@ -95,6 +111,14 @@
 			id: "2699D7367B6CCE4E"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "41D030209B66E1E1"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IA1 · Erste Fluggeräte · Nebenquest"
 			tasks: [{
 				id: "523A3B564AF47F9A"
@@ -143,6 +167,14 @@
 			id: "49F91214DE919443"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "765EA2AEA912B469"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IA2 · Luftschiffe · Nebenquest"
 			tasks: [{
 				id: "24758F0F3B917A81"
@@ -163,6 +195,14 @@
 			id: "5015A43A7B88A706"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "52EE248A6496076C"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IA2 · Luftschiffe · Nebenquest"
 			tasks: [{
 				id: "3A2C46CB246A5509"
@@ -183,6 +223,14 @@
 			id: "72C03921EE484BF1"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "719331548E7F0006"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IA2 · Luftschiffe · Nebenquest"
 			tasks: [{
 				id: "08376D23FF1CA372"

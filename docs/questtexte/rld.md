@@ -107,7 +107,7 @@ Für das Portal (WD5) brauchst du acht Orbs. Jede Bone Chest gibt einen oder zwe
 
 ---
 
-## WD3 · Der Purpur-Palast im End (K10 Der Elf)
+## WD3 · Der Purpur-Palast im End (K8 Hitze)
 
 > **Vorsicht:** Drei Gegner hintereinander, dazu das End selbst. Nimm Ender Pearls und Slow Falling mit.
 
@@ -130,7 +130,7 @@ Der Schlüssel zum Portal: 8 Bleeding Corruption um 1 Ender Heart in der Werkban
 
 ---
 
-## WD4 · Der Nether (K10 Der Elf)
+## WD4 · Der Nether (K8 Hitze)
 
 ### WD4-01 Quartz Vessel of Vision · Nebenquest
 **Aufgabe:** `wrd:magic_cauldron_nether`
@@ -213,7 +213,7 @@ Die **City of Gold** verlangt Erfahrungsstufe 80. Wer The Great Creator besiegt,
 
 ## 🔵 Offen vor dem Einbau
 
-1. ~~O35~~ entschieden (F15): Stufe 1 und ein Oberwelt-Dungeon Pflicht. **Offen:** Kapitel-Zuordnung ist ein Vorschlag (WD1/WD2 K8, WD3/WD4 K10, WD5 K12 = Teil 2). Ob WD3 und WD4 schon in Teil 1 als Nebenquests erscheinen oder mit WD5 ins Training gehören, entscheidet der User. Die Kill-Aufgabe fehlt nicht: Bosse werden über ihre Trophäen geprüft.
+1. ~~O35~~ entschieden (F15): Stufe 1 und ein Oberwelt-Dungeon Pflicht. 🟢 Kapitel (F31, 2026-10-28): WD1 bis WD4 mit K8, WD5 mit K12 (Teil 2). Ob WD3 und WD4 schon in Teil 1 als Nebenquests erscheinen oder mit WD5 ins Training gehören, entscheidet der User. Die Kill-Aufgabe fehlt nicht: Bosse werden über ihre Trophäen geprüft.
 2. Die Story nennt für Stufe 2 „die acht Oberwelt-Dungeons, je eine Quest“. Der Mod hat in der Oberwelt fünf Dungeon-Gruppen (normal, besonders, Wüste, Dschungel, Eis) und dazu die Nether-Gruppe. Die Texte machen eine Quest je Gruppe; mit WD2-01, WD2-02 und WD2-08 sind es acht Quests. Gemeint waren vielleicht die acht Dungeons der Infinite-Dimension (WD5).
 3. Rückweg des Sentient Pathfinder (WD1-02) und Herkunft der Kreide (WD1-03) im Spiel prüfen.
 4. Prüfbare Aufgabe für den Purpur-Palast (WD3-01): FTB Quests kann keine Struktur prüfen; Kontrollhaken oder `wrd:pur_pur_key`.

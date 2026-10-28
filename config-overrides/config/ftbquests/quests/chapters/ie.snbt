@@ -35,6 +35,21 @@
 			hide_until_deps_visible: true
 			icon: "immersiveengineering:manual"
 			id: "62A35FCF574906B1"
+			rewards: [{
+				auto: "enabled"
+				id: "22649C569C37B2F2"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "4091BC743DC69C88"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE1 · Koks und erster Stahl"
 			tasks: [{
 				id: "11217C459111D0AE"
@@ -55,6 +70,21 @@
 			hide_until_deps_visible: true
 			icon: "immersiveengineering:hammer"
 			id: "798B4A631B67A9BD"
+			rewards: [{
+				auto: "enabled"
+				id: "06272A4A8BEF7F4C"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "6D1B9D87D8FA3249"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE1 · Koks und erster Stahl"
 			tasks: [{
 				id: "7EBD959C1C83243E"
@@ -79,6 +109,21 @@
 			id: "54E983B56C80E743"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "0207700BDEEB0DBE"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "4750A302D998D625"
+				item: "minecraft:cooked_beef"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE1 · Koks und erster Stahl · Nebenquest"
 			tasks: [{
 				id: "4B9BAAE192D3E0BD"
@@ -99,6 +144,21 @@
 			hide_until_deps_visible: true
 			icon: "immersiveengineering:coke_oven"
 			id: "3ED5B6EA0E802EA4"
+			rewards: [{
+				auto: "enabled"
+				id: "14347943A8CA9421"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "6B755E0C03F6E551"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE1 · Koks und erster Stahl"
 			tasks: [{
 				id: "4F8CA2557D66DEA9"
@@ -125,6 +185,21 @@
 			hide_until_deps_visible: true
 			icon: "immersiveengineering:treated_wood_horizontal"
 			id: "7C2566B2919AA47D"
+			rewards: [{
+				auto: "enabled"
+				id: "7E15A79F129B2C65"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "31D96ACD6BA7ACD3"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE1 · Koks und erster Stahl"
 			tasks: [{
 				id: "5BBD8BD9A35F2A58"
@@ -147,6 +222,21 @@
 			id: "317CE07CD2F64A71"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "357C6EF7FD8C4112"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "6856675A0BFD885D"
+				item: "minecraft:iron_ingot"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE1 · Koks und erster Stahl · Nebenquest"
 			tasks: [{
 				id: "081E4A39EF08B6BE"
@@ -169,6 +259,21 @@
 			hide_until_deps_visible: true
 			icon: "immersiveengineering:blast_furnace"
 			id: "4C46CEFFAA6628FB"
+			rewards: [{
+				auto: "enabled"
+				id: "03124E3E058EDB10"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "3ABADFDB37CFB51D"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE1 · Koks und erster Stahl"
 			tasks: [{
 				id: "55642AD56D544B54"
@@ -196,6 +301,21 @@
 			hide_until_deps_visible: true
 			icon: "immersiveengineering:workbench"
 			id: "5525EF1C1A588A2E"
+			rewards: [{
+				auto: "enabled"
+				id: "43434D712931264B"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "69C0DEB3D2393040"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "IE1 · Koks und erster Stahl"
@@ -241,6 +361,21 @@
 			hide_until_deps_visible: true
 			icon: "immersiveengineering:dynamo"
 			id: "14D912DF8CA57B5C"
+			rewards: [{
+				auto: "enabled"
+				id: "794B5F6345D48017"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "7F4C5F312AD803AE"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE2 · Strom und Förderbänder"
 			tasks: [{
 				id: "5BB26C265E5C30D8"
@@ -267,6 +402,21 @@
 			hide_until_deps_visible: true
 			icon: "immersiveengineering:connector_lv"
 			id: "6403D8B9B81865B5"
+			rewards: [{
+				auto: "enabled"
+				id: "2CF3C14ADFDB7BDB"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "4C95188570484378"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "IE2 · Strom und Förderbänder"
@@ -297,6 +447,21 @@
 			id: "5E70E6C62F7A1DA7"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "5374CB19DEF1B212"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "158ACA6F92E9430A"
+				item: "minecraft:bread"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE2 · Strom und Förderbänder · Nebenquest"
 			tasks: [{
 				id: "62640FF847EEB979"
@@ -318,6 +483,21 @@
 			id: "3611D2E724C0176D"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "23F74D02F28AEC7D"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "59255439DA69D935"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE2 · Strom und Förderbänder · Nebenquest"
 			tasks: [{
 				id: "1C79EB870E870CB8"
@@ -345,6 +525,21 @@
 			id: "7D1F1377A778B12A"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "3BC6A7C2D3913EB3"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "555CE0DC06031F90"
+				item: "minecraft:iron_ingot"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE2 · Strom und Förderbänder · Nebenquest"
 			tasks: [{
 				id: "4D3E07447CF43DFF"
@@ -365,6 +560,21 @@
 			id: "6218ACEDA163AC97"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "7E5A0A8C22B86F0E"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 8
+				id: "31CCD7C344A69F24"
+				item: "minecraft:coal"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE2 · Strom und Förderbänder · Nebenquest"
 			tasks: [{
 				id: "7C419FE9A8F68D96"
@@ -402,6 +612,21 @@
 			hide_until_deps_visible: true
 			icon: "immersiveengineering:advanced_blast_furnace"
 			id: "3B00BFD409EAA884"
+			rewards: [{
+				auto: "enabled"
+				id: "235B48CD2503D043"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "1F16EFE721B00AC6"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE3 · Schwermaschinen und Biodiesel"
 			tasks: [{
 				id: "3B4EC47F0E739229"
@@ -427,6 +652,21 @@
 			hide_until_deps_visible: true
 			icon: "immersiveengineering:light_engineering"
 			id: "562BFD38258C9AEE"
+			rewards: [{
+				auto: "enabled"
+				id: "39A4BF262B04BE57"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "46C8CE9F7B642AD3"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE3 · Schwermaschinen und Biodiesel"
 			tasks: [{
 				id: "5383C9E43EB84232"
@@ -457,6 +697,21 @@
 			hide_until_deps_visible: true
 			icon: "immersiveengineering:metal_press"
 			id: "20ABB5E0F22B9859"
+			rewards: [{
+				auto: "enabled"
+				id: "6C05C773EBF815D7"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "08C86E1FB0582B50"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE3 · Schwermaschinen und Biodiesel"
 			tasks: [{
 				id: "776578560166BC45"
@@ -479,6 +734,21 @@
 			hide_until_deps_visible: true
 			icon: "immersiveengineering:crusher"
 			id: "4BBC049D29718225"
+			rewards: [{
+				auto: "enabled"
+				id: "76956037DA497E14"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "76B556F516F13972"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE3 · Schwermaschinen und Biodiesel"
 			tasks: [{
 				id: "571B3A9A985CD1B3"
@@ -501,6 +771,21 @@
 			id: "38CE5B749E6CD00A"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "03FD410CA6840F88"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 8
+				id: "5106437682C4B127"
+				item: "minecraft:coal"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE3 · Schwermaschinen und Biodiesel · Nebenquest"
 			tasks: [{
 				id: "0F2FAECF2A38FD3E"
@@ -523,6 +808,21 @@
 			hide_until_deps_visible: true
 			icon: "immersiveengineering:refinery"
 			id: "314870713B15C085"
+			rewards: [{
+				auto: "enabled"
+				id: "3F858B8BEA6FCCD4"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "308C366393498743"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "IE3 · Schwermaschinen und Biodiesel"
@@ -568,6 +868,21 @@
 			id: "05AC75A6FF5A4E3C"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "49A71B1C08083508"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "1BBEB04E09F5FE99"
+				item: "minecraft:bread"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE3 · Schwermaschinen und Biodiesel · Nebenquest"
 			tasks: [{
 				id: "4E8D5EC9DA5C6AE8"
@@ -590,6 +905,21 @@
 			id: "1C699BB7EFE48DF9"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "5D7924B882FFD397"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "108FC72705BDE700"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE3 · Schwermaschinen und Biodiesel · Nebenquest"
 			tasks: [{
 				id: "33246BE7571854DC"
@@ -637,6 +967,14 @@
 			hide_until_deps_visible: true
 			icon: "immersivepetroleum:seismic_survey"
 			id: "2DC16D7466689218"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "441F95F2B9D5A261"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE4 · Erdöl und Destillation"
 			tasks: [{
 				id: "0FA517443C8F42DA"
@@ -661,6 +999,14 @@
 			hide_until_deps_visible: true
 			icon: "immersivepetroleum:pumpjack"
 			id: "3618A099F6094A9C"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "6CE658E1CCA795DA"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE4 · Erdöl und Destillation"
 			tasks: [{
 				id: "0D64E291222D7F82"
@@ -691,6 +1037,14 @@
 			id: "1F16796D0C170F63"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "47E6C1F0DC92E0D7"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE4 · Erdöl und Destillation · Nebenquest"
 			tasks: [{
 				id: "244E396C9E4984E0"
@@ -713,6 +1067,14 @@
 			hide_until_deps_visible: true
 			icon: "immersivepetroleum:distillation_tower"
 			id: "717FEB79354DEDAF"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "08A497828A87A630"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "IE4 · Erdöl und Destillation"
@@ -743,6 +1105,14 @@
 			id: "18AE5A93BBDBCC4E"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "236E165592AA34A0"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE4 · Erdöl und Destillation · Nebenquest"
 			tasks: [{
 				amount: 1000L
@@ -783,6 +1153,14 @@
 			hide_until_deps_visible: true
 			icon: "immersivepetroleum:hydrotreater"
 			id: "604E7F0E3AB26675"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "69ED6A9D9115AD37"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "IE5 · Entschwefelter Diesel"
@@ -814,6 +1192,14 @@
 			id: "2B35E329CA5D669C"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "713A927DDF24D33C"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE5 · Entschwefelter Diesel · Nebenquest"
 			tasks: [{
 				id: "69E0173CEE45872B"
@@ -860,6 +1246,14 @@
 			id: "3163A1FDC8D5989F"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "02A09157E7B3786E"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE6 · Großindustrie · Nebenquest"
 			tasks: [{
 				id: "50687089E6EB72C9"
@@ -889,6 +1283,14 @@
 			id: "078CA5B5B44BFF17"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "0B5A597B2C5CEAB0"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE6 · Großindustrie · Nebenquest"
 			tasks: [{
 				id: "7FF83C8E94E417CB"
@@ -916,6 +1318,14 @@
 			id: "690D7D5B87093152"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "2BAB496FD0FAB7EA"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE6 · Großindustrie · Nebenquest"
 			tasks: [{
 				id: "01FDD056E9D0BCA6"
@@ -938,6 +1348,14 @@
 			id: "6299875A2D12F3C3"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "31C303650366362C"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE6 · Großindustrie · Nebenquest"
 			tasks: [{
 				id: "1DDA89A0AC3ACA00"
@@ -958,6 +1376,14 @@
 			id: "5B447F9A1B3D7220"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "28F472066BFE0D15"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE6 · Großindustrie · Nebenquest"
 			tasks: [{
 				id: "0E861D91A2B0194D"
@@ -984,6 +1410,14 @@
 			id: "32E82D078CAFE96C"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "61BC6F89C5F15F21"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "IE6 · Großindustrie · Nebenquest"
 			tasks: [{
 				id: "3691977473C8BFA6"
@@ -1006,6 +1440,21 @@
 			id: "5A982967B2B58B88"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "14D77C085533626B"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "4AA3B52C97241104"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
 			tasks: [{
 				id: "0FD17A685D3006CF"
@@ -1026,6 +1475,21 @@
 			id: "5261834EC4D5CE7F"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "6C0670F9946CFBDB"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "7833550C37087D33"
+				item: "minecraft:iron_ingot"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
 			tasks: [{
 				id: "3E64D065EE8EC8CB"
@@ -1046,6 +1510,21 @@
 			id: "2FF2620DD872FB22"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "2679F02DCEF5FF03"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 8
+				id: "0866E217261596FD"
+				item: "minecraft:coal"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
 			tasks: [{
 				id: "30DBF58F0D2F4493"
@@ -1066,6 +1545,21 @@
 			id: "6BA62092B7E3EC4D"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "5B9E9928D9FB8B22"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "79BB25F85CF88FA2"
+				item: "minecraft:cooked_beef"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
 			tasks: [{
 				id: "6FAC0597D28E33A7"
@@ -1086,6 +1580,21 @@
 			id: "5DADD4F6432CB6BC"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "1877112FF240095A"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "766351B3C6E22FA3"
+				item: "minecraft:bread"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
 			tasks: [{
 				id: "2B6E867C1F07C14F"
@@ -1106,6 +1615,21 @@
 			id: "2AF2061CCC078189"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "5281017D0AAAADCF"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "3FD2B58E0DBA4634"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
 			tasks: [{
 				id: "35AA6DDA8B8B383F"

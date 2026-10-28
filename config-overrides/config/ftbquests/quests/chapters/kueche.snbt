@@ -41,6 +41,21 @@
 			id: "574543DA6E41527F"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "663EF9A972B7FFC2"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "426ACD371F651869"
+				item: "minecraft:bread"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU1 · Messer und Feld · Nebenquest"
 			tasks: [{
 				id: "756062911A0ADE1F"
@@ -63,6 +78,21 @@
 			id: "4888FEAE96A437A8"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "66680B0532B1B851"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "0AC70A7F91332FC6"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU1 · Messer und Feld · Nebenquest"
 			tasks: [{
 				id: "532ACBAD5CBBDE4A"
@@ -84,6 +114,21 @@
 			id: "7FFA84BA10640C2F"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "2E9443C5B50D0BE6"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "10F64A0D33CEFE68"
+				item: "minecraft:iron_ingot"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU1 · Messer und Feld · Nebenquest"
 			tasks: [{
 				id: "0DD71AA1A3F53910"
@@ -106,6 +151,21 @@
 			id: "0C6E4E3B3DA4D6E4"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "405713F90C070B06"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 8
+				id: "1876739B8F802C5A"
+				item: "minecraft:coal"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU1 · Messer und Feld · Nebenquest"
 			tasks: [{
 				id: "718A3576AD5ADD38"
@@ -149,6 +209,21 @@
 			id: "6AE2D0ADAFC9AEDC"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "41853F4F8F56A25A"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "0EA7261B0C4DA54B"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU2 · Anbau · Nebenquest"
 			tasks: [{
 				id: "79ADABD40631C5AF"
@@ -175,6 +250,21 @@
 			id: "351F474E4281EA46"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "640D3CBAA5E3BD17"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "30ADD4BFA516DC83"
+				item: "minecraft:iron_ingot"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU2 · Anbau · Nebenquest"
 			tasks: [{
 				id: "70B26AF49CCBA878"
@@ -202,6 +292,21 @@
 			id: "0CFFF31F42B49001"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "164F48A7E76289B0"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 8
+				id: "1E39DD86ED7F8EED"
+				item: "minecraft:coal"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU2 · Anbau · Nebenquest"
 			tasks: [{
 				id: "4DB75EDA90FA66C4"
@@ -226,6 +331,21 @@
 			id: "0380E7F6772FD1EB"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "349FF0093B038488"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "03EE913D161E0E58"
+				item: "minecraft:cooked_beef"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU2 · Anbau · Nebenquest"
 			tasks: [{
 				id: "0EF495FA83811700"
@@ -276,6 +396,21 @@
 			id: "3161B258FA6C3ADB"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "31C826AD03800B41"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "64088CF8FE3EDB05"
+				item: "minecraft:iron_ingot"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU3 · Herd und Brett · Nebenquest"
 			tasks: [{
 				id: "49FC0AFEDD903E4C"
@@ -301,6 +436,21 @@
 			id: "3FA337C19CA6F9B1"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "6CED9DC8C3AAEE7B"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 8
+				id: "5275AD865B2A5285"
+				item: "minecraft:coal"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU3 · Herd und Brett · Nebenquest"
 			tasks: [{
 				id: "048666D93C5A69B8"
@@ -322,6 +472,21 @@
 			id: "4F5FE7EDF3FC9E6D"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "7380C02D8CDDA001"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "383266CF7AACE31D"
+				item: "minecraft:cooked_beef"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU3 · Herd und Brett · Nebenquest"
 			tasks: [{
 				id: "4A24590DF63FBBF3"
@@ -371,6 +536,21 @@
 			id: "799CAC82CF943BEE"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "07C0D5D4AAE6FEA5"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 8
+				id: "33D8DBBF77EC4AB2"
+				item: "minecraft:coal"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU4 · Kochgeräte · Nebenquest"
 			tasks: [{
 				id: "057E815D3D3998B3"
@@ -399,6 +579,21 @@
 			id: "4532F1FEAB4ECD08"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "7F722CC4CC3BA40B"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "23FB4B8690AF8638"
+				item: "minecraft:cooked_beef"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU4 · Kochgeräte · Nebenquest"
 			tasks: [{
 				id: "14D0CD71F6D0E587"
@@ -427,6 +622,21 @@
 			id: "65F3E04D90C02E0F"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "6E1BB57088ACD641"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "29E12233CDEE6603"
+				item: "minecraft:bread"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU4 · Kochgeräte · Nebenquest"
 			tasks: [{
 				id: "323072BEEB8C4C30"
@@ -455,6 +665,21 @@
 			id: "43A5C9A837B0E15A"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "1BA6F730DE9D083C"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "05C1FD979ECAE215"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU4 · Kochgeräte · Nebenquest"
 			tasks: [{
 				id: "14546952771640AE"
@@ -480,6 +705,21 @@
 			id: "05475E63B1FB3AA6"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "0F5AC81D3DBBFEF4"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "1559DBD422FCEFF2"
+				item: "minecraft:iron_ingot"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU4 · Kochgeräte · Nebenquest"
 			tasks: [{
 				id: "10134628B5925662"
@@ -507,6 +747,21 @@
 			id: "647E060A67759D95"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "377AE2E303E91A61"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 8
+				id: "61F0A79E0BA7EF77"
+				item: "minecraft:coal"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU4 · Kochgeräte · Nebenquest"
 			tasks: [{
 				id: "29320C1AB369A746"
@@ -533,6 +788,21 @@
 			id: "19D17D50871C51EC"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "2338C717FE12F7CD"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "756E7489D0A9FC0E"
+				item: "minecraft:cooked_beef"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU4 · Kochgeräte · Nebenquest"
 			tasks: [{
 				id: "55B39EC3BDA89D92"
@@ -559,6 +829,21 @@
 			id: "3C005C78FC715C4E"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "2FBF3021199863C9"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "46B1BBB5FC2F3045"
+				item: "minecraft:bread"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU4 · Kochgeräte · Nebenquest"
 			tasks: [{
 				id: "6CF26D9203779C15"
@@ -588,6 +873,21 @@
 			id: "3262321B77D7B026"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "6DE3D982E2DA3398"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "000AC58F56AF0CDE"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU4 · Kochgeräte · Nebenquest"
 			tasks: [{
 				id: "7E26E6EA9F4E94EB"
@@ -632,6 +932,14 @@
 			id: "69C4B64B16DEE8C7"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "4CE773911634CA88"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU5 · Festessen und Dorf · Nebenquest"
 			tasks: [{
 				id: "40D76E15E5847019"
@@ -654,6 +962,14 @@
 			id: "571321E72FF5FDDB"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "28E76BB1BDB0E4F2"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU5 · Festessen und Dorf · Nebenquest"
 			tasks: [{
 				id: "5339B2AD46B49D3D"
@@ -674,6 +990,14 @@
 			id: "5F36EC167CECD9E4"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "1219F5D9F8A781C3"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU5 · Festessen und Dorf · Nebenquest"
 			tasks: [{
 				id: "1D7FC7AF95D888C0"
@@ -717,6 +1041,14 @@
 			id: "2987CB18F3496AC6"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "0A23E9EA186E3FB8"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU6 · Taverne · Nebenquest"
 			tasks: [{
 				id: "3CC54415D3B7E08D"
@@ -742,6 +1074,14 @@
 			id: "0CCEB587E1810C04"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "7EB48CD4F16E4F56"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU6 · Taverne · Nebenquest"
 			tasks: [{
 				id: "7BCFC10C5A958FE5"
@@ -771,6 +1111,14 @@
 			id: "79000B1DDC0EE929"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "30DA72FA6179B1E7"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU6 · Taverne · Nebenquest"
 			tasks: [{
 				id: "5C21AA65B3ED9374"
@@ -801,6 +1149,14 @@
 			id: "1C10F28C68375EC8"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "7AF5CD5A673F3C55"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU6 · Taverne · Nebenquest"
 			tasks: [{
 				id: "4304DB7264A99E66"
@@ -845,6 +1201,14 @@
 			id: "7D72C132DD3D3843"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "5462189446B0073B"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU7 · Grill · Nebenquest"
 			tasks: [{
 				id: "6EEB7AF6895517B4"
@@ -867,6 +1231,14 @@
 			id: "7FEFB974D92C5B6B"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "359F9D7187847E80"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU7 · Grill · Nebenquest"
 			tasks: [{
 				id: "7FD6C0683E23F243"
@@ -891,6 +1263,14 @@
 			id: "3D7F707286D24A60"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "5A37EC6E8590A4A5"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU7 · Grill · Nebenquest"
 			tasks: [{
 				id: "3B4A9E68DE90C4AB"
@@ -911,6 +1291,14 @@
 			id: "26D6A1636D3AE1A1"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "78AED4AE5184FE45"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU7 · Grill · Nebenquest"
 			tasks: [{
 				id: "52223959A617B454"
@@ -949,6 +1337,14 @@
 			id: "7DBBE5EA05C146BF"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "33CC70CD5C86A84B"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU8 · Nether mit Nether's Delight · Nebenquest"
 			tasks: [{
 				id: "6DD293D2C366FA0A"
@@ -974,6 +1370,14 @@
 			id: "218F82BD2DD8BC4B"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "3DEFA370AB6E4BFE"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU8 · Nether mit Nether's Delight · Nebenquest"
 			tasks: [{
 				id: "169FD7E28884F230"
@@ -994,6 +1398,14 @@
 			id: "17480A604C6A4D09"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "084DACF120D59672"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU8 · Nether mit Nether's Delight · Nebenquest"
 			tasks: [{
 				id: "5F8364A63526801B"
@@ -1019,6 +1431,14 @@
 			id: "0F5A5C2DD1708FB9"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "42767010FFFCABDC"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU8 · Nether mit Nether's Delight · Nebenquest"
 			tasks: [{
 				id: "53661CE4C0F3E33C"
@@ -1057,6 +1477,14 @@
 			id: "275069B68F3C579E"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "2702F98D5E4A6AF5"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU9 · End mit Kaleidoscope End · Nebenquest"
 			tasks: [{
 				id: "5A01E174E23E81A6"
@@ -1082,6 +1510,14 @@
 			id: "0F0AD2D733CE32DF"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "0F00C78C44D62CA6"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU9 · End mit Kaleidoscope End · Nebenquest"
 			tasks: [{
 				id: "40D8C96D02E3A735"
@@ -1109,6 +1545,14 @@
 			id: "557A0D326CB41634"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "70A60F1C87C4F79E"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU9 · End mit Kaleidoscope End · Nebenquest"
 			tasks: [{
 				id: "46046AA927A5C3FE"
@@ -1129,6 +1573,14 @@
 			id: "5F44155984C6880D"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "378CD26D3B735B35"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "KU9 · End mit Kaleidoscope End · Nebenquest"
 			tasks: [{
 				id: "27C1C552C0FF7685"

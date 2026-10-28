@@ -35,6 +35,21 @@
 			hide_until_deps_visible: true
 			icon: "tconstruct:materials_and_you"
 			id: "7DCB85A285033033"
+			rewards: [{
+				auto: "enabled"
+				id: "44CCA511AF66989C"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "67B54D172A099FD0"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK1 · Werkzeuge und Melter"
 			tasks: [{
 				id: "0055CB9FF033874B"
@@ -54,6 +69,21 @@
 			hide_until_deps_visible: true
 			icon: "tconstruct:pattern"
 			id: "0EAD8E17462059D6"
+			rewards: [{
+				auto: "enabled"
+				id: "10AC5DE658A02034"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "4BA7DDEE385BB2FE"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK1 · Werkzeuge und Melter"
 			tasks: [{
 				id: "3B7E475FA900A5BA"
@@ -78,6 +108,21 @@
 			hide_until_deps_visible: true
 			icon: "tconstruct:tinker_station"
 			id: "118B6F9081AFD4AD"
+			rewards: [{
+				auto: "enabled"
+				id: "1E3D72960E00D201"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "0DEEE860C3FB40C5"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK1 · Werkzeuge und Melter"
 			tasks: [{
 				id: "15334EBC9926F670"
@@ -98,6 +143,21 @@
 			hide_until_deps_visible: true
 			icon: "tconstruct:pickaxe"
 			id: "52D1DC126D8F44AD"
+			rewards: [{
+				auto: "enabled"
+				id: "7B4F5545471FC435"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "3275727F4412678A"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK1 · Werkzeuge und Melter"
 			tasks: [{
 				id: "334C06FBB37E64B9"
@@ -120,6 +180,21 @@
 			id: "1A45482FFA693BF0"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "4FE71B4C8F6E5314"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 8
+				id: "1531EA6EB05DDD13"
+				item: "minecraft:coal"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK1 · Werkzeuge und Melter · Nebenquest"
 			tasks: [{
 				id: "26ABC14CF6359383"
@@ -156,6 +231,21 @@
 			id: "059BC4A610219C86"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "35E35A261FA09E15"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "16ACF59A509920BF"
+				item: "minecraft:cooked_beef"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK1 · Werkzeuge und Melter · Nebenquest"
 			tasks: [{
 				id: "151287A29294AD63"
@@ -192,6 +282,21 @@
 			id: "291C4A272632FE6B"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "66F49791C527A890"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "01F1B6249AD026FE"
+				item: "minecraft:bread"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK1 · Werkzeuge und Melter · Nebenquest"
 			tasks: [{
 				id: "1CB0E725C51153D1"
@@ -216,6 +321,21 @@
 			hide_until_deps_visible: true
 			icon: "tconstruct:puny_smelting"
 			id: "6B119E65A8778DC9"
+			rewards: [{
+				auto: "enabled"
+				id: "5504B133DE57441A"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "27AB7368EB30C91B"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK1 · Werkzeuge und Melter"
 			tasks: [{
 				id: "112F0B64210342D2"
@@ -245,6 +365,21 @@
 			hide_until_deps_visible: true
 			icon: "tconstruct:seared_melter"
 			id: "57780D6E51D5F36C"
+			rewards: [{
+				auto: "enabled"
+				id: "57541098FC4A5E93"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "217EC27EB49F9C7F"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK1 · Werkzeuge und Melter"
 			tasks: [{
 				id: "7E53FB5B55EAE910"
@@ -269,6 +404,21 @@
 			hide_until_deps_visible: true
 			icon: "tconstruct:seared_faucet"
 			id: "3064E3AD8CEEE905"
+			rewards: [{
+				auto: "enabled"
+				id: "68301CD3922B9B89"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "73FDB078CEE1F613"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK1 · Werkzeuge und Melter"
 			tasks: [{
 				id: "54EA76566FDC3D96"
@@ -298,6 +448,21 @@
 			hide_until_deps_visible: true
 			icon: "tconstruct:ingot_cast"
 			id: "1CCEEA499FC45CA5"
+			rewards: [{
+				auto: "enabled"
+				id: "0E3C3982613A25DA"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "50B342BF1537087E"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "TK1 · Werkzeuge und Melter"
@@ -327,6 +492,21 @@
 			id: "7383E70CAC6769FD"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "7C5F8398EDB8D4F2"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "7B30DD1DD9CE0AFD"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK1 · Werkzeuge und Melter · Nebenquest"
 			tasks: [{
 				id: "0476AFCE63484808"
@@ -348,6 +528,21 @@
 			id: "7960AF5C9713A098"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "491C90F5EB7EED57"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "35903CC359BBE109"
+				item: "minecraft:iron_ingot"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK1 · Werkzeuge und Melter · Nebenquest"
 			tasks: [{
 				id: "3D3132DF133082F5"
@@ -369,6 +564,21 @@
 			id: "7077D358EF892DC3"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "570100DA0D675062"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 8
+				id: "2AC62A2774FF25AD"
+				item: "minecraft:coal"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK1 · Werkzeuge und Melter · Nebenquest"
 			tasks: [{
 				id: "11BB79820FBBCFB8"
@@ -411,6 +621,21 @@
 			hide_until_deps_visible: true
 			icon: "tconstruct:mighty_smelting"
 			id: "0F99929080E4C2A3"
+			rewards: [{
+				auto: "enabled"
+				id: "4540B26E73012A6F"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "76B1EFC34AFA9220"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK2 · Smeltery"
 			tasks: [{
 				id: "5DDF5C85CF23A873"
@@ -430,6 +655,21 @@
 			hide_until_deps_visible: true
 			icon: "tconstruct:smeltery_controller"
 			id: "2CE34F8A88C5F005"
+			rewards: [{
+				auto: "enabled"
+				id: "64252E3286BE9477"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "59A1E3B4789B9F64"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK2 · Smeltery"
 			tasks: [{
 				id: "39C651F81A333D9D"
@@ -455,6 +695,21 @@
 			hide_until_deps_visible: true
 			icon: "tconstruct:slimesteel_ingot"
 			id: "522593DDBC3557D3"
+			rewards: [{
+				auto: "enabled"
+				id: "010B6445A9581364"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "74658036D8C36EC0"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK2 · Smeltery"
 			tasks: [{
 				id: "4EFC541B6F623173"
@@ -492,6 +747,21 @@
 			hide_until_deps_visible: true
 			icon: "tconstruct:raw_cobalt"
 			id: "5B96EB7CD84D822B"
+			rewards: [{
+				auto: "enabled"
+				id: "04125642549535EE"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "15D7267C5C0B4B9B"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK2 · Smeltery"
 			tasks: [{
 				id: "4C90256B2812BFE1"
@@ -517,6 +787,21 @@
 			hide_until_deps_visible: true
 			icon: "tconstruct:tinkers_anvil"
 			id: "3989A3F058DCBA0C"
+			rewards: [{
+				auto: "enabled"
+				id: "625D12783754C748"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "5541B86278CF0B34"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK2 · Smeltery"
 			tasks: [{
 				id: "6CF28AC09299A3F2"
@@ -537,6 +822,21 @@
 			hide_until_deps_visible: true
 			icon: "tconstruct:sledge_hammer"
 			id: "5C8310D9F4DA825C"
+			rewards: [{
+				auto: "enabled"
+				id: "50E5418F5CF92F53"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "12B347FCE1E30245"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "TK2 · Smeltery"
@@ -560,6 +860,21 @@
 			id: "5B0A26469C5B8BA5"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "17E2D8047656EDC3"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "2B3DE266B2CF7098"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK2 · Smeltery · Nebenquest"
 			tasks: [{
 				id: "301F4301A2CB8264"
@@ -586,6 +901,21 @@
 			id: "1A4D87F89330646E"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "23BDCD5F1D74EE63"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 8
+				id: "324527B0E184A33D"
+				item: "minecraft:coal"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK2 · Smeltery · Nebenquest"
 			tasks: [{
 				id: "76B19CAC9A35776E"
@@ -632,6 +962,21 @@
 			id: "06D9E90998FD442F"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "60DF729580BFDAB3"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "47DEEB4933539A0B"
+				item: "minecraft:bread"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK2 · Smeltery · Nebenquest"
 			tasks: [{
 				id: "3499CD2AF4E18A70"
@@ -668,6 +1013,21 @@
 			id: "151B10151FE12588"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "06161FE148AD0EA7"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "75EF2672A9BCAC54"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK2 · Smeltery · Nebenquest"
 			tasks: [{
 				id: "01B696031E97A919"
@@ -707,6 +1067,14 @@
 			hide_until_deps_visible: true
 			icon: "tconstruct:fantastic_foundry"
 			id: "70E79DDEEB63AC8A"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "27063073E0859909"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK3 · Alloyer und Foundry"
 			tasks: [{
 				id: "67E9EE68D2B27184"
@@ -738,6 +1106,14 @@
 			id: "0BC1AC8D9AEA15B2"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "1BC0B1F3C8DF8225"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK3 · Alloyer und Foundry · Nebenquest"
 			tasks: [{
 				id: "4138EC75180A80C0"
@@ -757,6 +1133,14 @@
 			hide_until_deps_visible: true
 			icon: "tconstruct:foundry_controller"
 			id: "5BF3A9635A7DA2CE"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "08A56ECDF36492FB"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK3 · Alloyer und Foundry"
 			tasks: [{
 				id: "724A032E2FADE6E1"
@@ -776,6 +1160,14 @@
 			]
 			hide_until_deps_visible: true
 			id: "3F7BC68BFB14323D"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "16C14F5DB91FF692"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "TK3 · Alloyer und Foundry"
@@ -802,6 +1194,14 @@
 			id: "1C3D78507510DD8B"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "0F72E958CBFE76D8"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK3 · Alloyer und Foundry · Nebenquest"
 			tasks: [{
 				id: "2245D00585E55E4D"
@@ -834,6 +1234,14 @@
 			id: "4AB259F9833F8B18"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "290A12145227DC05"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK3 · Alloyer und Foundry · Nebenquest"
 			tasks: [{
 				amount: 1000L
@@ -879,6 +1287,14 @@
 			]
 			hide_until_deps_visible: true
 			id: "6E53DA877D72BDAC"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "3700178AD3CE2703"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "TK4 · Planetenmetalle gießen"
@@ -909,6 +1325,14 @@
 			id: "266766DBCBF19385"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "563D27707EBB05D4"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK4 · Planetenmetalle gießen · Nebenquest"
 			tasks: [{
 				id: "4E1E4A1FF4645226"
@@ -935,6 +1359,14 @@
 			id: "7EDD64D2BE896363"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "19C460F0BCCAFF72"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK4 · Planetenmetalle gießen · Nebenquest"
 			tasks: [{
 				amount: 90L
@@ -963,6 +1395,14 @@
 			id: "122F6541DEE579EE"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "00223262204353AB"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "TK4 · Planetenmetalle gießen · Nebenquest"
 			tasks: [{
 				id: "3D0C0EE3D142B60A"
@@ -995,6 +1435,21 @@
 			id: "77975F43921D3BC9"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "297142B83000135D"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "0A914BEDB8310048"
+				item: "minecraft:bread"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Ausbau · Nebenquest"
 			tasks: [{
 				id: "1A4975FB2EF73761"
@@ -1016,6 +1471,21 @@
 			id: "0F95CEFDA79F1004"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "719CC33D86F2DEC5"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "0CE8AC694778AB48"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Ausbau · Nebenquest"
 			tasks: [{
 				id: "7D845CD6DDC632A8"
@@ -1036,6 +1506,21 @@
 			id: "71E1491FE21A9A21"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "0FB8E67358A1F8BD"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "4E13C3BD6E77687B"
+				item: "minecraft:iron_ingot"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Ausbau · Nebenquest"
 			tasks: [{
 				id: "68C2FCEE1E0F7CFD"
@@ -1057,6 +1542,14 @@
 			id: "32D280E08ABD0DF4"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "21B3C278E2D1E3C4"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Ausbau · Nebenquest"
 			tasks: [{
 				id: "112BD9C3DF7A3628"
@@ -1098,6 +1591,14 @@
 			id: "3069A947DFF290CC"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "72C43D0825D42EF8"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Ausbau · Nebenquest"
 			tasks: [{
 				id: "367982F451280B43"
@@ -1135,6 +1636,21 @@
 			id: "41AB0B6D80CCEECD"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "0FC4C8FAEDBEE65C"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "68915A04626A37C1"
+				item: "minecraft:bread"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Ausbau · Nebenquest"
 			tasks: [{
 				id: "56622B19684E6820"
@@ -1157,6 +1673,21 @@
 			id: "732874996CBEF388"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "53CFF2787543CB93"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "351E60D6DEBD5C36"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Ausbau · Nebenquest"
 			tasks: [{
 				id: "33997C19DB27710A"

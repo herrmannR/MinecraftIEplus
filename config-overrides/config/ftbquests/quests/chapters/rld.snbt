@@ -36,6 +36,14 @@
 			hide_until_deps_visible: true
 			icon: "wrd:magic_cauldron"
 			id: "64F39ED5163ED88E"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "6C644A0B5AC1557C"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "WD1 · Vorbereitung"
 			tasks: [{
 				id: "44D9A84DB95B457F"
@@ -57,6 +65,14 @@
 			hide_until_deps_visible: true
 			icon: "wrd:dungeon_locator_item"
 			id: "7A6EF9579E3C5994"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "07E7F12713FCF714"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "WD1 · Vorbereitung"
 			tasks: [{
 				id: "2FB35AE25280E44D"
@@ -78,6 +94,14 @@
 			hide_until_deps_visible: true
 			icon: "wrd:key_bag"
 			id: "5698E6E085F5F81B"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "652A377BBD4CB473"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "WD1 · Vorbereitung"
@@ -109,6 +133,14 @@
 			id: "40179BF426C17492"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "6CB0056DF9443B9C"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "WD1 · Vorbereitung · Nebenquest"
 			tasks: [{
 				id: "77E7821D0CC7B86D"
@@ -165,6 +197,14 @@
 			hide_until_deps_visible: true
 			icon: "wrd:keystrongholdchest_bonechest"
 			id: "38CE2691D0C9EB92"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "2280279697BC78DC"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "WD2 · Die Dungeons der Oberwelt"
 			tasks: [{
 				id: "7605373A75E06DB0"
@@ -183,6 +223,14 @@
 			hide_until_deps_visible: true
 			icon: "wrd:orb_of_the_deep"
 			id: "7D41CCDEF6A2699A"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "0DD41843FC391A79"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "WD2 · Die Dungeons der Oberwelt"
@@ -215,6 +263,14 @@
 			id: "6382884E225D2DEC"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "4F8B6D1CCFAB5B96"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "WD2 · Die Dungeons der Oberwelt · Nebenquest"
 			tasks: [{
 				id: "05C6A4AA06BE60AA"
@@ -236,6 +292,14 @@
 			id: "774D200A88633D5A"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "0B06F1768621DA64"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "WD2 · Die Dungeons der Oberwelt · Nebenquest"
 			tasks: [{
 				id: "15D1CE0F619A17D9"
@@ -257,6 +321,14 @@
 			id: "2024DAE37E1A95E6"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "4BEB341564498F72"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "WD2 · Die Dungeons der Oberwelt · Nebenquest"
 			tasks: [{
 				id: "1CD1D7D690ED6B00"
@@ -278,6 +350,14 @@
 			id: "30EBAF8AC9A0EF9E"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "1AABC4D8C58098DB"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "WD2 · Die Dungeons der Oberwelt · Nebenquest"
 			tasks: [{
 				id: "4C54242FE0608B76"
@@ -299,6 +379,14 @@
 			id: "441A146B105D69F3"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "3EEF14DF10F10967"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "WD2 · Die Dungeons der Oberwelt · Nebenquest"
 			tasks: [{
 				id: "4B1115B71A8EC0B2"
@@ -320,6 +408,14 @@
 			id: "0EAC78B46B72B508"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "1F6505189F90978E"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "WD2 · Die Dungeons der Oberwelt · Nebenquest"
 			tasks: [{
 				count: 8L
@@ -333,24 +429,24 @@
 		}
 		{
 			description: [
-				"Freigeschaltet mit Kapitel 10: Der Elf."
+				"Freigeschaltet mit Kapitel 8: Hitze."
 			]
 			invisible: true
 			icon: "minecraft:book"
-			id: "2B81A4421E911A83"
+			id: "2DC075F28AC17DB0"
 			shape: "gear"
 			subtitle: "WD3 · Der Purpur-Palast im End"
 			tasks: [{
-				id: "04ED4815CE117452"
-				stage: "kapitel_k10"
+				id: "619FAE58965605CA"
+				stage: "kapitel_k8"
 				type: "gamestage"
 			}]
-			title: "Kapitel 10: Roguelike Dungeons"
+			title: "Kapitel 8: Roguelike Dungeons"
 			x: 9.0d
 			y: -1.75d
 		}
 		{
-			dependencies: ["7D41CCDEF6A2699A", "2B81A4421E911A83"]
+			dependencies: ["7D41CCDEF6A2699A", "2DC075F28AC17DB0"]
 			description: [
 				"&c&eVorsicht:&r&c Drei Gegner hintereinander, dazu das End selbst. Nimm Ender Pearls und Slow Falling mit.&r"
 				""
@@ -363,6 +459,14 @@
 			id: "353C699590114D14"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "29890CD5CBF799D4"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "WD3 · Der Purpur-Palast im End · Nebenquest"
 			tasks: [{
 				id: "435487112EA12C5E"
@@ -383,6 +487,14 @@
 			id: "2C93E723E5808333"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "253CAFA79DEE700A"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "WD3 · Der Purpur-Palast im End · Nebenquest"
 			tasks: [{
 				id: "7E29369B1B2821D2"
@@ -403,6 +515,14 @@
 			id: "0F7187ED5C3069E0"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "175ED2B46F55938B"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "WD3 · Der Purpur-Palast im End · Nebenquest"
 			tasks: [{
 				id: "5B619C370D62BEAF"
@@ -415,24 +535,24 @@
 		}
 		{
 			description: [
-				"Freigeschaltet mit Kapitel 10: Der Elf."
+				"Freigeschaltet mit Kapitel 8: Hitze."
 			]
 			invisible: true
 			icon: "minecraft:book"
-			id: "31C83082E72D710F"
+			id: "610C5C458C170D1A"
 			shape: "gear"
 			subtitle: "WD4 · Der Nether"
 			tasks: [{
-				id: "648D6C94140C1104"
-				stage: "kapitel_k10"
+				id: "007EE3A0AAB759BE"
+				stage: "kapitel_k8"
 				type: "gamestage"
 			}]
-			title: "Kapitel 10: Roguelike Dungeons"
+			title: "Kapitel 8: Roguelike Dungeons"
 			x: 12.5d
 			y: -1.75d
 		}
 		{
-			dependencies: ["7D41CCDEF6A2699A", "31C83082E72D710F"]
+			dependencies: ["7D41CCDEF6A2699A", "610C5C458C170D1A"]
 			description: [
 				"Die Nether-Variante der Vessel (Nether Quartz statt Ender Pearl) funktioniert nur im Nether und sucht 1500 bis 3000 Blöcke entfernt."
 			]
@@ -441,6 +561,14 @@
 			id: "1D21F9C6AE71BBDF"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "45FE85C39FD1963E"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "WD4 · Der Nether · Nebenquest"
 			tasks: [{
 				id: "2C1433774504B0A8"
@@ -463,6 +591,14 @@
 			id: "16F38E36067E7DD3"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "1CD9FA91B478C5A4"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "WD4 · Der Nether · Nebenquest"
 			tasks: [{
 				id: "2516AE81BC90DCFB"

@@ -76,11 +76,11 @@ Der Pool speichert Mana und ist zugleich die Werkbank für Mana Infusion.
 Buch: Mana Manipulation → Mana Pool.
 
 ### BO2-04 Manasteel · Hauptweg
-**Aufgabe:** `botania:manasteel_ingot`
+**Aufgabe:** `botania:manasteel_block`
 
-Eisen in einen gefüllten Pool werfen. Manasteel ist das erste Metall des Mods.
+Eisen in einen gefüllten Pool werfen. Manasteel ist das erste Metall des Mods. Neun Barren ergeben einen Block of Manasteel.
 Buch: Mana Manipulation → Mana Pool.
-⚙️ Für „Würdig sein“ in Buch 1 brauchst du einen ganzen Block of Manasteel (`botania:manasteel_block`, 9 Barren).
+⚙️ Den Block brauchst du für „Würdig sein“ in Buch 1, deshalb verlangt die Quest gleich ihn.
 ⚙️ Mit TCIntegrations ist Manasteel auch ein Werkzeugmaterial für Tinkers, ebenso Livingwood, Livingrock und Mana Infused String.
 
 ### BO2-05 Mana Pearl und Mana Diamond · Hauptweg
@@ -410,7 +410,7 @@ Ab dem Runic Altar machbar, ohne feste Stelle im Weg.
 - **Mead of Kvasir:** Weg im Pack festlegen, dann BO6-01 umschreiben. Hängt an der Story (Meister in Part 2).
 - **Gaia-Pylon-Rezept** in JEI prüfen (Test 41 in `../11_TESTING.md`). Gilt doch das Botania-Original, liegt Gaia nicht mehr von selbst hinter Alfsteel; dann die ⚙️-Zeilen in BO6-06 und BO7-01 streichen.
 - **`lockAlfheim`** in 1.20.1 im Spiel prüfen (Test 40): Kommt man ohne Met wirklich nicht durch das Portal?
-- **Botania-Items für Story und Raketen:** entschieden sind „Würdig sein“ (Block of Manasteel, O67, Satz in BO2-04), Schutz beim Betreten (Goddess' Charm, F18/O39, BO3-14), Rune of Spring am Portal (O75, Satz in BO3-03) und Elementium im Tank der Rakete T4 (F2). Offen bleibt das Rumpf-Material T5 aus Alfheim (BO6-02). Ob BO2-04 statt des Barrens gleich den Block als Aufgabe bekommen soll, entscheidet der User.
+- **Botania-Items für Story und Raketen:** entschieden sind „Würdig sein“ (Block of Manasteel, O67, Satz in BO2-04), Schutz beim Betreten (Goddess' Charm, F18/O39, BO3-14), Rune of Spring am Portal (O75, Satz in BO3-03) und Elementium im Tank der Rakete T4 (F2). Offen bleibt das Rumpf-Material T5 aus Alfheim (BO6-02). BO2-04 verlangt gleich den Block (F39, User 2026-10-28).
 - **Questbuch bis K11 (2026-10-26):** gebaut sind BO1 bis BO5 und die Nebenquests ohne Meilenstein; BO6 (K12) und BO7 (K13) fallen per `bis = K11` weg. Die Corporea-Reihe hängt deshalb noch nicht im Buch, obwohl sie technisch ab BO5 geht.
 - **Corporea:** bei BO7 lassen (wie auf der Karte) oder schon nach BO5 anbieten.
 - **Aufgabe BO1-02:** Statt weißer Petals ginge auch „eine beliebige Mystical Flower“ über einen Tag; beim Einbau entscheiden.

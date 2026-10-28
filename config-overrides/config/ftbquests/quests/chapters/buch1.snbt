@@ -48,6 +48,21 @@
 				stage: "kapitel_k3"
 				team_reward: true
 				type: "gamestage"
+			}
+			{
+				auto: "enabled"
+				id: "42D6607E2699EC05"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "52DA37308B317943"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
 			}]
 			shape: "hexagon"
 			size: 1.5d
@@ -86,6 +101,21 @@
 			]
 			hide_until_deps_visible: true
 			id: "6BA547354B391EC1"
+			rewards: [{
+				auto: "enabled"
+				id: "2B6CB007FC14C16D"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "6D2D4137C388F300"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "ST3 · Der Weg zum Haus"
 			tasks: [{
 				id: "0A042BF523916E8B"
@@ -103,6 +133,21 @@
 			]
 			hide_until_deps_visible: true
 			id: "5179623A0C5A5AE8"
+			rewards: [{
+				auto: "enabled"
+				id: "4AE87BB19AFCB27F"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "64B26E376F982127"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "ST3 · Der Weg zum Haus"
 			tasks: [{
 				id: "0B68D740CCB49F28"
@@ -121,6 +166,21 @@
 			hide_until_deps_visible: true
 			icon: "blue_skies:zeal_lighter"
 			id: "15C19D5BD43D524B"
+			rewards: [{
+				auto: "enabled"
+				id: "3A07C1D5A1BCB801"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "5798CAC9F64BB0B1"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "ST3 · Der Weg zum Haus"
 			tasks: [{
 				id: "149E09DEE293D446"
@@ -143,6 +203,21 @@
 			]
 			hide_until_deps_visible: true
 			id: "17206FBB8635CA80"
+			rewards: [{
+				auto: "enabled"
+				id: "71E24A48EA8EF864"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "4F65661931C7E4A5"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "ST3 · Der Weg zum Haus"
 			tasks: [{
 				dimension: "blue_skies:everbright"
@@ -160,6 +235,21 @@
 			]
 			hide_until_deps_visible: true
 			id: "42BD14C8F5450C51"
+			rewards: [{
+				auto: "enabled"
+				id: "66284876A3AC75AB"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "70E227234E7B28BC"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "ST3 · Der Weg zum Haus"
 			tasks: [{
 				id: "61AD4C4DD3C8E19B"
@@ -192,6 +282,21 @@
 				stage: "kapitel_k4"
 				team_reward: true
 				type: "gamestage"
+			}
+			{
+				auto: "enabled"
+				id: "4E353F173D5A7CBA"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "631BC043601F3CCF"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
 			}]
 			shape: "hexagon"
 			size: 1.5d
@@ -230,6 +335,14 @@
 			]
 			hide_until_deps_visible: true
 			id: "652C2328B02237B2"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "3903523C8D198A57"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "ST4 · Der Mond"
 			tasks: [{
 				dimension: "ad_astra:moon"
@@ -247,6 +360,14 @@
 			]
 			hide_until_deps_visible: true
 			id: "6E08C04CF488410A"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "081D35996E902056"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "ST4 · Der Mond"
 			tasks: [{
 				id: "33042CF970C17F0B"
@@ -265,6 +386,14 @@
 			hide_until_deps_visible: true
 			icon: "kubejs:kaputter_klonhelm"
 			id: "3E6D53C0262AF74C"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "6EB28D2C4E4A6BDF"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "ST4 · Der Mond"
 			tasks: [{
 				id: "17D5627208C1418A"
@@ -283,6 +412,14 @@
 			hide_until_deps_visible: true
 			icon: "swgc:clone_212th_battalion_helmet"
 			id: "0CFFAA120AC837E9"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "1DC366C9DA423C7C"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "ST4 · Der Mond"
 			tasks: [{
 				id: "165CCDCA070CCAC9"
@@ -300,6 +437,14 @@
 			]
 			hide_until_deps_visible: true
 			id: "13CCF6551DA3A2CA"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "00EABBF73CA13DCB"
+				item: "swgc:gold_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "ST4 · Der Mond"
 			tasks: [{
 				id: "24FEFC1AE9B6A7F0"
@@ -317,6 +462,14 @@
 			]
 			hide_until_deps_visible: true
 			id: "02B23BE202B34FE1"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "470887A5D3B7BB39"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "ST4 · Der Mond"
 			tasks: [{
 				dimension: "blue_skies:everdawn"
@@ -345,6 +498,14 @@
 				stage: "kapitel_k5"
 				team_reward: true
 				type: "gamestage"
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "6E988A93BBCC761B"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
 			}]
 			shape: "hexagon"
 			size: 1.5d
@@ -389,6 +550,14 @@
 				stage: "kapitel_k6"
 				team_reward: true
 				type: "gamestage"
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "0FFC133DEED2FA6C"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
 			}]
 			shape: "hexagon"
 			size: 1.5d
@@ -427,6 +596,14 @@
 			]
 			hide_until_deps_visible: true
 			id: "04BE1525B9FA4995"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "3D3B4134ECE8AE09"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "ST6 · Der Mars"
 			tasks: [{
 				dimension: "ad_astra:mars"
@@ -451,6 +628,14 @@
 				stage: "kapitel_k7"
 				team_reward: true
 				type: "gamestage"
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "22DCDB52F262210B"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
 			}]
 			shape: "hexagon"
 			size: 1.5d
@@ -490,6 +675,14 @@
 			hide_until_deps_visible: true
 			icon: "ad_astra:oxygen_distributor"
 			id: "2E51BB9DCA5E8906"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "499BD51CC6460438"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "ST7 · Horchposten"
 			tasks: [{
 				id: "7F8903BEFDE692F6"
@@ -558,6 +751,14 @@
 				silent: true
 				team_reward: true
 				type: "command"
+			}
+			{
+				auto: "enabled"
+				count: 1
+				id: "639498D9281F9747"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
 			}]
 			subtitle: "ST7 · Horchposten"
 			tasks: [{
@@ -591,6 +792,14 @@
 				stage: "kapitel_k8"
 				team_reward: true
 				type: "gamestage"
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "3240046801C12714"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
 			}]
 			shape: "hexagon"
 			size: 1.5d
@@ -629,6 +838,14 @@
 			]
 			hide_until_deps_visible: true
 			id: "7ECE7E4F362DF0EB"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "68C39E0608391D18"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "ST8 · Hitze"
 			tasks: [{
 				dimension: "ad_astra:mercury"
@@ -647,6 +864,14 @@
 			hide_until_deps_visible: true
 			icon: "kubejs:tempelrolle_1"
 			id: "3DC3BE93D5199E50"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "068EAE709EC3D456"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "ST8 · Hitze"
 			tasks: [{
 				id: "599C497186B44689"
@@ -694,6 +919,14 @@
 				stage: "kapitel_k9"
 				team_reward: true
 				type: "gamestage"
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "1ED719D3F548768A"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
 			}]
 			shape: "hexagon"
 			size: 1.5d
@@ -733,6 +966,14 @@
 			hide_until_deps_visible: true
 			icon: "kubejs:siegel_der_traumwelten"
 			id: "4EE040CD5F41D0AC"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "5B7F64E4970EF913"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "ST9 · Der Tempel"
 			tasks: [{
 				id: "34682941EB6BDFC0"
@@ -751,6 +992,14 @@
 			hide_until_deps_visible: true
 			icon: "wrd:orb_of_the_deep"
 			id: "60311D48E3582A10"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "154160F62D258248"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "ST9 · Der Tempel"
 			tasks: [{
 				id: "1093AB101F8F6F8B"
@@ -769,6 +1018,14 @@
 			hide_until_deps_visible: true
 			icon: "botania:goddess_charm"
 			id: "4888C38F77E2ACA3"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "116CAE7AEFBB8D62"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "ST9 · Der Tempel"
 			tasks: [{
 				count: 3L
@@ -787,6 +1044,14 @@
 			]
 			hide_until_deps_visible: true
 			id: "670A6440E611950C"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "6A831AA8AAA4C773"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "ST9 · Der Tempel"
 			tasks: [{
 				id: "6C37907FAB013EBD"
@@ -820,6 +1085,14 @@
 				stage: "kapitel_k10"
 				team_reward: true
 				type: "gamestage"
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "712CC65B309BCE14"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
 			}]
 			shape: "hexagon"
 			size: 1.5d
@@ -858,6 +1131,14 @@
 			]
 			hide_until_deps_visible: true
 			id: "295AA116686A79CD"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "757C58135323F5C6"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "ST10 · Der Elf"
 			tasks: [{
 				id: "3460DA108AF23C55"
@@ -876,6 +1157,14 @@
 			hide_until_deps_visible: true
 			icon: "botania:alfheim_portal"
 			id: "7BBC3AEA97ABA19B"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "68336A0A2A9506DC"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "ST10 · Der Elf"
 			tasks: [{
 				id: "74BB61692E9F16D9"
@@ -893,6 +1182,14 @@
 			]
 			hide_until_deps_visible: true
 			id: "1355F32DAA30D984"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "5EF1F01B573124FA"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "ST10 · Der Elf"
 			tasks: [{
 				id: "3C7B7AEF6EE8EC74"
@@ -916,6 +1213,14 @@
 				stage: "kapitel_k11"
 				team_reward: true
 				type: "gamestage"
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "5D5BE0F209DF291B"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
 			}]
 			shape: "hexagon"
 			size: 1.5d
@@ -971,6 +1276,14 @@
 				silent: true
 				team_reward: true
 				type: "command"
+			}
+			{
+				auto: "enabled"
+				count: 1
+				id: "2BC36AD125367C44"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
 			}]
 			subtitle: "ST11 · Glacio"
 			tasks: [{
@@ -989,6 +1302,14 @@
 			]
 			hide_until_deps_visible: true
 			id: "5A55EA58598C8B73"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "7ADAD0BA354007F3"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "ST11 · Glacio"
 			tasks: [{
 				id: "45608263DB6AF14A"
@@ -1006,6 +1327,14 @@
 			]
 			hide_until_deps_visible: true
 			id: "3C478FA5033ECC6C"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "4551EB96A246120B"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "ST11 · Glacio"
 			tasks: [{
 				dimension: "minecraft:overworld"
@@ -1023,6 +1352,14 @@
 			]
 			hide_until_deps_visible: true
 			id: "67C81927469F789D"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "3574C71FC97D4F7F"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "ST11 · Glacio"

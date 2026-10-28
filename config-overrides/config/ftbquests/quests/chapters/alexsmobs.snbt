@@ -10,24 +10,24 @@
 	quests: [
 		{
 			description: [
-				"Freigeschaltet mit Kapitel 4: Der Mond."
+				"Freigeschaltet mit Kapitel 1: Ankunft."
 			]
 			invisible: true
 			icon: "minecraft:book"
-			id: "01F1F996ED155903"
+			id: "3CC8F5ECBF626B39"
 			shape: "gear"
 			subtitle: "AM1 · Tiere der Oberwelt"
 			tasks: [{
-				id: "53547F52A94188D3"
-				stage: "kapitel_k4"
+				id: "0FC65341980C3211"
+				stage: "kapitel_k1"
 				type: "gamestage"
 			}]
-			title: "Kapitel 4: Alex's Mobs"
+			title: "Kapitel 1: Alex's Mobs"
 			x: 2.0d
 			y: -1.75d
 		}
 		{
-			dependencies: ["01F1F996ED155903"]
+			dependencies: ["3CC8F5ECBF626B39"]
 			description: [
 				"Das Nachschlagewerk zu allen Tieren des Mods. Du brauchst dafür ein Beutestück irgendeines Tiers."
 				"Buch: Das Animal Dictionary selbst; Rezept in JEI."
@@ -37,6 +37,21 @@
 			id: "27EC624AA254E2F1"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "4032DDF1A9588229"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 8
+				id: "18CA02DA6CF79CAA"
+				item: "minecraft:coal"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM1 · Tiere der Oberwelt · Nebenquest"
 			tasks: [{
 				id: "175C8F995057AE68"
@@ -58,6 +73,21 @@
 			id: "450304E2C340D50E"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "798BDE0FC7478C5C"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "6EC7636E45E3A97F"
+				item: "minecraft:cooked_beef"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM1 · Tiere der Oberwelt · Nebenquest"
 			tasks: [{
 				id: "08BF670C186781A3"
@@ -84,6 +114,21 @@
 			id: "63F879285C6FFD7E"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "0F1D6EB10B455A77"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "1F0AC6F1262B5B1B"
+				item: "minecraft:bread"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM1 · Tiere der Oberwelt · Nebenquest"
 			tasks: [{
 				id: "757BE84D0BCDE92D"
@@ -105,6 +150,21 @@
 			id: "24B22430C11D9321"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "36F2C0B153BED7A5"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "1B34A858E3734FCC"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM1 · Tiere der Oberwelt · Nebenquest"
 			tasks: [{
 				id: "52227CC6C012A7A3"
@@ -127,24 +187,24 @@
 		}
 		{
 			description: [
-				"Freigeschaltet mit Kapitel 4: Der Mond."
+				"Freigeschaltet mit Kapitel 2: Würdig sein."
 			]
 			invisible: true
 			icon: "minecraft:book"
-			id: "60466A613A53F18A"
+			id: "517951580048164A"
 			shape: "gear"
 			subtitle: "AM2 · Beute der Oberwelt"
 			tasks: [{
-				id: "362A5BD2BA40D6F8"
-				stage: "kapitel_k4"
+				id: "5C6086334FBC9CD1"
+				stage: "kapitel_k2"
 				type: "gamestage"
 			}]
-			title: "Kapitel 4: Alex's Mobs"
+			title: "Kapitel 2: Alex's Mobs"
 			x: 5.5d
 			y: -1.75d
 		}
 		{
-			dependencies: ["27EC624AA254E2F1", "60466A613A53F18A"]
+			dependencies: ["27EC624AA254E2F1", "517951580048164A"]
 			description: [
 				"Jedes Stück kopiert eine Fähigkeit seines Tiers. Die Reihe ist in drei Ketten geteilt: Rüstung, Werkzeuge, Ameisen."
 				""
@@ -156,6 +216,21 @@
 			id: "52C67FB84B2DF1F9"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "59B508572CC9CCB5"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "72538ADF9C726095"
+				item: "minecraft:cooked_beef"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM2 · Beute der Oberwelt · Nebenquest"
 			tasks: [{
 				id: "62488EA255D40379"
@@ -178,6 +253,21 @@
 			id: "730B961C975FF15B"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "38A53D74D7813A15"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "5310F73CE18771D2"
+				item: "minecraft:bread"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM2 · Beute der Oberwelt · Nebenquest"
 			tasks: [{
 				id: "282B2E317319EFF1"
@@ -200,6 +290,21 @@
 			id: "6BBB0708A1D0A119"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "7A8A4D8161284122"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "68F3B95BB7508A53"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM2 · Beute der Oberwelt · Nebenquest"
 			tasks: [{
 				id: "4FD78DCA89653085"
@@ -222,6 +327,21 @@
 			id: "080472E8F456EE46"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "1EE7186E81713D11"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "15CE0D3C40FED8CF"
+				item: "minecraft:iron_ingot"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM2 · Beute der Oberwelt · Nebenquest"
 			tasks: [{
 				id: "46F7D3C418C65E3B"
@@ -250,6 +370,21 @@
 			id: "7F7C4D18773AC647"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "7F8E62E378C3BCDF"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 8
+				id: "3B9FEE48045B0CE3"
+				item: "minecraft:coal"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM2 · Beute der Oberwelt · Nebenquest"
 			tasks: [{
 				id: "199BBFFC07EC8DFA"
@@ -271,6 +406,21 @@
 			id: "7E95DDB4342F81A3"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "55DB560166CF428E"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "5AA1765CCFF7468D"
+				item: "minecraft:cooked_beef"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM2 · Beute der Oberwelt · Nebenquest"
 			tasks: [{
 				id: "60135DA85F29AE8F"
@@ -292,6 +442,21 @@
 			id: "5B996ECE96F97394"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "73B9994A6711D7AC"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "073012B9F5BD72A5"
+				item: "minecraft:bread"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM2 · Beute der Oberwelt · Nebenquest"
 			tasks: [{
 				id: "16AF168D77008607"
@@ -309,24 +474,24 @@
 		}
 		{
 			description: [
-				"Freigeschaltet mit Kapitel 4: Der Mond."
+				"Freigeschaltet mit Kapitel 3: Industrie."
 			]
 			invisible: true
 			icon: "minecraft:book"
-			id: "22BF98339CBF1A61"
+			id: "4AA8F81D01B34947"
 			shape: "gear"
 			subtitle: "AM3 · Meer und Untergrund"
 			tasks: [{
-				id: "311F118153B3E706"
-				stage: "kapitel_k4"
+				id: "3B8267F6D0705D0A"
+				stage: "kapitel_k3"
 				type: "gamestage"
 			}]
-			title: "Kapitel 4: Alex's Mobs"
+			title: "Kapitel 3: Alex's Mobs"
 			x: 9.0d
 			y: -1.75d
 		}
 		{
-			dependencies: ["27EC624AA254E2F1", "22BF98339CBF1A61"]
+			dependencies: ["27EC624AA254E2F1", "4AA8F81D01B34947"]
 			description: [
 				"Die Ortungsgeräte bauen aufeinander auf: Echolocator → Endolocator und Strange Fish Finder."
 				""
@@ -338,6 +503,21 @@
 			id: "14EBCB67E37C7289"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "3CC85A6EFF7F1B6B"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "5E85E3A85B653290"
+				item: "minecraft:bread"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM3 · Meer und Untergrund · Nebenquest"
 			tasks: [{
 				id: "0AF493E1C0923BF1"
@@ -359,6 +539,21 @@
 			id: "2D128048115C5C7F"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "3A781E48704A6E48"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "084E34E387ED6DAD"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM3 · Meer und Untergrund · Nebenquest"
 			tasks: [{
 				id: "203E2532CF54498B"
@@ -380,6 +575,21 @@
 			id: "037A297A13F43133"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "6F647BF5EC94BEEA"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "517D5FBD6DB6F689"
+				item: "minecraft:iron_ingot"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM3 · Meer und Untergrund · Nebenquest"
 			tasks: [{
 				id: "2CB43D1BA237D81D"
@@ -401,6 +611,21 @@
 			id: "20B19C1A9513CB4F"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "2A9C3C4316874F4F"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 8
+				id: "08B190F579B111B3"
+				item: "minecraft:coal"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM3 · Meer und Untergrund · Nebenquest"
 			tasks: [{
 				id: "5BA550A615BA0951"
@@ -422,6 +647,21 @@
 			id: "58B2177E65574B06"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "3F613FDAC3362591"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "73FDC2202C2D30FE"
+				item: "minecraft:cooked_beef"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM3 · Meer und Untergrund · Nebenquest"
 			tasks: [{
 				id: "15121BCD534E4E82"
@@ -443,6 +683,21 @@
 			id: "366C1884451FCA71"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "716A3117E8F573CF"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "6E3BA2ECC71CEB04"
+				item: "minecraft:bread"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM3 · Meer und Untergrund · Nebenquest"
 			tasks: [{
 				id: "317C04D16374E028"
@@ -464,6 +719,21 @@
 			id: "5E69355820AE4CEB"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "772D77FC09706200"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "74AE3D9E87AB8C53"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM3 · Meer und Untergrund · Nebenquest"
 			tasks: [{
 				id: "1B4CB4D85F441F16"
@@ -488,6 +758,21 @@
 			id: "2BEAE4B2305A989D"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "53CC90CFDBC87FD4"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "2C008115667688C8"
+				item: "minecraft:iron_ingot"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM3 · Meer und Untergrund · Nebenquest"
 			tasks: [{
 				id: "4BDBE4E2EB70D88C"
@@ -509,6 +794,21 @@
 			id: "2E0B98AC98EE94DF"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "0B7198041255614D"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 8
+				id: "35C30BEB72704771"
+				item: "minecraft:coal"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM3 · Meer und Untergrund · Nebenquest"
 			tasks: [{
 				id: "3CAE50C518B49A74"
@@ -521,24 +821,24 @@
 		}
 		{
 			description: [
-				"Freigeschaltet mit Kapitel 4: Der Mond."
+				"Freigeschaltet mit Kapitel 3: Industrie."
 			]
 			invisible: true
 			icon: "minecraft:book"
-			id: "3599C8F878A7DDF5"
+			id: "362471442870AA5E"
 			shape: "gear"
 			subtitle: "AM4 · Nether"
 			tasks: [{
-				id: "00D72E3ABC3B5A4B"
-				stage: "kapitel_k4"
+				id: "75D06283E73825BC"
+				stage: "kapitel_k3"
 				type: "gamestage"
 			}]
-			title: "Kapitel 4: Alex's Mobs"
+			title: "Kapitel 3: Alex's Mobs"
 			x: 12.5d
 			y: -1.75d
 		}
 		{
-			dependencies: ["27EC624AA254E2F1", "3599C8F878A7DDF5"]
+			dependencies: ["27EC624AA254E2F1", "362471442870AA5E"]
 			description: [
 				"Hier beginnt die lange Kette zur Void Worm: Die &eCrimson Mosquito Larva&r (Quest „Crimson Mosquito Larva“) wird in AM5 gebraucht."
 				""
@@ -550,6 +850,21 @@
 			id: "1B98B8611DB172BD"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "24BF098A4F572B44"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "70266EA995EC66DB"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM4 · Nether · Nebenquest"
 			tasks: [{
 				id: "34D60E87C7D654D5"
@@ -571,6 +886,21 @@
 			id: "30CD7A30445CC831"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "4C32BC8E2ECB5585"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "6026AA5B5BA68E8B"
+				item: "minecraft:iron_ingot"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM4 · Nether · Nebenquest"
 			tasks: [{
 				id: "776A8EE9708A7CE7"
@@ -592,6 +922,21 @@
 			id: "2A05C9B4C68E9374"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "1250CCF17C79A419"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 8
+				id: "3760325274E3541F"
+				item: "minecraft:coal"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM4 · Nether · Nebenquest"
 			tasks: [{
 				id: "57FE4F0EF6DE9301"
@@ -613,6 +958,21 @@
 			id: "4C899BC065E1E350"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "2061B05EAD2D7C55"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "747ACF40A7A45FCF"
+				item: "minecraft:cooked_beef"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM4 · Nether · Nebenquest"
 			tasks: [{
 				id: "59DF30B20A32FF0B"
@@ -639,6 +999,21 @@
 			id: "10B7814E9E4C32E7"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "151D6147168BDBE4"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "38DB09E0399535DA"
+				item: "minecraft:bread"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM4 · Nether · Nebenquest"
 			tasks: [{
 				id: "6C5507AC2470C4F6"
@@ -655,11 +1030,11 @@
 			]
 			invisible: true
 			icon: "minecraft:book"
-			id: "0DA264F454D0E70F"
+			id: "01F1F996ED155903"
 			shape: "gear"
 			subtitle: "AM5 · End"
 			tasks: [{
-				id: "4A3E606562DCA9D7"
+				id: "53547F52A94188D3"
 				stage: "kapitel_k4"
 				type: "gamestage"
 			}]
@@ -668,7 +1043,7 @@
 			y: -1.75d
 		}
 		{
-			dependencies: ["27EC624AA254E2F1", "0DA264F454D0E70F"]
+			dependencies: ["27EC624AA254E2F1", "01F1F996ED155903"]
 			description: [
 				"Der Capsid ist das Werkzeug für alle Umwandlungen bis zur Transmutation Table."
 				""
@@ -682,6 +1057,14 @@
 			id: "177821A29B6F8659"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "56FB4025029EE272"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM5 · End · Nebenquest"
 			tasks: [{
 				id: "18D7143B996675D5"
@@ -703,6 +1086,14 @@
 			id: "6C2B4E03378CF326"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "1410CD2A60DCA105"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM5 · End · Nebenquest"
 			tasks: [{
 				id: "48E2595F458B78EB"
@@ -724,6 +1115,14 @@
 			id: "703ABD5C133172DF"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "310B1F4DC2EC593B"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM5 · End · Nebenquest"
 			tasks: [{
 				id: "148050209456771D"
@@ -745,6 +1144,14 @@
 			id: "47C8B58BD5A5358E"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "205F19B5B6E92AF6"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM5 · End · Nebenquest"
 			tasks: [{
 				id: "600C3A42194D3E92"
@@ -761,11 +1168,11 @@
 			]
 			invisible: true
 			icon: "minecraft:book"
-			id: "52C84FFCFC886E76"
+			id: "60466A613A53F18A"
 			shape: "gear"
 			subtitle: "AM6 · Void Worm und Weltrand"
 			tasks: [{
-				id: "13609D81DD4EEC88"
+				id: "362A5BD2BA40D6F8"
 				stage: "kapitel_k4"
 				type: "gamestage"
 			}]
@@ -774,7 +1181,7 @@
 			y: -1.75d
 		}
 		{
-			dependencies: ["177821A29B6F8659", "30CD7A30445CC831", "52C84FFCFC886E76"]
+			dependencies: ["177821A29B6F8659", "30CD7A30445CC831", "60466A613A53F18A"]
 			description: [
 				"Der längste Pfad des Mods. Er braucht Capsid, Crimson Mosquito Larva, 2 Netheritebarren und einen Nether Star."
 				""
@@ -788,6 +1195,14 @@
 			id: "241DC4D4A663EFB1"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "74DBAC143E43115A"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM6 · Void Worm und Weltrand · Nebenquest"
 			tasks: [{
 				id: "0DBD2D69EED996FA"
@@ -809,6 +1224,14 @@
 			id: "56A6D79FE2B0BB91"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "3B7D3562155EC6A7"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM6 · Void Worm und Weltrand · Nebenquest"
 			tasks: [{
 				id: "3E26E916808DEB17"
@@ -836,6 +1259,14 @@
 			id: "27EC7A4B6E1D3DF8"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "77F6CD073EA72F9E"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM6 · Void Worm und Weltrand · Nebenquest"
 			tasks: [{
 				id: "5285FBA6D0C38118"
@@ -859,6 +1290,14 @@
 			id: "30A35D1D6D2CD59F"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "40832347102BB619"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM6 · Void Worm und Weltrand · Nebenquest"
 			tasks: [{
 				id: "0B637EA3C1231926"
@@ -889,6 +1328,14 @@
 			id: "265CD9F4F2386CC2"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "414544930420AAB3"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM6 · Void Worm und Weltrand · Nebenquest"
 			tasks: [{
 				id: "7EBFE56C3BE87287"
@@ -901,24 +1348,24 @@
 		}
 		{
 			description: [
-				"Freigeschaltet mit Kapitel 4: Der Mond."
+				"Freigeschaltet mit Kapitel 2: Würdig sein."
 			]
 			invisible: true
 			icon: "minecraft:book"
-			id: "38D9621F0DC44E74"
+			id: "5B85B658E2BCCCFE"
 			shape: "gear"
 			subtitle: "AM7 · Essen mit Alex's Delight"
 			tasks: [{
-				id: "7EB6237AA0D4CF1B"
-				stage: "kapitel_k4"
+				id: "6576FA5D8E4105EB"
+				stage: "kapitel_k2"
 				type: "gamestage"
 			}]
-			title: "Kapitel 4: Alex's Mobs"
+			title: "Kapitel 2: Alex's Mobs"
 			x: 23.0d
 			y: -1.75d
 		}
 		{
-			dependencies: ["27EC624AA254E2F1", "38D9621F0DC44E74"]
+			dependencies: ["27EC624AA254E2F1", "5B85B658E2BCCCFE"]
 			description: [
 				"Kurze Reihe für die Küche. Messer und Cooking Pot kommen aus Farmer's Delight."
 				""
@@ -930,6 +1377,21 @@
 			id: "4DA73D2621DF8C1F"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "630574191879DD66"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "1AAB1C87FFF56F68"
+				item: "minecraft:cooked_beef"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM7 · Essen mit Alex's Delight · Nebenquest"
 			tasks: [{
 				id: "09CC3E1E794A4127"
@@ -957,6 +1419,21 @@
 			id: "1FAC188534B5690F"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "2B8FA01060B582AE"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "375EAEEA6EDCD637"
+				item: "minecraft:bread"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM7 · Essen mit Alex's Delight · Nebenquest"
 			tasks: [{
 				id: "208D2239B4E637A3"
@@ -978,6 +1455,21 @@
 			id: "7EB23E2E93CC3B5F"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "19C9BCD91ACA2302"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "26DEEF4B02E65E2A"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AM7 · Essen mit Alex's Delight · Nebenquest"
 			tasks: [{
 				id: "7F2CBBC90306816D"

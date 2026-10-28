@@ -35,6 +35,21 @@
 			hide_until_deps_visible: true
 			icon: "botania:lexicon"
 			id: "672EC395D28D9461"
+			rewards: [{
+				auto: "enabled"
+				id: "1DC0D88F682A27B1"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "52769731EA0ADAB6"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO1 · Blüten und Lebendholz"
 			tasks: [{
 				id: "22A615EC14D28E31"
@@ -54,6 +69,21 @@
 			hide_until_deps_visible: true
 			icon: "botania:white_petal"
 			id: "6286EA3BAF407A45"
+			rewards: [{
+				auto: "enabled"
+				id: "629854AF3C8DE4BB"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "21975742B7A957FE"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO1 · Blüten und Lebendholz"
 			tasks: [{
 				count: 4L
@@ -74,6 +104,21 @@
 			hide_until_deps_visible: true
 			icon: "botania:apothecary_default"
 			id: "7583F8390031199F"
+			rewards: [{
+				auto: "enabled"
+				id: "7C02BC538D2B5829"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "172964AF7C3D5661"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO1 · Blüten und Lebendholz"
 			tasks: [{
 				id: "4952C500D9AB5771"
@@ -93,6 +138,21 @@
 			hide_until_deps_visible: true
 			icon: "botania:pure_daisy"
 			id: "77093286C0E2DB3B"
+			rewards: [{
+				auto: "enabled"
+				id: "475BE201985729CE"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "1BCF41B6186FC66C"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO1 · Blüten und Lebendholz"
 			tasks: [{
 				id: "42C6225923CE404A"
@@ -122,6 +182,21 @@
 			hide_until_deps_visible: true
 			icon: "botania:twig_wand"
 			id: "0E9E3687A3A51B2B"
+			rewards: [{
+				auto: "enabled"
+				id: "6787E67EFBE29E42"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "5D1978BB18C9469B"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "BO1 · Blüten und Lebendholz"
@@ -145,6 +220,21 @@
 			id: "35E3909F0AA03C7C"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "10DFDAEB1B20EF6C"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "5F80563C1C636724"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO1 · Blüten und Lebendholz · Nebenquest"
 			tasks: [{
 				id: "55B499FE9FFFD86F"
@@ -182,6 +272,21 @@
 			hide_until_deps_visible: true
 			icon: "botania:endoflame"
 			id: "47845FF024A9DDBC"
+			rewards: [{
+				auto: "enabled"
+				id: "0F82F35611CFE6EB"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "52612FC1599ABB92"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO2 · Mana und Manasteel"
 			tasks: [{
 				id: "6C11445465D145B4"
@@ -202,6 +307,21 @@
 			hide_until_deps_visible: true
 			icon: "botania:mana_spreader"
 			id: "6A138084A4B791EF"
+			rewards: [{
+				auto: "enabled"
+				id: "38812B73DCB1C34F"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "4E25054CDED3289E"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO2 · Mana und Manasteel"
 			tasks: [{
 				id: "0CAEC3D1E5412DA9"
@@ -221,6 +341,21 @@
 			hide_until_deps_visible: true
 			icon: "botania:mana_pool"
 			id: "131F51EE29E22307"
+			rewards: [{
+				auto: "enabled"
+				id: "3A4AC1C08F12CC18"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "77B4E05FEE956CFD"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO2 · Mana und Manasteel"
 			tasks: [{
 				id: "20B503D04FBBC361"
@@ -234,18 +369,33 @@
 		{
 			dependencies: ["131F51EE29E22307"]
 			description: [
-				"Eisen in einen gefüllten Pool werfen. Manasteel ist das erste Metall des Mods."
+				"Eisen in einen gefüllten Pool werfen. Manasteel ist das erste Metall des Mods. Neun Barren ergeben einen Block of Manasteel."
 				"Buch: Mana Manipulation → Mana Pool."
-				"&6⚙&r Für „Würdig sein“ in Buch 1 brauchst du einen ganzen Block of Manasteel (botania:manasteel_block, 9 Barren)."
+				"&6⚙&r Den Block brauchst du für „Würdig sein“ in Buch 1, deshalb verlangt die Quest gleich ihn."
 				"&6⚙&r Mit TCIntegrations ist Manasteel auch ein Werkzeugmaterial für Tinkers, ebenso Livingwood, Livingrock und Mana Infused String."
 			]
 			hide_until_deps_visible: true
-			icon: "botania:manasteel_ingot"
+			icon: "botania:manasteel_block"
 			id: "33A1ABD2FA5E2B9B"
+			rewards: [{
+				auto: "enabled"
+				id: "2441247F11020E29"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "01B0FFF01B40722A"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO2 · Mana und Manasteel"
 			tasks: [{
 				id: "0076FFCDD416D9DB"
-				item: "botania:manasteel_ingot"
+				item: "botania:manasteel_block"
 				type: "item"
 			}]
 			title: "Manasteel"
@@ -261,6 +411,21 @@
 			hide_until_deps_visible: true
 			icon: "botania:mana_pearl"
 			id: "4FEAEAE56A2A8400"
+			rewards: [{
+				auto: "enabled"
+				id: "542A53A63026D50C"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "7F988E5B73D5D647"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "BO2 · Mana und Manasteel"
@@ -289,6 +454,21 @@
 			id: "1F5B7E8CF2278E96"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "1B44E65EA4C9BF44"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "651C6900D1706B9C"
+				item: "minecraft:iron_ingot"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO2 · Mana und Manasteel · Nebenquest"
 			tasks: [{
 				id: "144BB95AA085BA55"
@@ -310,6 +490,21 @@
 			id: "50EAFBBFA5EF8E9A"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "78DF32AAD3C57527"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 8
+				id: "3C235E8F18632B76"
+				item: "minecraft:coal"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO2 · Mana und Manasteel · Nebenquest"
 			tasks: [{
 				id: "4E62BF778B8F12BB"
@@ -347,6 +542,21 @@
 			hide_until_deps_visible: true
 			icon: "botania:runic_altar"
 			id: "083AC076A6081BF5"
+			rewards: [{
+				auto: "enabled"
+				id: "1CEAEC9B48FE3DEA"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "2F752AB8E976CB1D"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO3 · Runenaltar"
 			tasks: [{
 				id: "028D6106559BDE9B"
@@ -367,6 +577,21 @@
 			hide_until_deps_visible: true
 			icon: "botania:rune_water"
 			id: "194C2ADA92F61A8F"
+			rewards: [{
+				auto: "enabled"
+				id: "7D0E4057D8C6269B"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "4239FAFCE88C2C84"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "BO3 · Runenaltar"
@@ -405,6 +630,21 @@
 			id: "2EA654EA36EC4AC7"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "168FA4022D1CEF06"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "4FEF958F71678E93"
+				item: "minecraft:bread"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO3 · Runenaltar · Nebenquest"
 			tasks: [{
 				id: "3EAF05128448D6EB"
@@ -446,6 +686,21 @@
 			id: "4FA29F534D2520C5"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "5F2EAEEE8DAA2DE1"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "3C62251DBDD125CF"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO3 · Runenaltar · Nebenquest"
 			tasks: [{
 				id: "354BB9FAFD14CF66"
@@ -497,6 +752,21 @@
 			id: "30E2BFE1CA8DCE48"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "6861B369B13E4571"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "4D80F19F283C0319"
+				item: "minecraft:iron_ingot"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO3 · Runenaltar · Nebenquest"
 			tasks: [{
 				id: "4ACB03CAC9009C8A"
@@ -519,6 +789,21 @@
 			id: "17E15B15A49C476B"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "5AD7349C1F546125"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 8
+				id: "793137523178934D"
+				item: "minecraft:coal"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO3 · Runenaltar · Nebenquest"
 			tasks: [{
 				id: "64A4E50D13DC8BB9"
@@ -541,6 +826,21 @@
 			id: "40EE4D2B83A53517"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "65F69AE310FDDA64"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "14011EED74D5753B"
+				item: "minecraft:cooked_beef"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO3 · Runenaltar · Nebenquest"
 			tasks: [{
 				id: "093950D49246E2C6"
@@ -567,6 +867,21 @@
 			id: "7501314B125FE8D3"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "4002A15E6D01908C"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "3DD135610E89A2A3"
+				item: "minecraft:bread"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO3 · Runenaltar · Nebenquest"
 			tasks: [{
 				id: "73792251025E5588"
@@ -594,6 +909,21 @@
 			id: "09D8AEEBB399F280"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "7DECEA13381500DE"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "09342D1ED0FFE069"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO3 · Runenaltar · Nebenquest"
 			tasks: [{
 				id: "54C0381F427626BF"
@@ -616,6 +946,21 @@
 			id: "7300CA11A587DBA3"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "70C0ECD8488A9F7E"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 8
+				id: "3F4EA6D25E158E7B"
+				item: "minecraft:coal"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO3 · Runenaltar · Nebenquest"
 			tasks: [{
 				id: "2E4E97EA47B0EC9C"
@@ -637,6 +982,21 @@
 			id: "0AB3571EEB10A49A"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "4620B27A784120E5"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "737A492C2B3AAEED"
+				item: "minecraft:cooked_beef"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO3 · Runenaltar · Nebenquest"
 			tasks: [{
 				id: "6D033AD2511CF907"
@@ -664,6 +1024,21 @@
 			id: "7DC3A406E4ED450D"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "06D69A19F4E5D4A9"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "3E408F0E0903047A"
+				item: "minecraft:bread"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO3 · Runenaltar · Nebenquest"
 			tasks: [{
 				id: "49204AC98026D90C"
@@ -685,6 +1060,21 @@
 			id: "6DE68168574592F9"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "593CE6308C4FE420"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "3B9646321B07DE31"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO3 · Runenaltar · Nebenquest"
 			tasks: [{
 				id: "60571ED6CC6351F3"
@@ -707,6 +1097,21 @@
 			id: "52038E88BE836763"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "379841225B1959A6"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "0E721CD0E5DE3335"
+				item: "minecraft:iron_ingot"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO3 · Runenaltar · Nebenquest"
 			tasks: [{
 				id: "27F4EFB1480AACB0"
@@ -744,6 +1149,14 @@
 			hide_until_deps_visible: true
 			icon: "botania:terra_plate"
 			id: "51CEB2BFB723DB77"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "2FA782DC124EAA92"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO4 · Terrasteel"
 			tasks: [{
 				id: "713FCA28E70B175D"
@@ -764,6 +1177,14 @@
 			hide_until_deps_visible: true
 			icon: "botania:terrasteel_ingot"
 			id: "32310B37BC9A953F"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "39676C5AA2EAF208"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "BO4 · Terrasteel"
@@ -786,6 +1207,14 @@
 			id: "45CDED460490F35A"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "0F4CAC98BA4E74C0"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO4 · Terrasteel · Nebenquest"
 			tasks: [{
 				id: "728208BE0E948102"
@@ -824,6 +1253,14 @@
 			hide_until_deps_visible: true
 			icon: "botania:natura_pylon"
 			id: "5D0A360656B07CDA"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "6FFCBB750499DB54"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO5 · Elfenportal"
 			tasks: [{
 				id: "4E978C6CD2F48BDC"
@@ -844,6 +1281,14 @@
 			hide_until_deps_visible: true
 			icon: "botania:alfheim_portal"
 			id: "1324315F8E271AF5"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "423E87B640FB4552"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO5 · Elfenportal"
 			tasks: [{
 				id: "28A70EE52044CD0E"
@@ -869,6 +1314,14 @@
 			hide_until_deps_visible: true
 			icon: "botania:elementium_ingot"
 			id: "20CA9735F369D8FB"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "207B507A4B4E3CC1"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "BO5 · Elfenportal"
@@ -906,6 +1359,14 @@
 			id: "2FDEFBFEF5D65F75"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "446ABA16516A5383"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO5 · Elfenportal · Nebenquest"
 			tasks: [{
 				id: "5FA130C12F7C4C95"
@@ -927,6 +1388,14 @@
 			id: "369AC4F605413BF3"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "6215028855746F69"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "BO5 · Elfenportal · Nebenquest"
 			tasks: [{
 				id: "212AFA53A304C4A6"
@@ -949,6 +1418,21 @@
 			id: "6DC1D2620A022BE9"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "4E716F0D523C4849"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "3AC134249D5021AA"
+				item: "minecraft:bread"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
 			tasks: [{
 				id: "2794B52D15876257"
@@ -969,6 +1453,21 @@
 			id: "1E96D64107AD5B15"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "0555DA58E987B4F9"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "77DF2F122964899E"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
 			tasks: [{
 				id: "48FE77597CB8499A"
@@ -989,6 +1488,21 @@
 			id: "76B739108DE7CD3F"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "1858F61DD5CEB441"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "478E88E9A1A84309"
+				item: "minecraft:iron_ingot"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
 			tasks: [{
 				id: "53F482725768E88E"
@@ -1009,6 +1523,21 @@
 			id: "15BC99F880D67DDD"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "75838B51F04AD41B"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 8
+				id: "06591B887A892444"
+				item: "minecraft:coal"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
 			tasks: [{
 				id: "19E8EB4CF09CC796"
@@ -1029,6 +1558,21 @@
 			id: "231E4C3A44261C67"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "405F4339003878A8"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "2EFC236F77487BE7"
+				item: "minecraft:cooked_beef"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
 			tasks: [{
 				id: "32B56861BCD36633"
@@ -1049,6 +1593,21 @@
 			id: "5DB2A5040C62E849"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "76662AC4686AC1BC"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "05FF4356EA08BF1E"
+				item: "minecraft:bread"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
 			tasks: [{
 				id: "4A348EAD4C61A37F"
@@ -1071,6 +1630,21 @@
 			id: "2237C88380EAB395"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "4C419ECCDFFCCFCB"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "4DE52AE3C113CC76"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
 			tasks: [{
 				id: "6FBDFADCCAFE0B23"

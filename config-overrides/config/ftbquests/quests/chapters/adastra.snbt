@@ -36,6 +36,14 @@
 			hide_until_deps_visible: true
 			icon: "ad_astra:astrodux"
 			id: "292FF893CE689E1B"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "679A5B30C25D8E41"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF1 · Rakete T1 → Mond"
 			tasks: [{
 				id: "012BDEF6A00A150E"
@@ -56,6 +64,14 @@
 			hide_until_deps_visible: true
 			icon: "immersiveengineering:ingot_steel"
 			id: "4BBF62035ACC750D"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "36244F711AB6BD7D"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF1 · Rakete T1 → Mond"
 			tasks: [{
 				id: "24D910ACED0C4BB2"
@@ -85,6 +101,14 @@
 			hide_until_deps_visible: true
 			icon: "ad_astra:nasa_workbench"
 			id: "499EC397EBA8F93C"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "48B1E132D83F8C63"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF1 · Rakete T1 → Mond"
 			tasks: [{
 				id: "3792032CBFCC5CFB"
@@ -110,6 +134,14 @@
 			hide_until_deps_visible: true
 			icon: "ad_astra:rocket_nose_cone"
 			id: "2D0C1755A2F72F7F"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "3393EB1A6CC504DF"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF1 · Rakete T1 → Mond"
 			tasks: [{
 				id: "44424A3FCCD04208"
@@ -146,6 +178,14 @@
 			hide_until_deps_visible: true
 			icon: "ad_astra:tier_1_rocket"
 			id: "356321F07D2E9B1C"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "625D99DA8A4F0B01"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF1 · Rakete T1 → Mond"
 			tasks: [{
 				id: "2D6B5EC1B31C77B3"
@@ -166,6 +206,14 @@
 			hide_until_deps_visible: true
 			icon: "immersiveengineering:biodiesel_bucket"
 			id: "1DCED9FAE9209EEE"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "049F260AF263B63B"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF1 · Rakete T1 → Mond"
 			tasks: [{
 				amount: 6000L
@@ -188,6 +236,14 @@
 			hide_until_deps_visible: true
 			icon: "ad_astra:oxygen_loader"
 			id: "1335B14FA1D8A955"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "23AFCA7DC0AD27DA"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF1 · Rakete T1 → Mond"
 			tasks: [{
 				id: "2CB1A9D38DC6F6C4"
@@ -213,6 +269,14 @@
 			hide_until_deps_visible: true
 			icon: "ad_astra:space_helmet"
 			id: "25E5B2BA4FC3E361"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "7B7A5D7B3249E14D"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF1 · Rakete T1 → Mond"
 			tasks: [{
 				id: "49A0EDD1082309D8"
@@ -250,6 +314,14 @@
 			id: "1A9BCF963F0801FC"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "54CBC80184E069F8"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF1 · Rakete T1 → Mond · Nebenquest"
 			tasks: [{
 				id: "5D05F7FDC239D2EF"
@@ -276,6 +348,14 @@
 			id: "2F58C3A495020A8D"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "76F067FD708B8E2E"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF1 · Rakete T1 → Mond · Nebenquest"
 			tasks: [{
 				id: "0ED5BB4CC3E1233B"
@@ -296,6 +376,14 @@
 			]
 			hide_until_deps_visible: true
 			id: "5E6257AA082F40C8"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "2DE549F12AE87392"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "RF1 · Rakete T1 → Mond"
@@ -321,6 +409,14 @@
 			id: "2E99BE918D6FDC91"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "388CFED71DB78472"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF1 · Rakete T1 → Mond · Nebenquest"
 			tasks: [{
 				id: "22C790C752EC2954"
@@ -341,6 +437,14 @@
 			id: "4F4D2FCAA683CDD8"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "0F4A5E56CCC74CA6"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF1 · Rakete T1 → Mond · Nebenquest"
 			tasks: [{
 				id: "29DEFEE26DF50935"
@@ -361,6 +465,14 @@
 			id: "707FEBC601E1DAD6"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "3BA26EE84A1893B4"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF1 · Rakete T1 → Mond · Nebenquest"
 			tasks: [{
 				id: "7EA0F7437F9F498E"
@@ -381,6 +493,14 @@
 			id: "5ACFECC62827B5B1"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "1D58910ECECADDEC"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF1 · Rakete T1 → Mond · Nebenquest"
 			tasks: [{
 				id: "0850C8D693A532F3"
@@ -419,6 +539,14 @@
 			hide_until_deps_visible: true
 			icon: "ad_astra:desh_ingot"
 			id: "4BE018C1418BD094"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "065DE62F62F4AC05"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF2 · Rakete T2 → Mars"
 			tasks: [{
 				id: "58FB567F98132EB5"
@@ -445,11 +573,19 @@
 			id: "20E320AB36DFEF88"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "7F082D19FA00B4ED"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF2 · Rakete T2 → Mars · Nebenquest"
 			tasks: [{
+				dimension: "ad_astra:earth_orbit"
 				id: "3E81349E7CEDCEEF"
-				title: "Orbit von Erde oder Mond erreicht"
-				type: "checkmark"
+				type: "dimension"
 			}]
 			title: "Space Station"
 			x: 5.5d
@@ -467,6 +603,14 @@
 			id: "768855C9B5F7B936"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "1C99CCD99AE66BA8"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF2 · Rakete T2 → Mars · Nebenquest"
 			tasks: [{
 				id: "54A579B98DD03B2D"
@@ -494,6 +638,14 @@
 			id: "6891F431A6B0AF0F"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "5ADEB968D0674435"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF2 · Rakete T2 → Mars · Nebenquest"
 			tasks: [{
 				id: "17CBEE34EF7A368B"
@@ -515,6 +667,14 @@
 			id: "74F8F30BB1442277"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "7A282F118F87CC83"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF2 · Rakete T2 → Mars · Nebenquest"
 			tasks: [{
 				id: "2DACF9DBABB895B8"
@@ -537,6 +697,14 @@
 			id: "2908469A28830F98"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "20F0BE64A05AF104"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF2 · Rakete T2 → Mars · Nebenquest"
 			tasks: [{
 				id: "4432554AC57ED7DA"
@@ -558,6 +726,14 @@
 			id: "5FFC13149F9EF18F"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "602B0D7D5A1BDBE2"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF2 · Rakete T2 → Mars · Nebenquest"
 			tasks: [{
 				id: "62DDDD653D474A65"
@@ -582,6 +758,14 @@
 			id: "7D9036D210967E78"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "360C344D17C7C784"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF2 · Rakete T2 → Mars · Nebenquest"
 			tasks: [{
 				id: "41EF7785D8BA7B7A"
@@ -602,6 +786,14 @@
 			hide_until_deps_visible: true
 			icon: "ad_astra:desh_tank"
 			id: "5396A1C55E6CCA7B"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "34D484FF0CB10B1B"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF2 · Rakete T2 → Mars"
 			tasks: [{
 				count: 2L
@@ -628,6 +820,14 @@
 			hide_until_deps_visible: true
 			icon: "ad_astra:tier_2_rocket"
 			id: "1B7973B17472DA07"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "24F0B00A9FFA3A37"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF2 · Rakete T2 → Mars"
 			tasks: [{
 				id: "43921A0D0D637BE0"
@@ -652,6 +852,14 @@
 			]
 			hide_until_deps_visible: true
 			id: "48930BE935D20A9C"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "5673B861845B8F62"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "RF2 · Rakete T2 → Mars"
@@ -692,6 +900,14 @@
 			hide_until_deps_visible: true
 			icon: "ad_astra:ostrum_ingot"
 			id: "2DFA1E07C7C17767"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "5AD59A5BE82B23D9"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF3 · Rakete T3 → Merkur, Venus"
 			tasks: [{
 				id: "6306955534403F6C"
@@ -718,6 +934,14 @@
 			id: "23BBF4FFEF3F07D0"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "47D41E999B9F1003"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF3 · Rakete T3 → Merkur, Venus · Nebenquest"
 			tasks: [{
 				id: "34C70E8171AF58E2"
@@ -744,6 +968,14 @@
 			id: "518D852D425B82B7"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "41F43BFFF44D366F"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF3 · Rakete T3 → Merkur, Venus · Nebenquest"
 			tasks: [{
 				id: "28D11A688792E6BF"
@@ -764,6 +996,14 @@
 			hide_until_deps_visible: true
 			icon: "ad_astra:cryo_freezer"
 			id: "7FD71820275E4C2E"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "08E41B6948527232"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF3 · Rakete T3 → Merkur, Venus"
 			tasks: [{
 				id: "367F159AC302DF45"
@@ -785,6 +1025,14 @@
 			hide_until_deps_visible: true
 			icon: "ad_astra:netherite_space_helmet"
 			id: "119C0376D6DB3782"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "0AC8B4F00370174E"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF3 · Rakete T3 → Merkur, Venus"
 			tasks: [{
 				id: "383E3E82DBAA1D50"
@@ -822,6 +1070,14 @@
 			id: "4B2AF9DC33C0E552"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "44BD6A32EB5B2944"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF3 · Rakete T3 → Merkur, Venus · Nebenquest"
 			tasks: [{
 				id: "3564D350E7A9F7B4"
@@ -842,6 +1098,14 @@
 			hide_until_deps_visible: true
 			icon: "ad_astra:ostrum_tank"
 			id: "504D1B9E15C17965"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "48AC39517C220283"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF3 · Rakete T3 → Merkur, Venus"
 			tasks: [{
 				count: 2L
@@ -868,6 +1132,14 @@
 			hide_until_deps_visible: true
 			icon: "ad_astra:tier_3_rocket"
 			id: "44E2B3F2841F03A8"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "475A89626F9805FD"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "RF3 · Rakete T3 → Merkur, Venus"
@@ -896,6 +1168,14 @@
 			id: "4A8203B5D41EAD99"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "16A3B5880AD0653A"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF3 · Rakete T3 → Merkur, Venus · Nebenquest"
 			tasks: [{
 				id: "4502B86C00194129"
@@ -935,6 +1215,14 @@
 			]
 			hide_until_deps_visible: true
 			id: "36474DCE9973F69E"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "50C52537D356B876"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF4 · Rakete T4 → Glacio"
 			tasks: [{
 				dimension: "ad_astra:mercury"
@@ -955,6 +1243,14 @@
 			hide_until_deps_visible: true
 			icon: "ad_astra:calorite_ingot"
 			id: "0A4869DC0EA5A984"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "29C3F7380644D7CF"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF4 · Rakete T4 → Glacio"
 			tasks: [{
 				id: "33F118927607CC1B"
@@ -982,6 +1278,14 @@
 			id: "07B0BAAFAF969FE8"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "5B6BF6EC3BD5C465"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF4 · Rakete T4 → Glacio · Nebenquest"
 			tasks: [{
 				id: "576EDA7A67D6E675"
@@ -1019,6 +1323,14 @@
 			id: "54C02EFCA426CD84"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "07C0B3FD705D0E59"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF4 · Rakete T4 → Glacio · Nebenquest"
 			tasks: [{
 				id: "776F66F64B417CB7"
@@ -1039,6 +1351,14 @@
 			hide_until_deps_visible: true
 			icon: "ad_astra:calorite_tank"
 			id: "2CEDF62B9BB37417"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "481E8BCFC11F8377"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF4 · Rakete T4 → Glacio"
 			tasks: [{
 				count: 2L
@@ -1065,6 +1385,14 @@
 			hide_until_deps_visible: true
 			icon: "ad_astra:tier_4_rocket"
 			id: "01378B5AFA1D04CD"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "6EB8DA7BFABFDF2C"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF4 · Rakete T4 → Glacio"
 			tasks: [{
 				id: "7B2774CA3ECA3A94"
@@ -1090,6 +1418,14 @@
 			]
 			hide_until_deps_visible: true
 			id: "7FA6CF2E44079A2F"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "6D5B8C43894DFB50"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "RF4 · Rakete T4 → Glacio"
@@ -1113,6 +1449,14 @@
 			id: "7ED664E93A344874"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "7B6D4208EF297A31"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "RF4 · Rakete T4 → Glacio · Nebenquest"
 			tasks: [{
 				id: "53C7B2FF95A7D7AA"
@@ -1142,6 +1486,14 @@
 			id: "00007691DEF1650A"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "46E746D5733C20D1"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Nebenquest-Reihe RFX · Schutz ohne Raumanzug · Nebenquest"
 			tasks: [{
 				id: "288839AE4B5FDBDF"
@@ -1162,6 +1514,14 @@
 			id: "516A2213260F8F14"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "5F0AFFB94196E344"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Nebenquest-Reihe RFX · Schutz ohne Raumanzug · Nebenquest"
 			tasks: [{
 				id: "587A9866ACCF922C"
@@ -1183,6 +1543,14 @@
 			id: "40460B05195FE83C"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "213BC69DF18AF69C"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Nebenquest RFY · Sky Stone für AE2 · Nebenquest"
 			tasks: [{
 				id: "061E7D68F4976D49"

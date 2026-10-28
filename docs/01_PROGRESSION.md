@@ -34,7 +34,7 @@ Die Karte (`meilensteine/`, Artifact-Seite) ist am 2026-10-14 feiner aufgeteilt 
 | **Part 3 · Rückkehr in die weit, weit entfernte Galaxis** (wird später besprochen) | | |
 | K14 Endor | Altar T6 · **Rakete T6** | Ankunft auf Endor, Basis des Meisters; sonst offen |
 | K15 Star-Wars-Welten | Meka-Ausrüstung und QIO | Bosse, Kopfgeldjagd, Lichtschwerter (SW5) |
-| K16 Mandalore | **Rakete T7** | offen |
+| K16 Mandalore | **Rakete T7** · MekaSuit Pflicht (F37, 2026-10-28) | offen |
 
 Vorschlag für die Mekanism-Stufe je Rakete (der User legt fest): T1 Basic, T2 Advanced, T3 Elite, T4 Ultimate, T5 Fusion, T6 SPS und Antimaterie, T7 offen.
 

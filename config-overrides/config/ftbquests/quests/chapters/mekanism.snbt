@@ -34,6 +34,21 @@
 			hide_until_deps_visible: true
 			icon: "mekanism:raw_osmium"
 			id: "75C91E77E306DEEC"
+			rewards: [{
+				auto: "enabled"
+				id: "401BD69C7D2EF53F"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "470058EACABE2C2B"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK1 · Infuser und Sauerstoff"
 			tasks: [{
 				id: "4B75EABC71B87420"
@@ -55,6 +70,21 @@
 			hide_until_deps_visible: true
 			icon: "mekanism:metallurgic_infuser"
 			id: "4BC3380EC1235A5D"
+			rewards: [{
+				auto: "enabled"
+				id: "26FB75E5BBEF0A10"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "72103A439A7C2238"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK1 · Infuser und Sauerstoff"
 			tasks: [{
 				id: "3DBA56CBE8853FC5"
@@ -74,6 +104,21 @@
 			hide_until_deps_visible: true
 			icon: "mekanismgenerators:heat_generator"
 			id: "297CC840928521E9"
+			rewards: [{
+				auto: "enabled"
+				id: "159BEF5CDA2AE4B4"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "67FDC04B0EADBBF7"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK1 · Infuser und Sauerstoff"
 			tasks: [{
 				id: "1EDAEBD24385AF8D"
@@ -96,6 +141,21 @@
 			hide_until_deps_visible: true
 			icon: "mekanism:alloy_infused"
 			id: "67B226B1E72E2FD3"
+			rewards: [{
+				auto: "enabled"
+				id: "7B7A2CE774E5E765"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "0C2E35D577218843"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK1 · Infuser und Sauerstoff"
 			tasks: [{
 				id: "734C90A1A173D8FE"
@@ -125,6 +185,21 @@
 			hide_until_deps_visible: true
 			icon: "mekanism:steel_casing"
 			id: "01BEF4545E477DFA"
+			rewards: [{
+				auto: "enabled"
+				id: "696CA0D3CE63D5DD"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "0A10E10916F18035"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK1 · Infuser und Sauerstoff"
 			tasks: [{
 				id: "76399E3BE2411590"
@@ -145,6 +220,21 @@
 			hide_until_deps_visible: true
 			icon: "mekanism:electrolytic_separator"
 			id: "3118A5050D4D56CD"
+			rewards: [{
+				auto: "enabled"
+				id: "73C65BC9423F81E5"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "0B4E1DB59D1F4520"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK1 · Infuser und Sauerstoff"
 			tasks: [{
 				id: "3B158D9E85D02702"
@@ -166,6 +256,21 @@
 			hide_until_deps_visible: true
 			icon: "mekanism:rotary_condensentrator"
 			id: "6D928FB73894B839"
+			rewards: [{
+				auto: "enabled"
+				id: "441934E8D79FF90F"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "158DFBBFE4AA2859"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "MK1 · Infuser und Sauerstoff"
@@ -213,6 +318,14 @@
 			hide_until_deps_visible: true
 			icon: "mekanism:enrichment_chamber"
 			id: "1594BB213B1B4F4A"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "75F6428297845DDB"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "MK2 · Grundmaschinen"
@@ -236,6 +349,14 @@
 			id: "5766D719B37D0041"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "3F312ED7ABE0FD58"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK2 · Grundmaschinen · Nebenquest"
 			tasks: [{
 				id: "7BA8FFBA1E1D56AC"
@@ -261,6 +382,14 @@
 			id: "715A0078E597D19A"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "4D7AA8674DDEC6E4"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK2 · Grundmaschinen · Nebenquest"
 			tasks: [{
 				id: "37F4901AB7F36BB9"
@@ -282,6 +411,14 @@
 			id: "4FB01C6023B9C078"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "167F233C0522D26D"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK2 · Grundmaschinen · Nebenquest"
 			tasks: [{
 				id: "48F9B53CBAC47C39"
@@ -307,6 +444,14 @@
 			id: "133BF0E61C0A906A"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "6AAD26F010E59D19"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK2 · Grundmaschinen · Nebenquest"
 			tasks: [{
 				id: "64C557D95A2A8ECD"
@@ -332,6 +477,14 @@
 			id: "442C4CB8A650550F"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "4423107A1C090E4B"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK2 · Grundmaschinen · Nebenquest"
 			tasks: [{
 				id: "3275ECEC4F9EDFF6"
@@ -365,6 +518,14 @@
 			id: "4FE3F76C9E78BFEA"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "5ED3E2FAC678ED53"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK2 · Grundmaschinen · Nebenquest"
 			tasks: [{
 				id: "7C96B71E252608C7"
@@ -402,6 +563,14 @@
 			hide_until_deps_visible: true
 			icon: "mekanism:raw_tin"
 			id: "4E293D6B64CEDD5B"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "195B38D08D311E4C"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK3 · Advanced, Erz ×3"
 			tasks: [{
 				id: "4C12B94043CCD832"
@@ -429,6 +598,14 @@
 			hide_until_deps_visible: true
 			icon: "mekanism:advanced_control_circuit"
 			id: "5FA26DC946224B1C"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "034B258BA6761B74"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK3 · Advanced, Erz ×3"
 			tasks: [{
 				id: "4645704C03BF285B"
@@ -451,6 +628,14 @@
 			hide_until_deps_visible: true
 			icon: "mekanism:purification_chamber"
 			id: "455E41A4AE947DE5"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "5EA4030D480FE62A"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK3 · Advanced, Erz ×3"
 			tasks: [{
 				id: "47DD2C93FBF2136B"
@@ -470,6 +655,14 @@
 			hide_until_deps_visible: true
 			icon: "mekanism:basic_tier_installer"
 			id: "481E87F8A3248F3D"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "52AEFE48C5054E9F"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK3 · Advanced, Erz ×3"
 			tasks: [{
 				id: "556A015DB57942B6"
@@ -491,6 +684,14 @@
 			hide_until_deps_visible: true
 			icon: "mekanism:osmium_compressor"
 			id: "7EAB9F168BFEB124"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "33991C0E1ACF54B6"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "MK3 · Advanced, Erz ×3"
@@ -518,6 +719,14 @@
 			id: "420CFB3DDEC4DBEE"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "006B7D93ED6D2042"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK3 · Advanced, Erz ×3 · Nebenquest"
 			tasks: [{
 				id: "0497DA5B73863432"
@@ -554,6 +763,14 @@
 			hide_until_deps_visible: true
 			icon: "mekanism:alloy_reinforced"
 			id: "3CFF6061F5E536DA"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "5376E1FE95BA1BBC"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK4 · Elite und Chemie"
 			tasks: [{
 				id: "44DCE4E9465F3B32"
@@ -580,6 +797,14 @@
 			hide_until_deps_visible: true
 			icon: "mekanism:chemical_infuser"
 			id: "0878C3A5623B60B2"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "4EEDB1906BA1ACC0"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK4 · Elite und Chemie"
 			tasks: [{
 				id: "242FDC88C2B6EB35"
@@ -604,6 +829,14 @@
 			hide_until_deps_visible: true
 			icon: "mekanism:thermal_evaporation_controller"
 			id: "0DABBBDEEB7FA801"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "041A1A5E42B90B6C"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK4 · Elite und Chemie"
 			tasks: [{
 				id: "187698D2296C9921"
@@ -629,6 +862,14 @@
 			hide_until_deps_visible: true
 			icon: "mekanism:chemical_injection_chamber"
 			id: "34847A93057851E3"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "5A18A2D4B83103BD"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK4 · Elite und Chemie"
 			tasks: [{
 				id: "1924A93A11F27880"
@@ -649,6 +890,14 @@
 			hide_until_deps_visible: true
 			icon: "mekanism:shard_iron"
 			id: "7CB162916BAEA3F8"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "44A10DB9FA22C207"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK4 · Elite und Chemie"
 			tasks: [{
 				id: "187A1167EB6476CC"
@@ -672,6 +921,14 @@
 			]
 			hide_until_deps_visible: true
 			id: "154589E32601A4F1"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "01DF3B79F02F217E"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK4 · Elite und Chemie"
 			tasks: [{
 				amount: 1000L
@@ -695,6 +952,14 @@
 			hide_until_deps_visible: true
 			icon: "mekanism:pressurized_reaction_chamber"
 			id: "65FD91C69EED1303"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "117F9F001349287D"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "MK4 · Elite und Chemie"
@@ -722,6 +987,14 @@
 			id: "42F8A3F0547755F0"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "02B83577DF385E2D"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK4 · Elite und Chemie · Nebenquest"
 			tasks: [{
 				id: "286315542DD6A9AC"
@@ -750,6 +1023,14 @@
 			id: "5FE4D02BD693272D"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "1685BB9AEABED18D"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Erzvervielfachung · Nebenquest"
 			tasks: [{
 				id: "7DFDA1E5F173F7F1"
@@ -775,6 +1056,14 @@
 			id: "04A50A3E66ACAB76"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "6ECF15826B4BB5CC"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Erzvervielfachung · Nebenquest"
 			tasks: [{
 				id: "283CA43B998592D9"
@@ -814,6 +1103,14 @@
 			hide_until_deps_visible: true
 			icon: "mekanism:yellow_cake_uranium"
 			id: "438B171218CF8B69"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "0C1900C4935FC141"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK5 · Kernkraft"
 			tasks: [{
 				id: "62C2C8539FEFC161"
@@ -833,6 +1130,14 @@
 			hide_until_deps_visible: true
 			icon: "mekanism:hazmat_mask"
 			id: "7B9237C64623DC2D"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "3D68BDD2F3F0481C"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK5 · Kernkraft"
 			tasks: [{
 				id: "2E97B3C37890D84A"
@@ -875,6 +1180,14 @@
 			hide_until_deps_visible: true
 			icon: "mekanism:isotopic_centrifuge"
 			id: "01C4EF0099DADAA6"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "504D3A4BAC746531"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK5 · Kernkraft"
 			tasks: [{
 				id: "34DB297B73DB8CE3"
@@ -900,6 +1213,14 @@
 			hide_until_deps_visible: true
 			icon: "mekanismgenerators:fission_reactor_casing"
 			id: "20336D7F206AFA68"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "1ADDD58B2AD7C0A9"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK5 · Kernkraft"
 			tasks: [{
 				id: "3C71DA83CDBB94D2"
@@ -935,6 +1256,14 @@
 			hide_until_deps_visible: true
 			icon: "mekanismgenerators:turbine_valve"
 			id: "700827270D79A55E"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "3300601302C8C887"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK5 · Kernkraft"
 			tasks: [{
 				id: "7F00ECD8AB916990"
@@ -962,6 +1291,14 @@
 			hide_until_deps_visible: true
 			icon: "mekanism:pellet_polonium"
 			id: "5727C86B5DB4F060"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "42FDB546E7521B9B"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "MK5 · Kernkraft"
@@ -985,6 +1322,14 @@
 			id: "43E0D08ABA30217D"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "3F29E8ACC815AF89"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK5 · Kernkraft · Nebenquest"
 			tasks: [{
 				id: "659F407C65F0C563"
@@ -1026,6 +1371,14 @@
 			hide_until_deps_visible: true
 			icon: "mekanism:alloy_atomic"
 			id: "39B05FAB9BD91D07"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "37D9DCD6A68CAE09"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK6 · Ultimate und Teleportation"
 			tasks: [{
 				id: "35BEA505F6D1FEF7"
@@ -1049,6 +1402,14 @@
 			hide_until_deps_visible: true
 			icon: "mekanism:teleportation_core"
 			id: "311387E5E5173165"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "3B24D6EC56DA4219"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK6 · Ultimate und Teleportation"
 			tasks: [{
 				id: "7731EB309C0C8182"
@@ -1071,6 +1432,14 @@
 			id: "7063538824095854"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "6C1678FBF1011236"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK6 · Ultimate und Teleportation · Nebenquest"
 			tasks: [{
 				id: "64FBC433C042D103"
@@ -1097,6 +1466,14 @@
 			id: "2A4ECEF5B229A69D"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "1F77286C61D8B885"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK6 · Ultimate und Teleportation · Nebenquest"
 			tasks: [{
 				id: "099480850046F010"
@@ -1117,6 +1494,14 @@
 			id: "0994FDE8F58FED03"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "5CEE9A4E36EEFEC1"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "MK6 · Ultimate und Teleportation · Nebenquest"
 			tasks: [{
 				id: "2AE1DFBDEB3F082F"
@@ -1135,6 +1520,14 @@
 			hide_until_deps_visible: true
 			icon: "mekanism:laser"
 			id: "015545685E8A0045"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "59FA74BBCD887C58"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "MK6 · Ultimate und Teleportation"

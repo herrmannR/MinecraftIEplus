@@ -15,7 +15,7 @@
 
 ---
 
-## AM1 · Tiere der Oberwelt (K4 Der Mond)
+## AM1 · Tiere der Oberwelt (K1 Ankunft)
 
 ### AM1-01 Animal Dictionary · Nebenquest
 **Aufgabe:** `alexsmobs:animal_dictionary`
@@ -43,7 +43,7 @@ Buch: Animal Dictionary → Bald Eagle; für die Zutaten Blobfish, Grizzly Bear,
 
 ---
 
-## AM2 · Beute der Oberwelt (K4 Der Mond)
+## AM2 · Beute der Oberwelt (K2 Würdig sein)
 
 Jedes Stück kopiert eine Fähigkeit seines Tiers. Die Reihe ist in drei Ketten geteilt: Rüstung, Werkzeuge, Ameisen.
 
@@ -91,7 +91,7 @@ Buch: Animal Dictionary → Leafcutter Ant.
 
 ---
 
-## AM3 · Meer und Untergrund (K4 Der Mond)
+## AM3 · Meer und Untergrund (K3 Industrie)
 
 Die Ortungsgeräte bauen aufeinander auf: Echolocator → Endolocator und Strange Fish Finder.
 
@@ -154,7 +154,7 @@ Buch: Animal Dictionary → Underminer.
 
 ---
 
-## AM4 · Nether (K4 Der Mond)
+## AM4 · Nether (K3 Industrie)
 
 Hier beginnt die lange Kette zur Void Worm: Die **Crimson Mosquito Larva** (AM4-02) wird in AM5 gebraucht.
 
@@ -265,7 +265,7 @@ Buch: Animal Dictionary → Farseer.
 
 ---
 
-## AM7 · Essen mit Alex's Delight (K4 Der Mond)
+## AM7 · Essen mit Alex's Delight (K2 Würdig sein)
 
 Kurze Reihe für die Küche. Messer und Cooking Pot kommen aus Farmer's Delight.
 
@@ -301,7 +301,7 @@ Zwei Burger. Alex's Delight ersetzt das Rezept des Kangaroo Burger durch ein eig
 - **AM3-08:** Ruft der Skreecher wirklich den Warden? Steht nicht in den Quellen; im Spiel prüfen.
 - **AM6-04:** Rückweg vom Weltrand (Bett, zweiter Carver) ist Spielwissen, nicht belegt; im Spiel prüfen.
 - ~~AM6-05~~ entschieden (F16): Tisch bleibt, nur Truhenbeute.
-- ~~Freischaltung~~ entschieden (F16): ganze Reihe ab dem Mond, alle Abschnitte mit K4. **Offen:** Mit K4 erscheinen 37 Quests auf einmal. Wer sie verteilen will (Vorschlag: AM4 Nether mit K5, AM5 und AM6 End mit K7), ändert nur die Kn in den Abschnittstiteln.
+- ~~Freischaltung~~ entschieden (F32, 2026-10-28): früher und verteilt, AM1 K1, AM2/AM7 K2, AM3/AM4 K3, AM5/AM6 K4. Früher (F16): ganze Reihe ab dem Mond. Mit K4 erscheinen 37 Quests auf einmal. Wer sie verteilen will (Vorschlag: AM4 Nether mit K5, AM5 und AM6 End mit K7), ändert nur die Kn in den Abschnittstiteln.
 - **Oder-Aufgaben:** „eins davon“ ist in `tools/questbuch/alexsmobs.cfg` als Oder-Aufgabe gebaut; „zwei davon“ (AM2-04, AM7-01) als zwei Oder-Aufgaben aus je zwei Items (Text angepasst), weil der Generator kein „zwei aus vier“ kennt.
 - **AM6:** Die Kette zur Transmutation Table hat fünf Quests und ist damit länger als die übrigen Ketten (höchstens vier); so verlangt es der Mod.
 - **Alex's Delight:** Barbecue on a Stick ist nicht herstellbar (Befund AM4).

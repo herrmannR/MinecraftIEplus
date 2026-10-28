@@ -38,6 +38,21 @@
 			hide_until_deps_visible: true
 			icon: "ae2:guide"
 			id: "47435CAF48E9E684"
+			rewards: [{
+				auto: "enabled"
+				id: "1F961BC101105003"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "4C3FCCB8CB859C2B"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AE1 · Storage-Layer"
 			tasks: [{
 				id: "1BB6EDD8F1142AC8"
@@ -58,6 +73,21 @@
 			hide_until_deps_visible: true
 			icon: "ae2:charger"
 			id: "6B132A79F89EE95B"
+			rewards: [{
+				auto: "enabled"
+				id: "2C65D3825857F36C"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "25DAD9382D839C55"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AE1 · Storage-Layer"
 			tasks: [{
 				id: "64A40E1152EF5226"
@@ -83,6 +113,21 @@
 			hide_until_deps_visible: true
 			icon: "ae2:meteorite_compass"
 			id: "1F4DFC2D78D6B7A6"
+			rewards: [{
+				auto: "enabled"
+				id: "7EAAB46A6357702D"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "257BAD87BEC22788"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AE1 · Storage-Layer"
 			tasks: [{
 				id: "5FF8405DD977043C"
@@ -104,6 +149,21 @@
 			hide_until_deps_visible: true
 			icon: "ae2:silicon_press"
 			id: "66B6782FBA73917A"
+			rewards: [{
+				auto: "enabled"
+				id: "64F455E801A2E07C"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "39CD076BADC34C2C"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AE1 · Storage-Layer"
 			tasks: [{
 				id: "5BFDCD2D15D93063"
@@ -145,6 +205,21 @@
 			hide_until_deps_visible: true
 			icon: "ae2:growth_accelerator"
 			id: "5B9E6DE11968B925"
+			rewards: [{
+				auto: "enabled"
+				id: "18113FB45A7216C3"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "3665B38F7AC263D2"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AE1 · Storage-Layer"
 			tasks: [{
 				id: "6CEEBCECD02BEB53"
@@ -170,6 +245,21 @@
 			hide_until_deps_visible: true
 			icon: "ae2:fluix_crystal"
 			id: "753A22B2C47AAA1C"
+			rewards: [{
+				auto: "enabled"
+				id: "4056C4A7B09E835A"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "25CC552CC2F011CB"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AE1 · Storage-Layer"
 			tasks: [{
 				id: "652BABABD917137B"
@@ -190,6 +280,21 @@
 			hide_until_deps_visible: true
 			icon: "ae2:inscriber"
 			id: "3FA949F1EE0DAFA6"
+			rewards: [{
+				auto: "enabled"
+				id: "137464D5604FF6CB"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "48437109C922D7B8"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AE1 · Storage-Layer"
 			tasks: [{
 				id: "2CFE4DF9D54108A0"
@@ -210,6 +315,21 @@
 			hide_until_deps_visible: true
 			icon: "ae2:silicon"
 			id: "310E3E632CF41446"
+			rewards: [{
+				auto: "enabled"
+				id: "44A2E080FA57E92E"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "52A2E77588B6F895"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AE1 · Storage-Layer"
 			tasks: [{
 				id: "261714EE168ABAE5"
@@ -244,6 +364,21 @@
 			hide_until_deps_visible: true
 			icon: "ae2:formation_core"
 			id: "07E6336DB123AB07"
+			rewards: [{
+				auto: "enabled"
+				id: "04B7162562C96BA0"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "2F52895966FF2296"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AE1 · Storage-Layer"
 			tasks: [{
 				id: "3232560976CAB855"
@@ -269,6 +404,21 @@
 			hide_until_deps_visible: true
 			icon: "ae2:energy_acceptor"
 			id: "79332D21193BB39F"
+			rewards: [{
+				auto: "enabled"
+				id: "16194A2879B9A947"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "3816749041D67541"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AE1 · Storage-Layer"
 			tasks: [{
 				id: "19DC9F032929850D"
@@ -288,6 +438,21 @@
 			hide_until_deps_visible: true
 			icon: "ae2:fluix_glass_cable"
 			id: "694BB95567703A4A"
+			rewards: [{
+				auto: "enabled"
+				id: "78277E9825252D90"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "1E7A178F217B72F4"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AE1 · Storage-Layer"
 			tasks: [{
 				id: "4492F9F47D3FE614"
@@ -313,6 +478,21 @@
 			hide_until_deps_visible: true
 			icon: "ae2:storage_bus"
 			id: "7293C4C03756CCF1"
+			rewards: [{
+				auto: "enabled"
+				id: "0F869975F3613A6A"
+				team_reward: true
+				type: "xp"
+				xp: 50
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "67E8DA57EBADC9B8"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "AE1 · Storage-Layer"
@@ -336,6 +516,21 @@
 			id: "1BBED7497AF9A2C5"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "0BF8B6AA1988FF53"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 8
+				id: "7ABDC6EF2505025A"
+				item: "minecraft:coal"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AE1 · Storage-Layer · Nebenquest"
 			tasks: [{
 				id: "7E9776A6828494DB"
@@ -381,6 +576,14 @@
 			hide_until_deps_visible: true
 			icon: "ae2:item_storage_cell_1k"
 			id: "61C378527699CA8B"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "18DC5B0A3CD3A4FD"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AE2 · ME-System"
 			tasks: [{
 				id: "1899ECCE7BD8BFA3"
@@ -401,6 +604,14 @@
 			hide_until_deps_visible: true
 			icon: "ae2:drive"
 			id: "71B568676039B4D7"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "618139C89EF0B811"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AE2 · ME-System"
 			tasks: [{
 				id: "0F97DF85F428D041"
@@ -421,6 +632,14 @@
 			hide_until_deps_visible: true
 			icon: "ae2:controller"
 			id: "151524197B359CFC"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "031D580B187EEF91"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AE2 · ME-System"
 			tasks: [{
 				id: "6870D63669315A55"
@@ -442,6 +661,14 @@
 			id: "60DAAEB5A4DE755D"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "77E0AAA8CCA372EA"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AE2 · ME-System · Nebenquest"
 			tasks: [{
 				id: "63CC5C604718C5DA"
@@ -468,6 +695,14 @@
 			id: "74C36AE2EF6ABDAB"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "01AA9FFF8B73DB59"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AE2 · ME-System · Nebenquest"
 			tasks: [{
 				id: "3DFADC27A3CF4F1F"
@@ -489,6 +724,14 @@
 			id: "3C508CC79599FD35"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "76C827CAE0B792B1"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AE2 · ME-System · Nebenquest"
 			tasks: [{
 				id: "24998E125F2CF910"
@@ -510,6 +753,14 @@
 			id: "1CBB16C6B92B4186"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "0A61277352A10F34"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AE2 · ME-System · Nebenquest"
 			tasks: [{
 				id: "67B03610C4B74D9C"
@@ -541,6 +792,14 @@
 			id: "6D7F156453A34B99"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "0764C42FE08634C4"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AE2 · ME-System · Nebenquest"
 			tasks: [{
 				id: "657D9ADA78CF2C6A"
@@ -562,6 +821,14 @@
 			id: "7861DE5C00BF5B58"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "34B1C17CA8C294BD"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AE2 · ME-System · Nebenquest"
 			tasks: [{
 				id: "519608AEAE0DC9E6"
@@ -591,6 +858,14 @@
 			hide_until_deps_visible: true
 			icon: "ae2:crafting_terminal"
 			id: "473B379DA5850F5F"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "2D7A0099F45DC0E7"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AE2 · ME-System"
 			tasks: [{
 				id: "3061CEFC5D1F62CF"
@@ -610,6 +885,14 @@
 			hide_until_deps_visible: true
 			icon: "ae2:blank_pattern"
 			id: "0F5670F69765BA49"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "68522135C05DA86A"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AE2 · ME-System"
 			tasks: [{
 				id: "6390DEA4F756B71B"
@@ -634,6 +917,14 @@
 			hide_until_deps_visible: true
 			icon: "ae2:pattern_provider"
 			id: "31D3ABFCF244549A"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "7CEC16A96F0C2D86"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AE2 · ME-System"
 			tasks: [{
 				id: "4156641443C53AD3"
@@ -658,6 +949,14 @@
 			hide_until_deps_visible: true
 			icon: "ae2:crafting_unit"
 			id: "7F8A2EA9729C9026"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "33A5EEF20CAE895C"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AE2 · ME-System"
 			tasks: [{
 				id: "02584658ED8BFFA4"
@@ -682,6 +981,14 @@
 			hide_until_deps_visible: true
 			icon: "appmek:chemical_cell_housing"
 			id: "066045B9476DF7B7"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "1B3D69ED709ADB33"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "AE2 · ME-System"
@@ -710,6 +1017,14 @@
 			id: "25075690125C9FC9"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "4B4F1F0223862D19"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AE2 · ME-System · Nebenquest"
 			tasks: [{
 				id: "667424E65D2D320E"
@@ -741,6 +1056,14 @@
 			id: "6FD9529FED79D0F9"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "0A2B2EB92A8FD1A0"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AE2 · ME-System · Nebenquest"
 			tasks: [{
 				id: "409B82ED15A5D29C"
@@ -763,6 +1086,14 @@
 			id: "0923680B32998242"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "12015160C2630327"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AE2 · ME-System · Nebenquest"
 			tasks: [{
 				id: "2CF16340F2BECEB7"
@@ -784,6 +1115,14 @@
 			id: "1E7CCCB98735A4FD"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "428A644A6A3C2BEE"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "AE2 · ME-System · Nebenquest"
 			tasks: [{
 				id: "4201B3450A100DD5"
@@ -812,6 +1151,21 @@
 			id: "53462FF5E11A29F1"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "79EE7A6264B139AE"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "591311A9F20F67AF"
+				item: "minecraft:cooked_beef"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
 			tasks: [{
 				id: "36AF3AC34ED46486"
@@ -833,6 +1187,21 @@
 			id: "55318ECB561E58CD"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "0FE00683BF9F50B8"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "2887759E57DEA68A"
+				item: "minecraft:bread"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
 			tasks: [{
 				id: "2E19DB46E681FDFC"
@@ -854,6 +1223,21 @@
 			id: "1015E66E8F08A3E0"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "60BF0CBC7BB62FA6"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 16
+				id: "6142B4E8DF5A474C"
+				item: "minecraft:torch"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
 			tasks: [{
 				id: "303A158D4BF2A77E"
@@ -875,6 +1259,21 @@
 			id: "169962C83C8E8634"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "0AAF08262CA42224"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "1B70A51A926F1C6A"
+				item: "minecraft:iron_ingot"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
 			tasks: [{
 				id: "35B39F6B52E6322B"
@@ -896,6 +1295,21 @@
 			id: "4363BDB209FD5894"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "46A28546B1F8C1D6"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 8
+				id: "11D9D2280DE09B64"
+				item: "minecraft:coal"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
 			tasks: [{
 				id: "2BF96D2021CAE873"
@@ -917,6 +1331,21 @@
 			id: "2F78E61D0513D6D4"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				id: "6A80057ACF210BA6"
+				team_reward: true
+				type: "xp"
+				xp: 20
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "45AA3B1835F66D2B"
+				item: "minecraft:cooked_beef"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "Nebenquests ohne Meilenstein · Nebenquest"
 			tasks: [{
 				id: "4741F2BD725A7F1F"

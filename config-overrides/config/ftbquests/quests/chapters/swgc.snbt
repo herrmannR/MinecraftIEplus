@@ -37,6 +37,14 @@
 			hide_until_deps_visible: true
 			icon: "swgc:copper_credit"
 			id: "0985C494F42DD4D2"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "5A9784FBD926FF4F"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "SW2 · Shop des Einsiedlers"
 			tasks: [{
 				id: "4C923A2B1E707B6F"
@@ -58,6 +66,14 @@
 			hide_until_deps_visible: true
 			icon: "swgc:assembly_bench"
 			id: "0415A1311660BD21"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "0880C64874CA977E"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "SW2 · Shop des Einsiedlers"
 			tasks: [{
 				id: "0DA1E52B094CA83E"
@@ -77,6 +93,14 @@
 			hide_until_deps_visible: true
 			icon: "swgc:durasteel_ingot"
 			id: "2B3941559F9CE63E"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "5D4C57A5EEA908B4"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "SW2 · Shop des Einsiedlers"
 			tasks: [{
 				id: "6452212145C1C70D"
@@ -97,6 +121,14 @@
 			hide_until_deps_visible: true
 			icon: "swgc:droid_fabricator"
 			id: "478F2A80BA51DFA1"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "1A91B024B3BBBAB2"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "SW2 · Shop des Einsiedlers"
@@ -122,6 +154,14 @@
 			id: "72498281B8CD6F96"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "0F00DD327E792E2D"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "SW2 · Shop des Einsiedlers · Nebenquest"
 			tasks: [{
 				id: "7295B1A4ECE1E2AA"
@@ -145,6 +185,14 @@
 			id: "5EAB6931D4F58A85"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "06EB4C59E1EE0F33"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "SW2 · Shop des Einsiedlers · Nebenquest"
 			tasks: [{
 				id: "6F50F8030E0A1105"
@@ -171,6 +219,14 @@
 			id: "16831D294602AB2A"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "4C53668368122C66"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "SW2 · Shop des Einsiedlers · Nebenquest"
 			tasks: [{
 				id: "17500AA8A0618CD0"
@@ -210,6 +266,14 @@
 			hide_until_deps_visible: true
 			icon: "swgc:plastoid"
 			id: "3243CD20D9B44F54"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "02922C94E2405AEA"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "SW3 · Plastoid, Blaster und Truppen"
 			tasks: [{
 				id: "79829BB9C21030FC"
@@ -230,6 +294,14 @@
 			hide_until_deps_visible: true
 			icon: "swgc:dc15a"
 			id: "2FF89C4C1271B68C"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "4F508F1F65167A5A"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "SW3 · Plastoid, Blaster und Truppen"
 			tasks: [{
 				id: "350405B71B24F519"
@@ -251,6 +323,14 @@
 			hide_until_deps_visible: true
 			icon: "swgc:b1"
 			id: "15166DF19696B212"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "226E751FA2660819"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "SW3 · Plastoid, Blaster und Truppen"
@@ -275,6 +355,14 @@
 			id: "301A93FAAA841C8A"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "552633AE724CD192"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "SW3 · Plastoid, Blaster und Truppen · Nebenquest"
 			tasks: [{
 				id: "6E9ADD4A0BF190CF"
@@ -296,6 +384,14 @@
 			id: "7424DEF5E96A7114"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "68D0208BA775B5B4"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "SW3 · Plastoid, Blaster und Truppen · Nebenquest"
 			tasks: [{
 				id: "1E58D87EE5A9E389"
@@ -331,6 +427,14 @@
 			id: "0C77470E27DEEF82"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "18090817C406AF0F"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "SW3 · Plastoid, Blaster und Truppen · Nebenquest"
 			tasks: [{
 				id: "39BAE562AFFEF339"
@@ -354,6 +458,14 @@
 			id: "59C48AB648C0C939"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "5EFB75EB24B1489F"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "SW3 · Plastoid, Blaster und Truppen · Nebenquest"
 			tasks: [{
 				id: "5AF0C52214AEF029"
@@ -390,6 +502,14 @@
 			id: "172476DC4088B888"
 			optional: true
 			shape: "square"
+			rewards: [{
+				auto: "enabled"
+				count: 2
+				id: "47048074185BF01B"
+				item: "swgc:copper_credit"
+				team_reward: true
+				type: "item"
+			}]
 			subtitle: "SW3 · Plastoid, Blaster und Truppen · Nebenquest"
 			tasks: [{
 				id: "65DC1DAF41B1106C"

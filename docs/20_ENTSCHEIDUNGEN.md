@@ -60,53 +60,7 @@ Welche Maschinen (IE Excavator, Mekanism-Factories, AE2-Autocrafting), welcher M
 
 Die Kapitel bis K11 sind gebaut (sechs parallele Sessions). Diese Punkte haben die Sessions bewusst nicht selbst entschieden; Einzelheiten stehen im Abschnitt „Offen vor dem Einbau“ der genannten Questtext-Datei.
 
-**F31 · Kapitel-Zuordnung der Nebenstränge** (Vorschläge der Session)
-Blue Skies BSN → K3; Roguelike WD1/WD2 → K8 (WD1-01 bis -03 und WD2-01/-02 Hauptweg nach F15), WD3/WD4 → K10, WD5 → K12; Aircraft IA1 → K4, Luftschiffe → K5, die übrigen 12 Quests → K12; Küche KU1 K1, KU2/KU3 K2, KU4 K3, KU5/KU6 K4, KU7 K5, KU8 K6, KU9 K7. Bestätigen? Sollen WD3/WD4 schon in Teil 1 erscheinen, und bleiben die 12 Aircraft-Quests überhaupt?
-→ `questtexte/rld.md`, `aircraft.md`, `kueche.md`, `blue_skies.md`
-
-**F32 · Alex's Mobs auf einmal** (F16: ganze Reihe ab dem Mond)
-37 Quests erscheinen zusammen mit K4. So lassen oder auf mehrere Kapitel verteilen?
-→ `questtexte/alexsmobs.md`
-
-**F33 · Belohnungen** (für alle Kapitel einheitlich, noch nicht eingetragen)
-Vor dem Mond (K1–K3) Aufgaben des Droiden: Kleinigkeiten und XP; ab dem Einsiedler (K4) Credits (F26, O27). Welche Mengen je Haupt- und Nebenquest, und wie viele Credits für den Helm (ST4-05)?
-→ `tools/questbuch/*.cfg` (`rewards`)
-
-**F34 · AE2 weiter verteuern?**
-F10 verteuert nur Controller und Drive. Auch Prozessoren (AE1-08) oder Housings und Components (AE2-01)?
-→ `questtexte/ae2.md`, `kubejs/server_scripts/progression/ae2_verteuerung.js`
-
-**F35 · Mengen in Aufgaben** (Vorschläge der Sessions)
-Liquid Oxygen in MK1-07 (offen); Kryo-Treibstoff in RF4-06 2000 mB (Hin- und Rückflug); Tinkers: Blazing Blood und Demon Will je 1000 mB, geschmolzene Metalle 90 mB (ein Barren).
-→ `questtexte/mekanism.md`, `adastra.md`, `tinkers.md`
-
-**F36 · RF2-02 „Orbit von Erde oder Mond“**
-Der Generator kennt keine Oder-Aufgabe für Dimensionen; jetzt ein Häkchen. Lieber eine feste Dimension?
-→ `questtexte/adastra.md`
-
-**F37 · MekaSuit-Module**
-F11 sagt Teil 2, `mekanism.md` hat den MekaSuit erst bei K15 (Teil 3). Was gilt?
-→ `questtexte/adastra.md` (RFX-03), `mekanism.md`
-
-**F38 · Galaxy in a Cube neu geordnet**
-SW2 beginnt jetzt mit der Assembly Bench als erstem Kauf; Gas Harvester und Tibanna sind Nebenquests (Plastoid braucht kein Tibanna mehr). SW3-06 (bemalte Einheit) zählt die 212th nicht, weil der Story-Helm (O71) die Quest sonst erfüllt. Gewollt?
-→ `questtexte/swgc.md`
-
-**F39 · Botania BO2-04 „Würdig sein“**
-Soll die Aufgabe gleich den Manastahlblock verlangen statt des Barrens?
-→ `questtexte/botania.md`
-
-**F40 · Relikt** (Story-Skripte)
-a) Beim Tod bleibt das Relikt beim Träger (so gebaut); Alternative: Es fällt, und nur die anderen können es aufheben. b) Wer die Truhe des Meisters öffnet, hat das Relikt sofort im Inventar und damit den Fluch. c) Die Altar-Reparatur verlangt 1 Terrasteel-Barren (kein Block). Passt alles?
-→ `kubejs/server_scripts/story/relikt_fluch.js`, `altar_reparatur.js`
-
-**F41 · Bauplan-Rollen öffnen ihren Eintrag?**
-Der Dialog von Davijaan sagt, das Lesen öffne den Eintrag im Buch; bisher schaltet keine Bauplan-Rolle das Buch auf (das Logbuch tut es). Für alle Rollen nachrüsten?
-→ `kubejs/server_scripts/starwars/einsiedler_shop.js`
-
-**F42 · BM1-01 Sanguine Scientiem**
-Die Aufgabe prüft nur `patchouli:guide_book` ohne NBT, also zählt jedes Patchouli-Buch (auch Logbuch und Bauplan-Buch). Hinnehmen oder dem Generator Aufgaben mit NBT beibringen?
-→ `questtexte/bloodmagic.md`
+Alle Punkte F31–F42 am 2026-10-28 entschieden; siehe „Erledigt“.
 
 ## Teil 2 · Entscheidungen zu Questbuch und Story
 
@@ -174,6 +128,18 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 
 | Nr. | Antwort | Datum | Eingetragen in |
 |---|---|---|---|
+| F31 | Kapitel der Nebenstränge wie vorgeschlagen; Wesley's WD3/WD4 früher verfügbar: mit K8 statt K10 (zusammen mit WD1/WD2); die 12 späten Aircraft-Quests bleiben bei K12 | 2026-10-28 | `questtexte/rld.md`, `aircraft.md`, `kueche.md`, `blue_skies.md` |
+| F32 | Alex's Mobs früher und verteilt statt 37 Quests auf einmal mit K4: AM1 K1, AM2 und AM7 K2, AM3 und AM4 K3, AM5 und AM6 (Transmutation Table) K4. Ersetzt „ganze Reihe ab dem Mond“ aus F16 | 2026-10-28 | `questtexte/alexsmobs.md` |
+| F33 | Belohnungen als Standard im Generator (`standardRewards`): K1–K3 Hauptquest 50 XP + 2 Copper Credits, Nebenquest 20 XP + eine Kleinigkeit; ab K4 Hauptquest 1 Iron Credit, Nebenquest 2 Copper Credits, letzte Hauptquest eines Story-Kapitels (Buch 1) 2 Iron Credits; Helm (ST4-05) 1 Gold Credit. Nebenquests ohne Meilenstein zählen zum Kapitel ihrer Vorgänger-Quest. Ändert F26 b): auch vor dem Mond gibt es kleine Credits für Hauptquests | 2026-10-28 | `tools/QuestbuchGen.java`, `tools/questbuch/buch1.cfg` |
+| F34 | AE2 nicht weiter verteuern (nur Controller und Drive, F10) | 2026-10-28 | `questtexte/ae2.md` |
+| F35 | Mengen bleiben: Liquid Oxygen MK1-07 1000 mB, Kryo-Treibstoff RF4-06 2000 mB (Rückflug mit Vos), Tinkers 1000 mB bzw. 90 mB | 2026-10-28 | `questtexte/mekanism.md`, `adastra.md`, `tinkers.md` |
+| F36 | RF2-02 prüft fest den Erdorbit (`ad_astra:earth_orbit`) statt eines Häkchens | 2026-10-28 | `questtexte/adastra.md`, `tools/questbuch/adastra.cfg` |
+| F37 | MekaSuit und seine Module in Teil 3 (K15, wie `mekanism.md`); der MekaSuit ist Pflicht für Mandalore (K16). Korrigiert F11 („Teil 2“) | 2026-10-28 | `questtexte/mekanism.md`, `adastra.md` |
+| F38 | Neuordnung von Galaxy in a Cube gewollt (Assembly Bench zuerst, Gas Harvester und Tibanna Nebenquest; SW3-06 zählt die 212th nicht) | 2026-10-28 | `questtexte/swgc.md` |
+| F39 | BO2-04 verlangt gleich den Block of Manasteel | 2026-10-28 | `questtexte/botania.md` |
+| F40 | Relikt bleibt beim Tod beim Träger; Truhe gibt es sofort (mit Fluch); Altar braucht 1 Terrasteel-Barren | 2026-10-28 | `relikt_fluch.js`, `altar_reparatur.js` |
+| F41 | Bauplan-Rollen bleiben, wie sie sind (kein Aufschlagen des Buchs); Dialog von Davijaan bei Gelegenheit angleichen | 2026-10-28 | – |
+| F42 | BM1-01 zählt jedes Patchouli-Buch; hingenommen | 2026-10-28 | `questtexte/bloodmagic.md` |
 | O62 | Der Meister kennt den Einsiedler („ein alter Bekannter aus meiner Welt“) und meidet ihn aus Schmerz. In Teil 1 steht das nur im Logbuch (Teil 3); Davijaan weiß nichts vom Meister, Vos erwähnt ihn nicht. Auflösung in Teil 2 | 2026-10-25 | `story/texte/logbuch.md`, `18_STORY.md` |
 | O77 | Der Schleier des Meisters liegt um sein Versteck auf Glacio, nicht um den Planeten; die Rakete T4 braucht den Strahlenschutz weiterhin, um durchzukommen | 2026-10-26 | `18_STORY.md`, `story/texte/` |
 | O78 | Kobalt kommt schon in K2 (Tinkers TK2-04, Nether), dazu Anvil als Hauptweg und Quest TK2-06 „Vorschlaghammer aus Kobalt“ für „Würdig sein“ | 2026-10-26 | `questtexte/tinkers.md` |
@@ -235,8 +201,8 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 | T7, T8, T10, T11 | aufgegangen in P9, F2d, P6, P8 | 2026-10-19 | hier |
 | E20 (Status) | Galaxy in a Cube kommt aus allen Nicht-Star-Wars-Welten raus (User, 2026-10-14); Kyber abgeschaltet (Test 9), Ewok-Dörfer und Jawas per Datapack (Test 54: keine Ewok-Dörfer), Tusken Raider per Skript `galaxy_overworld.js` (Test 54 erneut) | 2026-10-20 | `00_STATUS.md` |
 | F2e | Kein Uran-Teil für T4. Statt eines Dungeon-Items: Die Spieler finden ein **Relikt** und das **Tagebuch des Meisters** (Story siehe `18_STORY.md`). Das Relikt geht an den Elfen; zusammen mit den Boss-Items und Tech-Teilen (F14) wird daraus der Galaktische Strahlenschutz (F2f) | 2026-10-20 | `18_STORY.md`, `01_PROGRESSION.md` |
-| F11 | Rover nur mit Biodiesel; Fuel-Handel der Lunarians bleibt (nutzlos, harmlos); Sky Stone (Giselle) bleibt; MekaSuit-Module in Teil 2; `launchAnywhere` bleibt aus, Immersive Aircraft darf auf Planeten fliegen | 2026-10-20 | `15_RAUMFAHRT.md`, `questtexte/adastra.md` |
-| F16 | Transmutation Table bleibt, aber Config `limitTransmutingToLootTables = true` (nur noch Truhenbeute); ganze Alex's-Mobs-Reihe ab dem Mond offen | 2026-10-20 | `config-overrides/`, `questtexte/alexsmobs.md` |
+| F11 | Rover nur mit Biodiesel; Fuel-Handel der Lunarians bleibt (nutzlos, harmlos); Sky Stone (Giselle) bleibt; MekaSuit-Module in Teil 2 (🔴 korrigiert durch F37: Teil 3); `launchAnywhere` bleibt aus, Immersive Aircraft darf auf Planeten fliegen | 2026-10-20 | `15_RAUMFAHRT.md`, `questtexte/adastra.md` |
+| F16 | Transmutation Table bleibt, aber Config `limitTransmutingToLootTables = true` (nur noch Truhenbeute); ganze Alex's-Mobs-Reihe ab dem Mond offen (🔴 geändert durch F32: verteilt ab K1) | 2026-10-20 | `config-overrides/`, `questtexte/alexsmobs.md` |
 | F18 | Altar-Reparatur braucht Terrasteel; jeder Spieler muss beim Betreten der Altar-Dimension einen Benevolent Goddess’ Charm tragen (Skript prüft) | 2026-10-20 | `18_STORY.md`, `questtexte/botania.md` |
 | F21 | Fehler im Blood-Smeltery-Addon (Hellforged-Flüssigkeiten, Münzen) bleiben; erst in Teil 2 wieder ansehen | 2026-10-20 | `00_MODBASIS.md` |
 | F22 | Kein automatischer Transport in Teil 1; die Mars-Station muss nur stehen; Material per Rakete (8 Plätze) | 2026-10-20 | `18_STORY.md` (O19) |
@@ -261,7 +227,7 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 | T3 | Droide als Easy NPC mit eigenem Skin; den Skin sucht der User aus | 2026-10-20 | `18_STORY.md` |
 | T4 | **Geändert:** Das Questbuch gibt der Droide nach der ersten Quest („Würdig sein“). Nach dem Einsiedler erscheinen dort zusätzlich seine Quests und Nebenquests; der User erklärt das in Dialogen | 2026-10-20 | `18_STORY.md` |
 | T5 | 🔴 Geändert durch O51 (Patchouli-Buch). Ursprünglich: Tagebuch des Droiden und Tagebuch des Meisters als geschriebene Bücher: per `give` aus dem Dialog bzw. per Datapack in der Truhe der Altar-Dimension | 2026-10-20 | `18_STORY.md` |
-| F26 | Questbuch vor dem Mond: a) alle Quests werden ganz normal abgehakt (keine „Notizen“); b) Nebenquests aus K1–K3 sind Aufgaben des **Droiden**, „um uns intelligenter zu machen“: Belohnung nur Kleinigkeiten und XP, **keine Credits** (Credits erst beim Einsiedler); c) erste Quest im Buch ist **„Würdig sein“ als Klick-Quest** (Checkmark): schon im Dialog erfüllt, erklärt das Questsystem. Ersetzt F1 und die Startquest an der Schmelze aus F23 | 2026-10-20 | `18_STORY.md`, Questtexte vor dem Mond |
+| F26 | Questbuch vor dem Mond: a) alle Quests werden ganz normal abgehakt (keine „Notizen“); b) Nebenquests aus K1–K3 sind Aufgaben des **Droiden**, „um uns intelligenter zu machen“: Belohnung nur Kleinigkeiten und XP, **keine Credits** (Credits erst beim Einsiedler); c) erste Quest im Buch ist **„Würdig sein“ als Klick-Quest** (Checkmark): schon im Dialog erfüllt, erklärt das Questsystem. Ersetzt F1 und die Startquest an der Schmelze aus F23 (🔴 b) geändert durch F33: Hauptquests vor dem Mond geben zusätzlich 2 Copper Credits) | 2026-10-20 | `18_STORY.md`, Questtexte vor dem Mond |
 | F27 | Story-Variante B: Der Altar im Tempel ist **Pathway to the Endless Realm**; nur das Endless Realm ist die Dimension der Story. Edge of the Hidden Realm (Mini-Dungeon, 4 Räume, Sackgassen) bleibt überall nutzbar und hat keine Story. Ritual-Sperre in `altar_dimension.js` angepasst | 2026-10-20 | `18_STORY.md`, `meilensteine/`, `kubejs/` |
 | O39 | Die Amulett-Sperre (F18) gilt für **beide** Rituale, also die ganze Dimension `bloodmagic:dungeon` einschließlich Mini-Dungeon. Der Goddess' Charm ist ab BO3 machbar (Rune of Water, Rune of Spring, Mana Diamond), also vor Altar-Stufe 4. Das Skript bleibt unverändert | 2026-10-20 | `18_STORY.md`, `kubejs/` |
 | O42 | Nach Funden des Users beim Testen: a) **keine geschenkten Fahrzeuge** in Bauwerken von Ad Astra More Structures: Rover aus „Abandoned Base“, T1-Rakete aus „Rocket Launch T1“ entfernt (Bauwerke bleiben, alle Planeten); b) **Plastoid** wieder mit Rezept: 2 HDPE Pellets → 1 Plastoid hinter dem Bauplan „Plastoid“ (neues Kapitel „Werkstoffe“); der Einsiedler verkauft nur die **ersten 20 Plastoid** (Handel in Easy NPC, ADVANCED mit max. 20 Nutzungen ohne Zurücksetzen; stellt der User im Spiel ein); c) **Mekanism-Erzverarbeitung bis 5×** auch für Silber, Nickel, Aluminium; Desh, Ostrum, Calorite, Kobalt und Blue-Skies-Metalle bewusst nicht (Tor der Raketenstufen bzw. eigener Pfad) | 2026-10-20 | `17_STAR_WARS_1.20.1.md`, `18_STORY.md`, `14_ERZ_MOD_MATRIX.md`, `kubejs/` |

@@ -132,7 +132,7 @@ Buch: The First Launch → The Moon.
 ⚙️ Desh-Platten presst du in der IE Metal Press oder schlägst sie mit dem Engineer's Hammer. Auf dem Mond liegt außerdem Osmium in Menge (Erz von Mekanism in Moon Stone).
 
 ### RF2-02 Space Station · Nebenquest
-**Aufgabe:** Dimension `ad_astra:earth_orbit` oder `ad_astra:moon_orbit` betreten
+**Aufgabe:** Dimension `ad_astra:earth_orbit` betreten
 
 Im Orbit kannst du eine Raumstation errichten. Für Erde und Mond kostet sie 64 Iron Plate, 32 Steel Ingot, 32 Desh Ingot und 32 Desh Plate; wie man sie setzt, zeigt das Buch.
 Buch: The Moon → Space Station.
@@ -423,6 +423,6 @@ Aus 5 Moon Stone und 4 Mars Stone entsteht Sky Stone. Im Inscriber oder im Crush
 2. Funktionsweise der Automation NASA Workbench (RF1-14) und Sauerstoffverbrauch der Giselle-Verzauberungen (RFX-01) im Spiel prüfen.
 3. Hoth heißt intern `swplanets:hot`; beim Einbau der Dimensions-Aufgaben beachten.
 4. Rezepte, Treibstoffe und Zusatzteile der Raketen T5 bis T7 (Teil 2/3).
-5. Freischaltung der MekaSuit-Module (RFX-03): F11 sagt Teil 2, `mekanism.md` hat den MekaSuit erst bei MK9 (K15).
-6. RF2-02 (Orbit von Erde oder Mond): Der Generator kennt keine Oder-Aufgabe für Dimensionen; im Kapitel steht deshalb ein Häkchen. Lieber eine feste Dimension (z. B. nur `ad_astra:moon_orbit`)?
+5. 🟢 MekaSuit-Module (RFX-03): Teil 3, mit dem MekaSuit bei MK9 (K15); Pflicht für Mandalore (F37, 2026-10-28).
+6. 🟢 RF2-02: feste Dimension Erdorbit (`ad_astra:earth_orbit`), F36, User 2026-10-28.
 7. RF4-06: Wie viel Kryo-Treibstoff die Quest verlangt (jetzt 2000 mB für Hin- und Rückflug; Mengen des Rezepts sind ein Entwurf). Braucht man nach Glacio überhaupt einen Rückflug-Vorrat?
