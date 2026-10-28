@@ -681,7 +681,7 @@
 		{
 			dependencies: ["2D60B1D9528089B9", "03DEF56930A0CCB2"]
 			description: [
-				"DD3R8 braucht eine Station mit normalen Erd-Bedingungen. Sammle alles, was dafür nötig ist: Luft (zwei Sauerstoffverteiler), Strom (ein voll geladener Advanced Energy Cube), Gravitations-Normalisierer, einen Landeplatz, Betten und Glas für die Kuppel."
+				"DD3R8 braucht eine Station mit normalen Erd-Bedingungen. Sammle alles, was dafür nötig ist: Luft (zwei Sauerstoffverteiler), Strom (vier Solar Generators von Mekanism für ein eigenes Netz und ein voll geladener Advanced Energy Cube), Gravitations-Normalisierer, einen Landeplatz, Betten und Glas für die Kuppel."
 			]
 			hide_until_deps_visible: true
 			icon: "ad_astra:oxygen_distributor"
@@ -719,7 +719,7 @@
 			{
 				count: 4L
 				id: "6E67AE91F0C327DD"
-				item: "ad_astra:solar_panel"
+				item: "mekanismgenerators:solar_generator"
 				type: "item"
 			}
 			{

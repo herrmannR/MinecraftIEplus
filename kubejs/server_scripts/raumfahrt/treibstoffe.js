@@ -8,12 +8,13 @@ ServerEvents.tags('fluid', event => {
 })
 
 ServerEvents.recipes(event => {
-  // T4: 10 Benzin + 10 Cryo Fuel → 10 Kryo-Raketentreibstoff (Mengen sind ein Entwurf)
+  // T4: 10 Benzin + 20 Cryo Fuel → 10 Kryo-Raketentreibstoff, 480 Flux je Durchgang (B5 a, 2026-10-28: groß).
+  // Je Start 3 Eimer (efficient_fuel ist leer): 3000 Benzin, 6000 Cryo Fuel (= 240 Ice Shards), ~290 000 Flux mit energyModifier 2.0
   event.custom({
     type: 'immersiveengineering:refinery',
-    energy: 240,
+    energy: 480,
     input0: { amount: 10, tag: 'forge:gasoline' },
-    input1: { amount: 10, tag: 'ieplus:cryo_fuel' },
+    input1: { amount: 20, tag: 'ieplus:cryo_fuel' },
     result: { amount: 10, fluid: 'kubejs:kryo_treibstoff' }
   }).id('ieplus:refinery/kryo_treibstoff')
 })

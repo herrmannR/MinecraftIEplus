@@ -112,7 +112,7 @@ Ad Astra 1.15.21 bringt Etrium-Barren, -Platte, -Nugget, -Stab und -Blöcke mit,
 | `#forge:biodiesel` | Immersive Engineering: `biodiesel` | ja |
 | `#forge:biofuel`, `#forge:fuel` | (Giselle hängt weitere Mods ein) | nein |
 
-- `ad_astra:efficient_fuel` enthält nur Cryo Fuel (sparsamer Treibstoff).
+- `ad_astra:efficient_fuel` ist im Pack leer: Jede Rakete braucht 3 Eimer je Start, alle Stufen (B5, 2026-10-28).
 - **IE-Biodiesel und IP-Diesel funktionieren ohne Anpassung in jeder Rakete**, auch der ungereinigte schwefelhaltige Diesel.
 - ⚠️ `#ad_astra:oil` enthält `#forge:crude_oil`. Die Fuel Refinery macht also aus **Immersive-Petroleum-Rohöl direkt Raketentreibstoff**, ohne Destillation.
 - 🟢 Verbrauch pro Start: 3 Eimer auf jeder Stufe T1 bis T3, also 6 für Hin- und Rückflug (im Spiel abgelesen, 2026-10-17). In `ad_astra.jsonc` gibt es dafür keinen Schalter.
@@ -127,10 +127,10 @@ Jede Stufe verlangt einen Schritt mehr in der Industrie.
 | T1 | Biodiesel | `immersiveengineering:biodiesel` | IE Refinery |
 | T2 | entschwefelter Diesel | `immersivepetroleum:diesel` (nicht `diesel_sulfur`) | Immersive Petroleum: Destillation + Hydrotreater |
 | T3 | Kerosin | `immersivepetroleum:kerosene` | Immersive Petroleum |
-| T4 | Kryo-Raketentreibstoff (🟢 F3, 2026-10-20) | `kubejs:kryo_treibstoff` | IE Refinery: 10 Benzin + 10 Cryo Fuel → 10; sparsam (1 Eimer pro Start)  |
-| T5 | flüssiges D-T-Fusionsgemisch | `mekanismgenerators:fusion_fuel` | Mekanism: Deuterium + Tritium, Rotary Condensentrator; sparsam |
-| T6 | Antimaterie-Treibstoff | 🔵 eigenes Fluid (Teil 2/3) | IE Mixer: D-T-Gemisch + Antimaterie-Pellet; sparsam |
-| T7 | Antimaterie-Treibstoff + Magie | 🔵 eigenes Fluid, Name offen | Life Essence oder Demon Will; sparsam |
+| T4 | Kryo-Raketentreibstoff (🟢 F3, 2026-10-20) | `kubejs:kryo_treibstoff` | IE Refinery: 10 Benzin + 20 Cryo Fuel → 10, 480 Flux je Durchgang (B5); 3 Eimer je Start |
+| T5 | flüssiges D-T-Fusionsgemisch | `mekanismgenerators:fusion_fuel` | Mekanism: Deuterium + Tritium, Rotary Condensentrator; 3 Eimer je Start (B5) |
+| T6 | Antimaterie-Treibstoff | 🔵 eigenes Fluid (Teil 2/3) | IE Mixer: D-T-Gemisch + Antimaterie-Pellet; 3 Eimer je Start (B5) |
+| T7 | Antimaterie-Treibstoff + Magie | 🔵 eigenes Fluid, Name offen | Life Essence oder Demon Will; 3 Eimer je Start (B5) |
 
 Umsetzung (Block D): je Stufe eine Tag-Datei `ad_astra:tier_N_rocket_fuel` mit `replace: true`. 🔵 Zu klären: Rezept und Kosten des T4-Treibstoffs; Treibstoff des Rovers (`tier_1_rover_fuel`, Vorschlag: wie T1); ob Cryo Fuel entfernt wird oder Zutat des T4-Treibstoffs wird (User: später); Treibstoff für T5–T7, falls „Rocketed“ bleibt.
 

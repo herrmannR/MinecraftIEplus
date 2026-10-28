@@ -45,6 +45,6 @@ Stand 2026-10-12, Minecraft 1.20.1. **Nichts davon ist im Spiel getestet.** In d
 | `swgc/tags/worldgen/biome/spawns_jawas.json` | Leer: keine Jawas von Galaxy in a Cube mehr in Wüste und Badlands. | Galaxy in a Cube nur in den Star-Wars-Welten (2026-10-14) |
 | `swgc/worldgen/structure/ewok_village.json` | Biom-Liste leer: keine Ewok-Dörfer mehr in der Overworld. | wie oben |
 | `ad_astra/tags/fluids/tier_4_rocket_fuel.json` | T4 fliegt nur mit Kryo-Raketentreibstoff (`kubejs:kryo_treibstoff`). | F3 (2026-10-20) |
-| `ad_astra/tags/fluids/efficient_fuel.json` | Sparsam (1 Eimer pro Start statt 3): Kryo-Treibstoff und D-T-Fusionsgemisch. Cryo Fuel fliegt raus. | F3 (2026-10-20) |
+| `ad_astra/tags/fluids/efficient_fuel.json` | Leer: Jede Rakete aller Stufen braucht 3 Eimer je Start (B5, 2026-10-28; vorher sparsam für Kryo-Treibstoff und D-T-Gemisch, F3). Cryo Fuel fliegt raus. | F3, B5 |
 | `ad_astra_rocketed/tags/fluids/tier_5_rocket_fuel.json` | T5 fliegt mit flüssigem D-T-Fusionsgemisch. | F3 (2026-10-20) |
 | `ad_astra_rocketed/tags/fluids/tier_6_rocket_fuel.json`, `tier_7_rocket_fuel.json` | Vorerst leer: T6 und T7 lassen sich nicht betanken, bis es die Antimaterie-Treibstoffe gibt (Teil 2 und 3). | F3 (2026-10-20) |

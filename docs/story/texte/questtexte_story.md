@@ -139,9 +139,9 @@ Folge dem Peilsender von DD3R8 zu den Resten einer alten Basis und erkunde sie. 
 ## ST7 · Horchposten (K7 Horchposten)
 
 ### ST7-01 Material für die Station · Hauptweg
-**Aufgabe:** 2 × `ad_astra:oxygen_distributor`, `ad_astra:oxygen_loader`, `ad_astra:gravity_normalizer`, `ad_astra:launch_pad`, 4 × `ad_astra:solar_panel`, `mekanism:advanced_energy_cube` voll geladen, `mekanism:electrolytic_separator`, 3 × `minecraft:white_bed`, 64 × `minecraft:glass`
+**Aufgabe:** 2 × `ad_astra:oxygen_distributor`, `ad_astra:oxygen_loader`, `ad_astra:gravity_normalizer`, `ad_astra:launch_pad`, 4 × `mekanismgenerators:solar_generator`, `mekanism:advanced_energy_cube` voll geladen, `mekanism:electrolytic_separator`, 3 × `minecraft:white_bed`, 64 × `minecraft:glass`
 
-DD3R8 braucht eine Station mit normalen Erd-Bedingungen. Sammle alles, was dafür nötig ist: Luft (zwei Sauerstoffverteiler), Strom (ein voll geladener Advanced Energy Cube), Gravitations-Normalisierer, einen Landeplatz, Betten und Glas für die Kuppel.
+DD3R8 braucht eine Station mit normalen Erd-Bedingungen. Sammle alles, was dafür nötig ist: Luft (zwei Sauerstoffverteiler), Strom (vier Solar Generators von Mekanism für ein eigenes Netz und ein voll geladener Advanced Energy Cube), Gravitations-Normalisierer, einen Landeplatz, Betten und Glas für die Kuppel.
 
 ### ST7-02 Die Station steht · Hauptweg
 **Aufgabe:** Stage (heimlich von Host gesetzt, wird hier nicht beschrieben)

@@ -1380,7 +1380,7 @@
 			description: [
 				"Sechs Calorite-Blöcke. Die letzte Rakete des Hauptmods verlässt das Sonnensystem."
 				"Buch: The Hot Planets → Proxima Centauri."
-				"&6⚙&r Die Rakete T4 fliegt nur mit Kryo-Raketentreibstoff. Den mischt die IE Refinery aus Gasoline (Immersive Petroleum) und Cryo Fuel aus dem Cryo Freezer, 10 mB und 10 mB zu 10 mB. Er ist sparsam: Ein Start verbraucht nur einen Eimer, für Hin- und Rückflug brauchst du also 2. &9(ungeprüft)&r Mengen sind ein Entwurf."
+				"&6⚙&r Die Rakete T4 fliegt nur mit Kryo-Raketentreibstoff. Den mischt die IE Refinery aus Gasoline (Immersive Petroleum) und Cryo Fuel aus dem Cryo Freezer, 10 mB Gasoline und 20 mB Cryo Fuel zu 10 mB, mit viel Strom. Wie bei jeder Rakete verbraucht ein Start 3 Eimer, für Hin- und Rückflug brauchst du also 6: allein dafür 12 000 mB Cryo Fuel, das sind 480 Ice Shards. Plane eine richtige Anlage aus Cryo Freezer und Refinery."
 			]
 			hide_until_deps_visible: true
 			icon: "ad_astra:tier_4_rocket"

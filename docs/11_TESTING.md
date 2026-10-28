@@ -193,6 +193,10 @@ Neustart nötig (Startup-Skripte, neues Item). `kubejs/` und `patchouli_books/ba
 | 97 | Energie IE (B5) | Spiel zu; `config-overrides/serverconfig/immersiveengineering-server.toml` nach `saves/<Testwelt>/serverconfig/`; Lichtbogenofen: ein Rezept vor und nach dem Einspielen, Verbrauch am Kondensator ablesen | doppelter Verbrauch, gleiche Dauer | |
 | 98 | Energie Mekanism (B5) | Spiel zu; `config-overrides/config/Mekanism/machine-usage.toml` nach `config/Mekanism/`; Metallurgic Infuser: GUI-Anzeige „Usage“ vor und nach dem Einspielen | 100 J/t statt 50 J/t (= 40 FE/t statt 20) | |
 | 99 | Erz-Einstellungen IE nach 97 | Testwelt neu laden | Erzverteilung unverändert (Erz-Zeilen der Override-Datei gleich geblieben) | |
+| 100 | Story-Abgaben B1/B4 | Neustart; Questbuch Buch 1: ST4-01, ST7-01 ansehen; Altar-Skript: auf dem Merkur mit Terrasteel-Block, 4 Demonic Slate, Siegel, Orb rechtsklicken | ST4-01: Chemical Tank + Häkchen + Mond; ST7-01: 2 Distributors, 4 Mekanism Solar Generators, Advanced Energy Cube + Häkchen; Altar nimmt nur Block und Demonic Slate | |
+| 101 | Blood-Magic-Kapitel (B4) | Kapitel Blood Magic, K9 | Reihenfolge Edge (Hauptweg) → Tau Fruit → Weak Blood Shard → Altar Stufe 4 → Pathway → Foreman's Key; Master Blood Orb hängt an Stufe 4 | |
+| 102 | Treibstoff 3 Eimer (B5) | `/reload`; Rakete T1 und T4 betanken und starten | jede Stufe zieht 3000 mB je Start; JEI Refinery: 10 Gasoline + 20 Cryo Fuel → 10 Kryo-Treibstoff | |
+| 103 | Mekanism-Generatoren (B5) | `/reload`; JEI: Solar, Advanced Solar, Wind, Gas-Burning Generator | neue Rezepte mit IE-Teilen, alte weg; Wind Generator übernimmt die Ladung des Energy Tablet; Solar und Wind laufen auf Mond und Mars (B6) | |
 
 ### Runde M — Multiplayer (sammelt Tests mit mehreren Spielern)
 

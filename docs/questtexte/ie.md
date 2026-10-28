@@ -92,7 +92,7 @@ Buch: Power, wires, generators → Basic Wiring.
 ### IE2-03 Speichern · Nebenquest
 **Aufgabe:** `immersiveengineering:capacitor_lv`
 
-⚙️ Für „Würdig sein“ bei DD3R8 brauchst du die nächste Stufe, den MV-Kondensator (O67, B1).
+⚙️ Der LV-Kondensator ist Teil von „Würdig sein“ bei DD3R8 (O67).
 
 Buch: Power, wires, generators → Accumulators.
 ⚙️ Der LV Accumulator braucht Blei. Das gibt es in der Overworld kaum, reichlich in Everbright (Mekanism-Bleierz).

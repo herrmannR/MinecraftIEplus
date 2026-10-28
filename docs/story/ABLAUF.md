@@ -54,7 +54,7 @@ In der Hauptwelt sind K1 und K2 schon erreicht (IE-Stahl, Runenaltar). Der Absch
 
 | Code | Schritt | Aufgabe | Auslöser | Folge | Text |
 |---|---|---|---|---|---|
-| – | Beweis abgeben | – | Dialog (B1): Vorschlaghammer ganz aus Kobalt (Skript setzt Tag `ieplus_kobalthammer`), MV-Kondensator (B1), 1 Manastahlblock (O67, ersetzt F4) | `give @a ftbquests:book`, Stages `kapitel_k1`, `kapitel_k2`, `#dd3r8 = 2` | D-DD3R8-1 |
+| – | Beweis abgeben | – | Dialog (B1): Vorschlaghammer ganz aus Kobalt (Skript setzt Tag `ieplus_kobalthammer`), LV-Kondensator (B7), 1 Manastahlblock (O67, ersetzt F4) | `give @a ftbquests:book`, Stages `kapitel_k1`, `kapitel_k2`, `#dd3r8 = 2` | D-DD3R8-1 |
 | ST2-01 | Würdig sein | Checkmark (F26 c) | Spieler klicken im Buch | `/logbuch teil2`, Stage `kapitel_k3` | Q-ST2-01 (erklärt das Questsystem) |
 
 ### K3 Industrie
@@ -150,7 +150,7 @@ Item-Aufgaben in ST7-01 (je eine Aufgabe, Mengen für drei Spieler): 🔵 IDs vo
 - Oxygen Distributor (`ad_astra:oxygen_distributor`) und Oxygen Loader (`ad_astra:oxygen_loader`)
 - 3 Betten
 - Launch Pad (`ad_astra:launch_pad`)
-- Strom vor Ort: 4 Solar Panels (`ad_astra:solar_panel`) und ein voll geladener Mekanism Advanced Energy Cube (B1, 21_BALANCING 3b); zwei Oxygen Distributors
+- Strom vor Ort, eigenes Netz (B5 c): 4 Solar Generators von Mekanism (`mekanismgenerators:solar_generator`; die Ad-Astra-Panels sind entfernt) und ein voll geladener Mekanism Advanced Energy Cube (B1, 21_BALANCING 3b); zwei Oxygen Distributors
 - Ein Mekanism-Grundgerät für die Luft, z. B. Electrolytic Separator
 - 64 Glas oder Isolierglas für die Kuppel
 

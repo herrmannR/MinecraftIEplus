@@ -312,7 +312,7 @@ Buch: The Hot Planets → Proxima Centauri.
 
 Sechs Calorite-Blöcke. Die letzte Rakete des Hauptmods verlässt das Sonnensystem.
 Buch: The Hot Planets → Proxima Centauri.
-⚙️ Die Rakete T4 fliegt nur mit Kryo-Raketentreibstoff. Den mischt die IE Refinery aus Gasoline (Immersive Petroleum) und Cryo Fuel aus dem Cryo Freezer, 10 mB und 10 mB zu 10 mB. Er ist sparsam: Ein Start verbraucht nur einen Eimer, für Hin- und Rückflug brauchst du also 2. 🔵 Mengen sind ein Entwurf.
+⚙️ Die Rakete T4 fliegt nur mit Kryo-Raketentreibstoff. Den mischt die IE Refinery aus Gasoline (Immersive Petroleum) und Cryo Fuel aus dem Cryo Freezer, 10 mB Gasoline und 20 mB Cryo Fuel zu 10 mB, mit viel Strom. Wie bei jeder Rakete verbraucht ein Start 3 Eimer, für Hin- und Rückflug brauchst du also 6: allein dafür 12 000 mB Cryo Fuel, das sind 480 Ice Shards. Plane eine richtige Anlage aus Cryo Freezer und Refinery.
 
 ### RF4-07 Glacio · Hauptweg
 **Aufgabe:** Dimension `ad_astra:glacio` betreten
@@ -405,7 +405,7 @@ Aus 5 Moon Stone und 4 Mars Stone entsteht Sky Stone. Im Inscriber oder im Crush
 | Stahl-Rezept der Etrionic Blast Furnace entfernt; Stahl und Platten aus IE | RF1-01, RF1-02 | 🟢 Skript; Block selbst 🔵 |
 | Platten von Desh, Ostrum, Calorite nur über IE Metal Press oder Hammer | RF2-01, RF3-01, RF4-02 | 🟢 (Rezepte bringt Ad Astra mit) |
 | Treibstoff je Stufe: T1 Biodiesel, T2 entschwefelter Diesel, T3 Kerosene | RF1-06, RF2-10, RF3-08 | 🟢 Tag-Dateien, Test 16 |
-| T4: Kryo-Raketentreibstoff (`kubejs:kryo_treibstoff`) aus Gasoline + Cryo Fuel in der IE Refinery, 1 Eimer je Start; Cryo Freezer bleibt nur als Zulieferer | RF3-04, RF4-06 | 🟢 F3, Skript `treibstoffe.js` 🔵 ungetestet |
+| T4: Kryo-Raketentreibstoff (`kubejs:kryo_treibstoff`) aus Gasoline + Cryo Fuel in der IE Refinery (10 + 20 → 10, B5), 3 Eimer je Start wie alle Stufen; Cryo Freezer bleibt nur als Zulieferer | RF3-04, RF4-06 | 🟢 F3, Skript `treibstoffe.js` 🔵 ungetestet |
 | Rover nur mit Biodiesel; Fuel der Lunarians bleibt nutzlos | RF2-06, RF2-07 | 🟢 F11, Tag-Datei |
 | Oxygen Loader nur mit flüssigem Mekanism-Sauerstoff | RF1-07 | 🟢 Skript, Test bestanden |
 | Ölquellen von Ad Astra abgeschaltet | RF1-06 | 🟢 Datei, 🔵 Test |

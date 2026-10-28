@@ -1,7 +1,7 @@
 # 21 — BALANCING
 
 > Vorschläge, um Story-Abgaben, Ad-Astra-Rezepte und Energie teurer zu machen.
-> Stand: 2026-10-25 (übernommen am 2026-10-28). Alles hier ist **🔵 Vorschlag**, außer was mit 🟢 markiert ist. Was der User übernimmt, wandert als Entscheidung nach `20_ENTSCHEIDUNGEN.md` und in die Fachdokumente; erst dann folgen Skripte. Offene Fragen: **B5, B7** in `20_ENTSCHEIDUNGEN.md`. **Entschieden am 2026-10-28:** B1 (Abschnitt 1 ganz), B2 (Abschnitt 2 ganz, mit Hebel), B3 (Processor in T3), B4 (Demonic Slate), B6 (Solar/Wind auf Planeten erlaubt).
+> Stand: 2026-10-25 (übernommen am 2026-10-28). Alles hier ist **🔵 Vorschlag**, außer was mit 🟢 markiert ist. Was der User übernimmt, wandert als Entscheidung nach `20_ENTSCHEIDUNGEN.md` und in die Fachdokumente; erst dann folgen Skripte. **Alles entschieden am 2026-10-28 (B1–B7, `20_ENTSCHEIDUNGEN.md`):** B1 Abschnitt 1 (ohne MV-Kondensator, B7), B2 Abschnitt 2 mit Hebel, B3 Processor in T3, B4 Demonic Slate, B5 Energie a/c/e/f, B6 Solar/Wind auf Planeten erlaubt. Offen: Skripte zu B2, Tests 97–103.
 
 ## Grundsätze
 
@@ -16,10 +16,10 @@
 | Quest | Heute | Vorschlag | Bezug |
 |---|---|---|---|
 | „Würdig sein“ (Droide) | 4 Manasteel-Barren | **1 Manasteel-Block** | F4 |
-| | LV-Kondensator | **MV-Kondensator** (laut JAR: Nickel- und Eisenplatte, 2 Stahl, Treated Wood, 1 Eimer Redstone Acid aus dem Mixer; B7) | F4 |
+| | LV-Kondensator | bleibt (B7): Der MV-Kondensator bräuchte Redstone Acid aus dem Mixer (K3) | F4 |
 | | Smeltery Controller | schon erledigt durch O67: Vorschlaghammer ganz aus Kobalt, Manastahlblock | F4, O67 |
 | Mondflug | flüssiger Sauerstoff (Menge offen) | **ein voller Basic Chemical Tank** Sauerstoff | `18_STORY.md` |
-| Mars-Station, Checkliste | Items offen | **2 Oxygen Distributors, 1 Gravity Normalizer, 1 Advanced Energy Cube** | O22 |
+| Mars-Station, Checkliste | Items offen | **2 Oxygen Distributors, 1 Gravity Normalizer, 1 voll geladener Advanced Energy Cube, 4 Mekanism Solar Generators** (B5 c) | O22 |
 | Altar-Reparatur (Merkur) | Terrasteel | **1 Terrasteel-Block** | F8 |
 | | 4 Imbued Slate | **4 Demonic Slate** (B4; Altar-Stufe 4 über Edge of the Hidden Realm vor dem Tempel) | F8 |
 | | Dusk Arc, Item aus Wesley's | bleibt (Unikate) | F8, F15 |
@@ -93,7 +93,7 @@ Energie kommt nur aus IE, Immersive Petroleum und Mekanism (`15_RAUMFAHRT.md`); 
 
 **a) Stromhungrige Schritte in die Progression**
 - Ab T2 Stahl überwiegend über den **Lichtbogenofen** (siehe Abschnitt 2) und die Planetenmetall-Platten dort (optionaler Hebel).
-- Treibstoffe: Der T4-**Kryo-Treibstoff** (F3) braucht Elektrolyse (Electrolytic Separator) und Kühlung, beides frisst viel Strom. Mengen so wählen, dass ein Tankvorgang eine echte Anlage braucht.
+- 🟢 Treibstoffe (B5): **Alle Stufen 3 Eimer je Start** (`efficient_fuel` leer). Kryo-Treibstoff: 10 Benzin + 20 Cryo Fuel → 10, 480 Flux je Durchgang; je Start 3000 Benzin, 6000 Cryo Fuel (240 Ice Shards), rund 290 000 Flux mit dem Multiplikator.
 - **Mekanism-Legierungen** (Abschnitt 2) kommen aus dem Metallurgic Infuser; Reinforced und Atomic laufen über mehrere stromhungrige Maschinen.
 
 **b) Energie als Quest-Abgabe**
@@ -101,7 +101,7 @@ Energie kommt nur aus IE, Immersive Petroleum und Mekanism (`15_RAUMFAHRT.md`); 
 - 🔵 Prüfen, ob FTB Quests eine Energie-Aufgabe (Forge Energy) mitbringt; sonst bleibt es beim geladenen Cube als Item-Aufgabe.
 
 **c) Stationen auf Planeten brauchen eigenen Strom**
-- Oxygen Distributor und Gravity Normalizer verbrauchen Strom. Die Mars-Station muss **ihr eigenes Netz** haben: Dieselgenerator mit Nachschub von der Erde oder Mekanism-Generatoren vor Ort. Das macht Logistik zum Teil der Story („dauerhaft besetzt“).
+- 🟢 (B5) Die Checkliste verlangt zusätzlich zum geladenen Cube **4 Solar Generators von Mekanism**. Oxygen Distributor und Gravity Normalizer verbrauchen Strom. Die Mars-Station muss **ihr eigenes Netz** haben: Dieselgenerator mit Nachschub von der Erde oder Mekanism-Generatoren vor Ort. Das macht Logistik zum Teil der Story („dauerhaft besetzt“).
 - 🟢 Mekanism-Solar und -Wind auf Planeten sind erlaubt (B6). Noch im Spiel prüfen, ob sie dort laufen.
 
 **d) Verbrauch per Config anheben** — 🟢 **übernommen** (User, 2026-10-25), als Config gebaut (Abschnitt 4, ungetestet)
@@ -151,8 +151,8 @@ Nicht anfassen:
 - `HydrogenEnergyDensity` in `general.toml`: steuert auch den Verbrauch des Electrolytic Separator, **aber zugleich** Wasserstoff- und Ethylen-Ertrag und den Gas-Burning Generator. Den Separator also nicht darüber verteuern.
 - `generators.toml` (Solar, Wind, Gas, Turbine, Fusion): gehört zu Hebel e, nicht zum Multiplikator.
 
-**e) Billige Erzeuger nicht zu früh**
-- Mekanism-Generatoren (Gas-Burning, Wind, Solar) erst ab einer bestimmten Stufe oder teurer, damit IE (Diesel, Thermoelectric) länger die Hauptquelle bleibt.
+**e) Billige Erzeuger teurer** — 🟢 (B5): teurer, aber **nicht später erreichbar** (`crossmod/mekanism_generatoren.js`, Entwurf, ungetestet)
+- Solar Generator: Light Engineering Block statt Eisen, Stahl statt Osmium. Advanced Solar: unten Stahl, Heavy Engineering Block, Stahl. Wind: IE-Windmühlenflügel oben, Stahl statt Osmium seitlich. Gas-Burning: 4 Heavy Engineering Blocks statt Osmium. Heat und Bio bleiben.
 - Die großen Lösungen (Fission, Turbine, Fusion) bleiben die Belohnung für Teil 2 (Fusion für T5, F3).
 
 **f) AE2 als Dauerverbraucher**
@@ -165,7 +165,7 @@ Nicht anfassen:
 
 ## 4. Config-Dateien: Energie-Multiplikator
 
-> Gebaut am 2026-10-25 nach Abschnitt 3d, im Repo abgelegt am 2026-10-28. **UNGETESTET** (Tests 97–99 in `11_TESTING.md`).
+> Gebaut am 2026-10-25 nach Abschnitt 3d, im Repo abgelegt am 2026-10-28. **UNGETESTET** (Tests 97–99 in `11_TESTING.md`; die übrigen Balancing-Änderungen 100–103).
 
 | Datei im Repo | Ins Spiel | Änderung |
 |---|---|---|

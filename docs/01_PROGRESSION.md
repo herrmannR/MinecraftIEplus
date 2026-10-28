@@ -102,7 +102,7 @@ Weitere Dimensionen ohne eigenen Pfad: Nether (Kobalt), Alfheim (Pfad C), Demon 
 | T1 | Mond | Stahl | Biodiesel (IE) | Desh, Osmium |
 | T2 | Mars | Desh | entschwefelter Diesel (Petroleum) | Ostrum, Fluorit |
 | T3 | Merkur, Venus | Ostrum | Kerosin (Petroleum) | Calorite, Uran, Blei; Zugang zum Demon Dungeon |
-| T4 | Glacio | Calorite | Kryo-Raketentreibstoff (Benzin + Cryo Fuel, F3 2026-10-20), sparsam | Fund des Meisters |
+| T4 | Glacio | Calorite | Kryo-Raketentreibstoff (Benzin + Cryo Fuel, F3 2026-10-20), 3 Eimer je Start (B5) | Fund des Meisters |
 | T5 | Endor | Etrium (Legierung aus Calorite und Elementium aus Alfheim, 🟢 2026-10-19) | flüssiges D-T-Fusionsgemisch (F3) | Kyber |
 | T6 | Tatooine, Hoth, Mustafar | 🔵 (Kyber von Endor ?) | Antimaterie-Treibstoff (F3) | Kyber |
 | T7 | Mandalore | 🔵 | Antimaterie-Treibstoff + Magie (F3, Name offen) | Beskar |
