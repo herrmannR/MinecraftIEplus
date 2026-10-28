@@ -23,8 +23,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 3: Blood Magic"
-			x: 0.5d
-			y: -1.75d
+			x: -1.5d
+			y: -2.0d
 		}
 		{
 			dependencies: ["68FA25A94F9E873A"]
@@ -57,7 +57,7 @@
 				type: "item"
 			}]
 			title: "Sanguine Scientiem"
-			x: 0.5d
+			x: -1.5d
 			y: 0.0d
 		}
 		{
@@ -98,8 +98,8 @@
 				type: "item"
 			}]
 			title: "Blood Altar"
-			x: 0.5d
-			y: 1.5d
+			x: 0.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["5507C16F016711A1"]
@@ -132,8 +132,8 @@
 				type: "item"
 			}]
 			title: "Weak Blood Orb"
-			x: 0.5d
-			y: 3.0d
+			x: 0.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["4B38F76E3D7E95AC"]
@@ -167,8 +167,8 @@
 				type: "item"
 			}]
 			title: "Blank Slate"
-			x: 0.5d
-			y: 4.5d
+			x: -1.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["28DBA24F5173352E"]
@@ -206,8 +206,8 @@
 				type: "item"
 			}]
 			title: "Alchemy Table und Arcane Ashes"
-			x: 0.5d
-			y: 6.0d
+			x: -1.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["37F36A64A11B29DA"]
@@ -240,8 +240,8 @@
 				type: "item"
 			}]
 			title: "Divination Sigil"
-			x: 0.5d
-			y: 7.5d
+			x: -1.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["602E0718188B0B92"]
@@ -281,8 +281,8 @@
 				type: "item"
 			}]
 			title: "Water und Lava Sigil"
-			x: 2.0d
-			y: 7.5d
+			x: -3.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["602E0718188B0B92"]
@@ -322,8 +322,8 @@
 				type: "item"
 			}]
 			title: "Your First Will"
-			x: 2.0d
-			y: 8.75d
+			x: -3.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["602E0718188B0B92"]
@@ -363,8 +363,8 @@
 				type: "item"
 			}]
 			title: "Hellfire Forge und Petty Tartaric Gem"
-			x: 2.0d
-			y: 10.0d
+			x: -2.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["602E0718188B0B92"]
@@ -399,8 +399,8 @@
 				type: "item"
 			}]
 			title: "Sentient Sword"
-			x: 2.0d
-			y: 11.25d
+			x: -1.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["602E0718188B0B92"]
@@ -435,8 +435,8 @@
 				type: "item"
 			}]
 			title: "Incense Altar"
-			x: 2.0d
-			y: 12.5d
+			x: -3.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["602E0718188B0B92"]
@@ -470,8 +470,8 @@
 				type: "item"
 			}]
 			title: "Altar Stufe 2"
-			x: 0.5d
-			y: 9.0d
+			x: 0.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["4B9D4443E6EC0C72"]
@@ -511,8 +511,8 @@
 				type: "item"
 			}]
 			title: "Apprentice Blood Orb"
-			x: 0.5d
-			y: 10.5d
+			x: 1.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["2CD1B14012721177"]
@@ -547,8 +547,8 @@
 				type: "item"
 			}]
 			title: "Dagger of Sacrifice"
-			x: 2.0d
-			y: 13.75d
+			x: 3.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["2CD1B14012721177"]
@@ -594,7 +594,7 @@
 			}]
 			title: "Bessere Runen"
 			x: 2.0d
-			y: 15.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["2CD1B14012721177"]
@@ -629,8 +629,8 @@
 				type: "item"
 			}]
 			title: "Alchemy Flask"
-			x: 2.0d
-			y: 16.25d
+			x: 1.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["2CD1B14012721177"]
@@ -666,8 +666,8 @@
 				type: "item"
 			}]
 			title: "Anointments"
-			x: 2.0d
-			y: 17.5d
+			x: 0.0d
+			y: 6.0d
 		}
 		{
 			description: [
@@ -684,8 +684,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 5: Blood Magic"
-			x: 4.0d
-			y: -1.75d
+			x: 4.5d
+			y: -2.0d
 		}
 		{
 			dependencies: ["2CD1B14012721177", "45BC7A0784066A0E"]
@@ -711,7 +711,7 @@
 				type: "item"
 			}]
 			title: "Altar Stufe 3"
-			x: 4.0d
+			x: 4.5d
 			y: 0.0d
 		}
 		{
@@ -738,7 +738,7 @@
 				type: "item"
 			}]
 			title: "Magician's Blood Orb"
-			x: 4.0d
+			x: 4.5d
 			y: 1.5d
 		}
 		{
@@ -767,7 +767,7 @@
 				type: "item"
 			}]
 			title: "Lava Crystal"
-			x: 4.0d
+			x: 4.5d
 			y: 3.0d
 		}
 		{
@@ -798,8 +798,8 @@
 				type: "item"
 			}]
 			title: "Sigils mit Reinforced Slate"
-			x: 5.5d
-			y: 3.0d
+			x: 6.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["6629539CC91EDD4C"]
@@ -827,8 +827,8 @@
 				type: "item"
 			}]
 			title: "Sigil of Holding"
-			x: 5.5d
-			y: 4.25d
+			x: 5.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["6629539CC91EDD4C"]
@@ -861,8 +861,8 @@
 				type: "item"
 			}]
 			title: "Größere Gems"
-			x: 5.5d
-			y: 5.5d
+			x: 4.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["6629539CC91EDD4C"]
@@ -891,8 +891,8 @@
 				type: "item"
 			}]
 			title: "Sentient Tools"
-			x: 5.5d
-			y: 6.75d
+			x: 3.0d
+			y: 4.5d
 		}
 		{
 			description: [
@@ -910,7 +910,7 @@
 			}]
 			title: "Kapitel 7: Blood Magic"
 			x: 7.5d
-			y: -1.75d
+			y: -2.0d
 		}
 		{
 			dependencies: ["6629539CC91EDD4C", "0A3D06DCC14B62A9"]
@@ -1139,8 +1139,8 @@
 				type: "item"
 			}]
 			title: "Living Armour"
-			x: 9.0d
-			y: 6.0d
+			x: 8.5d
+			y: 7.5d
 		}
 		{
 			dependencies: ["5269A83140F783E1"]
@@ -1168,8 +1168,8 @@
 				type: "item"
 			}]
 			title: "Training Bracelet"
-			x: 9.0d
-			y: 7.25d
+			x: 7.5d
+			y: 7.5d
 		}
 		{
 			dependencies: ["5269A83140F783E1"]
@@ -1202,8 +1202,8 @@
 				type: "item"
 			}]
 			title: "Item Routing"
-			x: 9.0d
-			y: 8.5d
+			x: 6.5d
+			y: 7.5d
 		}
 		{
 			description: [
@@ -1221,7 +1221,7 @@
 			}]
 			title: "Kapitel 9: Blood Magic"
 			x: 11.0d
-			y: -1.75d
+			y: -2.0d
 		}
 		{
 			dependencies: ["73FC65D12CE4879C", "2115BB2A5F479FB7"]
@@ -1275,8 +1275,8 @@
 				type: "item"
 			}]
 			title: "Tau Fruit"
-			x: 11.0d
-			y: 1.5d
+			x: 12.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["017FA53038DBE35C"]
@@ -1307,8 +1307,8 @@
 				type: "item"
 			}]
 			title: "Weak Blood Shard"
-			x: 11.0d
-			y: 3.0d
+			x: 12.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["7FFA53B2AC6339B1"]
@@ -1342,7 +1342,7 @@
 			}]
 			title: "Altar Stufe 4"
 			x: 11.0d
-			y: 4.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["6EE33044D2FCF2A4"]
@@ -1369,7 +1369,7 @@
 			}]
 			title: "Pathway to the Endless Realm"
 			x: 11.0d
-			y: 6.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["6C53489212B0A712"]
@@ -1396,7 +1396,7 @@
 			}]
 			title: "Foreman's Key"
 			x: 11.0d
-			y: 7.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["6EE33044D2FCF2A4"]
@@ -1424,8 +1424,8 @@
 				type: "item"
 			}]
 			title: "Master Blood Orb"
-			x: 11.0d
-			y: 9.0d
+			x: 12.75d
+			y: 3.0d
 		}
 	]
 	title: "Blood Magic"

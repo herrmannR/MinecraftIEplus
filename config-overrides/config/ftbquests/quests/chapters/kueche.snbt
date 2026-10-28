@@ -24,7 +24,7 @@
 			}]
 			title: "Kapitel 1: Küche"
 			x: 2.0d
-			y: -1.75d
+			y: -2.5d
 		}
 		{
 			dependencies: ["432B753E00404698"]
@@ -101,7 +101,7 @@
 			}]
 			title: "Straw Hat"
 			x: 2.0d
-			y: 1.25d
+			y: 5.5d
 		}
 		{
 			dependencies: ["574543DA6E41527F"]
@@ -137,8 +137,8 @@
 				type: "item"
 			}]
 			title: "Wildpflanzen"
-			x: 2.0d
-			y: 2.5d
+			x: 4.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["574543DA6E41527F"]
@@ -178,8 +178,8 @@
 				type: "item"
 			}]
 			title: "Sense und Arbeitskleidung"
-			x: 2.0d
-			y: 3.75d
+			x: 4.0d
+			y: -1.0d
 		}
 		{
 			description: [
@@ -196,8 +196,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 2: Küche"
-			x: 5.5d
-			y: -1.75d
+			x: 6.0d
+			y: 8.0d
 		}
 		{
 			dependencies: ["574543DA6E41527F", "6F4C082B66C371BD"]
@@ -236,8 +236,8 @@
 				type: "item"
 			}]
 			title: "Stroh, Canvas und Rope"
-			x: 5.5d
-			y: 0.0d
+			x: 6.0d
+			y: 6.5d
 		}
 		{
 			dependencies: ["6AE2D0ADAFC9AEDC"]
@@ -277,8 +277,8 @@
 				type: "item"
 			}]
 			title: "Rich Soil"
-			x: 5.5d
-			y: 1.25d
+			x: 7.5d
+			y: 6.5d
 		}
 		{
 			dependencies: ["6AE2D0ADAFC9AEDC"]
@@ -314,8 +314,8 @@
 				type: "item"
 			}]
 			title: "Reisfeld"
-			x: 5.5d
-			y: 2.5d
+			x: 4.5d
+			y: 6.5d
 		}
 		{
 			dependencies: ["6AE2D0ADAFC9AEDC", "4888FEAE96A437A8"]
@@ -363,8 +363,8 @@
 				type: "item"
 			}]
 			title: "Tomaten, Chili, Salat, Tee"
-			x: 5.5d
-			y: 3.75d
+			x: 4.5d
+			y: 5.5d
 		}
 		{
 			description: [
@@ -381,8 +381,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 2: Küche"
-			x: 9.0d
-			y: -1.75d
+			x: 6.0d
+			y: -2.5d
 		}
 		{
 			dependencies: ["574543DA6E41527F", "08C5F786BBAF328C"]
@@ -418,8 +418,8 @@
 				type: "item"
 			}]
 			title: "Stove"
-			x: 9.0d
-			y: 0.0d
+			x: 6.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["3161B258FA6C3ADB"]
@@ -458,8 +458,8 @@
 				type: "item"
 			}]
 			title: "Cutting Board"
-			x: 9.0d
-			y: 1.25d
+			x: 7.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["3FA337C19CA6F9B1"]
@@ -504,8 +504,8 @@
 				type: "item"
 			}]
 			title: "Fleischteile"
-			x: 9.0d
-			y: 2.5d
+			x: 7.5d
+			y: -1.0d
 		}
 		{
 			description: [
@@ -522,8 +522,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 3: Küche"
-			x: 12.5d
-			y: -1.75d
+			x: 9.0d
+			y: -2.5d
 		}
 		{
 			dependencies: ["3161B258FA6C3ADB", "6555E3CE29DA6F76"]
@@ -558,8 +558,8 @@
 				type: "item"
 			}]
 			title: "Cooking Pot"
-			x: 12.5d
-			y: 0.0d
+			x: 9.0d
+			y: -0.5d
 		}
 		{
 			dependencies: ["799CAC82CF943BEE"]
@@ -607,7 +607,7 @@
 			}]
 			title: "Wok"
 			x: 12.5d
-			y: 1.25d
+			y: 1.5d
 		}
 		{
 			dependencies: ["4532F1FEAB4ECD08"]
@@ -645,8 +645,8 @@
 				type: "item"
 			}]
 			title: "Erste Wok-Gerichte"
-			x: 12.5d
-			y: 2.5d
+			x: 13.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["799CAC82CF943BEE"]
@@ -693,7 +693,7 @@
 			}]
 			title: "Stockpot"
 			x: 12.5d
-			y: 3.75d
+			y: 3.5d
 		}
 		{
 			dependencies: ["43A5C9A837B0E15A"]
@@ -727,8 +727,8 @@
 				type: "item"
 			}]
 			title: "Borscht"
-			x: 12.5d
-			y: 5.0d
+			x: 13.0d
+			y: 2.5d
 		}
 		{
 			dependencies: ["799CAC82CF943BEE"]
@@ -774,8 +774,8 @@
 				type: "item"
 			}]
 			title: "Millstone"
-			x: 12.5d
-			y: 6.25d
+			x: 10.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["647E060A67759D95"]
@@ -815,8 +815,8 @@
 				type: "item"
 			}]
 			title: "Teig und Nudeln"
-			x: 12.5d
-			y: 7.5d
+			x: 9.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["19D17D50871C51EC"]
@@ -856,8 +856,8 @@
 				type: "item"
 			}]
 			title: "Steamer"
-			x: 12.5d
-			y: 8.75d
+			x: 9.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["799CAC82CF943BEE"]
@@ -900,8 +900,8 @@
 				type: "item"
 			}]
 			title: "Teapot"
-			x: 12.5d
-			y: 10.0d
+			x: 9.0d
+			y: 2.0d
 		}
 		{
 			description: [
@@ -918,8 +918,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 4: Küche"
-			x: 16.0d
-			y: -1.75d
+			x: 14.5d
+			y: -2.5d
 		}
 		{
 			dependencies: ["799CAC82CF943BEE", "418A4538C21176B2"]
@@ -948,8 +948,8 @@
 				type: "item"
 			}]
 			title: "Ein Festessen"
-			x: 16.0d
-			y: 0.0d
+			x: 14.5d
+			y: -0.5d
 		}
 		{
 			dependencies: ["69C4B64B16DEE8C7"]
@@ -977,8 +977,8 @@
 				type: "checkmark"
 			}]
 			title: "Der Koch"
-			x: 16.0d
-			y: 1.25d
+			x: 15.5d
+			y: -0.5d
 		}
 		{
 			dependencies: ["69C4B64B16DEE8C7"]
@@ -1005,8 +1005,8 @@
 				type: "item"
 			}]
 			title: "Lunch Bag"
-			x: 16.0d
-			y: 2.5d
+			x: 16.5d
+			y: -0.5d
 		}
 		{
 			description: [
@@ -1023,8 +1023,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 4: Küche"
-			x: 19.5d
-			y: -1.75d
+			x: 14.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["75FF64F97C7F1493"]
@@ -1061,8 +1061,8 @@
 				type: "item"
 			}]
 			title: "Reben und Trellis"
-			x: 19.5d
-			y: 0.0d
+			x: 15.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["2987CB18F3496AC6"]
@@ -1094,8 +1094,8 @@
 				type: "item"
 			}]
 			title: "Pressing Tub"
-			x: 19.5d
-			y: 1.25d
+			x: 15.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["0CCEB587E1810C04"]
@@ -1136,8 +1136,8 @@
 				type: "item"
 			}]
 			title: "Barrel und Tap"
-			x: 19.5d
-			y: 2.5d
+			x: 16.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["79000B1DDC0EE929"]
@@ -1170,8 +1170,8 @@
 				type: "item"
 			}]
 			title: "Cocktail"
-			x: 19.5d
-			y: 3.75d
+			x: 17.5d
+			y: 3.0d
 		}
 		{
 			description: [
@@ -1188,8 +1188,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 5: Küche"
-			x: 23.0d
-			y: -1.75d
+			x: 22.5d
+			y: -2.5d
 		}
 		{
 			dependencies: ["3161B258FA6C3ADB", "22F8574A06153984"]
@@ -1216,8 +1216,8 @@
 				type: "item"
 			}]
 			title: "Grill"
-			x: 23.0d
-			y: 0.0d
+			x: 22.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["7D72C132DD3D3843"]
@@ -1246,8 +1246,8 @@
 				type: "item"
 			}]
 			title: "Der erste Spieß"
-			x: 23.0d
-			y: 1.25d
+			x: 23.5d
+			y: 5.5d
 		}
 		{
 			dependencies: ["7D72C132DD3D3843", "647E060A67759D95"]
@@ -1278,8 +1278,8 @@
 				type: "item"
 			}]
 			title: "Canola-Öl"
-			x: 23.0d
-			y: 2.5d
+			x: 10.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["7D72C132DD3D3843"]
@@ -1306,8 +1306,8 @@
 				type: "item"
 			}]
 			title: "Gewürzflasche"
-			x: 23.0d
-			y: 3.75d
+			x: 23.5d
+			y: 4.5d
 		}
 		{
 			description: [
@@ -1324,8 +1324,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 6: Küche"
-			x: 26.5d
-			y: -1.75d
+			x: 18.0d
+			y: -2.5d
 		}
 		{
 			dependencies: ["514491943178D00A"]
@@ -1357,8 +1357,8 @@
 				type: "item"
 			}]
 			title: "Machete und Hoglin"
-			x: 26.5d
-			y: 0.0d
+			x: 18.0d
+			y: -0.5d
 		}
 		{
 			dependencies: ["7DBBE5EA05C146BF"]
@@ -1385,8 +1385,8 @@
 				type: "item"
 			}]
 			title: "Propelplant"
-			x: 26.5d
-			y: 1.25d
+			x: 19.0d
+			y: -0.5d
 		}
 		{
 			dependencies: ["7DBBE5EA05C146BF"]
@@ -1418,8 +1418,8 @@
 				type: "item"
 			}]
 			title: "Soul Compost"
-			x: 26.5d
-			y: 2.5d
+			x: 19.0d
+			y: 0.5d
 		}
 		{
 			dependencies: ["7DBBE5EA05C146BF", "799CAC82CF943BEE"]
@@ -1446,8 +1446,8 @@
 				type: "item"
 			}]
 			title: "Stuffed Hoglin"
-			x: 26.5d
-			y: 3.75d
+			x: 18.0d
+			y: 2.0d
 		}
 		{
 			description: [
@@ -1464,8 +1464,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 7: Küche"
-			x: 30.0d
-			y: -1.75d
+			x: 20.0d
+			y: -2.5d
 		}
 		{
 			dependencies: ["6B06DCD8046C545E"]
@@ -1497,8 +1497,8 @@
 				type: "item"
 			}]
 			title: "Ender Mint und Dream Berry"
-			x: 30.0d
-			y: 0.0d
+			x: 20.0d
+			y: -0.5d
 		}
 		{
 			dependencies: ["275069B68F3C579E"]
@@ -1530,8 +1530,8 @@
 				type: "item"
 			}]
 			title: "Abpinseln"
-			x: 30.0d
-			y: 1.25d
+			x: 20.0d
+			y: 0.5d
 		}
 		{
 			dependencies: ["0F0AD2D733CE32DF"]
@@ -1560,8 +1560,8 @@
 				type: "item"
 			}]
 			title: "Dragon Tooth Knife"
-			x: 30.0d
-			y: 2.5d
+			x: 21.0d
+			y: 0.5d
 		}
 		{
 			dependencies: ["0F0AD2D733CE32DF", "43A5C9A837B0E15A"]
@@ -1588,8 +1588,8 @@
 				type: "item"
 			}]
 			title: "Dragon Egg Stew"
-			x: 30.0d
-			y: 3.75d
+			x: 20.0d
+			y: 4.0d
 		}
 	]
 	title: "Küche"

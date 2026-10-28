@@ -24,7 +24,7 @@
 			}]
 			title: "Kapitel 1: Alex's Mobs"
 			x: 2.0d
-			y: -1.75d
+			y: -2.5d
 		}
 		{
 			dependencies: ["3CC8F5ECBF626B39"]
@@ -100,8 +100,8 @@
 				type: "item"
 			}]
 			title: "Bananen und Akazienblüten"
-			x: 2.0d
-			y: 1.25d
+			x: 0.0d
+			y: -0.5d
 		}
 		{
 			dependencies: ["27EC624AA254E2F1"]
@@ -136,8 +136,8 @@
 				type: "item"
 			}]
 			title: "Hummingbird Feeder"
-			x: 2.0d
-			y: 2.5d
+			x: 0.0d
+			y: 0.5d
 		}
 		{
 			dependencies: ["27EC624AA254E2F1"]
@@ -182,8 +182,8 @@
 				type: "item"
 			}]
 			title: "Falknerei"
-			x: 2.0d
-			y: 3.75d
+			x: 0.0d
+			y: -1.5d
 		}
 		{
 			description: [
@@ -201,7 +201,7 @@
 			}]
 			title: "Kapitel 2: Alex's Mobs"
 			x: 5.5d
-			y: -1.75d
+			y: -2.5d
 		}
 		{
 			dependencies: ["27EC624AA254E2F1", "517951580048164A"]
@@ -276,8 +276,8 @@
 				type: "item"
 			}]
 			title: "Brustpanzer"
-			x: 5.5d
-			y: 1.25d
+			x: 6.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["730B961C975FF15B"]
@@ -313,8 +313,8 @@
 				type: "item"
 			}]
 			title: "Beine und Stiefel"
-			x: 5.5d
-			y: 2.5d
+			x: 7.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["27EC624AA254E2F1"]
@@ -356,8 +356,8 @@
 				type: "item"
 			}]
 			title: "Werkzeuge der Tiere"
-			x: 5.5d
-			y: 3.75d
+			x: 0.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["080472E8F456EE46"]
@@ -392,8 +392,8 @@
 				type: "item"
 			}]
 			title: "Tendon Whip"
-			x: 5.5d
-			y: 5.0d
+			x: 0.0d
+			y: 2.5d
 		}
 		{
 			dependencies: ["7F7C4D18773AC647"]
@@ -428,8 +428,8 @@
 				type: "item"
 			}]
 			title: "Tarantula Hawk Elytra"
-			x: 5.5d
-			y: 6.25d
+			x: 0.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["27EC624AA254E2F1"]
@@ -469,8 +469,8 @@
 				type: "item"
 			}]
 			title: "Blattschneiderameisen"
-			x: 5.5d
-			y: 7.5d
+			x: 1.0d
+			y: -1.5d
 		}
 		{
 			description: [
@@ -487,8 +487,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 3: Alex's Mobs"
-			x: 9.0d
-			y: -1.75d
+			x: 10.0d
+			y: 6.5d
 		}
 		{
 			dependencies: ["27EC624AA254E2F1", "4AA8F81D01B34947"]
@@ -525,8 +525,8 @@
 				type: "item"
 			}]
 			title: "Ambergris"
-			x: 9.0d
-			y: 0.0d
+			x: 10.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["14EBCB67E37C7289"]
@@ -561,8 +561,8 @@
 				type: "item"
 			}]
 			title: "Echolocator"
-			x: 9.0d
-			y: 1.25d
+			x: 10.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["2D128048115C5C7F"]
@@ -597,8 +597,8 @@
 				type: "item"
 			}]
 			title: "Endolocator"
-			x: 9.0d
-			y: 2.5d
+			x: 10.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["2D128048115C5C7F"]
@@ -633,8 +633,8 @@
 				type: "item"
 			}]
 			title: "Strange Fish Finder"
-			x: 9.0d
-			y: 3.75d
+			x: 11.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["27EC624AA254E2F1"]
@@ -669,8 +669,8 @@
 				type: "item"
 			}]
 			title: "Grappling Squok"
-			x: 9.0d
-			y: 5.0d
+			x: 4.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["27EC624AA254E2F1"]
@@ -705,8 +705,8 @@
 				type: "item"
 			}]
 			title: "Shield Of The Deep"
-			x: 9.0d
-			y: 6.25d
+			x: 5.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["27EC624AA254E2F1"]
@@ -741,8 +741,8 @@
 				type: "item"
 			}]
 			title: "Rainbow Glass"
-			x: 9.0d
-			y: 7.5d
+			x: 4.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["27EC624AA254E2F1"]
@@ -780,8 +780,8 @@
 				type: "item"
 			}]
 			title: "Sculk Boomer"
-			x: 9.0d
-			y: 8.75d
+			x: 3.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["27EC624AA254E2F1"]
@@ -816,8 +816,8 @@
 				type: "item"
 			}]
 			title: "Ghostly Pickaxe"
-			x: 9.0d
-			y: 10.0d
+			x: 1.0d
+			y: 1.5d
 		}
 		{
 			description: [
@@ -834,8 +834,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 3: Alex's Mobs"
-			x: 12.5d
-			y: -1.75d
+			x: 10.0d
+			y: -2.5d
 		}
 		{
 			dependencies: ["27EC624AA254E2F1", "362471442870AA5E"]
@@ -872,8 +872,8 @@
 				type: "item"
 			}]
 			title: "Blood Sprayer"
-			x: 12.5d
-			y: 0.0d
+			x: 10.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["1B98B8611DB172BD"]
@@ -908,8 +908,8 @@
 				type: "item"
 			}]
 			title: "Crimson Mosquito Larva"
-			x: 12.5d
-			y: 1.25d
+			x: 11.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["27EC624AA254E2F1"]
@@ -944,8 +944,8 @@
 				type: "item"
 			}]
 			title: "Soul Heart"
-			x: 12.5d
-			y: 2.5d
+			x: 3.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["27EC624AA254E2F1"]
@@ -985,8 +985,8 @@
 				type: "item"
 			}]
 			title: "Auf dem Laviathan"
-			x: 12.5d
-			y: 3.75d
+			x: 5.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["4C899BC065E1E350"]
@@ -1021,8 +1021,8 @@
 				type: "item"
 			}]
 			title: "Straddleboard"
-			x: 12.5d
-			y: 5.0d
+			x: 5.5d
+			y: 4.0d
 		}
 		{
 			description: [
@@ -1039,8 +1039,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 4: Alex's Mobs"
-			x: 16.0d
-			y: -1.75d
+			x: 14.5d
+			y: 6.5d
 		}
 		{
 			dependencies: ["27EC624AA254E2F1", "01F1F996ED155903"]
@@ -1072,8 +1072,8 @@
 				type: "item"
 			}]
 			title: "Capsid"
-			x: 16.0d
-			y: 0.0d
+			x: 12.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["177821A29B6F8659"]
@@ -1101,8 +1101,8 @@
 				type: "item"
 			}]
 			title: "Cosmic Cod"
-			x: 16.0d
-			y: 1.25d
+			x: 12.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["177821A29B6F8659"]
@@ -1130,8 +1130,8 @@
 				type: "item"
 			}]
 			title: "Mimicream"
-			x: 16.0d
-			y: 2.5d
+			x: 12.5d
+			y: 1.0d
 		}
 		{
 			dependencies: ["703ABD5C133172DF", "1B98B8611DB172BD"]
@@ -1159,8 +1159,8 @@
 				type: "item"
 			}]
 			title: "Hemolymph Blaster"
-			x: 16.0d
-			y: 3.75d
+			x: 11.5d
+			y: 1.0d
 		}
 		{
 			description: [
@@ -1177,8 +1177,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 4: Alex's Mobs"
-			x: 19.5d
-			y: -1.75d
+			x: 14.5d
+			y: -2.5d
 		}
 		{
 			dependencies: ["177821A29B6F8659", "30CD7A30445CC831", "60466A613A53F18A"]
@@ -1210,7 +1210,7 @@
 				type: "item"
 			}]
 			title: "Mysterious Worm"
-			x: 19.5d
+			x: 14.5d
 			y: 0.0d
 		}
 		{
@@ -1245,8 +1245,8 @@
 				type: "item"
 			}]
 			title: "Void Worm"
-			x: 19.5d
-			y: 1.25d
+			x: 14.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["56A6D79FE2B0BB91"]
@@ -1274,8 +1274,8 @@
 				type: "item"
 			}]
 			title: "Dimensional Carver"
-			x: 19.5d
-			y: 2.5d
+			x: 14.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["27EC7A4B6E1D3DF8"]
@@ -1311,8 +1311,8 @@
 				type: "item"
 			}]
 			title: "Farseer am Weltrand"
-			x: 19.5d
-			y: 3.75d
+			x: 14.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["30A35D1D6D2CD59F"]
@@ -1343,8 +1343,8 @@
 				type: "item"
 			}]
 			title: "Transmutation Table"
-			x: 19.5d
-			y: 5.0d
+			x: 16.0d
+			y: 4.5d
 		}
 		{
 			description: [
@@ -1361,8 +1361,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 2: Alex's Mobs"
-			x: 23.0d
-			y: -1.75d
+			x: 5.5d
+			y: 6.5d
 		}
 		{
 			dependencies: ["27EC624AA254E2F1", "5B85B658E2BCCCFE"]
@@ -1406,8 +1406,8 @@
 				type: "item"
 			}]
 			title: "Tierisch gekocht"
-			x: 23.0d
-			y: 0.0d
+			x: 2.0d
+			y: 6.5d
 		}
 		{
 			dependencies: ["4DA73D2621DF8C1F"]
@@ -1442,8 +1442,8 @@
 				type: "item"
 			}]
 			title: "Aus dem Cooking Pot"
-			x: 23.0d
-			y: 1.25d
+			x: 1.0d
+			y: 6.5d
 		}
 		{
 			dependencies: ["4DA73D2621DF8C1F"]
@@ -1482,8 +1482,8 @@
 				type: "item"
 			}]
 			title: "Burger"
-			x: 23.0d
-			y: 2.5d
+			x: 1.0d
+			y: 5.5d
 		}
 	]
 	title: "Alex's Mobs"

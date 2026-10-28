@@ -330,8 +330,8 @@
 				type: "item"
 			}]
 			title: "Werkbank und Baupläne"
-			x: 0.5d
-			y: 7.5d
+			x: 2.25d
+			y: 6.0d
 		}
 		{
 			description: [
@@ -348,8 +348,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 2: Immersive Engineering"
-			x: 4.0d
-			y: -1.75d
+			x: 4.5d
+			y: -2.0d
 		}
 		{
 			dependencies: ["5525EF1C1A588A2E", "66D4020D2C561309"]
@@ -389,7 +389,7 @@
 				type: "item"
 			}]
 			title: "Erster Strom"
-			x: 4.0d
+			x: 4.5d
 			y: 0.0d
 		}
 		{
@@ -431,8 +431,8 @@
 				type: "item"
 			}]
 			title: "Kabel"
-			x: 4.0d
-			y: 1.5d
+			x: 4.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["6403D8B9B81865B5"]
@@ -469,8 +469,8 @@
 				type: "item"
 			}]
 			title: "Speichern"
-			x: 5.5d
-			y: 1.5d
+			x: 6.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["6403D8B9B81865B5"]
@@ -510,8 +510,8 @@
 				type: "item"
 			}]
 			title: "Förderbänder und Rohre"
-			x: 5.5d
-			y: 2.75d
+			x: 6.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["6403D8B9B81865B5"]
@@ -547,8 +547,8 @@
 				type: "item"
 			}]
 			title: "Charging Station"
-			x: 5.5d
-			y: 4.0d
+			x: 5.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["6403D8B9B81865B5"]
@@ -582,8 +582,8 @@
 				type: "item"
 			}]
 			title: "Garden Cloche"
-			x: 5.5d
-			y: 5.25d
+			x: 4.0d
+			y: 4.5d
 		}
 		{
 			description: [
@@ -795,8 +795,8 @@
 				type: "observation"
 			}]
 			title: "Sawmill"
-			x: 9.0d
-			y: 4.5d
+			x: 7.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["4BBC049D29718225"]
@@ -854,8 +854,8 @@
 				type: "fluid"
 			}]
 			title: "Biodiesel"
-			x: 7.5d
-			y: 6.0d
+			x: 9.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["314870713B15C085"]
@@ -936,8 +936,8 @@
 				type: "observation"
 			}]
 			title: "Mixer und Bottling Machine"
-			x: 9.0d
-			y: 7.25d
+			x: 10.0d
+			y: 6.0d
 		}
 		{
 			description: [
@@ -1055,7 +1055,7 @@
 			}]
 			title: "Oil Tank"
 			x: 12.5d
-			y: 1.5d
+			y: 1.0d
 		}
 		{
 			dependencies: ["3618A099F6094A9C"]
@@ -1121,8 +1121,8 @@
 				type: "fluid"
 			}]
 			title: "Lubricant"
-			x: 12.5d
-			y: 3.0d
+			x: 11.0d
+			y: 4.5d
 		}
 		{
 			description: [
@@ -1139,8 +1139,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 5: Immersive Engineering"
-			x: 14.5d
-			y: -1.75d
+			x: 15.0d
+			y: -2.0d
 		}
 		{
 			dependencies: ["717FEB79354DEDAF", "4ECD17AB09DE0513"]
@@ -1178,8 +1178,8 @@
 				type: "fluid"
 			}]
 			title: "High-Pressure Refinery Unit"
-			x: 14.5d
-			y: 0.0d
+			x: 15.0d
+			y: 0.5d
 		}
 		{
 			dependencies: ["604E7F0E3AB26675"]
@@ -1214,8 +1214,8 @@
 				type: "item"
 			}]
 			title: "Coker"
-			x: 16.0d
-			y: 0.0d
+			x: 17.5d
+			y: 2.0d
 		}
 		{
 			description: [
@@ -1269,7 +1269,7 @@
 			}]
 			title: "Arc Furnace"
 			x: 19.5d
-			y: 0.0d
+			y: 0.5d
 		}
 		{
 			dependencies: ["604E7F0E3AB26675"]
@@ -1303,8 +1303,8 @@
 				type: "item"
 			}]
 			title: "Erzadern finden"
-			x: 19.5d
-			y: 1.25d
+			x: 17.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["604E7F0E3AB26675"]
@@ -1335,8 +1335,8 @@
 				type: "observation"
 			}]
 			title: "Excavator"
-			x: 19.5d
-			y: 2.5d
+			x: 16.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["604E7F0E3AB26675"]
@@ -1363,8 +1363,8 @@
 				type: "item"
 			}]
 			title: "Kunststoff"
-			x: 19.5d
-			y: 3.75d
+			x: 15.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["604E7F0E3AB26675"]
@@ -1396,8 +1396,8 @@
 				type: "item"
 			}]
 			title: "Logic Circuits"
-			x: 19.5d
-			y: 5.0d
+			x: 14.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["604E7F0E3AB26675"]
@@ -1425,8 +1425,8 @@
 				type: "checkmark"
 			}]
 			title: "Assembler"
-			x: 19.5d
-			y: 6.25d
+			x: 13.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["5525EF1C1A588A2E"]
@@ -1462,8 +1462,8 @@
 				type: "item"
 			}]
 			title: "Mining Drill"
-			x: 23.0d
-			y: 0.0d
+			x: 1.0d
+			y: 7.5d
 		}
 		{
 			dependencies: ["5525EF1C1A588A2E"]
@@ -1497,8 +1497,8 @@
 				type: "item"
 			}]
 			title: "Engineer's Toolbox"
-			x: 23.0d
-			y: 1.25d
+			x: 2.0d
+			y: 7.5d
 		}
 		{
 			dependencies: ["5525EF1C1A588A2E"]
@@ -1532,8 +1532,8 @@
 				type: "item"
 			}]
 			title: "Skyhook"
-			x: 23.0d
-			y: 2.5d
+			x: 3.0d
+			y: 7.5d
 		}
 		{
 			dependencies: ["5525EF1C1A588A2E"]
@@ -1567,8 +1567,8 @@
 				type: "item"
 			}]
 			title: "Revolver"
-			x: 23.0d
-			y: 3.75d
+			x: 4.0d
+			y: 7.5d
 		}
 		{
 			dependencies: ["5525EF1C1A588A2E"]
@@ -1602,8 +1602,8 @@
 				type: "item"
 			}]
 			title: "Railgun"
-			x: 23.0d
-			y: 5.0d
+			x: 4.0d
+			y: 6.5d
 		}
 		{
 			dependencies: ["5525EF1C1A588A2E"]
@@ -1637,8 +1637,8 @@
 				type: "item"
 			}]
 			title: "Accumulator Backpack"
-			x: 23.0d
-			y: 6.25d
+			x: 4.0d
+			y: 5.5d
 		}
 	]
 	title: "Immersive Engineering"

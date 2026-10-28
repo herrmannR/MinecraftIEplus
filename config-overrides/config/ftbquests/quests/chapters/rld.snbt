@@ -24,7 +24,7 @@
 			}]
 			title: "Kapitel 8: Roguelike Dungeons"
 			x: 0.5d
-			y: -1.75d
+			y: -2.0d
 		}
 		{
 			dependencies: ["156FF25A9C28B0C9"]
@@ -80,8 +80,8 @@
 				type: "item"
 			}]
 			title: "Sentient Pathfinder"
-			x: 0.5d
-			y: 1.5d
+			x: 2.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["7A6EF9579E3C5994"]
@@ -116,8 +116,8 @@
 				type: "item"
 			}]
 			title: "Key Bag und Kreide"
-			x: 0.5d
-			y: 3.0d
+			x: 3.75d
+			y: 0.0d
 		}
 		{
 			dependencies: ["64F39ED5163ED88E"]
@@ -158,8 +158,8 @@
 				type: "item"
 			}]
 			title: "Biom-Vessels"
-			x: 2.0d
-			y: 0.0d
+			x: 0.5d
+			y: 3.0d
 		}
 		{
 			description: [
@@ -176,8 +176,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 8: Roguelike Dungeons"
-			x: 4.0d
-			y: -1.75d
+			x: 5.5d
+			y: -2.0d
 		}
 		{
 			dependencies: ["5698E6E085F5F81B", "5E691AA6EA9649F6"]
@@ -212,7 +212,7 @@
 				type: "item"
 			}]
 			title: "Erster Dungeon"
-			x: 4.0d
+			x: 5.5d
 			y: 0.0d
 		}
 		{
@@ -250,8 +250,8 @@
 				type: "item"
 			}]
 			title: "Ancient Bone Chest"
-			x: 4.0d
-			y: 1.5d
+			x: 7.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["7D41CCDEF6A2699A"]
@@ -279,8 +279,8 @@
 				type: "item"
 			}]
 			title: "Normaler Dungeon: Catacombs oder Necropolis"
-			x: 5.5d
-			y: 1.5d
+			x: 6.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["7D41CCDEF6A2699A"]
@@ -308,8 +308,8 @@
 				type: "item"
 			}]
 			title: "Besonderer Dungeon: Crypt oder Cursed Sepulchres"
-			x: 5.5d
-			y: 2.75d
+			x: 8.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["7D41CCDEF6A2699A", "40179BF426C17492"]
@@ -337,8 +337,8 @@
 				type: "item"
 			}]
 			title: "Wüsten-Dungeon: Mines oder Tomb"
-			x: 5.5d
-			y: 4.0d
+			x: 4.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["7D41CCDEF6A2699A", "40179BF426C17492"]
@@ -366,8 +366,8 @@
 				type: "item"
 			}]
 			title: "Dschungel-Dungeon: Ruins oder Labyrinth"
-			x: 5.5d
-			y: 5.25d
+			x: 4.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["7D41CCDEF6A2699A", "40179BF426C17492"]
@@ -395,8 +395,8 @@
 				type: "item"
 			}]
 			title: "Eis-Dungeon: Frosthold oder Tomb of Ice"
-			x: 5.5d
-			y: 6.5d
+			x: 4.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["7D41CCDEF6A2699A"]
@@ -424,8 +424,8 @@
 				type: "item"
 			}]
 			title: "Acht Orbs of the Deep"
-			x: 5.5d
-			y: 7.75d
+			x: 7.5d
+			y: 5.0d
 		}
 		{
 			description: [
@@ -442,8 +442,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 8: Roguelike Dungeons"
-			x: 9.0d
-			y: -1.75d
+			x: 7.5d
+			y: -2.0d
 		}
 		{
 			dependencies: ["7D41CCDEF6A2699A", "2DC075F28AC17DB0"]
@@ -474,7 +474,7 @@
 				type: "checkmark"
 			}]
 			title: "All Seeing Eye"
-			x: 9.0d
+			x: 7.5d
 			y: 0.0d
 		}
 		{
@@ -502,8 +502,8 @@
 				type: "item"
 			}]
 			title: "Heart of Ender"
-			x: 9.0d
-			y: 1.25d
+			x: 8.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["2C93E723E5808333"]
@@ -530,8 +530,8 @@
 				type: "item"
 			}]
 			title: "Heart of the Deceiver"
-			x: 9.0d
-			y: 2.5d
+			x: 8.5d
+			y: 1.0d
 		}
 		{
 			description: [
@@ -548,8 +548,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 8: Roguelike Dungeons"
-			x: 12.5d
-			y: -1.75d
+			x: 9.5d
+			y: -2.0d
 		}
 		{
 			dependencies: ["7D41CCDEF6A2699A", "610C5C458C170D1A"]
@@ -576,8 +576,8 @@
 				type: "item"
 			}]
 			title: "Quartz Vessel of Vision"
-			x: 12.5d
-			y: 0.0d
+			x: 9.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["1D21F9C6AE71BBDF"]
@@ -607,8 +607,8 @@
 				type: "item"
 			}]
 			title: "Nether-Dungeon"
-			x: 12.5d
-			y: 1.25d
+			x: 9.5d
+			y: 5.0d
 		}
 	]
 	title: "Roguelike Dungeons"

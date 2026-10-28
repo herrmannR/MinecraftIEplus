@@ -23,8 +23,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 4: Ad Astra"
-			x: 0.5d
-			y: -1.75d
+			x: -0.5d
+			y: -2.0d
 		}
 		{
 			dependencies: ["76675F0BE49207E9"]
@@ -51,8 +51,8 @@
 				type: "item"
 			}]
 			title: "Astrodux"
-			x: 0.5d
-			y: 0.0d
+			x: -0.5d
+			y: -0.25d
 		}
 		{
 			dependencies: ["292FF893CE689E1B"]
@@ -89,8 +89,8 @@
 				type: "item"
 			}]
 			title: "Stahl und Platten aus IE"
-			x: 0.5d
-			y: 1.5d
+			x: 1.0d
+			y: -0.25d
 		}
 		{
 			dependencies: ["4BBF62035ACC750D"]
@@ -122,8 +122,8 @@
 				type: "item"
 			}]
 			title: "NASA Workbench und Launch Pad"
-			x: 0.5d
-			y: 3.0d
+			x: 1.0d
+			y: 1.25d
 		}
 		{
 			dependencies: ["499EC397EBA8F93C"]
@@ -167,8 +167,8 @@
 				type: "item"
 			}]
 			title: "Raketenteile"
-			x: 0.5d
-			y: 4.5d
+			x: -0.5d
+			y: 1.25d
 		}
 		{
 			dependencies: ["2D0C1755A2F72F7F"]
@@ -194,8 +194,8 @@
 				type: "item"
 			}]
 			title: "Tier 1 Rocket"
-			x: 0.5d
-			y: 6.0d
+			x: -0.5d
+			y: 2.75d
 		}
 		{
 			dependencies: ["356321F07D2E9B1C"]
@@ -223,8 +223,8 @@
 				type: "fluid"
 			}]
 			title: "Biodiesel tanken"
-			x: 0.5d
-			y: 7.5d
+			x: -0.5d
+			y: 4.25d
 		}
 		{
 			dependencies: ["1DCED9FAE9209EEE"]
@@ -259,8 +259,8 @@
 				type: "fluid"
 			}]
 			title: "Sauerstoff aus Mekanism"
-			x: 0.5d
-			y: 9.0d
+			x: -0.5d
+			y: 5.75d
 		}
 		{
 			dependencies: ["1335B14FA1D8A955"]
@@ -302,8 +302,8 @@
 				type: "item"
 			}]
 			title: "Space Suit"
-			x: 0.5d
-			y: 10.5d
+			x: -0.5d
+			y: 7.25d
 		}
 		{
 			dependencies: ["25E5B2BA4FC3E361"]
@@ -337,8 +337,8 @@
 				type: "item"
 			}]
 			title: "Gas Tank und Etrionic Capacitor"
-			x: 2.0d
-			y: 10.5d
+			x: -1.5d
+			y: 8.5d
 		}
 		{
 			dependencies: ["25E5B2BA4FC3E361"]
@@ -366,8 +366,8 @@
 				type: "item"
 			}]
 			title: "Radio"
-			x: 2.0d
-			y: 11.75d
+			x: -0.5d
+			y: 8.5d
 		}
 		{
 			dependencies: ["25E5B2BA4FC3E361"]
@@ -396,8 +396,8 @@
 				type: "dimension"
 			}]
 			title: "Start zum Mond"
-			x: 0.5d
-			y: 12.0d
+			x: 1.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["356321F07D2E9B1C"]
@@ -427,8 +427,8 @@
 				type: "item"
 			}]
 			title: "Fuel Loader"
-			x: 2.0d
-			y: 13.0d
+			x: -2.0d
+			y: 2.25d
 		}
 		{
 			dependencies: ["356321F07D2E9B1C"]
@@ -455,8 +455,8 @@
 				type: "item"
 			}]
 			title: "Rocket Sensor"
-			x: 2.0d
-			y: 14.25d
+			x: -2.0d
+			y: 3.25d
 		}
 		{
 			dependencies: ["499EC397EBA8F93C"]
@@ -483,8 +483,8 @@
 				type: "item"
 			}]
 			title: "Automation NASA Workbench"
-			x: 2.0d
-			y: 15.5d
+			x: 1.0d
+			y: 2.75d
 		}
 		{
 			dependencies: ["25E5B2BA4FC3E361"]
@@ -511,8 +511,8 @@
 				type: "item"
 			}]
 			title: "Oxygen Can"
-			x: 2.0d
-			y: 16.75d
+			x: 0.5d
+			y: 8.5d
 		}
 		{
 			description: [
@@ -530,7 +530,7 @@
 			}]
 			title: "Kapitel 6: Ad Astra"
 			x: 4.0d
-			y: -1.75d
+			y: -2.0d
 		}
 		{
 			dependencies: ["5E6257AA082F40C8", "28BD871410DFDDEE"]
@@ -563,7 +563,7 @@
 			}]
 			title: "Desh"
 			x: 4.0d
-			y: 0.0d
+			y: 0.25d
 		}
 		{
 			dependencies: ["4BE018C1418BD094"]
@@ -592,8 +592,8 @@
 				type: "dimension"
 			}]
 			title: "Space Station"
-			x: 5.5d
-			y: 0.0d
+			x: 2.5d
+			y: -0.5d
 		}
 		{
 			dependencies: ["4BE018C1418BD094"]
@@ -628,8 +628,8 @@
 				type: "item"
 			}]
 			title: "Oxygen Distributor"
-			x: 5.5d
-			y: 1.25d
+			x: 6.0d
+			y: -0.5d
 		}
 		{
 			dependencies: ["4BE018C1418BD094"]
@@ -659,8 +659,8 @@
 				type: "item"
 			}]
 			title: "Gravity Normalizer"
-			x: 5.5d
-			y: 2.5d
+			x: 6.0d
+			y: 0.5d
 		}
 		{
 			dependencies: ["4BE018C1418BD094"]
@@ -688,8 +688,8 @@
 				type: "item"
 			}]
 			title: "TI-69"
-			x: 5.5d
-			y: 3.75d
+			x: 6.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["4BE018C1418BD094"]
@@ -718,8 +718,8 @@
 				type: "item"
 			}]
 			title: "Rover"
-			x: 5.5d
-			y: 5.0d
+			x: 5.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["4BE018C1418BD094"]
@@ -747,8 +747,8 @@
 				type: "checkmark"
 			}]
 			title: "Lunarians"
-			x: 5.5d
-			y: 6.25d
+			x: 2.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["4BE018C1418BD094"]
@@ -779,8 +779,8 @@
 				type: "item"
 			}]
 			title: "Moon Tower Dungeon"
-			x: 5.5d
-			y: 7.5d
+			x: 2.5d
+			y: 0.5d
 		}
 		{
 			dependencies: ["4BE018C1418BD094"]
@@ -814,7 +814,7 @@
 			}]
 			title: "Desh Tank und Desh Engine"
 			x: 4.0d
-			y: 1.5d
+			y: 2.5d
 		}
 		{
 			dependencies: ["5396A1C55E6CCA7B"]
@@ -848,7 +848,7 @@
 			}]
 			title: "Tier 2 Rocket"
 			x: 4.0d
-			y: 3.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["1B7973B17472DA07"]
@@ -875,8 +875,8 @@
 				type: "dimension"
 			}]
 			title: "Landung auf dem Mars"
-			x: 4.0d
-			y: 4.5d
+			x: 4.5d
+			y: 6.0d
 		}
 		{
 			description: [
@@ -894,7 +894,7 @@
 			}]
 			title: "Kapitel 8: Ad Astra"
 			x: 7.5d
-			y: -1.75d
+			y: -2.0d
 		}
 		{
 			dependencies: ["48930BE935D20A9C", "4739E0EE0E57F37E"]
@@ -961,7 +961,7 @@
 			}]
 			title: "Sliding Doors und Airlock"
 			x: 9.0d
-			y: 0.0d
+			y: -0.5d
 		}
 		{
 			dependencies: ["2DFA1E07C7C17767"]
@@ -990,7 +990,7 @@
 			}]
 			title: "Oxygen Sensor"
 			x: 9.0d
-			y: 1.25d
+			y: 0.5d
 		}
 		{
 			dependencies: ["2DFA1E07C7C17767"]
@@ -1162,7 +1162,7 @@
 				type: "fluid"
 			}]
 			title: "Tier 3 Rocket"
-			x: 7.5d
+			x: 9.0d
 			y: 6.0d
 		}
 		{
@@ -1191,7 +1191,7 @@
 			}]
 			title: "Netherite Oxygen Can"
 			x: 9.0d
-			y: 6.0d
+			y: 7.5d
 		}
 		{
 			description: [
@@ -1209,7 +1209,7 @@
 			}]
 			title: "Kapitel 11: Ad Astra"
 			x: 11.0d
-			y: -1.75d
+			y: -2.0d
 		}
 		{
 			dependencies: ["44E2B3F2841F03A8", "346FCF584BFE5BEB"]
@@ -1270,7 +1270,7 @@
 				type: "item"
 			}]
 			title: "Venus und Calorite"
-			x: 11.0d
+			x: 12.0d
 			y: 1.5d
 		}
 		{
@@ -1315,8 +1315,8 @@
 				type: "item"
 			}]
 			title: "Jet Suit"
-			x: 12.5d
-			y: 1.5d
+			x: 13.5d
+			y: 1.0d
 		}
 		{
 			dependencies: ["0A4869DC0EA5A984"]
@@ -1345,8 +1345,8 @@
 				type: "checkmark"
 			}]
 			title: "Venus- und Merkur-Dungeon"
-			x: 12.5d
-			y: 2.75d
+			x: 13.5d
+			y: 2.0d
 		}
 		{
 			dependencies: ["0A4869DC0EA5A984"]
@@ -1379,7 +1379,7 @@
 				type: "item"
 			}]
 			title: "Calorite Tank und Calorite Engine"
-			x: 11.0d
+			x: 12.0d
 			y: 3.0d
 		}
 		{
@@ -1413,7 +1413,7 @@
 				type: "fluid"
 			}]
 			title: "Tier 4 Rocket"
-			x: 11.0d
+			x: 12.0d
 			y: 4.5d
 		}
 		{
@@ -1442,7 +1442,7 @@
 				type: "dimension"
 			}]
 			title: "Glacio"
-			x: 11.0d
+			x: 12.0d
 			y: 6.0d
 		}
 		{
@@ -1471,8 +1471,8 @@
 				type: "checkmark"
 			}]
 			title: "Glacio Tower Dungeon"
-			x: 12.5d
-			y: 6.0d
+			x: 12.0d
+			y: 7.5d
 		}
 		{
 			dependencies: ["5E6257AA082F40C8"]
@@ -1508,8 +1508,8 @@
 				type: "checkmark"
 			}]
 			title: "Verzauberungsbücher"
-			x: 16.0d
-			y: 0.0d
+			x: 1.5d
+			y: 7.5d
 		}
 		{
 			dependencies: ["00007691DEF1650A"]
@@ -1536,8 +1536,8 @@
 				type: "checkmark"
 			}]
 			title: "Tinkers-Modifier"
-			x: 16.0d
-			y: 1.25d
+			x: 1.5d
+			y: 8.5d
 		}
 		{
 			dependencies: ["48930BE935D20A9C"]
@@ -1565,8 +1565,8 @@
 				type: "item"
 			}]
 			title: "Sky Stone"
-			x: 19.5d
-			y: 0.0d
+			x: 4.5d
+			y: 7.5d
 		}
 	]
 	title: "Ad Astra"

@@ -23,8 +23,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 3: Blue Skies"
-			x: 0.5d
-			y: -1.75d
+			x: 0.0d
+			y: -2.0d
 		}
 		{
 			dependencies: ["1ECA8C4658E46B1F"]
@@ -57,7 +57,7 @@
 				type: "item"
 			}]
 			title: "Gatekeeper's House"
-			x: 0.5d
+			x: 0.0d
 			y: 0.0d
 		}
 		{
@@ -90,8 +90,8 @@
 				type: "item"
 			}]
 			title: "Zeal Lighter"
-			x: 0.5d
-			y: 1.5d
+			x: 0.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["2BA9940A19FF9205"]
@@ -127,8 +127,8 @@
 				type: "dimension"
 			}]
 			title: "Durch das Portal nach Everbright"
-			x: 0.5d
-			y: 3.0d
+			x: 0.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["3EAE987B6BD74C1B"]
@@ -162,7 +162,7 @@
 				type: "item"
 			}]
 			title: "Neu anfangen: Holz und Stein"
-			x: 0.5d
+			x: 1.5d
 			y: 4.5d
 		}
 		{
@@ -202,8 +202,8 @@
 				type: "item"
 			}]
 			title: "Ventium und Tool Box"
-			x: 0.5d
-			y: 6.0d
+			x: 1.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["5C71431D3D22E211"]
@@ -246,8 +246,8 @@
 				type: "item"
 			}]
 			title: "Zinn, Blei und Bauxit"
-			x: 0.5d
-			y: 7.5d
+			x: 3.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["534472CA68E78922"]
@@ -282,8 +282,8 @@
 				type: "item"
 			}]
 			title: "Falsite"
-			x: 2.0d
-			y: 7.5d
+			x: 4.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["534472CA68E78922"]
@@ -318,8 +318,8 @@
 				type: "item"
 			}]
 			title: "Snowcap Oven"
-			x: 2.0d
-			y: 8.75d
+			x: 4.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["534472CA68E78922"]
@@ -354,8 +354,8 @@
 				type: "item"
 			}]
 			title: "Warding Pearl"
-			x: 2.0d
-			y: 10.0d
+			x: 3.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["534472CA68E78922"]
@@ -390,8 +390,8 @@
 				type: "item"
 			}]
 			title: "Pyrope, Aquite und Moonstone"
-			x: 0.5d
-			y: 9.0d
+			x: 3.0d
+			y: 1.5d
 		}
 		{
 			description: [
@@ -408,8 +408,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 4: Blue Skies"
-			x: 4.0d
-			y: -1.75d
+			x: 5.5d
+			y: -2.0d
 		}
 		{
 			dependencies: ["0F0A9BCA8E40F502", "0EE6CBCC4BF5AA64"]
@@ -435,7 +435,7 @@
 				type: "dimension"
 			}]
 			title: "Durch das Portal nach Everdawn"
-			x: 4.0d
+			x: 5.5d
 			y: 0.0d
 		}
 		{
@@ -461,8 +461,8 @@
 				type: "item"
 			}]
 			title: "Osmium"
-			x: 4.0d
-			y: 1.5d
+			x: 7.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["2EC898204E3F7965"]
@@ -488,8 +488,8 @@
 				type: "item"
 			}]
 			title: "Horizonite"
-			x: 4.0d
-			y: 3.0d
+			x: 5.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["130284B9336D0DE5"]
@@ -517,8 +517,8 @@
 				type: "item"
 			}]
 			title: "Horizonite Forge"
-			x: 5.5d
-			y: 3.0d
+			x: 7.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["130284B9336D0DE5"]
@@ -544,8 +544,8 @@
 				type: "item"
 			}]
 			title: "Moonstone Shield"
-			x: 4.0d
-			y: 4.5d
+			x: 5.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["140363A653179B26"]
@@ -575,8 +575,8 @@
 				type: "item"
 			}]
 			title: "Diopside oder Charoite"
-			x: 4.0d
-			y: 6.0d
+			x: 7.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["646CB6EC8370C3A3"]
@@ -604,8 +604,8 @@
 				type: "item"
 			}]
 			title: "Verzaubern ohne Oberwelt"
-			x: 5.5d
-			y: 6.0d
+			x: 7.5d
+			y: 4.5d
 		}
 		{
 			description: [
@@ -622,8 +622,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 5: Blue Skies"
-			x: 7.5d
-			y: -1.75d
+			x: 9.0d
+			y: -2.0d
 		}
 		{
 			dependencies: ["646CB6EC8370C3A3", "0D0F206F569E37DD"]
@@ -654,7 +654,7 @@
 				type: "item"
 			}]
 			title: "Blinding Dungeon"
-			x: 7.5d
+			x: 9.0d
 			y: 0.0d
 		}
 		{
@@ -684,7 +684,7 @@
 				value: 1L
 			}]
 			title: "Summoner"
-			x: 7.5d
+			x: 9.0d
 			y: 1.5d
 		}
 		{
@@ -716,7 +716,7 @@
 				value: 1L
 			}]
 			title: "Alchemist"
-			x: 7.5d
+			x: 9.75d
 			y: 3.0d
 		}
 		{
@@ -745,8 +745,8 @@
 				type: "item"
 			}]
 			title: "Alchemy Table"
-			x: 9.0d
-			y: 3.0d
+			x: 10.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["65D0CD0CCDD4216D"]
@@ -780,7 +780,7 @@
 			}]
 			title: "Arcs tragen"
 			x: 9.0d
-			y: 4.25d
+			y: 4.5d
 		}
 		{
 			description: [
@@ -797,8 +797,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 6: Blue Skies"
-			x: 11.0d
-			y: -1.75d
+			x: 12.0d
+			y: -2.0d
 		}
 		{
 			dependencies: ["65D0CD0CCDD4216D", "33126A4794FD48D8"]
@@ -826,7 +826,7 @@
 				type: "item"
 			}]
 			title: "Nature Dungeon"
-			x: 11.0d
+			x: 12.0d
 			y: 0.0d
 		}
 		{
@@ -856,8 +856,8 @@
 				value: 1L
 			}]
 			title: "Starlit Crusher"
-			x: 11.0d
-			y: 1.5d
+			x: 13.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["468DA32D7DB0FD55"]
@@ -883,8 +883,8 @@
 				type: "item"
 			}]
 			title: "Poison Dungeon"
-			x: 11.0d
-			y: 3.0d
+			x: 13.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["437B0DB53A740456"]
@@ -915,8 +915,8 @@
 				value: 1L
 			}]
 			title: "Arachnarch"
-			x: 11.0d
-			y: 4.5d
+			x: 13.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["6ED6E7E09F66A770"]
@@ -960,7 +960,7 @@
 				type: "item"
 			}]
 			title: "Alle vier Arcs"
-			x: 12.5d
+			x: 13.5d
 			y: 4.5d
 		}
 		{
@@ -978,8 +978,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 3: Blue Skies"
-			x: 16.0d
-			y: -1.75d
+			x: 0.0d
+			y: 9.5d
 		}
 		{
 			dependencies: ["3EAE987B6BD74C1B", "7A6F27C6FFCB5C94"]
@@ -1016,8 +1016,8 @@
 				type: "item"
 			}]
 			title: "Food Prep Table"
-			x: 16.0d
-			y: 0.0d
+			x: 0.0d
+			y: 7.5d
 		}
 		{
 			dependencies: ["3044683138D65009"]
@@ -1052,8 +1052,8 @@
 				type: "checkmark"
 			}]
 			title: "Reittiere"
-			x: 16.0d
-			y: 1.25d
+			x: 1.5d
+			y: 7.5d
 		}
 		{
 			dependencies: ["7F4F826675474480"]
@@ -1093,8 +1093,8 @@
 				type: "item"
 			}]
 			title: "Star Emitter und Astrolabe"
-			x: 16.0d
-			y: 2.5d
+			x: 3.0d
+			y: 7.5d
 		}
 	]
 	title: "Blue Skies"

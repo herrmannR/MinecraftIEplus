@@ -24,7 +24,7 @@
 			}]
 			title: "Kapitel 3: Applied Energistics 2"
 			x: 0.5d
-			y: -1.75d
+			y: -3.0d
 		}
 		{
 			dependencies: ["4B12135DB847F4B8"]
@@ -100,8 +100,8 @@
 				type: "item"
 			}]
 			title: "Charger und Crank"
-			x: 0.5d
-			y: 1.5d
+			x: 2.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["6B132A79F89EE95B"]
@@ -135,8 +135,8 @@
 				type: "item"
 			}]
 			title: "Meteorite Compass"
-			x: 0.5d
-			y: 3.0d
+			x: 2.0d
+			y: 1.0d
 		}
 		{
 			dependencies: ["1F4DFC2D78D6B7A6"]
@@ -191,8 +191,8 @@
 				type: "item"
 			}]
 			title: "Der Meteorit"
-			x: 0.5d
-			y: 4.5d
+			x: 1.0d
+			y: 1.0d
 		}
 		{
 			dependencies: ["66B6782FBA73917A"]
@@ -233,8 +233,8 @@
 				type: "item"
 			}]
 			title: "Certus wachsen lassen"
-			x: 0.5d
-			y: 6.0d
+			x: 1.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["5B9E6DE11968B925"]
@@ -267,8 +267,8 @@
 				type: "item"
 			}]
 			title: "Fluix"
-			x: 0.5d
-			y: 7.5d
+			x: 2.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["753A22B2C47AAA1C"]
@@ -302,8 +302,8 @@
 				type: "item"
 			}]
 			title: "Inscriber"
-			x: 0.5d
-			y: 9.0d
+			x: 2.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["3FA949F1EE0DAFA6"]
@@ -352,8 +352,8 @@
 				type: "item"
 			}]
 			title: "Die drei Prozessoren"
-			x: 0.5d
-			y: 10.5d
+			x: 1.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["310E3E632CF41446"]
@@ -391,8 +391,8 @@
 				type: "item"
 			}]
 			title: "Formation Core und Annihilation Core"
-			x: 0.5d
-			y: 12.0d
+			x: 1.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["07E6336DB123AB07"]
@@ -426,8 +426,8 @@
 				type: "item"
 			}]
 			title: "Energy Acceptor"
-			x: 0.5d
-			y: 13.5d
+			x: 1.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["79332D21193BB39F"]
@@ -465,8 +465,8 @@
 				type: "item"
 			}]
 			title: "Kabel und ME Terminal"
-			x: 0.5d
-			y: 15.0d
+			x: 1.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["694BB95567703A4A"]
@@ -502,8 +502,8 @@
 				type: "item"
 			}]
 			title: "Kisten anbinden"
-			x: 0.5d
-			y: 16.5d
+			x: 2.25d
+			y: 6.0d
 		}
 		{
 			dependencies: ["7293C4C03756CCF1"]
@@ -543,8 +543,8 @@
 				type: "item"
 			}]
 			title: "Quartz Glass und Illuminated Panel"
-			x: 2.0d
-			y: 16.5d
+			x: 3.5d
+			y: 6.0d
 		}
 		{
 			description: [
@@ -561,8 +561,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 9: Applied Energistics 2"
-			x: 4.0d
-			y: -1.75d
+			x: 3.5d
+			y: -3.0d
 		}
 		{
 			dependencies: ["7293C4C03756CCF1", "45E818ED398B26CE"]
@@ -591,7 +591,7 @@
 				type: "item"
 			}]
 			title: "Storage Cells"
-			x: 4.0d
+			x: 3.5d
 			y: 0.0d
 		}
 		{
@@ -619,8 +619,8 @@
 				type: "item"
 			}]
 			title: "ME Drive"
-			x: 4.0d
-			y: 1.5d
+			x: 5.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["71B568676039B4D7"]
@@ -647,8 +647,8 @@
 				type: "item"
 			}]
 			title: "ME Controller"
-			x: 4.0d
-			y: 3.0d
+			x: 7.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["151524197B359CFC"]
@@ -681,8 +681,8 @@
 				type: "item"
 			}]
 			title: "Größere Zellen"
-			x: 5.5d
-			y: 3.0d
+			x: 7.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["151524197B359CFC"]
@@ -710,8 +710,8 @@
 				type: "item"
 			}]
 			title: "Fluid Cell"
-			x: 5.5d
-			y: 4.25d
+			x: 8.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["151524197B359CFC"]
@@ -739,8 +739,8 @@
 				type: "item"
 			}]
 			title: "Energy Cell"
-			x: 5.5d
-			y: 5.5d
+			x: 9.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["151524197B359CFC"]
@@ -778,8 +778,8 @@
 				type: "item"
 			}]
 			title: "Import, Export, Interface"
-			x: 5.5d
-			y: 6.75d
+			x: 9.0d
+			y: -0.5d
 		}
 		{
 			dependencies: ["151524197B359CFC"]
@@ -807,8 +807,8 @@
 				type: "item"
 			}]
 			title: "Level Emitter"
-			x: 5.5d
-			y: 8.0d
+			x: 9.0d
+			y: 0.5d
 		}
 		{
 			dependencies: ["151524197B359CFC"]
@@ -846,8 +846,8 @@
 				type: "item"
 			}]
 			title: "Upgrade Cards und Cell Workbench"
-			x: 5.5d
-			y: 9.25d
+			x: 9.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["151524197B359CFC"]
@@ -873,8 +873,8 @@
 				type: "item"
 			}]
 			title: "Crafting Terminal"
-			x: 4.0d
-			y: 4.5d
+			x: 7.5d
+			y: 2.0d
 		}
 		{
 			dependencies: ["473B379DA5850F5F"]
@@ -905,8 +905,8 @@
 				type: "item"
 			}]
 			title: "Patterns"
-			x: 4.0d
-			y: 6.0d
+			x: 5.5d
+			y: 2.0d
 		}
 		{
 			dependencies: ["0F5670F69765BA49"]
@@ -937,8 +937,8 @@
 				type: "item"
 			}]
 			title: "Pattern Provider und Molecular Assembler"
-			x: 4.0d
-			y: 7.5d
+			x: 5.5d
+			y: 4.0d
 		}
 		{
 			dependencies: ["31D3ABFCF244549A"]
@@ -969,8 +969,8 @@
 				type: "item"
 			}]
 			title: "Crafting CPU"
-			x: 4.0d
-			y: 9.0d
+			x: 7.5d
+			y: 4.0d
 		}
 		{
 			dependencies: ["7F8A2EA9729C9026"]
@@ -1003,8 +1003,8 @@
 				type: "item"
 			}]
 			title: "Applied Mekanistics"
-			x: 4.0d
-			y: 10.5d
+			x: 7.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["066045B9476DF7B7"]
@@ -1042,8 +1042,8 @@
 				type: "item"
 			}]
 			title: "Kabelloser Zugriff"
-			x: 5.5d
-			y: 10.5d
+			x: 6.0d
+			y: 7.25d
 		}
 		{
 			dependencies: ["066045B9476DF7B7"]
@@ -1071,8 +1071,8 @@
 				type: "item"
 			}]
 			title: "Wireless Universal Terminal"
-			x: 5.5d
-			y: 11.75d
+			x: 7.0d
+			y: 7.25d
 		}
 		{
 			dependencies: ["066045B9476DF7B7"]
@@ -1101,8 +1101,8 @@
 				type: "item"
 			}]
 			title: "P2P Tunnels"
-			x: 5.5d
-			y: 13.0d
+			x: 8.0d
+			y: 7.25d
 		}
 		{
 			dependencies: ["066045B9476DF7B7"]
@@ -1135,8 +1135,8 @@
 				type: "item"
 			}]
 			title: "ME über IE-Drähte"
-			x: 5.5d
-			y: 14.25d
+			x: 9.0d
+			y: 7.25d
 		}
 		{
 			dependencies: ["47435CAF48E9E684"]
@@ -1173,8 +1173,8 @@
 				type: "item"
 			}]
 			title: "Certus Quartz Wrench"
-			x: 9.0d
-			y: 0.0d
+			x: -0.5d
+			y: -1.5d
 		}
 		{
 			dependencies: ["47435CAF48E9E684"]
@@ -1209,8 +1209,8 @@
 				type: "item"
 			}]
 			title: "Network Tool"
-			x: 9.0d
-			y: 1.25d
+			x: -1.5d
+			y: -1.5d
 		}
 		{
 			dependencies: ["47435CAF48E9E684"]
@@ -1245,8 +1245,8 @@
 				type: "item"
 			}]
 			title: "Memory Card"
-			x: 9.0d
-			y: 2.5d
+			x: -1.5d
+			y: -0.5d
 		}
 		{
 			dependencies: ["47435CAF48E9E684"]
@@ -1281,8 +1281,8 @@
 				type: "item"
 			}]
 			title: "Portable Cell"
-			x: 9.0d
-			y: 3.75d
+			x: -1.5d
+			y: 0.5d
 		}
 		{
 			dependencies: ["47435CAF48E9E684"]
@@ -1317,8 +1317,8 @@
 				type: "item"
 			}]
 			title: "Fluix-Werkzeuge"
-			x: 9.0d
-			y: 5.0d
+			x: -1.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["47435CAF48E9E684"]
@@ -1353,8 +1353,8 @@
 				type: "item"
 			}]
 			title: "Matter Cannon"
-			x: 9.0d
-			y: 6.25d
+			x: -0.5d
+			y: 1.5d
 		}
 	]
 	title: "Applied Energistics 2"

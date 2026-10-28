@@ -23,8 +23,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 4: Galaxy in a Cube"
-			x: 0.5d
-			y: -1.75d
+			x: 0.0d
+			y: -2.0d
 		}
 		{
 			dependencies: ["2A4278ABD8AAA4AE"]
@@ -52,7 +52,7 @@
 				type: "item"
 			}]
 			title: "Credits"
-			x: 0.5d
+			x: 0.0d
 			y: 0.0d
 		}
 		{
@@ -81,8 +81,8 @@
 				type: "item"
 			}]
 			title: "Assembly Bench"
-			x: -0.25d
-			y: 1.5d
+			x: -2.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["0985C494F42DD4D2"]
@@ -108,7 +108,7 @@
 				type: "item"
 			}]
 			title: "Durasteel Ingot"
-			x: 1.25d
+			x: 0.0d
 			y: 1.5d
 		}
 		{
@@ -138,8 +138,8 @@
 				type: "item"
 			}]
 			title: "Droid Fabricator"
-			x: 0.5d
-			y: 3.0d
+			x: 1.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["478F2A80BA51DFA1"]
@@ -169,7 +169,7 @@
 				type: "item"
 			}]
 			title: "B-2"
-			x: 2.0d
+			x: 1.0d
 			y: 3.0d
 		}
 		{
@@ -205,8 +205,8 @@
 				type: "item"
 			}]
 			title: "Gas Harvester"
-			x: 2.0d
-			y: 4.25d
+			x: -2.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["5EAB6931D4F58A85"]
@@ -234,8 +234,8 @@
 				type: "item"
 			}]
 			title: "Tibanna Vessel"
-			x: 2.0d
-			y: 5.5d
+			x: -2.0d
+			y: 3.0d
 		}
 		{
 			description: [
@@ -253,7 +253,7 @@
 			}]
 			title: "Kapitel 7: Galaxy in a Cube"
 			x: 4.0d
-			y: -1.75d
+			y: -2.0d
 		}
 		{
 			dependencies: ["478F2A80BA51DFA1", "70F1DDEE036F77A7"]
@@ -370,7 +370,7 @@
 				type: "item"
 			}]
 			title: "Droideka"
-			x: 5.5d
+			x: 2.5d
 			y: 3.0d
 		}
 		{
@@ -414,8 +414,8 @@
 				type: "item"
 			}]
 			title: "Klonrüstung"
-			x: 5.5d
-			y: 4.25d
+			x: 6.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["7424DEF5E96A7114"]
@@ -443,8 +443,8 @@
 				type: "item"
 			}]
 			title: "Bemalung einer Einheit"
-			x: 5.5d
-			y: 5.5d
+			x: 7.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["3243CD20D9B44F54"]
@@ -488,8 +488,8 @@
 				type: "item"
 			}]
 			title: "Royal Guard"
-			x: 5.5d
-			y: 6.75d
+			x: 6.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["3243CD20D9B44F54"]
@@ -532,8 +532,8 @@
 				type: "item"
 			}]
 			title: "Vader"
-			x: 5.5d
-			y: 8.0d
+			x: 7.5d
+			y: 1.5d
 		}
 	]
 	title: "Galaxy in a Cube"

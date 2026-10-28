@@ -23,8 +23,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 3: Mekanism"
-			x: 0.5d
-			y: -1.75d
+			x: 0.0d
+			y: -2.0d
 		}
 		{
 			dependencies: ["12617912326846AC"]
@@ -57,8 +57,8 @@
 				type: "item"
 			}]
 			title: "Osmium"
-			x: 0.5d
-			y: 0.0d
+			x: 0.0d
+			y: -0.5d
 		}
 		{
 			dependencies: ["75C91E77E306DEEC"]
@@ -92,8 +92,8 @@
 				type: "item"
 			}]
 			title: "Metallurgic Infuser"
-			x: -0.25d
-			y: 1.5d
+			x: -0.5d
+			y: 1.0d
 		}
 		{
 			dependencies: ["75C91E77E306DEEC"]
@@ -126,8 +126,8 @@
 				type: "item"
 			}]
 			title: "Heat Generator"
-			x: 1.25d
-			y: 1.5d
+			x: 0.5d
+			y: 1.0d
 		}
 		{
 			dependencies: ["4BC3380EC1235A5D", "297CC840928521E9"]
@@ -174,8 +174,8 @@
 				type: "item"
 			}]
 			title: "Die drei Grundstoffe"
-			x: 0.5d
-			y: 3.0d
+			x: 0.0d
+			y: 2.5d
 		}
 		{
 			dependencies: ["67B226B1E72E2FD3"]
@@ -207,8 +207,8 @@
 				type: "item"
 			}]
 			title: "Steel Casing"
-			x: 0.5d
-			y: 4.5d
+			x: 0.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["01BEF4545E477DFA"]
@@ -242,8 +242,8 @@
 				type: "item"
 			}]
 			title: "Electrolytic Separator"
-			x: 0.5d
-			y: 6.0d
+			x: 0.0d
+			y: 5.5d
 		}
 		{
 			dependencies: ["3118A5050D4D56CD"]
@@ -286,8 +286,8 @@
 				type: "fluid"
 			}]
 			title: "Flüssiger Sauerstoff"
-			x: 0.5d
-			y: 7.5d
+			x: 1.5d
+			y: 3.75d
 		}
 		{
 			description: [
@@ -305,7 +305,7 @@
 			}]
 			title: "Kapitel 4: Mekanism"
 			x: 4.0d
-			y: -1.75d
+			y: -2.0d
 		}
 		{
 			dependencies: ["6D928FB73894B839", "3E189EEF517F442D"]
@@ -369,7 +369,7 @@
 				type: "item"
 			}]
 			title: "Energy Cube und Universal Cable"
-			x: 4.0d
+			x: 3.0d
 			y: 3.0d
 		}
 		{
@@ -398,8 +398,8 @@
 				type: "item"
 			}]
 			title: "Upgrades"
-			x: 5.5d
-			y: 1.25d
+			x: 6.0d
+			y: 1.0d
 		}
 		{
 			dependencies: ["1594BB213B1B4F4A"]
@@ -431,8 +431,8 @@
 				type: "item"
 			}]
 			title: "Formulaic Assemblicator"
-			x: 5.5d
-			y: 2.5d
+			x: 6.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["1594BB213B1B4F4A"]
@@ -464,8 +464,8 @@
 				type: "item"
 			}]
 			title: "Logistik"
-			x: 5.5d
-			y: 3.75d
+			x: 6.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["1594BB213B1B4F4A"]
@@ -502,8 +502,8 @@
 				type: "item"
 			}]
 			title: "Lagern"
-			x: 5.5d
-			y: 5.0d
+			x: 5.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["1594BB213B1B4F4A"]
@@ -534,8 +534,8 @@
 				type: "item"
 			}]
 			title: "Weitere Generatoren"
-			x: 5.5d
-			y: 6.25d
+			x: 4.0d
+			y: 3.0d
 		}
 		{
 			description: [
@@ -553,7 +553,7 @@
 			}]
 			title: "Kapitel 5: Mekanism"
 			x: 7.5d
-			y: -1.75d
+			y: -2.0d
 		}
 		{
 			dependencies: ["1594BB213B1B4F4A", "43567C1272BD2765"]
@@ -753,7 +753,7 @@
 			}]
 			title: "Kapitel 7: Mekanism"
 			x: 11.0d
-			y: -1.75d
+			y: -2.0d
 		}
 		{
 			dependencies: ["7EAB9F168BFEB124", "3FA0B9BE762AE467"]
@@ -937,8 +937,8 @@
 				type: "fluid"
 			}]
 			title: "Schwefelsäure"
-			x: 11.0d
-			y: 7.5d
+			x: 13.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["154589E32601A4F1"]
@@ -974,8 +974,8 @@
 				type: "item"
 			}]
 			title: "Pressurized Reaction Chamber und HDPE"
-			x: 11.0d
-			y: 9.0d
+			x: 13.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["65FD91C69EED1303"]
@@ -1002,8 +1002,8 @@
 				type: "item"
 			}]
 			title: "Gas-Burning Generator"
-			x: 12.5d
-			y: 9.0d
+			x: 15.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["3CFF6061F5E536DA"]
@@ -1038,7 +1038,7 @@
 				type: "item"
 			}]
 			title: "Raw Ore zurück zum Erz"
-			x: 16.0d
+			x: 13.0d
 			y: 0.0d
 		}
 		{
@@ -1072,8 +1072,8 @@
 				type: "item"
 			}]
 			title: "Kristalle · Erz ×5"
-			x: 16.0d
-			y: 1.25d
+			x: 19.0d
+			y: 6.0d
 		}
 		{
 			description: [
@@ -1091,7 +1091,7 @@
 			}]
 			title: "Kapitel 9: Mekanism"
 			x: 18.0d
-			y: -1.75d
+			y: -2.0d
 		}
 		{
 			dependencies: ["65FD91C69EED1303", "212009E2CEC4D2E8"]
@@ -1165,8 +1165,8 @@
 				type: "item"
 			}]
 			title: "Schutz"
-			x: 18.0d
-			y: 1.5d
+			x: 19.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["7B9237C64623DC2D"]
@@ -1200,8 +1200,8 @@
 				type: "checkmark"
 			}]
 			title: "Fissile Fuel"
-			x: 18.0d
-			y: 3.0d
+			x: 19.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["01C4EF0099DADAA6"]
@@ -1244,7 +1244,7 @@
 			}]
 			title: "Fission Reactor"
 			x: 18.0d
-			y: 4.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["20336D7F206AFA68"]
@@ -1277,7 +1277,7 @@
 			}]
 			title: "Boiler und Turbine"
 			x: 18.0d
-			y: 6.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["700827270D79A55E"]
@@ -1308,8 +1308,8 @@
 				type: "item"
 			}]
 			title: "Polonium und Plutonium"
-			x: 18.0d
-			y: 7.5d
+			x: 19.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["5727C86B5DB4F060"]
@@ -1342,8 +1342,8 @@
 				type: "item"
 			}]
 			title: "Induction Matrix"
-			x: 19.5d
-			y: 7.5d
+			x: 19.0d
+			y: 4.5d
 		}
 		{
 			description: [
@@ -1360,8 +1360,8 @@
 				type: "gamestage"
 			}]
 			title: "Kapitel 10: Mekanism"
-			x: 21.5d
-			y: -1.75d
+			x: 22.5d
+			y: -2.0d
 		}
 		{
 			dependencies: ["5727C86B5DB4F060", "4E6259B8C3E06E09"]
@@ -1391,7 +1391,7 @@
 				type: "item"
 			}]
 			title: "Atomic Alloy"
-			x: 21.5d
+			x: 22.5d
 			y: 0.0d
 		}
 		{
@@ -1417,8 +1417,8 @@
 				type: "item"
 			}]
 			title: "Teleportation Core"
-			x: 21.5d
-			y: 1.5d
+			x: 22.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["311387E5E5173165"]
@@ -1452,8 +1452,8 @@
 				type: "item"
 			}]
 			title: "Teleporter"
-			x: 23.0d
-			y: 1.5d
+			x: 24.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["311387E5E5173165"]
@@ -1481,8 +1481,8 @@
 				type: "item"
 			}]
 			title: "Quantum Entangloporter"
-			x: 23.0d
-			y: 2.75d
+			x: 24.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["311387E5E5173165"]
@@ -1509,7 +1509,7 @@
 				type: "item"
 			}]
 			title: "Dimensional Stabilizer"
-			x: 23.0d
+			x: 24.0d
 			y: 4.0d
 		}
 		{
@@ -1542,8 +1542,8 @@
 				type: "item"
 			}]
 			title: "Laser"
-			x: 21.5d
-			y: 3.0d
+			x: 22.5d
+			y: 5.25d
 		}
 	]
 	title: "Mekanism"

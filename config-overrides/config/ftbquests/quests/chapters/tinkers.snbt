@@ -96,8 +96,8 @@
 				type: "item"
 			}]
 			title: "Pattern und Part Builder"
-			x: 0.5d
-			y: 1.5d
+			x: 2.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["0EAD8E17462059D6"]
@@ -130,8 +130,8 @@
 				type: "item"
 			}]
 			title: "Tinker Station"
-			x: 0.5d
-			y: 3.0d
+			x: 2.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["118B6F9081AFD4AD"]
@@ -167,7 +167,7 @@
 			}]
 			title: "Das erste Werkzeug"
 			x: 0.5d
-			y: 4.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["52D1DC126D8F44AD"]
@@ -217,8 +217,8 @@
 				type: "item"
 			}]
 			title: "Fernkampf"
-			x: 2.0d
-			y: 4.5d
+			x: -1.0d
+			y: 0.5d
 		}
 		{
 			dependencies: ["52D1DC126D8F44AD"]
@@ -268,8 +268,8 @@
 				type: "item"
 			}]
 			title: "Traveler's Gear"
-			x: 2.0d
-			y: 5.75d
+			x: -1.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["52D1DC126D8F44AD"]
@@ -309,8 +309,8 @@
 				type: "item"
 			}]
 			title: "Ordnung in der Werkstatt"
-			x: 2.0d
-			y: 7.0d
+			x: -1.0d
+			y: 2.5d
 		}
 		{
 			dependencies: ["52D1DC126D8F44AD"]
@@ -354,7 +354,7 @@
 			}]
 			title: "Puny Smelting und Seared Bricks"
 			x: 0.5d
-			y: 6.0d
+			y: 2.5d
 		}
 		{
 			dependencies: ["6B119E65A8778DC9"]
@@ -393,7 +393,7 @@
 			}]
 			title: "Seared Melter mit Heater"
 			x: 0.5d
-			y: 7.5d
+			y: 3.5d
 		}
 		{
 			dependencies: ["57780D6E51D5F36C"]
@@ -437,7 +437,7 @@
 			}]
 			title: "Faucet und Casting Table"
 			x: 0.5d
-			y: 9.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["3064E3AD8CEEE905"]
@@ -477,8 +477,8 @@
 				type: "item"
 			}]
 			title: "Gießen in Formen"
-			x: 0.5d
-			y: 10.5d
+			x: 1.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["1CCEEA499FC45CA5"]
@@ -514,8 +514,8 @@
 				type: "checkmark"
 			}]
 			title: "Erze schmelzen"
-			x: 2.0d
-			y: 10.5d
+			x: 2.5d
+			y: 8.0d
 		}
 		{
 			dependencies: ["1CCEEA499FC45CA5"]
@@ -550,8 +550,8 @@
 				type: "item"
 			}]
 			title: "Modifier Worktable"
-			x: 2.0d
-			y: 11.75d
+			x: 0.5d
+			y: 8.0d
 		}
 		{
 			dependencies: ["1CCEEA499FC45CA5"]
@@ -591,8 +591,8 @@
 				type: "checkmark"
 			}]
 			title: "Fremdmetalle"
-			x: 2.0d
-			y: 13.0d
+			x: 1.5d
+			y: 8.0d
 		}
 		{
 			description: [
@@ -846,8 +846,8 @@
 				type: "item"
 			}]
 			title: "Vorschlaghammer aus Kobalt"
-			x: 4.0d
-			y: 7.5d
+			x: 6.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["5C8310D9F4DA825C"]
@@ -887,8 +887,8 @@
 				type: "item"
 			}]
 			title: "Slime-Inseln und Geoden"
-			x: 5.5d
-			y: 7.5d
+			x: 7.5d
+			y: 6.5d
 		}
 		{
 			dependencies: ["5C8310D9F4DA825C"]
@@ -948,8 +948,8 @@
 				type: "item"
 			}]
 			title: "Große Werkzeuge"
-			x: 5.5d
-			y: 8.75d
+			x: 7.0d
+			y: 7.5d
 		}
 		{
 			dependencies: ["5C8310D9F4DA825C"]
@@ -999,8 +999,8 @@
 				type: "item"
 			}]
 			title: "Plate Armor"
-			x: 5.5d
-			y: 10.0d
+			x: 6.0d
+			y: 7.5d
 		}
 		{
 			dependencies: ["5C8310D9F4DA825C"]
@@ -1035,8 +1035,8 @@
 				type: "checkmark"
 			}]
 			title: "Entity Melting"
-			x: 5.5d
-			y: 11.25d
+			x: 5.0d
+			y: 7.5d
 		}
 		{
 			description: [
@@ -1122,7 +1122,7 @@
 			}]
 			title: "Scorched Alloyer"
 			x: 9.0d
-			y: 0.0d
+			y: -1.0d
 		}
 		{
 			dependencies: ["70E79DDEEB63AC8A"]
@@ -1149,7 +1149,7 @@
 			}]
 			title: "Foundry"
 			x: 7.5d
-			y: 1.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["5BF3A9635A7DA2CE"]
@@ -1178,7 +1178,7 @@
 				type: "fluid"
 			}]
 			title: "Blazing Blood"
-			x: 7.5d
+			x: 9.0d
 			y: 3.0d
 		}
 		{
@@ -1219,8 +1219,8 @@
 				type: "item"
 			}]
 			title: "Legierungen der vierten Stufe"
-			x: 9.0d
-			y: 3.0d
+			x: 8.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["3F7BC68BFB14323D", "5507C16F016711A1"]
@@ -1256,8 +1256,8 @@
 				type: "fluid"
 			}]
 			title: "Blood-Smeltery"
-			x: 9.0d
-			y: 4.25d
+			x: 9.5d
+			y: 4.5d
 		}
 		{
 			description: [
@@ -1457,8 +1457,8 @@
 				type: "item"
 			}]
 			title: "Tinkers' Gadgetry"
-			x: 16.0d
-			y: 0.0d
+			x: 6.0d
+			y: -0.5d
 		}
 		{
 			dependencies: ["0F99929080E4C2A3"]
@@ -1493,8 +1493,8 @@
 				type: "item"
 			}]
 			title: "Encyclopedia of Tinkering"
-			x: 16.0d
-			y: 1.25d
+			x: 6.0d
+			y: 0.5d
 		}
 		{
 			dependencies: ["0F99929080E4C2A3"]
@@ -1528,8 +1528,8 @@
 				type: "checkmark"
 			}]
 			title: "Werkzeuge leveln"
-			x: 16.0d
-			y: 2.5d
+			x: 6.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["70E79DDEEB63AC8A"]
@@ -1577,8 +1577,8 @@
 				type: "item"
 			}]
 			title: "Slime-Rüstung"
-			x: 16.0d
-			y: 3.75d
+			x: 9.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["70E79DDEEB63AC8A"]
@@ -1621,8 +1621,8 @@
 				type: "item"
 			}]
 			title: "Staffs"
-			x: 16.0d
-			y: 5.0d
+			x: 9.0d
+			y: 1.0d
 		}
 		{
 			dependencies: ["0F99929080E4C2A3"]
@@ -1659,8 +1659,8 @@
 				type: "item"
 			}]
 			title: "Ancient Tools"
-			x: 16.0d
-			y: 6.25d
+			x: 6.0d
+			y: 2.5d
 		}
 		{
 			dependencies: ["0F99929080E4C2A3"]
@@ -1705,8 +1705,8 @@
 				type: "item"
 			}]
 			title: "Gadgets"
-			x: 16.0d
-			y: 7.5d
+			x: 5.0d
+			y: 2.5d
 		}
 	]
 	title: "Tinkers' Construct"
