@@ -22,6 +22,12 @@ Stand 2026-10-12, Minecraft 1.20.1. **Nichts davon ist im Spiel getestet.** In d
 | `farmersdelight/loot_tables/blocks/*.json` (10), `farmersdelight/loot_tables/chests/fd_*.json` (14), `farmersdelight/loot_modifiers/add_onion_to_*.json` (2), `nethersdelight/loot_tables/blocks/blackstone_stove.json`, `kaleidoscope_cookery/loot_tables/blocks/{chopping_board,straw_block}.json`, `kaleidoscope_cookery/loot_tables/chest/village_chest.json` | Kopien der Mod-Tabellen, in denen Verlierer-Items durch die Gewinner ersetzt sind (Pflanzen, Truhenbeute, Zwiebel von Zombies und Illagern; FD- und Blackstone-Herd → KC-Herd, KC-Brett → FD-Brett, KC-„Strohballen“ → FD-Reisballen). Nicht von Hand ändern: `python tools/kaleidoscope_daten.py` erzeugt sie aus der Tabelle in `server_scripts/crossmod/kaleidoscope_einheitlich.js`. | User, 2026-10-20 |
 | Rezepte in `alexsdelight/`, `farmersdelight/`, `kaleidoscope_cookery/`, `kaleidoscope_end/`, `kaleidoscope_grilling/`, `minecraft/`, `nethersdelight/`, `tconstruct/`, `tmted/` (jeweils `recipes/…`) und `ieplus/recipes/einheitlich/` | Umgestellte Rezepte unter der Original-ID; abgeschaltete Rezepte als Datei mit `"conditions": [{"type": "forge:false"}]`; neue Brett- und Umwandlungsrezepte. Ebenfalls von `tools/kaleidoscope_daten.py` erzeugt, Liste aller Dateien in `tools/kaleidoscope_daten.liste`. | wie oben |
 
+## Mühlstein-Erze (F30, 2026-10-28, ungetestet)
+
+| Datei | Wirkung | Entscheidung |
+|---|---|---|
+| `kaleidoscope_cookery/recipes/millstone/*.json` (9) | Kopien der Mühlstein-Rezepte aus dem Kaleidoscope-JAR 1.6.0 unter derselben ID, nur mit Menge 2: Iron, Gold, Copper, Coal (je auch Deepslate), Nether Quartz. Redstone, Lapis, Diamond, Emerald und Nether Gold bleiben beim Original. | F30 (User, 2026-10-28) |
+
 ## Was zusätzlich nötig ist, damit die Erz-Features wirken
 
 - `config/blue_skies-common.toml`: `allowed_mods_for_feature_gen = ["ieplus"]` (liegt in `config-overrides/config/`). Blue Skies entfernt sonst alle platzierten Features fremder Namensräume aus seinen Biomen (🟢 im Code von `PurifyBiome` nachgelesen).

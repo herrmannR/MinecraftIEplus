@@ -1,0 +1,75 @@
+
+#Machine Energy Usage Config. This config is synced from server to client.
+[usage]
+	#Energy per operation tick (Joules). (IEplus: Standard 50, x1.5)
+	enrichmentChamber = "75"
+	#Energy per operation tick (Joules). (IEplus: Standard 100, x1.5)
+	osmiumCompressor = "150"
+	#Energy per operation tick (Joules). (IEplus: Standard 50, x1.5)
+	combiner = "75"
+	#Energy per operation tick (Joules). (IEplus: Standard 50, x1.5)
+	crusher = "75"
+	#Energy per operation tick (Joules). (IEplus: Standard 50, x2)
+	metallurgicInfuser = "100"
+	#Energy per operation tick (Joules). (IEplus: Standard 200, x2)
+	purificationChamber = "400"
+	#Energy per operation tick (Joules).
+	energizedSmelter = "50"
+	#Energy per operation tick (Joules). (IEplus: Standard 1000, x1.5)
+	digitalMiner = "1500"
+	#Energy per operation tick (Joules).
+	electricPump = "100"
+	#Energy that can be transferred at once per charge operation (Joules).
+	chargePad = "1024000"
+	#Energy per operation tick (Joules). (IEplus: Standard 50, x1.5)
+	rotaryCondensentrator = "75"
+	#Energy per operation tick (Joules). (IEplus: Standard 200, x2)
+	oxidationChamber = "400"
+	#Energy per operation tick (Joules). (IEplus: Standard 200, x2)
+	chemicalInfuser = "400"
+	#Energy per operation tick (Joules). (IEplus: Standard 400, x2)
+	chemicalInjectionChamber = "800"
+	#Energy per operation tick (Joules).
+	precisionSawmill = "50"
+	#Energy per operation tick (Joules). (IEplus: Standard 400, x2)
+	chemicalDissolutionChamber = "800"
+	#Energy per operation tick (Joules). (IEplus: Standard 200, x2)
+	chemicalWasher = "400"
+	#Energy per operation tick (Joules). (IEplus: Standard 400, x2)
+	chemicalCrystallizer = "800"
+	#Energy per operation tick (Joules).
+	seismicVibrator = "50"
+	#Energy per operation tick (Joules). (IEplus: Standard 5, x2)
+	pressurizedReactionBase = "10"
+	#Energy per operation tick (Joules).
+	fluidicPlenisher = "100"
+	#Energy per operation tick (Joules).
+	laser = "10000"
+	#Energy per operation tick (Joules).
+	formulaicAssemblicator = "100"
+	#Energy per operation tick (Joules).
+	modificationStation = "100"
+	#Energy per operation tick (Joules). (IEplus: Standard 200, x2)
+	isotopicCentrifuge = "400"
+	#Energy per operation tick (Joules).
+	nutritionalLiquifier = "200"
+	#Energy per operation tick (Joules).
+	antiprotonicNucleosynthesizer = "100000"
+	#Energy per operation tick (Joules).
+	pigmentExtractor = "200"
+	#Energy per operation tick (Joules).
+	pigmentMixer = "200"
+	#Energy per operation tick (Joules).
+	paintingMachine = "100"
+	#Energy per chunk per tick (Joules).
+	dimensionalStabilizer = "5000"
+
+	#Teleporter
+	[usage.teleporter]
+		#Base Joules cost for a teleportation.
+		teleporterBase = "1000"
+		#Joules per unit of distance travelled during teleportation - sqrt(xDiff^2 + yDiff^2 + zDiff^2).
+		teleporterDistance = "10"
+		#Flat additional cost for interdimensional teleportation. Distance is still taken into account minimizing energy cost based on dimension scales.
+		teleporterDimensionPenalty = "10000"
+

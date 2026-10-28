@@ -1398,3 +1398,9 @@ Status: 🟡
 - Mana-Diamant-Rahmen (O80, Wunsch des Users): Der Leuchtrahmen ist umgebaut (Name in `kubejs/assets/minecraft/lang`, Modelle `models/block/glow_item_frame*.json` mit Rand `kubejs:block/mana_rahmen` und Leder-Rückseite, Symbol; Texturen aus `tools/manarahmen_textur.py`, Holz nach Helligkeit auf Mana-Diamant-Farben). Rezept 8 Mana-Diamanten + Leder (`story_rezepte.js`), altes Rezept entfernt. `relikt_sperre.js` Fassung 2 lässt das Relikt nur in diesen Rahmen. Test 94.
 - Nachtrag: Test 87, Wegwerfen ✅ ohne Doppel. Der Fluch läuft beim Wegwerfen weiter; so gewollt (User), nur der Mana-Diamant-Rahmen unterbricht ihn.
 - Nachtrag: Tests 87 und 94 ✅. Wegwerfen unterbrach den Fluch manchmal (Rücksprung ein Tick später, die Uhr begann neu); `relikt_fluch.js` Fassung 4: Die Zeit beginnt erst neu, wenn das Relikt zwei Sekundenprüfungen hintereinander fehlt. In die Testinstanz kopiert.
+
+## 2026-10-28 — F30: Mühlstein-Erze auf 2
+
+Status: 🟡 (ungetestet, Test 96)
+
+- Neun Datapack-Kopien unter `kubejs/data/kaleidoscope_cookery/recipes/millstone/` (gleiche IDs wie im JAR): Iron, Gold, Copper, Coal (je auch Deepslate) und Nether Quartz geben 2 statt 3 bzw. 5. Diamond und Emerald gaben schon 2; Redstone, Lapis und Nether Gold bleiben (kaum über normalem Abbau). Questtext KU4-06 nennt den Weg jetzt.

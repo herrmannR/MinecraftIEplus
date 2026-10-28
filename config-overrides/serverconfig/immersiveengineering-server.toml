@@ -226,7 +226,7 @@
 	[machines.metal_press]
 		#A modifier to apply to the energy costs of every metal press recipe
 		#Range: 0.001 ~ 1000.0
-		energyModifier = 1.0
+		energyModifier = 1.5
 		#A modifier to apply to the time of every metal press recipe
 		#Range: 0.001 ~ 1000.0
 		timeModifier = 1.0
@@ -234,7 +234,7 @@
 	[machines.crusher]
 		#A modifier to apply to the energy costs of every crusher recipe
 		#Range: 0.001 ~ 1000.0
-		energyModifier = 1.0
+		energyModifier = 1.5
 		#A modifier to apply to the time of every crusher recipe
 		#Range: 0.001 ~ 1000.0
 		timeModifier = 1.0
@@ -242,7 +242,7 @@
 	[machines.squeezer]
 		#A modifier to apply to the energy costs of every squeezer recipe
 		#Range: 0.001 ~ 1000.0
-		energyModifier = 1.0
+		energyModifier = 1.5
 		#A modifier to apply to the time of every squeezer recipe
 		#Range: 0.001 ~ 1000.0
 		timeModifier = 1.0
@@ -250,7 +250,7 @@
 	[machines.fermenter]
 		#A modifier to apply to the energy costs of every fermenter recipe
 		#Range: 0.001 ~ 1000.0
-		energyModifier = 1.0
+		energyModifier = 1.5
 		#A modifier to apply to the time of every fermenter recipe
 		#Range: 0.001 ~ 1000.0
 		timeModifier = 1.0
@@ -258,7 +258,7 @@
 	[machines.refinery]
 		#A modifier to apply to the energy costs of every refinery recipe
 		#Range: 0.001 ~ 1000.0
-		energyModifier = 1.0
+		energyModifier = 2.0
 
 	[machines.auto_workbench]
 		#A modifier to apply to the energy costs of every auto workbench recipe
@@ -279,7 +279,7 @@
 	[machines.mixer]
 		#A modifier to apply to the energy costs of every mixer recipe
 		#Range: 0.001 ~ 1000.0
-		energyModifier = 1.0
+		energyModifier = 1.5
 		#A modifier to apply to the time of every mixer recipe
 		#Range: 0.001 ~ 1000.0
 		timeModifier = 1.0
@@ -295,7 +295,7 @@
 	[machines.arc_furnace]
 		#A modifier to apply to the energy costs of every arc furnace recipe
 		#Range: 0.001 ~ 1000.0
-		energyModifier = 1.0
+		energyModifier = 2.0
 		#A modifier to apply to the time of every arc furnace recipe
 		#Range: 0.001 ~ 1000.0
 		timeModifier = 1.0
@@ -315,7 +315,7 @@
 	[machines.excavator]
 		#The Flux per tick the Excavator will consume to dig
 		#Range: > 1
-		consumption = 4096
+		consumption = 6144
 		#The speed of the Excavator. Basically translates to how many degrees per tick it will turn.
 		#Range: 0.001 ~ 1000.0
 		speed = 1.0

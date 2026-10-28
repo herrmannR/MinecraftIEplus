@@ -162,7 +162,7 @@ Items legst du per Rechtsklick ein oder lässt sie von oben hineinfallen. Nach e
 - Samen → Oil.
 - Rice Panicle → 3 Rice Seed.
 - Chili, Onion, Canola → Pulver für den Grill (KU7).
-🔵 Der Mühlstein vervielfacht auch Vanilla-Erzblöcke (Iron Ore zu 3 Raw Iron, Copper Ore zu 5); ob das im Pack bleibt, ist nicht entschieden (F30 in `../20_ENTSCHEIDUNGEN.md`). Bis dahin nennt der Text es nicht als Weg.
+- Erzblöcke (mit Silk Touch abgebaut) → 2 Stück, wie im IE-Crusher: Iron, Gold, Copper (Rohmetall), Coal, Nether Quartz, Diamond, Emerald.
 
 ### KU4-07 Teig und Nudeln · Nebenquest
 **Aufgabe:** `kaleidoscope_cookery:raw_dough`, `kaleidoscope_cookery:raw_noodles`
@@ -331,7 +331,7 @@ Dragon Egg Shell (3 Obsidian + Dragon Dust) als Gefäß. Im Stockpot: 3 Ender Mi
 | Wildpflanzen und Truhen geben die Gewinner (Loot-Overrides) | KU1-03 | 🟢 Test 70 |
 | Altbestand 1:1 in der Werkbank, alter FD-Herd gibt Kaleidoscope-Herd | Hinweise, KU3-01 | 🟢 Test 71 |
 | FD-Config: Dorfhandel der Bauern und des Händlers mit FD-Items aus, FD-Pflanzen auf Dorffeldern aus | KU5-02 | 🟢 `config-overrides/config/farmersdelight-common.toml` |
-| Mühlstein vervielfacht Erze (Befund KS1) | KU4-06 | 🔵 nicht entschieden (F30) |
+| Mühlstein vervielfacht Erze (Befund KS1) | KU4-06 | 🟢 auf 2 gesenkt (F30, 2026-10-28) |
 
 ## 🔵 Offen vor dem Einbau
 

@@ -45,10 +45,6 @@ AT-RT, AT-ST und Delta-7B (`swgc:atrt`, `swgc:atst`, `swgc:delta7b`) haben im Mo
 Galaxy in a Cube setzt sie nur über einen eigenen Spawner im Code, der nur in der Overworld läuft (Test 54); in der Overworld sind sie jetzt per `galaxy_overworld.js` abgefangen. Auf Tatooine kommen sie also nicht von selbst. Weg: Forge-Biome-Modifier `add_spawns` für `swgc:tusken_raider` in `swplanets:tatooine_desert` und `swplanets:tatooine_rocky_desert` (oder Tag `swplanets:tatooine_like`); vorher prüfen, ob das Wesen eine Spawn-Regel hat und ob Gruppe und Häuptling dann fehlen. Wie häufig, und neben den Pillar-Tusken von Star Wars Planets?
 → `17_STAR_WARS_1.20.1.md`; `modpfade/swgc/WISSEN.md`
 
-**F30 · Kaleidoscope-Mühlstein vervielfacht Erze** (Teil 1; Befund KS1, 2026-10-21)
-Mit einem angespannten Esel macht der Millstone aus Iron und Gold Ore 3 Raw, aus Copper Ore 5 Raw Copper, aus Diamond Ore 2 – ohne Strom, gleich nach Eisen. Lassen, abschwächen (z. B. 2× wie der IE-Crusher) oder die Erzrezepte entfernen und in JEI ausblenden?
-→ `modpfade/CROSSMOD_AUFFAELLIGKEITEN.md` KS1, Ü2; `questtexte/kueche.md` KU4-06
-
 **F20 · Kostenrahmen je Meilenstein** (Schritt 5, Balance; User macht das später bei Bedarf, 2026-10-21)
 → `01_PROGRESSION.md`
 
@@ -128,6 +124,7 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 
 | Nr. | Antwort | Datum | Eingetragen in |
 |---|---|---|---|
+| F30 | Mühlstein-Erze auf 2 gesenkt wie beim IE-Crusher: Iron, Gold, Copper, Coal (je auch Deepslate) und Nether Quartz geben 2; Diamond und Emerald gaben schon 2. Redstone, Lapis (7) und Nether Gold Ore (5 Nuggets) bleiben, weil das kaum über normalem Abbau liegt (IE-Crusher: 6 bzw. 9) | 2026-10-28 | `kubejs/data/kaleidoscope_cookery/recipes/millstone/`, `questtexte/kueche.md` |
 | F31 | Kapitel der Nebenstränge wie vorgeschlagen; Wesley's WD3/WD4 früher verfügbar: mit K8 statt K10 (zusammen mit WD1/WD2); die 12 späten Aircraft-Quests bleiben bei K12 | 2026-10-28 | `questtexte/rld.md`, `aircraft.md`, `kueche.md`, `blue_skies.md` |
 | F32 | Alex's Mobs früher und verteilt statt 37 Quests auf einmal mit K4: AM1 K1, AM2 und AM7 K2, AM3 und AM4 K3, AM5 und AM6 (Transmutation Table) K4. Ersetzt „ganze Reihe ab dem Mond“ aus F16 | 2026-10-28 | `questtexte/alexsmobs.md` |
 | F33 | Belohnungen als Standard im Generator (`standardRewards`): K1–K3 Hauptquest 50 XP + 2 Copper Credits, Nebenquest 20 XP + eine Kleinigkeit; ab K4 Hauptquest 1 Iron Credit, Nebenquest 2 Copper Credits, letzte Hauptquest eines Story-Kapitels (Buch 1) 2 Iron Credits; Helm (ST4-05) 1 Gold Credit. Nebenquests ohne Meilenstein zählen zum Kapitel ihrer Vorgänger-Quest. Ändert F26 b): auch vor dem Mond gibt es kleine Credits für Hauptquests | 2026-10-28 | `tools/QuestbuchGen.java`, `tools/questbuch/buch1.cfg` |
