@@ -15,7 +15,7 @@ Scoreboard `story`, Eintrag `#zwerg` (B2): 0 = noch nie gesprochen, 1 = hat die 
 ## Stufe 0 · Fremde in der Schlucht (K3)
 
 #### `z0_gruss` · Prio 100 · `#zwerg = 0`
-> Halt! Wer so laut die Schlucht herunterpoltert, ist entweder ein Ochse oder ein Oberirdischer. Ihr seht nicht aus wie Ochsen. Knapp.
+> Halt! Wer so laut die Schlucht herunterpoltert, ist entweder ein Ochse oder ein Oberirdischer. Und Ochsen seid ihr nicht. Also, was wollt ihr hier unten?
 - **[Wir suchen ein Haus]** → `z0_haus`
 - **[Wer bist du?]** → `z0_wer`
 
