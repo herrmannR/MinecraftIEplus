@@ -58,16 +58,16 @@ Schreibweise: **[Knopf]** → Ziel. *Kursiv* sind Geräusche oder Gesten.
 #### `d1_wuerdig` · Prio 100 · `#dd3r8 = 1`
 > Habt ihr den Beweis?
 - **[Was brauchst du noch mal?]** → `d1_liste`
-- **[Hier ist alles]** · Bedingung: Spieler-Tag `ieplus_kobalthammer` (setzt ein Skript, solange ein Vorschlaghammer ganz aus Kobalt im Inventar ist; O67) und im Inventar `immersiveengineering:capacitor_lv`, `botania:manasteel_block` → Befehle:
+- **[Hier ist alles]** · Bedingung: Spieler-Tag `ieplus_kobalthammer` (setzt ein Skript, solange ein Vorschlaghammer ganz aus Kobalt im Inventar ist; O67) und im Inventar `immersiveengineering:capacitor_mv`, `botania:manasteel_block` → Befehle:
   `clear @initiator tconstruct:sledge_hammer 1`
-  `clear @initiator immersiveengineering:capacitor_lv 1`
+  `clear @initiator immersiveengineering:capacitor_mv 1`
   `clear @initiator botania:manasteel_block 1`
   `scoreboard players set #dd3r8 story 2`
   → `d1_bestanden`
 - **[Noch nicht]** → schließen
 
 #### `d1_liste` · Prio 0
-> Drei Dinge. Handwerkliches Geschick: einen reinen Kobalthammer. Technisches Verständnis: einen LV-Kondensator. Und zu guter Letzt: Bindet die Macht, die uns alle umgibt, und bringt mir einen Block Manastahl.
+> Drei Dinge. Handwerkliches Geschick: einen reinen Kobalthammer. Technisches Verständnis: einen MV-Kondensator. Und zu guter Letzt: Bindet die Macht, die uns alle umgibt, und bringt mir einen Block Manastahl.
 - **[Verstanden]** → schließen
 
 #### `d1_bestanden` · Prio 0
@@ -236,11 +236,11 @@ Sobald die Spieler das Relikt haben, verschwindet DD3R8 (ST9-05). Danach spricht
 - **[Und der Schutz?]** → `d8_schutz`
 
 #### `d8_metall` · Prio 0
-> Terrasteel. Das grüne Metall aus euren Blumenbecken. Es lebt, ich habe es gemessen.
+> Ein Block Terrasteel. Das grüne Metall aus euren Blumenbecken. Es lebt, ich habe es gemessen.
 - **[Zurück]** → `d8_warten`
 
 #### `d8_stein` · Prio 0
-> Vier Imbued Slate aus eurem Blutaltar. Ich bin nicht begeistert, dass ihr so etwas habt. Aber hier ist es nützlich.
+> Vier Demonic Slate aus eurem Blutaltar. Ich bin nicht begeistert, dass ihr so etwas habt. Aber hier ist es nützlich.
 - **[Zurück]** → `d8_warten`
 
 #### `d8_zeichen` · Prio 0

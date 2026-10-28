@@ -331,9 +331,10 @@
 		{
 			dependencies: ["142594AD6A1F211D", "181BC1A10B2DAA6F"]
 			description: [
-				"Der Meister bemerkte eine Präsenz auf dem Mond. Bau die Rakete T1 (Kapitel Ad Astra), nimm genug Sauerstoff mit und flieg hin, um herauszufinden, wer dort wohnt."
+				"Der Meister bemerkte eine Präsenz auf dem Mond. Bau die Rakete T1 (Kapitel Ad Astra), füll einen Basic Chemical Tank ganz mit Oxygen (Mekanism, Kapitel Mekanism) als Reserve, nimm ihn mit und flieg hin, um herauszufinden, wer dort wohnt."
 			]
 			hide_until_deps_visible: true
+			icon: "mekanism:basic_chemical_tank"
 			id: "652C2328B02237B2"
 			rewards: [{
 				auto: "enabled"
@@ -345,8 +346,18 @@
 			}]
 			subtitle: "ST4 · Der Mond"
 			tasks: [{
-				dimension: "ad_astra:moon"
 				id: "58F7C7B1D28B1F52"
+				item: "mekanism:basic_chemical_tank"
+				type: "item"
+			}
+			{
+				id: "18E5266B0CE6EADF"
+				title: "Basic Chemical Tank voll mit Oxygen"
+				type: "checkmark"
+			}
+			{
+				dimension: "ad_astra:moon"
+				id: "4235EB109B7B2640"
 				type: "dimension"
 			}]
 			title: "Auf zum Mond"
@@ -670,7 +681,7 @@
 		{
 			dependencies: ["2D60B1D9528089B9", "03DEF56930A0CCB2"]
 			description: [
-				"DD3R8 braucht eine Station mit normalen Erd-Bedingungen. Sammle alles, was dafür nötig ist: Luft, Strom, Gravitations-Normalisierer, einen Landeplatz, Betten und Glas für die Kuppel."
+				"DD3R8 braucht eine Station mit normalen Erd-Bedingungen. Sammle alles, was dafür nötig ist: Luft (zwei Sauerstoffverteiler), Strom (ein voll geladener Advanced Energy Cube), Gravitations-Normalisierer, einen Landeplatz, Betten und Glas für die Kuppel."
 			]
 			hide_until_deps_visible: true
 			icon: "ad_astra:oxygen_distributor"
@@ -685,6 +696,7 @@
 			}]
 			subtitle: "ST7 · Horchposten"
 			tasks: [{
+				count: 2L
 				id: "7F8903BEFDE692F6"
 				item: "ad_astra:oxygen_distributor"
 				type: "item"
@@ -712,23 +724,28 @@
 			}
 			{
 				id: "02575B3B28C734A8"
-				item: "mekanism:basic_energy_cube"
+				item: "mekanism:advanced_energy_cube"
 				type: "item"
 			}
 			{
 				id: "009BCE0A9E878D97"
+				title: "Advanced Energy Cube voll geladen"
+				type: "checkmark"
+			}
+			{
+				id: "1E502FF38ED8BE9B"
 				item: "mekanism:electrolytic_separator"
 				type: "item"
 			}
 			{
 				count: 3L
-				id: "1E502FF38ED8BE9B"
+				id: "15ACE4FDF2B98166"
 				item: "minecraft:white_bed"
 				type: "item"
 			}
 			{
 				count: 64L
-				id: "15ACE4FDF2B98166"
+				id: "675B3E5991F9483F"
 				item: "minecraft:glass"
 				type: "item"
 			}]
@@ -1040,7 +1057,7 @@
 		{
 			dependencies: ["4EE040CD5F41D0AC", "60311D48E3582A10", "4888C38F77E2ACA3"]
 			description: [
-				"Geh mit Terrasteel, 4 Imbued Slate, dem Siegel der Traumwelten und dem Orb of the Deep zum kaputten Altar im Tempel und klick ihn mit Rechtsklick an. Danach steht das Ritual wieder. Wecke es wie jedes Ritual von Blood Magic. (Siehe Buch über Blood Magic)"
+				"Geh mit einem Block Terrasteel, 4 Demonic Slate, dem Siegel der Traumwelten und dem Orb of the Deep zum kaputten Altar im Tempel und klick ihn mit Rechtsklick an. Danach steht das Ritual wieder. Wecke es wie jedes Ritual von Blood Magic. (Siehe Buch über Blood Magic)"
 			]
 			hide_until_deps_visible: true
 			id: "670A6440E611950C"
@@ -1203,7 +1220,7 @@
 		{
 			dependencies: ["1355F32DAA30D984"]
 			description: [
-				"Meisterin Cerina will euch helfen, zum Meister zu gelangen. Dafür braucht sie die vier Arcs der Wächter aus Blue Skies, einen Elite Control Circuit und vier Elementium. Elementium bekommst du durch das Portal: Wirf Manasteel hinein."
+				"Meisterin Cerina will euch helfen, zum Meister zu gelangen. Dafür braucht sie die vier Arcs der Wächter aus Blue Skies, einen Ultimate Control Circuit und einen Block Elementium. Elementium bekommst du durch das Portal: Wirf Manasteel hinein."
 			]
 			hide_until_deps_visible: true
 			id: "780645CE1B131BE4"

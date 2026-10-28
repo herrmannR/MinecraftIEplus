@@ -58,13 +58,13 @@ Scoreboard `story`, Eintrag `#cerina` (B2): 1 = gerade aus dem Portal getreten (
 #### `c2_auftrag` · Prio 100 · `#cerina = 2`
 > Da seid ihr ja wieder, wie schön! Habt ihr alles beisammen, worum ich euch gebeten habe? Ich frage nur, weil das Ding dort drüben nicht gerade geduldiger wird, während es auf uns wartet.
 - **[Was brauchst du noch mal?]** → `c2_liste`
-- **[Hier ist alles]** · Bedingung: im Inventar `blue_skies:ethereal_arc`, `blue_skies:dusk_arc`, `blue_skies:nature_arc`, `blue_skies:poison_arc`, `mekanism:elite_control_circuit`, 4 × `botania:elementium_ingot` → Befehle:
+- **[Hier ist alles]** · Bedingung: im Inventar `blue_skies:ethereal_arc`, `blue_skies:dusk_arc`, `blue_skies:nature_arc`, `blue_skies:poison_arc`, `mekanism:ultimate_control_circuit`, `botania:elementium_block` → Befehle:
   `clear @initiator blue_skies:ethereal_arc 1`
   `clear @initiator blue_skies:dusk_arc 1`
   `clear @initiator blue_skies:nature_arc 1`
   `clear @initiator blue_skies:poison_arc 1`
-  `clear @initiator mekanism:elite_control_circuit 1`
-  `clear @initiator botania:elementium_ingot 4`
+  `clear @initiator mekanism:ultimate_control_circuit 1`
+  `clear @initiator botania:elementium_block 1`
   `give @initiator kubejs:galaktischer_strahlenschutz 1`
   `tag @initiator add story_st10_04`
   `scoreboard players set #cerina story 3`
@@ -76,7 +76,7 @@ Scoreboard `story`, Eintrag `#cerina` (B2): 1 = gerade aus dem Portal getreten (
 - **[Was brauchst du dafür?]** → `c2_liste`
 
 #### `c2_liste` · Prio 0
-> Dafür brauche ich die vier Arcs aus den Traumwelten, von jedem ihrer Wächter einen, außerdem einen Elite Control Circuit aus eurer Technik und vier Barren Elementium. Das Elementium bekommt ihr von den Elfen, durch eben dieses Tor.
+> Dafür brauche ich die vier Arcs aus den Traumwelten, von jedem ihrer Wächter einen, außerdem einen Ultimate Control Circuit aus eurer Technik und einen Block Elementium. Das Elementium bekommt ihr von den Elfen, durch eben dieses Tor.
 - **[Wie mit den Elfen?]** → `c2_handel`
 - **[Wir besorgen alles]** → schließen
 

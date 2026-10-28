@@ -1081,7 +1081,7 @@
 		{
 			dependencies: ["222A17EBEA3175D1"]
 			description: [
-				"&6⚙&r Im Pack steckt in jedem Ostrum Tank zwei Imbued Slate, eine Rakete T3 braucht also vier (Kapitel Ad Astra). Mach gleich ein paar mehr: Auch der Altar im Tempel braucht später vier."
+				"&6⚙&r Im Pack steckt in jedem Ostrum Tank zwei Imbued Slate, eine Rakete T3 braucht also vier (Kapitel Ad Astra). Der Altar im Tempel braucht später vier Demonic Slate (Altar-Stufe 4)."
 				"Buch: Blood Altars → Tiers of Slates."
 			]
 			hide_until_deps_visible: true
@@ -1213,7 +1213,7 @@
 			icon: "minecraft:book"
 			id: "2115BB2A5F479FB7"
 			shape: "gear"
-			subtitle: "BM4 · Demon Realm und Altar Stufe 4"
+			subtitle: "BM4 · Altar Stufe 4 und Demon Realm"
 			tasks: [{
 				id: "6EA56B77E92AA88A"
 				stage: "kapitel_k9"
@@ -1224,64 +1224,35 @@
 			y: -1.75d
 		}
 		{
-			dependencies: ["5269A83140F783E1", "2115BB2A5F479FB7"]
+			dependencies: ["73FC65D12CE4879C", "2115BB2A5F479FB7"]
 			description: [
 				"&c&eVorsicht Demon Realm:&r&c Fallen, Spike Traps und Ethereal Mimics. Nimm Essen und Heilung mit und merk dir den Rückweg. Ohne getragenen Benevolent Goddess' Charm kommst du nicht hinein (Kapitel Botania).&r"
 				""
-				"Das große Dungeon-Ritual öffnet den Demon Realm mit seinen Räumen. Ist das Muster aus Ritual Stones vollständig, startest du es wie jedes Ritual mit dem Weak Activation Crystal am Master Ritual Stone. Es kostet 150 000 LP, so viel fasst ein voller Magician's Blood Orb. Hinein und wieder hinaus geht es über den Inversion Pillar."
-				"Buch: Rituals → List of Rituals → Pathway to the Endless Realm; Dungeon Delving → The Endless Realm."
-				"&6⚙&r Im Pack gelingt dieses Ritual nur im Tempel auf dem Merkur (Buch 1). Dort steht das Muster nach der Reparatur des Altars schon fertig."
-			]
-			hide_until_deps_visible: true
-			id: "6C53489212B0A712"
-			rewards: [{
-				auto: "enabled"
-				count: 1
-				id: "3133DC727BB06A92"
-				item: "swgc:iron_credit"
-				team_reward: true
-				type: "item"
-			}]
-			subtitle: "BM4 · Demon Realm und Altar Stufe 4"
-			tasks: [{
-				dimension: "bloodmagic:dungeon"
-				id: "0EFB4CA351CD5E39"
-				type: "dimension"
-			}]
-			title: "Pathway to the Endless Realm"
-			x: 11.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["73FC65D12CE4879C"]
-			description: [
-				"Das kleine Dungeon-Ritual führt in die Antechamber, einen Mini-Dungeon aus wenigen Räumen ohne Ausgang nach vorn. Es kostet 80 000 LP und geht überall. Gut, um Tau Fruit zu sammeln, ohne zum Merkur zu fliegen."
+				"Das kleine Dungeon-Ritual führt in die Antechamber, einen Mini-Dungeon aus wenigen Räumen ohne Ausgang nach vorn. Es kostet 80 000 LP und geht überall. Hier sammelst du die Tau Fruit für Altar-Stufe 4. Der Weg zum Endless Realm geht erst, wenn der Altar im Tempel repariert ist, und dafür brauchst du schon Demonic Slate von Stufe 4."
 				"Buch: Rituals → List of Rituals → Edge of the Hidden Realm; Dungeon Delving → The Antechamber."
 			]
 			hide_until_deps_visible: true
 			id: "1FFFC3F40626434D"
-			optional: true
-			shape: "square"
 			rewards: [{
 				auto: "enabled"
-				count: 2
+				count: 1
 				id: "368D3770709E7FF8"
-				item: "swgc:copper_credit"
+				item: "swgc:iron_credit"
 				team_reward: true
 				type: "item"
 			}]
-			subtitle: "BM4 · Demon Realm und Altar Stufe 4 · Nebenquest"
+			subtitle: "BM4 · Altar Stufe 4 und Demon Realm"
 			tasks: [{
 				id: "6BC7E0172FC13C2A"
 				title: "Ritual gestartet"
 				type: "checkmark"
 			}]
 			title: "Edge of the Hidden Realm"
-			x: 12.5d
+			x: 11.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["6C53489212B0A712"]
+			dependencies: ["1FFFC3F40626434D"]
 			description: [
 				"Tau Fruit liegt in vielen Truhen des Demon Realm, in der Antechamber wie im Endless Realm."
 				"Buch: Dungeon Delving → Tau Fruit."
@@ -1297,7 +1268,7 @@
 				team_reward: true
 				type: "item"
 			}]
-			subtitle: "BM4 · Demon Realm und Altar Stufe 4"
+			subtitle: "BM4 · Altar Stufe 4 und Demon Realm"
 			tasks: [{
 				id: "019C90363D71DDAB"
 				item: "bloodmagic:weak_tau"
@@ -1324,7 +1295,7 @@
 				team_reward: true
 				type: "item"
 			}]
-			subtitle: "BM4 · Demon Realm und Altar Stufe 4"
+			subtitle: "BM4 · Altar Stufe 4 und Demon Realm"
 			tasks: [{
 				id: "4C2DBBFBB76F8467"
 				item: "bloodmagic:strong_tau"
@@ -1338,6 +1309,67 @@
 			title: "Weak Blood Shard"
 			x: 11.0d
 			y: 3.0d
+		}
+		{
+			dependencies: ["7FFA53B2AC6339B1"]
+			description: [
+				"Stufe 4 braucht noch mehr Runen und Bloodstone als Kappen auf den Säulen."
+				"Buch: Utility Blocks & Items → Bloodstone Bricks, Tiers & Getting Started; Blood Altars → Tiers of Slates."
+				"&6⚙&r Vier Demonic Slate brauchst du für die Reparatur des Altars im Tempel (Buch 1, B4)."
+			]
+			hide_until_deps_visible: true
+			icon: "bloodmagic:largebloodstonebrick"
+			id: "6EE33044D2FCF2A4"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "35DAA68FFA7BF3FA"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
+			subtitle: "BM4 · Altar Stufe 4 und Demon Realm"
+			tasks: [{
+				count: 4L
+				id: "0C55FF68CFE5B8E3"
+				item: "bloodmagic:largebloodstonebrick"
+				type: "item"
+			}
+			{
+				id: "073C332F2AABA041"
+				item: "bloodmagic:demonslate"
+				type: "item"
+			}]
+			title: "Altar Stufe 4"
+			x: 11.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["6EE33044D2FCF2A4"]
+			description: [
+				"Das große Dungeon-Ritual öffnet den Demon Realm mit seinen Räumen. Ist das Muster aus Ritual Stones vollständig, startest du es wie jedes Ritual mit dem Weak Activation Crystal am Master Ritual Stone. Es kostet 150 000 LP, so viel fasst ein voller Magician's Blood Orb. Hinein und wieder hinaus geht es über den Inversion Pillar."
+				"Buch: Rituals → List of Rituals → Pathway to the Endless Realm; Dungeon Delving → The Endless Realm."
+				"&6⚙&r Im Pack gelingt dieses Ritual nur im Tempel auf dem Merkur (Buch 1). Dort steht das Muster nach der Reparatur des Altars schon fertig."
+			]
+			hide_until_deps_visible: true
+			id: "6C53489212B0A712"
+			rewards: [{
+				auto: "enabled"
+				count: 1
+				id: "3133DC727BB06A92"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}]
+			subtitle: "BM4 · Altar Stufe 4 und Demon Realm"
+			tasks: [{
+				dimension: "bloodmagic:dungeon"
+				id: "0EFB4CA351CD5E39"
+				type: "dimension"
+			}]
+			title: "Pathway to the Endless Realm"
+			x: 11.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["6C53489212B0A712"]
@@ -1356,7 +1388,7 @@
 				team_reward: true
 				type: "item"
 			}]
-			subtitle: "BM4 · Demon Realm und Altar Stufe 4"
+			subtitle: "BM4 · Altar Stufe 4 und Demon Realm"
 			tasks: [{
 				id: "01885330EF7D8B06"
 				item: "bloodmagic:mineentrancekey"
@@ -1364,40 +1396,7 @@
 			}]
 			title: "Foreman's Key"
 			x: 11.0d
-			y: 4.5d
-		}
-		{
-			dependencies: ["7FFA53B2AC6339B1"]
-			description: [
-				"Stufe 4 braucht noch mehr Runen und Bloodstone als Kappen auf den Säulen."
-				"Buch: Utility Blocks & Items → Bloodstone Bricks, Tiers & Getting Started; Blood Altars → Tiers of Slates."
-			]
-			hide_until_deps_visible: true
-			icon: "bloodmagic:largebloodstonebrick"
-			id: "6EE33044D2FCF2A4"
-			rewards: [{
-				auto: "enabled"
-				count: 1
-				id: "35DAA68FFA7BF3FA"
-				item: "swgc:iron_credit"
-				team_reward: true
-				type: "item"
-			}]
-			subtitle: "BM4 · Demon Realm und Altar Stufe 4"
-			tasks: [{
-				count: 4L
-				id: "0C55FF68CFE5B8E3"
-				item: "bloodmagic:largebloodstonebrick"
-				type: "item"
-			}
-			{
-				id: "073C332F2AABA041"
-				item: "bloodmagic:demonslate"
-				type: "item"
-			}]
-			title: "Altar Stufe 4"
-			x: 11.0d
-			y: 6.0d
+			y: 7.5d
 		}
 		{
 			dependencies: ["6EE33044D2FCF2A4"]
@@ -1418,7 +1417,7 @@
 			}]
 			shape: "hexagon"
 			size: 1.5d
-			subtitle: "BM4 · Demon Realm und Altar Stufe 4"
+			subtitle: "BM4 · Altar Stufe 4 und Demon Realm"
 			tasks: [{
 				id: "2E83A7A9A6243BA2"
 				item: "bloodmagic:masterbloodorb"
@@ -1426,7 +1425,7 @@
 			}]
 			title: "Master Blood Orb"
 			x: 11.0d
-			y: 7.5d
+			y: 9.0d
 		}
 	]
 	title: "Blood Magic"

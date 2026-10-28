@@ -26,10 +26,10 @@ const IEPLUS_ALTAR_VORLAGE = 'ieplus:altar_heil'   // check:ok (Strukturdatei li
 const IEPLUS_ALTAR_DIM = 'ad_astra:mercury'
 const IEPLUS_ALTAR_SCHLUESSEL = 'ieplus_altar_repariert'
 const IEPLUS_ALTAR_STAGE = 'story_st9_04'
-// Zutaten (F8, O47, O54). Terrasteel = Terrasteel Ingot.
+// Zutaten (F8, O47, O54; B1/B4 2026-10-28: Block statt Barren, Demonic statt Imbued Slate).
 const IEPLUS_ALTAR_ZUTATEN = [
-  { id: 'botania:terrasteel_ingot', anzahl: 1, name: 'Terrasteel' },
-  { id: 'bloodmagic:infusedslate', anzahl: 4, name: 'Imbued Slate' },
+  { id: 'botania:terrasteel_block', anzahl: 1, name: 'Terrasteel-Block' },
+  { id: 'bloodmagic:demonslate', anzahl: 4, name: 'Demonic Slate' },
   { id: 'kubejs:siegel_der_traumwelten', anzahl: 1, name: 'Siegel der Traumwelten' },
   { id: 'wrd:orb_of_the_deep', anzahl: 1, name: 'Orb of the Deep' }
 ]

@@ -54,7 +54,7 @@ In der Hauptwelt sind K1 und K2 schon erreicht (IE-Stahl, Runenaltar). Der Absch
 
 | Code | Schritt | Aufgabe | Auslöser | Folge | Text |
 |---|---|---|---|---|---|
-| – | Beweis abgeben | – | Dialog (B1): Vorschlaghammer ganz aus Kobalt (Skript setzt Tag `ieplus_kobalthammer`), LV-Kondensator, 1 Manastahlblock (O67, ersetzt F4) | `give @a ftbquests:book`, Stages `kapitel_k1`, `kapitel_k2`, `#dd3r8 = 2` | D-DD3R8-1 |
+| – | Beweis abgeben | – | Dialog (B1): Vorschlaghammer ganz aus Kobalt (Skript setzt Tag `ieplus_kobalthammer`), MV-Kondensator (B1), 1 Manastahlblock (O67, ersetzt F4) | `give @a ftbquests:book`, Stages `kapitel_k1`, `kapitel_k2`, `#dd3r8 = 2` | D-DD3R8-1 |
 | ST2-01 | Würdig sein | Checkmark (F26 c) | Spieler klicken im Buch | `/logbuch teil2`, Stage `kapitel_k3` | Q-ST2-01 (erklärt das Questsystem) |
 
 ### K3 Industrie
@@ -120,7 +120,7 @@ Nebenquest in K5/K6: Bodhis Boss-Reihe (BS3, BS4). Belohnung der letzten Boss-Qu
 | ST9-01 | Siegel der Traumwelten | `kubejs:siegel_der_traumwelten` | Dialog Bodhi (Bedingung `#bodhi ≥ 4`): er gibt es (O47) | `#bodhi = 5` | D-BODHI-3 |
 | ST9-02 | Fund aus der Tiefe | `wrd:orb_of_the_deep` (O54; liegt in jeder Ancient Bone Chest) | Item im Inventar | – | Q |
 | ST9-03 | Schutz für drei | 3 × `botania:goddess_charm` (ID wie in `altar_dimension.js`) | Items im Inventar | – | Q |
-| ST9-04 | Der Altar | Terrasteel, 4 Imbued Slate, Siegel, Orb of the Deep (F8, O47, O54) | Rechtsklick am kaputten Altar (O48, neues Skript); das Skript setzt die Stage `story_st9_04` | Das Skript setzt das komplette Ritual Pathway to the Endless Realm hin; aktivieren müssen es die Spieler selbst (Aktivierungskristall, LP; O56) | Q |
+| ST9-04 | Der Altar | 1 Terrasteel-Block, 4 Demonic Slate, Siegel, Orb of the Deep (F8, O47, O54, B1, B4) | Rechtsklick am kaputten Altar (O48, neues Skript); das Skript setzt die Stage `story_st9_04` | Das Skript setzt das komplette Ritual Pathway to the Endless Realm hin; aktivieren müssen es die Spieler selbst (Aktivierungskristall, LP; O56) | Q |
 | ST9-05 | Das Endless Realm | `kubejs:relikt` | Truhe in der Station der Minen (O40) | DD3R8 `despawn` auf dem Mars (O7), Stage `kapitel_k10`, `#dd3r8 = 9` | Q, TB (beim Lesen des Tagebuchs) |
 
 Nicht als Aufgabe „Dimension `bloodmagic:dungeon` betreten“: Das ginge schon über den Mini-Dungeon (F27).
@@ -132,7 +132,7 @@ Nicht als Aufgabe „Dimension `bloodmagic:dungeon` betreten“: Das ginge schon
 | ST10-01 | Die Station ist still | Checkmark | Spieler klicken (der Droide ist weg; keine automatische Prüfung möglich) | – | Q |
 | ST10-02 | Das Elfenportal | `botania:alfheim_portal` | Item im Inventar | – | Q |
 | ST10-03 | Meisterin Cerina | – | Rune des Frühlings ins offene Portal werfen: Skript lässt Cerina erscheinen, `#cerina = 1` (O75); dann Dialog (B1): Relikt | `#cerina = 2` | D-CERINA-0, D-CERINA-1 |
-| ST10-04 | Was sie braucht | – | Dialog (B1): 4 Arcs, Elite Control Circuit, 4 Elementium (F14) | `give @a kubejs:galaktischer_strahlenschutz` (einer), Stage `kapitel_k11`, `#cerina = 3` | D-CERINA-2 |
+| ST10-04 | Was sie braucht | – | Dialog (B1): 4 Arcs, Ultimate Control Circuit, 1 Elementium-Block (F14, B1) | `give @a kubejs:galaktischer_strahlenschutz` (einer), Stage `kapitel_k11`, `#cerina = 3` | D-CERINA-2 |
 
 ### K11 Glacio
 
@@ -150,7 +150,7 @@ Item-Aufgaben in ST7-01 (je eine Aufgabe, Mengen für drei Spieler): 🔵 IDs vo
 - Oxygen Distributor (`ad_astra:oxygen_distributor`) und Oxygen Loader (`ad_astra:oxygen_loader`)
 - 3 Betten
 - Launch Pad (`ad_astra:launch_pad`)
-- Strom vor Ort: 4 Solar Panels (`ad_astra:solar_panel`) und ein Energiespeicher (Mekanism Basic Energy Cube)
+- Strom vor Ort: 4 Solar Panels (`ad_astra:solar_panel`) und ein voll geladener Mekanism Advanced Energy Cube (B1, 21_BALANCING 3b); zwei Oxygen Distributors
 - Ein Mekanism-Grundgerät für die Luft, z. B. Electrolytic Separator
 - 64 Glas oder Isolierglas für die Kuppel
 

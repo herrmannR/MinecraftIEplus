@@ -73,9 +73,9 @@ Erzähl DD3R8, was ihr bei Bodhi erlebt habt. Vielleicht hat er inzwischen den n
 ## ST4 · Der Mond (K4 Der Mond)
 
 ### ST4-01 Auf zum Mond · Hauptweg
-**Aufgabe:** Dimension `ad_astra:moon` betreten
+**Aufgabe:** `mekanism:basic_chemical_tank` voll mit Oxygen, Dimension `ad_astra:moon` betreten
 
-Der Meister bemerkte eine Präsenz auf dem Mond. Bau die Rakete T1 (Kapitel Ad Astra), nimm genug Sauerstoff mit und flieg hin, um herauszufinden, wer dort wohnt.
+Der Meister bemerkte eine Präsenz auf dem Mond. Bau die Rakete T1 (Kapitel Ad Astra), füll einen Basic Chemical Tank ganz mit Oxygen (Mekanism, Kapitel Mekanism) als Reserve, nimm ihn mit und flieg hin, um herauszufinden, wer dort wohnt.
 
 ### ST4-02 Der Einsiedler · Hauptweg
 **Aufgabe:** Gespräch mit dem Einsiedler (Dialog)
@@ -139,9 +139,9 @@ Folge dem Peilsender von DD3R8 zu den Resten einer alten Basis und erkunde sie. 
 ## ST7 · Horchposten (K7 Horchposten)
 
 ### ST7-01 Material für die Station · Hauptweg
-**Aufgabe:** `ad_astra:oxygen_distributor`, `ad_astra:oxygen_loader`, `ad_astra:gravity_normalizer`, `ad_astra:launch_pad`, 4 × `ad_astra:solar_panel`, `mekanism:basic_energy_cube`, `mekanism:electrolytic_separator`, 3 × `minecraft:white_bed`, 64 × `minecraft:glass`
+**Aufgabe:** 2 × `ad_astra:oxygen_distributor`, `ad_astra:oxygen_loader`, `ad_astra:gravity_normalizer`, `ad_astra:launch_pad`, 4 × `ad_astra:solar_panel`, `mekanism:advanced_energy_cube` voll geladen, `mekanism:electrolytic_separator`, 3 × `minecraft:white_bed`, 64 × `minecraft:glass`
 
-DD3R8 braucht eine Station mit normalen Erd-Bedingungen. Sammle alles, was dafür nötig ist: Luft, Strom, Gravitations-Normalisierer, einen Landeplatz, Betten und Glas für die Kuppel.
+DD3R8 braucht eine Station mit normalen Erd-Bedingungen. Sammle alles, was dafür nötig ist: Luft (zwei Sauerstoffverteiler), Strom (ein voll geladener Advanced Energy Cube), Gravitations-Normalisierer, einen Landeplatz, Betten und Glas für die Kuppel.
 
 ### ST7-02 Die Station steht · Hauptweg
 **Aufgabe:** Stage (heimlich von Host gesetzt, wird hier nicht beschrieben)
@@ -198,7 +198,7 @@ Jeder von euch muss beim Durchgang einen Benevolent Goddess' Charm tragen, sonst
 ### ST9-04 Der Altar · Hauptweg
 **Aufgabe:** Altar im Tempel repariert
 
-Geh mit Terrasteel, 4 Imbued Slate, dem Siegel der Traumwelten und dem Orb of the Deep zum kaputten Altar im Tempel und klick ihn mit Rechtsklick an. Danach steht das Ritual wieder. Wecke es wie jedes Ritual von Blood Magic. (Siehe Buch über Blood Magic)
+Geh mit einem Block Terrasteel, 4 Demonic Slate, dem Siegel der Traumwelten und dem Orb of the Deep zum kaputten Altar im Tempel und klick ihn mit Rechtsklick an. Danach steht das Ritual wieder. Wecke es wie jedes Ritual von Blood Magic. (Siehe Buch über Blood Magic)
 
 ### ST9-05 Das Endless Realm · Hauptweg
 **Aufgabe:** `kubejs:relikt`
@@ -227,9 +227,9 @@ Der Meister schreibt von der Hellen Elfe hinter einem Tor aus lebendem Holz. Bau
 Wirf eine Rune des Frühlings (`botania:rune_spring`) in das offene Portal to Alfheim. Dann ruft das Portal die Helle Elfe herbei. Sprich mit ihr und gib ihr das Relikt.
 
 ### ST10-04 Was sie braucht · Hauptweg
-**Aufgabe:** Abgabe im Dialog: `blue_skies:ethereal_arc`, `blue_skies:dusk_arc`, `blue_skies:nature_arc`, `blue_skies:poison_arc`, `mekanism:elite_control_circuit`, 4 × `botania:elementium_ingot`
+**Aufgabe:** Abgabe im Dialog: `blue_skies:ethereal_arc`, `blue_skies:dusk_arc`, `blue_skies:nature_arc`, `blue_skies:poison_arc`, `mekanism:ultimate_control_circuit`, `botania:elementium_block`
 
-Meisterin Cerina will euch helfen, zum Meister zu gelangen. Dafür braucht sie die vier Arcs der Wächter aus Blue Skies, einen Elite Control Circuit und vier Elementium. Elementium bekommst du durch das Portal: Wirf Manasteel hinein.
+Meisterin Cerina will euch helfen, zum Meister zu gelangen. Dafür braucht sie die vier Arcs der Wächter aus Blue Skies, einen Ultimate Control Circuit und einen Block Elementium. Elementium bekommst du durch das Portal: Wirf Manasteel hinein.
 
 **Steuerdatei:** `ST10-03 tasks = stage(story_st10_03)`, `ST10-04 tasks = stage(story_st10_04)`.
 

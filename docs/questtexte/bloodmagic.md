@@ -209,7 +209,7 @@ ARC-Erzketten gibt es nur für Eisen, Gold, Kupfer, Netherite Scrap und Demonite
 ### BM3-06 Imbued Slate für die Rakete T3 · Hauptweg
 **Aufgabe:** 4 × `bloodmagic:infusedslate`
 
-⚙️ Im Pack steckt in jedem Ostrum Tank zwei Imbued Slate, eine Rakete T3 braucht also vier (Kapitel Ad Astra). Mach gleich ein paar mehr: Auch der Altar im Tempel braucht später vier.
+⚙️ Im Pack steckt in jedem Ostrum Tank zwei Imbued Slate, eine Rakete T3 braucht also vier (Kapitel Ad Astra). Der Altar im Tempel braucht später vier Demonic Slate (Altar-Stufe 4).
 Buch: Blood Altars → Tiers of Slates.
 
 ### BM3-07 Living Armour · Nebenquest
@@ -232,21 +232,14 @@ Buch: Demon Will → Item Routing → Routing Nodes, Node Router.
 
 ---
 
-## BM4 · Demon Realm und Altar Stufe 4 (K9 Der Tempel)
+## BM4 · Altar Stufe 4 und Demon Realm (K9 Der Tempel)
 
 > **Vorsicht Demon Realm:** Fallen, Spike Traps und Ethereal Mimics. Nimm Essen und Heilung mit und merk dir den Rückweg. Ohne getragenen Benevolent Goddess' Charm kommst du nicht hinein (Kapitel Botania).
 
-### BM4-01 Pathway to the Endless Realm · Hauptweg
-**Aufgabe:** Dimension `bloodmagic:dungeon` betreten
-
-Das große Dungeon-Ritual öffnet den Demon Realm mit seinen Räumen. Ist das Muster aus Ritual Stones vollständig, startest du es wie jedes Ritual mit dem Weak Activation Crystal am Master Ritual Stone. Es kostet 150 000 LP, so viel fasst ein voller Magician's Blood Orb. Hinein und wieder hinaus geht es über den Inversion Pillar.
-Buch: Rituals → List of Rituals → Pathway to the Endless Realm; Dungeon Delving → The Endless Realm.
-⚙️ Im Pack gelingt dieses Ritual nur im Tempel auf dem Merkur (Buch 1). Dort steht das Muster nach der Reparatur des Altars schon fertig.
-
-### BM4-02 Edge of the Hidden Realm · Nebenquest
+### BM4-02 Edge of the Hidden Realm · Hauptweg
 **Aufgabe:** Häkchen „Ritual gestartet“
 
-Das kleine Dungeon-Ritual führt in die Antechamber, einen Mini-Dungeon aus wenigen Räumen ohne Ausgang nach vorn. Es kostet 80 000 LP und geht überall. Gut, um Tau Fruit zu sammeln, ohne zum Merkur zu fliegen.
+Das kleine Dungeon-Ritual führt in die Antechamber, einen Mini-Dungeon aus wenigen Räumen ohne Ausgang nach vorn. Es kostet 80 000 LP und geht überall. Hier sammelst du die Tau Fruit für Altar-Stufe 4. Der Weg zum Endless Realm geht erst, wenn der Altar im Tempel repariert ist, und dafür brauchst du schon Demonic Slate von Stufe 4.
 Buch: Rituals → List of Rituals → Edge of the Hidden Realm; Dungeon Delving → The Antechamber.
 
 ### BM4-03 Tau Fruit · Hauptweg
@@ -261,17 +254,25 @@ Buch: Dungeon Delving → Tau Fruit.
 Aus Tau wird Saturated Tau (manchmal auch direkt in Truhen), daraus in der ARC der Weak Blood Shard. Er ist der Schlüssel zu Stufe 4.
 Buch: Dungeon Delving → Tau Fruit.
 
-### BM4-05 Foreman's Key · Hauptweg
-**Aufgabe:** `bloodmagic:mineentrancekey`
-
-Die Mines, die tiefsten Gänge des Endless Realm, öffnet nur der Foreman's Key. Meldet der Chat eine Spatial Distortion, liegt in diesem Raum entweder der Eingang zu den Mines oder eine kleine Kammer mit dem Key; die Kammer öffnest du mit einem Iron Key aus den Truhen. Der Eingang kommt immer zuerst, du musst also eventuell zurück.
-Buch: Dungeon Delving → Dungeon Keys, The Endless Realm.
-
 ### BM4-06 Altar Stufe 4 · Hauptweg
 **Aufgabe:** 4 × `bloodmagic:largebloodstonebrick`, `bloodmagic:demonslate`
 
 Stufe 4 braucht noch mehr Runen und Bloodstone als Kappen auf den Säulen.
 Buch: Utility Blocks & Items → Bloodstone Bricks, Tiers & Getting Started; Blood Altars → Tiers of Slates.
+⚙️ Vier Demonic Slate brauchst du für die Reparatur des Altars im Tempel (Buch 1, B4).
+
+### BM4-01 Pathway to the Endless Realm · Hauptweg
+**Aufgabe:** Dimension `bloodmagic:dungeon` betreten
+
+Das große Dungeon-Ritual öffnet den Demon Realm mit seinen Räumen. Ist das Muster aus Ritual Stones vollständig, startest du es wie jedes Ritual mit dem Weak Activation Crystal am Master Ritual Stone. Es kostet 150 000 LP, so viel fasst ein voller Magician's Blood Orb. Hinein und wieder hinaus geht es über den Inversion Pillar.
+Buch: Rituals → List of Rituals → Pathway to the Endless Realm; Dungeon Delving → The Endless Realm.
+⚙️ Im Pack gelingt dieses Ritual nur im Tempel auf dem Merkur (Buch 1). Dort steht das Muster nach der Reparatur des Altars schon fertig.
+
+### BM4-05 Foreman's Key · Hauptweg
+**Aufgabe:** `bloodmagic:mineentrancekey`
+
+Die Mines, die tiefsten Gänge des Endless Realm, öffnet nur der Foreman's Key. Meldet der Chat eine Spatial Distortion, liegt in diesem Raum entweder der Eingang zu den Mines oder eine kleine Kammer mit dem Key; die Kammer öffnest du mit einem Iron Key aus den Truhen. Der Eingang kommt immer zuerst, du musst also eventuell zurück.
+Buch: Dungeon Delving → Dungeon Keys, The Endless Realm.
 
 ### BM4-07 Master Blood Orb · Hauptweg
 **Aufgabe:** `bloodmagic:masterbloodorb`
@@ -377,7 +378,7 @@ Buch: Rituals → List of Rituals → Reverence of the Condor.
 | Life Essence, Blank Slates und Blank Runes nicht über die Smeltery (Blood-Smeltery) | BM1-04 | 🟢 umgesetzt (`crossmod/blood_smeltery.js`), in JEI bestätigt 2026-10-17 |
 | Edge of the Hidden Realm geht überall, ohne Story (F27); Amulett nötig (O39) | BM4-02 | 🟢 Skript `altar_dimension.js`, Tests 47–48 bestanden |
 | Pathway to the Endless Realm nur im Tempel auf dem Merkur (F27); Amulett nötig | BM4-01 | 🟢 Skript `altar_dimension.js`, Test 47 bestanden |
-| Altar im Tempel reparieren (Terrasteel, 4 Imbued Slate, Siegel der Traumwelten, Orb of the Deep; F8, O47, O54) | nur Buch 1 (ST9-04), BM3-06 nennt die Slates | 🟢 entschieden |
+| Altar im Tempel reparieren (1 Terrasteel-Block, 4 Demonic Slate (B4), Siegel der Traumwelten, Orb of the Deep; F8, O47, O54) | nur Buch 1 (ST9-04), BM3-06 nennt die Slates | 🟢 entschieden |
 | Imbued Slate im Ostrum Tank (Rakete T3, 2 je Tank) | BM3-06 | 🟢 F2, `raumfahrt/raketen_t1_t4.js` |
 | Meteore unverändert, auch mit Mekanism- und AE2-Erzen | BM5-06 | 🟢 Entscheidung 2026-10-17, keine Änderung |
 | ARC verarbeitet keine Pack-Erze (nur Eisen, Gold, Kupfer, Netherite Scrap, Demonite) | BM3-05 | 🟢 Fund, keine Änderung |

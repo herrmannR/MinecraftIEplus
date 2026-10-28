@@ -67,7 +67,7 @@ Leg sie an den Altar und berühre ihn. Dann erweckst du ihn zu neuem Leben.
 | 2 | „ruft im Blut“; Lebendiges bei sich tragen | Goddess Charm (F18), gleiche Worte wie Logbuch Teil 5 |
 | 3 | Gänge ins Endlose, große Halle, wo die Gänge sich treffen | Minen des Endless Realm, Station mit der Truhe (O40) |
 | 3 | Tor bricht an einem, der zu stark ist | O57; DD3R8 schließt daraus, dass der Meister hinübergezogen wurde |
-| 4 | Metall, das lebt / Stein, der Blut trank / Zeichen der träumenden Welten / Etwas aus der Tiefe | Terrasteel, 4 Imbued Slate, Siegel der Traumwelten, Orb of the Deep (F8, O47, O54) |
+| 4 | Metall, das lebt / Stein, der Blut trank / Zeichen der träumenden Welten / Etwas aus der Tiefe | 1 Terrasteel-Block, 4 Demonic Slate, Siegel der Traumwelten, Orb of the Deep (F8, O47, O54) |
 | 4 | an den Altar legen und berühren; wieder recht umstellen und wecken | Rechtsklick (O48), danach steht das Ritual, aktivieren die Spieler (O56) |
 
 ## Offen beim Überarbeiten

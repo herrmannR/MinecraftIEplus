@@ -132,7 +132,7 @@
   6. Erkenntnis in der Dimension: Der Meister war dort, ist aber weg.
 - 🟢 **Welches Ritual** (User, 2026-10-20, Variante B): Der Altar im Tempel ist **Pathway to the Endless Realm**. Nur das Endless Realm gilt in der Story als die Dimension, in der der Meister gefangen war. **Edge of the Hidden Realm** bleibt ohne Story und ist überall nutzbar. Es ist ein normaler Teil der Blood-Magic-Progression (Tau Fruit → Weak Blood Shard → Altar-Stufe 4). Grund: Der Mini-Dungeon hat nur einen Startraum mit 4 Türen, und jeder Raum dahinter ist eine Sackgasse (JAR geprüft, siehe `modpfade/bloodmagic/WISSEN.md`). Für die Story ist er zu klein. Folge: Die Spieler kennen die Dimension beim Betreten des Endless Realm schon vom Mini-Dungeon.
 - 🟢 **Wie der Altar kaputtging** (User, 2026-10-21, O57): Er war intakt, als der Meister kam, und zerbrach beim Sog, der ihn in die Dimension zog. Darum müssen die Spieler ihn heilen.
-- 🟢 **Reparatur per Rechtsklick** (User, 2026-10-21, O48): Mit den Zutaten (Terrasteel, 4 Imbued Slate, Siegel der Traumwelten, Item aus dem Wesley's-Dungeon; F8, O47) klicken die Spieler den kaputten Altar an; ein KubeJS-Skript ersetzt ihn durch den heilen. Neues Skript, noch ungeschrieben.
+- 🟢 **Reparatur per Rechtsklick** (User, 2026-10-21, O48): Mit den Zutaten (1 Terrasteel-Block, 4 Demonic Slate (B1, B4), Siegel der Traumwelten, Item aus dem Wesley's-Dungeon; F8, O47) klicken die Spieler den kaputten Altar an; ein KubeJS-Skript ersetzt ihn durch den heilen. Neues Skript, noch ungeschrieben.
 - 🟢 **Schriftrollen als eigene Items** (User, 2026-10-21, O49): vier KubeJS-Items, vom Host in den Tempel gelegt. Rechtsklick öffnet ihren Text im Patchouli-Buch des Logbuchs (wie die Baupläne); die Rolle bleibt erhalten und wird beim Droiden abgegeben (Bedingung „Item im Inventar“).
 - 🔵 Offen: Fundorte und Reihenfolge der Schriftrollen im Tempel; ob der Altar nach der Reparatur sofort öffnet oder weitere Bedingungen hat. Texte entwirft Claude, der User überarbeitet (O50).
 
@@ -378,7 +378,7 @@ Wunsch des Users: ein einigermaßen bekannter Sith-Lord aus sehr früher Zeit, d
 
 - **Kaputte Multiblöcke:** Die Druckwelle des Einschlags erklärt, warum alle IE-Multiblöcke neu geformt werden müssen; „Basis wieder aufbauen“ als Teil der ersten Quest.
 - **Würdigkeits-Beweis je Pfad:** je ein Item aus Tinkers, IE und Botania.
-- **Sauerstoff als Auftrag:** Der Mondflug verlangt flüssigen Sauerstoff aus Mekanism; der Droide nennt das als erste echte Aufgabe.
+- **Sauerstoff als Auftrag:** Der Mondflug verlangt einen vollen Basic Chemical Tank Oxygen aus Mekanism (B1); der Droide nennt das als erste echte Aufgabe.
 - **Tagebuch als Wegweiser:** Jeder Ausschnitt deutet auf den nächsten Ort oder Rohstoff (Zinn in Everbright, Osmium in Everdawn und auf dem Mond, Uran auf Merkur und Venus).
 - **Kapsel-Trümmer als Zutat:** Ein Fundstück aus der Kapsel wird später Raketenteil.
 - **Relikt als Dungeon-Item:** Das Pflicht-Item für T4 aus dem Dungeon könnte das Relikt des Meisters oder ein Bruchstück davon sein. Dann führt die Story von selbst nach Glacio.

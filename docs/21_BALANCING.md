@@ -1,7 +1,7 @@
 # 21 — BALANCING
 
 > Vorschläge, um Story-Abgaben, Ad-Astra-Rezepte und Energie teurer zu machen.
-> Stand: 2026-10-25 (übernommen am 2026-10-28). Alles hier ist **🔵 Vorschlag**, außer was mit 🟢 markiert ist. Was der User übernimmt, wandert als Entscheidung nach `20_ENTSCHEIDUNGEN.md` und in die Fachdokumente; erst dann folgen Skripte. Offene Fragen: **B1–B6** in `20_ENTSCHEIDUNGEN.md`.
+> Stand: 2026-10-25 (übernommen am 2026-10-28). Alles hier ist **🔵 Vorschlag**, außer was mit 🟢 markiert ist. Was der User übernimmt, wandert als Entscheidung nach `20_ENTSCHEIDUNGEN.md` und in die Fachdokumente; erst dann folgen Skripte. Offene Fragen: **B5, B7** in `20_ENTSCHEIDUNGEN.md`. **Entschieden am 2026-10-28:** B1 (Abschnitt 1 ganz), B2 (Abschnitt 2 ganz, mit Hebel), B3 (Processor in T3), B4 (Demonic Slate), B6 (Solar/Wind auf Planeten erlaubt).
 
 ## Grundsätze
 
@@ -11,17 +11,17 @@
 - Engine Frame, Fan, Flossen und Nose Cone sind für alle Stufen gleich. Die Verteuerung ab T2 gehört deshalb in die **stufeneigenen Teile** (Triebwerk, Tank, Rumpf).
 - Neue Gates dürfen bereits erreichten Fortschritt nicht rückwirkend sperren (`01_PROGRESSION.md`).
 
-## 1. Story-Abgaben (Teil 1)
+## 1. Story-Abgaben (Teil 1) — 🟢 übernommen (B1, 2026-10-28), eingebaut
 
 | Quest | Heute | Vorschlag | Bezug |
 |---|---|---|---|
 | „Würdig sein“ (Droide) | 4 Manasteel-Barren | **1 Manasteel-Block** | F4 |
-| | LV-Kondensator | **MV-Kondensator** (Stahl und Elektrum, also laufender Hochofen) | F4 |
-| | Smeltery Controller | **Smeltery Controller + ein Tinkers-Werkzeug mit Legierungskopf** (z. B. Rosengold oder Bronze) | F4 |
+| | LV-Kondensator | **MV-Kondensator** (laut JAR: Nickel- und Eisenplatte, 2 Stahl, Treated Wood, 1 Eimer Redstone Acid aus dem Mixer; B7) | F4 |
+| | Smeltery Controller | schon erledigt durch O67: Vorschlaghammer ganz aus Kobalt, Manastahlblock | F4, O67 |
 | Mondflug | flüssiger Sauerstoff (Menge offen) | **ein voller Basic Chemical Tank** Sauerstoff | `18_STORY.md` |
 | Mars-Station, Checkliste | Items offen | **2 Oxygen Distributors, 1 Gravity Normalizer, 1 Advanced Energy Cube** | O22 |
 | Altar-Reparatur (Merkur) | Terrasteel | **1 Terrasteel-Block** | F8 |
-| | 4 Imbued Slate | **4 Demonic Slate**, falls Altar-Stufe 4 zu dem Zeitpunkt erreicht ist; sonst **8 Imbued Slate** (B4) | F8 |
+| | 4 Imbued Slate | **4 Demonic Slate** (B4; Altar-Stufe 4 über Edge of the Hidden Realm vor dem Tempel) | F8 |
 | | Dusk Arc, Item aus Wesley's | bleibt (Unikate) | F8, F15 |
 | Elf: Galaktischer Strahlenschutz | 4 Elementium-Barren | **1 Elementium-Block** | F14 |
 | | Elite Control Circuit | **Ultimate Control Circuit** (das Calorite-Triebwerk verlangt schon einen Ultimate; der Elf wäre sonst billiger als die Rakete) | F14 |
@@ -29,7 +29,7 @@
 
 **Folgen:** Elf und T4-Rakete teilen sich Elementium und Ultimate Circuits; die Altar-Reparatur hängt stark an Mana. Teil 1 wird spürbar länger.
 
-## 2. Ad-Astra-Rezepte
+## 2. Ad-Astra-Rezepte — 🟢 übernommen samt Hebel (B2, 2026-10-28), Skripte offen
 
 Grundlage: `kubejs/server_scripts/raumfahrt/raketen_t1_t4.js` (Control Circuit je Stufe im Triebwerk, Pfad-Teil im Tank). IE-Stahl gilt über die Forge-Tags; der Ad-Astra-Stahl ist entfernt (O41). Jeder Stahl kommt also aus Hochofen oder Lichtbogenofen.
 
@@ -53,7 +53,7 @@ Grundlage: `kubejs/server_scripts/raumfahrt/raketen_t1_t4.js` (Control Circuit j
 - Rumpf: + 2 Stahlblöcke + **Redstone Engineering Block** (IE)
 - Ostrum-Triebwerk: **Reinforced Alloy**, **HV-Drahtspule** (IE), **AE2 Logic Processor**
 - Ostrum-Tank: **HDPE Sheets** (Mekanism-Kunststoff aus Ethylen; zieht die Erdöl-Chemie von Immersive Petroleum in die Raumfahrt)
-- Prüfen: Ist AE2 zu T3 weit genug (zweistufiges AE2, F19/F20)? Sonst rutscht der Processor nach T4 (B3).
+- 🟢 Processor bleibt in T3 (B3): Prozessoren gibt es ab AE1 (Stufe 3), T3 ist Stufe 8.
 
 ### T4 · Calorite
 
@@ -76,7 +76,7 @@ Grundlage: `kubejs/server_scripts/raumfahrt/raketen_t1_t4.js` (Control Circuit j
 
 ### Optional: der große Hebel
 
-Desh-, Ostrum- und Calorite-**Platten** nicht mehr aus der Metal Press, sondern im **Lichtbogenofen aus Planetenmetall + Stahl**. Dann frisst jede Stufe Stahl und Strom, ohne dass Stahl im Namen steht. Die Ad-Astra-eigenen Metal-Press-Rezepte (`immersiveengineering:metalpress/plate_desh` usw.) müssten dafür entfernt werden (B2).
+Desh-, Ostrum- und Calorite-**Platten** nicht mehr aus der Metal Press, sondern im **Lichtbogenofen aus Planetenmetall + Stahl**. Dann frisst jede Stufe Stahl und Strom, ohne dass Stahl im Namen steht. Die Ad-Astra-eigenen Metal-Press-Rezepte (`immersiveengineering:metalpress/plate_desh` usw.) müssen dafür entfernt werden, ebenso die Hammer-Rezepte `immersiveengineering:crafting/plate_*_hammering` (beide bringt Ad Astra mit). Der Ad-Astra-Compressor ist schon entfernt. 🟢 übernommen (B2). Planetenmetall läuft nicht durch die Mekanism-Vervielfältigung (O42, `crossmod/mekanism_erze.js`) und hat auch sonst keine Erzverdopplung im Pack.
 
 ### Folgen
 
@@ -102,7 +102,7 @@ Energie kommt nur aus IE, Immersive Petroleum und Mekanism (`15_RAUMFAHRT.md`); 
 
 **c) Stationen auf Planeten brauchen eigenen Strom**
 - Oxygen Distributor und Gravity Normalizer verbrauchen Strom. Die Mars-Station muss **ihr eigenes Netz** haben: Dieselgenerator mit Nachschub von der Erde oder Mekanism-Generatoren vor Ort. Das macht Logistik zum Teil der Story („dauerhaft besetzt“).
-- Prüfen: Laufen Mekanism-Solar- und -Windgeneratoren auf Mond und Mars? Wenn ja, eine bewusste Entscheidung treffen (B6).
+- 🟢 Mekanism-Solar und -Wind auf Planeten sind erlaubt (B6). Noch im Spiel prüfen, ob sie dort laufen.
 
 **d) Verbrauch per Config anheben** — 🟢 **übernommen** (User, 2026-10-25), als Config gebaut (Abschnitt 4, ungetestet)
 - Ein maßvoller Aufschlag auf die großen Verbraucher macht Strom dauerhaft zum Thema. Keine der beiden Mods hat **einen** globalen Schalter; der Aufschlag wird je Maschine gesetzt.

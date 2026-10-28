@@ -124,17 +124,13 @@ Kein Handlungsbedarf jetzt: Formatierung, Kontrollhaken statt Prüfaufgaben (Zä
 
 Vorschläge und Begründungen stehen in `21_BALANCING.md`. Entschieden (2026-10-25): Energie-Abgabe nur bei der Mars-Station (3b), Verbrauch per Config anheben (3d, gebaut, ungetestet: Tests 97–99).
 
-**B1 · Story-Abgaben:** Welche Vorschläge aus Abschnitt 1 übernimmt der User?
-
-**B2 · Ad-Astra-Rezepte:** Welche aus Abschnitt 2, und kommt der optionale Hebel (Planetenmetall-Platten im Lichtbogenofen)?
-
-**B3 · AE2-Processor:** in T3 oder erst T4 (hängt an F19/F20)?
-
-**B4 · Altar-Slate:** 4 Demonic oder 8 Imbued Slate (Reihenfolge Altar-Stufe 4 gegen `meilensteine/` prüfen)?
+Beantwortet am 2026-10-28: B1, B2, B3, B4, B6; siehe „Erledigt“.
 
 **B5 · Energie, Rest:** Multiplikator testen (97–99); offen die Hebel a, c, e, f.
 
-**B6 · Mekanism-Solar/-Wind auf Planeten:** erlauben (Vorteil der Planeten) oder abschwächen?
+**B7 · MV-Kondensator für „Würdig sein“** (aus B1)
+Laut JAR braucht der MV-Kondensator Nickelplatte, Eisenplatte, 2 Stahl, Treated Wood und **1 Eimer Redstone Acid**; die gibt es nur aus dem IE-Mixer (IE3-08, K3). Bleibt es beim MV-Kondensator (dann muss vor „Würdig sein“ schon ein Mixer laufen), oder zurück zum LV-Kondensator? Eingetragen ist vorerst MV.
+→ `story/texte/dialoge_dd3r8.md`, `questtexte/ie.md`
 
 → `21_BALANCING.md`, danach `15_RAUMFAHRT.md`, `18_STORY.md`, `kubejs/server_scripts/raumfahrt/`
 
@@ -142,6 +138,11 @@ Vorschläge und Begründungen stehen in `21_BALANCING.md`. Entschieden (2026-10-
 
 | Nr. | Antwort | Datum | Eingetragen in |
 |---|---|---|---|
+| B1 | Story-Abgaben alle eine Stufe teurer: „Würdig sein“ MV- statt LV-Kondensator (Werkzeug und Manastahlblock gab es schon durch O67; zu MV siehe B7); Mondflug (ST4-01) mit einem vollen Basic Chemical Tank Oxygen; Mars-Station (ST7-01) mit 2 Oxygen Distributors und einem voll geladenen Advanced Energy Cube statt Basic; Altar 1 Terrasteel-Block; Elf 1 Elementium-Block und Ultimate statt Elite Control Circuit | 2026-10-28 | `story/texte/`, `story/ABLAUF.md`, `18_STORY.md`, `altar_reparatur.js`, `buch1.cfg`; Easy-NPC-Dialoge DD3R8 und Cerina stellt der User im Editor um |
+| B2 | Ad-Astra-Rezepte wie in `21_BALANCING.md` Abschnitt 2 (T1–T4, Infrastruktur) **und** der Hebel: Desh-, Ostrum-, Calorite-Platten nur noch im Lichtbogenofen aus Planetenmetall + Stahl; dafür Metal-Press- und Hammer-Rezepte von Ad Astra entfernen (Compressor ist schon weg). Planetenmetall läuft weiter nicht durch die Mekanism-Vervielfältigung (O42). Skripte und Stückzahlen folgen | 2026-10-28 | `21_BALANCING.md`; Skripte offen |
+| B3 | AE2 Logic Processor im Ostrum-Triebwerk (T3), Calculation Processor im Calorite-Triebwerk (T4); Prozessoren gibt es ab AE1 (Stufe 3) | 2026-10-28 | `21_BALANCING.md` |
+| B4 | Altar-Reparatur mit 4 Demonic Slate; Altar-Stufe 4 kommt über Edge of the Hidden Realm (Tau Fruit, Weak Blood Shard) vor dem Tempel. Blood-Magic-Kapitel umgestellt: BM4-02 Edge ist Hauptweg, Altar-Stufe 4 (BM4-06) vor Pathway (BM4-01) | 2026-10-28 | `questtexte/bloodmagic.md`, `bloodmagic.cfg`, `altar_reparatur.js` |
+| B6 | Mekanism-Solar und -Wind auf Planeten erlaubt (Vorteil eigener Stationen); ob sie dort laufen, prüft ein Test | 2026-10-28 | `21_BALANCING.md` |
 | F30 | Mühlstein-Erze auf 2 gesenkt wie beim IE-Crusher: Iron, Gold, Copper, Coal (je auch Deepslate) und Nether Quartz geben 2; Diamond und Emerald gaben schon 2. Redstone, Lapis (7) und Nether Gold Ore (5 Nuggets) bleiben, weil das kaum über normalem Abbau liegt (IE-Crusher: 6 bzw. 9) | 2026-10-28 | `kubejs/data/kaleidoscope_cookery/recipes/millstone/`, `questtexte/kueche.md` |
 | F31 | Kapitel der Nebenstränge wie vorgeschlagen; Wesley's WD3/WD4 früher verfügbar: mit K8 statt K10 (zusammen mit WD1/WD2); die 12 späten Aircraft-Quests bleiben bei K12 | 2026-10-28 | `questtexte/rld.md`, `aircraft.md`, `kueche.md`, `blue_skies.md` |
 | F32 | Alex's Mobs früher und verteilt statt 37 Quests auf einmal mit K4: AM1 K1, AM2 und AM7 K2, AM3 und AM4 K3, AM5 und AM6 (Transmutation Table) K4. Ersetzt „ganze Reihe ab dem Mond“ aus F16 | 2026-10-28 | `questtexte/alexsmobs.md` |
