@@ -55,6 +55,8 @@
 
 - **Tusken Raider** (Befund 2026-10-20, Test 54): kein Biome-Modifier, sondern ein eigener Spawner `che.swgc.TuskenTribeSpawner` (tickt pro Welt, läuft nur in `Level.OVERWORLD`, nur bei `doMobSpawning`, prüft ein Vanilla-Biom-Tag, keine Config). Im Pack in der Overworld per `server_scripts/starwars/galaxy_overworld.js` abgefangen; auf Tatooine gewünscht (F29).
 
+- **Nicht als Easy-NPC-Doppler wählbar** (Befund 2026-10-28, JAR): Alle swgc-Wesen (`atrt`, `atst`, `delta7b`, `b1`, `b2`, `droideka`, `clone`, `royal_guardian`, `ewok` …) sind in `che.swgc.reg.SwgcEntities` mit `MobCategory.MISC` registriert. Der `EntityTypeManager` von Easy NPC 7.14 überspringt jede MISC-Kategorie, bevor er die Config liest; ein Eintrag in `config/easy_npc/render_entity_type_support.cfg` hilft also nicht. Die Klassen erben von `che.swgc.entity.CommandableMob`.
+
 ## Ohne Rezept und ohne Fundort
 
 AT-RT, AT-ST, Delta-7B, Clone, Darksaber, Double-bladed Glaive, Jedi/Sith Holocron (nur Kreativ). Nur von Mobs: Jawa Blaster, Tusken Pike, Ewok Staff. Obese-Wan Carbobi: Klasse vorhanden, nicht registriert.
