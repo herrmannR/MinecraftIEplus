@@ -40,7 +40,10 @@ Die fünf Skripte für 1.18.2 (`space_oxygen.js`, `moon_ores.js`, `tf_industrial
 |---|---|---|
 | `startup_scripts/teil1_items.js` | Eigene Items: Galaktischer Strahlenschutz, Relikt, Steuerkerne B-1/B-2/Droideka (eigene Texturen in `kubejs/assets/kubejs/textures/item/`), sechs Bauplan-Seiten `kubejs:bauplan_<name>` (Texturen aus Galaxy in a Cube). | F2f, F2e, O28 |
 | `startup_scripts/altar_dimension.js` | Dungeon-Rituale von Blood Magic nur auf dem Merkur; in die Altar-Dimension nur mit getragenem Benevolent Goddess' Charm (Curios). Forge-Ereignisse, deshalb in `startup_scripts`. | Pfad D, F18 |
-| `server_scripts/raumfahrt/raketen_t1_t4.js` | Triebwerke T1–T4 mit Control Circuit der Stufe; Tanks T2–T4 mit Ventium, Imbued Slate, Elementium; Calorite-Triebwerk mit Galaktischem Strahlenschutz. | F2, F2a, F2f |
+| `server_scripts/raumfahrt/raketen_t1_t4.js` | Triebwerke T1–T4 mit Control Circuit der Stufe; Tanks T2–T4 mit Ventium, Imbued Slate, Elementium; Calorite-Triebwerk mit Galaktischem Strahlenschutz; ab T2 Legierungen, IE-Blöcke, HDPE, AE2-Prozessoren, Tinkers; Flossen aus Sheetmetal. | F2, F2a, F2f, B2 |
+| `server_scripts/raumfahrt/infrastruktur.js` | NASA Workbench, Launch Pad, Oxygen Distributor/Loader, Gravity Normalizer, Rover und Rad, Raumanzug, Netherite Space Suit, Raumstationen Mars bis Glacio teurer. | B2 |
+| `server_scripts/raumfahrt/planetenplatten.js` | Desh-, Ostrum-, Calorite-Platten nur im Lichtbogenofen (2 Barren + 1 Stahl → 2). | B2 |
+| `server_scripts/crossmod/mekanism_generatoren.js` | Solar, Advanced Solar, Wind, Gas-Burning Generator mit IE-Teilen teurer. | B5 |
 | `server_scripts/progression/ae2_verteuerung.js` | ME Controller und ME Drive mit Advanced Control Circuit und Stahlplatten. | F10 |
 | `server_scripts/progression/aircraft_stahl.js` | Airship mit IE-Stahlplatten. | F17 |
 | `server_scripts/progression/ideenimport_entfernt.js` | Entfernt Digital Miner, Vibration Chamber, Crystal Resonance Generator, Plastic Plate. | Ideenimport |
@@ -51,7 +54,7 @@ Die fünf Skripte für 1.18.2 (`space_oxygen.js`, `moon_ores.js`, `tf_industrial
 | `server_scripts/progression/stahl_nur_ie.js` | Entfernt den Mekanism-Stahlweg (Enriched Iron → Stahlstaub). | O41 |
 | `startup_scripts/mekanism_erze.js` + `server_scripts/crossmod/mekanism_erze.js` | Mekanism-Erzverarbeitung bis 5× für Silber, Nickel, Aluminium: Clump, Shard, Crystal, Dirty Dust (`kubejs:<stufe>_<metall>`, eingefärbte Blei-Texturen), Slurries `kubejs:dirty_/clean_<metall>`, Rezepte nach Vorlage Blei; Endprodukt IE-Staub. | O42 |
 | `data/ad_astra_more_structures/structures/` | `abandoned_base.nbt` ohne Rover, `rocket_launch_t1.nbt` ohne Rakete (erzeugt mit `tools/nbt_entities_entfernen.py` aus dem JAR). | O42 |
-| `startup_scripts/treibstoffe.js`, `server_scripts/raumfahrt/treibstoffe.js` | Kryo-Raketentreibstoff für T4 (eigene Flüssigkeit), IE Refinery: 10 Benzin + 10 Cryo Fuel → 10. | F3 |
+| `startup_scripts/treibstoffe.js`, `server_scripts/raumfahrt/treibstoffe.js` | Kryo-Raketentreibstoff für T4 (eigene Flüssigkeit), IE Refinery: 10 Benzin + 20 Cryo Fuel → 10, 480 Flux; alle Stufen 3 Eimer je Start (`efficient_fuel` leer). | F3, B5 |
 | `config-overrides/config/alexsmobs.toml` | `limitTransmutingToLootTables = true`. | F16 |
 | `server_scripts/starwars/galaxy_overworld.js` | Keine Tusken Raider von Galaxy in a Cube in der Overworld (eigener Spawner im Code, per Datapack nicht abschaltbar). Ewok-Dörfer und Jawas laufen über `kubejs/data/swgc/`. | E20, Test 54 |
 
