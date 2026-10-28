@@ -1,14 +1,15 @@
 # Minecraft-Modpack „Immersive Engineering+“ (1.20.1) — Projektstatus
 
 > Einstiegspunkt. Nur der aktuelle Stand und das Offene; Erledigtes, Phasenbeschreibungen und Entscheidungslog stehen in `00_STATUS_ARCHIV.md`.
-> Letzte Überarbeitung: 2026-10-21 (Story-Texte und Logbuch für Teil 1).
+> Letzte Überarbeitung: 2026-10-28 (F30, F31–F42 und B1–B7 entschieden; nächste Testrunde 96–105).
 
 ## ▶ Wo wir stehen
 
 Minecraft **1.20.1, Forge 47.4.26** (Wechsel von 1.18.2 am 2026-10-11). Erledigt sind die Grundlagen, die Erzverteilung (umgesetzt und nachgezählt, 2026-10-17) und die erste Fassung der Skripte (Tests 1–31 bestanden). Die Handlung legt der User fest (`18_STORY.md`); die Story-Texte von Teil 1 hat Claude entworfen, der User liest gegen (O50). Questtexte gibt es für alle großen Mods im Entwurf.
 
-**Übergabe (2026-10-26) – als Nächstes testet der User Runde 10–12:** Alles für Teil 1 ist gebaut und liegt in der Testinstanz (KubeJS, Logbuch, Bauplan-Buch, Questbuch: Buch 1 aus den Story-Quests und 13 Mod-Kapitel bis K11). Tests 73–93 in `11_TESTING.md` (Runde 10 Logbuch/Items, 11 Questbuch, 12 Story-Skripte); 90 und 91 erst mit den Platzhaltern des Hosts (H6). Vorher `scoreboard objectives add story dummy`, alle drei in einer Party, Neustart. Ergebnisse in `11_TESTING.md` eintragen, Fehler beheben (Log: `py tools/kubejs_check.py --nur-log`). Stand 2026-10-27 (abends): Runde 10 und 11 durch, Runde 12 bis auf 90 (wartet auf Preset von Cerina, geht in der Testinstanz) und 91 (wartet auf Tempel, Altar-Koordinaten und `altar_heil.nbt` beim Host) erledigt, 85 und 95 bestanden; damit alle Einzelspieler-Tests ohne echte Welt durch; Mehrspieler-Tests (76, 82) in Runde M.
-F31–F42 entschieden und eingebaut (2026-10-28, Belohnungen als Standard im Generator); offen die Prüfpunkte P17–P20 (`20_ENTSCHEIDUNGEN.md`). Dialoge im Easy-NPC-Editor baut der User nach `docs/story/texte/dialoge_*.md`; Ablauf und Technik der Story in `docs/story/ABLAUF.md`; Bauweise des Questbuchs in `docs/questtexte/README.md`. Nach Textänderungen: `py tools/logbuch_gen.py`, `py tools/story_druck.py`, Kapitel mit `java tools/QuestbuchGen.java` neu bauen (Aufruf oben in jeder `tools/questbuch/*.cfg`); vor dem Kopieren in die Instanz immer erst vergleichen (im Spiel verschobene Positionen).
+**Als Nächstes (Stand 2026-10-28):** Alle Entscheidungen für Teil 1 sind gefallen (F30, F31–F42, Balancing B1–B7). Gebaut und in der Testinstanz, aber ungetestet: **Tests 96–105** in `11_TESTING.md` (Mühlstein, Energie-Configs, Story-Abgaben, Blood-Magic-Kapitel, Treibstoff, Mekanism-Generatoren, Raketen, Planetenplatten). Für Test 97 die IE-Serverconfig von Hand in `saves/<Testwelt>/serverconfig/` legen. Ergebnisse in `11_TESTING.md` eintragen, Fehler beheben (Log: `py tools/kubejs_check.py --nur-log`).
+Danach offen: Test 90 (Easy-NPC-Preset von Cerina, geht in der Testinstanz), Dialoge im Easy-NPC-Editor und Skins DD3R8/Bodhi (User, nach `docs/story/texte/dialoge_*.md`), Gegenlesen der Story-Texte (O50). Mit dem Host: Test 91 (Tempel, `altar_heil.nbt`), Mehrspieler-Runde M (76, 82), H1–H6. Prüfpunkte im Spiel: P1, P3–P13, P15–P20.
+Ablauf und Technik der Story in `docs/story/ABLAUF.md`; Bauweise des Questbuchs in `docs/questtexte/README.md`. Nach Textänderungen: `py tools/logbuch_gen.py`, `py tools/story_druck.py`, Kapitel mit `java tools/QuestbuchGen.java` neu bauen (Aufruf oben in jeder `tools/questbuch/*.cfg`); vor dem Kopieren in die Instanz immer erst vergleichen (im Spiel verschobene Positionen).
 
 **Abgeschlossen (2026-10-21):** Kaleidoscope (Wunsch eines Mitspielers) ist ohne Dopplungen mit Farmer's Delight zusammengeführt und getestet (Tests 65–72). Mühlstein-Erze auf 2 gesenkt (F30, 2026-10-28); offen dazu nur die Pflichtgewürze (P16).
 
@@ -18,12 +19,12 @@ Die Schritte laufen in dieser Reihenfolge; 1 und 2 gehen parallel. Alle offenen 
 
 | Schritt | Inhalt | Stand | Hängt an |
 |---|---|---|---|
-| 1 Entscheidungen | Teil 1 entschieden; Teil 2 und 3 offen | 🟢 Teil 1 erledigt (2026-10-20) | User |
+| 1 Entscheidungen | Teil 1 entschieden; Teil 2 und 3 offen | 🟢 Teil 1 erledigt (F30–F42 und B1–B7 am 2026-10-28) | User |
 | 2 Tests im Spiel | Teil 1 fertig; 33–41 erledigt (2026-10-21, 35 entfällt); offen nur noch Prüfpunkte aus `20_ENTSCHEIDUNGEN.md` (P1, P3–P13, P15, P16) | 🟢 Teil 1 bestanden (2026-10-20) | User spielt |
 | 3 Story von Part 1 fertig | `18_STORY.md` bis zur Rückkehr des Meisters; Ablauf `story/ABLAUF.md`; Texte `story/texte/` (Entwurf Claude, O50) | 🟡 Handlung steht, alle Texte im Entwurf (2026-10-21); O47–O66 entschieden | User liest gegen |
 | 4 Skripte und Raketen | Teil 1 geschrieben (2026-10-20): Raketen T1–T4, Rover, eigene Items, Altar-Dimension (Ritual, Amulett, Truhe), Ideenimport-Entfernungen, IE-Crusher, AE2, Airship, Shop und Baupläne, Galaxy in a Cube aus der Overworld. Offen: Antimaterie-Treibstoffe T6/T7, Etrium, Planetenstufen T5–T7, Beskar, Kyber (Teil 2 und 3) | 🟢 Teil 1 getestet (2026-10-20) | – |
-| 5 Balance (frühere Phasen 3–6) | Erträge der Erzverarbeitung, Energie, AE2 zweistufig, Cross-Mod-Rezepte (`07_CROSSMOD_INTEGRATION.md`). Vorschläge für Story-Abgaben, Raketen und Energie in `21_BALANCING.md`; Energie-Multiplikator als Config gebaut (2026-10-28, Tests 97–99) | 🟡 Vorschläge | B1–B6, F20, F24 |
-| 6 Questbuch einbauen | FTB Quests: Buch 1 (Story) und alle Mod-Kapitel bis K11 gebaut (2026-10-26, 545 Quests, IDs gegen die JARs geprüft); Story-Skripte gebaut (Kobalthammer, Relikt-Fluch, Altar, Everdawn-Sperre, Elfenportal, Bauplan Pilotenhelm, Gatekeeper aus). Offen: F31–F42, Belohnungen (F33), Tests 73–93, Dialoge im Easy-NPC-Editor und Skins DD3R8/Bodhi (User), Platzhalter beim Host (H6) | 🟡 gebaut, ungetestet, nicht in der Testinstanz | User: F31–F42 |
+| 5 Balance (frühere Phasen 3–6) | Erträge der Erzverarbeitung, Energie, AE2 zweistufig, Cross-Mod-Rezepte (`07_CROSSMOD_INTEGRATION.md`). Vorschläge für Story-Abgaben, Raketen und Energie in `21_BALANCING.md`; Energie-Multiplikator als Config gebaut (2026-10-28, Tests 97–99) | 🟡 B1–B7 entschieden und gebaut (2026-10-28), Tests 96–105 offen | F20, F24 (später) |
+| 6 Questbuch einbauen | FTB Quests: Buch 1 (Story) und alle Mod-Kapitel bis K11 gebaut (2026-10-26, 545 Quests, IDs gegen die JARs geprüft); Story-Skripte gebaut (Kobalthammer, Relikt-Fluch, Altar, Everdawn-Sperre, Elfenportal, Bauplan Pilotenhelm, Gatekeeper aus). Standard-Belohnungen (F33) im Generator. Tests 73–95 bestanden bis auf 90 und 91. Offen: Dialoge im Easy-NPC-Editor und Skins DD3R8/Bodhi (User), Platzhalter beim Host (H6) | 🟡 in der Testinstanz, Einzelspieler getestet | User: Dialoge; Host: H6 |
 | 7 Hauptwelt umstellen | Aufgaben beim Host (H1–H5 unten) | 🔵 | Schritte 4–6; nur, was in `11_TESTING.md` ✅ hat |
 
 ### Aufgaben beim Host (Schritt 7)
