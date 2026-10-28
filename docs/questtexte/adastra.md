@@ -39,13 +39,14 @@ Buch: The First Launch → Creating Plates, Making Steel (beide nur zur Einordnu
 
 An der NASA Workbench baust du jede Rakete. Gestartet wird vom Launch Pad.
 Buch: The First Launch → Your First Rocket.
+⚙️ Die NASA Workbench braucht Stahlstäbe, ein Steel Casing aus Mekanism und 2 Heavy Engineering Blocks. Das Launch Pad hat einen Stahlblock in der Mitte und Steel Sheetmetal außen.
 
 ### RF1-04 Raketenteile · Hauptweg
 **Aufgabe:** `ad_astra:rocket_nose_cone`, 4 × `ad_astra:rocket_fin`, 2 × `ad_astra:steel_tank`, `ad_astra:steel_engine`
 
 Nose Cone, Flossen, Tanks und Triebwerk entstehen in der normalen Werkbank. Dazu kommen sechs Stahlblöcke.
 Buch: The First Launch → Your First Rocket.
-⚙️ Stahlblöcke aus IE gelten ebenso wie die von Ad Astra. In der Steel Engine sitzt oben in der Mitte ein Basic Control Circuit aus Mekanism statt einer Platte. Jedes höhere Triebwerk baut auf dem davor auf.
+⚙️ Stahlblöcke aus IE gelten ebenso wie die von Ad Astra. In der Steel Engine sitzt oben in der Mitte ein Basic Control Circuit aus Mekanism statt einer Platte. Jedes höhere Triebwerk baut auf dem davor auf. Die Flossen (für alle Stufen gleich) brauchen Steel Sheetmetal aus IE statt Stahlplatten.
 
 ### RF1-05 Tier 1 Rocket · Hauptweg
 **Aufgabe:** `ad_astra:tier_1_rocket`
@@ -67,12 +68,14 @@ Der Oxygen Loader füllt Raumanzug und Gas Tanks mit Sauerstoff.
 Kette: Wasser → Electrolytic Separator → Oxygen (Gas) → Rotary Condensentrator → Liquid Oxygen → Oxygen Loader.
 Buch: The First Launch → Oxygen.
 ⚙️ Der Oxygen Loader nimmt kein Wasser an, nur flüssigen Sauerstoff aus Mekanism (25 mB ergeben 25 mB). Wie du ihn herstellst, steht im Mekanism-Kapitel in der Quest „Flüssiger Sauerstoff“.
+⚙️ Der Oxygen Loader braucht zusätzlich ein Steel Casing aus Mekanism und eine Steel Mechanical Component aus IE.
 
 ### RF1-08 Space Suit · Hauptweg
 **Aufgabe:** `ad_astra:space_helmet`, `ad_astra:space_suit`, `ad_astra:space_pants`, `ad_astra:space_boots`
 
 Ohne Anzug überlebst du auf dem Mond nicht: keine Luft, −173 °C. Fülle den Anzug vor dem Start im Oxygen Loader.
 Buch: The First Launch → Oxygen.
+⚙️ Der Raumanzug ist aus Steel Sheetmetal statt aus Stahlplatten.
 
 ### RF1-09 Gas Tank und Etrionic Capacitor · Nebenquest
 **Aufgabe:** `ad_astra:gas_tank`, `ad_astra:etrionic_capacitor`
@@ -129,13 +132,14 @@ Eine Sauerstoff-Reserve mit 500 mB, die du als Curio tragen kannst. Sie füllt d
 
 Desh liegt nur auf dem Mond. Es ist das Metall der Rakete T2 und vieler Maschinen.
 Buch: The First Launch → The Moon.
-⚙️ Desh-Platten presst du in der IE Metal Press oder schlägst sie mit dem Engineer's Hammer. Auf dem Mond liegt außerdem Osmium in Menge (Erz von Mekanism in Moon Stone).
+⚙️ Desh-Platten gibt es nur im IE-Lichtbogenofen: 2 Desh-Barren + 1 Stahlbarren → 2 Platten. Metal Press und Hammer gehen dafür nicht. Auf dem Mond liegt außerdem Osmium in Menge (Erz von Mekanism in Moon Stone).
 
 ### RF2-02 Space Station · Nebenquest
 **Aufgabe:** Dimension `ad_astra:earth_orbit` betreten
 
 Im Orbit kannst du eine Raumstation errichten. Für Erde und Mond kostet sie 64 Iron Plate, 32 Steel Ingot, 32 Desh Ingot und 32 Desh Plate; wie man sie setzt, zeigt das Buch.
 Buch: The Moon → Space Station.
+⚙️ Stationen weiter draußen kosten mehr: Mars 16 Stahlblöcke, 32 Infused Alloy, je 32 Ostrum-Barren und -Platten; Merkur und Venus 32 Stahlblöcke, 32 Reinforced Alloy, je 32 Calorite-Barren und -Platten; Glacio 16 Stahlblöcke, 16 Atomic Alloy, 32 Ostrum- und 32 Calorite-Platten.
 
 ### RF2-03 Oxygen Distributor · Nebenquest
 **Aufgabe:** `ad_astra:oxygen_distributor`, `ad_astra:vent`
@@ -143,6 +147,7 @@ Buch: The Moon → Space Station.
 Der Distributor füllt einen abgedichteten Raum mit Luft, bis 6000 Blöcke. Ist der Raum undicht, bläst die Luft hinaus.
 Buch: The Moon → Oxygen Distributor.
 ⚙️ Die Water Pump gibt es im Pack nicht; Wasser und Sauerstoff kommen über Mekanism. Strom bringst du mit dem IE Feedthrough Insulator oder einem Energiespeicher in Wand oder Boden hinein, ohne die Abdichtung zu brechen.
+⚙️ Der Oxygen Distributor braucht unten ein Steel Casing und eine Infused Alloy aus Mekanism statt der Desh-Platten.
 
 ### RF2-04 Gravity Normalizer · Nebenquest
 **Aufgabe:** `ad_astra:gravity_normalizer`
@@ -150,6 +155,7 @@ Buch: The Moon → Oxygen Distributor.
 Stellt in seiner Umgebung die Schwerkraft der Overworld her.
 Buch: The Moon → Gravity Normalizer.
 ⚙️ Die Etrionic Capacitors dafür lädst du in der IE Charging Station oder am Mekanism Energy Cube.
+⚙️ Der Gravity Normalizer braucht zusätzlich 2 Reinforced Alloy aus Mekanism und einen Heavy Engineering Block.
 
 ### RF2-05 TI-69 · Nebenquest
 **Aufgabe:** `ad_astra:ti_69`
@@ -162,7 +168,7 @@ Buch: The Moon → Ti-69.
 
 Ein Fahrzeug für weite Wege auf Mond und Mars, mit Radio und Stauraum.
 Buch: The Moon → Rover.
-⚙️ Der Rover fährt nur mit Biodiesel, wie die Rakete T1.
+⚙️ Der Rover fährt nur mit Biodiesel, wie die Rakete T1. Er braucht zusätzlich einen Light Engineering Block, seine Räder haben Reifen aus HDPE Sheets (Mekanism) statt Wolle.
 
 ### RF2-07 Lunarians · Nebenquest
 **Aufgabe:** Häkchen „Lunarian-Dorf gefunden“
@@ -185,7 +191,7 @@ Buch: Surviving Mars → Trophies (der Globus); den Dungeon kennt das Buch nicht
 
 Ab jetzt baut jede Stufe auf der davor auf: In jedem Desh Tank steckt ein Steel Tank, in der Desh Engine eine Steel Engine.
 Buch: The Moon → Mars.
-⚙️ Jeder Desh Tank braucht zusätzlich 2 Ventium Ingot aus Blue Skies (`blue_skies:ventium_ingot`, Everbright) und einen Steel Rod. In der Desh Engine sitzt ein Advanced Control Circuit aus Mekanism.
+⚙️ Jeder Desh Tank braucht zusätzlich 2 Ventium Ingot aus Blue Skies (`blue_skies:ventium_ingot`, Everbright), einen Stahlblock, ein Steel Sheetmetal, eine Electrum-Drahtspule und einen Steel Rod. In der Desh Engine sitzen ein Advanced Control Circuit aus Mekanism, ein Heavy Engineering Block und eine Infused Alloy. Ab hier reicht der einfache Hochofen kaum noch: Bau den Improved Blast Furnace oder den Lichtbogenofen.
 
 ### RF2-10 Tier 2 Rocket · Hauptweg
 **Aufgabe:** `ad_astra:tier_2_rocket`, Flüssigkeit `immersivepetroleum:diesel` 6000 mB
@@ -209,7 +215,7 @@ Buch: The Moon → Mars.
 
 Ostrum liegt nur auf dem Mars. Es ist das Metall der Rakete T3.
 Buch: The Moon → Mars.
-⚙️ Platten über die IE Metal Press oder den Engineer's Hammer. Auf dem Mars liegt außerdem Fluorit (Erz von Mekanism in Mars Stone).
+⚙️ Ostrum-Platten nur im IE-Lichtbogenofen: 2 Barren + 1 Stahl → 2 Platten. Auf dem Mars liegt außerdem Fluorit (Erz von Mekanism in Mars Stone).
 
 ### RF3-02 Sliding Doors und Airlock · Nebenquest
 **Aufgabe:** `ad_astra:iron_sliding_door`, `ad_astra:airlock`
@@ -237,6 +243,7 @@ Der stärkere Anzug aus Ostrum und einer vollen Netherite-Rüstung. Er schützt 
 Buch: Surviving Mars → Netherite Space Suit.
 Hinweis: Das Buch nennt ihn Pflicht für Venus und Merkur. Im Spiel stimmt das nicht; dort reicht jeder Anzug.
 ⚙️ Im Pack ist er trotzdem Pflicht vor dem Flug zum Merkur: Die Story-Quest „Die heißeste Welt“ verlangt ihn.
+⚙️ Das Bruststück braucht zusätzlich ein Steel Casing aus Mekanism.
 
 ### RF3-06 Mars Tower Dungeon · Nebenquest
 **Aufgabe:** Häkchen „Boss im Mars-Turm besiegt“ 🔵
@@ -251,7 +258,7 @@ Der zweite Dungeon von More Structures. Der Boss lässt Ice Shards, Diamanten, R
 
 In jedem Ostrum-Teil steckt das Desh-Teil der Stufe davor.
 Buch: Surviving Mars → Venus and Mercury.
-⚙️ Jeder Ostrum Tank braucht zusätzlich 2 Imbued Slate aus Blood Magic (`bloodmagic:infusedslate`, Blood Altar Stufe 3) und einen Steel Rod. In der Ostrum Engine sitzt ein Elite Control Circuit aus Mekanism.
+⚙️ Jeder Ostrum Tank braucht zusätzlich 2 Imbued Slate aus Blood Magic (`bloodmagic:infusedslate`, Blood Altar Stufe 3), 2 HDPE Sheets (Mekanism, aus Ethylen), einen Stahlblock und einen Redstone Engineering Block. In der Ostrum Engine sitzen ein Elite Control Circuit, 2 Reinforced Alloy, ein Logic Processor aus AE2 und eine HV-Drahtspule.
 
 ### RF3-08 Tier 3 Rocket · Hauptweg
 **Aufgabe:** `ad_astra:tier_3_rocket`, Flüssigkeit `immersivepetroleum:kerosene` 6000 mB
@@ -283,7 +290,7 @@ Buch: Surviving Mars → Venus and Mercury.
 
 Calorite gibt es nur auf der Venus. Es ist das Metall der Rakete T4.
 Buch: Surviving Mars → Venus and Mercury.
-⚙️ Platten über die IE Metal Press oder den Engineer's Hammer. Auf der Venus liegen außerdem Uran und Blei.
+⚙️ Calorite-Platten nur im IE-Lichtbogenofen: 2 Barren + 1 Stahl → 2 Platten. Auf der Venus liegen außerdem Uran und Blei.
 
 ### RF4-03 Jet Suit · Nebenquest
 **Aufgabe:** `ad_astra:jet_suit_helmet`, `ad_astra:jet_suit`, `ad_astra:jet_suit_pants`, `ad_astra:jet_suit_boots`
@@ -305,7 +312,7 @@ More Structures setzt auf die Venus den Venus Tree Dungeon und auf den Merkur de
 
 In jedem Calorite-Teil steckt das Ostrum-Teil davor, also die Teile aller vier Stufen.
 Buch: The Hot Planets → Proxima Centauri.
-⚙️ Jeder Calorite Tank braucht zusätzlich 2 Elementium Ingot aus Botania (`botania:elementium_ingot`) und einen Steel Rod. In der Calorite Engine sitzen ein Ultimate Control Circuit aus Mekanism und der **Galaktische Strahlenschutz** (`kubejs:galaktischer_strahlenschutz`). Den Strahlenschutz kann man nicht selbst herstellen; du bekommst ihn im Lauf der Hauptquests.
+⚙️ Jeder Calorite Tank braucht zusätzlich 2 Elementium Ingot aus Botania (`botania:elementium_ingot`), 2 Barren Hepatizon oder Manyullyn aus Tinkers (Kobalt aus dem Nether), einen Stahlblock und einen Light Engineering Block. In der Calorite Engine sitzen ein Ultimate Control Circuit, 2 Atomic Alloy, ein Calculation Processor aus AE2 und der **Galaktische Strahlenschutz** (`kubejs:galaktischer_strahlenschutz`). Den Strahlenschutz kann man nicht selbst herstellen; du bekommst ihn im Lauf der Hauptquests.
 
 ### RF4-06 Tier 4 Rocket · Hauptweg
 **Aufgabe:** `ad_astra:tier_4_rocket`, Flüssigkeit `kubejs:kryo_treibstoff` 2000 mB

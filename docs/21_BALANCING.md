@@ -1,7 +1,7 @@
 # 21 — BALANCING
 
 > Vorschläge, um Story-Abgaben, Ad-Astra-Rezepte und Energie teurer zu machen.
-> Stand: 2026-10-25 (übernommen am 2026-10-28). Alles hier ist **🔵 Vorschlag**, außer was mit 🟢 markiert ist. Was der User übernimmt, wandert als Entscheidung nach `20_ENTSCHEIDUNGEN.md` und in die Fachdokumente; erst dann folgen Skripte. **Alles entschieden am 2026-10-28 (B1–B7, `20_ENTSCHEIDUNGEN.md`):** B1 Abschnitt 1 (ohne MV-Kondensator, B7), B2 Abschnitt 2 mit Hebel, B3 Processor in T3, B4 Demonic Slate, B5 Energie a/c/e/f, B6 Solar/Wind auf Planeten erlaubt. Offen: Skripte zu B2, Tests 97–103.
+> Stand: 2026-10-25 (übernommen am 2026-10-28). Alles hier ist **🔵 Vorschlag**, außer was mit 🟢 markiert ist. Was der User übernimmt, wandert als Entscheidung nach `20_ENTSCHEIDUNGEN.md` und in die Fachdokumente; erst dann folgen Skripte. **Alles entschieden am 2026-10-28 (B1–B7, `20_ENTSCHEIDUNGEN.md`):** B1 Abschnitt 1 (ohne MV-Kondensator, B7), B2 Abschnitt 2 mit Hebel, B3 Processor in T3, B4 Demonic Slate, B5 Energie a/c/e/f, B6 Solar/Wind auf Planeten erlaubt. Alles gebaut, ungetestet: Tests 97–105.
 
 ## Grundsätze
 
@@ -29,7 +29,9 @@
 
 **Folgen:** Elf und T4-Rakete teilen sich Elementium und Ultimate Circuits; die Altar-Reparatur hängt stark an Mana. Teil 1 wird spürbar länger.
 
-## 2. Ad-Astra-Rezepte — 🟢 übernommen samt Hebel (B2, 2026-10-28), Skripte offen
+## 2. Ad-Astra-Rezepte — 🟢 übernommen samt Hebel (B2, 2026-10-28), gebaut
+
+> **Umsetzung** (`raumfahrt/raketen_t1_t4.js`, `infrastruktur.js`, `planetenplatten.js`): Die NASA Workbench hat 14 feste Plätze; die Rumpf-Zusätze (Stahlblock, Engineering-Block) stecken deshalb **im Tank** (1 je Tank, 2 je Rakete). Der Ostrum-Tank hat 2 HDPE Sheets statt des Steel Rod, der Calorite-Tank 2 Hepatizon/Manyullyn. Oxygen Distributor: **ein** Rezept für alle (Steel Casing + Infused Alloy). Raumstationen behalten 4 Zutaten (Mars 16 Stahlblöcke, 32 Infused, Ostrum 32/32; Merkur/Venus 32 Stahlblöcke, 32 Reinforced, Calorite 32/32; Glacio 16 Stahlblöcke, 16 Atomic, Ostrum- und Calorite-Platten je 32). Rover: Räder mit HDPE statt Wolle. Planetenplatten: 2 Barren + 1 Stahl → 2 Platten im Lichtbogenofen.
 
 Grundlage: `kubejs/server_scripts/raumfahrt/raketen_t1_t4.js` (Control Circuit je Stufe im Triebwerk, Pfad-Teil im Tank). IE-Stahl gilt über die Forge-Tags; der Ad-Astra-Stahl ist entfernt (O41). Jeder Stahl kommt also aus Hochofen oder Lichtbogenofen.
 

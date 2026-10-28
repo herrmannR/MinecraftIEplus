@@ -197,6 +197,8 @@ Neustart nötig (Startup-Skripte, neues Item). `kubejs/` und `patchouli_books/ba
 | 101 | Blood-Magic-Kapitel (B4) | Kapitel Blood Magic, K9 | Reihenfolge Edge (Hauptweg) → Tau Fruit → Weak Blood Shard → Altar Stufe 4 → Pathway → Foreman's Key; Master Blood Orb hängt an Stufe 4 | |
 | 102 | Treibstoff 3 Eimer (B5) | `/reload`; Rakete T1 und T4 betanken und starten | jede Stufe zieht 3000 mB je Start; JEI Refinery: 10 Gasoline + 20 Cryo Fuel → 10 Kryo-Treibstoff | |
 | 103 | Mekanism-Generatoren (B5) | `/reload`; JEI: Solar, Advanced Solar, Wind, Gas-Burning Generator | neue Rezepte mit IE-Teilen, alte weg; Wind Generator übernimmt die Ladung des Energy Tablet; Solar und Wind laufen auf Mond und Mars (B6) | |
+| 104 | Raketen und Infrastruktur (B2) | `/reload`; JEI: Flossen, Desh/Ostrum/Calorite Engine und Tank, NASA Workbench, Launch Pad, Oxygen Distributor und Loader, Gravity Normalizer, Rover, Rad, Raumanzug, Netherite Space Suit; Raumstation Mars im Planetenmenü | neue Rezepte wie in `21_BALANCING.md` Abschnitt 2, alte weg; Raumstation zeigt die neuen 4 Zutaten | |
+| 105 | Planetenplatten im Lichtbogenofen (B2) | JEI: Desh Plate, Ostrum Plate, Calorite Plate; im Lichtbogenofen 2 Desh-Barren + 1 Stahl | nur noch das Lichtbogenofen-Rezept (2 → 2), kein Metal-Press- oder Hammer-Rezept | |
 
 ### Runde M — Multiplayer (sammelt Tests mit mehreren Spielern)
 
