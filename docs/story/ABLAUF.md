@@ -190,7 +190,7 @@ Ablage in `docs/story/texte/`, je Figur oder Buch eine Datei. Der User überarbe
 | ✅ Skript Altar per Rechtsklick (O48, O56, 2026-10-26, ungetestet, `altar_reparatur.js`): Platzhalter für Bereich des kaputten Altars, Ursprung und Vorlage `ieplus:altar_heil` (Anleitung im Skriptkopf) | Claude, dann Host | Bauplan des kaputten Altars vom Host; 🔵 Test 91 |
 | ✅ Gatekeeper abschalten (O34, 2026-10-26, ungetestet, `gatekeeper.js`) | Claude | 🔵 Test 93 |
 | ✅ Buch 1 im Questbuch mit ST-Quests (2026-10-26): `tools/questbuch/buch1.cfg` → `chapters/buch1.snbt`, 36 Quests + 10 Marken; Belohnungen aus Abschnitt 3; Easy-NPC-Befehle (Figuren erscheinen/verschwinden) und Credits für ST4-05 fehlen noch | Claude | 🔵 Tests 79–83 |
-| Dialoge im Easy-NPC-Editor | User | Texte D |
+| Dialoge im Easy-NPC-Editor; Bauanleitung zum Abhaken mit allen Befehlen: `py tools/npc_bauanleitung.py` → `docs/story/druck/npc_bauanleitung.pdf` (aus `texte/dialoge_*.md`, nach Textänderungen neu erzeugen) | User | Texte D |
 | Skins DD3R8, Bodhi, Cerina | User | – |
 | Testdurchlauf mit Befehlen (neue Tests in `11_TESTING.md`) | Claude schreibt, User spielt | alles oben |
 | Bauten, Koordinaten in `schutzzonen.js`, Figuren setzen | Host | H5 |
