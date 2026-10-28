@@ -740,7 +740,7 @@
 				"• Samen → Oil."
 				"• Rice Panicle → 3 Rice Seed."
 				"• Chili, Onion, Canola → Pulver für den Grill (KU7)."
-				"&9(ungeprüft)&r Der Mühlstein vervielfacht auch Vanilla-Erzblöcke (Iron Ore zu 3 Raw Iron, Copper Ore zu 5); ob das im Pack bleibt, ist nicht entschieden (F30 in ../20_ENTSCHEIDUNGEN.md). Bis dahin nennt der Text es nicht als Weg."
+				"• Erzblöcke (mit Silk Touch abgebaut) → 2 Stück, wie im IE-Crusher: Iron, Gold, Copper (Rohmetall), Coal, Nether Quartz, Diamond, Emerald."
 			]
 			hide_until_deps_visible: true
 			icon: "kaleidoscope_cookery:millstone"
