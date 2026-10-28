@@ -10,7 +10,7 @@
 | Nr. | Baustein | Wie | Stand |
 |---|---|---|---|
 | B1 | **Abgabe im Dialog** | Knopf mit Bedingung „Item im Inventar“ → Befehle `clear @initiator <item> <n>` und `tag @initiator add story_<code>` (z. B. `story_st3_05`). Die Quest hat eine Stage-Aufgabe mit genau diesem Namen und ist damit für die ganze Party erledigt. Gespräche ohne Abgabe genauso, nur ohne `clear`. So brauchen die Dialoge keine Quest-IDs. | 🟢 Weg erprobt (Test 29); Vorschlag des User 2026-10-26 statt `ftbquests change_progress`. 🔵 P15: Stage-Aufgabe, wenn nur ein Party-Mitglied den Tag hat |
-| B2 | **Dialogstufe je Figur** | Ein Scoreboard `story` mit einem Platzhalter-Namen je Figur (`#dd3r8`, `#davijaan`, `#bodhi`, `#cerina`, `#vos`). Der Wert sagt, welcher Dialogteil gerade gilt (Bedingung „Scoreboard“). Gilt für die ganze Welt, also für alle drei Spieler. Gesetzt per `scoreboard players set #dd3r8 story <n>` aus Dialog oder Quest-Belohnung. Anlegen einmalig: `scoreboard objectives add story dummy`. | 🟡 |
+| B2 | **Dialogstufe je Figur** | Ein Objective je Figur: `story_dd3r8`, `story_zwerg`, `story_bodhi`, `story_davijaan`, `story_cerina`, `story_vos`. Der Wert sagt, welcher Dialogteil gerade gilt. Die Easy-NPC-Bedingung „Scoreboard“ liest immer den Score des Spielers, der gerade spricht (JAR 7.14 geprüft 2026-10-28, `ScoreboardCondition`); Einträge wie `#dd3r8` kann sie nicht lesen. Darum: Bedingung Name `story_dd3r8`, Vergleich, Wert. Gesetzt wird immer für alle: `scoreboard players set @a story_dd3r8 <n>` aus Dialog oder Quest-Belohnung. So gilt die Stufe für alle drei Spieler. `kubejs/server_scripts/story/dialogstufen.js` legt die Objectives beim Serverstart an und hebt beim Einloggen jeden Spieler auf den höchsten Wert, den jemand hat (falls er beim Setzen offline war). Werte steigen nur, nie zurück. 🔵 Im Spiel prüfen (Test 106). | 🟡 |
 | B3 | **Quest → Dialog** | Braucht ein Dialog eine erledigte Quest (z. B. „Bosse besiegt“), setzt deren Belohnung die Dialogstufe (B2). | 🟡 |
 | B4 | **Figur erscheinen/verschwinden** | Befehl in der Quest-Belohnung (Team Reward): `easy_npc spawn|despawn <uuid>` oder `execute in <dim> run easy_npc preset import …` (Test 30). | 🟢 |
 | B5 | **Logbuch-Eintrag freischalten** | Befehl `/logbuch <eintrag>` (neues KubeJS-Skript nach dem Muster von `/bauplan`): setzt für alle Spieler das Advancement `ieplus:logbuch/<eintrag>`, das den Eintrag im Patchouli-Buch „Logbuch des Meisters“ öffnet; Offline-Spieler beim Einloggen. Der erste Aufruf gibt das Buch an alle. Aufruf aus Quest-Belohnung oder Dialog. | 🟢 gebaut (`server_scripts/story/logbuch.js`), 🔵 Tests 74–77. FTB-Belohnungen mit `/logbuch` brauchen erhöhte Rechte (Befehls-Belohnung „elevate“) |
@@ -48,45 +48,45 @@ In der Hauptwelt sind K1 und K2 schon erreicht (IE-Stahl, Runenaltar). Der Absch
 
 | Code | Schritt | Aufgabe | Auslöser | Folge | Text |
 |---|---|---|---|---|---|
-| – | Der Einschlag | – (nur Dialog) | Erstes Gespräch mit DD3R8 in der Kapsel | `/logbuch teil1` (Buch an alle), `#dd3r8 = 1` | D-DD3R8-0, L1 |
+| – | Der Einschlag | – (nur Dialog) | Erstes Gespräch mit DD3R8 in der Kapsel | `/logbuch teil1` (Buch an alle), `story_dd3r8 = 1` | D-DD3R8-0, L1 |
 
 ### K2 Würdig sein
 
 | Code | Schritt | Aufgabe | Auslöser | Folge | Text |
 |---|---|---|---|---|---|
-| – | Beweis abgeben | – | Dialog (B1): Vorschlaghammer ganz aus Kobalt (Skript setzt Tag `ieplus_kobalthammer`), LV-Kondensator (B7), 1 Manastahlblock (O67, ersetzt F4) | `give @a ftbquests:book`, Stages `kapitel_k1`, `kapitel_k2`, `#dd3r8 = 2` | D-DD3R8-1 |
+| – | Beweis abgeben | – | Dialog (B1): Vorschlaghammer ganz aus Kobalt (Skript setzt Tag `ieplus_kobalthammer`), LV-Kondensator (B7), 1 Manastahlblock (O67, ersetzt F4) | `give @a ftbquests:book`, Stages `kapitel_k1`, `kapitel_k2`, `story_dd3r8 = 2` | D-DD3R8-1 |
 | ST2-01 | Würdig sein | Checkmark (F26 c) | Spieler klicken im Buch | `/logbuch teil2`, Stage `kapitel_k3` | Q-ST2-01 (erklärt das Questsystem) |
 
 ### K3 Industrie
 
 | Code | Schritt | Aufgabe | Auslöser | Folge | Text |
 |---|---|---|---|---|---|
-| ST3-00 | Die Schlucht | Gespräch (Dialog) | Erstes Gespräch mit dem Zwerg (DD3R8 schickt die Spieler über `d2_weg` hin) | `#zwerg = 1`, Handel offen | D-ZWERG (`dialoge_zwerg.md`) |
-| ST3-01 | Das Haus | Checkmark-Ersatz: Dialog | Erstes Gespräch mit Bodhi (B1 ohne Item) | `#bodhi = 1` | D-BODHI-0 |
+| ST3-00 | Die Schlucht | Gespräch (Dialog) | Erstes Gespräch mit dem Zwerg (DD3R8 schickt die Spieler über `d2_weg` hin) | `story_zwerg = 1`, Handel offen | D-ZWERG (`dialoge_zwerg.md`) |
+| ST3-01 | Das Haus | Checkmark-Ersatz: Dialog | Erstes Gespräch mit Bodhi (B1 ohne Item) | `story_bodhi = 1` | D-BODHI-0 |
 | ST3-02 | Zünder und Journal | `blue_skies:zeal_lighter`, `blue_skies:blue_journal` | gekauft bei Bodhi | – | Q |
 | ST3-03 | Everbright | Dimension `blue_skies:everbright` | betreten | – | Q |
-| ST3-04 | Zinn für Bodhi | – | Dialog (B1): 32 × `mekanism:raw_tin` (User, 2026-10-26) | `#bodhi = 2` | D-BODHI-1 |
-| ST3-05 | Bericht beim Droiden | – | Dialog DD3R8 (Bedingung `#bodhi ≥ 2`) | `/logbuch teil3`, Stage `kapitel_k4`, `#dd3r8 = 3` | D-DD3R8-2 |
+| ST3-04 | Zinn für Bodhi | – | Dialog (B1): 32 × `mekanism:raw_tin` (User, 2026-10-26) | `story_bodhi = 2` | D-BODHI-1 |
+| ST3-05 | Bericht beim Droiden | – | Dialog DD3R8 (Bedingung `story_bodhi ≥ 2`) | `/logbuch teil3`, Stage `kapitel_k4`, `story_dd3r8 = 3` | D-DD3R8-2 |
 
 ### K4 Der Mond
 
 | Code | Schritt | Aufgabe | Auslöser | Folge | Text |
 |---|---|---|---|---|---|
 | ST4-01 | Auf zum Mond | Dimension `ad_astra:moon` | betreten (Rakete T1 steht in RF1) | – | Q |
-| ST4-02 | Der Einsiedler | – | Erstes Gespräch mit Davijaan (er erwähnt, „da unten“ etwas verloren zu haben) | `#davijaan = 1` | D-DAVIJAAN-0 |
+| ST4-02 | Der Einsiedler | – | Erstes Gespräch mit Davijaan (er erwähnt, „da unten“ etwas verloren zu haben) | `story_davijaan = 1` | D-DAVIJAAN-0 |
 | ST4-03 | Die Höhle | `kubejs:kaputter_klonhelm` | Truhe in der Höhle | – | Q |
 | ST4-04 | Reparatur | `swgc:clone_212th_battalion_helmet` (O71; Rezept erst nach dem Bauplan von Davijaan) | Werkbank (Rezept in `18_STORY.md`) | – | Q |
-| ST4-05 | Vertrauen | – | Dialog (B1): reparierter Helm | `#davijaan = 2` (Dialog); Credits. Bauplan Assembly Bench schenkt er im Dialog; danach `#davijaan = 3`, Laden offen | D-DAVIJAAN-1 |
-| ST4-06 | Everdawn | Dimension `blue_skies:everdawn`, dann Dialog (B1): 32 × `mekanism:raw_osmium` (User, 2026-10-26); Everdawn erst nach dem Zinn (O73) | Bodhi | `#bodhi = 3`; danach ist Bodhis Strang Nebenquest | D-BODHI-2 |
-| ST4-07 | Warum der Mond schweigt | – | Dialog DD3R8 (Bedingung `#davijaan ≥ 2`): Bericht, dass es vom Mars aus geht | Stage `kapitel_k5`, `#dd3r8 = 4` | D-DAVIJAAN-1 (Hinweis Mars), D-DD3R8-3 |
+| ST4-05 | Vertrauen | – | Dialog (B1): reparierter Helm | `story_davijaan = 2` (Dialog); Credits. Bauplan Assembly Bench schenkt er im Dialog; danach `story_davijaan = 3`, Laden offen | D-DAVIJAAN-1 |
+| ST4-06 | Everdawn | Dimension `blue_skies:everdawn`, dann Dialog (B1): 32 × `mekanism:raw_osmium` (User, 2026-10-26); Everdawn erst nach dem Zinn (O73) | Bodhi | `story_bodhi = 3`; danach ist Bodhis Strang Nebenquest | D-BODHI-2 |
+| ST4-07 | Warum der Mond schweigt | – | Dialog DD3R8 (Bedingung `story_davijaan ≥ 2`): Bericht, dass es vom Mars aus geht | Stage `kapitel_k5`, `story_dd3r8 = 4` | D-DAVIJAAN-1 (Hinweis Mars), D-DD3R8-3 |
 
 ### K5 Erzketten
 
 | Code | Schritt | Aufgabe | Auslöser | Folge | Text |
 |---|---|---|---|---|---|
-| ST5-01 | Treibstoff für den Mars | – | Dialog DD3R8 (B1): 1 Eimer entschwefelter Diesel (`immersivepetroleum:diesel_bucket`, im JAR geprüft) und 1 `mekanism:advanced_control_circuit` – beides braucht die Rakete T2 (O53) | Stage `kapitel_k6`, `#dd3r8 = 5` | D-DD3R8-4 |
+| ST5-01 | Treibstoff für den Mars | – | Dialog DD3R8 (B1): 1 Eimer entschwefelter Diesel (`immersivepetroleum:diesel_bucket`, im JAR geprüft) und 1 `mekanism:advanced_control_circuit` – beides braucht die Rakete T2 (O53) | Stage `kapitel_k6`, `story_dd3r8 = 5` | D-DD3R8-4 |
 
-Nebenquest in K5/K6: Bodhis Boss-Reihe (BS3, BS4). Belohnung der letzten Boss-Quest (BS4) setzt `#bodhi = 4` (B3); damit bietet Bodhi das Siegel an.
+Nebenquest in K5/K6: Bodhis Boss-Reihe (BS3, BS4). Belohnung der letzten Boss-Quest (BS4) setzt `story_bodhi = 4` (B3); damit bietet Bodhi das Siegel an.
 
 ### K6 Der Mars
 
@@ -100,8 +100,8 @@ Nebenquest in K5/K6: Bodhis Boss-Reihe (BS3, BS4). Belohnung der letzten Boss-Qu
 | Code | Schritt | Aufgabe | Auslöser | Folge | Text |
 |---|---|---|---|---|---|
 | ST7-01 | Material für die Station | 🟡 Checkliste (Abschnitt 4) | Items im Inventar | – | Q |
-| ST7-02 | Die Station steht | Checkmark, nur für den User | User setzt die Stage per Befehl (`tag <Spieler> add story_st7_02`), wenn alle drei dort sind (B8, O22) | DD3R8: `despawn` in der Basis; erscheint am festen Platz der Station (O69, Befehl mit festen Koordinaten in der Belohnung statt von Hand); `#dd3r8 = 6` | Q |
-| ST7-03 | Das Signal | – | Dialog DD3R8 auf dem Mars | `/logbuch teil4`, Stage `kapitel_k8`, `#dd3r8 = 7` | D-DD3R8-5 |
+| ST7-02 | Die Station steht | Checkmark, nur für den User | User setzt die Stage per Befehl (`tag <Spieler> add story_st7_02`), wenn alle drei dort sind (B8, O22) | DD3R8: `despawn` in der Basis; erscheint am festen Platz der Station (O69, Befehl mit festen Koordinaten in der Belohnung statt von Hand); `story_dd3r8 = 6` | Q |
+| ST7-03 | Das Signal | – | Dialog DD3R8 auf dem Mars | `/logbuch teil4`, Stage `kapitel_k8`, `story_dd3r8 = 7` | D-DD3R8-5 |
 
 ### K8 Hitze
 
@@ -109,7 +109,7 @@ Nebenquest in K5/K6: Bodhis Boss-Reihe (BS3, BS4). Belohnung der letzten Boss-Qu
 |---|---|---|---|---|---|
 | ST8-01 | Die heißeste Welt | Dimension `ad_astra:mercury` | betreten (Rakete T3 steht in RF3) | – | Q |
 | ST8-02 | Der Tempel | `kubejs:tempelrolle_1` bis `_4` | im Tempel gefunden; Rechtsklick schaltet R1–R4 im Logbuch frei (B6) | – | Q, R1–R4 |
-| ST8-03 | Die Rollen | – | Dialog DD3R8 auf dem Mars (B1): die vier Rollen | `/logbuch teil5`, Stage `kapitel_k9`, `#dd3r8 = 8` | D-DD3R8-6 |
+| ST8-03 | Die Rollen | – | Dialog DD3R8 auf dem Mars (B1): die vier Rollen | `/logbuch teil5`, Stage `kapitel_k9`, `story_dd3r8 = 8` | D-DD3R8-6 |
 
 🟡 Die Rollen werden bei der Abgabe verbraucht; ihr Text bleibt im Logbuch.
 
@@ -117,11 +117,11 @@ Nebenquest in K5/K6: Bodhis Boss-Reihe (BS3, BS4). Belohnung der letzten Boss-Qu
 
 | Code | Schritt | Aufgabe | Auslöser | Folge | Text |
 |---|---|---|---|---|---|
-| ST9-01 | Siegel der Traumwelten | `kubejs:siegel_der_traumwelten` | Dialog Bodhi (Bedingung `#bodhi ≥ 4`): er gibt es (O47) | `#bodhi = 5` | D-BODHI-3 |
+| ST9-01 | Siegel der Traumwelten | `kubejs:siegel_der_traumwelten` | Dialog Bodhi (Bedingung `story_bodhi ≥ 4`): er gibt es (O47) | `story_bodhi = 5` | D-BODHI-3 |
 | ST9-02 | Fund aus der Tiefe | `wrd:orb_of_the_deep` (O54; liegt in jeder Ancient Bone Chest) | Item im Inventar | – | Q |
 | ST9-03 | Schutz für drei | 3 × `botania:goddess_charm` (ID wie in `altar_dimension.js`) | Items im Inventar | – | Q |
 | ST9-04 | Der Altar | 1 Terrasteel-Block, 4 Demonic Slate, Siegel, Orb of the Deep (F8, O47, O54, B1, B4) | Rechtsklick am kaputten Altar (O48, neues Skript); das Skript setzt die Stage `story_st9_04` | Das Skript setzt das komplette Ritual Pathway to the Endless Realm hin; aktivieren müssen es die Spieler selbst (Aktivierungskristall, LP; O56) | Q |
-| ST9-05 | Das Endless Realm | `kubejs:relikt` | Truhe in der Station der Minen (O40) | DD3R8 `despawn` auf dem Mars (O7), Stage `kapitel_k10`, `#dd3r8 = 9` | Q, TB (beim Lesen des Tagebuchs) |
+| ST9-05 | Das Endless Realm | `kubejs:relikt` | Truhe in der Station der Minen (O40) | DD3R8 `despawn` auf dem Mars (O7), Stage `kapitel_k10`, `story_dd3r8 = 9` | Q, TB (beim Lesen des Tagebuchs) |
 
 Nicht als Aufgabe „Dimension `bloodmagic:dungeon` betreten“: Das ginge schon über den Mini-Dungeon (F27).
 
@@ -131,17 +131,17 @@ Nicht als Aufgabe „Dimension `bloodmagic:dungeon` betreten“: Das ginge schon
 |---|---|---|---|---|---|
 | ST10-01 | Die Station ist still | Checkmark | Spieler klicken (der Droide ist weg; keine automatische Prüfung möglich) | – | Q |
 | ST10-02 | Das Elfenportal | `botania:alfheim_portal` | Item im Inventar | – | Q |
-| ST10-03 | Meisterin Cerina | – | Rune des Frühlings ins offene Portal werfen: Skript lässt Cerina erscheinen, `#cerina = 1` (O75); dann Dialog (B1): Relikt | `#cerina = 2` | D-CERINA-0, D-CERINA-1 |
-| ST10-04 | Was sie braucht | – | Dialog (B1): 4 Arcs, Ultimate Control Circuit, 1 Elementium-Block (F14, B1) | `give @a kubejs:galaktischer_strahlenschutz` (einer), Stage `kapitel_k11`, `#cerina = 3` | D-CERINA-2 |
+| ST10-03 | Meisterin Cerina | – | Rune des Frühlings ins offene Portal werfen: Skript lässt Cerina erscheinen, `story_cerina = 1` (O75); dann Dialog (B1): Relikt | `story_cerina = 2` | D-CERINA-0, D-CERINA-1 |
+| ST10-04 | Was sie braucht | – | Dialog (B1): 4 Arcs, Ultimate Control Circuit, 1 Elementium-Block (F14, B1) | `give @a kubejs:galaktischer_strahlenschutz` (einer), Stage `kapitel_k11`, `story_cerina = 3` | D-CERINA-2 |
 
 ### K11 Glacio
 
 | Code | Schritt | Aufgabe | Auslöser | Folge | Text |
 |---|---|---|---|---|---|
-| ST11-01 | Durch die Barriere | Dimension `ad_astra:glacio` | betreten (Rakete T4 steht in RF4) | Vos und DD3R8 im Versteck: `spawn` (O52), `#vos = 1`, `#dd3r8 = 10` | Q |
-| ST11-02 | Das Versteck | – | Erstes Gespräch mit Vos | `#vos = 2` | D-VOS-0, D-DD3R8-7 |
-| ST11-03 | Heimkehr | Dimension `minecraft:overworld` (nach ST11-02) | zurück auf der Erde (Vos fliegt mit, O33) | Vos und DD3R8 `despawn` auf Glacio, der User setzt beide in der Basis (O55) und dann `#vos = 3` | Q |
-| ST11-04 | Ende von Teil 1 | – | Dialog mit Vos in der Basis | Buch 2 wird sichtbar, `#vos = 4` | D-VOS-1 |
+| ST11-01 | Durch die Barriere | Dimension `ad_astra:glacio` | betreten (Rakete T4 steht in RF4) | Vos und DD3R8 im Versteck: `spawn` (O52), `story_vos = 1`, `story_dd3r8 = 10` | Q |
+| ST11-02 | Das Versteck | – | Erstes Gespräch mit Vos | `story_vos = 2` | D-VOS-0, D-DD3R8-7 |
+| ST11-03 | Heimkehr | Dimension `minecraft:overworld` (nach ST11-02) | zurück auf der Erde (Vos fliegt mit, O33) | Vos und DD3R8 `despawn` auf Glacio, der User setzt beide in der Basis (O55) und dann `story_vos = 3` | Q |
+| ST11-04 | Ende von Teil 1 | – | Dialog mit Vos in der Basis | Buch 2 wird sichtbar, `story_vos = 4` | D-VOS-1 |
 
 ## 4. Checkliste Mars-Station (🟡 Vorschlag, O22)
 
@@ -179,9 +179,9 @@ Ablage in `docs/story/texte/`, je Figur oder Buch eine Datei. Der User überarbe
 | ✅ Items: 4 Tempelrollen, Tagebuch, Siegel, Pilotenhelm (kaputt/repariert); Reparaturrezept, 2026-10-21 | Claude | 🔵 Tests 73, 78 |
 | ✅ `meister_truhe.json`: Tagebuch als Item, 2026-10-21 | Claude | 🔵 Test 78 |
 | ✅ Bauplan „Pilotenhelm“ (O71, 2026-10-26, ungetestet): Rolle `kubejs:bauplan_pilotenhelm`, neues Kapitel „Erinnerungsstücke“ im Buch „Baupläne des Einsiedlers“; das Reparaturrezept ergibt jetzt `swgc:clone_212th_battalion_helmet` und ist bis zum Lesen gesperrt (`einsiedler_shop.js`, `story_rezepte.js`, `teil1_items.js`, Patchouli-Eintrag); `kubejs:klonhelm_repariert` entfällt | Claude | 🔵 Test 92 |
-| ✅ Sperre Everdawn (O73, 2026-10-26, ungetestet, `everdawn_sperre.js`): Wer `blue_skies:everdawn` betritt, solange `#bodhi < 2` (Zinn-Zoll nicht bezahlt), wird zurückgeschickt, mit Meldung; Vorlage `altar_dimension.js`. Ergänzt 2026-10-27 (User): auch `blue_skies:everbright` erst ab `#bodhi ≥ 1` (nach dem ersten Gespräch, ST3-01) | Claude | ✅ Test 89 (Everdawn); 🔵 Test 95 (Everbright) |
+| ✅ Sperre Everdawn (O73, 2026-10-26, ungetestet, `everdawn_sperre.js`): Wer `blue_skies:everdawn` betritt, solange `story_bodhi < 2` (Zinn-Zoll nicht bezahlt), wird zurückgeschickt, mit Meldung; Vorlage `altar_dimension.js`. Ergänzt 2026-10-27 (User): auch `blue_skies:everbright` erst ab `story_bodhi ≥ 1` (nach dem ersten Gespräch, ST3-01) | Claude | ✅ Test 89 (Everdawn); 🔵 Test 95 (Everbright) |
 | Mars-Schriften (O74): Lese-Item `kubejs:schrift_marsbasis` („Aufzeichnungen der früheren Bewohner“), Eintrag im Logbuch, neues Kapitel „Fundstücke“, mit Text (Entwurf Claude) und einer Patchouli-Multiblock-Seite der Station (3D, auf Klick als Geisterbild vor Ort). Die Station entwirft der User im Kreativmodus; Claude übernimmt sie aus der Strukturdatei in den Bauplan. `logbuch_gen.py` erweitern | User (Station), Claude | Bau der Station |
-| ✅ Elfe rufen (O75, 2026-10-26, ungetestet, `elfenportal.js`; Platzhalter `IEPLUS_CERINA_PRESET`): Skript erkennt eine `botania:rune_spring`, die in ein aktives Portal to Alfheim geworfen wird, entfernt sie, lässt Meisterin Cerina am Portal erscheinen (`easy_npc preset import` an der Portalstelle) und setzt `#cerina = 1`. Ersetzt das Hinstellen von Hand (O55) für die Elfe | Claude | Preset von Cerina; 🔵 Test 90 |
+| ✅ Elfe rufen (O75, 2026-10-26, ungetestet, `elfenportal.js`; Platzhalter `IEPLUS_CERINA_PRESET`): Skript erkennt eine `botania:rune_spring`, die in ein aktives Portal to Alfheim geworfen wird, entfernt sie, lässt Meisterin Cerina am Portal erscheinen (`easy_npc preset import` an der Portalstelle) und setzt `story_cerina = 1`. Ersetzt das Hinstellen von Hand (O55) für die Elfe | Claude | Preset von Cerina; 🔵 Test 90 |
 | Mod-Bücher erst später sichtbar (ST2-01): Mod-Tabs im Questbuch bleiben unsichtbar, bis ihr erstes Kapitel freigeschaltet ist. 🔵 Prüfen, wie FTB Quests ein Kapitel ohne sichtbare Quest anzeigt | Claude | – |
 | ✅ Skript Kobalthammer (O67, 2026-10-26, ungetestet, `kobalthammer.js`): setzt den Spieler-Tag `ieplus_kobalthammer`, solange ein `tconstruct:sledge_hammer` mit allen Teilen aus Kobalt im Inventar ist, sonst entfernt es ihn (für die Abgabe „Würdig sein“) | Claude | 🔵 Test 85 |
 | Peilsender (O69): Koordinaten des Platzes auf dem Mars in den Befehl von `d4_danke` und in die Belohnung von ST7-02 eintragen | Host, dann Claude | Bau der Ruine |

@@ -13,7 +13,7 @@
 
 Easy NPC 7.14 (aus dem JAR, 2026-10-21): Ein Dialog hat einen **Namen** (höchstens 32 Zeichen), **Texte**, **Knöpfe** (Beschriftung höchstens 64 Zeichen; bis 20 Zeichen passen mehrere nebeneinander, längere stehen einzeln), **Bedingungen** und eine **Priorität**. `@initiator` im Text wird durch den Namen des Spielers ersetzt.
 
-- **Einstieg:** Jede Stufe hat einen Einstiegsdialog mit Bedingung auf das Scoreboard `story`, Eintrag `#dd3r8` (B2). Die Priorität entscheidet, wenn mehrere passen (höhere Zahl zuerst). 🔵 Im Spiel prüfen, dass beim Ansprechen der passende Einstieg öffnet und Unterdialoge (Priorität 0, ohne Bedingung) nur über Knöpfe erreichbar sind.
+- **Einstieg:** Jede Stufe hat einen Einstiegsdialog mit Bedingung auf das Scoreboard `story_dd3r8` (B2). Die Priorität entscheidet, wenn mehrere passen (höhere Zahl zuerst). 🔵 Im Spiel prüfen, dass beim Ansprechen der passende Einstieg öffnet und Unterdialoge (Priorität 0, ohne Bedingung) nur über Knöpfe erreichbar sind.
 - **Texte** dürfen bis etwa 512 Zeichen lang sein (Eingabefeld im Editor); 192 ist nur die Zeilenbreite in Pixeln, längere Texte werden umgebrochen (JAR geprüft 2026-10-26, `easy_npc_config_ui`). 🔵 Im Spiel ansehen, ab wie vielen Zeilen es unübersichtlich wird.
 - **Knopf mit Bedingung** (z. B. Items im Inventar) bleibt sichtbar und ist erst klickbar, wenn die Bedingung erfüllt ist (Test 29).
 - `<ST3-05>` usw. steht für die Quest-ID, die `QuestbuchGen` aus dem Code erzeugt; die echten IDs trage ich ein, sobald Buch 1 gebaut ist.
@@ -25,7 +25,7 @@ Schreibweise: **[Knopf]** → Ziel. *Kursiv* sind Geräusche oder Gesten.
 
 ## Stufe 0 · Der Einschlag (K1, in der Kapsel)
 
-#### `d0_einschlag` · Prio 100 · `#dd3r8 = 0`
+#### `d0_einschlag` · Prio 100 · `story_dd3r8 = 0`
 > *Zischen. Eine Klappe springt auf.* Systemprüfung … 61 Prozent. Beine: vorhanden. Würde: beschädigt. Oh. Hallo. Seid ihr die drei Brüder der Spezies Mensch?
 - **[Ähh ja... Wer bist du?]** → `d0_wer`
 - **[Was zum Teufel hast du hier angestellt?]** → `d0_basis`
@@ -49,20 +49,20 @@ Schreibweise: **[Knopf]** → Ziel. *Kursiv* sind Geräusche oder Gesten.
 
 #### `d0_beweis` · Prio 0
 > Das ist freundlich. Aber freundlich reicht nicht für eine Reise zwischen den Sternen. Ich brauche einen Beweis, dass eure Spezies weit genug entwickelt ist.
-- **[Was für einen Beweis?]** → Befehl: `scoreboard players set #dd3r8 story 1` → `d1_liste`
+- **[Was für einen Beweis?]** → Befehl: `scoreboard players set @a story_dd3r8 1` → `d1_liste`
 
 ---
 
 ## Stufe 1 · Würdig sein (K2)
 
-#### `d1_wuerdig` · Prio 100 · `#dd3r8 = 1`
+#### `d1_wuerdig` · Prio 100 · `story_dd3r8 = 1`
 > Habt ihr den Beweis?
 - **[Was brauchst du noch mal?]** → `d1_liste`
 - **[Hier ist alles]** · Bedingung: Spieler-Tag `ieplus_kobalthammer` (setzt ein Skript, solange ein Vorschlaghammer ganz aus Kobalt im Inventar ist; O67) und im Inventar `immersiveengineering:capacitor_lv`, `botania:manasteel_block` → Befehle:
   `clear @initiator tconstruct:sledge_hammer 1`
   `clear @initiator immersiveengineering:capacitor_lv 1`
   `clear @initiator botania:manasteel_block 1`
-  `scoreboard players set #dd3r8 story 2`
+  `scoreboard players set @a story_dd3r8 2`
   → `d1_bestanden`
 - **[Noch nicht]** → schließen
 
@@ -88,9 +88,9 @@ Schreibweise: **[Knopf]** → Ziel. *Kursiv* sind Geräusche oder Gesten.
 
 Logbuch Teil 2 kommt mit dem Abhaken von „Würdig sein“ (ST2-01).
 
-#### `d2_bericht` · Prio 110 · `#dd3r8 = 2` und `#bodhi ≥ 2`
+#### `d2_bericht` · Prio 110 · `story_dd3r8 = 2` und `story_bodhi ≥ 2`
 > Ihr wart bei ihm. Und ihr habt Zinn mitgebracht. Mein Vertrauen in eure Spezies steigt um vier Prozent.
-- **[Was kommt jetzt?]** → Befehle: `tag @initiator add story_st3_05`, `scoreboard players set #dd3r8 story 3` → `d2_mond`
+- **[Was kommt jetzt?]** → Befehle: `tag @initiator add story_st3_05`, `scoreboard players set @a story_dd3r8 3` → `d2_mond`
 
 #### `d2_mond` · Prio 0
 > Der dritte Teil ist entschlüsselt. Mein Meister entdeckte einen alten Bekannten auf eurem Mond. Ihr müsst zu ihm gelangen. Vielleicht weiß er etwas.
@@ -101,7 +101,7 @@ Logbuch Teil 2 kommt mit dem Abhaken von „Würdig sein“ (ST2-01).
 > Ihr braucht eine Rakete samt Treibstoff, Startplattform und Raumanzug mit Sauerstoff-Reserven. Für den Mond reicht eine T1-Rakete. Alles weitere steht im Buch.
 - **[Alles klar, danke.]** → schließen
 
-#### `d2_haus` · Prio 100 · `#dd3r8 = 2`
+#### `d2_haus` · Prio 100 · `story_dd3r8 = 2`
 > Ich habe etwas geortet. Nicht weit von hier steht ein Haus, das nicht in diese Welt gehört. Seine Steine schwingen wie Dinge von … woanders. Licht und Dämmerung. Ich verstehe es nicht und mag es nicht. Aber vielleicht bringt es uns weiter.
 - **[Was erhoffst du dir von diesem Haus?]** → `d2_hausinhalt`
 
@@ -117,16 +117,16 @@ Logbuch Teil 2 kommt mit dem Abhaken von „Würdig sein“ (ST2-01).
 
 ## Stufe 3 · Der Mond (K4)
 
-#### `d3_bericht` · Prio 110 · `#dd3r8 = 3` und `#davijaan ≥ 2`
+#### `d3_bericht` · Prio 110 · `story_dd3r8 = 3` und `story_davijaan ≥ 2`
 > Ihr seht aus, als hättet ihr jemanden getroffen. Ein Einsiedler? Der den Mond abschirmt? Und mich nicht leiden kann? … Ich verstehe.
-- **[Er sagt, vom Mars könntest du das gesamte Sonnensystem scannen.]** → Befehle: `tag @initiator add story_st4_07`, `scoreboard players set #dd3r8 story 4` → `d3_mars`
+- **[Er sagt, vom Mars könntest du das gesamte Sonnensystem scannen.]** → Befehle: `tag @initiator add story_st4_07`, `scoreboard players set @a story_dd3r8 4` → `d3_mars`
 
 #### `d3_mars` · Prio 0
 > Ah, die vierte Welt. Weiter, kälter, mehr Staub. Ein Horchposten braucht Strom, Luft und eine vernünftige Gravitation. Kriegt ihr das hin?
 - **[Ähh, vielleicht...]** → schließen
 - **[Na klar, wir bauen die Basis.]** → schließen
 
-#### `d3_warten` · Prio 100 · `#dd3r8 = 3`
+#### `d3_warten` · Prio 100 · `story_dd3r8 = 3`
 > Ihr seid noch nicht auf dem Mond. Eine Rakete fliegt nicht von allein.
 - **[Was fehlt uns?]** → `d3_hilfe`
 - **[Wir sind dran]** → schließen
@@ -139,7 +139,7 @@ Logbuch Teil 2 kommt mit dem Abhaken von „Würdig sein“ (ST2-01).
 
 ## Stufe 4 · Treibstoff für den Mars (K5)
 
-#### `d4_treibstoff` · Prio 100 · `#dd3r8 = 4`
+#### `d4_treibstoff` · Prio 100 · `story_dd3r8 = 4`
 > Für die vierte Welt reicht euer Pflanzentreibstoff nicht. Ich habe es zweimal simuliert. Beide endeten fatal. Es wird Zeit für euch, hochwertigeren Treibstoff zu produzieren.
 - **[Was genau brauchen wir?]** → `d4_liste`
 - **[Hier, beides]** · Bedingung: im Inventar `immersivepetroleum:diesel_bucket`, `mekanism:advanced_control_circuit` → Befehle:
@@ -147,7 +147,7 @@ Logbuch Teil 2 kommt mit dem Abhaken von „Würdig sein“ (ST2-01).
   `clear @initiator mekanism:advanced_control_circuit 1`
   `give @initiator minecraft:bucket 1`
   `tag @initiator add story_st5_01`
-  `scoreboard players set #dd3r8 story 5`
+  `scoreboard players set @a story_dd3r8 5`
   → `d4_danke`
 
 #### `d4_liste` · Prio 0
@@ -164,7 +164,7 @@ Auf dem Mars zeigt der Peilsender auf den Platz. Dort liegen die Reste einer alt
 
 ## Stufe 5 · Die Station (K6, K7, noch in der Basis)
 
-#### `d5_hinweis` · Prio 100 · `#dd3r8 = 5`
+#### `d5_hinweis` · Prio 100 · `story_dd3r8 = 5`
 > Habt ihr den Platz auf dem Mars gefunden? Der Peilsender zeigt euch den Weg. Baut dort die Station, dann komme ich nach.
 - **[Wir sind dran]** → schließen
 
@@ -174,13 +174,13 @@ Auf dem Mars zeigt der Peilsender auf den Platz. Dort liegen die Reste einer alt
 
 DD3R8 erscheint am festen Platz der Station, wenn ST7-02 erledigt ist (O69; Befehl in der Belohnung).
 
-#### `d6_ankunft` · Prio 100 · `#dd3r8 = 6`
+#### `d6_ankunft` · Prio 100 · `story_dd3r8 = 6`
 > *Rauschen.* Ich bin da. Sieht gut aus. Gebt mir einen Moment, ich richte meine Sensoren aus.
 - **[Hörst du etwas?]** → `d6_signal`
 
 #### `d6_signal` · Prio 0
 > Da. Ein Signal. Eine Signatur, alt, aber seine. Er lebt. Oder er hat gelebt, als er das gesendet hat.
-- **[Wohin führt es?]** → Befehle: `tag @initiator add story_st7_03`, `scoreboard players set #dd3r8 story 7` → `d6_merkur`
+- **[Wohin führt es?]** → Befehle: `tag @initiator add story_st7_03`, `scoreboard players set @a story_dd3r8 7` → `d6_merkur`
 
 #### `d6_merkur` · Prio 0
 > Zur heißesten Welt, nah am Stern. Dort steht ein Tempel. Ich habe ein schlechtes Gefühl dabei.
@@ -195,12 +195,12 @@ DD3R8 erscheint am festen Platz der Station, wenn ST7-02 erledigt ist (O69; Befe
 
 ## Stufe 7 · Die Rollen (K8, Mars-Station)
 
-#### `d7_rollen` · Prio 100 · `#dd3r8 = 7`
+#### `d7_rollen` · Prio 100 · `story_dd3r8 = 7`
 > Der Tempel. Habt ihr dort etwas gefunden? Schriften, Zeichen, Kratzer an der Wand? Ich nehme alles.
 - **[Vier Rollen]** · Bedingung: im Inventar `kubejs:tempelrolle_1` bis `_4` → Befehle:
   `clear @initiator kubejs:tempelrolle_1 1` (ebenso `_2`, `_3`, `_4`)
   `tag @initiator add story_st8_03`
-  `scoreboard players set #dd3r8 story 8`
+  `scoreboard players set @a story_dd3r8 8`
   → `d7_erkenntnis`
 - **[Noch nichts]** → schließen
 
@@ -227,7 +227,7 @@ DD3R8 erscheint am festen Platz der Station, wenn ST7-02 erledigt ist (O69; Befe
 
 Sobald die Spieler das Relikt haben, verschwindet DD3R8 (ST9-05). Danach spricht ihn niemand mehr an, bis Glacio.
 
-#### `d8_warten` · Prio 100 · `#dd3r8 = 8`
+#### `d8_warten` · Prio 100 · `story_dd3r8 = 8`
 > Habt ihr alles für den Altar? Oder braucht ihr noch Erklärungen?
 - **[Metall, das lebt?]** → `d8_metall`
 - **[Stein, der Blut trank?]** → `d8_stein`
@@ -261,7 +261,7 @@ Sobald die Spieler das Relikt haben, verschwindet DD3R8 (ST9-05). Danach spricht
 
 Stufe 9 hat keinen Dialog: DD3R8 ist verschwunden. Mit ST11-01 erscheinen er und der Meister im Versteck.
 
-#### `d10_glacio` · Prio 100 · `#dd3r8 = 10`
+#### `d10_glacio` · Prio 100 · `story_dd3r8 = 10`
 > Ihr! Ich wusste es. Ich habe eine Wette gegen mich selbst gewonnen. Und verloren. Es ist kompliziert.
 - **[Wie kommst du hierher?]** → `d10_wie`
 

@@ -12,13 +12,13 @@
 > - Das Relikt steckt im Galaktischen Strahlenschutz im Triebwerk der Rakete T4 (O43). Er nimmt es heraus, ohne dass die Spieler etwas abgeben müssen.
 > - Easy NPC: Text höchstens ~512 Zeichen, Knopf höchstens 64.
 
-Scoreboard `story`, Eintrag `#vos` (B2): 1 = im Versteck erschienen (Belohnung von ST11-01), 2 = erstes Gespräch geführt, 3 = in der Basis (setzt der User, wenn er Vos und DD3R8 dort hinstellt, O55), 4 = Teil 1 abgeschlossen.
+Scoreboard `story_vos` (B2): 1 = im Versteck erschienen (Belohnung von ST11-01), 2 = erstes Gespräch geführt, 3 = in der Basis (setzt der User, wenn er Vos und DD3R8 dort hinstellt, O55), 4 = Teil 1 abgeschlossen.
 
 ---
 
 ## Stufe 1 · Das Versteck (K11, Glacio)
 
-#### `q1_treffen` · Prio 100 · `#vos = 1`
+#### `q1_treffen` · Prio 100 · `story_vos = 1`
 > *Ein Mann sitzt am Feuer, in einen Mantel gewickelt, das Gesicht voller Narben. Er schaut nicht einmal auf.* Ihr seid also zu dritt. Ich hab euch schon gespürt, lange bevor eure Rakete hier gelandet ist.
 - **[Bist du der Meister?]** → `q1_meister`
 
@@ -53,23 +53,23 @@ Scoreboard `story`, Eintrag `#vos` (B2): 1 = im Versteck erschienen (Belohnung v
 
 #### `q1_heim` · Prio 0
 > Mit zu euch? Sehr gern, wenn ihr noch Platz in der Rakete habt. Hier ist es kalt, und meine Knie sind dafür nicht mehr gemacht. Außerdem hab ich euch noch einiges zu erzählen, und das geht am Feuer besser als im Eis.
-- **[Dann fliegen wir]** → Befehle: `tag @initiator add story_st11_02`, `scoreboard players set #vos story 2` → schließen
+- **[Dann fliegen wir]** → Befehle: `tag @initiator add story_st11_02`, `scoreboard players set @a story_vos 2` → schließen
 
 ---
 
 ## Stufe 2 · Aufbruch (Glacio, bis zur Heimkehr)
 
-#### `q2_aufbruch` · Prio 100 · `#vos = 2`
+#### `q2_aufbruch` · Prio 100 · `story_vos = 2`
 > Ich bin bereit, wenn ihr es seid. Der Droide auch, er hat schon dreimal nachgezählt, ob er alles eingepackt hat. Dabei besitzt er gar nichts.
 - **[Gleich geht es los]** → schließen
 
-Wenn die Spieler wieder auf der Erde sind (ST11-03), stellt der User Vos und DD3R8 in die Basis und setzt `#vos = 3` (O55).
+Wenn die Spieler wieder auf der Erde sind (ST11-03), stellt der User Vos und DD3R8 in die Basis und setzt `story_vos = 3` (O55).
 
 ---
 
 ## Stufe 3 · Angekommen (K11, Basis der Spieler)
 
-#### `q3_ankunft` · Prio 100 · `#vos = 3`
+#### `q3_ankunft` · Prio 100 · `story_vos = 3`
 > *Er schaut sich lange in eurer Basis um und fängt langsam an zu grinsen.* Hier hat also alles angefangen. Viel Rauch, viel Lärm, wenig Ordnung. Aber man sieht, dass ihr hier mit Spaß gebaut habt. Gefällt mir.
 - **[Was jetzt, Meister?]** → `q3_was`
 
@@ -84,13 +84,13 @@ Wenn die Spieler wieder auf der Erde sind (ST11-03), stellt der User Vos und DD3
 
 #### `q3_ende` · Prio 0
 > Gut, dann fangen wir bald an. Und danke. Ihr habt einem Fremden geholfen, ohne zu wissen, wer er ist oder was er getan hat. Das macht nicht jeder.
-- **[Gern geschehen]** → Befehle: `tag @initiator add story_st11_04`, `scoreboard players set #vos story 4` → schließen
+- **[Gern geschehen]** → Befehle: `tag @initiator add story_st11_04`, `scoreboard players set @a story_vos 4` → schließen
 
 ---
 
 ## Stufe 4 · Ende von Teil 1
 
-#### `q4_ruhe` · Prio 100 · `#vos = 4`
+#### `q4_ruhe` · Prio 100 · `story_vos = 4`
 > Ich ruhe mich aus. Solltet ihr auch mal probieren. Mit der Ausbildung fangen wir an, sobald ich wieder ohne Stöhnen aufstehen kann. Gebt mir noch ein paar Tage.
 - **[Bis bald, Meister]** → schließen
 

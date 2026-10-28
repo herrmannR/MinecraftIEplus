@@ -10,13 +10,13 @@
 > - Nach Alfheim dürfen die Spieler noch nicht (Mead of Kvasir in Teil 2, F9).
 > - Easy NPC: Text höchstens ~512 Zeichen, Knopf höchstens 64.
 
-Scoreboard `story`, Eintrag `#cerina` (B2): 1 = gerade aus dem Portal getreten (setzt die Belohnung von ST10-02; der User setzt sie ans Portal, O55), 2 = Relikt abgegeben, 3 = Strahlenschutz übergeben.
+Scoreboard `story_cerina` (B2): 1 = gerade aus dem Portal getreten (setzt die Belohnung von ST10-02; der User setzt sie ans Portal, O55), 2 = Relikt abgegeben, 3 = Strahlenschutz übergeben.
 
 ---
 
 ## Stufe 1 · Aus dem Portal (K10)
 
-#### `c1_portal` · Prio 100 · `#cerina = 1`
+#### `c1_portal` · Prio 100 · `story_cerina = 1`
 > *Aus dem Portal tritt eine Frau mit grüner Haut und feinen Mustern im Gesicht. Sie lächelt euch an.* Willkommen! Es ist lange her, dass jemand von dieser Seite ein Tor für mich gebaut hat, und ihr habt es wirklich schön gemacht. Sagt mal, wer hat euch gezeigt, wie das geht?
 - **[Ein Tagebuch]** → `c1_tagebuch`
 - **[Wer bist du?]** → `c1_wer`
@@ -44,7 +44,7 @@ Scoreboard `story`, Eintrag `#cerina` (B2): 1 = gerade aus dem Portal getreten (
 - **[Hier, wir legen es ab]** → Befehle:
   `clear @initiator kubejs:relikt 1`
   `tag @initiator add story_st10_03`
-  `scoreboard players set #cerina story 2`
+  `scoreboard players set @a story_cerina 2`
   → `c1_danke`
 
 #### `c1_danke` · Prio 0
@@ -55,7 +55,7 @@ Scoreboard `story`, Eintrag `#cerina` (B2): 1 = gerade aus dem Portal getreten (
 
 ## Stufe 2 · Was sie braucht (K10)
 
-#### `c2_auftrag` · Prio 100 · `#cerina = 2`
+#### `c2_auftrag` · Prio 100 · `story_cerina = 2`
 > Da seid ihr ja wieder, wie schön! Habt ihr alles beisammen, worum ich euch gebeten habe? Ich frage nur, weil ich das Ding nicht länger als nötig hier herumliegen haben möchte.
 - **[Was brauchst du noch mal?]** → `c2_liste`
 - **[Hier ist alles]** · Bedingung: im Inventar `blue_skies:ethereal_arc`, `blue_skies:dusk_arc`, `blue_skies:nature_arc`, `blue_skies:poison_arc`, `mekanism:ultimate_control_circuit`, `botania:elementium_block` → Befehle:
@@ -67,7 +67,7 @@ Scoreboard `story`, Eintrag `#cerina` (B2): 1 = gerade aus dem Portal getreten (
   `clear @initiator botania:elementium_block 1`
   `give @initiator kubejs:galaktischer_strahlenschutz 1`
   `tag @initiator add story_st10_04`
-  `scoreboard players set #cerina story 3`
+  `scoreboard players set @a story_cerina 3`
   → `c2_fertig`
 - **[Noch nicht]** → schließen
 
@@ -96,7 +96,7 @@ Scoreboard `story`, Eintrag `#cerina` (B2): 1 = gerade aus dem Portal getreten (
 
 ## Stufe 3 · Danach
 
-#### `c3_hallo` · Prio 100 · `#cerina ≥ 3`
+#### `c3_hallo` · Prio 100 · `story_cerina ≥ 3`
 > Ihr seid ja noch da! Schön, euch zu sehen. Aber euer Meister wartet auf Glacio, und ich wette, er ist nicht besonders geduldig. Kann ich noch etwas für euch tun?
 - **[Was ist auf der anderen Seite?]** → `c3_alfheim`
 - **[Wer bist du wirklich?]** → `c3_wer`

@@ -21,14 +21,14 @@ WURZEL = Path(__file__).resolve().parent.parent
 TEXTE = WURZEL / 'docs' / 'story' / 'texte'
 AUS = WURZEL / 'docs' / 'story' / 'druck'
 
-# Datei, Figur, Scoreboard-Eintrag, Ort; Reihenfolge wie in der Story
+# Datei, Figur, Objective der Dialogstufe, Ort; Reihenfolge wie in der Story
 FIGUREN = [
-    ('dialoge_dd3r8.md', 'DD3R8', '#dd3r8', 'Kapsel in der Basis (bis K7), danach Mars-Station'),
-    ('dialoge_zwerg.md', 'Der Zwerg in der Schlucht', '#zwerg', 'Schlucht auf halbem Weg nach Süden'),
-    ('dialoge_bodhi.md', 'Bodhi Bad Dur', '#bodhi', 'Blue-Skies-Haus'),
-    ('dialoge_davijaan.md', 'Davijaan', '#davijaan', 'Mondbasis'),
-    ('dialoge_cerina.md', 'Meisterin Cerina', '#cerina', 'erscheint am Elfenportal (Skript, aus ihrem Preset)'),
-    ('dialoge_vos.md', 'Quinlan Vos', '#vos', 'Versteck auf Glacio, danach Basis'),
+    ('dialoge_dd3r8.md', 'DD3R8', 'story_dd3r8', 'Kapsel in der Basis (bis K7), danach Mars-Station'),
+    ('dialoge_zwerg.md', 'Der Zwerg in der Schlucht', 'story_zwerg', 'Schlucht auf halbem Weg nach Süden'),
+    ('dialoge_bodhi.md', 'Bodhi Bad Dur', 'story_bodhi', 'Blue-Skies-Haus'),
+    ('dialoge_davijaan.md', 'Davijaan', 'story_davijaan', 'Mondbasis'),
+    ('dialoge_cerina.md', 'Meisterin Cerina', 'story_cerina', 'erscheint am Elfenportal (Skript, aus ihrem Preset)'),
+    ('dialoge_vos.md', 'Quinlan Vos', 'story_vos', 'Versteck auf Glacio, danach Basis'),
 ]
 PLATZHALTER = re.compile(r'(\[Name\]|&lt;[xyz]&gt;|&lt;ST[\d-]+&gt;|&lt;uuid&gt;|PLATZHALTER\w*)')  # nach html.escape
 
@@ -98,12 +98,12 @@ def figur(datei, name, eintrag, ort):
             sprechtext = ' '.join(rede)
             warn = ' <span class="ph">(über 512 Zeichen)</span>' if len(sprechtext) > 512 else ''
             bed_html = inline(bed) if bed and bed != 'ohne Bedingung' else '–'
-            if bed and bed.startswith('`#'):
-                pass
-            m2 = re.match(r'`(#\w+)\s*(=|≥)\s*(\d+)`', bed)
-            if m2:
-                bed_html = (f'Scoreboard <code>story</code>, Eintrag <code>{m2.group(1)}</code> '
-                            f'{"gleich" if m2.group(2) == "=" else "mindestens"} <b>{m2.group(3)}</b>')
+            # je Vergleich eine Scoreboard-Bedingung im Editor: Name = Objective, Vergleich, Wert
+            bedingungen = re.findall(r'`(story_\w+)\s*(=|≥)\s*(\d+)`', bed)
+            if bedingungen:
+                bed_html = ' und '.join(
+                    f'Scoreboard, Name <code>{o}</code>, {"gleich (=)" if op == "=" else "größer gleich (≥)"} <b>{w}</b>'
+                    for o, op, w in bedingungen)
             tab = ''.join(knopf(k) for k in knoepfe)
             teile.append(
                 f'<div class="dialog"><h3><span class="box">☐</span> <code>{did}</code></h3>'
@@ -117,7 +117,7 @@ def figur(datei, name, eintrag, ort):
             teile.append(f'<p class="hinweis">{inline(z.strip())}</p>')
         i += 1
     kopf = (f'<h1>{html.escape(name)}</h1>'
-            f'<p class="figkopf">Ort: {html.escape(ort)} · Dialogstufe: Scoreboard <code>story</code>, Eintrag '
+            f'<p class="figkopf">Ort: {html.escape(ort)} · Dialogstufe: Objective '
             f'<code>{eintrag}</code> · {anzahl} Dialoge · Quelle <code>docs/story/texte/{datei}</code></p>'
             f'<p class="figkopf">☐ Figur gesetzt · ☐ Skin · ☐ Name · ☐ alle Dialoge · ☐ Handel (falls vorhanden) · '
             f'☐ Preset exportiert</p>')
@@ -159,14 +159,15 @@ def main():
         '<div class="titel"><h1>Immersive Engineering+<br>Story-Figuren bauen</h1>'
         f'<p>Bauanleitung für den Easy-NPC-Editor · Teil 1 · Stand {date.today().strftime("%d.%m.%Y")}</p>'
         '<h2>Einmal vorher</h2><ol>'
-        '<li>In der Welt einmal <code>/scoreboard objectives add story dummy</code> ausführen.</li>'
+        '<li>Die Objectives <code>story_&lt;figur&gt;</code> legt das Skript <code>dialogstufen.js</code> beim Serverstart selbst an.</li>'
         '<li>Figur setzen, Skin und Namen eintragen.</li>'
         '<li>Je Figur alle Dialoge der Reihe nach anlegen und abhaken (☐).</li>'
         '<li>Fertige Figur als Preset exportieren und den Namen an Claude geben (Cerina braucht das für das Elfenportal, '
         'DD3R8 und Vos für ihr Erscheinen an neuen Orten).</li></ol>'
         '<h2>So liest man einen Dialog</h2><ul>'
         '<li><b>Name</b> (blau, höchstens 32 Zeichen) genau so übernehmen; die Knöpfe verweisen darauf.</li>'
-        '<li><b>Priorität</b> und <b>Bedingung</b>: Der Einstieg jeder Stufe hat Priorität 100 und eine Scoreboard-Bedingung; '
+        '<li><b>Priorität</b> und <b>Bedingung</b>: Der Einstieg jeder Stufe hat Priorität 100 und eine Bedingung vom Typ Scoreboard (Name = Objective, Vergleich, Wert; '
+        'sie liest den Score des Spielers, der spricht, darum setzen alle Befehle den Wert mit <code>@a</code>); '
         'Unterdialoge haben Priorität 0 und keine Bedingung, sie öffnen nur über Knöpfe. Der Rückfall hat Priorität 1.</li>'
         '<li><b>Text</b> (gelber Rand, bis etwa 512 Zeichen) wird in das Textfeld kopiert. Sternchen *…* markieren Gesten; '
         'die kann man so lassen oder weglassen.</li>'

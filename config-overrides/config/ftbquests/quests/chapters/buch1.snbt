@@ -762,7 +762,7 @@
 			id: "4366AFEFC2007111"
 			rewards: [{
 				auto: "enabled"
-				command: "/scoreboard players set #dd3r8 story 6"
+				command: "/scoreboard players set @a story_dd3r8 6"
 				elevate_perms: true
 				id: "38028A5FA8DF2C5B"
 				silent: true
@@ -1089,7 +1089,7 @@
 			id: "7DD64B24B0FBEEE8"
 			rewards: [{
 				auto: "enabled"
-				command: "/scoreboard players set #dd3r8 story 9"
+				command: "/scoreboard players set @a story_dd3r8 9"
 				elevate_perms: true
 				id: "4141C5BB6A489A81"
 				silent: true
@@ -1278,7 +1278,7 @@
 			id: "07D905C647F1A801"
 			rewards: [{
 				auto: "enabled"
-				command: "/scoreboard players set #vos story 1"
+				command: "/scoreboard players set @a story_vos 1"
 				elevate_perms: true
 				id: "451BD385FEF34187"
 				silent: true
@@ -1287,7 +1287,7 @@
 			}
 			{
 				auto: "enabled"
-				command: "/scoreboard players set #dd3r8 story 10"
+				command: "/scoreboard players set @a story_dd3r8 10"
 				elevate_perms: true
 				id: "695FB35730349AC2"
 				silent: true

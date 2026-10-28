@@ -1,16 +1,16 @@
 // Everbright erst nach dem ersten Gespräch mit Bodhi Bad Dur, Everdawn erst nach dem Zinn-Zoll
 // (O73, docs/story/ABLAUF.md Abschnitt 6).
-// Wer blue_skies:everdawn betreten will, solange der Scoreboard-Wert #bodhi im Objective story unter 2 liegt,
-// bleibt draußen (die Reise wird abgebrochen) und bekommt eine Meldung. Fehlt das Objective oder der Wert, gilt 0.
+// Wer blue_skies:everdawn betreten will, solange der höchste Wert im Objective story_bodhi unter 2 liegt,
+// bleibt draußen (die Reise wird abgebrochen) und bekommt eine Meldung. Fehlt das Objective oder jeder Wert, gilt 0.
+// Der höchste Wert irgendeines Spielers zählt, damit die Stufe für die ganze Welt gilt (ABLAUF B2, dialogstufen.js).
 // Kreativ und Zuschauer ausgenommen. Vorlage: Amulett-Sperre in altar_dimension.js (gleiches Forge-Ereignis;
 // Forge-Ereignisse gehen in KubeJS 2001 nur aus startup_scripts). Fehler lassen das Ereignis durch.
 // Jede Entscheidung steht in logs/kubejs/startup.log („everdawn_sperre.js: …“).
-// Fassung 2 (2026-10-27, User): auch Everbright ist gesperrt, bis zum ersten Gespräch mit Bodhi (#bodhi ≥ 1, ST3-01).
-// Everdawn ✅ Test 89; Everbright UNGETESTET (Test 95).
+// Fassung 2 (2026-10-27, User): auch Everbright ist gesperrt, bis zum ersten Gespräch mit Bodhi (story_bodhi ≥ 1, ST3-01).
+// Fassung 3 (2026-10-28): Objective story_bodhi mit Spieler-Werten statt #bodhi in story. UNGETESTET (Tests 89, 95).
 
-const IEPLUS_EVERDAWN_OBJECTIVE = 'story'
-const IEPLUS_EVERDAWN_NAME = '#bodhi'
-// Dimension → nötiger Mindestwert von #bodhi und Meldung beim Abweisen
+const IEPLUS_EVERDAWN_OBJECTIVE = 'story_bodhi'
+// Dimension → nötiger Mindestwert von story_bodhi und Meldung beim Abweisen
 const IEPLUS_BODHI_SPERREN = {
   'blue_skies:everbright': {
     mindestens: 1,
@@ -34,8 +34,13 @@ function ieplusBodhiWert(server) {
   var sb = server.getScoreboard()
   var obj = sb.getObjective(IEPLUS_EVERDAWN_OBJECTIVE)
   if (!obj) return 0
-  if (!sb.hasPlayerScore(IEPLUS_EVERDAWN_NAME, obj)) return 0
-  return sb.getOrCreatePlayerScore(IEPLUS_EVERDAWN_NAME, obj).getScore()
+  var hoechst = 0
+  var it = sb.getPlayerScores(obj).iterator()
+  while (it.hasNext()) {
+    var w = it.next().getScore()
+    if (w > hoechst) hoechst = w
+  }
+  return hoechst
 }
 
 ForgeEvents.onEvent('net.minecraftforge.event.entity.EntityTravelToDimensionEvent', event => {
@@ -47,7 +52,7 @@ ForgeEvents.onEvent('net.minecraftforge.event.entity.EntityTravelToDimensionEven
     if (!sperre) return
     if (entity.isCreative() || entity.isSpectator()) return
     var wert = ieplusBodhiWert(entity.server)
-    console.info('everdawn_sperre.js: Betreten ' + ziel + ' durch ' + entity.username + ', #bodhi = ' + wert)
+    console.info('everdawn_sperre.js: Betreten ' + ziel + ' durch ' + entity.username + ', story_bodhi = ' + wert)
     if (wert >= sperre.mindestens) return
     event.setCanceled(true)
     entity.tell(Text.gold(sperre.meldung))

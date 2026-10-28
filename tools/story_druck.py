@@ -112,7 +112,7 @@ def datei(name, titel, art, kurz):
             out.append(f'<p class="soll">{inline(s)}</p>')
             i += 1
             continue
-        if s.startswith(('**Steuerdatei:**', 'Scoreboard `story`')) or re.match(r'^\s{2,}`', z):
+        if s.startswith(('**Steuerdatei:**', 'Scoreboard `story_')) or re.match(r'^\s{2,}`', z):
             i += 1
             continue
         if s == '---' or not s:

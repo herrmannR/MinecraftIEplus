@@ -1404,3 +1404,11 @@ Status: 🟡
 Status: 🟡 (ungetestet, Test 96)
 
 - Neun Datapack-Kopien unter `kubejs/data/kaleidoscope_cookery/recipes/millstone/` (gleiche IDs wie im JAR): Iron, Gold, Copper, Coal (je auch Deepslate) und Nether Quartz geben 2 statt 3 bzw. 5. Diamond und Emerald gaben schon 2; Redstone, Lapis und Nether Gold bleiben (kaum über normalem Abbau). Questtext KU4-06 nennt den Weg jetzt.
+
+## 2026-10-28 — Dialogstufen: ein Objective je Figur
+
+Status: 🟡 (ungetestet, Test 106; Tests 89 und 95 neu prüfen)
+
+- Befund im JAR (Easy NPC 7.14, `ScoreboardCondition`): Die Scoreboard-Bedingung liest immer den Score des Spielers, der spricht. Einträge wie `#dd3r8` im Objective `story` kann sie nicht lesen, das alte Schema B2 hätte im Editor nicht funktioniert.
+- Neu: je Figur ein Objective `story_<figur>` (dd3r8, zwerg, bodhi, davijaan, cerina, vos), gesetzt immer mit `@a`. Umgestellt in ABLAUF, allen Dialogtexten, `buch1.cfg`/`buch1.snbt`, `everdawn_sperre.js` (höchster Wert in `story_bodhi`), `elfenportal.js`, Bauanleitung und Druckseiten.
+- Neues Skript `server_scripts/story/dialogstufen.js`: legt die Objectives beim Serverstart an und hebt beim Einloggen jeden Spieler auf den höchsten Wert (übernimmt auch alte `#<figur>`-Werte).

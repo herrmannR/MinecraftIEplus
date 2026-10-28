@@ -9,13 +9,13 @@
 > - Er kennt weder den Meister noch den Droiden. Dass ein „Ding aus Metall“ sein Haus vermessen hat, hat er bemerkt.
 > - Er handelt, was sonst der Gatekeeper verkauft; keine Credits (O34).
 
-Scoreboard `story`, Eintrag `#bodhi` (B2): 0 = noch nie gesprochen, 1 = Zinn-Auftrag, 2 = Zinn gebracht, 3 = Osmium gebracht (Strang ist ab hier Nebenquest), 4 = alle vier Bosse besiegt (setzt die Belohnung der letzten Boss-Quest in BS4, B3), 5 = Siegel übergeben.
+Scoreboard `story_bodhi` (B2): 0 = noch nie gesprochen, 1 = Zinn-Auftrag, 2 = Zinn gebracht, 3 = Osmium gebracht (Strang ist ab hier Nebenquest), 4 = alle vier Bosse besiegt (setzt die Belohnung der letzten Boss-Quest in BS4, B3), 5 = Siegel übergeben.
 
 ---
 
 ## Stufe 0 · Das Haus (K3)
 
-#### `b0_gruss` · Prio 100 · `#bodhi = 0`
+#### `b0_gruss` · Prio 100 · `story_bodhi = 0`
 > Besuch! Tretet ein, tretet ein. Verzeiht die Enge. Ich bin Bodhi Bad Dur, Wächter der Traumwelten. Zurzeit wache ich vor allem über diesen Raum.
 - **[Traumwelten?]** → `b0_welten`
 - **[Ein Droide schickt uns]** → `b0_droide`
@@ -34,7 +34,7 @@ Scoreboard `story`, Eintrag `#bodhi` (B2): 0 = noch nie gesprochen, 1 = Zinn-Auf
 
 #### `b0_metalle` · Prio 0
 > Zinn? Osmium? Meine Welten sind voll davon. Ich lasse euch gern hinein. Bringt mir dafür etwas von dem, was ihr findet. Seht es als Wegzoll an. Aber hütet euch vor den vier Wesen!
-- **[Abgemacht]** → Befehle: `tag @initiator add story_st3_01`, `scoreboard players set #bodhi story 1` → `b0_tor`
+- **[Abgemacht]** → Befehle: `tag @initiator add story_st3_01`, `scoreboard players set @a story_bodhi 1` → `b0_tor`
 
 #### `b0_tor` · Prio 0
 > Ein Tor baut ihr selbst, aus türkisem Ziegel für Everbright, aus mondhellem Ziegel für Everdawn. Entzündet wird es mit dem Zeal Lighter. Den und mein Buch über die Welten verkaufe ich euch.
@@ -44,16 +44,16 @@ Scoreboard `story`, Eintrag `#bodhi` (B2): 0 = noch nie gesprochen, 1 = Zinn-Auf
 
 ## Stufe 1 · Zinn (K3)
 
-Everdawn ist erst offen, wenn der Zinn-Zoll bezahlt ist (User, 2026-10-26, O73): Ein Skript schickt jeden zurück, der Everdawn bei `#bodhi < 2` betritt.
+Everdawn ist erst offen, wenn der Zinn-Zoll bezahlt ist (User, 2026-10-26, O73): Ein Skript schickt jeden zurück, der Everdawn bei `story_bodhi < 2` betritt.
 
-#### `b1_zinn` · Prio 100 · `#bodhi = 1`
+#### `b1_zinn` · Prio 100 · `story_bodhi = 1`
 > Wart ihr schon in Everbright? Kalt, nicht wahr?
 - **[Handeln]** → Aktion: Handelsfenster öffnen
 - **[Wie kommen wir hinein?]** → `b0_tor`
 - **[Hier ist dein Zinn]** · Bedingung: im Inventar 32 × `mekanism:raw_tin` → Befehle:
   `clear @initiator mekanism:raw_tin 32`
   `tag @initiator add story_st3_04`
-  `scoreboard players set #bodhi story 2`
+  `scoreboard players set @a story_bodhi 2`
   → `b1_danke`
 - **[Bis bald]** → schließen
 
@@ -69,13 +69,13 @@ Everdawn ist erst offen, wenn der Zinn-Zoll bezahlt ist (User, 2026-10-26, O73):
 
 ## Stufe 2 · Osmium (K4)
 
-#### `b2_osmium` · Prio 100 · `#bodhi = 2`
+#### `b2_osmium` · Prio 100 · `story_bodhi = 2`
 > Ah, meine Freunde. Wart ihr schon in Everdawn? Habt ihr die Echsen gesehen? Sie sind unhöflich, aber schön.
 - **[Handeln]** → Aktion: Handelsfenster öffnen
 - **[Hier ist das Osmium]** · Bedingung: im Inventar 32 × `mekanism:raw_osmium` → Befehle:
   `clear @initiator mekanism:raw_osmium 32`
   `tag @initiator add story_st4_06`
-  `scoreboard players set #bodhi story 3`
+  `scoreboard players set @a story_bodhi 3`
   → `b2_danke`
 - **[Bis bald]** → schließen
 
@@ -95,7 +95,7 @@ Everdawn ist erst offen, wenn der Zinn-Zoll bezahlt ist (User, 2026-10-26, O73):
 
 ## Stufe 3 · Die Bosse (Nebenquest, K5/K6)
 
-#### `b3_bosse` · Prio 100 · `#bodhi = 3`
+#### `b3_bosse` · Prio 100 · `story_bodhi = 3`
 > Und, habt ihr es euch überlegt? Werdet ihr die vier Monsterwesen bekämpfen?
 - **[Handeln]** → Aktion: Handelsfenster öffnen
 - **[Wer sind die vier?]** → `b3_wer`
@@ -113,13 +113,13 @@ Everdawn ist erst offen, wenn der Zinn-Zoll bezahlt ist (User, 2026-10-26, O73):
 
 ## Stufe 4 · Das Siegel (nach dem letzten Boss)
 
-#### `b4_siegel` · Prio 100 · `#bodhi = 4`
+#### `b4_siegel` · Prio 100 · `story_bodhi = 4`
 > *Er steht am Fenster und lacht leise.* Alle vier. Ich habe es gehört. Meine Welten atmen wieder.
 - **[Was jetzt?]** → `b4_geschenk`
 
 #### `b4_geschenk` · Prio 0
 > Ich habe euch etwas versprochen. Das Siegel der Traumwelten. Es trägt Licht und Dämmerung zugleich. Wo es liegt, kann nichts ganz dunkel werden.
-- **[Danke, Bodhi]** → Befehle: `give @initiator kubejs:siegel_der_traumwelten 1`, `scoreboard players set #bodhi story 5` → `b4_abschied`
+- **[Danke, Bodhi]** → Befehle: `give @initiator kubejs:siegel_der_traumwelten 1`, `scoreboard players set @a story_bodhi 5` → `b4_abschied`
 
 #### `b4_abschied` · Prio 0
 > Ich danke euch. Ich bleibe hier in dieser Welt und bewache den Eingang von hier.
@@ -130,7 +130,7 @@ Everdawn ist erst offen, wenn der Zinn-Zoll bezahlt ist (User, 2026-10-26, O73):
 
 ## Stufe 5 · Danach
 
-#### `b5_hallo` · Prio 100 · `#bodhi ≥ 5`
+#### `b5_hallo` · Prio 100 · `story_bodhi ≥ 5`
 > Meine Freunde, kommt herein!
 - **[Handeln]** → Aktion: Handelsfenster öffnen
 - **[Wozu ist das Siegel?]** → `b5_siegel`

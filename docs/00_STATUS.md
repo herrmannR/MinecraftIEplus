@@ -34,7 +34,7 @@ Die Schritte laufen in dieser Reihenfolge; 1 und 2 gehen parallel. Alle offenen 
 - H3. Vollständiges Backup beim Host (im Test-Backup fehlte `DIM-1/entities`).
 - H4. Alte `immersivepetroleum-server.toml` entfernen; Worldgen-Configs und Tag-Overrides vor dem ersten Start einspielen.
 - H5. Questbuch und Story-Figuren einspielen.
-- H6. Story-Bauten mit Platzhaltern: Kapsel, Höhle und Mondbasis, Blue-Skies-Haus und Schlucht des Zwergs, Ruine der Mars-Station (Koordinaten für den Peilsender), Tempel mit kaputtem Altar (Koordinaten und Strukturdatei `altar_heil.nbt` in `altar_reparatur.js`), Versteck auf Glacio; Easy-NPC-Presets (Cerina: `IEPLUS_CERINA_PRESET` in `elfenportal.js`; Befehle zum Erscheinen/Verschwinden in `tools/questbuch/buch1.cfg`); Koordinaten der Schutzzonen; Station für den 3D-Bauplan (O74). Einmalig `scoreboard objectives add story dummy`.
+- H6. Story-Bauten mit Platzhaltern: Kapsel, Höhle und Mondbasis, Blue-Skies-Haus und Schlucht des Zwergs, Ruine der Mars-Station (Koordinaten für den Peilsender), Tempel mit kaputtem Altar (Koordinaten und Strukturdatei `altar_heil.nbt` in `altar_reparatur.js`), Versteck auf Glacio; Easy-NPC-Presets (Cerina: `IEPLUS_CERINA_PRESET` in `elfenportal.js`; Befehle zum Erscheinen/Verschwinden in `tools/questbuch/buch1.cfg`); Koordinaten der Schutzzonen; Station für den 3D-Bauplan (O74)..
 
 (Die Nummern 9–28 und die Blöcke A–G aus früheren Fassungen gelten nicht mehr; sie stehen noch im Archiv.)
 
