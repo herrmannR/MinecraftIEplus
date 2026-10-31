@@ -99,7 +99,7 @@ const MODS = [
   },
   {
     name: "Star Wars Expansion", version: "3.1.0", addons: "braucht GeckoLib, Player Animator",
-    text: "Kaputte Rettungskapsel reparieren, mit Galaxiekarte nach Tatooine, Endor, Hoth und Naboo; Erze, sechs Händlerberufe gegen Galactic Credits, Fahrzeuge, Droiden als Begleiter, Lichtschwerter und Beskar. Viele Wesen, alle als Easy-NPC-Doppler wählbar. Bisher nur in der Testinstanz.",
+    text: "Kaputte Rettungskapsel reparieren, mit Galaxiekarte nach Tatooine, Endor, Hoth und Naboo; Erze, sechs Händlerberufe gegen Galactic Credits, Fahrzeuge, Droiden als Begleiter, Lichtschwerter und Beskar. Viele Wesen, alle als Easy-NPC-Doppler wählbar. Im Pack nur wegen der Wesen; Reise, Rezepte und Items abgeschaltet (F43).",
     phases: 5, steps: 15, icon: "star_wars_expansion:item/protocol_item",
     accent: ["#e8c25f", "#8a6a12"], url: "https://claude.ai/artifact/97NsKRWxt8zi1fSt2MuFjx",
   },

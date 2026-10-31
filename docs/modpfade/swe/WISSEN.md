@@ -43,6 +43,8 @@
 
 ## Pack-Bezug
 
+- 🟢 **Im Pack abgeschaltet bis auf die Wesen (F43, 2026-10-31):** Kapsel-Struktur leer (`kubejs/data/star_wars_expansion/worldgen/structure/broken_pod_structure.json`), alle Rezepte weg (`server_scripts/starwars/swe_entfernt.js`), alle Items in JEI aus (`client_scripts/swe_ausblenden.js`). Ideen für Teil 2/3: E1–E7 in `17_STAR_WARS_1.20.1.md`, F44.
+
 - **Doppelt zu Star Wars Planets**: Tatooine, Endor, Hoth als eigene Dimensionen mit eigener Reise ohne Ad Astra; Beskar, Stormtrooper-Rüstung. Dagegen stand die frühere Entscheidung in `17_STAR_WARS_1.20.1.md` („❌ weglassen“, nur ein Reisesystem).
 - **Doppelt zu Galaxy in a Cube**: Lichtschwerter, Plastoid (eigenes Item), Klonrüstung, Jawas, Tusken, Ewoks, Blaster, Force Pike.
 - **Abkürzungen**: Miner Trader macht aus Vanilla-Rohstoffen Credits; Fahrzeuge und Raumschiffe nur gegen Quadanium + Electronic Board. Overworld-Dorfbewohner werden Händler, sobald ein Arbeitsblock dasteht.

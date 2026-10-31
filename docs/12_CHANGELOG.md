@@ -1421,3 +1421,13 @@ Status: 🟡 (ungetestet, Test 107)
 - Bodhis Preset aus dem Spiel geprüft: Stufe 1 (Zinn) fehlte, zwei Befehle in einer Zeile, Knöpfe „Button 1/2“. Texte des Users in `dialoge_bodhi.md` übernommen, Stufe 1 aus dem Entwurf.
 - Neu `tools/npc_preset.py`: baut aus `dialoge_<figur>.md` die Dialoge ins Preset (DD3R8 47, Zwerg 9, Bodhi 22, Davijaan 25, Cerina 17, Vos 16 Dialoge). Vorlagen: Presets des Users; Vos aus der Testwelt (das Preset `quinlanvos` war eine Kopie von Cerina und ist gelöscht); DD3R8 und Zwerg ohne Skin.
 - Presets in die Testinstanz kopiert (alte gesichert im Scratchpad der Sitzung).
+
+## 2026-10-31 — Star Wars Expansion: Modpfad-Seite, abgeschaltet bis auf die Wesen (F43)
+
+Status: 🟡 (ungetestet, Test 108)
+
+- Grund: Die Wesen von Galaxy in a Cube stehen in `MobCategory.MISC` und fehlen im Easy-NPC-Doppler; die von Star Wars Expansion nicht (Droiden-Modell für DD3R8, weitere Wesen für Teil 2/3). Mod und Player Animator (Pflicht, steht als optional) liegen in der Pack-Instanz (vom User).
+- Modpfad-Seite https://claude.ai/artifact/97NsKRWxt8zi1fSt2MuFjx, `modpfade/swe/WISSEN.md`, Crossmod SE1–SE6, P15; Übersicht ergänzt.
+- F43 umgesetzt: `data/star_wars_expansion/worldgen/structure/broken_pod_structure.json` (Kapsel aus), `server_scripts/starwars/swe_entfernt.js` (alle 31 Rezepte), `client_scripts/swe_ausblenden.js` (139 dauerhaft, 41 nur Teil 1, 35 Spawn-Eier). In die Testinstanz kopiert.
+- Vorschläge E1–E7 (Wesen, Bauten, Kopfgeld, Bosse, Belohnungen, Deko) in `17_STAR_WARS_1.20.1.md`; Entscheidung F44.
+

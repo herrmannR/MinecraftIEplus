@@ -37,6 +37,7 @@ Begründung in Kurzform:
 | Klone, Droiden (B1, B2, Droideka), Klon-Rüstung | Galaxy in a Cube | |
 | Fahrzeuge AT-RT, AT-ST, Jedi-Sternjäger | Galaxy in a Cube | |
 | Jawas, Kyber-Kristalle, Blaster | **beide** | 🔵 Dopplung, bei Bedarf eine Seite ausblenden |
+| Wesen als Modelle für Easy NPC (Droiden, Rodians, Twi'Leks, Hutt …) | **Star Wars Expansion** | übrige Inhalte abgeschaltet (F43), siehe unten |
 
 ## Unterschiede zum 1.18.2-Plan
 
@@ -100,6 +101,22 @@ JEIEvents.hideItems(event => {
 8. 🔵 **Dopplungen** bei Jawas, Kyber-Kristallen und Blastern sichten und entscheiden, welche Seite bleibt.
 9. 🟡 **Rezepte und Werte** von Galaxy in a Cube: JEI zeigt nur die 32 Werkbank-Rezepte (Test 24, 2026-10-17). Lichtschwerter, Blaster, Bemalungen (z. B. 501st), Kyber-Färben und Droiden laufen über Assembly Bench, eigenen Bildschirm und Droid Fabricator ohne JEI; Rezepte dieser Wege stehen in `modpfade/swgc/WISSEN.md` und müssen im Questbuch erklärt werden. 🔵 Werte der Waffen und Rüstungen offen.
 10. 🔵 **Quests:** Star-Wars-Kapitel in FTB Quests, z. B. „Lande auf Tatooine", „Baue ein Lichtschwert".
+
+## Star Wars Expansion: abgeschaltet, Inhalte für die Planeten (2026-10-31)
+
+🟢 **Umgesetzt (F43):** Star Wars Expansion ist im Pack, aber nur als Lieferant von Wesen. Rettungskapsel in der Overworld aus (`kubejs/data/star_wars_expansion/worldgen/structure/broken_pod_structure.json`), alle 31 Rezepte weg (`server_scripts/starwars/swe_entfernt.js`), alle Items in JEI ausgeblendet (`client_scripts/swe_ausblenden.js`, Listen „dauerhaft“, „nur Teil 1“, Spawn-Eier). Damit gibt es keinen Weg in seine vier Dimensionen (Tatooine, Endor, Hoth, Naboo); sie bleiben registriert, werden aber nie eingebunden. Test 108.
+
+🔵 **Vorschläge: Inhalte aus Star Wars Expansion in die Welten von Star Wars Planets holen** (Claude, 2026-10-31; Entscheidung F44). Ziele sind die Biome von Star Wars Planets: `swplanets:tatooine_desert`, `tatooine_rocky_desert`, `endor_taiga`, `hoth_frozen_desert`, `mustafar_hill`, `mandalore_vestige` (dazu `hot_desert`). Alles per Datapack in `kubejs/data/`, ohne Code.
+
+| # | Idee | Technik | Haken |
+|---|---|---|---|
+| E1 | **Tiere und Gegner spawnen lassen**: Krykna (Spinne) und Tusken auf Tatooine, Tauntaun und Wampa auf Hoth, Porgs und Ewoks auf Endor. Bantha hat Star Wars Planets selbst. | je eine Datei `forge/biome_modifier/*.json` mit `forge:add_spawns` und den Biomen oben | Die Spawn-Regeln der Wesen stehen im Code (MCreator); Tiere brauchen evtl. Blöcke aus `minecraft:animals_spawnable_on` – die Oberflächenblöcke von Star Wars Planets dort eintragen. Im Spiel prüfen. |
+| E2 | **Bauten übernehmen**: Hutt Palace, Tatooine Village, Jawa Sandcrawler, Pirate Ship, Tusken Campment und Jedi Temple auf Tatooine; Hoth Base auf Hoth; Ewok Tree auf Endor; Sith Ruins auf Mustafar. | Strukturdateien des Mods in `kubejs/data/star_wars_expansion/worldgen/structure/` überschreiben, `biomes` auf die Biome von Star Wars Planets setzen | Die Bauten bringen ihre Bewohner fest mit (z. B. Hutt, Gamorreans, Skiff Guards). Truhen haben festen Inhalt mit ausgeblendeten Items (Doonium, Credits, Saber-Teile), die Siedlungen enthalten Arbeitsblöcke der Händler (dann Händler gegen Credits). Vorher NBT bereinigen oder nur Bauten ohne Truhen und Händlerblöcke nehmen (Tusken Campment, Ewok Tree, Hoth Base). |
+| E3 | **Kopfgeldjäger-Quests in Teil 3** (`18_STORY.md`: „verdingen sich als Kopfgeldjäger“): Auftraggeber als Easy NPC mit Doppler-Modell Hutt, Bib Fortuna, Rodian oder Twi'Lek; Ziele Pirates, Gamorreans, Skiff Guards, Tusken, Wampa. Bib Fortuna sagt im Mod schon „We only cater to bounty hunters here“. | Easy NPC (Doppler), FTB-Quests-Aufgabe „Kill“ | Ziele müssen spawnen (E1/E2) oder vom Host gesetzt werden (`/summon`). |
+| E4 | **Bosse für den Meister** (Teil 3: „mehrere Bosse“): Ancient Sith Lord als Boss in den Sith Ruins auf Mustafar; Wampa als Boss auf Hoth. Der Sith Lord lässt seine Maske fallen (Lebensraub je Treffer). | Struktur aus E2 oder `/summon` am festen Ort | Werte des Sith Lord nicht ausgelesen. |
+| E5 | **Belohnungen aus der Teil-1-Liste**: Droiden als Begleiter (R2-D2, C-3PO, BB-8 …), Landspeeder und Speeder Bike, Vibro-Waffen, Jedi-Gewänder mit Doppelsprung (Teil 2, Training), Snow Suit für Hoth. | in `swe_ausblenden.js` aus `SWE_NUR_TEIL1` streichen; als Quest-Belohnung oder im Shop | Droiden fressen Computer Tip (dann auch freigeben). 🔵 Prüfen, ob die Taste Z auch in Bodenfahrzeugen die Galaxiekarte öffnet – dann nur Fahrzeuge, die das nicht tun. X-Wing und TIE-Fighter nie. |
+| E6 | **Deko für Story-Bauten des Hosts**: Imperial-, Modern- und Metal-Blöcke, Kolto Tank (Heilung des Meisters), Moisture Vaporator, Holocron, Jedi Knight Statue, Cantina Light – für Mondbasis, Versteck auf Glacio, Endor-Basis. | Kreativmodus des Hosts | Blöcke sind in JEI ausgeblendet, aber im Kreativ-Tab des Mods vorhanden. |
+| E7 | **Cantina auf Tatooine**: Cantina Band mit Platte „Cantina Music“ in einem gebauten Treffpunkt der Kopfgeldjäger. | Bau des Hosts, Wesen per `/summon` oder Easy NPC | – |
 
 ## Vorlage: fremde Dimension als Ad-Astra-Planet
 

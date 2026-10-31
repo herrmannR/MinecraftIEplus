@@ -64,6 +64,8 @@ Verbindliche Mod-Liste des Packs. Die Liste wird nicht stillschweigend veränder
 | Ad Astra: Rocketed | 1.0.5 | — | Raketen T5–T7; 🟢 bleibt (2026-10-13), Star-Wars-Planeten auf T5 und T6 |
 | Star Wars Planets (Ad-Astra-Version) | 1.4.6.1 | MR / CF | Tatooine, Hoth, Endor, Mustafar, Mandalore; Kyber, Beskar |
 | Star Wars: Galaxy in a Cube | 1.0.3.1 | MR | Lichtschwerter, Macht, Klone, Droiden |
+| Star Wars Expansion | 3.1.0 | MR | nur als Lieferant von Wesen für Easy NPC (Doppler); Reise, Rezepte und Items abgeschaltet (F43). Braucht GeckoLib und Player Animator |
+| Player Animator | 1.0.2-rc1+1.20 | MR | Pflicht für Star Wars Expansion (steht dort als optional, ohne sie Absturz) |
 
 Details: `15_RAUMFAHRT.md`, `17_STAR_WARS_1.20.1.md`.
 

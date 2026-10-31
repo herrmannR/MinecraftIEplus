@@ -25,7 +25,7 @@ Je Content-Mod eine Seite mit der Progression, wie der Mod sie mit seinen Addons
 | Immersive Aircraft (Brücke iaie) | https://claude.ai/artifact/BfUwZLQdeo3DugNVASvxYh | `aircraft/` |
 | Farmer's Delight (+ Nether's Delight; Brücke Engineer's Delight) | https://claude.ai/artifact/Rj7tWAhmGLAmje66fHT9sX | `farmersdelight/` |
 | Kaleidoscope Cookery (+ Tavern, Grilling, End, ImmersiveEating) | https://claude.ai/artifact/ARtUyrGSeAuncutGR6r6oV | `kaleidoscope/` |
-| Star Wars Expansion (nur TestModsInstance; braucht GeckoLib, Player Animator) | https://claude.ai/artifact/97NsKRWxt8zi1fSt2MuFjx | `swe/` |
+| Star Wars Expansion (im Pack nur wegen der Wesen, F43; braucht GeckoLib, Player Animator) | https://claude.ai/artifact/97NsKRWxt8zi1fSt2MuFjx | `swe/` |
 
 **Nachschlage-Notizen für Claude:** Zu jeder Seite gibt es `<mod>/WISSEN.md` mit JARs und Kürzeln, Fundstellen im JAR (bei Galaxy in a Cube die Klassen), Progression in Kürze, Schlüsselzahlen, Pack-Bezug, Offenem und einer Tabelle Name → Item-ID. Vor Arbeit an einem Mod zuerst dort nachsehen; bei Änderungen an `data.js` mitziehen.
 
