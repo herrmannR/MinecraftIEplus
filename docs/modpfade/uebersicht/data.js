@@ -97,6 +97,12 @@ const MODS = [
     phases: 7, steps: 25, icon: "kaleidoscope_cookery:item/pot_has_oil",
     accent: ["#e0855a", "#a24a22"], url: "https://claude.ai/artifact/ARtUyrGSeAuncutGR6r6oV",
   },
+  {
+    name: "Star Wars Expansion", version: "3.1.0", addons: "braucht GeckoLib, Player Animator",
+    text: "Kaputte Rettungskapsel reparieren, mit Galaxiekarte nach Tatooine, Endor, Hoth und Naboo; Erze, sechs Händlerberufe gegen Galactic Credits, Fahrzeuge, Droiden als Begleiter, Lichtschwerter und Beskar. Viele Wesen, alle als Easy-NPC-Doppler wählbar. Bisher nur in der Testinstanz.",
+    phases: 5, steps: 15, icon: "star_wars_expansion:item/protocol_item",
+    accent: ["#e8c25f", "#8a6a12"], url: "https://claude.ai/artifact/97NsKRWxt8zi1fSt2MuFjx",
+  },
 ];
 // Mods ohne Seite, in der Reihenfolge der Mod-Liste
 const PLANNED = [];

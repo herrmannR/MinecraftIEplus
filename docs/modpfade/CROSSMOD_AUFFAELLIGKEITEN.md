@@ -1,6 +1,6 @@
 # Auffälligkeiten für die Crossmod-Planung
 
-> Stand 2026-10-21, Minecraft 1.20.1. Gesammelt beim Erstellen der Modpfad-Seiten für Tinkers' Construct, Immersive Engineering, Botania, Mekanism, Ad Astra, Star Wars Planets, Star Wars: Galaxy in a Cube und weitere (zuletzt Kaleidoscope). Wird mit jeder weiteren Seite fortgeschrieben.
+> Stand 2026-10-31, Minecraft 1.20.1. Gesammelt beim Erstellen der Modpfad-Seiten für Tinkers' Construct, Immersive Engineering, Botania, Mekanism, Ad Astra, Star Wars Planets, Star Wars: Galaxy in a Cube und weitere (zuletzt Star Wars Expansion). Wird mit jeder weiteren Seite fortgeschrieben.
 
 ## Zweck
 
@@ -242,6 +242,15 @@ Jeder Befund ist aus den JARs oder der Config der Testinstanz belegt (🟢). Was
 - **KS3** 🟢 Kaleidoscope und Farmer's Delight teilen die Hitzequellen (`farmersdelight:heat_sources` ↔ `kaleidoscope_cookery:heat_source_blocks_without_lit`); Reis wächst auch auf FD Rich Soil Farmland. Die Rezepte nehmen Zutaten über Forge-Tags an – im Pack per KubeJS zusammengeführt (2026-10-20).
 - **KS4** 🟢 Grilling bringt Create-Rezepte mit (Bedingung `modid=create`), die ohne Create nicht laden; Ponder (Anleitungsszenen von Cookery und Tavern) ist nicht installiert, Kaleidoscope hat damit im Spiel keine Anleitung außer Tooltips und JEI. End: Dragon Tooth Knife und Smithing Template brauchen Dragon Dust aus dem abgepinselten Drachenei, also nach dem Enderdrachen.
 
+## Star Wars Expansion (TestModsInstance, 2026-10-31)
+
+- **SE1** 🟢 Zweites Reisesystem: Eine reparierte Rettungskapsel (Reparation Kit = 8 Eisen + Eisenblock; Struktur in Plains) oder jedes gekaufte Raumschiff öffnet mit Z eine Galaxiekarte und bringt den Spieler ohne Treibstoff nach Tatooine, Endor, Hoth, Naboo und zurück. Das umgeht Ad Astra und die Raketenstufen vollständig.
+- **SE2** 🟢 Tatooine, Endor und Hoth gibt es damit doppelt (Star Wars Planets über Ad Astra, Star Wars Expansion als eigene Dimensionen). Doppelt sind auch Beskar und Stormtrooper-Rüstung (Star Wars Planets) sowie Lichtschwerter, Plastoid, Klonrüstung, Blaster, Jawas, Tusken und Ewoks (Galaxy in a Cube).
+- **SE3** 🟢 Der Miner Trader tauscht Vanilla-Rohstoffe in Galactic Credits (10 Eisen → 10, 10 Diamant → 32, 1 Netherite → 2 Gold-Credits); dafür gibt es beim Weaponsmith Blaster und Rüstung, beim Spaceship Trader Fahrzeuge. Eine zweite Währung neben den Credits von Galaxy in a Cube. Dorfbewohner der Overworld werden Händler, sobald einer der sechs Arbeitsblöcke dasteht (Blöcke ohne Rezept, nur aus Tatooine-Strukturen).
+- **SE4** 🟢 Beskar kostet 2 Netherite + 2 Doonium je Barren und wertet Klonrüstung am Schmiedetisch auf: Nether ist Voraussetzung (Ü7).
+- **SE5** 🟢 Alle Wesen sind `MONSTER` oder `CREATURE` und damit als Easy-NPC-Doppler wählbar (Galaxy in a Cube: alle `MISC`, nicht wählbar). Von selbst spawnen nur sechs Tiere, und nur auf den eigenen Planeten; in der Overworld nur die kaputte Kapsel.
+- **SE6** 🟢 Pflicht-Abhängigkeit Player Animator steht in `mods.toml` als optional; ohne sie Absturz beim Laden.
+
 ## Zu prüfen
 
 - **P1** 🔵 Botania Gaia Pylon: Botania hat ein Rezept ohne Alfsteel, MythicBotany eines über den Alfsteel Pylon. Welches im Pack gilt, in JEI nachsehen. Davon hängt ab, ob das Ritual of Gaia vor oder nach Alfsteel liegt.
@@ -258,6 +267,7 @@ Jeder Befund ist aus den JARs oder der Config der Testinstanz belegt (🟢). Was
 - **P12** 🔵 Wesley's Roguelike Dungeons: Staffel der Lauf-Belohnung nach Dungeon-Wert, Wirkung der 25 Artefakte, Schaden der Waffen und Stäbe, Herkunft des ersten Boss Room Key, Rückweg des Sentient Pathfinder. Im Spiel prüfen, ob die Dimension auf dem Server des Hosts stabil läuft (eigene Dimension, Strukturen zur Laufzeit gebaut).
 - **P13** 🔵 AE2: Reichweite je Wireless Booster, Brennstoffwerte der Vibration Chamber und Energiebedarf von Spatial IO sind nicht ausgelesen. Ob die Spatial-Storage-Dimension auf dem Server des Hosts stabil läuft, ist nicht geprüft.
 - **P14** 🔵 Blue Skies: Werkzeugrezepte, Preise des Gatekeepers und der Dorfbewohner, Stärke der Werkzeugabschwächung, Wahl des Loot Bags (common/uncommon/rare) und ob Catylist-Hilfsstoffe der Alchemy Table verbraucht werden, stehen nur im Code.
+- **P15** 🔵 Star Wars Expansion: Kyber-Kristalle, Tatooine Planet Anchor, Bantha Leather und mehrere Rüstungen haben weder Rezept noch Handel noch Fundort in den Dateien; ob sie im Überleben erreichbar sind, im Spiel prüfen. Ebenso offen: welcher Arbeitsblock zu welchem Beruf gehört.
 
 ## Quellen
 

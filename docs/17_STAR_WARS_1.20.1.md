@@ -14,7 +14,7 @@ Grundlage: Recherche des Users vom 2026-10-10, vollständig in `recherche/star-w
 | Star Wars Planets 1.4.6.1 | Planeten, direkt in Ad Astra eingebunden | 🟢 nehmen (steht schon in Stufe 2) |
 | Star Wars: Galaxy in a Cube 1.0.3.1 | Lichtschwerter, Macht, Klone, Droiden, Fahrzeuge | 🟢 nehmen (**neu**) |
 | FTB Quests | Star-Wars-Quests (Dimension besucht, Item, Kill, Advancement) | 🟢 schon beschlossen |
-| Star Wars Expansion (FazBrick) | eigene Planeten mit eigener Galaxiekarte | ❌ weglassen |
+| Star Wars Expansion 3.1.0 (FazBrick) | eigene Planeten mit eigener Galaxiekarte; viele Wesen | 🟢 nehmen als **Lieferant von Wesen** (User, 2026-10-31): Droiden-Modell für DD3R8 (Easy-NPC-Doppler), weitere Wesen für Teil 2 und 3. Reisesystem und Doppeltes wird abgeschaltet, siehe F43 in `20_ENTSCHEIDUNGEN.md` |
 | Star Wars Clone Wars (Rupyber) | Portal-Planeten, Klone, Droiden | ❌ weglassen |
 | Star Wars The Clone Wars (MelonHaver) | Klone, Droiden | ❌ weglassen |
 
@@ -22,7 +22,7 @@ Begründung in Kurzform:
 
 - **Star Wars Planets** ist der einzige Mod, dessen Planeten ohne Zutun über Ad-Astra-Raketen laufen (Galaxie „Outer Rims", Tatooine verlangt Stufe 4).
 - **Galaxy in a Cube** hat das beste Schwert- und Machtsystem und deckt Klone und Droiden mit ab. Damit sind beide Clone-Wars-Mods überflüssig.
-- **Star Wars Expansion** bringt Tatooine, Hoth und Endor ein zweites Mal und reist über eine eigene Galaxiekarte statt über Ad Astra (Variante A aus der Recherche: nur ein Reisesystem).
+- **Star Wars Expansion** bringt Tatooine, Hoth und Endor ein zweites Mal und reist über eine eigene Galaxiekarte statt über Ad Astra (Variante A aus der Recherche: nur ein Reisesystem). Seit 2026-10-31 trotzdem im Pack, aber nur wegen der Wesen: Die Wesen von Galaxy in a Cube stehen in Kategorie `MISC` und sind im Easy-NPC-Doppler nicht wählbar, die von Star Wars Expansion schon. Die Galaxiekarte bleibt dabei abgeschaltet (F43).
 
 ## Aufteilung der Inhalte
 

@@ -52,6 +52,15 @@ Galaxy in a Cube setzt sie nur über einen eigenen Spawner im Code, der nur in d
 Welche Maschinen (IE Excavator, Mekanism-Factories, AE2-Autocrafting), welcher Meilenstein? Für Teil 1 nichts zusätzlich.
 → `01_PROGRESSION.md`
 
+**F43 · Star Wars Expansion: was weg muss** (User nimmt den Mod für die Wesen, 2026-10-31; Vorschlag von Claude, aus dem JAR: `modpfade/swe/WISSEN.md`)
+Grundsatz wie bei Star Wars Planets (nur ein Reisesystem, Doppeltes zu Galaxy in a Cube raus). Der Mod bringt von sich aus in die Overworld nur die kaputte Rettungskapsel (Plains); alle Erze, Strukturen, Händler und Tiere liegen in seinen vier Dimensionen. Wer die Reise abschaltet, legt damit fast alles still.
+- a) **Dauerhaft weg: das Reisesystem.** Struktur `broken_pod_structure` per Datapack aus (leeres Structure Set oder leere Biomliste); Rezept Reparation Kit weg; Escape Pod, X-Wing, TIE-Fighter und Tatooine Planet Anchor in JEI ausblenden. Ohne Raumschiff öffnet Taste Z nichts; die Dimensionen bleiben registriert, aber unerreichbar. Kommen die Spieler doch hinein (Befehl, Fehler), wäre der Spaceship Trader dort der nächste Weg – darum auch die Planeten-Inhalte ausblenden (b).
+- b) **Dauerhaft weg: Doppeltes und Unerreichbares.** Rezepte entfernen und in JEI ausblenden: alle Lichtschwerter (5 Farben, offen/geschlossen, Doppelschwerter), Kyber Crystals, Saber Emitter, Saber Handle, Plastoid (eigenes Item neben `swgc:plastoid`), Beskar Ingot und Beskar-Rüstung (Beskar kommt aus Star Wars Planets), Klon- und Stormtrooper-Rüstung, Blaster (E-11, DL-44, Westar-34, EE-3), Force Pike. Nur ausblenden (haben kein Rezept): Erze, Barren und Werkstoffe der Planeten (Doonium, Quadanium, Aurodium, Rubber, Electronic Board, Computer Tip), Baublöcke, Arbeitsblöcke der Händler, Galactic Credits (zweite Währung neben den Credits von Galaxy in a Cube).
+- c) **Nur in Teil 1 weg, später als Belohnung möglich:** Droiden-Items (R2-D2, R4-P17, R2-KT, C-3PO, TC-14, I-82, GNK, MSE-6, T3-M4, 11-3K, BB-8, Battle Droid B1), Bodenfahrzeuge (Landspeeder, Speeder Bike, Snowspeeder, AT-ST), Vibroblade, Vibro-Axe, Stun Baton, Thermal Detonator, Jedi-Gewänder und Sith Clothes (Doppelsprung, passt zum Training in Teil 2), Masken und Helme mit Effekt (Stabilizer Mask, Interface Band, Ancient Sith Lord Mask), Snow Suit, Cantina Music, Essen. In Teil 1 nur in JEI ausblenden; Rezepte haben sie ohnehin nicht (außer Snow Suit: aus Leder, Rezept in Teil 1 entfernen).
+- d) **Spawn-Eier** (62): in JEI ausblenden? Für Easy NPC braucht der Host sie nicht (der Doppler wählt das Modell aus der Liste); zum Setzen echter Wesen reicht `/summon`.
+- e) Oder einfacher: **ganzen Mod in JEI ausblenden** und alle 31 Rezepte entfernen, Teil-2/3-Belohnungen später gezielt freigeben.
+→ `17_STAR_WARS_1.20.1.md`, `modpfade/swe/WISSEN.md`
+
 ### Questbuch Teil 1 (aus dem Einbau der Mod-Kapitel, 2026-10-26)
 
 Die Kapitel bis K11 sind gebaut (sechs parallele Sessions). Diese Punkte haben die Sessions bewusst nicht selbst entschieden; Einzelheiten stehen im Abschnitt „Offen vor dem Einbau“ der genannten Questtext-Datei.
