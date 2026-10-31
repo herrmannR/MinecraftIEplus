@@ -23,12 +23,12 @@ AUS = WURZEL / 'docs' / 'story' / 'druck'
 
 # Datei, Figur, Objective der Dialogstufe, Ort; Reihenfolge wie in der Story
 FIGUREN = [
-    ('dialoge_dd3r8.md', 'DD3R8', 'story_dd3r8', 'Kapsel in der Basis (bis K7), danach Mars-Station'),
-    ('dialoge_zwerg.md', 'Der Zwerg in der Schlucht', 'story_zwerg', 'Schlucht auf halbem Weg nach Süden'),
-    ('dialoge_bodhi.md', 'Bodhi Bad Dur', 'story_bodhi', 'Blue-Skies-Haus'),
-    ('dialoge_davijaan.md', 'Davijaan', 'story_davijaan', 'Mondbasis'),
-    ('dialoge_cerina.md', 'Meisterin Cerina', 'story_cerina', 'erscheint am Elfenportal (Skript, aus ihrem Preset)'),
-    ('dialoge_vos.md', 'Quinlan Vos', 'story_vos', 'Versteck auf Glacio, danach Basis'),
+    ('dialoge_dd3r8.md', 'DD3R8', 'dd3r8', 'Kapsel in der Basis (bis K7), danach Mars-Station'),
+    ('dialoge_zwerg.md', 'Der Zwerg in der Schlucht', 'zwerg', 'Schlucht auf halbem Weg nach Süden'),
+    ('dialoge_bodhi.md', 'Bodhi Bad Dur', 'bodhi', 'Blue-Skies-Haus'),
+    ('dialoge_davijaan.md', 'Davijaan', 'davijaan', 'Mondbasis'),
+    ('dialoge_cerina.md', 'Meisterin Cerina', 'cerina', 'erscheint am Elfenportal (Skript, aus ihrem Preset)'),
+    ('dialoge_vos.md', 'Quinlan Vos', 'vos', 'Versteck auf Glacio, danach Basis'),
 ]
 PLATZHALTER = re.compile(r'(\[Name\]|&lt;[xyz]&gt;|&lt;ST[\d-]+&gt;|&lt;uuid&gt;|PLATZHALTER\w*)')  # nach html.escape
 
@@ -159,7 +159,7 @@ def main():
         '<div class="titel"><h1>Immersive Engineering+<br>Story-Figuren bauen</h1>'
         f'<p>Bauanleitung für den Easy-NPC-Editor · Teil 1 · Stand {date.today().strftime("%d.%m.%Y")}</p>'
         '<h2>Einmal vorher</h2><ol>'
-        '<li>Die Objectives <code>story_&lt;figur&gt;</code> legt das Skript <code>dialogstufen.js</code> beim Serverstart selbst an.</li>'
+        '<li>Die Objectives <code>&lt;figur&gt;</code> legt das Skript <code>dialogstufen.js</code> beim Serverstart selbst an.</li>'
         '<li>Figur setzen, Skin und Namen eintragen.</li>'
         '<li>Je Figur alle Dialoge der Reihe nach anlegen und abhaken (☐).</li>'
         '<li>Fertige Figur als Preset exportieren und den Namen an Claude geben (Cerina braucht das für das Elfenportal, '

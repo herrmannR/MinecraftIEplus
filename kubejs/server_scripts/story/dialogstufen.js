@@ -1,5 +1,5 @@
 // Dialogstufen der Story-Figuren (docs/story/ABLAUF.md B2).
-// Je Figur ein Objective story_<figur>. Die Easy-NPC-Bedingung „Scoreboard“ liest den Score des Spielers,
+// Je Figur ein Objective <figur>. Die Easy-NPC-Bedingung „Scoreboard“ liest den Score des Spielers,
 // der gerade spricht; darum setzen Dialoge und Quests den Wert immer mit @a.
 // - Beim Serverstart werden die Objectives angelegt (schon vorhandene bleiben, wie sie sind).
 // - Beim Einloggen bekommt der Spieler je Figur den höchsten Wert, den irgendwer hat. So holt jemand,
@@ -29,8 +29,8 @@ function ieplusDialogAltWert(sb, figur) {
 }
 
 ServerEvents.loaded(event => {
-  IEPLUS_DIALOG_FIGUREN.forEach(f => event.server.runCommandSilent('scoreboard objectives add story_' + f + ' dummy'))
-  console.info('dialogstufen.js: Objectives story_<figur> angelegt')
+  IEPLUS_DIALOG_FIGUREN.forEach(f => event.server.runCommandSilent('scoreboard objectives add ' + f + ' dummy'))
+  console.info('dialogstufen.js: Objectives <figur> angelegt')
 })
 
 PlayerEvents.loggedIn(event => {
@@ -39,7 +39,7 @@ PlayerEvents.loggedIn(event => {
     var server = event.server
     var sb = server.getScoreboard()
     IEPLUS_DIALOG_FIGUREN.forEach(f => {
-      var name = 'story_' + f
+      var name = f
       var ziel = Math.max(ieplusDialogHoechsterWert(sb, name), ieplusDialogAltWert(sb, f))
       if (ziel < 0) return
       var obj = sb.getObjective(name)

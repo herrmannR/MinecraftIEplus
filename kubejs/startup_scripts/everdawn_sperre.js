@@ -1,16 +1,16 @@
 // Everbright erst nach dem ersten Gespräch mit Bodhi Bad Dur, Everdawn erst nach dem Zinn-Zoll
 // (O73, docs/story/ABLAUF.md Abschnitt 6).
-// Wer blue_skies:everdawn betreten will, solange der höchste Wert im Objective story_bodhi unter 2 liegt,
+// Wer blue_skies:everdawn betreten will, solange der höchste Wert im Objective bodhi unter 2 liegt,
 // bleibt draußen (die Reise wird abgebrochen) und bekommt eine Meldung. Fehlt das Objective oder jeder Wert, gilt 0.
 // Der höchste Wert irgendeines Spielers zählt, damit die Stufe für die ganze Welt gilt (ABLAUF B2, dialogstufen.js).
 // Kreativ und Zuschauer ausgenommen. Vorlage: Amulett-Sperre in altar_dimension.js (gleiches Forge-Ereignis;
 // Forge-Ereignisse gehen in KubeJS 2001 nur aus startup_scripts). Fehler lassen das Ereignis durch.
 // Jede Entscheidung steht in logs/kubejs/startup.log („everdawn_sperre.js: …“).
-// Fassung 2 (2026-10-27, User): auch Everbright ist gesperrt, bis zum ersten Gespräch mit Bodhi (story_bodhi ≥ 1, ST3-01).
-// Fassung 3 (2026-10-28): Objective story_bodhi mit Spieler-Werten statt #bodhi in story. UNGETESTET (Tests 89, 95).
+// Fassung 2 (2026-10-27, User): auch Everbright ist gesperrt, bis zum ersten Gespräch mit Bodhi (bodhi ≥ 1, ST3-01).
+// Fassung 3 (2026-10-28): Objective bodhi mit Spieler-Werten statt #bodhi in story. UNGETESTET (Tests 89, 95).
 
-const IEPLUS_EVERDAWN_OBJECTIVE = 'story_bodhi'
-// Dimension → nötiger Mindestwert von story_bodhi und Meldung beim Abweisen
+const IEPLUS_EVERDAWN_OBJECTIVE = 'bodhi'
+// Dimension → nötiger Mindestwert von bodhi und Meldung beim Abweisen
 const IEPLUS_BODHI_SPERREN = {
   'blue_skies:everbright': {
     mindestens: 1,
@@ -52,7 +52,7 @@ ForgeEvents.onEvent('net.minecraftforge.event.entity.EntityTravelToDimensionEven
     if (!sperre) return
     if (entity.isCreative() || entity.isSpectator()) return
     var wert = ieplusBodhiWert(entity.server)
-    console.info('everdawn_sperre.js: Betreten ' + ziel + ' durch ' + entity.username + ', story_bodhi = ' + wert)
+    console.info('everdawn_sperre.js: Betreten ' + ziel + ' durch ' + entity.username + ', bodhi = ' + wert)
     if (wert >= sperre.mindestens) return
     event.setCanceled(true)
     entity.tell(Text.gold(sperre.meldung))

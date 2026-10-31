@@ -9,13 +9,13 @@
 > - Er nennt sich nur „Davijaan“. Den Droiden nennt er „Blechkopf“ oder „euer komischer Roboter“.
 > - Die Mondbasis hat Luft, er ist verwundbar (O29).
 
-Scoreboard `story_davijaan` (B2): 0 = noch nie gesprochen, 1 = Helm-Auftrag, 2 = Helm gerade zurück, 3 = Vertrauen (normaler Betrieb). DD3R8 prüft `story_davijaan ≥ 2` (ST4-07), Stufe 3 erfüllt das also ebenfalls.
+Scoreboard `davijaan` (B2): 0 = noch nie gesprochen, 1 = Helm-Auftrag, 2 = Helm gerade zurück, 3 = Vertrauen (normaler Betrieb). DD3R8 prüft `davijaan ≥ 2` (ST4-07), Stufe 3 erfüllt das also ebenfalls.
 
 ---
 
 ## Stufe 0 · Besuch (K4, erstes Gespräch)
 
-#### `v0_besuch` · Prio 100 · `story_davijaan = 0`
+#### `v0_besuch` · Prio 100 · `davijaan = 0`
 > Na sieh mal an. Drei Menschen, in Raumanzügen. Ich hab euch landen sehen. Ich seh alles von hier oben. Die Landung war … mutig.
 - **[Wer bist du?]** → `v0_wer`
 - **[Du bist der, der den Mond abschirmt?]** → `v0_schirm`
@@ -39,7 +39,7 @@ Scoreboard `story_davijaan` (B2): 0 = noch nie gesprochen, 1 = Helm-Auftrag, 2 =
 
 #### `v0_verloren` · Prio 0
 > Euch vielleicht. Wenn ihr was für mich tut. Da unten in der Höhle hab ich was verloren. Ich geh da nicht mehr hin. Meine Knie und die Viecher da unten verstehen sich nicht allzu gut.
-- **[Was hast du verloren?]** → Befehle: `tag @initiator add story_st4_02`, `scoreboard players set @a story_davijaan 1` → `v0_helm`
+- **[Was hast du verloren?]** → Befehle: `tag @initiator add story_st4_02`, `scoreboard players set @a davijaan 1` → `v0_helm`
 
 #### `v0_helm` · Prio 0
 > Einen Helm. Alt, verbeult, mit einem Funkgerät drin, das keiner mehr baut. Er hat mehr gesehen als ihr drei zusammen. Bringt ihn mir, dann reden wir weiter.
@@ -49,14 +49,14 @@ Scoreboard `story_davijaan` (B2): 0 = noch nie gesprochen, 1 = Helm-Auftrag, 2 =
 
 ## Stufe 1 · Der Helm (K4)
 
-#### `v1_warten` · Prio 100 · `story_davijaan = 1`
+#### `v1_warten` · Prio 100 · `davijaan = 1`
 > Und? Mein Helm? Ich hab euch zugesehen, wie ihr im Kreis lauft. Sehr unterhaltsam. Aber der Helm fehlt.
 - **[Wo ist die Höhle?]** → `v1_weg`
 - **[Er ist kaputt]** · Bedingung: im Inventar `kubejs:kaputter_klonhelm` → `v1_kaputt`
 - **[Hier ist er, repariert]** · Bedingung: im Inventar `swgc:clone_212th_battalion_helmet` (der reparierte Helm ist der echte 212er-Helm, O71) → Befehle:
   `clear @initiator swgc:clone_212th_battalion_helmet 1`
   `tag @initiator add story_st4_05`
-  `scoreboard players set @a story_davijaan 2`
+  `scoreboard players set @a davijaan 2`
   → `v2_helm`
 
 #### `v1_weg` · Prio 0
@@ -77,7 +77,7 @@ Der Bauplan ist eine Rolle wie die übrigen: Rechtsklick schaltet das Reparaturr
 
 ## Stufe 2 · Vertrauen (K4, gleich nach der Abgabe)
 
-#### `v2_helm` · Prio 100 · `story_davijaan = 2`
+#### `v2_helm` · Prio 100 · `davijaan = 2`
 > *Er dreht den Helm lange in den Händen.* … Der Funk geht wieder. Da ist nur noch Rauschen drauf. Aber er geht.
 - **[Was ist das für ein Helm?]** → `v2_wessen`
 - **[Gern geschehen]** → `v2_danke`
@@ -104,7 +104,7 @@ Der Bauplan ist eine Rolle wie die übrigen: Rechtsklick schaltet das Reparaturr
 
 #### `v2_mars` · Prio 0
 > Hier oben findet ihr keinen, dafür sorg ich. Aber wollt ihr das Sonnensystem durchsuchen, geht auf den roten Planeten. Von da erreicht man jeden Planeten des Systems. Keine Abschirmung, kein alter Mann.
-- **[Danke, Davijaan]** → Befehl: `scoreboard players set @a story_davijaan 3` → `v2_tschuess`
+- **[Danke, Davijaan]** → Befehl: `scoreboard players set @a davijaan 3` → `v2_tschuess`
 
 #### `v2_tschuess` · Prio 0
 > Nennt mich Odd Ball. So nannte man mich früher in meiner Einheit. Macht’s gut und lasst euch mal wieder blicken.
@@ -114,7 +114,7 @@ Der Bauplan ist eine Rolle wie die übrigen: Rechtsklick schaltet das Reparaturr
 
 ## Stufe 3 · Der Laden (ab K4, normaler Betrieb)
 
-#### `v3_hallo` · Prio 100 · `story_davijaan ≥ 3`
+#### `v3_hallo` · Prio 100 · `davijaan ≥ 3`
 
 Drei Texte zur Abwechslung (🔵 prüfen, ob Easy NPC mehrere Texte eines Dialogs zufällig zeigt; sonst nur den ersten nehmen):
 > Da sind sie ja wieder. Ich hab euch gestern zugesehen. Großartig.

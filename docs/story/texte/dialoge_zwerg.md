@@ -8,13 +8,13 @@
 > - Die Zwerge gehören in diese Welt, nicht in die ferne Galaxis; Bodhi nennen sie „den Hüter des Hauses“.
 > - Seit die vier Wesen Bodhis Welten genommen haben, kommt kein Erz mehr aus dem Haus. Das gibt dem Zwerg einen Grund, die Spieler hinzuschicken.
 
-Scoreboard `story_zwerg` (B2): 0 = noch nie gesprochen, 1 = hat die Spieler zum Haus geschickt (Handel offen).
+Scoreboard `zwerg` (B2): 0 = noch nie gesprochen, 1 = hat die Spieler zum Haus geschickt (Handel offen).
 
 ---
 
 ## Stufe 0 · Fremde in der Schlucht (K3)
 
-#### `z0_gruss` · Prio 100 · `story_zwerg = 0`
+#### `z0_gruss` · Prio 100 · `zwerg = 0`
 > Halt! Wer poltert denn da so laut die Schlucht runter? Ihr seid nicht von hier unten, das hört man. Was wollt ihr?
 - **[Wir suchen ein Haus]** → `z0_haus`
 - **[Wer bist du?]** → `z0_wer`
@@ -33,7 +33,7 @@ Scoreboard `story_zwerg` (B2): 0 = noch nie gesprochen, 1 = hat die Spieler zum 
 
 #### `z0_auftrag` · Prio 0
 > Dann grüßt ihn von uns aus der Schlucht. Und wenn ihr aus seinen Welten Erz mitbringt, kommt zu mir. Ich zahle gut und wiege ehrlich ab, darauf mein Wort.
-- **[Abgemacht]** → Befehle: `tag @initiator add story_st3_00`, `scoreboard players set @a story_zwerg 1` → `z0_weg`
+- **[Abgemacht]** → Befehle: `tag @initiator add story_st3_00`, `scoreboard players set @a zwerg 1` → `z0_weg`
 
 #### `z0_weg` · Prio 0
 > Immer weiter nach Süden, erst die Schlucht entlang und dann noch ein gutes Stück weiter. Das Haus erkennt ihr sofort, es ist aus einem Stein, den es hier sonst nirgends gibt.
@@ -43,7 +43,7 @@ Scoreboard `story_zwerg` (B2): 0 = noch nie gesprochen, 1 = hat die Spieler zum 
 
 ## Stufe 1 · Der Handel (ab K3)
 
-#### `z1_hallo` · Prio 100 · `story_zwerg ≥ 1`
+#### `z1_hallo` · Prio 100 · `zwerg ≥ 1`
 > Ah, ihr schon wieder. Noch alles dran? Was habt ihr mir mitgebracht?
 - **[Handeln]** → Aktion: Handelsfenster öffnen
 - **[Was nimmst du an?]** → `z1_waren`

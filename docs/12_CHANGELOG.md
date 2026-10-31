@@ -1410,5 +1410,5 @@ Status: 🟡 (ungetestet, Test 96)
 Status: 🟡 (ungetestet, Test 106; Tests 89 und 95 neu prüfen)
 
 - Befund im JAR (Easy NPC 7.14, `ScoreboardCondition`): Die Scoreboard-Bedingung liest immer den Score des Spielers, der spricht. Einträge wie `#dd3r8` im Objective `story` kann sie nicht lesen, das alte Schema B2 hätte im Editor nicht funktioniert.
-- Neu: je Figur ein Objective `story_<figur>` (dd3r8, zwerg, bodhi, davijaan, cerina, vos), gesetzt immer mit `@a`. Umgestellt in ABLAUF, allen Dialogtexten, `buch1.cfg`/`buch1.snbt`, `everdawn_sperre.js` (höchster Wert in `story_bodhi`), `elfenportal.js`, Bauanleitung und Druckseiten.
+- Neu: je Figur ein Objective `<figur>` (dd3r8, zwerg, bodhi, davijaan, cerina, vos), gesetzt immer mit `@a`. Umgestellt in ABLAUF, allen Dialogtexten, `buch1.cfg`/`buch1.snbt`, `everdawn_sperre.js` (höchster Wert in `bodhi`), `elfenportal.js`, Bauanleitung und Druckseiten.
 - Neues Skript `server_scripts/story/dialogstufen.js`: legt die Objectives beim Serverstart an und hebt beim Einloggen jeden Spieler auf den höchsten Wert (übernimmt auch alte `#<figur>`-Werte).

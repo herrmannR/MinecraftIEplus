@@ -1,6 +1,6 @@
 // Meisterin Cerina rufen (O75, ST10-03; docs/story/ABLAUF.md Abschnitt 6).
 // Wird eine Rune des Frühlings (botania:rune_spring) in ein offenes Portal to Alfheim geworfen, verschwindet sie,
-// Meisterin Cerina erscheint vor dem Portal (easy_npc preset import) und story_cerina wird für alle Spieler 1.
+// Meisterin Cerina erscheint vor dem Portal (easy_npc preset import) und cerina wird für alle Spieler 1.
 // Nur einmal je Welt (Weltwert ieplus_cerina_gerufen). Ersetzt für die Elfe das Hinstellen von Hand (O55).
 //
 // Technik (Botania 1.20.1-456, JAR geprüft 2026-10-26): AlfheimPortalBlockEntity.commonTick feuert jeden Tick das
@@ -72,8 +72,8 @@ ForgeEvents.onEvent('vazkii.botania.api.recipe.ElvenPortalUpdateEvent', event =>
       var dim = ieplusCerinaDimId(level)
       server.runCommandSilent('execute in ' + dim + ' run easy_npc preset import ' + IEPLUS_CERINA_QUELLE + ' ' +
         IEPLUS_CERINA_PRESET + ' ' + p[0] + ' ' + p[1] + ' ' + p[2])
-      server.runCommandSilent('scoreboard objectives add story_cerina dummy')
-      server.runCommandSilent('scoreboard players set @a story_cerina 1')
+      server.runCommandSilent('scoreboard objectives add cerina dummy')
+      server.runCommandSilent('scoreboard players set @a cerina 1')
       server.tell(Text.green('Die Rune zerfällt zu Blütenstaub. Aus dem Licht des Portals tritt eine Gestalt.'))
       console.info('elfenportal.js: Cerina gerufen in ' + dim + ' bei ' + p.join(' '))
       return
