@@ -47,7 +47,7 @@ Begründung in Kurzform:
 
 ## KubeJS: Schwerter von Star Wars Planets entfernen
 
-Noch nicht angelegt. IDs stammen aus dem Quellcode (Zweig 1.20.1), 🔵 im Spiel mit `/kubejs hand` gegenprüfen.
+🟢 Umgesetzt 2026-10-31 (Test 109): `server_scripts/starwars/swplanets_entfernt.js` entfernt die Rezepte, `client_scripts/jei_ausblenden.js` blendet aus: die acht Schwerter unten, dazu Blaster, Blaster Upgrader, Zoom- und Explosion-Upgrade (Doppelung zu Galaxy in a Cube) und `swplanets:kyber_crystal` (Kyber kommt aus Galaxy in a Cube; das Erz lässt ihn noch fallen, bis Punkt 4 gebaut ist). Stormtrooper- und Beskar-Rüstung bleiben (Questtexte `questtexte/swplanets.md`). Der Entwurf unten ist damit überholt.
 
 `kubejs/server_scripts/star_wars_sabers.js`:
 

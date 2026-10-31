@@ -24,6 +24,12 @@ JEIEvents.hideItems(event => {
     'ae2:vibration_chamber',
     'ae2:crystal_resonance_generator',
     'swplanets:plastic_plate',
+    // Star Wars Planets: Doppeltes zu Galaxy in a Cube (server_scripts/starwars/swplanets_entfernt.js, 2026-10-31)
+    'swplanets:light_saber_base', 'swplanets:light_saber_blue', 'swplanets:light_saber_green', 'swplanets:light_saber_violet',
+    'swplanets:light_saber_red', 'swplanets:light_saber_kylo_ren', 'swplanets:light_saber_dark_maul', 'swplanets:darksaber',
+    'swplanets:blaster', 'swplanets:blaster_upgrader',
+    'swplanets:blaster_zoom_upgrade', 'swplanets:blaster_explosion_upgrade',
+    'swplanets:kyber_crystal',
     // Rezepte hinter Bauplänen (server_scripts/starwars/einsiedler_shop.js): in JEI ausgeblendet, das Bauplan-Buch zeigt sie
     'swgc:assembly_bench',
     'swgc:droid_fabricator',

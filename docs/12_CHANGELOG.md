@@ -1433,3 +1433,13 @@ Status: 🟡 (ungetestet, Test 108)
 
 
 - Nachtrag: DD3R8 auf das Doppler-Preset des Users (Droide aus Star Wars Expansion); Zwerg mit eigenem Skin `moria-dwarf.png` (von 64×32 auf 64×64 gebracht, liegt unter `config-overrides/config/easy_npc/skin/humanoid/`); Gesten in Sternchen aus allen Dialogtexten entfernt (Wunsch des Users), Rückfall des Zwergs bekommt dafür einen Satz; Bodhi „Fast hätten wir es nicht geschafft...“. Noch nicht in die Testinstanz kopiert (Spiel lief).
+
+## 2026-10-31 — Testergebnisse 95–108, Star Wars Planets ausgeblendet
+
+Status: 🟡
+
+- Bestanden (User): 96, 102, 103, 104, 105, 108; 99 per Dateivergleich (Claude).
+- ❌ 95: Everbright-Sperre bleibt auch mit `bodhi` 1 oder 2. Ursache: Fassung 3 von `everdawn_sperre.js` (2026-10-28) lag nie in der Testinstanz, ebenso `story/dialogstufen.js`, `elfenportal.js` und `assets/kubejs/lang/`. Nach dem Kopieren 89, 95 und 106 neu testen.
+- 🟡 97 und 98 nicht auswertbar: Beide Energie-Configs waren schon seit 2026-10-28 aktiv, „vorher“ lief also schon mit Aufschlag; die 8 kFE bei Mekanism sind der Speicher des Infusers. Neuer Messweg in `11_TESTING.md`.
+- Testliste umgebaut: neue Runde S (Story und Quests: 100, 101, 107 als vollständiger Durchgang zuletzt) vor Runde M; 106 in Runde M.
+- Star Wars Planets (Wunsch des Users): Lichtschwerter, Blaster, Blaster-Upgrades und Upgrader sowie der eigene Kyber Crystal aus JEI und ohne Rezept (`starwars/swplanets_entfernt.js`, `jei_ausblenden.js`, Test 109). Stormtrooper- und Beskar-Rüstung bleiben.

@@ -47,6 +47,7 @@ Die fünf Skripte für 1.18.2 (`space_oxygen.js`, `moon_ores.js`, `tf_industrial
 | `server_scripts/progression/ae2_verteuerung.js` | ME Controller und ME Drive mit Advanced Control Circuit und Stahlplatten. | F10 |
 | `server_scripts/progression/aircraft_stahl.js` | Airship mit IE-Stahlplatten. | F17 |
 | `server_scripts/progression/ideenimport_entfernt.js` | Entfernt Digital Miner, Vibration Chamber, Crystal Resonance Generator, Plastic Plate. | Ideenimport |
+| `server_scripts/starwars/swplanets_entfernt.js` | Entfernt Lichtschwerter, Blaster und Blaster Upgrader von Star Wars Planets (Doppelung zu Galaxy in a Cube); ausgeblendet samt Upgrades und Kyber Crystal in `jei_ausblenden.js`. Ungetestet (Test 109). | `17_STAR_WARS_1.20.1.md` |
 | `server_scripts/crossmod/ie_crusher_uebernimmt.js` | Legt für jedes Rezept des Mekanism-Crushers ein gleiches im IE-Crusher an (wenn der IE-Crusher die Eingabe noch nicht kennt). | Ideenimport |
 | `server_scripts/starwars/einsiedler_shop.js` | Credits nicht mehr aus Metall; Plastoid und Durasteel nur im Shop; Droiden mit Steuerkern und Stahlblöcken. Baupläne: Der Einsiedler verkauft Schriftrollen (alle gleich, eigene Textur); Rechtsklick liest die Rolle: sie verschwindet, das Rezept für die Welt freigeschaltet (Weltwert) und alle Spieler bekommen das Advancement `ieplus:bauplan/<name>` (`kubejs/data/ieplus/advancements/bauplan/`, versteckt), das den Eintrag im Patchouli-Buch „Baupläne des Einsiedlers“ (`patchouli_books/bauplaene/`, gehört in den Ordner `patchouli_books/` der Instanz) entsperrt; Offline-Spieler beim Einloggen. Der erste Kauf der Welt gibt das Buch dazu. Befehle `/bauplan <name>`, `/bauplan buch`, `/bauplan zuruecksetzen` (alles wieder sperren), `/bauplan alles` (alles freischalten). Dazu eine Blaster-Rolle: Sie öffnet alle sieben Blaster-Seiten (Modelle der Assembly Bench); an der Bench wird nichts gesperrt, deren Blaster-Rezept ist für alle Modelle gleich und steht im Code (User, 2026-10-20). Fünf Rüstungs-Rollen (Klon Phase 2, Jedi, Sith, Royal Guard, Vader): deren Werkbank-Rezepte sind bis zum Bauplan gesperrt, Kosten unverändert. Das Buch hat drei Kapitel: Maschinen, Waffen (Blaster, Droiden), Rüstung. Rezepte stark verteuert (Test 43). | O28, F5c/d, Test 43 |
 | `client_scripts/tooltips_teil1.js` | Tooltips der eigenen Items. | – |
@@ -117,7 +118,7 @@ Unter `_original/` liegen die unveränderten Standarddateien zum Vergleich.
 
 - 🔵 Antimaterie-Treibstoffe für T6 und T7 (F3, Teil 2 und 3).
 - 🔵 Tinkers in den höheren Stufen (Wege A, C, D, E, F und fehlende Schmelzrezepte, `07_CROSSMOD_INTEGRATION.md`): beschlossen, Rezepte und Werte offen.
-- 🔵 Rezept vom Kyber-Erz zum Kyber-Kristall; Lichtschwerter von Star Wars Planets entfernen (`17_STAR_WARS_1.20.1.md`).
+- 🔵 Rezept vom Kyber-Erz zum Kyber-Kristall (`17_STAR_WARS_1.20.1.md`). Lichtschwerter von Star Wars Planets sind entfernt (2026-10-31).
 - 🔵 Etrium-Rezepte (`15_RAUMFAHRT.md`), Planetenstufen T5–T7 (Teil 2 und 3).
 - 🔵 Aus dem Ideenimport noch offen: Beskar, Kyber (Teil 3, F5, F12). Der Mekanism-Crusher bleibt vorerst neben dem IE-Crusher.
 - 🔵 Alles aus den Phasen 3 bis 6 (Erträge, Energie, AE2-Gates, Cross-Mod-Rezepte).
