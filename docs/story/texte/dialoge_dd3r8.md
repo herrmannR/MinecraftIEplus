@@ -198,7 +198,10 @@ DD3R8 erscheint am festen Platz der Station, wenn ST7-02 erledigt ist (O69; Befe
 #### `d7_rollen` · Prio 100 · `dd3r8 = 7`
 > Der Tempel. Habt ihr dort etwas gefunden? Schriften, Zeichen, Kratzer an der Wand? Ich nehme alles.
 - **[Vier Rollen]** · Bedingung: im Inventar `kubejs:tempelrolle_1` bis `_4` → Befehle:
-  `clear @initiator kubejs:tempelrolle_1 1` (ebenso `_2`, `_3`, `_4`)
+  `clear @initiator kubejs:tempelrolle_1 1`
+  `clear @initiator kubejs:tempelrolle_2 1`
+  `clear @initiator kubejs:tempelrolle_3 1`
+  `clear @initiator kubejs:tempelrolle_4 1`
   `tag @initiator add story_st8_03`
   `scoreboard players set @a dd3r8 8`
   → `d7_erkenntnis`

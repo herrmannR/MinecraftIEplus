@@ -1412,3 +1412,12 @@ Status: 🟡 (ungetestet, Test 106; Tests 89 und 95 neu prüfen)
 - Befund im JAR (Easy NPC 7.14, `ScoreboardCondition`): Die Scoreboard-Bedingung liest immer den Score des Spielers, der spricht. Einträge wie `#dd3r8` im Objective `story` kann sie nicht lesen, das alte Schema B2 hätte im Editor nicht funktioniert.
 - Neu: je Figur ein Objective `<figur>` (dd3r8, zwerg, bodhi, davijaan, cerina, vos), gesetzt immer mit `@a`. Umgestellt in ABLAUF, allen Dialogtexten, `buch1.cfg`/`buch1.snbt`, `everdawn_sperre.js` (höchster Wert in `bodhi`), `elfenportal.js`, Bauanleitung und Druckseiten.
 - Neues Skript `server_scripts/story/dialogstufen.js`: legt die Objectives beim Serverstart an und hebt beim Einloggen jeden Spieler auf den höchsten Wert (übernimmt auch alte `#<figur>`-Werte).
+
+## 2026-10-31 — Easy-NPC-Presets aus den Dialogtexten
+
+Status: 🟡 (ungetestet, Test 107)
+
+- Objectives heißen nur `<figur>` (Wunsch des Users), nicht `story_<figur>`.
+- Bodhis Preset aus dem Spiel geprüft: Stufe 1 (Zinn) fehlte, zwei Befehle in einer Zeile, Knöpfe „Button 1/2“. Texte des Users in `dialoge_bodhi.md` übernommen, Stufe 1 aus dem Entwurf.
+- Neu `tools/npc_preset.py`: baut aus `dialoge_<figur>.md` die Dialoge ins Preset (DD3R8 47, Zwerg 9, Bodhi 22, Davijaan 25, Cerina 17, Vos 16 Dialoge). Vorlagen: Presets des Users; Vos aus der Testwelt (das Preset `quinlanvos` war eine Kopie von Cerina und ist gelöscht); DD3R8 und Zwerg ohne Skin.
+- Presets in die Testinstanz kopiert (alte gesichert im Scratchpad der Sitzung).

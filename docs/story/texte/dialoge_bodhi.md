@@ -70,7 +70,7 @@ Everdawn ist erst offen, wenn der Zinn-Zoll bezahlt ist (User, 2026-10-26, O73):
 ## Stufe 2 · Osmium (K4)
 
 #### `b2_osmium` · Prio 100 · `bodhi = 2`
-> Ah, meine Freunde. Wart ihr schon in Everdawn? Habt ihr die Echsen gesehen? Sie sind unhöflich, aber schön.
+> Ah, meine Freunde. Wart ihr schon in Everdawn? Habt ihr die Echsen gesehen? Sie sind unhöflich, aber schön, nicht wahr?
 - **[Handeln]** → Aktion: Handelsfenster öffnen
 - **[Hier ist das Osmium]** · Bedingung: im Inventar 32 × `mekanism:raw_osmium` → Befehle:
   `clear @initiator mekanism:raw_osmium 32`
@@ -81,15 +81,15 @@ Everdawn ist erst offen, wenn der Zinn-Zoll bezahlt ist (User, 2026-10-26, O73):
 
 #### `b2_danke` · Prio 0
 > Ihr wart in beiden Welten und seid zurückgekommen. Das schaffen nicht viele. Darf ich euch um etwas Größeres bitten?
-- **[Worum geht es?]** → `b2_bosse`
+- **[Worum geht's?]** → `b2_bosse`
 
 #### `b2_bosse` · Prio 0
 > Die vier, die meine Welten halten. Zwei sitzen in Türmen, je einer in jeder Welt. Zwei weitere tiefer drin. Besiegt sie, und ich komme nach Hause.
-- **[Wir denken darüber nach]** → `b2_lohn`
+- **[Wir denken drüber nach]** → `b2_lohn`
 
 #### `b2_lohn` · Prio 0
 > Danke, bereitet euch in Ruhe vor. Ich vergesse nicht, wer mir hilft. Wenn alle vier gefallen sind, habe ich etwas für euch. Etwas, das euch nur der Wächter der Traumwelten geben kann.
-- **[Bis dann]** → schließen
+- **[Gut, bis dann]** → schließen
 
 ---
 
@@ -99,10 +99,10 @@ Everdawn ist erst offen, wenn der Zinn-Zoll bezahlt ist (User, 2026-10-26, O73):
 > Und, habt ihr es euch überlegt? Werdet ihr die vier Monsterwesen bekämpfen?
 - **[Handeln]** → Aktion: Handelsfenster öffnen
 - **[Wer sind die vier?]** → `b3_wer`
-- **[Bis bald]** → schließen
+- **[Noch nicht, wir kommen wieder.]** → schließen
 
 #### `b3_wer` · Prio 0
-> In Everbright der Summoner, im Turm. In Everdawn der Alchemist, im Turm. Dann der Starlit Crusher in der grünen Pyramide und der Arachnarch im Baum der Spinnen.
+> In Everbright der Summoner, im Turm. In Everdawn der Alchemist, im Turm. Dann der Starlit Crusher in der grünen Pyramide und die Arachnarch im Baum der Spinnen.
 - **[Und wie kommen wir rein?]** → `b3_schluessel`
 
 #### `b3_schluessel` · Prio 0
@@ -114,8 +114,9 @@ Everdawn ist erst offen, wenn der Zinn-Zoll bezahlt ist (User, 2026-10-26, O73):
 ## Stufe 4 · Das Siegel (nach dem letzten Boss)
 
 #### `b4_siegel` · Prio 100 · `bodhi = 4`
-> *Er steht am Fenster und lacht leise.* Alle vier. Ich habe es gehört. Meine Welten atmen wieder.
-- **[Was jetzt?]** → `b4_geschenk`
+> Alle vier! Ich habe es gehört. Meine Welten atmen wieder.
+- **[Das war ein Kinderspiel]** → `b4_geschenk`
+- **[Was hätten wir es nicht geschafft...]** → `b4_geschenk`
 
 #### `b4_geschenk` · Prio 0
 > Ich habe euch etwas versprochen. Das Siegel der Traumwelten. Es trägt Licht und Dämmerung zugleich. Wo es liegt, kann nichts ganz dunkel werden.
@@ -124,14 +125,14 @@ Everdawn ist erst offen, wenn der Zinn-Zoll bezahlt ist (User, 2026-10-26, O73):
 #### `b4_abschied` · Prio 0
 > Ich danke euch. Ich bleibe hier in dieser Welt und bewache den Eingang von hier.
 - **[Bis bald!]** → schließen
-- **[Das machen wir.]** → schließen
+- **[Machen wir]** → schließen
 
 ---
 
 ## Stufe 5 · Danach
 
 #### `b5_hallo` · Prio 100 · `bodhi ≥ 5`
-> Meine Freunde, kommt herein!
+> Hallo, meine Freunde. Kommt herein!
 - **[Handeln]** → Aktion: Handelsfenster öffnen
 - **[Wozu ist das Siegel?]** → `b5_siegel`
 - **[Bis bald]** → schließen
@@ -148,7 +149,7 @@ Everdawn ist erst offen, wenn der Zinn-Zoll bezahlt ist (User, 2026-10-26, O73):
 
 ## Offen beim Überarbeiten
 
-Gegengelesen vom User am 2026-10-26; die früheren Punkte sind erledigt: Wächter statt Herrscher (O72), Grund für das Nicht-Kämpfen bleibt offen, erste Ziegel verkauft Bodhi, Handel wie der Gatekeeper, Siegel gleich nach dem letzten Boss.
+Texte von Stufe 0 und 2 bis 5 aus dem Preset übernommen, das der User im Spiel gebaut hat (2026-10-31); Stufe 1 fehlte dort noch und steht hier wie im Entwurf. Gegengelesen vom User am 2026-10-26; die früheren Punkte sind erledigt: Wächter statt Herrscher (O72), Grund für das Nicht-Kämpfen bleibt offen, erste Ziegel verkauft Bodhi, Handel wie der Gatekeeper, Siegel gleich nach dem letzten Boss.
 
 - 🟢 **Mengen** (User, 2026-10-26): je 32 Rohzinn und 32 Rohosmium.
 - 🟢 **Everdawn erst nach dem Zinn** (O73): Skript auf der Technik-Liste (`../ABLAUF.md`).

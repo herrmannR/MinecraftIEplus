@@ -18,7 +18,7 @@ Scoreboard `davijaan` (B2): 0 = noch nie gesprochen, 1 = Helm-Auftrag, 2 = Helm 
 #### `v0_besuch` · Prio 100 · `davijaan = 0`
 > Na sieh mal an. Drei Menschen, in Raumanzügen. Ich hab euch landen sehen. Ich seh alles von hier oben. Die Landung war … mutig.
 - **[Wer bist du?]** → `v0_wer`
-- **[Du bist der, der den Mond abschirmt?]** → `v0_schirm`
+- **[Bist du der, der den Mond abschirmt?]** → `v0_schirm`
 
 #### `v0_wer` · Prio 0
 > Davijaan. Ich habe mich schon länger gefragt, wann einer von euch Erdmenschen hier hochkommt.
