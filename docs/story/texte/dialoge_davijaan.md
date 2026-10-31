@@ -78,7 +78,7 @@ Der Bauplan ist eine Rolle wie die übrigen: Rechtsklick schaltet das Reparaturr
 ## Stufe 2 · Vertrauen (K4, gleich nach der Abgabe)
 
 #### `v2_helm` · Prio 100 · `davijaan = 2`
-> *Er dreht den Helm lange in den Händen.* … Der Funk geht wieder. Da ist nur noch Rauschen drauf. Aber er geht.
+> Der Funk geht wieder. Da ist nur noch Rauschen drauf. Aber er geht.
 - **[Was ist das für ein Helm?]** → `v2_wessen`
 - **[Gern geschehen]** → `v2_danke`
 
@@ -95,7 +95,7 @@ Der Bauplan ist eine Rolle wie die übrigen: Rechtsklick schaltet das Reparaturr
 - **[Unser Questbuch?]** → `v2_buch`
 
 #### `v2_buch` · Prio 0
-> *Er kritzelt hinein.* So. Da stehen jetzt meine Aufgaben drin. Für jede gibt's Credits.
+> So. Da stehen jetzt meine Aufgaben drin. Für jede gibt's Credits.
 - **[Und die anderen Einträge?]** → `v2_notizen`
 
 #### `v2_notizen` · Prio 0

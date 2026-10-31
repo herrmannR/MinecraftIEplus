@@ -1431,3 +1431,5 @@ Status: 🟡 (ungetestet, Test 108)
 - F43 umgesetzt: `data/star_wars_expansion/worldgen/structure/broken_pod_structure.json` (Kapsel aus), `server_scripts/starwars/swe_entfernt.js` (alle 31 Rezepte), `client_scripts/swe_ausblenden.js` (139 dauerhaft, 41 nur Teil 1, 35 Spawn-Eier). In die Testinstanz kopiert.
 - Vorschläge E1–E7 (Wesen, Bauten, Kopfgeld, Bosse, Belohnungen, Deko) in `17_STAR_WARS_1.20.1.md`; Entscheidung F44.
 
+
+- Nachtrag: DD3R8 auf das Doppler-Preset des Users (Droide aus Star Wars Expansion); Zwerg mit eigenem Skin `moria-dwarf.png` (von 64×32 auf 64×64 gebracht, liegt unter `config-overrides/config/easy_npc/skin/humanoid/`); Gesten in Sternchen aus allen Dialogtexten entfernt (Wunsch des Users), Rückfall des Zwergs bekommt dafür einen Satz; Bodhi „Fast hätten wir es nicht geschafft...“. Noch nicht in die Testinstanz kopiert (Spiel lief).

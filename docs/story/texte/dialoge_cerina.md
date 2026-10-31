@@ -17,7 +17,7 @@ Scoreboard `cerina` (B2): 1 = gerade aus dem Portal getreten (setzt die Belohnun
 ## Stufe 1 · Aus dem Portal (K10)
 
 #### `c1_portal` · Prio 100 · `cerina = 1`
-> *Aus dem Portal tritt eine Frau mit grüner Haut und feinen Mustern im Gesicht. Sie lächelt euch an.* Willkommen! Es ist lange her, dass jemand von dieser Seite ein Tor für mich gebaut hat, und ihr habt es wirklich schön gemacht. Sagt mal, wer hat euch gezeigt, wie das geht?
+> Willkommen! Es ist lange her, dass jemand von dieser Seite ein Tor für mich gebaut hat, und ihr habt es wirklich schön gemacht. Sagt mal, wer hat euch gezeigt, wie das geht?
 - **[Ein Tagebuch]** → `c1_tagebuch`
 - **[Wer bist du?]** → `c1_wer`
 
@@ -26,7 +26,7 @@ Scoreboard `cerina` (B2): 1 = gerade aus dem Portal getreten (setzt die Belohnun
 - **[Wir suchen die Helle Elfe]** → `c1_elf`
 
 #### `c1_elf` · Prio 0
-> *Sie lacht leise.* Die Helle Elfe, so nennt man mich da draußen? Das gefällt mir, auch wenn ich gar keine echte Elfe bin. Das ist eine lange Geschichte, die erzähle ich euch ein andermal. Aber ihr seid bei der Richtigen.
+> Die Helle Elfe, so nennt man mich da draußen? Das gefällt mir, auch wenn ich gar keine echte Elfe bin. Das ist eine lange Geschichte, die erzähle ich euch ein andermal. Aber ihr seid bei der Richtigen.
 - **[Wir haben ein Tagebuch]** → `c1_tagebuch`
 
 #### `c1_tagebuch` · Prio 0
@@ -40,7 +40,7 @@ Scoreboard `cerina` (B2): 1 = gerade aus dem Portal getreten (setzt die Belohnun
 - **[Wir holen es]** → schließen
 
 #### `c1_relikt` · Prio 0
-> *Sie tritt einen Schritt zurück und hebt die Hände.* Bitte legt es dort auf den Boden, nicht in meine Hand. So etwas fasse ich nur an, wenn es gar nicht anders geht.
+> Bitte legt es dort auf den Boden, nicht in meine Hand. So etwas fasse ich nur an, wenn es gar nicht anders geht.
 - **[Hier, wir legen es ab]** → Befehle:
   `clear @initiator kubejs:relikt 1`
   `tag @initiator add story_st10_03`
@@ -85,7 +85,7 @@ Scoreboard `cerina` (B2): 1 = gerade aus dem Portal getreten (setzt die Belohnun
 - **[Zurück]** → `c2_auftrag`
 
 #### `c2_fertig` · Prio 0
-> *Sie arbeitet lange, ohne ein Wort zu sagen, und ihr Gesicht wird dabei sehr ernst. Dann reicht sie euch das fertige Stück.* Hier, fertig. Das Relikt ist jetzt sicher eingeschlossen und gibt Ruhe, ihr werdet merken, dass es euch nicht mehr quält. Versprecht mir bitte, dass ihr es nie wieder aufmacht.
+> Hier, fertig. Das Relikt ist jetzt sicher eingeschlossen und gibt Ruhe, ihr werdet merken, dass es euch nicht mehr quält. Versprecht mir bitte, dass ihr es nie wieder aufmacht.
 - **[Was machen wir damit?]** → `c2_rakete`
 
 #### `c2_rakete` · Prio 0
@@ -107,13 +107,13 @@ Scoreboard `cerina` (B2): 1 = gerade aus dem Portal getreten (setzt die Belohnun
 - **[Zurück]** → `c3_hallo`
 
 #### `c3_wer` · Prio 0
-> *Sie überlegt kurz, dann lächelt sie.* Das kann ich euch heute nicht sagen, so gern ich es würde. Nur so viel: Ich habe einmal etwas verschwiegen, das ich hätte sagen müssen. Seitdem bin ich lieber ehrlich. Deshalb sage ich euch offen: noch nicht.
+> Das kann ich euch heute nicht sagen, so gern ich es würde. Nur so viel: Ich habe einmal etwas verschwiegen, das ich hätte sagen müssen. Seitdem bin ich lieber ehrlich. Deshalb sage ich euch offen: noch nicht.
 - **[Zurück]** → `c3_hallo`
 
 ## Rückfall
 
 #### `c_standard` · Prio 1 · ohne Bedingung
-> *Sie schaut ganz in Gedanken ins Portal und bemerkt euch erst, als ihr näher kommt.* Oh, entschuldigt, ich war gerade ganz woanders. Kommt doch später wieder, dann habe ich mehr Zeit für euch.
+> Oh, entschuldigt, ich war gerade ganz woanders. Kommt doch später wieder, dann habe ich mehr Zeit für euch.
 - **[Später]** → schließen
 
 ## Offen beim Überarbeiten

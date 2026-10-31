@@ -59,7 +59,7 @@ Scoreboard `zwerg` (B2): 0 = noch nie gesprochen, 1 = hat die Spieler zum Haus g
 ## Rückfall
 
 #### `z_standard` · Prio 1 · ohne Bedingung
-> *Er klopft prüfend an einen Stein und hört euch nicht zu.*
+> Hm? Ich hab zu tun. Kommt später wieder.
 - **[Später]** → schließen
 
 ## Offen beim Überarbeiten

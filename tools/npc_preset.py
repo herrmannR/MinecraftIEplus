@@ -31,7 +31,8 @@ INSTANZ = Path.home() / 'AppData/Roaming/ATLauncher/instances/Minecraft1201withF
 
 # Kürzel: Dialogdatei, Name im Spiel, Ausgabe (Ordner/Datei), Vorlage (Ordner/Datei der Ausgabe oder Datei der Instanz)
 FIGUREN = {
-    'dd3r8':    ('dialoge_dd3r8.md', 'DD3R8', 'humanoid/dd3r8.npc.nbt', None),
+    # Doppler, der den Droiden aus Star Wars Expansion darstellt (vom User gebaut, 2026-10-31)
+    'dd3r8':    ('dialoge_dd3r8.md', 'DD3R8', 'humanoid/dd3r8.npc.nbt', 'config/easy_npc/preset/humanoid/dd3r8.npc.nbt'),
     'zwerg':    ('dialoge_zwerg.md', 'Der Zwerg', 'humanoid/zwerg.npc.nbt', None),
     'bodhi':    ('dialoge_bodhi.md', 'Bodhi Bad Dur', 'humanoid/bodhibaddur.npc.nbt', 'config/easy_npc/preset/humanoid/bodhibaddur.npc.nbt'),
     'davijaan': ('dialoge_davijaan.md', 'Davijaan', 'humanoid/davijaan.npc.nbt', 'config/easy_npc/preset/humanoid/davijaan.npc.nbt'),
@@ -39,6 +40,10 @@ FIGUREN = {
     # Das Preset quinlanvos war eine Kopie von Cerina; Vorlage ist der Vos, der in der Testwelt steht.
     'vos':      ('dialoge_vos.md', 'Quinlan Vos', 'humanoid/quinlanvos.npc.nbt', 'saves/New World/easy_npc/npcs/2edd3745-1e00-47bd-93e8-7f748b456e62.npc.nbt'),
 }
+# Eigener Skin: Datei liegt im Projekt unter config-overrides/config/easy_npc/skin/<modell>/ und muss in denselben
+# Ordner der Instanz. Easy NPC erkennt einen eigenen Skin an der UUID aus dem Dateinamen
+# (UUID.nameUUIDFromBytes("name.png"), geprüft an Odd-Ball.png, 2026-10-31).
+SKINS = {'zwerg': 'moria-dwarf.png'}
 # ohne eigene Vorlage: Davijaan als Grundgerüst, aber Standard-Skin (Skin stellt der User im Editor ein)
 LEERE_VORLAGE = 'davijaan'
 # Diese Schlüssel hat ein exportiertes Preset; aus einer NPC-Datei der Welt kommt nur das hinein
@@ -122,6 +127,14 @@ def s(v): return (STR, v)
 def i(v): return (INT, v)
 def comp(d): return (COMP, d)
 def liste(et, werte): return (LIST, (et, werte))
+def skin_uuid(dateiname):
+    import hashlib
+    h = bytearray(hashlib.md5(dateiname.encode('utf-8')).digest())
+    h[6] = h[6] & 0x0f | 0x30
+    h[8] = h[8] & 0x3f | 0x80
+    return (IARR, list(struct.unpack('>iiii', bytes(h))))
+
+
 def uuid(): return (IARR, [random.randint(-2**31, 2**31 - 1) for _ in range(4)])
 
 
@@ -270,6 +283,8 @@ def bauen(kuerzel):
     meta.setdefault('created', (LONG, jetzt))
     meta.setdefault('category', s('General'))
     meta.setdefault('version', s('1.1.0'))
+    if kuerzel in SKINS:
+        data['SkinData'] = comp({'Type': s('CUSTOM'), 'UUID': skin_uuid(SKINS[kuerzel])})
     data['CustomName'] = s('{"color":"#FFFFFF","text":%s}' % ('"' + name.replace('"', '\\"') + '"'))
     ds = dialoge(datei, warn)
     data['DialogData'] = comp({'Type': s('STANDARD'), 'DialogDataSet': liste(COMP, ds)})

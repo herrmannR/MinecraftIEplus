@@ -19,7 +19,7 @@ Scoreboard `vos` (B2): 1 = im Versteck erschienen (Belohnung von ST11-01), 2 = e
 ## Stufe 1 · Das Versteck (K11, Glacio)
 
 #### `q1_treffen` · Prio 100 · `vos = 1`
-> *Ein Mann sitzt am Feuer, in einen Mantel gewickelt, das Gesicht voller Narben. Er schaut nicht einmal auf.* Ihr seid also zu dritt. Ich hab euch schon gespürt, lange bevor eure Rakete hier gelandet ist.
+> Ihr seid also zu dritt. Ich hab euch schon gespürt, lange bevor eure Rakete hier gelandet ist.
 - **[Bist du der Meister?]** → `q1_meister`
 
 #### `q1_meister` · Prio 0
@@ -44,7 +44,7 @@ Scoreboard `vos` (B2): 1 = im Versteck erschienen (Belohnung von ST11-01), 2 = e
 - **[Kommst du mit uns?]** → `q1_heim`
 
 #### `q1_hand` · Prio 0
-> *Er nimmt eure Hand, hält sie kurz fest und schließt halb die Augen.* Hm, interessant. Ich sehe eine Truhe voller Kohl, einen Dungeon, der euch gar nicht mochte, und einen Ofen, den einer von euch in die Luft gejagt hat. Zweimal.
+> Hm, interessant. Ich sehe eine Truhe voller Kohl, einen Dungeon, der euch gar nicht mochte, und einen Ofen, den einer von euch in die Luft gejagt hat. Zweimal.
 - **[Woher weißt du das?]** → `q1_woher`
 
 #### `q1_woher` · Prio 0
@@ -70,7 +70,7 @@ Wenn die Spieler wieder auf der Erde sind (ST11-03), stellt der User Vos und DD3
 ## Stufe 3 · Angekommen (K11, Basis der Spieler)
 
 #### `q3_ankunft` · Prio 100 · `vos = 3`
-> *Er schaut sich lange in eurer Basis um und fängt langsam an zu grinsen.* Hier hat also alles angefangen. Viel Rauch, viel Lärm, wenig Ordnung. Aber man sieht, dass ihr hier mit Spaß gebaut habt. Gefällt mir.
+> Hier hat also alles angefangen. Viel Rauch, viel Lärm, wenig Ordnung. Aber man sieht, dass ihr hier mit Spaß gebaut habt. Gefällt mir.
 - **[Was jetzt, Meister?]** → `q3_was`
 
 #### `q3_was` · Prio 0
@@ -99,7 +99,7 @@ Ab Teil 2 folgen hier die Dialoge der Ausbildung.
 ## Rückfall
 
 #### `q_standard` · Prio 1 · ohne Bedingung
-> *Er hat die Augen geschlossen und scheint auf etwas zu horchen.* Später, Freunde. Ich bin gerade beschäftigt.
+> Später, Freunde. Ich bin gerade beschäftigt.
 - **[Später]** → schließen
 
 ## Offen beim Überarbeiten

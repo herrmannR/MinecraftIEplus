@@ -116,7 +116,7 @@ Everdawn ist erst offen, wenn der Zinn-Zoll bezahlt ist (User, 2026-10-26, O73):
 #### `b4_siegel` · Prio 100 · `bodhi = 4`
 > Alle vier! Ich habe es gehört. Meine Welten atmen wieder.
 - **[Das war ein Kinderspiel]** → `b4_geschenk`
-- **[Was hätten wir es nicht geschafft...]** → `b4_geschenk`
+- **[Fast hätten wir es nicht geschafft...]** → `b4_geschenk`
 
 #### `b4_geschenk` · Prio 0
 > Ich habe euch etwas versprochen. Das Siegel der Traumwelten. Es trägt Licht und Dämmerung zugleich. Wo es liegt, kann nichts ganz dunkel werden.

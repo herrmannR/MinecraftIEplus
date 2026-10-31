@@ -19,14 +19,14 @@ Easy NPC 7.14 (aus dem JAR, 2026-10-21): Ein Dialog hat einen **Namen** (höchst
 - `<ST3-05>` usw. steht für die Quest-ID, die `QuestbuchGen` aus dem Code erzeugt; die echten IDs trage ich ein, sobald Buch 1 gebaut ist.
 - Alle Befehle mit `@a` gelten für alle drei Spieler; `@initiator` ist, wer gerade spricht.
 
-Schreibweise: **[Knopf]** → Ziel. *Kursiv* sind Geräusche oder Gesten.
+Schreibweise: **[Knopf]** → Ziel. Keine Gesten in Sternchen (User, 2026-10-31): Was eine Figur tut, steht nicht im Text.
 
 ---
 
 ## Stufe 0 · Der Einschlag (K1, in der Kapsel)
 
 #### `d0_einschlag` · Prio 100 · `dd3r8 = 0`
-> *Zischen. Eine Klappe springt auf.* Systemprüfung … 61 Prozent. Beine: vorhanden. Würde: beschädigt. Oh. Hallo. Seid ihr die drei Brüder der Spezies Mensch?
+> Systemprüfung … 61 Prozent. Beine: vorhanden. Würde: beschädigt. Oh. Hallo. Seid ihr die drei Brüder der Spezies Mensch?
 - **[Ähh ja... Wer bist du?]** → `d0_wer`
 - **[Was zum Teufel hast du hier angestellt?]** → `d0_basis`
 
@@ -71,7 +71,7 @@ Schreibweise: **[Knopf]** → Ziel. *Kursiv* sind Geräusche oder Gesten.
 - **[Verstanden]** → schließen
 
 #### `d1_bestanden` · Prio 0
-> *Summen.* Analyse abgeschlossen. Ergebnis: weit entwickelt. Nur die Ordnung in euren Truhen lässt zu wünschen übrig … Aber dabei kann ich euch vielleicht noch helfen.
+> Analyse abgeschlossen. Ergebnis: weit entwickelt. Nur die Ordnung in euren Truhen lässt zu wünschen übrig … Aber dabei kann ich euch vielleicht noch helfen.
 - **[Und jetzt?]** → Befehle: `give @a ftbquests:book`, `kubejs stages add @a kapitel_k1`, `kubejs stages add @a kapitel_k2` → `d1_buch`
 
 #### `d1_buch` · Prio 0
@@ -175,7 +175,7 @@ Auf dem Mars zeigt der Peilsender auf den Platz. Dort liegen die Reste einer alt
 DD3R8 erscheint am festen Platz der Station, wenn ST7-02 erledigt ist (O69; Befehl in der Belohnung).
 
 #### `d6_ankunft` · Prio 100 · `dd3r8 = 6`
-> *Rauschen.* Ich bin da. Sieht gut aus. Gebt mir einen Moment, ich richte meine Sensoren aus.
+> Ich bin da. Sieht gut aus. Gebt mir einen Moment, ich richte meine Sensoren aus.
 - **[Hörst du etwas?]** → `d6_signal`
 
 #### `d6_signal` · Prio 0
@@ -208,7 +208,7 @@ DD3R8 erscheint am festen Platz der Station, wenn ST7-02 erledigt ist (O69; Befe
 - **[Noch nichts]** → schließen
 
 #### `d7_erkenntnis` · Prio 0
-> *Lange Pause.* Das Tor bricht an einem, der zu stark ist. Der Altar ist gebrochen. Er muss hindurchgegangen sein.
+> Das Tor bricht an einem, der zu stark ist. Der Altar ist gebrochen. Er muss hindurchgegangen sein.
 - **[Was tun wir?]** → `d7_auftrag`
 
 #### `d7_auftrag` · Prio 0
@@ -281,7 +281,7 @@ Stufe 9 hat keinen Dialog: DD3R8 ist verschwunden. Mit ST11-01 erscheinen er und
 ## Rückfall
 
 #### `d_standard` · Prio 1 · ohne Bedingung
-> *Surren.* Ich habe gerade nichts Neues. Kommt später wieder. Ich laufe nicht weg. Das kann ich nicht so gut.
+> Ich habe gerade nichts Neues. Kommt später wieder. Ich laufe nicht weg. Das kann ich nicht so gut.
 - **[Wer ist dein Meister?]** → `d_meister`
 - **[Woher kommt ihr?]** → `d_woher`
 - **[Was war das Ziel eurer Mission?]** → `d_mission`

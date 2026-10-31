@@ -42,7 +42,7 @@ def inline(t):
 
 
 def roh(t):
-    """Text so, wie er in den Editor kommt (ohne Markdown, Gesten bleiben mit Sternchen)."""
+    """Text so, wie er in den Editor kommt (ohne Markdown)."""
     return PLATZHALTER.sub(lambda m: f'<span class="ph">{m.group(1)}</span>', html.escape(t, quote=False))
 
 
@@ -169,8 +169,7 @@ def main():
         '<li><b>Priorität</b> und <b>Bedingung</b>: Der Einstieg jeder Stufe hat Priorität 100 und eine Bedingung vom Typ Scoreboard (Name = Objective, Vergleich, Wert; '
         'sie liest den Score des Spielers, der spricht, darum setzen alle Befehle den Wert mit <code>@a</code>); '
         'Unterdialoge haben Priorität 0 und keine Bedingung, sie öffnen nur über Knöpfe. Der Rückfall hat Priorität 1.</li>'
-        '<li><b>Text</b> (gelber Rand, bis etwa 512 Zeichen) wird in das Textfeld kopiert. Sternchen *…* markieren Gesten; '
-        'die kann man so lassen oder weglassen.</li>'
+        '<li><b>Text</b> (gelber Rand, bis etwa 512 Zeichen) wird in das Textfeld kopiert.</li>'
         '<li><b>Knöpfe</b> (höchstens 64 Zeichen): Bedingung am Knopf eintragen, dann jede Befehlszeile als eigene '
         'Befehls-Aktion, dann das Ziel (anderer Dialog, Gespräch schließen oder Handelsfenster).</li>'
         '<li><code>@initiator</code> ist der Spieler, der gerade spricht; <code>@a</code> sind alle Spieler.</li>'
