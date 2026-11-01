@@ -288,6 +288,13 @@ def bauen(kuerzel):
     data['CustomName'] = s('{"color":"#FFFFFF","text":%s}' % ('"' + name.replace('"', '\\"') + '"'))
     ds = dialoge(datei, warn)
     data['DialogData'] = comp({'Type': s('STANDARD'), 'DialogDataSet': liste(COMP, ds)})
+    # Obergrenze für Dialogbefehle der Figur; fehlt sie, gilt Stufe 0 und scoreboard/tag/give scheitern still
+    # (Easy NPC 7.14, ActionEventDataCapable: ActionData.ActionPermissionLevel, Standard ALL; 2026-11-01)
+    akt = data.setdefault('ActionData', comp({}))[1]
+    akt['ActionPermissionLevel'] = i(2)
+    # Standard beim Ansprechen wie bei einer neu gesetzten Figur (aus der NPC-Datei der Testwelt)
+    akt.setdefault('ActionEventSet', comp({'ON_INTERACTION': liste(COMP, [{'Type': s('OPEN_DEFAULT_DIALOG')},
+                                                                          {'Type': s('OPEN_TRADING_SCREEN')}])}))
     nbt_schreiben(AUS / ausgabe, w)
     print(f'{kuerzel}: {len(ds)} Dialoge -> {(AUS / ausgabe).relative_to(WURZEL)}')
     for x in warn:

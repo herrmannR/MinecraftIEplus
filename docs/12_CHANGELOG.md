@@ -1467,3 +1467,10 @@ Status: 🟡 (ungetestet, Test 112)
 
 - „Zeig her“ lief `/logbuch teil1` als Befehl der Figur; in der Welt kam nichts an (kein Logbuch-Advancement, kein Merker), Scoreboard-Befehle desselben Dialogs schon. Als „als Spieler ausführen“ blockt Easy NPC den Befehl (nicht auf `executeAsUserCommandAllowList` in `security.cfg`).
 - Lösung ohne Änderung an der Easy-NPC-Sicherheit: Dialog setzt Tag `ieplus_cmd_logbuch_teil1` bzw. `ieplus_cmd_kapitel_k2`, `story/dialog_bruecke.js` führt `logbuch teil1` bzw. `kubejs stages add @a kapitel_k1/k2` aus. DD3R8-Preset neu gebaut.
+
+## 2026-11-01 — Easy NPC: Dialogbefehle liefen mit Stufe 0
+
+Status: 🟡 (ungetestet, Tests 107, 112)
+
+- Auch die Dialogbrücke kam nicht an: Der Tag wurde nie gesetzt, `dd3r8` blieb 0. Ursache (JAR, `ActionEventDataCapable`): Jede Figur hat eine Obergrenze `ActionData.ActionPermissionLevel`; fehlt sie, gilt `ALL` = Stufe 0. Unsere Presets hatten keinen `ActionData`-Block, also scheiterten alle Dialogbefehle (`tag`, `scoreboard`, `give`, `clear`) still. Wer im Editor einen Knopf speichert, hebt die Stufe offenbar an; daher kam früher `dd3r8 = 1` an.
+- `tools/npc_preset.py` setzt jetzt `ActionPermissionLevel = 2` und den Standard „Ansprechen öffnet Dialog“. Alle sechs Presets neu gebaut; jede Figur muss neu importiert werden, und zwar als Admin (OP): Ein Import im Kreativmodus ohne OP deckelt Befehle auf Stufe 1 (`creativePlayerCommandLevel` in `security.cfg`).
