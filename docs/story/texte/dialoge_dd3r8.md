@@ -80,7 +80,7 @@ Schreibweise: **[Knopf]** → Ziel. Keine Gesten in Sternchen (User, 2026-10-31)
 
 #### `d1_buch2` · Prio 0
 > Alles, womit ihr mir helfen könnt, meinen Meister zu finden, und kleine Aufgaben von mir, um euch etwas intelligenter zu machen. Belohnung gibt es auch, aber nur Kleinigkeiten. Ich bin ein Droide, keine Bank.
-- **[Okayy … danke.]** → schließen
+- **[Okayy … danke.]** → Befehle: `tp @npc-uuid -370 80 -20`, `easy_npc navigation set home @npc-uuid -370 80 -20` (DD3R8 zieht von der Kapsel an seinen neuen Platz, Koordinaten vom User 2026-11-01; `@npc-uuid` setzt Easy NPC 7.14 ein, JAR `ActionUtils`) → schließen
 
 ---
 
@@ -156,7 +156,7 @@ Logbuch Teil 2 kommt mit dem Abhaken von „Würdig sein“ (ST2-01).
 
 #### `d4_danke` · Prio 0
 > Sehr gut, damit schafft ihr es zum Mars. Außerdem ist es ein ideales Schmiermittel für mein Getriebe. Danke! Stellt mehr her, baut die T2-Rakete und fliegt zum Mars. Hier, ich habe bereits den idealen Platz für die Basis lokalisiert. Schaut euch dort mal um.
-- **[Gut, wir gehen.]** → Befehl: `give @initiator minecraft:compass{LodestoneDimension:"ad_astra:mars",LodestoneTracked:0b,LodestonePos:{X:<x>,Y:<y>,Z:<z>},display:{Name:'{"text":"Peilsender von DD3R8","italic":false}'}} 1` (Koordinaten des Platzes trägt der Host ein; O69) → schließen
+- **[Gut, wir gehen.]** → Befehl: `give @initiator minecraft:compass{LodestoneDimension:"ad_astra:mars",LodestoneTracked:0b,LodestonePos:{X:-272,Y:104,Z:-252},display:{Name:'{"text":"Peilsender von DD3R8","italic":false}'}} 1` (Mitte der verlassenen Basis -280 111 -242 bis -265 102 -262, User 2026-11-01; O69) → schließen
 
 Auf dem Mars zeigt der Peilsender auf den Platz. Dort liegen die Reste einer alten Basis mit einem kleinen Dungeon und einer Notiz der früheren Bewohner: Hier ist man vor Sonnenstürmen geschützt (User, 2026-10-26; Notiz-Text folgt).
 

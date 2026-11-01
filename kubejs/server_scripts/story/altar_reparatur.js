@@ -1,28 +1,39 @@
 // Altar im Sith-Tempel auf dem Merkur reparieren (O48, O56, O57, O65; ST9-04, docs/story/ABLAUF.md Abschnitt 6).
 // Der Altar zerbrach beim Sog, der den Meister in die Dimension zog (O57). Rechtsklick auf den kaputten Altar mit allen
-// Zutaten im Inventar: Zutaten weg, an seiner Stelle steht das heile Ritual Pathway to the Endless Realm (Vorlage
-// ieplus:altar_heil), Stage story_st9_04 für den Spieler. Aktivieren müssen die Spieler das Ritual selbst (O56:
+// Zutaten im Inventar: Zutaten weg, an seiner Stelle steht das heile Ritual Pathway to the Endless Realm (Meister-
+// und Runensteine, siehe unten), Stage story_st9_04 für den Spieler. Aktivieren müssen die Spieler das Ritual selbst (O56:
 // Aktivierungskristall, LP). Nur einmal je Welt (Weltwert ieplus_altar_repariert); danach greift das Skript nicht mehr ein.
-// Fehlen Zutaten, sagt eine Meldung, welche. Ohne eingetragene Koordinaten ist das Skript stumm (Hinweis im Log).
+// Fehlen Zutaten, sagt eine Meldung, welche.
 // Dass das Ritual nur auf dem Merkur gelingt, regelt startup_scripts/altar_dimension.js.
 //
-// ┌─ PLATZHALTER (Host) ── erst ausfüllen, wenn der Tempel steht ─────────────────────────────────────────────────┐
-// │ 1. IEPLUS_ALTAR_BEREICH: Ecken des kaputten Altars (zwei gegenüberliegende Ecken, x y z, ganze Zahlen).       │
-// │    Rechtsklick auf irgendeinen Block in diesem Quader löst die Reparatur aus. F3 zeigt die Blockkoordinaten   │
-// │    unter „Targeted Block“.                                                                                       │
-// │ 2. Heiles Ritual als Vorlage speichern: Ritual Pathway to the Endless Realm vollständig bauen (am besten an     │
-// │    der echten Stelle, dann Strukturblock „Save“ mit Namen ieplus:altar_heil, Luft mitspeichern, danach den      │
-// │    kaputten Altar darüber bauen). Die Datei landet in saves/<Welt>/generated/ieplus/structures/altar_heil.nbt; │
-// │    nach kubejs/data/ieplus/structures/altar_heil.nbt kopieren (ins Projekt und auf den Host).                   │
-// │ 3. IEPLUS_ALTAR_URSPRUNG: Ecke, an die die Vorlage gesetzt wird (x y z; die Ecke mit den kleinsten Werten,       │
-// │    wie beim Strukturblock „relative Position“ + Position des Strukturblocks).                                   │
-// │ Danach /reload und Test 91 (docs/11_TESTING.md).                                                                 │
-// └──────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-// Stand 2026-10-26, KubeJS 2001. Fassung 1, UNGETESTET.
+// Koordinaten vom User (2026-11-01, Welt „3. Versuch von 1,5“): Sith-Tempel auf dem Merkur -438 103 208 bis -473 126 269.
+// Mitte unten des kaputten Altars steht ein Spawner (-456 108 254). Rechtsklick darauf mit allen Zutaten setzt das heile Ritual
+// Pathway to the Endless Realm (bloodmagic standardDungeonRitual): Meisterstein an die Stelle des Spawners, die Runensteine nach
+// dem Muster aus dem JAR (RitualStandardDungeon.gatherComponents, Blood Magic 3.3.8, ausgelesen 2026-11-01). Andere Blöcke des
+// kaputten Altars bleiben stehen; das Ritual prüft nur seine eigenen Plätze. Die Ausrichtung sucht der Meisterstein beim Aktivieren selbst.
+// Fassung 2 (2026-11-01): Ritual per setblock statt Strukturvorlage ieplus:altar_heil (die entfällt). UNGETESTET (Test 91).
 
-const IEPLUS_ALTAR_BEREICH = null        // PLATZHALTER, z. B. { von: [100, 64, -20], bis: [104, 66, -16] }
-const IEPLUS_ALTAR_URSPRUNG = null       // PLATZHALTER, z. B. [96, 63, -24]
-const IEPLUS_ALTAR_VORLAGE = 'ieplus:altar_heil'   // check:ok (Strukturdatei liefert der Host)
+const IEPLUS_ALTAR_MITTE = [-456, 108, 254]   // Spawner = späterer Meisterstein
+const IEPLUS_ALTAR_BEREICH = { von: IEPLUS_ALTAR_MITTE, bis: IEPLUS_ALTAR_MITTE }
+// Runensteine relativ zum Meisterstein: [dx, dy, dz, Art]
+const IEPLUS_ALTAR_RUNEN = [
+  [0, 0, 1, 'FIRE'], [-1, 0, 0, 'FIRE'], [0, 0, -1, 'WATER'], [1, 0, 0, 'WATER'], [-1, 0, 1, 'DUSK'], [1, 0, -1, 'DUSK'],
+  [2, 0, 2, 'WATER'], [2, 0, 1, 'WATER'], [1, 0, 2, 'WATER'], [-2, 0, -2, 'FIRE'], [-2, 0, -1, 'FIRE'], [-1, 0, -2, 'FIRE'],
+  [-3, 0, 3, 'AIR'], [-2, 0, 3, 'AIR'], [-1, 0, 3, 'AIR'], [-3, 0, 2, 'AIR'], [-3, 0, 1, 'AIR'], [3, 0, -3, 'EARTH'],
+  [2, 0, -3, 'EARTH'], [1, 0, -3, 'EARTH'], [3, 0, -2, 'EARTH'], [3, 0, -1, 'EARTH'], [3, 0, 3, 'DUSK'], [3, 0, 4, 'DUSK'],
+  [4, 0, 3, 'DUSK'], [2, 0, 4, 'DUSK'], [4, 0, 2, 'DUSK'], [-3, 0, -3, 'DUSK'], [-3, 0, -4, 'DUSK'], [-4, 0, -3, 'DUSK'],
+  [-2, 0, -4, 'DUSK'], [-4, 0, -2, 'DUSK'], [3, 4, 3, 'EARTH'], [3, 4, -3, 'EARTH'], [-3, 4, -3, 'EARTH'], [-3, 4, 3, 'EARTH'],
+  [2, 4, 3, 'DUSK'], [3, 4, 2, 'DUSK'], [2, 4, -3, 'DUSK'], [-3, 4, 2, 'DUSK'], [-2, 4, 3, 'DUSK'], [3, 4, -2, 'DUSK'],
+  [-2, 4, -3, 'DUSK'], [-3, 4, -2, 'DUSK'], [2, 4, 4, 'DUSK'], [4, 4, 2, 'DUSK'], [2, 4, -4, 'DUSK'], [-4, 4, 2, 'DUSK'],
+  [-2, 4, 4, 'DUSK'], [4, 4, -2, 'DUSK'], [-2, 4, -4, 'DUSK'], [-4, 4, -2, 'DUSK'], [1, 4, 4, 'AIR'], [4, 4, 1, 'AIR'],
+  [1, 4, -4, 'AIR'], [-4, 4, 1, 'AIR'], [-1, 4, 4, 'AIR'], [4, 4, -1, 'AIR'], [-1, 4, -4, 'AIR'], [-4, 4, -1, 'AIR'],
+  [4, 4, 0, 'AIR'], [-4, 4, 0, 'AIR'], [0, 4, 4, 'AIR'], [0, 4, -4, 'AIR'], [0, 2, 0, 'EARTH'], [0, 3, 0, 'DUSK'],
+  [0, 4, 0, 'DUSK'], [0, 5, 0, 'DUSK'], [0, 6, 0, 'AIR']
+]
+const IEPLUS_ALTAR_STEIN = {
+  BLANK: 'bloodmagic:ritualstone', WATER: 'bloodmagic:waterritualstone', FIRE: 'bloodmagic:fireritualstone',
+  EARTH: 'bloodmagic:earthritualstone', AIR: 'bloodmagic:airritualstone', DUSK: 'bloodmagic:duskritualstone'
+}
 const IEPLUS_ALTAR_DIM = 'ad_astra:mercury'
 const IEPLUS_ALTAR_SCHLUESSEL = 'ieplus_altar_repariert'
 const IEPLUS_ALTAR_STAGE = 'story_st9_04'
@@ -33,7 +44,6 @@ const IEPLUS_ALTAR_ZUTATEN = [
   { id: 'kubejs:siegel_der_traumwelten', anzahl: 1, name: 'Siegel der Traumwelten' },
   { id: 'wrd:orb_of_the_deep', anzahl: 1, name: 'Orb of the Deep' }
 ]
-let ieplusAltarHinweisGeloggt = false
 
 function ieplusAltarDimId(level) {
   var s = String(level.dimension)
@@ -75,13 +85,6 @@ BlockEvents.rightClicked(event => {
   if (String(event.hand) !== 'MAIN_HAND') return
   var server = event.server
   if (server.persistentData.getBoolean(IEPLUS_ALTAR_SCHLUESSEL)) return
-  if (IEPLUS_ALTAR_BEREICH === null || IEPLUS_ALTAR_URSPRUNG === null) {
-    if (!ieplusAltarHinweisGeloggt) {
-      ieplusAltarHinweisGeloggt = true
-      console.warn('altar_reparatur.js: Koordinaten des Altars fehlen noch (Platzhalter oben im Skript)')
-    }
-    return
-  }
   if (ieplusAltarDimId(event.level) !== IEPLUS_ALTAR_DIM) return
   if (!ieplusImAltar(event.block.pos)) return
   var player = event.player
@@ -99,8 +102,12 @@ BlockEvents.rightClicked(event => {
 
   IEPLUS_ALTAR_ZUTATEN.forEach(z => ieplusAltarEntferne(player, z.id, z.anzahl))
   server.persistentData.putBoolean(IEPLUS_ALTAR_SCHLUESSEL, true)
-  var u = IEPLUS_ALTAR_URSPRUNG
-  server.runCommandSilent('execute in ' + IEPLUS_ALTAR_DIM + ' run place template ' + IEPLUS_ALTAR_VORLAGE + ' ' + u[0] + ' ' + u[1] + ' ' + u[2])
+  var u = IEPLUS_ALTAR_MITTE
+  var vor = 'execute in ' + IEPLUS_ALTAR_DIM + ' run setblock '
+  server.runCommandSilent(vor + u[0] + ' ' + u[1] + ' ' + u[2] + ' bloodmagic:masterritualstone replace')
+  IEPLUS_ALTAR_RUNEN.forEach(r => {
+    server.runCommandSilent(vor + (u[0] + r[0]) + ' ' + (u[1] + r[1]) + ' ' + (u[2] + r[2]) + ' ' + IEPLUS_ALTAR_STEIN[r[3]] + ' replace')
+  })
   server.runCommandSilent('tag ' + player.username + ' add ' + IEPLUS_ALTAR_STAGE)
   server.runCommandSilent('execute in ' + IEPLUS_ALTAR_DIM + ' run playsound minecraft:block.respawn_anchor.charge block @a ' + u[0] + ' ' + u[1] + ' ' + u[2] + ' 2 0.6')
   server.tell(Text.darkPurple('Die Bruchstücke fügen sich zusammen. Der Altar steht wieder, still und wartend.'))

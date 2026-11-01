@@ -1451,3 +1451,12 @@ Status: 🟡
 - Test 95/89: Nach dem Nachkopieren waren beide Portale immer offen. `getPlayerScores(objective)` ist in Rhino mehrdeutig, `everdawn_sperre.js` und `dialogstufen.js` warfen und ließen durch. Beide lesen jetzt über `getTrackedPlayers()`; in die Testinstanz kopiert, ungetestet.
 - Test 109 bestanden (Star Wars Planets ausgeblendet).
 - Tests 97/98: Energie-Configs der Testinstanz kurz auf Standard gesetzt (Messung des Users), danach wieder auf die Overrides.
+
+## 2026-11-01 — Story-Positionen der Testwelt eingetragen
+
+Status: 🟡 (ungetestet, Tests 91, 110, 111)
+
+- Positionen vom User (Welt „3. Versuch von 1,5“): Zwerg -547 63 1151, Bodhi -1052 73 1115, DD3R8 -384 72 -6 (nach „Würdig sein“ -370 80 -20), Davijaan -348 108 -74 (Mondbasis -354 118 -83 bis -336 102 -61), Sith-Tempel Merkur -438 103 208 bis -473 126 269 (Altar-Mitte -456 108 254), verlassene Basis Mars -280 111 -242 bis -265 102 -262.
+- `altar_reparatur.js` Fassung 2: Rechtsklick auf den Spawner setzt das Ritual Pathway to the Endless Realm per `setblock` (Muster aus `RitualStandardDungeon`, Blood Magic 3.3.8); die Strukturdatei `altar_heil.nbt` entfällt.
+- `schutzzonen.js`: drei Zonen (Mond, Mars, Merkur), Dimensionsvergleich robuster.
+- DD3R8: letzter Knopf von Stufe 1 versetzt ihn per `tp` und `easy_npc navigation set home` nach -370 80 -20; Peilsender zeigt auf -272 104 -252. Preset neu gebaut.

@@ -1,4 +1,4 @@
-// Schutzzonen für Story-Bauten (User, 2026-10-21).
+// Schutzzonen für Story-Bauten (User, 2026-10-21). Zonen eingetragen 2026-11-01, UNGETESTET (Test 110).
 // Zweck: Spieler sollen Story-Strukturen nicht aus Versehen zerstören. Geschützt wird nur gegen
 // Aktionen von Spielern (Abbauen, Setzen, Werkzeuge per Rechtsklick), nicht gegen Explosionen,
 // Mobs oder Maschinen.
@@ -9,19 +9,15 @@
 // Statt `pos` geht auch `von`/`bis` für einen Bereich. Blöcke als ID oder Tag ('#mod:tag').
 
 const SCHUTZZONEN = [
-  // Beispiel (auskommentiert, Koordinaten folgen vom User):
-  // {
-  //   name: 'Tempel',
-  //   dimension: 'minecraft:overworld',
-  //   von: [100, 60, 200],
-  //   bis: [140, 90, 240],
-  //   freistellen: [
-  //     { pos: [120, 64, 220], bloecke: ['bloodmagic:masterritualstone'] },
-  //     { von: [118, 64, 218], bis: [122, 64, 222], bloecke: ['bloodmagic:ritualstone',
-  //       'bloodmagic:waterritualstone', 'bloodmagic:fireritualstone', 'bloodmagic:earthritualstone',
-  //       'bloodmagic:airritualstone', 'bloodmagic:duskritualstone', 'bloodmagic:lightritualstone'] }
-  //   ]
-  // },
+  // Koordinaten vom User (2026-11-01, Welt „3. Versuch von 1,5“)
+  { name: 'Mondbasis von Davijaan', dimension: 'ad_astra:moon', von: [-354, 118, -83], bis: [-336, 102, -61] },
+  { name: 'Verlassene Basis', dimension: 'ad_astra:mars', von: [-280, 111, -242], bis: [-265, 102, -262] },
+  // Sith-Tempel; der Altar in der Mitte wird per Skript repariert (altar_reparatur.js), Befehle umgehen den Schutz
+  { name: 'Sith-Tempel', dimension: 'ad_astra:mercury', von: [-438, 103, 208], bis: [-473, 126, 269] },
+  // Beispiel für Freistellen (Blöcke, die Spieler in der Zone setzen und abbauen dürfen):
+  // { name: 'Tempel', dimension: 'minecraft:overworld', von: [100, 60, 200], bis: [140, 90, 240],
+  //   freistellen: [ { pos: [120, 64, 220], bloecke: ['bloodmagic:masterritualstone'] },
+  //                  { von: [118, 64, 218], bis: [122, 64, 222], bloecke: ['bloodmagic:ritualstone', 'bloodmagic:duskritualstone'] } ] },
 ]
 
 // Gegenstände, deren Rechtsklick in einer Zone Blöcke verändert (Entrinden, Pfade, Feuer, Eimer ...).
@@ -41,7 +37,10 @@ function imBereich(b, von, bis) {
 
 // Zone, in der der Block liegt, oder null.
 function zoneVon(block) {
-  const dim = String(block.level.dimension)
+  // String(level.dimension) kann „ResourceKey[minecraft:dimension / ad_astra:moon]“ oder „ad_astra:moon“ sein
+  const roh = String(block.level.dimension)
+  const m = roh.match(/\/\s*([a-z0-9_.-]+:[a-z0-9_.\/-]+)\s*\]/)
+  const dim = m ? m[1] : roh
   for (let i = 0; i < SCHUTZZONEN.length; i++) {
     let z = SCHUTZZONEN[i]
     if (z.dimension == dim && imBereich(block, z.von, z.bis)) return z
