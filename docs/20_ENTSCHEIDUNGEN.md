@@ -16,7 +16,7 @@ Beantwortet am 2026-10-20: F2 (bis auf g), F2e, F3, F6, F7, F10, F11, F16–F19,
 
 **F45 · Mekanism-Retrogen stürzt in neuen Dimensionen ab** (2026-11-01, Absturz auf dem Mond in `3. Versuch von 1,5`)
 Fehler in Mekanism 10.4.16 (`CommonWorldTickHandler.chunkUnloadEvent`, im JAR nachgelesen): Sobald irgendwo ein alter Chunk ohne Mekanism-Erze lädt (Retrogen-Kandidat), führt Mekanism eine Liste je Dimension. Wird danach in einer Dimension ohne solchen alten Chunk ein Chunk entladen (Mond, Mars, Blue Skies … mit nur neu erzeugtem Gelände), wirft Mekanism und das Spiel stürzt ab. Ohne alte Chunks (neue Welt) passiert nichts.
-Vorschlag: a) `userWorldGenVersion = 0` in `config/Mekanism/world.toml` – nie wieder Absturz, aber kein Retrogen mehr (Mekanism-Erze nur in neuem Gelände). b) Retrogen-Phase beim Host: mit Version 1 nur in Overworld, Nether und End die alten Gebiete abfliegen, keine andere Dimension betreten; danach auf 0 stellen. c) Retrogen ganz weglassen, die alten Gebiete bleiben ohne Osmium usw.
+Vorschlag: a) `userWorldGenVersion = 0` in `config/Mekanism/world.toml` – nie wieder Absturz, aber kein Retrogen mehr (Mekanism-Erze nur in neuem Gelände). b) Retrogen-Phase beim Host: mit Version 1 nur in Overworld, Nether und End die alten Gebiete abfliegen, keine andere Dimension betreten; danach auf 0 stellen. c) Retrogen ganz weglassen, die alten Gebiete bleiben ohne Osmium usw. In der Testinstanz gilt seit 2026-11-01 a (User), für den Host offen.
 → `03_ERZGENERATION.md`, `11_TESTING.md`
 
 **F2g · Etrium** (Teil 2)

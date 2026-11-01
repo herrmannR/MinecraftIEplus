@@ -10,6 +10,7 @@ Was im Spiel geprüft werden muss, bevor etwas in die Hauptwelt geht, und was da
 
 - Testinstanz `…\ATLauncher\instances\Minecraft1201withForge` (98 JARs).
 - 🟢 Am 2026-10-12 kopiert: `kubejs/data/`, `kubejs/server_scripts/`, `config/Mekanism/world.toml`, `config/blue_skies-common.toml`, `defaultconfigs/immersiveengineering-server.toml`. Sicherungen der zwei ersetzten Configs liegen daneben (`….vor-2026-10-12`).
+- 🟢 2026-11-01: Mekanism-Retrogen in der Testinstanz **abgeschaltet** (`userWorldGenVersion = 0`, Sicherung `world.toml.vor-2026-11-01`), wegen des Absturzes in neuen Dimensionen (F45). Die Projekt-Config in `config-overrides/` hat weiter 1, bis F45 entschieden ist. Der folgende Hinweis gilt damit nur noch für die alte Einstellung:
 - ⚠️ Mekanism-Retrogen ist in der Instanz jetzt eingeschaltet. Wer eine **vorhandene** Testwelt öffnet (auch die Weltkopie `3_ Versuch von 1,5`), löst dort Retrogen aus. Für Test 1 bis 8 deshalb eine **neue Welt** anlegen (Kreativmodus, Cheats an).
 - Die IE-Erzwerte gelten nur für neu angelegte Welten (Datei in `defaultconfigs/`). 🟢 Bestätigt am 2026-10-13: Die neue Welt `New World (3)` hat unsere Werte übernommen (Bauxit 5, Blei und Uran aus).
 
