@@ -1460,3 +1460,10 @@ Status: 🟡 (ungetestet, Tests 91, 110, 111)
 - `altar_reparatur.js` Fassung 2: Rechtsklick auf den Spawner setzt das Ritual Pathway to the Endless Realm per `setblock` (Muster aus `RitualStandardDungeon`, Blood Magic 3.3.8); die Strukturdatei `altar_heil.nbt` entfällt.
 - `schutzzonen.js`: drei Zonen (Mond, Mars, Merkur), Dimensionsvergleich robuster.
 - DD3R8: letzter Knopf von Stufe 1 versetzt ihn per `tp` und `easy_npc navigation set home` nach -370 80 -20; Peilsender zeigt auf -272 104 -252. Preset neu gebaut.
+
+## 2026-11-01 — DD3R8 gibt kein Logbuch: Dialogbrücke
+
+Status: 🟡 (ungetestet, Test 112)
+
+- „Zeig her“ lief `/logbuch teil1` als Befehl der Figur; in der Welt kam nichts an (kein Logbuch-Advancement, kein Merker), Scoreboard-Befehle desselben Dialogs schon. Als „als Spieler ausführen“ blockt Easy NPC den Befehl (nicht auf `executeAsUserCommandAllowList` in `security.cfg`).
+- Lösung ohne Änderung an der Easy-NPC-Sicherheit: Dialog setzt Tag `ieplus_cmd_logbuch_teil1` bzw. `ieplus_cmd_kapitel_k2`, `story/dialog_bruecke.js` führt `logbuch teil1` bzw. `kubejs stages add @a kapitel_k1/k2` aus. DD3R8-Preset neu gebaut.

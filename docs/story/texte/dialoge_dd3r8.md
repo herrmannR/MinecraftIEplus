@@ -41,7 +41,7 @@ Schreibweise: **[Knopf]** → Ziel. Keine Gesten in Sternchen (User, 2026-10-31)
 
 #### `d0_meister` · Prio 0
 > Mein Meister war auf einer Mission in diesem System. Dann gerieten wir in einen Sonnensturm und wurden getrennt. Der Funkkontakt brach ab, und der Datenspeicher hat beim Aufprall gelitten. Moment, ich entschlüssele ihn. Das ist der erste Teil.
-- **[Zeig her]** → Befehle: `logbuch teil1` → `d0_hilfe`
+- **[Zeig her]** → Befehl: `tag @initiator add ieplus_cmd_logbuch_teil1` (führt `dialog_bruecke.js` als `logbuch teil1` aus; direkt kommt der Befehl von Easy NPC nicht an, 2026-11-01) → `d0_hilfe`
 
 #### `d0_hilfe` · Prio 0
 > Hier, es ist nicht viel. Er schreibt selten, und wenn, dann in Rätseln. Ich habe ihn oft gebeten, deutlicher zu sein. Er hat gelächelt. Das war keine Antwort. Ich muss ihn finden.
@@ -72,7 +72,7 @@ Schreibweise: **[Knopf]** → Ziel. Keine Gesten in Sternchen (User, 2026-10-31)
 
 #### `d1_bestanden` · Prio 0
 > Analyse abgeschlossen. Ergebnis: weit entwickelt. Nur die Ordnung in euren Truhen lässt zu wünschen übrig … Aber dabei kann ich euch vielleicht noch helfen.
-- **[Und jetzt?]** → Befehle: `give @a ftbquests:book`, `kubejs stages add @a kapitel_k1`, `kubejs stages add @a kapitel_k2` → `d1_buch`
+- **[Und jetzt?]** → Befehle: `give @a ftbquests:book`, `tag @initiator add ieplus_cmd_kapitel_k2` (Stages `kapitel_k1`, `kapitel_k2` für alle über `dialog_bruecke.js`) → `d1_buch`
 
 #### `d1_buch` · Prio 0
 > Hier, ein Notizbuch für euch. Der erste Eintrag ist erledigt, den dürft ihr abhaken. Menschen mögen das, habe ich gelesen.

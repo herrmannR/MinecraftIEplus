@@ -84,6 +84,7 @@ Die fünf Skripte für 1.18.2 (`space_oxygen.js`, `moon_ores.js`, `tf_industrial
 | Datei | Aufgabe | Entscheidung |
 |---|---|---|
 | `server_scripts/story/schutzzonen.js` | Liste `SCHUTZZONEN` (Name, Dimension, `von`/`bis`). In einer Zone können Spieler im Überlebensmodus keine Blöcke abbauen oder setzen. Ein Rechtsklick mit Axt, Schaufel, Hacke, Feuerzeug, Feuerkugel, Knochenmehl oder Eimer ist dort ebenfalls gesperrt, alles andere bleibt erlaubt (Truhen, Türen, Ritual aktivieren). Hinweis in der Aktionsleiste. `freistellen` je Zone: Stelle (`pos`) oder Bereich (`von`/`bis`) mit erlaubten Blöcken (IDs oder `#tags`), die dort gesetzt und abgebaut werden dürfen, z. B. Ritualsteine im Tempel. Nur gegen Spieler, nicht gegen Explosionen, Mobs oder Maschinen; Kreativmodus ausgenommen. | User, 2026-10-21 |
+| `server_scripts/story/dialog_bruecke.js` | Easy-NPC-Dialoge setzen nur einen Tag `ieplus_cmd_<auftrag>`; das Skript nimmt ihn weg und führt die zugehörigen KubeJS-Befehle mit Serverrechten aus (`logbuch teil1`, Stages K1/K2). Grund: eigene Befehle kommen als Dialogbefehl der Figur nicht an. Ungetestet (Test 112). | `story/texte/dialoge_dd3r8.md` |
 
 #### Story Teil 1: Skripte aus ABLAUF Abschnitt 6 (2026-10-26, 🔵 ungetestet, Tests 84–93)
 
