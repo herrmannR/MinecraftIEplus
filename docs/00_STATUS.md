@@ -1,14 +1,14 @@
 # Minecraft-Modpack „Immersive Engineering+“ (1.20.1) — Projektstatus
 
 > Einstiegspunkt. Nur der aktuelle Stand und das Offene; Erledigtes, Phasenbeschreibungen und Entscheidungslog stehen in `00_STATUS_ARCHIV.md`.
-> Letzte Überarbeitung: 2026-10-28 (F30, F31–F42 und B1–B7 entschieden; nächste Testrunde 96–105).
+> Letzte Überarbeitung: 2026-11-01 (Tests 89–112 bis auf 91, 110, 111-Peilsender; Story-Testwelt vorbereitet; F45 Mekanism-Retrogen).
 
 ## ▶ Wo wir stehen
 
 Minecraft **1.20.1, Forge 47.4.26** (Wechsel von 1.18.2 am 2026-10-11). Erledigt sind die Grundlagen, die Erzverteilung (umgesetzt und nachgezählt, 2026-10-17) und die erste Fassung der Skripte (Tests 1–31 bestanden). Die Handlung legt der User fest (`18_STORY.md`); die Story-Texte von Teil 1 hat Claude entworfen, der User liest gegen (O50). Questtexte gibt es für alle großen Mods im Entwurf.
 
-**Als Nächstes (Stand 2026-10-31):** Alle Entscheidungen für Teil 1 sind gefallen. Tests 89, 95–99, 102–105, 108, 109 bestanden (2026-11-01). Als Nächstes in `11_TESTING.md`: Runde S (Story und Quests, 107 zuletzt), dann Runde M (Multiplayer). Fehler beheben (Log: `py tools/kubejs_check.py --nur-log`). Star Wars Expansion ist nur wegen der Wesen im Pack (F43), Ideen für Teil 2/3 in F44. Danach in der Testwelt `/probejs dump`, damit `kubejs_check.py` die neuen IDs kennt.
-Danach offen: Test 90 (Easy-NPC-Preset von Cerina, geht in der Testinstanz), Dialoge im Easy-NPC-Editor und Skins DD3R8/Bodhi (User, Bauanleitung mit allen Befehlen: `py tools/npc_bauanleitung.py`), Gegenlesen der Story-Texte (O50). Mit dem Host: Test 91 (Tempel, `altar_heil.nbt`), Mehrspieler-Runde M (76, 82), H1–H6. Prüfpunkte im Spiel: P1, P3–P13, P15–P20.
+**Als Nächstes (Stand 2026-11-01):** Die Story-Testwelt `Hauptwelt_IE_Decon` („3. Versuch von 1,5“) ist vorbereitet, Positionen der Figuren und Bauten stehen im Changelog vom 2026-11-01. **Vor jedem Durchgang den Weltordner kopieren** und danach zurückspielen (Altar und Cerina lassen sich in der Welt nicht zurücksetzen). Offen in `11_TESTING.md`: 110 (Schutzzonen), 111 (Peilsender), 91 (Altar, nur in der Kopie), dann Runde S (100, 101, 107 zuletzt), dann Runde M (Multiplayer). Alle Easy-NPC-Figuren **als OP neu importieren** (Presets mit Befehlsstufe 2, sonst laufen Dialogbefehle ins Leere). Fehler beheben mit `py tools/kubejs_check.py --nur-log`; in der Testwelt einmal `/probejs dump`.
+Danach offen: Test 90 (Preset von Cerina in `elfenportal.js`), Gegenlesen der Story-Texte (O50), F45 (Mekanism-Retrogen beim Host). Mit dem Host: H1–H6, Runde M (76, 82, 106). Prüfpunkte im Spiel: P1, P3–P13, P15–P20.
 Ablauf und Technik der Story in `docs/story/ABLAUF.md`; Bauweise des Questbuchs in `docs/questtexte/README.md`. Nach Textänderungen: `py tools/logbuch_gen.py`, `py tools/story_druck.py`, Kapitel mit `java tools/QuestbuchGen.java` neu bauen (Aufruf oben in jeder `tools/questbuch/*.cfg`); vor dem Kopieren in die Instanz immer erst vergleichen (im Spiel verschobene Positionen).
 
 **Abgeschlossen (2026-10-21):** Kaleidoscope (Wunsch eines Mitspielers) ist ohne Dopplungen mit Farmer's Delight zusammengeführt und getestet (Tests 65–72). Mühlstein-Erze auf 2 gesenkt (F30, 2026-10-28); offen dazu nur die Pflichtgewürze (P16).
@@ -23,8 +23,8 @@ Die Schritte laufen in dieser Reihenfolge; 1 und 2 gehen parallel. Alle offenen 
 | 2 Tests im Spiel | Teil 1 fertig; 33–41 erledigt (2026-10-21, 35 entfällt); offen nur noch Prüfpunkte aus `20_ENTSCHEIDUNGEN.md` (P1, P3–P13, P15, P16) | 🟢 Teil 1 bestanden (2026-10-20) | User spielt |
 | 3 Story von Part 1 fertig | `18_STORY.md` bis zur Rückkehr des Meisters; Ablauf `story/ABLAUF.md`; Texte `story/texte/` (Entwurf Claude, O50) | 🟡 Handlung steht, alle Texte im Entwurf (2026-10-21); O47–O66 entschieden | User liest gegen |
 | 4 Skripte und Raketen | Teil 1 geschrieben (2026-10-20): Raketen T1–T4, Rover, eigene Items, Altar-Dimension (Ritual, Amulett, Truhe), Ideenimport-Entfernungen, IE-Crusher, AE2, Airship, Shop und Baupläne, Galaxy in a Cube aus der Overworld. Offen: Antimaterie-Treibstoffe T6/T7, Etrium, Planetenstufen T5–T7, Beskar, Kyber (Teil 2 und 3) | 🟢 Teil 1 getestet (2026-10-20) | – |
-| 5 Balance (frühere Phasen 3–6) | Erträge der Erzverarbeitung, Energie, AE2 zweistufig, Cross-Mod-Rezepte (`07_CROSSMOD_INTEGRATION.md`). Vorschläge für Story-Abgaben, Raketen und Energie in `21_BALANCING.md`; Energie-Multiplikator als Config gebaut (2026-10-28, Tests 97–99) | 🟡 B1–B7 entschieden und gebaut (2026-10-28), Tests 96–105 offen | F20, F24 (später) |
-| 6 Questbuch einbauen | FTB Quests: Buch 1 (Story) und alle Mod-Kapitel bis K11 gebaut (2026-10-26, 545 Quests, IDs gegen die JARs geprüft); Story-Skripte gebaut (Kobalthammer, Relikt-Fluch, Altar, Everdawn-Sperre, Elfenportal, Bauplan Pilotenhelm, Gatekeeper aus). Standard-Belohnungen (F33) im Generator. Tests 73–95 bestanden bis auf 90 und 91. Offen: Dialoge im Easy-NPC-Editor und Skins DD3R8/Bodhi (User), Platzhalter beim Host (H6) | 🟡 in der Testinstanz, Einzelspieler getestet | User: Dialoge; Host: H6 |
+| 5 Balance (frühere Phasen 3–6) | Erträge der Erzverarbeitung, Energie, AE2 zweistufig, Cross-Mod-Rezepte (`07_CROSSMOD_INTEGRATION.md`). Vorschläge für Story-Abgaben, Raketen und Energie in `21_BALANCING.md`; Energie-Multiplikator als Config gebaut (2026-10-28, Tests 97–99) | 🟢 B1–B7 gebaut und getestet (Tests 96–105, 2026-11-01) | F20, F24 (später) |
+| 6 Questbuch einbauen | FTB Quests: Buch 1 (Story) und alle Mod-Kapitel bis K11 gebaut (2026-10-26, 545 Quests, IDs gegen die JARs geprüft); Story-Skripte gebaut (Kobalthammer, Relikt-Fluch, Altar, Everdawn-Sperre, Elfenportal, Bauplan Pilotenhelm, Gatekeeper aus). Standard-Belohnungen (F33) im Generator. Tests 73–112 bestanden bis auf 90, 91, 110 und den Peilsender (111). Dialoge kommen als Presets aus `tools/npc_preset.py`, Dialogbefehle laufen (2026-11-01). Offen: Runde S, Platzhalter beim Host (H6) | 🟡 Story-Testwelt vorbereitet | User: Runde S; Host: H6 |
 | 7 Hauptwelt umstellen | Aufgaben beim Host (H1–H5 unten) | 🔵 | Schritte 4–6; nur, was in `11_TESTING.md` ✅ hat |
 
 ### Aufgaben beim Host (Schritt 7)
@@ -33,7 +33,7 @@ Die Schritte laufen in dieser Reihenfolge; 1 und 2 gehen parallel. Alle offenen 
 - H2. Checkliste für alle Spieler, noch in 1.18.2 (siehe „Wichtig für den Host“).
 - H3. Vollständiges Backup beim Host (im Test-Backup fehlte `DIM-1/entities`).
 - H4. Alte `immersivepetroleum-server.toml` entfernen; Worldgen-Configs und Tag-Overrides vor dem ersten Start einspielen.
-- H5. Questbuch und Story-Figuren einspielen.
+- H5. Questbuch und Story-Figuren einspielen (Figuren als OP importieren, sonst deckelt Easy NPC die Befehlsstufe). Mekanism-Retrogen klären (F45: stürzt in neuen Dimensionen ab).
 - H6. Story-Bauten mit Platzhaltern: Kapsel, Höhle und Mondbasis, Blue-Skies-Haus und Schlucht des Zwergs, Ruine der Mars-Station, Tempel mit kaputtem Altar (🟢 2026-11-01 Koordinaten in der Testwelt eingetragen: Peilsender, Altar, DD3R8-Umzug, Schutzzonen Mond/Mars/Merkur; die Strukturdatei entfällt), Versteck auf Glacio; Easy-NPC-Presets (Cerina: `IEPLUS_CERINA_PRESET` in `elfenportal.js`; Befehle zum Erscheinen/Verschwinden in `tools/questbuch/buch1.cfg`); Koordinaten der Schutzzonen; Station für den 3D-Bauplan (O74)..
 
 (Die Nummern 9–28 und die Blöcke A–G aus früheren Fassungen gelten nicht mehr; sie stehen noch im Archiv.)
