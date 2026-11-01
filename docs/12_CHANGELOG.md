@@ -1443,3 +1443,11 @@ Status: 🟡
 - 🟡 97 und 98 nicht auswertbar: Beide Energie-Configs waren schon seit 2026-10-28 aktiv, „vorher“ lief also schon mit Aufschlag; die 8 kFE bei Mekanism sind der Speicher des Infusers. Neuer Messweg in `11_TESTING.md`.
 - Testliste umgebaut: neue Runde S (Story und Quests: 100, 101, 107 als vollständiger Durchgang zuletzt) vor Runde M; 106 in Runde M.
 - Star Wars Planets (Wunsch des Users): Lichtschwerter, Blaster, Blaster-Upgrades und Upgrader sowie der eigene Kyber Crystal aus JEI und ohne Rezept (`starwars/swplanets_entfernt.js`, `jei_ausblenden.js`, Test 109). Stormtrooper- und Beskar-Rüstung bleiben.
+
+## 2026-11-01 — Portalsperre und Dialogstufen: Scoreboard-Lesen repariert
+
+Status: 🟡
+
+- Test 95/89: Nach dem Nachkopieren waren beide Portale immer offen. `getPlayerScores(objective)` ist in Rhino mehrdeutig, `everdawn_sperre.js` und `dialogstufen.js` warfen und ließen durch. Beide lesen jetzt über `getTrackedPlayers()`; in die Testinstanz kopiert, ungetestet.
+- Test 109 bestanden (Star Wars Planets ausgeblendet).
+- Tests 97/98: Energie-Configs der Testinstanz kurz auf Standard gesetzt (Messung des Users), danach wieder auf die Overrides.

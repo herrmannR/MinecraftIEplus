@@ -13,10 +13,13 @@ const IEPLUS_DIALOG_FIGUREN = ['dd3r8', 'zwerg', 'bodhi', 'davijaan', 'cerina', 
 function ieplusDialogHoechsterWert(sb, objName) {
   var obj = sb.getObjective(objName)
   if (!obj) return -1
+  // Nicht getPlayerScores(obj): In Rhino mehrdeutig (Objective/String), Test 95 vom 2026-11-01
   var hoechst = -1
-  var it = sb.getPlayerScores(obj).iterator()
+  var it = sb.getTrackedPlayers().iterator()
   while (it.hasNext()) {
-    var w = it.next().getScore()
+    var name = it.next()
+    if (!sb.hasPlayerScore(name, obj)) continue
+    var w = sb.getOrCreatePlayerScore(name, obj).getScore()
     if (w > hoechst) hoechst = w
   }
   return hoechst

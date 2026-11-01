@@ -7,7 +7,8 @@
 // Forge-Ereignisse gehen in KubeJS 2001 nur aus startup_scripts). Fehler lassen das Ereignis durch.
 // Jede Entscheidung steht in logs/kubejs/startup.log („everdawn_sperre.js: …“).
 // Fassung 2 (2026-10-27, User): auch Everbright ist gesperrt, bis zum ersten Gespräch mit Bodhi (bodhi ≥ 1, ST3-01).
-// Fassung 3 (2026-10-28): Objective bodhi mit Spieler-Werten statt #bodhi in story. UNGETESTET (Tests 89, 95).
+// Fassung 3 (2026-10-28): Objective bodhi mit Spieler-Werten statt #bodhi in story.
+// Fassung 4 (2026-11-01): Werte über getTrackedPlayers lesen (getPlayerScores war mehrdeutig, Sperre ließ immer durch). UNGETESTET (Tests 89, 95).
 
 const IEPLUS_EVERDAWN_OBJECTIVE = 'bodhi'
 // Dimension → nötiger Mindestwert von bodhi und Meldung beim Abweisen
@@ -34,10 +35,13 @@ function ieplusBodhiWert(server) {
   var sb = server.getScoreboard()
   var obj = sb.getObjective(IEPLUS_EVERDAWN_OBJECTIVE)
   if (!obj) return 0
+  // Nicht getPlayerScores(obj): In Rhino mehrdeutig (Objective/String), Test 95 vom 2026-11-01
   var hoechst = 0
-  var it = sb.getPlayerScores(obj).iterator()
+  var it = sb.getTrackedPlayers().iterator()
   while (it.hasNext()) {
-    var w = it.next().getScore()
+    var name = it.next()
+    if (!sb.hasPlayerScore(name, obj)) continue
+    var w = sb.getOrCreatePlayerScore(name, obj).getScore()
     if (w > hoechst) hoechst = w
   }
   return hoechst

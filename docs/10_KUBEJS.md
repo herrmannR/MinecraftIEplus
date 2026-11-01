@@ -134,6 +134,7 @@ Unter `_original/` liegen die unveränderten Standarddateien zum Vergleich.
 - Ereignisse heißen `ServerEvents.recipes(event => { … })`, `ServerEvents.tags('item', event => { … })`, `StartupEvents.registry(…)`. Die alte Form `onEvent('recipes', …)` aus 1802 gibt es nicht mehr.
 - Die Worldgen-Ereignisse aus 1802 (`worldgen.add`, `worldgen.remove`) werden hier nicht benutzt. Erze entstehen als normale Datapack-Dateien (`configured_feature`, `placed_feature`, Forge-Biome-Modifier); das ist unabhängig von der KubeJS-Version.
 - Rezepte fremder Maschinen werden als JSON mit `event.custom({ … })` geschrieben, das Schema jeweils aus dem JAR des Mods kopiert.
+- 🟢 Falle (2026-11-01): `scoreboard.getPlayerScores(objective)` ist in Rhino mehrdeutig (Überladung mit `String`) und wirft. Stattdessen `getTrackedPlayers()` durchgehen, je Name `hasPlayerScore(name, obj)` und `getOrCreatePlayerScore(name, obj).getScore()`.
 - 🔵 Beispiele aus anderen Versionen werden nicht ungeprüft übernommen; nach dem ersten Start `logs/kubejs/server.log` lesen.
 
 ## Zielstruktur
