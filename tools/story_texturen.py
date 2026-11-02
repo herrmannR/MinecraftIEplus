@@ -48,6 +48,11 @@ def main():
     # Der reparierte Helm ist seit O71 der 212er-Helm von Galaxy in a Cube; keine eigene Textur.
     kaputt = lade(swe, 'clone_helmet_item_212', 'star_wars_expansion')
     px = kaputt.load()
+    # Braun des 212er-Streifens auf das Orange-Gelb des fertigen SWGC-Helms (clone_212th_battalion_layer_1) setzen (User, 2026-11-02)
+    for x in range(kaputt.width):
+        for y in range(kaputt.height):
+            if px[x, y] == (147, 76, 8, 255):
+                px[x, y] = (235, 132, 38, 255)
     # Riss leicht schräg durch die Mitte, ein Ast nach rechts unten. Auf dem schwarzen Visier hell, sonst dunkel.
     for x, y in [(8, 2), (7, 3), (8, 4), (8, 5), (9, 6), (8, 7), (8, 8), (7, 9), (7, 10), (6, 11),
                  (9, 8), (10, 9), (11, 9)]:
