@@ -72,7 +72,7 @@ StartupEvents.registry('item', event => {
     .rarity('rare').maxStackSize(1)
 
   // Helm des Einsiedlers (O25, O64: im Spiel „Pilotenhelm“, kein „Klon“ im Namen). Nicht tragbar.
-  // Textur aus tools/story_texturen.py (Eisenhelm, umgefärbt). Repariert wird er zu swgc:clone_212th_battalion_helmet (O71).
+  // Textur aus tools/story_texturen.py (212er-Klonhelm aus Star Wars Expansion mit Riss, 2026-11-02). Repariert wird er zu swgc:clone_212th_battalion_helmet (O71).
   event.create('kaputter_klonhelm')
     .displayName('Verbeulter Pilotenhelm')
     .texture('kubejs:item/pilotenhelm_kaputt')

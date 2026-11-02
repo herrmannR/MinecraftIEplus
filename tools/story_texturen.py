@@ -1,11 +1,12 @@
-"""Erzeugt die Texturen der Story-Items (Teil 1) aus Vanilla-Texturen.
+"""Erzeugt die Texturen der Story-Items (Teil 1) aus Vanilla- und Mod-Texturen.
 
 Aufruf (aus dem Projektordner):
-    py tools/story_texturen.py <pfad zu client-1.20.1.jar>
-Der Client liegt bei ATLauncher unter libraries/net/minecraft/client/1.20.1/client-1.20.1.jar.
+    py tools/story_texturen.py <pfad zu client-1.20.1.jar> <pfad zu StarWarsExpansion-JAR>
+Der Client liegt bei ATLauncher unter libraries/net/minecraft/client/1.20.1/client-1.20.1.jar,
+der Mod im mods-Ordner der Instanz (StarWarsExpansionv3.1.0.jar).
 
 Ergebnis in kubejs/assets/kubejs/textures/item/:
-    pilotenhelm_kaputt.png   Eisenhelm, schmutzig grau mit Riss (kubejs:kaputter_klonhelm)
+    pilotenhelm_kaputt.png   212er-Klonhelm aus Star Wars Expansion mit Riss durch die Mitte (kubejs:kaputter_klonhelm)
     tempelrolle.png          offene Rolle mit schwarzen Schriftzeilen, von Hand gezeichnet (kubejs:tempelrolle_1 bis _4)
 """
 import io
@@ -18,9 +19,9 @@ from PIL import Image
 ZIEL = Path(__file__).resolve().parent.parent / 'kubejs' / 'assets' / 'kubejs' / 'textures' / 'item'
 
 
-def lade(jar, name):
+def lade(jar, name, mod='minecraft'):
     with zipfile.ZipFile(jar) as z:
-        return Image.open(io.BytesIO(z.read(f'assets/minecraft/textures/item/{name}.png'))).convert('RGBA')
+        return Image.open(io.BytesIO(z.read(f'assets/{mod}/textures/item/{name}.png'))).convert('RGBA')
 
 
 def faerben(bild, farbe):
@@ -38,20 +39,21 @@ def faerben(bild, farbe):
 
 
 def main():
-    if len(sys.argv) != 2:
+    if len(sys.argv) != 3:
         sys.exit(__doc__)
-    jar = sys.argv[1]
+    jar, swe = sys.argv[1], sys.argv[2]
     ZIEL.mkdir(parents=True, exist_ok=True)
 
-    helm = lade(jar, 'iron_helmet')
-    # Der reparierte Helm ist seit O71 der 212er-Helm von Galaxy in a Cube; keine eigene Textur mehr.
-
-    kaputt = faerben(helm, (128, 120, 104))
+    # Verbeulter Pilotenhelm: 212er-Klonhelm aus Star Wars Expansion mit Riss (User, 2026-11-02, Vorschlag 3).
+    # Der reparierte Helm ist seit O71 der 212er-Helm von Galaxy in a Cube; keine eigene Textur.
+    kaputt = lade(swe, 'clone_helmet_item_212', 'star_wars_expansion')
     px = kaputt.load()
-    # Riss schräg über die Schale, nur auf sichtbaren Pixeln
-    for x, y in [(6, 3), (6, 4), (7, 5), (7, 6), (8, 7), (9, 8), (9, 9), (10, 10)]:
-        if px[x, y][3] > 0:
-            px[x, y] = (40, 36, 30, 255)
+    # Riss leicht schräg durch die Mitte, ein Ast nach rechts unten. Auf dem schwarzen Visier hell, sonst dunkel.
+    for x, y in [(8, 2), (7, 3), (8, 4), (8, 5), (9, 6), (8, 7), (8, 8), (7, 9), (7, 10), (6, 11),
+                 (9, 8), (10, 9), (11, 9)]:
+        r, g, b, a = px[x, y]
+        if a > 0:
+            px[x, y] = (38, 34, 30, 255) if (r + g + b) / 3 > 45 else (170, 176, 184, 255)
     kaputt.save(ZIEL / 'pilotenhelm_kaputt.png')
 
     # Offene Rolle: Stäbe oben und unten, dazwischen das Blatt mit drei schwarzen Schriftzeilen (User, 2026-10-27)
