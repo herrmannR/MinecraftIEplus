@@ -136,6 +136,8 @@ public class QuestbuchGen {
             for (String t : standardRewards(q, kEff, kapitelEnde.contains(q.code), eigeneCredits)) q.rewards.add(reward(q, r++, t));
         }
         if (ohneK > 0) System.out.println(ohneK + " Quests ohne Kn: keine Standard-Belohnung");
+        for (Map.Entry<String, int[]> e : CREDIT_ZAEHLER.entrySet())
+            System.out.println("Credits je Kn: " + e.getKey() + " Haupt " + e.getValue()[0] + " Neben " + e.getValue()[1] + " Ende " + e.getValue()[2] + " Copper " + e.getValue()[3]);
 
         // Layout: je Abschnitt eine Zeile; Hauptweg oben, Nebenquests darunter
         String sec = null; double y = -3, mainX = 0, sideX = 0; Quest prevMain = null;
@@ -470,22 +472,41 @@ public class QuestbuchGen {
     };
 
     /**
-     * Standard-Belohnungen (F33, User 2026-10-28):
-     *   K1–K3 (Aufgaben des Droiden): Hauptquest 50 XP + 2 Copper Credits, Nebenquest 20 XP + eine Kleinigkeit.
-     *   ab K4 (Einsiedler):            Hauptquest 1 Iron Credit, Nebenquest 2 Copper Credits,
-     *                                  letzte Hauptquest eines Story-Kapitels in Buch 1: 2 Iron Credits.
+     * Standard-Belohnungen (F33, User 2026-10-28; Credits neu nach B8a, User 2026-11-02):
+     *   Credits je Story-Kapitel steigen linear (Ziel 50 Copper x Kapitelnummer, über alle Bücher zusammen).
+     *   Wert je Quest in Copper aus CREDITS_HAUPT / CREDITS_NEBEN (Index = Kapitel); die letzte Hauptquest
+     *   eines Story-Kapitels in Buch 1 gibt das Doppelte. Ausgezahlt in Gold (15), Iron (5) und Copper (1).
+     *   Die Tabelle passt zu den Quest-Zahlen vom 2026-11-02; ändern sie sich stark, Tabelle nachrechnen
+     *   (Zählung: Ausgabe „Credits je Kn“ aller Bücher zusammenzählen).
+     *   K1–K3 (Aufgaben des Droiden): Hauptquest 50 XP + Credits, Nebenquest 20 XP + eine Kleinigkeit (F26).
      * Hat die Steuerdatei für die Quest schon Credits (z. B. ST4-05), entfallen die Standard-Credits.
      */
+    static final int[] CREDITS_HAUPT = { 0, 3, 7, 3, 4,  9, 13, 12, 18, 14, 37, 48 };
+    static final int[] CREDITS_NEBEN = { 0, 0, 0, 0, 2,  5,  7,  6,  9,  7, 19, 24 };
+    static final Map<String, int[]> CREDIT_ZAEHLER = new TreeMap<>();   // Kn -> {Haupt, Neben, Kapitelende, Copper gesamt}
+
     static List<String> standardRewards(Quest q, String kGate, boolean kapitelEnde, boolean eigeneCredits) {
         int k = Integer.parseInt(kGate.substring(1));
         List<String> r = new ArrayList<>();
         if (k <= 3) {
-            if (q.main) { r.add("xp(50)"); if (!eigeneCredits) r.add("item(swgc:copper_credit,2)"); }
+            if (q.main) r.add("xp(50)");
             else { r.add("xp(20)"); r.add("item(" + KLEINIGKEITEN[Math.floorMod(q.code.hashCode(), KLEINIGKEITEN.length)] + ")"); }
-        } else if (!eigeneCredits) {
-            if (q.main) r.add(kapitelEnde ? "item(swgc:iron_credit,2)" : "item(swgc:iron_credit,1)");
-            else r.add("item(swgc:copper_credit,2)");
         }
+        if (eigeneCredits) return r;
+        int wert = q.main ? CREDITS_HAUPT[k] * (kapitelEnde ? 2 : 1) : CREDITS_NEBEN[k];
+        int[] z = CREDIT_ZAEHLER.computeIfAbsent(String.format("K%02d", k), x -> new int[4]);
+        z[kapitelEnde ? 2 : (q.main ? 0 : 1)]++; z[3] += wert;
+        r.addAll(muenzen(wert));
+        return r;
+    }
+
+    /** Copper-Wert in möglichst wenige Münzen: Gold 15, Iron 5, Copper 1 */
+    static List<String> muenzen(int wert) {
+        List<String> r = new ArrayList<>();
+        int g = wert / 15, e = (wert % 15) / 5, c = wert % 5;
+        if (g > 0) r.add("item(swgc:gold_credit," + g + ")");
+        if (e > 0) r.add("item(swgc:iron_credit," + e + ")");
+        if (c > 0) r.add("item(swgc:copper_credit," + c + ")");
         return r;
     }
 

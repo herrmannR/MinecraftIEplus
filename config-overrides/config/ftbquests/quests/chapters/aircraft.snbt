@@ -169,9 +169,9 @@
 			shape: "square"
 			rewards: [{
 				auto: "enabled"
-				count: 2
+				count: 1
 				id: "765EA2AEA912B469"
-				item: "swgc:copper_credit"
+				item: "swgc:iron_credit"
 				team_reward: true
 				type: "item"
 			}]
@@ -197,9 +197,9 @@
 			shape: "square"
 			rewards: [{
 				auto: "enabled"
-				count: 2
+				count: 1
 				id: "52EE248A6496076C"
-				item: "swgc:copper_credit"
+				item: "swgc:iron_credit"
 				team_reward: true
 				type: "item"
 			}]
@@ -225,9 +225,9 @@
 			shape: "square"
 			rewards: [{
 				auto: "enabled"
-				count: 2
+				count: 1
 				id: "719331548E7F0006"
-				item: "swgc:copper_credit"
+				item: "swgc:iron_credit"
 				team_reward: true
 				type: "item"
 			}]

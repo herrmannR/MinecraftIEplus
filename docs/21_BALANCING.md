@@ -175,3 +175,89 @@ Nicht anfassen:
 | `config-overrides/config/Mekanism/machine-usage.toml` (neu; Original in `_original/config/Mekanism/`) | `config/Mekanism/` der Instanz | 16 Werte (Tabelle Mekanism oben), im Kommentar mit `IEplus: Standard …` markiert |
 
 Nur bei geschlossenem Spiel kopieren (sonst überschreibt Mekanism die Datei beim Beenden).
+
+## 5. Credits, Shop und Handel — Quest-Credits 🟢 eingebaut (B8a, 2026-11-02), Shop und Handel 🔵 Vorschlag (B8b–f)
+
+Vorgaben des Users (2026-11-02):
+- Davijaans Shop ist die **einzige Stelle**, an der man Credits ausgibt.
+- Credits aus Quests steigen **linear je Story-Kapitel**; jede bessere Shop-Stufe ist **grob exponentiell** teurer.
+- Der ganze Shop kostet etwa **das Doppelte** aller Quest-Credits. Die zweite Hälfte kommt aus dem **Handel mit Bodhi Bad Dur und dem Zwerg**; der ist so teuer, dass er ohne Rohstoff-Automatisierung praktisch nicht zu schaffen ist.
+- Reihenfolge im Shop: Werkbank → Klon-Rüstung (Bauplan + Material für genau zwei Rüstungen) → sehr teuer: Rezepte Plastoid und Durasteel → Waffen mit Gas Harvester → Droid Fabricator und drei Droiden zu einem extremen Vielfachen.
+
+Alle Werte in **Copper**: 1 Iron = 5 Copper, 1 Gold = 15 Copper (= 3 Iron). Credits stapeln bis 64 (`CreditItem` ohne `stacksTo`, JAR 1.0.3.1 geprüft 2026-11-02); ein Easy-NPC-Handel nimmt höchstens zwei Stapel, also **höchstens 128 Gold = 1.920 Copper** je Handel.
+
+### 5.1 Quest-Credits je Kapitel — eingebaut
+
+Ziel 50 × Kapitel, über alle Bücher zusammen (Story-Buch und Mod-Bücher). Umgesetzt im Generator (`tools/QuestbuchGen.java`, `CREDITS_HAUPT`/`CREDITS_NEBEN`, Index = Kapitel); die letzte Hauptquest eines Story-Kapitels in Buch 1 gibt das Doppelte; der Helm (ST4-05) bleibt bei 1 Gold. Ausgezahlt wird in möglichst wenigen Münzen (Gold, Iron, Copper). K1–K3: Nebenquests weiter nur XP und eine Kleinigkeit (F26).
+
+| Kapitel | Credits | kumuliert | je Hauptquest | je Nebenquest |
+|---|---:|---:|---:|---:|
+| K1 | 57 | 57 | 3 | – |
+| K2 | 105 | 162 | 7 | – |
+| K3 | 144 | 306 | 3 | – |
+| K4 | 211 | 517 | 4 | 2 |
+| K5 | 253 | 770 | 9 | 5 |
+| K6 | 309 | 1.079 | 13 | 7 |
+| K7 | 354 | 1.433 | 12 | 6 |
+| K8 | 396 | 1.829 | 18 | 9 |
+| K9 | 455 | 2.284 | 14 | 7 |
+| K10 | 502 | 2.786 | 37 | 19 |
+| K11 | 552 | **3.338** | 48 | 24 |
+
+Die Werte je Quest springen, weil die Kapitel sehr verschieden viele Quests haben (K3: 46 Hauptquests, K10: 9). Ändern sich die Quest-Zahlen stark, die Tabelle nachrechnen: Der Generator gibt je Buch „Credits je Kn“ aus.
+
+### 5.2 Shop von Davijaan — 🔵 Vorschlag (B8b)
+
+| Stufe | Ware | Preis | im Handel | Nutzungen |
+|---|---|---:|---|---:|
+| 0 | Bauplan Assembly Bench | 45 | 3 Gold | 1 |
+| 1 | Bauplan Klon-Rüstung (Phase 2) | 75 | 5 Gold | 1 |
+| 1 | 6 Plastoid | 15 | 1 Gold | 8 (= 48 Plastoid, genau zwei Rüstungen à 24) |
+| 2 | Bauplan Plastoid (2 HDPE → 1 Plastoid) | 300 | 20 Gold | 1 |
+| 2 | Bauplan Durasteel (neu, B8e) | 300 | 20 Gold | 1 |
+| 3 | Bauplan Blaster (alle sieben Modelle) | 750 | 50 Gold | 1 |
+| 3 | Bauplan Gas Harvester (mit Empty Gas Vessel; Tibanna = Munition) | 600 | 40 Gold | 1 |
+| 4 | Bauplan Droid Fabricator | 600 | 40 Gold | 1 |
+| 4 | Bauplan Droide B-1 | 900 | 60 Gold | 1 |
+| 4 | Bauplan Droide B-2 | 1.260 | 64 + 20 Gold | 1 |
+| 4 | Bauplan Droideka | 1.650 | 64 + 46 Gold | 1 |
+
+Summe je Stufe: 45 · 195 · 600 · 1.350 · 4.410 = **6.600** (≈ 2 × 3.338). Sprung von Stufe zu Stufe etwa ×4, ×3, ×2,3, ×3,3.
+
+Wann es allein mit Quest-Credits reicht: Stufe 0 und 1 in K4 (517 da, 240 nötig); Stufe 2 in K6 (840 nötig); Stufe 3 am Ende von K9 (2.190 nötig, 2.284 da). Danach bleiben bis Ende K11 rund 1.150: genug für den Droid Fabricator, aber nicht mehr für einen Droiden. **Die Droiden gibt es nur mit Credits aus dem Handel.**
+
+Was dafür im Skript (`einsiedler_shop.js`) und im Preset zu tun wäre:
+- Davijaans Preset hat heute **keine** Handel; die Liste oben käme als `Offers` hinein (Easy NPC `ADVANCED`, damit „Nutzungen“ greift; ob Nutzungen ohne „Zurücksetzen“ dauerhaft verbraucht bleiben, im Spiel prüfen).
+- Neuer Bauplan **Durasteel** (Rolle, Advancement, Patchouli-Eintrag), Rezept siehe B8e.
+- Plastoid: 48 statt „die ersten 20“ (Kommentar im Skript, Dialog `v3_waren` passt schon: „ein bisschen Plastoid für den Anfang“).
+- Optional (B8f): Eine Rolle lässt sich erst lesen, wenn die Stufe davor gelesen ist. Easy NPC zeigt sonst alle Handel auf einmal; die Reihenfolge entstünde nur über den Preis.
+- Nicht im Shop: Jedi-, Sith-, Royal-Guard- und Vader-Rüstung (B8d); Pilotenhelm (kommt aus der Story).
+
+### 5.3 Handel mit Zwerg und Bodhi — Credits gegen Rohstoffe — 🔵 Vorschlag (B8f)
+
+Ziel: zusammen rund **3.300 Copper (≈ 220 Gold)**. Jeder Ankauf verlangt zwei volle Stapel (128) Blöcke oder seltene Items; von Hand lohnt das nicht, mit Erzverarbeitung und Digital Miner schon. Ankauf ohne Grenze (viele Nutzungen).
+
+**Zwerg** (Erze und Metalle; Handel offen ab ST3-00):
+
+| Er nimmt | Er zahlt | Barren je Copper |
+|---|---|---:|
+| 128 Kupferblöcke | 1 Gold (15) | 77 |
+| 128 Eisenblöcke | 2 Gold (30) | 38 |
+| 128 Zinnblöcke (Mekanism) | 2 Gold (30) | 38 |
+| 128 Osmiumblöcke | 3 Gold (45) | 26 |
+| 128 Stahlblöcke | 5 Gold (75) | 15 |
+| *bleibt:* 16 Rohosmium | 1 Kobaltbarren | – |
+
+**Bodhi Bad Dur** (Rohstoffe der Traumwelten; Handel offen ab dem Haus, ST3):
+
+| Er nimmt | Er zahlt |
+|---|---|
+| 128 Pyrope Gemstone | 1 Gold |
+| 128 Aquite | 1 Gold |
+| 128 Charoite | 2 Gold |
+| 128 Falsite-, Ventium- oder Horizonite-Barren (je ein Handel) | 2 Gold |
+| *bleibt:* Zeal Lighter, Blue Journal, Schlüssel (wie der Gatekeeper) | – |
+
+Größenordnung: 3.300 Copper nur aus Stahlblöcken wären ≈ 5.600 Blöcke (50.000 Barren), nur aus Eisenblöcken ≈ 14.000 Blöcke. Das ist gewollt extrem; zu hart, dann die Zahlen der Spalte „zahlt“ verdoppeln.
+
+Ändert O34/O72 (Bodhi: „keine Credits“) und streicht Davijaans Idee „Credits für gutes Essen“ (`dialoge_davijaan.md`, `v2_bauplan`): Er verkauft nur noch.

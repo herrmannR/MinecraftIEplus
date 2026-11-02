@@ -44,7 +44,7 @@
 			}
 			{
 				auto: "enabled"
-				count: 2
+				count: 3
 				id: "52769731EA0ADAB6"
 				item: "swgc:copper_credit"
 				team_reward: true
@@ -78,7 +78,7 @@
 			}
 			{
 				auto: "enabled"
-				count: 2
+				count: 3
 				id: "21975742B7A957FE"
 				item: "swgc:copper_credit"
 				team_reward: true
@@ -113,7 +113,7 @@
 			}
 			{
 				auto: "enabled"
-				count: 2
+				count: 3
 				id: "172964AF7C3D5661"
 				item: "swgc:copper_credit"
 				team_reward: true
@@ -147,7 +147,7 @@
 			}
 			{
 				auto: "enabled"
-				count: 2
+				count: 3
 				id: "1BCF41B6186FC66C"
 				item: "swgc:copper_credit"
 				team_reward: true
@@ -191,7 +191,7 @@
 			}
 			{
 				auto: "enabled"
-				count: 2
+				count: 3
 				id: "5D1978BB18C9469B"
 				item: "swgc:copper_credit"
 				team_reward: true
@@ -281,8 +281,16 @@
 			}
 			{
 				auto: "enabled"
-				count: 2
+				count: 1
 				id: "52612FC1599ABB92"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "0868DE555BD7E4C2"
 				item: "swgc:copper_credit"
 				team_reward: true
 				type: "item"
@@ -316,8 +324,16 @@
 			}
 			{
 				auto: "enabled"
-				count: 2
+				count: 1
 				id: "4E25054CDED3289E"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "79307E3CA7117227"
 				item: "swgc:copper_credit"
 				team_reward: true
 				type: "item"
@@ -350,8 +366,16 @@
 			}
 			{
 				auto: "enabled"
-				count: 2
+				count: 1
 				id: "77B4E05FEE956CFD"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "1B786A0433111B08"
 				item: "swgc:copper_credit"
 				team_reward: true
 				type: "item"
@@ -386,8 +410,16 @@
 			}
 			{
 				auto: "enabled"
-				count: 2
+				count: 1
 				id: "01B0FFF01B40722A"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "141D7C86AE911874"
 				item: "swgc:copper_credit"
 				team_reward: true
 				type: "item"
@@ -420,8 +452,16 @@
 			}
 			{
 				auto: "enabled"
-				count: 2
+				count: 1
 				id: "7F988E5B73D5D647"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "785E4B8701A7D4E4"
 				item: "swgc:copper_credit"
 				team_reward: true
 				type: "item"
@@ -551,7 +591,7 @@
 			}
 			{
 				auto: "enabled"
-				count: 2
+				count: 3
 				id: "2F752AB8E976CB1D"
 				item: "swgc:copper_credit"
 				team_reward: true
@@ -586,7 +626,7 @@
 			}
 			{
 				auto: "enabled"
-				count: 2
+				count: 3
 				id: "4239FAFCE88C2C84"
 				item: "swgc:copper_credit"
 				team_reward: true
@@ -1151,9 +1191,17 @@
 			id: "51CEB2BFB723DB77"
 			rewards: [{
 				auto: "enabled"
-				count: 1
+				count: 2
 				id: "2FA782DC124EAA92"
 				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}
+			{
+				auto: "enabled"
+				count: 3
+				id: "11A50D012AFBA5DF"
+				item: "swgc:copper_credit"
 				team_reward: true
 				type: "item"
 			}]
@@ -1179,9 +1227,17 @@
 			id: "32310B37BC9A953F"
 			rewards: [{
 				auto: "enabled"
-				count: 1
+				count: 2
 				id: "39676C5AA2EAF208"
 				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}
+			{
+				auto: "enabled"
+				count: 3
+				id: "1BE70FAC31B27340"
+				item: "swgc:copper_credit"
 				team_reward: true
 				type: "item"
 			}]
@@ -1209,8 +1265,16 @@
 			shape: "square"
 			rewards: [{
 				auto: "enabled"
-				count: 2
+				count: 1
 				id: "0F4CAC98BA4E74C0"
+				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "3FE1919B2E95F066"
 				item: "swgc:copper_credit"
 				team_reward: true
 				type: "item"
@@ -1255,9 +1319,25 @@
 			id: "5D0A360656B07CDA"
 			rewards: [{
 				auto: "enabled"
-				count: 1
+				count: 2
 				id: "6FFCBB750499DB54"
+				item: "swgc:gold_credit"
+				team_reward: true
+				type: "item"
+			}
+			{
+				auto: "enabled"
+				count: 1
+				id: "19E23DF5C04A15AF"
 				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "3D6C7E3883F326F4"
+				item: "swgc:copper_credit"
 				team_reward: true
 				type: "item"
 			}]
@@ -1283,9 +1363,25 @@
 			id: "1324315F8E271AF5"
 			rewards: [{
 				auto: "enabled"
-				count: 1
+				count: 2
 				id: "423E87B640FB4552"
+				item: "swgc:gold_credit"
+				team_reward: true
+				type: "item"
+			}
+			{
+				auto: "enabled"
+				count: 1
+				id: "2C47806A9CF0B274"
 				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "4D14940FC94ECD2B"
+				item: "swgc:copper_credit"
 				team_reward: true
 				type: "item"
 			}]
@@ -1316,9 +1412,25 @@
 			id: "20CA9735F369D8FB"
 			rewards: [{
 				auto: "enabled"
-				count: 1
+				count: 2
 				id: "207B507A4B4E3CC1"
+				item: "swgc:gold_credit"
+				team_reward: true
+				type: "item"
+			}
+			{
+				auto: "enabled"
+				count: 1
+				id: "058D126561B020D0"
 				item: "swgc:iron_credit"
+				team_reward: true
+				type: "item"
+			}
+			{
+				auto: "enabled"
+				count: 2
+				id: "68F3D28C8ECC3C5F"
+				item: "swgc:copper_credit"
 				team_reward: true
 				type: "item"
 			}]
@@ -1361,8 +1473,16 @@
 			shape: "square"
 			rewards: [{
 				auto: "enabled"
-				count: 2
+				count: 1
 				id: "446ABA16516A5383"
+				item: "swgc:gold_credit"
+				team_reward: true
+				type: "item"
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "6AC98E74527F2C04"
 				item: "swgc:copper_credit"
 				team_reward: true
 				type: "item"
@@ -1390,8 +1510,16 @@
 			shape: "square"
 			rewards: [{
 				auto: "enabled"
-				count: 2
+				count: 1
 				id: "6215028855746F69"
+				item: "swgc:gold_credit"
+				team_reward: true
+				type: "item"
+			}
+			{
+				auto: "enabled"
+				count: 4
+				id: "146FB569162CD778"
 				item: "swgc:copper_credit"
 				team_reward: true
 				type: "item"
