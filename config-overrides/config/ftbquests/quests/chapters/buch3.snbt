@@ -12,7 +12,7 @@
 			dependencies: ["13CC768AFE8EB0F0"]
 			hide_until_deps_complete: true
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
+				"Dieses Kapitel folgt später."
 				""
 				"&eFortschritt:&r Altar T6 · &eRakete T6&r"
 			]
@@ -38,7 +38,7 @@
 		{
 			dependencies: ["7E3BF632DE197FB4"]
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
+				"Dieses Kapitel folgt später."
 				""
 				"&eFortschritt:&r Meka-Ausrüstung und QIO"
 			]
@@ -64,9 +64,9 @@
 		{
 			dependencies: ["3F54FB63312E353E"]
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
+				"Dieses Kapitel folgt später."
 				""
-				"&eFortschritt:&r &eRakete T7&r · MekaSuit Pflicht (F37, 2026-10-28)"
+				"&eFortschritt:&r &eRakete T7&r · MekaSuit Pflicht"
 			]
 			icon: "minecraft:book"
 			id: "2E92F0E81C219781"

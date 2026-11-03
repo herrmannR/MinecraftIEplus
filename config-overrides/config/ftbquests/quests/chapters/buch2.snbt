@@ -12,7 +12,7 @@
 			dependencies: ["67C81927469F789D"]
 			hide_until_deps_complete: true
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
+				"Dieses Kapitel folgt später."
 				""
 				"&eFortschritt:&r Altar T5 · Alfheim betreten · Fusion"
 			]
@@ -38,7 +38,7 @@
 		{
 			dependencies: ["490DA592DDA71B52"]
 			description: [
-				"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r"
+				"Dieses Kapitel folgt später."
 				""
 				"&eFortschritt:&r Gaia · SPS und Antimaterie · AE2-Quantenbrücke · &eRakete T5&r"
 			]

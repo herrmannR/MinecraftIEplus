@@ -34,7 +34,7 @@ Tipp: Der **Multiblock Projector** aus Immersive Petroleum zeigt den Bauplan als
 **Aufgabe:** `immersiveengineering:raw_aluminum` oder `immersiveengineering:raw_silver` oder `immersiveengineering:raw_nickel`
 
 Buch: Overview and Resources → Ores.
-⚙️ Das Pack verteilt die Erze anders, als das Buch beschreibt:
+Das Pack verteilt die Erze anders, als das Buch beschreibt:
 - **Blei und Uran** kommen nicht als IE-Erz vor, sondern als Erz von Mekanism. Die Barren passen in jedes IE-Rezept. Blei ist in der Overworld sehr selten und reichlich in Everbright, Uran reichlich auf Merkur und Venus.
 - **Bauxit** (Aluminium) ist in der Overworld selten und reichlich in Everbright.
 - Silber und Nickel liegen wie gewohnt in der Overworld.
@@ -56,14 +56,13 @@ Buch: Overview and Resources → Treated Wood.
 
 Legiert ohne Strom, etwa Electrum und Constantan.
 Buch: Workbenches & Furnaces → Alloy Kiln; Overview and Resources → Alloys.
-⚙️ Bronze, Constantan, Electrum und Invar lassen sich auch in der Smeltery von Tinkers legieren.
 
 ### IE1-07 Erster Stahl · Hauptweg
 **Aufgabe:** `immersiveengineering:blast_furnace`, `immersiveengineering:ingot_steel`
 
 Die Crude Blast Furnace macht aus Eisen und Coal Coke Stahl. Für die Blast Bricks brauchst du Zutaten aus dem Nether.
 Buch: Workbenches & Furnaces → Crude Blast Furnace.
-⚙️ Stahl ist die Grundwährung des Packs: Mekanism, AE2 und die erste Rakete brauchen ihn. Stahl aus Mekanism zählt genauso.
+Stahl ist die Grundwährung des Packs: Mekanism, AE2 und die erste Rakete brauchen ihn. Stahl aus Mekanism zählt genauso.
 
 ### IE1-08 Werkbank und Baupläne · Hauptweg
 **Aufgabe:** `immersiveengineering:workbench`, `immersiveengineering:component_iron`
@@ -80,35 +79,35 @@ Buch: Workbenches & Furnaces → Workbench & Blueprints, Engineer's Blueprints; 
 
 Windmühle oder Wasserrad treiben den Kinetic Dynamo an.
 Buch: Power, wires, generators → Power Generation.
-⚙️ Strom im Pack kommt nur aus IE, Immersive Petroleum und Mekanism. Die Generatoren von Ad Astra sind entfernt.
+Strom im Pack kommt nur aus IE, Immersive Petroleum und Mekanism. Die Generatoren von Ad Astra sind entfernt.
 
 ### IE2-02 Kabel · Hauptweg
 **Aufgabe:** `immersiveengineering:connector_lv`, `immersiveengineering:wirecoil_copper`
 
 Strom fließt über Drähte zwischen Connectors. LV (Kupfer) trägt 256 Flux je Tick, MV (Electrum) 1024, HV (Stahl und Aluminium) 4096.
 Buch: Power, wires, generators → Basic Wiring.
-⚙️ Die Kabel von Ad Astra sind entfernt. Raumbasen versorgst du mit IE oder Mekanism. In einen abgedichteten Raum bringt ein **Feedthrough Insulator** (oder ein Energiespeicher in der Wand) den Strom, ohne die Luftdichtung zu brechen.
+Die Kabel von Ad Astra sind entfernt. Raumbasen versorgst du mit IE oder Mekanism. In einen abgedichteten Raum bringt ein **Feedthrough Insulator** (oder ein Energiespeicher in der Wand) den Strom, ohne die Luftdichtung zu brechen.
 
 ### IE2-03 Speichern · Nebenquest
 **Aufgabe:** `immersiveengineering:capacitor_lv`
 
-⚙️ Der LV-Kondensator ist Teil von „Würdig sein“ bei DD3R8 (O67).
+Der LV-Kondensator ist Teil von „Würdig sein“ bei DD3R8.
 
 Buch: Power, wires, generators → Accumulators.
-⚙️ Der LV Accumulator braucht Blei. Das gibt es in der Overworld kaum, reichlich in Everbright (Mekanism-Bleierz).
+Blei gibt es in der Overworld kaum, reichlich in Everbright.
 
 ### IE2-04 Förderbänder und Rohre · Nebenquest
 **Aufgabe:** `immersiveengineering:conveyor_basic`, `immersiveengineering:fluid_pipe`
 
 Buch: Simple Machines → Conveyor Belts, Item Router, Fluid Transport.
-⚙️ Die Fluid Pipes und die Water Pump von Ad Astra sind entfernt; IE-Rohre und die Fluid Pump übernehmen.
+Die Fluid Pipes und die Water Pump von Ad Astra sind entfernt; IE-Rohre und die Fluid Pump übernehmen.
 
 ### IE2-05 Charging Station · Nebenquest
 **Aufgabe:** `immersiveengineering:charging_station`
 
 Lädt Werkzeuge und Akkus.
 Buch: Simple Machines → Charging Station.
-⚙️ Der Energizer von Ad Astra ist entfernt. Jet Suit und Etrionic Capacitor lädst du hier oder an einem Mekanism Energy Cube.
+Der Energizer von Ad Astra ist entfernt. Jet Suit und Etrionic Capacitor lädst du hier oder an einem Mekanism Energy Cube.
 
 ### IE2-06 Garden Cloche · Nebenquest
 **Aufgabe:** `immersiveengineering:cloche`
@@ -135,14 +134,13 @@ Buch: Construction → Metal Constructions.
 
 Presst Platten, Stäbe und Drähte.
 Buch: Heavy Machinery → Metal Press.
-⚙️ Alle Platten für die Raketen kommen aus dieser Presse, auch Desh, Ostrum und Calorite. Der Compressor von Ad Astra entfällt 🔵 (Skript fehlt).
 
 ### IE3-04 Crusher · Hauptweg
 **Aufgabe:** `immersiveengineering:crusher`
 
 Mahlt Erz zu zwei Stäuben, dazu Nebenprodukte wie Schwefel.
 Buch: Heavy Machinery → Crusher.
-⚙️ 🔵 Der Crusher soll alles übernehmen, was der Crusher von Mekanism kann (Liste und Umsetzung offen). Für mehr als die doppelte Ausbeute führt Mekanism weiter (`mekanism.md`, Erzvervielfachung).
+Für mehr als die doppelte Ausbeute führt Mekanism weiter (Erzvervielfachung).
 
 ### IE3-05 Sawmill · Nebenquest
 **Aufgabe:** `immersiveengineering:sawmill`
@@ -154,7 +152,7 @@ Buch: Heavy Machinery → Sawmill. Sägemehl passt auch in Mekanism-Rezepte.
 
 Plant Oil aus dem Squeezer und Ethanol aus dem Fermenter ergeben in der Refinery Biodiesel.
 Buch: Heavy Machinery → Squeezer, Fermenter, Refinery.
-⚙️ **Biodiesel ist der Treibstoff der Rakete T1.** Die Rakete nimmt nur diesen Treibstoff.
+**Biodiesel ist der Treibstoff der Rakete T1.** Die Rakete nimmt nur diesen Treibstoff.
 
 ### IE3-07 Diesel Generator · Nebenquest
 **Aufgabe:** `immersiveengineering:diesel_generator`
@@ -175,8 +173,8 @@ Buch: Heavy Machinery → Mixer, Bottling Machine. Mit dem Mixer entsteht flüss
 **Aufgabe:** `immersivepetroleum:seismic_survey`, `immersivepetroleum:survey_result`
 
 Das Seismic Survey Tool zeigt, wo unter dir ein Ölvorkommen liegt.
-Buch: Oil Processing → Derrick 🔵 (Eintrag prüfen, in dem das Werkzeug beschrieben ist).
-⚙️ Immersive Petroleum ist die einzige Ölquelle im Pack; die Ölquellen von Ad Astra sind abgeschaltet.
+Buch: Oil Processing → Derrick.
+Immersive Petroleum ist die einzige Ölquelle im Pack; die Ölquellen von Ad Astra sind abgeschaltet.
 
 ### IE4-02 Derrick und Pumpjack · Hauptweg
 **Aufgabe:** `immersivepetroleum:derrick`, `immersivepetroleum:pumpjack`
@@ -195,7 +193,7 @@ Buch: Oil Processing → Oil Tank.
 
 Zerlegt Rohöl in Lubricant, Diesel (schwefelhaltig), Kerosene und Naphtha, dazu Bitumen.
 Buch: Oil Processing → Distillation Tower, Petroleum Products.
-⚙️ **Kerosene ist der Treibstoff der Rakete T3** und Grundlage des Treibstoffs T4.
+**Kerosene ist der Treibstoff der Rakete T3** und Grundlage des Treibstoffs T4.
 
 ### IE4-05 Lubricant · Nebenquest
 **Aufgabe:** Flüssigkeit `immersivepetroleum:lubricant`
@@ -212,8 +210,8 @@ Buch: Oil Processing → Lubrication.
 
 Entschwefelt den Diesel aus dem Turm; dabei fallen 5 Schwefelstaub je Eimer an.
 Buch: Oil Processing → High-Pressure Refinery Unit.
-⚙️ **Entschwefelter Diesel ist der Treibstoff der Rakete T2.** Schwefelhaltiger Diesel (Sulfurized Diesel) zählt nicht.
-⚙️ Der Schwefel wird für die Schwefelsäure von Mekanism gebraucht.
+**Entschwefelter Diesel ist der Treibstoff der Rakete T2.** Schwefelhaltiger Diesel (Sulfurized Diesel) zählt nicht.
+Der Schwefel wird für die Schwefelsäure von Mekanism gebraucht.
 
 ### IE5-02 Coker · Nebenquest
 **Aufgabe:** `immersivepetroleum:coker_unit`, `immersivepetroleum:petcoke`
@@ -236,14 +234,14 @@ Buch: Heavy Machinery → Arc Furnace; Overview and Resources → Graphite, Vill
 
 Mit den Mineral Survey Tools und dem Core Sample Drill findest du heraus, welche Erzader unter einem Chunk liegt.
 Buch: Heavy Machinery → Excavator, darin der Verweis auf Mineral Deposits.
-⚙️ Die Adern sind angepasst: Cassiterite (Zinn) gibt es nicht, Zinn kommt nur aus Everbright. Galena (Blei) und Uraninite (Uran) sind seltener.
+Die Adern sind angepasst: Cassiterite (Zinn) gibt es nicht, Zinn kommt nur aus Everbright. Galena (Blei) und Uraninite (Uran) sind seltener.
 
 ### IE6-03 Excavator · Nebenquest
 **Aufgabe:** `immersiveengineering:excavator`, `immersiveengineering:bucket_wheel`
 
 Baut eine Erzader ab, ohne die Welt aufzugraben.
 Buch: Heavy Machinery → Excavator.
-⚙️ Der Digital Miner von Mekanism ist im Pack entfernt; der Excavator ist der Weg zur automatischen Erzgewinnung.
+Der Digital Miner von Mekanism ist im Pack entfernt; der Excavator ist der Weg zur automatischen Erzgewinnung.
 
 ### IE6-04 Kunststoff · Nebenquest
 **Aufgabe:** `immersiveengineering:plate_duroplast`

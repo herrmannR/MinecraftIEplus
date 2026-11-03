@@ -33,7 +33,7 @@
 				""
 				"AE2 erklärt sich im eigenen Handbuch. Halte über einem AE2-Item die Taste G gedrückt, dann springt der Guide auf die passende Seite."
 				"Buch: Guide → Getting Started (1.20+)."
-				"&6⚙&r Im Pack erzeugt AE2 keinen eigenen Strom, und einige Rezepte können vom Guide abweichen. Gültig ist immer, was JEI zeigt."
+				"Im Pack erzeugt AE2 keinen eigenen Strom, und einige Rezepte können vom Guide abweichen. Gültig ist immer, was JEI zeigt."
 			]
 			hide_until_deps_visible: true
 			icon: "ae2:guide"
@@ -68,7 +68,7 @@
 			description: [
 				"Der Charger lädt Certus Quartz auf und macht aus einem Kompass den Meteorite Compass. Strom gibt die Kurbel oder jede FE-Quelle."
 				"Buch: Items, Blocks, and Machines → Charger, Crank."
-				"&6⚙&r Statt der Kurbel kannst du den Charger direkt an IE-Strom hängen."
+				"Statt der Kurbel kannst du den Charger direkt an IE-Strom hängen."
 			]
 			hide_until_deps_visible: true
 			icon: "ae2:charger"
@@ -108,7 +108,7 @@
 			description: [
 				"Der Kompass zeigt zum nächsten Meteoriten."
 				"Buch: Items, Blocks, and Machines → Meteorite Compass; Getting Started → Getting The Initial Materials."
-				"&6⚙&r Meteoriten gibt es nur in der Overworld, etwa einer je 32 × 32 Chunks."
+				"Meteoriten gibt es nur in der Overworld, etwa einer je 32 × 32 Chunks."
 			]
 			hide_until_deps_visible: true
 			icon: "ae2:meteorite_compass"
@@ -143,8 +143,8 @@
 			description: [
 				"Im Kern des Meteoriten steckt der Mysterious Cube mit den vier Inscriber-Pressen. Daneben findest du Budding Certus Quartz und Sky Stone. Ein Meteorit reicht: Pressen lassen sich später im Inscriber kopieren."
 				"Buch: AE2 Mechanics → Meteorites; Items, Blocks, and Machines → Mysterious Cube, Presses, Sky Stone."
-				"&6⚙&r Certus gibt es im Pack nur an Budding-Blöcken, kein Certus-Erz. Flawless Budding Certus lässt sich nicht abbauen; merk dir den Ort."
-				"&6⚙&r Später gibt es weitere Quellen: Sky Stone aus 5 Moon Stone und 4 Mars Stone (Ad Astra), Budding Quartz aus einem Blood-Magic-Meteor mit Certus Quartz Crystal (Mark of the Falling Tower)."
+				"Certus gibt es im Pack nur an Budding-Blöcken, kein Certus-Erz. Flawless Budding Certus lässt sich nicht abbauen; merk dir den Ort."
+				"Später gibt es weitere Quellen: Sky Stone aus Moon Stone und Mars Stone (Ad Astra), Budding Quartz aus einem Blood-Magic-Meteor mit Certus Quartz Crystal (Mark of the Falling Tower)."
 			]
 			hide_until_deps_visible: true
 			icon: "ae2:silicon_press"
@@ -199,8 +199,7 @@
 			description: [
 				"Certus wächst als Cluster an Budding-Blöcken; der Growth Accelerator beschleunigt das stark. Bau ihn zuerst."
 				"Buch: Getting Started → Growing Certus Quartz; AE2 Mechanics → Certus Growth; Items, Blocks, and Machines → Budding Certus Quartz, Growth Accelerator."
-				"&6⚙&r Der Growth Accelerator braucht Strom. AE2 erzeugt im Pack keinen eigenen; nimm IE-Strom."
-				"&6⚙&r Mekanism hat eigene Rezepte für AE2-Material (Staub, Kristalle); JEI zeigt sie."
+				"Der Growth Accelerator braucht Strom. AE2 erzeugt im Pack keinen eigenen; nimm IE-Strom."
 			]
 			hide_until_deps_visible: true
 			icon: "ae2:growth_accelerator"
@@ -275,7 +274,7 @@
 			description: [
 				"Im Inscriber prägst du mit den Pressen die Schaltkreise. Eine Presse mit einem Eisenblock ergibt eine Kopie."
 				"Buch: Items, Blocks, and Machines → Inscriber, Presses."
-				"&6⚙&r Der Inscriber nimmt FE direkt an; Strom aus IE."
+				"Der Inscriber nimmt FE direkt an; Strom aus IE."
 			]
 			hide_until_deps_visible: true
 			icon: "ae2:inscriber"
@@ -310,7 +309,6 @@
 			description: [
 				"Aus Gold, Certus, Diamant und Silicon entstehen Printed Circuits und daraus die drei Prozessoren. Fast jedes ME-Gerät braucht einen davon."
 				"Buch: Getting Started → Inscribing Some Processors; Items, Blocks, and Machines → Processors."
-				"&6⚙&r &9(ungeprüft)&r Ob die Prozessoren im Pack teurer werden (Teil des „teuren“ Storage-Layers), ist offen."
 			]
 			hide_until_deps_visible: true
 			icon: "ae2:silicon"
@@ -399,7 +397,7 @@
 			description: [
 				"Das Netz läuft mit AE. Der Energy Acceptor wandelt Forge Energy um, 2 FE ergeben 1 AE."
 				"Buch: AE2 Mechanics → Energy; Items, Blocks, and Machines → Energy Acceptor."
-				"&6⚙&r Vibration Chamber und Crystal Resonance Generator gibt es im Pack nicht. Strom kommt aus IE oder Mekanism."
+				"Vibration Chamber und Crystal Resonance Generator gibt es im Pack nicht. Strom kommt aus IE oder Mekanism."
 			]
 			hide_until_deps_visible: true
 			icon: "ae2:energy_acceptor"
@@ -473,7 +471,6 @@
 			description: [
 				"Der Storage Bus macht eine Kiste oder einen Storage Drawer zum Teil des Netzes. Ein Bus je Lager, und das Terminal durchsucht alles auf einmal. Das ist der Storage-Layer."
 				"Buch: Items, Blocks, and Machines → ME Storage Bus; AE2 Mechanics → Import, Export, and Storage."
-				"&6⚙&r &9(ungeprüft)&r Ob ein Storage Bus an einem Drawer Controller alle angeschlossenen Drawers erfasst, im Spiel prüfen."
 			]
 			hide_until_deps_visible: true
 			icon: "ae2:storage_bus"
@@ -571,7 +568,6 @@
 				""
 				"Eine Zelle besteht aus Housing und Component. Sie zählt Bytes und Sorten: höchstens 63 Sorten je Zelle, egal wie groß."
 				"Buch: Items, Blocks, and Machines → Storage Cells; AE2 Mechanics → Bytes and Types."
-				"&6⚙&r &9(ungeprüft)&r Ob Housing oder Components im Pack teurer werden (AE2 als Endgame), ist offen."
 			]
 			hide_until_deps_visible: true
 			icon: "ae2:item_storage_cell_1k"
@@ -607,7 +603,6 @@
 			description: [
 				"Der Drive hält mehrere Zellen und macht sie fürs Netz sichtbar."
 				"Buch: Items, Blocks, and Machines → ME Drive; Getting Started → Your Very First ME System."
-				"&6⚙&r Rezept anders als im Guide: 4 Steel Plate, 2 Engineering Processor, 2 Fluix Glass Cable und ein Advanced Control Circuit aus Mekanism (Quest „Die Stufen von Mekanism“). Siehe JEI."
 			]
 			hide_until_deps_visible: true
 			icon: "ae2:drive"
@@ -643,7 +638,6 @@
 			description: [
 				"Ab 9 Geräten braucht das Netz einen Controller. Er verteilt Kanäle: 8 je normalem Kabel, 32 je Dense Cable."
 				"Buch: Items, Blocks, and Machines → Controller; AE2 Mechanics → Channels; Getting Started → Expanding your Network, Overcoming Limits."
-				"&6⚙&r Rezept anders als im Guide: 2 Steel Plate, 3 Fluix Crystal, ein Engineering Processor, 2 Smooth Sky Stone Block und ein Advanced Control Circuit aus Mekanism. Siehe JEI."
 			]
 			hide_until_deps_visible: true
 			icon: "ae2:controller"
@@ -1079,7 +1073,7 @@
 		{
 			dependencies: ["7F8A2EA9729C9026"]
 			description: [
-				"Applied Mekanistics lagert Mekanism-Chemikalien wie Gase im ME-Netz. Das Housing braucht 2 Quartz Glass, 3 Redstone und 3 Osmium Ingot; die Zelle entsteht wie eine Item-Zelle aus Housing und Component. Mit Processing Patterns läuft dann auch Autocrafting über Mekanism-Maschinen, die Gase brauchen."
+				"Applied Mekanistics lagert Mekanism-Chemikalien wie Gase im ME-Netz. Die Zelle entsteht wie eine Item-Zelle aus Housing und Component. Mit Processing Patterns läuft dann auch Autocrafting über Mekanism-Maschinen, die Gase brauchen."
 				"Das Addon steht nicht im Guide."
 			]
 			hide_until_deps_visible: true
@@ -1168,7 +1162,7 @@
 		{
 			dependencies: ["066045B9476DF7B7"]
 			description: [
-				"Das Addon AE2 Wireless Terminals bringt auch kabellose Pattern-Terminals. Zwei kabellose Terminals lassen sich zum Universal Terminal kombinieren. Die Magnet Card im Wireless Crafting Terminal zieht laut Beschreibung Items an."
+				"Das Addon AE2 Wireless Terminals bringt auch kabellose Pattern-Terminals. Zwei kabellose Terminals lassen sich zum Universal Terminal kombinieren. Die Magnet Card im Wireless Crafting Terminal zieht Items an."
 				"Das Addon steht nicht im Guide."
 			]
 			hide_until_deps_visible: true
@@ -1243,7 +1237,7 @@
 		{
 			dependencies: ["066045B9476DF7B7"]
 			description: [
-				"More Immersive Wires führt ME-Kabel als IE-Draht über Masten, auch über weite Strecken. Die Spule braucht 4 Aluminiumdraht aus IE und 4 Glass Cable; Anschluss und Relais setzt du wie bei IE. Für 32 Kanäle gibt es Dense-Spule, -Anschluss und -Relais."
+				"More Immersive Wires führt ME-Kabel als IE-Draht über Masten, auch über weite Strecken. Anschluss und Relais setzt du wie bei IE. Für 32 Kanäle gibt es Dense-Spule, -Anschluss und -Relais."
 				"Das Addon steht nicht im Guide; das Verlegen erklärt das Engineer's Manual bei den Drähten."
 			]
 			hide_until_deps_visible: true

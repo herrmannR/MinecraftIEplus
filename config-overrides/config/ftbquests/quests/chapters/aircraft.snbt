@@ -29,12 +29,9 @@
 		{
 			dependencies: ["3496A9D3803916D3"]
 			description: [
-				"Die kurze Reihe des Packs (F17): sechs Quests in zwei Abschnitten. Der Gyrodyne fliegt ohne Treibstoff und lässt sich schon früh bauen; die Quests erscheinen ab dem Mond."
+				"Die kurze Reihe des Packs: sechs Quests in zwei Abschnitten. Der Gyrodyne fliegt ohne Treibstoff und lässt sich schon früh bauen; die Quests erscheinen ab dem Mond."
 				""
-				"Aus diesen drei Teilen bestehen alle Fluggeräte."
-				"• &eHull&r (Rumpf): 6 Holzstämme + 3 Iron Ingot"
-				"• &eSail&r (Segel): 6 White Carpet + 3 String"
-				"• &ePropeller&r: 5 Iron Ingot"
+				"Aus diesen drei Teilen bestehen alle Fluggeräte: &eHull&r (Rumpf), &eSail&r (Segel) und &ePropeller&r."
 			]
 			hide_until_deps_visible: true
 			icon: "immersive_aircraft:hull"
@@ -104,7 +101,7 @@
 				"Fluggeräte mit Engine tanken flüssigen Treibstoff, nicht Kohle."
 				"So geht's: Fülle ein IE &eMetal Barrel&r mit Treibstoff und lege das Fass in den Treibstoffplatz des Fluggeräts."
 				"Geeignet sind Biodiesel aus der IE Refinery und von Immersive Petroleum Diesel, Sulfurized Diesel und Kerosene. Gasoline geht nicht."
-				"&6⚙&r Fester Brennstoff ist abgeschaltet (Config von iaie: disableSolidFuel = true). &9(ungeprüft)&r Ob Blaze Powder trotzdem noch brennt, im Spiel prüfen."
+				"Fester Brennstoff ist im Pack abgeschaltet."
 			]
 			hide_until_deps_visible: true
 			icon: "immersiveengineering:metal_barrel"
@@ -157,10 +154,7 @@
 			dependencies: ["2699D7367B6CCE4E", "130A93651EA2305F"]
 			description: [
 				"Das erste Fluggerät mit Engine. Langsam, aber leicht zu steuern. Drei Upgrade-Plätze und ein Inventarplatz."
-				"&6⚙&r Im Pack mit IE-Stahl: 4 Sail + 2 Steel Plate + 2 Hull + 1 Engine (Rezept in JEI)."
-				"Die &eEngine&r baust du so:"
-				"• &eBoiler&r: 7 Copper Ingot + 1 Furnace"
-				"• &eEngine&r: Boiler + Blast Furnace + 2 Piston + 3 Cobblestone"
+				"Die &eEngine&r baust du aus einem &eBoiler&r."
 			]
 			hide_until_deps_visible: true
 			icon: "immersive_aircraft:airship"
@@ -188,7 +182,7 @@
 		{
 			dependencies: ["49F91214DE919443"]
 			description: [
-				"Airship + 1 Hull + 4 Chest; der Stahl steckt im Airship schon drin. Langsam und durstig, trägt aber fünf Inventarplätze, also ein ganzes Lager."
+				"Ein aufgerüstetes Airship. Langsam und durstig, trägt aber fünf Inventarplätze, also ein ganzes Lager."
 			]
 			hide_until_deps_visible: true
 			icon: "immersive_aircraft:cargo_airship"
@@ -216,7 +210,7 @@
 		{
 			dependencies: ["5015A43A7B88A706"]
 			description: [
-				"Cargo Airship + 2 Engine + Industrial Gears (3 Iron + 3 Copper Ingot + 1 Lever). Die fliegende Festung: dreifache Haltbarkeit, drei Treibstoffplätze, zwei Waffen, sechs Upgrades. Langsam, aber mit 0,8 überraschend sparsam."
+				"Die fliegende Festung, gebaut aus dem Cargo Airship: dreifache Haltbarkeit, drei Treibstoffplätze, zwei Waffen, sechs Upgrades. Langsam, aber mit 0,8 überraschend sparsam."
 			]
 			hide_until_deps_visible: true
 			icon: "immersive_aircraft:warship"

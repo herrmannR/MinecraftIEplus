@@ -80,8 +80,7 @@ Buch: Mana Manipulation → Mana Pool.
 
 Eisen in einen gefüllten Pool werfen. Manasteel ist das erste Metall des Mods. Neun Barren ergeben einen Block of Manasteel.
 Buch: Mana Manipulation → Mana Pool.
-⚙️ Den Block brauchst du für „Würdig sein“ in Buch 1, deshalb verlangt die Quest gleich ihn.
-⚙️ Mit TCIntegrations ist Manasteel auch ein Werkzeugmaterial für Tinkers, ebenso Livingwood, Livingrock und Mana Infused String.
+Den Block brauchst du für „Würdig sein“ in Buch 1.
 
 ### BO2-05 Mana Pearl und Mana Diamond · Hauptweg
 **Aufgabe:** `botania:mana_pearl`, `botania:mana_diamond`
@@ -159,14 +158,14 @@ Buch: Natural Apparatus → Botanical Brewery, Brewing Flasks.
 
 Botanias Autocrafter: Er baut Rezepte nach, die du ihm vorgibst.
 Buch: Natural Apparatus → Open Crate, Crafty Crate.
-⚙️ Im Pack gibt es weitere Autocrafter (IE Assembler, Mekanism Formulaic Assemblicator, später AE2); die Crate ist der magische Weg.
+Im Pack gibt es weitere Autocrafter (IE Assembler, Mekanism Formulaic Assemblicator, später AE2); die Crate ist der magische Weg.
 
 ### BO3-10 Mana Fluxfield · Nebenquest
 **Aufgabe:** `botania:mana_fluxfield`
 
 Wandelt Mana in Strom um.
 Buch: Mana Manipulation → Mana Fluxfield.
-⚙️ Das Fluxfield ist die einzige Brücke von Botania zur Technik. Der Strom passt in IE- und Mekanism-Netze; den Rückweg von Strom zu Mana gibt es nicht.
+Das Fluxfield ist die einzige Brücke von Botania zur Technik. Der Strom passt in IE- und Mekanism-Netze; den Rückweg von Strom zu Mana gibt es nicht.
 
 ### BO3-11 Katalysatoren · Nebenquest
 **Aufgabe:** `botania:alchemy_catalyst`, `botania:conjuration_catalyst`
@@ -179,7 +178,6 @@ Buch: Natural Apparatus → Alchemising with Mana, Conjuring with Mana.
 
 Verwandelt Stein in Erz.
 Buch: Functional Flora → Orechid.
-⚙️ Die Orechid macht nur Vanilla-Erze. Erze von IE, Mekanism, Blue Skies und den Planeten liefert sie nicht.
 
 ### BO3-13 Mana Enchanter · Nebenquest
 **Aufgabe:** `botania:enchanter`
@@ -192,7 +190,7 @@ Buch: Natural Apparatus → Mana Pylon, Enchanting with Mana.
 
 Ein Amulett, das gegen Mana verhindert, dass Explosionen in deiner Nähe Blöcke zerstören. Du machst es aus Rune of Water, Rune of Spring, Mana Diamond und zwei rosa Petals.
 Buch: Trinkets and Accessories → Benevolent Goddess' Charm.
-⚙️ Im Pack lässt der Demon Realm von Blood Magic nur hinein, wer den Charm trägt. Für Buch 1 braucht jeder von euch einen eigenen.
+Im Pack lässt der Demon Realm von Blood Magic nur hinein, wer den Charm trägt. Für Buch 1 braucht jeder von euch einen eigenen.
 
 ---
 
@@ -209,7 +207,6 @@ Buch: Basics and Mechanics → Terrasteel.
 
 Das zweite Metall des Mods und Baustoff des Elfenportals. Plane die Mana-Versorgung vorher: Ein Barren braucht etwa einen halben Pool.
 Buch: Basics and Mechanics → Terrasteel.
-⚙️ Mit TCIntegrations gibt Terrasteel einen Modifier für Tinkers-Werkzeuge.
 
 ### BO4-03 Terra-Ausrüstung · Nebenquest
 **Aufgabe:** `botania:terra_sword` oder `botania:terra_pick` oder `botania:terrasteel_helmet`
@@ -231,14 +228,14 @@ Buch: Alfhomancy → The Portal to Alfheim.
 
 Rahmen aus Livingwood, in der Mitte der Elven Gateway Core. Mit dem Wand of the Forest öffnest du es.
 Buch: Alfhomancy → The Portal to Alfheim, A Message from Elven Garde.
-⚙️ Hindurchgehen kannst du noch nicht: MythicBotany lässt nur durch, wer den Mead of Kvasir getrunken hat (späteres Kapitel). Bis dahin dient das Portal dem Handel.
+Hindurchgehen kannst du noch nicht: MythicBotany lässt nur durch, wer den Mead of Kvasir getrunken hat (späteres Kapitel). Bis dahin dient das Portal dem Handel.
 
 ### BO5-03 Elfenhandel · Hauptweg
 **Aufgabe:** `botania:elementium_ingot`, `botania:pixie_dust`, `botania:dragonstone`, `botania:dreamwood`
 
 Was du ins Portal wirfst, tauschen die Elfen gegen ihre Stoffe.
 Buch: Alfhomancy → Resources of Alfheim.
-⚙️ Bis Alfheim betreten werden kann, gibt es diese Stoffe nur über den Handel.
+Bis Alfheim betreten werden kann, gibt es diese Stoffe nur über den Handel.
 
 ### BO5-04 Elementium-Ausrüstung · Nebenquest
 **Aufgabe:** `botania:elementium_pickaxe`
@@ -260,7 +257,6 @@ Buch: Mana Manipulation → Elven Mana Spreaders, Elven Mana Lenses.
 
 Der Met öffnet dir das Portal nach Alfheim.
 Buch: Alfheim → The Mead of Kvasir.
-⚙️ 🔵 Im Buch liegt der Met hinter dem Guardian of Gaia II (Blood of Kvasir). Im Pack kommt Alfheim vor Gaia; wie du den Met bekommst (Quest-Belohnung oder gesperrtes Rezept), ist noch nicht entschieden. Text nach der Entscheidung anpassen.
 
 ### BO6-02 Alfheim · Hauptweg
 **Aufgabe:** Dimension `mythicbotany:alfheim` betreten
@@ -274,7 +270,6 @@ Buch: Alfheim → Alfheim Landscape, Resources of Alfheim.
 Neun neue Runen am Runic Altar.
 Buch: MythicBotany → Runes of the Nine Worlds.
 Hinweis: Die Rune of Asgard braucht einen Netherite-Barren.
-⚙️ Netherite lässt sich im Pack über die Alchemical Reaction Chamber (ARC) von Blood Magic vervielfachen.
 
 ### BO6-04 Mana Infuser · Hauptweg
 **Aufgabe:** `mythicbotany:mana_infuser`
@@ -292,7 +287,6 @@ Buch: MythicBotany → The Mana Infuser.
 **Aufgabe:** `mythicbotany:alfsteel_pylon`
 
 Buch: MythicBotany → Alfsteel Pylons.
-⚙️ Im Pack braucht der Gaia Pylon den Alfsteel Pylon (BO7-01).
 
 ### BO6-07 Alfsteel-Werkzeuge · Nebenquest
 **Aufgabe:** `mythicbotany:alfsteel_pick` oder `mythicbotany:alfsteel_sword` oder `mythicbotany:alfsteel_axe`
@@ -321,7 +315,6 @@ Buch: MythicBotany → Generating Flora, Functional Flora.
 
 Das Ritual braucht einen aktiven Beacon mit Gaia Pylons darum.
 Buch: Alfhomancy → Ritual of Gaia.
-⚙️ Im Pack wird der Gaia Pylon aus dem Alfsteel Pylon gebaut, nicht wie im Buch beschrieben.
 Hinweis: Der Beacon braucht einen Nether Star.
 
 ### BO7-02 Guardian of Gaia · Hauptweg
@@ -384,7 +377,7 @@ Ab dem Runic Altar machbar, ohne feste Stelle im Weg.
 | BOX-06 Tiny Potato | `botania:tiny_potato` | Miscellaneous → Tiny Potato |
 | BOX-07 Mana im ME-Netz | `appbot:mana_cell_housing` oder `appbot:mana_p2p_tunnel` | kein Eintrag (Applied Botanics) |
 
-⚙️ BOX-07: Applied Botanics lagert Mana in AE2. AE2 ist im Pack Endgame, die Quest gehört deshalb hinter den Meilenstein des ME-Systems.
+BOX-07: Applied Botanics lagert Mana in AE2. Die Quest erscheint deshalb erst mit dem ME-System.
 
 ---
 

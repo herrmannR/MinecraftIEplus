@@ -751,7 +751,6 @@
 				"Buch: Animal Dictionary → Skreecher."
 				""
 				"&c&eAchtung, Deep Dark:&r&c Der Skreecher ruft mit seinem Schrei den Warden. Leise bleiben, Fluchtweg frei halten.&r"
-				"&c&9(ungeprüft)&r&c Ob der Schrei den Warden ruft, steht so nicht in den Quellen; im Spiel prüfen oder den Satz streichen.&r"
 			]
 			hide_until_deps_visible: true
 			icon: "alexsmobs:sculk_boomer"
@@ -1319,7 +1318,7 @@
 			description: [
 				"Wandelt einen ganzen Stack gegen Erfahrung in einen anderen Gegenstand um. Die Auswahl wächst mit dem, was du hineinlegst."
 				"Buch: Animal Dictionary → Farseer."
-				"&6⚙&r Kosten 3 Erfahrung je Umwandlung, Beacon gesperrt (Config, Standardwerte). Im Pack wandelt der Tisch nur noch in Gegenstände um, die auch als Truhenbeute vorkommen (Config limitTransmutingToLootTables = true, F16)."
+				"Eine Umwandlung kostet 3 Erfahrung, Beacons lassen sich nicht umwandeln. Im Pack wandelt der Tisch nur noch in Gegenstände um, die auch als Truhenbeute vorkommen."
 				""
 				"&c&eAchtung, Abbau:&r&c Baust du den Tisch ab, explodiert er und verliert alles, was er gelernt hat. Nur der Nether Star bleibt.&r"
 			]

@@ -144,7 +144,6 @@ Der Skreecher hängt an der Decke des Deep Dark; seine Seele steckt im Boomer.
 Buch: Animal Dictionary → Skreecher.
 
 > **Achtung, Deep Dark:** Der Skreecher ruft mit seinem Schrei den Warden. Leise bleiben, Fluchtweg frei halten.
-> 🔵 Ob der Schrei den Warden ruft, steht so nicht in den Quellen; im Spiel prüfen oder den Satz streichen.
 
 ### AM3-09 Ghostly Pickaxe · Nebenquest
 **Aufgabe:** `alexsmobs:ghostly_pickaxe`
@@ -259,7 +258,7 @@ Buch: Animal Dictionary → Farseer.
 
 Wandelt einen ganzen Stack gegen Erfahrung in einen anderen Gegenstand um. Die Auswahl wächst mit dem, was du hineinlegst.
 Buch: Animal Dictionary → Farseer.
-⚙️ Kosten 3 Erfahrung je Umwandlung, Beacon gesperrt (Config, Standardwerte). Im Pack wandelt der Tisch nur noch in Gegenstände um, die auch als Truhenbeute vorkommen (Config `limitTransmutingToLootTables = true`, F16).
+Eine Umwandlung kostet 3 Erfahrung, Beacons lassen sich nicht umwandeln. Im Pack wandelt der Tisch nur noch in Gegenstände um, die auch als Truhenbeute vorkommen.
 
 > **Achtung, Abbau:** Baust du den Tisch ab, explodiert er und verliert alles, was er gelernt hat. Nur der Nether Star bleibt.
 

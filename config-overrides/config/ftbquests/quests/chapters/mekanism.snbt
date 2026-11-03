@@ -29,7 +29,7 @@
 		{
 			dependencies: ["12617912326846AC"]
 			description: [
-				"Osmium ist das Metall, um das sich in Mekanism alles dreht: Maschinen, Schaltkreise, Tanks und Upgrades brauchen es. In der Overworld ist es selten, ungefähr so häufig wie Diamant, und liegt in allen Höhen. Für den Anfang reichen ein paar Barren. &6⚙&r Später gibt es Osmium reichlich in Everdawn und auf dem Mond."
+				"Osmium ist das Metall, um das sich in Mekanism alles dreht: Maschinen, Schaltkreise, Tanks und Upgrades brauchen es. In der Overworld ist es selten, ungefähr so häufig wie Diamant, und liegt in allen Höhen. Für den Anfang reichen ein paar Barren. Später gibt es Osmium reichlich in Everdawn und auf dem Mond."
 			]
 			hide_until_deps_visible: true
 			icon: "mekanism:raw_osmium"
@@ -64,7 +64,6 @@
 			dependencies: ["75C91E77E306DEEC"]
 			description: [
 				"Die erste Maschine von Mekanism. Sie lädt einen Stoff in ein Item: links das Item, rechts der Stoff, etwa Redstone oder Kohle. Ein Redstone-Staub ergibt 10 Einheiten Redstone, eine Kohle 10 Carbon, eine Holzkohle 20."
-				"Rezept: 4 Eisen, 2 Furnace, 2 Redstone, 1 Osmium Ingot."
 				"Die Maschine braucht Strom. Hast du noch keinen, bau zuerst den Heat Generator (nächste Quest)."
 			]
 			hide_until_deps_visible: true
@@ -133,9 +132,9 @@
 			dependencies: ["4BC3380EC1235A5D", "297CC840928521E9"]
 			description: [
 				"Mit dem Infuser entstehen die Grundstoffe des Mods:"
-				"• &eInfused Alloy:&r Eisenbarren + 10 Redstone."
-				"• &eBasic Control Circuit:&r Osmium Ingot + 20 Redstone. Der Schaltkreis steckt in fast jeder Maschine."
-				"• &eStahl:&r Eisenbarren + 10 Carbon ergibt Enriched Iron, Enriched Iron + 10 Carbon ergibt Steel Dust, im Ofen geschmolzen ein Steel Ingot."
+				"• &eInfused Alloy:&r Eisenbarren mit Redstone."
+				"• &eBasic Control Circuit:&r Osmium Ingot mit Redstone. Der Schaltkreis steckt in fast jeder Maschine."
+				"• &eStahl:&r Eisenbarren mit Carbon ergibt Enriched Iron, noch einmal mit Carbon Steel Dust, im Ofen geschmolzen ein Steel Ingot."
 				"Stahl aus Immersive Engineering passt in jedes Mekanism-Rezept und umgekehrt."
 			]
 			hide_until_deps_visible: true
@@ -180,7 +179,7 @@
 		{
 			dependencies: ["67B226B1E72E2FD3"]
 			description: [
-				"Das Gehäuse sitzt in der Mitte fast jedes Maschinenrezepts. Rezept: 4 Stahl, 4 Glass, 1 Osmium Ingot. Bau dir gleich ein paar auf Vorrat."
+				"Das Gehäuse sitzt in der Mitte fast jedes Maschinenrezepts. Bau dir gleich ein paar auf Vorrat."
 			]
 			hide_until_deps_visible: true
 			icon: "mekanism:steel_casing"
@@ -214,7 +213,7 @@
 			dependencies: ["01BEF4545E477DFA"]
 			description: [
 				"Der Separator spaltet Wasser mit Strom in zwei Gase: aus 2 mB Wasser werden 2 mB Hydrogen und 1 mB Oxygen. Er ist die Quelle fast aller Gase in Mekanism."
-				"Zuerst brauchst du einen &eElectrolytic Core&r (5 Infused Alloy, 2 Osmium Dust, 1 Iron Dust, 1 Gold Dust). Die Stäube macht der Crusher. &6⚙&r&9(ungeprüft)&r Im Pack übernimmt der Crusher von Immersive Engineering diese Arbeit; ob der Mekanism-Crusher bleibt, ist noch offen."
+				"Zuerst brauchst du einen &eElectrolytic Core&r. Die Stäube dafür macht der Crusher."
 				"Wasser kommt über ein Rohr oder per Eimer hinein. Die beiden Gase verlassen die Maschine an zwei verschiedenen Seiten; links im Fenster stellst du ein, was mit einem Gas geschieht, das du nicht brauchst (behalten oder ablassen)."
 			]
 			hide_until_deps_visible: true
@@ -250,8 +249,8 @@
 			description: [
 				"Gase lassen sich nicht in Eimer füllen. Der &eRotary Condensentrator&r macht aus Gas eine Flüssigkeit und umgekehrt; der Hebel im Fenster bestimmt die Richtung."
 				"Der Weg: Wasser → Electrolytic Separator → Oxygen (Gas) → Pressurized Tube oder Chemical Tank → Rotary Condensentrator → Liquid Oxygen."
-				"&6⚙&r Raumanzüge und Raumstationen von Ad Astra laufen in diesem Pack nur mit diesem Sauerstoff. Der Oxygen Loader nimmt kein Wasser mehr an."
-				"Tipp: Leitungen für Gase sind die &ePressurized Tubes&r (2 Stahl + 1 Glass ergeben 8), für Flüssigkeiten die &eMechanical Pipes&r (2 Stahl + 1 Bucket)."
+				"Raumanzüge und Raumstationen von Ad Astra laufen in diesem Pack nur mit diesem Sauerstoff. Der Oxygen Loader nimmt kein Wasser mehr an."
+				"Tipp: Leitungen für Gase sind die &ePressurized Tubes&r, für Flüssigkeiten die &eMechanical Pipes&r."
 			]
 			hide_until_deps_visible: true
 			icon: "mekanism:rotary_condensentrator"
@@ -341,7 +340,7 @@
 		{
 			dependencies: ["1594BB213B1B4F4A"]
 			description: [
-				"Der Energy Cube speichert Strom, der Basic Cube 4 Millionen Joule. Universal Cables leiten ihn (2 Stahl + 1 Redstone ergeben 8)."
+				"Der Energy Cube speichert Strom, der Basic Cube 4 Millionen Joule. Universal Cables leiten ihn."
 				"Jede Seite eines Mekanism-Blocks lässt sich einzeln einstellen: im Fenster des Blocks am Rand („Side Config“) oder mit dem &eConfigurator&r. So legst du fest, wo Strom hineingeht und wo er herauskommt."
 			]
 			hide_until_deps_visible: true
@@ -375,7 +374,7 @@
 		{
 			dependencies: ["1594BB213B1B4F4A"]
 			description: [
-				"Upgrades steckst du in den Upgrade-Slot rechts im Maschinenfenster. &eSpeed&r macht schneller, braucht aber mehr Strom; &eEnergy&r gleicht das aus. Beide aus 2 Glass, 2 Infused Alloy und einem Staub (Osmium bzw. Gold). Weitere: Muffling (leiser), Gas (spart Gas), Filter (Heavy Water aus der Pumpe), Anchor (hält den Chunk geladen)."
+				"Upgrades steckst du in den Upgrade-Slot rechts im Maschinenfenster. &eSpeed&r macht schneller, braucht aber mehr Strom; &eEnergy&r gleicht das aus. Weitere: Muffling (leiser), Gas (spart Gas), Filter (Heavy Water aus der Pumpe), Anchor (hält den Chunk geladen)."
 			]
 			hide_until_deps_visible: true
 			icon: "mekanism:upgrade_speed"
@@ -404,7 +403,7 @@
 		{
 			dependencies: ["1594BB213B1B4F4A"]
 			description: [
-				"Der früheste Autocrafter im Pack. Lege das Rezept ins Raster, schreibe es auf eine &eCrafting Formula&r (Paper + Basic Control Circuit) und lass die Maschine laufen. Sie craftet, solange Zutaten im Inventar liegen. Mit einer Kiste davor und einem Transporter dahinter ist das eine kleine Fabrik."
+				"Der früheste Autocrafter im Pack. Lege das Rezept ins Raster, schreibe es auf eine &eCrafting Formula&r und lass die Maschine laufen. Sie craftet, solange Zutaten im Inventar liegen. Mit einer Kiste davor und einem Transporter dahinter ist das eine kleine Fabrik."
 			]
 			hide_until_deps_visible: true
 			icon: "mekanism:formulaic_assemblicator"
@@ -558,7 +557,7 @@
 		{
 			dependencies: ["1594BB213B1B4F4A", "43567C1272BD2765"]
 			description: [
-				"&6⚙&r Zinn gibt es in diesem Pack nur in Everbright. Du brauchst es für Bronze (3 Kupfer + 10 Tin im Infuser ergeben 4 Bronze) und für die Pumpen, Jetpacks und Fluidic Plenisher von Mekanism. Everbright liefert auch Blei."
+				"Zinn gibt es in diesem Pack nur in Everbright. Du brauchst es für Bronze (Kupfer mit Tin im Infuser) und für die Pumpen, Jetpacks und Fluidic Plenisher von Mekanism. Everbright liefert auch Blei."
 			]
 			hide_until_deps_visible: true
 			icon: "mekanism:raw_tin"
@@ -597,9 +596,9 @@
 				""
 				"• &eStufe&r: Legierung · Schaltkreis"
 				"• &eBasic&r: Redstone · Basic Control Circuit"
-				"• &eAdvanced&r: Infused Alloy · Basic Circuit + 2 Infused Alloy"
-				"• &eElite&r: Reinforced Alloy (Infused Alloy + 20 Diamond) · Advanced Circuit + 2 Reinforced Alloy"
-				"• &eUltimate&r: Atomic Alloy (Reinforced Alloy + 40 Refined Obsidian) · Elite Circuit + 2 Atomic Alloy"
+				"• &eAdvanced&r: Infused Alloy · Advanced Control Circuit"
+				"• &eElite&r: Reinforced Alloy (Infused Alloy mit Diamond) · Elite Control Circuit"
+				"• &eUltimate&r: Atomic Alloy (Reinforced Alloy mit Refined Obsidian) · Ultimate Control Circuit"
 				""
 				"Energy Cubes, Tanks, Bins und Leitungen der nächsten Stufe craftest du aus der darunter mit Legierung und Schaltkreis. Leitungen kannst du auch an Ort und Stelle aufwerten: Rechtsklick mit der Legierung."
 			]
@@ -710,7 +709,7 @@
 			dependencies: ["481E87F8A3248F3D"]
 			description: [
 				"Der Compressor presst Stäube mit Osmium zu Barren; ein Osmium Ingot ergibt 200 Einheiten."
-				"• &eRefined Obsidian:&r Obsidian zu Staub mahlen, im Infuser mit 10 Diamond zu Refined Obsidian Dust, im Compressor zum Barren. Er wird für die Ultimate-Stufe gebraucht. &6⚙&r Die Smeltery von Tinkers stellt ihn in diesem Pack nicht her."
+				"• &eRefined Obsidian:&r Obsidian zu Staub mahlen, im Infuser mit Diamond zu Refined Obsidian Dust, im Compressor zum Barren. Er wird für die Ultimate-Stufe gebraucht. Die Smeltery von Tinkers stellt ihn in diesem Pack nicht her."
 				"• &eRefined Glowstone:&r Glowstone Dust im Compressor."
 			]
 			hide_until_deps_visible: true
@@ -752,7 +751,7 @@
 		{
 			dependencies: ["7EAB9F168BFEB124"]
 			description: [
-				"Ein frei groß baubarer Tank für Flüssigkeiten oder Gase. &9(ungeprüft)&r Bauregeln (nicht aus den JAR-Daten, im Spiel prüfen): ein hohler Quader von 3 × 3 × 3 bis 18 × 18 × 18. Kanten aus Dynamic Tank, die Flächen aus Dynamic Tank, Structural Glass oder Dynamic Valve. Innen nur Luft. Ein Valve ist der Anschluss für Rohre. Steht er richtig, zeigt Rechtsklick ein Fenster."
+				"Ein frei groß baubarer Tank für Flüssigkeiten oder Gase. Bauregeln: ein hohler Quader von 3 × 3 × 3 bis 18 × 18 × 18. Kanten aus Dynamic Tank, die Flächen aus Dynamic Tank, Structural Glass oder Dynamic Valve. Innen nur Luft. Ein Valve ist der Anschluss für Rohre. Steht er richtig, zeigt Rechtsklick ein Fenster."
 			]
 			hide_until_deps_visible: true
 			icon: "mekanism:dynamic_valve"
@@ -798,7 +797,7 @@
 		{
 			dependencies: ["7EAB9F168BFEB124", "3FA0B9BE762AE467"]
 			description: [
-				"Im Infuser: Infused Alloy + 20 Diamond. Ein Diamant ergibt 10 Einheiten; in der Enrichment Chamber angereichert (Enriched Diamond) sind es 80. Reichere die Diamanten deshalb immer erst an."
+				"Im Infuser aus Infused Alloy und Diamond. Angereicherte Diamanten aus der Enrichment Chamber (Enriched Diamond) zählen achtmal so viel; reichere sie deshalb immer erst an."
 			]
 			hide_until_deps_visible: true
 			icon: "mekanism:alloy_reinforced"
@@ -880,7 +879,7 @@
 			dependencies: ["0878C3A5623B60B2"]
 			description: [
 				"Ein Verdunstungsturm aus Kupfer und Stahl. Er dampft Wasser zu &eBrine&r ein (10 mB Wasser ergeben 1 mB) und Brine zu &eLiquid Lithium&r (wieder 10 zu 1). Wärme beschleunigt ihn."
-				"&9(ungeprüft)&r Bauregeln (im Spiel prüfen): Grundfläche 4 × 4, Höhe 3 bis 18 Blöcke, Wände aus Thermal Evaporation Blocks mit einem hohlen Inneren von 2 × 2. Genau ein Controller in einer Wand, dazu Valves für Ein- und Ausgang. Je höher der Turm, desto schneller. Heizen lässt er sich mit Sonne, Fuelwood Heater oder Resistive Heater."
+				"Bauregeln: Grundfläche 4 × 4, Höhe 3 bis 18 Blöcke, Wände aus Thermal Evaporation Blocks mit einem hohlen Inneren von 2 × 2. Genau ein Controller in einer Wand, dazu Valves für Ein- und Ausgang. Je höher der Turm, desto schneller. Heizen lässt er sich mit Sonne, Fuelwood Heater oder Resistive Heater."
 			]
 			hide_until_deps_visible: true
 			icon: "mekanism:thermal_evaporation_controller"
@@ -1032,8 +1031,8 @@
 			dependencies: ["154589E32601A4F1"]
 			description: [
 				"Die Reaktionskammer verarbeitet einen Feststoff, eine Flüssigkeit und ein Gas zugleich."
-				"1. 2 Bio Fuel + 10 mB Wasser + 100 Hydrogen ergeben &eSubstrate&r; dabei entstehen 100 &eEthylene&r."
-				"2. Substrate + 50 mB Ethylene + 10 Oxygen ergeben ein &eHDPE Pellet&r."
+				"1. Bio Fuel, Wasser und Hydrogen ergeben &eSubstrate&r; dabei entsteht &eEthylene&r."
+				"2. Substrate, Ethylene und Oxygen ergeben ein &eHDPE Pellet&r."
 				"3. Pellets in der Enrichment Chamber ergeben &eHDPE Sheets&r, den Kunststoff des Endgames."
 				"Ethylene ist nebenbei der beste Brennstoff des Gas-Burning Generators."
 			]
@@ -1112,7 +1111,7 @@
 		{
 			dependencies: ["3CFF6061F5E536DA"]
 			description: [
-				"Kurze Anleitungen, die mit der passenden Maschine erscheinen. Quelle der Zahlen: Rezeptdaten. Aus einem &eErzblock&r (in Klammern aus drei Raw-Stücken):"
+				"Kurze Anleitungen, die mit der passenden Maschine erscheinen. Aus einem &eErzblock&r (in Klammern aus drei Raw-Stücken):"
 				""
 				"• &eQuest&r: Stufe · Neue Maschine · Neue Chemikalie · Ergebnis"
 				"• &eEV-2&r: ×2 · Enrichment Chamber · keine · 2 Dust (4)"
@@ -1218,7 +1217,7 @@
 			description: [
 				"&c&lWarnung:&r&c Radioaktive Stoffe sind gefährlich. Tritt Gas aus einer Leitung, einer zerstörten Maschine oder einem abgebauten Tank aus, verstrahlt es die Umgebung. Strahlenvergiftung macht Schaden und kann töten.&r"
 				""
-				"&6⚙&r Uran ist in der Overworld knapp; reichlich gibt es es auf Merkur und Venus. Aus einem Uranbarren macht die Enrichment Chamber 2 &eYellow Cake Uranium&r. Rohes Uran ist ungefährlich, Gefahr droht erst bei den Gasen."
+				"Uran ist in der Overworld knapp; reichlich gibt es es auf Merkur und Venus. Aus einem Uranbarren macht die Enrichment Chamber 2 &eYellow Cake Uranium&r. Rohes Uran ist ungefährlich, Gefahr droht erst bei den Gasen."
 			]
 			hide_until_deps_visible: true
 			icon: "mekanism:yellow_cake_uranium"
@@ -1311,7 +1310,7 @@
 				"2. Fluorit in der Dissolution Chamber mit Sulfuric Acid: &eHydrofluoric Acid&r."
 				"3. Uranium Oxide + Hydrofluoric Acid im Chemical Infuser: &eUranium Hexafluoride&r."
 				"4. In der &eIsotopic Centrifuge&r: &eFissile Fuel&r."
-				"&6⚙&r Fluorit liegt in der Overworld und reichlich auf dem Mars. Blei für die Zentrifuge kommt aus Everbright, vom Merkur oder von der Venus."
+				"Fluorit liegt in der Overworld und reichlich auf dem Mars. Blei für die Zentrifuge kommt aus Everbright, vom Merkur oder von der Venus."
 			]
 			hide_until_deps_visible: true
 			icon: "mekanism:isotopic_centrifuge"
@@ -1351,7 +1350,7 @@
 			dependencies: ["01C4EF0099DADAA6"]
 			description: [
 				"Der Spaltreaktor verbrennt Fissile Fuel und erhitzt ein Kühlmittel, Wasser oder Sodium. Er erzeugt keinen Strom, sondern Wärme und heißen Dampf; Strom macht erst die Turbine (Quest „Boiler und Turbine“). 1 mB Brennstoff setzt 1 000 000 Joule Wärme frei. Als Abfall entsteht &eNuclear Waste&r."
-				"&9(ungeprüft)&r Bauregeln (im Spiel prüfen): Quader aus Fission Reactor Casing oder Reactor Glass, mindestens 3 × 3 × 4, höchstens 18 × 18 × 18. Innen stehen Säulen aus Fuel Assemblies, jede mit einer Control Rod Assembly obenauf. Ports in der Hülle stellst du mit dem Configurator auf Kühlmittel, Brennstoff oder Abfall um."
+				"Bauregeln: Quader aus Fission Reactor Casing oder Reactor Glass, mindestens 3 × 3 × 4, höchstens 18 × 18 × 18. Innen stehen Säulen aus Fuel Assemblies, jede mit einer Control Rod Assembly obenauf. Ports in der Hülle stellst du mit dem Configurator auf Kühlmittel, Brennstoff oder Abfall um."
 				"&eWichtig:&r Fang mit einer niedrigen Brennrate an (Feld „Rate“ im Fenster) und halte die Kühlung immer voll. Läuft ein Tank voll oder fehlt Kühlmittel, steigen Temperatur und Schaden. Mit dem Knopf &eSCRAM&r schaltest du sofort ab. Mit einem &eLogic Adapter&r schaltet der Reaktor sich bei Gefahr selbst per Redstone ab. Bei 100 % Schaden explodiert er und verstrahlt die Gegend."
 			]
 			hide_until_deps_visible: true
@@ -1402,8 +1401,8 @@
 			dependencies: ["20336D7F206AFA68"]
 			description: [
 				"Die &eIndustrial Turbine&r macht aus Dampf Strom. Den Dampf liefert der Reaktor direkt, wenn er mit Wasser gekühlt wird, oder ein &eThermoelectric Boiler&r, der Wärme (etwa von Sodium aus dem Reaktor) in Dampf umwandelt."
-				"&9(ungeprüft)&r Turbine (im Spiel prüfen): quadratische Grundfläche mit ungerader Kantenlänge, 5 × 5 bis 17 × 17, Höhe bis 18. In der Mitte eine Säule aus Turbine Rotors mit je zwei Blades. Auf dem obersten Rotor der Rotational Complex, um ihn herum eine Ebene aus Pressure Dispersers, die bis an die Wände reicht. Darüber die Electromagnetic Coils, die den Complex berühren; eine Coil versorgt vier Blades. Turbine Vents darüber in Wand oder Dach lassen den Dampf ab. Turbine Valves unterhalb der Disperser-Ebene nehmen Dampf an und geben Strom ab."
-				"&9(ungeprüft)&r Boiler (im Spiel prüfen): hohler Quader aus Boiler Casing, unten Superheating Elements, darüber eine Ebene aus Pressure Dispersers über die volle Fläche, darüber Platz für den Dampf."
+				"Turbine: quadratische Grundfläche mit ungerader Kantenlänge, 5 × 5 bis 17 × 17, Höhe bis 18. In der Mitte eine Säule aus Turbine Rotors mit je zwei Blades. Auf dem obersten Rotor der Rotational Complex, um ihn herum eine Ebene aus Pressure Dispersers, die bis an die Wände reicht. Darüber die Electromagnetic Coils, die den Complex berühren; eine Coil versorgt vier Blades. Turbine Vents darüber in Wand oder Dach lassen den Dampf ab. Turbine Valves unterhalb der Disperser-Ebene nehmen Dampf an und geben Strom ab."
+				"Boiler: hohler Quader aus Boiler Casing, unten Superheating Elements, darüber eine Ebene aus Pressure Dispersers über die volle Fläche, darüber Platz für den Dampf."
 			]
 			hide_until_deps_visible: true
 			icon: "mekanismgenerators:turbine_valve"
@@ -1445,7 +1444,7 @@
 				"Aus dem Abfall wird der Rohstoff des Endgames."
 				"• &ePolonium:&r Nuclear Waste im &eSolar Neutron Activator&r (arbeitet nur bei Sonnenlicht). 10 Waste ergeben 1 Polonium."
 				"• &ePlutonium:&r Nuclear Waste in der Isotopic Centrifuge, ebenfalls 10 zu 1."
-				"Ein Pellet presst die Pressurized Reaction Chamber aus 1000 Einheiten Gas, 1000 mB Wasser und einem Fluorite Dust. Übrig bleibt Spent Nuclear Waste; lagere ihn im Waste Barrel."
+				"Ein Pellet presst die Pressurized Reaction Chamber aus dem Gas, Wasser und Fluorite Dust. Übrig bleibt Spent Nuclear Waste; lagere ihn im Waste Barrel."
 				"Polonium brauchst du für das QIO-Lager, die MekaSuit, den Fusionsreaktor und das SPS."
 			]
 			hide_until_deps_visible: true
@@ -1483,7 +1482,7 @@
 			dependencies: ["5727C86B5DB4F060"]
 			description: [
 				"Der große Stromspeicher. Die &eCells&r innen bestimmen die Kapazität (die Basic Cell 8 Milliarden Joule), die &eProviders&r wie viel Strom je Tick fließt. Die Cells brauchen &eLithium&r aus dem Verdunstungsturm (Quest „Thermal Evaporation Plant: Brine“) und dem Chemical Crystallizer."
-				"&9(ungeprüft)&r Bauregeln (im Spiel prüfen): hohler Quader aus Induction Casing, mindestens 3 × 3 × 3, höchstens 18 × 18 × 18. Flächen auch aus Structural Glass. Innen Cells und Providers in beliebiger Mischung. Ein Induction Port wird mit dem Configurator zwischen Ein- und Ausgang umgeschaltet."
+				"Bauregeln: hohler Quader aus Induction Casing, mindestens 3 × 3 × 3, höchstens 18 × 18 × 18. Flächen auch aus Structural Glass. Innen Cells und Providers in beliebiger Mischung. Ein Induction Port wird mit dem Configurator zwischen Ein- und Ausgang umgeschaltet."
 			]
 			hide_until_deps_visible: true
 			icon: "mekanism:induction_port"
@@ -1542,7 +1541,7 @@
 		{
 			dependencies: ["5727C86B5DB4F060", "4E6259B8C3E06E09"]
 			description: [
-				"Im Infuser: Reinforced Alloy + 40 Refined Obsidian. Enriched Refined Obsidian aus der Enrichment Chamber liefert 80 Einheiten statt 10. Die höchste Stufe von Mekanism."
+				"Im Infuser aus Reinforced Alloy und Refined Obsidian. Enriched Refined Obsidian aus der Enrichment Chamber zählt achtmal so viel. Die höchste Stufe von Mekanism."
 			]
 			hide_until_deps_visible: true
 			icon: "mekanism:alloy_atomic"
@@ -1589,7 +1588,7 @@
 		{
 			dependencies: ["39B05FAB9BD91D07"]
 			description: [
-				"4 Lapis, 2 Atomic Alloy, 2 Gold, 1 Diamant. Der Kern steckt in allem, was Dinge über weite Strecken bewegt."
+				"Der Kern steckt in allem, was Dinge über weite Strecken bewegt."
 			]
 			hide_until_deps_visible: true
 			icon: "mekanism:teleportation_core"
@@ -1632,7 +1631,7 @@
 			dependencies: ["311387E5E5173165"]
 			description: [
 				"Der Teleporter bringt Spieler zu einem anderen Teleporter, auch in andere Dimensionen. Im Fenster gibst du ihm eine Frequenz; Teleporter mit derselben Frequenz sind verbunden."
-				"&9(ungeprüft)&r Bauregeln (im Spiel prüfen): ein Rahmen aus Teleporter Frames, 3 Blöcke breit und 4 hoch, mit einer Öffnung von 1 × 2 in der Mitte. Der Teleporter-Block ist Teil des Rahmens. Er braucht Strom, auf weite Strecken und zwischen Dimensionen mehr."
+				"Bauregeln: ein Rahmen aus Teleporter Frames, 3 Blöcke breit und 4 hoch, mit einer Öffnung von 1 × 2 in der Mitte. Der Teleporter-Block ist Teil des Rahmens. Er braucht Strom, auf weite Strecken und zwischen Dimensionen mehr."
 				"Für unterwegs gibt es den &ePortable Teleporter&r."
 			]
 			hide_until_deps_visible: true

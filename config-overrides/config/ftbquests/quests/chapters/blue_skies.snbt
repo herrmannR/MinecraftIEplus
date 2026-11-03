@@ -30,7 +30,7 @@
 			dependencies: ["1ECA8C4658E46B1F"]
 			description: [
 				"In der Oberwelt stehen Häuser mit zwei Portalen, eines aus Turquoise Stone Bricks, eines aus Lunar Stone Bricks. Du findest sie in Ebenen, Savannen, Bergen und Schnee, nie nahe beim Spawn; im Raster liegt etwa alle 33 Chunks eines. Im Haus bekommst du das Blue Journal. Es ist das Buch des Mods: Seine Einträge kommen dazu, sobald du die Welten betrittst und die Bosse besiegst. Nimm es mit, es erklärt Tiere, Pflanzen und Rohstoffe der Welten."
-				"&6⚙&r Im Pack steht im Haus eine eigene Figur statt des Händlers aus dem Mod. Von ihr bekommst du Journal und Zeal Lighter. &9(ungeprüft)&r Handel der Figur noch nicht gebaut."
+				"Im Pack steht im Haus eine eigene Figur statt des Händlers aus dem Mod. Bei ihr kaufst du Journal und Zeal Lighter."
 			]
 			hide_until_deps_visible: true
 			icon: "blue_skies:blue_journal"
@@ -63,7 +63,7 @@
 		{
 			dependencies: ["388814E694813951"]
 			description: [
-				"Der Zeal Lighter entzündet die Portale nach Everbright und Everdawn, so wie Feuerzeug und Feuerstein das Netherportal. Er kostet 8 &9(ungeprüft)&r (Währung im Spiel prüfen, laut Meilensteinkarte Smaragde). Später kannst du ihn selbst bauen: 1 Charoite + 1 Moonstone Shard, formlos."
+				"Der Zeal Lighter entzündet die Portale nach Everbright und Everdawn, so wie Feuerzeug und Feuerstein das Netherportal. Er kostet 8 Emeralds. Später kannst du ihn auch selbst bauen."
 			]
 			hide_until_deps_visible: true
 			icon: "blue_skies:zeal_lighter"
@@ -98,7 +98,7 @@
 			description: [
 				"Das Portal mit dem Rahmen aus Turquoise Stone Bricks führt nach Everbright: immer Tag, kalt, viel Schnee. Entzünde es mit dem Zeal Lighter. Weitere Portale baust du aus Turquoise Stone Bricks, die du in Everbright aus Turquoise Stone herstellst (4 Stein ergeben 4 Ziegel)."
 				"Everbright ist die leichtere Welt; hier fängst du an."
-				"&6⚙&r Everdawn ist im Pack anfangs gesperrt: Das Portal dorthin lässt dich erst durch, wenn der Wegzoll von 32 Raw Tin aus Everbright bezahlt ist (Buch 1)."
+				"Everdawn ist im Pack anfangs gesperrt: Das Portal dorthin lässt dich erst durch, wenn der Wegzoll von 32 Raw Tin aus Everbright bezahlt ist (Buch 1)."
 				"Buch: Blue Journal → Everbright → Everbright Portal."
 				""
 				"&c⚠ &eDeine Werkzeuge taugen hier nicht.&r&c Werkzeuge und Waffen von außerhalb, auch die aus Tinkers' Construct, arbeiten in Everbright und Everdawn deutlich schlechter (Tooltip: „It seems this tool doesn't work as well here.“). Ein Erz mit einer Tinkers-Spitzhacke abzubauen dauert ewig. Rechne damit, dass du in den Welten neu anfängst.&r"
@@ -133,8 +133,8 @@
 		{
 			dependencies: ["3EAE987B6BD74C1B"]
 			description: [
-				"Bau dir Werkzeuge aus dem Material der Welt: erst aus Bluebright-Holz, dann aus Turquoise Cobblestone. Die Sticks der Welten haben eigene Werte; welcher Stick im Werkzeug steckt, ändert Tempo, Haltbarkeit und Wurfschaden ein wenig. &9(ungeprüft)&r Die Werkzeugrezepte stehen nur im Code; in JEI nachsehen, welche Sticks sie annehmen."
-				"Ein Speer (1 Moonstone Shard + 2 Sticks) ist billig, fliegt wie ein Dreizack und hilft später gegen die Bosse."
+				"Bau dir Werkzeuge aus dem Material der Welt: erst aus Bluebright-Holz, dann aus Turquoise Cobblestone. Die Sticks der Welten haben eigene Werte; welcher Stick im Werkzeug steckt, ändert Tempo, Haltbarkeit und Wurfschaden ein wenig."
+				"Ein Speer ist billig, fliegt wie ein Dreizack und hilft später gegen die Bosse."
 				"Buch: Blue Journal → General → Stick Variations, Spears."
 			]
 			hide_until_deps_visible: true
@@ -169,7 +169,7 @@
 			dependencies: ["5C718D62FB8B816A"]
 			description: [
 				"Ventium ist das Eisen von Everbright. Das Erz liegt bis Y 63, Raw Ventium schmilzt im Ofen. Daraus entstehen Ventium Bucket, Ventium Shears, Anvil und Stonecutter."
-				"Die Tool Box (2 Ventium Ingot + 4 Planks) verbessert Werkzeuge der Welten: Falsite erhöht ihre Haltbarkeit, und ein anderer Stick lässt sich in ein fertiges Werkzeug einsetzen."
+				"Die Tool Box verbessert Werkzeuge der Welten: Falsite erhöht ihre Haltbarkeit, und ein anderer Stick lässt sich in ein fertiges Werkzeug einsetzen."
 				"Buch: Blue Journal → Everbright → Ventium; General → Tool Box."
 			]
 			hide_until_deps_visible: true
@@ -208,7 +208,7 @@
 		{
 			dependencies: ["5C71431D3D22E211"]
 			description: [
-				"&6⚙&r Im Pack liegen in Everbright drei Industriemetalle, die anderswo fehlen oder selten sind: &eZinn&r gibt es nur hier, &eBlei&r und &eBauxit&r reichlich, in der Overworld nur sehr selten. Alle drei stecken im Turquoise Stone. Zinn brauchst du für Bronze und den Ausbau von Mekanism, Blei und Aluminium für Immersive Engineering. Leg außerdem 32 Raw Tin für den Wegzoll nach Everdawn beiseite (Buch 1)."
+				"Im Pack liegen in Everbright drei Industriemetalle, die anderswo fehlen oder selten sind: &eZinn&r gibt es nur hier, &eBlei&r und &eBauxit&r reichlich, in der Overworld nur sehr selten. Alle drei stecken im Turquoise Stone. Zinn brauchst du für Bronze und den Ausbau von Mekanism, Blei und Aluminium für Immersive Engineering. Leg außerdem 32 Raw Tin für den Wegzoll nach Everdawn beiseite (Buch 1)."
 				"Abbauen kannst du sie mit den Werkzeugen der Welt, am besten ab Pyrope oder Aquite (Quest „Pyrope, Aquite und Moonstone“)."
 			]
 			hide_until_deps_visible: true
@@ -324,7 +324,7 @@
 		{
 			dependencies: ["534472CA68E78922"]
 			description: [
-				"In den Welten hält Licht keine Monster ab. Die Warding Pearl verhindert das Spawnen in großem Umkreis, etwa um deinen Stützpunkt. Rezept: 6 Falsite Nugget + 2 Soul Fragment + 1 Pearl. Die Pearl steckt in einem Seclam in der Tiefsee, die Soul Fragments lassen vor allem die Frost Spirits fallen."
+				"In den Welten hält Licht keine Monster ab. Die Warding Pearl verhindert das Spawnen in großem Umkreis, etwa um deinen Stützpunkt. Die Pearl dafür steckt in einem Seclam in der Tiefsee, die Soul Fragments lassen vor allem die Frost Spirits fallen."
 				"Buch: Blue Journal → Everbright → Warding Pearl, Seclam, Soul Fragment."
 			]
 			hide_until_deps_visible: true
@@ -415,7 +415,7 @@
 			dependencies: ["0F0A9BCA8E40F502", "0EE6CBCC4BF5AA64"]
 			description: [
 				"Das zweite Portal mit dem Rahmen aus Lunar Stone Bricks führt nach Everdawn: ewiger Sonnenaufgang, heiß und feucht, mit Spinnen, Käfern und Echsen. Die Gegner sind härter als in Everbright. Nimm Werkzeuge aus Everbright mit; deine Oberwelt-Werkzeuge sind hier ebenso abgeschwächt."
-				"&6⚙&r Durch das Portal kommst du erst, wenn der Wegzoll von 32 Raw Tin bezahlt ist; vorher schickt es dich zurück (Buch 1)."
+				"Durch das Portal kommst du erst, wenn der Wegzoll von 32 Raw Tin bezahlt ist; vorher schickt es dich zurück (Buch 1)."
 				"Buch: Blue Journal → Everdawn → Everdawn Portal."
 			]
 			hide_until_deps_visible: true
@@ -441,7 +441,7 @@
 		{
 			dependencies: ["54B24C3F06316816"]
 			description: [
-				"&6⚙&r Im Pack liegt Osmium in Everdawn reichlich, im Lunar Stone in allen Höhen. In der Overworld ist es selten. Mit diesem Vorrat lohnt sich der Ausbau von Mekanism, schon bevor der Mond erreichbar ist. 32 Raw Osmium sind die zweite Abgabe in Buch 1."
+				"Im Pack liegt Osmium in Everdawn reichlich, im Lunar Stone in allen Höhen. In der Overworld ist es selten. Mit diesem Vorrat lohnt sich der Ausbau von Mekanism, schon bevor der Mond erreichbar ist. 32 Raw Osmium sind die zweite Abgabe in Buch 1."
 			]
 			hide_until_deps_visible: true
 			icon: "mekanism:raw_osmium"
@@ -494,7 +494,7 @@
 		{
 			dependencies: ["130284B9336D0DE5"]
 			description: [
-				"Ein Ofen ohne Brennstoff: Er lädt sich langsam selbst auf, schneller mit Horizonite oder Sunstone Crystals. Rezept: 5 Horizonite Ingot + 1 Furnace + 3 Lunar Cobblestone. Mehrere Forges nebeneinander sind praktisch."
+				"Ein Ofen ohne Brennstoff: Er lädt sich langsam selbst auf, schneller mit Horizonite oder Sunstone Crystals. Mehrere Forges nebeneinander sind praktisch."
 				"Buch: Blue Journal → Everdawn → Horizonite Forge, Sunstone Crystal."
 			]
 			hide_until_deps_visible: true
@@ -523,7 +523,7 @@
 		{
 			dependencies: ["130284B9336D0DE5"]
 			description: [
-				"In Everdawn brauchst du einen Schild: Gift der Venom Spider, Atem der Emberbacks und später die Pfeile des Alchemist und die Sprünge des Arachnarch fängst du damit ab. Der Moonstone Shield hält mehr aus als der Holzschild. Rezept: 6 Vitreous Moonstone + 1 Stick; Vitreous Moonstone lässt das Crystal Camel fallen."
+				"In Everdawn brauchst du einen Schild: Gift der Venom Spider, Atem der Emberbacks und später die Pfeile des Alchemist und die Sprünge des Arachnarch fängst du damit ab. Der Moonstone Shield hält mehr aus als der Holzschild. Vitreous Moonstone dafür lässt das Crystal Camel fallen."
 				"Buch: Blue Journal → Everdawn → Moonstone Shield, Crystal Camel."
 			]
 			hide_until_deps_visible: true
@@ -581,7 +581,7 @@
 		{
 			dependencies: ["646CB6EC8370C3A3"]
 			description: [
-				"Mit Material der Welten kannst du verzaubern: Enchanting Table aus 1 Book + 2 Charoite + 4 Obsidian (Obsidian gibt es in Everdawn), Falsite Nuggets statt Lapis. Aquite lässt sich besonders gut verzaubern."
+				"Mit Material der Welten kannst du verzaubern: ein eigener Enchanting Table (Obsidian gibt es in Everdawn), Falsite Nuggets statt Lapis. Aquite lässt sich besonders gut verzaubern."
 				"Buch: Blue Journal → General → Enchanting."
 			]
 			hide_until_deps_visible: true
@@ -631,9 +631,8 @@
 				"&c⚠ &eBosskämpfe.&r&c Geh nicht ohne Waffe aus Diopside oder Charoite, Rüstung, Schild, Speere und Essen. Beide Bosse teleportieren sich weg, wenn du zu nahe kommst. Wer stirbt, lässt seine Sachen im obersten Stockwerk eines Turms voller Illager liegen.&r"
 				""
 				"In jeder Welt steht ein hoher Turm, bewohnt von Illagern. In Everbright findest du ihn in Calming Skies, Brisk Meadow, Brightlands und Snow Covered Pines. Die Schlüssel liegen in den Kisten der Bibliotheks-, Gefängnis- und Studierzimmer. Mit vier Schlüsseln öffnest du den Keystone im obersten Stockwerk und kommst zum Boss."
-				"Hast du einen Keystone benutzt, kannst du weitere Blinding-Schlüssel kaufen."
 				"Buch: Blue Journal → General → Blinding Dungeon."
-				"&6⚙&r &9(ungeprüft)&r Ob die Figur im Haus die Schlüssel verkauft, wie es der Händler des Mods tut, ist offen."
+				"Die Schlüssel verkauft auch die Figur im Haus."
 			]
 			hide_until_deps_visible: true
 			icon: "blue_skies:blinding_key"
@@ -668,10 +667,10 @@
 		{
 			dependencies: ["555D5A857EF94B29"]
 			description: [
-				"Der Boss des Turms in Everbright (Keystone blue_skies:bright_blinding_keystone). Er kämpft nicht selbst, sondern ruft Golems aus Dungeonstein, erst Fernkämpfer, dann Nahkämpfer. Treffen kannst du ihn nur, während er zaubert."
+				"Der Boss des Turms in Everbright. Er kämpft nicht selbst, sondern ruft Golems aus Dungeonstein, erst Fernkämpfer, dann Nahkämpfer. Treffen kannst du ihn nur, während er zaubert."
 				"Beute ist ein Summoner Loot Bag mit dem Ethereal Arc, dem Soulbound Spear, der Summoning Table und manchmal dem Summoning Tome. Sein Sieg öffnet in Everbright den Weg zum Nature Dungeon."
 				"Buch: Blue Journal → Everbright → Summoner."
-				"&6⚙&r Behalte die Beute; ein Teil davon wird später gebraucht (&9(ungeprüft)&r welche Items, O1)."
+				"Behalte die Beute; ein Teil davon wird später gebraucht."
 			]
 			hide_until_deps_visible: true
 			icon: "blue_skies:bright_blinding_keystone"
@@ -706,10 +705,10 @@
 		{
 			dependencies: ["70D675EC3E41624E"]
 			description: [
-				"Der Boss des Turms in Everdawn (Keystone blue_skies:dawn_blinding_keystone). Er kämpft selbst: Pfeilbündel (mit dem Schild abwehren), Steinstacheln aus dem Boden und Trankwolken in den Ecken des Raums. Auch er teleportiert sich weg, außer beim Zaubern."
+				"Der Boss des Turms in Everdawn. Er kämpft selbst: Pfeilbündel (mit dem Schild abwehren), Steinstacheln aus dem Boden und Trankwolken in den Ecken des Raums. Auch er teleportiert sich weg, außer beim Zaubern."
 				"Beute ist ein Alchemist Loot Bag mit dem Dusk Arc, dem Spike Shield, der Alchemy Table und manchmal der Alchemy Scroll. Sein Sieg öffnet in Everdawn den Weg zum Poison Dungeon."
 				"Buch: Blue Journal → Everdawn → Alchemist."
-				"&6⚙&r Behalte die Beute (&9(ungeprüft)&r welche Items, O1)."
+				"Behalte die Beute."
 			]
 			hide_until_deps_visible: true
 			icon: "blue_skies:dawn_blinding_keystone"
@@ -830,7 +829,7 @@
 				"&c⚠ &eZweite Boss-Stufe.&r&c Beide Dungeons sind lang und voller Gegner, die Bosse brauchen eine bestimmte Taktik. Für den Starlit Crusher brauchst du eine Axt und Speere, für den Arachnarch einen starken Schild.&r"
 				""
 				"Eine grüne Pyramide in den Snow Covered Pines von Everbright. Ihre Wächter, die Stonelets, nehmen wie die Frost Spirits mehr Schaden von Pickaxes; weiter oben spucken Spewters Samenbomben. Die Schlüssel liegen in den Kisten, der Nature Keystone am Ende."
-				"Buch: Blue Journal → Everbright → Nature Dungeon, Stonelet (offen nach dem Summoner)."
+				"Buch: Blue Journal → Everbright → Nature Dungeon, Stonelet (erscheint nach dem Summoner)."
 			]
 			hide_until_deps_visible: true
 			icon: "blue_skies:nature_key"
@@ -867,7 +866,7 @@
 				"Der Starlit Crusher versteckt sich hinter vier Holzwänden und lässt Wurzeln, Spewters und hölzerne Schneeeulen wachsen. Eine Wand fällst du nur mit der Axt (andere Waffen: „maybe an axe would work?“). Danach schlägt er auf den Boden und ist für Speere verwundbar."
 				"Beute: Nature Arc (zusätzliche Herzen), Falsite, Cryo Root, seltener der Crushing Hammer und Diopside."
 				"Buch: Blue Journal → Everbright → Starlit Crusher."
-				"&6⚙&r Behalte die Beute (&9(ungeprüft)&r welche Items, O1)."
+				"Behalte die Beute."
 			]
 			hide_until_deps_visible: true
 			icon: "blue_skies:nature_key"
@@ -903,7 +902,7 @@
 			dependencies: ["468DA32D7DB0FD55"]
 			description: [
 				"Ein mit Netzen überzogener Baum im Sunset Maple Forest von Everdawn, innen ein Spinnennest voller Venom Spiders und Cave Spiders. Jedes Stockwerk hat einen Schlüssel; der Poison Keystone liegt am Ende der Tunnel. Nimm Milch oder Mittel gegen Gift mit (schwarze Brewberries heilen Gift)."
-				"Buch: Blue Journal → Everdawn → Poison Dungeon (offen nach dem Alchemist)."
+				"Buch: Blue Journal → Everdawn → Poison Dungeon (erscheint nach dem Alchemist)."
 			]
 			hide_until_deps_visible: true
 			icon: "blue_skies:poison_key"
@@ -937,10 +936,10 @@
 		{
 			dependencies: ["437B0DB53A740456"]
 			description: [
-				"Der Arachnarch hängt sich an die Decke und ist dort kaum zu verwunden. Halte durch, bis er herunterkommt, und wehre seine Sprünge mit dem Schild ab. Nicht jeder Schild hält ihn aus (Tooltip: „It seems this shield isn't strong enough!“); der Spike Shield des Alchemist ist stärker als der Moonstone Shield. &9(ungeprüft)&r Welcher Schild genügt, steht nur im Code."
+				"Der Arachnarch hängt sich an die Decke und ist dort kaum zu verwunden. Halte durch, bis er herunterkommt, und wehre seine Sprünge mit dem Schild ab. Nicht jeder Schild hält ihn aus (Tooltip: „It seems this shield isn't strong enough!“); der Spike Shield des Alchemist ist stärker als der Moonstone Shield."
 				"Beute: Poisonous Arc (mehr Schaden, wenn du vergiftet bist), Horizonite, seltener Venom Sac, Diopside und das Different Sword."
 				"Buch: Blue Journal → Everdawn → Arachnarch."
-				"&6⚙&r Behalte die Beute (&9(ungeprüft)&r welche Items, O1)."
+				"Behalte die Beute."
 			]
 			hide_until_deps_visible: true
 			icon: "blue_skies:poison_key"
@@ -978,7 +977,6 @@
 			dependencies: ["6ED6E7E09F66A770"]
 			description: [
 				"Jeder Boss trägt einen Arc. Wer alle vier besitzt, kann sie zusammen tragen: schneller, unsichtbar, mehr Herzen, mehr Schaden unter Gift."
-				"&9(ungeprüft)&r Ob man einen Boss erneut bekämpfen kann (für einen besseren Arc) oder einen neuen Dungeon suchen muss, im Spiel prüfen."
 				"Buch: Blue Journal → General → Arcs."
 			]
 			hide_until_deps_visible: true

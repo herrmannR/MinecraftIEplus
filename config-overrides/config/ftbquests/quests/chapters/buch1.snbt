@@ -1395,7 +1395,7 @@
 		{
 			dependencies: ["7BBC3AEA97ABA19B"]
 			description: [
-				"Wirf eine Rune des Frühlings (botania:rune_spring) in das offene Portal to Alfheim. Dann ruft das Portal die Helle Elfe herbei. Sprich mit ihr und gib ihr das Relikt."
+				"Wirf eine Rune des Frühlings (Rune of Spring) in das offene Portal to Alfheim. Dann ruft das Portal die Helle Elfe herbei. Sprich mit ihr und gib ihr das Relikt."
 			]
 			hide_until_deps_visible: true
 			id: "1355F32DAA30D984"

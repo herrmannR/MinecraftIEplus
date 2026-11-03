@@ -30,7 +30,7 @@
 			dependencies: ["156FF25A9C28B0C9"]
 			description: [
 				"Dungeons entstehen in diesem Pack nicht von selbst. Erst die Vessel of Vision erschafft einen."
-				"Rezept: 6 Iron Ingot, 1 Blaze Powder, 1 Ender Pearl, 1 Cauldron. Für Blaze Powder brauchst du einen Ausflug in den Nether."
+				"Für das Blaze Powder darin brauchst du einen Ausflug in den Nether."
 				"So geht's: Der erste Rechtsklick aktiviert die Vessel. Der zweite sucht 5000 bis 10000 Blöcke entfernt einen Ort und baut dort den Dungeon. Findet sie nichts, versuch es an einem anderen Ort noch einmal."
 			]
 			hide_until_deps_visible: true
@@ -66,9 +66,7 @@
 			dependencies: ["64F39ED5163ED88E"]
 			description: [
 				"Der Dungeon liegt tausende Blöcke weit weg. Der Pathfinder bringt dich hin."
-				"Rezept: Eye of Ender, Soul Lantern, Iron Ingot (formlos, ergibt 2)."
 				"So geht's: Pathfinder auf einen Block setzen, mit der benutzten Vessel rechtsklicken (er merkt sich den Ort), noch einmal rechtsklicken. Nach dem Countdown teleportiert er alle Spieler in seiner Nähe zum Dungeon."
-				"&9(ungeprüft)&r Wie der Rückweg funktioniert, ist nicht ausgelesen; im Spiel prüfen. Bis dahin: Nimm einen zweiten Pathfinder mit oder merk dir die Koordinaten."
 			]
 			hide_until_deps_visible: true
 			icon: "wrd:dungeon_locator_item"
@@ -103,9 +101,8 @@
 			dependencies: ["7A6EF9579E3C5994"]
 			description: [
 				"Jede Truhe im Dungeon braucht ihren eigenen Schlüssel, und die Stockwerke sind Labyrinthe."
-				"Der &eKey Bag&r (1 Lead, 3 Leather, 1 Iron Ingot) nimmt alle Schlüssel und Kreidemarker auf; Schlösser erkennen den Schlüssel auch im Beutel."
+				"Der &eKey Bag&r nimmt alle Schlüssel und Kreidemarker auf; Schlösser erkennen den Schlüssel auch im Beutel."
 				"Mit &eKreide&r im Beutel setzt Shift-Rechtsklick eine Markierung auf den Boden. Die Taste R wechselt die Farbe (rot, blau, grün). Markiere so, woher du kommst."
-				"&9(ungeprüft)&r Woher die Kreide kommt (Rezept oder Truhen), ist nicht ausgelesen."
 			]
 			hide_until_deps_visible: true
 			icon: "wrd:key_bag"
@@ -620,7 +617,7 @@
 		{
 			dependencies: ["2C93E723E5808333"]
 			description: [
-				"Der Schlüssel zum Portal: 8 Bleeding Corruption um 1 Ender Heart in der Werkbank."
+				"Aus dem Ender Heart und Bleeding Corruption baust du den Schlüssel zum Portal."
 			]
 			hide_until_deps_visible: true
 			icon: "wrd:heart_of_the_deceiver"

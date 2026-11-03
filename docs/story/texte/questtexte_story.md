@@ -224,7 +224,7 @@ Der Meister schreibt von der Hellen Elfe hinter einem Tor aus lebendem Holz. Bau
 ### ST10-03 Meisterin Cerina · Hauptweg
 **Aufgabe:** Abgabe im Dialog: `kubejs:relikt`
 
-Wirf eine Rune des Frühlings (`botania:rune_spring`) in das offene Portal to Alfheim. Dann ruft das Portal die Helle Elfe herbei. Sprich mit ihr und gib ihr das Relikt.
+Wirf eine Rune des Frühlings (Rune of Spring) in das offene Portal to Alfheim. Dann ruft das Portal die Helle Elfe herbei. Sprich mit ihr und gib ihr das Relikt.
 
 ### ST10-04 Was sie braucht · Hauptweg
 **Aufgabe:** Abgabe im Dialog: `blue_skies:ethereal_arc`, `blue_skies:dusk_arc`, `blue_skies:nature_arc`, `blue_skies:poison_arc`, `mekanism:ultimate_control_circuit`, `botania:elementium_block`

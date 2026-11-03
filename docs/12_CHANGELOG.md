@@ -1487,3 +1487,13 @@ Status: 🟡 (ungetestet, Tests 117–121)
 - Fehler: Rechtsklick auf eine Figur mit Gold- oder Iron-Credit in der Hand wechselte den Credit (Kleingeld fiel heraus), der Credit blieb aber in der Hand. Ursache: `CreditItem.use` von Galaxy in a Cube läuft nach dem Dialog weiter. Neu `starwars/credits_npc.js`: nach dem Anklicken eines Wesens wird das Wechseln für 5 Ticks unterdrückt.
 - Questbuch: Items und XP holt man per Klick an der Quest ab (`auto: "disabled"`); Stages und Befehle laufen weiter automatisch. Alle Kapitel neu gebaut (885 Belohnungen).
 - In die Testinstanz kopiert: alle Kapitel (Sicherung der vorigen im Scratchpad; Alex's Mobs lag dort noch in der Fassung vom 2026-10-28), `einsiedler_shop.js`, `credits_npc.js`, Presets von Zwerg, Bodhi und Davijaan.
+
+## 2026-11-03 — Questbuch: Entwickler-Notizen und Rezepttexte raus
+
+Status: 🟡 (ungetestet, im Spiel lesen)
+
+- Auf Wunsch des Users aus allen Questtexten entfernt: Prüf-Notizen (🔵, im Buch „(ungeprüft)“; Satz ganz gestrichen, bei Vermutungen nur der sichere Teil), interne Verweise (O/F/B-Nummern, Testnummern, Config-Schlüssel, Datumsangaben, Item-IDs im Fließtext) und das ⚙-Zeichen. Hinweise auf Pack-Abweichungen, die JEI ohnehin zeigt (geänderte Rezepte, Zutaten aus anderen Mods), sind gestrichen; Abweichungen, die JEI nicht zeigt (Treibstoffe, Wegzoll, entfernte Blöcke, Erzorte), bleiben als normaler Satz.
+- Zutatenlisten und Mengen gestrichen; welche Maschine was macht, bleibt kurz drin. Ausnahme: Droid Fabricator (nicht in JEI). Werkbank-Rezepte hinter Bauplänen stehen im Bauplan-Buch und sind ebenfalls raus.
+- Drei Prüf-Stellen bei Blue Skies mit dem Handel von Bodhi beantwortet (Zeal Lighter 8 Emeralds, Schlüssel bei der Figur). Falsche Angabe im IE-Kapitel entfernt (Metal Press mache Desh-, Ostrum- und Calorite-Platten; im Pack nur der Lichtbogenofen).
+- Buch 2 und 3: statt des Mock-Satzes „Dieses Kapitel folgt später.“, Verweise aus der Fortschrittszeile gefiltert (`QuestbuchGen.java`).
+- Quellen: `docs/questtexte/*.md` (außer `swplanets.md`, nicht im Buch), `docs/story/texte/questtexte_story.md`. Alle Kapitel neu gebaut (nur Beschreibungen geändert, IDs und Positionen gleich) und in die Testinstanz kopiert.

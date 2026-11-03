@@ -19,13 +19,12 @@
 ### MK1-01 Osmium · Hauptweg
 **Aufgabe:** `mekanism:raw_osmium` oder `mekanism:ingot_osmium`
 
-Osmium ist das Metall, um das sich in Mekanism alles dreht: Maschinen, Schaltkreise, Tanks und Upgrades brauchen es. In der Overworld ist es selten, ungefähr so häufig wie Diamant, und liegt in allen Höhen. Für den Anfang reichen ein paar Barren. ⚙️ Später gibt es Osmium reichlich in Everdawn und auf dem Mond.
+Osmium ist das Metall, um das sich in Mekanism alles dreht: Maschinen, Schaltkreise, Tanks und Upgrades brauchen es. In der Overworld ist es selten, ungefähr so häufig wie Diamant, und liegt in allen Höhen. Für den Anfang reichen ein paar Barren. Später gibt es Osmium reichlich in Everdawn und auf dem Mond.
 
 ### MK1-02 Metallurgic Infuser · Hauptweg
 **Aufgabe:** `mekanism:metallurgic_infuser`
 
 Die erste Maschine von Mekanism. Sie lädt einen Stoff in ein Item: links das Item, rechts der Stoff, etwa Redstone oder Kohle. Ein Redstone-Staub ergibt 10 Einheiten Redstone, eine Kohle 10 Carbon, eine Holzkohle 20.
-Rezept: 4 Eisen, 2 Furnace, 2 Redstone, 1 Osmium Ingot.
 Die Maschine braucht Strom. Hast du noch keinen, bau zuerst den Heat Generator (nächste Quest).
 
 ### MK1-03 Heat Generator · Hauptweg
@@ -38,21 +37,21 @@ Mekanism rechnet in Joule, nimmt aber auch Strom von Immersive Engineering an. E
 **Aufgabe:** `mekanism:alloy_infused`, `mekanism:basic_control_circuit`, `mekanism:ingot_steel` (oder Stahl aus IE)
 
 Mit dem Infuser entstehen die Grundstoffe des Mods:
-- **Infused Alloy:** Eisenbarren + 10 Redstone.
-- **Basic Control Circuit:** Osmium Ingot + 20 Redstone. Der Schaltkreis steckt in fast jeder Maschine.
-- **Stahl:** Eisenbarren + 10 Carbon ergibt Enriched Iron, Enriched Iron + 10 Carbon ergibt Steel Dust, im Ofen geschmolzen ein Steel Ingot.
+- **Infused Alloy:** Eisenbarren mit Redstone.
+- **Basic Control Circuit:** Osmium Ingot mit Redstone. Der Schaltkreis steckt in fast jeder Maschine.
+- **Stahl:** Eisenbarren mit Carbon ergibt Enriched Iron, noch einmal mit Carbon Steel Dust, im Ofen geschmolzen ein Steel Ingot.
 Stahl aus Immersive Engineering passt in jedes Mekanism-Rezept und umgekehrt.
 
 ### MK1-05 Steel Casing · Hauptweg
 **Aufgabe:** `mekanism:steel_casing`
 
-Das Gehäuse sitzt in der Mitte fast jedes Maschinenrezepts. Rezept: 4 Stahl, 4 Glass, 1 Osmium Ingot. Bau dir gleich ein paar auf Vorrat.
+Das Gehäuse sitzt in der Mitte fast jedes Maschinenrezepts. Bau dir gleich ein paar auf Vorrat.
 
 ### MK1-06 Electrolytic Separator · Hauptweg
 **Aufgabe:** `mekanism:electrolytic_separator`
 
 Der Separator spaltet Wasser mit Strom in zwei Gase: aus 2 mB Wasser werden 2 mB Hydrogen und 1 mB Oxygen. Er ist die Quelle fast aller Gase in Mekanism.
-Zuerst brauchst du einen **Electrolytic Core** (5 Infused Alloy, 2 Osmium Dust, 1 Iron Dust, 1 Gold Dust). Die Stäube macht der Crusher. ⚙️🔵 Im Pack übernimmt der Crusher von Immersive Engineering diese Arbeit; ob der Mekanism-Crusher bleibt, ist noch offen.
+Zuerst brauchst du einen **Electrolytic Core**. Die Stäube dafür macht der Crusher.
 Wasser kommt über ein Rohr oder per Eimer hinein. Die beiden Gase verlassen die Maschine an zwei verschiedenen Seiten; links im Fenster stellst du ein, was mit einem Gas geschieht, das du nicht brauchst (behalten oder ablassen).
 
 ### MK1-07 Flüssiger Sauerstoff · Hauptweg
@@ -60,8 +59,8 @@ Wasser kommt über ein Rohr oder per Eimer hinein. Die beiden Gase verlassen die
 
 Gase lassen sich nicht in Eimer füllen. Der **Rotary Condensentrator** macht aus Gas eine Flüssigkeit und umgekehrt; der Hebel im Fenster bestimmt die Richtung.
 Der Weg: Wasser → Electrolytic Separator → Oxygen (Gas) → Pressurized Tube oder Chemical Tank → Rotary Condensentrator → Liquid Oxygen.
-⚙️ Raumanzüge und Raumstationen von Ad Astra laufen in diesem Pack nur mit diesem Sauerstoff. Der Oxygen Loader nimmt kein Wasser mehr an.
-Tipp: Leitungen für Gase sind die **Pressurized Tubes** (2 Stahl + 1 Glass ergeben 8), für Flüssigkeiten die **Mechanical Pipes** (2 Stahl + 1 Bucket).
+Raumanzüge und Raumstationen von Ad Astra laufen in diesem Pack nur mit diesem Sauerstoff. Der Oxygen Loader nimmt kein Wasser mehr an.
+Tipp: Leitungen für Gase sind die **Pressurized Tubes**, für Flüssigkeiten die **Mechanical Pipes**.
 
 ---
 
@@ -78,18 +77,18 @@ Mekanism verarbeitet nur Eisen, Gold, Kupfer, Zinn, Osmium, Blei und Uran. Silbe
 ### MK2-02 Energy Cube und Universal Cable · Nebenquest
 **Aufgabe:** `mekanism:basic_energy_cube`, `mekanism:basic_universal_cable`
 
-Der Energy Cube speichert Strom, der Basic Cube 4 Millionen Joule. Universal Cables leiten ihn (2 Stahl + 1 Redstone ergeben 8).
+Der Energy Cube speichert Strom, der Basic Cube 4 Millionen Joule. Universal Cables leiten ihn.
 Jede Seite eines Mekanism-Blocks lässt sich einzeln einstellen: im Fenster des Blocks am Rand („Side Config“) oder mit dem **Configurator**. So legst du fest, wo Strom hineingeht und wo er herauskommt.
 
 ### MK2-03 Upgrades · Nebenquest
 **Aufgabe:** `mekanism:upgrade_speed` oder `mekanism:upgrade_energy`
 
-Upgrades steckst du in den Upgrade-Slot rechts im Maschinenfenster. **Speed** macht schneller, braucht aber mehr Strom; **Energy** gleicht das aus. Beide aus 2 Glass, 2 Infused Alloy und einem Staub (Osmium bzw. Gold). Weitere: Muffling (leiser), Gas (spart Gas), Filter (Heavy Water aus der Pumpe), Anchor (hält den Chunk geladen).
+Upgrades steckst du in den Upgrade-Slot rechts im Maschinenfenster. **Speed** macht schneller, braucht aber mehr Strom; **Energy** gleicht das aus. Weitere: Muffling (leiser), Gas (spart Gas), Filter (Heavy Water aus der Pumpe), Anchor (hält den Chunk geladen).
 
 ### MK2-04 Formulaic Assemblicator · Nebenquest
 **Aufgabe:** `mekanism:formulaic_assemblicator`, `mekanism:crafting_formula`
 
-Der früheste Autocrafter im Pack. Lege das Rezept ins Raster, schreibe es auf eine **Crafting Formula** (Paper + Basic Control Circuit) und lass die Maschine laufen. Sie craftet, solange Zutaten im Inventar liegen. Mit einer Kiste davor und einem Transporter dahinter ist das eine kleine Fabrik.
+Der früheste Autocrafter im Pack. Lege das Rezept ins Raster, schreibe es auf eine **Crafting Formula** und lass die Maschine laufen. Sie craftet, solange Zutaten im Inventar liegen. Mit einer Kiste davor und einem Transporter dahinter ist das eine kleine Fabrik.
 
 ### MK2-05 Logistik · Nebenquest
 **Aufgabe:** `mekanism:basic_logistical_transporter`, `mekanism:logistical_sorter`
@@ -116,7 +115,7 @@ Alle drei kosten viel Osmium.
 ### MK3-01 Zinn aus Everbright · Hauptweg
 **Aufgabe:** `mekanism:raw_tin` oder `mekanism:ingot_tin`
 
-⚙️ Zinn gibt es in diesem Pack nur in Everbright. Du brauchst es für Bronze (3 Kupfer + 10 Tin im Infuser ergeben 4 Bronze) und für die Pumpen, Jetpacks und Fluidic Plenisher von Mekanism. Everbright liefert auch Blei.
+Zinn gibt es in diesem Pack nur in Everbright. Du brauchst es für Bronze (Kupfer mit Tin im Infuser) und für die Pumpen, Jetpacks und Fluidic Plenisher von Mekanism. Everbright liefert auch Blei.
 
 ### MK3-02 Die Stufen von Mekanism · Hauptweg
 **Aufgabe:** `mekanism:advanced_control_circuit`
@@ -126,9 +125,9 @@ Fast alles in Mekanism gibt es in vier Stufen. Jede Stufe hat eine Legierung und
 | Stufe | Legierung | Schaltkreis |
 |---|---|---|
 | Basic | Redstone | Basic Control Circuit |
-| Advanced | Infused Alloy | Basic Circuit + 2 Infused Alloy |
-| Elite | Reinforced Alloy (Infused Alloy + 20 Diamond) | Advanced Circuit + 2 Reinforced Alloy |
-| Ultimate | Atomic Alloy (Reinforced Alloy + 40 Refined Obsidian) | Elite Circuit + 2 Atomic Alloy |
+| Advanced | Infused Alloy | Advanced Control Circuit |
+| Elite | Reinforced Alloy (Infused Alloy mit Diamond) | Elite Control Circuit |
+| Ultimate | Atomic Alloy (Reinforced Alloy mit Refined Obsidian) | Ultimate Control Circuit |
 
 Energy Cubes, Tanks, Bins und Leitungen der nächsten Stufe craftest du aus der darunter mit Legierung und Schaltkreis. Leitungen kannst du auch an Ort und Stelle aufwerten: Rechtsklick mit der Legierung.
 
@@ -151,13 +150,13 @@ Tipp: Eine Factory sortiert die Items selbst auf ihre Slots, wenn du den Knopf �
 **Aufgabe:** `mekanism:osmium_compressor`, `mekanism:ingot_refined_obsidian`
 
 Der Compressor presst Stäube mit Osmium zu Barren; ein Osmium Ingot ergibt 200 Einheiten.
-- **Refined Obsidian:** Obsidian zu Staub mahlen, im Infuser mit 10 Diamond zu Refined Obsidian Dust, im Compressor zum Barren. Er wird für die Ultimate-Stufe gebraucht. ⚙️ Die Smeltery von Tinkers stellt ihn in diesem Pack nicht her.
+- **Refined Obsidian:** Obsidian zu Staub mahlen, im Infuser mit Diamond zu Refined Obsidian Dust, im Compressor zum Barren. Er wird für die Ultimate-Stufe gebraucht. Die Smeltery von Tinkers stellt ihn in diesem Pack nicht her.
 - **Refined Glowstone:** Glowstone Dust im Compressor.
 
 ### MK3-06 Dynamic Tank · Nebenquest
 **Aufgabe:** `mekanism:dynamic_valve`
 
-Ein frei groß baubarer Tank für Flüssigkeiten oder Gase. 🔵 Bauregeln (nicht aus den JAR-Daten, im Spiel prüfen): ein hohler Quader von 3 × 3 × 3 bis 18 × 18 × 18. Kanten aus Dynamic Tank, die Flächen aus Dynamic Tank, Structural Glass oder Dynamic Valve. Innen nur Luft. Ein Valve ist der Anschluss für Rohre. Steht er richtig, zeigt Rechtsklick ein Fenster.
+Ein frei groß baubarer Tank für Flüssigkeiten oder Gase. Bauregeln: ein hohler Quader von 3 × 3 × 3 bis 18 × 18 × 18. Kanten aus Dynamic Tank, die Flächen aus Dynamic Tank, Structural Glass oder Dynamic Valve. Innen nur Luft. Ein Valve ist der Anschluss für Rohre. Steht er richtig, zeigt Rechtsklick ein Fenster.
 
 ---
 
@@ -166,7 +165,7 @@ Ein frei groß baubarer Tank für Flüssigkeiten oder Gase. 🔵 Bauregeln (nich
 ### MK4-01 Reinforced Alloy · Hauptweg
 **Aufgabe:** `mekanism:alloy_reinforced`, `mekanism:elite_control_circuit`
 
-Im Infuser: Infused Alloy + 20 Diamond. Ein Diamant ergibt 10 Einheiten; in der Enrichment Chamber angereichert (Enriched Diamond) sind es 80. Reichere die Diamanten deshalb immer erst an.
+Im Infuser aus Infused Alloy und Diamond. Angereicherte Diamanten aus der Enrichment Chamber (Enriched Diamond) zählen achtmal so viel; reichere sie deshalb immer erst an.
 
 ### MK4-02 Chemische Grundausstattung · Hauptweg
 **Aufgabe:** `mekanism:chemical_infuser`, `mekanism:chemical_oxidizer`
@@ -180,7 +179,7 @@ Gase reisen in Pressurized Tubes und warten in Chemical Tanks. Bau lieber ein pa
 **Aufgabe:** `mekanism:thermal_evaporation_controller`, Flüssigkeit `mekanism:brine`
 
 Ein Verdunstungsturm aus Kupfer und Stahl. Er dampft Wasser zu **Brine** ein (10 mB Wasser ergeben 1 mB) und Brine zu **Liquid Lithium** (wieder 10 zu 1). Wärme beschleunigt ihn.
-🔵 Bauregeln (im Spiel prüfen): Grundfläche 4 × 4, Höhe 3 bis 18 Blöcke, Wände aus Thermal Evaporation Blocks mit einem hohlen Inneren von 2 × 2. Genau ein Controller in einer Wand, dazu Valves für Ein- und Ausgang. Je höher der Turm, desto schneller. Heizen lässt er sich mit Sonne, Fuelwood Heater oder Resistive Heater.
+Bauregeln: Grundfläche 4 × 4, Höhe 3 bis 18 Blöcke, Wände aus Thermal Evaporation Blocks mit einem hohlen Inneren von 2 × 2. Genau ein Controller in einer Wand, dazu Valves für Ein- und Ausgang. Je höher der Turm, desto schneller. Heizen lässt er sich mit Sonne, Fuelwood Heater oder Resistive Heater.
 
 ### MK4-04 Hydrogen Chloride · Hauptweg
 **Aufgabe:** `mekanism:chemical_injection_chamber`
@@ -209,8 +208,8 @@ Schwefel liefert Immersive Engineering (Crusher, als Nebenprodukt), Immersive Pe
 **Aufgabe:** `mekanism:pressurized_reaction_chamber`, `mekanism:hdpe_sheet`
 
 Die Reaktionskammer verarbeitet einen Feststoff, eine Flüssigkeit und ein Gas zugleich.
-1. 2 Bio Fuel + 10 mB Wasser + 100 Hydrogen ergeben **Substrate**; dabei entstehen 100 **Ethylene**.
-2. Substrate + 50 mB Ethylene + 10 Oxygen ergeben ein **HDPE Pellet**.
+1. Bio Fuel, Wasser und Hydrogen ergeben **Substrate**; dabei entsteht **Ethylene**.
+2. Substrate, Ethylene und Oxygen ergeben ein **HDPE Pellet**.
 3. Pellets in der Enrichment Chamber ergeben **HDPE Sheets**, den Kunststoff des Endgames.
 Ethylene ist nebenbei der beste Brennstoff des Gas-Burning Generators.
 
@@ -223,7 +222,7 @@ Verbrennt Gase zu Strom. Ethylene aus der Reaktionskammer liefert viel mehr Ener
 
 ## Nebenquest-Reihe: Erzvervielfachung (ab MK2, je Stufe freigeschaltet)
 
-Kurze Anleitungen, die mit der passenden Maschine erscheinen. Quelle der Zahlen: Rezeptdaten. Aus einem **Erzblock** (in Klammern aus drei Raw-Stücken):
+Kurze Anleitungen, die mit der passenden Maschine erscheinen. Aus einem **Erzblock** (in Klammern aus drei Raw-Stücken):
 
 | Quest | Stufe | Neue Maschine | Neue Chemikalie | Ergebnis |
 |---|---|---|---|---|
@@ -256,7 +255,7 @@ Der Washer braucht viel Wasser. Eine Electric Pump in einer Wasserquelle oder ei
 ### MK5-01 Uran · Hauptweg
 **Aufgabe:** `mekanism:yellow_cake_uranium`
 
-⚙️ Uran ist in der Overworld knapp; reichlich gibt es es auf Merkur und Venus. Aus einem Uranbarren macht die Enrichment Chamber 2 **Yellow Cake Uranium**. Rohes Uran ist ungefährlich, Gefahr droht erst bei den Gasen.
+Uran ist in der Overworld knapp; reichlich gibt es es auf Merkur und Venus. Aus einem Uranbarren macht die Enrichment Chamber 2 **Yellow Cake Uranium**. Rohes Uran ist ungefährlich, Gefahr droht erst bei den Gasen.
 
 ### MK5-02 Schutz · Hauptweg
 **Aufgabe:** `mekanism:hazmat_mask`, `mekanism:hazmat_gown`, `mekanism:hazmat_pants`, `mekanism:hazmat_boots`, `mekanism:geiger_counter`
@@ -271,21 +270,21 @@ Radioaktiven Abfall lagerst du im **Radioactive Waste Barrel**. Baust du ein vol
 2. Fluorit in der Dissolution Chamber mit Sulfuric Acid: **Hydrofluoric Acid**.
 3. Uranium Oxide + Hydrofluoric Acid im Chemical Infuser: **Uranium Hexafluoride**.
 4. In der **Isotopic Centrifuge**: **Fissile Fuel**.
-⚙️ Fluorit liegt in der Overworld und reichlich auf dem Mars. Blei für die Zentrifuge kommt aus Everbright, vom Merkur oder von der Venus.
+Fluorit liegt in der Overworld und reichlich auf dem Mars. Blei für die Zentrifuge kommt aus Everbright, vom Merkur oder von der Venus.
 
 ### MK5-04 Fission Reactor · Hauptweg
 **Aufgabe:** `mekanismgenerators:fission_reactor_casing`, `mekanismgenerators:fission_fuel_assembly`, `mekanismgenerators:control_rod_assembly`, `mekanismgenerators:fission_reactor_port`
 
 Der Spaltreaktor verbrennt Fissile Fuel und erhitzt ein Kühlmittel, Wasser oder Sodium. Er erzeugt keinen Strom, sondern Wärme und heißen Dampf; Strom macht erst die Turbine (MK5-05). 1 mB Brennstoff setzt 1 000 000 Joule Wärme frei. Als Abfall entsteht **Nuclear Waste**.
-🔵 Bauregeln (im Spiel prüfen): Quader aus Fission Reactor Casing oder Reactor Glass, mindestens 3 × 3 × 4, höchstens 18 × 18 × 18. Innen stehen Säulen aus Fuel Assemblies, jede mit einer Control Rod Assembly obenauf. Ports in der Hülle stellst du mit dem Configurator auf Kühlmittel, Brennstoff oder Abfall um.
+Bauregeln: Quader aus Fission Reactor Casing oder Reactor Glass, mindestens 3 × 3 × 4, höchstens 18 × 18 × 18. Innen stehen Säulen aus Fuel Assemblies, jede mit einer Control Rod Assembly obenauf. Ports in der Hülle stellst du mit dem Configurator auf Kühlmittel, Brennstoff oder Abfall um.
 **Wichtig:** Fang mit einer niedrigen Brennrate an (Feld „Rate“ im Fenster) und halte die Kühlung immer voll. Läuft ein Tank voll oder fehlt Kühlmittel, steigen Temperatur und Schaden. Mit dem Knopf **SCRAM** schaltest du sofort ab. Mit einem **Logic Adapter** schaltet der Reaktor sich bei Gefahr selbst per Redstone ab. Bei 100 % Schaden explodiert er und verstrahlt die Gegend.
 
 ### MK5-05 Boiler und Turbine · Hauptweg
 **Aufgabe:** `mekanismgenerators:turbine_valve`, `mekanismgenerators:electromagnetic_coil`
 
 Die **Industrial Turbine** macht aus Dampf Strom. Den Dampf liefert der Reaktor direkt, wenn er mit Wasser gekühlt wird, oder ein **Thermoelectric Boiler**, der Wärme (etwa von Sodium aus dem Reaktor) in Dampf umwandelt.
-🔵 Turbine (im Spiel prüfen): quadratische Grundfläche mit ungerader Kantenlänge, 5 × 5 bis 17 × 17, Höhe bis 18. In der Mitte eine Säule aus Turbine Rotors mit je zwei Blades. Auf dem obersten Rotor der Rotational Complex, um ihn herum eine Ebene aus Pressure Dispersers, die bis an die Wände reicht. Darüber die Electromagnetic Coils, die den Complex berühren; eine Coil versorgt vier Blades. Turbine Vents darüber in Wand oder Dach lassen den Dampf ab. Turbine Valves unterhalb der Disperser-Ebene nehmen Dampf an und geben Strom ab.
-🔵 Boiler (im Spiel prüfen): hohler Quader aus Boiler Casing, unten Superheating Elements, darüber eine Ebene aus Pressure Dispersers über die volle Fläche, darüber Platz für den Dampf.
+Turbine: quadratische Grundfläche mit ungerader Kantenlänge, 5 × 5 bis 17 × 17, Höhe bis 18. In der Mitte eine Säule aus Turbine Rotors mit je zwei Blades. Auf dem obersten Rotor der Rotational Complex, um ihn herum eine Ebene aus Pressure Dispersers, die bis an die Wände reicht. Darüber die Electromagnetic Coils, die den Complex berühren; eine Coil versorgt vier Blades. Turbine Vents darüber in Wand oder Dach lassen den Dampf ab. Turbine Valves unterhalb der Disperser-Ebene nehmen Dampf an und geben Strom ab.
+Boiler: hohler Quader aus Boiler Casing, unten Superheating Elements, darüber eine Ebene aus Pressure Dispersers über die volle Fläche, darüber Platz für den Dampf.
 
 ### MK5-06 Polonium und Plutonium · Hauptweg
 **Aufgabe:** `mekanism:pellet_polonium`
@@ -293,14 +292,14 @@ Die **Industrial Turbine** macht aus Dampf Strom. Den Dampf liefert der Reaktor 
 Aus dem Abfall wird der Rohstoff des Endgames.
 - **Polonium:** Nuclear Waste im **Solar Neutron Activator** (arbeitet nur bei Sonnenlicht). 10 Waste ergeben 1 Polonium.
 - **Plutonium:** Nuclear Waste in der Isotopic Centrifuge, ebenfalls 10 zu 1.
-Ein Pellet presst die Pressurized Reaction Chamber aus 1000 Einheiten Gas, 1000 mB Wasser und einem Fluorite Dust. Übrig bleibt Spent Nuclear Waste; lagere ihn im Waste Barrel.
+Ein Pellet presst die Pressurized Reaction Chamber aus dem Gas, Wasser und Fluorite Dust. Übrig bleibt Spent Nuclear Waste; lagere ihn im Waste Barrel.
 Polonium brauchst du für das QIO-Lager, die MekaSuit, den Fusionsreaktor und das SPS.
 
 ### MK5-07 Induction Matrix · Nebenquest
 **Aufgabe:** `mekanism:induction_port`, `mekanism:basic_induction_cell`
 
 Der große Stromspeicher. Die **Cells** innen bestimmen die Kapazität (die Basic Cell 8 Milliarden Joule), die **Providers** wie viel Strom je Tick fließt. Die Cells brauchen **Lithium** aus dem Verdunstungsturm (MK4-03) und dem Chemical Crystallizer.
-🔵 Bauregeln (im Spiel prüfen): hohler Quader aus Induction Casing, mindestens 3 × 3 × 3, höchstens 18 × 18 × 18. Flächen auch aus Structural Glass. Innen Cells und Providers in beliebiger Mischung. Ein Induction Port wird mit dem Configurator zwischen Ein- und Ausgang umgeschaltet.
+Bauregeln: hohler Quader aus Induction Casing, mindestens 3 × 3 × 3, höchstens 18 × 18 × 18. Flächen auch aus Structural Glass. Innen Cells und Providers in beliebiger Mischung. Ein Induction Port wird mit dem Configurator zwischen Ein- und Ausgang umgeschaltet.
 
 ---
 
@@ -309,18 +308,18 @@ Der große Stromspeicher. Die **Cells** innen bestimmen die Kapazität (die Basi
 ### MK6-01 Atomic Alloy · Hauptweg
 **Aufgabe:** `mekanism:alloy_atomic`, `mekanism:ultimate_control_circuit`
 
-Im Infuser: Reinforced Alloy + 40 Refined Obsidian. Enriched Refined Obsidian aus der Enrichment Chamber liefert 80 Einheiten statt 10. Die höchste Stufe von Mekanism.
+Im Infuser aus Reinforced Alloy und Refined Obsidian. Enriched Refined Obsidian aus der Enrichment Chamber zählt achtmal so viel. Die höchste Stufe von Mekanism.
 
 ### MK6-02 Teleportation Core · Hauptweg
 **Aufgabe:** `mekanism:teleportation_core`
 
-4 Lapis, 2 Atomic Alloy, 2 Gold, 1 Diamant. Der Kern steckt in allem, was Dinge über weite Strecken bewegt.
+Der Kern steckt in allem, was Dinge über weite Strecken bewegt.
 
 ### MK6-03 Teleporter · Nebenquest
 **Aufgabe:** `mekanism:teleporter`, `mekanism:teleporter_frame`
 
 Der Teleporter bringt Spieler zu einem anderen Teleporter, auch in andere Dimensionen. Im Fenster gibst du ihm eine Frequenz; Teleporter mit derselben Frequenz sind verbunden.
-🔵 Bauregeln (im Spiel prüfen): ein Rahmen aus Teleporter Frames, 3 Blöcke breit und 4 hoch, mit einer Öffnung von 1 × 2 in der Mitte. Der Teleporter-Block ist Teil des Rahmens. Er braucht Strom, auf weite Strecken und zwischen Dimensionen mehr.
+Bauregeln: ein Rahmen aus Teleporter Frames, 3 Blöcke breit und 4 hoch, mit einer Öffnung von 1 × 2 in der Mitte. Der Teleporter-Block ist Teil des Rahmens. Er braucht Strom, auf weite Strecken und zwischen Dimensionen mehr.
 Für unterwegs gibt es den **Portable Teleporter**.
 
 ### MK6-04 Quantum Entangloporter · Nebenquest
@@ -356,14 +355,14 @@ Lithium (MK4-03) im **Solar Neutron Activator**: Tritium. Der Aktivator arbeitet
 ### MK7-03 Hohlraum · Hauptweg
 **Aufgabe:** `mekanismgenerators:hohlraum`
 
-Die Zündkapsel des Reaktors: im Infuser aus 4 Gold Dust + 10 Carbon. Fülle sie im Chemical Tank oder an einem Port mit **D-T Fuel**: Deuterium + Tritium im Chemical Infuser.
+Die Zündkapsel des Reaktors: im Infuser aus Gold Dust und Carbon. Fülle sie im Chemical Tank oder an einem Port mit **D-T Fuel**: Deuterium + Tritium im Chemical Infuser.
 
 ### MK7-04 Fusionsreaktor · Hauptweg
 **Aufgabe:** `mekanismgenerators:fusion_reactor_controller`, `mekanismgenerators:laser_focus_matrix`
 
 Der Fusionsreaktor verbrennt D-T Fuel; 1 mB liefert 10 000 000 Joule.
-🔵 Bauregeln (im Spiel prüfen): ein Würfel von 5 × 5 × 5 ohne die zwölf Kanten, aus Fusion Reactor Frames. Der Controller sitzt oben in der Mitte. Ports und Reactor Glass in den Flächen, dazu eine Laser Focus Matrix.
-**Zünden:** Der gefüllte Hohlraum kommt in den Controller. Ein Laser Amplifier, der mindestens 🔵 400 Millionen Joule gesammelt hat, feuert auf die Laser Focus Matrix. Danach brennt der Reaktor, solange Deuterium und Tritium nachkommen. Den Strom nimmst du an einem Port ab; mit Wasser gekühlt liefert er stattdessen Dampf für die Turbine.
+Bauregeln: ein Würfel von 5 × 5 × 5 ohne die zwölf Kanten, aus Fusion Reactor Frames. Der Controller sitzt oben in der Mitte. Ports und Reactor Glass in den Flächen, dazu eine Laser Focus Matrix.
+**Zünden:** Der gefüllte Hohlraum kommt in den Controller. Ein Laser Amplifier, der mindestens 400 Millionen Joule gesammelt hat, feuert auf die Laser Focus Matrix. Danach brennt der Reaktor, solange Deuterium und Tritium nachkommen. Den Strom nimmst du an einem Port ab; mit Wasser gekühlt liefert er stattdessen Dampf für die Turbine.
 
 ---
 
@@ -372,7 +371,7 @@ Der Fusionsreaktor verbrennt D-T Fuel; 1 mB liefert 10 000 000 Joule.
 ### MK8-01 Supercritical Phase Shifter · Hauptweg
 **Aufgabe:** `mekanism:sps_casing`, `mekanism:sps_port`, `mekanism:supercharged_coil`
 
-Das SPS erzeugt mit riesigen Mengen Strom **Antimatter**. 🔵 Eingangsstoff und Bauregeln stehen nicht in den JAR-Daten. Nach Spielwissen (im Spiel prüfen): Eingang ist Polonium als Gas, 2000 mB je 1 mB Antimatter. Bauform ein Würfel von 7 × 7 × 7 ohne Kanten aus SPS Casing und Reactor Glass, mit SPS Ports. An einen Port, der Strom bekommt, setzt du außen die **Supercharged Coil**.
+Das SPS erzeugt mit riesigen Mengen Strom **Antimatter**. Eingang ist Polonium als Gas, 2000 mB je 1 mB Antimatter. Bauform ein Würfel von 7 × 7 × 7 ohne Kanten aus SPS Casing und Reactor Glass, mit SPS Ports. An einen Port, der Strom bekommt, setzt du außen die **Supercharged Coil**.
 
 ### MK8-02 Antimatter · Hauptweg
 **Aufgabe:** `mekanism:pellet_antimatter`
@@ -396,10 +395,10 @@ An der Modification Station setzt du **Module** in MekaSuit und Meka-Tool ein un
 ### MK9-02 MekaSuit · Hauptweg
 **Aufgabe:** `mekanism:mekasuit_helmet`, `mekanism:mekasuit_bodyarmor`, `mekanism:mekasuit_pants`, `mekanism:mekasuit_boots`
 
-Eine Netherite-Rüstung, die mit Strom läuft. Je Teil: 4 HDPE Sheet, Ultimate Control Circuit, das Netherite-Teil, 2 Polonium Pellet, Basic Induction Cell.
-Für die Raumfahrt gibt es eigene Module (Giselle Addon): **Space Breathing**, **Space Fire Proof**, **Acid Rain Proof** und **Gravity Normalizing**. 🔵 Ob der Space-Breathing-Unit-Sauerstoff im Pack aus Mekanism kommen muss, prüfen.
+Eine Netherite-Rüstung, die mit Strom läuft. In jedem Teil steckt das passende Netherite-Teil.
+Für die Raumfahrt gibt es eigene Module (Giselle Addon): **Space Breathing**, **Space Fire Proof**, **Acid Rain Proof** und **Gravity Normalizing**.
 Laden kannst du die Rüstung am Chargepad oder in einem Energy Cube.
-⚙️ Ohne MekaSuit kommst du nicht nach Mandalore (F37). 🔵 Wie die Sperre technisch aussieht, wird in Teil 3 gebaut.
+Ohne MekaSuit kommst du nicht nach Mandalore.
 
 ### MK9-03 Meka-Tool · Nebenquest
 **Aufgabe:** `mekanism:meka_tool`

@@ -25,37 +25,36 @@ Ziel des Meilensteins: Meteorit finden, Prozessoren prägen und vorhandene Kiste
 
 AE2 erklärt sich im eigenen Handbuch. Halte über einem AE2-Item die Taste G gedrückt, dann springt der Guide auf die passende Seite.
 Buch: Guide → Getting Started (1.20+).
-⚙️ Im Pack erzeugt AE2 keinen eigenen Strom, und einige Rezepte können vom Guide abweichen. Gültig ist immer, was JEI zeigt.
+Im Pack erzeugt AE2 keinen eigenen Strom, und einige Rezepte können vom Guide abweichen. Gültig ist immer, was JEI zeigt.
 
 ### AE1-02 Charger und Crank · Hauptweg
 **Aufgabe:** `ae2:charger`, `ae2:crank`
 
 Der Charger lädt Certus Quartz auf und macht aus einem Kompass den Meteorite Compass. Strom gibt die Kurbel oder jede FE-Quelle.
 Buch: Items, Blocks, and Machines → Charger, Crank.
-⚙️ Statt der Kurbel kannst du den Charger direkt an IE-Strom hängen.
+Statt der Kurbel kannst du den Charger direkt an IE-Strom hängen.
 
 ### AE1-03 Meteorite Compass · Hauptweg
 **Aufgabe:** `ae2:meteorite_compass`
 
 Der Kompass zeigt zum nächsten Meteoriten.
 Buch: Items, Blocks, and Machines → Meteorite Compass; Getting Started → Getting The Initial Materials.
-⚙️ Meteoriten gibt es nur in der Overworld, etwa einer je 32 × 32 Chunks.
+Meteoriten gibt es nur in der Overworld, etwa einer je 32 × 32 Chunks.
 
 ### AE1-04 Der Meteorit · Hauptweg
 **Aufgabe:** `ae2:silicon_press`, `ae2:logic_processor_press`, `ae2:calculation_processor_press`, `ae2:engineering_processor_press`, `ae2:sky_stone_block`
 
 Im Kern des Meteoriten steckt der Mysterious Cube mit den vier Inscriber-Pressen. Daneben findest du Budding Certus Quartz und Sky Stone. Ein Meteorit reicht: Pressen lassen sich später im Inscriber kopieren.
 Buch: AE2 Mechanics → Meteorites; Items, Blocks, and Machines → Mysterious Cube, Presses, Sky Stone.
-⚙️ Certus gibt es im Pack nur an Budding-Blöcken, kein Certus-Erz. Flawless Budding Certus lässt sich nicht abbauen; merk dir den Ort.
-⚙️ Später gibt es weitere Quellen: Sky Stone aus 5 Moon Stone und 4 Mars Stone (Ad Astra), Budding Quartz aus einem Blood-Magic-Meteor mit Certus Quartz Crystal (Mark of the Falling Tower).
+Certus gibt es im Pack nur an Budding-Blöcken, kein Certus-Erz. Flawless Budding Certus lässt sich nicht abbauen; merk dir den Ort.
+Später gibt es weitere Quellen: Sky Stone aus Moon Stone und Mars Stone (Ad Astra), Budding Quartz aus einem Blood-Magic-Meteor mit Certus Quartz Crystal (Mark of the Falling Tower).
 
 ### AE1-05 Certus wachsen lassen · Hauptweg
 **Aufgabe:** `ae2:growth_accelerator`, 16 × `ae2:certus_quartz_crystal`
 
 Certus wächst als Cluster an Budding-Blöcken; der Growth Accelerator beschleunigt das stark. Bau ihn zuerst.
 Buch: Getting Started → Growing Certus Quartz; AE2 Mechanics → Certus Growth; Items, Blocks, and Machines → Budding Certus Quartz, Growth Accelerator.
-⚙️ Der Growth Accelerator braucht Strom. AE2 erzeugt im Pack keinen eigenen; nimm IE-Strom.
-⚙️ Mekanism hat eigene Rezepte für AE2-Material (Staub, Kristalle); JEI zeigt sie.
+Der Growth Accelerator braucht Strom. AE2 erzeugt im Pack keinen eigenen; nimm IE-Strom.
 
 ### AE1-06 Fluix · Hauptweg
 **Aufgabe:** `ae2:fluix_crystal`
@@ -68,14 +67,13 @@ Buch: Getting Started → A Quick Aside on Fluix; Items, Blocks, and Machines �
 
 Im Inscriber prägst du mit den Pressen die Schaltkreise. Eine Presse mit einem Eisenblock ergibt eine Kopie.
 Buch: Items, Blocks, and Machines → Inscriber, Presses.
-⚙️ Der Inscriber nimmt FE direkt an; Strom aus IE.
+Der Inscriber nimmt FE direkt an; Strom aus IE.
 
 ### AE1-08 Die drei Prozessoren · Hauptweg
 **Aufgabe:** `ae2:silicon`, `ae2:logic_processor`, `ae2:calculation_processor`, `ae2:engineering_processor`
 
 Aus Gold, Certus, Diamant und Silicon entstehen Printed Circuits und daraus die drei Prozessoren. Fast jedes ME-Gerät braucht einen davon.
 Buch: Getting Started → Inscribing Some Processors; Items, Blocks, and Machines → Processors.
-⚙️ 🔵 Ob die Prozessoren im Pack teurer werden (Teil des „teuren“ Storage-Layers), ist offen.
 
 ### AE1-09 Formation Core und Annihilation Core · Hauptweg
 **Aufgabe:** `ae2:formation_core`, `ae2:annihilation_core`
@@ -88,7 +86,7 @@ Buch: Items, Blocks, and Machines → Formation and Annihilation Cores.
 
 Das Netz läuft mit AE. Der Energy Acceptor wandelt Forge Energy um, 2 FE ergeben 1 AE.
 Buch: AE2 Mechanics → Energy; Items, Blocks, and Machines → Energy Acceptor.
-⚙️ Vibration Chamber und Crystal Resonance Generator gibt es im Pack nicht. Strom kommt aus IE oder Mekanism.
+Vibration Chamber und Crystal Resonance Generator gibt es im Pack nicht. Strom kommt aus IE oder Mekanism.
 
 ### AE1-11 Kabel und ME Terminal · Hauptweg
 **Aufgabe:** `ae2:fluix_glass_cable`, `ae2:terminal`
@@ -101,7 +99,6 @@ Buch: Getting Started → Matter Energy Tech: ME Networks and Storage; Items, Bl
 
 Der Storage Bus macht eine Kiste oder einen Storage Drawer zum Teil des Netzes. Ein Bus je Lager, und das Terminal durchsucht alles auf einmal. Das ist der Storage-Layer.
 Buch: Items, Blocks, and Machines → ME Storage Bus; AE2 Mechanics → Import, Export, and Storage.
-⚙️ 🔵 Ob ein Storage Bus an einem Drawer Controller alle angeschlossenen Drawers erfasst, im Spiel prüfen.
 
 ### AE1-13 Quartz Glass und Illuminated Panel · Nebenquest
 **Aufgabe:** `ae2:quartz_glass`, `ae2:semi_dark_monitor`
@@ -120,21 +117,18 @@ Ziel des Meilensteins: echte Speicherzellen, Autocrafting und Applied Mekanistic
 
 Eine Zelle besteht aus Housing und Component. Sie zählt Bytes und Sorten: höchstens 63 Sorten je Zelle, egal wie groß.
 Buch: Items, Blocks, and Machines → Storage Cells; AE2 Mechanics → Bytes and Types.
-⚙️ 🔵 Ob Housing oder Components im Pack teurer werden (AE2 als Endgame), ist offen.
 
 ### AE2-02 ME Drive · Hauptweg
 **Aufgabe:** `ae2:drive`
 
 Der Drive hält mehrere Zellen und macht sie fürs Netz sichtbar.
 Buch: Items, Blocks, and Machines → ME Drive; Getting Started → Your Very First ME System.
-⚙️ Rezept anders als im Guide: 4 Steel Plate, 2 Engineering Processor, 2 Fluix Glass Cable und ein Advanced Control Circuit aus Mekanism (Quest „Die Stufen von Mekanism“). Siehe JEI.
 
 ### AE2-03 ME Controller · Hauptweg
 **Aufgabe:** `ae2:controller`
 
 Ab 9 Geräten braucht das Netz einen Controller. Er verteilt Kanäle: 8 je normalem Kabel, 32 je Dense Cable.
 Buch: Items, Blocks, and Machines → Controller; AE2 Mechanics → Channels; Getting Started → Expanding your Network, Overcoming Limits.
-⚙️ Rezept anders als im Guide: 2 Steel Plate, 3 Fluix Crystal, ein Engineering Processor, 2 Smooth Sky Stone Block und ein Advanced Control Circuit aus Mekanism. Siehe JEI.
 
 ### AE2-04 Größere Zellen · Nebenquest
 **Aufgabe:** `ae2:item_storage_cell_4k`, `ae2:item_storage_cell_16k`
@@ -199,7 +193,7 @@ Buch: Items, Blocks, and Machines → Crafting CPU Multiblock (Storage, Coproces
 ### AE2-14 Applied Mekanistics · Hauptweg
 **Aufgabe:** `appmek:chemical_cell_housing`, `appmek:chemical_storage_cell_4k`
 
-Applied Mekanistics lagert Mekanism-Chemikalien wie Gase im ME-Netz. Das Housing braucht 2 Quartz Glass, 3 Redstone und 3 Osmium Ingot; die Zelle entsteht wie eine Item-Zelle aus Housing und Component. Mit Processing Patterns läuft dann auch Autocrafting über Mekanism-Maschinen, die Gase brauchen.
+Applied Mekanistics lagert Mekanism-Chemikalien wie Gase im ME-Netz. Die Zelle entsteht wie eine Item-Zelle aus Housing und Component. Mit Processing Patterns läuft dann auch Autocrafting über Mekanism-Maschinen, die Gase brauchen.
 Das Addon steht nicht im Guide.
 
 ### AE2-15 Kabelloser Zugriff · Nebenquest
@@ -211,7 +205,7 @@ Buch: Items, Blocks, and Machines → Fluix Pearl, Wireless Receiver, Wireless A
 ### AE2-16 Wireless Universal Terminal · Nebenquest
 **Aufgabe:** `ae2wtlib:wireless_universal_terminal`
 
-Das Addon AE2 Wireless Terminals bringt auch kabellose Pattern-Terminals. Zwei kabellose Terminals lassen sich zum Universal Terminal kombinieren. Die Magnet Card im Wireless Crafting Terminal zieht laut Beschreibung Items an.
+Das Addon AE2 Wireless Terminals bringt auch kabellose Pattern-Terminals. Zwei kabellose Terminals lassen sich zum Universal Terminal kombinieren. Die Magnet Card im Wireless Crafting Terminal zieht Items an.
 Das Addon steht nicht im Guide.
 
 ### AE2-17 P2P Tunnels · Nebenquest
@@ -224,7 +218,7 @@ Ein Chemical P2P Tunnel (Applied Mekanistics) wird mit einem Mekanism Chemical T
 ### AE2-18 ME über IE-Drähte · Nebenquest
 **Aufgabe:** `more_immersive_wires:ae_coil`, `more_immersive_wires:ae_connector`
 
-More Immersive Wires führt ME-Kabel als IE-Draht über Masten, auch über weite Strecken. Die Spule braucht 4 Aluminiumdraht aus IE und 4 Glass Cable; Anschluss und Relais setzt du wie bei IE. Für 32 Kanäle gibt es Dense-Spule, -Anschluss und -Relais.
+More Immersive Wires führt ME-Kabel als IE-Draht über Masten, auch über weite Strecken. Anschluss und Relais setzt du wie bei IE. Für 32 Kanäle gibt es Dense-Spule, -Anschluss und -Relais.
 Das Addon steht nicht im Guide; das Verlegen erklärt das Engineer's Manual bei den Drähten.
 
 ---
@@ -232,7 +226,6 @@ Das Addon steht nicht im Guide; das Verlegen erklärt das Engineer's Manual bei 
 ## AE3 · Quantenbrücke (K13 Die Prüfung)
 
 Ziel des Meilensteins: zwei Netze über jede Entfernung und Dimension verbinden, dazu Spatial IO.
-⚙️ 🔵 Vorschlag auf der Meilensteinkarte: die Quantum Network Bridge als „Navigationscomputer“, Hürde der Rakete T6. Nicht entschieden.
 
 ### AE3-01 Matter Condenser und Singularity · Hauptweg
 **Aufgabe:** `ae2:condenser`, `ae2:singularity`
@@ -253,32 +246,29 @@ Buch: Items, Blocks, and Machines → Singularities, Ender Dust, Tiny TNT.
 
 Acht Quantum Rings um eine Quantum Link Chamber bilden ein Ende. Beide Enden müssen geladen sein; dann trägt die Brücke 32 Kanäle über jede Entfernung, auch zwischen Planeten.
 Buch: AE2 Mechanics → Quantum Bridge; Items, Blocks, and Machines → Quantum Bridge.
-⚙️ 🔵 Beide Enden müssen im geladenen Chunk liegen; auf dem Server mit Spatial Anchor oder Chunkloader von Mekanism. Im Spiel prüfen.
 
 ### AE3-04 Quantum Bridge Card · Nebenquest
 **Aufgabe:** `ae2wtlib:quantum_bridge_card`
 
-Die Karte aus AE2 Wireless Terminals (2 Fluix Pearl und ein Wireless Receiver) verbindet ein kabelloses Terminal über eine Quantum Bridge ohne Reichweitengrenze.
-Das Addon steht nicht im Guide. 🔵 Aufbau im Spiel prüfen.
+Die Karte aus AE2 Wireless Terminals verbindet ein kabelloses Terminal über eine Quantum Bridge ohne Reichweitengrenze.
+Das Addon steht nicht im Guide.
 
 ### AE3-05 Spatial IO · Nebenquest
 **Aufgabe:** `ae2:spatial_pylon`, `ae2:spatial_io_port`, `ae2:spatial_storage_cell_2`
 
 Spatial IO schneidet einen Raum aus der Welt und speichert ihn in einer Zelle, samt Blöcken und Maschinen. So lässt sich sogar Flawless Budding Certus umziehen.
 Buch: AE2 Mechanics → Spatial IO; Items, Blocks, and Machines → Spatial Pylon, Spatial IO Port, Spatial Cells.
-🔵 Energiebedarf nicht ausgelesen. Die gespeicherten Räume liegen in einer eigenen Dimension; ob sie auf dem Server stabil läuft, ist nicht geprüft.
 
 ### AE3-06 Spatial Anchor · Nebenquest
 **Aufgabe:** `ae2:spatial_anchor`
 
 Der Anchor hält die Chunks des eigenen Netzes geladen.
 Buch: Items, Blocks, and Machines → Spatial Anchor.
-🔵 Ob Chunkloading auf dem Server erlaubt bleibt, entscheidet der Host.
 
 ### AE3-07 Applied Botanics · Nebenquest
 **Aufgabe:** `appbot:mana_cell_housing`, `appbot:mana_storage_cell_4k`
 
-Applied Botanics lagert Mana im ME-Netz. Das Housing braucht 2 Quartz Glass, 3 Life Essence und 3 Manasteel Ingot, also erst nach dem Gaia Guardian. Ein Mana P2P Tunnel wird mit Petals oder Mana Dust abgestimmt.
+Applied Botanics lagert Mana im ME-Netz. Das Housing braucht Life Essence, also geht das erst nach dem Gaia Guardian. Ein Mana P2P Tunnel wird mit Petals oder Mana Dust abgestimmt.
 Das Addon steht nicht im Guide.
 
 ---

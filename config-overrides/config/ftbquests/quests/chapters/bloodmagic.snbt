@@ -29,7 +29,7 @@
 		{
 			dependencies: ["68FA25A94F9E873A"]
 			description: [
-				"Blood Magic erklärt sich in seinem eigenen Buch: Altar, Runen, Rituale und alle Rezepte. Du machst es aus einem Buch und einem Glas."
+				"Blood Magic erklärt sich in seinem eigenen Buch: Altar, Runen, Rituale und alle Rezepte."
 				"Buch: Utility Blocks & Items → Tiers & Getting Started. Diese Seite gibt die ganze Reihenfolge des Mods vor."
 			]
 			hide_until_deps_visible: true
@@ -140,7 +140,6 @@
 			description: [
 				"Slates sind die Grundzutat jeder Stufe. Jede Slate braucht die vorige und einen stärkeren Altar."
 				"Buch: Blood Altars → Tiers of Slates."
-				"&6⚙&r Slates und Runen entstehen im Pack nur am Altar, nicht im Gießtisch der Smeltery."
 			]
 			hide_until_deps_visible: true
 			icon: "bloodmagic:blankslate"
@@ -993,7 +992,6 @@
 			description: [
 				"Der Master Ritual Stone ist das Herz jedes Rituals, die Ritual Stones bilden das Muster drumherum."
 				"Buch: Rituals → Rituals - Getting Started, Ritual Stones."
-				"&9(ungeprüft)&r Die Zahl 16 ist ein Platzhalter; wie viele Steine das erste geplante Ritual braucht, ist nicht ausgelesen."
 			]
 			hide_until_deps_visible: true
 			icon: "bloodmagic:masterritualstone"
@@ -1145,7 +1143,7 @@
 		{
 			dependencies: ["222A17EBEA3175D1"]
 			description: [
-				"&6⚙&r Im Pack steckt in jedem Ostrum Tank zwei Imbued Slate, eine Rakete T3 braucht also vier (Kapitel Ad Astra). Der Altar im Tempel braucht später vier Demonic Slate (Altar-Stufe 4)."
+				"Der Altar im Tempel braucht später vier Demonic Slate (Altar-Stufe 4)."
 				"Buch: Blood Altars → Tiers of Slates."
 			]
 			hide_until_deps_visible: true
@@ -1435,7 +1433,7 @@
 			description: [
 				"Stufe 4 braucht noch mehr Runen und Bloodstone als Kappen auf den Säulen."
 				"Buch: Utility Blocks & Items → Bloodstone Bricks, Tiers & Getting Started; Blood Altars → Tiers of Slates."
-				"&6⚙&r Vier Demonic Slate brauchst du für die Reparatur des Altars im Tempel (Buch 1, B4)."
+				"Vier Demonic Slate brauchst du für die Reparatur des Altars im Tempel (Buch 1)."
 			]
 			hide_until_deps_visible: true
 			icon: "bloodmagic:largebloodstonebrick"
@@ -1477,7 +1475,7 @@
 			description: [
 				"Das große Dungeon-Ritual öffnet den Demon Realm mit seinen Räumen. Ist das Muster aus Ritual Stones vollständig, startest du es wie jedes Ritual mit dem Weak Activation Crystal am Master Ritual Stone. Es kostet 150 000 LP, so viel fasst ein voller Magician's Blood Orb. Hinein und wieder hinaus geht es über den Inversion Pillar."
 				"Buch: Rituals → List of Rituals → Pathway to the Endless Realm; Dungeon Delving → The Endless Realm."
-				"&6⚙&r Im Pack gelingt dieses Ritual nur im Tempel auf dem Merkur (Buch 1). Dort steht das Muster nach der Reparatur des Altars schon fertig."
+				"Im Pack gelingt dieses Ritual nur im Tempel auf dem Merkur (Buch 1). Dort steht das Muster nach der Reparatur des Altars schon fertig."
 			]
 			hide_until_deps_visible: true
 			id: "6C53489212B0A712"

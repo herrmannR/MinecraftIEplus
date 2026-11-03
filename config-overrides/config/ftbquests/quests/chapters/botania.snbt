@@ -395,8 +395,7 @@
 			description: [
 				"Eisen in einen gefüllten Pool werfen. Manasteel ist das erste Metall des Mods. Neun Barren ergeben einen Block of Manasteel."
 				"Buch: Mana Manipulation → Mana Pool."
-				"&6⚙&r Den Block brauchst du für „Würdig sein“ in Buch 1, deshalb verlangt die Quest gleich ihn."
-				"&6⚙&r Mit TCIntegrations ist Manasteel auch ein Werkzeugmaterial für Tinkers, ebenso Livingwood, Livingrock und Mana Infused String."
+				"Den Block brauchst du für „Würdig sein“ in Buch 1."
 			]
 			hide_until_deps_visible: true
 			icon: "botania:manasteel_block"
@@ -942,7 +941,7 @@
 			description: [
 				"Botanias Autocrafter: Er baut Rezepte nach, die du ihm vorgibst."
 				"Buch: Natural Apparatus → Open Crate, Crafty Crate."
-				"&6⚙&r Im Pack gibt es weitere Autocrafter (IE Assembler, Mekanism Formulaic Assemblicator, später AE2); die Crate ist der magische Weg."
+				"Im Pack gibt es weitere Autocrafter (IE Assembler, Mekanism Formulaic Assemblicator, später AE2); die Crate ist der magische Weg."
 			]
 			hide_until_deps_visible: true
 			icon: "botania:crafty_crate"
@@ -979,7 +978,7 @@
 			description: [
 				"Wandelt Mana in Strom um."
 				"Buch: Mana Manipulation → Mana Fluxfield."
-				"&6⚙&r Das Fluxfield ist die einzige Brücke von Botania zur Technik. Der Strom passt in IE- und Mekanism-Netze; den Rückweg von Strom zu Mana gibt es nicht."
+				"Das Fluxfield ist die einzige Brücke von Botania zur Technik. Der Strom passt in IE- und Mekanism-Netze; den Rückweg von Strom zu Mana gibt es nicht."
 			]
 			hide_until_deps_visible: true
 			icon: "botania:mana_fluxfield"
@@ -1057,7 +1056,6 @@
 			description: [
 				"Verwandelt Stein in Erz."
 				"Buch: Functional Flora → Orechid."
-				"&6⚙&r Die Orechid macht nur Vanilla-Erze. Erze von IE, Mekanism, Blue Skies und den Planeten liefert sie nicht."
 			]
 			hide_until_deps_visible: true
 			icon: "botania:orechid"
@@ -1130,7 +1128,7 @@
 			description: [
 				"Ein Amulett, das gegen Mana verhindert, dass Explosionen in deiner Nähe Blöcke zerstören. Du machst es aus Rune of Water, Rune of Spring, Mana Diamond und zwei rosa Petals."
 				"Buch: Trinkets and Accessories → Benevolent Goddess' Charm."
-				"&6⚙&r Im Pack lässt der Demon Realm von Blood Magic nur hinein, wer den Charm trägt. Für Buch 1 braucht jeder von euch einen eigenen."
+				"Im Pack lässt der Demon Realm von Blood Magic nur hinein, wer den Charm trägt. Für Buch 1 braucht jeder von euch einen eigenen."
 			]
 			hide_until_deps_visible: true
 			icon: "botania:goddess_charm"
@@ -1220,7 +1218,6 @@
 			description: [
 				"Das zweite Metall des Mods und Baustoff des Elfenportals. Plane die Mana-Versorgung vorher: Ein Barren braucht etwa einen halben Pool."
 				"Buch: Basics and Mechanics → Terrasteel."
-				"&6⚙&r Mit TCIntegrations gibt Terrasteel einen Modifier für Tinkers-Werkzeuge."
 			]
 			hide_until_deps_visible: true
 			icon: "botania:terrasteel_ingot"
@@ -1356,7 +1353,7 @@
 			description: [
 				"Rahmen aus Livingwood, in der Mitte der Elven Gateway Core. Mit dem Wand of the Forest öffnest du es."
 				"Buch: Alfhomancy → The Portal to Alfheim, A Message from Elven Garde."
-				"&6⚙&r Hindurchgehen kannst du noch nicht: MythicBotany lässt nur durch, wer den Mead of Kvasir getrunken hat (späteres Kapitel). Bis dahin dient das Portal dem Handel."
+				"Hindurchgehen kannst du noch nicht: MythicBotany lässt nur durch, wer den Mead of Kvasir getrunken hat (späteres Kapitel). Bis dahin dient das Portal dem Handel."
 			]
 			hide_until_deps_visible: true
 			icon: "botania:alfheim_portal"
@@ -1405,7 +1402,7 @@
 			description: [
 				"Was du ins Portal wirfst, tauschen die Elfen gegen ihre Stoffe."
 				"Buch: Alfhomancy → Resources of Alfheim."
-				"&6⚙&r Bis Alfheim betreten werden kann, gibt es diese Stoffe nur über den Handel."
+				"Bis Alfheim betreten werden kann, gibt es diese Stoffe nur über den Handel."
 			]
 			hide_until_deps_visible: true
 			icon: "botania:elementium_ingot"
@@ -1751,7 +1748,7 @@
 			description: [
 				"Buch: kein Eintrag (Applied Botanics)"
 				""
-				"&6⚙&r Applied Botanics lagert Mana in AE2. AE2 ist im Pack Endgame, die Quest gehört deshalb hinter den Meilenstein des ME-Systems."
+				"Applied Botanics lagert Mana in AE2. Die Quest erscheint deshalb erst mit dem ME-System."
 			]
 			hide_until_deps_visible: true
 			icon: "appbot:mana_cell_housing"

@@ -628,8 +628,10 @@ public class QuestbuchGen {
             // erste Quest eines späteren Buchs: unsichtbar, bis das vorige Buch fertig ist; der Tab bleibt so verborgen
             if (depHex != null && firstInBook) sb.append("\t\t\thide_until_deps_complete: true\n");
             firstInBook = false;
-            sb.append("\t\t\tdescription: [\n\t\t\t\t\"&7Mock: Kapitel per Klick abschließen. Die Belohnung setzt die Stage, mit der die Quests dieses Kapitels in den Mod-Kapiteln erscheinen.&r\"\n")
-              .append("\t\t\t\t\"\"\n\t\t\t\t\"&eFortschritt:&r ").append(esc(fmt(c.length > 1 ? c[1] : ""))).append("\"\n\t\t\t]\n");
+            // Spielertext ohne interne Verweise wie „(F37, 2026-10-28)“ (User, 2026-11-03)
+            String fortschritt = (c.length > 1 ? c[1] : "").replaceAll("\\s*\\((?:[OFEB]\\d+|\\d{4}-\\d\\d-\\d\\d)[^)]*\\)", "");
+            sb.append("\t\t\tdescription: [\n\t\t\t\t\"Dieses Kapitel folgt später.\"\n")
+              .append("\t\t\t\t\"\"\n\t\t\t\t\"&eFortschritt:&r ").append(esc(fmt(fortschritt))).append("\"\n\t\t\t]\n");
             sb.append("\t\t\ticon: \"minecraft:book\"\n\t\t\tid: \"").append(hex(HQ + ":" + k)).append("\"\n");
             sb.append("\t\t\tshape: \"hexagon\"\n\t\t\tsize: 1.25d\n");
             sb.append("\t\t\ttasks: [{\n\t\t\t\tid: \"").append(hex(HQ + ":" + k + ":task0"))

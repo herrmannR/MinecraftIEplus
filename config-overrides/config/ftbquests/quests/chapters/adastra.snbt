@@ -29,9 +29,9 @@
 		{
 			dependencies: ["76675F0BE49207E9"]
 			description: [
-				"Das Astrodux führt durch die ganze Raumfahrt bis Proxima Centauri. Lies es kapitelweise, aber achte auf die &6⚙&r-Hinweise in diesen Quests: Einiges im Buch gilt hier nicht."
+				"Das Astrodux führt durch die ganze Raumfahrt bis Proxima Centauri. Lies es kapitelweise. Einiges im Buch gilt hier nicht; wo das Pack abweicht, sagen es die Quests."
 				"Buch: The First Launch."
-				"&6⚙&r Die ersten drei Einträge stimmen im Pack nicht. Coal Generator und Compressor gibt es nicht, und die Etrionic Blast Furnace macht keinen Stahl. Strom, Stahl und Platten kommen aus Immersive Engineering."
+				"Die ersten drei Einträge stimmen im Pack nicht. Coal Generator und Compressor gibt es nicht, und die Etrionic Blast Furnace macht keinen Stahl. Strom, Stahl und Platten kommen aus Immersive Engineering."
 			]
 			hide_until_deps_visible: true
 			icon: "ad_astra:astrodux"
@@ -59,7 +59,7 @@
 			description: [
 				"Für Rakete, Anzug und Werkbank brauchst du viel Stahl, Stahlplatten und Eisenplatten. Ad Astra nimmt die Teile aus Immersive Engineering ohne Umweg an."
 				"Buch: The First Launch → Creating Plates, Making Steel (beide nur zur Einordnung)."
-				"&6⚙&r Stahl kommt aus dem IE Blast Furnace, Platten aus der Metal Press oder mit dem Engineer's Hammer. Der Compressor und das Stahl-Rezept der Etrionic Blast Furnace sind entfernt."
+				"Stahl kommt aus dem IE Blast Furnace, Platten aus der Metal Press oder mit dem Engineer's Hammer. Der Compressor und das Stahl-Rezept der Etrionic Blast Furnace sind entfernt."
 			]
 			hide_until_deps_visible: true
 			icon: "immersiveengineering:ingot_steel"
@@ -97,7 +97,6 @@
 			description: [
 				"An der NASA Workbench baust du jede Rakete. Gestartet wird vom Launch Pad."
 				"Buch: The First Launch → Your First Rocket."
-				"&6⚙&r Die NASA Workbench braucht Stahlstäbe, ein Steel Casing aus Mekanism und 2 Heavy Engineering Blocks. Das Launch Pad hat einen Stahlblock in der Mitte und Steel Sheetmetal außen."
 			]
 			hide_until_deps_visible: true
 			icon: "ad_astra:nasa_workbench"
@@ -130,7 +129,6 @@
 			description: [
 				"Nose Cone, Flossen, Tanks und Triebwerk entstehen in der normalen Werkbank. Dazu kommen sechs Stahlblöcke."
 				"Buch: The First Launch → Your First Rocket."
-				"&6⚙&r Stahlblöcke aus IE gelten ebenso wie die von Ad Astra. In der Steel Engine sitzt oben in der Mitte ein Basic Control Circuit aus Mekanism statt einer Platte. Jedes höhere Triebwerk baut auf dem davor auf. Die Flossen (für alle Stufen gleich) brauchen Steel Sheetmetal aus IE statt Stahlplatten."
 			]
 			hide_until_deps_visible: true
 			icon: "ad_astra:rocket_nose_cone"
@@ -202,7 +200,7 @@
 			description: [
 				"Ein Start verbraucht 3 Eimer. Für Hin- und Rückflug brauchst du also 6: drei im Tank, drei im Gepäck."
 				"Buch: The First Launch → Fuel (nur zur Einordnung)."
-				"&6⚙&r Die Rakete T1 fliegt nur mit Biodiesel aus der IE Refinery. Fuel, Oil und die Fuel Refinery gibt es im Pack nicht; Ölquellen von Ad Astra sind abgeschaltet."
+				"Die Rakete T1 fliegt nur mit Biodiesel aus der IE Refinery. Fuel, Oil und die Fuel Refinery gibt es im Pack nicht; Ölquellen von Ad Astra sind abgeschaltet."
 			]
 			hide_until_deps_visible: true
 			icon: "immersiveengineering:biodiesel_bucket"
@@ -232,8 +230,7 @@
 				"Der Oxygen Loader füllt Raumanzug und Gas Tanks mit Sauerstoff."
 				"Kette: Wasser → Electrolytic Separator → Oxygen (Gas) → Rotary Condensentrator → Liquid Oxygen → Oxygen Loader."
 				"Buch: The First Launch → Oxygen."
-				"&6⚙&r Der Oxygen Loader nimmt kein Wasser an, nur flüssigen Sauerstoff aus Mekanism (25 mB ergeben 25 mB). Wie du ihn herstellst, steht im Mekanism-Kapitel in der Quest „Flüssiger Sauerstoff“."
-				"&6⚙&r Der Oxygen Loader braucht zusätzlich ein Steel Casing aus Mekanism und eine Steel Mechanical Component aus IE."
+				"Der Oxygen Loader nimmt kein Wasser an, nur flüssigen Sauerstoff aus Mekanism. Wie du ihn herstellst, steht im Mekanism-Kapitel in der Quest „Flüssiger Sauerstoff“."
 			]
 			hide_until_deps_visible: true
 			icon: "ad_astra:oxygen_loader"
@@ -267,7 +264,6 @@
 			description: [
 				"Ohne Anzug überlebst du auf dem Mond nicht: keine Luft, −173 °C. Fülle den Anzug vor dem Start im Oxygen Loader."
 				"Buch: The First Launch → Oxygen."
-				"&6⚙&r Der Raumanzug ist aus Steel Sheetmetal statt aus Stahlplatten."
 			]
 			hide_until_deps_visible: true
 			icon: "ad_astra:space_helmet"
@@ -310,7 +306,7 @@
 			description: [
 				"Ein Gas Tank ist Sauerstoff zum Nachfüllen, der Capacitor ein tragbarer Energiespeicher."
 				"Buch: The First Launch → Portable Resources."
-				"&6⚙&r Den Capacitor lädst du in der IE Charging Station oder am Mekanism Energy Cube. Den Energizer gibt es im Pack nicht."
+				"Den Capacitor lädst du in der IE Charging Station oder am Mekanism Energy Cube. Den Energizer gibt es im Pack nicht."
 			]
 			hide_until_deps_visible: true
 			icon: "ad_astra:gas_tank"
@@ -405,7 +401,7 @@
 				"Das Giselle Addon steht nicht im Astrodux. Alle Quests dieser Reihe sind optional."
 				""
 				"Der Fuel Loader betankt Raketen und Rover, die höchstens 2 Blöcke entfernt stehen. Er fasst 8000 mB, also genug für einen Hin- und Rückflug. Füll ihn per Rohr oder Eimer mit dem Treibstoff der Rakete."
-				"&6⚙&r Auch hier zählt nur der Treibstoff der jeweiligen Stufe."
+				"Auch hier zählt nur der Treibstoff der jeweiligen Stufe."
 			]
 			hide_until_deps_visible: true
 			icon: "ad_astra_giselle_addon:fuel_loader"
@@ -461,7 +457,7 @@
 		{
 			dependencies: ["499EC397EBA8F93C"]
 			description: [
-				"Eine NASA Workbench, die sich mit Trichtern und Rohren beschicken lässt. &9(ungeprüft)&r Wie sie genau arbeitet, ist nicht ausgelesen; Text im Spiel prüfen."
+				"Eine NASA Workbench, die sich mit Trichtern und Rohren beschicken lässt."
 			]
 			hide_until_deps_visible: true
 			icon: "ad_astra_giselle_addon:automation_nasa_workbench"
@@ -537,7 +533,7 @@
 			description: [
 				"Desh liegt nur auf dem Mond. Es ist das Metall der Rakete T2 und vieler Maschinen."
 				"Buch: The First Launch → The Moon."
-				"&6⚙&r Desh-Platten gibt es nur im IE-Lichtbogenofen: 2 Desh-Barren + 1 Stahlbarren → 2 Platten. Metal Press und Hammer gehen dafür nicht. Auf dem Mond liegt außerdem Osmium in Menge (Erz von Mekanism in Moon Stone)."
+				"Auf dem Mond liegt außerdem Osmium in Menge (Erz von Mekanism in Moon Stone)."
 			]
 			hide_until_deps_visible: true
 			icon: "ad_astra:desh_ingot"
@@ -578,7 +574,7 @@
 			description: [
 				"Im Orbit kannst du eine Raumstation errichten. Für Erde und Mond kostet sie 64 Iron Plate, 32 Steel Ingot, 32 Desh Ingot und 32 Desh Plate; wie man sie setzt, zeigt das Buch."
 				"Buch: The Moon → Space Station."
-				"&6⚙&r Stationen weiter draußen kosten mehr: Mars 16 Stahlblöcke, 32 Infused Alloy, je 32 Ostrum-Barren und -Platten; Merkur und Venus 32 Stahlblöcke, 32 Reinforced Alloy, je 32 Calorite-Barren und -Platten; Glacio 16 Stahlblöcke, 16 Atomic Alloy, 32 Ostrum- und 32 Calorite-Platten."
+				"Stationen weiter draußen kosten mehr: Mars 16 Stahlblöcke, 32 Infused Alloy, je 32 Ostrum-Barren und -Platten; Merkur und Venus 32 Stahlblöcke, 32 Reinforced Alloy, je 32 Calorite-Barren und -Platten; Glacio 16 Stahlblöcke, 16 Atomic Alloy, 32 Ostrum- und 32 Calorite-Platten."
 			]
 			hide_until_deps_visible: true
 			icon: "ad_astra:launch_pad"
@@ -616,8 +612,7 @@
 			description: [
 				"Der Distributor füllt einen abgedichteten Raum mit Luft, bis 6000 Blöcke. Ist der Raum undicht, bläst die Luft hinaus."
 				"Buch: The Moon → Oxygen Distributor."
-				"&6⚙&r Die Water Pump gibt es im Pack nicht; Wasser und Sauerstoff kommen über Mekanism. Strom bringst du mit dem IE Feedthrough Insulator oder einem Energiespeicher in Wand oder Boden hinein, ohne die Abdichtung zu brechen."
-				"&6⚙&r Der Oxygen Distributor braucht unten ein Steel Casing und eine Infused Alloy aus Mekanism statt der Desh-Platten."
+				"Die Water Pump gibt es im Pack nicht; Wasser und Sauerstoff kommen über Mekanism. Strom bringst du mit dem IE Feedthrough Insulator oder einem Energiespeicher in Wand oder Boden hinein, ohne die Abdichtung zu brechen."
 			]
 			hide_until_deps_visible: true
 			icon: "ad_astra:oxygen_distributor"
@@ -660,8 +655,7 @@
 			description: [
 				"Stellt in seiner Umgebung die Schwerkraft der Overworld her."
 				"Buch: The Moon → Gravity Normalizer."
-				"&6⚙&r Die Etrionic Capacitors dafür lädst du in der IE Charging Station oder am Mekanism Energy Cube."
-				"&6⚙&r Der Gravity Normalizer braucht zusätzlich 2 Reinforced Alloy aus Mekanism und einen Heavy Engineering Block."
+				"Die Etrionic Capacitors dafür lädst du in der IE Charging Station oder am Mekanism Energy Cube."
 			]
 			hide_until_deps_visible: true
 			icon: "ad_astra:gravity_normalizer"
@@ -736,7 +730,7 @@
 			description: [
 				"Ein Fahrzeug für weite Wege auf Mond und Mars, mit Radio und Stauraum."
 				"Buch: The Moon → Rover."
-				"&6⚙&r Der Rover fährt nur mit Biodiesel, wie die Rakete T1. Er braucht zusätzlich einen Light Engineering Block, seine Räder haben Reifen aus HDPE Sheets (Mekanism) statt Wolle."
+				"Der Rover fährt nur mit Biodiesel, wie die Rakete T1."
 			]
 			hide_until_deps_visible: true
 			icon: "ad_astra:tier_1_rover"
@@ -774,7 +768,7 @@
 			description: [
 				"Unter der Mondoberfläche leben Lunarians. Sie handeln gegen Smaragde mit Planetenmaterial und Ausrüstung; ein wandernder Händler taucht auf jedem Planeten auf."
 				"Buch: The Moon → Lunarians."
-				"&6⚙&r Der Händler verkauft Fuel. Damit fliegt im Pack keine Rakete; kauf es nicht für den Rückflug."
+				"Der Händler verkauft Fuel. Damit fliegt im Pack keine Rakete; kauf es nicht für den Rückflug."
 			]
 			hide_until_deps_visible: true
 			id: "5FFC13149F9EF18F"
@@ -813,7 +807,6 @@
 				""
 				"Das Addon More Structures setzt auf jeden Himmelskörper einen Dungeon mit Boss. Der Mond-Turm steht in den Lunar Wastelands. Der Boss lässt Cheese, Raw Desh, Raw Iron und Ice Shards fallen. Als Trophäe liegt dort der Moon Globe, der einzige Globus, den man im Überlebensmodus bekommt."
 				"Buch: Surviving Mars → Trophies (der Globus); den Dungeon kennt das Buch nicht."
-				"&9(ungeprüft)&r Welcher Mob der Boss ist, ist nicht ausgelesen."
 			]
 			hide_until_deps_visible: true
 			icon: "ad_astra:moon_globe"
@@ -851,7 +844,7 @@
 			description: [
 				"Ab jetzt baut jede Stufe auf der davor auf: In jedem Desh Tank steckt ein Steel Tank, in der Desh Engine eine Steel Engine."
 				"Buch: The Moon → Mars."
-				"&6⚙&r Jeder Desh Tank braucht zusätzlich 2 Ventium Ingot aus Blue Skies (blue_skies:ventium_ingot, Everbright), einen Stahlblock, ein Steel Sheetmetal, eine Electrum-Drahtspule und einen Steel Rod. In der Desh Engine sitzen ein Advanced Control Circuit aus Mekanism, ein Heavy Engineering Block und eine Infused Alloy. Ab hier reicht der einfache Hochofen kaum noch: Bau den Improved Blast Furnace oder den Lichtbogenofen."
+				"Ab hier reicht der einfache Hochofen kaum noch: Bau den Improved Blast Furnace oder den Lichtbogenofen."
 			]
 			hide_until_deps_visible: true
 			icon: "ad_astra:desh_tank"
@@ -893,7 +886,7 @@
 			description: [
 				"Wie die erste Rakete, aber mit sechs Desh-Blöcken. Sie fliegt bis zum Mars."
 				"Buch: The Moon → Mars."
-				"&6⚙&r Die Rakete T2 fliegt nur mit entschwefeltem Diesel aus dem Hydrotreater, nicht mit schwefelhaltigem Diesel und nicht mit Biodiesel. Für Hin- und Rückflug brauchst du 6 Eimer."
+				"Die Rakete T2 fliegt nur mit entschwefeltem Diesel aus dem Hydrotreater, nicht mit schwefelhaltigem Diesel und nicht mit Biodiesel. Für Hin- und Rückflug brauchst du 6 Eimer."
 			]
 			hide_until_deps_visible: true
 			icon: "ad_astra:tier_2_rocket"
@@ -989,7 +982,7 @@
 			description: [
 				"Ostrum liegt nur auf dem Mars. Es ist das Metall der Rakete T3."
 				"Buch: The Moon → Mars."
-				"&6⚙&r Ostrum-Platten nur im IE-Lichtbogenofen: 2 Barren + 1 Stahl → 2 Platten. Auf dem Mars liegt außerdem Fluorit (Erz von Mekanism in Mars Stone)."
+				"Auf dem Mars liegt Fluorit (Erz von Mekanism in Mars Stone)."
 			]
 			hide_until_deps_visible: true
 			icon: "ad_astra:ostrum_ingot"
@@ -1109,7 +1102,7 @@
 			description: [
 				"Der Freezer macht aus Eis Cryo Fuel; am ergiebigsten sind Ice Shards (25 mB je Stück)."
 				"Buch: Surviving Mars → Better Fuel."
-				"&6⚙&r Cryo Fuel allein fliegt im Pack keine Rakete. Du brauchst es als Zutat für den Treibstoff der Rakete T4 (Quest „Tier 4 Rocket“). Fang früh an, Ice Shards zu sammeln."
+				"Cryo Fuel allein fliegt im Pack keine Rakete. Du brauchst es als Zutat für den Treibstoff der Rakete T4 (Quest „Tier 4 Rocket“). Fang früh an, Ice Shards zu sammeln."
 			]
 			hide_until_deps_visible: true
 			icon: "ad_astra:cryo_freezer"
@@ -1146,8 +1139,7 @@
 				"Der stärkere Anzug aus Ostrum und einer vollen Netherite-Rüstung. Er schützt besser und gibt dauerhafte Feuerresistenz."
 				"Buch: Surviving Mars → Netherite Space Suit."
 				"Hinweis: Das Buch nennt ihn Pflicht für Venus und Merkur. Im Spiel stimmt das nicht; dort reicht jeder Anzug."
-				"&6⚙&r Im Pack ist er trotzdem Pflicht vor dem Flug zum Merkur: Die Story-Quest „Die heißeste Welt“ verlangt ihn."
-				"&6⚙&r Das Bruststück braucht zusätzlich ein Steel Casing aus Mekanism."
+				"Im Pack ist er trotzdem Pflicht vor dem Flug zum Merkur: Die Story-Quest „Die heißeste Welt“ verlangt ihn."
 			]
 			hide_until_deps_visible: true
 			icon: "ad_astra:netherite_space_helmet"
@@ -1199,7 +1191,6 @@
 				"&c&eVorsicht:&r&c Boss am Ende des Turms.&r"
 				""
 				"Der zweite Dungeon von More Structures. Der Boss lässt Ice Shards, Diamanten, Raw Ostrum und Raw Iron fallen."
-				"&9(ungeprüft)&r Boss-Mob und eine prüfbare Beute für die Aufgabe nicht ausgelesen."
 			]
 			hide_until_deps_visible: true
 			id: "4B2AF9DC33C0E552"
@@ -1236,7 +1227,6 @@
 			description: [
 				"In jedem Ostrum-Teil steckt das Desh-Teil der Stufe davor."
 				"Buch: Surviving Mars → Venus and Mercury."
-				"&6⚙&r Jeder Ostrum Tank braucht zusätzlich 2 Imbued Slate aus Blood Magic (bloodmagic:infusedslate, Blood Altar Stufe 3), 2 HDPE Sheets (Mekanism, aus Ethylen), einen Stahlblock und einen Redstone Engineering Block. In der Ostrum Engine sitzen ein Elite Control Circuit, 2 Reinforced Alloy, ein Logic Processor aus AE2 und eine HV-Drahtspule."
 			]
 			hide_until_deps_visible: true
 			icon: "ad_astra:ostrum_tank"
@@ -1278,7 +1268,7 @@
 			description: [
 				"Sechs Ostrum-Blöcke. Die Rakete erreicht Merkur und Venus."
 				"Buch: Surviving Mars → Venus and Mercury."
-				"&6⚙&r Die Rakete T3 fliegt nur mit Kerosene aus Immersive Petroleum. Für Hin- und Rückflug brauchst du 6 Eimer."
+				"Die Rakete T3 fliegt nur mit Kerosene aus Immersive Petroleum. Für Hin- und Rückflug brauchst du 6 Eimer."
 			]
 			hide_until_deps_visible: true
 			icon: "ad_astra:tier_3_rocket"
@@ -1378,7 +1368,7 @@
 				""
 				"Der Merkur hat im Hauptmod nur Eisen."
 				"Buch: Surviving Mars → Venus and Mercury."
-				"&6⚙&r Auf dem Merkur liegen Uran und Blei als Mekanism-Erze. Uran gibt es hier und auf der Venus in Menge, in der Overworld kaum."
+				"Auf dem Merkur liegen Uran und Blei als Mekanism-Erze. Uran gibt es hier und auf der Venus in Menge, in der Overworld kaum."
 			]
 			hide_until_deps_visible: true
 			id: "36474DCE9973F69E"
@@ -1413,7 +1403,7 @@
 			description: [
 				"Calorite gibt es nur auf der Venus. Es ist das Metall der Rakete T4."
 				"Buch: Surviving Mars → Venus and Mercury."
-				"&6⚙&r Calorite-Platten nur im IE-Lichtbogenofen: 2 Barren + 1 Stahl → 2 Platten. Auf der Venus liegen außerdem Uran und Blei."
+				"Auf der Venus liegen Uran und Blei."
 			]
 			hide_until_deps_visible: true
 			icon: "ad_astra:calorite_ingot"
@@ -1454,7 +1444,7 @@
 			description: [
 				"Der beste Anzug: Er fliegt mit Energie. Du baust ihn aus dem Netherite Space Suit und Calorite."
 				"Buch: The Hot Planets → Jet Suit."
-				"&6⚙&r Laden in der IE Charging Station oder am Mekanism Energy Cube; den Energizer gibt es im Pack nicht."
+				"Laden in der IE Charging Station oder am Mekanism Energy Cube; den Energizer gibt es im Pack nicht."
 			]
 			hide_until_deps_visible: true
 			icon: "ad_astra:jet_suit_helmet"
@@ -1516,7 +1506,6 @@
 				"&c&eVorsicht:&r&c Zwei Bosse, dazu Hitze und saurer Regen auf der Venus.&r"
 				""
 				"More Structures setzt auf die Venus den Venus Tree Dungeon und auf den Merkur den Mercury Arena Dungeon. Der Venus-Boss lässt Raw Calorite, Diamanten, Raw Gold, Kohle und Blaze Rods fallen, der Merkur-Boss Raw Iron, Magma Cream und Blaze Rods."
-				"&9(ungeprüft)&r Boss-Mobs nicht ausgelesen."
 			]
 			hide_until_deps_visible: true
 			id: "54C02EFCA426CD84"
@@ -1561,7 +1550,7 @@
 			description: [
 				"In jedem Calorite-Teil steckt das Ostrum-Teil davor, also die Teile aller vier Stufen."
 				"Buch: The Hot Planets → Proxima Centauri."
-				"&6⚙&r Jeder Calorite Tank braucht zusätzlich 2 Elementium Ingot aus Botania (botania:elementium_ingot), 2 Barren Hepatizon oder Manyullyn aus Tinkers (Kobalt aus dem Nether), einen Stahlblock und einen Light Engineering Block. In der Calorite Engine sitzen ein Ultimate Control Circuit, 2 Atomic Alloy, ein Calculation Processor aus AE2 und der &eGalaktische Strahlenschutz&r (kubejs:galaktischer_strahlenschutz). Den Strahlenschutz kann man nicht selbst herstellen; du bekommst ihn im Lauf der Hauptquests."
+				"In der Calorite Engine steckt der &eGalaktische Strahlenschutz&r. Den kann man nicht selbst herstellen; du bekommst ihn im Lauf der Hauptquests."
 			]
 			hide_until_deps_visible: true
 			icon: "ad_astra:calorite_tank"
@@ -1603,7 +1592,7 @@
 			description: [
 				"Sechs Calorite-Blöcke. Die letzte Rakete des Hauptmods verlässt das Sonnensystem."
 				"Buch: The Hot Planets → Proxima Centauri."
-				"&6⚙&r Die Rakete T4 fliegt nur mit Kryo-Raketentreibstoff. Den mischt die IE Refinery aus Gasoline (Immersive Petroleum) und Cryo Fuel aus dem Cryo Freezer, 10 mB Gasoline und 20 mB Cryo Fuel zu 10 mB, mit viel Strom. Wie bei jeder Rakete verbraucht ein Start 3 Eimer, für Hin- und Rückflug brauchst du also 6: allein dafür 12 000 mB Cryo Fuel, das sind 480 Ice Shards. Plane eine richtige Anlage aus Cryo Freezer und Refinery."
+				"Die Rakete T4 fliegt nur mit Kryo-Raketentreibstoff. Den mischt die IE Refinery aus Gasoline (Immersive Petroleum) und Cryo Fuel aus dem Cryo Freezer. Wie bei jeder Rakete verbraucht ein Start 3 Eimer, für Hin- und Rückflug brauchst du also 6: allein dafür 12 000 mB Cryo Fuel, das sind 480 Ice Shards. Plane eine richtige Anlage aus Cryo Freezer und Refinery."
 			]
 			hide_until_deps_visible: true
 			icon: "ad_astra:tier_4_rocket"
@@ -1645,7 +1634,7 @@
 			description: [
 				"Glacio im System Proxima Centauri ist kalt (−20 °C), hat aber Luft. Hier brauchst du keinen Anzug. Ein eigenes Metall gibt es nicht. Das Astrodux endet hier."
 				"Buch: The Hot Planets → Proxima Centauri."
-				"&6⚙&r Auf Glacio liegen Osmium und Uran als Mekanism-Erze."
+				"Auf Glacio liegen Osmium und Uran als Mekanism-Erze."
 			]
 			hide_until_deps_visible: true
 			id: "7FA6CF2E44079A2F"
@@ -1733,8 +1722,7 @@
 				"• &eSpace Fire Proof&r: kein Feuer am Körper auf heißen Planeten · Mercury Stone · Merkur"
 				"• &eAcid Rain Proof&r: kein Schaden durch sauren Regen · Venus Stone · Venus"
 				""
-				"Die Bücher entstehen in der Werkbank: 7 Gestein des Planeten, ein Book und ein Anzug- oder Metallteil (Space Suit, Space Boots, Ostrum Plate oder Calorite Plate). Am Amboss kommt die Verzauberung auf beliebige Rüstung."
-				"&9(ungeprüft)&r Wie viel Sauerstoff die Verzauberung verbraucht und woher sie ihn nimmt, regelt die Config des Addons; im Spiel prüfen."
+				"Die Bücher entstehen in der Werkbank. Am Amboss kommt die Verzauberung auf beliebige Rüstung."
 			]
 			hide_until_deps_visible: true
 			icon: "minecraft:enchanted_book"
@@ -1762,7 +1750,7 @@
 		{
 			dependencies: ["00007691DEF1650A"]
 			description: [
-				"Für Tinkers-Rüstung gibt es dieselben vier Wirkungen als Modifier. Jeder kostet einen Upgrade-Slot. Space Breathing kommt auf den Helm, Gravity Normalizing auf die Stiefel, Fire Proof und Acid Rain Proof auf die Brustplatte. Zutaten: das Anzug- oder Metallteil und 4 Gestein des Planeten."
+				"Für Tinkers-Rüstung gibt es dieselben vier Wirkungen als Modifier. Jeder kostet einen Upgrade-Slot. Space Breathing kommt auf den Helm, Gravity Normalizing auf die Stiefel, Fire Proof und Acid Rain Proof auf die Brustplatte."
 			]
 			hide_until_deps_visible: true
 			icon: "tconstruct:plate_chestplate"
@@ -1790,8 +1778,7 @@
 		{
 			dependencies: ["48930BE935D20A9C"]
 			description: [
-				"Aus 5 Moon Stone und 4 Mars Stone entsteht Sky Stone. Im Inscriber oder im Crusher wird daraus Sky Dust für AE2; Meteoriten musst du dafür nicht suchen."
-				"&6⚙&r Der Weg bleibt im Pack."
+				"Aus Moon Stone und Mars Stone entsteht Sky Stone. Im Inscriber oder im Crusher wird daraus Sky Dust für AE2; Meteoriten musst du dafür nicht suchen."
 			]
 			hide_until_deps_visible: true
 			icon: "ad_astra:sky_stone"

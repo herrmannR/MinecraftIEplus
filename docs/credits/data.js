@@ -481,15 +481,20 @@ const DATA = {
        "n": 1,
        "id": "farmersdelight:roast_chicken_block",
        "name": "Roast Chicken"
+      },
+      {
+       "n": 1,
+       "id": "farmersdelight:roast_chicken_block",
+       "name": "Roast Chicken"
       }
      ],
      "ware": {
-      "n": 4,
+      "n": 2,
       "id": "ad_astra:desh_ingot",
       "name": "Desh Ingot"
      },
-     "nutzungen": 8,
-     "hinweis": "Essen gegen Mond-Rohstoffe",
+     "nutzungen": 16,
+     "hinweis": "Essen gegen Mond-Rohstoffe (Festessen stapeln nur 1, deshalb zwei Felder)",
      "kostet": 0,
      "zahlt": 0
     },
@@ -499,14 +504,19 @@ const DATA = {
        "n": 1,
        "id": "farmersdelight:honey_glazed_ham_block",
        "name": "Honey Glazed Ham"
+      },
+      {
+       "n": 1,
+       "id": "farmersdelight:honey_glazed_ham_block",
+       "name": "Honey Glazed Ham"
       }
      ],
      "ware": {
-      "n": 4,
+      "n": 2,
       "id": "ad_astra:desh_ingot",
       "name": "Desh Ingot"
      },
-     "nutzungen": 8,
+     "nutzungen": 16,
      "hinweis": "Essen gegen Mond-Rohstoffe",
      "kostet": 0,
      "zahlt": 0
@@ -514,7 +524,7 @@ const DATA = {
     {
      "preis": [
       {
-       "n": 4,
+       "n": 8,
        "id": "kaleidoscope_cookery:borscht",
        "name": "Borscht"
       }
@@ -524,7 +534,7 @@ const DATA = {
       "id": "ad_astra:ice_shard",
       "name": "Ice Shard"
      },
-     "nutzungen": 8,
+     "nutzungen": 16,
      "hinweis": "Essen gegen Mond-Rohstoffe",
      "kostet": 0,
      "zahlt": 0
@@ -532,17 +542,17 @@ const DATA = {
     {
      "preis": [
       {
-       "n": 4,
+       "n": 8,
        "id": "kaleidoscope_cookery:egg_fried_rice",
        "name": "Egg Fried Rice"
       }
      ],
      "ware": {
-      "n": 4,
+      "n": 2,
       "id": "ad_astra:raw_desh",
       "name": "Raw Desh"
      },
-     "nutzungen": 8,
+     "nutzungen": 16,
      "hinweis": "Essen gegen Mond-Rohstoffe",
      "kostet": 0,
      "zahlt": 0

@@ -160,10 +160,10 @@ Davijaan ist die einzige Stelle, an der man Credits ausgibt. Alles ist von Anfan
 
 | Preis | Preis 2 | Ware | Nutzungen | Stufe · Wert in Copper |
 |---|---|---|---|---|
-| 1 × `farmersdelight:roast_chicken_block` | – | 4 × `ad_astra:desh_ingot` | 8 | Essen gegen Mond-Rohstoffe |
-| 1 × `farmersdelight:honey_glazed_ham_block` | – | 4 × `ad_astra:desh_ingot` | 8 | Essen gegen Mond-Rohstoffe |
-| 4 × `kaleidoscope_cookery:borscht` | – | 4 × `ad_astra:ice_shard` | 8 | Essen gegen Mond-Rohstoffe |
-| 4 × `kaleidoscope_cookery:egg_fried_rice` | – | 4 × `ad_astra:raw_desh` | 8 | Essen gegen Mond-Rohstoffe |
+| 1 × `farmersdelight:roast_chicken_block` | 1 × `farmersdelight:roast_chicken_block` | 2 × `ad_astra:desh_ingot` | 16 | Essen gegen Mond-Rohstoffe (Festessen stapeln nur 1, deshalb zwei Felder) |
+| 1 × `farmersdelight:honey_glazed_ham_block` | 1 × `farmersdelight:honey_glazed_ham_block` | 2 × `ad_astra:desh_ingot` | 16 | Essen gegen Mond-Rohstoffe |
+| 8 × `kaleidoscope_cookery:borscht` | – | 4 × `ad_astra:ice_shard` | 16 | Essen gegen Mond-Rohstoffe |
+| 8 × `kaleidoscope_cookery:egg_fried_rice` | – | 2 × `ad_astra:raw_desh` | 16 | Essen gegen Mond-Rohstoffe |
 | 5 × `swgc:gold_credit` | – | 1 × `kubejs:bauplan_ruestung_klon` | 1 | 1 · 75 |
 | 1 × `swgc:gold_credit` | – | 6 × `swgc:plastoid` | 8 | 1 · 15 (48 Plastoid = zwei Klon-Rüstungen) |
 | 20 × `swgc:gold_credit` | – | 1 × `kubejs:bauplan_plastoid` | 1 | 2 · 300 |
@@ -182,5 +182,5 @@ Gegengelesen vom User am 2026-10-26; die früheren Punkte sind erledigt (Bauplan
 
 - 🟢 **Er gibt sich zu erkennen** (User, 2026-10-26, O70): „Nennt mich Odd Ball“, „Outer Rim“, „Geonosis“, „die Order“. Seine Herkunft ist in Teil 1 nicht mehr geheim; was die Order war und wem er gedient hat, sagt er nicht.
 - 🟢 **Helm und Bauplan** (User, 2026-10-26, O71): siehe `v1_reparatur`, Technik in `../ABLAUF.md`.
-- 🟢 **Essen gegen Mond-Rohstoffe** (User, 2026-11-03, B8): Für gutes Essen gibt er Desh, Rohdesh und Ice Shards statt Credits (Tabelle „Handel“). `v2_bauplan` und `v3_waren` von Claude angepasst (kein Durasteel mehr im Verkauf), bitte gegenlesen.
+- 🟢 **Essen gegen Mond-Rohstoffe** (User, 2026-11-03, B8): Für gutes Essen gibt er Desh, Rohdesh und Ice Shards statt Credits (Tabelle „Handel“). Fassung 2 (User, 2026-11-03, nach Test 115): mehr Essen je Rohstoff, je Handel 16-mal; zusammen höchstens 64 Desh-Barren, 32 Rohdesh, 64 Ice Shards für 64 Festessen und 256 Schüsseln. `v2_bauplan` und `v3_waren` von Claude angepasst (kein Durasteel mehr im Verkauf), bitte gegenlesen.
 - **Mehrere Begrüßungstexte** (`v3_hallo`): ob Easy NPC zufällig wählt, ist weiter ungeprüft.

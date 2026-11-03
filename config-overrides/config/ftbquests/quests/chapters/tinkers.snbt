@@ -766,7 +766,7 @@
 				""
 				"Kobalt ist das Metall des Nethers und Zutat der starken Legierungen. Die Smeltery schmilzt es mit Lava."
 				"Buch: Tinkers' Gadgetry → Exploration → Cobalt Ore."
-				"&6⚙&r Im Pack schon in K2 (User, 2026-10-26, O78): Der Vorschlaghammer aus Kobalt ist Teil von „Würdig sein“. (Früher TK3-01.)"
+				"Im Pack ist der Vorschlaghammer aus Kobalt schon früh dran: Er ist Teil von „Würdig sein“."
 			]
 			hide_until_deps_visible: true
 			icon: "tconstruct:raw_cobalt"
@@ -857,7 +857,7 @@
 			description: [
 				"Bau am Anvil einen Vorschlaghammer, bei dem jedes Teil aus Kobalt ist: zwei Hammerköpfe, ein schwerer Griff und eine große Platte. DD3R8 nimmt ihn als Beweis eures handwerklichen Geschicks."
 				"Buch: Mighty Smelting → Broad Tools → Sledge Hammer."
-				"&6⚙&r Die Quest erkennt nur den Hammer; dass alle Teile aus Kobalt sind, prüft ein Skript bei der Abgabe an DD3R8 (O67)."
+				"Die Quest erkennt nur den Hammer; dass alle Teile aus Kobalt sind, prüft DD3R8 bei der Abgabe."
 			]
 			hide_until_deps_visible: true
 			icon: "tconstruct:sledge_hammer"
@@ -1003,7 +1003,7 @@
 			dependencies: ["5C8310D9F4DA825C"]
 			description: [
 				"Schwere Rüstung aus Plating und Maille. Das Metall bestimmt die Schutzart."
-				"Buch: Mighty Smelting → Mighty Armor (Materialien); Fantastic Foundry → Fantastic Armor (die Teile). &9(ungeprüft)&r Prüfen, ob das Mighty-Smelting-Buch die Teile schon selbst zeigt."
+				"Buch: Mighty Smelting → Mighty Armor (Materialien); Fantastic Foundry → Fantastic Armor (die Teile)."
 			]
 			hide_until_deps_visible: true
 			icon: "tconstruct:plate_helmet"
@@ -1220,7 +1220,6 @@
 			description: [
 				"Der heißeste Brennstoff. Er braucht die Legierungen der vierten Stufe."
 				"Buch: Fantastic Foundry → Blazing Blood."
-				"&6⚙&r &9(ungeprüft)&r Blazing Blood soll im Pack auch Zutat in Rezepten anderer Mods werden (Weg A); welche Rezepte, ist offen."
 			]
 			hide_until_deps_visible: true
 			id: "3F7BC68BFB14323D"
@@ -1258,8 +1257,6 @@
 			description: [
 				"Die stärksten Metalle des Mods, nur mit Blazing Blood als Brennstoff."
 				"Buch: Fantastic Foundry → Tier 4 General Materials; Fantastic Armor."
-				"&6⚙&r Refined Obsidian kannst du hier nicht legieren. Es entsteht nur über Mekanism. Fertige Barren lassen sich trotzdem einschmelzen und gießen."
-				"&6⚙&r &9(ungeprüft)&r Auch Manyullyn und Queen's Slime sollen Zutat anderer Mods werden (Weg A, offen)."
 			]
 			hide_until_deps_visible: true
 			icon: "tconstruct:manyullyn_ingot"
@@ -1299,8 +1296,6 @@
 			description: [
 				"Erst nach dem Blutaltar von Blood Magic (BM1)."
 				"Das Addon verbindet Smeltery und Blood Magic: Demon Will wird flüssig, daraus entstehen Bloodbrass und Blood-Seared Stone als Werkzeugmaterial. Kein Buch."
-				"&6⚙&r Life Essence entsteht nur am Blutaltar, nicht als Legierung in der Smeltery. Blank Slates und Runen werden nicht gegossen, sondern am Altar gemacht. Einschmelzen von Slates und Runen zu Blood-Seared Stone geht weiter."
-				"&9(ungeprüft)&r Das Addon ist in Version 1.2.1a teilweise defekt (nur eine von fünf Demonite-Flüssigkeiten). Vor dem Einbau im Spiel prüfen, was davon geht."
 			]
 			hide_until_deps_visible: true
 			id: "4AB259F9833F8B18"
@@ -1355,7 +1350,6 @@
 				"TCIntegrations hat kein Buch. Desh, Ostrum und Calorite erscheinen aber in den Materiallisten der Tinkers-Bücher, sobald sie geladen sind."
 				""
 				"Die Metalle von Mond und Mars lassen sich in der Smeltery schmelzen und gießen."
-				"&6⚙&r &9(ungeprüft)&r Im Mod liegen sie nur auf Eisen-Niveau. Das Pack hebt Stufe und Werte an (Weg C); die Werte sind offen."
 			]
 			hide_until_deps_visible: true
 			id: "6E53DA877D72BDAC"
@@ -1398,7 +1392,6 @@
 			dependencies: ["6E53DA877D72BDAC"]
 			description: [
 				"Werkzeugteile aus Desh, Ostrum und später Calorite tragen den Trait Oxygenated."
-				"&9(ungeprüft)&r Was Oxygenated genau tut, steht noch nicht in den Quellen."
 			]
 			hide_until_deps_visible: true
 			icon: "tconstruct:pick_head"
@@ -1482,9 +1475,7 @@
 		{
 			dependencies: ["6E53DA877D72BDAC"]
 			description: [
-				"Das Giselle Addon bringt Space Breathing, Space Fire Proof, Acid Rain Proof und Gravity Normalizing als Tinkers-Modifier. Beschrieben in adastra.md, RFX-02; hier nur als Verweis, damit die Quest nicht doppelt steht."
-				""
-				"&6⚙&r &9(ungeprüft)&r Weitere geplante Wege ohne eigene Quest, bis sie entschieden sind: eigene Tinkers-Materialien für Metalle ohne Material (Weg D, z. B. Terrasteel, Hellforged, Metalle aus Blue Skies und weiteren Mods), Modifier an späte Items (Weg E), einzelne Raketenteile nur gegossen (Weg F). Kommt einer davon, gehört er als Quest hierher."
+				"Das Giselle Addon bringt Space Breathing, Space Fire Proof, Acid Rain Proof und Gravity Normalizing als Tinkers-Modifier. Mehr dazu im Kapitel Ad Astra."
 			]
 			hide_until_deps_visible: true
 			icon: "tconstruct:plate_chestplate"
@@ -1733,7 +1724,6 @@
 			description: [
 				"Diese Werkzeuge kannst du nicht bauen, nur finden. Eins reicht."
 				"Buch: Tinkers' Gadgetry → Ancient Tools."
-				"&9(ungeprüft)&r Die Fundorte stammen aus dem Buch und setzen teils andere Mods voraus (Piratenorte, Labyrinthe). Prüfen, welche im Pack erreichbar sind; sonst die Quest auf die übrigen beschränken."
 			]
 			hide_until_deps_visible: true
 			icon: "tconstruct:melting_pan"

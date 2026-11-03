@@ -135,7 +135,7 @@ Im Pack: Bronze, Constantan und Electrum kannst du auch hier legieren, nicht nur
 
 Kobalt ist das Metall des Nethers und Zutat der starken Legierungen. Die Smeltery schmilzt es mit Lava.
 Buch: Tinkers' Gadgetry → Exploration → Cobalt Ore.
-⚙️ Im Pack schon in K2 (User, 2026-10-26, O78): Der Vorschlaghammer aus Kobalt ist Teil von „Würdig sein“. (Früher TK3-01.)
+Im Pack ist der Vorschlaghammer aus Kobalt schon früh dran: Er ist Teil von „Würdig sein“.
 
 ### TK2-05 Tinker's Anvil · Hauptweg
 **Aufgabe:** `tconstruct:tinkers_anvil`
@@ -149,7 +149,7 @@ Im Pack: Der Anvil nimmt auch Blöcke aus Bronze, Electrum, Constantan, Refined 
 
 Bau am Anvil einen Vorschlaghammer, bei dem jedes Teil aus Kobalt ist: zwei Hammerköpfe, ein schwerer Griff und eine große Platte. DD3R8 nimmt ihn als Beweis eures handwerklichen Geschicks.
 Buch: Mighty Smelting → Broad Tools → Sledge Hammer.
-⚙️ Die Quest erkennt nur den Hammer; dass alle Teile aus Kobalt sind, prüft ein Skript bei der Abgabe an DD3R8 (O67).
+Die Quest erkennt nur den Hammer; dass alle Teile aus Kobalt sind, prüft DD3R8 bei der Abgabe.
 
 ### TK2-07 Slime-Inseln und Geoden · Nebenquest
 **Aufgabe:** `tconstruct:sky_slime_ball`, `tconstruct:steel_shard`
@@ -167,7 +167,7 @@ Buch: Mighty Smelting → Broad Tools.
 **Aufgabe:** `tconstruct:plate_helmet`, `tconstruct:plate_chestplate`, `tconstruct:plate_leggings`, `tconstruct:plate_boots`
 
 Schwere Rüstung aus Plating und Maille. Das Metall bestimmt die Schutzart.
-Buch: Mighty Smelting → Mighty Armor (Materialien); Fantastic Foundry → Fantastic Armor (die Teile). 🔵 Prüfen, ob das Mighty-Smelting-Buch die Teile schon selbst zeigt.
+Buch: Mighty Smelting → Mighty Armor (Materialien); Fantastic Foundry → Fantastic Armor (die Teile).
 
 ### TK2-11 Entity Melting · Nebenquest
 **Aufgabe:** Kontrollhaken
@@ -204,23 +204,18 @@ Buch: Fantastic Foundry → Foundry → Controller, Structure, Byproducts.
 
 Der heißeste Brennstoff. Er braucht die Legierungen der vierten Stufe.
 Buch: Fantastic Foundry → Blazing Blood.
-⚙️ 🔵 Blazing Blood soll im Pack auch Zutat in Rezepten anderer Mods werden (Weg A); welche Rezepte, ist offen.
 
 ### TK3-06 Legierungen der vierten Stufe · Nebenquest
 **Aufgabe:** `tconstruct:manyullyn_ingot`, `tconstruct:hepatizon_ingot`, `tconstruct:queens_slime_ingot`
 
 Die stärksten Metalle des Mods, nur mit Blazing Blood als Brennstoff.
 Buch: Fantastic Foundry → Tier 4 General Materials; Fantastic Armor.
-⚙️ Refined Obsidian kannst du hier nicht legieren. Es entsteht nur über Mekanism. Fertige Barren lassen sich trotzdem einschmelzen und gießen.
-⚙️ 🔵 Auch Manyullyn und Queen's Slime sollen Zutat anderer Mods werden (Weg A, offen).
 
 ### TK3-07 Blood-Smeltery · Nebenquest
 **Aufgabe:** Flüssigkeit `bloodsmeltery:demon_will`, `bloodsmeltery:molten_bloodbrass`
 
 Erst nach dem Blutaltar von Blood Magic (BM1).
 Das Addon verbindet Smeltery und Blood Magic: Demon Will wird flüssig, daraus entstehen Bloodbrass und Blood-Seared Stone als Werkzeugmaterial. Kein Buch.
-⚙️ Life Essence entsteht nur am Blutaltar, nicht als Legierung in der Smeltery. Blank Slates und Runen werden nicht gegossen, sondern am Altar gemacht. Einschmelzen von Slates und Runen zu Blood-Seared Stone geht weiter.
-🔵 Das Addon ist in Version 1.2.1a teilweise defekt (nur eine von fünf Demonite-Flüssigkeiten). Vor dem Einbau im Spiel prüfen, was davon geht.
 
 ---
 
@@ -232,13 +227,11 @@ TCIntegrations hat kein Buch. Desh, Ostrum und Calorite erscheinen aber in den M
 **Aufgabe:** Flüssigkeit `tcintegrations:molten_desh`, Flüssigkeit `tcintegrations:molten_ostrum`
 
 Die Metalle von Mond und Mars lassen sich in der Smeltery schmelzen und gießen.
-⚙️ 🔵 Im Mod liegen sie nur auf Eisen-Niveau. Das Pack hebt Stufe und Werte an (Weg C); die Werte sind offen.
 
 ### TK4-02 Werkzeug aus dem All · Nebenquest
 **Aufgabe:** `tconstruct:pick_head` (Kontrollhaken: Teil aus Desh oder Ostrum) 🔵
 
 Werkzeugteile aus Desh, Ostrum und später Calorite tragen den Trait Oxygenated.
-🔵 Was Oxygenated genau tut, steht noch nicht in den Quellen.
 
 ### TK4-03 Calorite · Nebenquest
 **Aufgabe:** Flüssigkeit `tcintegrations:molten_calorite`, `ad_astra:calorite_ingot`
@@ -249,9 +242,7 @@ Das Metall der Venus, wie Desh und Ostrum gieß- und verbaubar.
 ### TK4-04 Raumfahrt-Modifier · Nebenquest
 **Aufgabe:** Kontrollhaken (Tinkers-Rüstung mit einem Raumfahrt-Modifier)
 
-Das Giselle Addon bringt Space Breathing, Space Fire Proof, Acid Rain Proof und Gravity Normalizing als Tinkers-Modifier. Beschrieben in `adastra.md`, RFX-02; hier nur als Verweis, damit die Quest nicht doppelt steht.
-
-⚙️ 🔵 Weitere geplante Wege ohne eigene Quest, bis sie entschieden sind: eigene Tinkers-Materialien für Metalle ohne Material (Weg D, z. B. Terrasteel, Hellforged, Metalle aus Blue Skies und weiteren Mods), Modifier an späte Items (Weg E), einzelne Raketenteile nur gegossen (Weg F). Kommt einer davon, gehört er als Quest hierher.
+Das Giselle Addon bringt Space Breathing, Space Fire Proof, Acid Rain Proof und Gravity Normalizing als Tinkers-Modifier. Mehr dazu im Kapitel Ad Astra.
 
 ---
 
@@ -303,7 +294,6 @@ Buch: Tinkers' Gadgetry → Staffs.
 
 Diese Werkzeuge kannst du nicht bauen, nur finden. Eins reicht.
 Buch: Tinkers' Gadgetry → Ancient Tools.
-🔵 Die Fundorte stammen aus dem Buch und setzen teils andere Mods voraus (Piratenorte, Labyrinthe). Prüfen, welche im Pack erreichbar sind; sonst die Quest auf die übrigen beschränken.
 
 ### TKA-07 Gadgets · Nebenquest
 **Aufgabe:** `tconstruct:piggy_backpack`, `tconstruct:seared_fluid_cannon`, `tconstruct:clear_item_frame`

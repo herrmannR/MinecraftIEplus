@@ -19,7 +19,7 @@
 ### BM1-01 Sanguine Scientiem · Hauptweg
 **Aufgabe:** `patchouli:guide_book` (NBT `patchouli:book: "bloodmagic:guide"`)
 
-Blood Magic erklärt sich in seinem eigenen Buch: Altar, Runen, Rituale und alle Rezepte. Du machst es aus einem Buch und einem Glas.
+Blood Magic erklärt sich in seinem eigenen Buch: Altar, Runen, Rituale und alle Rezepte.
 Buch: Utility Blocks & Items → Tiers & Getting Started. Diese Seite gibt die ganze Reihenfolge des Mods vor.
 
 ### BM1-02 Blood Altar · Hauptweg
@@ -41,7 +41,6 @@ Buch: Blood Altars → Soul Network.
 
 Slates sind die Grundzutat jeder Stufe. Jede Slate braucht die vorige und einen stärkeren Altar.
 Buch: Blood Altars → Tiers of Slates.
-⚙️ Slates und Runen entstehen im Pack nur am Altar, nicht im Gießtisch der Smeltery.
 
 ### BM1-05 Alchemy Table und Arcane Ashes · Hauptweg
 **Aufgabe:** `bloodmagic:alchemytable`, `bloodmagic:arcaneashes`
@@ -185,7 +184,6 @@ Buch: Rituals → Ritual Stones.
 
 Der Master Ritual Stone ist das Herz jedes Rituals, die Ritual Stones bilden das Muster drumherum.
 Buch: Rituals → Rituals - Getting Started, Ritual Stones.
-🔵 Die Zahl 16 ist ein Platzhalter; wie viele Steine das erste geplante Ritual braucht, ist nicht ausgelesen.
 
 ### BM3-03 Ritual Diviner und Weak Activation Crystal · Hauptweg
 **Aufgabe:** `bloodmagic:ritualdiviner`, `bloodmagic:activationcrystalweak`
@@ -209,7 +207,7 @@ ARC-Erzketten gibt es nur für Eisen, Gold, Kupfer, Netherite Scrap und Demonite
 ### BM3-06 Imbued Slate für die Rakete T3 · Hauptweg
 **Aufgabe:** 4 × `bloodmagic:infusedslate`
 
-⚙️ Im Pack steckt in jedem Ostrum Tank zwei Imbued Slate, eine Rakete T3 braucht also vier (Kapitel Ad Astra). Der Altar im Tempel braucht später vier Demonic Slate (Altar-Stufe 4).
+Der Altar im Tempel braucht später vier Demonic Slate (Altar-Stufe 4).
 Buch: Blood Altars → Tiers of Slates.
 
 ### BM3-07 Living Armour · Nebenquest
@@ -259,14 +257,14 @@ Buch: Dungeon Delving → Tau Fruit.
 
 Stufe 4 braucht noch mehr Runen und Bloodstone als Kappen auf den Säulen.
 Buch: Utility Blocks & Items → Bloodstone Bricks, Tiers & Getting Started; Blood Altars → Tiers of Slates.
-⚙️ Vier Demonic Slate brauchst du für die Reparatur des Altars im Tempel (Buch 1, B4).
+Vier Demonic Slate brauchst du für die Reparatur des Altars im Tempel (Buch 1).
 
 ### BM4-01 Pathway to the Endless Realm · Hauptweg
 **Aufgabe:** Dimension `bloodmagic:dungeon` betreten
 
 Das große Dungeon-Ritual öffnet den Demon Realm mit seinen Räumen. Ist das Muster aus Ritual Stones vollständig, startest du es wie jedes Ritual mit dem Weak Activation Crystal am Master Ritual Stone. Es kostet 150 000 LP, so viel fasst ein voller Magician's Blood Orb. Hinein und wieder hinaus geht es über den Inversion Pillar.
 Buch: Rituals → List of Rituals → Pathway to the Endless Realm; Dungeon Delving → The Endless Realm.
-⚙️ Im Pack gelingt dieses Ritual nur im Tempel auf dem Merkur (Buch 1). Dort steht das Muster nach der Reparatur des Altars schon fertig.
+Im Pack gelingt dieses Ritual nur im Tempel auf dem Merkur (Buch 1). Dort steht das Muster nach der Reparatur des Altars schon fertig.
 
 ### BM4-05 Foreman's Key · Hauptweg
 **Aufgabe:** `bloodmagic:mineentrancekey`
@@ -343,7 +341,7 @@ Buch: Utility Blocks & Items → Tiers & Getting Started.
 
 ## BM6 · Hellforged-Ausbau (K14 Endor, Part 3)
 
-Eine Altar-Stufe 6 gibt es im Mod nicht (laut Buch nicht umgesetzt). BM6 ist deshalb der Ausbau mit Hellforged.
+Eine Altar-Stufe 6 gibt es im Mod nicht (auch das Buch kennt sie nicht). BM6 ist deshalb der Ausbau mit Hellforged.
 
 ### BM6-01 Reinforced Runes · Hauptweg
 **Aufgabe:** `bloodmagic:speedrune2`

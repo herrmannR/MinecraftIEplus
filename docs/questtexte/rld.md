@@ -23,24 +23,21 @@
 **Aufgabe:** `wrd:magic_cauldron`
 
 Dungeons entstehen in diesem Pack nicht von selbst. Erst die Vessel of Vision erschafft einen.
-Rezept: 6 Iron Ingot, 1 Blaze Powder, 1 Ender Pearl, 1 Cauldron. Für Blaze Powder brauchst du einen Ausflug in den Nether.
+Für das Blaze Powder darin brauchst du einen Ausflug in den Nether.
 So geht's: Der erste Rechtsklick aktiviert die Vessel. Der zweite sucht 5000 bis 10000 Blöcke entfernt einen Ort und baut dort den Dungeon. Findet sie nichts, versuch es an einem anderen Ort noch einmal.
 
 ### WD1-02 Sentient Pathfinder · Hauptweg
 **Aufgabe:** `wrd:dungeon_locator_item`
 
 Der Dungeon liegt tausende Blöcke weit weg. Der Pathfinder bringt dich hin.
-Rezept: Eye of Ender, Soul Lantern, Iron Ingot (formlos, ergibt 2).
 So geht's: Pathfinder auf einen Block setzen, mit der benutzten Vessel rechtsklicken (er merkt sich den Ort), noch einmal rechtsklicken. Nach dem Countdown teleportiert er alle Spieler in seiner Nähe zum Dungeon.
-🔵 Wie der Rückweg funktioniert, ist nicht ausgelesen; im Spiel prüfen. Bis dahin: Nimm einen zweiten Pathfinder mit oder merk dir die Koordinaten.
 
 ### WD1-03 Key Bag und Kreide · Hauptweg
 **Aufgabe:** `wrd:key_bag`, `wrd:chalk_marker_red`
 
 Jede Truhe im Dungeon braucht ihren eigenen Schlüssel, und die Stockwerke sind Labyrinthe.
-Der **Key Bag** (1 Lead, 3 Leather, 1 Iron Ingot) nimmt alle Schlüssel und Kreidemarker auf; Schlösser erkennen den Schlüssel auch im Beutel.
+Der **Key Bag** nimmt alle Schlüssel und Kreidemarker auf; Schlösser erkennen den Schlüssel auch im Beutel.
 Mit **Kreide** im Beutel setzt Shift-Rechtsklick eine Markierung auf den Boden. Die Taste R wechselt die Farbe (rot, blau, grün). Markiere so, woher du kommst.
-🔵 Woher die Kreide kommt (Rezept oder Truhen), ist nicht ausgelesen.
 
 ### WD1-04 Biom-Vessels · Nebenquest
 **Aufgabe:** `wrd:magic_cauldron_desert`, `wrd:magic_cauldron_jungle`, `wrd:magic_cauldron_ice`
@@ -126,7 +123,7 @@ Ein Spawner im Palast ruft den **Ender King**, den **Ender Super Enforcer** und 
 ### WD3-03 Heart of the Deceiver · Nebenquest
 **Aufgabe:** `wrd:heart_of_the_deceiver`
 
-Der Schlüssel zum Portal: 8 Bleeding Corruption um 1 Ender Heart in der Werkbank.
+Aus dem Ender Heart und Bleeding Corruption baust du den Schlüssel zum Portal.
 
 ---
 
@@ -153,14 +150,13 @@ Oben die Magma Chambers, darunter The Forge mit dem **Doom Pillar**, ganz unten 
 
 Das Portal steckt in einem riesigen hohlen Baum, der von selbst in der Welt wächst (selten; nicht in Ozeanen, an Stränden oder in Plains). Innen liegen acht **Orb Holder** im Ring um den **Heart Holder**.
 So geht's: Jeden Orb Holder mit einem Orb of the Deep rechtsklicken, dann den Heart Holder mit dem Heart of the Deceiver. Das Portal öffnet sich.
-🔵 Der Baum ist sehr selten. Prüfen, ob er im Pack in vertretbarer Entfernung zu finden ist, oder ihn als Struktur setzen.
 
 > **Achtung:** Beim Betreten warnt der Mod, dass Gegenstände in den Dungeons dauerhaft verloren gehen können. Lass Wertvolles zu Hause.
 
 ### WD5-02 Orb of Corruption · Nebenquest
 **Aufgabe:** `wrd:orb_of_corruption`
 
-Jeder Lauf kostet einen Orb of Corruption: 2 Bleeding Corruption und 1 Ender Pearl, formlos. Ein Trialstone aus der Bone Chest gibt einen freien Lauf.
+Jeder Lauf kostet einen Orb of Corruption. Ein Trialstone aus der Bone Chest gibt einen freien Lauf.
 So startest du: Dungeon am Selector nahe dem Artefakt-Altar wählen, Schwierigkeit an den Difficulty Selectors wählen, dann mit dem Orb in der Hand den Totempfahl (Dungeon Totempole Top) rechtsklicken.
 
 ### WD5-03 Der erste Lauf · Nebenquest
@@ -183,14 +179,14 @@ Shops im Dungeon verkaufen Time Dust und Artefakte. Die **Sacrificial Statue** v
 
 Jeder weitere Dungeon verlangt eine höhere Erfahrungsstufe:
 
-| Dungeon | Stufe | Boss | Trophäe |
-|---|---|---|---|
-| Aquatic Shrine | 10 | Aquaguard | `wrd:trophy_aqg` |
-| Gemstone Grotto | 30 | Crystal Spider | `wrd:trophy_cs` |
-| Temple of Ra | 40 | Giant Mummy | `wrd:trophy_gm` |
-| The Maw | 50 | Face of The Maw | `wrd:trophy_tm` |
-| Arctic Cenotaph | 60 | The Corpse | `wrd:trophy_tc` |
-| Palace of The Dead | 70 | The Beyond | `wrd:trophy_be` |
+| Dungeon | Stufe | Boss |
+|---|---|---|
+| Aquatic Shrine | 10 | Aquaguard |
+| Gemstone Grotto | 30 | Crystal Spider |
+| Temple of Ra | 40 | Giant Mummy |
+| The Maw | 50 | Face of The Maw |
+| Arctic Cenotaph | 60 | The Corpse |
+| Palace of The Dead | 70 | The Beyond |
 
 Die Schwierigkeit wählst du getrennt: Easy frei, Medium ab Stufe 5, Hard ab 30, Extreme ab 60. Höhere Schwierigkeit heißt bessere Belohnung.
 **Artefakte** aus Dungeon und Shop opferst du vor dem Start am Altar; sie verändern den nächsten Lauf (mehr Zeit, mehr Gold, mehr Fallen …).
