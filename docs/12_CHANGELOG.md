@@ -1505,3 +1505,11 @@ Status: 🟡 (ungetestet, Tests 90, 122)
 - Tests 117, 118, 120, 121 bestanden.
 - `elfenportal.js` Fassung 2: Cerina stand im Portal. Botania (`AlfheimPortalBlockEntity.getPortalAABB`): `ON_X` = Portalfläche entlang Z; die Achsen waren vertauscht. Jetzt drei Blöcke vor dem Kern auf der Seite des Werfers.
 - Abgaben im Dialog oder per Rechtsklick zeigt das Questbuch nicht als Item-Aufgabe; der User wusste bei ST5-01 und beim Altar nicht, was genau gebraucht wird. `QuestbuchGen.java` hängt jetzt an jede Quest mit „Abgabe im Dialog:“ oder „Rechtsklick mit:“ eine Liste „Mitbringen“ an (Anzahl und Name als JSON-Text mit translate, Sprache des Spiels). ST8-03 und ST9-04 nennen ihre Items jetzt als IDs. Buch 1 neu gebaut und kopiert.
+
+## 2026-11-03 — Cerina wieder rufbar
+
+Status: 🟡 (ungetestet, Test 90)
+
+- Tests 119 und 122 bestanden.
+- `elfenportal.js` Fassung 3: Nach dem ersten Ruf blieb der Weltwert `ieplus_cerina_gerufen` gesetzt; mit `cerina` 0 kam Cerina nicht wieder, ohne Log. Gesperrt wird jetzt über den Score `cerina` (höchster Wert aller Spieler ≥ 1), mit Log-Zeile.
+- Test 111: Knopf „Hier, beides“ blieb gesperrt; Preset und Prüfung im Easy-NPC-JAR stimmen, Ursache offen.

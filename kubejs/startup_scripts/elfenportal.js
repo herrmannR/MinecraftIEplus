@@ -1,7 +1,8 @@
 // Meisterin Cerina rufen (O75, ST10-03; docs/story/ABLAUF.md Abschnitt 6).
 // Wird eine Rune des Frühlings (botania:rune_spring) in ein offenes Portal to Alfheim geworfen, verschwindet sie,
 // Meisterin Cerina erscheint vor dem Portal (easy_npc preset import) und cerina wird für alle Spieler 1.
-// Nur einmal je Welt (Weltwert ieplus_cerina_gerufen). Ersetzt für die Elfe das Hinstellen von Hand (O55).
+// Nur solange niemand cerina ≥ 1 hat; wer cerina wieder auf 0 setzt, kann sie erneut rufen (Test 90).
+// Ersetzt für die Elfe das Hinstellen von Hand (O55).
 //
 // Technik (Botania 1.20.1-456, JAR geprüft 2026-10-26): AlfheimPortalBlockEntity.commonTick feuert jeden Tick das
 // Forge-Ereignis vazkii.botania.api.recipe.ElvenPortalUpdateEvent (Portal, AABB der Öffnung, offen ja/nein),
@@ -14,13 +15,30 @@
 // │   (wo das Preset liegt; Easy NPC 7.14). Solange der Platzhalter steht, bleibt die Rune liegen (Botania        │
 // │   verschluckt sie dann) und im Chat der Operatoren und in logs/kubejs/startup.log steht ein Hinweis.          │
 // └────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-// Stand 2026-11-03, KubeJS 2001. Fassung 2 (Stelle vor dem Portal korrigiert, Test 90).
+// Stand 2026-11-03, KubeJS 2001. Fassung 3: Sperre über den Score cerina statt Weltwert (Fassung 2: Stelle vor dem Portal).
+// Log: „elfenportal.js: Rune im Portal, cerina schon …“ wenn die Sperre greift.
 
 // Name im JAR belegt (Easy NPC 7.14, DataFileHandler): custom = config/easy_npc/preset/, Name = easy_npc:preset/<Pfad darunter>
 const IEPLUS_CERINA_QUELLE = 'custom'
 const IEPLUS_CERINA_PRESET = 'easy_npc:preset/humanoid_slim/cerina.npc.nbt'
 const IEPLUS_CERINA_RUNE = 'botania:rune_spring'
 const IEPLUS_CERINA_SCHLUESSEL = 'ieplus_cerina_gerufen'
+
+// höchster Wert von cerina aller Spieler (wie everdawn_sperre.js: getPlayerScores ist in Rhino mehrdeutig)
+function ieplusCerinaWert(server) {
+  var sb = server.getScoreboard()
+  var obj = sb.getObjective('cerina')
+  if (!obj) return 0
+  var hoechst = 0
+  var it = sb.getTrackedPlayers().iterator()
+  while (it.hasNext()) {
+    var name = it.next()
+    if (!sb.hasPlayerScore(name, obj)) continue
+    var w = sb.getOrCreatePlayerScore(name, obj).getScore()
+    if (w > hoechst) hoechst = w
+  }
+  return hoechst
+}
 
 function ieplusCerinaDimId(level) {
   var s = String(level.dimension)
@@ -54,7 +72,6 @@ ForgeEvents.onEvent('vazkii.botania.api.recipe.ElvenPortalUpdateEvent', event =>
     var level = portal.getLevel()
     if (!level || level.isClientSide()) return
     var server = level.getServer()
-    if (server.persistentData.getBoolean(IEPLUS_CERINA_SCHLUESSEL)) return
     var ItemEntity = Java.loadClass('net.minecraft.world.entity.item.ItemEntity')
     var items = level.getEntitiesOfClass(ItemEntity, event.getAabb())
     for (var i = 0; i < items.size(); i++) {
@@ -62,6 +79,15 @@ ForgeEvents.onEvent('vazkii.botania.api.recipe.ElvenPortalUpdateEvent', event =>
       var stack = e.getItem()
       if (stack.isEmpty() || String(stack.id) !== IEPLUS_CERINA_RUNE) continue
       var werfer = e.getOwner()
+      var schon = ieplusCerinaWert(server)
+      if (schon >= 1) {
+        // Rune bleibt liegen (Botania verschluckt sie dann); nur einmal je Rune loggen
+        if (!e.persistentData.getBoolean('ieplus_cerina_geloggt')) {
+          e.persistentData.putBoolean('ieplus_cerina_geloggt', true)
+          console.info('elfenportal.js: Rune im Portal, cerina schon ' + schon + ', niemand gerufen')
+        }
+        return
+      }
       if (IEPLUS_CERINA_PRESET.indexOf('PLATZHALTER') === 0) {
         console.error('elfenportal.js: Preset von Cerina fehlt (IEPLUS_CERINA_PRESET), Rune nicht verwendet')
         server.runCommandSilent('tellraw @a[gamemode=creative] {"text":"elfenportal.js: Preset von Cerina fehlt (Platzhalter).","color":"red"}')
