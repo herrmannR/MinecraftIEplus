@@ -37,7 +37,7 @@
 			icon: "wrd:magic_cauldron"
 			id: "64F39ED5163ED88E"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "6C644A0B5AC1557C"
 				item: "swgc:gold_credit"
@@ -45,7 +45,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 3
 				id: "608D50F72F30C699"
 				item: "swgc:copper_credit"
@@ -74,7 +74,7 @@
 			icon: "wrd:dungeon_locator_item"
 			id: "7A6EF9579E3C5994"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "07E7F12713FCF714"
 				item: "swgc:gold_credit"
@@ -82,7 +82,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 3
 				id: "3F334E606C62AB51"
 				item: "swgc:copper_credit"
@@ -111,7 +111,7 @@
 			icon: "wrd:key_bag"
 			id: "5698E6E085F5F81B"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "652A377BBD4CB473"
 				item: "swgc:gold_credit"
@@ -119,7 +119,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 3
 				id: "40390938337ACF3C"
 				item: "swgc:copper_credit"
@@ -158,7 +158,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "6CB0056DF9443B9C"
 				item: "swgc:iron_credit"
@@ -166,7 +166,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "2FBE37F4C22F265C"
 				item: "swgc:copper_credit"
@@ -230,7 +230,7 @@
 			icon: "wrd:keystrongholdchest_bonechest"
 			id: "38CE2691D0C9EB92"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "2280279697BC78DC"
 				item: "swgc:gold_credit"
@@ -238,7 +238,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 3
 				id: "6496AD364F0E148D"
 				item: "swgc:copper_credit"
@@ -264,7 +264,7 @@
 			icon: "wrd:orb_of_the_deep"
 			id: "7D41CCDEF6A2699A"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "0DD41843FC391A79"
 				item: "swgc:gold_credit"
@@ -272,7 +272,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 3
 				id: "4BC717D6FFD0A420"
 				item: "swgc:copper_credit"
@@ -312,7 +312,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "4F8B6D1CCFAB5B96"
 				item: "swgc:iron_credit"
@@ -320,7 +320,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "0E9AAD2C80632C79"
 				item: "swgc:copper_credit"
@@ -349,7 +349,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "0B06F1768621DA64"
 				item: "swgc:iron_credit"
@@ -357,7 +357,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "5CB4D2F6FB7FC18F"
 				item: "swgc:copper_credit"
@@ -386,7 +386,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "4BEB341564498F72"
 				item: "swgc:iron_credit"
@@ -394,7 +394,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "0BD764012F610A73"
 				item: "swgc:copper_credit"
@@ -423,7 +423,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "1AABC4D8C58098DB"
 				item: "swgc:iron_credit"
@@ -431,7 +431,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "6BE8AC79F87D2B26"
 				item: "swgc:copper_credit"
@@ -460,7 +460,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "3EEF14DF10F10967"
 				item: "swgc:iron_credit"
@@ -468,7 +468,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "1F7072F7C7811AC7"
 				item: "swgc:copper_credit"
@@ -497,7 +497,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "1F6505189F90978E"
 				item: "swgc:iron_credit"
@@ -505,7 +505,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "6E583E9453CFB84D"
 				item: "swgc:copper_credit"
@@ -556,7 +556,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "29890CD5CBF799D4"
 				item: "swgc:iron_credit"
@@ -564,7 +564,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "4540A0A05C12C79A"
 				item: "swgc:copper_credit"
@@ -592,7 +592,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "253CAFA79DEE700A"
 				item: "swgc:iron_credit"
@@ -600,7 +600,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "1BBA839A517F80DD"
 				item: "swgc:copper_credit"
@@ -628,7 +628,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "175ED2B46F55938B"
 				item: "swgc:iron_credit"
@@ -636,7 +636,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "15412369A7F84C52"
 				item: "swgc:copper_credit"
@@ -682,7 +682,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "45FE85C39FD1963E"
 				item: "swgc:iron_credit"
@@ -690,7 +690,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "7EF278DCF7E21002"
 				item: "swgc:copper_credit"
@@ -720,7 +720,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "1CD9FA91B478C5A4"
 				item: "swgc:iron_credit"
@@ -728,7 +728,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "7549BC941207C66A"
 				item: "swgc:copper_credit"

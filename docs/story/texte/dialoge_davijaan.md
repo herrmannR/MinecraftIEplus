@@ -160,6 +160,10 @@ Davijaan ist die einzige Stelle, an der man Credits ausgibt. Alles ist von Anfan
 
 | Preis | Preis 2 | Ware | Nutzungen | Stufe · Wert in Copper |
 |---|---|---|---|---|
+| 1 × `farmersdelight:roast_chicken_block` | – | 4 × `ad_astra:desh_ingot` | 8 | Essen gegen Mond-Rohstoffe |
+| 1 × `farmersdelight:honey_glazed_ham_block` | – | 4 × `ad_astra:desh_ingot` | 8 | Essen gegen Mond-Rohstoffe |
+| 4 × `kaleidoscope_cookery:borscht` | – | 4 × `ad_astra:ice_shard` | 8 | Essen gegen Mond-Rohstoffe |
+| 4 × `kaleidoscope_cookery:egg_fried_rice` | – | 4 × `ad_astra:raw_desh` | 8 | Essen gegen Mond-Rohstoffe |
 | 5 × `swgc:gold_credit` | – | 1 × `kubejs:bauplan_ruestung_klon` | 1 | 1 · 75 |
 | 1 × `swgc:gold_credit` | – | 6 × `swgc:plastoid` | 8 | 1 · 15 (48 Plastoid = zwei Klon-Rüstungen) |
 | 20 × `swgc:gold_credit` | – | 1 × `kubejs:bauplan_plastoid` | 1 | 2 · 300 |
@@ -171,10 +175,6 @@ Davijaan ist die einzige Stelle, an der man Credits ausgibt. Alles ist von Anfan
 | 58 × `swgc:gold_credit` | – | 1 × `kubejs:bauplan_droide_b1` | 1 | 4 · 870 |
 | 64 × `swgc:gold_credit` | 20 × `swgc:gold_credit` | 1 × `kubejs:bauplan_droide_b2` | 1 | 4 · 1.260 |
 | 64 × `swgc:gold_credit` | 46 × `swgc:gold_credit` | 1 × `kubejs:bauplan_droide_droideka` | 1 | 4 · 1.650 |
-| 1 × `farmersdelight:roast_chicken_block` | – | 4 × `ad_astra:desh_ingot` | 8 | Essen gegen Mond-Rohstoffe |
-| 1 × `farmersdelight:honey_glazed_ham_block` | – | 4 × `ad_astra:desh_ingot` | 8 | Essen gegen Mond-Rohstoffe |
-| 4 × `kaleidoscope_cookery:borscht` | – | 8 × `ad_astra:ice_shard` | 8 | Essen gegen Mond-Rohstoffe |
-| 4 × `kaleidoscope_cookery:egg_fried_rice` | – | 4 × `ad_astra:raw_desh` | 8 | Essen gegen Mond-Rohstoffe |
 
 ## Offen beim Überarbeiten
 

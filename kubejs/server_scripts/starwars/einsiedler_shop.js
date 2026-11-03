@@ -9,7 +9,8 @@
 //   server.persistentData) und alle Spieler bekommen das Advancement ieplus:bauplan/<name>, das den Eintrag im Buch
 //   „Baupläne des Einsiedlers“ (Patchouli, patchouli_books/bauplaene) entsperrt. Wer offline war, bekommt es beim Einloggen.
 //   Ist der Bauplan schon im Buch, bleibt die Rolle und es kommt nur eine Meldung.
-//   Wer als Erster in der Welt eine Rolle liest, bekommt das Buch dazu (gedacht: Assembly Bench als erster Kauf).
+//   Das Buch gibt es nur mit dem Bauplan „Pilotenhelm“, der ersten Rolle der Story (User, 2026-11-03, Test 115);
+//   wer ihn als Erster liest, bekommt das Buch dazu. Andere Rollen geben kein Buch (Ersatz: /bauplan buch).
 //   Ohne Freischaltung liefert die Werkbank nichts; danach auch die Tinkers-Werkstation und Autocrafter (Weltwert, Test 56).
 // - Droiden: Jeder Droide braucht im Droid Fabricator zusätzlich seinen Steuerkern (wird verbraucht).
 //   Das Werkbank-Rezept des Kerns schaltet der Bauplan des Droiden frei.
@@ -18,14 +19,14 @@
 //   /bauplan <name>          eine Schriftrolle (zum Testen oder für das Handelsfenster von Easy NPC)
 //   /bauplan buch            Ersatzbuch
 //   /bauplan zuruecksetzen   alle Baupläne der Welt wieder sperren, Bucheinträge bei allen Spielern zurücknehmen,
-//                            das Buch wird beim nächsten Lesen einer Rolle erneut verteilt
+//                            das Buch kommt beim nächsten Lesen des Pilotenhelms erneut
 //   /bauplan alles           Gegenteil: alle Baupläne frei, alle Einträge offen, Buch an den Ausführenden
 // Rezept-IDs ieplus:bauplan/<ergebnis> werden in den Patchouli-Einträgen verwendet; beim Ändern dort mitziehen.
 // - Buch in drei Kapiteln (User, 2026-10-20): Maschinen (Assembly Bench, Droid Fabricator, Gas Harvester), Waffen (Blaster,
 //   Droiden), Rüstung (Klon, Jedi, Sith, Royal Guard, Vader; deren Werkbank-Rezepte sind bis zum Bauplan gesperrt).
 // - Kapitel „Erinnerungsstücke“ (O71, 2026-10-26): Bauplan „Pilotenhelm“, gibt Davijaan beim Helm-Auftrag. Sein Rezept
 //   (Reparatur des verbeulten Helms) steht in server_scripts/story/story_rezepte.js und fragt denselben Weltwert ab.
-// Stand 2026-11-03, KubeJS 2001. Fassung 13 (Bauplan Durasteel, B8; Fassung 12: Bauplan Pilotenhelm), UNGETESTET.
+// Stand 2026-11-03, KubeJS 2001. Fassung 14 (Buch nur mit dem Pilotenhelm; Fassung 13: Bauplan Durasteel, B8), UNGETESTET.
 
 const IEPLUS_ADV = 'mekanism:advanced_control_circuit'
 const IEPLUS_BAUPLAN_BUCH = 'patchouli:bauplaene'
@@ -183,7 +184,7 @@ ItemEvents.rightClicked(event => {
   event.item.shrink(1)
   daten.putBoolean(ieplusSchluessel(name), true)
   server.tell(Text.gold('Neuer Bauplan im Buch: ' + b.titel + ((b.rezepte.length > 0 || b.rezepteAnderswo) ? '. Das Rezept ist jetzt für alle herstellbar.' : '.')))
-  if (!daten.getBoolean('ieplus_bauplan_buch_gegeben')) {
+  if (name === 'pilotenhelm' && !daten.getBoolean('ieplus_bauplan_buch_gegeben')) {
     daten.putBoolean('ieplus_bauplan_buch_gegeben', true)
     player.give(ieplusBauplanBuch())
     player.tell(Text.aqua('Der Einsiedler drückt dir ein Buch in die Hand: „Baupläne des Einsiedlers“.'))

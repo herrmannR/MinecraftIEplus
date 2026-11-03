@@ -29,7 +29,8 @@ import java.util.regex.*;
  *   <CODE> tasks = item(id[,anzahl]); or(Titel; id, id, ...); fluid(id, mB); dim(id); check(Titel); stage(name);
  *                  kill(entity-id[,anzahl]); observe(block-id)   (observe = Block ansehen, z. B. gebauter Multiblock)
  *   <CODE> rewards = stage(name); command(/befehl …); item(id[,anzahl]); xp(menge)
- *             (alle als Team-Belohnung, automatisch abgeholt; Befehle mit erhöhten Rechten und ohne Chat-Ausgabe)
+ *             (alle als Team-Belohnung; stage und command automatisch, item und xp per Klick abholen;
+ *              Befehle mit erhöhten Rechten und ohne Chat-Ausgabe)
  *             Dazu kommen Standard-Belohnungen je Kn und Haupt-/Nebenquest (standardRewards, F33).
  *   <CODE> deps  = CODE, CODE        (ersetzt die Standard-Abhängigkeit; "kapitel:CODE" = Quest in einem anderen Kapitel)
  *   <CODE> icon  = <item-id>
@@ -447,13 +448,17 @@ public class QuestbuchGen {
     /** Stage einer Story-Quest, die der Dialog setzt: ST3-05 -> story_st3_05. */
     static String storyStage(String code) { return "story_" + code.toLowerCase().replace("-", "_"); }
 
-    /** Belohnung aus der Steuerdatei; alle für das Team, automatisch abgeholt. */
+    /**
+     * Belohnung aus der Steuerdatei; alle für das Team. Stages und Befehle automatisch (treiben Story und Freischaltung),
+     * Items und XP holt man per Klick an der Quest ab (User, 2026-11-03, Test 113).
+     */
     static String reward(Quest q, int n, String t) {
         String id = hex(chapter + ":" + q.code + ":reward" + n);
         Matcher m = Pattern.compile("^(\\w+)\\((.*)\\)$").matcher(t);
         if (!m.matches()) throw new RuntimeException(q.code + ": Belohnung nicht lesbar: " + t);
         String arg = m.group(2).trim();
         String head = "{\n\t\t\t\tauto: \"enabled\"\n\t\t\t\t", team = "\t\t\t\tteam_reward: true\n";
+        String headManuell = "{\n\t\t\t\tauto: \"disabled\"\n\t\t\t\t";
         switch (m.group(1)) {
             case "stage":
                 return head + "id: \"" + id + "\"\n\t\t\t\tstage: \"" + arg + "\"\n" + team + "\t\t\t\ttype: \"gamestage\"\n\t\t\t}";
@@ -462,11 +467,11 @@ public class QuestbuchGen {
                     + "\"\n\t\t\t\tsilent: true\n" + team + "\t\t\t\ttype: \"command\"\n\t\t\t}";
             case "item": {
                 String[] p = arg.split(",");
-                return head + (p.length > 1 ? "count: " + p[1].trim() + "\n\t\t\t\t" : "") + "id: \"" + id + "\"\n\t\t\t\titem: \"" + p[0].trim()
+                return headManuell + (p.length > 1 ? "count: " + p[1].trim() + "\n\t\t\t\t" : "") + "id: \"" + id + "\"\n\t\t\t\titem: \"" + p[0].trim()
                     + "\"\n" + team + "\t\t\t\ttype: \"item\"\n\t\t\t}";
             }
             case "xp":
-                return head + "id: \"" + id + "\"\n" + team + "\t\t\t\ttype: \"xp\"\n\t\t\t\txp: " + arg + "\n\t\t\t}";
+                return headManuell + "id: \"" + id + "\"\n" + team + "\t\t\t\ttype: \"xp\"\n\t\t\t\txp: " + arg + "\n\t\t\t}";
         }
         throw new RuntimeException(q.code + ": unbekannte Belohnungsart " + m.group(1));
     }

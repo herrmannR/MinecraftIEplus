@@ -43,6 +43,7 @@
 - Jedi-Ränge (hell ab): 10 / 24 / 42 / 54 / 72; Sith-Ränge (dunkel ab): 8 / 18 / 40 / 55 / 70.
 - Fabricator-Zeit: B-1 160, B-2 240, Droideka 200.
 - Credits: 2 Kupfer = Copper Credit; 5 Copper = Iron Credit; 3 Iron = Gold Credit. Nur der Anzellan nimmt Credits.
+- Rechtsklick mit einem Credit wechselt ihn (`CreditItem.use`, JAR 1.0.3.1, gelesen 2026-11-03): Stapel −1, dafür die nächstkleinere Stufe (Gold → 3 Iron, Iron → 5 Copper); passt es nicht ins Inventar, fällt es auf den Boden. Läuft auch nach dem Anklicken eines Easy-NPC weiter (Test 115, Vervielfältigung); abgefangen in `server_scripts/starwars/credits_npc.js`.
 - Jawa-Preise: Lichtschwert zufällig 28–56 Emeralds, Blaster aus Schaden und Magazin.
 - Tusken-Stämme alle 6000–18000 Ticks in Biomen mit Wüstendorf.
 

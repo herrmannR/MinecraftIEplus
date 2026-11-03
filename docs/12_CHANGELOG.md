@@ -1474,3 +1474,16 @@ Status: 🟡 (ungetestet, Tests 107, 112)
 
 - Auch die Dialogbrücke kam nicht an: Der Tag wurde nie gesetzt, `dd3r8` blieb 0. Ursache (JAR, `ActionEventDataCapable`): Jede Figur hat eine Obergrenze `ActionData.ActionPermissionLevel`; fehlt sie, gilt `ALL` = Stufe 0. Unsere Presets hatten keinen `ActionData`-Block, also scheiterten alle Dialogbefehle (`tag`, `scoreboard`, `give`, `clear`) still. Wer im Editor einen Knopf speichert, hebt die Stufe offenbar an; daher kam früher `dd3r8 = 1` an.
 - `tools/npc_preset.py` setzt jetzt `ActionPermissionLevel = 2` und den Standard „Ansprechen öffnet Dialog“. Alle sechs Presets neu gebaut; jede Figur muss neu importiert werden, und zwar als Admin (OP): Ein Import im Kreativmodus ohne OP deckelt Befehle auf Stufe 1 (`creativePlayerCommandLevel` in `security.cfg`).
+
+## 2026-11-03 — Nach Tests 113–116: Handel, Bauplan-Buch, Credits, Quest-Belohnungen
+
+Status: 🟡 (ungetestet, Tests 117–121)
+
+- Tests 113, 114 und 116 bestanden; 115 mit Wünschen und einem Fehler.
+- Zwerg: vier kleine Tauschgeschäfte (32 Rohzinn → 1 Amethyst Bronze, 16 Raw Falsite → 4 Diamanten, 16 Raw Ventium → 4 Refined Obsidian Ingots, 32 Raw Horizonite → 1 Miner's Key).
+- Bodhi: Testhandel (NPC-Schlüssel → Greatsword) gestrichen; verkauft jetzt, was der Gatekeeper verkauft (Zeal Lighter, Blue Journal, Blinding/Nature/Poison Key; Preise aus dem JAR, ohne Sperre, unbegrenzt).
+- Davijaan: Essens-Handel oben, Borschtsch gibt 4 statt 8 Ice Shards.
+- Bauplan-Buch kommt nur noch mit dem Bauplan „Pilotenhelm“ (erste Rolle der Story), nicht mit der ersten beliebigen Rolle (`einsiedler_shop.js` Fassung 14).
+- Fehler: Rechtsklick auf eine Figur mit Gold- oder Iron-Credit in der Hand wechselte den Credit (Kleingeld fiel heraus), der Credit blieb aber in der Hand. Ursache: `CreditItem.use` von Galaxy in a Cube läuft nach dem Dialog weiter. Neu `starwars/credits_npc.js`: nach dem Anklicken eines Wesens wird das Wechseln für 5 Ticks unterdrückt.
+- Questbuch: Items und XP holt man per Klick an der Quest ab (`auto: "disabled"`); Stages und Befehle laufen weiter automatisch. Alle Kapitel neu gebaut (885 Belohnungen).
+- In die Testinstanz kopiert: alle Kapitel (Sicherung der vorigen im Scratchpad; Alex's Mobs lag dort noch in der Fassung vom 2026-10-28), `einsiedler_shop.js`, `credits_npc.js`, Presets von Zwerg, Bodhi und Davijaan.

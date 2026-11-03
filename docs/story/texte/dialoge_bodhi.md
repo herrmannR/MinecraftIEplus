@@ -151,11 +151,15 @@ Everdawn ist erst offen, wenn der Zinn-Zoll bezahlt ist (User, 2026-10-26, O73):
 
 Wird mit `tools/npc_preset.py` ins Preset gebaut (ersetzt alle Handel aus der Vorlage; Handelsart `ADVANCED`, Nutzungen bleiben verbraucht, kein Zurücksetzen). Preise und Begründung: `../../21_BALANCING.md` Abschnitt 5 (B8, 2026-11-03). 1 Gold Credit = 3 Iron = 15 Copper; ein Feld nimmt höchstens 64.
 
-Bodhi kauft Rohstoffe der Traumwelten in großen Mengen und zahlt in Credits (B8f, ändert O34/O72). Die erste Zeile hat der User im Spiel eingestellt. **Noch nicht drin:** Zeal Lighter, Blue Journal und die Schlüssel (wie der Gatekeeper); deren Preise sind noch nicht aus dem JAR gelesen. Weil die Tabelle alle Handel im Preset ersetzt, gehören sie hier hinein, nicht in den Editor.
+Bodhi kauft Rohstoffe der Traumwelten in großen Mengen und zahlt in Credits (B8f, ändert O34/O72). Dazu verkauft er, was der Gatekeeper verkauft (User, 2026-11-03, nach Test 116). Preise aus dem JAR (Blue Skies 1.3.31, `GatekeeperEntity.getTradesForProgression`; Zeal Lighter nach `zeal_lighter_cost = 8` in `blue_skies-common.toml`). Anders als beim Gatekeeper: alle Schlüssel sofort zu haben (der Gatekeeper zeigt Blinding, Nature und Poison erst nach den Fortschritten `progression/unlock_…_key_trade`), und unbegrenzt, weil Easy NPC nicht nachfüllt (Gatekeeper: Lighter 5, Journal 50, Schlüssel je 4). Den Testhandel (NPC-Schlüssel → Greatsword) hat der User gestrichen (2026-11-03). Weil die Tabelle alle Handel im Preset ersetzt, gehören neue Angebote hier hinein, nicht in den Editor.
 
 | Preis | Preis 2 | Ware | Nutzungen | Hinweis |
 |---|---|---|---|---|
-| 1 × `easy_npc:npc_key` | – | 1 × `wrd:corrupted_greatsword` | 64 | vom User im Spiel eingestellt |
+| 8 × `minecraft:emerald` | – | 1 × `blue_skies:zeal_lighter` | unbegrenzt | wie Gatekeeper |
+| 1 × `minecraft:book` | – | 1 × `blue_skies:blue_journal` | unbegrenzt | wie Gatekeeper |
+| 6 × `minecraft:book` | 1 × `minecraft:emerald` | 1 × `blue_skies:blinding_key` | unbegrenzt | wie Gatekeeper |
+| 6 × `blue_skies:nature_stone` | 16 × `blue_skies:starlit_sapling` | 1 × `blue_skies:nature_key` | unbegrenzt | wie Gatekeeper |
+| 6 × `blue_skies:poison_stone` | 16 × `minecraft:spider_eye` | 1 × `blue_skies:poison_key` | unbegrenzt | wie Gatekeeper |
 | 64 × `blue_skies:pyrope_gem` | 64 × `blue_skies:pyrope_gem` | 1 × `swgc:gold_credit` | unbegrenzt | 15 |
 | 64 × `blue_skies:aquite` | 64 × `blue_skies:aquite` | 1 × `swgc:gold_credit` | unbegrenzt | 15 |
 | 64 × `blue_skies:charoite` | 64 × `blue_skies:charoite` | 2 × `swgc:gold_credit` | unbegrenzt | 30 |

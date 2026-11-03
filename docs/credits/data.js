@@ -478,6 +478,78 @@ const DATA = {
     {
      "preis": [
       {
+       "n": 1,
+       "id": "farmersdelight:roast_chicken_block",
+       "name": "Roast Chicken"
+      }
+     ],
+     "ware": {
+      "n": 4,
+      "id": "ad_astra:desh_ingot",
+      "name": "Desh Ingot"
+     },
+     "nutzungen": 8,
+     "hinweis": "Essen gegen Mond-Rohstoffe",
+     "kostet": 0,
+     "zahlt": 0
+    },
+    {
+     "preis": [
+      {
+       "n": 1,
+       "id": "farmersdelight:honey_glazed_ham_block",
+       "name": "Honey Glazed Ham"
+      }
+     ],
+     "ware": {
+      "n": 4,
+      "id": "ad_astra:desh_ingot",
+      "name": "Desh Ingot"
+     },
+     "nutzungen": 8,
+     "hinweis": "Essen gegen Mond-Rohstoffe",
+     "kostet": 0,
+     "zahlt": 0
+    },
+    {
+     "preis": [
+      {
+       "n": 4,
+       "id": "kaleidoscope_cookery:borscht",
+       "name": "Borscht"
+      }
+     ],
+     "ware": {
+      "n": 4,
+      "id": "ad_astra:ice_shard",
+      "name": "Ice Shard"
+     },
+     "nutzungen": 8,
+     "hinweis": "Essen gegen Mond-Rohstoffe",
+     "kostet": 0,
+     "zahlt": 0
+    },
+    {
+     "preis": [
+      {
+       "n": 4,
+       "id": "kaleidoscope_cookery:egg_fried_rice",
+       "name": "Egg Fried Rice"
+      }
+     ],
+     "ware": {
+      "n": 4,
+      "id": "ad_astra:raw_desh",
+      "name": "Raw Desh"
+     },
+     "nutzungen": 8,
+     "hinweis": "Essen gegen Mond-Rohstoffe",
+     "kostet": 0,
+     "zahlt": 0
+    },
+    {
+     "preis": [
+      {
        "n": 5,
        "id": "swgc:gold_credit",
        "name": "Gold Credit"
@@ -693,78 +765,6 @@ const DATA = {
      "kostet": 1650,
      "zahlt": 0,
      "stufe": 4
-    },
-    {
-     "preis": [
-      {
-       "n": 1,
-       "id": "farmersdelight:roast_chicken_block",
-       "name": "Roast Chicken"
-      }
-     ],
-     "ware": {
-      "n": 4,
-      "id": "ad_astra:desh_ingot",
-      "name": "Desh Ingot"
-     },
-     "nutzungen": 8,
-     "hinweis": "Essen gegen Mond-Rohstoffe",
-     "kostet": 0,
-     "zahlt": 0
-    },
-    {
-     "preis": [
-      {
-       "n": 1,
-       "id": "farmersdelight:honey_glazed_ham_block",
-       "name": "Honey Glazed Ham"
-      }
-     ],
-     "ware": {
-      "n": 4,
-      "id": "ad_astra:desh_ingot",
-      "name": "Desh Ingot"
-     },
-     "nutzungen": 8,
-     "hinweis": "Essen gegen Mond-Rohstoffe",
-     "kostet": 0,
-     "zahlt": 0
-    },
-    {
-     "preis": [
-      {
-       "n": 4,
-       "id": "kaleidoscope_cookery:borscht",
-       "name": "Borscht"
-      }
-     ],
-     "ware": {
-      "n": 8,
-      "id": "ad_astra:ice_shard",
-      "name": "Ice Shard"
-     },
-     "nutzungen": 8,
-     "hinweis": "Essen gegen Mond-Rohstoffe",
-     "kostet": 0,
-     "zahlt": 0
-    },
-    {
-     "preis": [
-      {
-       "n": 4,
-       "id": "kaleidoscope_cookery:egg_fried_rice",
-       "name": "Egg Fried Rice"
-      }
-     ],
-     "ware": {
-      "n": 4,
-      "id": "ad_astra:raw_desh",
-      "name": "Raw Desh"
-     },
-     "nutzungen": 8,
-     "hinweis": "Essen gegen Mond-Rohstoffe",
-     "kostet": 0,
-     "zahlt": 0
     }
    ]
   },
@@ -788,6 +788,78 @@ const DATA = {
      },
      "nutzungen": "unbegrenzt",
      "hinweis": "–",
+     "kostet": 0,
+     "zahlt": 0
+    },
+    {
+     "preis": [
+      {
+       "n": 32,
+       "id": "mekanism:raw_tin",
+       "name": "Rohzinn"
+      }
+     ],
+     "ware": {
+      "n": 1,
+      "id": "tconstruct:amethyst_bronze_ingot",
+      "name": "Amethyst-Bronze-Barren"
+     },
+     "nutzungen": "unbegrenzt",
+     "hinweis": "– (User, 2026-11-03)",
+     "kostet": 0,
+     "zahlt": 0
+    },
+    {
+     "preis": [
+      {
+       "n": 16,
+       "id": "blue_skies:raw_falsite",
+       "name": "Raw Falsite"
+      }
+     ],
+     "ware": {
+      "n": 4,
+      "id": "minecraft:diamond",
+      "name": "Diamant"
+     },
+     "nutzungen": "unbegrenzt",
+     "hinweis": "– (User, 2026-11-03)",
+     "kostet": 0,
+     "zahlt": 0
+    },
+    {
+     "preis": [
+      {
+       "n": 16,
+       "id": "blue_skies:raw_ventium",
+       "name": "Raw Ventium"
+      }
+     ],
+     "ware": {
+      "n": 4,
+      "id": "mekanism:ingot_refined_obsidian",
+      "name": "Refined Obsidian Ingot"
+     },
+     "nutzungen": "unbegrenzt",
+     "hinweis": "– (User, 2026-11-03)",
+     "kostet": 0,
+     "zahlt": 0
+    },
+    {
+     "preis": [
+      {
+       "n": 32,
+       "id": "blue_skies:raw_horizonite",
+       "name": "Raw Horizonite"
+      }
+     ],
+     "ware": {
+      "n": 1,
+      "id": "bloodmagic:minekey",
+      "name": "Miner's Key"
+     },
+     "nutzungen": "unbegrenzt",
+     "hinweis": "– Miner's Key (User, 2026-11-03)",
      "kostet": 0,
      "zahlt": 0
     },
@@ -916,18 +988,105 @@ const DATA = {
     {
      "preis": [
       {
-       "n": 1,
-       "id": "easy_npc:npc_key",
-       "name": "NPC Key"
+       "n": 8,
+       "id": "minecraft:emerald",
+       "name": "Smaragd"
       }
      ],
      "ware": {
       "n": 1,
-      "id": "wrd:corrupted_greatsword",
-      "name": "Corrupted Greatsword"
+      "id": "blue_skies:zeal_lighter",
+      "name": "Zeal Lighter"
      },
-     "nutzungen": 64,
-     "hinweis": "vom User im Spiel eingestellt",
+     "nutzungen": "unbegrenzt",
+     "hinweis": "wie Gatekeeper",
+     "kostet": 0,
+     "zahlt": 0
+    },
+    {
+     "preis": [
+      {
+       "n": 1,
+       "id": "minecraft:book",
+       "name": "Buch"
+      }
+     ],
+     "ware": {
+      "n": 1,
+      "id": "blue_skies:blue_journal",
+      "name": "Blue Journal"
+     },
+     "nutzungen": "unbegrenzt",
+     "hinweis": "wie Gatekeeper",
+     "kostet": 0,
+     "zahlt": 0
+    },
+    {
+     "preis": [
+      {
+       "n": 6,
+       "id": "minecraft:book",
+       "name": "Buch"
+      },
+      {
+       "n": 1,
+       "id": "minecraft:emerald",
+       "name": "Smaragd"
+      }
+     ],
+     "ware": {
+      "n": 1,
+      "id": "blue_skies:blinding_key",
+      "name": "Blinding Key"
+     },
+     "nutzungen": "unbegrenzt",
+     "hinweis": "wie Gatekeeper",
+     "kostet": 0,
+     "zahlt": 0
+    },
+    {
+     "preis": [
+      {
+       "n": 6,
+       "id": "blue_skies:nature_stone",
+       "name": "Nature Stone"
+      },
+      {
+       "n": 16,
+       "id": "blue_skies:starlit_sapling",
+       "name": "Starlit Sapling"
+      }
+     ],
+     "ware": {
+      "n": 1,
+      "id": "blue_skies:nature_key",
+      "name": "Nature Key"
+     },
+     "nutzungen": "unbegrenzt",
+     "hinweis": "wie Gatekeeper",
+     "kostet": 0,
+     "zahlt": 0
+    },
+    {
+     "preis": [
+      {
+       "n": 6,
+       "id": "blue_skies:poison_stone",
+       "name": "Poison Stone"
+      },
+      {
+       "n": 16,
+       "id": "minecraft:spider_eye",
+       "name": "Spinnenauge"
+      }
+     ],
+     "ware": {
+      "n": 1,
+      "id": "blue_skies:poison_key",
+      "name": "Poison Key"
+     },
+     "nutzungen": "unbegrenzt",
+     "hinweis": "wie Gatekeeper",
      "kostet": 0,
      "zahlt": 0
     },

@@ -36,14 +36,14 @@
 			icon: "botania:lexicon"
 			id: "672EC395D28D9461"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "1DC0D88F682A27B1"
 				team_reward: true
 				type: "xp"
 				xp: 50
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 3
 				id: "52769731EA0ADAB6"
 				item: "swgc:copper_credit"
@@ -70,14 +70,14 @@
 			icon: "botania:white_petal"
 			id: "6286EA3BAF407A45"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "629854AF3C8DE4BB"
 				team_reward: true
 				type: "xp"
 				xp: 50
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 3
 				id: "21975742B7A957FE"
 				item: "swgc:copper_credit"
@@ -105,14 +105,14 @@
 			icon: "botania:apothecary_default"
 			id: "7583F8390031199F"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "7C02BC538D2B5829"
 				team_reward: true
 				type: "xp"
 				xp: 50
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 3
 				id: "172964AF7C3D5661"
 				item: "swgc:copper_credit"
@@ -139,14 +139,14 @@
 			icon: "botania:pure_daisy"
 			id: "77093286C0E2DB3B"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "475BE201985729CE"
 				team_reward: true
 				type: "xp"
 				xp: 50
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 3
 				id: "1BCF41B6186FC66C"
 				item: "swgc:copper_credit"
@@ -183,14 +183,14 @@
 			icon: "botania:twig_wand"
 			id: "0E9E3687A3A51B2B"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "6787E67EFBE29E42"
 				team_reward: true
 				type: "xp"
 				xp: 50
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 3
 				id: "5D1978BB18C9469B"
 				item: "swgc:copper_credit"
@@ -221,14 +221,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "10DFDAEB1B20EF6C"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 16
 				id: "5F80563C1C636724"
 				item: "minecraft:torch"
@@ -273,14 +273,14 @@
 			icon: "botania:endoflame"
 			id: "47845FF024A9DDBC"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "0F82F35611CFE6EB"
 				team_reward: true
 				type: "xp"
 				xp: 50
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "52612FC1599ABB92"
 				item: "swgc:iron_credit"
@@ -288,7 +288,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "0868DE555BD7E4C2"
 				item: "swgc:copper_credit"
@@ -316,14 +316,14 @@
 			icon: "botania:mana_spreader"
 			id: "6A138084A4B791EF"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "38812B73DCB1C34F"
 				team_reward: true
 				type: "xp"
 				xp: 50
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "4E25054CDED3289E"
 				item: "swgc:iron_credit"
@@ -331,7 +331,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "79307E3CA7117227"
 				item: "swgc:copper_credit"
@@ -358,14 +358,14 @@
 			icon: "botania:mana_pool"
 			id: "131F51EE29E22307"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "3A4AC1C08F12CC18"
 				team_reward: true
 				type: "xp"
 				xp: 50
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "77B4E05FEE956CFD"
 				item: "swgc:iron_credit"
@@ -373,7 +373,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "1B786A0433111B08"
 				item: "swgc:copper_credit"
@@ -402,14 +402,14 @@
 			icon: "botania:manasteel_block"
 			id: "33A1ABD2FA5E2B9B"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "2441247F11020E29"
 				team_reward: true
 				type: "xp"
 				xp: 50
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "01B0FFF01B40722A"
 				item: "swgc:iron_credit"
@@ -417,7 +417,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "141D7C86AE911874"
 				item: "swgc:copper_credit"
@@ -444,14 +444,14 @@
 			icon: "botania:mana_pearl"
 			id: "4FEAEAE56A2A8400"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "542A53A63026D50C"
 				team_reward: true
 				type: "xp"
 				xp: 50
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "7F988E5B73D5D647"
 				item: "swgc:iron_credit"
@@ -459,7 +459,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "785E4B8701A7D4E4"
 				item: "swgc:copper_credit"
@@ -495,14 +495,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "1B44E65EA4C9BF44"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "651C6900D1706B9C"
 				item: "minecraft:iron_ingot"
@@ -531,14 +531,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "78DF32AAD3C57527"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 8
 				id: "3C235E8F18632B76"
 				item: "minecraft:coal"
@@ -583,14 +583,14 @@
 			icon: "botania:runic_altar"
 			id: "083AC076A6081BF5"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "1CEAEC9B48FE3DEA"
 				team_reward: true
 				type: "xp"
 				xp: 50
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 3
 				id: "2F752AB8E976CB1D"
 				item: "swgc:copper_credit"
@@ -618,14 +618,14 @@
 			icon: "botania:rune_water"
 			id: "194C2ADA92F61A8F"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "7D0E4057D8C6269B"
 				team_reward: true
 				type: "xp"
 				xp: 50
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 3
 				id: "4239FAFCE88C2C84"
 				item: "swgc:copper_credit"
@@ -671,14 +671,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "168FA4022D1CEF06"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "4FEF958F71678E93"
 				item: "minecraft:bread"
@@ -727,14 +727,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "5F2EAEEE8DAA2DE1"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 16
 				id: "3C62251DBDD125CF"
 				item: "minecraft:torch"
@@ -793,14 +793,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "6861B369B13E4571"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "4D80F19F283C0319"
 				item: "minecraft:iron_ingot"
@@ -830,14 +830,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "5AD7349C1F546125"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 8
 				id: "793137523178934D"
 				item: "minecraft:coal"
@@ -867,14 +867,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "65F69AE310FDDA64"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "14011EED74D5753B"
 				item: "minecraft:cooked_beef"
@@ -908,14 +908,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "4002A15E6D01908C"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "3DD135610E89A2A3"
 				item: "minecraft:bread"
@@ -950,14 +950,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "7DECEA13381500DE"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 16
 				id: "09342D1ED0FFE069"
 				item: "minecraft:torch"
@@ -987,14 +987,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "70C0ECD8488A9F7E"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 8
 				id: "3F4EA6D25E158E7B"
 				item: "minecraft:coal"
@@ -1023,14 +1023,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "4620B27A784120E5"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "737A492C2B3AAEED"
 				item: "minecraft:cooked_beef"
@@ -1065,14 +1065,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "06D69A19F4E5D4A9"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "3E408F0E0903047A"
 				item: "minecraft:bread"
@@ -1101,14 +1101,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "593CE6308C4FE420"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 16
 				id: "3B9646321B07DE31"
 				item: "minecraft:torch"
@@ -1138,14 +1138,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "379841225B1959A6"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "0E721CD0E5DE3335"
 				item: "minecraft:iron_ingot"
@@ -1190,7 +1190,7 @@
 			icon: "botania:terra_plate"
 			id: "51CEB2BFB723DB77"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "2FA782DC124EAA92"
 				item: "swgc:iron_credit"
@@ -1198,7 +1198,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 3
 				id: "11A50D012AFBA5DF"
 				item: "swgc:copper_credit"
@@ -1226,7 +1226,7 @@
 			icon: "botania:terrasteel_ingot"
 			id: "32310B37BC9A953F"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "39676C5AA2EAF208"
 				item: "swgc:iron_credit"
@@ -1234,7 +1234,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 3
 				id: "1BE70FAC31B27340"
 				item: "swgc:copper_credit"
@@ -1264,7 +1264,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "0F4CAC98BA4E74C0"
 				item: "swgc:iron_credit"
@@ -1272,7 +1272,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "3FE1919B2E95F066"
 				item: "swgc:copper_credit"
@@ -1318,7 +1318,7 @@
 			icon: "botania:natura_pylon"
 			id: "5D0A360656B07CDA"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "6FFCBB750499DB54"
 				item: "swgc:gold_credit"
@@ -1326,7 +1326,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "19E23DF5C04A15AF"
 				item: "swgc:iron_credit"
@@ -1334,7 +1334,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "3D6C7E3883F326F4"
 				item: "swgc:copper_credit"
@@ -1362,7 +1362,7 @@
 			icon: "botania:alfheim_portal"
 			id: "1324315F8E271AF5"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "423E87B640FB4552"
 				item: "swgc:gold_credit"
@@ -1370,7 +1370,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "2C47806A9CF0B274"
 				item: "swgc:iron_credit"
@@ -1378,7 +1378,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "4D14940FC94ECD2B"
 				item: "swgc:copper_credit"
@@ -1411,7 +1411,7 @@
 			icon: "botania:elementium_ingot"
 			id: "20CA9735F369D8FB"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "207B507A4B4E3CC1"
 				item: "swgc:gold_credit"
@@ -1419,7 +1419,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "058D126561B020D0"
 				item: "swgc:iron_credit"
@@ -1427,7 +1427,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "68F3D28C8ECC3C5F"
 				item: "swgc:copper_credit"
@@ -1472,7 +1472,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "446ABA16516A5383"
 				item: "swgc:gold_credit"
@@ -1480,7 +1480,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "6AC98E74527F2C04"
 				item: "swgc:copper_credit"
@@ -1509,7 +1509,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "6215028855746F69"
 				item: "swgc:gold_credit"
@@ -1517,7 +1517,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "146FB569162CD778"
 				item: "swgc:copper_credit"
@@ -1547,14 +1547,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "4E716F0D523C4849"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "3AC134249D5021AA"
 				item: "minecraft:bread"
@@ -1582,14 +1582,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "0555DA58E987B4F9"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 16
 				id: "77DF2F122964899E"
 				item: "minecraft:torch"
@@ -1617,14 +1617,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "1858F61DD5CEB441"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "478E88E9A1A84309"
 				item: "minecraft:iron_ingot"
@@ -1652,14 +1652,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "75838B51F04AD41B"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 8
 				id: "06591B887A892444"
 				item: "minecraft:coal"
@@ -1687,14 +1687,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "405F4339003878A8"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "2EFC236F77487BE7"
 				item: "minecraft:cooked_beef"
@@ -1722,14 +1722,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "76662AC4686AC1BC"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "05FF4356EA08BF1E"
 				item: "minecraft:bread"
@@ -1759,14 +1759,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "4C419ECCDFFCCFCB"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 16
 				id: "4DE52AE3C113CC76"
 				item: "minecraft:torch"

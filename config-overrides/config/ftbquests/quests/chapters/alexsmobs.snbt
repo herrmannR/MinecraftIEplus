@@ -38,14 +38,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "4032DDF1A9588229"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 8
 				id: "18CA02DA6CF79CAA"
 				item: "minecraft:coal"
@@ -74,14 +74,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "798BDE0FC7478C5C"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "6EC7636E45E3A97F"
 				item: "minecraft:cooked_beef"
@@ -115,14 +115,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "0F1D6EB10B455A77"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "1F0AC6F1262B5B1B"
 				item: "minecraft:bread"
@@ -151,14 +151,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "36F2C0B153BED7A5"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 16
 				id: "1B34A858E3734FCC"
 				item: "minecraft:torch"
@@ -217,14 +217,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "59B508572CC9CCB5"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "72538ADF9C726095"
 				item: "minecraft:cooked_beef"
@@ -254,14 +254,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "38A53D74D7813A15"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "5310F73CE18771D2"
 				item: "minecraft:bread"
@@ -291,14 +291,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "7A8A4D8161284122"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 16
 				id: "68F3B95BB7508A53"
 				item: "minecraft:torch"
@@ -328,14 +328,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "1EE7186E81713D11"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "15CE0D3C40FED8CF"
 				item: "minecraft:iron_ingot"
@@ -371,14 +371,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "7F8E62E378C3BCDF"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 8
 				id: "3B9FEE48045B0CE3"
 				item: "minecraft:coal"
@@ -407,14 +407,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "55DB560166CF428E"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "5AA1765CCFF7468D"
 				item: "minecraft:cooked_beef"
@@ -443,14 +443,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "73B9994A6711D7AC"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "073012B9F5BD72A5"
 				item: "minecraft:bread"
@@ -504,14 +504,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "3CC85A6EFF7F1B6B"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "5E85E3A85B653290"
 				item: "minecraft:bread"
@@ -540,14 +540,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "3A781E48704A6E48"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 16
 				id: "084E34E387ED6DAD"
 				item: "minecraft:torch"
@@ -576,14 +576,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "6F647BF5EC94BEEA"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "517D5FBD6DB6F689"
 				item: "minecraft:iron_ingot"
@@ -612,14 +612,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "2A9C3C4316874F4F"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 8
 				id: "08B190F579B111B3"
 				item: "minecraft:coal"
@@ -648,14 +648,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "3F613FDAC3362591"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "73FDC2202C2D30FE"
 				item: "minecraft:cooked_beef"
@@ -684,14 +684,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "716A3117E8F573CF"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "6E3BA2ECC71CEB04"
 				item: "minecraft:bread"
@@ -720,14 +720,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "772D77FC09706200"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 16
 				id: "74AE3D9E87AB8C53"
 				item: "minecraft:torch"
@@ -759,14 +759,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "53CC90CFDBC87FD4"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "2C008115667688C8"
 				item: "minecraft:iron_ingot"
@@ -795,14 +795,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "0B7198041255614D"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 8
 				id: "35C30BEB72704771"
 				item: "minecraft:coal"
@@ -851,14 +851,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "24BF098A4F572B44"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 16
 				id: "70266EA995EC66DB"
 				item: "minecraft:torch"
@@ -887,14 +887,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "4C32BC8E2ECB5585"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "6026AA5B5BA68E8B"
 				item: "minecraft:iron_ingot"
@@ -923,14 +923,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "1250CCF17C79A419"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 8
 				id: "3760325274E3541F"
 				item: "minecraft:coal"
@@ -959,14 +959,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "2061B05EAD2D7C55"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "747ACF40A7A45FCF"
 				item: "minecraft:cooked_beef"
@@ -1000,14 +1000,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "151D6147168BDBE4"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "38DB09E0399535DA"
 				item: "minecraft:bread"
@@ -1058,7 +1058,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "56FB4025029EE272"
 				item: "swgc:copper_credit"
@@ -1087,7 +1087,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "1410CD2A60DCA105"
 				item: "swgc:copper_credit"
@@ -1116,7 +1116,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "310B1F4DC2EC593B"
 				item: "swgc:copper_credit"
@@ -1145,7 +1145,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "205F19B5B6E92AF6"
 				item: "swgc:copper_credit"
@@ -1196,7 +1196,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "74DBAC143E43115A"
 				item: "swgc:copper_credit"
@@ -1225,7 +1225,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "3B7D3562155EC6A7"
 				item: "swgc:copper_credit"
@@ -1260,7 +1260,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "77F6CD073EA72F9E"
 				item: "swgc:copper_credit"
@@ -1291,7 +1291,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "40832347102BB619"
 				item: "swgc:copper_credit"
@@ -1329,7 +1329,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "414544930420AAB3"
 				item: "swgc:copper_credit"
@@ -1378,14 +1378,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "630574191879DD66"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "1AAB1C87FFF56F68"
 				item: "minecraft:cooked_beef"
@@ -1420,14 +1420,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "2B8FA01060B582AE"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "375EAEEA6EDCD637"
 				item: "minecraft:bread"
@@ -1456,14 +1456,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "19C9BCD91ACA2302"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 16
 				id: "26DEEF4B02E65E2A"
 				item: "minecraft:torch"

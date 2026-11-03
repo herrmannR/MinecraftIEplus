@@ -23,6 +23,7 @@ WERT = {'copper': 1, 'iron': 5, 'gold': 15}
 NAMEN = {
     'swgc:gold_credit': 'Gold Credit', 'swgc:iron_credit': 'Iron Credit', 'swgc:copper_credit': 'Copper Credit',
     'swgc:plastoid': 'Plastoid',
+    'mekanism:raw_tin': 'Rohzinn', 'tconstruct:amethyst_bronze_ingot': 'Amethyst-Bronze-Barren', 'blue_skies:raw_falsite': 'Raw Falsite', 'minecraft:diamond': 'Diamant', 'blue_skies:raw_ventium': 'Raw Ventium', 'mekanism:ingot_refined_obsidian': 'Refined Obsidian Ingot', 'blue_skies:raw_horizonite': 'Raw Horizonite', 'bloodmagic:minekey': "Miner's Key", 'minecraft:emerald': 'Smaragd', 'blue_skies:zeal_lighter': 'Zeal Lighter', 'minecraft:book': 'Buch', 'blue_skies:blue_journal': 'Blue Journal', 'blue_skies:blinding_key': 'Blinding Key', 'blue_skies:nature_stone': 'Nature Stone', 'blue_skies:starlit_sapling': 'Starlit Sapling', 'blue_skies:nature_key': 'Nature Key', 'blue_skies:poison_stone': 'Poison Stone', 'minecraft:spider_eye': 'Spinnenauge', 'blue_skies:poison_key': 'Poison Key',
     'kubejs:bauplan_ruestung_klon': 'Bauplan: Klon-Rüstung (Phase 2)', 'kubejs:bauplan_plastoid': 'Bauplan: Plastoid',
     'kubejs:bauplan_durasteel': 'Bauplan: Durasteel', 'kubejs:bauplan_blaster': 'Bauplan: Blaster',
     'kubejs:bauplan_gas_harvester': 'Bauplan: Gas Harvester',

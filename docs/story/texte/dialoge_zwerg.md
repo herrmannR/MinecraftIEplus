@@ -66,11 +66,15 @@ Scoreboard `zwerg` (B2): 0 = noch nie gesprochen, 1 = hat die Spieler zum Haus g
 
 Wird mit `tools/npc_preset.py` ins Preset gebaut (ersetzt alle Handel aus der Vorlage; Handelsart `ADVANCED`, Nutzungen bleiben verbraucht, kein Zurücksetzen). Preise und Begründung: `../../21_BALANCING.md` Abschnitt 5 (B8, 2026-11-03). 1 Gold Credit = 3 Iron = 15 Copper; ein Feld nimmt höchstens 64.
 
-Der Zwerg kauft Metall in großen Mengen und zahlt in Credits; das geht praktisch nur mit Erzverarbeitung und Automatisierung (B8f).
+Der Zwerg kauft Metall in großen Mengen und zahlt in Credits; das geht praktisch nur mit Erzverarbeitung und Automatisierung (B8f). Dazu ein paar kleine Tauschgeschäfte mit Roherz (User, 2026-11-03, nach Test 116).
 
 | Preis | Preis 2 | Ware | Nutzungen | Credits je Barren |
 |---|---|---|---|---|
 | 16 × `mekanism:raw_osmium` | – | 1 × `tconstruct:cobalt_ingot` | unbegrenzt | – |
+| 32 × `mekanism:raw_tin` | – | 1 × `tconstruct:amethyst_bronze_ingot` | unbegrenzt | – (User, 2026-11-03) |
+| 16 × `blue_skies:raw_falsite` | – | 4 × `minecraft:diamond` | unbegrenzt | – (User, 2026-11-03) |
+| 16 × `blue_skies:raw_ventium` | – | 4 × `mekanism:ingot_refined_obsidian` | unbegrenzt | – (User, 2026-11-03) |
+| 32 × `blue_skies:raw_horizonite` | – | 1 × `bloodmagic:minekey` | unbegrenzt | – Miner's Key (User, 2026-11-03) |
 | 64 × `minecraft:copper_block` | 64 × `minecraft:copper_block` | 1 × `swgc:gold_credit` | unbegrenzt | 15 je 1.152 Barren |
 | 64 × `minecraft:iron_block` | 64 × `minecraft:iron_block` | 2 × `swgc:gold_credit` | unbegrenzt | 30 je 1.152 |
 | 64 × `mekanism:block_tin` | 64 × `mekanism:block_tin` | 2 × `swgc:gold_credit` | unbegrenzt | 30 je 1.152 |

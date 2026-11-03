@@ -42,14 +42,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "663EF9A972B7FFC2"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "426ACD371F651869"
 				item: "minecraft:bread"
@@ -79,14 +79,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "66680B0532B1B851"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 16
 				id: "0AC70A7F91332FC6"
 				item: "minecraft:torch"
@@ -115,14 +115,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "2E9443C5B50D0BE6"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "10F64A0D33CEFE68"
 				item: "minecraft:iron_ingot"
@@ -152,14 +152,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "405713F90C070B06"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 8
 				id: "1876739B8F802C5A"
 				item: "minecraft:coal"
@@ -210,14 +210,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "41853F4F8F56A25A"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 16
 				id: "0EA7261B0C4DA54B"
 				item: "minecraft:torch"
@@ -251,14 +251,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "640D3CBAA5E3BD17"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "30ADD4BFA516DC83"
 				item: "minecraft:iron_ingot"
@@ -293,14 +293,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "164F48A7E76289B0"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 8
 				id: "1E39DD86ED7F8EED"
 				item: "minecraft:coal"
@@ -332,14 +332,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "349FF0093B038488"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "03EE913D161E0E58"
 				item: "minecraft:cooked_beef"
@@ -397,14 +397,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "31C826AD03800B41"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "64088CF8FE3EDB05"
 				item: "minecraft:iron_ingot"
@@ -437,14 +437,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "6CED9DC8C3AAEE7B"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 8
 				id: "5275AD865B2A5285"
 				item: "minecraft:coal"
@@ -473,14 +473,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "7380C02D8CDDA001"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "383266CF7AACE31D"
 				item: "minecraft:cooked_beef"
@@ -537,14 +537,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "07C0D5D4AAE6FEA5"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 8
 				id: "33D8DBBF77EC4AB2"
 				item: "minecraft:coal"
@@ -580,14 +580,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "7F722CC4CC3BA40B"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "23FB4B8690AF8638"
 				item: "minecraft:cooked_beef"
@@ -623,14 +623,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "6E1BB57088ACD641"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "29E12233CDEE6603"
 				item: "minecraft:bread"
@@ -666,14 +666,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "1BA6F730DE9D083C"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 16
 				id: "05C1FD979ECAE215"
 				item: "minecraft:torch"
@@ -706,14 +706,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "0F5AC81D3DBBFEF4"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "1559DBD422FCEFF2"
 				item: "minecraft:iron_ingot"
@@ -748,14 +748,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "377AE2E303E91A61"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 8
 				id: "61F0A79E0BA7EF77"
 				item: "minecraft:coal"
@@ -789,14 +789,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "2338C717FE12F7CD"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "756E7489D0A9FC0E"
 				item: "minecraft:cooked_beef"
@@ -830,14 +830,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "2FBF3021199863C9"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 4
 				id: "46B1BBB5FC2F3045"
 				item: "minecraft:bread"
@@ -874,14 +874,14 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				id: "6DE3D982E2DA3398"
 				team_reward: true
 				type: "xp"
 				xp: 20
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 16
 				id: "000AC58F56AF0CDE"
 				item: "minecraft:torch"
@@ -933,7 +933,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "4CE773911634CA88"
 				item: "swgc:copper_credit"
@@ -963,7 +963,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "28E76BB1BDB0E4F2"
 				item: "swgc:copper_credit"
@@ -991,7 +991,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "1219F5D9F8A781C3"
 				item: "swgc:copper_credit"
@@ -1042,7 +1042,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "0A23E9EA186E3FB8"
 				item: "swgc:copper_credit"
@@ -1075,7 +1075,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "7EB48CD4F16E4F56"
 				item: "swgc:copper_credit"
@@ -1112,7 +1112,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "30DA72FA6179B1E7"
 				item: "swgc:copper_credit"
@@ -1150,7 +1150,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "7AF5CD5A673F3C55"
 				item: "swgc:copper_credit"
@@ -1202,7 +1202,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "5462189446B0073B"
 				item: "swgc:iron_credit"
@@ -1232,7 +1232,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "359F9D7187847E80"
 				item: "swgc:iron_credit"
@@ -1264,7 +1264,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "5A37EC6E8590A4A5"
 				item: "swgc:iron_credit"
@@ -1292,7 +1292,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "78AED4AE5184FE45"
 				item: "swgc:iron_credit"
@@ -1338,7 +1338,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "33CC70CD5C86A84B"
 				item: "swgc:iron_credit"
@@ -1346,7 +1346,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "0EC131E7E5A27474"
 				item: "swgc:copper_credit"
@@ -1379,7 +1379,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "3DEFA370AB6E4BFE"
 				item: "swgc:iron_credit"
@@ -1387,7 +1387,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "04431B8D3F7D2996"
 				item: "swgc:copper_credit"
@@ -1415,7 +1415,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "084DACF120D59672"
 				item: "swgc:iron_credit"
@@ -1423,7 +1423,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "3FC51005DA87133F"
 				item: "swgc:copper_credit"
@@ -1456,7 +1456,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "42767010FFFCABDC"
 				item: "swgc:iron_credit"
@@ -1464,7 +1464,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "3476B739CB6A3DD2"
 				item: "swgc:copper_credit"
@@ -1510,7 +1510,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "2702F98D5E4A6AF5"
 				item: "swgc:iron_credit"
@@ -1518,7 +1518,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "4B247DC5321545FA"
 				item: "swgc:copper_credit"
@@ -1551,7 +1551,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "0F00C78C44D62CA6"
 				item: "swgc:iron_credit"
@@ -1559,7 +1559,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "7507FF3060FCCFAA"
 				item: "swgc:copper_credit"
@@ -1594,7 +1594,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "70A60F1C87C4F79E"
 				item: "swgc:iron_credit"
@@ -1602,7 +1602,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "487A5E00D8306898"
 				item: "swgc:copper_credit"
@@ -1630,7 +1630,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "378CD26D3B735B35"
 				item: "swgc:iron_credit"
@@ -1638,7 +1638,7 @@
 				type: "item"
 			}
 			{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "2E2B05C1C059C0EB"
 				item: "swgc:copper_credit"

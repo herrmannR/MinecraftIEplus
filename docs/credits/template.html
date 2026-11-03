@@ -238,7 +238,7 @@ function c3(){
       const hinweis=o.stufe?o.hinweis.replace(/^\d\s*·\s*[\d.]+\s*/,'').replace(/^\(|\)$/g,''):o.hinweis.replace(/^\d+$/,'');
       return `<tr><td>${o.preis.map(feld).join('<br>+ ')}</td><td>${feld(o.ware)}</td><td class="n">${o.nutzungen==='unbegrenzt'?'∞':o.nutzungen}</td><td class="n">${wert}</td><td>${st} ${hinweis}</td></tr>`; }).join('');
     const extra = f.id==='davijaan' ? '<div class="hinweis">Den Bauplan Assembly Bench schenkt Davijaan im Dialog, wenn ihr ihm den Helm gebracht habt. Für gutes Essen gibt er Rohstoffe vom Mond statt Credits.</div>'
-      : f.id==='bodhi' ? '<div class="hinweis">Noch nicht in der Liste: Zeal Lighter, Blue Journal und die Schlüssel, die sonst der Gatekeeper verkauft. Ihre Preise sind noch nicht aus dem JAR gelesen.</div>' : '';
+      : f.id==='bodhi' ? '<div class="hinweis">Bodhi verkauft auch, was sonst der Gatekeeper verkauft: Zeal Lighter, Blue Journal und die Schlüssel, zu den Preisen des Gatekeepers, aber ohne Sperre und unbegrenzt.</div>' : '';
     return `<div class="figur"><h3>${f.name}</h3><p>${f.rolle}</p>${extra}<div class="tab"><table class="t"><tr><th>Er nimmt</th><th>Er gibt</th><th class="n">Nutzungen</th><th class="n">Credits</th><th>Hinweis</th></tr>${zeilen}</table></div></div>`;
   }).join('');
 })();

@@ -42,7 +42,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "3AA03B9334334415"
 				item: "swgc:copper_credit"
@@ -81,7 +81,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "7302223A5EFAD2D3"
 				item: "swgc:copper_credit"
@@ -112,7 +112,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 2
 				id: "41D030209B66E1E1"
 				item: "swgc:copper_credit"
@@ -168,7 +168,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "765EA2AEA912B469"
 				item: "swgc:iron_credit"
@@ -196,7 +196,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "52EE248A6496076C"
 				item: "swgc:iron_credit"
@@ -224,7 +224,7 @@
 			optional: true
 			shape: "square"
 			rewards: [{
-				auto: "enabled"
+				auto: "disabled"
 				count: 1
 				id: "719331548E7F0006"
 				item: "swgc:iron_credit"

@@ -20,6 +20,7 @@
 - **Tags**: `forge:ingots` (= blue_skies:ingots/horizonite, falsite, ventium), `forge:raw_materials`, `forge:ores`, `forge:gems` (pyrope, diopside, aquite, charoite), `forge:enchanting_fuels` (= falsite-Nuggets); keine Untertags `forge:ingots/<metall>`. `blue_skies:arcs` (7 Arcs).
 - **Config** `config/blue_skies-common.toml`: `zeal_lighter_cost = 8`, `allowed_mods_for_feature_gen` (Testinstanz `["ieplus"]`), `allowed_mobs_for_spawning = []`.
 - **Nur im Code** (nicht gelesen): Werkzeugrezepte, Gatekeeper-/Dorfhandel, Werkzeugabschwächung (`PlayerHooks.isNerfableTool`, `SkiesEntityHooks.nerfDamage`, laut `docs/16_MODLISTE_1.20.1.md`), Wahl des Loot Bags, Arc-Stufen, Bosse.
+- **Handel des Gatekeepers** (JAR 1.3.31, `GatekeeperEntity.getTradesForProgression`, gelesen 2026-11-03): Zeal Lighter für `zeal_lighter_cost` Smaragde (Config 8), 5 Nutzungen; Blue Journal für 1 Buch, 50; Blinding Key für 6 Bücher + 1 Smaragd, 4 (erst nach `progression/unlock_everbright_blinding_key_trade` oder `…everdawn…`); Nature Key für 6 `nature_stone` + 16 `starlit_sapling`, 4 (`progression/unlock_nature_key_trade`); Poison Key für 6 `poison_stone` + 16 Spinnenaugen, 4 (`progression/unlock_poison_key_trade`). Im Pack verkauft Bodhi dasselbe ohne Sperre und unbegrenzt (`docs/story/texte/dialoge_bodhi.md`).
 
 ### So wurde billig gelesen
 
@@ -39,7 +40,7 @@ Werkzeug-Icons als Ebenen: `blue_skies:item/tools/handles/handle+/item/tools/hea
 
 ## Progression in Kürze
 
-1. Gatekeeper's House (Oberwelt; `blue_skies:gatekeeper_house_plains`/`_mountain`/`_snowy`, Tag `#blue_skies:gatekeeper_houses`, Händler `blue_skies:gatekeeper`): Blue Journal und Zeal Lighter beim Gatekeeper; im Haus stehen keine Portale (Test 39), die Spieler bauen sie aus Turquoise/Lunar Stone Bricks. Danach Holz-/Steinwerkzeuge der Welten (fremde Werkzeuge abgeschwächt).
+1. Gatekeeper's House (Oberwelt; `blue_skies:gatekeeper_house_plains`/`_mountain`/`_snowy`, Tag `#blue_skies:gatekeeper_houses`, Händler `blue_skies:gatekeeper`): Blue Journal und Zeal Lighter beim Gatekeeper (Handel siehe unten); im Haus stehen keine Portale (Test 39), die Spieler bauen sie aus Turquoise/Lunar Stone Bricks. Danach Holz-/Steinwerkzeuge der Welten (fremde Werkzeuge abgeschwächt).
 2. Everbright: Ventium (Eimer, Schere, Tool Box), Falsite (Haltbarkeit über Tool Box, Lapis-Ersatz), Snowcap Oven, Warding Pearl.
 3. Everdawn: Horizonite (Auto-Smelt), Horizonite Forge (ohne Brennstoff, Sunstone lädt), Moonstone Shield.
 4. Beide Welten: Pyrope → Aquite → Diopside / Charoite; Enchanting Table mit Charoite.
@@ -67,7 +68,7 @@ Aquatic Arc, Life Arc, Runic Arc, Aquatic/Life Keystone und Key, Infused Arc Swo
 
 ## Offen
 
-Werkzeugrezepte (Code), Preise des Gatekeepers und der Dorfbewohner, genaue Stärke und Ende der Werkzeugabschwächung, welche Schilde gegen den Arachnarch genügen, wann common/uncommon/rare Loot Bag, ob Catylist-Hilfsstoffe verbraucht werden, Bosswerte.
+Werkzeugrezepte (Code), Preise der Dorfbewohner, genaue Stärke und Ende der Werkzeugabschwächung, welche Schilde gegen den Arachnarch genügen, wann common/uncommon/rare Loot Bag, ob Catylist-Hilfsstoffe verbraucht werden, Bosswerte.
 
 ## IDs der Seite
 
