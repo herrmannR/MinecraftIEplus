@@ -170,7 +170,7 @@ Das Signal führt zur Welt, die dem Stern am nächsten ist. Bau die Rakete T3 (K
 Irgendwo auf dem Merkur steht ein alter Tempel. Durchsuch ihn und nimm alle vier Schriftrollen mit. Mit Rechtsklick liest du eine Rolle; ihr Text steht danach auch im Logbuch des Meisters.
 
 ### ST8-03 Die Rollen · Hauptweg
-**Aufgabe:** Abgabe im Dialog: die vier Tempelrollen
+**Aufgabe:** Abgabe im Dialog: `kubejs:tempelrolle_1`, `kubejs:tempelrolle_2`, `kubejs:tempelrolle_3`, `kubejs:tempelrolle_4`
 
 Bring die vier Rollen zu DD3R8 in die Station auf dem Mars.
 
@@ -196,7 +196,7 @@ In den alten Dungeons tief unter der Erde liegt in der Ancient Bone Chest ein Or
 Jeder von euch muss beim Durchgang einen Benevolent Goddess' Charm tragen, sonst lässt das Tor ihn nicht hinein. Drei Stück, für jeden einen. Das Rezept steht in der Lexica Botania.
 
 ### ST9-04 Der Altar · Hauptweg
-**Aufgabe:** Altar im Tempel repariert
+**Aufgabe:** Altar im Tempel repariert, Rechtsklick mit: `botania:terrasteel_block`, 4 × `bloodmagic:demonslate`, `kubejs:siegel_der_traumwelten`, `wrd:orb_of_the_deep`
 
 Geh mit einem Block Terrasteel, 4 Demonic Slate, dem Siegel der Traumwelten und dem Orb of the Deep zum kaputten Altar im Tempel und klick ihn mit Rechtsklick an. Danach steht das Ritual wieder. Wecke es wie jedes Ritual von Blood Magic. (Siehe Buch über Blood Magic)
 

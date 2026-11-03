@@ -557,6 +557,7 @@ public class QuestbuchGen {
             }
             sb.append("\t\t\tdescription: [\n");
             for (String d : q.desc) sb.append("\t\t\t\t\"").append(esc(d)).append("\"\n");
+            for (String d : mitbringen(q)) sb.append("\t\t\t\t\"").append(esc(d)).append("\"\n");
             sb.append("\t\t\t]\n");
             if (q.marker) sb.append("\t\t\tinvisible: true\n");
             else if (q.gated) sb.append("\t\t\thide_until_deps_complete: true\n");
@@ -650,6 +651,36 @@ public class QuestbuchGen {
 
     /** Stage, die ein Story-Kapitel freischaltet (Hauptquest-Belohnung, später NPC-Dialog). */
     static String stage(String k) { return "kapitel_" + k.toLowerCase(); }
+
+    /**
+     * Abgaben im Dialog oder per Rechtsklick (Story) haben keine Item-Aufgabe, die das Questbuch anzeigt. Steht in der
+     * Aufgabe „Abgabe im Dialog:“ oder „Rechtsklick mit:“, folgt am Ende des Texts eine Liste „Mitbringen“ mit den genauen
+     * Items (User, 2026-11-03, Test 111). Die Namen kommen als JSON-Text mit translate aus der Sprache des Spiels;
+     * FTB Quests 2001.4.22 liest Zeilen, die mit {" oder [" beginnen, als JSON (TextUtils.parseRawText, JAR geprüft).
+     */
+    // Items, deren Name im Code zusammengesetzt wird (kein Schlüssel item.<ns>.<pfad> in der Sprachdatei)
+    static final Map<String, String> NAME_JSON = Map.of(
+        // swgc 1.0.3.1: Klonrüstung = "clone.swgc.<einheit>" mit dem Teil als %s ("212th Battalion %s", "item.swgc.helmet")
+        "swgc:clone_212th_battalion_helmet", "{\"translate\":\"clone.swgc.212th_battalion\",\"with\":[{\"translate\":\"item.swgc.helmet\"}]}"
+    );
+
+    static List<String> mitbringen(Quest q) {
+        List<String> out = new ArrayList<>();
+        if (q.aufgabe == null) return out;
+        Matcher start = Pattern.compile("(Abgabe im Dialog|Rechtsklick mit):").matcher(q.aufgabe);
+        if (!start.find()) return out;
+        Matcher m = Pattern.compile("(?:(\\d+)\\s*×\\s*)?`([a-z0-9_.-]+:[a-z0-9_./-]+)`").matcher(q.aufgabe.substring(start.end()));
+        while (m.find()) {
+            String id = m.group(2), ns = id.substring(0, id.indexOf(':')), pfad = id.substring(id.indexOf(':') + 1);
+            // Block-Items heißen block.<ns>.<pfad>; im Pack sind das die *_block-IDs
+            String art = pfad.endsWith("_block") || pfad.startsWith("block_") ? "block" : "item";
+            String anzahl = m.group(1) != null ? m.group(1) : "1";
+            String name = NAME_JSON.getOrDefault(id, "{\"translate\":\"" + art + "." + ns + "." + pfad.replace('/', '.') + "\",\"fallback\":\"" + id + "\"}");
+            out.add("[\"\",{\"text\":\"• " + anzahl + " × \",\"color\":\"gray\"}," + name + "]");
+        }
+        if (!out.isEmpty()) { out.add(0, "&eMitbringen:&r"); out.add(0, ""); }
+        return out;
+    }
 
     static String esc(String s) { return s.replace("\\", "\\\\").replace("\"", "\\\""); }
 

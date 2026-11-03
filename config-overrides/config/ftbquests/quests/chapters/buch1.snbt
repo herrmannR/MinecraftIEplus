@@ -240,6 +240,9 @@
 			dependencies: ["17206FBB8635CA80"]
 			description: [
 				"Bodhi lässt euch in seine Welten, verlangt aber einen Wegzoll. Bring ihm 32 Rohzinn aus Everbright. Erst dann öffnet sich auch der Weg nach Everdawn."
+				""
+				"&eMitbringen:&r"
+				"[\"\",{\"text\":\"• 32 × \",\"color\":\"gray\"},{\"translate\":\"item.mekanism.raw_tin\",\"fallback\":\"mekanism:raw_tin\"}]"
 			]
 			hide_until_deps_visible: true
 			id: "42BD14C8F5450C51"
@@ -461,6 +464,9 @@
 			dependencies: ["0CFFAA120AC837E9"]
 			description: [
 				"Bring Davijaan seinen Helm zurück."
+				""
+				"&eMitbringen:&r"
+				"[\"\",{\"text\":\"• 1 × \",\"color\":\"gray\"},{\"translate\":\"clone.swgc.212th_battalion\",\"with\":[{\"translate\":\"item.swgc.helmet\"}]}]"
 			]
 			hide_until_deps_visible: true
 			id: "13CCF6551DA3A2CA"
@@ -486,6 +492,9 @@
 			dependencies: ["142594AD6A1F211D"]
 			description: [
 				"Bau ein Tor aus Lunar Stone Bricks und reise nach Everdawn, die Welt der ewigen Dämmerung. Bring Bodhi 32 Rohosmium. Danach hat er eine größere Bitte an euch."
+				""
+				"&eMitbringen:&r"
+				"[\"\",{\"text\":\"• 32 × \",\"color\":\"gray\"},{\"translate\":\"item.mekanism.raw_osmium\",\"fallback\":\"mekanism:raw_osmium\"}]"
 			]
 			hide_until_deps_visible: true
 			id: "02B23BE202B34FE1"
@@ -576,6 +585,10 @@
 			dependencies: ["1B0AD210C9E00C0A", "06FA2BFBBC460365"]
 			description: [
 				"Für den Mars reicht Biodiesel nicht. DD3R8 will einen Eimer entschwefelten Diesel und einen Advanced Control Circuit sehen, beides braucht die Rakete T2. Wie du den Diesel herstellst, steht im Kapitel Immersive Engineering, den Circuit im Kapitel Mekanism."
+				""
+				"&eMitbringen:&r"
+				"[\"\",{\"text\":\"• 1 × \",\"color\":\"gray\"},{\"translate\":\"item.immersivepetroleum.diesel_bucket\",\"fallback\":\"immersivepetroleum:diesel_bucket\"}]"
+				"[\"\",{\"text\":\"• 1 × \",\"color\":\"gray\"},{\"translate\":\"item.mekanism.advanced_control_circuit\",\"fallback\":\"mekanism:advanced_control_circuit\"}]"
 			]
 			hide_until_deps_visible: true
 			id: "656F9AD2B36083D8"
@@ -1022,6 +1035,12 @@
 			dependencies: ["3DC3BE93D5199E50"]
 			description: [
 				"Bring die vier Rollen zu DD3R8 in die Station auf dem Mars."
+				""
+				"&eMitbringen:&r"
+				"[\"\",{\"text\":\"• 1 × \",\"color\":\"gray\"},{\"translate\":\"item.kubejs.tempelrolle_1\",\"fallback\":\"kubejs:tempelrolle_1\"}]"
+				"[\"\",{\"text\":\"• 1 × \",\"color\":\"gray\"},{\"translate\":\"item.kubejs.tempelrolle_2\",\"fallback\":\"kubejs:tempelrolle_2\"}]"
+				"[\"\",{\"text\":\"• 1 × \",\"color\":\"gray\"},{\"translate\":\"item.kubejs.tempelrolle_3\",\"fallback\":\"kubejs:tempelrolle_3\"}]"
+				"[\"\",{\"text\":\"• 1 × \",\"color\":\"gray\"},{\"translate\":\"item.kubejs.tempelrolle_4\",\"fallback\":\"kubejs:tempelrolle_4\"}]"
 			]
 			hide_until_deps_visible: true
 			id: "021EC3981EE8340E"
@@ -1202,6 +1221,12 @@
 			dependencies: ["4EE040CD5F41D0AC", "60311D48E3582A10", "4888C38F77E2ACA3"]
 			description: [
 				"Geh mit einem Block Terrasteel, 4 Demonic Slate, dem Siegel der Traumwelten und dem Orb of the Deep zum kaputten Altar im Tempel und klick ihn mit Rechtsklick an. Danach steht das Ritual wieder. Wecke es wie jedes Ritual von Blood Magic. (Siehe Buch über Blood Magic)"
+				""
+				"&eMitbringen:&r"
+				"[\"\",{\"text\":\"• 1 × \",\"color\":\"gray\"},{\"translate\":\"block.botania.terrasteel_block\",\"fallback\":\"botania:terrasteel_block\"}]"
+				"[\"\",{\"text\":\"• 4 × \",\"color\":\"gray\"},{\"translate\":\"item.bloodmagic.demonslate\",\"fallback\":\"bloodmagic:demonslate\"}]"
+				"[\"\",{\"text\":\"• 1 × \",\"color\":\"gray\"},{\"translate\":\"item.kubejs.siegel_der_traumwelten\",\"fallback\":\"kubejs:siegel_der_traumwelten\"}]"
+				"[\"\",{\"text\":\"• 1 × \",\"color\":\"gray\"},{\"translate\":\"item.wrd.orb_of_the_deep\",\"fallback\":\"wrd:orb_of_the_deep\"}]"
 			]
 			hide_until_deps_visible: true
 			id: "670A6440E611950C"
@@ -1396,6 +1421,9 @@
 			dependencies: ["7BBC3AEA97ABA19B"]
 			description: [
 				"Wirf eine Rune des Frühlings (Rune of Spring) in das offene Portal to Alfheim. Dann ruft das Portal die Helle Elfe herbei. Sprich mit ihr und gib ihr das Relikt."
+				""
+				"&eMitbringen:&r"
+				"[\"\",{\"text\":\"• 1 × \",\"color\":\"gray\"},{\"translate\":\"item.kubejs.relikt\",\"fallback\":\"kubejs:relikt\"}]"
 			]
 			hide_until_deps_visible: true
 			id: "1355F32DAA30D984"
@@ -1437,6 +1465,14 @@
 			dependencies: ["1355F32DAA30D984"]
 			description: [
 				"Meisterin Cerina will euch helfen, zum Meister zu gelangen. Dafür braucht sie die vier Arcs der Wächter aus Blue Skies, einen Ultimate Control Circuit und einen Block Elementium. Elementium bekommst du durch das Portal: Wirf Manasteel hinein."
+				""
+				"&eMitbringen:&r"
+				"[\"\",{\"text\":\"• 1 × \",\"color\":\"gray\"},{\"translate\":\"item.blue_skies.ethereal_arc\",\"fallback\":\"blue_skies:ethereal_arc\"}]"
+				"[\"\",{\"text\":\"• 1 × \",\"color\":\"gray\"},{\"translate\":\"item.blue_skies.dusk_arc\",\"fallback\":\"blue_skies:dusk_arc\"}]"
+				"[\"\",{\"text\":\"• 1 × \",\"color\":\"gray\"},{\"translate\":\"item.blue_skies.nature_arc\",\"fallback\":\"blue_skies:nature_arc\"}]"
+				"[\"\",{\"text\":\"• 1 × \",\"color\":\"gray\"},{\"translate\":\"item.blue_skies.poison_arc\",\"fallback\":\"blue_skies:poison_arc\"}]"
+				"[\"\",{\"text\":\"• 1 × \",\"color\":\"gray\"},{\"translate\":\"item.mekanism.ultimate_control_circuit\",\"fallback\":\"mekanism:ultimate_control_circuit\"}]"
+				"[\"\",{\"text\":\"• 1 × \",\"color\":\"gray\"},{\"translate\":\"block.botania.elementium_block\",\"fallback\":\"botania:elementium_block\"}]"
 			]
 			hide_until_deps_visible: true
 			id: "780645CE1B131BE4"

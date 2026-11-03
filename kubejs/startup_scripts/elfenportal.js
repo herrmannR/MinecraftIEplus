@@ -14,7 +14,7 @@
 // │   (wo das Preset liegt; Easy NPC 7.14). Solange der Platzhalter steht, bleibt die Rune liegen (Botania        │
 // │   verschluckt sie dann) und im Chat der Operatoren und in logs/kubejs/startup.log steht ein Hinweis.          │
 // └────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-// Stand 2026-10-26, KubeJS 2001. Fassung 1, UNGETESTET.
+// Stand 2026-11-03, KubeJS 2001. Fassung 2 (Stelle vor dem Portal korrigiert, Test 90).
 
 // Name im JAR belegt (Easy NPC 7.14, DataFileHandler): custom = config/easy_npc/preset/, Name = easy_npc:preset/<Pfad darunter>
 const IEPLUS_CERINA_QUELLE = 'custom'
@@ -28,7 +28,9 @@ function ieplusCerinaDimId(level) {
   return m ? m[1] : s
 }
 
-// Stelle vor dem Portal: zwei Blöcke vor dem Kern (unten Mitte des Rahmens), auf der Seite des Werfers
+// Stelle vor dem Portal: drei Blöcke vor dem Kern (unten Mitte des Rahmens), auf der Seite des Werfers.
+// Botania 1.20.1 (JAR, AlfheimPortalBlockEntity.getPortalAABB): ON_X = Portalfläche läuft entlang Z, davor liegt X;
+// ON_Z = Fläche entlang X, davor liegt Z. Fassung 1 hatte das vertauscht, Cerina stand im Portal (Test 90).
 function ieplusCerinaStelle(portal, werfer) {
   var pos = portal.getBlockPos()
   var zustand = String(portal.getBlockState()).toLowerCase()
@@ -36,12 +38,11 @@ function ieplusCerinaStelle(portal, werfer) {
   var y = pos.y
   var z = pos.z + 0.5
   if (zustand.indexOf('on_x') >= 0) {
-    // Rahmen läuft entlang X, davor liegt Z
-    var sz = (werfer && werfer.z < z) ? -1 : 1
-    z += 2 * sz
-  } else {
     var sx = (werfer && werfer.x < x) ? -1 : 1
-    x += 2 * sx
+    x += 3 * sx
+  } else {
+    var sz = (werfer && werfer.z < z) ? -1 : 1
+    z += 3 * sz
   }
   return [x, y, z]
 }
