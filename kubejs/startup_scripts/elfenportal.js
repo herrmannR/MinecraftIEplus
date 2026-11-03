@@ -16,8 +16,9 @@
 // └────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 // Stand 2026-10-26, KubeJS 2001. Fassung 1, UNGETESTET.
 
-const IEPLUS_CERINA_QUELLE = 'custom'                  // PLATZHALTER prüfen
-const IEPLUS_CERINA_PRESET = 'PLATZHALTER_CERINA'      // PLATZHALTER: Preset-Name eintragen
+// Name im JAR belegt (Easy NPC 7.14, DataFileHandler): custom = config/easy_npc/preset/, Name = easy_npc:preset/<Pfad darunter>
+const IEPLUS_CERINA_QUELLE = 'custom'
+const IEPLUS_CERINA_PRESET = 'easy_npc:preset/humanoid_slim/cerina.npc.nbt'
 const IEPLUS_CERINA_RUNE = 'botania:rune_spring'
 const IEPLUS_CERINA_SCHLUESSEL = 'ieplus_cerina_gerufen'
 
