@@ -86,7 +86,7 @@
 
 **Die Schlucht der Zwerge (User, 2026-10-26, O68)**
 - Auf halbem Weg nach Süden zum Blue-Skies-Haus liegt eine Schlucht mit Zwergen (eine Easy-NPC-Figur, Name und Skin offen). Sie kennen das Haus und seinen Wächter Bodhi Bad Dur („den Hüter des Hauses“), weil sie früher mit ihm Erze aus seinen Welten gehandelt haben. DD3R8 schickt die Spieler zuerst zu ihnen (`d2_weg`), der Zwerg weiter zum Haus.
-- Danach handelt der Zwerg, z. B. 16 Osmium gegen 1 Kobalt. Dialoge: `story/texte/dialoge_zwerg.md`.
+- Danach handelt der Zwerg: 16 Rohosmium gegen 1 Kobalt und Metallblöcke in großen Mengen gegen Credits (B8, 2026-11-03). Dialoge: `story/texte/dialoge_zwerg.md`.
 
 **Erstes großes Ziel: der Mond.**
 
@@ -109,7 +109,7 @@
 - **Seine Quests im Questbuch** (geändert 2026-10-20, T4: das Buch selbst kommt vom Droiden). Nach dem Besuch bei ihm erscheinen darin seine Aufgaben (die Nebenquests). Für die gibt er Credits, obwohl sie ihm eigentlich nichts bringen: Er hat einfach Spaß am Zusehen. Credits gibt es direkt nach dem Erfüllen.
 - Er sagt, im Buch könne man auch Notizen über die Aufgaben „dieses komischen Roboters“ machen. Das sind die Hauptquests; sie stehen einfach drin, die Spieler schreiben nichts selbst.
 - Das Buch ist futuristisch beziehungsweise elektrisch gestaltet.
-- **Shop:** Credits sind die Währung seines Shops. Handeln geht nur bei ihm auf dem Mond.
+- **Shop:** Credits sind die Währung seines Shops. Ausgeben kann man Credits nur bei ihm auf dem Mond; verdienen mit Quests und beim Zwerg und bei Bodhi (Ankauf von Rohstoffen). Für gutes Essen gibt er Mond-Rohstoffe. Ware, Preise und Stufen: `21_BALANCING.md` Abschnitt 5 (B8, 2026-11-03).
 - Angebot: Items und Rohstoffe für Droiden (Einzelheiten offen), Baupläne für die Werkbank der Droiden, Rezepte für Blaster und für die Droiden selbst. Die Droiden setzen die Spieler als Wachen ein.
 - **Seine Waren sind in der Overworld und den übrigen Nicht-Star-Wars-Dimensionen nicht anders zu bekommen.**
 - 🟢 **Galaxy in a Cube wird komplett aus allen Nicht-Star-Wars-Dimensionen entfernt** (User, 2026-10-14): keine Jawas, Tusken, Ewok-Dörfer, Kyber-Kristalle usw. außerhalb der Star-Wars-Welten.
@@ -318,7 +318,7 @@ Vorgabe des Users: Der Strang ist der Start der Blue-Skies-Welten.
   3. (K4) Portal nach Everdawn, Osmium bringen. Danach ist der Strang zunächst Nebenquest.
   4. (K5/K6, Nebenquest) Boss-Reihe: Summoner, Alchemist, Starlit Crusher, Arachnarch; Alchemy Table nach dem Alchemist.
   5. (K8, ab hier Pflicht) Die vier Arcs stecken schon im Galaktischen Strahlenschutz (F14). 🟢 Für die Altar-Reparatur gibt der Wächter nach dem letzten Boss als Dank ein eigenes Item **„Siegel der Traumwelten“** (`kubejs:siegel_der_traumwelten`); es **ersetzt den Dusk Arc** in der Reparatur (User, 2026-10-21, O47).
-- **Was die Figur handelt:** was sonst der Gatekeeper verkauft (Zeal Lighter, Blue Journal; nach den Blinding Dungeons die Schlüssel), zu ähnlichen Preisen wie das Original (Preise im JAR noch nicht ausgelesen). Keine Credits, die gibt es nur beim Einsiedler.
+- **Was die Figur handelt:** was sonst der Gatekeeper verkauft (Zeal Lighter, Blue Journal; nach den Blinding Dungeons die Schlüssel), zu ähnlichen Preisen wie das Original (Preise im JAR noch nicht ausgelesen). Dazu kauft er Rohstoffe der Traumwelten gegen Credits (B8, 2026-11-03; früher „keine Credits“).
 - **Technik:** Den echten Gatekeeper per Skript nicht mehr erscheinen lassen (wie `galaxy_overworld.js`), sonst kauft man in jedem Haus. Die Figur steht in genau einem Haus, das der User auswählt; der Droide nennt Richtung oder Koordinaten.
 
 ### Relikt und Strahlenschutz (O43, 🟢 vom User übernommen 2026-10-21)

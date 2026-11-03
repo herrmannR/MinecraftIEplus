@@ -137,18 +137,11 @@ Beantwortet am 2026-10-28: B1–B7; siehe „Erledigt“. Offen sind nur die Tes
 
 → `21_BALANCING.md`, danach `15_RAUMFAHRT.md`, `18_STORY.md`, `kubejs/server_scripts/raumfahrt/`
 
-**B8 · Credits, Shop und Handel** (2026-11-02; Vorgaben des Users, Vorschlag in `21_BALANCING.md` Abschnitt 5; B8a schon eingebaut)
-- b) Shop von Davijaan: Stufen und Preise wie 5.2 (Bench 45 · Klon 195 · Plastoid- und Durasteel-Rezept je 300 · Blaster 750 und Gas Harvester 600 · Droid Fabricator 600, B-1 900, B-2 1.260, Droideka 1.650; zusammen 6.600)?
-- c) „Zuerst die Werkbank kaufen“: Heute **schenkt** Davijaan den Bauplan Assembly Bench im Dialog (ST4-05), und die erste gelesene Rolle bringt das Bauplan-Buch. Künftig kaufen (Dialog ändern), oder bleibt das Geschenk und Stufe 0 entfällt?
-- d) Jedi-, Sith-, Royal-Guard- und Vader-Rüstung: in Teil 1 gar nicht verkaufen, oder in Stufe 3/4?
-- e) Durasteel-Rezept hinter dem neuen Bauplan: Vorschlag 4 Stahlbarren + 4 Osmiumbarren + 1 Desh-Platte → 4 Durasteel (Original: 4 Eisen + 1 Diamant → 4).
-- f) Ankauf bei Zwerg und Bodhi wie 5.3 (ändert O34/O72: Bodhi zahlt Credits; streicht „Credits für Essen“ bei Davijaan)? Und: Rollen erst lesbar, wenn die Stufe davor gelesen ist?
-→ `21_BALANCING.md`, `18_STORY.md`, `story/texte/dialoge_*.md`, `kubejs/server_scripts/starwars/einsiedler_shop.js`, Presets (`tools/npc_preset.py`)
-
 ## Erledigt
 
 | Nr. | Antwort | Datum | Eingetragen in |
 |---|---|---|---|
+| B8b–f | Shop und Handel (User, 2026-11-03): b) Preise wie vorgeschlagen, ohne Stufe 0; c) Bauplan Assembly Bench bleibt ein **Geschenk**; d) nur die **Royal-Guard-Rüstung** kommt in den Shop (Stufe 3, 450), Jedi, Sith und Vader in Teil 2; e) Durasteel 4 Stahl + 4 Osmium + 1 Desh-Platte → 4; f) Zwerg und Bodhi kaufen Rohstoffe gegen Credits (ändert O34/O72), Davijaan gibt für gutes Essen Mond-Rohstoffe statt Credits; keine Sperre der Reihenfolge, alles von Anfang an sichtbar. Shop zusammen 6.675 = 2 × Quest-Credits | 2026-11-03 | `21_BALANCING.md` 5.2/5.3, `story/texte/dialoge_{davijaan,zwerg,bodhi}.md` (Handel), `tools/npc_preset.py`, Presets, `einsiedler_shop.js`, `teil1_items.js`, Patchouli, Tests 113–116 |
 | B8a | Quest-Credits steigen linear je Story-Kapitel (Ziel 50 × Kapitel, über alle Bücher; zusammen 3.338 Copper): Tabelle `CREDITS_HAUPT`/`CREDITS_NEBEN` im Generator, Kapitelende in Buch 1 doppelt, Auszahlung in Gold/Iron/Copper; K1–K3-Nebenquests weiter ohne Credits (F26). Ersetzt die Credit-Werte aus F33 | 2026-11-02 | `21_BALANCING.md` 5.1, `tools/QuestbuchGen.java`, alle `chapters/*.snbt` |
 | F43 | Star Wars Expansion nur wegen der Wesen im Pack: Rettungskapsel (Overworld) per Datapack aus, alle 31 Rezepte weg, alle Items in JEI ausgeblendet (Listen „dauerhaft“: Reisesystem, Doppeltes, Planeten-Rohstoffe, Blöcke, Credits; „nur Teil 1“: Droiden-Items, Bodenfahrzeuge, Vibro-Waffen, Gewänder, Masken, Snow Suit, Essen; Spawn-Eier) | 2026-10-31 | `17_STAR_WARS_1.20.1.md`; `server_scripts/starwars/swe_entfernt.js`, `client_scripts/swe_ausblenden.js`, `data/star_wars_expansion/` |
 | B1 | Story-Abgaben alle eine Stufe teurer: „Würdig sein“ unverändert (Werkzeug und Manastahlblock gab es schon durch O67, LV-Kondensator bleibt, B7); Mondflug (ST4-01) mit einem vollen Basic Chemical Tank Oxygen; Mars-Station (ST7-01) mit 2 Oxygen Distributors und einem voll geladenen Advanced Energy Cube statt Basic; Altar 1 Terrasteel-Block; Elf 1 Elementium-Block und Ultimate statt Elite Control Circuit | 2026-10-28 | `story/texte/`, `story/ABLAUF.md`, `18_STORY.md`, `altar_reparatur.js`, `buch1.cfg`; Easy-NPC-Dialoge DD3R8 und Cerina stellt der User im Editor um |

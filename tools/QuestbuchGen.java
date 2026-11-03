@@ -132,6 +132,11 @@ public class QuestbuchGen {
             String kEff = kEffektiv(q, byCode, new HashSet<>());
             if (kEff == null) { ohneK++; continue; }
             boolean eigeneCredits = cfgRewards.containsKey(q.code) && cfgRewards.get(q.code).contains("_credit");
+            if (eigeneCredits) {   // mitzählen, damit „Credits je Kn“ vollständig ist (Übersichtsseite docs/credits)
+                Matcher m = Pattern.compile("swgc:(copper|iron|gold)_credit\\s*,\\s*(\\d+)").matcher(cfgRewards.get(q.code));
+                int[] z = CREDIT_ZAEHLER.computeIfAbsent(String.format("K%02d", Integer.parseInt(kEff.substring(1))), x -> new int[4]);
+                while (m.find()) z[3] += Integer.parseInt(m.group(2)) * (m.group(1).equals("gold") ? 15 : m.group(1).equals("iron") ? 5 : 1);
+            }
             int r = q.rewards.size();
             for (String t : standardRewards(q, kEff, kapitelEnde.contains(q.code), eigeneCredits)) q.rewards.add(reward(q, r++, t));
         }

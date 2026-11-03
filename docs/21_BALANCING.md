@@ -176,7 +176,7 @@ Nicht anfassen:
 
 Nur bei geschlossenem Spiel kopieren (sonst überschreibt Mekanism die Datei beim Beenden).
 
-## 5. Credits, Shop und Handel — Quest-Credits 🟢 eingebaut (B8a, 2026-11-02), Shop und Handel 🔵 Vorschlag (B8b–f)
+## 5. Credits, Shop und Handel — 🟢 übernommen und eingebaut (B8, 2026-11-02/03), ungetestet (Tests 113–116)
 
 Vorgaben des Users (2026-11-02):
 - Davijaans Shop ist die **einzige Stelle**, an der man Credits ausgibt.
@@ -206,36 +206,36 @@ Ziel 50 × Kapitel, über alle Bücher zusammen (Story-Buch und Mod-Bücher). Um
 
 Die Werte je Quest springen, weil die Kapitel sehr verschieden viele Quests haben (K3: 46 Hauptquests, K10: 9). Ändern sich die Quest-Zahlen stark, die Tabelle nachrechnen: Der Generator gibt je Buch „Credits je Kn“ aus.
 
-### 5.2 Shop von Davijaan — 🔵 Vorschlag (B8b)
+### 5.2 Shop von Davijaan — 🟢 eingebaut (B8b–e, 2026-11-03)
+
+Entscheidungen des Users (2026-11-03): Den Bauplan **Assembly Bench schenkt** Davijaan weiter im Dialog (kein Verkauf, B8c). Von den übrigen Rüstungen kommt nur die **Royal Guard** in den Shop, Jedi, Sith und Vader erst in Teil 2 (B8d). Durasteel-Rezept wie vorgeschlagen (B8e). **Keine Sperre der Reihenfolge**: Alles ist von Anfang an zu sehen; die späten Stufen sind so teuer, dass man sie sich am Anfang nicht leisten kann.
 
 | Stufe | Ware | Preis | im Handel | Nutzungen |
 |---|---|---:|---|---:|
-| 0 | Bauplan Assembly Bench | 45 | 3 Gold | 1 |
+| – | Bauplan Assembly Bench | Geschenk | Dialog `v2_danke` | – |
 | 1 | Bauplan Klon-Rüstung (Phase 2) | 75 | 5 Gold | 1 |
 | 1 | 6 Plastoid | 15 | 1 Gold | 8 (= 48 Plastoid, genau zwei Rüstungen à 24) |
 | 2 | Bauplan Plastoid (2 HDPE → 1 Plastoid) | 300 | 20 Gold | 1 |
-| 2 | Bauplan Durasteel (neu, B8e) | 300 | 20 Gold | 1 |
-| 3 | Bauplan Blaster (alle sieben Modelle) | 750 | 50 Gold | 1 |
-| 3 | Bauplan Gas Harvester (mit Empty Gas Vessel; Tibanna = Munition) | 600 | 40 Gold | 1 |
+| 2 | Bauplan Durasteel (4 Stahl + 4 Osmium + 1 Desh-Platte → 4) | 300 | 20 Gold | 1 |
+| 3 | Bauplan Blaster (alle sieben Modelle) | 600 | 40 Gold | 1 |
+| 3 | Bauplan Gas Harvester (mit Empty Gas Vessel; Tibanna = Munition) | 450 | 30 Gold | 1 |
+| 3 | Bauplan Rüstung der Royal Guard | 450 | 30 Gold | 1 |
 | 4 | Bauplan Droid Fabricator | 600 | 40 Gold | 1 |
-| 4 | Bauplan Droide B-1 | 900 | 60 Gold | 1 |
+| 4 | Bauplan Droide B-1 | 870 | 58 Gold | 1 |
 | 4 | Bauplan Droide B-2 | 1.260 | 64 + 20 Gold | 1 |
 | 4 | Bauplan Droideka | 1.650 | 64 + 46 Gold | 1 |
 
-Summe je Stufe: 45 · 195 · 600 · 1.350 · 4.410 = **6.600** (≈ 2 × 3.338). Sprung von Stufe zu Stufe etwa ×4, ×3, ×2,3, ×3,3.
+Summe je Stufe: 195 · 600 · 1.500 · 4.380 = **6.675** (= 2 × 3.338). Sprung von Stufe zu Stufe etwa ×3, ×2,5, ×2,9.
 
-Wann es allein mit Quest-Credits reicht: Stufe 0 und 1 in K4 (517 da, 240 nötig); Stufe 2 in K6 (840 nötig); Stufe 3 am Ende von K9 (2.190 nötig, 2.284 da). Danach bleiben bis Ende K11 rund 1.150: genug für den Droid Fabricator, aber nicht mehr für einen Droiden. **Die Droiden gibt es nur mit Credits aus dem Handel.**
+Wann es allein mit Quest-Credits reicht: Stufe 1 in K4 (517 da, 195 nötig); Stufe 2 Anfang K6 (795 nötig); Stufe 3 Anfang K10 (2.295 nötig, Ende K9 2.284 da). Danach bleiben bis Ende K11 rund 1.040: genug für den Droid Fabricator, aber nicht mehr für einen Droiden. **Die Droiden gibt es nur mit Credits aus dem Handel.**
 
-Was dafür im Skript (`einsiedler_shop.js`) und im Preset zu tun wäre:
-- Davijaans Preset hat heute **keine** Handel; die Liste oben käme als `Offers` hinein (Easy NPC `ADVANCED`, damit „Nutzungen“ greift; ob Nutzungen ohne „Zurücksetzen“ dauerhaft verbraucht bleiben, im Spiel prüfen).
-- Neuer Bauplan **Durasteel** (Rolle, Advancement, Patchouli-Eintrag), Rezept siehe B8e.
-- Plastoid: 48 statt „die ersten 20“ (Kommentar im Skript, Dialog `v3_waren` passt schon: „ein bisschen Plastoid für den Anfang“).
-- Optional (B8f): Eine Rolle lässt sich erst lesen, wenn die Stufe davor gelesen ist. Easy NPC zeigt sonst alle Handel auf einmal; die Reihenfolge entstünde nur über den Preis.
-- Nicht im Shop: Jedi-, Sith-, Royal-Guard- und Vader-Rüstung (B8d); Pilotenhelm (kommt aus der Story).
+Dazu, ohne Credits: **gutes Essen gegen Mond-Rohstoffe** (User, 2026-11-03): je 8-mal 1 Roast Chicken oder 1 Honey Glazed Ham → 4 Desh-Barren, 4 Borscht → 8 Ice Shards, 4 Egg Fried Rice → 4 Rohdesh.
 
-### 5.3 Handel mit Zwerg und Bodhi — Credits gegen Rohstoffe — 🔵 Vorschlag (B8f)
+Umsetzung: Handelstabelle in `story/texte/dialoge_davijaan.md` (Abschnitt „Handel“), von `tools/npc_preset.py` ins Preset gebaut (Easy NPC `ADVANCED`: nur dort behält jedes Angebot seine Nutzungen; ohne „Zurücksetzen“ bleiben sie verbraucht, JAR 7.14 geprüft). Bauplan Durasteel in `einsiedler_shop.js`, `teil1_items.js`, Advancement und Patchouli-Eintrag (Kapitel Werkstoffe).
 
-Ziel: zusammen rund **3.300 Copper (≈ 220 Gold)**. Jeder Ankauf verlangt zwei volle Stapel (128) Blöcke oder seltene Items; von Hand lohnt das nicht, mit Erzverarbeitung und Digital Miner schon. Ankauf ohne Grenze (viele Nutzungen).
+### 5.3 Handel mit Zwerg und Bodhi — Credits gegen Rohstoffe — 🟢 eingebaut (B8f, 2026-11-03)
+
+Ziel: zusammen rund **3.340 Copper (≈ 220 Gold)**, die zweite Hälfte des Shops. Jeder Ankauf verlangt zwei volle Stapel (128) Blöcke oder seltene Items; von Hand lohnt das nicht, mit Erzverarbeitung und Digital Miner schon. Ankauf ohne Grenze. Tabellen in `story/texte/dialoge_zwerg.md` und `dialoge_bodhi.md`.
 
 **Zwerg** (Erze und Metalle; Handel offen ab ST3-00):
 
@@ -245,8 +245,8 @@ Ziel: zusammen rund **3.300 Copper (≈ 220 Gold)**. Jeder Ankauf verlangt zwei 
 | 128 Eisenblöcke | 2 Gold (30) | 38 |
 | 128 Zinnblöcke (Mekanism) | 2 Gold (30) | 38 |
 | 128 Osmiumblöcke | 3 Gold (45) | 26 |
-| 128 Stahlblöcke | 5 Gold (75) | 15 |
-| *bleibt:* 16 Rohosmium | 1 Kobaltbarren | – |
+| 128 Stahlblöcke (IE) | 5 Gold (75) | 15 |
+| 16 Rohosmium | 1 Kobaltbarren | – |
 
 **Bodhi Bad Dur** (Rohstoffe der Traumwelten; Handel offen ab dem Haus, ST3):
 
@@ -256,8 +256,10 @@ Ziel: zusammen rund **3.300 Copper (≈ 220 Gold)**. Jeder Ankauf verlangt zwei 
 | 128 Aquite | 1 Gold |
 | 128 Charoite | 2 Gold |
 | 128 Falsite-, Ventium- oder Horizonite-Barren (je ein Handel) | 2 Gold |
-| *bleibt:* Zeal Lighter, Blue Journal, Schlüssel (wie der Gatekeeper) | – |
+| Zeal Lighter, Blue Journal, Schlüssel (wie der Gatekeeper) | 🔵 noch nicht in der Tabelle, Preise nicht aus dem JAR gelesen |
 
-Größenordnung: 3.300 Copper nur aus Stahlblöcken wären ≈ 5.600 Blöcke (50.000 Barren), nur aus Eisenblöcken ≈ 14.000 Blöcke. Das ist gewollt extrem; zu hart, dann die Zahlen der Spalte „zahlt“ verdoppeln.
+Größenordnung: 3.340 Copper nur aus Stahlblöcken wären ≈ 5.700 Blöcke (51.000 Barren), nur aus Eisenblöcken ≈ 14.000 Blöcke. Das ist gewollt extrem; zu hart, dann die Zahlen der Spalte „zahlt“ verdoppeln.
 
-Ändert O34/O72 (Bodhi: „keine Credits“) und streicht Davijaans Idee „Credits für gutes Essen“ (`dialoge_davijaan.md`, `v2_bauplan`): Er verkauft nur noch.
+Ändert O34/O72 (Bodhi: „keine Credits“). Davijaans „Credits für gutes Essen“ entfällt, er gibt dafür Mond-Rohstoffe (5.2).
+
+Übersicht mit Diagrammen: `docs/credits/` (Quelle `data.js`, `bash build.sh` → `credits.html`).

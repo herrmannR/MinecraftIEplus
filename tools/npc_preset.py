@@ -248,6 +248,48 @@ def dialoge(datei, warn):
     return out
 
 
+# ---------------------------------------------------------------- Handel lesen
+# Abschnitt „## Handel“ der Dialogdatei: Tabelle | Preis | Preis 2 | Ware | Nutzungen | (weitere Spalten egal).
+# Zellen „n × `item`“ oder „–“; Nutzungen als Zahl oder „unbegrenzt“. Handelsart ADVANCED: nur dort behält jedes
+# Angebot seine eigenen Nutzungen (BASIC setzt alle auf denselben Wert); ResetsEveryMin 0 = verbrauchte Angebote
+# kommen nie wieder (Easy NPC 7.14, TradingOfferHandler/TradingDataCapable, JAR geprüft 2026-11-03).
+UNBEGRENZT = 99999
+
+
+def _stapel(zelle, warn):
+    m = re.search(r'(\d+)\s*×\s*`([\w.:-]+)`', zelle)
+    if not m:
+        return comp({'id': s('minecraft:air'), 'Count': (BYTE, 1)})
+    n = int(m.group(1))
+    if n > 64:
+        warn.append(f'Handel: mehr als 64 in einem Feld ({zelle.strip()})')
+    return comp({'id': s(m.group(2)), 'Count': (BYTE, n)})
+
+
+def handel(datei, warn):
+    text = (TEXTE / datei).read_text(encoding='utf-8')
+    if '\n## Handel' not in text:
+        return None
+    teil = text.split('\n## Handel', 1)[1].split('\n## ', 1)[0]
+    angebote = []
+    for z in teil.split('\n'):
+        z = z.strip()
+        if not z.startswith('|') or '`' not in z:
+            continue
+        zellen = [c.strip() for c in z.strip('|').split('|')]
+        if len(zellen) < 4:
+            warn.append(f'Handel: Zeile zu kurz: {z}')
+            continue
+        nutz = UNBEGRENZT if 'unbegrenzt' in zellen[3] else int(re.sub(r'\D', '', zellen[3]) or 1)
+        angebote.append({'buy': _stapel(zellen[0], warn), 'buyB': _stapel(zellen[1], warn),
+                         'sell': _stapel(zellen[2], warn), 'maxUses': i(nutz), 'uses': i(0), 'xp': i(0),
+                         'priceMultiplier': (FLOAT, 0.0), 'specialPrice': i(0), 'demand': i(0),
+                         'rewardExp': (BYTE, 0)})
+    if len(angebote) > 25:
+        warn.append(f'Handel: {len(angebote)} Angebote, ADVANCED erlaubt 25')
+    return angebote
+
+
 # ---------------------------------------------------------------- Preset bauen
 def vorlage(kuerzel):
     datei, name, ausgabe, quelle = FIGUREN[kuerzel]
@@ -295,8 +337,13 @@ def bauen(kuerzel):
     # Standard beim Ansprechen wie bei einer neu gesetzten Figur (aus der NPC-Datei der Testwelt)
     akt.setdefault('ActionEventSet', comp({'ON_INTERACTION': liste(COMP, [{'Type': s('OPEN_DEFAULT_DIALOG')},
                                                                           {'Type': s('OPEN_TRADING_SCREEN')}])}))
+    ha = handel(datei, warn)
+    if ha is not None:
+        data['Offers'] = comp({'Recipes': comp({'Recipes': liste(COMP, ha)}), 'Inventory': comp({})})
+        data['TradingData'] = comp({'TradingDataSet': comp({'Type': s('ADVANCED'), 'ResetsEveryMin': i(0),
+                                                           'LastReset': (LONG, jetzt)})})
     nbt_schreiben(AUS / ausgabe, w)
-    print(f'{kuerzel}: {len(ds)} Dialoge -> {(AUS / ausgabe).relative_to(WURZEL)}')
+    print(f'{kuerzel}: {len(ds)} Dialoge' + (f', {len(ha)} Handel' if ha is not None else '') + f' -> {(AUS / ausgabe).relative_to(WURZEL)}')
     for x in warn:
         print('   !', x)
 

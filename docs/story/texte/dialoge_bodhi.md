@@ -7,7 +7,7 @@
 > - Er wacht über beide Welten, Everbright (Licht) und Everdawn (Dämmerung). Dass Licht und Dämmerung zusammengehören, ist sein Leitsatz. Das ist eine leise Anspielung auf helle und dunkle Seite, ohne sie zu nennen.
 > - Die vier Bosse haben seine Welten an sich gerissen. Er will sie zurück, kämpfen kann er nicht mehr selbst (Grund bleibt offen).
 > - Er kennt weder den Meister noch den Droiden. Dass ein „Ding aus Metall“ sein Haus vermessen hat, hat er bemerkt.
-> - Er handelt, was sonst der Gatekeeper verkauft; keine Credits (O34).
+> - Er handelt, was sonst der Gatekeeper verkauft, und kauft Rohstoffe der Traumwelten gegen Credits (B8, 2026-11-03; ändert O34).
 
 Scoreboard `bodhi` (B2): 0 = noch nie gesprochen, 1 = Zinn-Auftrag, 2 = Zinn gebracht, 3 = Osmium gebracht (Strang ist ab hier Nebenquest), 4 = alle vier Bosse besiegt (setzt die Belohnung der letzten Boss-Quest in BS4, B3), 5 = Siegel übergeben.
 
@@ -146,6 +146,22 @@ Everdawn ist erst offen, wenn der Zinn-Zoll bezahlt ist (User, 2026-10-26, O73):
 #### `b_standard` · Prio 1 · ohne Bedingung
 > Ich wache momentan. Kommt später wieder.
 - **[Bis später]** → schließen
+
+## Handel
+
+Wird mit `tools/npc_preset.py` ins Preset gebaut (ersetzt alle Handel aus der Vorlage; Handelsart `ADVANCED`, Nutzungen bleiben verbraucht, kein Zurücksetzen). Preise und Begründung: `../../21_BALANCING.md` Abschnitt 5 (B8, 2026-11-03). 1 Gold Credit = 3 Iron = 15 Copper; ein Feld nimmt höchstens 64.
+
+Bodhi kauft Rohstoffe der Traumwelten in großen Mengen und zahlt in Credits (B8f, ändert O34/O72). Die erste Zeile hat der User im Spiel eingestellt. **Noch nicht drin:** Zeal Lighter, Blue Journal und die Schlüssel (wie der Gatekeeper); deren Preise sind noch nicht aus dem JAR gelesen. Weil die Tabelle alle Handel im Preset ersetzt, gehören sie hier hinein, nicht in den Editor.
+
+| Preis | Preis 2 | Ware | Nutzungen | Hinweis |
+|---|---|---|---|---|
+| 1 × `easy_npc:npc_key` | – | 1 × `wrd:corrupted_greatsword` | 64 | vom User im Spiel eingestellt |
+| 64 × `blue_skies:pyrope_gem` | 64 × `blue_skies:pyrope_gem` | 1 × `swgc:gold_credit` | unbegrenzt | 15 |
+| 64 × `blue_skies:aquite` | 64 × `blue_skies:aquite` | 1 × `swgc:gold_credit` | unbegrenzt | 15 |
+| 64 × `blue_skies:charoite` | 64 × `blue_skies:charoite` | 2 × `swgc:gold_credit` | unbegrenzt | 30 |
+| 64 × `blue_skies:falsite_ingot` | 64 × `blue_skies:falsite_ingot` | 2 × `swgc:gold_credit` | unbegrenzt | 30 |
+| 64 × `blue_skies:ventium_ingot` | 64 × `blue_skies:ventium_ingot` | 2 × `swgc:gold_credit` | unbegrenzt | 30 |
+| 64 × `blue_skies:horizonite_ingot` | 64 × `blue_skies:horizonite_ingot` | 2 × `swgc:gold_credit` | unbegrenzt | 30 |
 
 ## Offen beim Überarbeiten
 

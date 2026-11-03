@@ -91,7 +91,7 @@ Der Bauplan ist eine Rolle wie die übrigen: Rechtsklick schaltet das Reparaturr
 - **[Was ist das?]** → Befehl: `give @initiator kubejs:bauplan_assembly_bench 1` → `v2_bauplan`
 
 #### `v2_bauplan` · Prio 0
-> Ein Bauplan. Lest ihn, dann wisst ihr, wie es geht. Ich habe noch mehr, gegen Credits. Und Credits gibt's bei mir für Arbeit oder für gutes Essen. Hier auf dem Mond ist die Auswahl nicht ganz so gut. Gebt mal euer Buch her.
+> Ein Bauplan. Lest ihn, dann wisst ihr, wie es geht. Ich habe noch mehr, gegen Credits. Credits gibt's bei mir für Arbeit. Und wer mir gutes Essen bringt, kriegt was vom Mond. Hier oben ist die Auswahl nicht ganz so gut. Gebt mal euer Buch her.
 - **[Unser Questbuch?]** → `v2_buch`
 
 #### `v2_buch` · Prio 0
@@ -133,7 +133,7 @@ Drei Texte zur Abwechslung (🔵 prüfen, ob Easy NPC mehrere Texte eines Dialog
 - **[Zurück]** → `v3_hallo`
 
 #### `v3_waren` · Prio 0
-> Sachen, die es auf eurer Welt nicht gibt. Baupläne, Durasteel, ein bisschen Plastoid für den Anfang. Damals auf Geonosis haben wir aus dieser verfluchten Klappergestellfabrik einiges mitgehen lassen.
+> Sachen, die es auf eurer Welt nicht gibt. Baupläne und ein bisschen Plastoid für den Anfang. Damals auf Geonosis haben wir aus dieser verfluchten Klappergestellfabrik einiges mitgehen lassen.
 - **[Zurück]** → `v3_hallo`
 
 #### `v3_wer` · Prio 0
@@ -152,11 +152,35 @@ Drei Texte zur Abwechslung (🔵 prüfen, ob Easy NPC mehrere Texte eines Dialog
 > Hm? Ich bin beschäftigt. Kommt später wieder.
 - **[Bis später]** → schließen
 
+## Handel
+
+Wird mit `tools/npc_preset.py` ins Preset gebaut (ersetzt alle Handel aus der Vorlage; Handelsart `ADVANCED`, Nutzungen bleiben verbraucht, kein Zurücksetzen). Preise und Begründung: `../../21_BALANCING.md` Abschnitt 5 (B8, 2026-11-03). 1 Gold Credit = 3 Iron = 15 Copper; ein Feld nimmt höchstens 64.
+
+Davijaan ist die einzige Stelle, an der man Credits ausgibt. Alles ist von Anfang an zu sehen; die späten Stufen sind so teuer, dass man sie sich lange nicht leisten kann. Den Bauplan Assembly Bench schenkt er (`v2_danke`), der steht nicht im Handel.
+
+| Preis | Preis 2 | Ware | Nutzungen | Stufe · Wert in Copper |
+|---|---|---|---|---|
+| 5 × `swgc:gold_credit` | – | 1 × `kubejs:bauplan_ruestung_klon` | 1 | 1 · 75 |
+| 1 × `swgc:gold_credit` | – | 6 × `swgc:plastoid` | 8 | 1 · 15 (48 Plastoid = zwei Klon-Rüstungen) |
+| 20 × `swgc:gold_credit` | – | 1 × `kubejs:bauplan_plastoid` | 1 | 2 · 300 |
+| 20 × `swgc:gold_credit` | – | 1 × `kubejs:bauplan_durasteel` | 1 | 2 · 300 |
+| 40 × `swgc:gold_credit` | – | 1 × `kubejs:bauplan_blaster` | 1 | 3 · 600 |
+| 30 × `swgc:gold_credit` | – | 1 × `kubejs:bauplan_gas_harvester` | 1 | 3 · 450 |
+| 30 × `swgc:gold_credit` | – | 1 × `kubejs:bauplan_ruestung_royal_guard` | 1 | 3 · 450 |
+| 40 × `swgc:gold_credit` | – | 1 × `kubejs:bauplan_droid_fabricator` | 1 | 4 · 600 |
+| 58 × `swgc:gold_credit` | – | 1 × `kubejs:bauplan_droide_b1` | 1 | 4 · 870 |
+| 64 × `swgc:gold_credit` | 20 × `swgc:gold_credit` | 1 × `kubejs:bauplan_droide_b2` | 1 | 4 · 1.260 |
+| 64 × `swgc:gold_credit` | 46 × `swgc:gold_credit` | 1 × `kubejs:bauplan_droide_droideka` | 1 | 4 · 1.650 |
+| 1 × `farmersdelight:roast_chicken_block` | – | 4 × `ad_astra:desh_ingot` | 8 | Essen gegen Mond-Rohstoffe |
+| 1 × `farmersdelight:honey_glazed_ham_block` | – | 4 × `ad_astra:desh_ingot` | 8 | Essen gegen Mond-Rohstoffe |
+| 4 × `kaleidoscope_cookery:borscht` | – | 8 × `ad_astra:ice_shard` | 8 | Essen gegen Mond-Rohstoffe |
+| 4 × `kaleidoscope_cookery:egg_fried_rice` | – | 4 × `ad_astra:raw_desh` | 8 | Essen gegen Mond-Rohstoffe |
+
 ## Offen beim Überarbeiten
 
 Gegengelesen vom User am 2026-10-26; die früheren Punkte sind erledigt (Bauplan-Geschenk bleibt im Dialog, Order-Anspielung ist jetzt ausdrücklich).
 
 - 🟢 **Er gibt sich zu erkennen** (User, 2026-10-26, O70): „Nennt mich Odd Ball“, „Outer Rim“, „Geonosis“, „die Order“. Seine Herkunft ist in Teil 1 nicht mehr geheim; was die Order war und wem er gedient hat, sagt er nicht.
 - 🟢 **Helm und Bauplan** (User, 2026-10-26, O71): siehe `v1_reparatur`, Technik in `../ABLAUF.md`.
-- **Credits für Essen** (`v2_bauplan`): Er zahlt auch für „gutes Essen“. Welche Gerichte (Kaleidoscope, Farmer's Delight) und zu welchem Preis, stellst du im Handel ein oder legst du als Nebenquests fest.
+- 🟢 **Essen gegen Mond-Rohstoffe** (User, 2026-11-03, B8): Für gutes Essen gibt er Desh, Rohdesh und Ice Shards statt Credits (Tabelle „Handel“). `v2_bauplan` und `v3_waren` von Claude angepasst (kein Durasteel mehr im Verkauf), bitte gegenlesen.
 - **Mehrere Begrüßungstexte** (`v3_hallo`): ob Easy NPC zufällig wählt, ist weiter ungeprüft.

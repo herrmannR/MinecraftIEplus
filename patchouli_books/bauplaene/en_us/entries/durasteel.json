@@ -1,0 +1,11 @@
+{
+  "name": "Durasteel",
+  "icon": "swgc:durasteel_ingot",
+  "category": "patchouli:werkstoffe",
+  "advancement": "ieplus:bauplan/durasteel",
+  "sortnum": 2,
+  "pages": [
+    { "type": "patchouli:text", "text": "Der harte Stahl der Galaxis, aus dem Blaster, Droiden und die Rüstung der Royal Guard sind. Der Einsiedler gibt keinen ab; mit diesem Bauplan legieren wir ihn selbst aus Stahl, Osmium und Desh." },
+    { "type": "patchouli:crafting", "recipe": "ieplus:bauplan/swgc_durasteel_ingot" }
+  ]
+}

@@ -62,10 +62,25 @@ Scoreboard `zwerg` (B2): 0 = noch nie gesprochen, 1 = hat die Spieler zum Haus g
 > Hm? Ich hab zu tun. Kommt später wieder.
 - **[Später]** → schließen
 
+## Handel
+
+Wird mit `tools/npc_preset.py` ins Preset gebaut (ersetzt alle Handel aus der Vorlage; Handelsart `ADVANCED`, Nutzungen bleiben verbraucht, kein Zurücksetzen). Preise und Begründung: `../../21_BALANCING.md` Abschnitt 5 (B8, 2026-11-03). 1 Gold Credit = 3 Iron = 15 Copper; ein Feld nimmt höchstens 64.
+
+Der Zwerg kauft Metall in großen Mengen und zahlt in Credits; das geht praktisch nur mit Erzverarbeitung und Automatisierung (B8f).
+
+| Preis | Preis 2 | Ware | Nutzungen | Credits je Barren |
+|---|---|---|---|---|
+| 16 × `mekanism:raw_osmium` | – | 1 × `tconstruct:cobalt_ingot` | unbegrenzt | – |
+| 64 × `minecraft:copper_block` | 64 × `minecraft:copper_block` | 1 × `swgc:gold_credit` | unbegrenzt | 15 je 1.152 Barren |
+| 64 × `minecraft:iron_block` | 64 × `minecraft:iron_block` | 2 × `swgc:gold_credit` | unbegrenzt | 30 je 1.152 |
+| 64 × `mekanism:block_tin` | 64 × `mekanism:block_tin` | 2 × `swgc:gold_credit` | unbegrenzt | 30 je 1.152 |
+| 64 × `mekanism:block_osmium` | 64 × `mekanism:block_osmium` | 3 × `swgc:gold_credit` | unbegrenzt | 45 je 1.152 |
+| 64 × `immersiveengineering:storage_steel` | 64 × `immersiveengineering:storage_steel` | 5 × `swgc:gold_credit` | unbegrenzt | 75 je 1.152 |
+
 ## Offen beim Überarbeiten
 
 - **Name und Skin** des Zwergs legst du fest. Stimmt der Charakter (knurrig, stolz, ehrlicher Händler)?
-- **Handel:** Vorschlag 16 Rohosmium (`mekanism:raw_osmium`) gegen 1 Kobaltbarren (`tconstruct:cobalt_ingot`). Osmium gibt es erst ab Everdawn (K4), der Handel lohnt also erst dann. Weitere Angebote stellst du im Spiel ein (Easy NPC, Handel).
+- **Handel:** 16 Rohosmium gegen 1 Kobaltbarren (Osmium gibt es erst ab Everdawn, K4) und der Ankauf von Metallblöcken gegen Credits (B8, 2026-11-03) stehen in der Tabelle „Handel“; neue Angebote dort eintragen, nicht im Editor.
 - **Kobalt früh im Spiel:** Kobalt kommt sonst nur aus dem Nether. Der Handel und der Kobalthammer für „Würdig sein“ (O67) holen ihn nach vorn, in K2/K3. Gewollt?
 - **Ort:** Die Schlucht liegt auf halbem Weg nach Süden zwischen Basis und Blue-Skies-Haus; der Host sucht sie aus (eine echte Schlucht der Welt oder gebaut). Schutzzone ja oder nein?
 - **Questtext ST3-00** („Die Schlucht“) kommt in `questtexte_story.md`, wenn du die Questtexte durchgesehen hast.

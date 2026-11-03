@@ -4,7 +4,7 @@
 // Story-Items (Lese-Items, Helm, Siegel): docs/story/ABLAUF.md, Texte in docs/story/texte/ (2026-10-21).
 // Bauplan „Pilotenhelm“ (O71, 2026-10-26): Davijaan gibt ihn beim Helm-Auftrag; die Reparatur ergibt den echten
 // 212er-Helm swgc:clone_212th_battalion_helmet, kubejs:klonhelm_repariert entfällt.
-// Stand 2026-11-02, KubeJS 2001. Fassung 8 (Relikt mit der Grafik des Sith-Holocrons), UNGETESTET.
+// Stand 2026-11-03, KubeJS 2001. Fassung 9 (Bauplan Durasteel, B8; Fassung 8: Relikt mit der Grafik des Sith-Holocrons), UNGETESTET.
 
 StartupEvents.registry('item', event => {
   // Bauteil der Rakete T4, fertigt Meisterin Cerina (der „Helle Elf“) aus Relikt, Arcs, Elite Control Circuit und Elementium (F14)
@@ -26,8 +26,10 @@ StartupEvents.registry('item', event => {
     assembly_bench: 'Assembly Bench',
     droid_fabricator: 'Droid Fabricator',
     gas_harvester: 'Gas Harvester',
-    // Plastoid aus HDPE Pellets; der Einsiedler verkauft nur die ersten 20 Plastoid (User, 2026-10-20)
+    // Plastoid aus HDPE Pellets; der Einsiedler verkauft nur 48 Plastoid, genug für zwei Klon-Rüstungen (B8, 2026-11-03)
     plastoid: 'Plastoid',
+    // Durasteel aus Stahl, Osmium und Desh; im Shop gibt es keins (B8e, 2026-11-03)
+    durasteel: 'Durasteel',
     droide_b1: 'Droide B-1',
     droide_b2: 'Droide B-2',
     droide_droideka: 'Droideka',

@@ -1,0 +1,252 @@
+<title>Credits und Handel IE+</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: oben drei Eckzahlen, dann drei Diagramme (Credits je Kapitel, verdient gegen Preise, Preise je Ware),
+   darunter die Werte je Quest und die Handelslisten der drei Figuren. Gleiche Material-Welt wie Erzatlas und Meilensteinkarte. */
+:root{
+  --bg:#1b1d20; --panel:#24272b; --line:#34383e; --fg:#e7e5e1; --muted:#9a9890; --accent:#e0a33a;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500;
+  --chip:#2c3035;
+  --f-display:"Pixelify Sans","Courier New",monospace;
+  --f-body:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-data:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){
+  --bg:#f1efea; --panel:#fbfaf7; --line:#d9d5cc; --fg:#24221f; --muted:#6c675e; --accent:#a36a12;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --chip:#ebe7df; color-scheme:light}}
+:root[data-theme="light"]{
+  --bg:#f1efea; --panel:#fbfaf7; --line:#d9d5cc; --fg:#24221f; --muted:#6c675e; --accent:#a36a12;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --chip:#ebe7df; color-scheme:light}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.45;margin:0}
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 56px;display:grid;gap:34px}
+header{display:grid;gap:10px}
+h1{font-family:var(--f-display);font-weight:700;font-size:clamp(28px,4vw,40px);letter-spacing:.02em;margin:0;text-wrap:balance}
+h1 span{color:var(--accent)}
+h2{font:700 19px var(--f-display);letter-spacing:.04em;margin:0;color:var(--accent);text-wrap:balance}
+h3{font:700 16px var(--f-body);margin:0}
+.lede{color:var(--muted);max-width:72ch;margin:0}
+.meta{font-family:var(--f-data);font-size:12px;color:var(--muted)}
+section{display:grid;gap:12px;min-width:0}
+section>p{margin:0;max-width:72ch;color:var(--muted)}
+
+.eck{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.eck div{border-top:3px solid var(--line);padding-top:8px;display:grid;gap:2px}
+.eck b{font:700 30px var(--f-data);font-variant-numeric:tabular-nums}
+.eck span{color:var(--muted);font-size:14px}
+.eck .q{border-color:var(--s1)} .eck .s{border-color:var(--accent)} .eck .h{border-color:var(--s3)}
+
+.chart{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:10px 10px 6px;min-width:0}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--muted);padding:2px 4px 6px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+svg text{fill:var(--muted);font-family:var(--f-data);font-size:11px}
+svg .val{fill:var(--fg);font-weight:600}
+svg .lab{fill:var(--fg);font-family:var(--f-body);font-size:12px}
+svg .grid{stroke:var(--line);stroke-width:1}
+svg .axis{stroke:var(--muted);stroke-width:1}
+svg .hit{fill:transparent;cursor:default}
+svg .hit:hover+.mark,svg .bar:hover{opacity:.85}
+.tip{position:absolute;pointer-events:none;background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:8px 10px;font-size:13px;box-shadow:0 4px 14px rgba(0,0,0,.25);max-width:260px;z-index:2}
+.tip b{font-family:var(--f-data)}
+.tip table{border-collapse:collapse;margin-top:4px}
+.tip td{padding:1px 8px 1px 0;font-family:var(--f-data);font-size:12px}
+.tip td:last-child{text-align:right;padding-right:0}
+
+.tab{overflow-x:auto;border:1px solid var(--line);border-radius:4px;background:var(--panel)}
+table.t{border-collapse:collapse;width:100%;font-size:14px}
+.t th,.t td{padding:7px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.t th{font:600 12px var(--f-data);color:var(--muted);letter-spacing:.03em;text-transform:uppercase;white-space:nowrap}
+.t td.n,.t th.n{text-align:right;font-family:var(--f-data);font-variant-numeric:tabular-nums;white-space:nowrap}
+.t tr:last-child td{border-bottom:0}
+.t tr.sum td{font-weight:700}
+.t .id{display:block;font:11px var(--f-data);color:var(--muted)}
+.stufe{display:inline-block;font:700 11px var(--f-data);padding:1px 6px;border-radius:2px;color:#fff;white-space:nowrap}
+.figur{display:grid;gap:8px}
+.figur p{margin:0;color:var(--muted);font-size:14px}
+.hinweis{border-left:3px solid var(--accent);padding:6px 12px;background:var(--chip);border-radius:0 4px 4px 0;font-size:14px;max-width:80ch}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Credits und Handel <span>IE+</span></h1>
+    <p class="lede">Was Quests an Credits einbringen, was Davijaans Shop kostet und was Zwerg und Bodhi für Rohstoffe zahlen. Alle Werte in Copper Credits: 1 Iron = 5, 1 Gold = 15.</p>
+    <p class="meta" id="stand"></p>
+  </header>
+
+  <section>
+    <div class="eck" id="eck"></div>
+  </section>
+
+  <section>
+    <h2>Credits je Kapitel</h2>
+    <p>Quest-Belohnungen aller Bücher zusammen. Sie steigen linear, etwa 50 × Kapitelnummer. Fahre über eine Säule, um die Bücher zu sehen.</p>
+    <div class="chart" id="c1"><div class="legend"><span><i style="background:var(--s1)"></i>Story (Buch 1)</span><span><i style="background:var(--s2)"></i>Mod-Bücher</span></div></div>
+  </section>
+
+  <section>
+    <h2>Verdient gegen Preise</h2>
+    <p>Die Linie zeigt, wie viele Credits man bis zum Ende eines Kapitels allein aus Quests hat. Die gestrichelten Linien zeigen, was der Shop bis einschließlich einer Stufe kostet. Über der Linie liegt alles, was man erst mit Credits aus dem Handel bezahlen kann.</p>
+    <div class="chart" id="c2"></div>
+  </section>
+
+  <section>
+    <h2>Preise im Shop</h2>
+    <p>Jede bessere Stufe kostet grob das Dreifache der vorigen. Alles ist von Anfang an zu sehen; die Droiden kann man sich lange nicht leisten. Den Bauplan Assembly Bench schenkt Davijaan, er steht nicht im Handel.</p>
+    <div class="chart" id="c3"><div class="legend" id="l3"></div></div>
+  </section>
+
+  <section>
+    <h2>Werte je Kapitel</h2>
+    <p>Je Quest gibt es einen festen Wert, je nach Kapitel. Die letzte Hauptquest eines Story-Kapitels gibt das Doppelte. Die Werte springen, weil die Kapitel sehr verschieden viele Quests haben. In K1 bis K3 geben Nebenquests nur XP und eine Kleinigkeit.</p>
+    <div class="tab"><table class="t" id="t1"></table></div>
+  </section>
+
+  <section>
+    <h2>Alle Handel</h2>
+    <div id="figuren" style="display:grid;gap:26px"></div>
+  </section>
+</div>
+
+<script>
+/*DATA*/
+(function(){
+const de = n => n.toLocaleString('de-DE');
+const K = [1,2,3,4,5,6,7,8,9,10,11];
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const STUFE = {1:'--s1',2:'--s2',3:'--s3',4:'--s4'};
+const SVGNS = 'http://www.w3.org/2000/svg';
+function el(tag, attrs, parent, text){ const e=document.createElementNS(SVGNS,tag); for(const k in attrs) e.setAttribute(k,attrs[k]); if(text!==undefined) e.textContent=text; if(parent) parent.appendChild(e); return e; }
+function niceMax(v){ const p=Math.pow(10,Math.floor(Math.log10(v))); for(const m of [1,1.5,2,2.5,3,4,5,6,8,10]) if(m*p>=v) return m*p; return 10*p; }
+
+// ---- Daten aufbereiten
+const proK = K.map(k => { let story=0, mods=0; const teile=[];
+  for (const [id,b] of Object.entries(DATA.buecher)) { const v=b.k[k]; if(!v) continue;
+    if (id==='buch1') story+=v.copper; else mods+=v.copper; teile.push([b.titel, v.copper]); }
+  teile.sort((a,b)=>b[1]-a[1]); return {k, story, mods, summe: story+mods, teile}; });
+let kum=0; proK.forEach(r => { kum += r.summe; r.kum = kum; });
+const questSumme = kum;
+const dav = DATA.figuren.find(f=>f.id==='davijaan');
+const shop = dav.handel.filter(o=>o.stufe).map(o=>({name:o.ware.name.replace('Bauplan: ',''), stufe:o.stufe, einzeln:o.kostet, n:o.nutzungen, summe:o.kostet*o.nutzungen, menge:o.ware.n}));
+const stufenSumme = [1,2,3,4].map(s => shop.filter(x=>x.stufe===s).reduce((a,x)=>a+x.summe,0));
+const bis = []; stufenSumme.reduce((a,v,i)=>(bis[i]=a+v), 0);
+const shopSumme = bis[3];
+
+document.getElementById('stand').textContent = 'Stand ' + DATA.stand + ' · Quelle: Questbücher (QuestbuchGen) und Handelstabellen in docs/story/texte';
+document.getElementById('eck').innerHTML =
+  `<div class="q"><b>${de(questSumme)}</b><span>Credits aus allen Quests, K1–K11</span></div>`+
+  `<div class="s"><b>${de(shopSumme)}</b><span>kostet der ganze Shop von Davijaan</span></div>`+
+  `<div class="h"><b>${de(shopSumme-questSumme)}</b><span>fehlen, kommen aus dem Handel mit Zwerg und Bodhi</span></div>`;
+
+// ---- Tooltip
+function tip(chart){ let t=chart.querySelector('.tip'); if(!t){ t=document.createElement('div'); t.className='tip'; t.hidden=true; chart.appendChild(t);} return t; }
+function zeige(chart, html, ev){ const t=tip(chart); t.innerHTML=html; t.hidden=false; const r=chart.getBoundingClientRect();
+  let x=ev.clientX-r.left+14, y=ev.clientY-r.top+14; if(x+t.offsetWidth>r.width) x=Math.max(4,ev.clientX-r.left-t.offsetWidth-14); if(y+t.offsetHeight>r.height) y=Math.max(4,r.height-t.offsetHeight-4);
+  t.style.left=x+'px'; t.style.top=y+'px'; }
+function weg(chart){ tip(chart).hidden=true; }
+
+// ---- Diagramm 1: gestapelte Säulen je Kapitel
+function c1(){
+  const box=document.getElementById('c1'); box.querySelector('svg')?.remove();
+  const W=Math.max(320, box.clientWidth-20), H=W<520?260:300, L=44, R=8, T=22, B=26;
+  const max=niceMax(Math.max(...proK.map(r=>r.summe)));
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':'Credits je Kapitel, gestapelt nach Story und Mod-Büchern'});
+  const y=v=>T+(H-T-B)*(1-v/max), bw=(W-L-R)/K.length;
+  for(let i=0;i<=4;i++){ const v=max*i/4; el('line',{x1:L,x2:W-R,y1:y(v),y2:y(v),class:i?'grid':'axis'},svg); el('text',{x:L-6,y:y(v)+4,'text-anchor':'end'},svg,de(v)); }
+  proK.forEach((r,i)=>{ const x=L+i*bw+bw*0.18, w=bw*0.64;
+    const hs=y(0)-y(r.story), hm=y(0)-y(r.mods);
+    if(r.mods) el('rect',{x, y:y(r.mods), width:w, height:Math.max(0,hm), fill:css('--s2'), rx:0},svg);
+    if(r.story) el('rect',{x, y:y(r.summe), width:w, height:Math.max(0,hs-2), fill:css('--s1'), rx:3},svg);
+    el('text',{x:x+w/2,y:y(r.summe)-6,'text-anchor':'middle',class:'val'},svg,de(r.summe));
+    el('text',{x:x+w/2,y:H-8,'text-anchor':'middle'},svg,'K'+r.k);
+    const hit=el('rect',{x:L+i*bw,y:T,width:bw,height:H-T-B,class:'hit'},svg);
+    const html=`<b>K${r.k} · ${de(r.summe)} Credits</b><table>${r.teile.map(([n,v])=>`<tr><td>${n}</td><td>${de(v)}</td></tr>`).join('')}</table>`;
+    hit.addEventListener('mousemove',ev=>zeige(box,html,ev)); hit.addEventListener('mouseleave',()=>weg(box));
+  });
+  box.appendChild(svg);
+}
+
+// ---- Diagramm 2: kumulierte Quest-Credits gegen Shop-Stufen
+function c2(){
+  const box=document.getElementById('c2'); box.querySelector('svg')?.remove();
+  const W=Math.max(320, box.clientWidth-20), H=W<520?300:340, L=48, R=W<520?96:150, T=14, B=26;
+  const max=Math.ceil(shopSumme*1.03/1000)*1000, schritte=max/1000;
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':'Credits aus Quests bis zum Kapitel, verglichen mit den Kosten der Shop-Stufen'});
+  const x=k=>L+(W-L-R)*(k/11), y=v=>T+(H-T-B)*(1-v/max);
+  for(let i=0;i<=schritte;i++){ const v=1000*i; el('line',{x1:L,x2:W-R,y1:y(v),y2:y(v),class:i?'grid':'axis'},svg); el('text',{x:L-6,y:y(v)+4,'text-anchor':'end'},svg,de(v)); }
+  K.forEach(k=>el('text',{x:x(k),y:H-8,'text-anchor':'middle'},svg,'K'+k));
+  // Bereich über der Linie bis zum Shop-Gesamtpreis: nur mit Handel
+  const pts=[[0,0],...proK.map(r=>[r.k,r.kum])];
+  el('path',{d:'M'+pts.map(([k,v])=>x(k)+','+y(v)).join(' L')+` L${x(11)},${y(shopSumme)} L${x(0)},${y(shopSumme)} Z`,fill:css('--s3'),'fill-opacity':.10},svg);
+  [1,2,3,4].forEach((s,i)=>{ const v=bis[i];
+    el('line',{x1:L,x2:W-R,y1:y(v),y2:y(v),stroke:css(STUFE[s]),'stroke-width':1.5,'stroke-dasharray':'5 4'},svg);
+    const t=el('text',{x:W-R+6,y:y(v)+4,class:'lab'},svg); t.textContent=(W<520?'bis S'+s+' ':'bis Stufe '+s+' · ')+de(v); });
+  el('path',{d:'M'+pts.map(([k,v])=>x(k)+','+y(v)).join(' L'),fill:'none',stroke:css('--s1'),'stroke-width':2.5,'stroke-linejoin':'round'},svg);
+  proK.forEach(r=>{ el('circle',{cx:x(r.k),cy:y(r.kum),r:4,fill:css('--s1'),stroke:css('--panel'),'stroke-width':2},svg);
+    const hit=el('rect',{x:x(r.k)-(W-L-R)/22,y:T,width:(W-L-R)/11,height:H-T-B,class:'hit'},svg);
+    const reicht=[1,2,3,4].filter((s,i)=>bis[i]<=r.kum);
+    const html=`<b>Ende K${r.k}: ${de(r.kum)} Credits</b><br>${reicht.length?'reicht bis Stufe '+reicht[reicht.length-1]:'reicht noch für keine Stufe'}`+
+      (reicht.length<4?`<br>bis Stufe ${reicht.length+1} fehlen ${de(bis[reicht.length]-r.kum)}`:'');
+    hit.addEventListener('mousemove',ev=>zeige(box,html,ev)); hit.addEventListener('mouseleave',()=>weg(box)); });
+  const last=proK[proK.length-1];
+  el('text',{x:x(11)-12,y:y(last.kum)-10,'text-anchor':'end',class:'lab'},svg,'aus Quests '+de(last.kum));
+  el('text',{x:x(0)+8,y:y(shopSumme)+18,class:'lab'},svg,'nur mit Credits aus dem Handel');
+  box.appendChild(svg);
+}
+
+// ---- Diagramm 3: Preis je Ware (waagerechte Balken, Farbe = Stufe)
+function c3(){
+  const box=document.getElementById('c3'); box.querySelector('svg')?.remove();
+  const W=Math.max(320, box.clientWidth-20), schmal=W<520, rowH=26, L=schmal?132:210, R=56, T=6;
+  const H=T+shop.length*rowH+20, max=niceMax(Math.max(...shop.map(s=>s.summe)));
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':'Preis jeder Ware im Shop, nach Stufe gefärbt'});
+  const x=v=>L+(W-L-R)*v/max;
+  for(let i=0;i<=4;i++){ const v=max*i/4; el('line',{x1:x(v),x2:x(v),y1:T,y2:H-18,class:i?'grid':'axis'},svg); el('text',{x:x(v),y:H-4,'text-anchor':'middle'},svg,de(v)); }
+  shop.forEach((s,i)=>{ const yy=T+i*rowH;
+    const name=s.n>1?`${s.n} × ${s.menge} ${s.name}`:s.name;
+    el('text',{x:L-8,y:yy+rowH/2+4,'text-anchor':'end',class:'lab'},svg,schmal&&name.length>20?name.slice(0,19)+'…':name);
+    el('rect',{x:x(0),y:yy+5,width:Math.max(2,x(s.summe)-x(0)),height:rowH-10,fill:css(STUFE[s.stufe]),rx:3,class:'bar'},svg);
+    el('text',{x:x(s.summe)+6,y:yy+rowH/2+4,class:'val'},svg,de(s.summe));
+    const hit=el('rect',{x:0,y:yy,width:W,height:rowH,class:'hit'},svg);
+    const html=`<b>${s.name}</b><br>Stufe ${s.stufe} · ${de(s.summe)} Credits`+(s.n>1?`<br>${s.n}-mal je ${de(s.einzeln)} für ${s.menge} Stück`:'');
+    hit.addEventListener('mousemove',ev=>zeige(box,html,ev)); hit.addEventListener('mouseleave',()=>weg(box)); });
+  box.appendChild(svg);
+  document.getElementById('l3').innerHTML=[1,2,3,4].map(s=>`<span><i style="background:var(${STUFE[s]})"></i>Stufe ${s} · zusammen ${de(stufenSumme[s-1])}</span>`).join('');
+}
+
+// ---- Tabelle je Kapitel
+(function(){
+  const jq=DATA.jeQuest;
+  let h='<tr><th>Kapitel</th><th class="n">je Hauptquest</th><th class="n">je Nebenquest</th><th class="n">Story</th><th class="n">Mod-Bücher</th><th class="n">zusammen</th><th class="n">bis dahin</th></tr>';
+  proK.forEach(r=>{ h+=`<tr><td>K${r.k}</td><td class="n">${jq.haupt[r.k]}</td><td class="n">${jq.neben[r.k]||'–'}</td><td class="n">${de(r.story)}</td><td class="n">${de(r.mods)}</td><td class="n">${de(r.summe)}</td><td class="n">${de(r.kum)}</td></tr>`; });
+  h+=`<tr class="sum"><td>Summe</td><td></td><td></td><td class="n">${de(proK.reduce((a,r)=>a+r.story,0))}</td><td class="n">${de(proK.reduce((a,r)=>a+r.mods,0))}</td><td class="n">${de(questSumme)}</td><td></td></tr>`;
+  document.getElementById('t1').innerHTML=h;
+})();
+
+// ---- Handelslisten
+(function(){
+  const feld=p=>`${p.n} × ${p.name}<span class="id">${p.id}</span>`;
+  document.getElementById('figuren').innerHTML = DATA.figuren.map(f=>{
+    const zeilen=f.handel.map(o=>{
+      const st=o.stufe?`<span class="stufe" style="background:var(${STUFE[o.stufe]})">Stufe ${o.stufe}</span>`:'';
+      const wert=o.kostet?`kostet ${de(o.kostet)}`:(o.zahlt?`zahlt ${de(o.zahlt)}`:'');
+      const hinweis=o.stufe?o.hinweis.replace(/^\d\s*·\s*[\d.]+\s*/,'').replace(/^\(|\)$/g,''):o.hinweis.replace(/^\d+$/,'');
+      return `<tr><td>${o.preis.map(feld).join('<br>+ ')}</td><td>${feld(o.ware)}</td><td class="n">${o.nutzungen==='unbegrenzt'?'∞':o.nutzungen}</td><td class="n">${wert}</td><td>${st} ${hinweis}</td></tr>`; }).join('');
+    const extra = f.id==='davijaan' ? '<div class="hinweis">Den Bauplan Assembly Bench schenkt Davijaan im Dialog, wenn ihr ihm den Helm gebracht habt. Für gutes Essen gibt er Rohstoffe vom Mond statt Credits.</div>'
+      : f.id==='bodhi' ? '<div class="hinweis">Noch nicht in der Liste: Zeal Lighter, Blue Journal und die Schlüssel, die sonst der Gatekeeper verkauft. Ihre Preise sind noch nicht aus dem JAR gelesen.</div>' : '';
+    return `<div class="figur"><h3>${f.name}</h3><p>${f.rolle}</p>${extra}<div class="tab"><table class="t"><tr><th>Er nimmt</th><th>Er gibt</th><th class="n">Nutzungen</th><th class="n">Credits</th><th>Hinweis</th></tr>${zeilen}</table></div></div>`;
+  }).join('');
+})();
+
+function alle(){ c1(); c2(); c3(); }
+alle();
+let warte; addEventListener('resize',()=>{ clearTimeout(warte); warte=setTimeout(alle,120); });
+if (window.matchMedia) matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change',alle);
+new MutationObserver(alle).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+})();
+</script>

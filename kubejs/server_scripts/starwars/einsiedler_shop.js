@@ -1,7 +1,9 @@
 // Waren aus der Star-Wars-Galaxis gibt es nur beim Einsiedler auf dem Mond (O28, F5c/d, 2026-10-20; docs/18_STORY.md).
 // - Credits nur als Quest-Belohnung und im Shop: die Rezepte aus Kupfer, Eisen und Gold entfallen; Umtausch zwischen den Stufen bleibt.
-// - Durasteel: nur im Shop. Plastoid: der Shop verkauft nur die ersten 20 (Handel in Easy NPC begrenzt), danach
-//   Werkbank-Rezept aus 2 HDPE Pellets (Mekanism) hinter dem Bauplan „Plastoid“ (User, 2026-10-20).
+// - Shop und Preise: B8 (User, 2026-11-03; docs/21_BALANCING.md Abschnitt 5, Handel in docs/story/texte/dialoge_davijaan.md).
+//   Plastoid: der Shop verkauft genau 48 (zwei Klon-Rüstungen), danach Werkbank-Rezept aus 2 HDPE Pellets (Mekanism)
+//   hinter dem Bauplan „Plastoid“. Durasteel: kein Verkauf, nur hinter dem Bauplan „Durasteel“
+//   (4 Stahl + 4 Osmium + 1 Desh-Platte → 4; B8e). Beide nur über die Rezept-ID entfernen (Test 63).
 // - Baupläne (User, 2026-10-20): Der Einsiedler verkauft Schriftrollen (kubejs:bauplan_<name>, alle gleich aussehend).
 //   Rechtsklick liest die Rolle: Sie verschwindet, das Rezept ist für die ganze Welt freigeschaltet (Weltwert in
 //   server.persistentData) und alle Spieler bekommen das Advancement ieplus:bauplan/<name>, das den Eintrag im Buch
@@ -23,7 +25,7 @@
 //   Droiden), Rüstung (Klon, Jedi, Sith, Royal Guard, Vader; deren Werkbank-Rezepte sind bis zum Bauplan gesperrt).
 // - Kapitel „Erinnerungsstücke“ (O71, 2026-10-26): Bauplan „Pilotenhelm“, gibt Davijaan beim Helm-Auftrag. Sein Rezept
 //   (Reparatur des verbeulten Helms) steht in server_scripts/story/story_rezepte.js und fragt denselben Weltwert ab.
-// Stand 2026-10-26, KubeJS 2001. Fassung 12 (Bauplan Pilotenhelm; Fassung 11: Plastoid-Rezept nicht mehr über output entfernt, Test 63), UNGETESTET.
+// Stand 2026-11-03, KubeJS 2001. Fassung 13 (Bauplan Durasteel, B8; Fassung 12: Bauplan Pilotenhelm), UNGETESTET.
 
 const IEPLUS_ADV = 'mekanism:advanced_control_circuit'
 const IEPLUS_BAUPLAN_BUCH = 'patchouli:bauplaene'
@@ -43,6 +45,10 @@ const IEPLUS_BAUPLAENE = {
       zutaten: { D: 'ad_astra:desh_plate', P: '#forge:plates/steel', G: 'minecraft:glass' } }] },
   plastoid: { titel: 'Plastoid', rezepte: [
     { ergebnis: 'swgc:plastoid', muster: ['HH'], zutaten: { H: 'mekanism:hdpe_pellet' } }] },
+  // B8e (User, 2026-11-03); Original swgc: 4 Eisen + 1 Diamant → 4
+  durasteel: { titel: 'Durasteel', rezepte: [
+    { ergebnis: 'swgc:durasteel_ingot', anzahl: 4, muster: ['SOS', 'ODO', 'SOS'],
+      zutaten: { S: '#forge:ingots/steel', O: '#forge:ingots/osmium', D: 'ad_astra:desh_plate' } }] },
   droide_b1: { titel: 'Droide B-1', rezepte: [
     { ergebnis: 'kubejs:steuerkern_b1', muster: ['PCP', 'CRC', 'PCP'],
       zutaten: { P: 'swgc:plastoid', C: 'mekanism:basic_control_circuit', R: 'minecraft:redstone_block' } }] },
@@ -122,9 +128,8 @@ function ieplusEintraegeAbgleichen(server, ziel) {
 ServerEvents.recipes(event => {
   // Credits
   ;['swgc:copper_credit', 'swgc:iron_credit', 'swgc:gold_credit'].forEach(id => event.remove({ id: id }))
-  // Shop-Waren. Plastoid nicht über output entfernen: das träfe auch das Bauplan-Rezept unten (Test 63);
-  // sein einziges Mod-Rezept swgc:plastoid entfernt die Bauplan-Schleife über die ID.
-  event.remove({ output: 'swgc:durasteel_ingot' })
+  // Shop-Waren. Plastoid und Durasteel nicht über output entfernen: das träfe auch die Bauplan-Rezepte unten (Test 63);
+  // ihre einzigen Mod-Rezepte swgc:plastoid und swgc:durasteel_ingot entfernt die Bauplan-Schleife über die ID.
 
   // Droiden mit Steuerkern; Eisenblöcke werden Stahlblöcke (verteuert, Test 43). "weapon" zeigt weiter auf die Blaster-Zutat.
   const stahl = { tag: 'forge:storage_blocks/steel' }
@@ -152,7 +157,7 @@ ServerEvents.recipes(event => {
   Object.keys(IEPLUS_BAUPLAENE).forEach(name => {
     IEPLUS_BAUPLAENE[name].rezepte.forEach(r => {
       if (r.ergebnis.indexOf('swgc:') === 0) event.remove({ id: r.ergebnis })
-      event.shaped(r.ergebnis, r.muster, r.zutaten)
+      event.shaped(r.anzahl ? Item.of(r.ergebnis, r.anzahl) : r.ergebnis, r.muster, r.zutaten)
         .modifyResult((grid, result) => ieplusFreigeschaltet(grid, name) ? result : Item.empty)
         .id('ieplus:bauplan/' + r.ergebnis.replace(':', '_'))
     })
