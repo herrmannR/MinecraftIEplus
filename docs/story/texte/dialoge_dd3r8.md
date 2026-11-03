@@ -158,7 +158,7 @@ Logbuch Teil 2 kommt mit dem Abhaken von „Würdig sein“ (ST2-01).
 > Sehr gut, damit schafft ihr es zum Mars. Außerdem ist es ein ideales Schmiermittel für mein Getriebe. Danke! Stellt mehr her, baut die T2-Rakete und fliegt zum Mars. Hier, ich habe bereits den idealen Platz für die Basis lokalisiert. Schaut euch dort mal um.
 - **[Gut, wir gehen.]** → Befehl: `give @initiator minecraft:compass{LodestoneDimension:"ad_astra:mars",LodestoneTracked:0b,LodestonePos:{X:-272,Y:104,Z:-252},display:{Name:'{"text":"Peilsender von DD3R8","italic":false}'}} 1` (Mitte der verlassenen Basis -280 111 -242 bis -265 102 -262, User 2026-11-01; O69) → schließen
 
-Auf dem Mars zeigt der Peilsender auf den Platz. Dort liegen die Reste einer alten Basis mit einem kleinen Dungeon und einer Notiz der früheren Bewohner: Hier ist man vor Sonnenstürmen geschützt (User, 2026-10-26; Notiz-Text folgt).
+Auf dem Mars zeigt der Peilsender auf den Platz. Dort liegen die Reste einer alten Basis mit einem kleinen Dungeon und einer Notiz der früheren Bewohner: Hier ist man vor Sonnenstürmen geschützt (User, 2026-10-26; Text in `fundstuecke.md`, `kubejs:schrift_marsbasis`).
 
 ---
 

@@ -60,7 +60,7 @@ Scoreboard `davijaan` (B2): 0 = noch nie gesprochen, 1 = Helm-Auftrag, 2 = Helm 
   → `v2_helm`
 
 #### `v1_weg` · Prio 0
-> [Richtung zur Höhle, trägt der User ein]. Ein Gang, ein paar Räume, eine Truhe. Und Viecher, die nicht gern Besuch haben. Wie ich, nur mit mehr Zähnen.
+> Gleich hinter meinem Haus. Ein Gang, ein paar Räume, eine Truhe. Und Viecher, die nicht gern Besuch haben. Wie ich, nur mit mehr Zähnen.
 - **[Wir holen ihn]** → schließen
 
 #### `v1_kaputt` · Prio 0

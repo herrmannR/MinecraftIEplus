@@ -24,7 +24,7 @@ Scoreboard `zwerg` (B2): 0 = noch nie gesprochen, 1 = hat die Spieler zum Haus g
 - **[Wir suchen ein Haus]** → `z0_haus`
 
 #### `z0_haus` · Prio 0
-> Ein Haus aus fremdem Stein, weiter im Süden? Das ist das Haus des Hüters. Mit dem haben wir jahrelang gehandelt: unser Werkzeug gegen Erz aus seinen Welten. Das beste Zinn, das ich je gesehen habe.
+> Ein Haus aus fremdem Stein, weiter im Westen? Das ist das Haus des Hüters. Mit dem haben wir jahrelang gehandelt: unser Werkzeug gegen Erz aus seinen Welten. Das beste Zinn, das ich je gesehen habe.
 - **[Und jetzt nicht mehr?]** → `z0_still`
 
 #### `z0_still` · Prio 0
@@ -36,7 +36,7 @@ Scoreboard `zwerg` (B2): 0 = noch nie gesprochen, 1 = hat die Spieler zum Haus g
 - **[Abgemacht]** → Befehle: `tag @initiator add story_st3_00`, `scoreboard players set @a zwerg 1` → `z0_weg`
 
 #### `z0_weg` · Prio 0
-> Immer weiter nach Süden, erst die Schlucht entlang und dann noch ein gutes Stück weiter. Das Haus erkennt ihr sofort, es ist aus einem Stein, den es hier sonst nirgends gibt.
+> Von hier aus nach Westen, erst die Schlucht entlang und dann noch ein gutes Stück weiter. Das Haus erkennt ihr sofort, es ist aus einem Stein, den es hier sonst nirgends gibt.
 - **[Danke]** → schließen
 
 ---

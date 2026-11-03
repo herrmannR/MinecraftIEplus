@@ -85,7 +85,7 @@ Auf dem Mond lebt jemand in einer Station. Besuch ihn. Sei höflich, er bekommt 
 ### ST4-03 Die Höhle · Hauptweg
 **Aufgabe:** `kubejs:kaputter_klonhelm`
 
-Davijaan hat in einer Höhle in der Nähe seiner Station einen alten Helm verloren und will nicht mehr hin. Hol ihn aus der Truhe in der Höhle. Ohne Raumanzug kommst du dort nicht weit, und du bist dort nicht allein.
+Davijaan hat in einer Höhle gleich hinter seinem Haus einen alten Helm verloren und will nicht mehr hin. Hol ihn aus der Truhe in der Höhle. Ohne Raumanzug kommst du dort nicht weit, und du bist dort nicht allein.
 
 ### ST4-04 Reparatur · Hauptweg
 **Aufgabe:** `swgc:clone_212th_battalion_helmet`

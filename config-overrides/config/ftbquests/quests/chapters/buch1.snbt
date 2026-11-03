@@ -411,7 +411,7 @@
 		{
 			dependencies: ["6E08C04CF488410A"]
 			description: [
-				"Davijaan hat in einer Höhle in der Nähe seiner Station einen alten Helm verloren und will nicht mehr hin. Hol ihn aus der Truhe in der Höhle. Ohne Raumanzug kommst du dort nicht weit, und du bist dort nicht allein."
+				"Davijaan hat in einer Höhle gleich hinter seinem Haus einen alten Helm verloren und will nicht mehr hin. Hol ihn aus der Truhe in der Höhle. Ohne Raumanzug kommst du dort nicht weit, und du bist dort nicht allein."
 			]
 			hide_until_deps_visible: true
 			icon: "kubejs:kaputter_klonhelm"
