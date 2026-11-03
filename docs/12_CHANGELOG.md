@@ -1513,3 +1513,11 @@ Status: 🟡 (ungetestet, Test 90)
 - Tests 119 und 122 bestanden.
 - `elfenportal.js` Fassung 3: Nach dem ersten Ruf blieb der Weltwert `ieplus_cerina_gerufen` gesetzt; mit `cerina` 0 kam Cerina nicht wieder, ohne Log. Gesperrt wird jetzt über den Score `cerina` (höchster Wert aller Spieler ≥ 1), mit Log-Zeile.
 - Test 111: Knopf „Hier, beides“ blieb gesperrt; Preset und Prüfung im Easy-NPC-JAR stimmen, Ursache offen.
+
+## 2026-11-03 — Easy NPC: gesperrte Knöpfe durch gleiche Labels
+
+Status: 🟡 (ungetestet, Test 111)
+
+- Tests 90, 91, 110, 123 bestanden.
+- Knopf „Hier, beides“ (DD3R8 Stufe 4) blieb mit jeder Bedingung gesperrt. Easy NPC 7.14 (`DialogButtonEntry`) bildet die Knopf-ID aus dem Label; `npc_preset.py` gab jedem Dialog `button_1`, `button_2` …, damit teilten sich Knöpfe verschiedener Dialoge die ID. Beim Öffnen sperrt der Server (`DialogLockSnapshot`) jede ID, deren Bedingung irgendwo nicht erfüllt ist. Jetzt Label = Dialogname + Nummer (≤ 32 Zeichen, Warnung bei Dopplung). Alle sechs Presets neu gebaut und kopiert; alle Figuren neu importieren.
+- Schutzzone verlassene Basis entfernt; Bodhis Haus folgt (Koordinaten). Figuren sind in Easy NPC standardmäßig unverwundbar (`CombatAttributes`), Test 123.

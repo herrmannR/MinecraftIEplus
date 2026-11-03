@@ -170,7 +170,7 @@ def bedingungen_knopf(text):
     return out
 
 
-def knopf(z, nr, warn):
+def knopf(z, nr, warn, did=''):
     m = KNOPF.match(z)
     label, rest = m.group(1), m.group(2)
     bed = re.search(r'Bedingung:\s*(.+?)\s*→', rest, re.S)
@@ -190,7 +190,10 @@ def knopf(z, nr, warn):
         warn.append(f'Ziel nicht erkannt: „{ziel}“ (Knopf „{label}“)')
     if len(label) > 64:
         warn.append(f'Knopf über 64 Zeichen: „{label}“')
-    k = {'Name': s(label), 'Label': s(f'button_{nr}'),
+    # Easy NPC 7.14 bildet die Knopf-ID nur aus dem Label (DialogButtonEntry: UUIDUtils.textToUUID). Gleiche Labels in
+    # verschiedenen Dialogen teilen sich die ID; der Server sperrt dann alle, sobald eine Bedingung irgendwo fehlt
+    # (Test 111, 2026-11-03). Deshalb Dialogname + Nummer, höchstens 32 Zeichen.
+    k = {'Name': s(label), 'Label': s(f'{did[:28]}_{nr}' if did else f'button_{nr}'),
          'Actions': liste(COMP, [{**a, 'Id': uuid()} for a in aktionen])}
     if bed:
         bl = bedingungen_knopf(bed.group(1))
@@ -205,7 +208,7 @@ def dialoge(datei, warn):
     text = text.split('\n---\n', 1)[1] if '\n---\n' in text else text
     text = text.split('## Offen beim Überarbeiten')[0]
     zeilen = text.split('\n')
-    out, namen, ziele = [], set(), set()
+    out, namen, ziele, labels = [], set(), set(), set()
     n = 0
     while n < len(zeilen):
         m = re.match(r'#### `(\w+)`\s*·\s*Prio\s*(\d+)\s*(?:·\s*(.*))?', zeilen[n])
@@ -231,7 +234,11 @@ def dialoge(datei, warn):
                 warn.append(f'{did}: Text über 512 Zeichen ({len(t)})')
         for ph in re.findall(r'\[[^\]]*(?:trägt der User|Name)[^\]]*\]|<[xyz]>|<ST[\d-]+>|PLATZHALTER\w*', ' '.join(texte + knoepfe)):
             warn.append(f'{did}: Platzhalter {ph}')
-        ks = [knopf(k, j + 1, warn) for j, k in enumerate(knoepfe)]
+        ks = [knopf(k, j + 1, warn, did) for j, k in enumerate(knoepfe)]
+        for k in ks:
+            if k['Label'][1] in labels:
+                warn.append(f'Knopf-Label doppelt: {k["Label"][1]}')
+            labels.add(k['Label'][1])
         d ={'Name': s(did), 'Priority': i(prio), 'Texts': liste(COMP, [{'Text': s(t)} for t in texte]),
              'Buttons': liste(COMP, ks)}
         bl = bedingungen_dialog(bed)
