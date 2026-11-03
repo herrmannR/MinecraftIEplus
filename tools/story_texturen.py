@@ -7,9 +7,13 @@ der Mod im mods-Ordner der Instanz (StarWarsExpansionv3.1.0.jar).
 
 Ergebnis in kubejs/assets/kubejs/textures/item/:
     pilotenhelm_kaputt.png   212er-Klonhelm aus Star Wars Expansion mit Riss durch die Mitte (kubejs:kaputter_klonhelm)
-    tempelrolle.png          offene Rolle mit schwarzen Schriftzeilen, von Hand gezeichnet (kubejs:tempelrolle_1 bis _4)
+    tempelrolle.png          offene Rolle mit Holzknäufen und schwarzen Schriftzeilen, von Hand gezeichnet (kubejs:tempelrolle_1 bis _4)
+    steuerkern_b1.png        Chip mit Goldkontakten und leuchtendem Kern, sandgelb (kubejs:steuerkern_b1)
+    steuerkern_b2.png        dasselbe, blau (kubejs:steuerkern_b2)
+    steuerkern_droideka.png  dasselbe, rot (kubejs:steuerkern_droideka)
 """
 import io
+import math
 import sys
 import zipfile
 from pathlib import Path
@@ -38,6 +42,46 @@ def faerben(bild, farbe):
     return aus
 
 
+def mischen(a, b, t):
+    return tuple(int(a[i] + (b[i] - a[i]) * t) for i in range(3))
+
+
+def steuerkern(farbe):
+    """16x16-Chip: Goldkontakte, Metallgehäuse mit Licht oben links, runder Kern in der Farbe des Droiden."""
+    weiss = (255, 255, 255)
+    k = {'d2': tuple(int(c * 0.35) for c in farbe), 'd': tuple(int(c * 0.62) for c in farbe), 'm': farbe,
+         'l': mischen(farbe, weiss, 0.4), 'h': mischen(farbe, weiss, 0.78)}
+    metall = {'o': (24, 26, 31), 'd': (52, 56, 64), 'm': (84, 90, 100), 'l': (122, 129, 140)}
+    bild = Image.new('RGBA', (16, 16), (0, 0, 0, 0))
+    for p in (4, 6, 9, 11):
+        for x, y in ((p, 1), (p, 14), (1, p), (14, p)):
+            bild.putpixel((x, y), (205, 162, 62, 255))
+    gehaeuse = {(x, y) for x in range(2, 14) for y in range(2, 14)} - {(2, 2), (13, 2), (2, 13), (13, 13)}
+    nachbarn = ((1, 0), (-1, 0), (0, 1), (0, -1))
+    rand = {p for p in gehaeuse if any((p[0] + dx, p[1] + dy) not in gehaeuse for dx, dy in nachbarn)}
+    for x, y in gehaeuse:
+        if (x, y) in rand:
+            c = metall['o']
+        elif any((x + dx, y + dy) in rand for dx, dy in nachbarn):
+            c = metall['l'] if (x, y - 1) in rand or (x - 1, y) in rand else metall['d']
+        else:
+            c = metall['m']
+        bild.putpixel((x, y), c + (255,))
+    for x, y in ((4, 4), (11, 4), (4, 11), (11, 11)):
+        bild.putpixel((x, y), metall['o'] + (255,))
+    for x in range(5, 11):
+        bild.putpixel((x, 12), k['d'] + (255,))
+    for x in range(16):
+        for y in range(16):
+            d = math.hypot(x - 7.5, y - 7.5)
+            if d > 3.3:
+                continue
+            dl = math.hypot(x - 6.5, y - 6.5)
+            c = k['d2'] if d > 2.6 else k['h'] if dl < 0.8 else k['l'] if dl < 1.8 else k['m'] if d < 2.0 else k['d']
+            bild.putpixel((x, y), c + (255,))
+    return bild
+
+
 def main():
     if len(sys.argv) != 3:
         sys.exit(__doc__)
@@ -61,33 +105,37 @@ def main():
             px[x, y] = (38, 34, 30, 255) if (r + g + b) / 3 > 45 else (170, 176, 184, 255)
     kaputt.save(ZIEL / 'pilotenhelm_kaputt.png')
 
-    # Offene Rolle: Stäbe oben und unten, dazwischen das Blatt mit drei schwarzen Schriftzeilen (User, 2026-10-27)
+    # Offene Rolle mit Holzknäufen, Schatten unter dem oberen Stab, vier Schriftzeilen (User, 2026-11-03, Vorschlag 1)
     karte = [
         '................',
         '.OOOOOOOOOOOOOO.',
-        'OrhhhhhhhhhhhhrO',
-        'ORrrrrrrrrrrrrRO',
-        '.ORRRRRRRRRRRRO.',
-        '..OPPPPPPPPPPO..',
+        'OwOhhhhhhhhhhOwO',
+        'OwOrrrrrrrrrrOwO',
+        '.OORRRRRRRRRROO.',
+        '..OqqqqqqqqqqO..',
         '..OPKKKKKKKKpO..',
         '..OPPPPPPPPPpO..',
         '..OPKKKPKKKKpO..',
         '..OPPPPPPPPPpO..',
         '..OPKKKKKPKKpO..',
         '..OPPPPPPPPPpO..',
-        '.OrrrrrrrrrrrrO.',
-        'OrhhhhhhhhhhhhrO',
-        'ORRRRRRRRRRRRRRO',
+        '..OPKKKPPPPPpO..',
+        '.OOrrrrrrrrrrOO.',
+        'OwOhhhhhhhhhhOwO',
         '.OOOOOOOOOOOOOO.',
     ]
-    farben = {'O': (66, 44, 24), 'R': (150, 108, 60), 'r': (196, 156, 98), 'h': (236, 212, 160),
-              'P': (232, 208, 158), 'p': (208, 178, 126), 'K': (22, 20, 18)}
+    farben = {'O': (56, 36, 20), 'w': (124, 80, 40), 'h': (236, 212, 160), 'r': (176, 132, 78), 'R': (150, 108, 60),
+              'P': (234, 211, 160), 'p': (212, 182, 130), 'q': (190, 158, 108), 'K': (22, 20, 18)}
     rolle = Image.new('RGBA', (16, 16), (0, 0, 0, 0))
     for y, zeile in enumerate(karte):
         for x, zeichen in enumerate(zeile):
             if zeichen in farben:
                 rolle.putpixel((x, y), farben[zeichen] + (255,))
     rolle.save(ZIEL / 'tempelrolle.png')
+
+    # Steuerkerne: Chip mit Goldkontakten, abgeschrägtem Metallgehäuse und leuchtendem Kern (User, 2026-11-03, Vorschlag 1)
+    for name, farbe in (('b1', (217, 170, 96)), ('b2', (120, 150, 205)), ('droideka', (205, 92, 64))):
+        steuerkern(farbe).save(ZIEL / f'steuerkern_{name}.png')
     print('geschrieben nach', ZIEL)
 
 

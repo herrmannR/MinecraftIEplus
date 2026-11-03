@@ -51,7 +51,7 @@ StartupEvents.registry('item', event => {
   })
 
   // Steuerkerne: Gehirn eines Droiden, zusätzliche Zutat im Droid Fabricator (wird verbraucht).
-  // Werkbank-Rezept erst nach dem Bauplan des Droiden. Texturen: assets/kubejs/textures/item/steuerkern_*.png
+  // Werkbank-Rezept erst nach dem Bauplan des Droiden. Texturen: assets/kubejs/textures/item/steuerkern_*.png (aus tools/story_texturen.py)
   event.create('steuerkern_b1').displayName('Steuerkern B-1').rarity('uncommon')
   event.create('steuerkern_b2').displayName('Steuerkern B-2').rarity('uncommon')
   event.create('steuerkern_droideka').displayName('Steuerkern Droideka').rarity('rare')
