@@ -1,4 +1,5 @@
-// Schutzzonen für Story-Bauten (User, 2026-10-21). Zonen eingetragen 2026-11-01, UNGETESTET (Test 110).
+// Schutzzonen für Story-Bauten (User, 2026-10-21). Zonen eingetragen 2026-11-01, Test 110 bestanden 2026-11-03;
+// danach verlassene Basis entfernt, Bodhis Haus folgt.
 // Zweck: Spieler sollen Story-Strukturen nicht aus Versehen zerstören. Geschützt wird nur gegen
 // Aktionen von Spielern (Abbauen, Setzen, Werkzeuge per Rechtsklick), nicht gegen Explosionen,
 // Mobs oder Maschinen.
@@ -11,7 +12,8 @@
 const SCHUTZZONEN = [
   // Koordinaten vom User (2026-11-01, Welt „3. Versuch von 1,5“)
   { name: 'Mondbasis von Davijaan', dimension: 'ad_astra:moon', von: [-354, 118, -83], bis: [-336, 102, -61] },
-  { name: 'Verlassene Basis', dimension: 'ad_astra:mars', von: [-280, 111, -242], bis: [-265, 102, -262] },
+  // Verlassene Basis (Mars) nicht geschützt: dort bauen die Spieler die Station (User, 2026-11-03, Test 110)
+  // Haus von Bodhi Bad Dur (Overworld): Koordinaten vom User folgen
   // Sith-Tempel; der Altar in der Mitte wird per Skript repariert (altar_reparatur.js), Befehle umgehen den Schutz
   { name: 'Sith-Tempel', dimension: 'ad_astra:mercury', von: [-438, 103, 208], bis: [-473, 126, 269] },
   // Beispiel für Freistellen (Blöcke, die Spieler in der Zone setzen und abbauen dürfen):
