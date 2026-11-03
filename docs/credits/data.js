@@ -530,7 +530,7 @@ const DATA = {
       }
      ],
      "ware": {
-      "n": 4,
+      "n": 8,
       "id": "ad_astra:ice_shard",
       "name": "Ice Shard"
      },
