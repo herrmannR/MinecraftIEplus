@@ -229,7 +229,7 @@ Summe je Stufe: 195 · 600 · 1.500 · 4.380 = **6.675** (= 2 × 3.338). Sprung 
 
 Wann es allein mit Quest-Credits reicht: Stufe 1 in K4 (517 da, 195 nötig); Stufe 2 Anfang K6 (795 nötig); Stufe 3 Anfang K10 (2.295 nötig, Ende K9 2.284 da). Danach bleiben bis Ende K11 rund 1.040: genug für den Droid Fabricator, aber nicht mehr für einen Droiden. **Die Droiden gibt es nur mit Credits aus dem Handel.**
 
-Dazu, ohne Credits: **gutes Essen gegen Mond-Rohstoffe** (User, 2026-11-03): je 16-mal 2 Roast Chicken oder 2 Honey Glazed Ham → 2 Desh-Barren, 8 Borscht → 4 Ice Shards, 8 Egg Fried Rice → 2 Rohdesh (Fassung 2, User 2026-11-03; vorher je 8-mal 1 Festessen → 4 Desh, 4 Borscht → 8 Ice Shards, 4 Egg Fried Rice → 4 Rohdesh). Davijaan steht auf dem Mond, wo Desh und Ice Shards ohnehin abgebaut werden; der Handel überspringt also keine Stufe, er ist eine Abkürzung für Köche.
+Dazu, ohne Credits: **gutes Essen gegen Mond-Rohstoffe** (User, 2026-11-03): je 16-mal 2 Roast Chicken oder 2 Honey Glazed Ham → 2 Desh-Barren, 8 Borscht → 8 Ice Shards, 8 Egg Fried Rice → 2 Rohdesh (Fassung 2, User 2026-11-03; vorher je 8-mal 1 Festessen → 4 Desh, 4 Borscht → 8 Ice Shards, 4 Egg Fried Rice → 4 Rohdesh). Davijaan steht auf dem Mond, wo Desh und Ice Shards ohnehin abgebaut werden; der Handel überspringt also keine Stufe, er ist eine Abkürzung für Köche.
 
 Umsetzung: Handelstabelle in `story/texte/dialoge_davijaan.md` (Abschnitt „Handel“), von `tools/npc_preset.py` ins Preset gebaut (Easy NPC `ADVANCED`: nur dort behält jedes Angebot seine Nutzungen; ohne „Zurücksetzen“ bleiben sie verbraucht, JAR 7.14 geprüft). Bauplan Durasteel in `einsiedler_shop.js`, `teil1_items.js`, Advancement und Patchouli-Eintrag (Kapitel Werkstoffe).
 
