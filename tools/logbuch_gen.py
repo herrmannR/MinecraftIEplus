@@ -7,6 +7,9 @@ Quellen (Wortlaut, den der User überarbeitet):
     docs/story/texte/logbuch.md       ## Teil n · „Titel“ (…)   → Kapitel Logbuch, Eintrag teil<n>
     docs/story/texte/tempelrollen.md  ## Rolle n · Titel        → Kapitel Tempelrollen, Eintrag rolle_<n>
     docs/story/texte/tagebuch.md      ## Tagebuch               → Kapitel Tagebuch, Eintrag tagebuch
+    docs/story/texte/fundstuecke.md   ## Fundstück n · Titel    → Kapitel Fundstücke, Eintrag fundstueck_<n>;
+                                      Fundstück 1 bekommt danach den 3D-Bauplan der Mars-Station
+                                      (tools/schematics/MarsBase.litematic, tools/schematic_multiblock.py; O74)
 Ziele (werden komplett neu geschrieben):
     patchouli_books/logbuch/                      Buch (gehört in den Ordner patchouli_books/ der Instanz)
     kubejs/data/ieplus/advancements/logbuch/      je Eintrag ein Advancement, vergibt server_scripts/story/logbuch.js
@@ -20,7 +23,11 @@ Umsetzung der Markdown-Zeilen:
 import json
 import re
 import shutil
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from schematic_multiblock import multiblock  # noqa: E402
 
 WURZEL = Path(__file__).resolve().parent.parent
 TEXTE = WURZEL / 'docs' / 'story' / 'texte'
@@ -37,7 +44,11 @@ KAPITEL = {
     'logbuch': ('Logbuch', 'Die entschlüsselten Teile seines Datenspeichers.', 'minecraft:writable_book', 1),
     'tempelrollen': ('Tempelrollen', 'Alte Schriften aus dem Tempel auf der heißesten Welt.', 'kubejs:tempelrolle_1', 2),
     'tagebuch': ('Tagebuch', 'Was er schrieb, nachdem er vom Droiden getrennt wurde.', 'kubejs:tagebuch_des_meisters', 3),
+    'fundstuecke': ('Fundstücke', 'Was andere vor uns zurückgelassen haben.', 'kubejs:schrift_marsbasis', 4),
 }
+
+# 3D-Bauplan der Mars-Station (User, 2026-11-04: MarsBase.litematic)
+STATION = WURZEL / 'tools' / 'schematics' / 'MarsBase.litematic'
 
 
 def abschnitte(datei, muster, ende):
@@ -162,10 +173,10 @@ def advancement(eintrag, titel, icon):
         'criteria': {'freigeschaltet': {'trigger': 'minecraft:impossible'}}})
 
 
-def eintrag(eid, kapitel, titel, icon, sortnum, absaetze):
+def eintrag(eid, kapitel, titel, icon, sortnum, absaetze, extra=()):
     daten = {'name': titel, 'icon': icon, 'category': f'patchouli:{kapitel}',
              'advancement': f'ieplus:logbuch/{eid}', 'sortnum': sortnum,
-             'pages': [{'type': 'patchouli:text', 'text': s} for s in seiten(absaetze)]}
+             'pages': [{'type': 'patchouli:text', 'text': s} for s in seiten(absaetze)] + list(extra)}
     if GEHEIM:
         daten['secret'] = True
     schreibe(BUCH / 'en_us' / 'entries' / f'{eid}.json', daten)
@@ -207,7 +218,16 @@ def main():
     for kopf, zeilen in abschnitte('tagebuch.md', r'Tagebuch$', 'Abgleich'):
         ergebnis.append(eintrag('tagebuch', 'tagebuch', 'Tagebuch des Meisters',
                                 'kubejs:tagebuch_des_meisters', 1, bloecke(zeilen)))
-    erwartet = [f'teil{i}' for i in range(1, 6)] + [f'rolle_{i}' for i in range(1, 5)] + ['tagebuch']
+    for kopf, zeilen in abschnitte('fundstuecke.md', r'Fundstück \d', 'Offen'):
+        m = re.match(r'Fundstück (\d) · (.+)', kopf)
+        extra = []
+        if m.group(1) == '1':
+            extra = [{'type': 'patchouli:multiblock', 'name': 'Die Station', 'multiblock': multiblock(STATION),
+                      'enable_visualize': True,
+                      'text': 'Auf das Auge klicken: Die Station erscheint als Geisterbild am Platz.'}]
+        ergebnis.append(eintrag(f'fundstueck_{m.group(1)}', 'fundstuecke', m.group(2).strip(),
+                                'kubejs:schrift_marsbasis', int(m.group(1)), bloecke(zeilen), extra))
+    erwartet = [f'teil{i}' for i in range(1, 6)] + [f'rolle_{i}' for i in range(1, 5)] + ['tagebuch', 'fundstueck_1']
     fehlt = [e for e in erwartet if e not in [x[0] for x in ergebnis]]
     if fehlt:
         raise SystemExit('Fehlende Einträge: ' + ', '.join(fehlt))

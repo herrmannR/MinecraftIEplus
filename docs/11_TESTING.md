@@ -214,6 +214,7 @@ Neustart nötig (Startup-Skripte, neues Item). `kubejs/` und `patchouli_books/ba
 | 121 | Zwerg und Bodhi Fassung 2 (2026-11-03) | Presets von Zwerg und Bodhi neu importieren (als OP); Handelsfenster öffnen; je einen neuen Handel ausführen | Zwerg: 32 Rohzinn → Amethyst Bronze, 16 Raw Falsite → 4 Diamanten, 16 Raw Ventium → 4 Refined Obsidian, 32 Raw Horizonite → Miner's Key; Bodhi: kein Greatsword-Handel mehr, dazu 8 Smaragde → Zeal Lighter, Buch → Blue Journal, 6 Bücher + Smaragd → Blinding Key, Nature Key, Poison Key | ✅ 2026-11-03 (User) |
 | 122 | Abgaben im Questtext (2026-11-03) | Neustart; Buch 1: ST3-04, ST4-05, ST4-06, ST5-01, ST8-03, ST9-04, ST10-03, ST10-04 ansehen | unter dem Text „Mitbringen:“ mit Anzahl und Namen der Items, wie sie im Spiel heißen (nicht als ID); beim Helm „212th Battalion Helmet“ | ✅ 2026-11-03 (User) |
 | 123 | Figuren unsterblich (2026-11-03) | Überlebensmodus: jede Story-Figur mit Schwert schlagen, Pfeil schießen, TNT daneben zünden | keine Figur nimmt Schaden oder stirbt (Easy NPC 7.14: unverwundbar und nicht angreifbar ist Standard, `CombatAttributes`, JAR) | ✅ 2026-11-03 (User) |
+| 124 | Fundstück Mars und Bauplan der Station (O74, 2026-11-04) | Neustart (Startskript); `/give @s kubejs:schrift_marsbasis`, Rechtsklick; Logbuch öffnen, Kapitel „Fundstücke“; auf Seite 3 das Auge klicken | Meldung „Neu im Logbuch …“; Text auf zwei Seiten, Seite 3 zeigt die Station in 3D; Geisterbild erscheint am Platz; Quest ST6-02 hakt mit dem Item ab | ⏳ |
 
 ### Runde S — Story und Quests (als Letztes vor Runde M)
 

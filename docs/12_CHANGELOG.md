@@ -1521,3 +1521,12 @@ Status: 🟡 (ungetestet, Test 111)
 - Tests 90, 91, 110, 123 bestanden.
 - Knopf „Hier, beides“ (DD3R8 Stufe 4) blieb mit jeder Bedingung gesperrt. Easy NPC 7.14 (`DialogButtonEntry`) bildet die Knopf-ID aus dem Label; `npc_preset.py` gab jedem Dialog `button_1`, `button_2` …, damit teilten sich Knöpfe verschiedener Dialoge die ID. Beim Öffnen sperrt der Server (`DialogLockSnapshot`) jede ID, deren Bedingung irgendwo nicht erfüllt ist. Jetzt Label = Dialogname + Nummer (≤ 32 Zeichen, Warnung bei Dopplung). Alle sechs Presets neu gebaut und kopiert; alle Figuren neu importieren.
 - Schutzzone verlassene Basis entfernt; Bodhis Haus folgt (Koordinaten). Figuren sind in Easy NPC standardmäßig unverwundbar (`CombatAttributes`), Test 123.
+
+## 2026-11-04 — Fundstück Mars mit 3D-Bauplan der Station
+
+Status: 🟡 (ungetestet, Test 124)
+
+- Lücke gefunden: Quest ST6-02 verlangt `kubejs:schrift_marsbasis`, das Item gab es nicht; das Logbuch hatte kein Kapitel „Fundstücke“.
+- Neu: Item „Aufzeichnungen der früheren Bewohner“ (`teil1_items.js`), Lese-Item in `logbuch.js` (Eintrag `fundstueck_1`), Kapitel „Fundstücke“ in `tools/logbuch_gen.py` mit dem Text aus `fundstuecke.md` und einer Patchouli-Multiblock-Seite.
+- Bauplan aus `MarsBase.litematic` (User), Kopie in `tools/schematics/`; `tools/schematic_multiblock.py` liest Litematica (Format 6) und schreibt Muster und Zuordnung. Luft = beliebig; die 3×3-Luftschleusentür nur mit dem unteren Mittelteil.
+- Zoltan heißt der Zwerg; Richtungen in den Dialogen (Haus im Westen, Höhle hinter Davijaans Haus); Testablauf `22_TESTABEND.md`.

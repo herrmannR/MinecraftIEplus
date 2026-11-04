@@ -72,6 +72,11 @@ StartupEvents.registry('item', event => {
     .displayName('Tagebuch des Meisters')
     .texture('minecraft:item/book')
     .rarity('rare').maxStackSize(1)
+  // Fundstück in der Ruine auf dem Mars (O74, ST6-02); Eintrag „Fundstücke“ mit dem 3D-Bauplan der Station (2026-11-04)
+  event.create('schrift_marsbasis')
+    .displayName('Aufzeichnungen der früheren Bewohner')
+    .texture('minecraft:item/paper')
+    .rarity('uncommon').maxStackSize(1)
 
   // Helm des Einsiedlers (O25, O64: im Spiel „Pilotenhelm“, kein „Klon“ im Namen). Nicht tragbar.
   // Textur aus tools/story_texturen.py (212er-Klonhelm aus Star Wars Expansion mit Riss, 2026-11-02). Repariert wird er zu swgc:clone_212th_battalion_helmet (O71).

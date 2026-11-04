@@ -9,11 +9,11 @@
 // - Tempelrollen und Tagebuch sind Lese-Items: Rechtsklick schaltet ihren Eintrag frei (Meldung im Chat), gelesen wird
 //   im Logbuch; es öffnet sich nichts. Das Item bleibt.
 // Befehle (nur mit Rechten):
-//   /logbuch <eintrag>       Eintrag freischalten (teil1 … teil5, rolle_1 … rolle_4, tagebuch)
+//   /logbuch <eintrag>       Eintrag freischalten (teil1 … teil5, rolle_1 … rolle_4, tagebuch, fundstueck_1)
 //   /logbuch buch            Ersatzbuch für den Ausführenden
 //   /logbuch zuruecksetzen   alle Einträge sperren, Buch-Merker zurücksetzen
 //   /logbuch alles           alle Einträge frei
-// Stand 2026-10-27, KubeJS 2001. Fassung 2 (Lese-Items öffnen nichts mehr), Fassung 1 getestet (Tests 73, 74, 77).
+// Stand 2026-11-04, KubeJS 2001. Fassung 3 (Fundstück Marsbasis, O74), Fassung 2 getestet (Test 75).
 
 const IEPLUS_LOGBUCH_BUCH = 'patchouli:logbuch'
 
@@ -28,7 +28,8 @@ const IEPLUS_LOGBUCH = {
   rolle_2: 'Tempelrolle: Vom Blut',
   rolle_3: 'Tempelrolle: Vom Endlosen',
   rolle_4: 'Tempelrolle: Von der Heilung',
-  tagebuch: 'Tagebuch des Meisters'
+  tagebuch: 'Tagebuch des Meisters',
+  fundstueck_1: 'Aufzeichnungen der früheren Bewohner'
 }
 
 // Lese-Items → Eintrag
@@ -37,7 +38,8 @@ const IEPLUS_LOGBUCH_ITEMS = {
   'kubejs:tempelrolle_2': 'rolle_2',
   'kubejs:tempelrolle_3': 'rolle_3',
   'kubejs:tempelrolle_4': 'rolle_4',
-  'kubejs:tagebuch_des_meisters': 'tagebuch'
+  'kubejs:tagebuch_des_meisters': 'tagebuch',
+  'kubejs:schrift_marsbasis': 'fundstueck_1'
 }
 
 function ieplusLogbuchSchluessel(eintrag) { return 'ieplus_logbuch_' + eintrag }

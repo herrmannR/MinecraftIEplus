@@ -26,5 +26,5 @@ Wir brechen morgen auf. Der Funk sagt, die Stürme werden stärker. Wir lassen d
 ## Offen beim Überarbeiten
 
 - **Wer die früheren Bewohner waren** und wohin sie gingen, legst du fest (oder es bleibt offen).
-- **Die Station selbst:** Den Bauplan übernehme ich aus einer Struktur, die du im Kreativmodus baust (Strukturblock speichern, Datei aus `saves/<Welt>/generated/minecraft/structures/`). Die Lage der Ruine und die Himmelsrichtungen im Text („Felsen im Westen“) passe ich daran an.
+- 🟢 **Die Station selbst** (User, 2026-11-04): Bauplan aus `MarsBase.litematic` (Kopie in `tools/schematics/`), umgewandelt mit `tools/schematic_multiblock.py`; Seite 3 des Eintrags. Stimmen die Himmelsrichtungen im Text („Felsen im Westen“) zum Platz?
 - **Ein oder mehrere Fundstücke?** Bisher eins; der kleine Dungeon könnte weitere Seiten liefern.

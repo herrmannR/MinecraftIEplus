@@ -31,6 +31,7 @@ Ein Fall je Figur, weil der Fehler mit den Knopf-Labels alle betraf.
 | B3 | Beobachtungs-Aufgabe (P20) | Einen IE-Multiblock bauen, zu dem es eine Quest gibt (z. B. Koksofen), Quest hakt ab |
 | B4 | Kill-Aufgabe (P20) | Einen Blue-Skies-Boss per `/summon` töten, Quest hakt ab |
 | B5 | Story-Abgaben ansehen (Test 100) | ST4-01 und ST7-01: alle Items mit Bild und Namen (kein „Unknown Item“) |
+| B7 | Fundstück Mars (Test 124) | `/give @s kubejs:schrift_marsbasis`, Rechtsklick: Meldung, Logbuch hat das Kapitel „Fundstücke“ mit Text und auf Seite 3 den 3D-Bauplan; Klick aufs Auge zeigt das Geisterbild; Quest ST6-02 hakt mit dem Item ab |
 | B6 | Blood-Magic-Kapitel (Test 101) | K9 in der Reihenfolge Edge → Tau Fruit → Weak Blood Shard → Altar Stufe 4 → Pathway → Foreman's Key |
 
 ## C · Mehrspieler (blockiert die Runde beim Host) — 30 min, nur mit zweitem Spieler
@@ -56,7 +57,8 @@ Alles, was nur Komfort oder Beschreibung betrifft: Multiblock-Größen Mekanism 
 
 | # | Lücke | Wer | Was fehlt |
 |---|---|---|---|
-| L1 | 3D-Bauplan der Mars-Station (O74, ST6-02, Logbuch „Fundstücke“) | Claude | Patchouli-Multiblock aus der Schematic; welche Datei? |
+| L1 | 3D-Bauplan der Mars-Station (O74, ST6-02, Logbuch „Fundstücke“) | ✅ Claude, 2026-11-04 | aus `MarsBase.litematic`; dazu fehlte das Item `kubejs:schrift_marsbasis` ganz (ST6-02 wäre hängen geblieben) |
+| L7 | Aufzeichnungen in die Ruine legen | Host | `kubejs:schrift_marsbasis` in eine Truhe der Ruine auf dem Mars |
 | L2 | DD3R8 zieht zur Mars-Station (Belohnung ST7-02) | Claude | Befehl: in der Basis entfernen, an der Station erscheinen (Platz -272 104 -252 bekannt) |
 | L3 | DD3R8 verlässt den Mars (Belohnung ST9-05) | Claude | Befehl zum Entfernen |
 | L4 | Vos und DD3R8 im Versteck auf Glacio (Belohnung ST11-01) | User, dann Claude | Koordinaten des Verstecks; ist es gebaut? |
