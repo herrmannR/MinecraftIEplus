@@ -25,10 +25,15 @@
 | S7 | `docs/story/ABLAUF.md` Abschnitt 2 und 5 | Zwerg noch „`[Name]`“, Tagebuch noch „Heller Elf“. | ✅ Zoltan, „Helle Elfe“ |
 | S8 | `kubejs/startup_scripts/teil1_items.js` Kommentar | Strahlenschutz „aus … Elite Control Circuit“, „der Helle Elf“: Die Abgabe verlangt den Ultimate Control Circuit (ST10-04). | ✅ Kommentar, kopiert |
 | S9 | `docs/22_TESTABEND.md` | Für ST11-03 fehlten die Befehle des Hosts (Vos in die Basis, DD3R8 holen, `vos = 3`); sie standen nur im Ablauf. | ✅ Lücke L8 mit Befehlen |
-| F1 | Bodhi `b0_tor`, Questtext ST3-03, `everdawn_sperre.js` | Torrahmen: siehe Frage F1 unten. | 🔵 offen, Test 130 |
-| F2–F7 | verschiedene | siehe Fragen unten | 🔵 offen |
+| F1 | Bodhi `b0_tor`, Questtext ST3-03, `everdawn_sperre.js` | Torrahmen: siehe Frage F1 unten. | ✅ User 2026-11-04: Bodhi verkauft als erste zwei Handel 1 Diamond → 1 Turquoise Stone Brick und 1 Cobalt Ingot → 1 Lunar Stone Brick; `b0_tor` und ST3-03 nennen das. Test 131 |
+| F2 | `swgc.cfg` SW2-01 | siehe Frage F2 | ✅ SW2-01 hängt an `buch1:ST4-05` (Helm). Test 131 |
+| F3 | Bodhi `b3_schluessel` | siehe Frage F3 | ✅ bleibt so (User) |
+| F4 | DD3R8 nach der Heimkehr | siehe Frage F4 | ✅ Belohnung ST11-03 setzt `dd3r8 = 11`, kein Einstieg dafür, Rückfall auf `d_standard`. Test 131 |
+| F5 | DD3R8 `d10_meister` | siehe Frage F5 | ✅ „Und sprecht mit ihm über das, was ihr bei euch habt.“ |
+| F6 | `elfenportal.js` | siehe Frage F6 | ✅ bleibt so; der Host lässt es im Durchgang nicht zu (User) |
+| F7 | Entfernung zu Bodhis Haus | siehe Frage F7 | ✅ bleibt so (User) |
 
-## Offene Fragen an den User (O81 in `20_ENTSCHEIDUNGEN.md`)
+## Fragen an den User (O81, alle beantwortet 2026-11-04)
 
 1. **F1 Ziegel für das erste Tor.** Bodhi sagt „Ein Tor baut ihr selbst“, ST3-03 „Bau ein Tor aus Turquoise Stone Bricks“. Die Ziegel gibt es vor dem ersten Besuch aber nur aus den Torrahmen der Gatekeeper-Häuser, und Bodhis Haus ist geschützt. In Bodhis Haus steht nur **ein** Rahmen: Ist er aus Lunar-Ziegeln, führt er nach Everdawn, und das ist bis zum Zinn gesperrt. Dann müssten die Spieler erst ein anderes Haus mit Turquoise-Rahmen finden, ohne dass ein Text das sagt. Früher war entschieden: „erste Ziegel verkauft Bodhi“ (`dialoge_bodhi.md`, „Offen“). Im Handel steht das aber nicht. Vorschlag: Bodhi verkauft je 12 Turquoise und 12 Lunar Stone Bricks (ein Rahmen); welcher Preis? Oder sollen die Spieler den Rahmen in seinem Haus anzünden bzw. Ziegel aus anderen Häusern holen (dann passe ich ST3-03 an)? Test 130 zeigt, welcher Rahmen bei Bodhi steht.
 2. **F2 Davijaans Aufgaben im Buch.** Davijaan sagt erst nach dem Helm „Da stehen jetzt meine Aufgaben drin“ (`v2_buch`). Das Kapitel Galaxy in a Cube (SW2) erscheint aber schon mit `kapitel_k4`, also vor dem ersten Besuch. Soll SW2-01 an ST4-05 hängen?

@@ -69,7 +69,7 @@ Die Story schreibt der User. Diese Fragen braucht es, damit Questbuch und Skript
 
 Beantwortet am 2026-10-20: F1, F4, F8, F14, F15; siehe „Erledigt“.
 
-**O81 · Fragen aus der Storyprüfung Teil 1** (2026-11-04)
+**O81 · Fragen aus der Storyprüfung Teil 1** (2026-11-04) 🟢 beantwortet vom User 2026-11-04: F1 Bodhi verkauft Ziegel (1 Diamond → 1 Turquoise, 1 Cobalt Ingot → 1 Lunar), F2 SW2 erst nach dem Helm, F3 bleibt, F4 `dd3r8 = 11` nach der Heimkehr (Standard-Dialog), F5 Satz von DD3R8 geändert, F6 bleibt (Host lässt es nicht zu), F7 bleibt.
 Sieben Fragen F1–F7 (Ziegel für das erste Blue-Skies-Tor, Davijaans Aufgaben im Buch, Schlüssel bei Bodhi, DD3R8 nach der Heimkehr, Relikt auf Glacio, Cerina zu früh rufbar, Entfernung zum Haus). Einzelheiten und Vorschläge am Ende der Datei.
 → `23_STORYPRUEFUNG.md`
 

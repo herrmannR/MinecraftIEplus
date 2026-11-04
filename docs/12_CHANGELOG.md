@@ -30,6 +30,18 @@ Status: 🟢 / 🟡 / 🔵
 ...
 ```
 
+## 2026-11-04 — Antworten auf die Storyprüfung (O81)
+
+Status: 🟡 (Test 131)
+
+### Änderung
+- F1: Bodhi verkauft als erste zwei Handel 1 Diamond → 1 Turquoise Stone Brick und 1 Cobalt Ingot → 1 Lunar Stone Brick; `b0_tor` und ST3-03 sagen es.
+- F2: SW2-01 (Galaxy in a Cube) erst nach ST4-05 (Helm).
+- F4: Belohnung von ST11-03 setzt `dd3r8 = 11`; DD3R8 spricht dann seinen Standard-Dialog.
+- F5: DD3R8 auf Glacio: „Und sprecht mit ihm über das, was ihr bei euch habt.“
+- F3, F6, F7 bleiben, wie sie sind.
+- Presets Bodhi und DD3R8, Buch 1 und Galaxy in a Cube neu gebaut und in die Testinstanz kopiert.
+
 ## 2026-11-04 — Storyprüfung Teil 1 (`23_STORYPRUEFUNG.md`)
 
 Status: 🟡 (ungetestet: Tests 129, 130; sieben Fragen an den User offen)
