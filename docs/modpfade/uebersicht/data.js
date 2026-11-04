@@ -110,4 +110,5 @@ const PLANNED = [];
 const MORE = [
   ["Erzatlas", "alle Erze, Fundorte und Verbrauch je Mod", "https://claude.ai/artifact/LWwdvCpXRwaHCa8NstSc4g"],
   ["Meilensteinkarte", "der geplante Progressionsweg des Packs", "https://claude.ai/artifact/Hdy6LMxESx5CJ9omjkAMEX"],
+  ["Credits und Handel", "Credits verdienen und ausgeben, Händler im Pack", "https://claude.ai/artifact/V8orFzHVUp5bNcC9nax7Cp"],
 ];

@@ -3,7 +3,7 @@
 > Entwurf von Claude, 2026-10-26 (O50, O68). Idee des Users: Auf halbem Weg nach Süden liegt eine Schlucht mit Zwergen. Sie kennen das Haus und seinen Wächter (Bodhi Bad Dur), weil sie früher mit ihm Erze aus seinen Welten gehandelt haben. Sie schicken die Spieler hin, danach kann man mit ihnen handeln (z. B. 16 Osmium gegen 1 Kobalt). Lesart wie in `dialoge_dd3r8.md` (Name ≤ 32 Zeichen, Knopf ≤ 64, Text bis etwa 512, Einstieg über Bedingung und Priorität).
 >
 > **Leitlinien dieses Entwurfs**
-> - Eine Figur (O68); Name und Skin legt der User fest, im Text steht `[Name]`.
+> - Eine Figur (O68); Name Zoltan, Skin im Preset (User, 2026-11-04).
 > - Charakter (Vorschlag): knurrig, stolz auf sein Handwerk, misstrauisch gegen Fremde, aber ehrlich im Handel. Humor aus seiner Sturheit und seinem Blick auf alles, was nicht Stein oder Erz ist.
 > - Die Zwerge gehören in diese Welt, nicht in die ferne Galaxis; Bodhi nennen sie „den Hüter des Hauses“.
 > - Seit die vier Wesen Bodhis Welten genommen haben, kommt kein Erz mehr aus dem Haus. Das gibt dem Zwerg einen Grund, die Spieler hinzuschicken.
@@ -20,7 +20,7 @@ Scoreboard `zwerg` (B2): 0 = noch nie gesprochen, 1 = hat die Spieler zum Haus g
 - **[Wer bist du?]** → `z0_wer`
 
 #### `z0_wer` · Prio 0
-> Ich bin [Name]. Meine Familie gräbt hier schon ewig, mein Vater, sein Vater und so weiter. Wie lange genau, weiß keiner mehr. Vielleicht haben wir die Schlucht sogar selbst gegraben.
+> Ich bin Zoltan. Meine Familie gräbt hier schon ewig, mein Vater, sein Vater und so weiter. Wie lange genau, weiß keiner mehr. Vielleicht haben wir die Schlucht sogar selbst gegraben.
 - **[Wir suchen ein Haus]** → `z0_haus`
 
 #### `z0_haus` · Prio 0
@@ -83,7 +83,7 @@ Der Zwerg kauft Metall in großen Mengen und zahlt in Credits; das geht praktisc
 
 ## Offen beim Überarbeiten
 
-- **Name und Skin** des Zwergs legst du fest. Stimmt der Charakter (knurrig, stolz, ehrlicher Händler)?
+- 🟢 **Name und Skin** (User, 2026-11-04): Zoltan, Skin im Preset. Stimmt der Charakter (knurrig, stolz, ehrlicher Händler)?
 - **Handel:** 16 Rohosmium gegen 1 Kobaltbarren (Osmium gibt es erst ab Everdawn, K4) und der Ankauf von Metallblöcken gegen Credits (B8, 2026-11-03) stehen in der Tabelle „Handel“; neue Angebote dort eintragen, nicht im Editor.
 - **Kobalt früh im Spiel:** Kobalt kommt sonst nur aus dem Nether. Der Handel und der Kobalthammer für „Würdig sein“ (O67) holen ihn nach vorn, in K2/K3. Gewollt?
 - **Ort:** Die Schlucht liegt auf halbem Weg nach Süden zwischen Basis und Blue-Skies-Haus; der Host sucht sie aus (eine echte Schlucht der Welt oder gebaut). Schutzzone ja oder nein?

@@ -33,7 +33,7 @@ INSTANZ = Path.home() / 'AppData/Roaming/ATLauncher/instances/Minecraft1201withF
 FIGUREN = {
     # Doppler, der den Droiden aus Star Wars Expansion darstellt (vom User gebaut, 2026-10-31)
     'dd3r8':    ('dialoge_dd3r8.md', 'DD3R8', 'humanoid/dd3r8.npc.nbt', 'config/easy_npc/preset/humanoid/dd3r8.npc.nbt'),
-    'zwerg':    ('dialoge_zwerg.md', 'Der Zwerg', 'humanoid/zwerg.npc.nbt', None),
+    'zwerg':    ('dialoge_zwerg.md', 'Zoltan', 'humanoid/zwerg.npc.nbt', None),
     'bodhi':    ('dialoge_bodhi.md', 'Bodhi Bad Dur', 'humanoid/bodhibaddur.npc.nbt', 'config/easy_npc/preset/humanoid/bodhibaddur.npc.nbt'),
     'davijaan': ('dialoge_davijaan.md', 'Davijaan', 'humanoid/davijaan.npc.nbt', 'config/easy_npc/preset/humanoid/davijaan.npc.nbt'),
     'cerina':   ('dialoge_cerina.md', 'Meisterin Cerina', 'humanoid_slim/cerina.npc.nbt', 'config/easy_npc/preset/humanoid_slim/cerina.npc.nbt'),

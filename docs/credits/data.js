@@ -780,7 +780,7 @@ const DATA = {
   },
   {
    "id": "zwerg",
-   "name": "Der Zwerg",
+   "name": "Zoltan, der Zwerg",
    "rolle": "Schlucht auf halbem Weg zum Blue-Skies-Haus · kauft Metall gegen Credits",
    "handel": [
     {

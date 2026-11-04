@@ -45,7 +45,7 @@ NAMEN = {
 
 FIGUREN = [
     ('davijaan', 'Davijaan', 'Einsiedler auf dem Mond · einzige Stelle, an der man Credits ausgibt'),
-    ('zwerg', 'Der Zwerg', 'Schlucht auf halbem Weg zum Blue-Skies-Haus · kauft Metall gegen Credits'),
+    ('zwerg', 'Zoltan, der Zwerg', 'Schlucht auf halbem Weg zum Blue-Skies-Haus · kauft Metall gegen Credits'),
     ('bodhi', 'Bodhi Bad Dur', 'Wächter der Traumwelten · kauft Rohstoffe aus Everbright und Everdawn gegen Credits'),
 ]
 
