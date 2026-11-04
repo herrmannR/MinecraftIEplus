@@ -11,7 +11,7 @@ Item-ID: `kubejs:schrift_marsbasis`, Anzeigename „Aufzeichnungen der früheren
 
 ---
 
-## Fundstück 1 · Aufzeichnungen der früheren Bewohner
+## Fundstück 1 · Die Basis
 
 Bericht der Station, letzter Eintrag.
 

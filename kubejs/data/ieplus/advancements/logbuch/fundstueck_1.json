@@ -4,7 +4,7 @@
     "icon": {
       "item": "kubejs:schrift_marsbasis"
     },
-    "title": "Aufzeichnungen der früheren Bewohner",
+    "title": "Die Basis",
     "description": "Im Logbuch des Meisters freigeschaltet",
     "frame": "task",
     "show_toast": false,

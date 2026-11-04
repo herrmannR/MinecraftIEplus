@@ -172,7 +172,7 @@ Auf dem Mars zeigt der Peilsender auf den Platz. Dort liegen die Reste einer alt
 
 ## Stufe 6 · Das Signal (K7, in der Mars-Station)
 
-DD3R8 erscheint am festen Platz der Station, wenn ST7-02 erledigt ist (O69; Befehl in der Belohnung).
+DD3R8 holt der Host an seinen Platz in der Station (`/dd3r8 hierher`, dann der Tag für ST7-02; User 2026-11-04).
 
 #### `d6_ankunft` · Prio 100 · `dd3r8 = 6`
 > Ich bin da. Sieht gut aus. Gebt mir einen Moment, ich richte meine Sensoren aus.
@@ -228,7 +228,7 @@ DD3R8 erscheint am festen Platz der Station, wenn ST7-02 erledigt ist (O69; Befe
 
 ## Stufe 8 · Vorbereitung (K9, Mars-Station)
 
-Sobald die Spieler das Relikt haben, verschwindet DD3R8 (ST9-05). Danach spricht ihn niemand mehr an, bis Glacio.
+Sobald die Spieler das Relikt haben, verschwindet DD3R8 (ST9-05: `/dd3r8 glacio` stellt ihn ins Versteck auf Glacio). Danach spricht ihn niemand mehr an, bis Glacio.
 
 #### `d8_warten` · Prio 100 · `dd3r8 = 8`
 > Habt ihr alles für den Altar? Oder braucht ihr noch Erklärungen?
@@ -262,7 +262,7 @@ Sobald die Spieler das Relikt haben, verschwindet DD3R8 (ST9-05). Danach spricht
 
 ## Stufe 10 · Wiedersehen (K11, Versteck auf Glacio)
 
-Stufe 9 hat keinen Dialog: DD3R8 ist verschwunden. Mit ST11-01 erscheinen er und der Meister im Versteck.
+Stufe 9 hat keinen Dialog: DD3R8 ist verschwunden. Er wartet seit ST9-05 mit dem Meister im Versteck auf Glacio.
 
 #### `d10_glacio` · Prio 100 · `dd3r8 = 10`
 > Ihr! Ich wusste es. Ich habe eine Wette gegen mich selbst gewonnen. Und verloren. Es ist kompliziert.

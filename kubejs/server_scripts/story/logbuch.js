@@ -29,7 +29,7 @@ const IEPLUS_LOGBUCH = {
   rolle_3: 'Tempelrolle: Vom Endlosen',
   rolle_4: 'Tempelrolle: Von der Heilung',
   tagebuch: 'Tagebuch des Meisters',
-  fundstueck_1: 'Aufzeichnungen der früheren Bewohner'
+  fundstueck_1: 'Die Basis'
 }
 
 // Lese-Items → Eintrag

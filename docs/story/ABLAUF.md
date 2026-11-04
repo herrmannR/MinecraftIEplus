@@ -100,7 +100,7 @@ Nebenquest in K5/K6: Bodhis Boss-Reihe (BS3, BS4). Belohnung der letzten Boss-Qu
 | Code | Schritt | Aufgabe | Auslöser | Folge | Text |
 |---|---|---|---|---|---|
 | ST7-01 | Material für die Station | 🟡 Checkliste (Abschnitt 4) | Items im Inventar | – | Q |
-| ST7-02 | Die Station steht | Checkmark, nur für den User | User setzt die Stage per Befehl (`tag <Spieler> add story_st7_02`), wenn alle drei dort sind (B8, O22) | DD3R8: `despawn` in der Basis; erscheint am festen Platz der Station (O69, Befehl mit festen Koordinaten in der Belohnung statt von Hand); `dd3r8 = 6` | Q |
+| ST7-02 | Die Station steht | Checkmark, nur für den User | User setzt die Stage per Befehl (`tag <Spieler> add story_st7_02`), wenn alle drei dort sind (B8, O22) | DD3R8: der Host holt ihn vorher mit `/dd3r8 hierher` an seinen Platz in der Station (User, 2026-11-04, `dd3r8_umzug.js`; ersetzt O69 „feste Koordinaten“); `dd3r8 = 6` | Q |
 | ST7-03 | Das Signal | – | Dialog DD3R8 auf dem Mars | `/logbuch teil4`, Stage `kapitel_k8`, `dd3r8 = 7` | D-DD3R8-5 |
 
 ### K8 Hitze
@@ -121,7 +121,7 @@ Nebenquest in K5/K6: Bodhis Boss-Reihe (BS3, BS4). Belohnung der letzten Boss-Qu
 | ST9-02 | Fund aus der Tiefe | `wrd:orb_of_the_deep` (O54; liegt in jeder Ancient Bone Chest) | Item im Inventar | – | Q |
 | ST9-03 | Schutz für drei | 3 × `botania:goddess_charm` (ID wie in `altar_dimension.js`) | Items im Inventar | – | Q |
 | ST9-04 | Der Altar | 1 Terrasteel-Block, 4 Demonic Slate, Siegel, Orb of the Deep (F8, O47, O54, B1, B4) | Rechtsklick am kaputten Altar (O48, neues Skript); das Skript setzt die Stage `story_st9_04` | Das Skript setzt das komplette Ritual Pathway to the Endless Realm hin; aktivieren müssen es die Spieler selbst (Aktivierungskristall, LP; O56) | Q |
-| ST9-05 | Das Endless Realm | `kubejs:relikt` | Truhe in der Station der Minen (O40) | DD3R8 `despawn` auf dem Mars (O7), Stage `kapitel_k10`, `dd3r8 = 9` | Q, TB (beim Lesen des Tagebuchs) |
+| ST9-05 | Das Endless Realm | `kubejs:relikt` | Truhe in der Station der Minen (O40) | DD3R8 verlässt den Mars (O7): `/dd3r8 glacio` stellt ihn ins Versteck auf Glacio (-347 102 89, User 2026-11-04), Stage `kapitel_k10`, `dd3r8 = 9` | Q, TB (beim Lesen des Tagebuchs) |
 
 Nicht als Aufgabe „Dimension `bloodmagic:dungeon` betreten“: Das ginge schon über den Mini-Dungeon (F27).
 
@@ -138,9 +138,9 @@ Nicht als Aufgabe „Dimension `bloodmagic:dungeon` betreten“: Das ginge schon
 
 | Code | Schritt | Aufgabe | Auslöser | Folge | Text |
 |---|---|---|---|---|---|
-| ST11-01 | Durch die Barriere | Dimension `ad_astra:glacio` | betreten (Rakete T4 steht in RF4) | Vos und DD3R8 im Versteck: `spawn` (O52), `vos = 1`, `dd3r8 = 10` | Q |
+| ST11-01 | Durch die Barriere | Dimension `ad_astra:glacio` | betreten (Rakete T4 steht in RF4) | Vos und DD3R8 stehen schon im Versteck (Vos stellt der Host bei -343 103 84 hin, DD3R8 kam mit ST9-05; User 2026-11-04), `vos = 1`, `dd3r8 = 10` | Q |
 | ST11-02 | Das Versteck | – | Erstes Gespräch mit Vos | `vos = 2` | D-VOS-0, D-DD3R8-7 |
-| ST11-03 | Heimkehr | Dimension `minecraft:overworld` (nach ST11-02) | zurück auf der Erde (Vos fliegt mit, O33) | Vos und DD3R8 `despawn` auf Glacio, der User setzt beide in der Basis (O55) und dann `vos = 3` | Q |
+| ST11-03 | Heimkehr | Dimension `minecraft:overworld` (nach ST11-02) | zurück auf der Erde (Vos fliegt mit, O33) | der User setzt Vos in der Basis (O55), DD3R8 mit `/dd3r8 hierher`, dann `vos = 3` | Q |
 | ST11-04 | Ende von Teil 1 | – | Dialog mit Vos in der Basis | Buch 2 wird sichtbar, `vos = 4` | D-VOS-1 |
 
 ## 4. Checkliste Mars-Station (🟡 Vorschlag, O22)
@@ -184,7 +184,7 @@ Ablage in `docs/story/texte/`, je Figur oder Buch eine Datei. Der User überarbe
 | ✅ Elfe rufen (O75, 2026-10-26, `elfenportal.js` Fassung 3, Test 90 bestanden 2026-11-03): Skript erkennt eine `botania:rune_spring`, die in ein aktives Portal to Alfheim geworfen wird, entfernt sie, lässt Meisterin Cerina am Portal erscheinen (`easy_npc preset import` an der Portalstelle) und setzt `cerina = 1`. Ersetzt das Hinstellen von Hand (O55) für die Elfe | Claude | Preset von Cerina; 🔵 Test 90 |
 | Mod-Bücher erst später sichtbar (ST2-01): Mod-Tabs im Questbuch bleiben unsichtbar, bis ihr erstes Kapitel freigeschaltet ist. 🔵 Prüfen, wie FTB Quests ein Kapitel ohne sichtbare Quest anzeigt | Claude | – |
 | ✅ Skript Kobalthammer (O67, 2026-10-26, ungetestet, `kobalthammer.js`): setzt den Spieler-Tag `ieplus_kobalthammer`, solange ein `tconstruct:sledge_hammer` mit allen Teilen aus Kobalt im Inventar ist, sonst entfernt es ihn (für die Abgabe „Würdig sein“) | Claude | 🔵 Test 85 |
-| Peilsender (O69): Koordinaten des Platzes auf dem Mars in den Befehl von `d4_danke` und in die Belohnung von ST7-02 eintragen | Host, dann Claude | Bau der Ruine |
+| ~~Peilsender (O69): Koordinaten des Platzes auf dem Mars in den Befehl von `d4_danke` und in die Belohnung von ST7-02 eintragen~~ erledigt: Peilsender zeigt auf -272 104 -252, DD3R8 holt der Host mit `/dd3r8 hierher` (2026-11-04) | Host, dann Claude | Bau der Ruine |
 | Ruine, kleiner Dungeon und Notiz auf dem Mars (O69); Schlucht der Zwerge (O68) | Host | – |
 | ✅ Skript Relikt-Fluch (O66, 2026-10-26, ungetestet, `relikt_fluch.js`, `relikt_sperre.js`): nach 15 s im Inventar Blindheit, Langsamkeit, Vergiftung; nicht ablegbar (Truhe, Behälter, Wegwerfen, Itemrahmen …). 🔵 Offen: Was passiert beim Tod des Trägers (Relikt bleibt bei ihm oder fällt für die anderen)? Gebaut ist vorerst: Relikt bleibt beim Träger (kommt beim Wiedereinstieg zurück, nicht in den Grabstein) | Claude | 🔵 Tests 86–88 |
 | ✅ Skript Altar per Rechtsklick (O48, O56, 2026-10-26, ungetestet, `altar_reparatur.js`): Fassung 2 (2026-11-01): Rechtsklick auf den Spawner -456 108 254 setzt Meister- und Runensteine selbst, keine Strukturdatei mehr | Claude | 🔵 Test 91 |

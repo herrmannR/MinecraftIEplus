@@ -1275,7 +1275,16 @@
 			}
 			{
 				auto: "enabled"
+				command: "/dd3r8 glacio"
+				elevate_perms: true
 				id: "789AA73E1CACCDAF"
+				silent: true
+				team_reward: true
+				type: "command"
+			}
+			{
+				auto: "enabled"
+				id: "712CC65B309BCE14"
 				stage: "kapitel_k10"
 				team_reward: true
 				type: "gamestage"
@@ -1283,7 +1292,7 @@
 			{
 				auto: "disabled"
 				count: 1
-				id: "712CC65B309BCE14"
+				id: "2FFFF5CD7D2B9D1B"
 				item: "swgc:gold_credit"
 				team_reward: true
 				type: "item"
@@ -1291,7 +1300,7 @@
 			{
 				auto: "disabled"
 				count: 2
-				id: "2FFFF5CD7D2B9D1B"
+				id: "3A76CD30B3C780C3"
 				item: "swgc:iron_credit"
 				team_reward: true
 				type: "item"
@@ -1299,7 +1308,7 @@
 			{
 				auto: "disabled"
 				count: 3
-				id: "3A76CD30B3C780C3"
+				id: "611AA757FAAE179F"
 				item: "swgc:copper_credit"
 				team_reward: true
 				type: "item"

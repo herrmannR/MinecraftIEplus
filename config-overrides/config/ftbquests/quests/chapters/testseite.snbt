@@ -1,0 +1,89 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "testseite"
+	group: ""
+	icon: "minecraft:command_block"
+	id: "79342CAEDD1431EA"
+	order_index: 99
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Bau eine Arc Furnace und schau sie an. Die Quest hakt ab, sobald du auf den fertigen Multiblock blickst."
+				"Schnell: Blöcke per JEI holen, Bauplan im Engineer's Manual, mit dem Engineer's Hammer formen."
+			]
+			icon: "immersiveengineering:arc_furnace"
+			id: "74565D0FB62F5860"
+			optional: true
+			shape: "square"
+			subtitle: "TS1 · Aufgabenarten · Nebenquest"
+			tasks: [{
+				id: "0C25435E5F179AE2"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersiveengineering:arc_furnace"
+				type: "observation"
+			}]
+			title: "Arc Furnace ansehen"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Ruf einen Boss aus Blue Skies und besiege ihn: /summon blue_skies:summoner. Die Quest hakt ab, wenn er stirbt."
+			]
+			id: "012ED60D3CBCE152"
+			optional: true
+			shape: "square"
+			subtitle: "TS1 · Aufgabenarten · Nebenquest"
+			tasks: [{
+				entity: "blue_skies:summoner"
+				id: "5A9BAA20C7028A2C"
+				type: "kill"
+				value: 1L
+			}]
+			title: "Boss besiegen"
+			x: 2.0d
+			y: 1.25d
+		}
+		{
+			description: [
+				"Hol dir einen Eimer Biodiesel (/give @s immersiveengineering:biodiesel_bucket) und gib ihn in der Quest ab."
+			]
+			id: "2E886A34197629AE"
+			optional: true
+			shape: "square"
+			subtitle: "TS1 · Aufgabenarten · Nebenquest"
+			tasks: [{
+				amount: 1000L
+				fluid: "immersiveengineering:biodiesel"
+				id: "6A7257E06D32D229"
+				type: "fluid"
+			}]
+			title: "Flüssigkeit abgeben"
+			x: 2.0d
+			y: 2.5d
+		}
+		{
+			description: [
+				"Bring ein rotes oder ein weißes Bett. Die Quest nimmt jedes der beiden (Smart Filter)."
+			]
+			icon: "minecraft:white_bed"
+			id: "61BC35F77DC26023"
+			optional: true
+			shape: "square"
+			subtitle: "TS1 · Aufgabenarten · Nebenquest"
+			tasks: [{
+				id: "09343F98D4D1AFEE"
+				item: { Count: 1b, id: "ftbfiltersystem:smart_filter", tag: { "ftbfiltersystem:filter": "or(item(minecraft:white_bed)item(minecraft:red_bed))" } }
+				title: "Ein Bett"
+				type: "item"
+			}]
+			title: "Eins von mehreren"
+			x: 2.0d
+			y: 3.75d
+		}
+	]
+	title: "Testseite (Aufgabenarten)"
+}

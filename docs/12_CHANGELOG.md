@@ -30,6 +30,19 @@ Status: 🟢 / 🟡 / 🔵
 ...
 ```
 
+## 2026-11-04 — Testabend: Lücken L2–L5, Testseite, Eintrag „Die Basis“
+
+Status: 🟡 (ungetestet: Tests 125–128)
+
+### Änderung
+- Ergebnisse vom User: Testabend A1–A5 bestanden (Test 111 ✅), B1, B2, B6 (Test 101 ✅), B7 (Test 124 ✅).
+- L2/L6: Neuer Befehl `/dd3r8 hierher` (`kubejs/server_scripts/story/dd3r8_umzug.js`): Der Host holt DD3R8 bei ST7-02 an seinen Platz in der Station, dann `/tag @a add story_st7_02`. Ersetzt die feste Stelle aus O69.
+- L3: Belohnung von ST9-05 ruft `/dd3r8 glacio`: DD3R8 geht ins Versteck auf Glacio (-347 102 89) und wartet dort. L4: Vos stellt der Host selbst bei -343 103 84 hin.
+- L5: Schutzzone „Haus von Bodhi Bad Dur“, Oberwelt -1059 72 1108 bis -1033 87 1121.
+- Logbuch: Eintrag Fundstück 1 heißt „Die Basis“ (Wunsch des Users).
+- Neues Questkapitel „Testseite (Aufgabenarten)“ (`docs/questtexte/testseite.md`, `tools/questbuch/testseite.cfg`): Beobachtung Arc Furnace, Kill Summoner, Flüssigkeit, Smart Filter. Vor dem Host löschen.
+- Alles in der Testinstanz; Neustart nötig (Questbuch, Befehle).
+
 ## 2026-10-06 — Dokumentationsgrundstruktur erstellt
 
 Status: 🟢

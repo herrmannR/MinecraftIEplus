@@ -12,6 +12,8 @@
 
 ## A · Abgaben im Dialog (blockiert jede Story-Stufe) — 30 min
 
+✅ 2026-11-04 (User): A1–A5 bestanden.
+
 Ein Fall je Figur, weil der Fehler mit den Knopf-Labels alle betraf.
 
 | # | Figur, Stufe | Vorspulen | Prüfen |
@@ -24,12 +26,14 @@ Ein Fall je Figur, weil der Fehler mit den Knopf-Labels alle betraf.
 
 ## B · Questbuch-Fluss (blockiert das Weiterkommen) — 30 min
 
+✅ 2026-11-04 (User): B1, B2, B6, B7 bestanden. Für B3 und B4 gibt es jetzt das Kapitel **„Testseite (Aufgabenarten)“** (Test 128, vor dem Host löschen: `config/ftbquests/quests/chapters/testseite.snbt`).
+
 | # | Was | Prüfen |
 |---|---|---|
 | B1 | Kapitelwechsel | Nach A2 bzw. nach einer Kapitel-Belohnung erscheint das nächste Kapitel von selbst, ohne Klick |
 | B2 | Mod-Kapitel tauchen auf | Nach `kapitel_k3` (z. B. `/kubejs stages add @s kapitel_k3`) werden die K3-Quests in IE, Mekanism, Blood Magic, Blue Skies sichtbar; vorher nicht (ABLAUF ST2-01) |
-| B3 | Beobachtungs-Aufgabe (P20) | Einen IE-Multiblock bauen, zu dem es eine Quest gibt (z. B. Koksofen), Quest hakt ab |
-| B4 | Kill-Aufgabe (P20) | Einen Blue-Skies-Boss per `/summon` töten, Quest hakt ab |
+| B3 | Beobachtungs-Aufgabe (P20) | Testseite TS1-01: Arc Furnace bauen und ansehen, Quest hakt ab |
+| B4 | Kill-Aufgabe (P20) | Testseite TS1-02: `/summon blue_skies:summoner`, töten, Quest hakt ab; dazu TS1-03 Flüssigkeit, TS1-04 Smart Filter |
 | B5 | Story-Abgaben ansehen (Test 100) | ST4-01 und ST7-01: alle Items mit Bild und Namen (kein „Unknown Item“) |
 | B7 | Fundstück Mars (Test 124) | `/give @s kubejs:schrift_marsbasis`, Rechtsklick: Meldung, Logbuch hat das Kapitel „Fundstücke“ mit Text und auf Seite 3 den 3D-Bauplan; Klick aufs Auge zeigt das Geisterbild; Quest ST6-02 hakt mit dem Item ab |
 | B6 | Blood-Magic-Kapitel (Test 101) | K9 in der Reihenfolge Edge → Tau Fruit → Weak Blood Shard → Altar Stufe 4 → Pathway → Foreman's Key |
@@ -57,10 +61,26 @@ Alles, was nur Komfort oder Beschreibung betrifft: Multiblock-Größen Mekanism 
 
 | # | Lücke | Wer | Was fehlt |
 |---|---|---|---|
-| L1 | 3D-Bauplan der Mars-Station (O74, ST6-02, Logbuch „Fundstücke“) | ✅ Claude, 2026-11-04 | aus `MarsBase.litematic`; dazu fehlte das Item `kubejs:schrift_marsbasis` ganz (ST6-02 wäre hängen geblieben) |
+| L1 | 3D-Bauplan der Mars-Station (O74, ST6-02, Logbuch „Fundstücke“) | ✅ Claude, 2026-11-04 | aus `MarsBase.litematic`; dazu fehlte das Item `kubejs:schrift_marsbasis` ganz (ST6-02 wäre hängen geblieben); Eintrag heißt „Die Basis“ |
 | L7 | Aufzeichnungen in die Ruine legen | Host | `kubejs:schrift_marsbasis` in eine Truhe der Ruine auf dem Mars |
-| L2 | DD3R8 zieht zur Mars-Station (Belohnung ST7-02) | Claude | Befehl: in der Basis entfernen, an der Station erscheinen (Platz -272 104 -252 bekannt) |
-| L3 | DD3R8 verlässt den Mars (Belohnung ST9-05) | Claude | Befehl zum Entfernen |
-| L4 | Vos und DD3R8 im Versteck auf Glacio (Belohnung ST11-01) | User, dann Claude | Koordinaten des Verstecks; ist es gebaut? |
-| L5 | Schutzzone um Bodhis Haus | User, dann Claude | zwei gegenüberliegende Ecken |
-| L6 | ST7-02 „Die Station steht“ | Host | setzt den Tag `story_st7_02` von Hand, wenn alle drei in der fertigen Station sind (so gewollt) |
+| L2 | DD3R8 zieht zur Mars-Station (ST7-02) | ✅ Claude, 2026-11-04; Host von Hand | Befehle unten (Test 126) |
+| L3 | DD3R8 verlässt den Mars (Belohnung ST9-05) | ✅ Claude, 2026-11-04 | Belohnung ruft `/dd3r8 glacio`: DD3R8 geht ins Versteck auf Glacio (-347 102 89) und wartet dort (Test 127) |
+| L4 | Vos im Versteck auf Glacio (ST11-01) | Host | stellt Vos selbst bei -343 103 84 hin; DD3R8 ist durch L3 schon da |
+| L5 | Schutzzone um Bodhis Haus | ✅ Claude, 2026-11-04 | -1059 72 1108 bis -1033 87 1121 (Test 125) |
+| L6 | ST7-02 „Die Station steht“ | Host | setzt den Tag von Hand, siehe unten |
+
+### Befehle für den Host bei ST7-02 (L2, L6)
+
+Wenn alle drei in der fertigen Station sind: an die Stelle stellen, wo DD3R8 stehen soll, dann
+
+```
+/dd3r8 hierher
+```
+
+DD3R8 kommt aus der Basis genau an diese Stelle (kann bis zu 10 Sekunden dauern, Meldung im Chat) und bleibt dort. Danach
+
+```
+/tag @a add story_st7_02
+```
+
+Damit hakt ST7-02 ab und die Belohnung setzt `dd3r8 = 6`. Bei ST11-03 holt `/dd3r8 hierher` ihn genauso in die Basis zurück.
