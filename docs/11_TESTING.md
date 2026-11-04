@@ -219,6 +219,8 @@ Neustart nötig (Startup-Skripte, neues Item). `kubejs/` und `patchouli_books/ba
 | 126 | DD3R8 zur Station (L2, 2026-11-04) | `/reload`; DD3R8 steht in der Basis; auf den Mars fliegen, an den Platz stellen, `/dd3r8 hierher` | Meldung „DD3R8 ist umgezogen“ (nach bis zu 10 s), DD3R8 steht an der Stelle und bleibt dort (Heimatpunkt); in der Basis ist er weg | 🔵 |
 | 127 | DD3R8 nach Glacio (L3, 2026-11-04) | nach Test 126: `/dd3r8 glacio` (so läuft es in der Belohnung von ST9-05) | Meldung, DD3R8 steht in Glacio bei -347 102 89, auf dem Mars ist er weg | 🔵 |
 | 128 | Testseite Aufgabenarten (B3, B4, 2026-11-04) | Neustart; Kapitel „Testseite (Aufgabenarten)“: Arc Furnace bauen und ansehen, `/summon blue_skies:summoner` und töten, Eimer Biodiesel abgeben, rotes oder weißes Bett abgeben | jede Quest hakt ab | 🔵 |
+| 129 | Bodhi bietet das Siegel an (Storyprüfung S1, 2026-11-04) | Neustart; Blue Skies bis BS4-03 abschließen (vorspulen erlaubt), dann den Arachnarch töten (`/summon blue_skies:arachnarch`, wenn BS4-04 offen ist) | BS4-04 hakt ab, `bodhi` ist für alle 4; Bodhi begrüßt mit „Alle vier! …“, der Knopf gibt das Siegel der Traumwelten, danach `bodhi` 5 | 🔵 |
+| 130 | Torrahmen in Bodhis Haus (Storyprüfung F1, 2026-11-04) | Überlebensmodus; im Haus von Bodhi den Torrahmen suchen und mit dem Zeal Lighter anzünden | Notieren: Rahmen aus Turquoise (Everbright) oder Lunar Stone Bricks (Everdawn); das Tor entzündet sich trotz Schutzzone; Everbright ab `bodhi` 1, Everdawn ab `bodhi` 2 betretbar | 🔵 |
 
 ### Runde S — Story und Quests (als Letztes vor Runde M)
 

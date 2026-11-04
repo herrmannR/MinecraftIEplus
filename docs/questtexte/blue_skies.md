@@ -21,7 +21,7 @@
 ### BS1-01 Gatekeeper's House · Hauptweg
 **Aufgabe:** `blue_skies:blue_journal`
 
-In der Oberwelt stehen Häuser mit zwei Portalen, eines aus Turquoise Stone Bricks, eines aus Lunar Stone Bricks. Du findest sie in Ebenen, Savannen, Bergen und Schnee, nie nahe beim Spawn; im Raster liegt etwa alle 33 Chunks eines. Im Haus bekommst du das Blue Journal. Es ist das Buch des Mods: Seine Einträge kommen dazu, sobald du die Welten betrittst und die Bosse besiegst. Nimm es mit, es erklärt Tiere, Pflanzen und Rohstoffe der Welten.
+In der Oberwelt stehen Häuser mit einem unentzündeten Torrahmen, je nach Haus aus Turquoise Stone Bricks (nach Everbright) oder aus Lunar Stone Bricks (nach Everdawn). Du findest sie in Ebenen, Savannen, Bergen und Schnee, nie nahe beim Spawn; im Raster liegt etwa alle 33 Chunks eines. Im Haus bekommst du das Blue Journal. Es ist das Buch des Mods: Seine Einträge kommen dazu, sobald du die Welten betrittst und die Bosse besiegst. Nimm es mit, es erklärt Tiere, Pflanzen und Rohstoffe der Welten.
 Im Pack steht im Haus eine eigene Figur statt des Händlers aus dem Mod. Bei ihr kaufst du Journal und Zeal Lighter.
 
 ### BS1-02 Zeal Lighter · Hauptweg

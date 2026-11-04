@@ -29,7 +29,7 @@
 		{
 			dependencies: ["1ECA8C4658E46B1F"]
 			description: [
-				"In der Oberwelt stehen Häuser mit zwei Portalen, eines aus Turquoise Stone Bricks, eines aus Lunar Stone Bricks. Du findest sie in Ebenen, Savannen, Bergen und Schnee, nie nahe beim Spawn; im Raster liegt etwa alle 33 Chunks eines. Im Haus bekommst du das Blue Journal. Es ist das Buch des Mods: Seine Einträge kommen dazu, sobald du die Welten betrittst und die Bosse besiegst. Nimm es mit, es erklärt Tiere, Pflanzen und Rohstoffe der Welten."
+				"In der Oberwelt stehen Häuser mit einem unentzündeten Torrahmen, je nach Haus aus Turquoise Stone Bricks (nach Everbright) oder aus Lunar Stone Bricks (nach Everdawn). Du findest sie in Ebenen, Savannen, Bergen und Schnee, nie nahe beim Spawn; im Raster liegt etwa alle 33 Chunks eines. Im Haus bekommst du das Blue Journal. Es ist das Buch des Mods: Seine Einträge kommen dazu, sobald du die Welten betrittst und die Bosse besiegst. Nimm es mit, es erklärt Tiere, Pflanzen und Rohstoffe der Welten."
 				"Im Pack steht im Haus eine eigene Figur statt des Händlers aus dem Mod. Bei ihr kaufst du Journal und Zeal Lighter."
 			]
 			hide_until_deps_visible: true
@@ -945,9 +945,18 @@
 			icon: "blue_skies:poison_key"
 			id: "6ED6E7E09F66A770"
 			rewards: [{
+				auto: "enabled"
+				command: "/scoreboard players set @a bodhi 4"
+				elevate_perms: true
+				id: "0FEC57FC64B4EDB3"
+				silent: true
+				team_reward: true
+				type: "command"
+			}
+			{
 				auto: "disabled"
 				count: 2
-				id: "0FEC57FC64B4EDB3"
+				id: "0A65EAB2C90C2676"
 				item: "swgc:iron_credit"
 				team_reward: true
 				type: "item"
@@ -955,7 +964,7 @@
 			{
 				auto: "disabled"
 				count: 3
-				id: "0A65EAB2C90C2676"
+				id: "112FC0DDE20084F8"
 				item: "swgc:copper_credit"
 				team_reward: true
 				type: "item"

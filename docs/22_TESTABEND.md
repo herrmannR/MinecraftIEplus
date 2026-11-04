@@ -36,6 +36,8 @@ Ein Fall je Figur, weil der Fehler mit den Knopf-Labels alle betraf.
 | B4 | Kill-Aufgabe (P20) | Testseite TS1-02: `/summon blue_skies:summoner`, töten, Quest hakt ab; dazu TS1-03 Flüssigkeit, TS1-04 Smart Filter |
 | B5 | Story-Abgaben ansehen (Test 100) | ST4-01 und ST7-01: alle Items mit Bild und Namen (kein „Unknown Item“) |
 | B7 | Fundstück Mars (Test 124) | `/give @s kubejs:schrift_marsbasis`, Rechtsklick: Meldung, Logbuch hat das Kapitel „Fundstücke“ mit Text und auf Seite 3 den 3D-Bauplan; Klick aufs Auge zeigt das Geisterbild; Quest ST6-02 hakt mit dem Item ab |
+| B8 | Siegel von Bodhi (Test 129) | Nach dem Arachnarch (BS4-04) wird `bodhi` 4 und Bodhi gibt das Siegel; vorher war das nirgends gesetzt (Storyprüfung S1) |
+| B9 | Torrahmen bei Bodhi (Test 130) | Welcher Rahmen steht im Haus, lässt er sich trotz Schutzzone anzünden? Antwort für Frage F1 in `23_STORYPRUEFUNG.md` |
 | B6 | Blood-Magic-Kapitel (Test 101) | K9 in der Reihenfolge Edge → Tau Fruit → Weak Blood Shard → Altar Stufe 4 → Pathway → Foreman's Key |
 
 ## C · Mehrspieler (blockiert die Runde beim Host) — 30 min, nur mit zweitem Spieler
@@ -68,6 +70,7 @@ Alles, was nur Komfort oder Beschreibung betrifft: Multiblock-Größen Mekanism 
 | L4 | Vos im Versteck auf Glacio (ST11-01) | Host | stellt Vos selbst bei -343 103 84 hin; DD3R8 ist durch L3 schon da |
 | L5 | Schutzzone um Bodhis Haus | ✅ Claude, 2026-11-04 | -1059 72 1108 bis -1033 87 1121 (Test 125) |
 | L6 | ST7-02 „Die Station steht“ | Host | setzt den Tag von Hand, siehe unten |
+| L8 | ST11-03 Heimkehr: Vos und DD3R8 in die Basis | Host | Befehle unten (aus ABLAUF ST11-03, O55; Storyprüfung S9) |
 
 ### Befehle für den Host bei ST7-02 (L2, L6)
 
@@ -84,3 +87,25 @@ DD3R8 kommt aus der Basis genau an diese Stelle (kann bis zu 10 Sekunden dauern,
 ```
 
 Damit hakt ST7-02 ab und die Belohnung setzt `dd3r8 = 6`. Bei ST11-03 holt `/dd3r8 hierher` ihn genauso in die Basis zurück.
+
+### Befehle für den Host bei ST11-03 (L8)
+
+Wenn alle wieder auf der Erde sind und ST11-03 abgehakt ist: an die Stelle in der Basis stellen, wo Vos stehen soll (als OP), dann
+
+```
+/easy_npc preset import custom easy_npc:preset/humanoid/quinlanvos.npc.nbt ~ ~ ~
+```
+
+An die Stelle für DD3R8 gehen, dann
+
+```
+/dd3r8 hierher
+```
+
+Zum Schluss
+
+```
+/scoreboard players set @a vos 3
+```
+
+Damit begrüßt Vos die Spieler in der Basis (`q3_ankunft`), und ST11-04 schließt Teil 1 ab. Der Vos im Versteck auf Glacio bleibt stehen; wer will, entfernt ihn.

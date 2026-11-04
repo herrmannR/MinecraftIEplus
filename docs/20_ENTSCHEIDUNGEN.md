@@ -69,6 +69,10 @@ Die Story schreibt der User. Diese Fragen braucht es, damit Questbuch und Skript
 
 Beantwortet am 2026-10-20: F1, F4, F8, F14, F15; siehe „Erledigt“.
 
+**O81 · Fragen aus der Storyprüfung Teil 1** (2026-11-04)
+Sieben Fragen F1–F7 (Ziegel für das erste Blue-Skies-Tor, Davijaans Aufgaben im Buch, Schlüssel bei Bodhi, DD3R8 nach der Heimkehr, Relikt auf Glacio, Cerina zu früh rufbar, Entfernung zum Haus). Einzelheiten und Vorschläge am Ende der Datei.
+→ `23_STORYPRUEFUNG.md`
+
 **F13 · Holocrons und Machtpunkte (O37)** (Teil 2)
 Welche Jedi- und Sith-Artefakte, und wie hängen sie an den Machtpunkten?
 → `18_STORY.md`; `swgc.md`

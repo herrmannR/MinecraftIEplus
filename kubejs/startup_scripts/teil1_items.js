@@ -7,7 +7,7 @@
 // Stand 2026-11-03, KubeJS 2001. Fassung 9 (Bauplan Durasteel, B8; Fassung 8: Relikt mit der Grafik des Sith-Holocrons), UNGETESTET.
 
 StartupEvents.registry('item', event => {
-  // Bauteil der Rakete T4, fertigt Meisterin Cerina (der „Helle Elf“) aus Relikt, Arcs, Elite Control Circuit und Elementium (F14)
+  // Bauteil der Rakete T4, fertigt Meisterin Cerina (die „Helle Elfe“) aus Relikt, vier Arcs, Ultimate Control Circuit und Elementium-Block (F14, ST10-04)
   event.create('galaktischer_strahlenschutz')
     .displayName('Galaktischer Strahlenschutz')
     .texture('minecraft:item/heart_of_the_sea')

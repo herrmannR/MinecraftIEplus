@@ -18,19 +18,19 @@
 
 ## SW2 · Shop des Einsiedlers (K4 Der Mond)
 
-Alles aus diesem Kapitel beginnt im Shop des Einsiedlers auf dem Mond: Credits, Durasteel, die ersten Plastoid und die **Baupläne**. Ein Bauplan ist eine Schriftrolle. Ein Rechtsklick liest sie: Die Rolle verschwindet, und das Rezept ist für die ganze Welt freigeschaltet, für alle Spieler. Rezept und Beschreibung stehen danach im Buch „Baupläne des Einsiedlers“. Ohne Bauplan liefert die Werkbank nichts.
+Alles aus diesem Kapitel beginnt beim Einsiedler Davijaan auf dem Mond: Den ersten Bauplan schenkt er dir, die ersten Plastoid und alle weiteren **Baupläne** verkauft er gegen Credits. Ein Bauplan ist eine Schriftrolle. Ein Rechtsklick liest sie: Die Rolle verschwindet, und das Rezept ist für die ganze Welt freigeschaltet, für alle Spieler. Rezept und Beschreibung stehen danach im Buch „Baupläne des Einsiedlers“. Ohne Bauplan liefert die Werkbank nichts.
 
 ### SW2-01 Credits · Hauptweg
 **Aufgabe:** `swgc:copper_credit`
 
 Credits sind die Währung des Shops. Es gibt drei Sorten: 5 Copper Credit sind ein Iron Credit, 3 Iron Credit ein Gold Credit. Ein Rechtsklick zerlegt einen Credit in die kleinere Sorte, kleine Sorten tauschst du an der Werkbank in die größere.
-Credits gibt es nur als Belohnung für Quests. Aus Kupfer, Eisen oder Gold lassen sie sich nicht herstellen.
+Credits gibt es als Belohnung für Quests. Außerdem kaufen Zoltan, der Zwerg in der Schlucht, und Bodhi Bad Dur große Mengen Metall und Rohstoffe gegen Credits. Aus Kupfer, Eisen oder Gold lassen sie sich nicht herstellen.
 
 ### SW2-05 Assembly Bench · Hauptweg
 **Aufgabe:** `swgc:assembly_bench`
 
 Die Werkbank für Blaster, Lichtschwerter und Rüstungsbemalungen. Ihre Rezepte stehen im Code und erscheinen **nicht in JEI**; die Quests dieses Kapitels nennen sie.
-Kauf den Bauplan „Assembly Bench“ und lies ihn. Danach baust du sie an der Werkbank. Der Block ist zwei Felder breit.
+Den Bauplan „Assembly Bench“ schenkt dir Davijaan, wenn du ihm seinen Helm zurückbringst (Buch 1). Lies ihn, danach baust du sie an der Werkbank. Der Block ist zwei Felder breit.
 
 So funktioniert die Bank: links ein **Hauptfeld**, darunter zwei **Nebenfelder**, rechts das **Ergebnis**. Was im Hauptfeld liegt, bestimmt das Rezept. Gibt es mehrere Ausführungen (Blaster-Modelle, Griffdesigns, Bemalungen), wählst du sie in der Liste der Oberfläche. Jeder Zusammenbau verbraucht genau ein Item aus jedem belegten Feld.
 
@@ -38,7 +38,7 @@ So funktioniert die Bank: links ein **Hauptfeld**, darunter zwei **Nebenfelder**
 **Aufgabe:** `swgc:durasteel_ingot`
 
 Das Metall von Galaxy in a Cube, für Droid Fabricator, Blaster, die Steuerkerne der Droiden und die schweren Rüstungen. Es steht in keinem Tag; kein anderer Mod verarbeitet es.
-Durasteel gibt es nur im Shop. Ein Rezept hat es im Pack nicht.
+Das Rezept schaltet der Bauplan „Durasteel“ aus dem Shop frei: 4 Steel Ingot, 4 Osmium Ingot und 1 Desh Plate ergeben 4 Durasteel.
 
 ### SW2-06 Droid Fabricator · Hauptweg
 **Aufgabe:** `swgc:droid_fabricator`
@@ -272,9 +272,9 @@ Eigener Bildschirm per Rechtsklick, Tabelle in SW5-02. Weiß nur durch Reinigen 
 | Änderung | wo im Text | Stand |
 |---|---|---|
 | Galaxy in a Cube aus allen Nicht-Star-Wars-Dimensionen entfernt (Kyber, Jawas, Tusken, Ewok-Dörfer) | SW5-01, SW5-08 | 🟢 entschieden; Kyber-Override 🟡 angelegt, ungetestet; Mobs und Strukturen offen |
-| Credits nur als Quest-Belohnung, Herstellungsrezepte aus Metall weg | SW2-01 | 🟢 Skript `einsiedler_shop.js` |
+| Credits als Quest-Belohnung und im Ankauf bei Zwerg und Bodhi (B8f), Herstellungsrezepte aus Metall weg | SW2-01 | 🟢 Skript `einsiedler_shop.js` |
 | Baupläne (Schriftrollen) aus dem Shop schalten Rezepte für die ganze Welt frei: Assembly Bench, Droid Fabricator, Gas Harvester mit Empty Gas Vessel, Plastoid, Steuerkerne, Rüstungen; Blaster nur Buchseite; alle Rezepte verteuert | SW2, SW3 | 🟢 O28, Test 43; Skript `einsiedler_shop.js` 🔵 ungetestet |
-| Durasteel nur im Shop, ohne Rezept | SW2-04 | 🟢 O28, Skript |
+| Durasteel über den Bauplan „Durasteel“ (B8e, 2026-11-03; vorher nur im Shop); Bauplan Assembly Bench schenkt Davijaan (B8c) | SW2-04, SW2-05 | 🟢 Skript `einsiedler_shop.js` |
 | Steuerkern je Droidentyp als Zutat im Fabricator, Rezept per Bauplan; Stahl- statt Eisenblöcke | SW2-07, SW3-03, SW3-04, Anhang | 🟢 Skript |
 | Plastoid: die ersten 20 im Shop, danach 2 HDPE Pellets → 1 Plastoid hinter dem Bauplan | SW3 (Einleitung), SW3-01 | 🟢 O42, Skript; Handelsgrenze stellt der User in Easy NPC ein |
 | Macht wächst nicht von selbst, Punkte über Quests | SW4-01 | 🟢 entschieden; Technik offen (T10, Tests 33/34) |

@@ -29,7 +29,7 @@ Quest-Codes der Story: **ST\<Kapitel\>-\<Nr\>** (ST4-03 …). Die Quest-IDs ents
 | Mondbasis mit Luft | `ad_astra:moon` | Host (O29) | Davijaan | ja |
 | Höhle mit kaputtem Klonhelm | `ad_astra:moon` | Host | – (Spawner) | ja |
 | Mars-Station | `ad_astra:mars` | **die Spieler**, an einem festen Platz (O69): dort Reste einer alten Basis, kleiner Dungeon und Notiz der früheren Bewohner (baut der Host) | DD3R8 ab K7 | Ruine ja, Bauplatz nein |
-| Schlucht der Zwerge (halber Weg nach Süden zum Blue-Skies-Haus) | `minecraft:overworld` | sucht der Host aus (O68) | Zwerg `[Name]` | offen |
+| Schlucht der Zwerge (halber Weg nach Süden zum Blue-Skies-Haus) | `minecraft:overworld` | sucht der Host aus (O68) | Zwerg Zoltan | offen |
 | Tempel mit kaputtem Altar und 4 Rollen | `ad_astra:mercury` | Host (T6) | – | ja, Freistellen für Ritualsteine |
 | Station der Minen (Truhe mit Relikt und Tagebuch) | `bloodmagic:dungeon` | automatisch (O40) | – | nein |
 | Elfenportal | `minecraft:overworld` | **die Spieler** | Meisterin Cerina ab K10 | nein |
@@ -162,7 +162,7 @@ Ablage in `docs/story/texte/`, je Figur oder Buch eine Datei. Der User überarbe
 |---|---|---|---|
 | L1–L5 | Logbuch des Meisters, Teil 1–5 | Tabelle in `18_STORY.md` Abschnitt 5 | je das nächste Ziel, ohne es zu nennen |
 | R1–R4 | Tempelrollen | K8 | R1: Portal zur dunklen Seite im Tempel; R2–R4 kurze Texte |
-| TB | Tagebuch des Meisters | K9 | Trennung vom Droiden, Flucht ohne Relikt (O4), Glacio, Heller Elf, „wer unbefleckt ist, bringe es mir“ |
+| TB | Tagebuch des Meisters | K9 | Trennung vom Droiden, Flucht ohne Relikt (O4), Glacio, Helle Elfe, „wer unbefleckt ist, bringe es mir“ |
 | D-DD3R8-0 … 7 | Dialoge des Droiden | je Dialogstufe | siehe Abschnitt 3 |
 | D-DAVIJAAN-0, 1 | Einsiedler | K4 | Misstrauen, Höhle, Vertrauen, Shop, Buch („Notizen über die Aufgaben dieses komischen Roboters“), Hinweis Mars |
 | D-BODHI-0 … 5 | Wächter der Traumwelten (O72) | K3, K4, K9 | Exil, Bosse haben seine Welten, Zinn/Osmium, Siegel |

@@ -40,7 +40,7 @@ Werkzeug-Icons als Ebenen: `blue_skies:item/tools/handles/handle+/item/tools/hea
 
 ## Progression in Kürze
 
-1. Gatekeeper's House (Oberwelt; `blue_skies:gatekeeper_house_plains`/`_mountain`/`_snowy`, Tag `#blue_skies:gatekeeper_houses`, Händler `blue_skies:gatekeeper`): Blue Journal und Zeal Lighter beim Gatekeeper (Handel siehe unten); im Haus stehen keine Portale (Test 39), die Spieler bauen sie aus Turquoise/Lunar Stone Bricks. Danach Holz-/Steinwerkzeuge der Welten (fremde Werkzeuge abgeschwächt).
+1. Gatekeeper's House (Oberwelt; `blue_skies:gatekeeper_house_plains`/`_mountain`/`_snowy`, Tag `#blue_skies:gatekeeper_houses`, Händler `blue_skies:gatekeeper`): Blue Journal und Zeal Lighter beim Gatekeeper (Handel siehe unten); im Haus stehen keine Portale (Test 39), die Spieler bauen sie aus Turquoise/Lunar Stone Bricks. JAR-Befund 2026-11-04 (Storyprüfung): Jedes Haus hat genau **einen** unentzündeten Torrahmen (11–14 Ziegel; `structures/gatekeeper/mountain/main`, `plains/shack_1|2`, `snowy/main`); der Template-Pool wählt zu 50 % den Prozessor `swap_portal` (Lunar → Turquoise), also Everbright **oder** Everdawn. Rahmenblock laut `SkiesBlocks`: Everbright `turquoise_stonebrick`, Everdawn `lunar_stonebrick`. Gatekeeper-Handel ohne Ziegel. Ziegel vor dem ersten Besuch gibt es also nur aus Hausrahmen. Danach Holz-/Steinwerkzeuge der Welten (fremde Werkzeuge abgeschwächt).
 2. Everbright: Ventium (Eimer, Schere, Tool Box), Falsite (Haltbarkeit über Tool Box, Lapis-Ersatz), Snowcap Oven, Warding Pearl.
 3. Everdawn: Horizonite (Auto-Smelt), Horizonite Forge (ohne Brennstoff, Sunstone lädt), Moonstone Shield.
 4. Beide Welten: Pyrope → Aquite → Diopside / Charoite; Enchanting Table mit Charoite.

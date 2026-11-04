@@ -30,6 +30,19 @@ Status: 🟢 / 🟡 / 🔵
 ...
 ```
 
+## 2026-11-04 — Storyprüfung Teil 1 (`23_STORYPRUEFUNG.md`)
+
+Status: 🟡 (ungetestet: Tests 129, 130; sieben Fragen an den User offen)
+
+### Änderung
+- Ganze Story von Teil 1 logisch geprüft: Ablauf, Dialogstufen, Stage-Aufgaben, Kapitel-Stages, Items, Logbuch, Skripte, Mod-Kapitel. Ergebnis und Fragen in `docs/23_STORYPRUEFUNG.md`.
+- S1 (Sackgasse): `bodhi = 4` setzte niemand, Bodhi hätte das Siegel nie angeboten. Jetzt Belohnung von BS4-04 (Arachnarch) in `tools/questbuch/blue_skies.cfg`.
+- S2–S4: Kapitel Galaxy in a Cube an B8 angepasst (Bauplan Assembly Bench schenkt Davijaan, Durasteel über Bauplan, Credits auch bei Zwerg und Bodhi).
+- S5: BS1-01 beschreibt den einen Torrahmen je Gatekeeper-Haus (JAR-Befund in `modpfade/blue_skies/WISSEN.md`).
+- S6–S8: veraltete Angaben in `dialoge_cerina.md`, `ABLAUF.md` (Zoltan, Helle Elfe) und einem Kommentar in `teil1_items.js`.
+- S9: `22_TESTABEND.md` hat jetzt die Host-Befehle für ST11-03 (L8) und die Tests B8, B9.
+- Gebaut und in die Testinstanz kopiert: `blue_skies.snbt`, `swgc.snbt`, `teil1_items.js`. Presets, Logbuch und Buch 1 neu gebaut zum Vergleich: unverändert. `kubejs_check.py`: 0 Fehler, 2 bekannte Warnungen.
+
 ## 2026-11-04 — Testabend: Lücken L2–L5, Testseite, Eintrag „Die Basis“
 
 Status: 🟡 (ungetestet: Tests 125–128)

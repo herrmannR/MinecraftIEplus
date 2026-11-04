@@ -29,10 +29,10 @@
 		{
 			dependencies: ["2A4278ABD8AAA4AE"]
 			description: [
-				"Alles aus diesem Kapitel beginnt im Shop des Einsiedlers auf dem Mond: Credits, Durasteel, die ersten Plastoid und die &eBaupläne&r. Ein Bauplan ist eine Schriftrolle. Ein Rechtsklick liest sie: Die Rolle verschwindet, und das Rezept ist für die ganze Welt freigeschaltet, für alle Spieler. Rezept und Beschreibung stehen danach im Buch „Baupläne des Einsiedlers“. Ohne Bauplan liefert die Werkbank nichts."
+				"Alles aus diesem Kapitel beginnt beim Einsiedler Davijaan auf dem Mond: Den ersten Bauplan schenkt er dir, die ersten Plastoid und alle weiteren &eBaupläne&r verkauft er gegen Credits. Ein Bauplan ist eine Schriftrolle. Ein Rechtsklick liest sie: Die Rolle verschwindet, und das Rezept ist für die ganze Welt freigeschaltet, für alle Spieler. Rezept und Beschreibung stehen danach im Buch „Baupläne des Einsiedlers“. Ohne Bauplan liefert die Werkbank nichts."
 				""
 				"Credits sind die Währung des Shops. Es gibt drei Sorten: 5 Copper Credit sind ein Iron Credit, 3 Iron Credit ein Gold Credit. Ein Rechtsklick zerlegt einen Credit in die kleinere Sorte, kleine Sorten tauschst du an der Werkbank in die größere."
-				"Credits gibt es nur als Belohnung für Quests. Aus Kupfer, Eisen oder Gold lassen sie sich nicht herstellen."
+				"Credits gibt es als Belohnung für Quests. Außerdem kaufen Zoltan, der Zwerg in der Schlucht, und Bodhi Bad Dur große Mengen Metall und Rohstoffe gegen Credits. Aus Kupfer, Eisen oder Gold lassen sie sich nicht herstellen."
 			]
 			hide_until_deps_visible: true
 			icon: "swgc:copper_credit"
@@ -59,7 +59,7 @@
 			dependencies: ["0985C494F42DD4D2"]
 			description: [
 				"Die Werkbank für Blaster, Lichtschwerter und Rüstungsbemalungen. Ihre Rezepte stehen im Code und erscheinen &enicht in JEI&r; die Quests dieses Kapitels nennen sie."
-				"Kauf den Bauplan „Assembly Bench“ und lies ihn. Danach baust du sie an der Werkbank. Der Block ist zwei Felder breit."
+				"Den Bauplan „Assembly Bench“ schenkt dir Davijaan, wenn du ihm seinen Helm zurückbringst (Buch 1). Lies ihn, danach baust du sie an der Werkbank. Der Block ist zwei Felder breit."
 				""
 				"So funktioniert die Bank: links ein &eHauptfeld&r, darunter zwei &eNebenfelder&r, rechts das &eErgebnis&r. Was im Hauptfeld liegt, bestimmt das Rezept. Gibt es mehrere Ausführungen (Blaster-Modelle, Griffdesigns, Bemalungen), wählst du sie in der Liste der Oberfläche. Jeder Zusammenbau verbraucht genau ein Item aus jedem belegten Feld."
 			]
@@ -88,7 +88,7 @@
 			dependencies: ["0985C494F42DD4D2"]
 			description: [
 				"Das Metall von Galaxy in a Cube, für Droid Fabricator, Blaster, die Steuerkerne der Droiden und die schweren Rüstungen. Es steht in keinem Tag; kein anderer Mod verarbeitet es."
-				"Durasteel gibt es nur im Shop. Ein Rezept hat es im Pack nicht."
+				"Das Rezept schaltet der Bauplan „Durasteel“ aus dem Shop frei: 4 Steel Ingot, 4 Osmium Ingot und 1 Desh Plate ergeben 4 Durasteel."
 			]
 			hide_until_deps_visible: true
 			icon: "swgc:durasteel_ingot"

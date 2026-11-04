@@ -10,7 +10,7 @@
 > - Nach Alfheim dürfen die Spieler noch nicht (Mead of Kvasir in Teil 2, F9).
 > - Easy NPC: Text höchstens ~512 Zeichen, Knopf höchstens 64.
 
-Scoreboard `cerina` (B2): 1 = gerade aus dem Portal getreten (setzt die Belohnung von ST10-02; der User setzt sie ans Portal, O55), 2 = Relikt abgegeben, 3 = Strahlenschutz übergeben.
+Scoreboard `cerina` (B2): 1 = gerade aus dem Portal getreten (setzt `elfenportal.js`, wenn eine Rune des Frühlings ins offene Portal fällt; O75, ersetzt das Hinstellen von Hand nach O55), 2 = Relikt abgegeben, 3 = Strahlenschutz übergeben.
 
 ---
 
