@@ -37,7 +37,7 @@ Scoreboard `bodhi` (B2): 0 = noch nie gesprochen, 1 = Zinn-Auftrag, 2 = Zinn geb
 - **[Abgemacht]** → Befehle: `tag @initiator add story_st3_01`, `scoreboard players set @a bodhi 1` → `b0_tor`
 
 #### `b0_tor` · Prio 0
-> Ein Tor baut ihr selbst, aus türkisem Ziegel für Everbright, aus mondhellem Ziegel für Everdawn. Entzündet wird es mit dem Zeal Lighter. Den und mein Buch über die Welten verkaufe ich euch.
+> Ein Tor baut ihr selbst, aus türkisem Ziegel für Everbright, aus mondhellem Ziegel für Everdawn. Entzündet wird es mit dem Zeal Lighter. Die Ziegel, den Lighter und mein Buch über die Welten verkaufe ich euch.
 - **[Handeln]** → Aktion: Handelsfenster öffnen
 
 ---
@@ -155,6 +155,8 @@ Bodhi kauft Rohstoffe der Traumwelten in großen Mengen und zahlt in Credits (B8
 
 | Preis | Preis 2 | Ware | Nutzungen | Hinweis |
 |---|---|---|---|---|
+| 1 × `minecraft:diamond` | – | 1 × `blue_skies:turquoise_stonebrick` | unbegrenzt | Ziegel fürs erste Tor nach Everbright (User, 2026-11-04, F1) |
+| 1 × `tconstruct:cobalt_ingot` | – | 1 × `blue_skies:lunar_stonebrick` | unbegrenzt | Ziegel fürs Tor nach Everdawn (User, 2026-11-04, F1) |
 | 8 × `minecraft:emerald` | – | 1 × `blue_skies:zeal_lighter` | unbegrenzt | wie Gatekeeper |
 | 1 × `minecraft:book` | – | 1 × `blue_skies:blue_journal` | unbegrenzt | wie Gatekeeper |
 | 6 × `minecraft:book` | 1 × `minecraft:emerald` | 1 × `blue_skies:blinding_key` | unbegrenzt | wie Gatekeeper |

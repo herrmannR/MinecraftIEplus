@@ -140,7 +140,7 @@ Nicht als Aufgabe „Dimension `bloodmagic:dungeon` betreten“: Das ginge schon
 |---|---|---|---|---|---|
 | ST11-01 | Durch die Barriere | Dimension `ad_astra:glacio` | betreten (Rakete T4 steht in RF4) | Vos und DD3R8 stehen schon im Versteck (Vos stellt der Host bei -343 103 84 hin, DD3R8 kam mit ST9-05; User 2026-11-04), `vos = 1`, `dd3r8 = 10` | Q |
 | ST11-02 | Das Versteck | – | Erstes Gespräch mit Vos | `vos = 2` | D-VOS-0, D-DD3R8-7 |
-| ST11-03 | Heimkehr | Dimension `minecraft:overworld` (nach ST11-02) | zurück auf der Erde (Vos fliegt mit, O33) | der User setzt Vos in der Basis (O55), DD3R8 mit `/dd3r8 hierher`, dann `vos = 3` | Q |
+| ST11-03 | Heimkehr | Dimension `minecraft:overworld` (nach ST11-02) | zurück auf der Erde (Vos fliegt mit, O33) | der User setzt Vos in der Basis (O55), DD3R8 mit `/dd3r8 hierher`, dann `vos = 3`; Belohnung `dd3r8 = 11` (Standard-Dialog, F4) | Q |
 | ST11-04 | Ende von Teil 1 | – | Dialog mit Vos in der Basis | Buch 2 wird sichtbar, `vos = 4` | D-VOS-1 |
 
 ## 4. Checkliste Mars-Station (🟡 Vorschlag, O22)

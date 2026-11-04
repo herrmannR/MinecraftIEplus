@@ -27,7 +27,7 @@
 			y: -2.0d
 		}
 		{
-			dependencies: ["2A4278ABD8AAA4AE"]
+			dependencies: ["13CCF6551DA3A2CA", "2A4278ABD8AAA4AE"]
 			description: [
 				"Alles aus diesem Kapitel beginnt beim Einsiedler Davijaan auf dem Mond: Den ersten Bauplan schenkt er dir, die ersten Plastoid und alle weiteren &eBaupläne&r verkauft er gegen Credits. Ein Bauplan ist eine Schriftrolle. Ein Rechtsklick liest sie: Die Rolle verschwindet, und das Rezept ist für die ganze Welt freigeschaltet, für alle Spieler. Rezept und Beschreibung stehen danach im Buch „Baupläne des Einsiedlers“. Ohne Bauplan liefert die Werkbank nichts."
 				""

@@ -273,7 +273,7 @@ Stufe 9 hat keinen Dialog: DD3R8 ist verschwunden. Er wartet seit ST9-05 mit dem
 - **[Wo ist er?]** → `d10_meister`
 
 #### `d10_meister` · Prio 0
-> Dort drüben. Er sieht müde aus. Seid freundlich zu ihm. Und gebt ihm, was ihr für ihn tragt. Aber vorsichtig.
+> Dort drüben. Er sieht müde aus. Seid freundlich zu ihm. Und sprecht mit ihm über das, was ihr bei euch habt. Aber vorsichtig.
 - **[Machen wir]** → schließen
 
 ---
@@ -303,6 +303,6 @@ Stufe 9 hat keinen Dialog: DD3R8 ist verschwunden. Er wartet seit ST9-05 mit dem
 
 - **Warum DD3R8 nicht selbst ins Endless Realm geht:** Im Entwurf bleibt er, um zu horchen (`d7_schutz`). Die Story sagt nur, dass er das Relikt nicht holen kann. Reicht dir das, oder soll es einen anderen Grund geben? -> passt so
 - **Richtung zum Blue-Skies-Haus** (`d2_weg`) trägst du ein, sobald das Haus gewählt ist. -> mit neuem npc auf halben weg im süden. in einer schlucht leben zwerge, die das haus mit dem wächter kennen, da sie früher dort mit ihm erze aus seinen welten gehandelt haben. Sie schicken uns hin und ab dem moment können wir mit ihnen handeln. 16 Osmium zu einem Kobalt zum beispiel.
-- **Stufe 10 nach der Heimkehr:** Wenn DD3R8 mit Vos in der Basis steht (ST11-03), braucht er einen Dialog für Teil 2. Kommt mit Teil 2. -> ja
+- **Stufe 10 nach der Heimkehr:** Wenn DD3R8 mit Vos in der Basis steht (ST11-03), braucht er einen Dialog für Teil 2. Kommt mit Teil 2. -> ja. Bis dahin setzt die Belohnung von ST11-03 `dd3r8 = 11`; dafür gibt es keinen Einstieg, DD3R8 fällt in `d_standard` zurück (User, 2026-11-04, F4).
 - **Anspielungen:** „Ich habe ein schlechtes Gefühl dabei“ (`d6_merkur`) ist die deutlichste. Lassen? -> ja passt
 - **Eimer zurück** (`d4_danke`): kleiner Komfort, damit der Eimer nicht verloren geht. Streichen, wenn unnötig. -> schon angepasst

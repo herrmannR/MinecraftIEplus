@@ -108,4 +108,4 @@ Zum Schluss
 /scoreboard players set @a vos 3
 ```
 
-Damit begrüßt Vos die Spieler in der Basis (`q3_ankunft`), und ST11-04 schließt Teil 1 ab. Der Vos im Versteck auf Glacio bleibt stehen; wer will, entfernt ihn.
+Damit begrüßt Vos die Spieler in der Basis (`q3_ankunft`), und ST11-04 schließt Teil 1 ab. `dd3r8 = 11` setzt die Belohnung von ST11-03 selbst; DD3R8 spricht dann seinen Standard-Dialog. Der Vos im Versteck auf Glacio bleibt stehen; wer will, entfernt ihn.

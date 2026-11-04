@@ -54,7 +54,7 @@ Bodhi Bad Dur verkauft dir den Zeal Lighter, mit dem man die Tore in seine Welte
 ### ST3-03 Everbright · Hauptweg
 **Aufgabe:** Dimension `blue_skies:everbright` betreten
 
-Bau ein Tor aus Turquoise Stone Bricks, entzünde es mit dem Zeal Lighter und tritt hindurch. Everbright ist die Welt des ewigen Lichts. Deine Werkzeuge taugen dort wenig; wie du neu anfängst, steht im Kapitel Blue Skies.
+Bau ein Tor aus Turquoise Stone Bricks, entzünde es mit dem Zeal Lighter und tritt hindurch. Die Ziegel verkauft dir Bodhi, einen für je einen Diamond. Everbright ist die Welt des ewigen Lichts. Deine Werkzeuge taugen dort wenig; wie du neu anfängst, steht im Kapitel Blue Skies.
 
 ### ST3-04 Zinn für Bodhi · Hauptweg
 **Aufgabe:** Abgabe im Dialog: 32 × `mekanism:raw_tin`

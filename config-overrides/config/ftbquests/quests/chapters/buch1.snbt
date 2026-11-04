@@ -207,7 +207,7 @@
 		{
 			dependencies: ["15C19D5BD43D524B"]
 			description: [
-				"Bau ein Tor aus Turquoise Stone Bricks, entzünde es mit dem Zeal Lighter und tritt hindurch. Everbright ist die Welt des ewigen Lichts. Deine Werkzeuge taugen dort wenig; wie du neu anfängst, steht im Kapitel Blue Skies."
+				"Bau ein Tor aus Turquoise Stone Bricks, entzünde es mit dem Zeal Lighter und tritt hindurch. Die Ziegel verkauft dir Bodhi, einen für je einen Diamond. Everbright ist die Welt des ewigen Lichts. Deine Werkzeuge taugen dort wenig; wie du neu anfängst, steht im Kapitel Blue Skies."
 			]
 			hide_until_deps_visible: true
 			id: "17206FBB8635CA80"
@@ -1638,9 +1638,18 @@
 			hide_until_deps_visible: true
 			id: "3C478FA5033ECC6C"
 			rewards: [{
+				auto: "enabled"
+				command: "/scoreboard players set @a dd3r8 11"
+				elevate_perms: true
+				id: "4551EB96A246120B"
+				silent: true
+				team_reward: true
+				type: "command"
+			}
+			{
 				auto: "disabled"
 				count: 3
-				id: "4551EB96A246120B"
+				id: "17A904632F78DBAD"
 				item: "swgc:gold_credit"
 				team_reward: true
 				type: "item"
@@ -1648,7 +1657,7 @@
 			{
 				auto: "disabled"
 				count: 3
-				id: "17A904632F78DBAD"
+				id: "62CA9517607BD26E"
 				item: "swgc:copper_credit"
 				team_reward: true
 				type: "item"
