@@ -34,7 +34,7 @@
 				"Credits sind die Währung des Shops. Es gibt drei Sorten: 5 Copper Credit sind ein Iron Credit, 3 Iron Credit ein Gold Credit. Ein Rechtsklick zerlegt einen Credit in die kleinere Sorte, kleine Sorten tauschst du an der Werkbank in die größere."
 				"Credits gibt es als Belohnung für Quests. Außerdem kaufen Zoltan, der Zwerg in der Schlucht, und Bodhi Bad Dur große Mengen Metall und Rohstoffe gegen Credits. Aus Kupfer, Eisen oder Gold lassen sie sich nicht herstellen."
 			]
-			hide_until_deps_visible: true
+			hide_until_deps_complete: true
 			icon: "swgc:copper_credit"
 			id: "0985C494F42DD4D2"
 			rewards: [{

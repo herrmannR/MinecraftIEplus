@@ -563,7 +563,9 @@ public class QuestbuchGen {
             for (String d : mitbringen(q)) sb.append("\t\t\t\t\"").append(esc(d)).append("\"\n");
             sb.append("\t\t\t]\n");
             if (q.marker) sb.append("\t\t\tinvisible: true\n");
-            else if (q.gated) sb.append("\t\t\thide_until_deps_complete: true\n");
+            // Abhängigkeit von einer Story-Quest (buch1:…): erst nach deren Abschluss sichtbar. „Sichtbar, wenn die
+            // Vorgänger sichtbar sind“ hinge sonst an der ganzen Kette in Buch 1 samt Kapitel-Marken (Test 131, 2026-11-06)
+            else if (q.gated || q.deps.stream().anyMatch(d -> d.startsWith("buch1:"))) sb.append("\t\t\thide_until_deps_complete: true\n");
             else if (!q.deps.isEmpty()) sb.append("\t\t\thide_until_deps_visible: true\n");
             if (q.icon != null) sb.append("\t\t\ticon: \"").append(q.icon).append("\"\n");
             sb.append("\t\t\tid: \"").append(depId(q.code)).append("\"\n");

@@ -30,6 +30,14 @@ Status: 🟢 / 🟡 / 🔵
 ...
 ```
 
+## 2026-11-06 — SW2-01 sichtbar nach dem Helm
+
+Status: 🟡 (Test 131 F2 erneut)
+
+### Änderung
+- Test 131: Credits-Quest (SW2-01) nach ST4-05 frei, aber unsichtbar. FTB Quests zeigt eine Quest mit „hide_until_deps_visible“ nur, wenn alle Vorgänger sichtbar sind, und ST4-05 hängt an der ganzen Kette von Buch 1. `QuestbuchGen.java`: Quests mit Abhängigkeit von Buch 1 werden erst nach deren Abschluss sichtbar (`hide_until_deps_complete`). Betrifft nur SW2-01; Galaxy in a Cube neu gebaut und kopiert.
+- Bestanden (User): Tests 126, 127; 131 F1, F4, F5.
+
 ## 2026-11-06 — Flüssigkeits-Aufgaben werden Eimer-Abgaben
 
 Status: 🟡 (Test 128 erneut)
