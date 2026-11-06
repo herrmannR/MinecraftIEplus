@@ -7,7 +7,7 @@
 // bis zu zehnmal im Abstand von einer Sekunde. Letzter Platz: Weltwert ieplus_dd3r8_ort, anfangs der Platz aus dem Dialog
 // „Okayy … danke.“ (-370 80 -20 in der Oberwelt).
 // Erkannt wird DD3R8 am Typ easy_npc:doppler und am Namen DD3R8.
-// Stand 2026-11-04, KubeJS 2001. Fassung 1, UNGETESTET.
+// Stand 2026-11-04, KubeJS 2001. Fassung 2 (Welt aus der Befehlsquelle, Fehler im Chat und Log; Fassung 1 scheiterte mit „unexpected error“, Test 126), UNGETESTET.
 
 const IEPLUS_DD3R8_TYP = 'easy_npc:doppler'
 const IEPLUS_DD3R8_NAME = 'DD3R8'
@@ -30,7 +30,9 @@ function ieplusDd3r8Platz(text) {
 function ieplusDd3r8Finden(server) {
   var levels = server.getAllLevels().iterator()
   while (levels.hasNext()) {
-    var es = levels.next().getAllEntities().iterator()
+    var level = levels.next()
+    var es
+    try { es = level.getAllEntities().iterator() } catch (err) { es = level.getEntities().iterator() }
     while (es.hasNext()) {
       var e = es.next()
       if (String(e.getEncodeId()) === IEPLUS_DD3R8_TYP && String(e.getName().getString()) === IEPLUS_DD3R8_NAME) return e
@@ -66,7 +68,12 @@ function ieplusDd3r8Umzug(server, ziel, melden, versuch) {
       '. Dort hinfliegen und /dd3r8 hierher am Ziel wiederholen.'))
     return
   }
-  server.scheduleInTicks(20, () => ieplusDd3r8Umzug(server, ziel, melden, versuch + 1))
+  server.scheduleInTicks(20, () => {
+    try { ieplusDd3r8Umzug(server, ziel, melden, versuch + 1) } catch (err) {
+      console.error('dd3r8_umzug.js: ' + err)
+      melden(Text.red('dd3r8_umzug.js: ' + err))
+    }
+  })
 }
 
 ServerEvents.commandRegistry(event => {
@@ -74,14 +81,25 @@ ServerEvents.commandRegistry(event => {
   var befehl = Commands.literal('dd3r8').requires(s => s.hasPermission(2))
   befehl = befehl.then(Commands.literal('hierher').executes(ctx => {
     var player = ctx.source.getPlayerOrException()
-    var ziel = ieplusDd3r8Dim(player.level()) + ' ' + (Math.floor(player.getX()) + 0.5) + ' ' +
-      Math.floor(player.getY()) + ' ' + (Math.floor(player.getZ()) + 0.5)
-    ieplusDd3r8Umzug(ctx.source.getServer(), ziel, t => player.tell(t), 0)
+    try {
+      // Welt aus der Befehlsquelle (player.level() ist in KubeJS keine Funktion, Test 126)
+      var ziel = ieplusDd3r8Dim(ctx.source.getLevel()) + ' ' + (Math.floor(player.getX()) + 0.5) + ' ' +
+        Math.floor(player.getY()) + ' ' + (Math.floor(player.getZ()) + 0.5)
+      ieplusDd3r8Umzug(ctx.source.getServer(), ziel, t => player.tell(t), 0)
+    } catch (err) {
+      console.error('dd3r8_umzug.js: hierher: ' + err)
+      player.tell(Text.red('dd3r8_umzug.js: ' + err))
+    }
     return 1
   }))
   befehl = befehl.then(Commands.literal('glacio').executes(ctx => {
     var player = ctx.source.getPlayer()
-    ieplusDd3r8Umzug(ctx.source.getServer(), IEPLUS_DD3R8_GLACIO, t => { if (player) player.tell(t) }, 0)
+    try {
+      ieplusDd3r8Umzug(ctx.source.getServer(), IEPLUS_DD3R8_GLACIO, t => { if (player) player.tell(t) }, 0)
+    } catch (err) {
+      console.error('dd3r8_umzug.js: glacio: ' + err)
+      if (player) player.tell(Text.red('dd3r8_umzug.js: ' + err))
+    }
     return 1
   }))
   event.register(befehl)

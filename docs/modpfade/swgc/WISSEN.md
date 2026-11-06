@@ -58,6 +58,8 @@
 
 - **Nicht als Easy-NPC-Doppler wählbar** (Befund 2026-10-28, JAR): Alle swgc-Wesen (`atrt`, `atst`, `delta7b`, `b1`, `b2`, `droideka`, `clone`, `royal_guardian`, `ewok` …) sind in `che.swgc.reg.SwgcEntities` mit `MobCategory.MISC` registriert. Der `EntityTypeManager` von Easy NPC 7.14 überspringt jede MISC-Kategorie, bevor er die Config liest; ein Eintrag in `config/easy_npc/render_entity_type_support.cfg` hilft also nicht. Die Klassen erben von `che.swgc.entity.CommandableMob`.
 
+- **Eigenes Startmenü nicht abschaltbar** (Befund 2026-11-06, JAR 1.0.3.1): `che.swgc.mixin.MixinTitleScreen` (Client-Mixin in `swgc.mixins.json`) ersetzt ohne Bedingung das Panorama durch `SpaceGui.renderSpaceBg/Fg`, zeichnet ein eigenes Logo, spielt einmal `swgc:title` und nimmt in jedem zweiten Fall eigene Splash-Texte (`SwgcSplashManager`). Die Config `swgc-client.toml` kennt nur `lightsaberDetailing` und `lightsaberStaminaBar`. Abmildern ginge nur per Ressourcenpaket (Texturen `assets/swgc/textures/gui/title/background.png`, `foreground.png`, `logo.png` und Sound `assets/swgc/sounds/title.ogg` überschreiben); das Vanilla-Panorama kommt so nicht zurück. Nicht im Spiel geprüft.
+
 ## Ohne Rezept und ohne Fundort
 
 AT-RT, AT-ST, Delta-7B, Clone, Darksaber, Double-bladed Glaive, Jedi/Sith Holocron (nur Kreativ). Nur von Mobs: Jawa Blaster, Tusken Pike, Ewok Staff. Obese-Wan Carbobi: Klasse vorhanden, nicht registriert.
