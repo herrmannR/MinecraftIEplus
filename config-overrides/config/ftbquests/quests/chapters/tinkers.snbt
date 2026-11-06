@@ -1243,10 +1243,9 @@
 			size: 1.5d
 			subtitle: "TK3 · Alloyer und Foundry"
 			tasks: [{
-				amount: 1000L
-				fluid: "tconstruct:blazing_blood"
 				id: "72F1D96A8FADC38A"
-				type: "fluid"
+				item: "tconstruct:blazing_blood_bucket"
+				type: "item"
 			}]
 			title: "Blazing Blood"
 			x: 9.0d
@@ -1311,16 +1310,14 @@
 			}]
 			subtitle: "TK3 · Alloyer und Foundry · Nebenquest"
 			tasks: [{
-				amount: 1000L
-				fluid: "bloodsmeltery:demon_will"
 				id: "0592D8701491ED28"
-				type: "fluid"
+				item: "bloodsmeltery:demon_will_bucket"
+				type: "item"
 			}
 			{
-				amount: 90L
-				fluid: "bloodsmeltery:molten_bloodbrass"
 				id: "39AC35380BCBED5E"
-				type: "fluid"
+				item: "bloodsmeltery:molten_bloodbrass_bucket"
+				type: "item"
 			}]
 			title: "Blood-Smeltery"
 			x: 9.5d
@@ -1373,16 +1370,14 @@
 			size: 1.5d
 			subtitle: "TK4 · Planetenmetalle gießen"
 			tasks: [{
-				amount: 90L
-				fluid: "tcintegrations:molten_desh"
 				id: "01F18CC3EE341D96"
-				type: "fluid"
+				item: "tcintegrations:molten_desh_bucket"
+				type: "item"
 			}
 			{
-				amount: 90L
-				fluid: "tcintegrations:molten_ostrum"
 				id: "15E74C372B42F156"
-				type: "fluid"
+				item: "tcintegrations:molten_ostrum_bucket"
+				type: "item"
 			}]
 			title: "Desh und Ostrum schmelzen"
 			x: 11.0d
@@ -1458,10 +1453,9 @@
 			}]
 			subtitle: "TK4 · Planetenmetalle gießen · Nebenquest"
 			tasks: [{
-				amount: 90L
-				fluid: "tcintegrations:molten_calorite"
 				id: "1F19D68556B9D711"
-				type: "fluid"
+				item: "tcintegrations:molten_calorite_bucket"
+				type: "item"
 			}
 			{
 				id: "0590854CE619343A"

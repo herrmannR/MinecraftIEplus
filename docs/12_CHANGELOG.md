@@ -30,6 +30,15 @@ Status: 🟢 / 🟡 / 🔵
 ...
 ```
 
+## 2026-11-06 — Flüssigkeits-Aufgaben werden Eimer-Abgaben
+
+Status: 🟡 (Test 128 erneut)
+
+### Änderung
+- Test 128: Die Flüssigkeits-Aufgabe von FTB Quests erkannte im Spiel nichts. Auf Wunsch des Users verlangen alle 20 solchen Aufgaben jetzt 1 Eimer der Flüssigkeit im Inventar (`<flüssigkeit>_bucket`, alle Eimer in den JARs belegt; `kubejs:kryo_treibstoff_bucket` legt KubeJS an). Die mB-Angaben der Steuerdateien gelten nicht mehr.
+- Neu gebaut und kopiert: Ad Astra, Aircraft, IE, Mekanism, Tinkers, Testseite.
+- Bestanden (User): Tests 100, 125, 129.
+
 ## 2026-11-04 — Antworten auf die Storyprüfung (O81)
 
 Status: 🟡 (Test 131)

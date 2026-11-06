@@ -862,10 +862,9 @@
 				type: "observation"
 			}
 			{
-				amount: 1000L
-				fluid: "immersiveengineering:biodiesel"
 				id: "75F89F7ADF4F8BF6"
-				type: "fluid"
+				item: "immersiveengineering:biodiesel_bucket"
+				type: "item"
 			}]
 			title: "Biodiesel"
 			x: 9.0d
@@ -1100,10 +1099,9 @@
 				type: "observation"
 			}
 			{
-				amount: 1000L
-				fluid: "immersivepetroleum:kerosene"
 				id: "398CA3259A39F246"
-				type: "fluid"
+				item: "immersivepetroleum:kerosene_bucket"
+				type: "item"
 			}]
 			title: "Distillation Tower"
 			x: 11.0d
@@ -1129,10 +1127,9 @@
 			}]
 			subtitle: "IE4 · Erdöl und Destillation · Nebenquest"
 			tasks: [{
-				amount: 1000L
-				fluid: "immersivepetroleum:lubricant"
 				id: "435A6A396A95B7E8"
-				type: "fluid"
+				item: "immersivepetroleum:lubricant_bucket"
+				type: "item"
 			}]
 			title: "Lubricant"
 			x: 11.0d
@@ -1194,10 +1191,9 @@
 				type: "observation"
 			}
 			{
-				amount: 1000L
-				fluid: "immersivepetroleum:diesel"
 				id: "2B6E7E5AFEAD7352"
-				type: "fluid"
+				item: "immersivepetroleum:diesel_bucket"
+				type: "item"
 			}]
 			title: "High-Pressure Refinery Unit"
 			x: 15.0d

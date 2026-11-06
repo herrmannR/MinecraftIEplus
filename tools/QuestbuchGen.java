@@ -28,6 +28,7 @@ import java.util.regex.*;
  *   bis = K11                  (optional) nur Abschnitte bis zu diesem Kapitel; spätere fallen weg
  *   <CODE> tasks = item(id[,anzahl]); or(Titel; id, id, ...); fluid(id, mB); dim(id); check(Titel); stage(name);
  *                  kill(entity-id[,anzahl]); observe(block-id)   (observe = Block ansehen, z. B. gebauter Multiblock)
+ *                  fluid(id, mB) wird zu 1 Eimer id_bucket im Inventar (Test 128, 2026-11-06)
  *   <CODE> rewards = stage(name); command(/befehl …); item(id[,anzahl]); xp(menge)
  *             (alle als Team-Belohnung; stage und command automatisch, item und xp per Klick abholen;
  *              Befehle mit erhöhten Rechten und ohne Chat-Ausgabe)
@@ -422,9 +423,11 @@ public class QuestbuchGen {
                     + f + "\" } }\n\t\t\t\ttitle: \"" + esc(title) + "\"\n\t\t\t\ttype: \"item\"\n\t\t\t}";
             }
             case "fluid": {
+                // Flüssigkeits-Aufgabe von FTB Quests erkennt im Spiel nichts (Test 128, 2026-11-06): stattdessen
+                // 1 Eimer der Flüssigkeit im Inventar (User). Eimer-ID = Flüssigkeit + "_bucket" (in den JARs geprüft,
+                // KubeJS-Flüssigkeiten bekommen ihren Eimer ebenso); die Menge in der Steuerdatei gilt nicht mehr.
                 String[] p = arg.split(",");
-                return "{\n\t\t\t\tamount: " + p[1].trim() + "L\n\t\t\t\tfluid: \"" + p[0].trim() + "\"\n\t\t\t\tid: \"" + id
-                    + "\"\n\t\t\t\ttype: \"fluid\"\n\t\t\t}";
+                return "{\n\t\t\t\tid: \"" + id + "\"\n\t\t\t\titem: \"" + p[0].trim() + "_bucket\"\n\t\t\t\ttype: \"item\"\n\t\t\t}";
             }
             case "dim":
                 return "{\n\t\t\t\tdimension: \"" + arg + "\"\n\t\t\t\tid: \"" + id + "\"\n\t\t\t\ttype: \"dimension\"\n\t\t\t}";

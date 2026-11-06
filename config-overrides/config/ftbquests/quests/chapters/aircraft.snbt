@@ -123,10 +123,9 @@
 				type: "item"
 			}
 			{
-				amount: 1000L
-				fluid: "immersiveengineering:biodiesel"
 				id: "1FD68462DFB78435"
-				type: "fluid"
+				item: "immersiveengineering:biodiesel_bucket"
+				type: "item"
 			}]
 			title: "Treibstoff im Metal Barrel"
 			x: 2.0d

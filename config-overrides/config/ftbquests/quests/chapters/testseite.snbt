@@ -56,10 +56,9 @@
 			shape: "square"
 			subtitle: "TS1 · Aufgabenarten · Nebenquest"
 			tasks: [{
-				amount: 1000L
-				fluid: "immersiveengineering:biodiesel"
 				id: "6A7257E06D32D229"
-				type: "fluid"
+				item: "immersiveengineering:biodiesel_bucket"
+				type: "item"
 			}]
 			title: "Flüssigkeit abgeben"
 			x: 2.0d

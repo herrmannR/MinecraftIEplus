@@ -279,10 +279,9 @@
 				type: "item"
 			}
 			{
-				amount: 1000L
-				fluid: "mekanism:oxygen"
 				id: "669FC81012A87F05"
-				type: "fluid"
+				item: "mekanism:oxygen_bucket"
+				type: "item"
 			}]
 			title: "Flüssiger Sauerstoff"
 			x: 1.5d
@@ -907,10 +906,9 @@
 				type: "item"
 			}
 			{
-				amount: 1000L
-				fluid: "mekanism:brine"
 				id: "4F2E62257D921C76"
-				type: "fluid"
+				item: "mekanism:brine_bucket"
+				type: "item"
 			}]
 			title: "Thermal Evaporation Plant: Brine"
 			x: 11.0d
@@ -1018,10 +1016,9 @@
 			}]
 			subtitle: "MK4 · Elite und Chemie"
 			tasks: [{
-				amount: 1000L
-				fluid: "mekanism:sulfuric_acid"
 				id: "515BC571C880720A"
-				type: "fluid"
+				item: "mekanism:sulfuric_acid_bucket"
+				type: "item"
 			}]
 			title: "Schwefelsäure"
 			x: 13.5d

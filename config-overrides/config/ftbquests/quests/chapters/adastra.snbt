@@ -215,10 +215,9 @@
 			}]
 			subtitle: "RF1 · Rakete T1 → Mond"
 			tasks: [{
-				amount: 6000L
-				fluid: "immersiveengineering:biodiesel"
 				id: "456ED0925BED68D2"
-				type: "fluid"
+				item: "immersiveengineering:biodiesel_bucket"
+				type: "item"
 			}]
 			title: "Biodiesel tanken"
 			x: -0.5d
@@ -250,10 +249,9 @@
 				type: "item"
 			}
 			{
-				amount: 1000L
-				fluid: "mekanism:oxygen"
 				id: "67EC05635D54DA3E"
-				type: "fluid"
+				item: "mekanism:oxygen_bucket"
+				type: "item"
 			}]
 			title: "Sauerstoff aus Mekanism"
 			x: -0.5d
@@ -914,10 +912,9 @@
 				type: "item"
 			}
 			{
-				amount: 6000L
-				fluid: "immersivepetroleum:diesel"
 				id: "4FCB037ACE1931B2"
-				type: "fluid"
+				item: "immersivepetroleum:diesel_bucket"
+				type: "item"
 			}]
 			title: "Tier 2 Rocket"
 			x: 4.0d
@@ -1298,10 +1295,9 @@
 				type: "item"
 			}
 			{
-				amount: 6000L
-				fluid: "immersivepetroleum:kerosene"
 				id: "03ED964E417BFD30"
-				type: "fluid"
+				item: "immersivepetroleum:kerosene_bucket"
+				type: "item"
 			}]
 			title: "Tier 3 Rocket"
 			x: 9.0d
@@ -1620,10 +1616,9 @@
 				type: "item"
 			}
 			{
-				amount: 2000L
-				fluid: "kubejs:kryo_treibstoff"
 				id: "3E6A95E311665C91"
-				type: "fluid"
+				item: "kubejs:kryo_treibstoff_bucket"
+				type: "item"
 			}]
 			title: "Tier 4 Rocket"
 			x: 12.0d

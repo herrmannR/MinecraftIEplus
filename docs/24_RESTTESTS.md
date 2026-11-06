@@ -10,7 +10,7 @@
 
 ## Einzeln testbar (ca. 45 min)
 
-- [ ] **129 Siegel von Bodhi** (war eine Sackgasse): BS4-04 offen, `/summon blue_skies:arachnarch`, töten → Quest hakt ab, `bodhi` = 4, Bodhi gibt das Siegel, danach `bodhi` = 5
+- [x] **129 Siegel von Bodhi** (war eine Sackgasse): BS4-04 offen, `/summon blue_skies:arachnarch`, töten → Quest hakt ab, `bodhi` = 4, Bodhi gibt das Siegel, danach `bodhi` = 5
 - [ ] **126 `/dd3r8 hierher`**: DD3R8 in der Basis; auf dem Mars an den Platz stellen, Befehl → nach bis zu 10 s Meldung, DD3R8 steht dort und bleibt
 - [ ] **127 `/dd3r8 glacio`** (direkt nach 126): DD3R8 steht auf Glacio bei -347 102 89
 - [ ] **131 Antworten F1, F2, F4, F5**:
@@ -18,9 +18,9 @@
   - [ ] Galaxy in a Cube erst nach ST4-05 (Helm) sichtbar
   - [ ] `/scoreboard players set @a dd3r8 11` → Standard-Dialog
   - [ ] `dd3r8` 10, Knopf „Wo ist er?“ → „sprecht mit ihm über das, was ihr bei euch habt“
-- [ ] **125 Schutzzone Bodhis Haus**: im Überlebensmodus im Haus abbauen und setzen geht nicht, außerhalb schon
-- [ ] **128 Testseite**: Arc Furnace ansehen, Summoner töten, Eimer Biodiesel abgeben, Bett abgeben → alle vier haken ab
-- [ ] **100 Abgaben ansehen**: ST4-01 und ST7-01 zeigen alle Items mit Bild und Namen (kein „Unknown Item“)
+- [x] **125 Schutzzone Bodhis Haus**: im Überlebensmodus im Haus abbauen und setzen geht nicht, außerhalb schon
+- [ ] **128 Testseite**: nur noch TS1-03: Eimer Biodiesel ins Inventar (`/give @s immersiveengineering:biodiesel_bucket`) → Quest hakt ab (Rest ✅ 2026-11-06)
+- [x] **100 Abgaben ansehen**: ST4-01 und ST7-01 zeigen alle Items mit Bild und Namen (kein „Unknown Item“)
 
 ## Nur mit zweitem Spieler (beim Host als Erstes)
 
