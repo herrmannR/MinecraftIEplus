@@ -13,13 +13,13 @@
 - [x] **129 Siegel von Bodhi** (war eine Sackgasse): BS4-04 offen, `/summon blue_skies:arachnarch`, töten → Quest hakt ab, `bodhi` = 4, Bodhi gibt das Siegel, danach `bodhi` = 5
 - [x] **126 `/dd3r8 hierher`**: DD3R8 in der Basis; auf dem Mars an den Platz stellen, Befehl → nach bis zu 10 s Meldung, DD3R8 steht dort und bleibt
 - [x] **127 `/dd3r8 glacio`** (direkt nach 126): DD3R8 steht auf Glacio bei -347 102 89
-- [ ] **131 Antworten F1, F2, F4, F5**:
+- [x] **131 Antworten F1, F2, F4, F5**:
   - [x] Bodhi: erste zwei Handel Diamond → Turquoise Stone Brick, Cobalt Ingot → Lunar Stone Brick
-  - [ ] Galaxy in a Cube: SW2-01 „Credits“ vor ST4-05 unsichtbar, danach sichtbar (nach Neustart erneut, Fix 2026-11-06)
+  - [x] Galaxy in a Cube: SW2-01 „Credits“ vor ST4-05 unsichtbar, danach sichtbar (nach Neustart erneut, Fix 2026-11-06)
   - [x] `/scoreboard players set @a dd3r8 11` → Standard-Dialog
   - [x] `dd3r8` 10, Knopf „Wo ist er?“ → „sprecht mit ihm über das, was ihr bei euch habt“
 - [x] **125 Schutzzone Bodhis Haus**: im Überlebensmodus im Haus abbauen und setzen geht nicht, außerhalb schon
-- [ ] **128 Testseite**: nur noch TS1-03: Eimer Biodiesel ins Inventar (`/give @s immersiveengineering:biodiesel_bucket`) → Quest hakt ab (Rest ✅ 2026-11-06)
+- [x] **128 Testseite**: nur noch TS1-03: Eimer Biodiesel ins Inventar (`/give @s immersiveengineering:biodiesel_bucket`) → Quest hakt ab (Rest ✅ 2026-11-06)
 - [x] **100 Abgaben ansehen**: ST4-01 und ST7-01 zeigen alle Items mit Bild und Namen (kein „Unknown Item“)
 
 ## Nur mit zweitem Spieler (beim Host als Erstes)
@@ -35,7 +35,7 @@
 
 ## Vor der Runde beim Host (kein Test)
 
-- [ ] `config/ftbquests/quests/chapters/testseite.snbt` löschen
+- [x] `config/ftbquests/quests/chapters/testseite.snbt` löschen (User, 2026-11-06)
 - [ ] L7: `kubejs:schrift_marsbasis` in eine Truhe der Ruine auf dem Mars legen
 - [ ] L4: Vos bei -343 103 84 auf Glacio hinstellen
 - [ ] Befehle für ST7-02 und ST11-03 (L6, L8) bereithalten: `22_TESTABEND.md`
