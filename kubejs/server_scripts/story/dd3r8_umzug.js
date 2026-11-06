@@ -7,7 +7,7 @@
 // bis zu zehnmal im Abstand von einer Sekunde. Letzter Platz: Weltwert ieplus_dd3r8_ort, anfangs der Platz aus dem Dialog
 // „Okayy … danke.“ (-370 80 -20 in der Oberwelt).
 // Erkannt wird DD3R8 am Typ easy_npc:doppler und am Namen DD3R8.
-// Stand 2026-11-04, KubeJS 2001. Fassung 2 (Welt aus der Befehlsquelle, Fehler im Chat und Log; Fassung 1 scheiterte mit „unexpected error“, Test 126), UNGETESTET.
+// Stand 2026-11-04, KubeJS 2001. Fassung 3 (UUID über e.uuid), Fassung 2 (Welt aus der Befehlsquelle, Fehler im Chat und Log; Fassung 1 scheiterte mit „unexpected error“, Test 126), UNGETESTET.
 
 const IEPLUS_DD3R8_TYP = 'easy_npc:doppler'
 const IEPLUS_DD3R8_NAME = 'DD3R8'
@@ -25,6 +25,13 @@ function ieplusDd3r8Dim(level) {
 function ieplusDd3r8Platz(text) {
   var t = String(text).split(' ')
   return { dim: t[0], x: Number(t[1]), y: Number(t[2]), z: Number(t[3]) }
+}
+
+// UUID als Text; getUUID() ist in KubeJS 2001 nicht sichtbar (Test 126), dort heißt es uuid / getStringUuid
+function ieplusDd3r8Uuid(e) {
+  if (e.uuid) return String(e.uuid)
+  try { return String(e.getStringUuid()) } catch (err) {}
+  return String(e.getStringUUID())
 }
 
 function ieplusDd3r8Finden(server) {
@@ -48,7 +55,7 @@ function ieplusDd3r8Umzug(server, ziel, melden, versuch) {
   var e = ieplusDd3r8Finden(server)
   if (e) {
     var p = ieplusDd3r8Platz(ziel)
-    var uuid = String(e.getUUID().toString())
+    var uuid = ieplusDd3r8Uuid(e)
     server.runCommandSilent('execute in ' + p.dim + ' run tp ' + uuid + ' ' + p.x + ' ' + p.y + ' ' + p.z)
     daten.putString(IEPLUS_DD3R8_ORT, ziel)
     server.scheduleInTicks(5, () => {
